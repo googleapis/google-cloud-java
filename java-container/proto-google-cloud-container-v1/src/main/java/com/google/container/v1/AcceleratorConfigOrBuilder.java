@@ -31,6 +31,8 @@ public interface AcceleratorConfigOrBuilder
    * </pre>
    *
    * <code>int64 accelerator_count = 1;</code>
+   *
+   * @return The acceleratorCount.
    */
   long getAcceleratorCount();
 
@@ -39,10 +41,12 @@ public interface AcceleratorConfigOrBuilder
    *
    * <pre>
    * The accelerator type resource name. List of supported accelerators
-   * [here](/compute/docs/gpus/#Introduction)
+   * [here](/compute/docs/gpus)
    * </pre>
    *
    * <code>string accelerator_type = 2;</code>
+   *
+   * @return The acceleratorType.
    */
   java.lang.String getAcceleratorType();
   /**
@@ -50,10 +54,12 @@ public interface AcceleratorConfigOrBuilder
    *
    * <pre>
    * The accelerator type resource name. List of supported accelerators
-   * [here](/compute/docs/gpus/#Introduction)
+   * [here](/compute/docs/gpus)
    * </pre>
    *
    * <code>string accelerator_type = 2;</code>
+   *
+   * @return The bytes for acceleratorType.
    */
   com.google.protobuf.ByteString getAcceleratorTypeBytes();
 }

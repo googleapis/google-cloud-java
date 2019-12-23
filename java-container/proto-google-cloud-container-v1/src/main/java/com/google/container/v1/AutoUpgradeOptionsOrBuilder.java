@@ -33,6 +33,8 @@ public interface AutoUpgradeOptionsOrBuilder
    * </pre>
    *
    * <code>string auto_upgrade_start_time = 1;</code>
+   *
+   * @return The autoUpgradeStartTime.
    */
   java.lang.String getAutoUpgradeStartTime();
   /**
@@ -45,6 +47,8 @@ public interface AutoUpgradeOptionsOrBuilder
    * </pre>
    *
    * <code>string auto_upgrade_start_time = 1;</code>
+   *
+   * @return The bytes for autoUpgradeStartTime.
    */
   com.google.protobuf.ByteString getAutoUpgradeStartTimeBytes();
 
@@ -57,6 +61,8 @@ public interface AutoUpgradeOptionsOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -68,6 +74,8 @@ public interface AutoUpgradeOptionsOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 }

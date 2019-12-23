@@ -31,6 +31,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -52,6 +56,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.NodeConfig config = 2;</code>
+   *
+   * @return Whether the config field is set.
    */
   boolean hasConfig();
   /**
@@ -62,6 +68,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.NodeConfig config = 2;</code>
+   *
+   * @return The config.
    */
   com.google.container.v1.NodeConfig getConfig();
   /**
@@ -86,6 +94,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>int32 initial_node_count = 3;</code>
+   *
+   * @return The initialNodeCount.
    */
   int getInitialNodeCount();
 
@@ -97,6 +107,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>string self_link = 100;</code>
+   *
+   * @return The selfLink.
    */
   java.lang.String getSelfLink();
   /**
@@ -107,6 +119,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>string self_link = 100;</code>
+   *
+   * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
 
@@ -118,6 +132,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>string version = 101;</code>
+   *
+   * @return The version.
    */
   java.lang.String getVersion();
   /**
@@ -128,6 +144,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>string version = 101;</code>
+   *
+   * @return The bytes for version.
    */
   com.google.protobuf.ByteString getVersionBytes();
 
@@ -141,6 +159,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>repeated string instance_group_urls = 102;</code>
+   *
+   * @return A list containing the instanceGroupUrls.
    */
   java.util.List<java.lang.String> getInstanceGroupUrlsList();
   /**
@@ -153,6 +173,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>repeated string instance_group_urls = 102;</code>
+   *
+   * @return The count of instanceGroupUrls.
    */
   int getInstanceGroupUrlsCount();
   /**
@@ -165,6 +187,9 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>repeated string instance_group_urls = 102;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The instanceGroupUrls at the given index.
    */
   java.lang.String getInstanceGroupUrls(int index);
   /**
@@ -177,6 +202,9 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>repeated string instance_group_urls = 102;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the instanceGroupUrls at the given index.
    */
   com.google.protobuf.ByteString getInstanceGroupUrlsBytes(int index);
 
@@ -188,6 +216,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.NodePool.Status status = 103;</code>
+   *
+   * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
@@ -198,6 +228,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.NodePool.Status status = 103;</code>
+   *
+   * @return The status.
    */
   com.google.container.v1.NodePool.Status getStatus();
 
@@ -210,6 +242,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>string status_message = 104;</code>
+   *
+   * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
   /**
@@ -221,6 +255,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>string status_message = 104;</code>
+   *
+   * @return The bytes for statusMessage.
    */
   com.google.protobuf.ByteString getStatusMessageBytes();
 
@@ -233,6 +269,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 4;</code>
+   *
+   * @return Whether the autoscaling field is set.
    */
   boolean hasAutoscaling();
   /**
@@ -244,6 +282,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 4;</code>
+   *
+   * @return The autoscaling.
    */
   com.google.container.v1.NodePoolAutoscaling getAutoscaling();
   /**
@@ -266,6 +306,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.NodeManagement management = 5;</code>
+   *
+   * @return Whether the management field is set.
    */
   boolean hasManagement();
   /**
@@ -276,6 +318,8 @@ public interface NodePoolOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.NodeManagement management = 5;</code>
+   *
+   * @return The management.
    */
   com.google.container.v1.NodeManagement getManagement();
   /**
@@ -288,4 +332,107 @@ public interface NodePoolOrBuilder
    * <code>.google.container.v1.NodeManagement management = 5;</code>
    */
   com.google.container.v1.NodeManagementOrBuilder getManagementOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The constraint on the maximum number of pods that can be run
+   * simultaneously on a node in the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
+   *
+   * @return Whether the maxPodsConstraint field is set.
+   */
+  boolean hasMaxPodsConstraint();
+  /**
+   *
+   *
+   * <pre>
+   * The constraint on the maximum number of pods that can be run
+   * simultaneously on a node in the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
+   *
+   * @return The maxPodsConstraint.
+   */
+  com.google.container.v1.MaxPodsConstraint getMaxPodsConstraint();
+  /**
+   *
+   *
+   * <pre>
+   * The constraint on the maximum number of pods that can be run
+   * simultaneously on a node in the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
+   */
+  com.google.container.v1.MaxPodsConstraintOrBuilder getMaxPodsConstraintOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   */
+  java.util.List<com.google.container.v1.StatusCondition> getConditionsList();
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   */
+  com.google.container.v1.StatusCondition getConditions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   */
+  int getConditionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   */
+  java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
+      getConditionsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   */
+  com.google.container.v1.StatusConditionOrBuilder getConditionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The pod CIDR block size per node in this node pool.
+   * </pre>
+   *
+   * <code>int32 pod_ipv4_cidr_size = 7;</code>
+   *
+   * @return The podIpv4CidrSize.
+   */
+  int getPodIpv4CidrSize();
 }

@@ -41,6 +41,12 @@ public final class LegacyAbac extends com.google.protobuf.GeneratedMessageV3
   private LegacyAbac() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LegacyAbac();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class LegacyAbac extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -116,6 +121,8 @@ public final class LegacyAbac extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool enabled = 1;</code>
+   *
+   * @return The enabled.
    */
   public boolean getEnabled() {
     return enabled_;
@@ -446,6 +453,8 @@ public final class LegacyAbac extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool enabled = 1;</code>
+     *
+     * @return The enabled.
      */
     public boolean getEnabled() {
       return enabled_;
@@ -461,6 +470,9 @@ public final class LegacyAbac extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool enabled = 1;</code>
+     *
+     * @param value The enabled to set.
+     * @return This builder for chaining.
      */
     public Builder setEnabled(boolean value) {
 
@@ -479,6 +491,8 @@ public final class LegacyAbac extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool enabled = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnabled() {
 

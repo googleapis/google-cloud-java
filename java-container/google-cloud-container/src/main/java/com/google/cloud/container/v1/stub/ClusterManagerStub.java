@@ -15,6 +15,8 @@
  */
 package com.google.cloud.container.v1.stub;
 
+import static com.google.cloud.container.v1.ClusterManagerClient.ListUsableSubnetworksPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -35,6 +37,8 @@ import com.google.container.v1.ListNodePoolsRequest;
 import com.google.container.v1.ListNodePoolsResponse;
 import com.google.container.v1.ListOperationsRequest;
 import com.google.container.v1.ListOperationsResponse;
+import com.google.container.v1.ListUsableSubnetworksRequest;
+import com.google.container.v1.ListUsableSubnetworksResponse;
 import com.google.container.v1.NodePool;
 import com.google.container.v1.Operation;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
@@ -187,6 +191,17 @@ public abstract class ClusterManagerStub implements BackgroundResource {
 
   public UnaryCallable<SetMaintenancePolicyRequest, Operation> setMaintenancePolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setMaintenancePolicyCallable()");
+  }
+
+  public UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksPagedResponse>
+      listUsableSubnetworksPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listUsableSubnetworksPagedCallable()");
+  }
+
+  public UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>
+      listUsableSubnetworksCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUsableSubnetworksCallable()");
   }
 
   @Override

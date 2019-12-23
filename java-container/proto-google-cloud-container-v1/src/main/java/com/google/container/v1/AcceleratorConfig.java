@@ -42,6 +42,12 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AcceleratorConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -121,6 +126,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>int64 accelerator_count = 1;</code>
+   *
+   * @return The acceleratorCount.
    */
   public long getAcceleratorCount() {
     return acceleratorCount_;
@@ -133,10 +140,12 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The accelerator type resource name. List of supported accelerators
-   * [here](/compute/docs/gpus/#Introduction)
+   * [here](/compute/docs/gpus)
    * </pre>
    *
    * <code>string accelerator_type = 2;</code>
+   *
+   * @return The acceleratorType.
    */
   public java.lang.String getAcceleratorType() {
     java.lang.Object ref = acceleratorType_;
@@ -154,10 +163,12 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The accelerator type resource name. List of supported accelerators
-   * [here](/compute/docs/gpus/#Introduction)
+   * [here](/compute/docs/gpus)
    * </pre>
    *
    * <code>string accelerator_type = 2;</code>
+   *
+   * @return The bytes for acceleratorType.
    */
   public com.google.protobuf.ByteString getAcceleratorTypeBytes() {
     java.lang.Object ref = acceleratorType_;
@@ -511,6 +522,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int64 accelerator_count = 1;</code>
+     *
+     * @return The acceleratorCount.
      */
     public long getAcceleratorCount() {
       return acceleratorCount_;
@@ -523,6 +536,9 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int64 accelerator_count = 1;</code>
+     *
+     * @param value The acceleratorCount to set.
+     * @return This builder for chaining.
      */
     public Builder setAcceleratorCount(long value) {
 
@@ -538,6 +554,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int64 accelerator_count = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAcceleratorCount() {
 
@@ -552,10 +570,12 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The accelerator type resource name. List of supported accelerators
-     * [here](/compute/docs/gpus/#Introduction)
+     * [here](/compute/docs/gpus)
      * </pre>
      *
      * <code>string accelerator_type = 2;</code>
+     *
+     * @return The acceleratorType.
      */
     public java.lang.String getAcceleratorType() {
       java.lang.Object ref = acceleratorType_;
@@ -573,10 +593,12 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The accelerator type resource name. List of supported accelerators
-     * [here](/compute/docs/gpus/#Introduction)
+     * [here](/compute/docs/gpus)
      * </pre>
      *
      * <code>string accelerator_type = 2;</code>
+     *
+     * @return The bytes for acceleratorType.
      */
     public com.google.protobuf.ByteString getAcceleratorTypeBytes() {
       java.lang.Object ref = acceleratorType_;
@@ -594,10 +616,13 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The accelerator type resource name. List of supported accelerators
-     * [here](/compute/docs/gpus/#Introduction)
+     * [here](/compute/docs/gpus)
      * </pre>
      *
      * <code>string accelerator_type = 2;</code>
+     *
+     * @param value The acceleratorType to set.
+     * @return This builder for chaining.
      */
     public Builder setAcceleratorType(java.lang.String value) {
       if (value == null) {
@@ -613,10 +638,12 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The accelerator type resource name. List of supported accelerators
-     * [here](/compute/docs/gpus/#Introduction)
+     * [here](/compute/docs/gpus)
      * </pre>
      *
      * <code>string accelerator_type = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAcceleratorType() {
 
@@ -629,10 +656,13 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The accelerator type resource name. List of supported accelerators
-     * [here](/compute/docs/gpus/#Introduction)
+     * [here](/compute/docs/gpus)
      * </pre>
      *
      * <code>string accelerator_type = 2;</code>
+     *
+     * @param value The bytes for acceleratorType to set.
+     * @return This builder for chaining.
      */
     public Builder setAcceleratorTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

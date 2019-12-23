@@ -46,6 +46,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     accelerators_ = java.util.Collections.emptyList();
     diskType_ = "";
     minCpuPlatform_ = "";
+    taints_ = java.util.Collections.emptyList();
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new NodeConfig();
   }
 
   @java.lang.Override
@@ -87,20 +94,20 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 oauthScopes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               oauthScopes_.add(s);
               break;
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 metadata_ =
                     com.google.protobuf.MapField.newMapField(
                         MetadataDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
                   input.readMessage(
@@ -118,10 +125,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000004;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -137,9 +144,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
           case 66:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000008;
               }
               tags_.add(s);
               break;
@@ -158,10 +165,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 accelerators_ =
                     new java.util.ArrayList<com.google.container.v1.AcceleratorConfig>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000010;
               }
               accelerators_.add(
                   input.readMessage(
@@ -182,6 +189,32 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
               minCpuPlatform_ = s;
               break;
             }
+          case 122:
+            {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                taints_ = new java.util.ArrayList<com.google.container.v1.NodeTaint>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              taints_.add(
+                  input.readMessage(com.google.container.v1.NodeTaint.parser(), extensionRegistry));
+              break;
+            }
+          case 162:
+            {
+              com.google.container.v1.ShieldedInstanceConfig.Builder subBuilder = null;
+              if (shieldedInstanceConfig_ != null) {
+                subBuilder = shieldedInstanceConfig_.toBuilder();
+              }
+              shieldedInstanceConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.ShieldedInstanceConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(shieldedInstanceConfig_);
+                shieldedInstanceConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -196,14 +229,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         oauthScopes_ = oauthScopes_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         tags_ = tags_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
+      }
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        taints_ = java.util.Collections.unmodifiableList(taints_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -238,7 +274,6 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1.NodeConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int MACHINE_TYPE_FIELD_NUMBER = 1;
   private volatile java.lang.Object machineType_;
   /**
@@ -253,6 +288,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string machine_type = 1;</code>
+   *
+   * @return The machineType.
    */
   public java.lang.String getMachineType() {
     java.lang.Object ref = machineType_;
@@ -277,6 +314,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string machine_type = 1;</code>
+   *
+   * @return The bytes for machineType.
    */
   public com.google.protobuf.ByteString getMachineTypeBytes() {
     java.lang.Object ref = machineType_;
@@ -302,6 +341,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 disk_size_gb = 2;</code>
+   *
+   * @return The diskSizeGb.
    */
   public int getDiskSizeGb() {
     return diskSizeGb_;
@@ -327,6 +368,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string oauth_scopes = 3;</code>
+   *
+   * @return A list containing the oauthScopes.
    */
   public com.google.protobuf.ProtocolStringList getOauthScopesList() {
     return oauthScopes_;
@@ -349,6 +392,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string oauth_scopes = 3;</code>
+   *
+   * @return The count of oauthScopes.
    */
   public int getOauthScopesCount() {
     return oauthScopes_.size();
@@ -371,6 +416,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string oauth_scopes = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The oauthScopes at the given index.
    */
   public java.lang.String getOauthScopes(int index) {
     return oauthScopes_.get(index);
@@ -393,6 +441,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string oauth_scopes = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the oauthScopes at the given index.
    */
   public com.google.protobuf.ByteString getOauthScopesBytes(int index) {
     return oauthScopes_.getByteString(index);
@@ -409,6 +460,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string service_account = 9;</code>
+   *
+   * @return The serviceAccount.
    */
   public java.lang.String getServiceAccount() {
     java.lang.Object ref = serviceAccount_;
@@ -430,6 +483,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string service_account = 9;</code>
+   *
+   * @return The bytes for serviceAccount.
    */
   public com.google.protobuf.ByteString getServiceAccountBytes() {
     java.lang.Object ref = serviceAccount_;
@@ -481,6 +536,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *  "cluster-name"
    *  "cluster-uid"
    *  "configure-sh"
+   *  "containerd-configure-sh"
    *  "enable-os-login"
    *  "gci-update-strategy"
    *  "gci-ensure-gke-docker"
@@ -488,6 +544,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *  "kube-env"
    *  "startup-script"
    *  "user-data"
+   *  "disable-address-manager"
+   *  "windows-startup-script-ps1"
+   *  "common-psm1"
+   *  "k8s-node-setup-psm1"
+   *  "install-ssh-psm1"
+   *  "user-profile-psm1"
+   *  "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -520,6 +583,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *  "cluster-name"
    *  "cluster-uid"
    *  "configure-sh"
+   *  "containerd-configure-sh"
    *  "enable-os-login"
    *  "gci-update-strategy"
    *  "gci-ensure-gke-docker"
@@ -527,6 +591,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *  "kube-env"
    *  "startup-script"
    *  "user-data"
+   *  "disable-address-manager"
+   *  "windows-startup-script-ps1"
+   *  "common-psm1"
+   *  "k8s-node-setup-psm1"
+   *  "install-ssh-psm1"
+   *  "user-profile-psm1"
+   *  "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -551,6 +622,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *  "cluster-name"
    *  "cluster-uid"
    *  "configure-sh"
+   *  "containerd-configure-sh"
    *  "enable-os-login"
    *  "gci-update-strategy"
    *  "gci-ensure-gke-docker"
@@ -558,6 +630,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *  "kube-env"
    *  "startup-script"
    *  "user-data"
+   *  "disable-address-manager"
+   *  "windows-startup-script-ps1"
+   *  "common-psm1"
+   *  "k8s-node-setup-psm1"
+   *  "install-ssh-psm1"
+   *  "user-profile-psm1"
+   *  "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -587,6 +666,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *  "cluster-name"
    *  "cluster-uid"
    *  "configure-sh"
+   *  "containerd-configure-sh"
    *  "enable-os-login"
    *  "gci-update-strategy"
    *  "gci-ensure-gke-docker"
@@ -594,6 +674,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *  "kube-env"
    *  "startup-script"
    *  "user-data"
+   *  "disable-address-manager"
+   *  "windows-startup-script-ps1"
+   *  "common-psm1"
+   *  "k8s-node-setup-psm1"
+   *  "install-ssh-psm1"
+   *  "user-profile-psm1"
+   *  "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -624,6 +711,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string image_type = 5;</code>
+   *
+   * @return The imageType.
    */
   public java.lang.String getImageType() {
     java.lang.Object ref = imageType_;
@@ -645,6 +734,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string image_type = 5;</code>
+   *
+   * @return The bytes for imageType.
    */
   public com.google.protobuf.ByteString getImageTypeBytes() {
     java.lang.Object ref = imageType_;
@@ -786,13 +877,15 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The number of local SSD disks to be attached to the node.
-   * The limit for this value is dependant upon the maximum number of
+   * The limit for this value is dependent upon the maximum number of
    * disks available on a machine per zone. See:
-   * https://cloud.google.com/compute/docs/disks/local-ssd#local_ssd_limits
+   * https://cloud.google.com/compute/docs/disks/local-ssd
    * for more information.
    * </pre>
    *
    * <code>int32 local_ssd_count = 7;</code>
+   *
+   * @return The localSsdCount.
    */
   public int getLocalSsdCount() {
     return localSsdCount_;
@@ -811,6 +904,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string tags = 8;</code>
+   *
+   * @return A list containing the tags.
    */
   public com.google.protobuf.ProtocolStringList getTagsList() {
     return tags_;
@@ -826,6 +921,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string tags = 8;</code>
+   *
+   * @return The count of tags.
    */
   public int getTagsCount() {
     return tags_.size();
@@ -841,6 +938,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string tags = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
    */
   public java.lang.String getTags(int index) {
     return tags_.get(index);
@@ -856,6 +956,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string tags = 8;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the tags at the given index.
    */
   public com.google.protobuf.ByteString getTagsBytes(int index) {
     return tags_.getByteString(index);
@@ -873,6 +976,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool preemptible = 10;</code>
+   *
+   * @return The preemptible.
    */
   public boolean getPreemptible() {
     return preemptible_;
@@ -963,6 +1068,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string disk_type = 12;</code>
+   *
+   * @return The diskType.
    */
   public java.lang.String getDiskType() {
     java.lang.Object ref = diskType_;
@@ -984,6 +1091,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string disk_type = 12;</code>
+   *
+   * @return The bytes for diskType.
    */
   public com.google.protobuf.ByteString getDiskTypeBytes() {
     java.lang.Object ref = diskType_;
@@ -1013,6 +1122,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string min_cpu_platform = 13;</code>
+   *
+   * @return The minCpuPlatform.
    */
   public java.lang.String getMinCpuPlatform() {
     java.lang.Object ref = minCpuPlatform_;
@@ -1039,6 +1150,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string min_cpu_platform = 13;</code>
+   *
+   * @return The bytes for minCpuPlatform.
    */
   public com.google.protobuf.ByteString getMinCpuPlatformBytes() {
     java.lang.Object ref = minCpuPlatform_;
@@ -1050,6 +1163,126 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int TAINTS_FIELD_NUMBER = 15;
+  private java.util.List<com.google.container.v1.NodeTaint> taints_;
+  /**
+   *
+   *
+   * <pre>
+   * List of kubernetes taints to be applied to each node.
+   * For more information, including usage and the valid values, see:
+   * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+   */
+  public java.util.List<com.google.container.v1.NodeTaint> getTaintsList() {
+    return taints_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of kubernetes taints to be applied to each node.
+   * For more information, including usage and the valid values, see:
+   * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+   */
+  public java.util.List<? extends com.google.container.v1.NodeTaintOrBuilder>
+      getTaintsOrBuilderList() {
+    return taints_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of kubernetes taints to be applied to each node.
+   * For more information, including usage and the valid values, see:
+   * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+   */
+  public int getTaintsCount() {
+    return taints_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of kubernetes taints to be applied to each node.
+   * For more information, including usage and the valid values, see:
+   * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+   */
+  public com.google.container.v1.NodeTaint getTaints(int index) {
+    return taints_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of kubernetes taints to be applied to each node.
+   * For more information, including usage and the valid values, see:
+   * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+   */
+  public com.google.container.v1.NodeTaintOrBuilder getTaintsOrBuilder(int index) {
+    return taints_.get(index);
+  }
+
+  public static final int SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER = 20;
+  private com.google.container.v1.ShieldedInstanceConfig shieldedInstanceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
+   *
+   * @return Whether the shieldedInstanceConfig field is set.
+   */
+  public boolean hasShieldedInstanceConfig() {
+    return shieldedInstanceConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
+   *
+   * @return The shieldedInstanceConfig.
+   */
+  public com.google.container.v1.ShieldedInstanceConfig getShieldedInstanceConfig() {
+    return shieldedInstanceConfig_ == null
+        ? com.google.container.v1.ShieldedInstanceConfig.getDefaultInstance()
+        : shieldedInstanceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
+   */
+  public com.google.container.v1.ShieldedInstanceConfigOrBuilder
+      getShieldedInstanceConfigOrBuilder() {
+    return getShieldedInstanceConfig();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1102,6 +1335,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getMinCpuPlatformBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, minCpuPlatform_);
+    }
+    for (int i = 0; i < taints_.size(); i++) {
+      output.writeMessage(15, taints_.get(i));
+    }
+    if (shieldedInstanceConfig_ != null) {
+      output.writeMessage(20, getShieldedInstanceConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -1175,6 +1414,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getMinCpuPlatformBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, minCpuPlatform_);
     }
+    for (int i = 0; i < taints_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, taints_.get(i));
+    }
+    if (shieldedInstanceConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(20, getShieldedInstanceConfig());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1203,6 +1449,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getAcceleratorsList().equals(other.getAcceleratorsList())) return false;
     if (!getDiskType().equals(other.getDiskType())) return false;
     if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
+    if (!getTaintsList().equals(other.getTaintsList())) return false;
+    if (hasShieldedInstanceConfig() != other.hasShieldedInstanceConfig()) return false;
+    if (hasShieldedInstanceConfig()) {
+      if (!getShieldedInstanceConfig().equals(other.getShieldedInstanceConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1250,6 +1501,14 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDiskType().hashCode();
     hash = (37 * hash) + MIN_CPU_PLATFORM_FIELD_NUMBER;
     hash = (53 * hash) + getMinCpuPlatform().hashCode();
+    if (getTaintsCount() > 0) {
+      hash = (37 * hash) + TAINTS_FIELD_NUMBER;
+      hash = (53 * hash) + getTaintsList().hashCode();
+    }
+    if (hasShieldedInstanceConfig()) {
+      hash = (37 * hash) + SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getShieldedInstanceConfig().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1414,6 +1673,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getAcceleratorsFieldBuilder();
+        getTaintsFieldBuilder();
       }
     }
 
@@ -1425,7 +1685,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       diskSizeGb_ = 0;
 
       oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       serviceAccount_ = "";
 
       internalGetMutableMetadata().clear();
@@ -1435,12 +1695,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       localSsdCount_ = 0;
 
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000008);
       preemptible_ = false;
 
       if (acceleratorsBuilder_ == null) {
         accelerators_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         acceleratorsBuilder_.clear();
       }
@@ -1448,6 +1708,18 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
 
       minCpuPlatform_ = "";
 
+      if (taintsBuilder_ == null) {
+        taints_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      } else {
+        taintsBuilder_.clear();
+      }
+      if (shieldedInstanceConfigBuilder_ == null) {
+        shieldedInstanceConfig_ = null;
+      } else {
+        shieldedInstanceConfig_ = null;
+        shieldedInstanceConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1475,12 +1747,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1.NodeConfig buildPartial() {
       com.google.container.v1.NodeConfig result = new com.google.container.v1.NodeConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.machineType_ = machineType_;
       result.diskSizeGb_ = diskSizeGb_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         oauthScopes_ = oauthScopes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.oauthScopes_ = oauthScopes_;
       result.serviceAccount_ = serviceAccount_;
@@ -1490,16 +1761,16 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
       result.localSsdCount_ = localSsdCount_;
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.tags_ = tags_;
       result.preemptible_ = preemptible_;
       if (acceleratorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.accelerators_ = accelerators_;
       } else {
@@ -1507,7 +1778,20 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       result.diskType_ = diskType_;
       result.minCpuPlatform_ = minCpuPlatform_;
-      result.bitField0_ = to_bitField0_;
+      if (taintsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          taints_ = java.util.Collections.unmodifiableList(taints_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.taints_ = taints_;
+      } else {
+        result.taints_ = taintsBuilder_.build();
+      }
+      if (shieldedInstanceConfigBuilder_ == null) {
+        result.shieldedInstanceConfig_ = shieldedInstanceConfig_;
+      } else {
+        result.shieldedInstanceConfig_ = shieldedInstanceConfigBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1567,7 +1851,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.oauthScopes_.isEmpty()) {
         if (oauthScopes_.isEmpty()) {
           oauthScopes_ = other.oauthScopes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureOauthScopesIsMutable();
           oauthScopes_.addAll(other.oauthScopes_);
@@ -1590,7 +1874,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -1604,7 +1888,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.accelerators_.isEmpty()) {
           if (accelerators_.isEmpty()) {
             accelerators_ = other.accelerators_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureAcceleratorsIsMutable();
             accelerators_.addAll(other.accelerators_);
@@ -1617,7 +1901,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
             acceleratorsBuilder_.dispose();
             acceleratorsBuilder_ = null;
             accelerators_ = other.accelerators_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000010);
             acceleratorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAcceleratorsFieldBuilder()
@@ -1634,6 +1918,36 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.getMinCpuPlatform().isEmpty()) {
         minCpuPlatform_ = other.minCpuPlatform_;
         onChanged();
+      }
+      if (taintsBuilder_ == null) {
+        if (!other.taints_.isEmpty()) {
+          if (taints_.isEmpty()) {
+            taints_ = other.taints_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureTaintsIsMutable();
+            taints_.addAll(other.taints_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.taints_.isEmpty()) {
+          if (taintsBuilder_.isEmpty()) {
+            taintsBuilder_.dispose();
+            taintsBuilder_ = null;
+            taints_ = other.taints_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            taintsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getTaintsFieldBuilder()
+                    : null;
+          } else {
+            taintsBuilder_.addAllMessages(other.taints_);
+          }
+        }
+      }
+      if (other.hasShieldedInstanceConfig()) {
+        mergeShieldedInstanceConfig(other.getShieldedInstanceConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1679,6 +1993,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string machine_type = 1;</code>
+     *
+     * @return The machineType.
      */
     public java.lang.String getMachineType() {
       java.lang.Object ref = machineType_;
@@ -1703,6 +2019,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string machine_type = 1;</code>
+     *
+     * @return The bytes for machineType.
      */
     public com.google.protobuf.ByteString getMachineTypeBytes() {
       java.lang.Object ref = machineType_;
@@ -1727,6 +2045,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string machine_type = 1;</code>
+     *
+     * @param value The machineType to set.
+     * @return This builder for chaining.
      */
     public Builder setMachineType(java.lang.String value) {
       if (value == null) {
@@ -1749,6 +2070,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string machine_type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMachineType() {
 
@@ -1768,6 +2091,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string machine_type = 1;</code>
+     *
+     * @param value The bytes for machineType to set.
+     * @return This builder for chaining.
      */
     public Builder setMachineTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1791,6 +2117,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 disk_size_gb = 2;</code>
+     *
+     * @return The diskSizeGb.
      */
     public int getDiskSizeGb() {
       return diskSizeGb_;
@@ -1805,6 +2133,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 disk_size_gb = 2;</code>
+     *
+     * @param value The diskSizeGb to set.
+     * @return This builder for chaining.
      */
     public Builder setDiskSizeGb(int value) {
 
@@ -1822,6 +2153,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 disk_size_gb = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDiskSizeGb() {
 
@@ -1834,9 +2167,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureOauthScopesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         oauthScopes_ = new com.google.protobuf.LazyStringArrayList(oauthScopes_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1857,6 +2190,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string oauth_scopes = 3;</code>
+     *
+     * @return A list containing the oauthScopes.
      */
     public com.google.protobuf.ProtocolStringList getOauthScopesList() {
       return oauthScopes_.getUnmodifiableView();
@@ -1879,6 +2214,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string oauth_scopes = 3;</code>
+     *
+     * @return The count of oauthScopes.
      */
     public int getOauthScopesCount() {
       return oauthScopes_.size();
@@ -1901,6 +2238,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string oauth_scopes = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The oauthScopes at the given index.
      */
     public java.lang.String getOauthScopes(int index) {
       return oauthScopes_.get(index);
@@ -1923,6 +2263,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string oauth_scopes = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the oauthScopes at the given index.
      */
     public com.google.protobuf.ByteString getOauthScopesBytes(int index) {
       return oauthScopes_.getByteString(index);
@@ -1945,6 +2288,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string oauth_scopes = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The oauthScopes to set.
+     * @return This builder for chaining.
      */
     public Builder setOauthScopes(int index, java.lang.String value) {
       if (value == null) {
@@ -1973,6 +2320,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string oauth_scopes = 3;</code>
+     *
+     * @param value The oauthScopes to add.
+     * @return This builder for chaining.
      */
     public Builder addOauthScopes(java.lang.String value) {
       if (value == null) {
@@ -2001,6 +2351,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string oauth_scopes = 3;</code>
+     *
+     * @param values The oauthScopes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllOauthScopes(java.lang.Iterable<java.lang.String> values) {
       ensureOauthScopesIsMutable();
@@ -2026,10 +2379,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string oauth_scopes = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOauthScopes() {
       oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2051,6 +2406,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string oauth_scopes = 3;</code>
+     *
+     * @param value The bytes of the oauthScopes to add.
+     * @return This builder for chaining.
      */
     public Builder addOauthScopesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2073,6 +2431,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account = 9;</code>
+     *
+     * @return The serviceAccount.
      */
     public java.lang.String getServiceAccount() {
       java.lang.Object ref = serviceAccount_;
@@ -2094,6 +2454,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account = 9;</code>
+     *
+     * @return The bytes for serviceAccount.
      */
     public com.google.protobuf.ByteString getServiceAccountBytes() {
       java.lang.Object ref = serviceAccount_;
@@ -2115,6 +2477,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account = 9;</code>
+     *
+     * @param value The serviceAccount to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceAccount(java.lang.String value) {
       if (value == null) {
@@ -2134,6 +2499,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearServiceAccount() {
 
@@ -2150,6 +2517,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account = 9;</code>
+     *
+     * @param value The bytes for serviceAccount to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2201,6 +2571,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  "cluster-name"
      *  "cluster-uid"
      *  "configure-sh"
+     *  "containerd-configure-sh"
      *  "enable-os-login"
      *  "gci-update-strategy"
      *  "gci-ensure-gke-docker"
@@ -2208,6 +2579,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  "kube-env"
      *  "startup-script"
      *  "user-data"
+     *  "disable-address-manager"
+     *  "windows-startup-script-ps1"
+     *  "common-psm1"
+     *  "k8s-node-setup-psm1"
+     *  "install-ssh-psm1"
+     *  "user-profile-psm1"
+     *  "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2240,6 +2618,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  "cluster-name"
      *  "cluster-uid"
      *  "configure-sh"
+     *  "containerd-configure-sh"
      *  "enable-os-login"
      *  "gci-update-strategy"
      *  "gci-ensure-gke-docker"
@@ -2247,6 +2626,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  "kube-env"
      *  "startup-script"
      *  "user-data"
+     *  "disable-address-manager"
+     *  "windows-startup-script-ps1"
+     *  "common-psm1"
+     *  "k8s-node-setup-psm1"
+     *  "install-ssh-psm1"
+     *  "user-profile-psm1"
+     *  "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2271,6 +2657,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  "cluster-name"
      *  "cluster-uid"
      *  "configure-sh"
+     *  "containerd-configure-sh"
      *  "enable-os-login"
      *  "gci-update-strategy"
      *  "gci-ensure-gke-docker"
@@ -2278,6 +2665,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  "kube-env"
      *  "startup-script"
      *  "user-data"
+     *  "disable-address-manager"
+     *  "windows-startup-script-ps1"
+     *  "common-psm1"
+     *  "k8s-node-setup-psm1"
+     *  "install-ssh-psm1"
+     *  "user-profile-psm1"
+     *  "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2307,6 +2701,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  "cluster-name"
      *  "cluster-uid"
      *  "configure-sh"
+     *  "containerd-configure-sh"
      *  "enable-os-login"
      *  "gci-update-strategy"
      *  "gci-ensure-gke-docker"
@@ -2314,6 +2709,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  "kube-env"
      *  "startup-script"
      *  "user-data"
+     *  "disable-address-manager"
+     *  "windows-startup-script-ps1"
+     *  "common-psm1"
+     *  "k8s-node-setup-psm1"
+     *  "install-ssh-psm1"
+     *  "user-profile-psm1"
+     *  "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2350,6 +2752,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  "cluster-name"
      *  "cluster-uid"
      *  "configure-sh"
+     *  "containerd-configure-sh"
      *  "enable-os-login"
      *  "gci-update-strategy"
      *  "gci-ensure-gke-docker"
@@ -2357,6 +2760,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  "kube-env"
      *  "startup-script"
      *  "user-data"
+     *  "disable-address-manager"
+     *  "windows-startup-script-ps1"
+     *  "common-psm1"
+     *  "k8s-node-setup-psm1"
+     *  "install-ssh-psm1"
+     *  "user-profile-psm1"
+     *  "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2390,6 +2800,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  "cluster-name"
      *  "cluster-uid"
      *  "configure-sh"
+     *  "containerd-configure-sh"
      *  "enable-os-login"
      *  "gci-update-strategy"
      *  "gci-ensure-gke-docker"
@@ -2397,6 +2808,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  "kube-env"
      *  "startup-script"
      *  "user-data"
+     *  "disable-address-manager"
+     *  "windows-startup-script-ps1"
+     *  "common-psm1"
+     *  "k8s-node-setup-psm1"
+     *  "install-ssh-psm1"
+     *  "user-profile-psm1"
+     *  "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2428,6 +2846,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  "cluster-name"
      *  "cluster-uid"
      *  "configure-sh"
+     *  "containerd-configure-sh"
      *  "enable-os-login"
      *  "gci-update-strategy"
      *  "gci-ensure-gke-docker"
@@ -2435,6 +2854,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  "kube-env"
      *  "startup-script"
      *  "user-data"
+     *  "disable-address-manager"
+     *  "windows-startup-script-ps1"
+     *  "common-psm1"
+     *  "k8s-node-setup-psm1"
+     *  "install-ssh-psm1"
+     *  "user-profile-psm1"
+     *  "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2458,6 +2884,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_type = 5;</code>
+     *
+     * @return The imageType.
      */
     public java.lang.String getImageType() {
       java.lang.Object ref = imageType_;
@@ -2479,6 +2907,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_type = 5;</code>
+     *
+     * @return The bytes for imageType.
      */
     public com.google.protobuf.ByteString getImageTypeBytes() {
       java.lang.Object ref = imageType_;
@@ -2500,6 +2930,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_type = 5;</code>
+     *
+     * @param value The imageType to set.
+     * @return This builder for chaining.
      */
     public Builder setImageType(java.lang.String value) {
       if (value == null) {
@@ -2519,6 +2952,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_type = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearImageType() {
 
@@ -2535,6 +2970,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string image_type = 5;</code>
+     *
+     * @param value The bytes for imageType to set.
+     * @return This builder for chaining.
      */
     public Builder setImageTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2754,13 +3192,15 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The number of local SSD disks to be attached to the node.
-     * The limit for this value is dependant upon the maximum number of
+     * The limit for this value is dependent upon the maximum number of
      * disks available on a machine per zone. See:
-     * https://cloud.google.com/compute/docs/disks/local-ssd#local_ssd_limits
+     * https://cloud.google.com/compute/docs/disks/local-ssd
      * for more information.
      * </pre>
      *
      * <code>int32 local_ssd_count = 7;</code>
+     *
+     * @return The localSsdCount.
      */
     public int getLocalSsdCount() {
       return localSsdCount_;
@@ -2770,13 +3210,16 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The number of local SSD disks to be attached to the node.
-     * The limit for this value is dependant upon the maximum number of
+     * The limit for this value is dependent upon the maximum number of
      * disks available on a machine per zone. See:
-     * https://cloud.google.com/compute/docs/disks/local-ssd#local_ssd_limits
+     * https://cloud.google.com/compute/docs/disks/local-ssd
      * for more information.
      * </pre>
      *
      * <code>int32 local_ssd_count = 7;</code>
+     *
+     * @param value The localSsdCount to set.
+     * @return This builder for chaining.
      */
     public Builder setLocalSsdCount(int value) {
 
@@ -2789,13 +3232,15 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The number of local SSD disks to be attached to the node.
-     * The limit for this value is dependant upon the maximum number of
+     * The limit for this value is dependent upon the maximum number of
      * disks available on a machine per zone. See:
-     * https://cloud.google.com/compute/docs/disks/local-ssd#local_ssd_limits
+     * https://cloud.google.com/compute/docs/disks/local-ssd
      * for more information.
      * </pre>
      *
      * <code>int32 local_ssd_count = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocalSsdCount() {
 
@@ -2808,9 +3253,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -2824,6 +3269,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 8;</code>
+     *
+     * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList getTagsList() {
       return tags_.getUnmodifiableView();
@@ -2839,6 +3286,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 8;</code>
+     *
+     * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
@@ -2854,6 +3303,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 8;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
@@ -2869,6 +3321,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 8;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     public com.google.protobuf.ByteString getTagsBytes(int index) {
       return tags_.getByteString(index);
@@ -2884,6 +3339,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 8;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The tags to set.
+     * @return This builder for chaining.
      */
     public Builder setTags(int index, java.lang.String value) {
       if (value == null) {
@@ -2905,6 +3364,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 8;</code>
+     *
+     * @param value The tags to add.
+     * @return This builder for chaining.
      */
     public Builder addTags(java.lang.String value) {
       if (value == null) {
@@ -2926,6 +3388,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 8;</code>
+     *
+     * @param values The tags to add.
+     * @return This builder for chaining.
      */
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
@@ -2944,10 +3409,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTags() {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2962,6 +3429,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string tags = 8;</code>
+     *
+     * @param value The bytes of the tags to add.
+     * @return This builder for chaining.
      */
     public Builder addTagsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2985,6 +3455,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool preemptible = 10;</code>
+     *
+     * @return The preemptible.
      */
     public boolean getPreemptible() {
       return preemptible_;
@@ -2999,6 +3471,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool preemptible = 10;</code>
+     *
+     * @param value The preemptible to set.
+     * @return This builder for chaining.
      */
     public Builder setPreemptible(boolean value) {
 
@@ -3016,6 +3491,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool preemptible = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPreemptible() {
 
@@ -3028,10 +3505,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAcceleratorsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         accelerators_ =
             new java.util.ArrayList<com.google.container.v1.AcceleratorConfig>(accelerators_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -3269,7 +3746,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAccelerators() {
       if (acceleratorsBuilder_ == null) {
         accelerators_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         acceleratorsBuilder_.clear();
@@ -3405,7 +3882,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.container.v1.AcceleratorConfig,
                 com.google.container.v1.AcceleratorConfig.Builder,
                 com.google.container.v1.AcceleratorConfigOrBuilder>(
-                accelerators_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+                accelerators_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         accelerators_ = null;
       }
       return acceleratorsBuilder_;
@@ -3421,6 +3898,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string disk_type = 12;</code>
+     *
+     * @return The diskType.
      */
     public java.lang.String getDiskType() {
       java.lang.Object ref = diskType_;
@@ -3442,6 +3921,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string disk_type = 12;</code>
+     *
+     * @return The bytes for diskType.
      */
     public com.google.protobuf.ByteString getDiskTypeBytes() {
       java.lang.Object ref = diskType_;
@@ -3463,6 +3944,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string disk_type = 12;</code>
+     *
+     * @param value The diskType to set.
+     * @return This builder for chaining.
      */
     public Builder setDiskType(java.lang.String value) {
       if (value == null) {
@@ -3482,6 +3966,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string disk_type = 12;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDiskType() {
 
@@ -3498,6 +3984,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string disk_type = 12;</code>
+     *
+     * @param value The bytes for diskType to set.
+     * @return This builder for chaining.
      */
     public Builder setDiskTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3525,6 +4014,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string min_cpu_platform = 13;</code>
+     *
+     * @return The minCpuPlatform.
      */
     public java.lang.String getMinCpuPlatform() {
       java.lang.Object ref = minCpuPlatform_;
@@ -3551,6 +4042,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string min_cpu_platform = 13;</code>
+     *
+     * @return The bytes for minCpuPlatform.
      */
     public com.google.protobuf.ByteString getMinCpuPlatformBytes() {
       java.lang.Object ref = minCpuPlatform_;
@@ -3577,6 +4070,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string min_cpu_platform = 13;</code>
+     *
+     * @param value The minCpuPlatform to set.
+     * @return This builder for chaining.
      */
     public Builder setMinCpuPlatform(java.lang.String value) {
       if (value == null) {
@@ -3601,6 +4097,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string min_cpu_platform = 13;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMinCpuPlatform() {
 
@@ -3622,6 +4120,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string min_cpu_platform = 13;</code>
+     *
+     * @param value The bytes for minCpuPlatform to set.
+     * @return This builder for chaining.
      */
     public Builder setMinCpuPlatformBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3632,6 +4133,577 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       minCpuPlatform_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.container.v1.NodeTaint> taints_ =
+        java.util.Collections.emptyList();
+
+    private void ensureTaintsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        taints_ = new java.util.ArrayList<com.google.container.v1.NodeTaint>(taints_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1.NodeTaint,
+            com.google.container.v1.NodeTaint.Builder,
+            com.google.container.v1.NodeTaintOrBuilder>
+        taintsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public java.util.List<com.google.container.v1.NodeTaint> getTaintsList() {
+      if (taintsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(taints_);
+      } else {
+        return taintsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public int getTaintsCount() {
+      if (taintsBuilder_ == null) {
+        return taints_.size();
+      } else {
+        return taintsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public com.google.container.v1.NodeTaint getTaints(int index) {
+      if (taintsBuilder_ == null) {
+        return taints_.get(index);
+      } else {
+        return taintsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public Builder setTaints(int index, com.google.container.v1.NodeTaint value) {
+      if (taintsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTaintsIsMutable();
+        taints_.set(index, value);
+        onChanged();
+      } else {
+        taintsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public Builder setTaints(int index, com.google.container.v1.NodeTaint.Builder builderForValue) {
+      if (taintsBuilder_ == null) {
+        ensureTaintsIsMutable();
+        taints_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        taintsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public Builder addTaints(com.google.container.v1.NodeTaint value) {
+      if (taintsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTaintsIsMutable();
+        taints_.add(value);
+        onChanged();
+      } else {
+        taintsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public Builder addTaints(int index, com.google.container.v1.NodeTaint value) {
+      if (taintsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTaintsIsMutable();
+        taints_.add(index, value);
+        onChanged();
+      } else {
+        taintsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public Builder addTaints(com.google.container.v1.NodeTaint.Builder builderForValue) {
+      if (taintsBuilder_ == null) {
+        ensureTaintsIsMutable();
+        taints_.add(builderForValue.build());
+        onChanged();
+      } else {
+        taintsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public Builder addTaints(int index, com.google.container.v1.NodeTaint.Builder builderForValue) {
+      if (taintsBuilder_ == null) {
+        ensureTaintsIsMutable();
+        taints_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        taintsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public Builder addAllTaints(
+        java.lang.Iterable<? extends com.google.container.v1.NodeTaint> values) {
+      if (taintsBuilder_ == null) {
+        ensureTaintsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, taints_);
+        onChanged();
+      } else {
+        taintsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public Builder clearTaints() {
+      if (taintsBuilder_ == null) {
+        taints_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        taintsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public Builder removeTaints(int index) {
+      if (taintsBuilder_ == null) {
+        ensureTaintsIsMutable();
+        taints_.remove(index);
+        onChanged();
+      } else {
+        taintsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public com.google.container.v1.NodeTaint.Builder getTaintsBuilder(int index) {
+      return getTaintsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public com.google.container.v1.NodeTaintOrBuilder getTaintsOrBuilder(int index) {
+      if (taintsBuilder_ == null) {
+        return taints_.get(index);
+      } else {
+        return taintsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public java.util.List<? extends com.google.container.v1.NodeTaintOrBuilder>
+        getTaintsOrBuilderList() {
+      if (taintsBuilder_ != null) {
+        return taintsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(taints_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public com.google.container.v1.NodeTaint.Builder addTaintsBuilder() {
+      return getTaintsFieldBuilder()
+          .addBuilder(com.google.container.v1.NodeTaint.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public com.google.container.v1.NodeTaint.Builder addTaintsBuilder(int index) {
+      return getTaintsFieldBuilder()
+          .addBuilder(index, com.google.container.v1.NodeTaint.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of kubernetes taints to be applied to each node.
+     * For more information, including usage and the valid values, see:
+     * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+     */
+    public java.util.List<com.google.container.v1.NodeTaint.Builder> getTaintsBuilderList() {
+      return getTaintsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1.NodeTaint,
+            com.google.container.v1.NodeTaint.Builder,
+            com.google.container.v1.NodeTaintOrBuilder>
+        getTaintsFieldBuilder() {
+      if (taintsBuilder_ == null) {
+        taintsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.container.v1.NodeTaint,
+                com.google.container.v1.NodeTaint.Builder,
+                com.google.container.v1.NodeTaintOrBuilder>(
+                taints_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+        taints_ = null;
+      }
+      return taintsBuilder_;
+    }
+
+    private com.google.container.v1.ShieldedInstanceConfig shieldedInstanceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ShieldedInstanceConfig,
+            com.google.container.v1.ShieldedInstanceConfig.Builder,
+            com.google.container.v1.ShieldedInstanceConfigOrBuilder>
+        shieldedInstanceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
+     *
+     * @return Whether the shieldedInstanceConfig field is set.
+     */
+    public boolean hasShieldedInstanceConfig() {
+      return shieldedInstanceConfigBuilder_ != null || shieldedInstanceConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
+     *
+     * @return The shieldedInstanceConfig.
+     */
+    public com.google.container.v1.ShieldedInstanceConfig getShieldedInstanceConfig() {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        return shieldedInstanceConfig_ == null
+            ? com.google.container.v1.ShieldedInstanceConfig.getDefaultInstance()
+            : shieldedInstanceConfig_;
+      } else {
+        return shieldedInstanceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
+     */
+    public Builder setShieldedInstanceConfig(com.google.container.v1.ShieldedInstanceConfig value) {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        shieldedInstanceConfig_ = value;
+        onChanged();
+      } else {
+        shieldedInstanceConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
+     */
+    public Builder setShieldedInstanceConfig(
+        com.google.container.v1.ShieldedInstanceConfig.Builder builderForValue) {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        shieldedInstanceConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        shieldedInstanceConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
+     */
+    public Builder mergeShieldedInstanceConfig(
+        com.google.container.v1.ShieldedInstanceConfig value) {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        if (shieldedInstanceConfig_ != null) {
+          shieldedInstanceConfig_ =
+              com.google.container.v1.ShieldedInstanceConfig.newBuilder(shieldedInstanceConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          shieldedInstanceConfig_ = value;
+        }
+        onChanged();
+      } else {
+        shieldedInstanceConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
+     */
+    public Builder clearShieldedInstanceConfig() {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        shieldedInstanceConfig_ = null;
+        onChanged();
+      } else {
+        shieldedInstanceConfig_ = null;
+        shieldedInstanceConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
+     */
+    public com.google.container.v1.ShieldedInstanceConfig.Builder
+        getShieldedInstanceConfigBuilder() {
+
+      onChanged();
+      return getShieldedInstanceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
+     */
+    public com.google.container.v1.ShieldedInstanceConfigOrBuilder
+        getShieldedInstanceConfigOrBuilder() {
+      if (shieldedInstanceConfigBuilder_ != null) {
+        return shieldedInstanceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return shieldedInstanceConfig_ == null
+            ? com.google.container.v1.ShieldedInstanceConfig.getDefaultInstance()
+            : shieldedInstanceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ShieldedInstanceConfig,
+            com.google.container.v1.ShieldedInstanceConfig.Builder,
+            com.google.container.v1.ShieldedInstanceConfigOrBuilder>
+        getShieldedInstanceConfigFieldBuilder() {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        shieldedInstanceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ShieldedInstanceConfig,
+                com.google.container.v1.ShieldedInstanceConfig.Builder,
+                com.google.container.v1.ShieldedInstanceConfigOrBuilder>(
+                getShieldedInstanceConfig(), getParentForChildren(), isClean());
+        shieldedInstanceConfig_ = null;
+      }
+      return shieldedInstanceConfigBuilder_;
     }
 
     @java.lang.Override

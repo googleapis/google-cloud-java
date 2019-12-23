@@ -43,6 +43,12 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListOperationsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -201,6 +207,8 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>repeated string missing_zones = 2;</code>
+   *
+   * @return A list containing the missingZones.
    */
   public com.google.protobuf.ProtocolStringList getMissingZonesList() {
     return missingZones_;
@@ -214,6 +222,8 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>repeated string missing_zones = 2;</code>
+   *
+   * @return The count of missingZones.
    */
   public int getMissingZonesCount() {
     return missingZones_.size();
@@ -227,6 +237,9 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>repeated string missing_zones = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The missingZones at the given index.
    */
   public java.lang.String getMissingZones(int index) {
     return missingZones_.get(index);
@@ -240,6 +253,9 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>repeated string missing_zones = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the missingZones at the given index.
    */
   public com.google.protobuf.ByteString getMissingZonesBytes(int index) {
     return missingZones_.getByteString(index);
@@ -1002,6 +1018,8 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string missing_zones = 2;</code>
+     *
+     * @return A list containing the missingZones.
      */
     public com.google.protobuf.ProtocolStringList getMissingZonesList() {
       return missingZones_.getUnmodifiableView();
@@ -1015,6 +1033,8 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string missing_zones = 2;</code>
+     *
+     * @return The count of missingZones.
      */
     public int getMissingZonesCount() {
       return missingZones_.size();
@@ -1028,6 +1048,9 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string missing_zones = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The missingZones at the given index.
      */
     public java.lang.String getMissingZones(int index) {
       return missingZones_.get(index);
@@ -1041,6 +1064,9 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string missing_zones = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the missingZones at the given index.
      */
     public com.google.protobuf.ByteString getMissingZonesBytes(int index) {
       return missingZones_.getByteString(index);
@@ -1054,6 +1080,10 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string missing_zones = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The missingZones to set.
+     * @return This builder for chaining.
      */
     public Builder setMissingZones(int index, java.lang.String value) {
       if (value == null) {
@@ -1073,6 +1103,9 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string missing_zones = 2;</code>
+     *
+     * @param value The missingZones to add.
+     * @return This builder for chaining.
      */
     public Builder addMissingZones(java.lang.String value) {
       if (value == null) {
@@ -1092,6 +1125,9 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string missing_zones = 2;</code>
+     *
+     * @param values The missingZones to add.
+     * @return This builder for chaining.
      */
     public Builder addAllMissingZones(java.lang.Iterable<java.lang.String> values) {
       ensureMissingZonesIsMutable();
@@ -1108,6 +1144,8 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string missing_zones = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMissingZones() {
       missingZones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1124,6 +1162,9 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>repeated string missing_zones = 2;</code>
+     *
+     * @param value The bytes of the missingZones to add.
+     * @return This builder for chaining.
      */
     public Builder addMissingZonesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

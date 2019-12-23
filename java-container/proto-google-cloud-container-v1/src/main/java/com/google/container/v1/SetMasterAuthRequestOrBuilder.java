@@ -27,12 +27,15 @@ public interface SetMasterAuthRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The projectId.
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
@@ -40,12 +43,15 @@ public interface SetMasterAuthRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for projectId.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getProjectIdBytes();
@@ -54,13 +60,15 @@ public interface SetMasterAuthRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The zone.
    */
   @java.lang.Deprecated
   java.lang.String getZone();
@@ -68,13 +76,15 @@ public interface SetMasterAuthRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for zone.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getZoneBytes();
@@ -83,11 +93,14 @@ public interface SetMasterAuthRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster to upgrade.
+   * Required. Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The clusterId.
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
@@ -95,11 +108,14 @@ public interface SetMasterAuthRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster to upgrade.
+   * Required. Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getClusterIdBytes();
@@ -108,20 +124,28 @@ public interface SetMasterAuthRequestOrBuilder
    *
    *
    * <pre>
-   * The exact form of action to be taken on the master auth.
+   * Required. The exact form of action to be taken on the master auth.
    * </pre>
    *
-   * <code>.google.container.v1.SetMasterAuthRequest.Action action = 4;</code>
+   * <code>
+   * .google.container.v1.SetMasterAuthRequest.Action action = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for action.
    */
   int getActionValue();
   /**
    *
    *
    * <pre>
-   * The exact form of action to be taken on the master auth.
+   * Required. The exact form of action to be taken on the master auth.
    * </pre>
    *
-   * <code>.google.container.v1.SetMasterAuthRequest.Action action = 4;</code>
+   * <code>
+   * .google.container.v1.SetMasterAuthRequest.Action action = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The action.
    */
   com.google.container.v1.SetMasterAuthRequest.Action getAction();
 
@@ -129,30 +153,37 @@ public interface SetMasterAuthRequestOrBuilder
    *
    *
    * <pre>
-   * A description of the update.
+   * Required. A description of the update.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuth update = 5;</code>
+   * <code>.google.container.v1.MasterAuth update = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the update field is set.
    */
   boolean hasUpdate();
   /**
    *
    *
    * <pre>
-   * A description of the update.
+   * Required. A description of the update.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuth update = 5;</code>
+   * <code>.google.container.v1.MasterAuth update = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The update.
    */
   com.google.container.v1.MasterAuth getUpdate();
   /**
    *
    *
    * <pre>
-   * A description of the update.
+   * Required. A description of the update.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuth update = 5;</code>
+   * <code>.google.container.v1.MasterAuth update = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.container.v1.MasterAuthOrBuilder getUpdateOrBuilder();
 
@@ -165,6 +196,8 @@ public interface SetMasterAuthRequestOrBuilder
    * </pre>
    *
    * <code>string name = 7;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -176,6 +209,8 @@ public interface SetMasterAuthRequestOrBuilder
    * </pre>
    *
    * <code>string name = 7;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 }

@@ -50,6 +50,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     location_ = "";
     startTime_ = "";
     endTime_ = "";
+    clusterConditions_ = java.util.Collections.emptyList();
+    nodepoolConditions_ = java.util.Collections.emptyList();
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Operation();
   }
 
   @java.lang.Override
@@ -153,6 +161,30 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
               endTime_ = s;
               break;
             }
+          case 106:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                clusterConditions_ =
+                    new java.util.ArrayList<com.google.container.v1.StatusCondition>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              clusterConditions_.add(
+                  input.readMessage(
+                      com.google.container.v1.StatusCondition.parser(), extensionRegistry));
+              break;
+            }
+          case 114:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                nodepoolConditions_ =
+                    new java.util.ArrayList<com.google.container.v1.StatusCondition>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              nodepoolConditions_.add(
+                  input.readMessage(
+                      com.google.container.v1.StatusCondition.parser(), extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -167,6 +199,12 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        clusterConditions_ = java.util.Collections.unmodifiableList(clusterConditions_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        nodepoolConditions_ = java.util.Collections.unmodifiableList(nodepoolConditions_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -309,12 +347,20 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Status valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Status forNumber(int value) {
       switch (value) {
         case 0:
@@ -738,12 +784,20 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Type valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Type forNumber(int value) {
       switch (value) {
         case 0:
@@ -839,6 +893,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -859,6 +915,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -885,6 +943,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
+   *
+   * @return The zone.
    */
   @java.lang.Deprecated
   public java.lang.String getZone() {
@@ -909,6 +969,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
+   *
+   * @return The bytes for zone.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getZoneBytes() {
@@ -933,6 +995,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.Operation.Type operation_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for operationType.
    */
   public int getOperationTypeValue() {
     return operationType_;
@@ -945,6 +1009,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.Operation.Type operation_type = 3;</code>
+   *
+   * @return The operationType.
    */
   public com.google.container.v1.Operation.Type getOperationType() {
     @SuppressWarnings("deprecation")
@@ -963,6 +1029,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.Operation.Status status = 4;</code>
+   *
+   * @return The enum numeric value on the wire for status.
    */
   public int getStatusValue() {
     return status_;
@@ -975,6 +1043,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.Operation.Status status = 4;</code>
+   *
+   * @return The status.
    */
   public com.google.container.v1.Operation.Status getStatus() {
     @SuppressWarnings("deprecation")
@@ -993,6 +1063,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string detail = 8;</code>
+   *
+   * @return The detail.
    */
   public java.lang.String getDetail() {
     java.lang.Object ref = detail_;
@@ -1013,6 +1085,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string detail = 8;</code>
+   *
+   * @return The bytes for detail.
    */
   public com.google.protobuf.ByteString getDetailBytes() {
     java.lang.Object ref = detail_;
@@ -1036,6 +1110,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string status_message = 5;</code>
+   *
+   * @return The statusMessage.
    */
   public java.lang.String getStatusMessage() {
     java.lang.Object ref = statusMessage_;
@@ -1056,6 +1132,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string status_message = 5;</code>
+   *
+   * @return The bytes for statusMessage.
    */
   public com.google.protobuf.ByteString getStatusMessageBytes() {
     java.lang.Object ref = statusMessage_;
@@ -1079,6 +1157,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string self_link = 6;</code>
+   *
+   * @return The selfLink.
    */
   public java.lang.String getSelfLink() {
     java.lang.Object ref = selfLink_;
@@ -1099,6 +1179,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string self_link = 6;</code>
+   *
+   * @return The bytes for selfLink.
    */
   public com.google.protobuf.ByteString getSelfLinkBytes() {
     java.lang.Object ref = selfLink_;
@@ -1122,6 +1204,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string target_link = 7;</code>
+   *
+   * @return The targetLink.
    */
   public java.lang.String getTargetLink() {
     java.lang.Object ref = targetLink_;
@@ -1142,6 +1226,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string target_link = 7;</code>
+   *
+   * @return The bytes for targetLink.
    */
   public com.google.protobuf.ByteString getTargetLinkBytes() {
     java.lang.Object ref = targetLink_;
@@ -1168,6 +1254,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string location = 9;</code>
+   *
+   * @return The location.
    */
   public java.lang.String getLocation() {
     java.lang.Object ref = location_;
@@ -1191,6 +1279,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string location = 9;</code>
+   *
+   * @return The bytes for location.
    */
   public com.google.protobuf.ByteString getLocationBytes() {
     java.lang.Object ref = location_;
@@ -1215,6 +1305,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string start_time = 10;</code>
+   *
+   * @return The startTime.
    */
   public java.lang.String getStartTime() {
     java.lang.Object ref = startTime_;
@@ -1236,6 +1328,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string start_time = 10;</code>
+   *
+   * @return The bytes for startTime.
    */
   public com.google.protobuf.ByteString getStartTimeBytes() {
     java.lang.Object ref = startTime_;
@@ -1260,6 +1354,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string end_time = 11;</code>
+   *
+   * @return The endTime.
    */
   public java.lang.String getEndTime() {
     java.lang.Object ref = endTime_;
@@ -1281,6 +1377,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string end_time = 11;</code>
+   *
+   * @return The bytes for endTime.
    */
   public com.google.protobuf.ByteString getEndTimeBytes() {
     java.lang.Object ref = endTime_;
@@ -1292,6 +1390,135 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int CLUSTER_CONDITIONS_FIELD_NUMBER = 13;
+  private java.util.List<com.google.container.v1.StatusCondition> clusterConditions_;
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current cluster state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   */
+  public java.util.List<com.google.container.v1.StatusCondition> getClusterConditionsList() {
+    return clusterConditions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current cluster state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   */
+  public java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
+      getClusterConditionsOrBuilderList() {
+    return clusterConditions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current cluster state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   */
+  public int getClusterConditionsCount() {
+    return clusterConditions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current cluster state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   */
+  public com.google.container.v1.StatusCondition getClusterConditions(int index) {
+    return clusterConditions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current cluster state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   */
+  public com.google.container.v1.StatusConditionOrBuilder getClusterConditionsOrBuilder(int index) {
+    return clusterConditions_.get(index);
+  }
+
+  public static final int NODEPOOL_CONDITIONS_FIELD_NUMBER = 14;
+  private java.util.List<com.google.container.v1.StatusCondition> nodepoolConditions_;
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   */
+  public java.util.List<com.google.container.v1.StatusCondition> getNodepoolConditionsList() {
+    return nodepoolConditions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   */
+  public java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
+      getNodepoolConditionsOrBuilderList() {
+    return nodepoolConditions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   */
+  public int getNodepoolConditionsCount() {
+    return nodepoolConditions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   */
+  public com.google.container.v1.StatusCondition getNodepoolConditions(int index) {
+    return nodepoolConditions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   */
+  public com.google.container.v1.StatusConditionOrBuilder getNodepoolConditionsOrBuilder(
+      int index) {
+    return nodepoolConditions_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1341,6 +1568,12 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (!getEndTimeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, endTime_);
     }
+    for (int i = 0; i < clusterConditions_.size(); i++) {
+      output.writeMessage(13, clusterConditions_.get(i));
+    }
+    for (int i = 0; i < nodepoolConditions_.size(); i++) {
+      output.writeMessage(14, nodepoolConditions_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1383,6 +1616,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (!getEndTimeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, endTime_);
     }
+    for (int i = 0; i < clusterConditions_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(13, clusterConditions_.get(i));
+    }
+    for (int i = 0; i < nodepoolConditions_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(14, nodepoolConditions_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1409,6 +1650,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (!getLocation().equals(other.getLocation())) return false;
     if (!getStartTime().equals(other.getStartTime())) return false;
     if (!getEndTime().equals(other.getEndTime())) return false;
+    if (!getClusterConditionsList().equals(other.getClusterConditionsList())) return false;
+    if (!getNodepoolConditionsList().equals(other.getNodepoolConditionsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1442,6 +1685,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getStartTime().hashCode();
     hash = (37 * hash) + END_TIME_FIELD_NUMBER;
     hash = (53 * hash) + getEndTime().hashCode();
+    if (getClusterConditionsCount() > 0) {
+      hash = (37 * hash) + CLUSTER_CONDITIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getClusterConditionsList().hashCode();
+    }
+    if (getNodepoolConditionsCount() > 0) {
+      hash = (37 * hash) + NODEPOOL_CONDITIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getNodepoolConditionsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1581,7 +1832,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getClusterConditionsFieldBuilder();
+        getNodepoolConditionsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1609,6 +1863,18 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
 
       endTime_ = "";
 
+      if (clusterConditionsBuilder_ == null) {
+        clusterConditions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        clusterConditionsBuilder_.clear();
+      }
+      if (nodepoolConditionsBuilder_ == null) {
+        nodepoolConditions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        nodepoolConditionsBuilder_.clear();
+      }
       return this;
     }
 
@@ -1635,6 +1901,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.container.v1.Operation buildPartial() {
       com.google.container.v1.Operation result = new com.google.container.v1.Operation(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.zone_ = zone_;
       result.operationType_ = operationType_;
@@ -1646,6 +1913,24 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       result.location_ = location_;
       result.startTime_ = startTime_;
       result.endTime_ = endTime_;
+      if (clusterConditionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          clusterConditions_ = java.util.Collections.unmodifiableList(clusterConditions_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.clusterConditions_ = clusterConditions_;
+      } else {
+        result.clusterConditions_ = clusterConditionsBuilder_.build();
+      }
+      if (nodepoolConditionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          nodepoolConditions_ = java.util.Collections.unmodifiableList(nodepoolConditions_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.nodepoolConditions_ = nodepoolConditions_;
+      } else {
+        result.nodepoolConditions_ = nodepoolConditionsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1737,6 +2022,60 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         endTime_ = other.endTime_;
         onChanged();
       }
+      if (clusterConditionsBuilder_ == null) {
+        if (!other.clusterConditions_.isEmpty()) {
+          if (clusterConditions_.isEmpty()) {
+            clusterConditions_ = other.clusterConditions_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureClusterConditionsIsMutable();
+            clusterConditions_.addAll(other.clusterConditions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.clusterConditions_.isEmpty()) {
+          if (clusterConditionsBuilder_.isEmpty()) {
+            clusterConditionsBuilder_.dispose();
+            clusterConditionsBuilder_ = null;
+            clusterConditions_ = other.clusterConditions_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            clusterConditionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getClusterConditionsFieldBuilder()
+                    : null;
+          } else {
+            clusterConditionsBuilder_.addAllMessages(other.clusterConditions_);
+          }
+        }
+      }
+      if (nodepoolConditionsBuilder_ == null) {
+        if (!other.nodepoolConditions_.isEmpty()) {
+          if (nodepoolConditions_.isEmpty()) {
+            nodepoolConditions_ = other.nodepoolConditions_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureNodepoolConditionsIsMutable();
+            nodepoolConditions_.addAll(other.nodepoolConditions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.nodepoolConditions_.isEmpty()) {
+          if (nodepoolConditionsBuilder_.isEmpty()) {
+            nodepoolConditionsBuilder_.dispose();
+            nodepoolConditionsBuilder_ = null;
+            nodepoolConditions_ = other.nodepoolConditions_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            nodepoolConditionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getNodepoolConditionsFieldBuilder()
+                    : null;
+          } else {
+            nodepoolConditionsBuilder_.addAllMessages(other.nodepoolConditions_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1766,6 +2105,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -1775,6 +2116,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1795,6 +2138,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1815,6 +2160,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1833,6 +2181,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1848,6 +2198,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1872,6 +2225,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
+     *
+     * @return The zone.
      */
     @java.lang.Deprecated
     public java.lang.String getZone() {
@@ -1896,6 +2251,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
+     *
+     * @return The bytes for zone.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getZoneBytes() {
@@ -1920,6 +2277,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
+     *
+     * @param value The zone to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setZone(java.lang.String value) {
@@ -1942,6 +2302,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearZone() {
@@ -1961,6 +2323,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
+     *
+     * @param value The bytes for zone to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setZoneBytes(com.google.protobuf.ByteString value) {
@@ -1983,6 +2348,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.Operation.Type operation_type = 3;</code>
+     *
+     * @return The enum numeric value on the wire for operationType.
      */
     public int getOperationTypeValue() {
       return operationType_;
@@ -1995,6 +2362,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.Operation.Type operation_type = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for operationType to set.
+     * @return This builder for chaining.
      */
     public Builder setOperationTypeValue(int value) {
       operationType_ = value;
@@ -2009,6 +2379,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.Operation.Type operation_type = 3;</code>
+     *
+     * @return The operationType.
      */
     public com.google.container.v1.Operation.Type getOperationType() {
       @SuppressWarnings("deprecation")
@@ -2024,6 +2396,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.Operation.Type operation_type = 3;</code>
+     *
+     * @param value The operationType to set.
+     * @return This builder for chaining.
      */
     public Builder setOperationType(com.google.container.v1.Operation.Type value) {
       if (value == null) {
@@ -2042,6 +2417,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.Operation.Type operation_type = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOperationType() {
 
@@ -2059,6 +2436,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.Operation.Status status = 4;</code>
+     *
+     * @return The enum numeric value on the wire for status.
      */
     public int getStatusValue() {
       return status_;
@@ -2071,6 +2450,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.Operation.Status status = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for status to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
       status_ = value;
@@ -2085,6 +2467,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.Operation.Status status = 4;</code>
+     *
+     * @return The status.
      */
     public com.google.container.v1.Operation.Status getStatus() {
       @SuppressWarnings("deprecation")
@@ -2100,6 +2484,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.Operation.Status status = 4;</code>
+     *
+     * @param value The status to set.
+     * @return This builder for chaining.
      */
     public Builder setStatus(com.google.container.v1.Operation.Status value) {
       if (value == null) {
@@ -2118,6 +2505,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.Operation.Status status = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStatus() {
 
@@ -2135,6 +2524,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string detail = 8;</code>
+     *
+     * @return The detail.
      */
     public java.lang.String getDetail() {
       java.lang.Object ref = detail_;
@@ -2155,6 +2546,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string detail = 8;</code>
+     *
+     * @return The bytes for detail.
      */
     public com.google.protobuf.ByteString getDetailBytes() {
       java.lang.Object ref = detail_;
@@ -2175,6 +2568,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string detail = 8;</code>
+     *
+     * @param value The detail to set.
+     * @return This builder for chaining.
      */
     public Builder setDetail(java.lang.String value) {
       if (value == null) {
@@ -2193,6 +2589,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string detail = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDetail() {
 
@@ -2208,6 +2606,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string detail = 8;</code>
+     *
+     * @param value The bytes for detail to set.
+     * @return This builder for chaining.
      */
     public Builder setDetailBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2229,6 +2630,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string status_message = 5;</code>
+     *
+     * @return The statusMessage.
      */
     public java.lang.String getStatusMessage() {
       java.lang.Object ref = statusMessage_;
@@ -2249,6 +2652,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string status_message = 5;</code>
+     *
+     * @return The bytes for statusMessage.
      */
     public com.google.protobuf.ByteString getStatusMessageBytes() {
       java.lang.Object ref = statusMessage_;
@@ -2269,6 +2674,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string status_message = 5;</code>
+     *
+     * @param value The statusMessage to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusMessage(java.lang.String value) {
       if (value == null) {
@@ -2287,6 +2695,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string status_message = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStatusMessage() {
 
@@ -2302,6 +2712,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string status_message = 5;</code>
+     *
+     * @param value The bytes for statusMessage to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusMessageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2323,6 +2736,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string self_link = 6;</code>
+     *
+     * @return The selfLink.
      */
     public java.lang.String getSelfLink() {
       java.lang.Object ref = selfLink_;
@@ -2343,6 +2758,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string self_link = 6;</code>
+     *
+     * @return The bytes for selfLink.
      */
     public com.google.protobuf.ByteString getSelfLinkBytes() {
       java.lang.Object ref = selfLink_;
@@ -2363,6 +2780,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string self_link = 6;</code>
+     *
+     * @param value The selfLink to set.
+     * @return This builder for chaining.
      */
     public Builder setSelfLink(java.lang.String value) {
       if (value == null) {
@@ -2381,6 +2801,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string self_link = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
 
@@ -2396,6 +2818,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string self_link = 6;</code>
+     *
+     * @param value The bytes for selfLink to set.
+     * @return This builder for chaining.
      */
     public Builder setSelfLinkBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2417,6 +2842,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string target_link = 7;</code>
+     *
+     * @return The targetLink.
      */
     public java.lang.String getTargetLink() {
       java.lang.Object ref = targetLink_;
@@ -2437,6 +2864,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string target_link = 7;</code>
+     *
+     * @return The bytes for targetLink.
      */
     public com.google.protobuf.ByteString getTargetLinkBytes() {
       java.lang.Object ref = targetLink_;
@@ -2457,6 +2886,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string target_link = 7;</code>
+     *
+     * @param value The targetLink to set.
+     * @return This builder for chaining.
      */
     public Builder setTargetLink(java.lang.String value) {
       if (value == null) {
@@ -2475,6 +2907,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string target_link = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTargetLink() {
 
@@ -2490,6 +2924,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string target_link = 7;</code>
+     *
+     * @param value The bytes for targetLink to set.
+     * @return This builder for chaining.
      */
     public Builder setTargetLinkBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2514,6 +2951,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 9;</code>
+     *
+     * @return The location.
      */
     public java.lang.String getLocation() {
       java.lang.Object ref = location_;
@@ -2537,6 +2976,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 9;</code>
+     *
+     * @return The bytes for location.
      */
     public com.google.protobuf.ByteString getLocationBytes() {
       java.lang.Object ref = location_;
@@ -2560,6 +3001,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 9;</code>
+     *
+     * @param value The location to set.
+     * @return This builder for chaining.
      */
     public Builder setLocation(java.lang.String value) {
       if (value == null) {
@@ -2581,6 +3025,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocation() {
 
@@ -2599,6 +3045,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 9;</code>
+     *
+     * @param value The bytes for location to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2621,6 +3070,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string start_time = 10;</code>
+     *
+     * @return The startTime.
      */
     public java.lang.String getStartTime() {
       java.lang.Object ref = startTime_;
@@ -2642,6 +3093,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string start_time = 10;</code>
+     *
+     * @return The bytes for startTime.
      */
     public com.google.protobuf.ByteString getStartTimeBytes() {
       java.lang.Object ref = startTime_;
@@ -2663,6 +3116,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string start_time = 10;</code>
+     *
+     * @param value The startTime to set.
+     * @return This builder for chaining.
      */
     public Builder setStartTime(java.lang.String value) {
       if (value == null) {
@@ -2682,6 +3138,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string start_time = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStartTime() {
 
@@ -2698,6 +3156,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string start_time = 10;</code>
+     *
+     * @param value The bytes for startTime to set.
+     * @return This builder for chaining.
      */
     public Builder setStartTimeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2720,6 +3181,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string end_time = 11;</code>
+     *
+     * @return The endTime.
      */
     public java.lang.String getEndTime() {
       java.lang.Object ref = endTime_;
@@ -2741,6 +3204,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string end_time = 11;</code>
+     *
+     * @return The bytes for endTime.
      */
     public com.google.protobuf.ByteString getEndTimeBytes() {
       java.lang.Object ref = endTime_;
@@ -2762,6 +3227,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string end_time = 11;</code>
+     *
+     * @param value The endTime to set.
+     * @return This builder for chaining.
      */
     public Builder setEndTime(java.lang.String value) {
       if (value == null) {
@@ -2781,6 +3249,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string end_time = 11;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEndTime() {
 
@@ -2797,6 +3267,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string end_time = 11;</code>
+     *
+     * @param value The bytes for endTime to set.
+     * @return This builder for chaining.
      */
     public Builder setEndTimeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2807,6 +3280,716 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       endTime_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.container.v1.StatusCondition> clusterConditions_ =
+        java.util.Collections.emptyList();
+
+    private void ensureClusterConditionsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        clusterConditions_ =
+            new java.util.ArrayList<com.google.container.v1.StatusCondition>(clusterConditions_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1.StatusCondition,
+            com.google.container.v1.StatusCondition.Builder,
+            com.google.container.v1.StatusConditionOrBuilder>
+        clusterConditionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public java.util.List<com.google.container.v1.StatusCondition> getClusterConditionsList() {
+      if (clusterConditionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(clusterConditions_);
+      } else {
+        return clusterConditionsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public int getClusterConditionsCount() {
+      if (clusterConditionsBuilder_ == null) {
+        return clusterConditions_.size();
+      } else {
+        return clusterConditionsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public com.google.container.v1.StatusCondition getClusterConditions(int index) {
+      if (clusterConditionsBuilder_ == null) {
+        return clusterConditions_.get(index);
+      } else {
+        return clusterConditionsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public Builder setClusterConditions(int index, com.google.container.v1.StatusCondition value) {
+      if (clusterConditionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureClusterConditionsIsMutable();
+        clusterConditions_.set(index, value);
+        onChanged();
+      } else {
+        clusterConditionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public Builder setClusterConditions(
+        int index, com.google.container.v1.StatusCondition.Builder builderForValue) {
+      if (clusterConditionsBuilder_ == null) {
+        ensureClusterConditionsIsMutable();
+        clusterConditions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        clusterConditionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public Builder addClusterConditions(com.google.container.v1.StatusCondition value) {
+      if (clusterConditionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureClusterConditionsIsMutable();
+        clusterConditions_.add(value);
+        onChanged();
+      } else {
+        clusterConditionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public Builder addClusterConditions(int index, com.google.container.v1.StatusCondition value) {
+      if (clusterConditionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureClusterConditionsIsMutable();
+        clusterConditions_.add(index, value);
+        onChanged();
+      } else {
+        clusterConditionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public Builder addClusterConditions(
+        com.google.container.v1.StatusCondition.Builder builderForValue) {
+      if (clusterConditionsBuilder_ == null) {
+        ensureClusterConditionsIsMutable();
+        clusterConditions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        clusterConditionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public Builder addClusterConditions(
+        int index, com.google.container.v1.StatusCondition.Builder builderForValue) {
+      if (clusterConditionsBuilder_ == null) {
+        ensureClusterConditionsIsMutable();
+        clusterConditions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        clusterConditionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public Builder addAllClusterConditions(
+        java.lang.Iterable<? extends com.google.container.v1.StatusCondition> values) {
+      if (clusterConditionsBuilder_ == null) {
+        ensureClusterConditionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, clusterConditions_);
+        onChanged();
+      } else {
+        clusterConditionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public Builder clearClusterConditions() {
+      if (clusterConditionsBuilder_ == null) {
+        clusterConditions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        clusterConditionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public Builder removeClusterConditions(int index) {
+      if (clusterConditionsBuilder_ == null) {
+        ensureClusterConditionsIsMutable();
+        clusterConditions_.remove(index);
+        onChanged();
+      } else {
+        clusterConditionsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public com.google.container.v1.StatusCondition.Builder getClusterConditionsBuilder(int index) {
+      return getClusterConditionsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public com.google.container.v1.StatusConditionOrBuilder getClusterConditionsOrBuilder(
+        int index) {
+      if (clusterConditionsBuilder_ == null) {
+        return clusterConditions_.get(index);
+      } else {
+        return clusterConditionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
+        getClusterConditionsOrBuilderList() {
+      if (clusterConditionsBuilder_ != null) {
+        return clusterConditionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(clusterConditions_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public com.google.container.v1.StatusCondition.Builder addClusterConditionsBuilder() {
+      return getClusterConditionsFieldBuilder()
+          .addBuilder(com.google.container.v1.StatusCondition.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public com.google.container.v1.StatusCondition.Builder addClusterConditionsBuilder(int index) {
+      return getClusterConditionsFieldBuilder()
+          .addBuilder(index, com.google.container.v1.StatusCondition.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current cluster state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     */
+    public java.util.List<com.google.container.v1.StatusCondition.Builder>
+        getClusterConditionsBuilderList() {
+      return getClusterConditionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1.StatusCondition,
+            com.google.container.v1.StatusCondition.Builder,
+            com.google.container.v1.StatusConditionOrBuilder>
+        getClusterConditionsFieldBuilder() {
+      if (clusterConditionsBuilder_ == null) {
+        clusterConditionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.container.v1.StatusCondition,
+                com.google.container.v1.StatusCondition.Builder,
+                com.google.container.v1.StatusConditionOrBuilder>(
+                clusterConditions_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        clusterConditions_ = null;
+      }
+      return clusterConditionsBuilder_;
+    }
+
+    private java.util.List<com.google.container.v1.StatusCondition> nodepoolConditions_ =
+        java.util.Collections.emptyList();
+
+    private void ensureNodepoolConditionsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        nodepoolConditions_ =
+            new java.util.ArrayList<com.google.container.v1.StatusCondition>(nodepoolConditions_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1.StatusCondition,
+            com.google.container.v1.StatusCondition.Builder,
+            com.google.container.v1.StatusConditionOrBuilder>
+        nodepoolConditionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public java.util.List<com.google.container.v1.StatusCondition> getNodepoolConditionsList() {
+      if (nodepoolConditionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(nodepoolConditions_);
+      } else {
+        return nodepoolConditionsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public int getNodepoolConditionsCount() {
+      if (nodepoolConditionsBuilder_ == null) {
+        return nodepoolConditions_.size();
+      } else {
+        return nodepoolConditionsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public com.google.container.v1.StatusCondition getNodepoolConditions(int index) {
+      if (nodepoolConditionsBuilder_ == null) {
+        return nodepoolConditions_.get(index);
+      } else {
+        return nodepoolConditionsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public Builder setNodepoolConditions(int index, com.google.container.v1.StatusCondition value) {
+      if (nodepoolConditionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNodepoolConditionsIsMutable();
+        nodepoolConditions_.set(index, value);
+        onChanged();
+      } else {
+        nodepoolConditionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public Builder setNodepoolConditions(
+        int index, com.google.container.v1.StatusCondition.Builder builderForValue) {
+      if (nodepoolConditionsBuilder_ == null) {
+        ensureNodepoolConditionsIsMutable();
+        nodepoolConditions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        nodepoolConditionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public Builder addNodepoolConditions(com.google.container.v1.StatusCondition value) {
+      if (nodepoolConditionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNodepoolConditionsIsMutable();
+        nodepoolConditions_.add(value);
+        onChanged();
+      } else {
+        nodepoolConditionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public Builder addNodepoolConditions(int index, com.google.container.v1.StatusCondition value) {
+      if (nodepoolConditionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNodepoolConditionsIsMutable();
+        nodepoolConditions_.add(index, value);
+        onChanged();
+      } else {
+        nodepoolConditionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public Builder addNodepoolConditions(
+        com.google.container.v1.StatusCondition.Builder builderForValue) {
+      if (nodepoolConditionsBuilder_ == null) {
+        ensureNodepoolConditionsIsMutable();
+        nodepoolConditions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        nodepoolConditionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public Builder addNodepoolConditions(
+        int index, com.google.container.v1.StatusCondition.Builder builderForValue) {
+      if (nodepoolConditionsBuilder_ == null) {
+        ensureNodepoolConditionsIsMutable();
+        nodepoolConditions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        nodepoolConditionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public Builder addAllNodepoolConditions(
+        java.lang.Iterable<? extends com.google.container.v1.StatusCondition> values) {
+      if (nodepoolConditionsBuilder_ == null) {
+        ensureNodepoolConditionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, nodepoolConditions_);
+        onChanged();
+      } else {
+        nodepoolConditionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public Builder clearNodepoolConditions() {
+      if (nodepoolConditionsBuilder_ == null) {
+        nodepoolConditions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        nodepoolConditionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public Builder removeNodepoolConditions(int index) {
+      if (nodepoolConditionsBuilder_ == null) {
+        ensureNodepoolConditionsIsMutable();
+        nodepoolConditions_.remove(index);
+        onChanged();
+      } else {
+        nodepoolConditionsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public com.google.container.v1.StatusCondition.Builder getNodepoolConditionsBuilder(int index) {
+      return getNodepoolConditionsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public com.google.container.v1.StatusConditionOrBuilder getNodepoolConditionsOrBuilder(
+        int index) {
+      if (nodepoolConditionsBuilder_ == null) {
+        return nodepoolConditions_.get(index);
+      } else {
+        return nodepoolConditionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
+        getNodepoolConditionsOrBuilderList() {
+      if (nodepoolConditionsBuilder_ != null) {
+        return nodepoolConditionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(nodepoolConditions_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public com.google.container.v1.StatusCondition.Builder addNodepoolConditionsBuilder() {
+      return getNodepoolConditionsFieldBuilder()
+          .addBuilder(com.google.container.v1.StatusCondition.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public com.google.container.v1.StatusCondition.Builder addNodepoolConditionsBuilder(int index) {
+      return getNodepoolConditionsFieldBuilder()
+          .addBuilder(index, com.google.container.v1.StatusCondition.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     */
+    public java.util.List<com.google.container.v1.StatusCondition.Builder>
+        getNodepoolConditionsBuilderList() {
+      return getNodepoolConditionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1.StatusCondition,
+            com.google.container.v1.StatusCondition.Builder,
+            com.google.container.v1.StatusConditionOrBuilder>
+        getNodepoolConditionsFieldBuilder() {
+      if (nodepoolConditionsBuilder_ == null) {
+        nodepoolConditionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.container.v1.StatusCondition,
+                com.google.container.v1.StatusCondition.Builder,
+                com.google.container.v1.StatusConditionOrBuilder>(
+                nodepoolConditions_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        nodepoolConditions_ = null;
+      }
+      return nodepoolConditionsBuilder_;
     }
 
     @java.lang.Override

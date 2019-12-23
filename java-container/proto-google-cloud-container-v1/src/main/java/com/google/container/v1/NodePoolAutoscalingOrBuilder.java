@@ -31,6 +31,8 @@ public interface NodePoolAutoscalingOrBuilder
    * </pre>
    *
    * <code>bool enabled = 1;</code>
+   *
+   * @return The enabled.
    */
   boolean getEnabled();
 
@@ -43,6 +45,8 @@ public interface NodePoolAutoscalingOrBuilder
    * </pre>
    *
    * <code>int32 min_node_count = 2;</code>
+   *
+   * @return The minNodeCount.
    */
   int getMinNodeCount();
 
@@ -55,6 +59,21 @@ public interface NodePoolAutoscalingOrBuilder
    * </pre>
    *
    * <code>int32 max_node_count = 3;</code>
+   *
+   * @return The maxNodeCount.
    */
   int getMaxNodeCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Can this node pool be deleted automatically.
+   * </pre>
+   *
+   * <code>bool autoprovisioned = 4;</code>
+   *
+   * @return The autoprovisioned.
+   */
+  boolean getAutoprovisioned();
 }

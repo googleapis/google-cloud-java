@@ -27,12 +27,15 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The projectId.
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
@@ -40,12 +43,15 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for projectId.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getProjectIdBytes();
@@ -54,13 +60,15 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The zone.
    */
   @java.lang.Deprecated
   java.lang.String getZone();
@@ -68,13 +76,15 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for zone.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getZoneBytes();
@@ -83,33 +93,40 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * A [cluster
+   * Required. A [cluster
    * resource](/container-engine/reference/rest/v1/projects.zones.clusters)
    * </pre>
    *
-   * <code>.google.container.v1.Cluster cluster = 3;</code>
+   * <code>.google.container.v1.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the cluster field is set.
    */
   boolean hasCluster();
   /**
    *
    *
    * <pre>
-   * A [cluster
+   * Required. A [cluster
    * resource](/container-engine/reference/rest/v1/projects.zones.clusters)
    * </pre>
    *
-   * <code>.google.container.v1.Cluster cluster = 3;</code>
+   * <code>.google.container.v1.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The cluster.
    */
   com.google.container.v1.Cluster getCluster();
   /**
    *
    *
    * <pre>
-   * A [cluster
+   * Required. A [cluster
    * resource](/container-engine/reference/rest/v1/projects.zones.clusters)
    * </pre>
    *
-   * <code>.google.container.v1.Cluster cluster = 3;</code>
+   * <code>.google.container.v1.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.container.v1.ClusterOrBuilder getClusterOrBuilder();
 
@@ -122,6 +139,8 @@ public interface CreateClusterRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 5;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -133,6 +152,8 @@ public interface CreateClusterRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 5;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 }

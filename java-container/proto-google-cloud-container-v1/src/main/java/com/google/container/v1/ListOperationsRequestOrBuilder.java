@@ -27,12 +27,15 @@ public interface ListOperationsRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The projectId.
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
@@ -40,12 +43,15 @@ public interface ListOperationsRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for projectId.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getProjectIdBytes();
@@ -54,12 +60,14 @@ public interface ListOperationsRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) to return operations for, or `-` for
    * all zones. This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The zone.
    */
   @java.lang.Deprecated
   java.lang.String getZone();
@@ -67,12 +75,14 @@ public interface ListOperationsRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) to return operations for, or `-` for
    * all zones. This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for zone.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getZoneBytes();
@@ -87,6 +97,8 @@ public interface ListOperationsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 4;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -99,6 +111,8 @@ public interface ListOperationsRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 4;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 }

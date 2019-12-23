@@ -46,6 +46,12 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ServerConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -79,9 +85,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 validNodeVersions_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               validNodeVersions_.add(s);
               break;
@@ -96,9 +102,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
           case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 validImageTypes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000002;
               }
               validImageTypes_.add(s);
               break;
@@ -106,9 +112,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 validMasterVersions_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000004;
               }
               validMasterVersions_.add(s);
               break;
@@ -127,13 +133,13 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         validNodeVersions_ = validNodeVersions_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         validImageTypes_ = validImageTypes_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         validMasterVersions_ = validMasterVersions_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -156,7 +162,6 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1.ServerConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DEFAULT_CLUSTER_VERSION_FIELD_NUMBER = 1;
   private volatile java.lang.Object defaultClusterVersion_;
   /**
@@ -167,6 +172,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string default_cluster_version = 1;</code>
+   *
+   * @return The defaultClusterVersion.
    */
   public java.lang.String getDefaultClusterVersion() {
     java.lang.Object ref = defaultClusterVersion_;
@@ -187,6 +194,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string default_cluster_version = 1;</code>
+   *
+   * @return The bytes for defaultClusterVersion.
    */
   public com.google.protobuf.ByteString getDefaultClusterVersionBytes() {
     java.lang.Object ref = defaultClusterVersion_;
@@ -210,6 +219,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
+   *
+   * @return A list containing the validNodeVersions.
    */
   public com.google.protobuf.ProtocolStringList getValidNodeVersionsList() {
     return validNodeVersions_;
@@ -222,6 +233,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
+   *
+   * @return The count of validNodeVersions.
    */
   public int getValidNodeVersionsCount() {
     return validNodeVersions_.size();
@@ -234,6 +247,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The validNodeVersions at the given index.
    */
   public java.lang.String getValidNodeVersions(int index) {
     return validNodeVersions_.get(index);
@@ -246,6 +262,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the validNodeVersions at the given index.
    */
   public com.google.protobuf.ByteString getValidNodeVersionsBytes(int index) {
     return validNodeVersions_.getByteString(index);
@@ -261,6 +280,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string default_image_type = 4;</code>
+   *
+   * @return The defaultImageType.
    */
   public java.lang.String getDefaultImageType() {
     java.lang.Object ref = defaultImageType_;
@@ -281,6 +302,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string default_image_type = 4;</code>
+   *
+   * @return The bytes for defaultImageType.
    */
   public com.google.protobuf.ByteString getDefaultImageTypeBytes() {
     java.lang.Object ref = defaultImageType_;
@@ -304,6 +327,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string valid_image_types = 5;</code>
+   *
+   * @return A list containing the validImageTypes.
    */
   public com.google.protobuf.ProtocolStringList getValidImageTypesList() {
     return validImageTypes_;
@@ -316,6 +341,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string valid_image_types = 5;</code>
+   *
+   * @return The count of validImageTypes.
    */
   public int getValidImageTypesCount() {
     return validImageTypes_.size();
@@ -328,6 +355,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string valid_image_types = 5;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The validImageTypes at the given index.
    */
   public java.lang.String getValidImageTypes(int index) {
     return validImageTypes_.get(index);
@@ -340,6 +370,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string valid_image_types = 5;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the validImageTypes at the given index.
    */
   public com.google.protobuf.ByteString getValidImageTypesBytes(int index) {
     return validImageTypes_.getByteString(index);
@@ -355,6 +388,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
+   *
+   * @return A list containing the validMasterVersions.
    */
   public com.google.protobuf.ProtocolStringList getValidMasterVersionsList() {
     return validMasterVersions_;
@@ -367,6 +402,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
+   *
+   * @return The count of validMasterVersions.
    */
   public int getValidMasterVersionsCount() {
     return validMasterVersions_.size();
@@ -379,6 +416,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The validMasterVersions at the given index.
    */
   public java.lang.String getValidMasterVersions(int index) {
     return validMasterVersions_.get(index);
@@ -391,6 +431,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the validMasterVersions at the given index.
    */
   public com.google.protobuf.ByteString getValidMasterVersionsBytes(int index) {
     return validMasterVersions_.getByteString(index);
@@ -658,13 +701,13 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       defaultClusterVersion_ = "";
 
       validNodeVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       defaultImageType_ = "";
 
       validImageTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000002);
       validMasterVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -692,25 +735,23 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1.ServerConfig buildPartial() {
       com.google.container.v1.ServerConfig result = new com.google.container.v1.ServerConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.defaultClusterVersion_ = defaultClusterVersion_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         validNodeVersions_ = validNodeVersions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.validNodeVersions_ = validNodeVersions_;
       result.defaultImageType_ = defaultImageType_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         validImageTypes_ = validImageTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.validImageTypes_ = validImageTypes_;
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         validMasterVersions_ = validMasterVersions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.validMasterVersions_ = validMasterVersions_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -767,7 +808,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.validNodeVersions_.isEmpty()) {
         if (validNodeVersions_.isEmpty()) {
           validNodeVersions_ = other.validNodeVersions_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureValidNodeVersionsIsMutable();
           validNodeVersions_.addAll(other.validNodeVersions_);
@@ -781,7 +822,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.validImageTypes_.isEmpty()) {
         if (validImageTypes_.isEmpty()) {
           validImageTypes_ = other.validImageTypes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureValidImageTypesIsMutable();
           validImageTypes_.addAll(other.validImageTypes_);
@@ -791,7 +832,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.validMasterVersions_.isEmpty()) {
         if (validMasterVersions_.isEmpty()) {
           validMasterVersions_ = other.validMasterVersions_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureValidMasterVersionsIsMutable();
           validMasterVersions_.addAll(other.validMasterVersions_);
@@ -838,6 +879,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_cluster_version = 1;</code>
+     *
+     * @return The defaultClusterVersion.
      */
     public java.lang.String getDefaultClusterVersion() {
       java.lang.Object ref = defaultClusterVersion_;
@@ -858,6 +901,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_cluster_version = 1;</code>
+     *
+     * @return The bytes for defaultClusterVersion.
      */
     public com.google.protobuf.ByteString getDefaultClusterVersionBytes() {
       java.lang.Object ref = defaultClusterVersion_;
@@ -878,6 +923,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_cluster_version = 1;</code>
+     *
+     * @param value The defaultClusterVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultClusterVersion(java.lang.String value) {
       if (value == null) {
@@ -896,6 +944,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_cluster_version = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDefaultClusterVersion() {
 
@@ -911,6 +961,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_cluster_version = 1;</code>
+     *
+     * @param value The bytes for defaultClusterVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultClusterVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -927,9 +980,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureValidNodeVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         validNodeVersions_ = new com.google.protobuf.LazyStringArrayList(validNodeVersions_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -940,6 +993,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
+     *
+     * @return A list containing the validNodeVersions.
      */
     public com.google.protobuf.ProtocolStringList getValidNodeVersionsList() {
       return validNodeVersions_.getUnmodifiableView();
@@ -952,6 +1007,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
+     *
+     * @return The count of validNodeVersions.
      */
     public int getValidNodeVersionsCount() {
       return validNodeVersions_.size();
@@ -964,6 +1021,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The validNodeVersions at the given index.
      */
     public java.lang.String getValidNodeVersions(int index) {
       return validNodeVersions_.get(index);
@@ -976,6 +1036,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the validNodeVersions at the given index.
      */
     public com.google.protobuf.ByteString getValidNodeVersionsBytes(int index) {
       return validNodeVersions_.getByteString(index);
@@ -988,6 +1051,10 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The validNodeVersions to set.
+     * @return This builder for chaining.
      */
     public Builder setValidNodeVersions(int index, java.lang.String value) {
       if (value == null) {
@@ -1006,6 +1073,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
+     *
+     * @param value The validNodeVersions to add.
+     * @return This builder for chaining.
      */
     public Builder addValidNodeVersions(java.lang.String value) {
       if (value == null) {
@@ -1024,6 +1094,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
+     *
+     * @param values The validNodeVersions to add.
+     * @return This builder for chaining.
      */
     public Builder addAllValidNodeVersions(java.lang.Iterable<java.lang.String> values) {
       ensureValidNodeVersionsIsMutable();
@@ -1039,10 +1112,12 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearValidNodeVersions() {
       validNodeVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1054,6 +1129,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
+     *
+     * @param value The bytes of the validNodeVersions to add.
+     * @return This builder for chaining.
      */
     public Builder addValidNodeVersionsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1075,6 +1153,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_image_type = 4;</code>
+     *
+     * @return The defaultImageType.
      */
     public java.lang.String getDefaultImageType() {
       java.lang.Object ref = defaultImageType_;
@@ -1095,6 +1175,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_image_type = 4;</code>
+     *
+     * @return The bytes for defaultImageType.
      */
     public com.google.protobuf.ByteString getDefaultImageTypeBytes() {
       java.lang.Object ref = defaultImageType_;
@@ -1115,6 +1197,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_image_type = 4;</code>
+     *
+     * @param value The defaultImageType to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultImageType(java.lang.String value) {
       if (value == null) {
@@ -1133,6 +1218,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_image_type = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDefaultImageType() {
 
@@ -1148,6 +1235,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string default_image_type = 4;</code>
+     *
+     * @param value The bytes for defaultImageType to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultImageTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1164,9 +1254,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureValidImageTypesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         validImageTypes_ = new com.google.protobuf.LazyStringArrayList(validImageTypes_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1177,6 +1267,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_image_types = 5;</code>
+     *
+     * @return A list containing the validImageTypes.
      */
     public com.google.protobuf.ProtocolStringList getValidImageTypesList() {
       return validImageTypes_.getUnmodifiableView();
@@ -1189,6 +1281,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_image_types = 5;</code>
+     *
+     * @return The count of validImageTypes.
      */
     public int getValidImageTypesCount() {
       return validImageTypes_.size();
@@ -1201,6 +1295,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_image_types = 5;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The validImageTypes at the given index.
      */
     public java.lang.String getValidImageTypes(int index) {
       return validImageTypes_.get(index);
@@ -1213,6 +1310,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_image_types = 5;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the validImageTypes at the given index.
      */
     public com.google.protobuf.ByteString getValidImageTypesBytes(int index) {
       return validImageTypes_.getByteString(index);
@@ -1225,6 +1325,10 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_image_types = 5;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The validImageTypes to set.
+     * @return This builder for chaining.
      */
     public Builder setValidImageTypes(int index, java.lang.String value) {
       if (value == null) {
@@ -1243,6 +1347,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_image_types = 5;</code>
+     *
+     * @param value The validImageTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addValidImageTypes(java.lang.String value) {
       if (value == null) {
@@ -1261,6 +1368,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_image_types = 5;</code>
+     *
+     * @param values The validImageTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllValidImageTypes(java.lang.Iterable<java.lang.String> values) {
       ensureValidImageTypesIsMutable();
@@ -1276,10 +1386,12 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_image_types = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearValidImageTypes() {
       validImageTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1291,6 +1403,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_image_types = 5;</code>
+     *
+     * @param value The bytes of the validImageTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addValidImageTypesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1307,9 +1422,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureValidMasterVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         validMasterVersions_ = new com.google.protobuf.LazyStringArrayList(validMasterVersions_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1320,6 +1435,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
+     *
+     * @return A list containing the validMasterVersions.
      */
     public com.google.protobuf.ProtocolStringList getValidMasterVersionsList() {
       return validMasterVersions_.getUnmodifiableView();
@@ -1332,6 +1449,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
+     *
+     * @return The count of validMasterVersions.
      */
     public int getValidMasterVersionsCount() {
       return validMasterVersions_.size();
@@ -1344,6 +1463,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The validMasterVersions at the given index.
      */
     public java.lang.String getValidMasterVersions(int index) {
       return validMasterVersions_.get(index);
@@ -1356,6 +1478,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the validMasterVersions at the given index.
      */
     public com.google.protobuf.ByteString getValidMasterVersionsBytes(int index) {
       return validMasterVersions_.getByteString(index);
@@ -1368,6 +1493,10 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The validMasterVersions to set.
+     * @return This builder for chaining.
      */
     public Builder setValidMasterVersions(int index, java.lang.String value) {
       if (value == null) {
@@ -1386,6 +1515,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
+     *
+     * @param value The validMasterVersions to add.
+     * @return This builder for chaining.
      */
     public Builder addValidMasterVersions(java.lang.String value) {
       if (value == null) {
@@ -1404,6 +1536,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
+     *
+     * @param values The validMasterVersions to add.
+     * @return This builder for chaining.
      */
     public Builder addAllValidMasterVersions(java.lang.Iterable<java.lang.String> values) {
       ensureValidMasterVersionsIsMutable();
@@ -1419,10 +1554,12 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearValidMasterVersions() {
       validMasterVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1434,6 +1571,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
+     *
+     * @param value The bytes of the validMasterVersions to add.
+     * @return This builder for chaining.
      */
     public Builder addValidMasterVersionsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

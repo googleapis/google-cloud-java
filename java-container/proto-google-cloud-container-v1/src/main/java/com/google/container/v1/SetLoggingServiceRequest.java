@@ -46,6 +46,12 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SetLoggingServiceRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -144,12 +149,15 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The projectId.
    */
   @java.lang.Deprecated
   public java.lang.String getProjectId() {
@@ -167,12 +175,15 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for projectId.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getProjectIdBytes() {
@@ -193,13 +204,15 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The zone.
    */
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
@@ -216,13 +229,15 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for zone.
    */
   public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
@@ -242,11 +257,14 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster to upgrade.
+   * Required. Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The clusterId.
    */
   @java.lang.Deprecated
   public java.lang.String getClusterId() {
@@ -264,11 +282,14 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster to upgrade.
+   * Required. Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getClusterIdBytes() {
@@ -289,13 +310,15 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The logging service the cluster should use to write metrics.
+   * Required. The logging service the cluster should use to write metrics.
    * Currently available options:
    * * "logging.googleapis.com" - the Google Cloud Logging service
    * * "none" - no metrics will be exported from the cluster
    * </pre>
    *
-   * <code>string logging_service = 4;</code>
+   * <code>string logging_service = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The loggingService.
    */
   public java.lang.String getLoggingService() {
     java.lang.Object ref = loggingService_;
@@ -312,13 +335,15 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The logging service the cluster should use to write metrics.
+   * Required. The logging service the cluster should use to write metrics.
    * Currently available options:
    * * "logging.googleapis.com" - the Google Cloud Logging service
    * * "none" - no metrics will be exported from the cluster
    * </pre>
    *
-   * <code>string logging_service = 4;</code>
+   * <code>string logging_service = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for loggingService.
    */
   public com.google.protobuf.ByteString getLoggingServiceBytes() {
     java.lang.Object ref = loggingService_;
@@ -343,6 +368,8 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string name = 5;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -364,6 +391,8 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>string name = 5;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -763,12 +792,15 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The projectId.
      */
     @java.lang.Deprecated
     public java.lang.String getProjectId() {
@@ -786,12 +818,15 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The bytes for projectId.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getProjectIdBytes() {
@@ -809,12 +844,16 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setProjectId(java.lang.String value) {
@@ -830,12 +869,15 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearProjectId() {
@@ -848,12 +890,16 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
@@ -872,13 +918,15 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The zone.
      */
     public java.lang.String getZone() {
       java.lang.Object ref = zone_;
@@ -895,13 +943,15 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for zone.
      */
     public com.google.protobuf.ByteString getZoneBytes() {
       java.lang.Object ref = zone_;
@@ -918,13 +968,16 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The zone to set.
+     * @return This builder for chaining.
      */
     public Builder setZone(java.lang.String value) {
       if (value == null) {
@@ -939,13 +992,15 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearZone() {
 
@@ -957,13 +1012,16 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for zone to set.
+     * @return This builder for chaining.
      */
     public Builder setZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -981,11 +1039,14 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The clusterId.
      */
     @java.lang.Deprecated
     public java.lang.String getClusterId() {
@@ -1003,11 +1064,14 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getClusterIdBytes() {
@@ -1025,11 +1089,15 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The clusterId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setClusterId(java.lang.String value) {
@@ -1045,11 +1113,14 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearClusterId() {
@@ -1062,11 +1133,15 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The bytes for clusterId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setClusterIdBytes(com.google.protobuf.ByteString value) {
@@ -1085,13 +1160,15 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The logging service the cluster should use to write metrics.
+     * Required. The logging service the cluster should use to write metrics.
      * Currently available options:
      * * "logging.googleapis.com" - the Google Cloud Logging service
      * * "none" - no metrics will be exported from the cluster
      * </pre>
      *
-     * <code>string logging_service = 4;</code>
+     * <code>string logging_service = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The loggingService.
      */
     public java.lang.String getLoggingService() {
       java.lang.Object ref = loggingService_;
@@ -1108,13 +1185,15 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The logging service the cluster should use to write metrics.
+     * Required. The logging service the cluster should use to write metrics.
      * Currently available options:
      * * "logging.googleapis.com" - the Google Cloud Logging service
      * * "none" - no metrics will be exported from the cluster
      * </pre>
      *
-     * <code>string logging_service = 4;</code>
+     * <code>string logging_service = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for loggingService.
      */
     public com.google.protobuf.ByteString getLoggingServiceBytes() {
       java.lang.Object ref = loggingService_;
@@ -1131,13 +1210,16 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The logging service the cluster should use to write metrics.
+     * Required. The logging service the cluster should use to write metrics.
      * Currently available options:
      * * "logging.googleapis.com" - the Google Cloud Logging service
      * * "none" - no metrics will be exported from the cluster
      * </pre>
      *
-     * <code>string logging_service = 4;</code>
+     * <code>string logging_service = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The loggingService to set.
+     * @return This builder for chaining.
      */
     public Builder setLoggingService(java.lang.String value) {
       if (value == null) {
@@ -1152,13 +1234,15 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The logging service the cluster should use to write metrics.
+     * Required. The logging service the cluster should use to write metrics.
      * Currently available options:
      * * "logging.googleapis.com" - the Google Cloud Logging service
      * * "none" - no metrics will be exported from the cluster
      * </pre>
      *
-     * <code>string logging_service = 4;</code>
+     * <code>string logging_service = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLoggingService() {
 
@@ -1170,13 +1254,16 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The logging service the cluster should use to write metrics.
+     * Required. The logging service the cluster should use to write metrics.
      * Currently available options:
      * * "logging.googleapis.com" - the Google Cloud Logging service
      * * "none" - no metrics will be exported from the cluster
      * </pre>
      *
-     * <code>string logging_service = 4;</code>
+     * <code>string logging_service = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for loggingService to set.
+     * @return This builder for chaining.
      */
     public Builder setLoggingServiceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1199,6 +1286,8 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string name = 5;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1220,6 +1309,8 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string name = 5;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1241,6 +1332,9 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string name = 5;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1260,6 +1354,8 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string name = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1276,6 +1372,9 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>string name = 5;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -27,12 +27,15 @@ public interface SetLegacyAbacRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The projectId.
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
@@ -40,12 +43,15 @@ public interface SetLegacyAbacRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for projectId.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getProjectIdBytes();
@@ -54,13 +60,15 @@ public interface SetLegacyAbacRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The zone.
    */
   @java.lang.Deprecated
   java.lang.String getZone();
@@ -68,13 +76,15 @@ public interface SetLegacyAbacRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for zone.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getZoneBytes();
@@ -83,11 +93,14 @@ public interface SetLegacyAbacRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster to update.
+   * Required. Deprecated. The name of the cluster to update.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The clusterId.
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
@@ -95,11 +108,14 @@ public interface SetLegacyAbacRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster to update.
+   * Required. Deprecated. The name of the cluster to update.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getClusterIdBytes();
@@ -108,10 +124,12 @@ public interface SetLegacyAbacRequestOrBuilder
    *
    *
    * <pre>
-   * Whether ABAC authorization will be enabled in the cluster.
+   * Required. Whether ABAC authorization will be enabled in the cluster.
    * </pre>
    *
-   * <code>bool enabled = 4;</code>
+   * <code>bool enabled = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The enabled.
    */
   boolean getEnabled();
 
@@ -124,6 +142,8 @@ public interface SetLegacyAbacRequestOrBuilder
    * </pre>
    *
    * <code>string name = 6;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -135,6 +155,8 @@ public interface SetLegacyAbacRequestOrBuilder
    * </pre>
    *
    * <code>string name = 6;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 }

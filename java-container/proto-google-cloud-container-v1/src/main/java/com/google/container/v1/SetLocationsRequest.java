@@ -46,6 +46,12 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SetLocationsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -93,9 +99,9 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 locations_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               locations_.add(s);
               break;
@@ -121,7 +127,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         locations_ = locations_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -144,19 +150,21 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
             com.google.container.v1.SetLocationsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object projectId_;
   /**
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The projectId.
    */
   @java.lang.Deprecated
   public java.lang.String getProjectId() {
@@ -174,12 +182,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for projectId.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getProjectIdBytes() {
@@ -200,13 +211,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The zone.
    */
   @java.lang.Deprecated
   public java.lang.String getZone() {
@@ -224,13 +237,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for zone.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getZoneBytes() {
@@ -251,11 +266,14 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster to upgrade.
+   * Required. Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The clusterId.
    */
   @java.lang.Deprecated
   public java.lang.String getClusterId() {
@@ -273,11 +291,14 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster to upgrade.
+   * Required. Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getClusterIdBytes() {
@@ -298,15 +319,17 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The desired list of Google Compute Engine
-   * [locations](/compute/docs/zones#available) in which the cluster's nodes
+   * Required. The desired list of Google Compute Engine
+   * [zones](/compute/docs/zones#available) in which the cluster's nodes
    * should be located. Changing the locations a cluster is in will result
    * in nodes being either created or removed from the cluster, depending on
    * whether locations are being added or removed.
    * This list must always include the cluster's primary zone.
    * </pre>
    *
-   * <code>repeated string locations = 4;</code>
+   * <code>repeated string locations = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return A list containing the locations.
    */
   public com.google.protobuf.ProtocolStringList getLocationsList() {
     return locations_;
@@ -315,15 +338,17 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The desired list of Google Compute Engine
-   * [locations](/compute/docs/zones#available) in which the cluster's nodes
+   * Required. The desired list of Google Compute Engine
+   * [zones](/compute/docs/zones#available) in which the cluster's nodes
    * should be located. Changing the locations a cluster is in will result
    * in nodes being either created or removed from the cluster, depending on
    * whether locations are being added or removed.
    * This list must always include the cluster's primary zone.
    * </pre>
    *
-   * <code>repeated string locations = 4;</code>
+   * <code>repeated string locations = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The count of locations.
    */
   public int getLocationsCount() {
     return locations_.size();
@@ -332,15 +357,18 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The desired list of Google Compute Engine
-   * [locations](/compute/docs/zones#available) in which the cluster's nodes
+   * Required. The desired list of Google Compute Engine
+   * [zones](/compute/docs/zones#available) in which the cluster's nodes
    * should be located. Changing the locations a cluster is in will result
    * in nodes being either created or removed from the cluster, depending on
    * whether locations are being added or removed.
    * This list must always include the cluster's primary zone.
    * </pre>
    *
-   * <code>repeated string locations = 4;</code>
+   * <code>repeated string locations = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The locations at the given index.
    */
   public java.lang.String getLocations(int index) {
     return locations_.get(index);
@@ -349,15 +377,18 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The desired list of Google Compute Engine
-   * [locations](/compute/docs/zones#available) in which the cluster's nodes
+   * Required. The desired list of Google Compute Engine
+   * [zones](/compute/docs/zones#available) in which the cluster's nodes
    * should be located. Changing the locations a cluster is in will result
    * in nodes being either created or removed from the cluster, depending on
    * whether locations are being added or removed.
    * This list must always include the cluster's primary zone.
    * </pre>
    *
-   * <code>repeated string locations = 4;</code>
+   * <code>repeated string locations = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the locations at the given index.
    */
   public com.google.protobuf.ByteString getLocationsBytes(int index) {
     return locations_.getByteString(index);
@@ -374,6 +405,8 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string name = 6;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -395,6 +428,8 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string name = 6;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -662,7 +697,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       clusterId_ = "";
 
       locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = "";
 
       return this;
@@ -693,17 +728,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       com.google.container.v1.SetLocationsRequest result =
           new com.google.container.v1.SetLocationsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.projectId_ = projectId_;
       result.zone_ = zone_;
       result.clusterId_ = clusterId_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         locations_ = locations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.locations_ = locations_;
       result.name_ = name_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -768,7 +801,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       if (!other.locations_.isEmpty()) {
         if (locations_.isEmpty()) {
           locations_ = other.locations_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureLocationsIsMutable();
           locations_.addAll(other.locations_);
@@ -815,12 +848,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The projectId.
      */
     @java.lang.Deprecated
     public java.lang.String getProjectId() {
@@ -838,12 +874,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The bytes for projectId.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getProjectIdBytes() {
@@ -861,12 +900,16 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setProjectId(java.lang.String value) {
@@ -882,12 +925,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearProjectId() {
@@ -900,12 +946,16 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
@@ -924,13 +974,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The zone.
      */
     @java.lang.Deprecated
     public java.lang.String getZone() {
@@ -948,13 +1000,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for zone.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getZoneBytes() {
@@ -972,13 +1026,16 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The zone to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setZone(java.lang.String value) {
@@ -994,13 +1051,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearZone() {
@@ -1013,13 +1072,16 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for zone to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setZoneBytes(com.google.protobuf.ByteString value) {
@@ -1038,11 +1100,14 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The clusterId.
      */
     @java.lang.Deprecated
     public java.lang.String getClusterId() {
@@ -1060,11 +1125,14 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getClusterIdBytes() {
@@ -1082,11 +1150,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The clusterId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setClusterId(java.lang.String value) {
@@ -1102,11 +1174,14 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearClusterId() {
@@ -1119,11 +1194,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The bytes for clusterId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setClusterIdBytes(com.google.protobuf.ByteString value) {
@@ -1141,24 +1220,26 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
      *
      *
      * <pre>
-     * The desired list of Google Compute Engine
-     * [locations](/compute/docs/zones#available) in which the cluster's nodes
+     * Required. The desired list of Google Compute Engine
+     * [zones](/compute/docs/zones#available) in which the cluster's nodes
      * should be located. Changing the locations a cluster is in will result
      * in nodes being either created or removed from the cluster, depending on
      * whether locations are being added or removed.
      * This list must always include the cluster's primary zone.
      * </pre>
      *
-     * <code>repeated string locations = 4;</code>
+     * <code>repeated string locations = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the locations.
      */
     public com.google.protobuf.ProtocolStringList getLocationsList() {
       return locations_.getUnmodifiableView();
@@ -1167,15 +1248,17 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The desired list of Google Compute Engine
-     * [locations](/compute/docs/zones#available) in which the cluster's nodes
+     * Required. The desired list of Google Compute Engine
+     * [zones](/compute/docs/zones#available) in which the cluster's nodes
      * should be located. Changing the locations a cluster is in will result
      * in nodes being either created or removed from the cluster, depending on
      * whether locations are being added or removed.
      * This list must always include the cluster's primary zone.
      * </pre>
      *
-     * <code>repeated string locations = 4;</code>
+     * <code>repeated string locations = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of locations.
      */
     public int getLocationsCount() {
       return locations_.size();
@@ -1184,15 +1267,18 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The desired list of Google Compute Engine
-     * [locations](/compute/docs/zones#available) in which the cluster's nodes
+     * Required. The desired list of Google Compute Engine
+     * [zones](/compute/docs/zones#available) in which the cluster's nodes
      * should be located. Changing the locations a cluster is in will result
      * in nodes being either created or removed from the cluster, depending on
      * whether locations are being added or removed.
      * This list must always include the cluster's primary zone.
      * </pre>
      *
-     * <code>repeated string locations = 4;</code>
+     * <code>repeated string locations = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The locations at the given index.
      */
     public java.lang.String getLocations(int index) {
       return locations_.get(index);
@@ -1201,15 +1287,18 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The desired list of Google Compute Engine
-     * [locations](/compute/docs/zones#available) in which the cluster's nodes
+     * Required. The desired list of Google Compute Engine
+     * [zones](/compute/docs/zones#available) in which the cluster's nodes
      * should be located. Changing the locations a cluster is in will result
      * in nodes being either created or removed from the cluster, depending on
      * whether locations are being added or removed.
      * This list must always include the cluster's primary zone.
      * </pre>
      *
-     * <code>repeated string locations = 4;</code>
+     * <code>repeated string locations = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the locations at the given index.
      */
     public com.google.protobuf.ByteString getLocationsBytes(int index) {
       return locations_.getByteString(index);
@@ -1218,15 +1307,19 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The desired list of Google Compute Engine
-     * [locations](/compute/docs/zones#available) in which the cluster's nodes
+     * Required. The desired list of Google Compute Engine
+     * [zones](/compute/docs/zones#available) in which the cluster's nodes
      * should be located. Changing the locations a cluster is in will result
      * in nodes being either created or removed from the cluster, depending on
      * whether locations are being added or removed.
      * This list must always include the cluster's primary zone.
      * </pre>
      *
-     * <code>repeated string locations = 4;</code>
+     * <code>repeated string locations = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The locations to set.
+     * @return This builder for chaining.
      */
     public Builder setLocations(int index, java.lang.String value) {
       if (value == null) {
@@ -1241,15 +1334,18 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The desired list of Google Compute Engine
-     * [locations](/compute/docs/zones#available) in which the cluster's nodes
+     * Required. The desired list of Google Compute Engine
+     * [zones](/compute/docs/zones#available) in which the cluster's nodes
      * should be located. Changing the locations a cluster is in will result
      * in nodes being either created or removed from the cluster, depending on
      * whether locations are being added or removed.
      * This list must always include the cluster's primary zone.
      * </pre>
      *
-     * <code>repeated string locations = 4;</code>
+     * <code>repeated string locations = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The locations to add.
+     * @return This builder for chaining.
      */
     public Builder addLocations(java.lang.String value) {
       if (value == null) {
@@ -1264,15 +1360,18 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The desired list of Google Compute Engine
-     * [locations](/compute/docs/zones#available) in which the cluster's nodes
+     * Required. The desired list of Google Compute Engine
+     * [zones](/compute/docs/zones#available) in which the cluster's nodes
      * should be located. Changing the locations a cluster is in will result
      * in nodes being either created or removed from the cluster, depending on
      * whether locations are being added or removed.
      * This list must always include the cluster's primary zone.
      * </pre>
      *
-     * <code>repeated string locations = 4;</code>
+     * <code>repeated string locations = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param values The locations to add.
+     * @return This builder for chaining.
      */
     public Builder addAllLocations(java.lang.Iterable<java.lang.String> values) {
       ensureLocationsIsMutable();
@@ -1284,19 +1383,21 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The desired list of Google Compute Engine
-     * [locations](/compute/docs/zones#available) in which the cluster's nodes
+     * Required. The desired list of Google Compute Engine
+     * [zones](/compute/docs/zones#available) in which the cluster's nodes
      * should be located. Changing the locations a cluster is in will result
      * in nodes being either created or removed from the cluster, depending on
      * whether locations are being added or removed.
      * This list must always include the cluster's primary zone.
      * </pre>
      *
-     * <code>repeated string locations = 4;</code>
+     * <code>repeated string locations = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocations() {
       locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1304,15 +1405,18 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The desired list of Google Compute Engine
-     * [locations](/compute/docs/zones#available) in which the cluster's nodes
+     * Required. The desired list of Google Compute Engine
+     * [zones](/compute/docs/zones#available) in which the cluster's nodes
      * should be located. Changing the locations a cluster is in will result
      * in nodes being either created or removed from the cluster, depending on
      * whether locations are being added or removed.
      * This list must always include the cluster's primary zone.
      * </pre>
      *
-     * <code>repeated string locations = 4;</code>
+     * <code>repeated string locations = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes of the locations to add.
+     * @return This builder for chaining.
      */
     public Builder addLocationsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1335,6 +1439,8 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1356,6 +1462,8 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1377,6 +1485,9 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1396,6 +1507,8 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1412,6 +1525,9 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

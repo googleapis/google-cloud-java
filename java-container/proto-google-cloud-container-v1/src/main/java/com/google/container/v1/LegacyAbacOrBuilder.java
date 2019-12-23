@@ -34,6 +34,8 @@ public interface LegacyAbacOrBuilder
    * </pre>
    *
    * <code>bool enabled = 1;</code>
+   *
+   * @return The enabled.
    */
   boolean getEnabled();
 }

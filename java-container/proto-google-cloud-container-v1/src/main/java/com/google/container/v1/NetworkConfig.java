@@ -43,6 +43,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new NetworkConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -78,6 +83,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               subnetwork_ = s;
+              break;
+            }
+          case 40:
+            {
+              enableIntraNodeVisibility_ = input.readBool();
               break;
             }
           default:
@@ -127,6 +137,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string network = 1;</code>
+   *
+   * @return The network.
    */
   public java.lang.String getNetwork() {
     java.lang.Object ref = network_;
@@ -150,6 +162,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string network = 1;</code>
+   *
+   * @return The bytes for network.
    */
   public com.google.protobuf.ByteString getNetworkBytes() {
     java.lang.Object ref = network_;
@@ -175,6 +189,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string subnetwork = 2;</code>
+   *
+   * @return The subnetwork.
    */
   public java.lang.String getSubnetwork() {
     java.lang.Object ref = subnetwork_;
@@ -197,6 +213,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string subnetwork = 2;</code>
+   *
+   * @return The bytes for subnetwork.
    */
   public com.google.protobuf.ByteString getSubnetworkBytes() {
     java.lang.Object ref = subnetwork_;
@@ -208,6 +226,24 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int ENABLE_INTRA_NODE_VISIBILITY_FIELD_NUMBER = 5;
+  private boolean enableIntraNodeVisibility_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether Intra-node visibility is enabled for this cluster.
+   * This makes same node pod to pod traffic visible for VPC network.
+   * </pre>
+   *
+   * <code>bool enable_intra_node_visibility = 5;</code>
+   *
+   * @return The enableIntraNodeVisibility.
+   */
+  public boolean getEnableIntraNodeVisibility() {
+    return enableIntraNodeVisibility_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -230,6 +266,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getSubnetworkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, subnetwork_);
     }
+    if (enableIntraNodeVisibility_ != false) {
+      output.writeBool(5, enableIntraNodeVisibility_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -244,6 +283,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getSubnetworkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, subnetwork_);
+    }
+    if (enableIntraNodeVisibility_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, enableIntraNodeVisibility_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -262,6 +304,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
     if (!getNetwork().equals(other.getNetwork())) return false;
     if (!getSubnetwork().equals(other.getSubnetwork())) return false;
+    if (getEnableIntraNodeVisibility() != other.getEnableIntraNodeVisibility()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -277,6 +320,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getNetwork().hashCode();
     hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getSubnetwork().hashCode();
+    hash = (37 * hash) + ENABLE_INTRA_NODE_VISIBILITY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableIntraNodeVisibility());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -425,6 +470,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
       subnetwork_ = "";
 
+      enableIntraNodeVisibility_ = false;
+
       return this;
     }
 
@@ -454,6 +501,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           new com.google.container.v1.NetworkConfig(this);
       result.network_ = network_;
       result.subnetwork_ = subnetwork_;
+      result.enableIntraNodeVisibility_ = enableIntraNodeVisibility_;
       onBuilt();
       return result;
     }
@@ -511,6 +559,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         subnetwork_ = other.subnetwork_;
         onChanged();
       }
+      if (other.getEnableIntraNodeVisibility() != false) {
+        setEnableIntraNodeVisibility(other.getEnableIntraNodeVisibility());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -552,6 +603,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string network = 1;</code>
+     *
+     * @return The network.
      */
     public java.lang.String getNetwork() {
       java.lang.Object ref = network_;
@@ -575,6 +628,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string network = 1;</code>
+     *
+     * @return The bytes for network.
      */
     public com.google.protobuf.ByteString getNetworkBytes() {
       java.lang.Object ref = network_;
@@ -598,6 +653,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string network = 1;</code>
+     *
+     * @param value The network to set.
+     * @return This builder for chaining.
      */
     public Builder setNetwork(java.lang.String value) {
       if (value == null) {
@@ -619,6 +677,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string network = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNetwork() {
 
@@ -637,6 +697,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string network = 1;</code>
+     *
+     * @param value The bytes for network to set.
+     * @return This builder for chaining.
      */
     public Builder setNetworkBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -660,6 +723,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string subnetwork = 2;</code>
+     *
+     * @return The subnetwork.
      */
     public java.lang.String getSubnetwork() {
       java.lang.Object ref = subnetwork_;
@@ -682,6 +747,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string subnetwork = 2;</code>
+     *
+     * @return The bytes for subnetwork.
      */
     public com.google.protobuf.ByteString getSubnetworkBytes() {
       java.lang.Object ref = subnetwork_;
@@ -704,6 +771,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string subnetwork = 2;</code>
+     *
+     * @param value The subnetwork to set.
+     * @return This builder for chaining.
      */
     public Builder setSubnetwork(java.lang.String value) {
       if (value == null) {
@@ -724,6 +794,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string subnetwork = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
 
@@ -741,6 +813,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string subnetwork = 2;</code>
+     *
+     * @param value The bytes for subnetwork to set.
+     * @return This builder for chaining.
      */
     public Builder setSubnetworkBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -749,6 +824,60 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       subnetwork_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableIntraNodeVisibility_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether Intra-node visibility is enabled for this cluster.
+     * This makes same node pod to pod traffic visible for VPC network.
+     * </pre>
+     *
+     * <code>bool enable_intra_node_visibility = 5;</code>
+     *
+     * @return The enableIntraNodeVisibility.
+     */
+    public boolean getEnableIntraNodeVisibility() {
+      return enableIntraNodeVisibility_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether Intra-node visibility is enabled for this cluster.
+     * This makes same node pod to pod traffic visible for VPC network.
+     * </pre>
+     *
+     * <code>bool enable_intra_node_visibility = 5;</code>
+     *
+     * @param value The enableIntraNodeVisibility to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableIntraNodeVisibility(boolean value) {
+
+      enableIntraNodeVisibility_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether Intra-node visibility is enabled for this cluster.
+     * This makes same node pod to pod traffic visible for VPC network.
+     * </pre>
+     *
+     * <code>bool enable_intra_node_visibility = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableIntraNodeVisibility() {
+
+      enableIntraNodeVisibility_ = false;
       onChanged();
       return this;
     }

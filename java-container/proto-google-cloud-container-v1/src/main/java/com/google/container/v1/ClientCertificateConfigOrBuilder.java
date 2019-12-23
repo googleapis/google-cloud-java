@@ -31,6 +31,8 @@ public interface ClientCertificateConfigOrBuilder
    * </pre>
    *
    * <code>bool issue_client_certificate = 1;</code>
+   *
+   * @return The issueClientCertificate.
    */
   boolean getIssueClientCertificate();
 }

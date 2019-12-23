@@ -31,6 +31,8 @@ public interface ServerConfigOrBuilder
    * </pre>
    *
    * <code>string default_cluster_version = 1;</code>
+   *
+   * @return The defaultClusterVersion.
    */
   java.lang.String getDefaultClusterVersion();
   /**
@@ -41,6 +43,8 @@ public interface ServerConfigOrBuilder
    * </pre>
    *
    * <code>string default_cluster_version = 1;</code>
+   *
+   * @return The bytes for defaultClusterVersion.
    */
   com.google.protobuf.ByteString getDefaultClusterVersionBytes();
 
@@ -52,6 +56,8 @@ public interface ServerConfigOrBuilder
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
+   *
+   * @return A list containing the validNodeVersions.
    */
   java.util.List<java.lang.String> getValidNodeVersionsList();
   /**
@@ -62,6 +68,8 @@ public interface ServerConfigOrBuilder
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
+   *
+   * @return The count of validNodeVersions.
    */
   int getValidNodeVersionsCount();
   /**
@@ -72,6 +80,9 @@ public interface ServerConfigOrBuilder
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The validNodeVersions at the given index.
    */
   java.lang.String getValidNodeVersions(int index);
   /**
@@ -82,6 +93,9 @@ public interface ServerConfigOrBuilder
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the validNodeVersions at the given index.
    */
   com.google.protobuf.ByteString getValidNodeVersionsBytes(int index);
 
@@ -93,6 +107,8 @@ public interface ServerConfigOrBuilder
    * </pre>
    *
    * <code>string default_image_type = 4;</code>
+   *
+   * @return The defaultImageType.
    */
   java.lang.String getDefaultImageType();
   /**
@@ -103,6 +119,8 @@ public interface ServerConfigOrBuilder
    * </pre>
    *
    * <code>string default_image_type = 4;</code>
+   *
+   * @return The bytes for defaultImageType.
    */
   com.google.protobuf.ByteString getDefaultImageTypeBytes();
 
@@ -114,6 +132,8 @@ public interface ServerConfigOrBuilder
    * </pre>
    *
    * <code>repeated string valid_image_types = 5;</code>
+   *
+   * @return A list containing the validImageTypes.
    */
   java.util.List<java.lang.String> getValidImageTypesList();
   /**
@@ -124,6 +144,8 @@ public interface ServerConfigOrBuilder
    * </pre>
    *
    * <code>repeated string valid_image_types = 5;</code>
+   *
+   * @return The count of validImageTypes.
    */
   int getValidImageTypesCount();
   /**
@@ -134,6 +156,9 @@ public interface ServerConfigOrBuilder
    * </pre>
    *
    * <code>repeated string valid_image_types = 5;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The validImageTypes at the given index.
    */
   java.lang.String getValidImageTypes(int index);
   /**
@@ -144,6 +169,9 @@ public interface ServerConfigOrBuilder
    * </pre>
    *
    * <code>repeated string valid_image_types = 5;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the validImageTypes at the given index.
    */
   com.google.protobuf.ByteString getValidImageTypesBytes(int index);
 
@@ -155,6 +183,8 @@ public interface ServerConfigOrBuilder
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
+   *
+   * @return A list containing the validMasterVersions.
    */
   java.util.List<java.lang.String> getValidMasterVersionsList();
   /**
@@ -165,6 +195,8 @@ public interface ServerConfigOrBuilder
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
+   *
+   * @return The count of validMasterVersions.
    */
   int getValidMasterVersionsCount();
   /**
@@ -175,6 +207,9 @@ public interface ServerConfigOrBuilder
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The validMasterVersions at the given index.
    */
   java.lang.String getValidMasterVersions(int index);
   /**
@@ -185,6 +220,9 @@ public interface ServerConfigOrBuilder
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the validMasterVersions at the given index.
    */
   com.google.protobuf.ByteString getValidMasterVersionsBytes(int index);
 }

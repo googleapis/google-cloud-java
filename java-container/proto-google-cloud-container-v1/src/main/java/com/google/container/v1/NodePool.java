@@ -49,6 +49,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     status_ = 0;
     statusMessage_ = "";
+    conditions_ = java.util.Collections.emptyList();
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new NodePool();
   }
 
   @java.lang.Override
@@ -134,6 +141,27 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 50:
+            {
+              com.google.container.v1.MaxPodsConstraint.Builder subBuilder = null;
+              if (maxPodsConstraint_ != null) {
+                subBuilder = maxPodsConstraint_.toBuilder();
+              }
+              maxPodsConstraint_ =
+                  input.readMessage(
+                      com.google.container.v1.MaxPodsConstraint.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(maxPodsConstraint_);
+                maxPodsConstraint_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 56:
+            {
+              podIpv4CidrSize_ = input.readInt32();
+              break;
+            }
           case 802:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -151,9 +179,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           case 818:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               instanceGroupUrls_.add(s);
               break;
@@ -172,6 +200,17 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
               statusMessage_ = s;
               break;
             }
+          case 842:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                conditions_ = new java.util.ArrayList<com.google.container.v1.StatusCondition>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              conditions_.add(
+                  input.readMessage(
+                      com.google.container.v1.StatusCondition.parser(), extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -186,8 +225,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        conditions_ = java.util.Collections.unmodifiableList(conditions_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -384,12 +426,20 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Status valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Status forNumber(int value) {
       switch (value) {
         case 0:
@@ -455,7 +505,6 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.container.v1.NodePool.Status)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -466,6 +515,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -486,6 +537,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -509,6 +562,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.NodeConfig config = 2;</code>
+   *
+   * @return Whether the config field is set.
    */
   public boolean hasConfig() {
     return config_ != null;
@@ -521,6 +576,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.NodeConfig config = 2;</code>
+   *
+   * @return The config.
    */
   public com.google.container.v1.NodeConfig getConfig() {
     return config_ == null ? com.google.container.v1.NodeConfig.getDefaultInstance() : config_;
@@ -551,6 +608,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 initial_node_count = 3;</code>
+   *
+   * @return The initialNodeCount.
    */
   public int getInitialNodeCount() {
     return initialNodeCount_;
@@ -566,6 +625,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string self_link = 100;</code>
+   *
+   * @return The selfLink.
    */
   public java.lang.String getSelfLink() {
     java.lang.Object ref = selfLink_;
@@ -586,6 +647,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string self_link = 100;</code>
+   *
+   * @return The bytes for selfLink.
    */
   public com.google.protobuf.ByteString getSelfLinkBytes() {
     java.lang.Object ref = selfLink_;
@@ -609,6 +672,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string version = 101;</code>
+   *
+   * @return The version.
    */
   public java.lang.String getVersion() {
     java.lang.Object ref = version_;
@@ -629,6 +694,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string version = 101;</code>
+   *
+   * @return The bytes for version.
    */
   public com.google.protobuf.ByteString getVersionBytes() {
     java.lang.Object ref = version_;
@@ -654,6 +721,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string instance_group_urls = 102;</code>
+   *
+   * @return A list containing the instanceGroupUrls.
    */
   public com.google.protobuf.ProtocolStringList getInstanceGroupUrlsList() {
     return instanceGroupUrls_;
@@ -668,6 +737,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string instance_group_urls = 102;</code>
+   *
+   * @return The count of instanceGroupUrls.
    */
   public int getInstanceGroupUrlsCount() {
     return instanceGroupUrls_.size();
@@ -682,6 +753,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string instance_group_urls = 102;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The instanceGroupUrls at the given index.
    */
   public java.lang.String getInstanceGroupUrls(int index) {
     return instanceGroupUrls_.get(index);
@@ -696,6 +770,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string instance_group_urls = 102;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the instanceGroupUrls at the given index.
    */
   public com.google.protobuf.ByteString getInstanceGroupUrlsBytes(int index) {
     return instanceGroupUrls_.getByteString(index);
@@ -711,6 +788,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.NodePool.Status status = 103;</code>
+   *
+   * @return The enum numeric value on the wire for status.
    */
   public int getStatusValue() {
     return status_;
@@ -723,6 +802,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.NodePool.Status status = 103;</code>
+   *
+   * @return The status.
    */
   public com.google.container.v1.NodePool.Status getStatus() {
     @SuppressWarnings("deprecation")
@@ -742,6 +823,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string status_message = 104;</code>
+   *
+   * @return The statusMessage.
    */
   public java.lang.String getStatusMessage() {
     java.lang.Object ref = statusMessage_;
@@ -763,6 +846,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string status_message = 104;</code>
+   *
+   * @return The bytes for statusMessage.
    */
   public com.google.protobuf.ByteString getStatusMessageBytes() {
     java.lang.Object ref = statusMessage_;
@@ -787,6 +872,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 4;</code>
+   *
+   * @return Whether the autoscaling field is set.
    */
   public boolean hasAutoscaling() {
     return autoscaling_ != null;
@@ -800,6 +887,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 4;</code>
+   *
+   * @return The autoscaling.
    */
   public com.google.container.v1.NodePoolAutoscaling getAutoscaling() {
     return autoscaling_ == null
@@ -830,6 +919,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.NodeManagement management = 5;</code>
+   *
+   * @return Whether the management field is set.
    */
   public boolean hasManagement() {
     return management_ != null;
@@ -842,6 +933,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.NodeManagement management = 5;</code>
+   *
+   * @return The management.
    */
   public com.google.container.v1.NodeManagement getManagement() {
     return management_ == null
@@ -859,6 +952,135 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.container.v1.NodeManagementOrBuilder getManagementOrBuilder() {
     return getManagement();
+  }
+
+  public static final int MAX_PODS_CONSTRAINT_FIELD_NUMBER = 6;
+  private com.google.container.v1.MaxPodsConstraint maxPodsConstraint_;
+  /**
+   *
+   *
+   * <pre>
+   * The constraint on the maximum number of pods that can be run
+   * simultaneously on a node in the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
+   *
+   * @return Whether the maxPodsConstraint field is set.
+   */
+  public boolean hasMaxPodsConstraint() {
+    return maxPodsConstraint_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The constraint on the maximum number of pods that can be run
+   * simultaneously on a node in the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
+   *
+   * @return The maxPodsConstraint.
+   */
+  public com.google.container.v1.MaxPodsConstraint getMaxPodsConstraint() {
+    return maxPodsConstraint_ == null
+        ? com.google.container.v1.MaxPodsConstraint.getDefaultInstance()
+        : maxPodsConstraint_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The constraint on the maximum number of pods that can be run
+   * simultaneously on a node in the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
+   */
+  public com.google.container.v1.MaxPodsConstraintOrBuilder getMaxPodsConstraintOrBuilder() {
+    return getMaxPodsConstraint();
+  }
+
+  public static final int CONDITIONS_FIELD_NUMBER = 105;
+  private java.util.List<com.google.container.v1.StatusCondition> conditions_;
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   */
+  public java.util.List<com.google.container.v1.StatusCondition> getConditionsList() {
+    return conditions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   */
+  public java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
+      getConditionsOrBuilderList() {
+    return conditions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   */
+  public int getConditionsCount() {
+    return conditions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   */
+  public com.google.container.v1.StatusCondition getConditions(int index) {
+    return conditions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   */
+  public com.google.container.v1.StatusConditionOrBuilder getConditionsOrBuilder(int index) {
+    return conditions_.get(index);
+  }
+
+  public static final int POD_IPV4_CIDR_SIZE_FIELD_NUMBER = 7;
+  private int podIpv4CidrSize_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The pod CIDR block size per node in this node pool.
+   * </pre>
+   *
+   * <code>int32 pod_ipv4_cidr_size = 7;</code>
+   *
+   * @return The podIpv4CidrSize.
+   */
+  public int getPodIpv4CidrSize() {
+    return podIpv4CidrSize_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -890,6 +1112,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (management_ != null) {
       output.writeMessage(5, getManagement());
     }
+    if (maxPodsConstraint_ != null) {
+      output.writeMessage(6, getMaxPodsConstraint());
+    }
+    if (podIpv4CidrSize_ != 0) {
+      output.writeInt32(7, podIpv4CidrSize_);
+    }
     if (!getSelfLinkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, selfLink_);
     }
@@ -904,6 +1132,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getStatusMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 104, statusMessage_);
+    }
+    for (int i = 0; i < conditions_.size(); i++) {
+      output.writeMessage(105, conditions_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -929,6 +1160,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (management_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getManagement());
     }
+    if (maxPodsConstraint_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getMaxPodsConstraint());
+    }
+    if (podIpv4CidrSize_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, podIpv4CidrSize_);
+    }
     if (!getSelfLinkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, selfLink_);
     }
@@ -948,6 +1185,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getStatusMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(104, statusMessage_);
+    }
+    for (int i = 0; i < conditions_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(105, conditions_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -983,6 +1223,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (hasManagement()) {
       if (!getManagement().equals(other.getManagement())) return false;
     }
+    if (hasMaxPodsConstraint() != other.hasMaxPodsConstraint()) return false;
+    if (hasMaxPodsConstraint()) {
+      if (!getMaxPodsConstraint().equals(other.getMaxPodsConstraint())) return false;
+    }
+    if (!getConditionsList().equals(other.getConditionsList())) return false;
+    if (getPodIpv4CidrSize() != other.getPodIpv4CidrSize()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1022,6 +1268,16 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + MANAGEMENT_FIELD_NUMBER;
       hash = (53 * hash) + getManagement().hashCode();
     }
+    if (hasMaxPodsConstraint()) {
+      hash = (37 * hash) + MAX_PODS_CONSTRAINT_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxPodsConstraint().hashCode();
+    }
+    if (getConditionsCount() > 0) {
+      hash = (37 * hash) + CONDITIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getConditionsList().hashCode();
+    }
+    hash = (37 * hash) + POD_IPV4_CIDR_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getPodIpv4CidrSize();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1165,7 +1421,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getConditionsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1186,7 +1444,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       version_ = "";
 
       instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       status_ = 0;
 
       statusMessage_ = "";
@@ -1203,6 +1461,20 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         management_ = null;
         managementBuilder_ = null;
       }
+      if (maxPodsConstraintBuilder_ == null) {
+        maxPodsConstraint_ = null;
+      } else {
+        maxPodsConstraint_ = null;
+        maxPodsConstraintBuilder_ = null;
+      }
+      if (conditionsBuilder_ == null) {
+        conditions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        conditionsBuilder_.clear();
+      }
+      podIpv4CidrSize_ = 0;
+
       return this;
     }
 
@@ -1230,7 +1502,6 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1.NodePool buildPartial() {
       com.google.container.v1.NodePool result = new com.google.container.v1.NodePool(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (configBuilder_ == null) {
         result.config_ = config_;
@@ -1240,9 +1511,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       result.initialNodeCount_ = initialNodeCount_;
       result.selfLink_ = selfLink_;
       result.version_ = version_;
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.instanceGroupUrls_ = instanceGroupUrls_;
       result.status_ = status_;
@@ -1257,7 +1528,21 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.management_ = managementBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
+      if (maxPodsConstraintBuilder_ == null) {
+        result.maxPodsConstraint_ = maxPodsConstraint_;
+      } else {
+        result.maxPodsConstraint_ = maxPodsConstraintBuilder_.build();
+      }
+      if (conditionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          conditions_ = java.util.Collections.unmodifiableList(conditions_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.conditions_ = conditions_;
+      } else {
+        result.conditions_ = conditionsBuilder_.build();
+      }
+      result.podIpv4CidrSize_ = podIpv4CidrSize_;
       onBuilt();
       return result;
     }
@@ -1328,7 +1613,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (!other.instanceGroupUrls_.isEmpty()) {
         if (instanceGroupUrls_.isEmpty()) {
           instanceGroupUrls_ = other.instanceGroupUrls_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureInstanceGroupUrlsIsMutable();
           instanceGroupUrls_.addAll(other.instanceGroupUrls_);
@@ -1347,6 +1632,39 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasManagement()) {
         mergeManagement(other.getManagement());
+      }
+      if (other.hasMaxPodsConstraint()) {
+        mergeMaxPodsConstraint(other.getMaxPodsConstraint());
+      }
+      if (conditionsBuilder_ == null) {
+        if (!other.conditions_.isEmpty()) {
+          if (conditions_.isEmpty()) {
+            conditions_ = other.conditions_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureConditionsIsMutable();
+            conditions_.addAll(other.conditions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.conditions_.isEmpty()) {
+          if (conditionsBuilder_.isEmpty()) {
+            conditionsBuilder_.dispose();
+            conditionsBuilder_ = null;
+            conditions_ = other.conditions_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            conditionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getConditionsFieldBuilder()
+                    : null;
+          } else {
+            conditionsBuilder_.addAllMessages(other.conditions_);
+          }
+        }
+      }
+      if (other.getPodIpv4CidrSize() != 0) {
+        setPodIpv4CidrSize(other.getPodIpv4CidrSize());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1388,6 +1706,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1408,6 +1728,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1428,6 +1750,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1446,6 +1771,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1461,6 +1788,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1487,6 +1817,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.NodeConfig config = 2;</code>
+     *
+     * @return Whether the config field is set.
      */
     public boolean hasConfig() {
       return configBuilder_ != null || config_ != null;
@@ -1499,6 +1831,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.NodeConfig config = 2;</code>
+     *
+     * @return The config.
      */
     public com.google.container.v1.NodeConfig getConfig() {
       if (configBuilder_ == null) {
@@ -1662,6 +1996,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 initial_node_count = 3;</code>
+     *
+     * @return The initialNodeCount.
      */
     public int getInitialNodeCount() {
       return initialNodeCount_;
@@ -1677,6 +2013,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 initial_node_count = 3;</code>
+     *
+     * @param value The initialNodeCount to set.
+     * @return This builder for chaining.
      */
     public Builder setInitialNodeCount(int value) {
 
@@ -1695,6 +2034,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 initial_node_count = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInitialNodeCount() {
 
@@ -1712,6 +2053,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string self_link = 100;</code>
+     *
+     * @return The selfLink.
      */
     public java.lang.String getSelfLink() {
       java.lang.Object ref = selfLink_;
@@ -1732,6 +2075,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string self_link = 100;</code>
+     *
+     * @return The bytes for selfLink.
      */
     public com.google.protobuf.ByteString getSelfLinkBytes() {
       java.lang.Object ref = selfLink_;
@@ -1752,6 +2097,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string self_link = 100;</code>
+     *
+     * @param value The selfLink to set.
+     * @return This builder for chaining.
      */
     public Builder setSelfLink(java.lang.String value) {
       if (value == null) {
@@ -1770,6 +2118,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string self_link = 100;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
 
@@ -1785,6 +2135,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string self_link = 100;</code>
+     *
+     * @param value The bytes for selfLink to set.
+     * @return This builder for chaining.
      */
     public Builder setSelfLinkBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1806,6 +2159,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string version = 101;</code>
+     *
+     * @return The version.
      */
     public java.lang.String getVersion() {
       java.lang.Object ref = version_;
@@ -1826,6 +2181,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string version = 101;</code>
+     *
+     * @return The bytes for version.
      */
     public com.google.protobuf.ByteString getVersionBytes() {
       java.lang.Object ref = version_;
@@ -1846,6 +2203,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string version = 101;</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersion(java.lang.String value) {
       if (value == null) {
@@ -1864,6 +2224,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string version = 101;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVersion() {
 
@@ -1879,6 +2241,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string version = 101;</code>
+     *
+     * @param value The bytes for version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1895,9 +2260,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInstanceGroupUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList(instanceGroupUrls_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1910,6 +2275,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
+     *
+     * @return A list containing the instanceGroupUrls.
      */
     public com.google.protobuf.ProtocolStringList getInstanceGroupUrlsList() {
       return instanceGroupUrls_.getUnmodifiableView();
@@ -1924,6 +2291,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
+     *
+     * @return The count of instanceGroupUrls.
      */
     public int getInstanceGroupUrlsCount() {
       return instanceGroupUrls_.size();
@@ -1938,6 +2307,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The instanceGroupUrls at the given index.
      */
     public java.lang.String getInstanceGroupUrls(int index) {
       return instanceGroupUrls_.get(index);
@@ -1952,6 +2324,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the instanceGroupUrls at the given index.
      */
     public com.google.protobuf.ByteString getInstanceGroupUrlsBytes(int index) {
       return instanceGroupUrls_.getByteString(index);
@@ -1966,6 +2341,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The instanceGroupUrls to set.
+     * @return This builder for chaining.
      */
     public Builder setInstanceGroupUrls(int index, java.lang.String value) {
       if (value == null) {
@@ -1986,6 +2365,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
+     *
+     * @param value The instanceGroupUrls to add.
+     * @return This builder for chaining.
      */
     public Builder addInstanceGroupUrls(java.lang.String value) {
       if (value == null) {
@@ -2006,6 +2388,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
+     *
+     * @param values The instanceGroupUrls to add.
+     * @return This builder for chaining.
      */
     public Builder addAllInstanceGroupUrls(java.lang.Iterable<java.lang.String> values) {
       ensureInstanceGroupUrlsIsMutable();
@@ -2023,10 +2408,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInstanceGroupUrls() {
       instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2040,6 +2427,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
+     *
+     * @param value The bytes of the instanceGroupUrls to add.
+     * @return This builder for chaining.
      */
     public Builder addInstanceGroupUrlsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2061,6 +2451,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.NodePool.Status status = 103;</code>
+     *
+     * @return The enum numeric value on the wire for status.
      */
     public int getStatusValue() {
       return status_;
@@ -2073,6 +2465,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.NodePool.Status status = 103;</code>
+     *
+     * @param value The enum numeric value on the wire for status to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
       status_ = value;
@@ -2087,6 +2482,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.NodePool.Status status = 103;</code>
+     *
+     * @return The status.
      */
     public com.google.container.v1.NodePool.Status getStatus() {
       @SuppressWarnings("deprecation")
@@ -2102,6 +2499,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.NodePool.Status status = 103;</code>
+     *
+     * @param value The status to set.
+     * @return This builder for chaining.
      */
     public Builder setStatus(com.google.container.v1.NodePool.Status value) {
       if (value == null) {
@@ -2120,6 +2520,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.NodePool.Status status = 103;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStatus() {
 
@@ -2138,6 +2540,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string status_message = 104;</code>
+     *
+     * @return The statusMessage.
      */
     public java.lang.String getStatusMessage() {
       java.lang.Object ref = statusMessage_;
@@ -2159,6 +2563,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string status_message = 104;</code>
+     *
+     * @return The bytes for statusMessage.
      */
     public com.google.protobuf.ByteString getStatusMessageBytes() {
       java.lang.Object ref = statusMessage_;
@@ -2180,6 +2586,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string status_message = 104;</code>
+     *
+     * @param value The statusMessage to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusMessage(java.lang.String value) {
       if (value == null) {
@@ -2199,6 +2608,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string status_message = 104;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStatusMessage() {
 
@@ -2215,6 +2626,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string status_message = 104;</code>
+     *
+     * @param value The bytes for statusMessage to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusMessageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2242,6 +2656,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 4;</code>
+     *
+     * @return Whether the autoscaling field is set.
      */
     public boolean hasAutoscaling() {
       return autoscalingBuilder_ != null || autoscaling_ != null;
@@ -2255,6 +2671,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 4;</code>
+     *
+     * @return The autoscaling.
      */
     public com.google.container.v1.NodePoolAutoscaling getAutoscaling() {
       if (autoscalingBuilder_ == null) {
@@ -2432,6 +2850,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.NodeManagement management = 5;</code>
+     *
+     * @return Whether the management field is set.
      */
     public boolean hasManagement() {
       return managementBuilder_ != null || management_ != null;
@@ -2444,6 +2864,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.NodeManagement management = 5;</code>
+     *
+     * @return The management.
      */
     public com.google.container.v1.NodeManagement getManagement() {
       if (managementBuilder_ == null) {
@@ -2597,6 +3019,601 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         management_ = null;
       }
       return managementBuilder_;
+    }
+
+    private com.google.container.v1.MaxPodsConstraint maxPodsConstraint_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.MaxPodsConstraint,
+            com.google.container.v1.MaxPodsConstraint.Builder,
+            com.google.container.v1.MaxPodsConstraintOrBuilder>
+        maxPodsConstraintBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The constraint on the maximum number of pods that can be run
+     * simultaneously on a node in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
+     *
+     * @return Whether the maxPodsConstraint field is set.
+     */
+    public boolean hasMaxPodsConstraint() {
+      return maxPodsConstraintBuilder_ != null || maxPodsConstraint_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The constraint on the maximum number of pods that can be run
+     * simultaneously on a node in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
+     *
+     * @return The maxPodsConstraint.
+     */
+    public com.google.container.v1.MaxPodsConstraint getMaxPodsConstraint() {
+      if (maxPodsConstraintBuilder_ == null) {
+        return maxPodsConstraint_ == null
+            ? com.google.container.v1.MaxPodsConstraint.getDefaultInstance()
+            : maxPodsConstraint_;
+      } else {
+        return maxPodsConstraintBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The constraint on the maximum number of pods that can be run
+     * simultaneously on a node in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
+     */
+    public Builder setMaxPodsConstraint(com.google.container.v1.MaxPodsConstraint value) {
+      if (maxPodsConstraintBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maxPodsConstraint_ = value;
+        onChanged();
+      } else {
+        maxPodsConstraintBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The constraint on the maximum number of pods that can be run
+     * simultaneously on a node in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
+     */
+    public Builder setMaxPodsConstraint(
+        com.google.container.v1.MaxPodsConstraint.Builder builderForValue) {
+      if (maxPodsConstraintBuilder_ == null) {
+        maxPodsConstraint_ = builderForValue.build();
+        onChanged();
+      } else {
+        maxPodsConstraintBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The constraint on the maximum number of pods that can be run
+     * simultaneously on a node in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
+     */
+    public Builder mergeMaxPodsConstraint(com.google.container.v1.MaxPodsConstraint value) {
+      if (maxPodsConstraintBuilder_ == null) {
+        if (maxPodsConstraint_ != null) {
+          maxPodsConstraint_ =
+              com.google.container.v1.MaxPodsConstraint.newBuilder(maxPodsConstraint_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          maxPodsConstraint_ = value;
+        }
+        onChanged();
+      } else {
+        maxPodsConstraintBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The constraint on the maximum number of pods that can be run
+     * simultaneously on a node in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
+     */
+    public Builder clearMaxPodsConstraint() {
+      if (maxPodsConstraintBuilder_ == null) {
+        maxPodsConstraint_ = null;
+        onChanged();
+      } else {
+        maxPodsConstraint_ = null;
+        maxPodsConstraintBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The constraint on the maximum number of pods that can be run
+     * simultaneously on a node in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
+     */
+    public com.google.container.v1.MaxPodsConstraint.Builder getMaxPodsConstraintBuilder() {
+
+      onChanged();
+      return getMaxPodsConstraintFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The constraint on the maximum number of pods that can be run
+     * simultaneously on a node in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
+     */
+    public com.google.container.v1.MaxPodsConstraintOrBuilder getMaxPodsConstraintOrBuilder() {
+      if (maxPodsConstraintBuilder_ != null) {
+        return maxPodsConstraintBuilder_.getMessageOrBuilder();
+      } else {
+        return maxPodsConstraint_ == null
+            ? com.google.container.v1.MaxPodsConstraint.getDefaultInstance()
+            : maxPodsConstraint_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The constraint on the maximum number of pods that can be run
+     * simultaneously on a node in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.MaxPodsConstraint,
+            com.google.container.v1.MaxPodsConstraint.Builder,
+            com.google.container.v1.MaxPodsConstraintOrBuilder>
+        getMaxPodsConstraintFieldBuilder() {
+      if (maxPodsConstraintBuilder_ == null) {
+        maxPodsConstraintBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.MaxPodsConstraint,
+                com.google.container.v1.MaxPodsConstraint.Builder,
+                com.google.container.v1.MaxPodsConstraintOrBuilder>(
+                getMaxPodsConstraint(), getParentForChildren(), isClean());
+        maxPodsConstraint_ = null;
+      }
+      return maxPodsConstraintBuilder_;
+    }
+
+    private java.util.List<com.google.container.v1.StatusCondition> conditions_ =
+        java.util.Collections.emptyList();
+
+    private void ensureConditionsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        conditions_ = new java.util.ArrayList<com.google.container.v1.StatusCondition>(conditions_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1.StatusCondition,
+            com.google.container.v1.StatusCondition.Builder,
+            com.google.container.v1.StatusConditionOrBuilder>
+        conditionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public java.util.List<com.google.container.v1.StatusCondition> getConditionsList() {
+      if (conditionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(conditions_);
+      } else {
+        return conditionsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public int getConditionsCount() {
+      if (conditionsBuilder_ == null) {
+        return conditions_.size();
+      } else {
+        return conditionsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public com.google.container.v1.StatusCondition getConditions(int index) {
+      if (conditionsBuilder_ == null) {
+        return conditions_.get(index);
+      } else {
+        return conditionsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public Builder setConditions(int index, com.google.container.v1.StatusCondition value) {
+      if (conditionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConditionsIsMutable();
+        conditions_.set(index, value);
+        onChanged();
+      } else {
+        conditionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public Builder setConditions(
+        int index, com.google.container.v1.StatusCondition.Builder builderForValue) {
+      if (conditionsBuilder_ == null) {
+        ensureConditionsIsMutable();
+        conditions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        conditionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public Builder addConditions(com.google.container.v1.StatusCondition value) {
+      if (conditionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConditionsIsMutable();
+        conditions_.add(value);
+        onChanged();
+      } else {
+        conditionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public Builder addConditions(int index, com.google.container.v1.StatusCondition value) {
+      if (conditionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConditionsIsMutable();
+        conditions_.add(index, value);
+        onChanged();
+      } else {
+        conditionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public Builder addConditions(com.google.container.v1.StatusCondition.Builder builderForValue) {
+      if (conditionsBuilder_ == null) {
+        ensureConditionsIsMutable();
+        conditions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        conditionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public Builder addConditions(
+        int index, com.google.container.v1.StatusCondition.Builder builderForValue) {
+      if (conditionsBuilder_ == null) {
+        ensureConditionsIsMutable();
+        conditions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        conditionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public Builder addAllConditions(
+        java.lang.Iterable<? extends com.google.container.v1.StatusCondition> values) {
+      if (conditionsBuilder_ == null) {
+        ensureConditionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, conditions_);
+        onChanged();
+      } else {
+        conditionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public Builder clearConditions() {
+      if (conditionsBuilder_ == null) {
+        conditions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        conditionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public Builder removeConditions(int index) {
+      if (conditionsBuilder_ == null) {
+        ensureConditionsIsMutable();
+        conditions_.remove(index);
+        onChanged();
+      } else {
+        conditionsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public com.google.container.v1.StatusCondition.Builder getConditionsBuilder(int index) {
+      return getConditionsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public com.google.container.v1.StatusConditionOrBuilder getConditionsOrBuilder(int index) {
+      if (conditionsBuilder_ == null) {
+        return conditions_.get(index);
+      } else {
+        return conditionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
+        getConditionsOrBuilderList() {
+      if (conditionsBuilder_ != null) {
+        return conditionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(conditions_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public com.google.container.v1.StatusCondition.Builder addConditionsBuilder() {
+      return getConditionsFieldBuilder()
+          .addBuilder(com.google.container.v1.StatusCondition.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public com.google.container.v1.StatusCondition.Builder addConditionsBuilder(int index) {
+      return getConditionsFieldBuilder()
+          .addBuilder(index, com.google.container.v1.StatusCondition.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which conditions caused the current node pool state.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     */
+    public java.util.List<com.google.container.v1.StatusCondition.Builder>
+        getConditionsBuilderList() {
+      return getConditionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1.StatusCondition,
+            com.google.container.v1.StatusCondition.Builder,
+            com.google.container.v1.StatusConditionOrBuilder>
+        getConditionsFieldBuilder() {
+      if (conditionsBuilder_ == null) {
+        conditionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.container.v1.StatusCondition,
+                com.google.container.v1.StatusCondition.Builder,
+                com.google.container.v1.StatusConditionOrBuilder>(
+                conditions_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        conditions_ = null;
+      }
+      return conditionsBuilder_;
+    }
+
+    private int podIpv4CidrSize_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The pod CIDR block size per node in this node pool.
+     * </pre>
+     *
+     * <code>int32 pod_ipv4_cidr_size = 7;</code>
+     *
+     * @return The podIpv4CidrSize.
+     */
+    public int getPodIpv4CidrSize() {
+      return podIpv4CidrSize_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The pod CIDR block size per node in this node pool.
+     * </pre>
+     *
+     * <code>int32 pod_ipv4_cidr_size = 7;</code>
+     *
+     * @param value The podIpv4CidrSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPodIpv4CidrSize(int value) {
+
+      podIpv4CidrSize_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The pod CIDR block size per node in this node pool.
+     * </pre>
+     *
+     * <code>int32 pod_ipv4_cidr_size = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPodIpv4CidrSize() {
+
+      podIpv4CidrSize_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

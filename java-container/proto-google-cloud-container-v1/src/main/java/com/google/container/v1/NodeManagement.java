@@ -41,6 +41,12 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
   private NodeManagement() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new NodeManagement();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -136,6 +141,8 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool auto_upgrade = 1;</code>
+   *
+   * @return The autoUpgrade.
    */
   public boolean getAutoUpgrade() {
     return autoUpgrade_;
@@ -154,6 +161,8 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool auto_repair = 2;</code>
+   *
+   * @return The autoRepair.
    */
   public boolean getAutoRepair() {
     return autoRepair_;
@@ -169,6 +178,8 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.AutoUpgradeOptions upgrade_options = 10;</code>
+   *
+   * @return Whether the upgradeOptions field is set.
    */
   public boolean hasUpgradeOptions() {
     return upgradeOptions_ != null;
@@ -181,6 +192,8 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.AutoUpgradeOptions upgrade_options = 10;</code>
+   *
+   * @return The upgradeOptions.
    */
   public com.google.container.v1.AutoUpgradeOptions getUpgradeOptions() {
     return upgradeOptions_ == null
@@ -569,6 +582,8 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool auto_upgrade = 1;</code>
+     *
+     * @return The autoUpgrade.
      */
     public boolean getAutoUpgrade() {
       return autoUpgrade_;
@@ -583,6 +598,9 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool auto_upgrade = 1;</code>
+     *
+     * @param value The autoUpgrade to set.
+     * @return This builder for chaining.
      */
     public Builder setAutoUpgrade(boolean value) {
 
@@ -600,6 +618,8 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool auto_upgrade = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAutoUpgrade() {
 
@@ -620,6 +640,8 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool auto_repair = 2;</code>
+     *
+     * @return The autoRepair.
      */
     public boolean getAutoRepair() {
       return autoRepair_;
@@ -635,6 +657,9 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool auto_repair = 2;</code>
+     *
+     * @param value The autoRepair to set.
+     * @return This builder for chaining.
      */
     public Builder setAutoRepair(boolean value) {
 
@@ -653,6 +678,8 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool auto_repair = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAutoRepair() {
 
@@ -675,6 +702,8 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.AutoUpgradeOptions upgrade_options = 10;</code>
+     *
+     * @return Whether the upgradeOptions field is set.
      */
     public boolean hasUpgradeOptions() {
       return upgradeOptionsBuilder_ != null || upgradeOptions_ != null;
@@ -687,6 +716,8 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.AutoUpgradeOptions upgrade_options = 10;</code>
+     *
+     * @return The upgradeOptions.
      */
     public com.google.container.v1.AutoUpgradeOptions getUpgradeOptions() {
       if (upgradeOptionsBuilder_ == null) {

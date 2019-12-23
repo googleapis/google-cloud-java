@@ -40,6 +40,12 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   private MaintenanceWindow() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new MaintenanceWindow();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -79,6 +85,40 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
               policyCase_ = 2;
               break;
             }
+          case 26:
+            {
+              com.google.container.v1.RecurringTimeWindow.Builder subBuilder = null;
+              if (policyCase_ == 3) {
+                subBuilder = ((com.google.container.v1.RecurringTimeWindow) policy_).toBuilder();
+              }
+              policy_ =
+                  input.readMessage(
+                      com.google.container.v1.RecurringTimeWindow.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.container.v1.RecurringTimeWindow) policy_);
+                policy_ = subBuilder.buildPartial();
+              }
+              policyCase_ = 3;
+              break;
+            }
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                maintenanceExclusions_ =
+                    com.google.protobuf.MapField.newMapField(
+                        MaintenanceExclusionsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, com.google.container.v1.TimeWindow>
+                  maintenanceExclusions__ =
+                      input.readMessage(
+                          MaintenanceExclusionsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              maintenanceExclusions_
+                  .getMutableMap()
+                  .put(maintenanceExclusions__.getKey(), maintenanceExclusions__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -103,6 +143,17 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         .internal_static_google_container_v1_MaintenanceWindow_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 4:
+        return internalGetMaintenanceExclusions();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -116,15 +167,23 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   private int policyCase_ = 0;
   private java.lang.Object policy_;
 
-  public enum PolicyCase implements com.google.protobuf.Internal.EnumLite {
+  public enum PolicyCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DAILY_MAINTENANCE_WINDOW(2),
+    RECURRING_WINDOW(3),
     POLICY_NOT_SET(0);
     private final int value;
 
     private PolicyCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static PolicyCase valueOf(int value) {
       return forNumber(value);
@@ -134,6 +193,8 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       switch (value) {
         case 2:
           return DAILY_MAINTENANCE_WINDOW;
+        case 3:
+          return RECURRING_WINDOW;
         case 0:
           return POLICY_NOT_SET;
         default:
@@ -159,6 +220,8 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.container.v1.DailyMaintenanceWindow daily_maintenance_window = 2;</code>
+   *
+   * @return Whether the dailyMaintenanceWindow field is set.
    */
   public boolean hasDailyMaintenanceWindow() {
     return policyCase_ == 2;
@@ -171,6 +234,8 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.container.v1.DailyMaintenanceWindow daily_maintenance_window = 2;</code>
+   *
+   * @return The dailyMaintenanceWindow.
    */
   public com.google.container.v1.DailyMaintenanceWindow getDailyMaintenanceWindow() {
     if (policyCase_ == 2) {
@@ -195,6 +260,167 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     return com.google.container.v1.DailyMaintenanceWindow.getDefaultInstance();
   }
 
+  public static final int RECURRING_WINDOW_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * RecurringWindow specifies some number of recurring time periods for
+   * maintenance to occur. The time windows may be overlapping. If no
+   * maintenance windows are set, maintenance can occur at any time.
+   * </pre>
+   *
+   * <code>.google.container.v1.RecurringTimeWindow recurring_window = 3;</code>
+   *
+   * @return Whether the recurringWindow field is set.
+   */
+  public boolean hasRecurringWindow() {
+    return policyCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * RecurringWindow specifies some number of recurring time periods for
+   * maintenance to occur. The time windows may be overlapping. If no
+   * maintenance windows are set, maintenance can occur at any time.
+   * </pre>
+   *
+   * <code>.google.container.v1.RecurringTimeWindow recurring_window = 3;</code>
+   *
+   * @return The recurringWindow.
+   */
+  public com.google.container.v1.RecurringTimeWindow getRecurringWindow() {
+    if (policyCase_ == 3) {
+      return (com.google.container.v1.RecurringTimeWindow) policy_;
+    }
+    return com.google.container.v1.RecurringTimeWindow.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * RecurringWindow specifies some number of recurring time periods for
+   * maintenance to occur. The time windows may be overlapping. If no
+   * maintenance windows are set, maintenance can occur at any time.
+   * </pre>
+   *
+   * <code>.google.container.v1.RecurringTimeWindow recurring_window = 3;</code>
+   */
+  public com.google.container.v1.RecurringTimeWindowOrBuilder getRecurringWindowOrBuilder() {
+    if (policyCase_ == 3) {
+      return (com.google.container.v1.RecurringTimeWindow) policy_;
+    }
+    return com.google.container.v1.RecurringTimeWindow.getDefaultInstance();
+  }
+
+  public static final int MAINTENANCE_EXCLUSIONS_FIELD_NUMBER = 4;
+
+  private static final class MaintenanceExclusionsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, com.google.container.v1.TimeWindow>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.container.v1.TimeWindow>newDefaultInstance(
+                    com.google.container.v1.ClusterServiceProto
+                        .internal_static_google_container_v1_MaintenanceWindow_MaintenanceExclusionsEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.container.v1.TimeWindow.getDefaultInstance());
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, com.google.container.v1.TimeWindow>
+      maintenanceExclusions_;
+
+  private com.google.protobuf.MapField<java.lang.String, com.google.container.v1.TimeWindow>
+      internalGetMaintenanceExclusions() {
+    if (maintenanceExclusions_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          MaintenanceExclusionsDefaultEntryHolder.defaultEntry);
+    }
+    return maintenanceExclusions_;
+  }
+
+  public int getMaintenanceExclusionsCount() {
+    return internalGetMaintenanceExclusions().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Exceptions to maintenance window. Non-emergency maintenance should not
+   * occur in these windows.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
+   */
+  public boolean containsMaintenanceExclusions(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetMaintenanceExclusions().getMap().containsKey(key);
+  }
+  /** Use {@link #getMaintenanceExclusionsMap()} instead. */
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.container.v1.TimeWindow>
+      getMaintenanceExclusions() {
+    return getMaintenanceExclusionsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Exceptions to maintenance window. Non-emergency maintenance should not
+   * occur in these windows.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
+   */
+  public java.util.Map<java.lang.String, com.google.container.v1.TimeWindow>
+      getMaintenanceExclusionsMap() {
+    return internalGetMaintenanceExclusions().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Exceptions to maintenance window. Non-emergency maintenance should not
+   * occur in these windows.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
+   */
+  public com.google.container.v1.TimeWindow getMaintenanceExclusionsOrDefault(
+      java.lang.String key, com.google.container.v1.TimeWindow defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.container.v1.TimeWindow> map =
+        internalGetMaintenanceExclusions().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Exceptions to maintenance window. Non-emergency maintenance should not
+   * occur in these windows.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
+   */
+  public com.google.container.v1.TimeWindow getMaintenanceExclusionsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.container.v1.TimeWindow> map =
+        internalGetMaintenanceExclusions().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -212,6 +438,14 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     if (policyCase_ == 2) {
       output.writeMessage(2, (com.google.container.v1.DailyMaintenanceWindow) policy_);
     }
+    if (policyCase_ == 3) {
+      output.writeMessage(3, (com.google.container.v1.RecurringTimeWindow) policy_);
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetMaintenanceExclusions(),
+        MaintenanceExclusionsDefaultEntryHolder.defaultEntry,
+        4);
     unknownFields.writeTo(output);
   }
 
@@ -225,6 +459,22 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.container.v1.DailyMaintenanceWindow) policy_);
+    }
+    if (policyCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.container.v1.RecurringTimeWindow) policy_);
+    }
+    for (java.util.Map.Entry<java.lang.String, com.google.container.v1.TimeWindow> entry :
+        internalGetMaintenanceExclusions().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.container.v1.TimeWindow>
+          maintenanceExclusions__ =
+              MaintenanceExclusionsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, maintenanceExclusions__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -242,10 +492,15 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     com.google.container.v1.MaintenanceWindow other =
         (com.google.container.v1.MaintenanceWindow) obj;
 
+    if (!internalGetMaintenanceExclusions().equals(other.internalGetMaintenanceExclusions()))
+      return false;
     if (!getPolicyCase().equals(other.getPolicyCase())) return false;
     switch (policyCase_) {
       case 2:
         if (!getDailyMaintenanceWindow().equals(other.getDailyMaintenanceWindow())) return false;
+        break;
+      case 3:
+        if (!getRecurringWindow().equals(other.getRecurringWindow())) return false;
         break;
       case 0:
       default:
@@ -261,10 +516,18 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (!internalGetMaintenanceExclusions().getMap().isEmpty()) {
+      hash = (37 * hash) + MAINTENANCE_EXCLUSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetMaintenanceExclusions().hashCode();
+    }
     switch (policyCase_) {
       case 2:
         hash = (37 * hash) + DAILY_MAINTENANCE_WINDOW_FIELD_NUMBER;
         hash = (53 * hash) + getDailyMaintenanceWindow().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + RECURRING_WINDOW_FIELD_NUMBER;
+        hash = (53 * hash) + getRecurringWindow().hashCode();
         break;
       case 0:
       default:
@@ -387,6 +650,26 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
           .internal_static_google_container_v1_MaintenanceWindow_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 4:
+          return internalGetMaintenanceExclusions();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 4:
+          return internalGetMutableMaintenanceExclusions();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -414,6 +697,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      internalGetMutableMaintenanceExclusions().clear();
       policyCase_ = 0;
       policy_ = null;
       return this;
@@ -443,6 +727,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public com.google.container.v1.MaintenanceWindow buildPartial() {
       com.google.container.v1.MaintenanceWindow result =
           new com.google.container.v1.MaintenanceWindow(this);
+      int from_bitField0_ = bitField0_;
       if (policyCase_ == 2) {
         if (dailyMaintenanceWindowBuilder_ == null) {
           result.policy_ = policy_;
@@ -450,6 +735,15 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
           result.policy_ = dailyMaintenanceWindowBuilder_.build();
         }
       }
+      if (policyCase_ == 3) {
+        if (recurringWindowBuilder_ == null) {
+          result.policy_ = policy_;
+        } else {
+          result.policy_ = recurringWindowBuilder_.build();
+        }
+      }
+      result.maintenanceExclusions_ = internalGetMaintenanceExclusions();
+      result.maintenanceExclusions_.makeImmutable();
       result.policyCase_ = policyCase_;
       onBuilt();
       return result;
@@ -500,10 +794,16 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
 
     public Builder mergeFrom(com.google.container.v1.MaintenanceWindow other) {
       if (other == com.google.container.v1.MaintenanceWindow.getDefaultInstance()) return this;
+      internalGetMutableMaintenanceExclusions().mergeFrom(other.internalGetMaintenanceExclusions());
       switch (other.getPolicyCase()) {
         case DAILY_MAINTENANCE_WINDOW:
           {
             mergeDailyMaintenanceWindow(other.getDailyMaintenanceWindow());
+            break;
+          }
+        case RECURRING_WINDOW:
+          {
+            mergeRecurringWindow(other.getRecurringWindow());
             break;
           }
         case POLICY_NOT_SET:
@@ -554,6 +854,8 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.DailyMaintenanceWindow,
             com.google.container.v1.DailyMaintenanceWindow.Builder,
@@ -567,6 +869,8 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.container.v1.DailyMaintenanceWindow daily_maintenance_window = 2;</code>
+     *
+     * @return Whether the dailyMaintenanceWindow field is set.
      */
     public boolean hasDailyMaintenanceWindow() {
       return policyCase_ == 2;
@@ -579,6 +883,8 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.container.v1.DailyMaintenanceWindow daily_maintenance_window = 2;</code>
+     *
+     * @return The dailyMaintenanceWindow.
      */
     public com.google.container.v1.DailyMaintenanceWindow getDailyMaintenanceWindow() {
       if (dailyMaintenanceWindowBuilder_ == null) {
@@ -757,6 +1063,402 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       ;
       return dailyMaintenanceWindowBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.RecurringTimeWindow,
+            com.google.container.v1.RecurringTimeWindow.Builder,
+            com.google.container.v1.RecurringTimeWindowOrBuilder>
+        recurringWindowBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * RecurringWindow specifies some number of recurring time periods for
+     * maintenance to occur. The time windows may be overlapping. If no
+     * maintenance windows are set, maintenance can occur at any time.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringTimeWindow recurring_window = 3;</code>
+     *
+     * @return Whether the recurringWindow field is set.
+     */
+    public boolean hasRecurringWindow() {
+      return policyCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * RecurringWindow specifies some number of recurring time periods for
+     * maintenance to occur. The time windows may be overlapping. If no
+     * maintenance windows are set, maintenance can occur at any time.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringTimeWindow recurring_window = 3;</code>
+     *
+     * @return The recurringWindow.
+     */
+    public com.google.container.v1.RecurringTimeWindow getRecurringWindow() {
+      if (recurringWindowBuilder_ == null) {
+        if (policyCase_ == 3) {
+          return (com.google.container.v1.RecurringTimeWindow) policy_;
+        }
+        return com.google.container.v1.RecurringTimeWindow.getDefaultInstance();
+      } else {
+        if (policyCase_ == 3) {
+          return recurringWindowBuilder_.getMessage();
+        }
+        return com.google.container.v1.RecurringTimeWindow.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * RecurringWindow specifies some number of recurring time periods for
+     * maintenance to occur. The time windows may be overlapping. If no
+     * maintenance windows are set, maintenance can occur at any time.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringTimeWindow recurring_window = 3;</code>
+     */
+    public Builder setRecurringWindow(com.google.container.v1.RecurringTimeWindow value) {
+      if (recurringWindowBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        policy_ = value;
+        onChanged();
+      } else {
+        recurringWindowBuilder_.setMessage(value);
+      }
+      policyCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * RecurringWindow specifies some number of recurring time periods for
+     * maintenance to occur. The time windows may be overlapping. If no
+     * maintenance windows are set, maintenance can occur at any time.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringTimeWindow recurring_window = 3;</code>
+     */
+    public Builder setRecurringWindow(
+        com.google.container.v1.RecurringTimeWindow.Builder builderForValue) {
+      if (recurringWindowBuilder_ == null) {
+        policy_ = builderForValue.build();
+        onChanged();
+      } else {
+        recurringWindowBuilder_.setMessage(builderForValue.build());
+      }
+      policyCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * RecurringWindow specifies some number of recurring time periods for
+     * maintenance to occur. The time windows may be overlapping. If no
+     * maintenance windows are set, maintenance can occur at any time.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringTimeWindow recurring_window = 3;</code>
+     */
+    public Builder mergeRecurringWindow(com.google.container.v1.RecurringTimeWindow value) {
+      if (recurringWindowBuilder_ == null) {
+        if (policyCase_ == 3
+            && policy_ != com.google.container.v1.RecurringTimeWindow.getDefaultInstance()) {
+          policy_ =
+              com.google.container.v1.RecurringTimeWindow.newBuilder(
+                      (com.google.container.v1.RecurringTimeWindow) policy_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          policy_ = value;
+        }
+        onChanged();
+      } else {
+        if (policyCase_ == 3) {
+          recurringWindowBuilder_.mergeFrom(value);
+        }
+        recurringWindowBuilder_.setMessage(value);
+      }
+      policyCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * RecurringWindow specifies some number of recurring time periods for
+     * maintenance to occur. The time windows may be overlapping. If no
+     * maintenance windows are set, maintenance can occur at any time.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringTimeWindow recurring_window = 3;</code>
+     */
+    public Builder clearRecurringWindow() {
+      if (recurringWindowBuilder_ == null) {
+        if (policyCase_ == 3) {
+          policyCase_ = 0;
+          policy_ = null;
+          onChanged();
+        }
+      } else {
+        if (policyCase_ == 3) {
+          policyCase_ = 0;
+          policy_ = null;
+        }
+        recurringWindowBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * RecurringWindow specifies some number of recurring time periods for
+     * maintenance to occur. The time windows may be overlapping. If no
+     * maintenance windows are set, maintenance can occur at any time.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringTimeWindow recurring_window = 3;</code>
+     */
+    public com.google.container.v1.RecurringTimeWindow.Builder getRecurringWindowBuilder() {
+      return getRecurringWindowFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * RecurringWindow specifies some number of recurring time periods for
+     * maintenance to occur. The time windows may be overlapping. If no
+     * maintenance windows are set, maintenance can occur at any time.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringTimeWindow recurring_window = 3;</code>
+     */
+    public com.google.container.v1.RecurringTimeWindowOrBuilder getRecurringWindowOrBuilder() {
+      if ((policyCase_ == 3) && (recurringWindowBuilder_ != null)) {
+        return recurringWindowBuilder_.getMessageOrBuilder();
+      } else {
+        if (policyCase_ == 3) {
+          return (com.google.container.v1.RecurringTimeWindow) policy_;
+        }
+        return com.google.container.v1.RecurringTimeWindow.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * RecurringWindow specifies some number of recurring time periods for
+     * maintenance to occur. The time windows may be overlapping. If no
+     * maintenance windows are set, maintenance can occur at any time.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringTimeWindow recurring_window = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.RecurringTimeWindow,
+            com.google.container.v1.RecurringTimeWindow.Builder,
+            com.google.container.v1.RecurringTimeWindowOrBuilder>
+        getRecurringWindowFieldBuilder() {
+      if (recurringWindowBuilder_ == null) {
+        if (!(policyCase_ == 3)) {
+          policy_ = com.google.container.v1.RecurringTimeWindow.getDefaultInstance();
+        }
+        recurringWindowBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.RecurringTimeWindow,
+                com.google.container.v1.RecurringTimeWindow.Builder,
+                com.google.container.v1.RecurringTimeWindowOrBuilder>(
+                (com.google.container.v1.RecurringTimeWindow) policy_,
+                getParentForChildren(),
+                isClean());
+        policy_ = null;
+      }
+      policyCase_ = 3;
+      onChanged();
+      ;
+      return recurringWindowBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, com.google.container.v1.TimeWindow>
+        maintenanceExclusions_;
+
+    private com.google.protobuf.MapField<java.lang.String, com.google.container.v1.TimeWindow>
+        internalGetMaintenanceExclusions() {
+      if (maintenanceExclusions_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MaintenanceExclusionsDefaultEntryHolder.defaultEntry);
+      }
+      return maintenanceExclusions_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, com.google.container.v1.TimeWindow>
+        internalGetMutableMaintenanceExclusions() {
+      onChanged();
+      ;
+      if (maintenanceExclusions_ == null) {
+        maintenanceExclusions_ =
+            com.google.protobuf.MapField.newMapField(
+                MaintenanceExclusionsDefaultEntryHolder.defaultEntry);
+      }
+      if (!maintenanceExclusions_.isMutable()) {
+        maintenanceExclusions_ = maintenanceExclusions_.copy();
+      }
+      return maintenanceExclusions_;
+    }
+
+    public int getMaintenanceExclusionsCount() {
+      return internalGetMaintenanceExclusions().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Exceptions to maintenance window. Non-emergency maintenance should not
+     * occur in these windows.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
+     */
+    public boolean containsMaintenanceExclusions(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetMaintenanceExclusions().getMap().containsKey(key);
+    }
+    /** Use {@link #getMaintenanceExclusionsMap()} instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.container.v1.TimeWindow>
+        getMaintenanceExclusions() {
+      return getMaintenanceExclusionsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Exceptions to maintenance window. Non-emergency maintenance should not
+     * occur in these windows.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
+     */
+    public java.util.Map<java.lang.String, com.google.container.v1.TimeWindow>
+        getMaintenanceExclusionsMap() {
+      return internalGetMaintenanceExclusions().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Exceptions to maintenance window. Non-emergency maintenance should not
+     * occur in these windows.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
+     */
+    public com.google.container.v1.TimeWindow getMaintenanceExclusionsOrDefault(
+        java.lang.String key, com.google.container.v1.TimeWindow defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.container.v1.TimeWindow> map =
+          internalGetMaintenanceExclusions().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Exceptions to maintenance window. Non-emergency maintenance should not
+     * occur in these windows.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
+     */
+    public com.google.container.v1.TimeWindow getMaintenanceExclusionsOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.container.v1.TimeWindow> map =
+          internalGetMaintenanceExclusions().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearMaintenanceExclusions() {
+      internalGetMutableMaintenanceExclusions().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Exceptions to maintenance window. Non-emergency maintenance should not
+     * occur in these windows.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
+     */
+    public Builder removeMaintenanceExclusions(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableMaintenanceExclusions().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.container.v1.TimeWindow>
+        getMutableMaintenanceExclusions() {
+      return internalGetMutableMaintenanceExclusions().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Exceptions to maintenance window. Non-emergency maintenance should not
+     * occur in these windows.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
+     */
+    public Builder putMaintenanceExclusions(
+        java.lang.String key, com.google.container.v1.TimeWindow value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableMaintenanceExclusions().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Exceptions to maintenance window. Non-emergency maintenance should not
+     * occur in these windows.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
+     */
+    public Builder putAllMaintenanceExclusions(
+        java.util.Map<java.lang.String, com.google.container.v1.TimeWindow> values) {
+      internalGetMutableMaintenanceExclusions().getMutableMap().putAll(values);
+      return this;
     }
 
     @java.lang.Override

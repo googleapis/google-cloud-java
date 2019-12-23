@@ -43,6 +43,12 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DailyMaintenanceWindow();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -122,10 +127,12 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
    * <pre>
    * Time within the maintenance window to start the maintenance operations.
    * Time format should be in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)
-   * format "HH:MM”, where HH : [00-23] and MM : [00-59] GMT.
+   * format "HH:MM", where HH : [00-23] and MM : [00-59] GMT.
    * </pre>
    *
    * <code>string start_time = 2;</code>
+   *
+   * @return The startTime.
    */
   public java.lang.String getStartTime() {
     java.lang.Object ref = startTime_;
@@ -144,10 +151,12 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
    * <pre>
    * Time within the maintenance window to start the maintenance operations.
    * Time format should be in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)
-   * format "HH:MM”, where HH : [00-23] and MM : [00-59] GMT.
+   * format "HH:MM", where HH : [00-23] and MM : [00-59] GMT.
    * </pre>
    *
    * <code>string start_time = 2;</code>
+   *
+   * @return The bytes for startTime.
    */
   public com.google.protobuf.ByteString getStartTimeBytes() {
     java.lang.Object ref = startTime_;
@@ -174,6 +183,8 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string duration = 3;</code>
+   *
+   * @return The duration.
    */
   public java.lang.String getDuration() {
     java.lang.Object ref = duration_;
@@ -197,6 +208,8 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string duration = 3;</code>
+   *
+   * @return The bytes for duration.
    */
   public com.google.protobuf.ByteString getDurationBytes() {
     java.lang.Object ref = duration_;
@@ -549,10 +562,12 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
      * <pre>
      * Time within the maintenance window to start the maintenance operations.
      * Time format should be in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)
-     * format "HH:MM”, where HH : [00-23] and MM : [00-59] GMT.
+     * format "HH:MM", where HH : [00-23] and MM : [00-59] GMT.
      * </pre>
      *
      * <code>string start_time = 2;</code>
+     *
+     * @return The startTime.
      */
     public java.lang.String getStartTime() {
       java.lang.Object ref = startTime_;
@@ -571,10 +586,12 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
      * <pre>
      * Time within the maintenance window to start the maintenance operations.
      * Time format should be in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)
-     * format "HH:MM”, where HH : [00-23] and MM : [00-59] GMT.
+     * format "HH:MM", where HH : [00-23] and MM : [00-59] GMT.
      * </pre>
      *
      * <code>string start_time = 2;</code>
+     *
+     * @return The bytes for startTime.
      */
     public com.google.protobuf.ByteString getStartTimeBytes() {
       java.lang.Object ref = startTime_;
@@ -593,10 +610,13 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
      * <pre>
      * Time within the maintenance window to start the maintenance operations.
      * Time format should be in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)
-     * format "HH:MM”, where HH : [00-23] and MM : [00-59] GMT.
+     * format "HH:MM", where HH : [00-23] and MM : [00-59] GMT.
      * </pre>
      *
      * <code>string start_time = 2;</code>
+     *
+     * @param value The startTime to set.
+     * @return This builder for chaining.
      */
     public Builder setStartTime(java.lang.String value) {
       if (value == null) {
@@ -613,10 +633,12 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
      * <pre>
      * Time within the maintenance window to start the maintenance operations.
      * Time format should be in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)
-     * format "HH:MM”, where HH : [00-23] and MM : [00-59] GMT.
+     * format "HH:MM", where HH : [00-23] and MM : [00-59] GMT.
      * </pre>
      *
      * <code>string start_time = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStartTime() {
 
@@ -630,10 +652,13 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
      * <pre>
      * Time within the maintenance window to start the maintenance operations.
      * Time format should be in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)
-     * format "HH:MM”, where HH : [00-23] and MM : [00-59] GMT.
+     * format "HH:MM", where HH : [00-23] and MM : [00-59] GMT.
      * </pre>
      *
      * <code>string start_time = 2;</code>
+     *
+     * @param value The bytes for startTime to set.
+     * @return This builder for chaining.
      */
     public Builder setStartTimeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -658,6 +683,8 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string duration = 3;</code>
+     *
+     * @return The duration.
      */
     public java.lang.String getDuration() {
       java.lang.Object ref = duration_;
@@ -681,6 +708,8 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string duration = 3;</code>
+     *
+     * @return The bytes for duration.
      */
     public com.google.protobuf.ByteString getDurationBytes() {
       java.lang.Object ref = duration_;
@@ -704,6 +733,9 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string duration = 3;</code>
+     *
+     * @param value The duration to set.
+     * @return This builder for chaining.
      */
     public Builder setDuration(java.lang.String value) {
       if (value == null) {
@@ -725,6 +757,8 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string duration = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDuration() {
 
@@ -743,6 +777,9 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string duration = 3;</code>
+     *
+     * @param value The bytes for duration to set.
+     * @return This builder for chaining.
      */
     public Builder setDurationBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

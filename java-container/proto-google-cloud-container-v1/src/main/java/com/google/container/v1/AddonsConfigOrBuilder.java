@@ -32,6 +32,8 @@ public interface AddonsConfigOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.HttpLoadBalancing http_load_balancing = 1;</code>
+   *
+   * @return Whether the httpLoadBalancing field is set.
    */
   boolean hasHttpLoadBalancing();
   /**
@@ -43,6 +45,8 @@ public interface AddonsConfigOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.HttpLoadBalancing http_load_balancing = 1;</code>
+   *
+   * @return The httpLoadBalancing.
    */
   com.google.container.v1.HttpLoadBalancing getHttpLoadBalancing();
   /**
@@ -67,6 +71,8 @@ public interface AddonsConfigOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.HorizontalPodAutoscaling horizontal_pod_autoscaling = 2;</code>
+   *
+   * @return Whether the horizontalPodAutoscaling field is set.
    */
   boolean hasHorizontalPodAutoscaling();
   /**
@@ -79,6 +85,8 @@ public interface AddonsConfigOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.HorizontalPodAutoscaling horizontal_pod_autoscaling = 2;</code>
+   *
+   * @return The horizontalPodAutoscaling.
    */
   com.google.container.v1.HorizontalPodAutoscaling getHorizontalPodAutoscaling();
   /**
@@ -99,30 +107,52 @@ public interface AddonsConfigOrBuilder
    *
    * <pre>
    * Configuration for the Kubernetes Dashboard.
+   * This addon is deprecated, and will be disabled in 1.15. It is recommended
+   * to use the Cloud Console to manage and monitor your Kubernetes clusters,
+   * workloads and applications. For more information, see:
+   * https://cloud.google.com/kubernetes-engine/docs/concepts/dashboards
    * </pre>
    *
-   * <code>.google.container.v1.KubernetesDashboard kubernetes_dashboard = 3;</code>
+   * <code>.google.container.v1.KubernetesDashboard kubernetes_dashboard = 3 [deprecated = true];
+   * </code>
+   *
+   * @return Whether the kubernetesDashboard field is set.
    */
+  @java.lang.Deprecated
   boolean hasKubernetesDashboard();
   /**
    *
    *
    * <pre>
    * Configuration for the Kubernetes Dashboard.
+   * This addon is deprecated, and will be disabled in 1.15. It is recommended
+   * to use the Cloud Console to manage and monitor your Kubernetes clusters,
+   * workloads and applications. For more information, see:
+   * https://cloud.google.com/kubernetes-engine/docs/concepts/dashboards
    * </pre>
    *
-   * <code>.google.container.v1.KubernetesDashboard kubernetes_dashboard = 3;</code>
+   * <code>.google.container.v1.KubernetesDashboard kubernetes_dashboard = 3 [deprecated = true];
+   * </code>
+   *
+   * @return The kubernetesDashboard.
    */
+  @java.lang.Deprecated
   com.google.container.v1.KubernetesDashboard getKubernetesDashboard();
   /**
    *
    *
    * <pre>
    * Configuration for the Kubernetes Dashboard.
+   * This addon is deprecated, and will be disabled in 1.15. It is recommended
+   * to use the Cloud Console to manage and monitor your Kubernetes clusters,
+   * workloads and applications. For more information, see:
+   * https://cloud.google.com/kubernetes-engine/docs/concepts/dashboards
    * </pre>
    *
-   * <code>.google.container.v1.KubernetesDashboard kubernetes_dashboard = 3;</code>
+   * <code>.google.container.v1.KubernetesDashboard kubernetes_dashboard = 3 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.container.v1.KubernetesDashboardOrBuilder getKubernetesDashboardOrBuilder();
 
   /**
@@ -135,6 +165,8 @@ public interface AddonsConfigOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.NetworkPolicyConfig network_policy_config = 4;</code>
+   *
+   * @return Whether the networkPolicyConfig field is set.
    */
   boolean hasNetworkPolicyConfig();
   /**
@@ -147,6 +179,8 @@ public interface AddonsConfigOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.NetworkPolicyConfig network_policy_config = 4;</code>
+   *
+   * @return The networkPolicyConfig.
    */
   com.google.container.v1.NetworkPolicyConfig getNetworkPolicyConfig();
   /**
@@ -161,4 +195,42 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1.NetworkPolicyConfig network_policy_config = 4;</code>
    */
   com.google.container.v1.NetworkPolicyConfigOrBuilder getNetworkPolicyConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Run addon, which allows the user to use a
+   * managed Knative service.
+   * </pre>
+   *
+   * <code>.google.container.v1.CloudRunConfig cloud_run_config = 7;</code>
+   *
+   * @return Whether the cloudRunConfig field is set.
+   */
+  boolean hasCloudRunConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Run addon, which allows the user to use a
+   * managed Knative service.
+   * </pre>
+   *
+   * <code>.google.container.v1.CloudRunConfig cloud_run_config = 7;</code>
+   *
+   * @return The cloudRunConfig.
+   */
+  com.google.container.v1.CloudRunConfig getCloudRunConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Run addon, which allows the user to use a
+   * managed Knative service.
+   * </pre>
+   *
+   * <code>.google.container.v1.CloudRunConfig cloud_run_config = 7;</code>
+   */
+  com.google.container.v1.CloudRunConfigOrBuilder getCloudRunConfigOrBuilder();
 }

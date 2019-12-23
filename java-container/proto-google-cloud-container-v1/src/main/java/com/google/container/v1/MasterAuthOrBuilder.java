@@ -28,11 +28,13 @@ public interface MasterAuthOrBuilder
    *
    * <pre>
    * The username to use for HTTP basic authentication to the master endpoint.
-   * For clusters v1.6.0 and later, you can disable basic authentication by
-   * providing an empty username.
+   * For clusters v1.6.0 and later, basic authentication can be disabled by
+   * leaving username unspecified (or setting it to the empty string).
    * </pre>
    *
    * <code>string username = 1;</code>
+   *
+   * @return The username.
    */
   java.lang.String getUsername();
   /**
@@ -40,11 +42,13 @@ public interface MasterAuthOrBuilder
    *
    * <pre>
    * The username to use for HTTP basic authentication to the master endpoint.
-   * For clusters v1.6.0 and later, you can disable basic authentication by
-   * providing an empty username.
+   * For clusters v1.6.0 and later, basic authentication can be disabled by
+   * leaving username unspecified (or setting it to the empty string).
    * </pre>
    *
    * <code>string username = 1;</code>
+   *
+   * @return The bytes for username.
    */
   com.google.protobuf.ByteString getUsernameBytes();
 
@@ -59,6 +63,8 @@ public interface MasterAuthOrBuilder
    * </pre>
    *
    * <code>string password = 2;</code>
+   *
+   * @return The password.
    */
   java.lang.String getPassword();
   /**
@@ -72,6 +78,8 @@ public interface MasterAuthOrBuilder
    * </pre>
    *
    * <code>string password = 2;</code>
+   *
+   * @return The bytes for password.
    */
   com.google.protobuf.ByteString getPasswordBytes();
 
@@ -85,6 +93,8 @@ public interface MasterAuthOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
+   *
+   * @return Whether the clientCertificateConfig field is set.
    */
   boolean hasClientCertificateConfig();
   /**
@@ -97,6 +107,8 @@ public interface MasterAuthOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
+   *
+   * @return The clientCertificateConfig.
    */
   com.google.container.v1.ClientCertificateConfig getClientCertificateConfig();
   /**
@@ -121,6 +133,8 @@ public interface MasterAuthOrBuilder
    * </pre>
    *
    * <code>string cluster_ca_certificate = 100;</code>
+   *
+   * @return The clusterCaCertificate.
    */
   java.lang.String getClusterCaCertificate();
   /**
@@ -132,6 +146,8 @@ public interface MasterAuthOrBuilder
    * </pre>
    *
    * <code>string cluster_ca_certificate = 100;</code>
+   *
+   * @return The bytes for clusterCaCertificate.
    */
   com.google.protobuf.ByteString getClusterCaCertificateBytes();
 
@@ -144,6 +160,8 @@ public interface MasterAuthOrBuilder
    * </pre>
    *
    * <code>string client_certificate = 101;</code>
+   *
+   * @return The clientCertificate.
    */
   java.lang.String getClientCertificate();
   /**
@@ -155,6 +173,8 @@ public interface MasterAuthOrBuilder
    * </pre>
    *
    * <code>string client_certificate = 101;</code>
+   *
+   * @return The bytes for clientCertificate.
    */
   com.google.protobuf.ByteString getClientCertificateBytes();
 
@@ -167,6 +187,8 @@ public interface MasterAuthOrBuilder
    * </pre>
    *
    * <code>string client_key = 102;</code>
+   *
+   * @return The clientKey.
    */
   java.lang.String getClientKey();
   /**
@@ -178,6 +200,8 @@ public interface MasterAuthOrBuilder
    * </pre>
    *
    * <code>string client_key = 102;</code>
+   *
+   * @return The bytes for clientKey.
    */
   com.google.protobuf.ByteString getClientKeyBytes();
 }

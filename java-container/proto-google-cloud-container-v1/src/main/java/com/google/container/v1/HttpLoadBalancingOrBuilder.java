@@ -33,6 +33,8 @@ public interface HttpLoadBalancingOrBuilder
    * </pre>
    *
    * <code>bool disabled = 1;</code>
+   *
+   * @return The disabled.
    */
   boolean getDisabled();
 }

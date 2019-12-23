@@ -31,6 +31,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,6 +43,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -55,6 +59,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
+   *
+   * @return The zone.
    */
   @java.lang.Deprecated
   java.lang.String getZone();
@@ -69,6 +75,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
+   *
+   * @return The bytes for zone.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getZoneBytes();
@@ -81,6 +89,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.Operation.Type operation_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for operationType.
    */
   int getOperationTypeValue();
   /**
@@ -91,6 +101,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.Operation.Type operation_type = 3;</code>
+   *
+   * @return The operationType.
    */
   com.google.container.v1.Operation.Type getOperationType();
 
@@ -102,6 +114,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.Operation.Status status = 4;</code>
+   *
+   * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
@@ -112,6 +126,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.Operation.Status status = 4;</code>
+   *
+   * @return The status.
    */
   com.google.container.v1.Operation.Status getStatus();
 
@@ -123,6 +139,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string detail = 8;</code>
+   *
+   * @return The detail.
    */
   java.lang.String getDetail();
   /**
@@ -133,6 +151,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string detail = 8;</code>
+   *
+   * @return The bytes for detail.
    */
   com.google.protobuf.ByteString getDetailBytes();
 
@@ -144,6 +164,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string status_message = 5;</code>
+   *
+   * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
   /**
@@ -154,6 +176,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string status_message = 5;</code>
+   *
+   * @return The bytes for statusMessage.
    */
   com.google.protobuf.ByteString getStatusMessageBytes();
 
@@ -165,6 +189,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string self_link = 6;</code>
+   *
+   * @return The selfLink.
    */
   java.lang.String getSelfLink();
   /**
@@ -175,6 +201,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string self_link = 6;</code>
+   *
+   * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
 
@@ -186,6 +214,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string target_link = 7;</code>
+   *
+   * @return The targetLink.
    */
   java.lang.String getTargetLink();
   /**
@@ -196,6 +226,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string target_link = 7;</code>
+   *
+   * @return The bytes for targetLink.
    */
   com.google.protobuf.ByteString getTargetLinkBytes();
 
@@ -210,6 +242,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string location = 9;</code>
+   *
+   * @return The location.
    */
   java.lang.String getLocation();
   /**
@@ -223,6 +257,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string location = 9;</code>
+   *
+   * @return The bytes for location.
    */
   com.google.protobuf.ByteString getLocationBytes();
 
@@ -235,6 +271,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string start_time = 10;</code>
+   *
+   * @return The startTime.
    */
   java.lang.String getStartTime();
   /**
@@ -246,6 +284,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string start_time = 10;</code>
+   *
+   * @return The bytes for startTime.
    */
   com.google.protobuf.ByteString getStartTimeBytes();
 
@@ -258,6 +298,8 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string end_time = 11;</code>
+   *
+   * @return The endTime.
    */
   java.lang.String getEndTime();
   /**
@@ -269,6 +311,112 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>string end_time = 11;</code>
+   *
+   * @return The bytes for endTime.
    */
   com.google.protobuf.ByteString getEndTimeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current cluster state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   */
+  java.util.List<com.google.container.v1.StatusCondition> getClusterConditionsList();
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current cluster state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   */
+  com.google.container.v1.StatusCondition getClusterConditions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current cluster state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   */
+  int getClusterConditionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current cluster state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   */
+  java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
+      getClusterConditionsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current cluster state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   */
+  com.google.container.v1.StatusConditionOrBuilder getClusterConditionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   */
+  java.util.List<com.google.container.v1.StatusCondition> getNodepoolConditionsList();
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   */
+  com.google.container.v1.StatusCondition getNodepoolConditions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   */
+  int getNodepoolConditionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   */
+  java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
+      getNodepoolConditionsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Which conditions caused the current node pool state.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   */
+  com.google.container.v1.StatusConditionOrBuilder getNodepoolConditionsOrBuilder(int index);
 }

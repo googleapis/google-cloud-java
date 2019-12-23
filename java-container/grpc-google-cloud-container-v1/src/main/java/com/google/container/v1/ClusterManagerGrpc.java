@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.google.container.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
@@ -1625,6 +1624,67 @@ public final class ClusterManagerGrpc {
     return getSetMaintenancePolicyMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getListUsableSubnetworksMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.container.v1.ListUsableSubnetworksRequest,
+          com.google.container.v1.ListUsableSubnetworksResponse>
+      METHOD_LIST_USABLE_SUBNETWORKS = getListUsableSubnetworksMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.container.v1.ListUsableSubnetworksRequest,
+          com.google.container.v1.ListUsableSubnetworksResponse>
+      getListUsableSubnetworksMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.container.v1.ListUsableSubnetworksRequest,
+          com.google.container.v1.ListUsableSubnetworksResponse>
+      getListUsableSubnetworksMethod() {
+    return getListUsableSubnetworksMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.container.v1.ListUsableSubnetworksRequest,
+          com.google.container.v1.ListUsableSubnetworksResponse>
+      getListUsableSubnetworksMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.container.v1.ListUsableSubnetworksRequest,
+            com.google.container.v1.ListUsableSubnetworksResponse>
+        getListUsableSubnetworksMethod;
+    if ((getListUsableSubnetworksMethod = ClusterManagerGrpc.getListUsableSubnetworksMethod)
+        == null) {
+      synchronized (ClusterManagerGrpc.class) {
+        if ((getListUsableSubnetworksMethod = ClusterManagerGrpc.getListUsableSubnetworksMethod)
+            == null) {
+          ClusterManagerGrpc.getListUsableSubnetworksMethod =
+              getListUsableSubnetworksMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.container.v1.ListUsableSubnetworksRequest,
+                          com.google.container.v1.ListUsableSubnetworksResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.container.v1.ClusterManager", "ListUsableSubnetworks"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1.ListUsableSubnetworksRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1.ListUsableSubnetworksResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ClusterManagerMethodDescriptorSupplier("ListUsableSubnetworks"))
+                      .build();
+        }
+      }
+    }
+    return getListUsableSubnetworksMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ClusterManagerStub newStub(io.grpc.Channel channel) {
     return new ClusterManagerStub(channel);
@@ -1688,11 +1748,11 @@ public final class ClusterManagerGrpc {
      * By default, the cluster is created in the project's
      * [default network](/compute/docs/networks-and-firewalls#networks).
      * One firewall is added for the cluster. After cluster creation,
-     * the cluster creates routes for each node to allow the containers
+     * the Kubelet creates routes for each node to allow the containers
      * on that node to communicate with all other instances in the
      * cluster.
      * Finally, an entry is added to the project's global metadata indicating
-     * which CIDR range is being used by the cluster.
+     * which CIDR range the cluster is using.
      * </pre>
      */
     public void createCluster(
@@ -1718,7 +1778,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Updates the version and/or image type for a specific node pool.
+     * Updates the version and/or image type for the specified node pool.
      * </pre>
      */
     public void updateNodePool(
@@ -1731,7 +1791,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Sets the autoscaling settings for a specific node pool.
+     * Sets the autoscaling settings for the specified node pool.
      * </pre>
      */
     public void setNodePoolAutoscaling(
@@ -1809,9 +1869,9 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Used to set master auth materials. Currently supports :-
-     * Changing the admin password for a specific cluster.
-     * This can be either via password generation or explicitly set the password.
+     * Sets master auth materials. Currently supports changing the admin password
+     * or a specific cluster, either via password generation or explicitly setting
+     * the password.
      * </pre>
      */
     public void setMasterAuth(
@@ -1828,9 +1888,9 @@ public final class ClusterManagerGrpc {
      * nodes.
      * Firewalls and routes that were configured during cluster creation
      * are also deleted.
-     * Other Google Compute Engine resources that might be in use by the cluster
-     * (e.g. load balancer resources) will not be deleted if they weren't present
-     * at the initial create time.
+     * Other Google Compute Engine resources that might be in use by the cluster,
+     * such as load balancer resources, are not deleted if they weren't present
+     * when the cluster was initially created.
      * </pre>
      */
     public void deleteCluster(
@@ -1883,7 +1943,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Returns configuration info about the Kubernetes Engine service.
+     * Returns configuration info about the Google Kubernetes Engine service.
      * </pre>
      */
     public void getServerConfig(
@@ -1910,7 +1970,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Retrieves the node pool requested.
+     * Retrieves the requested node pool.
      * </pre>
      */
     public void getNodePool(
@@ -1949,8 +2009,8 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Roll back the previously Aborted or Failed NodePool upgrade.
-     * This will be an no-op if the last upgrade successfully completed.
+     * Rolls back a previously Aborted or Failed NodePool upgrade.
+     * This makes no changes if the last upgrade successfully completed.
      * </pre>
      */
     public void rollbackNodePoolUpgrade(
@@ -2002,7 +2062,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Start master IP rotation.
+     * Starts master IP rotation.
      * </pre>
      */
     public void startIPRotation(
@@ -2041,7 +2101,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Enables/Disables Network Policy for a cluster.
+     * Enables or disables Network Policy for a cluster.
      * </pre>
      */
     public void setNetworkPolicy(
@@ -2061,6 +2121,20 @@ public final class ClusterManagerGrpc {
         com.google.container.v1.SetMaintenancePolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getSetMaintenancePolicyMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists subnetworks that are usable for creating clusters in a project.
+     * </pre>
+     */
+    public void listUsableSubnetworks(
+        com.google.container.v1.ListUsableSubnetworksRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1.ListUsableSubnetworksResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getListUsableSubnetworksMethodHelper(), responseObserver);
     }
 
     @java.lang.Override
@@ -2249,6 +2323,13 @@ public final class ClusterManagerGrpc {
                   new MethodHandlers<
                       com.google.container.v1.SetMaintenancePolicyRequest,
                       com.google.container.v1.Operation>(this, METHODID_SET_MAINTENANCE_POLICY)))
+          .addMethod(
+              getListUsableSubnetworksMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.container.v1.ListUsableSubnetworksRequest,
+                      com.google.container.v1.ListUsableSubnetworksResponse>(
+                      this, METHODID_LIST_USABLE_SUBNETWORKS)))
           .build();
     }
   }
@@ -2318,11 +2399,11 @@ public final class ClusterManagerGrpc {
      * By default, the cluster is created in the project's
      * [default network](/compute/docs/networks-and-firewalls#networks).
      * One firewall is added for the cluster. After cluster creation,
-     * the cluster creates routes for each node to allow the containers
+     * the Kubelet creates routes for each node to allow the containers
      * on that node to communicate with all other instances in the
      * cluster.
      * Finally, an entry is added to the project's global metadata indicating
-     * which CIDR range is being used by the cluster.
+     * which CIDR range the cluster is using.
      * </pre>
      */
     public void createCluster(
@@ -2354,7 +2435,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Updates the version and/or image type for a specific node pool.
+     * Updates the version and/or image type for the specified node pool.
      * </pre>
      */
     public void updateNodePool(
@@ -2370,7 +2451,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Sets the autoscaling settings for a specific node pool.
+     * Sets the autoscaling settings for the specified node pool.
      * </pre>
      */
     public void setNodePoolAutoscaling(
@@ -2466,9 +2547,9 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Used to set master auth materials. Currently supports :-
-     * Changing the admin password for a specific cluster.
-     * This can be either via password generation or explicitly set the password.
+     * Sets master auth materials. Currently supports changing the admin password
+     * or a specific cluster, either via password generation or explicitly setting
+     * the password.
      * </pre>
      */
     public void setMasterAuth(
@@ -2488,9 +2569,9 @@ public final class ClusterManagerGrpc {
      * nodes.
      * Firewalls and routes that were configured during cluster creation
      * are also deleted.
-     * Other Google Compute Engine resources that might be in use by the cluster
-     * (e.g. load balancer resources) will not be deleted if they weren't present
-     * at the initial create time.
+     * Other Google Compute Engine resources that might be in use by the cluster,
+     * such as load balancer resources, are not deleted if they weren't present
+     * when the cluster was initially created.
      * </pre>
      */
     public void deleteCluster(
@@ -2555,7 +2636,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Returns configuration info about the Kubernetes Engine service.
+     * Returns configuration info about the Google Kubernetes Engine service.
      * </pre>
      */
     public void getServerConfig(
@@ -2588,7 +2669,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Retrieves the node pool requested.
+     * Retrieves the requested node pool.
      * </pre>
      */
     public void getNodePool(
@@ -2636,8 +2717,8 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Roll back the previously Aborted or Failed NodePool upgrade.
-     * This will be an no-op if the last upgrade successfully completed.
+     * Rolls back a previously Aborted or Failed NodePool upgrade.
+     * This makes no changes if the last upgrade successfully completed.
      * </pre>
      */
     public void rollbackNodePoolUpgrade(
@@ -2701,7 +2782,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Start master IP rotation.
+     * Starts master IP rotation.
      * </pre>
      */
     public void startIPRotation(
@@ -2749,7 +2830,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Enables/Disables Network Policy for a cluster.
+     * Enables or disables Network Policy for a cluster.
      * </pre>
      */
     public void setNetworkPolicy(
@@ -2773,6 +2854,23 @@ public final class ClusterManagerGrpc {
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSetMaintenancePolicyMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists subnetworks that are usable for creating clusters in a project.
+     * </pre>
+     */
+    public void listUsableSubnetworks(
+        com.google.container.v1.ListUsableSubnetworksRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1.ListUsableSubnetworksResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListUsableSubnetworksMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2837,11 +2935,11 @@ public final class ClusterManagerGrpc {
      * By default, the cluster is created in the project's
      * [default network](/compute/docs/networks-and-firewalls#networks).
      * One firewall is added for the cluster. After cluster creation,
-     * the cluster creates routes for each node to allow the containers
+     * the Kubelet creates routes for each node to allow the containers
      * on that node to communicate with all other instances in the
      * cluster.
      * Finally, an entry is added to the project's global metadata indicating
-     * which CIDR range is being used by the cluster.
+     * which CIDR range the cluster is using.
      * </pre>
      */
     public com.google.container.v1.Operation createCluster(
@@ -2867,7 +2965,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Updates the version and/or image type for a specific node pool.
+     * Updates the version and/or image type for the specified node pool.
      * </pre>
      */
     public com.google.container.v1.Operation updateNodePool(
@@ -2880,7 +2978,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Sets the autoscaling settings for a specific node pool.
+     * Sets the autoscaling settings for the specified node pool.
      * </pre>
      */
     public com.google.container.v1.Operation setNodePoolAutoscaling(
@@ -2958,9 +3056,9 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Used to set master auth materials. Currently supports :-
-     * Changing the admin password for a specific cluster.
-     * This can be either via password generation or explicitly set the password.
+     * Sets master auth materials. Currently supports changing the admin password
+     * or a specific cluster, either via password generation or explicitly setting
+     * the password.
      * </pre>
      */
     public com.google.container.v1.Operation setMasterAuth(
@@ -2977,9 +3075,9 @@ public final class ClusterManagerGrpc {
      * nodes.
      * Firewalls and routes that were configured during cluster creation
      * are also deleted.
-     * Other Google Compute Engine resources that might be in use by the cluster
-     * (e.g. load balancer resources) will not be deleted if they weren't present
-     * at the initial create time.
+     * Other Google Compute Engine resources that might be in use by the cluster,
+     * such as load balancer resources, are not deleted if they weren't present
+     * when the cluster was initially created.
      * </pre>
      */
     public com.google.container.v1.Operation deleteCluster(
@@ -3031,7 +3129,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Returns configuration info about the Kubernetes Engine service.
+     * Returns configuration info about the Google Kubernetes Engine service.
      * </pre>
      */
     public com.google.container.v1.ServerConfig getServerConfig(
@@ -3057,7 +3155,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Retrieves the node pool requested.
+     * Retrieves the requested node pool.
      * </pre>
      */
     public com.google.container.v1.NodePool getNodePool(
@@ -3096,8 +3194,8 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Roll back the previously Aborted or Failed NodePool upgrade.
-     * This will be an no-op if the last upgrade successfully completed.
+     * Rolls back a previously Aborted or Failed NodePool upgrade.
+     * This makes no changes if the last upgrade successfully completed.
      * </pre>
      */
     public com.google.container.v1.Operation rollbackNodePoolUpgrade(
@@ -3148,7 +3246,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Start master IP rotation.
+     * Starts master IP rotation.
      * </pre>
      */
     public com.google.container.v1.Operation startIPRotation(
@@ -3187,7 +3285,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Enables/Disables Network Policy for a cluster.
+     * Enables or disables Network Policy for a cluster.
      * </pre>
      */
     public com.google.container.v1.Operation setNetworkPolicy(
@@ -3207,6 +3305,19 @@ public final class ClusterManagerGrpc {
         com.google.container.v1.SetMaintenancePolicyRequest request) {
       return blockingUnaryCall(
           getChannel(), getSetMaintenancePolicyMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists subnetworks that are usable for creating clusters in a project.
+     * </pre>
+     */
+    public com.google.container.v1.ListUsableSubnetworksResponse listUsableSubnetworks(
+        com.google.container.v1.ListUsableSubnetworksRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListUsableSubnetworksMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -3270,11 +3381,11 @@ public final class ClusterManagerGrpc {
      * By default, the cluster is created in the project's
      * [default network](/compute/docs/networks-and-firewalls#networks).
      * One firewall is added for the cluster. After cluster creation,
-     * the cluster creates routes for each node to allow the containers
+     * the Kubelet creates routes for each node to allow the containers
      * on that node to communicate with all other instances in the
      * cluster.
      * Finally, an entry is added to the project's global metadata indicating
-     * which CIDR range is being used by the cluster.
+     * which CIDR range the cluster is using.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
@@ -3300,7 +3411,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Updates the version and/or image type for a specific node pool.
+     * Updates the version and/or image type for the specified node pool.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
@@ -3313,7 +3424,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Sets the autoscaling settings for a specific node pool.
+     * Sets the autoscaling settings for the specified node pool.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
@@ -3391,9 +3502,9 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Used to set master auth materials. Currently supports :-
-     * Changing the admin password for a specific cluster.
-     * This can be either via password generation or explicitly set the password.
+     * Sets master auth materials. Currently supports changing the admin password
+     * or a specific cluster, either via password generation or explicitly setting
+     * the password.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
@@ -3410,9 +3521,9 @@ public final class ClusterManagerGrpc {
      * nodes.
      * Firewalls and routes that were configured during cluster creation
      * are also deleted.
-     * Other Google Compute Engine resources that might be in use by the cluster
-     * (e.g. load balancer resources) will not be deleted if they weren't present
-     * at the initial create time.
+     * Other Google Compute Engine resources that might be in use by the cluster,
+     * such as load balancer resources, are not deleted if they weren't present
+     * when the cluster was initially created.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
@@ -3465,7 +3576,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Returns configuration info about the Kubernetes Engine service.
+     * Returns configuration info about the Google Kubernetes Engine service.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.ServerConfig>
@@ -3492,7 +3603,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Retrieves the node pool requested.
+     * Retrieves the requested node pool.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.NodePool>
@@ -3531,8 +3642,8 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Roll back the previously Aborted or Failed NodePool upgrade.
-     * This will be an no-op if the last upgrade successfully completed.
+     * Rolls back a previously Aborted or Failed NodePool upgrade.
+     * This makes no changes if the last upgrade successfully completed.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
@@ -3585,7 +3696,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Start master IP rotation.
+     * Starts master IP rotation.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
@@ -3624,7 +3735,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Enables/Disables Network Policy for a cluster.
+     * Enables or disables Network Policy for a cluster.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
@@ -3644,6 +3755,20 @@ public final class ClusterManagerGrpc {
         setMaintenancePolicy(com.google.container.v1.SetMaintenancePolicyRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getSetMaintenancePolicyMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists subnetworks that are usable for creating clusters in a project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.container.v1.ListUsableSubnetworksResponse>
+        listUsableSubnetworks(com.google.container.v1.ListUsableSubnetworksRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListUsableSubnetworksMethodHelper(), getCallOptions()), request);
     }
   }
 
@@ -3677,6 +3802,7 @@ public final class ClusterManagerGrpc {
   private static final int METHODID_SET_NODE_POOL_SIZE = 27;
   private static final int METHODID_SET_NETWORK_POLICY = 28;
   private static final int METHODID_SET_MAINTENANCE_POLICY = 29;
+  private static final int METHODID_LIST_USABLE_SUBNETWORKS = 30;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3848,6 +3974,12 @@ public final class ClusterManagerGrpc {
               (com.google.container.v1.SetMaintenancePolicyRequest) request,
               (io.grpc.stub.StreamObserver<com.google.container.v1.Operation>) responseObserver);
           break;
+        case METHODID_LIST_USABLE_SUBNETWORKS:
+          serviceImpl.listUsableSubnetworks(
+              (com.google.container.v1.ListUsableSubnetworksRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.container.v1.ListUsableSubnetworksResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -3942,6 +4074,7 @@ public final class ClusterManagerGrpc {
                       .addMethod(getSetNodePoolSizeMethodHelper())
                       .addMethod(getSetNetworkPolicyMethodHelper())
                       .addMethod(getSetMaintenancePolicyMethodHelper())
+                      .addMethod(getListUsableSubnetworksMethodHelper())
                       .build();
         }
       }

@@ -33,6 +33,8 @@ public interface NodeManagementOrBuilder
    * </pre>
    *
    * <code>bool auto_upgrade = 1;</code>
+   *
+   * @return The autoUpgrade.
    */
   boolean getAutoUpgrade();
 
@@ -47,6 +49,8 @@ public interface NodeManagementOrBuilder
    * </pre>
    *
    * <code>bool auto_repair = 2;</code>
+   *
+   * @return The autoRepair.
    */
   boolean getAutoRepair();
 
@@ -58,6 +62,8 @@ public interface NodeManagementOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.AutoUpgradeOptions upgrade_options = 10;</code>
+   *
+   * @return Whether the upgradeOptions field is set.
    */
   boolean hasUpgradeOptions();
   /**
@@ -68,6 +74,8 @@ public interface NodeManagementOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.AutoUpgradeOptions upgrade_options = 10;</code>
+   *
+   * @return The upgradeOptions.
    */
   com.google.container.v1.AutoUpgradeOptions getUpgradeOptions();
   /**

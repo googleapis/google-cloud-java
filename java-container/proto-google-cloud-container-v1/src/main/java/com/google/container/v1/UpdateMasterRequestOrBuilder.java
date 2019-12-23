@@ -27,12 +27,15 @@ public interface UpdateMasterRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The projectId.
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
@@ -40,12 +43,15 @@ public interface UpdateMasterRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for projectId.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getProjectIdBytes();
@@ -54,13 +60,15 @@ public interface UpdateMasterRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The zone.
    */
   @java.lang.Deprecated
   java.lang.String getZone();
@@ -68,13 +76,15 @@ public interface UpdateMasterRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for zone.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getZoneBytes();
@@ -83,11 +93,14 @@ public interface UpdateMasterRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster to upgrade.
+   * Required. Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The clusterId.
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
@@ -95,11 +108,14 @@ public interface UpdateMasterRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster to upgrade.
+   * Required. Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getClusterIdBytes();
@@ -108,7 +124,7 @@ public interface UpdateMasterRequestOrBuilder
    *
    *
    * <pre>
-   * The Kubernetes version to change the master to.
+   * Required. The Kubernetes version to change the master to.
    * Users may specify either explicit versions offered by Kubernetes Engine or
    * version aliases, which have the following behavior:
    * - "latest": picks the highest valid Kubernetes version
@@ -118,14 +134,16 @@ public interface UpdateMasterRequestOrBuilder
    * - "-": picks the default Kubernetes version
    * </pre>
    *
-   * <code>string master_version = 4;</code>
+   * <code>string master_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The masterVersion.
    */
   java.lang.String getMasterVersion();
   /**
    *
    *
    * <pre>
-   * The Kubernetes version to change the master to.
+   * Required. The Kubernetes version to change the master to.
    * Users may specify either explicit versions offered by Kubernetes Engine or
    * version aliases, which have the following behavior:
    * - "latest": picks the highest valid Kubernetes version
@@ -135,7 +153,9 @@ public interface UpdateMasterRequestOrBuilder
    * - "-": picks the default Kubernetes version
    * </pre>
    *
-   * <code>string master_version = 4;</code>
+   * <code>string master_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for masterVersion.
    */
   com.google.protobuf.ByteString getMasterVersionBytes();
 
@@ -148,6 +168,8 @@ public interface UpdateMasterRequestOrBuilder
    * </pre>
    *
    * <code>string name = 7;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -159,6 +181,8 @@ public interface UpdateMasterRequestOrBuilder
    * </pre>
    *
    * <code>string name = 7;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 }

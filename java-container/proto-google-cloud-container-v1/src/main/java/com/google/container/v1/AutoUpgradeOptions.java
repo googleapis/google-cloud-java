@@ -44,6 +44,12 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AutoUpgradeOptions();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -127,6 +132,8 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string auto_upgrade_start_time = 1;</code>
+   *
+   * @return The autoUpgradeStartTime.
    */
   public java.lang.String getAutoUpgradeStartTime() {
     java.lang.Object ref = autoUpgradeStartTime_;
@@ -149,6 +156,8 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string auto_upgrade_start_time = 1;</code>
+   *
+   * @return The bytes for autoUpgradeStartTime.
    */
   public com.google.protobuf.ByteString getAutoUpgradeStartTimeBytes() {
     java.lang.Object ref = autoUpgradeStartTime_;
@@ -173,6 +182,8 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -194,6 +205,8 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -551,6 +564,8 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string auto_upgrade_start_time = 1;</code>
+     *
+     * @return The autoUpgradeStartTime.
      */
     public java.lang.String getAutoUpgradeStartTime() {
       java.lang.Object ref = autoUpgradeStartTime_;
@@ -573,6 +588,8 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string auto_upgrade_start_time = 1;</code>
+     *
+     * @return The bytes for autoUpgradeStartTime.
      */
     public com.google.protobuf.ByteString getAutoUpgradeStartTimeBytes() {
       java.lang.Object ref = autoUpgradeStartTime_;
@@ -595,6 +612,9 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string auto_upgrade_start_time = 1;</code>
+     *
+     * @param value The autoUpgradeStartTime to set.
+     * @return This builder for chaining.
      */
     public Builder setAutoUpgradeStartTime(java.lang.String value) {
       if (value == null) {
@@ -615,6 +635,8 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string auto_upgrade_start_time = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAutoUpgradeStartTime() {
 
@@ -632,6 +654,9 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string auto_upgrade_start_time = 1;</code>
+     *
+     * @param value The bytes for autoUpgradeStartTime to set.
+     * @return This builder for chaining.
      */
     public Builder setAutoUpgradeStartTimeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -654,6 +679,8 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -675,6 +702,8 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -696,6 +725,9 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -715,6 +747,8 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -731,6 +765,9 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

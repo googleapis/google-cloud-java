@@ -33,6 +33,8 @@ public interface PrivateClusterConfigOrBuilder
    * </pre>
    *
    * <code>bool enable_private_nodes = 1;</code>
+   *
+   * @return The enablePrivateNodes.
    */
   boolean getEnablePrivateNodes();
 
@@ -44,6 +46,8 @@ public interface PrivateClusterConfigOrBuilder
    * </pre>
    *
    * <code>bool enable_private_endpoint = 2;</code>
+   *
+   * @return The enablePrivateEndpoint.
    */
   boolean getEnablePrivateEndpoint();
 
@@ -58,6 +62,8 @@ public interface PrivateClusterConfigOrBuilder
    * </pre>
    *
    * <code>string master_ipv4_cidr_block = 3;</code>
+   *
+   * @return The masterIpv4CidrBlock.
    */
   java.lang.String getMasterIpv4CidrBlock();
   /**
@@ -71,6 +77,8 @@ public interface PrivateClusterConfigOrBuilder
    * </pre>
    *
    * <code>string master_ipv4_cidr_block = 3;</code>
+   *
+   * @return The bytes for masterIpv4CidrBlock.
    */
   com.google.protobuf.ByteString getMasterIpv4CidrBlockBytes();
 
@@ -82,6 +90,8 @@ public interface PrivateClusterConfigOrBuilder
    * </pre>
    *
    * <code>string private_endpoint = 4;</code>
+   *
+   * @return The privateEndpoint.
    */
   java.lang.String getPrivateEndpoint();
   /**
@@ -92,6 +102,8 @@ public interface PrivateClusterConfigOrBuilder
    * </pre>
    *
    * <code>string private_endpoint = 4;</code>
+   *
+   * @return The bytes for privateEndpoint.
    */
   com.google.protobuf.ByteString getPrivateEndpointBytes();
 
@@ -103,6 +115,8 @@ public interface PrivateClusterConfigOrBuilder
    * </pre>
    *
    * <code>string public_endpoint = 5;</code>
+   *
+   * @return The publicEndpoint.
    */
   java.lang.String getPublicEndpoint();
   /**
@@ -113,6 +127,8 @@ public interface PrivateClusterConfigOrBuilder
    * </pre>
    *
    * <code>string public_endpoint = 5;</code>
+   *
+   * @return The bytes for publicEndpoint.
    */
   com.google.protobuf.ByteString getPublicEndpointBytes();
 }

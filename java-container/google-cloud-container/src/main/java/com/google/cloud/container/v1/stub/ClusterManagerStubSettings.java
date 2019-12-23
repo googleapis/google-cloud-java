@@ -15,7 +15,10 @@
  */
 package com.google.cloud.container.v1.stub;
 
+import static com.google.cloud.container.v1.ClusterManagerClient.ListUsableSubnetworksPagedResponse;
+
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -24,12 +27,18 @@ import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.PagedListDescriptor;
+import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -51,6 +60,8 @@ import com.google.container.v1.ListNodePoolsRequest;
 import com.google.container.v1.ListNodePoolsResponse;
 import com.google.container.v1.ListOperationsRequest;
 import com.google.container.v1.ListOperationsResponse;
+import com.google.container.v1.ListUsableSubnetworksRequest;
+import com.google.container.v1.ListUsableSubnetworksResponse;
 import com.google.container.v1.NodePool;
 import com.google.container.v1.Operation;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
@@ -71,6 +82,7 @@ import com.google.container.v1.StartIPRotationRequest;
 import com.google.container.v1.UpdateClusterRequest;
 import com.google.container.v1.UpdateMasterRequest;
 import com.google.container.v1.UpdateNodePoolRequest;
+import com.google.container.v1.UsableSubnetwork;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -148,6 +160,11 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
   private final UnaryCallSettings<SetNetworkPolicyRequest, Operation> setNetworkPolicySettings;
   private final UnaryCallSettings<SetMaintenancePolicyRequest, Operation>
       setMaintenancePolicySettings;
+  private final PagedCallSettings<
+          ListUsableSubnetworksRequest,
+          ListUsableSubnetworksResponse,
+          ListUsableSubnetworksPagedResponse>
+      listUsableSubnetworksSettings;
 
   /** Returns the object with the settings used for calls to listClusters. */
   public UnaryCallSettings<ListClustersRequest, ListClustersResponse> listClustersSettings() {
@@ -302,6 +319,15 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     return setMaintenancePolicySettings;
   }
 
+  /** Returns the object with the settings used for calls to listUsableSubnetworks. */
+  public PagedCallSettings<
+          ListUsableSubnetworksRequest,
+          ListUsableSubnetworksResponse,
+          ListUsableSubnetworksPagedResponse>
+      listUsableSubnetworksSettings() {
+    return listUsableSubnetworksSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ClusterManagerStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -401,7 +427,73 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     setNodePoolSizeSettings = settingsBuilder.setNodePoolSizeSettings().build();
     setNetworkPolicySettings = settingsBuilder.setNetworkPolicySettings().build();
     setMaintenancePolicySettings = settingsBuilder.setMaintenancePolicySettings().build();
+    listUsableSubnetworksSettings = settingsBuilder.listUsableSubnetworksSettings().build();
   }
+
+  private static final PagedListDescriptor<
+          ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
+      LIST_USABLE_SUBNETWORKS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUsableSubnetworksRequest injectToken(
+                ListUsableSubnetworksRequest payload, String token) {
+              return ListUsableSubnetworksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListUsableSubnetworksRequest injectPageSize(
+                ListUsableSubnetworksRequest payload, int pageSize) {
+              return ListUsableSubnetworksRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUsableSubnetworksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListUsableSubnetworksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<UsableSubnetwork> extractResources(
+                ListUsableSubnetworksResponse payload) {
+              return payload.getSubnetworksList() != null
+                  ? payload.getSubnetworksList()
+                  : ImmutableList.<UsableSubnetwork>of();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListUsableSubnetworksRequest,
+          ListUsableSubnetworksResponse,
+          ListUsableSubnetworksPagedResponse>
+      LIST_USABLE_SUBNETWORKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUsableSubnetworksRequest,
+              ListUsableSubnetworksResponse,
+              ListUsableSubnetworksPagedResponse>() {
+            @Override
+            public ApiFuture<ListUsableSubnetworksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse> callable,
+                ListUsableSubnetworksRequest request,
+                ApiCallContext context,
+                ApiFuture<ListUsableSubnetworksResponse> futureResponse) {
+              PageContext<
+                      ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_USABLE_SUBNETWORKS_PAGE_STR_DESC, request, context);
+              return ListUsableSubnetworksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Builder for ClusterManagerStubSettings. */
   public static class Builder extends StubSettings.Builder<ClusterManagerStubSettings, Builder> {
@@ -455,6 +547,11 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
         setNetworkPolicySettings;
     private final UnaryCallSettings.Builder<SetMaintenancePolicyRequest, Operation>
         setMaintenancePolicySettings;
+    private final PagedCallSettings.Builder<
+            ListUsableSubnetworksRequest,
+            ListUsableSubnetworksResponse,
+            ListUsableSubnetworksPagedResponse>
+        listUsableSubnetworksSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -557,6 +654,9 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
 
       setMaintenancePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      listUsableSubnetworksSettings =
+          PagedCallSettings.newBuilder(LIST_USABLE_SUBNETWORKS_PAGE_STR_FACT);
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listClustersSettings,
@@ -588,7 +688,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               completeIPRotationSettings,
               setNodePoolSizeSettings,
               setNetworkPolicySettings,
-              setMaintenancePolicySettings);
+              setMaintenancePolicySettings,
+              listUsableSubnetworksSettings);
 
       initDefaults(this);
     }
@@ -666,7 +767,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
 
       builder
           .deleteClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -706,7 +807,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
 
       builder
           .deleteNodePoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -754,6 +855,11 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .listUsableSubnetworksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -790,6 +896,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       setNodePoolSizeSettings = settings.setNodePoolSizeSettings.toBuilder();
       setNetworkPolicySettings = settings.setNetworkPolicySettings.toBuilder();
       setMaintenancePolicySettings = settings.setMaintenancePolicySettings.toBuilder();
+      listUsableSubnetworksSettings = settings.listUsableSubnetworksSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -822,7 +929,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               completeIPRotationSettings,
               setNodePoolSizeSettings,
               setNetworkPolicySettings,
-              setMaintenancePolicySettings);
+              setMaintenancePolicySettings,
+              listUsableSubnetworksSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -1001,6 +1109,15 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     public UnaryCallSettings.Builder<SetMaintenancePolicyRequest, Operation>
         setMaintenancePolicySettings() {
       return setMaintenancePolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listUsableSubnetworks. */
+    public PagedCallSettings.Builder<
+            ListUsableSubnetworksRequest,
+            ListUsableSubnetworksResponse,
+            ListUsableSubnetworksPagedResponse>
+        listUsableSubnetworksSettings() {
+      return listUsableSubnetworksSettings;
     }
 
     @Override

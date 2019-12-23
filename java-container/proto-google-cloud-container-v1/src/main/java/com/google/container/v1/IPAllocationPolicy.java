@@ -47,6 +47,13 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     clusterIpv4CidrBlock_ = "";
     nodeIpv4CidrBlock_ = "";
     servicesIpv4CidrBlock_ = "";
+    tpuIpv4CidrBlock_ = "";
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new IPAllocationPolicy();
   }
 
   @java.lang.Override
@@ -62,7 +69,6 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -146,6 +152,13 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
               servicesIpv4CidrBlock_ = s;
               break;
             }
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tpuIpv4CidrBlock_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -190,6 +203,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>bool use_ip_aliases = 1;</code>
+   *
+   * @return The useIpAliases.
    */
   public boolean getUseIpAliases() {
     return useIpAliases_;
@@ -206,6 +221,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>bool create_subnetwork = 2;</code>
+   *
+   * @return The createSubnetwork.
    */
   public boolean getCreateSubnetwork() {
     return createSubnetwork_;
@@ -223,6 +240,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string subnetwork_name = 3;</code>
+   *
+   * @return The subnetworkName.
    */
   public java.lang.String getSubnetworkName() {
     java.lang.Object ref = subnetworkName_;
@@ -245,6 +264,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string subnetwork_name = 3;</code>
+   *
+   * @return The bytes for subnetworkName.
    */
   public com.google.protobuf.ByteString getSubnetworkNameBytes() {
     java.lang.Object ref = subnetworkName_;
@@ -268,6 +289,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
+   *
+   * @return The clusterIpv4Cidr.
    */
   @java.lang.Deprecated
   public java.lang.String getClusterIpv4Cidr() {
@@ -289,6 +312,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
+   *
+   * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getClusterIpv4CidrBytes() {
@@ -313,6 +338,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
+   *
+   * @return The nodeIpv4Cidr.
    */
   @java.lang.Deprecated
   public java.lang.String getNodeIpv4Cidr() {
@@ -334,6 +361,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
+   *
+   * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getNodeIpv4CidrBytes() {
@@ -358,6 +387,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
+   *
+   * @return The servicesIpv4Cidr.
    */
   @java.lang.Deprecated
   public java.lang.String getServicesIpv4Cidr() {
@@ -379,6 +410,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
+   *
+   * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getServicesIpv4CidrBytes() {
@@ -408,6 +441,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string cluster_secondary_range_name = 7;</code>
+   *
+   * @return The clusterSecondaryRangeName.
    */
   public java.lang.String getClusterSecondaryRangeName() {
     java.lang.Object ref = clusterSecondaryRangeName_;
@@ -433,6 +468,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string cluster_secondary_range_name = 7;</code>
+   *
+   * @return The bytes for clusterSecondaryRangeName.
    */
   public com.google.protobuf.ByteString getClusterSecondaryRangeNameBytes() {
     java.lang.Object ref = clusterSecondaryRangeName_;
@@ -461,6 +498,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string services_secondary_range_name = 8;</code>
+   *
+   * @return The servicesSecondaryRangeName.
    */
   public java.lang.String getServicesSecondaryRangeName() {
     java.lang.Object ref = servicesSecondaryRangeName_;
@@ -486,6 +525,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string services_secondary_range_name = 8;</code>
+   *
+   * @return The bytes for servicesSecondaryRangeName.
    */
   public com.google.protobuf.ByteString getServicesSecondaryRangeNameBytes() {
     java.lang.Object ref = servicesSecondaryRangeName_;
@@ -519,6 +560,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string cluster_ipv4_cidr_block = 9;</code>
+   *
+   * @return The clusterIpv4CidrBlock.
    */
   public java.lang.String getClusterIpv4CidrBlock() {
     java.lang.Object ref = clusterIpv4CidrBlock_;
@@ -549,6 +592,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string cluster_ipv4_cidr_block = 9;</code>
+   *
+   * @return The bytes for clusterIpv4CidrBlock.
    */
   public com.google.protobuf.ByteString getClusterIpv4CidrBlockBytes() {
     java.lang.Object ref = clusterIpv4CidrBlock_;
@@ -581,6 +626,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string node_ipv4_cidr_block = 10;</code>
+   *
+   * @return The nodeIpv4CidrBlock.
    */
   public java.lang.String getNodeIpv4CidrBlock() {
     java.lang.Object ref = nodeIpv4CidrBlock_;
@@ -610,6 +657,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string node_ipv4_cidr_block = 10;</code>
+   *
+   * @return The bytes for nodeIpv4CidrBlock.
    */
   public com.google.protobuf.ByteString getNodeIpv4CidrBlockBytes() {
     java.lang.Object ref = nodeIpv4CidrBlock_;
@@ -643,6 +692,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string services_ipv4_cidr_block = 11;</code>
+   *
+   * @return The servicesIpv4CidrBlock.
    */
   public java.lang.String getServicesIpv4CidrBlock() {
     java.lang.Object ref = servicesIpv4CidrBlock_;
@@ -673,6 +724,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string services_ipv4_cidr_block = 11;</code>
+   *
+   * @return The bytes for servicesIpv4CidrBlock.
    */
   public com.google.protobuf.ByteString getServicesIpv4CidrBlockBytes() {
     java.lang.Object ref = servicesIpv4CidrBlock_;
@@ -680,6 +733,73 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       servicesIpv4CidrBlock_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TPU_IPV4_CIDR_BLOCK_FIELD_NUMBER = 13;
+  private volatile java.lang.Object tpuIpv4CidrBlock_;
+  /**
+   *
+   *
+   * <pre>
+   * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
+   * range will be automatically chosen with the default size.
+   * This field is only applicable when `use_ip_aliases` is true.
+   * If unspecified, the range will use the default size.
+   * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
+   * netmask.
+   * Set to a
+   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
+   * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
+   * to use.
+   * </pre>
+   *
+   * <code>string tpu_ipv4_cidr_block = 13;</code>
+   *
+   * @return The tpuIpv4CidrBlock.
+   */
+  public java.lang.String getTpuIpv4CidrBlock() {
+    java.lang.Object ref = tpuIpv4CidrBlock_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tpuIpv4CidrBlock_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
+   * range will be automatically chosen with the default size.
+   * This field is only applicable when `use_ip_aliases` is true.
+   * If unspecified, the range will use the default size.
+   * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
+   * netmask.
+   * Set to a
+   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
+   * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
+   * to use.
+   * </pre>
+   *
+   * <code>string tpu_ipv4_cidr_block = 13;</code>
+   *
+   * @return The bytes for tpuIpv4CidrBlock.
+   */
+  public com.google.protobuf.ByteString getTpuIpv4CidrBlockBytes() {
+    java.lang.Object ref = tpuIpv4CidrBlock_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      tpuIpv4CidrBlock_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -733,6 +853,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (!getServicesIpv4CidrBlockBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, servicesIpv4CidrBlock_);
     }
+    if (!getTpuIpv4CidrBlockBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, tpuIpv4CidrBlock_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -777,6 +900,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (!getServicesIpv4CidrBlockBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, servicesIpv4CidrBlock_);
     }
+    if (!getTpuIpv4CidrBlockBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, tpuIpv4CidrBlock_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -805,6 +931,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (!getClusterIpv4CidrBlock().equals(other.getClusterIpv4CidrBlock())) return false;
     if (!getNodeIpv4CidrBlock().equals(other.getNodeIpv4CidrBlock())) return false;
     if (!getServicesIpv4CidrBlock().equals(other.getServicesIpv4CidrBlock())) return false;
+    if (!getTpuIpv4CidrBlock().equals(other.getTpuIpv4CidrBlock())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -838,6 +965,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getNodeIpv4CidrBlock().hashCode();
     hash = (37 * hash) + SERVICES_IPV4_CIDR_BLOCK_FIELD_NUMBER;
     hash = (53 * hash) + getServicesIpv4CidrBlock().hashCode();
+    hash = (37 * hash) + TPU_IPV4_CIDR_BLOCK_FIELD_NUMBER;
+    hash = (53 * hash) + getTpuIpv4CidrBlock().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1005,6 +1134,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
 
       servicesIpv4CidrBlock_ = "";
 
+      tpuIpv4CidrBlock_ = "";
+
       return this;
     }
 
@@ -1043,6 +1174,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       result.clusterIpv4CidrBlock_ = clusterIpv4CidrBlock_;
       result.nodeIpv4CidrBlock_ = nodeIpv4CidrBlock_;
       result.servicesIpv4CidrBlock_ = servicesIpv4CidrBlock_;
+      result.tpuIpv4CidrBlock_ = tpuIpv4CidrBlock_;
       onBuilt();
       return result;
     }
@@ -1134,6 +1266,10 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         servicesIpv4CidrBlock_ = other.servicesIpv4CidrBlock_;
         onChanged();
       }
+      if (!other.getTpuIpv4CidrBlock().isEmpty()) {
+        tpuIpv4CidrBlock_ = other.tpuIpv4CidrBlock_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1172,6 +1308,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool use_ip_aliases = 1;</code>
+     *
+     * @return The useIpAliases.
      */
     public boolean getUseIpAliases() {
       return useIpAliases_;
@@ -1184,6 +1322,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool use_ip_aliases = 1;</code>
+     *
+     * @param value The useIpAliases to set.
+     * @return This builder for chaining.
      */
     public Builder setUseIpAliases(boolean value) {
 
@@ -1199,6 +1340,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool use_ip_aliases = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUseIpAliases() {
 
@@ -1217,6 +1360,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool create_subnetwork = 2;</code>
+     *
+     * @return The createSubnetwork.
      */
     public boolean getCreateSubnetwork() {
       return createSubnetwork_;
@@ -1230,6 +1375,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool create_subnetwork = 2;</code>
+     *
+     * @param value The createSubnetwork to set.
+     * @return This builder for chaining.
      */
     public Builder setCreateSubnetwork(boolean value) {
 
@@ -1246,6 +1394,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool create_subnetwork = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCreateSubnetwork() {
 
@@ -1265,6 +1415,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string subnetwork_name = 3;</code>
+     *
+     * @return The subnetworkName.
      */
     public java.lang.String getSubnetworkName() {
       java.lang.Object ref = subnetworkName_;
@@ -1287,6 +1439,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string subnetwork_name = 3;</code>
+     *
+     * @return The bytes for subnetworkName.
      */
     public com.google.protobuf.ByteString getSubnetworkNameBytes() {
       java.lang.Object ref = subnetworkName_;
@@ -1309,6 +1463,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string subnetwork_name = 3;</code>
+     *
+     * @param value The subnetworkName to set.
+     * @return This builder for chaining.
      */
     public Builder setSubnetworkName(java.lang.String value) {
       if (value == null) {
@@ -1329,6 +1486,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string subnetwork_name = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSubnetworkName() {
 
@@ -1346,6 +1505,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string subnetwork_name = 3;</code>
+     *
+     * @param value The bytes for subnetworkName to set.
+     * @return This builder for chaining.
      */
     public Builder setSubnetworkNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1367,6 +1529,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
+     *
+     * @return The clusterIpv4Cidr.
      */
     @java.lang.Deprecated
     public java.lang.String getClusterIpv4Cidr() {
@@ -1388,6 +1552,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
+     *
+     * @return The bytes for clusterIpv4Cidr.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getClusterIpv4CidrBytes() {
@@ -1409,6 +1575,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
+     *
+     * @param value The clusterIpv4Cidr to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setClusterIpv4Cidr(java.lang.String value) {
@@ -1428,6 +1597,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearClusterIpv4Cidr() {
@@ -1444,6 +1615,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
+     *
+     * @param value The bytes for clusterIpv4Cidr to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setClusterIpv4CidrBytes(com.google.protobuf.ByteString value) {
@@ -1466,6 +1640,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
+     *
+     * @return The nodeIpv4Cidr.
      */
     @java.lang.Deprecated
     public java.lang.String getNodeIpv4Cidr() {
@@ -1487,6 +1663,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
+     *
+     * @return The bytes for nodeIpv4Cidr.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getNodeIpv4CidrBytes() {
@@ -1508,6 +1686,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
+     *
+     * @param value The nodeIpv4Cidr to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setNodeIpv4Cidr(java.lang.String value) {
@@ -1527,6 +1708,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearNodeIpv4Cidr() {
@@ -1543,6 +1726,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
+     *
+     * @param value The bytes for nodeIpv4Cidr to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setNodeIpv4CidrBytes(com.google.protobuf.ByteString value) {
@@ -1565,6 +1751,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
+     *
+     * @return The servicesIpv4Cidr.
      */
     @java.lang.Deprecated
     public java.lang.String getServicesIpv4Cidr() {
@@ -1586,6 +1774,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
+     *
+     * @return The bytes for servicesIpv4Cidr.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getServicesIpv4CidrBytes() {
@@ -1607,6 +1797,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
+     *
+     * @param value The servicesIpv4Cidr to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setServicesIpv4Cidr(java.lang.String value) {
@@ -1626,6 +1819,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearServicesIpv4Cidr() {
@@ -1642,6 +1837,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
+     *
+     * @param value The bytes for servicesIpv4Cidr to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setServicesIpv4CidrBytes(com.google.protobuf.ByteString value) {
@@ -1669,6 +1867,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string cluster_secondary_range_name = 7;</code>
+     *
+     * @return The clusterSecondaryRangeName.
      */
     public java.lang.String getClusterSecondaryRangeName() {
       java.lang.Object ref = clusterSecondaryRangeName_;
@@ -1694,6 +1894,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string cluster_secondary_range_name = 7;</code>
+     *
+     * @return The bytes for clusterSecondaryRangeName.
      */
     public com.google.protobuf.ByteString getClusterSecondaryRangeNameBytes() {
       java.lang.Object ref = clusterSecondaryRangeName_;
@@ -1719,6 +1921,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string cluster_secondary_range_name = 7;</code>
+     *
+     * @param value The clusterSecondaryRangeName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterSecondaryRangeName(java.lang.String value) {
       if (value == null) {
@@ -1742,6 +1947,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string cluster_secondary_range_name = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClusterSecondaryRangeName() {
 
@@ -1762,6 +1969,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string cluster_secondary_range_name = 7;</code>
+     *
+     * @param value The bytes for clusterSecondaryRangeName to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterSecondaryRangeNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1788,6 +1998,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string services_secondary_range_name = 8;</code>
+     *
+     * @return The servicesSecondaryRangeName.
      */
     public java.lang.String getServicesSecondaryRangeName() {
       java.lang.Object ref = servicesSecondaryRangeName_;
@@ -1813,6 +2025,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string services_secondary_range_name = 8;</code>
+     *
+     * @return The bytes for servicesSecondaryRangeName.
      */
     public com.google.protobuf.ByteString getServicesSecondaryRangeNameBytes() {
       java.lang.Object ref = servicesSecondaryRangeName_;
@@ -1838,6 +2052,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string services_secondary_range_name = 8;</code>
+     *
+     * @param value The servicesSecondaryRangeName to set.
+     * @return This builder for chaining.
      */
     public Builder setServicesSecondaryRangeName(java.lang.String value) {
       if (value == null) {
@@ -1861,6 +2078,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string services_secondary_range_name = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearServicesSecondaryRangeName() {
 
@@ -1881,6 +2100,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string services_secondary_range_name = 8;</code>
+     *
+     * @param value The bytes for servicesSecondaryRangeName to set.
+     * @return This builder for chaining.
      */
     public Builder setServicesSecondaryRangeNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1912,6 +2134,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string cluster_ipv4_cidr_block = 9;</code>
+     *
+     * @return The clusterIpv4CidrBlock.
      */
     public java.lang.String getClusterIpv4CidrBlock() {
       java.lang.Object ref = clusterIpv4CidrBlock_;
@@ -1942,6 +2166,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string cluster_ipv4_cidr_block = 9;</code>
+     *
+     * @return The bytes for clusterIpv4CidrBlock.
      */
     public com.google.protobuf.ByteString getClusterIpv4CidrBlockBytes() {
       java.lang.Object ref = clusterIpv4CidrBlock_;
@@ -1972,6 +2198,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string cluster_ipv4_cidr_block = 9;</code>
+     *
+     * @param value The clusterIpv4CidrBlock to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterIpv4CidrBlock(java.lang.String value) {
       if (value == null) {
@@ -2000,6 +2229,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string cluster_ipv4_cidr_block = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClusterIpv4CidrBlock() {
 
@@ -2025,6 +2256,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string cluster_ipv4_cidr_block = 9;</code>
+     *
+     * @param value The bytes for clusterIpv4CidrBlock to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterIpv4CidrBlockBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2055,6 +2289,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string node_ipv4_cidr_block = 10;</code>
+     *
+     * @return The nodeIpv4CidrBlock.
      */
     public java.lang.String getNodeIpv4CidrBlock() {
       java.lang.Object ref = nodeIpv4CidrBlock_;
@@ -2084,6 +2320,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string node_ipv4_cidr_block = 10;</code>
+     *
+     * @return The bytes for nodeIpv4CidrBlock.
      */
     public com.google.protobuf.ByteString getNodeIpv4CidrBlockBytes() {
       java.lang.Object ref = nodeIpv4CidrBlock_;
@@ -2113,6 +2351,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string node_ipv4_cidr_block = 10;</code>
+     *
+     * @param value The nodeIpv4CidrBlock to set.
+     * @return This builder for chaining.
      */
     public Builder setNodeIpv4CidrBlock(java.lang.String value) {
       if (value == null) {
@@ -2140,6 +2381,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string node_ipv4_cidr_block = 10;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNodeIpv4CidrBlock() {
 
@@ -2164,6 +2407,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string node_ipv4_cidr_block = 10;</code>
+     *
+     * @param value The bytes for nodeIpv4CidrBlock to set.
+     * @return This builder for chaining.
      */
     public Builder setNodeIpv4CidrBlockBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2195,6 +2441,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string services_ipv4_cidr_block = 11;</code>
+     *
+     * @return The servicesIpv4CidrBlock.
      */
     public java.lang.String getServicesIpv4CidrBlock() {
       java.lang.Object ref = servicesIpv4CidrBlock_;
@@ -2225,6 +2473,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string services_ipv4_cidr_block = 11;</code>
+     *
+     * @return The bytes for servicesIpv4CidrBlock.
      */
     public com.google.protobuf.ByteString getServicesIpv4CidrBlockBytes() {
       java.lang.Object ref = servicesIpv4CidrBlock_;
@@ -2255,6 +2505,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string services_ipv4_cidr_block = 11;</code>
+     *
+     * @param value The servicesIpv4CidrBlock to set.
+     * @return This builder for chaining.
      */
     public Builder setServicesIpv4CidrBlock(java.lang.String value) {
       if (value == null) {
@@ -2283,6 +2536,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string services_ipv4_cidr_block = 11;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearServicesIpv4CidrBlock() {
 
@@ -2308,6 +2563,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string services_ipv4_cidr_block = 11;</code>
+     *
+     * @param value The bytes for servicesIpv4CidrBlock to set.
+     * @return This builder for chaining.
      */
     public Builder setServicesIpv4CidrBlockBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2316,6 +2574,162 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
 
       servicesIpv4CidrBlock_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object tpuIpv4CidrBlock_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
+     * range will be automatically chosen with the default size.
+     * This field is only applicable when `use_ip_aliases` is true.
+     * If unspecified, the range will use the default size.
+     * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
+     * netmask.
+     * Set to a
+     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
+     * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
+     * to use.
+     * </pre>
+     *
+     * <code>string tpu_ipv4_cidr_block = 13;</code>
+     *
+     * @return The tpuIpv4CidrBlock.
+     */
+    public java.lang.String getTpuIpv4CidrBlock() {
+      java.lang.Object ref = tpuIpv4CidrBlock_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tpuIpv4CidrBlock_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
+     * range will be automatically chosen with the default size.
+     * This field is only applicable when `use_ip_aliases` is true.
+     * If unspecified, the range will use the default size.
+     * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
+     * netmask.
+     * Set to a
+     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
+     * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
+     * to use.
+     * </pre>
+     *
+     * <code>string tpu_ipv4_cidr_block = 13;</code>
+     *
+     * @return The bytes for tpuIpv4CidrBlock.
+     */
+    public com.google.protobuf.ByteString getTpuIpv4CidrBlockBytes() {
+      java.lang.Object ref = tpuIpv4CidrBlock_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        tpuIpv4CidrBlock_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
+     * range will be automatically chosen with the default size.
+     * This field is only applicable when `use_ip_aliases` is true.
+     * If unspecified, the range will use the default size.
+     * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
+     * netmask.
+     * Set to a
+     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
+     * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
+     * to use.
+     * </pre>
+     *
+     * <code>string tpu_ipv4_cidr_block = 13;</code>
+     *
+     * @param value The tpuIpv4CidrBlock to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTpuIpv4CidrBlock(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      tpuIpv4CidrBlock_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
+     * range will be automatically chosen with the default size.
+     * This field is only applicable when `use_ip_aliases` is true.
+     * If unspecified, the range will use the default size.
+     * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
+     * netmask.
+     * Set to a
+     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
+     * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
+     * to use.
+     * </pre>
+     *
+     * <code>string tpu_ipv4_cidr_block = 13;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTpuIpv4CidrBlock() {
+
+      tpuIpv4CidrBlock_ = getDefaultInstance().getTpuIpv4CidrBlock();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
+     * range will be automatically chosen with the default size.
+     * This field is only applicable when `use_ip_aliases` is true.
+     * If unspecified, the range will use the default size.
+     * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
+     * netmask.
+     * Set to a
+     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
+     * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
+     * to use.
+     * </pre>
+     *
+     * <code>string tpu_ipv4_cidr_block = 13;</code>
+     *
+     * @param value The bytes for tpuIpv4CidrBlock to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTpuIpv4CidrBlockBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      tpuIpv4CidrBlock_ = value;
       onChanged();
       return this;
     }

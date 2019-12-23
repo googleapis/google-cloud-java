@@ -15,6 +15,8 @@
  */
 package com.google.cloud.container.v1.stub;
 
+import static com.google.cloud.container.v1.ClusterManagerClient.ListUsableSubnetworksPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -41,6 +43,8 @@ import com.google.container.v1.ListNodePoolsRequest;
 import com.google.container.v1.ListNodePoolsResponse;
 import com.google.container.v1.ListOperationsRequest;
 import com.google.container.v1.ListOperationsResponse;
+import com.google.container.v1.ListUsableSubnetworksRequest;
+import com.google.container.v1.ListUsableSubnetworksResponse;
 import com.google.container.v1.NodePool;
 import com.google.container.v1.Operation;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
@@ -342,6 +346,16 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   ProtoUtils.marshaller(SetMaintenancePolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>
+      listUsableSubnetworksMethodDescriptor =
+          MethodDescriptor.<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.container.v1.ClusterManager/ListUsableSubnetworks")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListUsableSubnetworksRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListUsableSubnetworksResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -378,6 +392,10 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   private final UnaryCallable<SetNodePoolSizeRequest, Operation> setNodePoolSizeCallable;
   private final UnaryCallable<SetNetworkPolicyRequest, Operation> setNetworkPolicyCallable;
   private final UnaryCallable<SetMaintenancePolicyRequest, Operation> setMaintenancePolicyCallable;
+  private final UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>
+      listUsableSubnetworksCallable;
+  private final UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksPagedResponse>
+      listUsableSubnetworksPagedCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -814,6 +832,21 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   }
                 })
             .build();
+    GrpcCallSettings<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>
+        listUsableSubnetworksTransportSettings =
+            GrpcCallSettings
+                .<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>newBuilder()
+                .setMethodDescriptor(listUsableSubnetworksMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListUsableSubnetworksRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListUsableSubnetworksRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.listClustersCallable =
         callableFactory.createUnaryCallable(
@@ -918,6 +951,16 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
         callableFactory.createUnaryCallable(
             setMaintenancePolicyTransportSettings,
             settings.setMaintenancePolicySettings(),
+            clientContext);
+    this.listUsableSubnetworksCallable =
+        callableFactory.createUnaryCallable(
+            listUsableSubnetworksTransportSettings,
+            settings.listUsableSubnetworksSettings(),
+            clientContext);
+    this.listUsableSubnetworksPagedCallable =
+        callableFactory.createPagedCallable(
+            listUsableSubnetworksTransportSettings,
+            settings.listUsableSubnetworksSettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1042,6 +1085,16 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
 
   public UnaryCallable<SetMaintenancePolicyRequest, Operation> setMaintenancePolicyCallable() {
     return setMaintenancePolicyCallable;
+  }
+
+  public UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksPagedResponse>
+      listUsableSubnetworksPagedCallable() {
+    return listUsableSubnetworksPagedCallable;
+  }
+
+  public UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>
+      listUsableSubnetworksCallable() {
+    return listUsableSubnetworksCallable;
   }
 
   @Override

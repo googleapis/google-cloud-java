@@ -46,6 +46,12 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SetMasterAuthRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -261,12 +266,20 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Action valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Action forNumber(int value) {
       switch (value) {
         case 0:
@@ -332,12 +345,15 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The projectId.
    */
   @java.lang.Deprecated
   public java.lang.String getProjectId() {
@@ -355,12 +371,15 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for projectId.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getProjectIdBytes() {
@@ -381,13 +400,15 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The zone.
    */
   @java.lang.Deprecated
   public java.lang.String getZone() {
@@ -405,13 +426,15 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for zone.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getZoneBytes() {
@@ -432,11 +455,14 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster to upgrade.
+   * Required. Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The clusterId.
    */
   @java.lang.Deprecated
   public java.lang.String getClusterId() {
@@ -454,11 +480,14 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster to upgrade.
+   * Required. Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getClusterIdBytes() {
@@ -479,10 +508,14 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The exact form of action to be taken on the master auth.
+   * Required. The exact form of action to be taken on the master auth.
    * </pre>
    *
-   * <code>.google.container.v1.SetMasterAuthRequest.Action action = 4;</code>
+   * <code>
+   * .google.container.v1.SetMasterAuthRequest.Action action = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for action.
    */
   public int getActionValue() {
     return action_;
@@ -491,10 +524,14 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The exact form of action to be taken on the master auth.
+   * Required. The exact form of action to be taken on the master auth.
    * </pre>
    *
-   * <code>.google.container.v1.SetMasterAuthRequest.Action action = 4;</code>
+   * <code>
+   * .google.container.v1.SetMasterAuthRequest.Action action = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The action.
    */
   public com.google.container.v1.SetMasterAuthRequest.Action getAction() {
     @SuppressWarnings("deprecation")
@@ -511,10 +548,13 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A description of the update.
+   * Required. A description of the update.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuth update = 5;</code>
+   * <code>.google.container.v1.MasterAuth update = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the update field is set.
    */
   public boolean hasUpdate() {
     return update_ != null;
@@ -523,10 +563,13 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A description of the update.
+   * Required. A description of the update.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuth update = 5;</code>
+   * <code>.google.container.v1.MasterAuth update = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The update.
    */
   public com.google.container.v1.MasterAuth getUpdate() {
     return update_ == null ? com.google.container.v1.MasterAuth.getDefaultInstance() : update_;
@@ -535,10 +578,11 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A description of the update.
+   * Required. A description of the update.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuth update = 5;</code>
+   * <code>.google.container.v1.MasterAuth update = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.container.v1.MasterAuthOrBuilder getUpdateOrBuilder() {
     return getUpdate();
@@ -555,6 +599,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string name = 7;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -576,6 +622,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string name = 7;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -1001,12 +1049,15 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The projectId.
      */
     @java.lang.Deprecated
     public java.lang.String getProjectId() {
@@ -1024,12 +1075,15 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The bytes for projectId.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getProjectIdBytes() {
@@ -1047,12 +1101,16 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setProjectId(java.lang.String value) {
@@ -1068,12 +1126,15 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearProjectId() {
@@ -1086,12 +1147,16 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
@@ -1110,13 +1175,15 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The zone.
      */
     @java.lang.Deprecated
     public java.lang.String getZone() {
@@ -1134,13 +1201,15 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for zone.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getZoneBytes() {
@@ -1158,13 +1227,16 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The zone to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setZone(java.lang.String value) {
@@ -1180,13 +1252,15 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearZone() {
@@ -1199,13 +1273,16 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for zone to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setZoneBytes(com.google.protobuf.ByteString value) {
@@ -1224,11 +1301,14 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The clusterId.
      */
     @java.lang.Deprecated
     public java.lang.String getClusterId() {
@@ -1246,11 +1326,14 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getClusterIdBytes() {
@@ -1268,11 +1351,15 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The clusterId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setClusterId(java.lang.String value) {
@@ -1288,11 +1375,14 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearClusterId() {
@@ -1305,11 +1395,15 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The bytes for clusterId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setClusterIdBytes(com.google.protobuf.ByteString value) {
@@ -1328,10 +1422,14 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The exact form of action to be taken on the master auth.
+     * Required. The exact form of action to be taken on the master auth.
      * </pre>
      *
-     * <code>.google.container.v1.SetMasterAuthRequest.Action action = 4;</code>
+     * <code>
+     * .google.container.v1.SetMasterAuthRequest.Action action = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for action.
      */
     public int getActionValue() {
       return action_;
@@ -1340,10 +1438,15 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The exact form of action to be taken on the master auth.
+     * Required. The exact form of action to be taken on the master auth.
      * </pre>
      *
-     * <code>.google.container.v1.SetMasterAuthRequest.Action action = 4;</code>
+     * <code>
+     * .google.container.v1.SetMasterAuthRequest.Action action = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for action to set.
+     * @return This builder for chaining.
      */
     public Builder setActionValue(int value) {
       action_ = value;
@@ -1354,10 +1457,14 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The exact form of action to be taken on the master auth.
+     * Required. The exact form of action to be taken on the master auth.
      * </pre>
      *
-     * <code>.google.container.v1.SetMasterAuthRequest.Action action = 4;</code>
+     * <code>
+     * .google.container.v1.SetMasterAuthRequest.Action action = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The action.
      */
     public com.google.container.v1.SetMasterAuthRequest.Action getAction() {
       @SuppressWarnings("deprecation")
@@ -1371,10 +1478,15 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The exact form of action to be taken on the master auth.
+     * Required. The exact form of action to be taken on the master auth.
      * </pre>
      *
-     * <code>.google.container.v1.SetMasterAuthRequest.Action action = 4;</code>
+     * <code>
+     * .google.container.v1.SetMasterAuthRequest.Action action = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The action to set.
+     * @return This builder for chaining.
      */
     public Builder setAction(com.google.container.v1.SetMasterAuthRequest.Action value) {
       if (value == null) {
@@ -1389,10 +1501,14 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The exact form of action to be taken on the master auth.
+     * Required. The exact form of action to be taken on the master auth.
      * </pre>
      *
-     * <code>.google.container.v1.SetMasterAuthRequest.Action action = 4;</code>
+     * <code>
+     * .google.container.v1.SetMasterAuthRequest.Action action = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAction() {
 
@@ -1411,10 +1527,13 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A description of the update.
+     * Required. A description of the update.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuth update = 5;</code>
+     * <code>.google.container.v1.MasterAuth update = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the update field is set.
      */
     public boolean hasUpdate() {
       return updateBuilder_ != null || update_ != null;
@@ -1423,10 +1542,13 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A description of the update.
+     * Required. A description of the update.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuth update = 5;</code>
+     * <code>.google.container.v1.MasterAuth update = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The update.
      */
     public com.google.container.v1.MasterAuth getUpdate() {
       if (updateBuilder_ == null) {
@@ -1439,10 +1561,11 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A description of the update.
+     * Required. A description of the update.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuth update = 5;</code>
+     * <code>.google.container.v1.MasterAuth update = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdate(com.google.container.v1.MasterAuth value) {
       if (updateBuilder_ == null) {
@@ -1461,10 +1584,11 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A description of the update.
+     * Required. A description of the update.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuth update = 5;</code>
+     * <code>.google.container.v1.MasterAuth update = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdate(com.google.container.v1.MasterAuth.Builder builderForValue) {
       if (updateBuilder_ == null) {
@@ -1480,10 +1604,11 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A description of the update.
+     * Required. A description of the update.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuth update = 5;</code>
+     * <code>.google.container.v1.MasterAuth update = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdate(com.google.container.v1.MasterAuth value) {
       if (updateBuilder_ == null) {
@@ -1506,10 +1631,11 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A description of the update.
+     * Required. A description of the update.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuth update = 5;</code>
+     * <code>.google.container.v1.MasterAuth update = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdate() {
       if (updateBuilder_ == null) {
@@ -1526,10 +1652,11 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A description of the update.
+     * Required. A description of the update.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuth update = 5;</code>
+     * <code>.google.container.v1.MasterAuth update = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.container.v1.MasterAuth.Builder getUpdateBuilder() {
 
@@ -1540,10 +1667,11 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A description of the update.
+     * Required. A description of the update.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuth update = 5;</code>
+     * <code>.google.container.v1.MasterAuth update = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.container.v1.MasterAuthOrBuilder getUpdateOrBuilder() {
       if (updateBuilder_ != null) {
@@ -1556,10 +1684,11 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A description of the update.
+     * Required. A description of the update.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuth update = 5;</code>
+     * <code>.google.container.v1.MasterAuth update = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.MasterAuth,
@@ -1588,6 +1717,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 7;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1609,6 +1740,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 7;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1630,6 +1763,9 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 7;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1649,6 +1785,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1665,6 +1803,9 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 7;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

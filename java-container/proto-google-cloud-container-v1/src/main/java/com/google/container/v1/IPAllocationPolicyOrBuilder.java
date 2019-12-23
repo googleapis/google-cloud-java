@@ -31,6 +31,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>bool use_ip_aliases = 1;</code>
+   *
+   * @return The useIpAliases.
    */
   boolean getUseIpAliases();
 
@@ -43,6 +45,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>bool create_subnetwork = 2;</code>
+   *
+   * @return The createSubnetwork.
    */
   boolean getCreateSubnetwork();
 
@@ -56,6 +60,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string subnetwork_name = 3;</code>
+   *
+   * @return The subnetworkName.
    */
   java.lang.String getSubnetworkName();
   /**
@@ -68,6 +74,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string subnetwork_name = 3;</code>
+   *
+   * @return The bytes for subnetworkName.
    */
   com.google.protobuf.ByteString getSubnetworkNameBytes();
 
@@ -79,6 +87,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
+   *
+   * @return The clusterIpv4Cidr.
    */
   @java.lang.Deprecated
   java.lang.String getClusterIpv4Cidr();
@@ -90,6 +100,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
+   *
+   * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getClusterIpv4CidrBytes();
@@ -102,6 +114,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
+   *
+   * @return The nodeIpv4Cidr.
    */
   @java.lang.Deprecated
   java.lang.String getNodeIpv4Cidr();
@@ -113,6 +127,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
+   *
+   * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getNodeIpv4CidrBytes();
@@ -125,6 +141,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
+   *
+   * @return The servicesIpv4Cidr.
    */
   @java.lang.Deprecated
   java.lang.String getServicesIpv4Cidr();
@@ -136,6 +154,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
+   *
+   * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getServicesIpv4CidrBytes();
@@ -153,6 +173,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string cluster_secondary_range_name = 7;</code>
+   *
+   * @return The clusterSecondaryRangeName.
    */
   java.lang.String getClusterSecondaryRangeName();
   /**
@@ -168,6 +190,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string cluster_secondary_range_name = 7;</code>
+   *
+   * @return The bytes for clusterSecondaryRangeName.
    */
   com.google.protobuf.ByteString getClusterSecondaryRangeNameBytes();
 
@@ -184,6 +208,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string services_secondary_range_name = 8;</code>
+   *
+   * @return The servicesSecondaryRangeName.
    */
   java.lang.String getServicesSecondaryRangeName();
   /**
@@ -199,6 +225,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string services_secondary_range_name = 8;</code>
+   *
+   * @return The bytes for servicesSecondaryRangeName.
    */
   com.google.protobuf.ByteString getServicesSecondaryRangeNameBytes();
 
@@ -220,6 +248,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string cluster_ipv4_cidr_block = 9;</code>
+   *
+   * @return The clusterIpv4CidrBlock.
    */
   java.lang.String getClusterIpv4CidrBlock();
   /**
@@ -240,6 +270,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string cluster_ipv4_cidr_block = 9;</code>
+   *
+   * @return The bytes for clusterIpv4CidrBlock.
    */
   com.google.protobuf.ByteString getClusterIpv4CidrBlockBytes();
 
@@ -260,6 +292,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string node_ipv4_cidr_block = 10;</code>
+   *
+   * @return The nodeIpv4CidrBlock.
    */
   java.lang.String getNodeIpv4CidrBlock();
   /**
@@ -279,6 +313,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string node_ipv4_cidr_block = 10;</code>
+   *
+   * @return The bytes for nodeIpv4CidrBlock.
    */
   com.google.protobuf.ByteString getNodeIpv4CidrBlockBytes();
 
@@ -300,6 +336,8 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string services_ipv4_cidr_block = 11;</code>
+   *
+   * @return The servicesIpv4CidrBlock.
    */
   java.lang.String getServicesIpv4CidrBlock();
   /**
@@ -320,6 +358,53 @@ public interface IPAllocationPolicyOrBuilder
    * </pre>
    *
    * <code>string services_ipv4_cidr_block = 11;</code>
+   *
+   * @return The bytes for servicesIpv4CidrBlock.
    */
   com.google.protobuf.ByteString getServicesIpv4CidrBlockBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
+   * range will be automatically chosen with the default size.
+   * This field is only applicable when `use_ip_aliases` is true.
+   * If unspecified, the range will use the default size.
+   * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
+   * netmask.
+   * Set to a
+   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
+   * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
+   * to use.
+   * </pre>
+   *
+   * <code>string tpu_ipv4_cidr_block = 13;</code>
+   *
+   * @return The tpuIpv4CidrBlock.
+   */
+  java.lang.String getTpuIpv4CidrBlock();
+  /**
+   *
+   *
+   * <pre>
+   * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
+   * range will be automatically chosen with the default size.
+   * This field is only applicable when `use_ip_aliases` is true.
+   * If unspecified, the range will use the default size.
+   * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
+   * netmask.
+   * Set to a
+   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
+   * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
+   * to use.
+   * </pre>
+   *
+   * <code>string tpu_ipv4_cidr_block = 13;</code>
+   *
+   * @return The bytes for tpuIpv4CidrBlock.
+   */
+  com.google.protobuf.ByteString getTpuIpv4CidrBlockBytes();
 }

@@ -37,7 +37,15 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     super(builder);
   }
 
-  private MaintenancePolicy() {}
+  private MaintenancePolicy() {
+    resourceVersion_ = "";
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new MaintenancePolicy();
+  }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -52,7 +60,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -77,6 +84,13 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
                 window_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resourceVersion_ = s;
               break;
             }
           default:
@@ -123,6 +137,8 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.container.v1.MaintenanceWindow window = 1;</code>
+   *
+   * @return Whether the window field is set.
    */
   public boolean hasWindow() {
     return window_ != null;
@@ -135,6 +151,8 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.container.v1.MaintenanceWindow window = 1;</code>
+   *
+   * @return The window.
    */
   public com.google.container.v1.MaintenanceWindow getWindow() {
     return window_ == null
@@ -154,6 +172,61 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     return getWindow();
   }
 
+  public static final int RESOURCE_VERSION_FIELD_NUMBER = 3;
+  private volatile java.lang.Object resourceVersion_;
+  /**
+   *
+   *
+   * <pre>
+   * A hash identifying the version of this policy, so that updates to fields of
+   * the policy won't accidentally undo intermediate changes (and so that users
+   * of the API unaware of some fields won't accidentally remove other fields).
+   * Make a &lt;code&gt;get()&lt;/code&gt; request to the cluster to get the current
+   * resource version and include it with requests to set the policy.
+   * </pre>
+   *
+   * <code>string resource_version = 3;</code>
+   *
+   * @return The resourceVersion.
+   */
+  public java.lang.String getResourceVersion() {
+    java.lang.Object ref = resourceVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resourceVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A hash identifying the version of this policy, so that updates to fields of
+   * the policy won't accidentally undo intermediate changes (and so that users
+   * of the API unaware of some fields won't accidentally remove other fields).
+   * Make a &lt;code&gt;get()&lt;/code&gt; request to the cluster to get the current
+   * resource version and include it with requests to set the policy.
+   * </pre>
+   *
+   * <code>string resource_version = 3;</code>
+   *
+   * @return The bytes for resourceVersion.
+   */
+  public com.google.protobuf.ByteString getResourceVersionBytes() {
+    java.lang.Object ref = resourceVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      resourceVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -171,6 +244,9 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     if (window_ != null) {
       output.writeMessage(1, getWindow());
     }
+    if (!getResourceVersionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, resourceVersion_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -182,6 +258,9 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     size = 0;
     if (window_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getWindow());
+    }
+    if (!getResourceVersionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, resourceVersion_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -203,6 +282,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     if (hasWindow()) {
       if (!getWindow().equals(other.getWindow())) return false;
     }
+    if (!getResourceVersion().equals(other.getResourceVersion())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -218,6 +298,8 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + WINDOW_FIELD_NUMBER;
       hash = (53 * hash) + getWindow().hashCode();
     }
+    hash = (37 * hash) + RESOURCE_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getResourceVersion().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -369,6 +451,8 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         window_ = null;
         windowBuilder_ = null;
       }
+      resourceVersion_ = "";
+
       return this;
     }
 
@@ -401,6 +485,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       } else {
         result.window_ = windowBuilder_.build();
       }
+      result.resourceVersion_ = resourceVersion_;
       onBuilt();
       return result;
     }
@@ -453,6 +538,10 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       if (other.hasWindow()) {
         mergeWindow(other.getWindow());
       }
+      if (!other.getResourceVersion().isEmpty()) {
+        resourceVersion_ = other.resourceVersion_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -496,6 +585,8 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.container.v1.MaintenanceWindow window = 1;</code>
+     *
+     * @return Whether the window field is set.
      */
     public boolean hasWindow() {
       return windowBuilder_ != null || window_ != null;
@@ -508,6 +599,8 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.container.v1.MaintenanceWindow window = 1;</code>
+     *
+     * @return The window.
      */
     public com.google.container.v1.MaintenanceWindow getWindow() {
       if (windowBuilder_ == null) {
@@ -661,6 +754,132 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         window_ = null;
       }
       return windowBuilder_;
+    }
+
+    private java.lang.Object resourceVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A hash identifying the version of this policy, so that updates to fields of
+     * the policy won't accidentally undo intermediate changes (and so that users
+     * of the API unaware of some fields won't accidentally remove other fields).
+     * Make a &lt;code&gt;get()&lt;/code&gt; request to the cluster to get the current
+     * resource version and include it with requests to set the policy.
+     * </pre>
+     *
+     * <code>string resource_version = 3;</code>
+     *
+     * @return The resourceVersion.
+     */
+    public java.lang.String getResourceVersion() {
+      java.lang.Object ref = resourceVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A hash identifying the version of this policy, so that updates to fields of
+     * the policy won't accidentally undo intermediate changes (and so that users
+     * of the API unaware of some fields won't accidentally remove other fields).
+     * Make a &lt;code&gt;get()&lt;/code&gt; request to the cluster to get the current
+     * resource version and include it with requests to set the policy.
+     * </pre>
+     *
+     * <code>string resource_version = 3;</code>
+     *
+     * @return The bytes for resourceVersion.
+     */
+    public com.google.protobuf.ByteString getResourceVersionBytes() {
+      java.lang.Object ref = resourceVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        resourceVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A hash identifying the version of this policy, so that updates to fields of
+     * the policy won't accidentally undo intermediate changes (and so that users
+     * of the API unaware of some fields won't accidentally remove other fields).
+     * Make a &lt;code&gt;get()&lt;/code&gt; request to the cluster to get the current
+     * resource version and include it with requests to set the policy.
+     * </pre>
+     *
+     * <code>string resource_version = 3;</code>
+     *
+     * @param value The resourceVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      resourceVersion_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A hash identifying the version of this policy, so that updates to fields of
+     * the policy won't accidentally undo intermediate changes (and so that users
+     * of the API unaware of some fields won't accidentally remove other fields).
+     * Make a &lt;code&gt;get()&lt;/code&gt; request to the cluster to get the current
+     * resource version and include it with requests to set the policy.
+     * </pre>
+     *
+     * <code>string resource_version = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceVersion() {
+
+      resourceVersion_ = getDefaultInstance().getResourceVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A hash identifying the version of this policy, so that updates to fields of
+     * the policy won't accidentally undo intermediate changes (and so that users
+     * of the API unaware of some fields won't accidentally remove other fields).
+     * Make a &lt;code&gt;get()&lt;/code&gt; request to the cluster to get the current
+     * resource version and include it with requests to set the policy.
+     * </pre>
+     *
+     * <code>string resource_version = 3;</code>
+     *
+     * @param value The bytes for resourceVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      resourceVersion_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

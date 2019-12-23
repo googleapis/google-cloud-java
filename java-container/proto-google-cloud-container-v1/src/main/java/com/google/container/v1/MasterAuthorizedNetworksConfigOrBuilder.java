@@ -31,6 +31,8 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    * </pre>
    *
    * <code>bool enabled = 1;</code>
+   *
+   * @return The enabled.
    */
   boolean getEnabled();
 
@@ -38,7 +40,7 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    *
    *
    * <pre>
-   * cidr_blocks define up to 10 external networks that could access
+   * cidr_blocks define up to 50 external networks that could access
    * Kubernetes master through HTTPS.
    * </pre>
    *
@@ -51,7 +53,7 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    *
    *
    * <pre>
-   * cidr_blocks define up to 10 external networks that could access
+   * cidr_blocks define up to 50 external networks that could access
    * Kubernetes master through HTTPS.
    * </pre>
    *
@@ -63,7 +65,7 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    *
    *
    * <pre>
-   * cidr_blocks define up to 10 external networks that could access
+   * cidr_blocks define up to 50 external networks that could access
    * Kubernetes master through HTTPS.
    * </pre>
    *
@@ -75,7 +77,7 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    *
    *
    * <pre>
-   * cidr_blocks define up to 10 external networks that could access
+   * cidr_blocks define up to 50 external networks that could access
    * Kubernetes master through HTTPS.
    * </pre>
    *
@@ -89,7 +91,7 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    *
    *
    * <pre>
-   * cidr_blocks define up to 10 external networks that could access
+   * cidr_blocks define up to 50 external networks that could access
    * Kubernetes master through HTTPS.
    * </pre>
    *

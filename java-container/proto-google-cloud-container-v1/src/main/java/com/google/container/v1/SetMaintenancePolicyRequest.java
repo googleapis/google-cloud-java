@@ -45,6 +45,12 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SetMaintenancePolicyRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -152,11 +157,13 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Required. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -173,11 +180,13 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Required. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -197,12 +206,14 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The name of the Google Compute Engine
+   * Required. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The zone.
    */
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
@@ -219,12 +230,14 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The name of the Google Compute Engine
+   * Required. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for zone.
    */
   public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
@@ -244,10 +257,12 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The name of the cluster to update.
+   * Required. The name of the cluster to update.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The clusterId.
    */
   public java.lang.String getClusterId() {
     java.lang.Object ref = clusterId_;
@@ -264,10 +279,12 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The name of the cluster to update.
+   * Required. The name of the cluster to update.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for clusterId.
    */
   public com.google.protobuf.ByteString getClusterIdBytes() {
     java.lang.Object ref = clusterId_;
@@ -287,11 +304,15 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The maintenance policy to be set for the cluster. An empty field
+   * Required. The maintenance policy to be set for the cluster. An empty field
    * clears the existing maintenance policy.
    * </pre>
    *
-   * <code>.google.container.v1.MaintenancePolicy maintenance_policy = 4;</code>
+   * <code>
+   * .google.container.v1.MaintenancePolicy maintenance_policy = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the maintenancePolicy field is set.
    */
   public boolean hasMaintenancePolicy() {
     return maintenancePolicy_ != null;
@@ -300,11 +321,15 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The maintenance policy to be set for the cluster. An empty field
+   * Required. The maintenance policy to be set for the cluster. An empty field
    * clears the existing maintenance policy.
    * </pre>
    *
-   * <code>.google.container.v1.MaintenancePolicy maintenance_policy = 4;</code>
+   * <code>
+   * .google.container.v1.MaintenancePolicy maintenance_policy = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The maintenancePolicy.
    */
   public com.google.container.v1.MaintenancePolicy getMaintenancePolicy() {
     return maintenancePolicy_ == null
@@ -315,11 +340,13 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The maintenance policy to be set for the cluster. An empty field
+   * Required. The maintenance policy to be set for the cluster. An empty field
    * clears the existing maintenance policy.
    * </pre>
    *
-   * <code>.google.container.v1.MaintenancePolicy maintenance_policy = 4;</code>
+   * <code>
+   * .google.container.v1.MaintenancePolicy maintenance_policy = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.container.v1.MaintenancePolicyOrBuilder getMaintenancePolicyOrBuilder() {
     return getMaintenancePolicy();
@@ -337,6 +364,8 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string name = 5;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -359,6 +388,8 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string name = 5;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -771,11 +802,13 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Required. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -792,11 +825,13 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Required. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -813,11 +848,14 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Required. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -832,11 +870,13 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Required. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -848,11 +888,14 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Required. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -870,12 +913,14 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The name of the Google Compute Engine
+     * Required. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The zone.
      */
     public java.lang.String getZone() {
       java.lang.Object ref = zone_;
@@ -892,12 +937,14 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The name of the Google Compute Engine
+     * Required. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for zone.
      */
     public com.google.protobuf.ByteString getZoneBytes() {
       java.lang.Object ref = zone_;
@@ -914,12 +961,15 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The name of the Google Compute Engine
+     * Required. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The zone to set.
+     * @return This builder for chaining.
      */
     public Builder setZone(java.lang.String value) {
       if (value == null) {
@@ -934,12 +984,14 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The name of the Google Compute Engine
+     * Required. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearZone() {
 
@@ -951,12 +1003,15 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The name of the Google Compute Engine
+     * Required. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for zone to set.
+     * @return This builder for chaining.
      */
     public Builder setZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -974,10 +1029,12 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The name of the cluster to update.
+     * Required. The name of the cluster to update.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The clusterId.
      */
     public java.lang.String getClusterId() {
       java.lang.Object ref = clusterId_;
@@ -994,10 +1051,12 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The name of the cluster to update.
+     * Required. The name of the cluster to update.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for clusterId.
      */
     public com.google.protobuf.ByteString getClusterIdBytes() {
       java.lang.Object ref = clusterId_;
@@ -1014,10 +1073,13 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The name of the cluster to update.
+     * Required. The name of the cluster to update.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The clusterId to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterId(java.lang.String value) {
       if (value == null) {
@@ -1032,10 +1094,12 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The name of the cluster to update.
+     * Required. The name of the cluster to update.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClusterId() {
 
@@ -1047,10 +1111,13 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The name of the cluster to update.
+     * Required. The name of the cluster to update.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for clusterId to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1073,11 +1140,15 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The maintenance policy to be set for the cluster. An empty field
+     * Required. The maintenance policy to be set for the cluster. An empty field
      * clears the existing maintenance policy.
      * </pre>
      *
-     * <code>.google.container.v1.MaintenancePolicy maintenance_policy = 4;</code>
+     * <code>
+     * .google.container.v1.MaintenancePolicy maintenance_policy = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the maintenancePolicy field is set.
      */
     public boolean hasMaintenancePolicy() {
       return maintenancePolicyBuilder_ != null || maintenancePolicy_ != null;
@@ -1086,11 +1157,15 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The maintenance policy to be set for the cluster. An empty field
+     * Required. The maintenance policy to be set for the cluster. An empty field
      * clears the existing maintenance policy.
      * </pre>
      *
-     * <code>.google.container.v1.MaintenancePolicy maintenance_policy = 4;</code>
+     * <code>
+     * .google.container.v1.MaintenancePolicy maintenance_policy = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The maintenancePolicy.
      */
     public com.google.container.v1.MaintenancePolicy getMaintenancePolicy() {
       if (maintenancePolicyBuilder_ == null) {
@@ -1105,11 +1180,13 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The maintenance policy to be set for the cluster. An empty field
+     * Required. The maintenance policy to be set for the cluster. An empty field
      * clears the existing maintenance policy.
      * </pre>
      *
-     * <code>.google.container.v1.MaintenancePolicy maintenance_policy = 4;</code>
+     * <code>
+     * .google.container.v1.MaintenancePolicy maintenance_policy = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setMaintenancePolicy(com.google.container.v1.MaintenancePolicy value) {
       if (maintenancePolicyBuilder_ == null) {
@@ -1128,11 +1205,13 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The maintenance policy to be set for the cluster. An empty field
+     * Required. The maintenance policy to be set for the cluster. An empty field
      * clears the existing maintenance policy.
      * </pre>
      *
-     * <code>.google.container.v1.MaintenancePolicy maintenance_policy = 4;</code>
+     * <code>
+     * .google.container.v1.MaintenancePolicy maintenance_policy = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setMaintenancePolicy(
         com.google.container.v1.MaintenancePolicy.Builder builderForValue) {
@@ -1149,11 +1228,13 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The maintenance policy to be set for the cluster. An empty field
+     * Required. The maintenance policy to be set for the cluster. An empty field
      * clears the existing maintenance policy.
      * </pre>
      *
-     * <code>.google.container.v1.MaintenancePolicy maintenance_policy = 4;</code>
+     * <code>
+     * .google.container.v1.MaintenancePolicy maintenance_policy = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeMaintenancePolicy(com.google.container.v1.MaintenancePolicy value) {
       if (maintenancePolicyBuilder_ == null) {
@@ -1176,11 +1257,13 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The maintenance policy to be set for the cluster. An empty field
+     * Required. The maintenance policy to be set for the cluster. An empty field
      * clears the existing maintenance policy.
      * </pre>
      *
-     * <code>.google.container.v1.MaintenancePolicy maintenance_policy = 4;</code>
+     * <code>
+     * .google.container.v1.MaintenancePolicy maintenance_policy = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearMaintenancePolicy() {
       if (maintenancePolicyBuilder_ == null) {
@@ -1197,11 +1280,13 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The maintenance policy to be set for the cluster. An empty field
+     * Required. The maintenance policy to be set for the cluster. An empty field
      * clears the existing maintenance policy.
      * </pre>
      *
-     * <code>.google.container.v1.MaintenancePolicy maintenance_policy = 4;</code>
+     * <code>
+     * .google.container.v1.MaintenancePolicy maintenance_policy = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.container.v1.MaintenancePolicy.Builder getMaintenancePolicyBuilder() {
 
@@ -1212,11 +1297,13 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The maintenance policy to be set for the cluster. An empty field
+     * Required. The maintenance policy to be set for the cluster. An empty field
      * clears the existing maintenance policy.
      * </pre>
      *
-     * <code>.google.container.v1.MaintenancePolicy maintenance_policy = 4;</code>
+     * <code>
+     * .google.container.v1.MaintenancePolicy maintenance_policy = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.container.v1.MaintenancePolicyOrBuilder getMaintenancePolicyOrBuilder() {
       if (maintenancePolicyBuilder_ != null) {
@@ -1231,11 +1318,13 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The maintenance policy to be set for the cluster. An empty field
+     * Required. The maintenance policy to be set for the cluster. An empty field
      * clears the existing maintenance policy.
      * </pre>
      *
-     * <code>.google.container.v1.MaintenancePolicy maintenance_policy = 4;</code>
+     * <code>
+     * .google.container.v1.MaintenancePolicy maintenance_policy = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.MaintenancePolicy,
@@ -1265,6 +1354,8 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string name = 5;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1287,6 +1378,8 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string name = 5;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1309,6 +1402,9 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string name = 5;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1329,6 +1425,8 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string name = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1346,6 +1444,9 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string name = 5;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -34,6 +34,8 @@ import com.google.container.v1.ListNodePoolsRequest;
 import com.google.container.v1.ListNodePoolsResponse;
 import com.google.container.v1.ListOperationsRequest;
 import com.google.container.v1.ListOperationsResponse;
+import com.google.container.v1.ListUsableSubnetworksRequest;
+import com.google.container.v1.ListUsableSubnetworksResponse;
 import com.google.container.v1.NodePool;
 import com.google.container.v1.Operation;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
@@ -533,6 +535,22 @@ public class MockClusterManagerImpl extends ClusterManagerImplBase {
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext((Operation) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void listUsableSubnetworks(
+      ListUsableSubnetworksRequest request,
+      StreamObserver<ListUsableSubnetworksResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListUsableSubnetworksResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListUsableSubnetworksResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

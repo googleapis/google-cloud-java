@@ -34,6 +34,8 @@ public interface NetworkConfigOrBuilder
    * </pre>
    *
    * <code>string network = 1;</code>
+   *
+   * @return The network.
    */
   java.lang.String getNetwork();
   /**
@@ -47,6 +49,8 @@ public interface NetworkConfigOrBuilder
    * </pre>
    *
    * <code>string network = 1;</code>
+   *
+   * @return The bytes for network.
    */
   com.google.protobuf.ByteString getNetworkBytes();
 
@@ -60,6 +64,8 @@ public interface NetworkConfigOrBuilder
    * </pre>
    *
    * <code>string subnetwork = 2;</code>
+   *
+   * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
   /**
@@ -72,6 +78,22 @@ public interface NetworkConfigOrBuilder
    * </pre>
    *
    * <code>string subnetwork = 2;</code>
+   *
+   * @return The bytes for subnetwork.
    */
   com.google.protobuf.ByteString getSubnetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether Intra-node visibility is enabled for this cluster.
+   * This makes same node pod to pod traffic visible for VPC network.
+   * </pre>
+   *
+   * <code>bool enable_intra_node_visibility = 5;</code>
+   *
+   * @return The enableIntraNodeVisibility.
+   */
+  boolean getEnableIntraNodeVisibility();
 }

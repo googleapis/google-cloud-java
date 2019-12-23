@@ -46,6 +46,12 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SetNodePoolAutoscalingRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -160,12 +165,15 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The projectId.
    */
   @java.lang.Deprecated
   public java.lang.String getProjectId() {
@@ -183,12 +191,15 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for projectId.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getProjectIdBytes() {
@@ -209,13 +220,15 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The zone.
    */
   @java.lang.Deprecated
   public java.lang.String getZone() {
@@ -233,13 +246,15 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for zone.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getZoneBytes() {
@@ -260,11 +275,14 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster to upgrade.
+   * Required. Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The clusterId.
    */
   @java.lang.Deprecated
   public java.lang.String getClusterId() {
@@ -282,11 +300,14 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster to upgrade.
+   * Required. Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getClusterIdBytes() {
@@ -307,11 +328,14 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Deprecated. The name of the node pool to upgrade.
+   * Required. Deprecated. The name of the node pool to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string node_pool_id = 4 [deprecated = true];</code>
+   * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The nodePoolId.
    */
   @java.lang.Deprecated
   public java.lang.String getNodePoolId() {
@@ -329,11 +353,14 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Deprecated. The name of the node pool to upgrade.
+   * Required. Deprecated. The name of the node pool to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string node_pool_id = 4 [deprecated = true];</code>
+   * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getNodePoolIdBytes() {
@@ -354,10 +381,14 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Autoscaling configuration for the node pool.
+   * Required. Autoscaling configuration for the node pool.
    * </pre>
    *
-   * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 5;</code>
+   * <code>
+   * .google.container.v1.NodePoolAutoscaling autoscaling = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the autoscaling field is set.
    */
   public boolean hasAutoscaling() {
     return autoscaling_ != null;
@@ -366,10 +397,14 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Autoscaling configuration for the node pool.
+   * Required. Autoscaling configuration for the node pool.
    * </pre>
    *
-   * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 5;</code>
+   * <code>
+   * .google.container.v1.NodePoolAutoscaling autoscaling = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The autoscaling.
    */
   public com.google.container.v1.NodePoolAutoscaling getAutoscaling() {
     return autoscaling_ == null
@@ -380,10 +415,12 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Autoscaling configuration for the node pool.
+   * Required. Autoscaling configuration for the node pool.
    * </pre>
    *
-   * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 5;</code>
+   * <code>
+   * .google.container.v1.NodePoolAutoscaling autoscaling = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.container.v1.NodePoolAutoscalingOrBuilder getAutoscalingOrBuilder() {
     return getAutoscaling();
@@ -401,6 +438,8 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string name = 6;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -423,6 +462,8 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string name = 6;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -852,12 +893,15 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The projectId.
      */
     @java.lang.Deprecated
     public java.lang.String getProjectId() {
@@ -875,12 +919,15 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The bytes for projectId.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getProjectIdBytes() {
@@ -898,12 +945,16 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setProjectId(java.lang.String value) {
@@ -919,12 +970,15 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearProjectId() {
@@ -937,12 +991,16 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
@@ -961,13 +1019,15 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The zone.
      */
     @java.lang.Deprecated
     public java.lang.String getZone() {
@@ -985,13 +1045,15 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for zone.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getZoneBytes() {
@@ -1009,13 +1071,16 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The zone to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setZone(java.lang.String value) {
@@ -1031,13 +1096,15 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearZone() {
@@ -1050,13 +1117,16 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for zone to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setZoneBytes(com.google.protobuf.ByteString value) {
@@ -1075,11 +1145,14 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The clusterId.
      */
     @java.lang.Deprecated
     public java.lang.String getClusterId() {
@@ -1097,11 +1170,14 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getClusterIdBytes() {
@@ -1119,11 +1195,15 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The clusterId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setClusterId(java.lang.String value) {
@@ -1139,11 +1219,14 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearClusterId() {
@@ -1156,11 +1239,15 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The bytes for clusterId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setClusterIdBytes(com.google.protobuf.ByteString value) {
@@ -1179,11 +1266,14 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The name of the node pool to upgrade.
+     * Required. Deprecated. The name of the node pool to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true];</code>
+     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The nodePoolId.
      */
     @java.lang.Deprecated
     public java.lang.String getNodePoolId() {
@@ -1201,11 +1291,14 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The name of the node pool to upgrade.
+     * Required. Deprecated. The name of the node pool to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true];</code>
+     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getNodePoolIdBytes() {
@@ -1223,11 +1316,15 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The name of the node pool to upgrade.
+     * Required. Deprecated. The name of the node pool to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true];</code>
+     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The nodePoolId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setNodePoolId(java.lang.String value) {
@@ -1243,11 +1340,14 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The name of the node pool to upgrade.
+     * Required. Deprecated. The name of the node pool to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true];</code>
+     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearNodePoolId() {
@@ -1260,11 +1360,15 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Deprecated. The name of the node pool to upgrade.
+     * Required. Deprecated. The name of the node pool to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true];</code>
+     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The bytes for nodePoolId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setNodePoolIdBytes(com.google.protobuf.ByteString value) {
@@ -1288,10 +1392,14 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Autoscaling configuration for the node pool.
+     * Required. Autoscaling configuration for the node pool.
      * </pre>
      *
-     * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 5;</code>
+     * <code>
+     * .google.container.v1.NodePoolAutoscaling autoscaling = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the autoscaling field is set.
      */
     public boolean hasAutoscaling() {
       return autoscalingBuilder_ != null || autoscaling_ != null;
@@ -1300,10 +1408,14 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Autoscaling configuration for the node pool.
+     * Required. Autoscaling configuration for the node pool.
      * </pre>
      *
-     * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 5;</code>
+     * <code>
+     * .google.container.v1.NodePoolAutoscaling autoscaling = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The autoscaling.
      */
     public com.google.container.v1.NodePoolAutoscaling getAutoscaling() {
       if (autoscalingBuilder_ == null) {
@@ -1318,10 +1430,12 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Autoscaling configuration for the node pool.
+     * Required. Autoscaling configuration for the node pool.
      * </pre>
      *
-     * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 5;</code>
+     * <code>
+     * .google.container.v1.NodePoolAutoscaling autoscaling = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAutoscaling(com.google.container.v1.NodePoolAutoscaling value) {
       if (autoscalingBuilder_ == null) {
@@ -1340,10 +1454,12 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Autoscaling configuration for the node pool.
+     * Required. Autoscaling configuration for the node pool.
      * </pre>
      *
-     * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 5;</code>
+     * <code>
+     * .google.container.v1.NodePoolAutoscaling autoscaling = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAutoscaling(
         com.google.container.v1.NodePoolAutoscaling.Builder builderForValue) {
@@ -1360,10 +1476,12 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Autoscaling configuration for the node pool.
+     * Required. Autoscaling configuration for the node pool.
      * </pre>
      *
-     * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 5;</code>
+     * <code>
+     * .google.container.v1.NodePoolAutoscaling autoscaling = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeAutoscaling(com.google.container.v1.NodePoolAutoscaling value) {
       if (autoscalingBuilder_ == null) {
@@ -1386,10 +1504,12 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Autoscaling configuration for the node pool.
+     * Required. Autoscaling configuration for the node pool.
      * </pre>
      *
-     * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 5;</code>
+     * <code>
+     * .google.container.v1.NodePoolAutoscaling autoscaling = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearAutoscaling() {
       if (autoscalingBuilder_ == null) {
@@ -1406,10 +1526,12 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Autoscaling configuration for the node pool.
+     * Required. Autoscaling configuration for the node pool.
      * </pre>
      *
-     * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 5;</code>
+     * <code>
+     * .google.container.v1.NodePoolAutoscaling autoscaling = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.container.v1.NodePoolAutoscaling.Builder getAutoscalingBuilder() {
 
@@ -1420,10 +1542,12 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Autoscaling configuration for the node pool.
+     * Required. Autoscaling configuration for the node pool.
      * </pre>
      *
-     * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 5;</code>
+     * <code>
+     * .google.container.v1.NodePoolAutoscaling autoscaling = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.container.v1.NodePoolAutoscalingOrBuilder getAutoscalingOrBuilder() {
       if (autoscalingBuilder_ != null) {
@@ -1438,10 +1562,12 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Autoscaling configuration for the node pool.
+     * Required. Autoscaling configuration for the node pool.
      * </pre>
      *
-     * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 5;</code>
+     * <code>
+     * .google.container.v1.NodePoolAutoscaling autoscaling = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.NodePoolAutoscaling,
@@ -1471,6 +1597,8 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1493,6 +1621,8 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1515,6 +1645,9 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1535,6 +1668,8 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1552,6 +1687,9 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string name = 6;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

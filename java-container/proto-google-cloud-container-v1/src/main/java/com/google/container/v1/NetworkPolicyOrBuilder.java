@@ -31,6 +31,8 @@ public interface NetworkPolicyOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.NetworkPolicy.Provider provider = 1;</code>
+   *
+   * @return The enum numeric value on the wire for provider.
    */
   int getProviderValue();
   /**
@@ -41,6 +43,8 @@ public interface NetworkPolicyOrBuilder
    * </pre>
    *
    * <code>.google.container.v1.NetworkPolicy.Provider provider = 1;</code>
+   *
+   * @return The provider.
    */
   com.google.container.v1.NetworkPolicy.Provider getProvider();
 
@@ -52,6 +56,8 @@ public interface NetworkPolicyOrBuilder
    * </pre>
    *
    * <code>bool enabled = 2;</code>
+   *
+   * @return The enabled.
    */
   boolean getEnabled();
 }

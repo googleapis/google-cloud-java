@@ -48,6 +48,12 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new MasterAuth();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -60,7 +66,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -163,11 +168,13 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The username to use for HTTP basic authentication to the master endpoint.
-   * For clusters v1.6.0 and later, you can disable basic authentication by
-   * providing an empty username.
+   * For clusters v1.6.0 and later, basic authentication can be disabled by
+   * leaving username unspecified (or setting it to the empty string).
    * </pre>
    *
    * <code>string username = 1;</code>
+   *
+   * @return The username.
    */
   public java.lang.String getUsername() {
     java.lang.Object ref = username_;
@@ -185,11 +192,13 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The username to use for HTTP basic authentication to the master endpoint.
-   * For clusters v1.6.0 and later, you can disable basic authentication by
-   * providing an empty username.
+   * For clusters v1.6.0 and later, basic authentication can be disabled by
+   * leaving username unspecified (or setting it to the empty string).
    * </pre>
    *
    * <code>string username = 1;</code>
+   *
+   * @return The bytes for username.
    */
   public com.google.protobuf.ByteString getUsernameBytes() {
     java.lang.Object ref = username_;
@@ -216,6 +225,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string password = 2;</code>
+   *
+   * @return The password.
    */
   public java.lang.String getPassword() {
     java.lang.Object ref = password_;
@@ -239,6 +250,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string password = 2;</code>
+   *
+   * @return The bytes for password.
    */
   public com.google.protobuf.ByteString getPasswordBytes() {
     java.lang.Object ref = password_;
@@ -264,6 +277,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
+   *
+   * @return Whether the clientCertificateConfig field is set.
    */
   public boolean hasClientCertificateConfig() {
     return clientCertificateConfig_ != null;
@@ -278,6 +293,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
+   *
+   * @return The clientCertificateConfig.
    */
   public com.google.container.v1.ClientCertificateConfig getClientCertificateConfig() {
     return clientCertificateConfig_ == null
@@ -311,6 +328,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cluster_ca_certificate = 100;</code>
+   *
+   * @return The clusterCaCertificate.
    */
   public java.lang.String getClusterCaCertificate() {
     java.lang.Object ref = clusterCaCertificate_;
@@ -332,6 +351,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cluster_ca_certificate = 100;</code>
+   *
+   * @return The bytes for clusterCaCertificate.
    */
   public com.google.protobuf.ByteString getClusterCaCertificateBytes() {
     java.lang.Object ref = clusterCaCertificate_;
@@ -356,6 +377,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string client_certificate = 101;</code>
+   *
+   * @return The clientCertificate.
    */
   public java.lang.String getClientCertificate() {
     java.lang.Object ref = clientCertificate_;
@@ -377,6 +400,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string client_certificate = 101;</code>
+   *
+   * @return The bytes for clientCertificate.
    */
   public com.google.protobuf.ByteString getClientCertificateBytes() {
     java.lang.Object ref = clientCertificate_;
@@ -401,6 +426,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string client_key = 102;</code>
+   *
+   * @return The clientKey.
    */
   public java.lang.String getClientKey() {
     java.lang.Object ref = clientKey_;
@@ -422,6 +449,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string client_key = 102;</code>
+   *
+   * @return The bytes for clientKey.
    */
   public com.google.protobuf.ByteString getClientKeyBytes() {
     java.lang.Object ref = clientKey_;
@@ -849,11 +878,13 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The username to use for HTTP basic authentication to the master endpoint.
-     * For clusters v1.6.0 and later, you can disable basic authentication by
-     * providing an empty username.
+     * For clusters v1.6.0 and later, basic authentication can be disabled by
+     * leaving username unspecified (or setting it to the empty string).
      * </pre>
      *
      * <code>string username = 1;</code>
+     *
+     * @return The username.
      */
     public java.lang.String getUsername() {
       java.lang.Object ref = username_;
@@ -871,11 +902,13 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The username to use for HTTP basic authentication to the master endpoint.
-     * For clusters v1.6.0 and later, you can disable basic authentication by
-     * providing an empty username.
+     * For clusters v1.6.0 and later, basic authentication can be disabled by
+     * leaving username unspecified (or setting it to the empty string).
      * </pre>
      *
      * <code>string username = 1;</code>
+     *
+     * @return The bytes for username.
      */
     public com.google.protobuf.ByteString getUsernameBytes() {
       java.lang.Object ref = username_;
@@ -893,11 +926,14 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The username to use for HTTP basic authentication to the master endpoint.
-     * For clusters v1.6.0 and later, you can disable basic authentication by
-     * providing an empty username.
+     * For clusters v1.6.0 and later, basic authentication can be disabled by
+     * leaving username unspecified (or setting it to the empty string).
      * </pre>
      *
      * <code>string username = 1;</code>
+     *
+     * @param value The username to set.
+     * @return This builder for chaining.
      */
     public Builder setUsername(java.lang.String value) {
       if (value == null) {
@@ -913,11 +949,13 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The username to use for HTTP basic authentication to the master endpoint.
-     * For clusters v1.6.0 and later, you can disable basic authentication by
-     * providing an empty username.
+     * For clusters v1.6.0 and later, basic authentication can be disabled by
+     * leaving username unspecified (or setting it to the empty string).
      * </pre>
      *
      * <code>string username = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUsername() {
 
@@ -930,11 +968,14 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The username to use for HTTP basic authentication to the master endpoint.
-     * For clusters v1.6.0 and later, you can disable basic authentication by
-     * providing an empty username.
+     * For clusters v1.6.0 and later, basic authentication can be disabled by
+     * leaving username unspecified (or setting it to the empty string).
      * </pre>
      *
      * <code>string username = 1;</code>
+     *
+     * @param value The bytes for username to set.
+     * @return This builder for chaining.
      */
     public Builder setUsernameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -959,6 +1000,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string password = 2;</code>
+     *
+     * @return The password.
      */
     public java.lang.String getPassword() {
       java.lang.Object ref = password_;
@@ -982,6 +1025,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string password = 2;</code>
+     *
+     * @return The bytes for password.
      */
     public com.google.protobuf.ByteString getPasswordBytes() {
       java.lang.Object ref = password_;
@@ -1005,6 +1050,9 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string password = 2;</code>
+     *
+     * @param value The password to set.
+     * @return This builder for chaining.
      */
     public Builder setPassword(java.lang.String value) {
       if (value == null) {
@@ -1026,6 +1074,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string password = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPassword() {
 
@@ -1044,6 +1094,9 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string password = 2;</code>
+     *
+     * @param value The bytes for password to set.
+     * @return This builder for chaining.
      */
     public Builder setPasswordBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1072,6 +1125,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
+     *
+     * @return Whether the clientCertificateConfig field is set.
      */
     public boolean hasClientCertificateConfig() {
       return clientCertificateConfigBuilder_ != null || clientCertificateConfig_ != null;
@@ -1086,6 +1141,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
+     *
+     * @return The clientCertificateConfig.
      */
     public com.google.container.v1.ClientCertificateConfig getClientCertificateConfig() {
       if (clientCertificateConfigBuilder_ == null) {
@@ -1270,6 +1327,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_ca_certificate = 100;</code>
+     *
+     * @return The clusterCaCertificate.
      */
     public java.lang.String getClusterCaCertificate() {
       java.lang.Object ref = clusterCaCertificate_;
@@ -1291,6 +1350,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_ca_certificate = 100;</code>
+     *
+     * @return The bytes for clusterCaCertificate.
      */
     public com.google.protobuf.ByteString getClusterCaCertificateBytes() {
       java.lang.Object ref = clusterCaCertificate_;
@@ -1312,6 +1373,9 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_ca_certificate = 100;</code>
+     *
+     * @param value The clusterCaCertificate to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterCaCertificate(java.lang.String value) {
       if (value == null) {
@@ -1331,6 +1395,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_ca_certificate = 100;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClusterCaCertificate() {
 
@@ -1347,6 +1413,9 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_ca_certificate = 100;</code>
+     *
+     * @param value The bytes for clusterCaCertificate to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterCaCertificateBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1369,6 +1438,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string client_certificate = 101;</code>
+     *
+     * @return The clientCertificate.
      */
     public java.lang.String getClientCertificate() {
       java.lang.Object ref = clientCertificate_;
@@ -1390,6 +1461,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string client_certificate = 101;</code>
+     *
+     * @return The bytes for clientCertificate.
      */
     public com.google.protobuf.ByteString getClientCertificateBytes() {
       java.lang.Object ref = clientCertificate_;
@@ -1411,6 +1484,9 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string client_certificate = 101;</code>
+     *
+     * @param value The clientCertificate to set.
+     * @return This builder for chaining.
      */
     public Builder setClientCertificate(java.lang.String value) {
       if (value == null) {
@@ -1430,6 +1506,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string client_certificate = 101;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClientCertificate() {
 
@@ -1446,6 +1524,9 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string client_certificate = 101;</code>
+     *
+     * @param value The bytes for clientCertificate to set.
+     * @return This builder for chaining.
      */
     public Builder setClientCertificateBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1468,6 +1549,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string client_key = 102;</code>
+     *
+     * @return The clientKey.
      */
     public java.lang.String getClientKey() {
       java.lang.Object ref = clientKey_;
@@ -1489,6 +1572,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string client_key = 102;</code>
+     *
+     * @return The bytes for clientKey.
      */
     public com.google.protobuf.ByteString getClientKeyBytes() {
       java.lang.Object ref = clientKey_;
@@ -1510,6 +1595,9 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string client_key = 102;</code>
+     *
+     * @param value The clientKey to set.
+     * @return This builder for chaining.
      */
     public Builder setClientKey(java.lang.String value) {
       if (value == null) {
@@ -1529,6 +1617,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string client_key = 102;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearClientKey() {
 
@@ -1545,6 +1635,9 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string client_key = 102;</code>
+     *
+     * @param value The bytes for clientKey to set.
+     * @return This builder for chaining.
      */
     public Builder setClientKeyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

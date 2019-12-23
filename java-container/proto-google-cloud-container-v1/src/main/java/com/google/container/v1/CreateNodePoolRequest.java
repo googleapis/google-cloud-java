@@ -45,6 +45,12 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateNodePoolRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -151,12 +156,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://developers.google.com/console/help/new/#projectnumber).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The projectId.
    */
   @java.lang.Deprecated
   public java.lang.String getProjectId() {
@@ -174,12 +182,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://developers.google.com/console/help/new/#projectnumber).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for projectId.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getProjectIdBytes() {
@@ -200,13 +211,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The zone.
    */
   @java.lang.Deprecated
   public java.lang.String getZone() {
@@ -224,13 +237,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for zone.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getZoneBytes() {
@@ -251,11 +266,14 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster.
+   * Required. Deprecated. The name of the cluster.
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The clusterId.
    */
   @java.lang.Deprecated
   public java.lang.String getClusterId() {
@@ -273,11 +291,14 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster.
+   * Required. Deprecated. The name of the cluster.
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getClusterIdBytes() {
@@ -298,10 +319,13 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The node pool to create.
+   * Required. The node pool to create.
    * </pre>
    *
-   * <code>.google.container.v1.NodePool node_pool = 4;</code>
+   * <code>.google.container.v1.NodePool node_pool = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the nodePool field is set.
    */
   public boolean hasNodePool() {
     return nodePool_ != null;
@@ -310,10 +334,13 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The node pool to create.
+   * Required. The node pool to create.
    * </pre>
    *
-   * <code>.google.container.v1.NodePool node_pool = 4;</code>
+   * <code>.google.container.v1.NodePool node_pool = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The nodePool.
    */
   public com.google.container.v1.NodePool getNodePool() {
     return nodePool_ == null ? com.google.container.v1.NodePool.getDefaultInstance() : nodePool_;
@@ -322,10 +349,11 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The node pool to create.
+   * Required. The node pool to create.
    * </pre>
    *
-   * <code>.google.container.v1.NodePool node_pool = 4;</code>
+   * <code>.google.container.v1.NodePool node_pool = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.container.v1.NodePoolOrBuilder getNodePoolOrBuilder() {
     return getNodePool();
@@ -343,6 +371,8 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string parent = 6;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -365,6 +395,8 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string parent = 6;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -775,12 +807,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://developers.google.com/console/help/new/#projectnumber).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The projectId.
      */
     @java.lang.Deprecated
     public java.lang.String getProjectId() {
@@ -798,12 +833,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://developers.google.com/console/help/new/#projectnumber).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The bytes for projectId.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getProjectIdBytes() {
@@ -821,12 +859,16 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://developers.google.com/console/help/new/#projectnumber).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setProjectId(java.lang.String value) {
@@ -842,12 +884,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://developers.google.com/console/help/new/#projectnumber).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearProjectId() {
@@ -860,12 +905,16 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://developers.google.com/console/help/new/#projectnumber).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
@@ -884,13 +933,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The zone.
      */
     @java.lang.Deprecated
     public java.lang.String getZone() {
@@ -908,13 +959,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for zone.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getZoneBytes() {
@@ -932,13 +985,16 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The zone to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setZone(java.lang.String value) {
@@ -954,13 +1010,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearZone() {
@@ -973,13 +1031,16 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for zone to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setZoneBytes(com.google.protobuf.ByteString value) {
@@ -998,11 +1059,14 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster.
+     * Required. Deprecated. The name of the cluster.
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The clusterId.
      */
     @java.lang.Deprecated
     public java.lang.String getClusterId() {
@@ -1020,11 +1084,14 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster.
+     * Required. Deprecated. The name of the cluster.
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getClusterIdBytes() {
@@ -1042,11 +1109,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster.
+     * Required. Deprecated. The name of the cluster.
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The clusterId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setClusterId(java.lang.String value) {
@@ -1062,11 +1133,14 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster.
+     * Required. Deprecated. The name of the cluster.
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearClusterId() {
@@ -1079,11 +1153,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster.
+     * Required. Deprecated. The name of the cluster.
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The bytes for clusterId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setClusterIdBytes(com.google.protobuf.ByteString value) {
@@ -1107,10 +1185,13 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The node pool to create.
+     * Required. The node pool to create.
      * </pre>
      *
-     * <code>.google.container.v1.NodePool node_pool = 4;</code>
+     * <code>.google.container.v1.NodePool node_pool = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the nodePool field is set.
      */
     public boolean hasNodePool() {
       return nodePoolBuilder_ != null || nodePool_ != null;
@@ -1119,10 +1200,13 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The node pool to create.
+     * Required. The node pool to create.
      * </pre>
      *
-     * <code>.google.container.v1.NodePool node_pool = 4;</code>
+     * <code>.google.container.v1.NodePool node_pool = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The nodePool.
      */
     public com.google.container.v1.NodePool getNodePool() {
       if (nodePoolBuilder_ == null) {
@@ -1137,10 +1221,11 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The node pool to create.
+     * Required. The node pool to create.
      * </pre>
      *
-     * <code>.google.container.v1.NodePool node_pool = 4;</code>
+     * <code>.google.container.v1.NodePool node_pool = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setNodePool(com.google.container.v1.NodePool value) {
       if (nodePoolBuilder_ == null) {
@@ -1159,10 +1244,11 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The node pool to create.
+     * Required. The node pool to create.
      * </pre>
      *
-     * <code>.google.container.v1.NodePool node_pool = 4;</code>
+     * <code>.google.container.v1.NodePool node_pool = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setNodePool(com.google.container.v1.NodePool.Builder builderForValue) {
       if (nodePoolBuilder_ == null) {
@@ -1178,10 +1264,11 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The node pool to create.
+     * Required. The node pool to create.
      * </pre>
      *
-     * <code>.google.container.v1.NodePool node_pool = 4;</code>
+     * <code>.google.container.v1.NodePool node_pool = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeNodePool(com.google.container.v1.NodePool value) {
       if (nodePoolBuilder_ == null) {
@@ -1204,10 +1291,11 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The node pool to create.
+     * Required. The node pool to create.
      * </pre>
      *
-     * <code>.google.container.v1.NodePool node_pool = 4;</code>
+     * <code>.google.container.v1.NodePool node_pool = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearNodePool() {
       if (nodePoolBuilder_ == null) {
@@ -1224,10 +1312,11 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The node pool to create.
+     * Required. The node pool to create.
      * </pre>
      *
-     * <code>.google.container.v1.NodePool node_pool = 4;</code>
+     * <code>.google.container.v1.NodePool node_pool = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.container.v1.NodePool.Builder getNodePoolBuilder() {
 
@@ -1238,10 +1327,11 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The node pool to create.
+     * Required. The node pool to create.
      * </pre>
      *
-     * <code>.google.container.v1.NodePool node_pool = 4;</code>
+     * <code>.google.container.v1.NodePool node_pool = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.container.v1.NodePoolOrBuilder getNodePoolOrBuilder() {
       if (nodePoolBuilder_ != null) {
@@ -1256,10 +1346,11 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The node pool to create.
+     * Required. The node pool to create.
      * </pre>
      *
-     * <code>.google.container.v1.NodePool node_pool = 4;</code>
+     * <code>.google.container.v1.NodePool node_pool = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.NodePool,
@@ -1289,6 +1380,8 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string parent = 6;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1311,6 +1404,8 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string parent = 6;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1333,6 +1428,9 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string parent = 6;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1353,6 +1451,8 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string parent = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1370,6 +1470,9 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string parent = 6;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

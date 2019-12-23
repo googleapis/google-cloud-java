@@ -27,12 +27,15 @@ public interface CancelOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The projectId.
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
@@ -40,12 +43,15 @@ public interface CancelOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for projectId.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getProjectIdBytes();
@@ -54,12 +60,14 @@ public interface CancelOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the operation resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The zone.
    */
   @java.lang.Deprecated
   java.lang.String getZone();
@@ -67,12 +75,14 @@ public interface CancelOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the operation resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for zone.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getZoneBytes();
@@ -81,11 +91,14 @@ public interface CancelOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The server-assigned `name` of the operation.
+   * Required. Deprecated. The server-assigned `name` of the operation.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string operation_id = 3 [deprecated = true];</code>
+   * <code>string operation_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The operationId.
    */
   @java.lang.Deprecated
   java.lang.String getOperationId();
@@ -93,11 +106,14 @@ public interface CancelOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The server-assigned `name` of the operation.
+   * Required. Deprecated. The server-assigned `name` of the operation.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string operation_id = 3 [deprecated = true];</code>
+   * <code>string operation_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for operationId.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getOperationIdBytes();
@@ -111,6 +127,8 @@ public interface CancelOperationRequestOrBuilder
    * </pre>
    *
    * <code>string name = 4;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -122,6 +140,8 @@ public interface CancelOperationRequestOrBuilder
    * </pre>
    *
    * <code>string name = 4;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 }

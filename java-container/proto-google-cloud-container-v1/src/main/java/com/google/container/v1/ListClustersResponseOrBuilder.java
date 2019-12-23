@@ -88,6 +88,8 @@ public interface ListClustersResponseOrBuilder
    * </pre>
    *
    * <code>repeated string missing_zones = 2;</code>
+   *
+   * @return A list containing the missingZones.
    */
   java.util.List<java.lang.String> getMissingZonesList();
   /**
@@ -99,6 +101,8 @@ public interface ListClustersResponseOrBuilder
    * </pre>
    *
    * <code>repeated string missing_zones = 2;</code>
+   *
+   * @return The count of missingZones.
    */
   int getMissingZonesCount();
   /**
@@ -110,6 +114,9 @@ public interface ListClustersResponseOrBuilder
    * </pre>
    *
    * <code>repeated string missing_zones = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The missingZones at the given index.
    */
   java.lang.String getMissingZones(int index);
   /**
@@ -121,6 +128,9 @@ public interface ListClustersResponseOrBuilder
    * </pre>
    *
    * <code>repeated string missing_zones = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the missingZones at the given index.
    */
   com.google.protobuf.ByteString getMissingZonesBytes(int index);
 }

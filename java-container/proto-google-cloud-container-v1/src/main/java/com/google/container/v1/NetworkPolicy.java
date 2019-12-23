@@ -43,6 +43,12 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new NetworkPolicy();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -174,12 +179,20 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Provider valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Provider forNumber(int value) {
       switch (value) {
         case 0:
@@ -245,6 +258,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.NetworkPolicy.Provider provider = 1;</code>
+   *
+   * @return The enum numeric value on the wire for provider.
    */
   public int getProviderValue() {
     return provider_;
@@ -257,6 +272,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.container.v1.NetworkPolicy.Provider provider = 1;</code>
+   *
+   * @return The provider.
    */
   public com.google.container.v1.NetworkPolicy.Provider getProvider() {
     @SuppressWarnings("deprecation")
@@ -275,6 +292,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool enabled = 2;</code>
+   *
+   * @return The enabled.
    */
   public boolean getEnabled() {
     return enabled_;
@@ -620,6 +639,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.NetworkPolicy.Provider provider = 1;</code>
+     *
+     * @return The enum numeric value on the wire for provider.
      */
     public int getProviderValue() {
       return provider_;
@@ -632,6 +653,9 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.NetworkPolicy.Provider provider = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for provider to set.
+     * @return This builder for chaining.
      */
     public Builder setProviderValue(int value) {
       provider_ = value;
@@ -646,6 +670,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.NetworkPolicy.Provider provider = 1;</code>
+     *
+     * @return The provider.
      */
     public com.google.container.v1.NetworkPolicy.Provider getProvider() {
       @SuppressWarnings("deprecation")
@@ -661,6 +687,9 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.NetworkPolicy.Provider provider = 1;</code>
+     *
+     * @param value The provider to set.
+     * @return This builder for chaining.
      */
     public Builder setProvider(com.google.container.v1.NetworkPolicy.Provider value) {
       if (value == null) {
@@ -679,6 +708,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.container.v1.NetworkPolicy.Provider provider = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProvider() {
 
@@ -696,6 +727,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool enabled = 2;</code>
+     *
+     * @return The enabled.
      */
     public boolean getEnabled() {
       return enabled_;
@@ -708,6 +741,9 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool enabled = 2;</code>
+     *
+     * @param value The enabled to set.
+     * @return This builder for chaining.
      */
     public Builder setEnabled(boolean value) {
 
@@ -723,6 +759,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool enabled = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnabled() {
 

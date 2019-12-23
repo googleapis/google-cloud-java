@@ -40,6 +40,12 @@ public final class ClientCertificateConfig extends com.google.protobuf.Generated
   private ClientCertificateConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ClientCertificateConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ClientCertificateConfig extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -112,6 +117,8 @@ public final class ClientCertificateConfig extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>bool issue_client_certificate = 1;</code>
+   *
+   * @return The issueClientCertificate.
    */
   public boolean getIssueClientCertificate() {
     return issueClientCertificate_;
@@ -442,6 +449,8 @@ public final class ClientCertificateConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>bool issue_client_certificate = 1;</code>
+     *
+     * @return The issueClientCertificate.
      */
     public boolean getIssueClientCertificate() {
       return issueClientCertificate_;
@@ -454,6 +463,9 @@ public final class ClientCertificateConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>bool issue_client_certificate = 1;</code>
+     *
+     * @param value The issueClientCertificate to set.
+     * @return This builder for chaining.
      */
     public Builder setIssueClientCertificate(boolean value) {
 
@@ -469,6 +481,8 @@ public final class ClientCertificateConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>bool issue_client_certificate = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIssueClientCertificate() {
 

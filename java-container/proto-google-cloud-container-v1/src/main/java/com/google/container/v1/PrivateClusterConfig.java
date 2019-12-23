@@ -44,6 +44,12 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PrivateClusterConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -144,6 +149,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>bool enable_private_nodes = 1;</code>
+   *
+   * @return The enablePrivateNodes.
    */
   public boolean getEnablePrivateNodes() {
     return enablePrivateNodes_;
@@ -159,6 +166,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>bool enable_private_endpoint = 2;</code>
+   *
+   * @return The enablePrivateEndpoint.
    */
   public boolean getEnablePrivateEndpoint() {
     return enablePrivateEndpoint_;
@@ -177,6 +186,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string master_ipv4_cidr_block = 3;</code>
+   *
+   * @return The masterIpv4CidrBlock.
    */
   public java.lang.String getMasterIpv4CidrBlock() {
     java.lang.Object ref = masterIpv4CidrBlock_;
@@ -200,6 +211,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string master_ipv4_cidr_block = 3;</code>
+   *
+   * @return The bytes for masterIpv4CidrBlock.
    */
   public com.google.protobuf.ByteString getMasterIpv4CidrBlockBytes() {
     java.lang.Object ref = masterIpv4CidrBlock_;
@@ -223,6 +236,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string private_endpoint = 4;</code>
+   *
+   * @return The privateEndpoint.
    */
   public java.lang.String getPrivateEndpoint() {
     java.lang.Object ref = privateEndpoint_;
@@ -243,6 +258,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string private_endpoint = 4;</code>
+   *
+   * @return The bytes for privateEndpoint.
    */
   public com.google.protobuf.ByteString getPrivateEndpointBytes() {
     java.lang.Object ref = privateEndpoint_;
@@ -266,6 +283,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string public_endpoint = 5;</code>
+   *
+   * @return The publicEndpoint.
    */
   public java.lang.String getPublicEndpoint() {
     java.lang.Object ref = publicEndpoint_;
@@ -286,6 +305,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string public_endpoint = 5;</code>
+   *
+   * @return The bytes for publicEndpoint.
    */
   public com.google.protobuf.ByteString getPublicEndpointBytes() {
     java.lang.Object ref = publicEndpoint_;
@@ -688,6 +709,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool enable_private_nodes = 1;</code>
+     *
+     * @return The enablePrivateNodes.
      */
     public boolean getEnablePrivateNodes() {
       return enablePrivateNodes_;
@@ -702,6 +725,9 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool enable_private_nodes = 1;</code>
+     *
+     * @param value The enablePrivateNodes to set.
+     * @return This builder for chaining.
      */
     public Builder setEnablePrivateNodes(boolean value) {
 
@@ -719,6 +745,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool enable_private_nodes = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnablePrivateNodes() {
 
@@ -736,6 +764,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool enable_private_endpoint = 2;</code>
+     *
+     * @return The enablePrivateEndpoint.
      */
     public boolean getEnablePrivateEndpoint() {
       return enablePrivateEndpoint_;
@@ -748,6 +778,9 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool enable_private_endpoint = 2;</code>
+     *
+     * @param value The enablePrivateEndpoint to set.
+     * @return This builder for chaining.
      */
     public Builder setEnablePrivateEndpoint(boolean value) {
 
@@ -763,6 +796,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>bool enable_private_endpoint = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnablePrivateEndpoint() {
 
@@ -783,6 +818,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string master_ipv4_cidr_block = 3;</code>
+     *
+     * @return The masterIpv4CidrBlock.
      */
     public java.lang.String getMasterIpv4CidrBlock() {
       java.lang.Object ref = masterIpv4CidrBlock_;
@@ -806,6 +843,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string master_ipv4_cidr_block = 3;</code>
+     *
+     * @return The bytes for masterIpv4CidrBlock.
      */
     public com.google.protobuf.ByteString getMasterIpv4CidrBlockBytes() {
       java.lang.Object ref = masterIpv4CidrBlock_;
@@ -829,6 +868,9 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string master_ipv4_cidr_block = 3;</code>
+     *
+     * @param value The masterIpv4CidrBlock to set.
+     * @return This builder for chaining.
      */
     public Builder setMasterIpv4CidrBlock(java.lang.String value) {
       if (value == null) {
@@ -850,6 +892,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string master_ipv4_cidr_block = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMasterIpv4CidrBlock() {
 
@@ -868,6 +912,9 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string master_ipv4_cidr_block = 3;</code>
+     *
+     * @param value The bytes for masterIpv4CidrBlock to set.
+     * @return This builder for chaining.
      */
     public Builder setMasterIpv4CidrBlockBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -889,6 +936,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string private_endpoint = 4;</code>
+     *
+     * @return The privateEndpoint.
      */
     public java.lang.String getPrivateEndpoint() {
       java.lang.Object ref = privateEndpoint_;
@@ -909,6 +958,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string private_endpoint = 4;</code>
+     *
+     * @return The bytes for privateEndpoint.
      */
     public com.google.protobuf.ByteString getPrivateEndpointBytes() {
       java.lang.Object ref = privateEndpoint_;
@@ -929,6 +980,9 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string private_endpoint = 4;</code>
+     *
+     * @param value The privateEndpoint to set.
+     * @return This builder for chaining.
      */
     public Builder setPrivateEndpoint(java.lang.String value) {
       if (value == null) {
@@ -947,6 +1001,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string private_endpoint = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPrivateEndpoint() {
 
@@ -962,6 +1018,9 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string private_endpoint = 4;</code>
+     *
+     * @param value The bytes for privateEndpoint to set.
+     * @return This builder for chaining.
      */
     public Builder setPrivateEndpointBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -983,6 +1042,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string public_endpoint = 5;</code>
+     *
+     * @return The publicEndpoint.
      */
     public java.lang.String getPublicEndpoint() {
       java.lang.Object ref = publicEndpoint_;
@@ -1003,6 +1064,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string public_endpoint = 5;</code>
+     *
+     * @return The bytes for publicEndpoint.
      */
     public com.google.protobuf.ByteString getPublicEndpointBytes() {
       java.lang.Object ref = publicEndpoint_;
@@ -1023,6 +1086,9 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string public_endpoint = 5;</code>
+     *
+     * @param value The publicEndpoint to set.
+     * @return This builder for chaining.
      */
     public Builder setPublicEndpoint(java.lang.String value) {
       if (value == null) {
@@ -1041,6 +1107,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string public_endpoint = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPublicEndpoint() {
 
@@ -1056,6 +1124,9 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string public_endpoint = 5;</code>
+     *
+     * @param value The bytes for publicEndpoint to set.
+     * @return This builder for chaining.
      */
     public Builder setPublicEndpointBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

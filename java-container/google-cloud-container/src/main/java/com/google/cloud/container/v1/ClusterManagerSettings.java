@@ -15,6 +15,8 @@
  */
 package com.google.cloud.container.v1;
 
+import static com.google.cloud.container.v1.ClusterManagerClient.ListUsableSubnetworksPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -23,6 +25,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.container.v1.stub.ClusterManagerStubSettings;
@@ -43,6 +46,8 @@ import com.google.container.v1.ListNodePoolsRequest;
 import com.google.container.v1.ListNodePoolsResponse;
 import com.google.container.v1.ListOperationsRequest;
 import com.google.container.v1.ListOperationsResponse;
+import com.google.container.v1.ListUsableSubnetworksRequest;
+import com.google.container.v1.ListUsableSubnetworksResponse;
 import com.google.container.v1.NodePool;
 import com.google.container.v1.Operation;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
@@ -249,6 +254,15 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
   /** Returns the object with the settings used for calls to setMaintenancePolicy. */
   public UnaryCallSettings<SetMaintenancePolicyRequest, Operation> setMaintenancePolicySettings() {
     return ((ClusterManagerStubSettings) getStubSettings()).setMaintenancePolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to listUsableSubnetworks. */
+  public PagedCallSettings<
+          ListUsableSubnetworksRequest,
+          ListUsableSubnetworksResponse,
+          ListUsableSubnetworksPagedResponse>
+      listUsableSubnetworksSettings() {
+    return ((ClusterManagerStubSettings) getStubSettings()).listUsableSubnetworksSettings();
   }
 
   public static final ClusterManagerSettings create(ClusterManagerStubSettings stub)
@@ -508,6 +522,15 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
     public UnaryCallSettings.Builder<SetMaintenancePolicyRequest, Operation>
         setMaintenancePolicySettings() {
       return getStubSettingsBuilder().setMaintenancePolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listUsableSubnetworks. */
+    public PagedCallSettings.Builder<
+            ListUsableSubnetworksRequest,
+            ListUsableSubnetworksResponse,
+            ListUsableSubnetworksPagedResponse>
+        listUsableSubnetworksSettings() {
+      return getStubSettingsBuilder().listUsableSubnetworksSettings();
     }
 
     @Override

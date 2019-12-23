@@ -35,6 +35,8 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>string machine_type = 1;</code>
+   *
+   * @return The machineType.
    */
   java.lang.String getMachineType();
   /**
@@ -49,6 +51,8 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>string machine_type = 1;</code>
+   *
+   * @return The bytes for machineType.
    */
   com.google.protobuf.ByteString getMachineTypeBytes();
 
@@ -62,6 +66,8 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>int32 disk_size_gb = 2;</code>
+   *
+   * @return The diskSizeGb.
    */
   int getDiskSizeGb();
 
@@ -83,6 +89,8 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>repeated string oauth_scopes = 3;</code>
+   *
+   * @return A list containing the oauthScopes.
    */
   java.util.List<java.lang.String> getOauthScopesList();
   /**
@@ -103,6 +111,8 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>repeated string oauth_scopes = 3;</code>
+   *
+   * @return The count of oauthScopes.
    */
   int getOauthScopesCount();
   /**
@@ -123,6 +133,9 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>repeated string oauth_scopes = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The oauthScopes at the given index.
    */
   java.lang.String getOauthScopes(int index);
   /**
@@ -143,6 +156,9 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>repeated string oauth_scopes = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the oauthScopes at the given index.
    */
   com.google.protobuf.ByteString getOauthScopesBytes(int index);
 
@@ -155,6 +171,8 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>string service_account = 9;</code>
+   *
+   * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
   /**
@@ -166,6 +184,8 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>string service_account = 9;</code>
+   *
+   * @return The bytes for serviceAccount.
    */
   com.google.protobuf.ByteString getServiceAccountBytes();
 
@@ -182,6 +202,7 @@ public interface NodeConfigOrBuilder
    *  "cluster-name"
    *  "cluster-uid"
    *  "configure-sh"
+   *  "containerd-configure-sh"
    *  "enable-os-login"
    *  "gci-update-strategy"
    *  "gci-ensure-gke-docker"
@@ -189,6 +210,13 @@ public interface NodeConfigOrBuilder
    *  "kube-env"
    *  "startup-script"
    *  "user-data"
+   *  "disable-address-manager"
+   *  "windows-startup-script-ps1"
+   *  "common-psm1"
+   *  "k8s-node-setup-psm1"
+   *  "install-ssh-psm1"
+   *  "user-profile-psm1"
+   *  "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -211,6 +239,7 @@ public interface NodeConfigOrBuilder
    *  "cluster-name"
    *  "cluster-uid"
    *  "configure-sh"
+   *  "containerd-configure-sh"
    *  "enable-os-login"
    *  "gci-update-strategy"
    *  "gci-ensure-gke-docker"
@@ -218,6 +247,13 @@ public interface NodeConfigOrBuilder
    *  "kube-env"
    *  "startup-script"
    *  "user-data"
+   *  "disable-address-manager"
+   *  "windows-startup-script-ps1"
+   *  "common-psm1"
+   *  "k8s-node-setup-psm1"
+   *  "install-ssh-psm1"
+   *  "user-profile-psm1"
+   *  "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -243,6 +279,7 @@ public interface NodeConfigOrBuilder
    *  "cluster-name"
    *  "cluster-uid"
    *  "configure-sh"
+   *  "containerd-configure-sh"
    *  "enable-os-login"
    *  "gci-update-strategy"
    *  "gci-ensure-gke-docker"
@@ -250,6 +287,13 @@ public interface NodeConfigOrBuilder
    *  "kube-env"
    *  "startup-script"
    *  "user-data"
+   *  "disable-address-manager"
+   *  "windows-startup-script-ps1"
+   *  "common-psm1"
+   *  "k8s-node-setup-psm1"
+   *  "install-ssh-psm1"
+   *  "user-profile-psm1"
+   *  "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -272,6 +316,7 @@ public interface NodeConfigOrBuilder
    *  "cluster-name"
    *  "cluster-uid"
    *  "configure-sh"
+   *  "containerd-configure-sh"
    *  "enable-os-login"
    *  "gci-update-strategy"
    *  "gci-ensure-gke-docker"
@@ -279,6 +324,13 @@ public interface NodeConfigOrBuilder
    *  "kube-env"
    *  "startup-script"
    *  "user-data"
+   *  "disable-address-manager"
+   *  "windows-startup-script-ps1"
+   *  "common-psm1"
+   *  "k8s-node-setup-psm1"
+   *  "install-ssh-psm1"
+   *  "user-profile-psm1"
+   *  "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -301,6 +353,7 @@ public interface NodeConfigOrBuilder
    *  "cluster-name"
    *  "cluster-uid"
    *  "configure-sh"
+   *  "containerd-configure-sh"
    *  "enable-os-login"
    *  "gci-update-strategy"
    *  "gci-ensure-gke-docker"
@@ -308,6 +361,13 @@ public interface NodeConfigOrBuilder
    *  "kube-env"
    *  "startup-script"
    *  "user-data"
+   *  "disable-address-manager"
+   *  "windows-startup-script-ps1"
+   *  "common-psm1"
+   *  "k8s-node-setup-psm1"
+   *  "install-ssh-psm1"
+   *  "user-profile-psm1"
+   *  "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -327,6 +387,8 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>string image_type = 5;</code>
+   *
+   * @return The imageType.
    */
   java.lang.String getImageType();
   /**
@@ -338,6 +400,8 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>string image_type = 5;</code>
+   *
+   * @return The bytes for imageType.
    */
   com.google.protobuf.ByteString getImageTypeBytes();
 
@@ -435,13 +499,15 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * The number of local SSD disks to be attached to the node.
-   * The limit for this value is dependant upon the maximum number of
+   * The limit for this value is dependent upon the maximum number of
    * disks available on a machine per zone. See:
-   * https://cloud.google.com/compute/docs/disks/local-ssd#local_ssd_limits
+   * https://cloud.google.com/compute/docs/disks/local-ssd
    * for more information.
    * </pre>
    *
    * <code>int32 local_ssd_count = 7;</code>
+   *
+   * @return The localSsdCount.
    */
   int getLocalSsdCount();
 
@@ -456,6 +522,8 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>repeated string tags = 8;</code>
+   *
+   * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
   /**
@@ -469,6 +537,8 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>repeated string tags = 8;</code>
+   *
+   * @return The count of tags.
    */
   int getTagsCount();
   /**
@@ -482,6 +552,9 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>repeated string tags = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
   /**
@@ -495,6 +568,9 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>repeated string tags = 8;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the tags at the given index.
    */
   com.google.protobuf.ByteString getTagsBytes(int index);
 
@@ -508,6 +584,8 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>bool preemptible = 10;</code>
+   *
+   * @return The preemptible.
    */
   boolean getPreemptible();
 
@@ -582,6 +660,8 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>string disk_type = 12;</code>
+   *
+   * @return The diskType.
    */
   java.lang.String getDiskType();
   /**
@@ -593,6 +673,8 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>string disk_type = 12;</code>
+   *
+   * @return The bytes for diskType.
    */
   com.google.protobuf.ByteString getDiskTypeBytes();
 
@@ -610,6 +692,8 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>string min_cpu_platform = 13;</code>
+   *
+   * @return The minCpuPlatform.
    */
   java.lang.String getMinCpuPlatform();
   /**
@@ -626,6 +710,104 @@ public interface NodeConfigOrBuilder
    * </pre>
    *
    * <code>string min_cpu_platform = 13;</code>
+   *
+   * @return The bytes for minCpuPlatform.
    */
   com.google.protobuf.ByteString getMinCpuPlatformBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of kubernetes taints to be applied to each node.
+   * For more information, including usage and the valid values, see:
+   * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+   */
+  java.util.List<com.google.container.v1.NodeTaint> getTaintsList();
+  /**
+   *
+   *
+   * <pre>
+   * List of kubernetes taints to be applied to each node.
+   * For more information, including usage and the valid values, see:
+   * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+   */
+  com.google.container.v1.NodeTaint getTaints(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of kubernetes taints to be applied to each node.
+   * For more information, including usage and the valid values, see:
+   * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+   */
+  int getTaintsCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of kubernetes taints to be applied to each node.
+   * For more information, including usage and the valid values, see:
+   * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+   */
+  java.util.List<? extends com.google.container.v1.NodeTaintOrBuilder> getTaintsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * List of kubernetes taints to be applied to each node.
+   * For more information, including usage and the valid values, see:
+   * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
+   */
+  com.google.container.v1.NodeTaintOrBuilder getTaintsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
+   *
+   * @return Whether the shieldedInstanceConfig field is set.
+   */
+  boolean hasShieldedInstanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
+   *
+   * @return The shieldedInstanceConfig.
+   */
+  com.google.container.v1.ShieldedInstanceConfig getShieldedInstanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
+   */
+  com.google.container.v1.ShieldedInstanceConfigOrBuilder getShieldedInstanceConfigOrBuilder();
 }

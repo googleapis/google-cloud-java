@@ -33,6 +33,8 @@ public interface HorizontalPodAutoscalingOrBuilder
    * </pre>
    *
    * <code>bool disabled = 1;</code>
+   *
+   * @return The disabled.
    */
   boolean getDisabled();
 }

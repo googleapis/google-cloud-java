@@ -65,6 +65,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -83,7 +84,8 @@ public class ClusterManagerClientTest {
   public static void startStaticServer() {
     mockClusterManager = new MockClusterManager();
     serviceHelper =
-        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockClusterManager));
+        new MockServiceHelper(
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockClusterManager));
     serviceHelper.start();
   }
 
@@ -176,6 +178,8 @@ public class ClusterManagerClientTest {
     int currentNodeCount = 178977560;
     String expireTime = "expireTime-96179731";
     String location = "location1901043637";
+    boolean enableTpu = false;
+    String tpuIpv4CidrBlock = "tpuIpv4CidrBlock1137906646";
     Cluster expectedResponse =
         Cluster.newBuilder()
             .setName(name)
@@ -201,6 +205,8 @@ public class ClusterManagerClientTest {
             .setCurrentNodeCount(currentNodeCount)
             .setExpireTime(expireTime)
             .setLocation(location)
+            .setEnableTpu(enableTpu)
+            .setTpuIpv4CidrBlock(tpuIpv4CidrBlock)
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -1020,6 +1026,7 @@ public class ClusterManagerClientTest {
     String selfLink = "selfLink-1691268851";
     String version = "version351608024";
     String statusMessage = "statusMessage-239442758";
+    int podIpv4CidrSize = 1098768716;
     NodePool expectedResponse =
         NodePool.newBuilder()
             .setName(name)
@@ -1027,6 +1034,7 @@ public class ClusterManagerClientTest {
             .setSelfLink(selfLink)
             .setVersion(version)
             .setStatusMessage(statusMessage)
+            .setPodIpv4CidrSize(podIpv4CidrSize)
             .build();
     mockClusterManager.addResponse(expectedResponse);
 

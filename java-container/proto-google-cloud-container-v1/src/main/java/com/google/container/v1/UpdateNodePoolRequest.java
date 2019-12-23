@@ -48,6 +48,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateNodePoolRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -60,7 +66,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -160,12 +165,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The projectId.
    */
   @java.lang.Deprecated
   public java.lang.String getProjectId() {
@@ -183,12 +191,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Deprecated. The Google Developers Console [project ID or project
+   * Required. Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true];</code>
+   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for projectId.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getProjectIdBytes() {
@@ -209,13 +220,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The zone.
    */
   @java.lang.Deprecated
   public java.lang.String getZone() {
@@ -233,13 +246,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Deprecated. The name of the Google Compute Engine
+   * Required. Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for zone.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getZoneBytes() {
@@ -260,11 +275,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster to upgrade.
+   * Required. Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The clusterId.
    */
   @java.lang.Deprecated
   public java.lang.String getClusterId() {
@@ -282,11 +300,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Deprecated. The name of the cluster to upgrade.
+   * Required. Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true];</code>
+   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getClusterIdBytes() {
@@ -307,11 +328,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Deprecated. The name of the node pool to upgrade.
+   * Required. Deprecated. The name of the node pool to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string node_pool_id = 4 [deprecated = true];</code>
+   * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The nodePoolId.
    */
   @java.lang.Deprecated
   public java.lang.String getNodePoolId() {
@@ -329,11 +353,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Deprecated. The name of the node pool to upgrade.
+   * Required. Deprecated. The name of the node pool to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string node_pool_id = 4 [deprecated = true];</code>
+   * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getNodePoolIdBytes() {
@@ -354,7 +381,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The Kubernetes version to change the nodes to (typically an
+   * Required. The Kubernetes version to change the nodes to (typically an
    * upgrade).
    * Users may specify either explicit versions offered by Kubernetes Engine or
    * version aliases, which have the following behavior:
@@ -365,7 +392,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * - "-": picks the Kubernetes master version
    * </pre>
    *
-   * <code>string node_version = 5;</code>
+   * <code>string node_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The nodeVersion.
    */
   public java.lang.String getNodeVersion() {
     java.lang.Object ref = nodeVersion_;
@@ -382,7 +411,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The Kubernetes version to change the nodes to (typically an
+   * Required. The Kubernetes version to change the nodes to (typically an
    * upgrade).
    * Users may specify either explicit versions offered by Kubernetes Engine or
    * version aliases, which have the following behavior:
@@ -393,7 +422,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * - "-": picks the Kubernetes master version
    * </pre>
    *
-   * <code>string node_version = 5;</code>
+   * <code>string node_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for nodeVersion.
    */
   public com.google.protobuf.ByteString getNodeVersionBytes() {
     java.lang.Object ref = nodeVersion_;
@@ -413,10 +444,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The desired image type for the node pool.
+   * Required. The desired image type for the node pool.
    * </pre>
    *
-   * <code>string image_type = 6;</code>
+   * <code>string image_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The imageType.
    */
   public java.lang.String getImageType() {
     java.lang.Object ref = imageType_;
@@ -433,10 +466,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The desired image type for the node pool.
+   * Required. The desired image type for the node pool.
    * </pre>
    *
-   * <code>string image_type = 6;</code>
+   * <code>string image_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for imageType.
    */
   public com.google.protobuf.ByteString getImageTypeBytes() {
     java.lang.Object ref = imageType_;
@@ -462,6 +497,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string name = 8;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -484,6 +521,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string name = 8;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -914,12 +953,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The projectId.
      */
     @java.lang.Deprecated
     public java.lang.String getProjectId() {
@@ -937,12 +979,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The bytes for projectId.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getProjectIdBytes() {
@@ -960,12 +1005,16 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setProjectId(java.lang.String value) {
@@ -981,12 +1030,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearProjectId() {
@@ -999,12 +1051,16 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The Google Developers Console [project ID or project
+     * Required. Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true];</code>
+     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
@@ -1023,13 +1079,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The zone.
      */
     @java.lang.Deprecated
     public java.lang.String getZone() {
@@ -1047,13 +1105,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for zone.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getZoneBytes() {
@@ -1071,13 +1131,16 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The zone to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setZone(java.lang.String value) {
@@ -1093,13 +1156,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearZone() {
@@ -1112,13 +1177,16 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the Google Compute Engine
+     * Required. Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true];</code>
+     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for zone to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setZoneBytes(com.google.protobuf.ByteString value) {
@@ -1137,11 +1205,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The clusterId.
      */
     @java.lang.Deprecated
     public java.lang.String getClusterId() {
@@ -1159,11 +1230,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getClusterIdBytes() {
@@ -1181,11 +1255,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The clusterId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setClusterId(java.lang.String value) {
@@ -1201,11 +1279,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearClusterId() {
@@ -1218,11 +1299,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the cluster to upgrade.
+     * Required. Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true];</code>
+     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The bytes for clusterId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setClusterIdBytes(com.google.protobuf.ByteString value) {
@@ -1241,11 +1326,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the node pool to upgrade.
+     * Required. Deprecated. The name of the node pool to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true];</code>
+     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The nodePoolId.
      */
     @java.lang.Deprecated
     public java.lang.String getNodePoolId() {
@@ -1263,11 +1351,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the node pool to upgrade.
+     * Required. Deprecated. The name of the node pool to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true];</code>
+     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getNodePoolIdBytes() {
@@ -1285,11 +1376,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the node pool to upgrade.
+     * Required. Deprecated. The name of the node pool to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true];</code>
+     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The nodePoolId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setNodePoolId(java.lang.String value) {
@@ -1305,11 +1400,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the node pool to upgrade.
+     * Required. Deprecated. The name of the node pool to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true];</code>
+     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearNodePoolId() {
@@ -1322,11 +1420,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Deprecated. The name of the node pool to upgrade.
+     * Required. Deprecated. The name of the node pool to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true];</code>
+     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The bytes for nodePoolId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setNodePoolIdBytes(com.google.protobuf.ByteString value) {
@@ -1345,7 +1447,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The Kubernetes version to change the nodes to (typically an
+     * Required. The Kubernetes version to change the nodes to (typically an
      * upgrade).
      * Users may specify either explicit versions offered by Kubernetes Engine or
      * version aliases, which have the following behavior:
@@ -1356,7 +1458,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * - "-": picks the Kubernetes master version
      * </pre>
      *
-     * <code>string node_version = 5;</code>
+     * <code>string node_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The nodeVersion.
      */
     public java.lang.String getNodeVersion() {
       java.lang.Object ref = nodeVersion_;
@@ -1373,7 +1477,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The Kubernetes version to change the nodes to (typically an
+     * Required. The Kubernetes version to change the nodes to (typically an
      * upgrade).
      * Users may specify either explicit versions offered by Kubernetes Engine or
      * version aliases, which have the following behavior:
@@ -1384,7 +1488,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * - "-": picks the Kubernetes master version
      * </pre>
      *
-     * <code>string node_version = 5;</code>
+     * <code>string node_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for nodeVersion.
      */
     public com.google.protobuf.ByteString getNodeVersionBytes() {
       java.lang.Object ref = nodeVersion_;
@@ -1401,7 +1507,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The Kubernetes version to change the nodes to (typically an
+     * Required. The Kubernetes version to change the nodes to (typically an
      * upgrade).
      * Users may specify either explicit versions offered by Kubernetes Engine or
      * version aliases, which have the following behavior:
@@ -1412,7 +1518,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * - "-": picks the Kubernetes master version
      * </pre>
      *
-     * <code>string node_version = 5;</code>
+     * <code>string node_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The nodeVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setNodeVersion(java.lang.String value) {
       if (value == null) {
@@ -1427,7 +1536,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The Kubernetes version to change the nodes to (typically an
+     * Required. The Kubernetes version to change the nodes to (typically an
      * upgrade).
      * Users may specify either explicit versions offered by Kubernetes Engine or
      * version aliases, which have the following behavior:
@@ -1438,7 +1547,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * - "-": picks the Kubernetes master version
      * </pre>
      *
-     * <code>string node_version = 5;</code>
+     * <code>string node_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNodeVersion() {
 
@@ -1450,7 +1561,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The Kubernetes version to change the nodes to (typically an
+     * Required. The Kubernetes version to change the nodes to (typically an
      * upgrade).
      * Users may specify either explicit versions offered by Kubernetes Engine or
      * version aliases, which have the following behavior:
@@ -1461,7 +1572,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * - "-": picks the Kubernetes master version
      * </pre>
      *
-     * <code>string node_version = 5;</code>
+     * <code>string node_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for nodeVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setNodeVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1479,10 +1593,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The desired image type for the node pool.
+     * Required. The desired image type for the node pool.
      * </pre>
      *
-     * <code>string image_type = 6;</code>
+     * <code>string image_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The imageType.
      */
     public java.lang.String getImageType() {
       java.lang.Object ref = imageType_;
@@ -1499,10 +1615,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The desired image type for the node pool.
+     * Required. The desired image type for the node pool.
      * </pre>
      *
-     * <code>string image_type = 6;</code>
+     * <code>string image_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for imageType.
      */
     public com.google.protobuf.ByteString getImageTypeBytes() {
       java.lang.Object ref = imageType_;
@@ -1519,10 +1637,13 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The desired image type for the node pool.
+     * Required. The desired image type for the node pool.
      * </pre>
      *
-     * <code>string image_type = 6;</code>
+     * <code>string image_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The imageType to set.
+     * @return This builder for chaining.
      */
     public Builder setImageType(java.lang.String value) {
       if (value == null) {
@@ -1537,10 +1658,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The desired image type for the node pool.
+     * Required. The desired image type for the node pool.
      * </pre>
      *
-     * <code>string image_type = 6;</code>
+     * <code>string image_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearImageType() {
 
@@ -1552,10 +1675,13 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The desired image type for the node pool.
+     * Required. The desired image type for the node pool.
      * </pre>
      *
-     * <code>string image_type = 6;</code>
+     * <code>string image_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for imageType to set.
+     * @return This builder for chaining.
      */
     public Builder setImageTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1579,6 +1705,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 8;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1601,6 +1729,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 8;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1623,6 +1753,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 8;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1643,6 +1776,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1660,6 +1795,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string name = 8;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
