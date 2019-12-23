@@ -43,6 +43,12 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EventNotificationConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -127,6 +132,8 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string subfolder_matches = 2;</code>
+   *
+   * @return The subfolderMatches.
    */
   public java.lang.String getSubfolderMatches() {
     java.lang.Object ref = subfolderMatches_;
@@ -150,6 +157,8 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string subfolder_matches = 2;</code>
+   *
+   * @return The bytes for subfolderMatches.
    */
   public com.google.protobuf.ByteString getSubfolderMatchesBytes() {
     java.lang.Object ref = subfolderMatches_;
@@ -174,6 +183,8 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string pubsub_topic_name = 1;</code>
+   *
+   * @return The pubsubTopicName.
    */
   public java.lang.String getPubsubTopicName() {
     java.lang.Object ref = pubsubTopicName_;
@@ -195,6 +206,8 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string pubsub_topic_name = 1;</code>
+   *
+   * @return The bytes for pubsubTopicName.
    */
   public com.google.protobuf.ByteString getPubsubTopicNameBytes() {
     java.lang.Object ref = pubsubTopicName_;
@@ -553,6 +566,8 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string subfolder_matches = 2;</code>
+     *
+     * @return The subfolderMatches.
      */
     public java.lang.String getSubfolderMatches() {
       java.lang.Object ref = subfolderMatches_;
@@ -576,6 +591,8 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string subfolder_matches = 2;</code>
+     *
+     * @return The bytes for subfolderMatches.
      */
     public com.google.protobuf.ByteString getSubfolderMatchesBytes() {
       java.lang.Object ref = subfolderMatches_;
@@ -599,6 +616,9 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string subfolder_matches = 2;</code>
+     *
+     * @param value The subfolderMatches to set.
+     * @return This builder for chaining.
      */
     public Builder setSubfolderMatches(java.lang.String value) {
       if (value == null) {
@@ -620,6 +640,8 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string subfolder_matches = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSubfolderMatches() {
 
@@ -638,6 +660,9 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string subfolder_matches = 2;</code>
+     *
+     * @param value The bytes for subfolderMatches to set.
+     * @return This builder for chaining.
      */
     public Builder setSubfolderMatchesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -660,6 +685,8 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string pubsub_topic_name = 1;</code>
+     *
+     * @return The pubsubTopicName.
      */
     public java.lang.String getPubsubTopicName() {
       java.lang.Object ref = pubsubTopicName_;
@@ -681,6 +708,8 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string pubsub_topic_name = 1;</code>
+     *
+     * @return The bytes for pubsubTopicName.
      */
     public com.google.protobuf.ByteString getPubsubTopicNameBytes() {
       java.lang.Object ref = pubsubTopicName_;
@@ -702,6 +731,9 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string pubsub_topic_name = 1;</code>
+     *
+     * @param value The pubsubTopicName to set.
+     * @return This builder for chaining.
      */
     public Builder setPubsubTopicName(java.lang.String value) {
       if (value == null) {
@@ -721,6 +753,8 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string pubsub_topic_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPubsubTopicName() {
 
@@ -737,6 +771,9 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string pubsub_topic_name = 1;</code>
+     *
+     * @param value The bytes for pubsubTopicName to set.
+     * @return This builder for chaining.
      */
     public Builder setPubsubTopicNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

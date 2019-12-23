@@ -34,6 +34,8 @@ public interface EventNotificationConfigOrBuilder
    * </pre>
    *
    * <code>string subfolder_matches = 2;</code>
+   *
+   * @return The subfolderMatches.
    */
   java.lang.String getSubfolderMatches();
   /**
@@ -47,6 +49,8 @@ public interface EventNotificationConfigOrBuilder
    * </pre>
    *
    * <code>string subfolder_matches = 2;</code>
+   *
+   * @return The bytes for subfolderMatches.
    */
   com.google.protobuf.ByteString getSubfolderMatchesBytes();
 
@@ -59,6 +63,8 @@ public interface EventNotificationConfigOrBuilder
    * </pre>
    *
    * <code>string pubsub_topic_name = 1;</code>
+   *
+   * @return The pubsubTopicName.
    */
   java.lang.String getPubsubTopicName();
   /**
@@ -70,6 +76,8 @@ public interface EventNotificationConfigOrBuilder
    * </pre>
    *
    * <code>string pubsub_topic_name = 1;</code>
+   *
+   * @return The bytes for pubsubTopicName.
    */
   com.google.protobuf.ByteString getPubsubTopicNameBytes();
 }

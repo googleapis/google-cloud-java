@@ -31,6 +31,8 @@ public interface GatewayConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for gatewayType.
    */
   int getGatewayTypeValue();
   /**
@@ -41,6 +43,8 @@ public interface GatewayConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+   *
+   * @return The gatewayType.
    */
   com.google.cloud.iot.v1.GatewayType getGatewayType();
 
@@ -53,6 +57,8 @@ public interface GatewayConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayAuthMethod gateway_auth_method = 2;</code>
+   *
+   * @return The enum numeric value on the wire for gatewayAuthMethod.
    */
   int getGatewayAuthMethodValue();
   /**
@@ -64,6 +70,8 @@ public interface GatewayConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayAuthMethod gateway_auth_method = 2;</code>
+   *
+   * @return The gatewayAuthMethod.
    */
   com.google.cloud.iot.v1.GatewayAuthMethod getGatewayAuthMethod();
 
@@ -75,6 +83,8 @@ public interface GatewayConfigOrBuilder
    * </pre>
    *
    * <code>string last_accessed_gateway_id = 3;</code>
+   *
+   * @return The lastAccessedGatewayId.
    */
   java.lang.String getLastAccessedGatewayId();
   /**
@@ -85,6 +95,8 @@ public interface GatewayConfigOrBuilder
    * </pre>
    *
    * <code>string last_accessed_gateway_id = 3;</code>
+   *
+   * @return The bytes for lastAccessedGatewayId.
    */
   com.google.protobuf.ByteString getLastAccessedGatewayIdBytes();
 
@@ -97,6 +109,8 @@ public interface GatewayConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_accessed_gateway_time = 4;</code>
+   *
+   * @return Whether the lastAccessedGatewayTime field is set.
    */
   boolean hasLastAccessedGatewayTime();
   /**
@@ -108,6 +122,8 @@ public interface GatewayConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_accessed_gateway_time = 4;</code>
+   *
+   * @return The lastAccessedGatewayTime.
    */
   com.google.protobuf.Timestamp getLastAccessedGatewayTime();
   /**

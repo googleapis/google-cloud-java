@@ -42,6 +42,12 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DeviceConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -152,6 +157,8 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 version = 1;</code>
+   *
+   * @return The version.
    */
   public long getVersion() {
     return version_;
@@ -168,6 +175,8 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp cloud_update_time = 2;</code>
+   *
+   * @return Whether the cloudUpdateTime field is set.
    */
   public boolean hasCloudUpdateTime() {
     return cloudUpdateTime_ != null;
@@ -181,6 +190,8 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp cloud_update_time = 2;</code>
+   *
+   * @return The cloudUpdateTime.
    */
   public com.google.protobuf.Timestamp getCloudUpdateTime() {
     return cloudUpdateTime_ == null
@@ -219,6 +230,8 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp device_ack_time = 3;</code>
+   *
+   * @return Whether the deviceAckTime field is set.
    */
   public boolean hasDeviceAckTime() {
     return deviceAckTime_ != null;
@@ -239,6 +252,8 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp device_ack_time = 3;</code>
+   *
+   * @return The deviceAckTime.
    */
   public com.google.protobuf.Timestamp getDeviceAckTime() {
     return deviceAckTime_ == null
@@ -276,6 +291,8 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes binary_data = 4;</code>
+   *
+   * @return The binaryData.
    */
   public com.google.protobuf.ByteString getBinaryData() {
     return binaryData_;
@@ -676,6 +693,8 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 version = 1;</code>
+     *
+     * @return The version.
      */
     public long getVersion() {
       return version_;
@@ -691,6 +710,9 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 version = 1;</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
      */
     public Builder setVersion(long value) {
 
@@ -709,6 +731,8 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 version = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVersion() {
 
@@ -732,6 +756,8 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp cloud_update_time = 2;</code>
+     *
+     * @return Whether the cloudUpdateTime field is set.
      */
     public boolean hasCloudUpdateTime() {
       return cloudUpdateTimeBuilder_ != null || cloudUpdateTime_ != null;
@@ -745,6 +771,8 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp cloud_update_time = 2;</code>
+     *
+     * @return The cloudUpdateTime.
      */
     public com.google.protobuf.Timestamp getCloudUpdateTime() {
       if (cloudUpdateTimeBuilder_ == null) {
@@ -929,6 +957,8 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp device_ack_time = 3;</code>
+     *
+     * @return Whether the deviceAckTime field is set.
      */
     public boolean hasDeviceAckTime() {
       return deviceAckTimeBuilder_ != null || deviceAckTime_ != null;
@@ -949,6 +979,8 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp device_ack_time = 3;</code>
+     *
+     * @return The deviceAckTime.
      */
     public com.google.protobuf.Timestamp getDeviceAckTime() {
       if (deviceAckTimeBuilder_ == null) {
@@ -1169,6 +1201,8 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes binary_data = 4;</code>
+     *
+     * @return The binaryData.
      */
     public com.google.protobuf.ByteString getBinaryData() {
       return binaryData_;
@@ -1181,6 +1215,9 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes binary_data = 4;</code>
+     *
+     * @param value The binaryData to set.
+     * @return This builder for chaining.
      */
     public Builder setBinaryData(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1199,6 +1236,8 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes binary_data = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBinaryData() {
 

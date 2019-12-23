@@ -42,6 +42,12 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new MqttConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,6 +122,8 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.iot.v1.MqttState mqtt_enabled_state = 1;</code>
+   *
+   * @return The enum numeric value on the wire for mqttEnabledState.
    */
   public int getMqttEnabledStateValue() {
     return mqttEnabledState_;
@@ -130,6 +137,8 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.iot.v1.MqttState mqtt_enabled_state = 1;</code>
+   *
+   * @return The mqttEnabledState.
    */
   public com.google.cloud.iot.v1.MqttState getMqttEnabledState() {
     @SuppressWarnings("deprecation")
@@ -460,6 +469,8 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.MqttState mqtt_enabled_state = 1;</code>
+     *
+     * @return The enum numeric value on the wire for mqttEnabledState.
      */
     public int getMqttEnabledStateValue() {
       return mqttEnabledState_;
@@ -473,6 +484,9 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.MqttState mqtt_enabled_state = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for mqttEnabledState to set.
+     * @return This builder for chaining.
      */
     public Builder setMqttEnabledStateValue(int value) {
       mqttEnabledState_ = value;
@@ -488,6 +502,8 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.MqttState mqtt_enabled_state = 1;</code>
+     *
+     * @return The mqttEnabledState.
      */
     public com.google.cloud.iot.v1.MqttState getMqttEnabledState() {
       @SuppressWarnings("deprecation")
@@ -504,6 +520,9 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.MqttState mqtt_enabled_state = 1;</code>
+     *
+     * @param value The mqttEnabledState to set.
+     * @return This builder for chaining.
      */
     public Builder setMqttEnabledState(com.google.cloud.iot.v1.MqttState value) {
       if (value == null) {
@@ -523,6 +542,8 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.MqttState mqtt_enabled_state = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMqttEnabledState() {
 

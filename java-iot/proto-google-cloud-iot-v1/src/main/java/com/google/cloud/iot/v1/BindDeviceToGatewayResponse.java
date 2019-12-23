@@ -40,6 +40,12 @@ public final class BindDeviceToGatewayResponse extends com.google.protobuf.Gener
   private BindDeviceToGatewayResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BindDeviceToGatewayResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

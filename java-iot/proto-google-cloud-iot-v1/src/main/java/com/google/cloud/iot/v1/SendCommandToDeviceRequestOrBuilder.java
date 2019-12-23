@@ -35,6 +35,8 @@ public interface SendCommandToDeviceRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -49,6 +51,8 @@ public interface SendCommandToDeviceRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -60,6 +64,8 @@ public interface SendCommandToDeviceRequestOrBuilder
    * </pre>
    *
    * <code>bytes binary_data = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The binaryData.
    */
   com.google.protobuf.ByteString getBinaryData();
 
@@ -75,6 +81,8 @@ public interface SendCommandToDeviceRequestOrBuilder
    * </pre>
    *
    * <code>string subfolder = 3;</code>
+   *
+   * @return The subfolder.
    */
   java.lang.String getSubfolder();
   /**
@@ -89,6 +97,8 @@ public interface SendCommandToDeviceRequestOrBuilder
    * </pre>
    *
    * <code>string subfolder = 3;</code>
+   *
+   * @return The bytes for subfolder.
    */
   com.google.protobuf.ByteString getSubfolderBytes();
 }

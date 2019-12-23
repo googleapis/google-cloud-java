@@ -45,6 +45,12 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListDevicesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -77,9 +83,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
             }
           case 16:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 deviceNumIds_ = newLongList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               deviceNumIds_.addLong(input.readUInt64());
               break;
@@ -88,9 +94,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
             {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                 deviceNumIds_ = newLongList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
                 deviceNumIds_.addLong(input.readUInt64());
@@ -101,9 +107,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 deviceIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               deviceIds_.add(s);
               break;
@@ -165,10 +171,10 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         deviceNumIds_.makeImmutable(); // C
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         deviceIds_ = deviceIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -191,7 +197,6 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.iot.v1.ListDevicesRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -205,6 +210,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -228,6 +235,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -252,6 +261,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>repeated uint64 device_num_ids = 2;</code>
+   *
+   * @return A list containing the deviceNumIds.
    */
   public java.util.List<java.lang.Long> getDeviceNumIdsList() {
     return deviceNumIds_;
@@ -265,6 +276,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>repeated uint64 device_num_ids = 2;</code>
+   *
+   * @return The count of deviceNumIds.
    */
   public int getDeviceNumIdsCount() {
     return deviceNumIds_.size();
@@ -278,6 +291,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>repeated uint64 device_num_ids = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The deviceNumIds at the given index.
    */
   public long getDeviceNumIds(int index) {
     return deviceNumIds_.getLong(index);
@@ -296,6 +312,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>repeated string device_ids = 3;</code>
+   *
+   * @return A list containing the deviceIds.
    */
   public com.google.protobuf.ProtocolStringList getDeviceIdsList() {
     return deviceIds_;
@@ -309,6 +327,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>repeated string device_ids = 3;</code>
+   *
+   * @return The count of deviceIds.
    */
   public int getDeviceIdsCount() {
     return deviceIds_.size();
@@ -322,6 +342,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>repeated string device_ids = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The deviceIds at the given index.
    */
   public java.lang.String getDeviceIds(int index) {
     return deviceIds_.get(index);
@@ -335,6 +358,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>repeated string device_ids = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the deviceIds at the given index.
    */
   public com.google.protobuf.ByteString getDeviceIdsBytes(int index) {
     return deviceIds_.getByteString(index);
@@ -352,6 +378,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 4;</code>
+   *
+   * @return Whether the fieldMask field is set.
    */
   public boolean hasFieldMask() {
     return fieldMask_ != null;
@@ -366,6 +394,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 4;</code>
+   *
+   * @return The fieldMask.
    */
   public com.google.protobuf.FieldMask getFieldMask() {
     return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
@@ -395,6 +425,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+   *
+   * @return Whether the gatewayListOptions field is set.
    */
   public boolean hasGatewayListOptions() {
     return gatewayListOptions_ != null;
@@ -407,6 +439,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+   *
+   * @return The gatewayListOptions.
    */
   public com.google.cloud.iot.v1.GatewayListOptions getGatewayListOptions() {
     return gatewayListOptions_ == null
@@ -439,6 +473,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>int32 page_size = 100;</code>
+   *
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -456,6 +492,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string page_token = 101;</code>
+   *
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -478,6 +516,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string page_token = 101;</code>
+   *
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -786,9 +826,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       parent_ = "";
 
       deviceNumIds_ = emptyLongList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       deviceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (fieldMaskBuilder_ == null) {
         fieldMask_ = null;
       } else {
@@ -833,16 +873,15 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       com.google.cloud.iot.v1.ListDevicesRequest result =
           new com.google.cloud.iot.v1.ListDevicesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         deviceNumIds_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.deviceNumIds_ = deviceNumIds_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         deviceIds_ = deviceIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.deviceIds_ = deviceIds_;
       if (fieldMaskBuilder_ == null) {
@@ -857,7 +896,6 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       }
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -914,7 +952,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       if (!other.deviceNumIds_.isEmpty()) {
         if (deviceNumIds_.isEmpty()) {
           deviceNumIds_ = other.deviceNumIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureDeviceNumIdsIsMutable();
           deviceNumIds_.addAll(other.deviceNumIds_);
@@ -924,7 +962,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       if (!other.deviceIds_.isEmpty()) {
         if (deviceIds_.isEmpty()) {
           deviceIds_ = other.deviceIds_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureDeviceIdsIsMutable();
           deviceIds_.addAll(other.deviceIds_);
@@ -987,6 +1025,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1010,6 +1050,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1033,6 +1075,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1054,6 +1099,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1072,6 +1119,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1087,9 +1137,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
     private com.google.protobuf.Internal.LongList deviceNumIds_ = emptyLongList();
 
     private void ensureDeviceNumIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         deviceNumIds_ = mutableCopy(deviceNumIds_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1101,9 +1151,11 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated uint64 device_num_ids = 2;</code>
+     *
+     * @return A list containing the deviceNumIds.
      */
     public java.util.List<java.lang.Long> getDeviceNumIdsList() {
-      return ((bitField0_ & 0x00000002) != 0)
+      return ((bitField0_ & 0x00000001) != 0)
           ? java.util.Collections.unmodifiableList(deviceNumIds_)
           : deviceNumIds_;
     }
@@ -1116,6 +1168,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated uint64 device_num_ids = 2;</code>
+     *
+     * @return The count of deviceNumIds.
      */
     public int getDeviceNumIdsCount() {
       return deviceNumIds_.size();
@@ -1129,6 +1183,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated uint64 device_num_ids = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The deviceNumIds at the given index.
      */
     public long getDeviceNumIds(int index) {
       return deviceNumIds_.getLong(index);
@@ -1142,6 +1199,10 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated uint64 device_num_ids = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The deviceNumIds to set.
+     * @return This builder for chaining.
      */
     public Builder setDeviceNumIds(int index, long value) {
       ensureDeviceNumIdsIsMutable();
@@ -1158,6 +1219,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated uint64 device_num_ids = 2;</code>
+     *
+     * @param value The deviceNumIds to add.
+     * @return This builder for chaining.
      */
     public Builder addDeviceNumIds(long value) {
       ensureDeviceNumIdsIsMutable();
@@ -1174,6 +1238,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated uint64 device_num_ids = 2;</code>
+     *
+     * @param values The deviceNumIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllDeviceNumIds(java.lang.Iterable<? extends java.lang.Long> values) {
       ensureDeviceNumIdsIsMutable();
@@ -1190,10 +1257,12 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated uint64 device_num_ids = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDeviceNumIds() {
       deviceNumIds_ = emptyLongList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1202,9 +1271,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDeviceIdsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         deviceIds_ = new com.google.protobuf.LazyStringArrayList(deviceIds_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1216,6 +1285,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
+     *
+     * @return A list containing the deviceIds.
      */
     public com.google.protobuf.ProtocolStringList getDeviceIdsList() {
       return deviceIds_.getUnmodifiableView();
@@ -1229,6 +1300,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
+     *
+     * @return The count of deviceIds.
      */
     public int getDeviceIdsCount() {
       return deviceIds_.size();
@@ -1242,6 +1315,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The deviceIds at the given index.
      */
     public java.lang.String getDeviceIds(int index) {
       return deviceIds_.get(index);
@@ -1255,6 +1331,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the deviceIds at the given index.
      */
     public com.google.protobuf.ByteString getDeviceIdsBytes(int index) {
       return deviceIds_.getByteString(index);
@@ -1268,6 +1347,10 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The deviceIds to set.
+     * @return This builder for chaining.
      */
     public Builder setDeviceIds(int index, java.lang.String value) {
       if (value == null) {
@@ -1287,6 +1370,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
+     *
+     * @param value The deviceIds to add.
+     * @return This builder for chaining.
      */
     public Builder addDeviceIds(java.lang.String value) {
       if (value == null) {
@@ -1306,6 +1392,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
+     *
+     * @param values The deviceIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllDeviceIds(java.lang.Iterable<java.lang.String> values) {
       ensureDeviceIdsIsMutable();
@@ -1322,10 +1411,12 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDeviceIds() {
       deviceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1338,6 +1429,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
+     *
+     * @param value The bytes of the deviceIds to add.
+     * @return This builder for chaining.
      */
     public Builder addDeviceIdsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1366,6 +1460,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 4;</code>
+     *
+     * @return Whether the fieldMask field is set.
      */
     public boolean hasFieldMask() {
       return fieldMaskBuilder_ != null || fieldMask_ != null;
@@ -1380,6 +1476,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 4;</code>
+     *
+     * @return The fieldMask.
      */
     public com.google.protobuf.FieldMask getFieldMask() {
       if (fieldMaskBuilder_ == null) {
@@ -1557,6 +1655,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+     *
+     * @return Whether the gatewayListOptions field is set.
      */
     public boolean hasGatewayListOptions() {
       return gatewayListOptionsBuilder_ != null || gatewayListOptions_ != null;
@@ -1569,6 +1669,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+     *
+     * @return The gatewayListOptions.
      */
     public com.google.cloud.iot.v1.GatewayListOptions getGatewayListOptions() {
       if (gatewayListOptionsBuilder_ == null) {
@@ -1737,6 +1839,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 page_size = 100;</code>
+     *
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -1752,6 +1856,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 page_size = 100;</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
@@ -1770,6 +1877,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 page_size = 100;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
 
@@ -1789,6 +1898,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string page_token = 101;</code>
+     *
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -1811,6 +1922,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string page_token = 101;</code>
+     *
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -1833,6 +1946,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string page_token = 101;</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -1853,6 +1969,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string page_token = 101;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
 
@@ -1870,6 +1988,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string page_token = 101;</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

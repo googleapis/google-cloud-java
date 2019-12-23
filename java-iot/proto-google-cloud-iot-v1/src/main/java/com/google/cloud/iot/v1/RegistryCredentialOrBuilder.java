@@ -31,6 +31,8 @@ public interface RegistryCredentialOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.PublicKeyCertificate public_key_certificate = 1;</code>
+   *
+   * @return Whether the publicKeyCertificate field is set.
    */
   boolean hasPublicKeyCertificate();
   /**
@@ -41,6 +43,8 @@ public interface RegistryCredentialOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.PublicKeyCertificate public_key_certificate = 1;</code>
+   *
+   * @return The publicKeyCertificate.
    */
   com.google.cloud.iot.v1.PublicKeyCertificate getPublicKeyCertificate();
   /**

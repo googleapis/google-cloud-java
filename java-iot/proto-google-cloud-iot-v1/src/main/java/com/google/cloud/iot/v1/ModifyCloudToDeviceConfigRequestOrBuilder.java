@@ -35,6 +35,8 @@ public interface ModifyCloudToDeviceConfigRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -49,6 +51,8 @@ public interface ModifyCloudToDeviceConfigRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -64,6 +68,8 @@ public interface ModifyCloudToDeviceConfigRequestOrBuilder
    * </pre>
    *
    * <code>int64 version_to_update = 2;</code>
+   *
+   * @return The versionToUpdate.
    */
   long getVersionToUpdate();
 
@@ -75,6 +81,8 @@ public interface ModifyCloudToDeviceConfigRequestOrBuilder
    * </pre>
    *
    * <code>bytes binary_data = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The binaryData.
    */
   com.google.protobuf.ByteString getBinaryData();
 }

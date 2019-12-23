@@ -35,6 +35,8 @@ public interface GetDeviceRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -49,6 +51,8 @@ public interface GetDeviceRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -61,6 +65,8 @@ public interface GetDeviceRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+   *
+   * @return Whether the fieldMask field is set.
    */
   boolean hasFieldMask();
   /**
@@ -72,6 +78,8 @@ public interface GetDeviceRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+   *
+   * @return The fieldMask.
    */
   com.google.protobuf.FieldMask getFieldMask();
   /**

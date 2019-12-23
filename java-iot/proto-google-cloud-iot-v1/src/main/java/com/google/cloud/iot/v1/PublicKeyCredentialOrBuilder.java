@@ -31,6 +31,8 @@ public interface PublicKeyCredentialOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.PublicKeyFormat format = 1;</code>
+   *
+   * @return The enum numeric value on the wire for format.
    */
   int getFormatValue();
   /**
@@ -41,6 +43,8 @@ public interface PublicKeyCredentialOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.PublicKeyFormat format = 1;</code>
+   *
+   * @return The format.
    */
   com.google.cloud.iot.v1.PublicKeyFormat getFormat();
 
@@ -52,6 +56,8 @@ public interface PublicKeyCredentialOrBuilder
    * </pre>
    *
    * <code>string key = 2;</code>
+   *
+   * @return The key.
    */
   java.lang.String getKey();
   /**
@@ -62,6 +68,8 @@ public interface PublicKeyCredentialOrBuilder
    * </pre>
    *
    * <code>string key = 2;</code>
+   *
+   * @return The bytes for key.
    */
   com.google.protobuf.ByteString getKeyBytes();
 }

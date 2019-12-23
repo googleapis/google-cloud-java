@@ -32,6 +32,8 @@ public interface HttpConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.HttpState http_enabled_state = 1;</code>
+   *
+   * @return The enum numeric value on the wire for httpEnabledState.
    */
   int getHttpEnabledStateValue();
   /**
@@ -43,6 +45,8 @@ public interface HttpConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.HttpState http_enabled_state = 1;</code>
+   *
+   * @return The httpEnabledState.
    */
   com.google.cloud.iot.v1.HttpState getHttpEnabledState();
 }

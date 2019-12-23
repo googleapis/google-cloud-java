@@ -35,6 +35,8 @@ public interface CreateDeviceRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -49,6 +51,8 @@ public interface CreateDeviceRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -62,6 +66,8 @@ public interface CreateDeviceRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the device field is set.
    */
   boolean hasDevice();
   /**
@@ -74,6 +80,8 @@ public interface CreateDeviceRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The device.
    */
   com.google.cloud.iot.v1.Device getDevice();
   /**

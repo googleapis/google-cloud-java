@@ -41,6 +41,8 @@ public interface DeviceCredentialOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.PublicKeyCredential public_key = 2;</code>
+   *
+   * @return Whether the publicKey field is set.
    */
   boolean hasPublicKey();
   /**
@@ -61,6 +63,8 @@ public interface DeviceCredentialOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.PublicKeyCredential public_key = 2;</code>
+   *
+   * @return The publicKey.
    */
   com.google.cloud.iot.v1.PublicKeyCredential getPublicKey();
   /**
@@ -94,6 +98,8 @@ public interface DeviceCredentialOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
+   *
+   * @return Whether the expirationTime field is set.
    */
   boolean hasExpirationTime();
   /**
@@ -106,6 +112,8 @@ public interface DeviceCredentialOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
+   *
+   * @return The expirationTime.
    */
   com.google.protobuf.Timestamp getExpirationTime();
   /**

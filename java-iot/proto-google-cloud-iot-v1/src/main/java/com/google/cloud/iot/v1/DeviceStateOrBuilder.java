@@ -32,6 +32,8 @@ public interface DeviceStateOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 1;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -43,6 +45,8 @@ public interface DeviceStateOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 1;</code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -65,6 +69,8 @@ public interface DeviceStateOrBuilder
    * </pre>
    *
    * <code>bytes binary_data = 2;</code>
+   *
+   * @return The binaryData.
    */
   com.google.protobuf.ByteString getBinaryData();
 }

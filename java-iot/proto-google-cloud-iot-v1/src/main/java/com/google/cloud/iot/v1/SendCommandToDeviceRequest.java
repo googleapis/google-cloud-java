@@ -44,6 +44,12 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SendCommandToDeviceRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -134,6 +139,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -158,6 +165,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -181,6 +190,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>bytes binary_data = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The binaryData.
    */
   public com.google.protobuf.ByteString getBinaryData() {
     return binaryData_;
@@ -200,6 +211,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string subfolder = 3;</code>
+   *
+   * @return The subfolder.
    */
   public java.lang.String getSubfolder() {
     java.lang.Object ref = subfolder_;
@@ -224,6 +237,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>string subfolder = 3;</code>
+   *
+   * @return The bytes for subfolder.
    */
   public com.google.protobuf.ByteString getSubfolderBytes() {
     java.lang.Object ref = subfolder_;
@@ -599,6 +614,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -623,6 +640,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -647,6 +666,9 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -669,6 +691,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -688,6 +712,9 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -709,6 +736,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bytes binary_data = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The binaryData.
      */
     public com.google.protobuf.ByteString getBinaryData() {
       return binaryData_;
@@ -721,6 +750,9 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bytes binary_data = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The binaryData to set.
+     * @return This builder for chaining.
      */
     public Builder setBinaryData(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -739,6 +771,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>bytes binary_data = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBinaryData() {
 
@@ -760,6 +794,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string subfolder = 3;</code>
+     *
+     * @return The subfolder.
      */
     public java.lang.String getSubfolder() {
       java.lang.Object ref = subfolder_;
@@ -784,6 +820,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string subfolder = 3;</code>
+     *
+     * @return The bytes for subfolder.
      */
     public com.google.protobuf.ByteString getSubfolderBytes() {
       java.lang.Object ref = subfolder_;
@@ -808,6 +846,9 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string subfolder = 3;</code>
+     *
+     * @param value The subfolder to set.
+     * @return This builder for chaining.
      */
     public Builder setSubfolder(java.lang.String value) {
       if (value == null) {
@@ -830,6 +871,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string subfolder = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSubfolder() {
 
@@ -849,6 +892,9 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>string subfolder = 3;</code>
+     *
+     * @param value The bytes for subfolder to set.
+     * @return This builder for chaining.
      */
     public Builder setSubfolderBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

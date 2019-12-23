@@ -42,6 +42,12 @@ public final class StateNotificationConfig extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StateNotificationConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class StateNotificationConfig extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,6 +122,8 @@ public final class StateNotificationConfig extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string pubsub_topic_name = 1;</code>
+   *
+   * @return The pubsubTopicName.
    */
   public java.lang.String getPubsubTopicName() {
     java.lang.Object ref = pubsubTopicName_;
@@ -138,6 +145,8 @@ public final class StateNotificationConfig extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string pubsub_topic_name = 1;</code>
+   *
+   * @return The bytes for pubsubTopicName.
    */
   public com.google.protobuf.ByteString getPubsubTopicNameBytes() {
     java.lang.Object ref = pubsubTopicName_;
@@ -478,6 +487,8 @@ public final class StateNotificationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string pubsub_topic_name = 1;</code>
+     *
+     * @return The pubsubTopicName.
      */
     public java.lang.String getPubsubTopicName() {
       java.lang.Object ref = pubsubTopicName_;
@@ -499,6 +510,8 @@ public final class StateNotificationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string pubsub_topic_name = 1;</code>
+     *
+     * @return The bytes for pubsubTopicName.
      */
     public com.google.protobuf.ByteString getPubsubTopicNameBytes() {
       java.lang.Object ref = pubsubTopicName_;
@@ -520,6 +533,9 @@ public final class StateNotificationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string pubsub_topic_name = 1;</code>
+     *
+     * @param value The pubsubTopicName to set.
+     * @return This builder for chaining.
      */
     public Builder setPubsubTopicName(java.lang.String value) {
       if (value == null) {
@@ -539,6 +555,8 @@ public final class StateNotificationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string pubsub_topic_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPubsubTopicName() {
 
@@ -555,6 +573,9 @@ public final class StateNotificationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string pubsub_topic_name = 1;</code>
+     *
+     * @param value The bytes for pubsubTopicName to set.
+     * @return This builder for chaining.
      */
     public Builder setPubsubTopicNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -31,6 +31,8 @@ public interface X509CertificateDetailsOrBuilder
    * </pre>
    *
    * <code>string issuer = 1;</code>
+   *
+   * @return The issuer.
    */
   java.lang.String getIssuer();
   /**
@@ -41,6 +43,8 @@ public interface X509CertificateDetailsOrBuilder
    * </pre>
    *
    * <code>string issuer = 1;</code>
+   *
+   * @return The bytes for issuer.
    */
   com.google.protobuf.ByteString getIssuerBytes();
 
@@ -52,6 +56,8 @@ public interface X509CertificateDetailsOrBuilder
    * </pre>
    *
    * <code>string subject = 2;</code>
+   *
+   * @return The subject.
    */
   java.lang.String getSubject();
   /**
@@ -62,6 +68,8 @@ public interface X509CertificateDetailsOrBuilder
    * </pre>
    *
    * <code>string subject = 2;</code>
+   *
+   * @return The bytes for subject.
    */
   com.google.protobuf.ByteString getSubjectBytes();
 
@@ -73,6 +81,8 @@ public interface X509CertificateDetailsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
+   *
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -83,6 +93,8 @@ public interface X509CertificateDetailsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
+   *
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -104,6 +116,8 @@ public interface X509CertificateDetailsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expiry_time = 4;</code>
+   *
+   * @return Whether the expiryTime field is set.
    */
   boolean hasExpiryTime();
   /**
@@ -114,6 +128,8 @@ public interface X509CertificateDetailsOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expiry_time = 4;</code>
+   *
+   * @return The expiryTime.
    */
   com.google.protobuf.Timestamp getExpiryTime();
   /**
@@ -135,6 +151,8 @@ public interface X509CertificateDetailsOrBuilder
    * </pre>
    *
    * <code>string signature_algorithm = 5;</code>
+   *
+   * @return The signatureAlgorithm.
    */
   java.lang.String getSignatureAlgorithm();
   /**
@@ -145,6 +163,8 @@ public interface X509CertificateDetailsOrBuilder
    * </pre>
    *
    * <code>string signature_algorithm = 5;</code>
+   *
+   * @return The bytes for signatureAlgorithm.
    */
   com.google.protobuf.ByteString getSignatureAlgorithmBytes();
 
@@ -156,6 +176,8 @@ public interface X509CertificateDetailsOrBuilder
    * </pre>
    *
    * <code>string public_key_type = 6;</code>
+   *
+   * @return The publicKeyType.
    */
   java.lang.String getPublicKeyType();
   /**
@@ -166,6 +188,8 @@ public interface X509CertificateDetailsOrBuilder
    * </pre>
    *
    * <code>string public_key_type = 6;</code>
+   *
+   * @return The bytes for publicKeyType.
    */
   com.google.protobuf.ByteString getPublicKeyTypeBytes();
 }

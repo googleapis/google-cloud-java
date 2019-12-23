@@ -33,6 +33,8 @@ public interface GatewayListOptionsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for gatewayType.
    */
   int getGatewayTypeValue();
   /**
@@ -45,6 +47,8 @@ public interface GatewayListOptionsOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+   *
+   * @return The gatewayType.
    */
   com.google.cloud.iot.v1.GatewayType getGatewayType();
 
@@ -59,6 +63,8 @@ public interface GatewayListOptionsOrBuilder
    * </pre>
    *
    * <code>string associations_gateway_id = 2;</code>
+   *
+   * @return The associationsGatewayId.
    */
   java.lang.String getAssociationsGatewayId();
   /**
@@ -72,6 +78,8 @@ public interface GatewayListOptionsOrBuilder
    * </pre>
    *
    * <code>string associations_gateway_id = 2;</code>
+   *
+   * @return The bytes for associationsGatewayId.
    */
   com.google.protobuf.ByteString getAssociationsGatewayIdBytes();
 
@@ -86,6 +94,8 @@ public interface GatewayListOptionsOrBuilder
    * </pre>
    *
    * <code>string associations_device_id = 3;</code>
+   *
+   * @return The associationsDeviceId.
    */
   java.lang.String getAssociationsDeviceId();
   /**
@@ -99,6 +109,8 @@ public interface GatewayListOptionsOrBuilder
    * </pre>
    *
    * <code>string associations_device_id = 3;</code>
+   *
+   * @return The bytes for associationsDeviceId.
    */
   com.google.protobuf.ByteString getAssociationsDeviceIdBytes();
 

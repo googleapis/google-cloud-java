@@ -45,6 +45,12 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UnbindDeviceFromGatewayRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -136,6 +141,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -159,6 +166,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -183,6 +192,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The gatewayId.
    */
   public java.lang.String getGatewayId() {
     java.lang.Object ref = gatewayId_;
@@ -204,6 +215,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for gatewayId.
    */
   public com.google.protobuf.ByteString getGatewayIdBytes() {
     java.lang.Object ref = gatewayId_;
@@ -229,6 +242,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>string device_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The deviceId.
    */
   public java.lang.String getDeviceId() {
     java.lang.Object ref = deviceId_;
@@ -251,6 +266,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>string device_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for deviceId.
    */
   public com.google.protobuf.ByteString getDeviceIdBytes() {
     java.lang.Object ref = deviceId_;
@@ -627,6 +644,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -650,6 +669,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -673,6 +694,9 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -694,6 +718,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -712,6 +738,9 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -734,6 +763,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The gatewayId.
      */
     public java.lang.String getGatewayId() {
       java.lang.Object ref = gatewayId_;
@@ -755,6 +786,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for gatewayId.
      */
     public com.google.protobuf.ByteString getGatewayIdBytes() {
       java.lang.Object ref = gatewayId_;
@@ -776,6 +809,9 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The gatewayId to set.
+     * @return This builder for chaining.
      */
     public Builder setGatewayId(java.lang.String value) {
       if (value == null) {
@@ -795,6 +831,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGatewayId() {
 
@@ -811,6 +849,9 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for gatewayId to set.
+     * @return This builder for chaining.
      */
     public Builder setGatewayIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -834,6 +875,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string device_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The deviceId.
      */
     public java.lang.String getDeviceId() {
       java.lang.Object ref = deviceId_;
@@ -856,6 +899,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string device_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for deviceId.
      */
     public com.google.protobuf.ByteString getDeviceIdBytes() {
       java.lang.Object ref = deviceId_;
@@ -878,6 +923,9 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string device_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The deviceId to set.
+     * @return This builder for chaining.
      */
     public Builder setDeviceId(java.lang.String value) {
       if (value == null) {
@@ -898,6 +946,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string device_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDeviceId() {
 
@@ -915,6 +965,9 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>string device_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for deviceId to set.
+     * @return This builder for chaining.
      */
     public Builder setDeviceIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

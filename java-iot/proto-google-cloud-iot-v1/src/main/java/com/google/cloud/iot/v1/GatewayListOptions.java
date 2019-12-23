@@ -40,6 +40,12 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
   private GatewayListOptions() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GatewayListOptions();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -121,7 +126,10 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
   private int filterCase_ = 0;
   private java.lang.Object filter_;
 
-  public enum FilterCase implements com.google.protobuf.Internal.EnumLite {
+  public enum FilterCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GATEWAY_TYPE(1),
     ASSOCIATIONS_GATEWAY_ID(2),
     ASSOCIATIONS_DEVICE_ID(3),
@@ -131,7 +139,11 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
     private FilterCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static FilterCase valueOf(int value) {
       return forNumber(value);
@@ -172,6 +184,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for gatewayType.
    */
   public int getGatewayTypeValue() {
     if (filterCase_ == 1) {
@@ -189,6 +203,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+   *
+   * @return The gatewayType.
    */
   public com.google.cloud.iot.v1.GatewayType getGatewayType() {
     if (filterCase_ == 1) {
@@ -212,6 +228,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string associations_gateway_id = 2;</code>
+   *
+   * @return The associationsGatewayId.
    */
   public java.lang.String getAssociationsGatewayId() {
     java.lang.Object ref = "";
@@ -240,6 +258,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string associations_gateway_id = 2;</code>
+   *
+   * @return The bytes for associationsGatewayId.
    */
   public com.google.protobuf.ByteString getAssociationsGatewayIdBytes() {
     java.lang.Object ref = "";
@@ -270,6 +290,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string associations_device_id = 3;</code>
+   *
+   * @return The associationsDeviceId.
    */
   public java.lang.String getAssociationsDeviceId() {
     java.lang.Object ref = "";
@@ -298,6 +320,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string associations_device_id = 3;</code>
+   *
+   * @return The bytes for associationsDeviceId.
    */
   public com.google.protobuf.ByteString getAssociationsDeviceIdBytes() {
     java.lang.Object ref = "";
@@ -726,6 +750,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for gatewayType.
      */
     public int getGatewayTypeValue() {
       if (filterCase_ == 1) {
@@ -743,6 +769,9 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for gatewayType to set.
+     * @return This builder for chaining.
      */
     public Builder setGatewayTypeValue(int value) {
       filterCase_ = 1;
@@ -760,6 +789,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+     *
+     * @return The gatewayType.
      */
     public com.google.cloud.iot.v1.GatewayType getGatewayType() {
       if (filterCase_ == 1) {
@@ -780,6 +811,9 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+     *
+     * @param value The gatewayType to set.
+     * @return This builder for chaining.
      */
     public Builder setGatewayType(com.google.cloud.iot.v1.GatewayType value) {
       if (value == null) {
@@ -800,6 +834,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGatewayType() {
       if (filterCase_ == 1) {
@@ -821,6 +857,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string associations_gateway_id = 2;</code>
+     *
+     * @return The associationsGatewayId.
      */
     public java.lang.String getAssociationsGatewayId() {
       java.lang.Object ref = "";
@@ -849,6 +887,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string associations_gateway_id = 2;</code>
+     *
+     * @return The bytes for associationsGatewayId.
      */
     public com.google.protobuf.ByteString getAssociationsGatewayIdBytes() {
       java.lang.Object ref = "";
@@ -877,6 +917,9 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string associations_gateway_id = 2;</code>
+     *
+     * @param value The associationsGatewayId to set.
+     * @return This builder for chaining.
      */
     public Builder setAssociationsGatewayId(java.lang.String value) {
       if (value == null) {
@@ -898,6 +941,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string associations_gateway_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAssociationsGatewayId() {
       if (filterCase_ == 2) {
@@ -918,6 +963,9 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string associations_gateway_id = 2;</code>
+     *
+     * @param value The bytes for associationsGatewayId to set.
+     * @return This builder for chaining.
      */
     public Builder setAssociationsGatewayIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -941,6 +989,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string associations_device_id = 3;</code>
+     *
+     * @return The associationsDeviceId.
      */
     public java.lang.String getAssociationsDeviceId() {
       java.lang.Object ref = "";
@@ -969,6 +1019,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string associations_device_id = 3;</code>
+     *
+     * @return The bytes for associationsDeviceId.
      */
     public com.google.protobuf.ByteString getAssociationsDeviceIdBytes() {
       java.lang.Object ref = "";
@@ -997,6 +1049,9 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string associations_device_id = 3;</code>
+     *
+     * @param value The associationsDeviceId to set.
+     * @return This builder for chaining.
      */
     public Builder setAssociationsDeviceId(java.lang.String value) {
       if (value == null) {
@@ -1018,6 +1073,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string associations_device_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAssociationsDeviceId() {
       if (filterCase_ == 3) {
@@ -1038,6 +1095,9 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string associations_device_id = 3;</code>
+     *
+     * @param value The bytes for associationsDeviceId to set.
+     * @return This builder for chaining.
      */
     public Builder setAssociationsDeviceIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

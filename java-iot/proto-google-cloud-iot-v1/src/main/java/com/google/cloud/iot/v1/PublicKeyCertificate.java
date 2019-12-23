@@ -43,6 +43,12 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PublicKeyCertificate();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -140,6 +145,8 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.iot.v1.PublicKeyCertificateFormat format = 1;</code>
+   *
+   * @return The enum numeric value on the wire for format.
    */
   public int getFormatValue() {
     return format_;
@@ -152,6 +159,8 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.iot.v1.PublicKeyCertificateFormat format = 1;</code>
+   *
+   * @return The format.
    */
   public com.google.cloud.iot.v1.PublicKeyCertificateFormat getFormat() {
     @SuppressWarnings("deprecation")
@@ -172,6 +181,8 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string certificate = 2;</code>
+   *
+   * @return The certificate.
    */
   public java.lang.String getCertificate() {
     java.lang.Object ref = certificate_;
@@ -192,6 +203,8 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string certificate = 2;</code>
+   *
+   * @return The bytes for certificate.
    */
   public com.google.protobuf.ByteString getCertificateBytes() {
     java.lang.Object ref = certificate_;
@@ -215,6 +228,8 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.iot.v1.X509CertificateDetails x509_details = 3;</code>
+   *
+   * @return Whether the x509Details field is set.
    */
   public boolean hasX509Details() {
     return x509Details_ != null;
@@ -227,6 +242,8 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.cloud.iot.v1.X509CertificateDetails x509_details = 3;</code>
+   *
+   * @return The x509Details.
    */
   public com.google.cloud.iot.v1.X509CertificateDetails getX509Details() {
     return x509Details_ == null
@@ -620,6 +637,8 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.iot.v1.PublicKeyCertificateFormat format = 1;</code>
+     *
+     * @return The enum numeric value on the wire for format.
      */
     public int getFormatValue() {
       return format_;
@@ -632,6 +651,9 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.iot.v1.PublicKeyCertificateFormat format = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for format to set.
+     * @return This builder for chaining.
      */
     public Builder setFormatValue(int value) {
       format_ = value;
@@ -646,6 +668,8 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.iot.v1.PublicKeyCertificateFormat format = 1;</code>
+     *
+     * @return The format.
      */
     public com.google.cloud.iot.v1.PublicKeyCertificateFormat getFormat() {
       @SuppressWarnings("deprecation")
@@ -663,6 +687,9 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.iot.v1.PublicKeyCertificateFormat format = 1;</code>
+     *
+     * @param value The format to set.
+     * @return This builder for chaining.
      */
     public Builder setFormat(com.google.cloud.iot.v1.PublicKeyCertificateFormat value) {
       if (value == null) {
@@ -681,6 +708,8 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.iot.v1.PublicKeyCertificateFormat format = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFormat() {
 
@@ -698,6 +727,8 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string certificate = 2;</code>
+     *
+     * @return The certificate.
      */
     public java.lang.String getCertificate() {
       java.lang.Object ref = certificate_;
@@ -718,6 +749,8 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string certificate = 2;</code>
+     *
+     * @return The bytes for certificate.
      */
     public com.google.protobuf.ByteString getCertificateBytes() {
       java.lang.Object ref = certificate_;
@@ -738,6 +771,9 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string certificate = 2;</code>
+     *
+     * @param value The certificate to set.
+     * @return This builder for chaining.
      */
     public Builder setCertificate(java.lang.String value) {
       if (value == null) {
@@ -756,6 +792,8 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string certificate = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCertificate() {
 
@@ -771,6 +809,9 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string certificate = 2;</code>
+     *
+     * @param value The bytes for certificate to set.
+     * @return This builder for chaining.
      */
     public Builder setCertificateBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -797,6 +838,8 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.iot.v1.X509CertificateDetails x509_details = 3;</code>
+     *
+     * @return Whether the x509Details field is set.
      */
     public boolean hasX509Details() {
       return x509DetailsBuilder_ != null || x509Details_ != null;
@@ -809,6 +852,8 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.cloud.iot.v1.X509CertificateDetails x509_details = 3;</code>
+     *
+     * @return The x509Details.
      */
     public com.google.cloud.iot.v1.X509CertificateDetails getX509Details() {
       if (x509DetailsBuilder_ == null) {

@@ -40,6 +40,12 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
   private DeviceCredential() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DeviceCredential();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -132,7 +137,10 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
   private int credentialCase_ = 0;
   private java.lang.Object credential_;
 
-  public enum CredentialCase implements com.google.protobuf.Internal.EnumLite {
+  public enum CredentialCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PUBLIC_KEY(2),
     CREDENTIAL_NOT_SET(0);
     private final int value;
@@ -140,7 +148,11 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
     private CredentialCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static CredentialCase valueOf(int value) {
       return forNumber(value);
@@ -185,6 +197,8 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.iot.v1.PublicKeyCredential public_key = 2;</code>
+   *
+   * @return Whether the publicKey field is set.
    */
   public boolean hasPublicKey() {
     return credentialCase_ == 2;
@@ -207,6 +221,8 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.cloud.iot.v1.PublicKeyCredential public_key = 2;</code>
+   *
+   * @return The publicKey.
    */
   public com.google.cloud.iot.v1.PublicKeyCredential getPublicKey() {
     if (credentialCase_ == 2) {
@@ -252,6 +268,8 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
+   *
+   * @return Whether the expirationTime field is set.
    */
   public boolean hasExpirationTime() {
     return expirationTime_ != null;
@@ -266,6 +284,8 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
+   *
+   * @return The expirationTime.
    */
   public com.google.protobuf.Timestamp getExpirationTime() {
     return expirationTime_ == null
@@ -696,6 +716,8 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.iot.v1.PublicKeyCredential public_key = 2;</code>
+     *
+     * @return Whether the publicKey field is set.
      */
     public boolean hasPublicKey() {
       return credentialCase_ == 2;
@@ -718,6 +740,8 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.cloud.iot.v1.PublicKeyCredential public_key = 2;</code>
+     *
+     * @return The publicKey.
      */
     public com.google.cloud.iot.v1.PublicKeyCredential getPublicKey() {
       if (publicKeyBuilder_ == null) {
@@ -981,6 +1005,8 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
+     *
+     * @return Whether the expirationTime field is set.
      */
     public boolean hasExpirationTime() {
       return expirationTimeBuilder_ != null || expirationTime_ != null;
@@ -995,6 +1021,8 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
+     *
+     * @return The expirationTime.
      */
     public com.google.protobuf.Timestamp getExpirationTime() {
       if (expirationTimeBuilder_ == null) {

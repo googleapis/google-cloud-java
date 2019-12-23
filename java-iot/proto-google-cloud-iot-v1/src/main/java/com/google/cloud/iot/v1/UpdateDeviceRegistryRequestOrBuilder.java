@@ -35,6 +35,8 @@ public interface UpdateDeviceRegistryRequestOrBuilder
    * <code>
    * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the deviceRegistry field is set.
    */
   boolean hasDeviceRegistry();
   /**
@@ -49,6 +51,8 @@ public interface UpdateDeviceRegistryRequestOrBuilder
    * <code>
    * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The deviceRegistry.
    */
   com.google.cloud.iot.v1.DeviceRegistry getDeviceRegistry();
   /**
@@ -79,6 +83,8 @@ public interface UpdateDeviceRegistryRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -94,6 +100,8 @@ public interface UpdateDeviceRegistryRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

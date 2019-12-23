@@ -41,6 +41,12 @@ public final class UnbindDeviceFromGatewayResponse extends com.google.protobuf.G
   private UnbindDeviceFromGatewayResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UnbindDeviceFromGatewayResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

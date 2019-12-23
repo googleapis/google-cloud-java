@@ -43,6 +43,12 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PublicKeyCredential();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,6 +129,8 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.iot.v1.PublicKeyFormat format = 1;</code>
+   *
+   * @return The enum numeric value on the wire for format.
    */
   public int getFormatValue() {
     return format_;
@@ -136,6 +143,8 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.cloud.iot.v1.PublicKeyFormat format = 1;</code>
+   *
+   * @return The format.
    */
   public com.google.cloud.iot.v1.PublicKeyFormat getFormat() {
     @SuppressWarnings("deprecation")
@@ -154,6 +163,8 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string key = 2;</code>
+   *
+   * @return The key.
    */
   public java.lang.String getKey() {
     java.lang.Object ref = key_;
@@ -174,6 +185,8 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string key = 2;</code>
+   *
+   * @return The bytes for key.
    */
   public com.google.protobuf.ByteString getKeyBytes() {
     java.lang.Object ref = key_;
@@ -529,6 +542,8 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.iot.v1.PublicKeyFormat format = 1;</code>
+     *
+     * @return The enum numeric value on the wire for format.
      */
     public int getFormatValue() {
       return format_;
@@ -541,6 +556,9 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.iot.v1.PublicKeyFormat format = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for format to set.
+     * @return This builder for chaining.
      */
     public Builder setFormatValue(int value) {
       format_ = value;
@@ -555,6 +573,8 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.iot.v1.PublicKeyFormat format = 1;</code>
+     *
+     * @return The format.
      */
     public com.google.cloud.iot.v1.PublicKeyFormat getFormat() {
       @SuppressWarnings("deprecation")
@@ -570,6 +590,9 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.iot.v1.PublicKeyFormat format = 1;</code>
+     *
+     * @param value The format to set.
+     * @return This builder for chaining.
      */
     public Builder setFormat(com.google.cloud.iot.v1.PublicKeyFormat value) {
       if (value == null) {
@@ -588,6 +611,8 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.cloud.iot.v1.PublicKeyFormat format = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFormat() {
 
@@ -605,6 +630,8 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string key = 2;</code>
+     *
+     * @return The key.
      */
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
@@ -625,6 +652,8 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string key = 2;</code>
+     *
+     * @return The bytes for key.
      */
     public com.google.protobuf.ByteString getKeyBytes() {
       java.lang.Object ref = key_;
@@ -645,6 +674,9 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string key = 2;</code>
+     *
+     * @param value The key to set.
+     * @return This builder for chaining.
      */
     public Builder setKey(java.lang.String value) {
       if (value == null) {
@@ -663,6 +695,8 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string key = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearKey() {
 
@@ -678,6 +712,9 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string key = 2;</code>
+     *
+     * @param value The bytes for key to set.
+     * @return This builder for chaining.
      */
     public Builder setKeyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

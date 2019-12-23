@@ -31,6 +31,8 @@ public interface PublicKeyCertificateOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.PublicKeyCertificateFormat format = 1;</code>
+   *
+   * @return The enum numeric value on the wire for format.
    */
   int getFormatValue();
   /**
@@ -41,6 +43,8 @@ public interface PublicKeyCertificateOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.PublicKeyCertificateFormat format = 1;</code>
+   *
+   * @return The format.
    */
   com.google.cloud.iot.v1.PublicKeyCertificateFormat getFormat();
 
@@ -52,6 +56,8 @@ public interface PublicKeyCertificateOrBuilder
    * </pre>
    *
    * <code>string certificate = 2;</code>
+   *
+   * @return The certificate.
    */
   java.lang.String getCertificate();
   /**
@@ -62,6 +68,8 @@ public interface PublicKeyCertificateOrBuilder
    * </pre>
    *
    * <code>string certificate = 2;</code>
+   *
+   * @return The bytes for certificate.
    */
   com.google.protobuf.ByteString getCertificateBytes();
 
@@ -73,6 +81,8 @@ public interface PublicKeyCertificateOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.X509CertificateDetails x509_details = 3;</code>
+   *
+   * @return Whether the x509Details field is set.
    */
   boolean hasX509Details();
   /**
@@ -83,6 +93,8 @@ public interface PublicKeyCertificateOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.X509CertificateDetails x509_details = 3;</code>
+   *
+   * @return The x509Details.
    */
   com.google.cloud.iot.v1.X509CertificateDetails getX509Details();
   /**

@@ -31,6 +31,8 @@ public interface DeviceRegistryOrBuilder
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -41,6 +43,8 @@ public interface DeviceRegistryOrBuilder
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString getIdBytes();
 
@@ -53,6 +57,8 @@ public interface DeviceRegistryOrBuilder
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -64,6 +70,8 @@ public interface DeviceRegistryOrBuilder
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -178,6 +186,8 @@ public interface DeviceRegistryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.StateNotificationConfig state_notification_config = 7;</code>
+   *
+   * @return Whether the stateNotificationConfig field is set.
    */
   boolean hasStateNotificationConfig();
   /**
@@ -193,6 +203,8 @@ public interface DeviceRegistryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.StateNotificationConfig state_notification_config = 7;</code>
+   *
+   * @return The stateNotificationConfig.
    */
   com.google.cloud.iot.v1.StateNotificationConfig getStateNotificationConfig();
   /**
@@ -219,6 +231,8 @@ public interface DeviceRegistryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.MqttConfig mqtt_config = 4;</code>
+   *
+   * @return Whether the mqttConfig field is set.
    */
   boolean hasMqttConfig();
   /**
@@ -229,6 +243,8 @@ public interface DeviceRegistryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.MqttConfig mqtt_config = 4;</code>
+   *
+   * @return The mqttConfig.
    */
   com.google.cloud.iot.v1.MqttConfig getMqttConfig();
   /**
@@ -250,6 +266,8 @@ public interface DeviceRegistryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.HttpConfig http_config = 9;</code>
+   *
+   * @return Whether the httpConfig field is set.
    */
   boolean hasHttpConfig();
   /**
@@ -260,6 +278,8 @@ public interface DeviceRegistryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.HttpConfig http_config = 9;</code>
+   *
+   * @return The httpConfig.
    */
   com.google.cloud.iot.v1.HttpConfig getHttpConfig();
   /**
@@ -283,6 +303,8 @@ public interface DeviceRegistryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.LogLevel log_level = 11;</code>
+   *
+   * @return The enum numeric value on the wire for logLevel.
    */
   int getLogLevelValue();
   /**
@@ -295,6 +317,8 @@ public interface DeviceRegistryOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.LogLevel log_level = 11;</code>
+   *
+   * @return The logLevel.
    */
   com.google.cloud.iot.v1.LogLevel getLogLevel();
 

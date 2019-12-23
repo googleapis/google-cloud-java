@@ -34,6 +34,8 @@ public interface ListDevicesRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface ListDevicesRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -59,6 +63,8 @@ public interface ListDevicesRequestOrBuilder
    * </pre>
    *
    * <code>repeated uint64 device_num_ids = 2;</code>
+   *
+   * @return A list containing the deviceNumIds.
    */
   java.util.List<java.lang.Long> getDeviceNumIdsList();
   /**
@@ -70,6 +76,8 @@ public interface ListDevicesRequestOrBuilder
    * </pre>
    *
    * <code>repeated uint64 device_num_ids = 2;</code>
+   *
+   * @return The count of deviceNumIds.
    */
   int getDeviceNumIdsCount();
   /**
@@ -81,6 +89,9 @@ public interface ListDevicesRequestOrBuilder
    * </pre>
    *
    * <code>repeated uint64 device_num_ids = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The deviceNumIds at the given index.
    */
   long getDeviceNumIds(int index);
 
@@ -93,6 +104,8 @@ public interface ListDevicesRequestOrBuilder
    * </pre>
    *
    * <code>repeated string device_ids = 3;</code>
+   *
+   * @return A list containing the deviceIds.
    */
   java.util.List<java.lang.String> getDeviceIdsList();
   /**
@@ -104,6 +117,8 @@ public interface ListDevicesRequestOrBuilder
    * </pre>
    *
    * <code>repeated string device_ids = 3;</code>
+   *
+   * @return The count of deviceIds.
    */
   int getDeviceIdsCount();
   /**
@@ -115,6 +130,9 @@ public interface ListDevicesRequestOrBuilder
    * </pre>
    *
    * <code>repeated string device_ids = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The deviceIds at the given index.
    */
   java.lang.String getDeviceIds(int index);
   /**
@@ -126,6 +144,9 @@ public interface ListDevicesRequestOrBuilder
    * </pre>
    *
    * <code>repeated string device_ids = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the deviceIds at the given index.
    */
   com.google.protobuf.ByteString getDeviceIdsBytes(int index);
 
@@ -139,6 +160,8 @@ public interface ListDevicesRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 4;</code>
+   *
+   * @return Whether the fieldMask field is set.
    */
   boolean hasFieldMask();
   /**
@@ -151,6 +174,8 @@ public interface ListDevicesRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 4;</code>
+   *
+   * @return The fieldMask.
    */
   com.google.protobuf.FieldMask getFieldMask();
   /**
@@ -174,6 +199,8 @@ public interface ListDevicesRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+   *
+   * @return Whether the gatewayListOptions field is set.
    */
   boolean hasGatewayListOptions();
   /**
@@ -184,6 +211,8 @@ public interface ListDevicesRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+   *
+   * @return The gatewayListOptions.
    */
   com.google.cloud.iot.v1.GatewayListOptions getGatewayListOptions();
   /**
@@ -208,6 +237,8 @@ public interface ListDevicesRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 100;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -221,6 +252,8 @@ public interface ListDevicesRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 101;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -233,6 +266,8 @@ public interface ListDevicesRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 101;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 }

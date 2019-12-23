@@ -32,6 +32,8 @@ public interface StateNotificationConfigOrBuilder
    * </pre>
    *
    * <code>string pubsub_topic_name = 1;</code>
+   *
+   * @return The pubsubTopicName.
    */
   java.lang.String getPubsubTopicName();
   /**
@@ -43,6 +45,8 @@ public interface StateNotificationConfigOrBuilder
    * </pre>
    *
    * <code>string pubsub_topic_name = 1;</code>
+   *
+   * @return The bytes for pubsubTopicName.
    */
   com.google.protobuf.ByteString getPubsubTopicNameBytes();
 }

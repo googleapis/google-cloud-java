@@ -32,6 +32,8 @@ public interface MqttConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.MqttState mqtt_enabled_state = 1;</code>
+   *
+   * @return The enum numeric value on the wire for mqttEnabledState.
    */
   int getMqttEnabledStateValue();
   /**
@@ -43,6 +45,8 @@ public interface MqttConfigOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.MqttState mqtt_enabled_state = 1;</code>
+   *
+   * @return The mqttEnabledState.
    */
   com.google.cloud.iot.v1.MqttState getMqttEnabledState();
 }

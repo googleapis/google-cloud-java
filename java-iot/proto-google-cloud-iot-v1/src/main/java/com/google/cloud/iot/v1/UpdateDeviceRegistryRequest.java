@@ -40,6 +40,12 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
   private UpdateDeviceRegistryRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateDeviceRegistryRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -142,6 +147,8 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
    * <code>
    * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the deviceRegistry field is set.
    */
   public boolean hasDeviceRegistry() {
     return deviceRegistry_ != null;
@@ -158,6 +165,8 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
    * <code>
    * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The deviceRegistry.
    */
   public com.google.cloud.iot.v1.DeviceRegistry getDeviceRegistry() {
     return deviceRegistry_ == null
@@ -196,6 +205,8 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -213,6 +224,8 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -611,6 +624,8 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      * <code>
      * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the deviceRegistry field is set.
      */
     public boolean hasDeviceRegistry() {
       return deviceRegistryBuilder_ != null || deviceRegistry_ != null;
@@ -627,6 +642,8 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      * <code>
      * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The deviceRegistry.
      */
     public com.google.cloud.iot.v1.DeviceRegistry getDeviceRegistry() {
       if (deviceRegistryBuilder_ == null) {
@@ -830,6 +847,8 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -847,6 +866,8 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

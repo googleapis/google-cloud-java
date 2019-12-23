@@ -34,6 +34,8 @@ public interface BindDeviceToGatewayRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface BindDeviceToGatewayRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -59,6 +63,8 @@ public interface BindDeviceToGatewayRequestOrBuilder
    * </pre>
    *
    * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The gatewayId.
    */
   java.lang.String getGatewayId();
   /**
@@ -70,6 +76,8 @@ public interface BindDeviceToGatewayRequestOrBuilder
    * </pre>
    *
    * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for gatewayId.
    */
   com.google.protobuf.ByteString getGatewayIdBytes();
 
@@ -83,6 +91,8 @@ public interface BindDeviceToGatewayRequestOrBuilder
    * </pre>
    *
    * <code>string device_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The deviceId.
    */
   java.lang.String getDeviceId();
   /**
@@ -95,6 +105,8 @@ public interface BindDeviceToGatewayRequestOrBuilder
    * </pre>
    *
    * <code>string device_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for deviceId.
    */
   com.google.protobuf.ByteString getDeviceIdBytes();
 }

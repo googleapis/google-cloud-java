@@ -35,6 +35,8 @@ public interface ListDeviceStatesRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -49,6 +51,8 @@ public interface ListDeviceStatesRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -62,6 +66,8 @@ public interface ListDeviceStatesRequestOrBuilder
    * </pre>
    *
    * <code>int32 num_states = 2;</code>
+   *
+   * @return The numStates.
    */
   int getNumStates();
 }

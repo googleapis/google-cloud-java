@@ -42,6 +42,12 @@ public final class DeviceState extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DeviceState();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class DeviceState extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -130,6 +135,8 @@ public final class DeviceState extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 1;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -143,6 +150,8 @@ public final class DeviceState extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 1;</code>
+   *
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -171,6 +180,8 @@ public final class DeviceState extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes binary_data = 2;</code>
+   *
+   * @return The binaryData.
    */
   public com.google.protobuf.ByteString getBinaryData() {
     return binaryData_;
@@ -531,6 +542,8 @@ public final class DeviceState extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 1;</code>
+     *
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -544,6 +557,8 @@ public final class DeviceState extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 1;</code>
+     *
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -713,6 +728,8 @@ public final class DeviceState extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes binary_data = 2;</code>
+     *
+     * @return The binaryData.
      */
     public com.google.protobuf.ByteString getBinaryData() {
       return binaryData_;
@@ -725,6 +742,9 @@ public final class DeviceState extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes binary_data = 2;</code>
+     *
+     * @param value The binaryData to set.
+     * @return This builder for chaining.
      */
     public Builder setBinaryData(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -743,6 +763,8 @@ public final class DeviceState extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes binary_data = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBinaryData() {
 

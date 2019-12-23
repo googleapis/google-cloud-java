@@ -32,6 +32,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -43,6 +45,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString getIdBytes();
 
@@ -58,6 +62,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -72,6 +78,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -84,6 +92,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>uint64 num_id = 3;</code>
+   *
+   * @return The numId.
    */
   long getNumId();
 
@@ -176,6 +186,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_heartbeat_time = 7;</code>
+   *
+   * @return Whether the lastHeartbeatTime field is set.
    */
   boolean hasLastHeartbeatTime();
   /**
@@ -190,6 +202,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_heartbeat_time = 7;</code>
+   *
+   * @return The lastHeartbeatTime.
    */
   com.google.protobuf.Timestamp getLastHeartbeatTime();
   /**
@@ -217,6 +231,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_event_time = 8;</code>
+   *
+   * @return Whether the lastEventTime field is set.
    */
   boolean hasLastEventTime();
   /**
@@ -229,6 +245,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_event_time = 8;</code>
+   *
+   * @return The lastEventTime.
    */
   com.google.protobuf.Timestamp getLastEventTime();
   /**
@@ -254,6 +272,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_state_time = 20;</code>
+   *
+   * @return Whether the lastStateTime field is set.
    */
   boolean hasLastStateTime();
   /**
@@ -266,6 +286,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_state_time = 20;</code>
+   *
+   * @return The lastStateTime.
    */
   com.google.protobuf.Timestamp getLastStateTime();
   /**
@@ -291,6 +313,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_config_ack_time = 14;</code>
+   *
+   * @return Whether the lastConfigAckTime field is set.
    */
   boolean hasLastConfigAckTime();
   /**
@@ -303,6 +327,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_config_ack_time = 14;</code>
+   *
+   * @return The lastConfigAckTime.
    */
   com.google.protobuf.Timestamp getLastConfigAckTime();
   /**
@@ -327,6 +353,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_config_send_time = 18;</code>
+   *
+   * @return Whether the lastConfigSendTime field is set.
    */
   boolean hasLastConfigSendTime();
   /**
@@ -338,6 +366,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_config_send_time = 18;</code>
+   *
+   * @return The lastConfigSendTime.
    */
   com.google.protobuf.Timestamp getLastConfigSendTime();
   /**
@@ -362,6 +392,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>bool blocked = 19;</code>
+   *
+   * @return The blocked.
    */
   boolean getBlocked();
 
@@ -375,6 +407,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_error_time = 10;</code>
+   *
+   * @return Whether the lastErrorTime field is set.
    */
   boolean hasLastErrorTime();
   /**
@@ -387,6 +421,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_error_time = 10;</code>
+   *
+   * @return The lastErrorTime.
    */
   com.google.protobuf.Timestamp getLastErrorTime();
   /**
@@ -414,6 +450,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status last_error_status = 11;</code>
+   *
+   * @return Whether the lastErrorStatus field is set.
    */
   boolean hasLastErrorStatus();
   /**
@@ -428,6 +466,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status last_error_status = 11;</code>
+   *
+   * @return The lastErrorStatus.
    */
   com.google.rpc.Status getLastErrorStatus();
   /**
@@ -457,6 +497,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.DeviceConfig config = 13;</code>
+   *
+   * @return Whether the config field is set.
    */
   boolean hasConfig();
   /**
@@ -471,6 +513,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.DeviceConfig config = 13;</code>
+   *
+   * @return The config.
    */
   com.google.cloud.iot.v1.DeviceConfig getConfig();
   /**
@@ -497,6 +541,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.DeviceState state = 16;</code>
+   *
+   * @return Whether the state field is set.
    */
   boolean hasState();
   /**
@@ -508,6 +554,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.DeviceState state = 16;</code>
+   *
+   * @return The state.
    */
   com.google.cloud.iot.v1.DeviceState getState();
   /**
@@ -532,6 +580,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+   *
+   * @return The enum numeric value on the wire for logLevel.
    */
   int getLogLevelValue();
   /**
@@ -544,6 +594,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+   *
+   * @return The logLevel.
    */
   com.google.cloud.iot.v1.LogLevel getLogLevel();
 
@@ -649,6 +701,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+   *
+   * @return Whether the gatewayConfig field is set.
    */
   boolean hasGatewayConfig();
   /**
@@ -659,6 +713,8 @@ public interface DeviceOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+   *
+   * @return The gatewayConfig.
    */
   com.google.cloud.iot.v1.GatewayConfig getGatewayConfig();
   /**

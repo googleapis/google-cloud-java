@@ -34,6 +34,8 @@ public interface CreateDeviceRegistryRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface CreateDeviceRegistryRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -62,6 +66,8 @@ public interface CreateDeviceRegistryRequestOrBuilder
    * <code>
    * .google.cloud.iot.v1.DeviceRegistry device_registry = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the deviceRegistry field is set.
    */
   boolean hasDeviceRegistry();
   /**
@@ -76,6 +82,8 @@ public interface CreateDeviceRegistryRequestOrBuilder
    * <code>
    * .google.cloud.iot.v1.DeviceRegistry device_registry = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The deviceRegistry.
    */
   com.google.cloud.iot.v1.DeviceRegistry getDeviceRegistry();
   /**

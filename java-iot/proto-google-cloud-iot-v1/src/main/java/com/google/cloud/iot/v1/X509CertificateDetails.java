@@ -45,6 +45,12 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new X509CertificateDetails();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -170,6 +175,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string issuer = 1;</code>
+   *
+   * @return The issuer.
    */
   public java.lang.String getIssuer() {
     java.lang.Object ref = issuer_;
@@ -190,6 +197,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string issuer = 1;</code>
+   *
+   * @return The bytes for issuer.
    */
   public com.google.protobuf.ByteString getIssuerBytes() {
     java.lang.Object ref = issuer_;
@@ -213,6 +222,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string subject = 2;</code>
+   *
+   * @return The subject.
    */
   public java.lang.String getSubject() {
     java.lang.Object ref = subject_;
@@ -233,6 +244,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string subject = 2;</code>
+   *
+   * @return The bytes for subject.
    */
   public com.google.protobuf.ByteString getSubjectBytes() {
     java.lang.Object ref = subject_;
@@ -256,6 +269,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
+   *
+   * @return Whether the startTime field is set.
    */
   public boolean hasStartTime() {
     return startTime_ != null;
@@ -268,6 +283,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
+   *
+   * @return The startTime.
    */
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -295,6 +312,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expiry_time = 4;</code>
+   *
+   * @return Whether the expiryTime field is set.
    */
   public boolean hasExpiryTime() {
     return expiryTime_ != null;
@@ -307,6 +326,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expiry_time = 4;</code>
+   *
+   * @return The expiryTime.
    */
   public com.google.protobuf.Timestamp getExpiryTime() {
     return expiryTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiryTime_;
@@ -334,6 +355,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string signature_algorithm = 5;</code>
+   *
+   * @return The signatureAlgorithm.
    */
   public java.lang.String getSignatureAlgorithm() {
     java.lang.Object ref = signatureAlgorithm_;
@@ -354,6 +377,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string signature_algorithm = 5;</code>
+   *
+   * @return The bytes for signatureAlgorithm.
    */
   public com.google.protobuf.ByteString getSignatureAlgorithmBytes() {
     java.lang.Object ref = signatureAlgorithm_;
@@ -377,6 +402,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string public_key_type = 6;</code>
+   *
+   * @return The publicKeyType.
    */
   public java.lang.String getPublicKeyType() {
     java.lang.Object ref = publicKeyType_;
@@ -397,6 +424,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>string public_key_type = 6;</code>
+   *
+   * @return The bytes for publicKeyType.
    */
   public com.google.protobuf.ByteString getPublicKeyTypeBytes() {
     java.lang.Object ref = publicKeyType_;
@@ -839,6 +868,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string issuer = 1;</code>
+     *
+     * @return The issuer.
      */
     public java.lang.String getIssuer() {
       java.lang.Object ref = issuer_;
@@ -859,6 +890,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string issuer = 1;</code>
+     *
+     * @return The bytes for issuer.
      */
     public com.google.protobuf.ByteString getIssuerBytes() {
       java.lang.Object ref = issuer_;
@@ -879,6 +912,9 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string issuer = 1;</code>
+     *
+     * @param value The issuer to set.
+     * @return This builder for chaining.
      */
     public Builder setIssuer(java.lang.String value) {
       if (value == null) {
@@ -897,6 +933,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string issuer = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIssuer() {
 
@@ -912,6 +950,9 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string issuer = 1;</code>
+     *
+     * @param value The bytes for issuer to set.
+     * @return This builder for chaining.
      */
     public Builder setIssuerBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -933,6 +974,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string subject = 2;</code>
+     *
+     * @return The subject.
      */
     public java.lang.String getSubject() {
       java.lang.Object ref = subject_;
@@ -953,6 +996,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string subject = 2;</code>
+     *
+     * @return The bytes for subject.
      */
     public com.google.protobuf.ByteString getSubjectBytes() {
       java.lang.Object ref = subject_;
@@ -973,6 +1018,9 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string subject = 2;</code>
+     *
+     * @param value The subject to set.
+     * @return This builder for chaining.
      */
     public Builder setSubject(java.lang.String value) {
       if (value == null) {
@@ -991,6 +1039,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string subject = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSubject() {
 
@@ -1006,6 +1056,9 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string subject = 2;</code>
+     *
+     * @param value The bytes for subject to set.
+     * @return This builder for chaining.
      */
     public Builder setSubjectBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1032,6 +1085,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     *
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
@@ -1044,6 +1099,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     *
+     * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
@@ -1207,6 +1264,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expiry_time = 4;</code>
+     *
+     * @return Whether the expiryTime field is set.
      */
     public boolean hasExpiryTime() {
       return expiryTimeBuilder_ != null || expiryTime_ != null;
@@ -1219,6 +1278,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expiry_time = 4;</code>
+     *
+     * @return The expiryTime.
      */
     public com.google.protobuf.Timestamp getExpiryTime() {
       if (expiryTimeBuilder_ == null) {
@@ -1381,6 +1442,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string signature_algorithm = 5;</code>
+     *
+     * @return The signatureAlgorithm.
      */
     public java.lang.String getSignatureAlgorithm() {
       java.lang.Object ref = signatureAlgorithm_;
@@ -1401,6 +1464,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string signature_algorithm = 5;</code>
+     *
+     * @return The bytes for signatureAlgorithm.
      */
     public com.google.protobuf.ByteString getSignatureAlgorithmBytes() {
       java.lang.Object ref = signatureAlgorithm_;
@@ -1421,6 +1486,9 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string signature_algorithm = 5;</code>
+     *
+     * @param value The signatureAlgorithm to set.
+     * @return This builder for chaining.
      */
     public Builder setSignatureAlgorithm(java.lang.String value) {
       if (value == null) {
@@ -1439,6 +1507,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string signature_algorithm = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSignatureAlgorithm() {
 
@@ -1454,6 +1524,9 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string signature_algorithm = 5;</code>
+     *
+     * @param value The bytes for signatureAlgorithm to set.
+     * @return This builder for chaining.
      */
     public Builder setSignatureAlgorithmBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1475,6 +1548,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string public_key_type = 6;</code>
+     *
+     * @return The publicKeyType.
      */
     public java.lang.String getPublicKeyType() {
       java.lang.Object ref = publicKeyType_;
@@ -1495,6 +1570,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string public_key_type = 6;</code>
+     *
+     * @return The bytes for publicKeyType.
      */
     public com.google.protobuf.ByteString getPublicKeyTypeBytes() {
       java.lang.Object ref = publicKeyType_;
@@ -1515,6 +1592,9 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string public_key_type = 6;</code>
+     *
+     * @param value The publicKeyType to set.
+     * @return This builder for chaining.
      */
     public Builder setPublicKeyType(java.lang.String value) {
       if (value == null) {
@@ -1533,6 +1613,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string public_key_type = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPublicKeyType() {
 
@@ -1548,6 +1630,9 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>string public_key_type = 6;</code>
+     *
+     * @param value The bytes for publicKeyType to set.
+     * @return This builder for chaining.
      */
     public Builder setPublicKeyTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

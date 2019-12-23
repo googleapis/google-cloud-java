@@ -45,6 +45,12 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Device();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -149,9 +155,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
             }
           case 98:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 credentials_ = new java.util.ArrayList<com.google.cloud.iot.v1.DeviceCredential>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               credentials_.add(
                   input.readMessage(
@@ -207,11 +213,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
             }
           case 138:
             {
-              if (!((mutable_bitField0_ & 0x00008000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 metadata_ =
                     com.google.protobuf.MapField.newMapField(
                         MetadataDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00008000;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
                   input.readMessage(
@@ -292,7 +298,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         credentials_ = java.util.Collections.unmodifiableList(credentials_);
       }
       this.unknownFields = unknownFields.build();
@@ -325,7 +331,6 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iot.v1.Device.class, com.google.cloud.iot.v1.Device.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
@@ -337,6 +342,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -358,6 +365,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
@@ -385,6 +394,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -409,6 +420,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 2;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -433,6 +446,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>uint64 num_id = 3;</code>
+   *
+   * @return The numId.
    */
   public long getNumId() {
     return numId_;
@@ -541,6 +556,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_heartbeat_time = 7;</code>
+   *
+   * @return Whether the lastHeartbeatTime field is set.
    */
   public boolean hasLastHeartbeatTime() {
     return lastHeartbeatTime_ != null;
@@ -557,6 +574,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_heartbeat_time = 7;</code>
+   *
+   * @return The lastHeartbeatTime.
    */
   public com.google.protobuf.Timestamp getLastHeartbeatTime() {
     return lastHeartbeatTime_ == null
@@ -592,6 +611,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_event_time = 8;</code>
+   *
+   * @return Whether the lastEventTime field is set.
    */
   public boolean hasLastEventTime() {
     return lastEventTime_ != null;
@@ -606,6 +627,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_event_time = 8;</code>
+   *
+   * @return The lastEventTime.
    */
   public com.google.protobuf.Timestamp getLastEventTime() {
     return lastEventTime_ == null
@@ -639,6 +662,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_state_time = 20;</code>
+   *
+   * @return Whether the lastStateTime field is set.
    */
   public boolean hasLastStateTime() {
     return lastStateTime_ != null;
@@ -653,6 +678,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_state_time = 20;</code>
+   *
+   * @return The lastStateTime.
    */
   public com.google.protobuf.Timestamp getLastStateTime() {
     return lastStateTime_ == null
@@ -686,6 +713,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_config_ack_time = 14;</code>
+   *
+   * @return Whether the lastConfigAckTime field is set.
    */
   public boolean hasLastConfigAckTime() {
     return lastConfigAckTime_ != null;
@@ -700,6 +729,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_config_ack_time = 14;</code>
+   *
+   * @return The lastConfigAckTime.
    */
   public com.google.protobuf.Timestamp getLastConfigAckTime() {
     return lastConfigAckTime_ == null
@@ -732,6 +763,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_config_send_time = 18;</code>
+   *
+   * @return Whether the lastConfigSendTime field is set.
    */
   public boolean hasLastConfigSendTime() {
     return lastConfigSendTime_ != null;
@@ -745,6 +778,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_config_send_time = 18;</code>
+   *
+   * @return The lastConfigSendTime.
    */
   public com.google.protobuf.Timestamp getLastConfigSendTime() {
     return lastConfigSendTime_ == null
@@ -777,6 +812,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool blocked = 19;</code>
+   *
+   * @return The blocked.
    */
   public boolean getBlocked() {
     return blocked_;
@@ -794,6 +831,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_error_time = 10;</code>
+   *
+   * @return Whether the lastErrorTime field is set.
    */
   public boolean hasLastErrorTime() {
     return lastErrorTime_ != null;
@@ -808,6 +847,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_error_time = 10;</code>
+   *
+   * @return The lastErrorTime.
    */
   public com.google.protobuf.Timestamp getLastErrorTime() {
     return lastErrorTime_ == null
@@ -843,6 +884,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.rpc.Status last_error_status = 11;</code>
+   *
+   * @return Whether the lastErrorStatus field is set.
    */
   public boolean hasLastErrorStatus() {
     return lastErrorStatus_ != null;
@@ -859,6 +902,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.rpc.Status last_error_status = 11;</code>
+   *
+   * @return The lastErrorStatus.
    */
   public com.google.rpc.Status getLastErrorStatus() {
     return lastErrorStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : lastErrorStatus_;
@@ -894,6 +939,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.iot.v1.DeviceConfig config = 13;</code>
+   *
+   * @return Whether the config field is set.
    */
   public boolean hasConfig() {
     return config_ != null;
@@ -910,6 +957,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.iot.v1.DeviceConfig config = 13;</code>
+   *
+   * @return The config.
    */
   public com.google.cloud.iot.v1.DeviceConfig getConfig() {
     return config_ == null ? com.google.cloud.iot.v1.DeviceConfig.getDefaultInstance() : config_;
@@ -942,6 +991,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.iot.v1.DeviceState state = 16;</code>
+   *
+   * @return Whether the state field is set.
    */
   public boolean hasState() {
     return state_ != null;
@@ -955,6 +1006,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.iot.v1.DeviceState state = 16;</code>
+   *
+   * @return The state.
    */
   public com.google.cloud.iot.v1.DeviceState getState() {
     return state_ == null ? com.google.cloud.iot.v1.DeviceState.getDefaultInstance() : state_;
@@ -985,6 +1038,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+   *
+   * @return The enum numeric value on the wire for logLevel.
    */
   public int getLogLevelValue() {
     return logLevel_;
@@ -999,6 +1054,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+   *
+   * @return The logLevel.
    */
   public com.google.cloud.iot.v1.LogLevel getLogLevel() {
     @SuppressWarnings("deprecation")
@@ -1142,6 +1199,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+   *
+   * @return Whether the gatewayConfig field is set.
    */
   public boolean hasGatewayConfig() {
     return gatewayConfig_ != null;
@@ -1154,6 +1213,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+   *
+   * @return The gatewayConfig.
    */
   public com.google.cloud.iot.v1.GatewayConfig getGatewayConfig() {
     return gatewayConfig_ == null
@@ -1608,7 +1669,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
 
       if (credentialsBuilder_ == null) {
         credentials_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         credentialsBuilder_.clear();
       }
@@ -1704,14 +1765,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.iot.v1.Device buildPartial() {
       com.google.cloud.iot.v1.Device result = new com.google.cloud.iot.v1.Device(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.id_ = id_;
       result.name_ = name_;
       result.numId_ = numId_;
       if (credentialsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           credentials_ = java.util.Collections.unmodifiableList(credentials_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.credentials_ = credentials_;
       } else {
@@ -1771,7 +1831,6 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.gatewayConfig_ = gatewayConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1836,7 +1895,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
         if (!other.credentials_.isEmpty()) {
           if (credentials_.isEmpty()) {
             credentials_ = other.credentials_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureCredentialsIsMutable();
             credentials_.addAll(other.credentials_);
@@ -1849,7 +1908,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
             credentialsBuilder_.dispose();
             credentialsBuilder_ = null;
             credentials_ = other.credentials_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             credentialsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCredentialsFieldBuilder()
@@ -1937,6 +1996,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -1958,6 +2019,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
@@ -1979,6 +2042,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(java.lang.String value) {
       if (value == null) {
@@ -1998,6 +2064,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearId() {
 
@@ -2014,6 +2082,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2039,6 +2110,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 2;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2063,6 +2136,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 2;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -2087,6 +2162,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 2;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -2109,6 +2187,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -2128,6 +2208,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 2;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2150,6 +2233,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>uint64 num_id = 3;</code>
+     *
+     * @return The numId.
      */
     public long getNumId() {
       return numId_;
@@ -2163,6 +2248,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>uint64 num_id = 3;</code>
+     *
+     * @param value The numId to set.
+     * @return This builder for chaining.
      */
     public Builder setNumId(long value) {
 
@@ -2179,6 +2267,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>uint64 num_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNumId() {
 
@@ -2191,10 +2281,10 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureCredentialsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         credentials_ =
             new java.util.ArrayList<com.google.cloud.iot.v1.DeviceCredential>(credentials_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2465,7 +2555,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCredentials() {
       if (credentialsBuilder_ == null) {
         credentials_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         credentialsBuilder_.clear();
@@ -2622,7 +2712,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.iot.v1.DeviceCredential,
                 com.google.cloud.iot.v1.DeviceCredential.Builder,
                 com.google.cloud.iot.v1.DeviceCredentialOrBuilder>(
-                credentials_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                credentials_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         credentials_ = null;
       }
       return credentialsBuilder_;
@@ -2646,6 +2736,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_heartbeat_time = 7;</code>
+     *
+     * @return Whether the lastHeartbeatTime field is set.
      */
     public boolean hasLastHeartbeatTime() {
       return lastHeartbeatTimeBuilder_ != null || lastHeartbeatTime_ != null;
@@ -2662,6 +2754,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_heartbeat_time = 7;</code>
+     *
+     * @return The lastHeartbeatTime.
      */
     public com.google.protobuf.Timestamp getLastHeartbeatTime() {
       if (lastHeartbeatTimeBuilder_ == null) {
@@ -2861,6 +2955,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_event_time = 8;</code>
+     *
+     * @return Whether the lastEventTime field is set.
      */
     public boolean hasLastEventTime() {
       return lastEventTimeBuilder_ != null || lastEventTime_ != null;
@@ -2875,6 +2971,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_event_time = 8;</code>
+     *
+     * @return The lastEventTime.
      */
     public com.google.protobuf.Timestamp getLastEventTime() {
       if (lastEventTimeBuilder_ == null) {
@@ -3060,6 +3158,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_state_time = 20;</code>
+     *
+     * @return Whether the lastStateTime field is set.
      */
     public boolean hasLastStateTime() {
       return lastStateTimeBuilder_ != null || lastStateTime_ != null;
@@ -3074,6 +3174,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_state_time = 20;</code>
+     *
+     * @return The lastStateTime.
      */
     public com.google.protobuf.Timestamp getLastStateTime() {
       if (lastStateTimeBuilder_ == null) {
@@ -3259,6 +3361,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_config_ack_time = 14;</code>
+     *
+     * @return Whether the lastConfigAckTime field is set.
      */
     public boolean hasLastConfigAckTime() {
       return lastConfigAckTimeBuilder_ != null || lastConfigAckTime_ != null;
@@ -3273,6 +3377,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_config_ack_time = 14;</code>
+     *
+     * @return The lastConfigAckTime.
      */
     public com.google.protobuf.Timestamp getLastConfigAckTime() {
       if (lastConfigAckTimeBuilder_ == null) {
@@ -3457,6 +3563,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_config_send_time = 18;</code>
+     *
+     * @return Whether the lastConfigSendTime field is set.
      */
     public boolean hasLastConfigSendTime() {
       return lastConfigSendTimeBuilder_ != null || lastConfigSendTime_ != null;
@@ -3470,6 +3578,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_config_send_time = 18;</code>
+     *
+     * @return The lastConfigSendTime.
      */
     public com.google.protobuf.Timestamp getLastConfigSendTime() {
       if (lastConfigSendTimeBuilder_ == null) {
@@ -3643,6 +3753,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool blocked = 19;</code>
+     *
+     * @return The blocked.
      */
     public boolean getBlocked() {
       return blocked_;
@@ -3657,6 +3769,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool blocked = 19;</code>
+     *
+     * @param value The blocked to set.
+     * @return This builder for chaining.
      */
     public Builder setBlocked(boolean value) {
 
@@ -3674,6 +3789,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool blocked = 19;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBlocked() {
 
@@ -3698,6 +3815,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_error_time = 10;</code>
+     *
+     * @return Whether the lastErrorTime field is set.
      */
     public boolean hasLastErrorTime() {
       return lastErrorTimeBuilder_ != null || lastErrorTime_ != null;
@@ -3712,6 +3831,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_error_time = 10;</code>
+     *
+     * @return The lastErrorTime.
      */
     public com.google.protobuf.Timestamp getLastErrorTime() {
       if (lastErrorTimeBuilder_ == null) {
@@ -3897,6 +4018,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.rpc.Status last_error_status = 11;</code>
+     *
+     * @return Whether the lastErrorStatus field is set.
      */
     public boolean hasLastErrorStatus() {
       return lastErrorStatusBuilder_ != null || lastErrorStatus_ != null;
@@ -3913,6 +4036,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.rpc.Status last_error_status = 11;</code>
+     *
+     * @return The lastErrorStatus.
      */
     public com.google.rpc.Status getLastErrorStatus() {
       if (lastErrorStatusBuilder_ == null) {
@@ -4110,6 +4235,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.DeviceConfig config = 13;</code>
+     *
+     * @return Whether the config field is set.
      */
     public boolean hasConfig() {
       return configBuilder_ != null || config_ != null;
@@ -4126,6 +4253,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.DeviceConfig config = 13;</code>
+     *
+     * @return The config.
      */
     public com.google.cloud.iot.v1.DeviceConfig getConfig() {
       if (configBuilder_ == null) {
@@ -4324,6 +4453,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.DeviceState state = 16;</code>
+     *
+     * @return Whether the state field is set.
      */
     public boolean hasState() {
       return stateBuilder_ != null || state_ != null;
@@ -4337,6 +4468,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.DeviceState state = 16;</code>
+     *
+     * @return The state.
      */
     public com.google.cloud.iot.v1.DeviceState getState() {
       if (stateBuilder_ == null) {
@@ -4506,6 +4639,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+     *
+     * @return The enum numeric value on the wire for logLevel.
      */
     public int getLogLevelValue() {
       return logLevel_;
@@ -4520,6 +4655,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+     *
+     * @param value The enum numeric value on the wire for logLevel to set.
+     * @return This builder for chaining.
      */
     public Builder setLogLevelValue(int value) {
       logLevel_ = value;
@@ -4536,6 +4674,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+     *
+     * @return The logLevel.
      */
     public com.google.cloud.iot.v1.LogLevel getLogLevel() {
       @SuppressWarnings("deprecation")
@@ -4552,6 +4692,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+     *
+     * @param value The logLevel to set.
+     * @return This builder for chaining.
      */
     public Builder setLogLevel(com.google.cloud.iot.v1.LogLevel value) {
       if (value == null) {
@@ -4572,6 +4715,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLogLevel() {
 
@@ -4803,6 +4948,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     *
+     * @return Whether the gatewayConfig field is set.
      */
     public boolean hasGatewayConfig() {
       return gatewayConfigBuilder_ != null || gatewayConfig_ != null;
@@ -4815,6 +4962,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     *
+     * @return The gatewayConfig.
      */
     public com.google.cloud.iot.v1.GatewayConfig getGatewayConfig() {
       if (gatewayConfigBuilder_ == null) {

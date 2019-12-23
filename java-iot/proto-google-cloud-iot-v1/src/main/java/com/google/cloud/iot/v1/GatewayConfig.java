@@ -44,6 +44,12 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GatewayConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -147,6 +152,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+   *
+   * @return The enum numeric value on the wire for gatewayType.
    */
   public int getGatewayTypeValue() {
     return gatewayType_;
@@ -159,6 +166,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+   *
+   * @return The gatewayType.
    */
   public com.google.cloud.iot.v1.GatewayType getGatewayType() {
     @SuppressWarnings("deprecation")
@@ -178,6 +187,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayAuthMethod gateway_auth_method = 2;</code>
+   *
+   * @return The enum numeric value on the wire for gatewayAuthMethod.
    */
   public int getGatewayAuthMethodValue() {
     return gatewayAuthMethod_;
@@ -191,6 +202,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.iot.v1.GatewayAuthMethod gateway_auth_method = 2;</code>
+   *
+   * @return The gatewayAuthMethod.
    */
   public com.google.cloud.iot.v1.GatewayAuthMethod getGatewayAuthMethod() {
     @SuppressWarnings("deprecation")
@@ -209,6 +222,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string last_accessed_gateway_id = 3;</code>
+   *
+   * @return The lastAccessedGatewayId.
    */
   public java.lang.String getLastAccessedGatewayId() {
     java.lang.Object ref = lastAccessedGatewayId_;
@@ -229,6 +244,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string last_accessed_gateway_id = 3;</code>
+   *
+   * @return The bytes for lastAccessedGatewayId.
    */
   public com.google.protobuf.ByteString getLastAccessedGatewayIdBytes() {
     java.lang.Object ref = lastAccessedGatewayId_;
@@ -253,6 +270,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_accessed_gateway_time = 4;</code>
+   *
+   * @return Whether the lastAccessedGatewayTime field is set.
    */
   public boolean hasLastAccessedGatewayTime() {
     return lastAccessedGatewayTime_ != null;
@@ -266,6 +285,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_accessed_gateway_time = 4;</code>
+   *
+   * @return The lastAccessedGatewayTime.
    */
   public com.google.protobuf.Timestamp getLastAccessedGatewayTime() {
     return lastAccessedGatewayTime_ == null
@@ -670,6 +691,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for gatewayType.
      */
     public int getGatewayTypeValue() {
       return gatewayType_;
@@ -682,6 +705,9 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for gatewayType to set.
+     * @return This builder for chaining.
      */
     public Builder setGatewayTypeValue(int value) {
       gatewayType_ = value;
@@ -696,6 +722,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+     *
+     * @return The gatewayType.
      */
     public com.google.cloud.iot.v1.GatewayType getGatewayType() {
       @SuppressWarnings("deprecation")
@@ -711,6 +739,9 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+     *
+     * @param value The gatewayType to set.
+     * @return This builder for chaining.
      */
     public Builder setGatewayType(com.google.cloud.iot.v1.GatewayType value) {
       if (value == null) {
@@ -729,6 +760,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGatewayType() {
 
@@ -747,6 +780,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayAuthMethod gateway_auth_method = 2;</code>
+     *
+     * @return The enum numeric value on the wire for gatewayAuthMethod.
      */
     public int getGatewayAuthMethodValue() {
       return gatewayAuthMethod_;
@@ -760,6 +795,9 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayAuthMethod gateway_auth_method = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for gatewayAuthMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setGatewayAuthMethodValue(int value) {
       gatewayAuthMethod_ = value;
@@ -775,6 +813,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayAuthMethod gateway_auth_method = 2;</code>
+     *
+     * @return The gatewayAuthMethod.
      */
     public com.google.cloud.iot.v1.GatewayAuthMethod getGatewayAuthMethod() {
       @SuppressWarnings("deprecation")
@@ -791,6 +831,9 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayAuthMethod gateway_auth_method = 2;</code>
+     *
+     * @param value The gatewayAuthMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setGatewayAuthMethod(com.google.cloud.iot.v1.GatewayAuthMethod value) {
       if (value == null) {
@@ -810,6 +853,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.iot.v1.GatewayAuthMethod gateway_auth_method = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGatewayAuthMethod() {
 
@@ -827,6 +872,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string last_accessed_gateway_id = 3;</code>
+     *
+     * @return The lastAccessedGatewayId.
      */
     public java.lang.String getLastAccessedGatewayId() {
       java.lang.Object ref = lastAccessedGatewayId_;
@@ -847,6 +894,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string last_accessed_gateway_id = 3;</code>
+     *
+     * @return The bytes for lastAccessedGatewayId.
      */
     public com.google.protobuf.ByteString getLastAccessedGatewayIdBytes() {
       java.lang.Object ref = lastAccessedGatewayId_;
@@ -867,6 +916,9 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string last_accessed_gateway_id = 3;</code>
+     *
+     * @param value The lastAccessedGatewayId to set.
+     * @return This builder for chaining.
      */
     public Builder setLastAccessedGatewayId(java.lang.String value) {
       if (value == null) {
@@ -885,6 +937,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string last_accessed_gateway_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLastAccessedGatewayId() {
 
@@ -900,6 +954,9 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string last_accessed_gateway_id = 3;</code>
+     *
+     * @param value The bytes for lastAccessedGatewayId to set.
+     * @return This builder for chaining.
      */
     public Builder setLastAccessedGatewayIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -927,6 +984,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_accessed_gateway_time = 4;</code>
+     *
+     * @return Whether the lastAccessedGatewayTime field is set.
      */
     public boolean hasLastAccessedGatewayTime() {
       return lastAccessedGatewayTimeBuilder_ != null || lastAccessedGatewayTime_ != null;
@@ -940,6 +999,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_accessed_gateway_time = 4;</code>
+     *
+     * @return The lastAccessedGatewayTime.
      */
     public com.google.protobuf.Timestamp getLastAccessedGatewayTime() {
       if (lastAccessedGatewayTimeBuilder_ == null) {

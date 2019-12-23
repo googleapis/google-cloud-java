@@ -34,6 +34,8 @@ public interface UpdateDeviceRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the device field is set.
    */
   boolean hasDevice();
   /**
@@ -47,6 +49,8 @@ public interface UpdateDeviceRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The device.
    */
   com.google.cloud.iot.v1.Device getDevice();
   /**
@@ -75,6 +79,8 @@ public interface UpdateDeviceRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -89,6 +95,8 @@ public interface UpdateDeviceRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

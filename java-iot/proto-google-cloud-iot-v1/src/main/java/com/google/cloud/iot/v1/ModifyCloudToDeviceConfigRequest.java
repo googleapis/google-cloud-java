@@ -44,6 +44,12 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ModifyCloudToDeviceConfigRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -132,6 +137,8 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -156,6 +163,8 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -183,6 +192,8 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>int64 version_to_update = 2;</code>
+   *
+   * @return The versionToUpdate.
    */
   public long getVersionToUpdate() {
     return versionToUpdate_;
@@ -198,6 +209,8 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>bytes binary_data = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The binaryData.
    */
   public com.google.protobuf.ByteString getBinaryData() {
     return binaryData_;
@@ -565,6 +578,8 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -589,6 +604,8 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -613,6 +630,9 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -635,6 +655,8 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -654,6 +676,9 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -679,6 +704,8 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>int64 version_to_update = 2;</code>
+     *
+     * @return The versionToUpdate.
      */
     public long getVersionToUpdate() {
       return versionToUpdate_;
@@ -695,6 +722,9 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>int64 version_to_update = 2;</code>
+     *
+     * @param value The versionToUpdate to set.
+     * @return This builder for chaining.
      */
     public Builder setVersionToUpdate(long value) {
 
@@ -714,6 +744,8 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>int64 version_to_update = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVersionToUpdate() {
 
@@ -731,6 +763,8 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>bytes binary_data = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The binaryData.
      */
     public com.google.protobuf.ByteString getBinaryData() {
       return binaryData_;
@@ -743,6 +777,9 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>bytes binary_data = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The binaryData to set.
+     * @return This builder for chaining.
      */
     public Builder setBinaryData(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -761,6 +798,8 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>bytes binary_data = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBinaryData() {
 

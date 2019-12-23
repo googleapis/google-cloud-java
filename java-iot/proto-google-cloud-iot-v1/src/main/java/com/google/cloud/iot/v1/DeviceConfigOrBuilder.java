@@ -34,6 +34,8 @@ public interface DeviceConfigOrBuilder
    * </pre>
    *
    * <code>int64 version = 1;</code>
+   *
+   * @return The version.
    */
   long getVersion();
 
@@ -46,6 +48,8 @@ public interface DeviceConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp cloud_update_time = 2;</code>
+   *
+   * @return Whether the cloudUpdateTime field is set.
    */
   boolean hasCloudUpdateTime();
   /**
@@ -57,6 +61,8 @@ public interface DeviceConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp cloud_update_time = 2;</code>
+   *
+   * @return The cloudUpdateTime.
    */
   com.google.protobuf.Timestamp getCloudUpdateTime();
   /**
@@ -87,6 +93,8 @@ public interface DeviceConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp device_ack_time = 3;</code>
+   *
+   * @return Whether the deviceAckTime field is set.
    */
   boolean hasDeviceAckTime();
   /**
@@ -105,6 +113,8 @@ public interface DeviceConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp device_ack_time = 3;</code>
+   *
+   * @return The deviceAckTime.
    */
   com.google.protobuf.Timestamp getDeviceAckTime();
   /**
@@ -134,6 +144,8 @@ public interface DeviceConfigOrBuilder
    * </pre>
    *
    * <code>bytes binary_data = 4;</code>
+   *
+   * @return The binaryData.
    */
   com.google.protobuf.ByteString getBinaryData();
 }

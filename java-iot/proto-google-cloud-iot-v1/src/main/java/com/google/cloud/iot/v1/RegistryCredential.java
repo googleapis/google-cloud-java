@@ -40,6 +40,12 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
   private RegistryCredential() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RegistryCredential();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,7 +122,10 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
   private int credentialCase_ = 0;
   private java.lang.Object credential_;
 
-  public enum CredentialCase implements com.google.protobuf.Internal.EnumLite {
+  public enum CredentialCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PUBLIC_KEY_CERTIFICATE(1),
     CREDENTIAL_NOT_SET(0);
     private final int value;
@@ -125,7 +133,11 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
     private CredentialCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static CredentialCase valueOf(int value) {
       return forNumber(value);
@@ -160,6 +172,8 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.iot.v1.PublicKeyCertificate public_key_certificate = 1;</code>
+   *
+   * @return Whether the publicKeyCertificate field is set.
    */
   public boolean hasPublicKeyCertificate() {
     return credentialCase_ == 1;
@@ -172,6 +186,8 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.iot.v1.PublicKeyCertificate public_key_certificate = 1;</code>
+   *
+   * @return The publicKeyCertificate.
    */
   public com.google.cloud.iot.v1.PublicKeyCertificate getPublicKeyCertificate() {
     if (credentialCase_ == 1) {
@@ -567,6 +583,8 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.iot.v1.PublicKeyCertificate public_key_certificate = 1;</code>
+     *
+     * @return Whether the publicKeyCertificate field is set.
      */
     public boolean hasPublicKeyCertificate() {
       return credentialCase_ == 1;
@@ -579,6 +597,8 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.iot.v1.PublicKeyCertificate public_key_certificate = 1;</code>
+     *
+     * @return The publicKeyCertificate.
      */
     public com.google.cloud.iot.v1.PublicKeyCertificate getPublicKeyCertificate() {
       if (publicKeyCertificateBuilder_ == null) {
