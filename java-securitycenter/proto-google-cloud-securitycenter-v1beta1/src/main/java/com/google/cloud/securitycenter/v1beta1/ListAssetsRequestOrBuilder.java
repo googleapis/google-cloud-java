@@ -27,22 +27,30 @@ public interface ListAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the organization assets should belong to. Its format is
+   * Required. Name of the organization assets should belong to. Its format is
    * "organizations/[organization_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Name of the organization assets should belong to. Its format is
+   * Required. Name of the organization assets should belong to. Its format is
    * "organizations/[organization_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -73,6 +81,8 @@ public interface ListAssetsRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -102,6 +112,8 @@ public interface ListAssetsRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -120,6 +132,8 @@ public interface ListAssetsRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 3;</code>
+   *
+   * @return The orderBy.
    */
   java.lang.String getOrderBy();
   /**
@@ -137,6 +151,8 @@ public interface ListAssetsRequestOrBuilder
    * </pre>
    *
    * <code>string order_by = 3;</code>
+   *
+   * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
 
@@ -151,6 +167,8 @@ public interface ListAssetsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 4;</code>
+   *
+   * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
   /**
@@ -164,6 +182,8 @@ public interface ListAssetsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 4;</code>
+   *
+   * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
@@ -206,6 +226,8 @@ public interface ListAssetsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration compare_duration = 5;</code>
+   *
+   * @return Whether the compareDuration field is set.
    */
   boolean hasCompareDuration();
   /**
@@ -234,6 +256,8 @@ public interface ListAssetsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration compare_duration = 5;</code>
+   *
+   * @return The compareDuration.
    */
   com.google.protobuf.Duration getCompareDuration();
   /**
@@ -269,39 +293,43 @@ public interface ListAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * A field mask to specify the ListAssetsResult fields to be listed in the
+   * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
    * response.
    * An empty field mask will list all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+   * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the fieldMask field is set.
    */
   boolean hasFieldMask();
   /**
    *
    *
    * <pre>
-   * Optional.
-   * A field mask to specify the ListAssetsResult fields to be listed in the
+   * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
    * response.
    * An empty field mask will list all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+   * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The fieldMask.
    */
   com.google.protobuf.FieldMask getFieldMask();
   /**
    *
    *
    * <pre>
-   * Optional.
-   * A field mask to specify the ListAssetsResult fields to be listed in the
+   * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
    * response.
    * An empty field mask will list all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask field_mask = 7;</code>
+   * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder();
 
@@ -315,6 +343,8 @@ public interface ListAssetsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 8;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -327,6 +357,8 @@ public interface ListAssetsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 8;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -339,6 +371,8 @@ public interface ListAssetsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 9;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 }

@@ -41,6 +41,12 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
   private UpdateOrganizationSettingsRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateOrganizationSettingsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -142,6 +147,8 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
    * <code>
    * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the organizationSettings field is set.
    */
   public boolean hasOrganizationSettings() {
     return organizationSettings_ != null;
@@ -156,6 +163,8 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
    * <code>
    * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The organizationSettings.
    */
   public com.google.cloud.securitycenter.v1.OrganizationSettings getOrganizationSettings() {
     return organizationSettings_ == null
@@ -189,6 +198,8 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -202,6 +213,8 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -604,6 +617,8 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      * <code>
      * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the organizationSettings field is set.
      */
     public boolean hasOrganizationSettings() {
       return organizationSettingsBuilder_ != null || organizationSettings_ != null;
@@ -618,6 +633,8 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      * <code>
      * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The organizationSettings.
      */
     public com.google.cloud.securitycenter.v1.OrganizationSettings getOrganizationSettings() {
       if (organizationSettingsBuilder_ == null) {
@@ -808,6 +825,8 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -821,6 +840,8 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

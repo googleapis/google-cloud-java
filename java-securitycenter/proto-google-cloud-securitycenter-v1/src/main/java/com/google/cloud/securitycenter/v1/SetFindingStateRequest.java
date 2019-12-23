@@ -43,6 +43,12 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SetFindingStateRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -144,6 +149,8 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -169,6 +176,8 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -194,6 +203,8 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    * <code>
    * .google.cloud.securitycenter.v1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -208,6 +219,8 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    * <code>
    * .google.cloud.securitycenter.v1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The state.
    */
   public com.google.cloud.securitycenter.v1.Finding.State getState() {
     @SuppressWarnings("deprecation")
@@ -227,6 +240,8 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    *
    * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the startTime field is set.
    */
   public boolean hasStartTime() {
     return startTime_ != null;
@@ -240,6 +255,8 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    *
    * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The startTime.
    */
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -634,6 +651,8 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -659,6 +678,8 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -684,6 +705,9 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -707,6 +731,8 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -727,6 +753,9 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -750,6 +779,8 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      * <code>
      * .google.cloud.securitycenter.v1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -764,6 +795,9 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      * <code>
      * .google.cloud.securitycenter.v1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -780,6 +814,8 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      * <code>
      * .google.cloud.securitycenter.v1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The state.
      */
     public com.google.cloud.securitycenter.v1.Finding.State getState() {
       @SuppressWarnings("deprecation")
@@ -799,6 +835,9 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      * <code>
      * .google.cloud.securitycenter.v1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.securitycenter.v1.Finding.State value) {
       if (value == null) {
@@ -819,6 +858,8 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      * <code>
      * .google.cloud.securitycenter.v1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 
@@ -842,6 +883,8 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
@@ -855,6 +898,8 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {

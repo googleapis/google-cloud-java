@@ -40,6 +40,12 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
   private UpdateSourceRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateSourceRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -134,10 +139,14 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The source resource to update.
+   * Required. The source resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Source source = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the source field is set.
    */
   public boolean hasSource() {
     return source_ != null;
@@ -146,10 +155,14 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The source resource to update.
+   * Required. The source resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Source source = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The source.
    */
   public com.google.cloud.securitycenter.v1beta1.Source getSource() {
     return source_ == null
@@ -160,10 +173,12 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The source resource to update.
+   * Required. The source resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Source source = 1;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.securitycenter.v1beta1.SourceOrBuilder getSourceOrBuilder() {
     return getSource();
@@ -179,6 +194,8 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -191,6 +208,8 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -577,10 +596,14 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The source resource to update.
+     * Required. The source resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the source field is set.
      */
     public boolean hasSource() {
       return sourceBuilder_ != null || source_ != null;
@@ -589,10 +612,14 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The source resource to update.
+     * Required. The source resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The source.
      */
     public com.google.cloud.securitycenter.v1beta1.Source getSource() {
       if (sourceBuilder_ == null) {
@@ -607,10 +634,12 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The source resource to update.
+     * Required. The source resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSource(com.google.cloud.securitycenter.v1beta1.Source value) {
       if (sourceBuilder_ == null) {
@@ -629,10 +658,12 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The source resource to update.
+     * Required. The source resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSource(
         com.google.cloud.securitycenter.v1beta1.Source.Builder builderForValue) {
@@ -649,10 +680,12 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The source resource to update.
+     * Required. The source resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeSource(com.google.cloud.securitycenter.v1beta1.Source value) {
       if (sourceBuilder_ == null) {
@@ -675,10 +708,12 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The source resource to update.
+     * Required. The source resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearSource() {
       if (sourceBuilder_ == null) {
@@ -695,10 +730,12 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The source resource to update.
+     * Required. The source resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1beta1.Source.Builder getSourceBuilder() {
 
@@ -709,10 +746,12 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The source resource to update.
+     * Required. The source resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1beta1.SourceOrBuilder getSourceOrBuilder() {
       if (sourceBuilder_ != null) {
@@ -727,10 +766,12 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The source resource to update.
+     * Required. The source resource to update.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Source source = 1;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.securitycenter.v1beta1.Source,
@@ -763,6 +804,8 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -775,6 +818,8 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

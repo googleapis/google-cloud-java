@@ -45,12 +45,12 @@ public final class FindingOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/securitycenter/v1/finding"
-          + ".proto\022\036google.cloud.securitycenter.v1\032\034"
-          + "google/api/annotations.proto\032\037google/api"
-          + "/field_behavior.proto\032\031google/api/resour"
-          + "ce.proto\0323google/cloud/securitycenter/v1"
-          + "/security_marks.proto\032\034google/protobuf/s"
-          + "truct.proto\032\037google/protobuf/timestamp.p"
+          + ".proto\022\036google.cloud.securitycenter.v1\032\037"
+          + "google/api/field_behavior.proto\032\031google/"
+          + "api/resource.proto\0323google/cloud/securit"
+          + "ycenter/v1/security_marks.proto\032\034google/"
+          + "protobuf/struct.proto\032\037google/protobuf/t"
+          + "imestamp.proto\032\034google/api/annotations.p"
           + "roto\"\244\005\n\007Finding\022\014\n\004name\030\001 \001(\t\022\016\n\006parent"
           + "\030\002 \001(\t\022\025\n\rresource_name\030\003 \001(\t\022<\n\005state\030\004"
           + " \001(\0162-.google.cloud.securitycenter.v1.Fi"
@@ -75,25 +75,17 @@ public final class FindingOuterClass {
           + "ogle\\Cloud\\SecurityCenter\\V1\352\002!Google::C"
           + "loud::SecurityCenter::V1b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.api.FieldBehaviorProto.getDescriptor(),
-          com.google.api.ResourceProto.getDescriptor(),
-          com.google.cloud.securitycenter.v1.SecurityMarksOuterClass.getDescriptor(),
-          com.google.protobuf.StructProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.securitycenter.v1.SecurityMarksOuterClass.getDescriptor(),
+              com.google.protobuf.StructProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
+            });
     internal_static_google_cloud_securitycenter_v1_Finding_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_securitycenter_v1_Finding_fieldAccessorTable =
@@ -125,12 +117,12 @@ public final class FindingOuterClass {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.securitycenter.v1.SecurityMarksOuterClass.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

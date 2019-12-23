@@ -46,6 +46,12 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Source();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -133,10 +138,12 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * The relative resource name of this source. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/sources/456"
+   * "organizations/{organization_id}/sources/{source_id}"
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -156,10 +163,12 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * The relative resource name of this source. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/sources/456"
+   * "organizations/{organization_id}/sources/{source_id}"
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -182,13 +191,13 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * The source's display name.
    * A source's display name must be unique amongst its siblings, for example,
    * two sources with the same parent can't share the same display name.
-   * The display name must start and end with a letter or digit, may contain
-   * letters, digits, spaces, hyphens, and underscores, and can be no longer
-   * than 32 characters. This is captured by the regular expression:
-   * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
+   * The display name must have a length between 1 and 64 characters
+   * (inclusive).
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -208,13 +217,13 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * The source's display name.
    * A source's display name must be unique amongst its siblings, for example,
    * two sources with the same parent can't share the same display name.
-   * The display name must start and end with a letter or digit, may contain
-   * letters, digits, spaces, hyphens, and underscores, and can be no longer
-   * than 32 characters. This is captured by the regular expression:
-   * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
+   * The display name must have a length between 1 and 64 characters
+   * (inclusive).
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -244,6 +253,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -270,6 +281,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -641,10 +654,12 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this source. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -664,10 +679,12 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this source. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -687,10 +704,13 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this source. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -708,10 +728,12 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this source. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -726,10 +748,13 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this source. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/sources/456"
+     * "organizations/{organization_id}/sources/{source_id}"
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -750,13 +775,13 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * The source's display name.
      * A source's display name must be unique amongst its siblings, for example,
      * two sources with the same parent can't share the same display name.
-     * The display name must start and end with a letter or digit, may contain
-     * letters, digits, spaces, hyphens, and underscores, and can be no longer
-     * than 32 characters. This is captured by the regular expression:
-     * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
+     * The display name must have a length between 1 and 64 characters
+     * (inclusive).
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -776,13 +801,13 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * The source's display name.
      * A source's display name must be unique amongst its siblings, for example,
      * two sources with the same parent can't share the same display name.
-     * The display name must start and end with a letter or digit, may contain
-     * letters, digits, spaces, hyphens, and underscores, and can be no longer
-     * than 32 characters. This is captured by the regular expression:
-     * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
+     * The display name must have a length between 1 and 64 characters
+     * (inclusive).
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -802,13 +827,14 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * The source's display name.
      * A source's display name must be unique amongst its siblings, for example,
      * two sources with the same parent can't share the same display name.
-     * The display name must start and end with a letter or digit, may contain
-     * letters, digits, spaces, hyphens, and underscores, and can be no longer
-     * than 32 characters. This is captured by the regular expression:
-     * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
+     * The display name must have a length between 1 and 64 characters
+     * (inclusive).
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -826,13 +852,13 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * The source's display name.
      * A source's display name must be unique amongst its siblings, for example,
      * two sources with the same parent can't share the same display name.
-     * The display name must start and end with a letter or digit, may contain
-     * letters, digits, spaces, hyphens, and underscores, and can be no longer
-     * than 32 characters. This is captured by the regular expression:
-     * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
+     * The display name must have a length between 1 and 64 characters
+     * (inclusive).
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -847,13 +873,14 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * The source's display name.
      * A source's display name must be unique amongst its siblings, for example,
      * two sources with the same parent can't share the same display name.
-     * The display name must start and end with a letter or digit, may contain
-     * letters, digits, spaces, hyphens, and underscores, and can be no longer
-     * than 32 characters. This is captured by the regular expression:
-     * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
+     * The display name must have a length between 1 and 64 characters
+     * (inclusive).
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -881,6 +908,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -907,6 +936,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -933,6 +964,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -957,6 +991,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -978,6 +1014,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

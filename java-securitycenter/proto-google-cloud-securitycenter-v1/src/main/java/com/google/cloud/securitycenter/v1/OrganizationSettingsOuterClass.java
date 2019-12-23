@@ -46,8 +46,8 @@ public final class OrganizationSettingsOuterClass {
     java.lang.String[] descriptorData = {
       "\n:google/cloud/securitycenter/v1/organiz"
           + "ation_settings.proto\022\036google.cloud.secur"
-          + "itycenter.v1\032\034google/api/annotations.pro"
-          + "to\032\031google/api/resource.proto\"\212\004\n\024Organi"
+          + "itycenter.v1\032\031google/api/resource.proto\032"
+          + "\034google/api/annotations.proto\"\212\004\n\024Organi"
           + "zationSettings\022\014\n\004name\030\001 \001(\t\022\036\n\026enable_a"
           + "sset_discovery\030\002 \001(\010\022i\n\026asset_discovery_"
           + "config\030\003 \001(\0132I.google.cloud.securitycent"
@@ -68,21 +68,13 @@ public final class OrganizationSettingsOuterClass {
           + "d\\SecurityCenter\\V1\352\002!Google::Cloud::Sec"
           + "urityCenter::V1b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.api.ResourceProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.ResourceProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
+            });
     internal_static_google_cloud_securitycenter_v1_OrganizationSettings_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_securitycenter_v1_OrganizationSettings_fieldAccessorTable =
@@ -106,8 +98,8 @@ public final class OrganizationSettingsOuterClass {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

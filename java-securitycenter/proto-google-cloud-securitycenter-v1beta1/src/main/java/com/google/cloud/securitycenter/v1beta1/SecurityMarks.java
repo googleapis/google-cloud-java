@@ -45,6 +45,12 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SecurityMarks();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -77,10 +83,10 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 marks_ =
                     com.google.protobuf.MapField.newMapField(MarksDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> marks__ =
                   input.readMessage(
@@ -133,7 +139,6 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -143,11 +148,13 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
    * The relative resource name of the SecurityMarks. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Examples:
-   * "organizations/123/assets/456/securityMarks"
-   * "organizations/123/sources/456/findings/789/securityMarks".
+   * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks".
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -167,11 +174,13 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
    * The relative resource name of the SecurityMarks. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Examples:
-   * "organizations/123/assets/456/securityMarks"
-   * "organizations/123/sources/456/findings/789/securityMarks".
+   * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks".
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -216,9 +225,10 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
-   *   - Keys and values are treated as case insensitive
-   *   - Keys must be alphanumeric and between 1 - 256 characters (inclusive)
-   *   - Values have leading and trailing whitespace trimmed, remaining
+   *   * Keys and values are treated as case insensitive
+   *   * Keys must be between 1 - 256 characters (inclusive)
+   *   * Keys must be letters, numbers, underscores, or dashes
+   *   * Values have leading and trailing whitespace trimmed, remaining
    *     characters must be between 1 - 4096 characters (inclusive)
    * </pre>
    *
@@ -241,9 +251,10 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
-   *   - Keys and values are treated as case insensitive
-   *   - Keys must be alphanumeric and between 1 - 256 characters (inclusive)
-   *   - Values have leading and trailing whitespace trimmed, remaining
+   *   * Keys and values are treated as case insensitive
+   *   * Keys must be between 1 - 256 characters (inclusive)
+   *   * Keys must be letters, numbers, underscores, or dashes
+   *   * Values have leading and trailing whitespace trimmed, remaining
    *     characters must be between 1 - 4096 characters (inclusive)
    * </pre>
    *
@@ -258,9 +269,10 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
-   *   - Keys and values are treated as case insensitive
-   *   - Keys must be alphanumeric and between 1 - 256 characters (inclusive)
-   *   - Values have leading and trailing whitespace trimmed, remaining
+   *   * Keys and values are treated as case insensitive
+   *   * Keys must be between 1 - 256 characters (inclusive)
+   *   * Keys must be letters, numbers, underscores, or dashes
+   *   * Values have leading and trailing whitespace trimmed, remaining
    *     characters must be between 1 - 4096 characters (inclusive)
    * </pre>
    *
@@ -279,9 +291,10 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
-   *   - Keys and values are treated as case insensitive
-   *   - Keys must be alphanumeric and between 1 - 256 characters (inclusive)
-   *   - Values have leading and trailing whitespace trimmed, remaining
+   *   * Keys and values are treated as case insensitive
+   *   * Keys must be between 1 - 256 characters (inclusive)
+   *   * Keys must be letters, numbers, underscores, or dashes
+   *   * Values have leading and trailing whitespace trimmed, remaining
    *     characters must be between 1 - 4096 characters (inclusive)
    * </pre>
    *
@@ -574,11 +587,9 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.securitycenter.v1beta1.SecurityMarks result =
           new com.google.cloud.securitycenter.v1beta1.SecurityMarks(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.marks_ = internalGetMarks();
       result.marks_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -674,11 +685,13 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of the SecurityMarks. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Examples:
-     * "organizations/123/assets/456/securityMarks"
-     * "organizations/123/sources/456/findings/789/securityMarks".
+     * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks".
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -698,11 +711,13 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of the SecurityMarks. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Examples:
-     * "organizations/123/assets/456/securityMarks"
-     * "organizations/123/sources/456/findings/789/securityMarks".
+     * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks".
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -722,11 +737,14 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of the SecurityMarks. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Examples:
-     * "organizations/123/assets/456/securityMarks"
-     * "organizations/123/sources/456/findings/789/securityMarks".
+     * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks".
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -744,11 +762,13 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of the SecurityMarks. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Examples:
-     * "organizations/123/assets/456/securityMarks"
-     * "organizations/123/sources/456/findings/789/securityMarks".
+     * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks".
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -763,11 +783,14 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of the SecurityMarks. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Examples:
-     * "organizations/123/assets/456/securityMarks"
-     * "organizations/123/sources/456/findings/789/securityMarks".
+     * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks".
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -811,9 +834,10 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Mutable user specified security marks belonging to the parent resource.
      * Constraints are as follows:
-     *   - Keys and values are treated as case insensitive
-     *   - Keys must be alphanumeric and between 1 - 256 characters (inclusive)
-     *   - Values have leading and trailing whitespace trimmed, remaining
+     *   * Keys and values are treated as case insensitive
+     *   * Keys must be between 1 - 256 characters (inclusive)
+     *   * Keys must be letters, numbers, underscores, or dashes
+     *   * Values have leading and trailing whitespace trimmed, remaining
      *     characters must be between 1 - 4096 characters (inclusive)
      * </pre>
      *
@@ -836,9 +860,10 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Mutable user specified security marks belonging to the parent resource.
      * Constraints are as follows:
-     *   - Keys and values are treated as case insensitive
-     *   - Keys must be alphanumeric and between 1 - 256 characters (inclusive)
-     *   - Values have leading and trailing whitespace trimmed, remaining
+     *   * Keys and values are treated as case insensitive
+     *   * Keys must be between 1 - 256 characters (inclusive)
+     *   * Keys must be letters, numbers, underscores, or dashes
+     *   * Values have leading and trailing whitespace trimmed, remaining
      *     characters must be between 1 - 4096 characters (inclusive)
      * </pre>
      *
@@ -853,9 +878,10 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Mutable user specified security marks belonging to the parent resource.
      * Constraints are as follows:
-     *   - Keys and values are treated as case insensitive
-     *   - Keys must be alphanumeric and between 1 - 256 characters (inclusive)
-     *   - Values have leading and trailing whitespace trimmed, remaining
+     *   * Keys and values are treated as case insensitive
+     *   * Keys must be between 1 - 256 characters (inclusive)
+     *   * Keys must be letters, numbers, underscores, or dashes
+     *   * Values have leading and trailing whitespace trimmed, remaining
      *     characters must be between 1 - 4096 characters (inclusive)
      * </pre>
      *
@@ -874,9 +900,10 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Mutable user specified security marks belonging to the parent resource.
      * Constraints are as follows:
-     *   - Keys and values are treated as case insensitive
-     *   - Keys must be alphanumeric and between 1 - 256 characters (inclusive)
-     *   - Values have leading and trailing whitespace trimmed, remaining
+     *   * Keys and values are treated as case insensitive
+     *   * Keys must be between 1 - 256 characters (inclusive)
+     *   * Keys must be letters, numbers, underscores, or dashes
+     *   * Values have leading and trailing whitespace trimmed, remaining
      *     characters must be between 1 - 4096 characters (inclusive)
      * </pre>
      *
@@ -903,9 +930,10 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Mutable user specified security marks belonging to the parent resource.
      * Constraints are as follows:
-     *   - Keys and values are treated as case insensitive
-     *   - Keys must be alphanumeric and between 1 - 256 characters (inclusive)
-     *   - Values have leading and trailing whitespace trimmed, remaining
+     *   * Keys and values are treated as case insensitive
+     *   * Keys must be between 1 - 256 characters (inclusive)
+     *   * Keys must be letters, numbers, underscores, or dashes
+     *   * Values have leading and trailing whitespace trimmed, remaining
      *     characters must be between 1 - 4096 characters (inclusive)
      * </pre>
      *
@@ -929,9 +957,10 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Mutable user specified security marks belonging to the parent resource.
      * Constraints are as follows:
-     *   - Keys and values are treated as case insensitive
-     *   - Keys must be alphanumeric and between 1 - 256 characters (inclusive)
-     *   - Values have leading and trailing whitespace trimmed, remaining
+     *   * Keys and values are treated as case insensitive
+     *   * Keys must be between 1 - 256 characters (inclusive)
+     *   * Keys must be letters, numbers, underscores, or dashes
+     *   * Values have leading and trailing whitespace trimmed, remaining
      *     characters must be between 1 - 4096 characters (inclusive)
      * </pre>
      *
@@ -953,9 +982,10 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Mutable user specified security marks belonging to the parent resource.
      * Constraints are as follows:
-     *   - Keys and values are treated as case insensitive
-     *   - Keys must be alphanumeric and between 1 - 256 characters (inclusive)
-     *   - Values have leading and trailing whitespace trimmed, remaining
+     *   * Keys and values are treated as case insensitive
+     *   * Keys must be between 1 - 256 characters (inclusive)
+     *   * Keys must be letters, numbers, underscores, or dashes
+     *   * Values have leading and trailing whitespace trimmed, remaining
      *     characters must be between 1 - 4096 characters (inclusive)
      * </pre>
      *

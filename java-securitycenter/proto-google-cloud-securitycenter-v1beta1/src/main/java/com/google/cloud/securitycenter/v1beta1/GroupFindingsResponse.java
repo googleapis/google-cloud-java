@@ -43,6 +43,12 @@ public final class GroupFindingsResponse extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GroupFindingsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -138,7 +144,6 @@ public final class GroupFindingsResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.securitycenter.v1beta1.GroupFindingsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int GROUP_BY_RESULTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.securitycenter.v1beta1.GroupResult> groupByResults_;
   /**
@@ -225,6 +230,8 @@ public final class GroupFindingsResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
+   *
+   * @return Whether the readTime field is set.
    */
   public boolean hasReadTime() {
     return readTime_ != null;
@@ -237,6 +244,8 @@ public final class GroupFindingsResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
+   *
+   * @return The readTime.
    */
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
@@ -265,6 +274,8 @@ public final class GroupFindingsResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -286,6 +297,8 @@ public final class GroupFindingsResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -574,7 +587,6 @@ public final class GroupFindingsResponse extends com.google.protobuf.GeneratedMe
       com.google.cloud.securitycenter.v1beta1.GroupFindingsResponse result =
           new com.google.cloud.securitycenter.v1beta1.GroupFindingsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (groupByResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           groupByResults_ = java.util.Collections.unmodifiableList(groupByResults_);
@@ -590,7 +602,6 @@ public final class GroupFindingsResponse extends com.google.protobuf.GeneratedMe
         result.readTime_ = readTimeBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1121,6 +1132,8 @@ public final class GroupFindingsResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
+     *
+     * @return Whether the readTime field is set.
      */
     public boolean hasReadTime() {
       return readTimeBuilder_ != null || readTime_ != null;
@@ -1133,6 +1146,8 @@ public final class GroupFindingsResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
+     *
+     * @return The readTime.
      */
     public com.google.protobuf.Timestamp getReadTime() {
       if (readTimeBuilder_ == null) {
@@ -1292,6 +1307,8 @@ public final class GroupFindingsResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -1313,6 +1330,8 @@ public final class GroupFindingsResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1334,6 +1353,9 @@ public final class GroupFindingsResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1353,6 +1375,8 @@ public final class GroupFindingsResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1369,6 +1393,9 @@ public final class GroupFindingsResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

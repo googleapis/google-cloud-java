@@ -33,6 +33,8 @@ public interface UpdateOrganizationSettingsRequestOrBuilder
    * <code>
    * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the organizationSettings field is set.
    */
   boolean hasOrganizationSettings();
   /**
@@ -45,6 +47,8 @@ public interface UpdateOrganizationSettingsRequestOrBuilder
    * <code>
    * .google.cloud.securitycenter.v1.OrganizationSettings organization_settings = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The organizationSettings.
    */
   com.google.cloud.securitycenter.v1.OrganizationSettings getOrganizationSettings();
   /**
@@ -70,6 +74,8 @@ public interface UpdateOrganizationSettingsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -81,6 +87,8 @@ public interface UpdateOrganizationSettingsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

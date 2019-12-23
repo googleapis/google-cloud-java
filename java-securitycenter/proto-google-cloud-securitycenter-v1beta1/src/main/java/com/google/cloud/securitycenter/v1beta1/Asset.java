@@ -46,6 +46,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Asset();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -97,11 +103,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 resourceProperties_ =
                     com.google.protobuf.MapField.newMapField(
                         ResourcePropertiesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
                   resourceProperties__ =
@@ -214,24 +220,28 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full resource name of the GCP resource this asset
+     * Immutable. The full resource name of the GCP resource this asset
      * represents. This field is immutable after create time. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
      *
-     * <code>string resource_name = 1;</code>
+     * <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The resourceName.
      */
     java.lang.String getResourceName();
     /**
      *
      *
      * <pre>
-     * The full resource name of the GCP resource this asset
+     * Immutable. The full resource name of the GCP resource this asset
      * represents. This field is immutable after create time. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
      *
-     * <code>string resource_name = 1;</code>
+     * <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for resourceName.
      */
     com.google.protobuf.ByteString getResourceNameBytes();
 
@@ -246,6 +256,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_type = 2;</code>
+     *
+     * @return The resourceType.
      */
     java.lang.String getResourceType();
     /**
@@ -259,6 +271,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_type = 2;</code>
+     *
+     * @return The bytes for resourceType.
      */
     com.google.protobuf.ByteString getResourceTypeBytes();
 
@@ -271,6 +285,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_parent = 3;</code>
+     *
+     * @return The resourceParent.
      */
     java.lang.String getResourceParent();
     /**
@@ -282,6 +298,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_parent = 3;</code>
+     *
+     * @return The bytes for resourceParent.
      */
     com.google.protobuf.ByteString getResourceParentBytes();
 
@@ -294,6 +312,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_project = 4;</code>
+     *
+     * @return The resourceProject.
      */
     java.lang.String getResourceProject();
     /**
@@ -305,6 +325,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_project = 4;</code>
+     *
+     * @return The bytes for resourceProject.
      */
     com.google.protobuf.ByteString getResourceProjectBytes();
 
@@ -316,6 +338,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
+     *
+     * @return A list containing the resourceOwners.
      */
     java.util.List<java.lang.String> getResourceOwnersList();
     /**
@@ -326,6 +350,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
+     *
+     * @return The count of resourceOwners.
      */
     int getResourceOwnersCount();
     /**
@@ -336,6 +362,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The resourceOwners at the given index.
      */
     java.lang.String getResourceOwners(int index);
     /**
@@ -346,6 +375,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the resourceOwners at the given index.
      */
     com.google.protobuf.ByteString getResourceOwnersBytes(int index);
   }
@@ -375,6 +407,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       resourceParent_ = "";
       resourceProject_ = "";
       resourceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SecurityCenterProperties();
     }
 
     @java.lang.Override
@@ -432,9 +470,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   resourceOwners_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000010;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 resourceOwners_.add(s);
                 break;
@@ -453,7 +491,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           resourceOwners_ = resourceOwners_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -476,19 +514,20 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder.class);
     }
 
-    private int bitField0_;
     public static final int RESOURCE_NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object resourceName_;
     /**
      *
      *
      * <pre>
-     * The full resource name of the GCP resource this asset
+     * Immutable. The full resource name of the GCP resource this asset
      * represents. This field is immutable after create time. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
      *
-     * <code>string resource_name = 1;</code>
+     * <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The resourceName.
      */
     public java.lang.String getResourceName() {
       java.lang.Object ref = resourceName_;
@@ -505,12 +544,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full resource name of the GCP resource this asset
+     * Immutable. The full resource name of the GCP resource this asset
      * represents. This field is immutable after create time. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
      *
-     * <code>string resource_name = 1;</code>
+     * <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for resourceName.
      */
     public com.google.protobuf.ByteString getResourceNameBytes() {
       java.lang.Object ref = resourceName_;
@@ -537,6 +578,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_type = 2;</code>
+     *
+     * @return The resourceType.
      */
     public java.lang.String getResourceType() {
       java.lang.Object ref = resourceType_;
@@ -560,6 +603,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_type = 2;</code>
+     *
+     * @return The bytes for resourceType.
      */
     public com.google.protobuf.ByteString getResourceTypeBytes() {
       java.lang.Object ref = resourceType_;
@@ -584,6 +629,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_parent = 3;</code>
+     *
+     * @return The resourceParent.
      */
     public java.lang.String getResourceParent() {
       java.lang.Object ref = resourceParent_;
@@ -605,6 +652,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_parent = 3;</code>
+     *
+     * @return The bytes for resourceParent.
      */
     public com.google.protobuf.ByteString getResourceParentBytes() {
       java.lang.Object ref = resourceParent_;
@@ -629,6 +678,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_project = 4;</code>
+     *
+     * @return The resourceProject.
      */
     public java.lang.String getResourceProject() {
       java.lang.Object ref = resourceProject_;
@@ -650,6 +701,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string resource_project = 4;</code>
+     *
+     * @return The bytes for resourceProject.
      */
     public com.google.protobuf.ByteString getResourceProjectBytes() {
       java.lang.Object ref = resourceProject_;
@@ -673,6 +726,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
+     *
+     * @return A list containing the resourceOwners.
      */
     public com.google.protobuf.ProtocolStringList getResourceOwnersList() {
       return resourceOwners_;
@@ -685,6 +740,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
+     *
+     * @return The count of resourceOwners.
      */
     public int getResourceOwnersCount() {
       return resourceOwners_.size();
@@ -697,6 +754,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The resourceOwners at the given index.
      */
     public java.lang.String getResourceOwners(int index) {
       return resourceOwners_.get(index);
@@ -709,6 +769,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the resourceOwners at the given index.
      */
     public com.google.protobuf.ByteString getResourceOwnersBytes(int index) {
       return resourceOwners_.getByteString(index);
@@ -978,7 +1041,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         resourceProject_ = "";
 
         resourceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1010,17 +1073,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties result =
             new com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.resourceName_ = resourceName_;
         result.resourceType_ = resourceType_;
         result.resourceParent_ = resourceParent_;
         result.resourceProject_ = resourceProject_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           resourceOwners_ = resourceOwners_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.resourceOwners_ = resourceOwners_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1096,7 +1157,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         if (!other.resourceOwners_.isEmpty()) {
           if (resourceOwners_.isEmpty()) {
             resourceOwners_ = other.resourceOwners_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureResourceOwnersIsMutable();
             resourceOwners_.addAll(other.resourceOwners_);
@@ -1141,12 +1202,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The full resource name of the GCP resource this asset
+       * Immutable. The full resource name of the GCP resource this asset
        * represents. This field is immutable after create time. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
        * </pre>
        *
-       * <code>string resource_name = 1;</code>
+       * <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return The resourceName.
        */
       public java.lang.String getResourceName() {
         java.lang.Object ref = resourceName_;
@@ -1163,12 +1226,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The full resource name of the GCP resource this asset
+       * Immutable. The full resource name of the GCP resource this asset
        * represents. This field is immutable after create time. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
        * </pre>
        *
-       * <code>string resource_name = 1;</code>
+       * <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return The bytes for resourceName.
        */
       public com.google.protobuf.ByteString getResourceNameBytes() {
         java.lang.Object ref = resourceName_;
@@ -1185,12 +1250,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The full resource name of the GCP resource this asset
+       * Immutable. The full resource name of the GCP resource this asset
        * represents. This field is immutable after create time. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
        * </pre>
        *
-       * <code>string resource_name = 1;</code>
+       * <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @param value The resourceName to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceName(java.lang.String value) {
         if (value == null) {
@@ -1205,12 +1273,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The full resource name of the GCP resource this asset
+       * Immutable. The full resource name of the GCP resource this asset
        * represents. This field is immutable after create time. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
        * </pre>
        *
-       * <code>string resource_name = 1;</code>
+       * <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearResourceName() {
 
@@ -1222,12 +1292,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The full resource name of the GCP resource this asset
+       * Immutable. The full resource name of the GCP resource this asset
        * represents. This field is immutable after create time. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
        * </pre>
        *
-       * <code>string resource_name = 1;</code>
+       * <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @param value The bytes for resourceName to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1252,6 +1325,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_type = 2;</code>
+       *
+       * @return The resourceType.
        */
       public java.lang.String getResourceType() {
         java.lang.Object ref = resourceType_;
@@ -1275,6 +1350,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_type = 2;</code>
+       *
+       * @return The bytes for resourceType.
        */
       public com.google.protobuf.ByteString getResourceTypeBytes() {
         java.lang.Object ref = resourceType_;
@@ -1298,6 +1375,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_type = 2;</code>
+       *
+       * @param value The resourceType to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceType(java.lang.String value) {
         if (value == null) {
@@ -1319,6 +1399,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_type = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearResourceType() {
 
@@ -1337,6 +1419,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_type = 2;</code>
+       *
+       * @param value The bytes for resourceType to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceTypeBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1359,6 +1444,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_parent = 3;</code>
+       *
+       * @return The resourceParent.
        */
       public java.lang.String getResourceParent() {
         java.lang.Object ref = resourceParent_;
@@ -1380,6 +1467,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_parent = 3;</code>
+       *
+       * @return The bytes for resourceParent.
        */
       public com.google.protobuf.ByteString getResourceParentBytes() {
         java.lang.Object ref = resourceParent_;
@@ -1401,6 +1490,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_parent = 3;</code>
+       *
+       * @param value The resourceParent to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceParent(java.lang.String value) {
         if (value == null) {
@@ -1420,6 +1512,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_parent = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearResourceParent() {
 
@@ -1436,6 +1530,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_parent = 3;</code>
+       *
+       * @param value The bytes for resourceParent to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceParentBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1458,6 +1555,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_project = 4;</code>
+       *
+       * @return The resourceProject.
        */
       public java.lang.String getResourceProject() {
         java.lang.Object ref = resourceProject_;
@@ -1479,6 +1578,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_project = 4;</code>
+       *
+       * @return The bytes for resourceProject.
        */
       public com.google.protobuf.ByteString getResourceProjectBytes() {
         java.lang.Object ref = resourceProject_;
@@ -1500,6 +1601,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_project = 4;</code>
+       *
+       * @param value The resourceProject to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceProject(java.lang.String value) {
         if (value == null) {
@@ -1519,6 +1623,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_project = 4;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearResourceProject() {
 
@@ -1535,6 +1641,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string resource_project = 4;</code>
+       *
+       * @param value The bytes for resourceProject to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceProjectBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1551,9 +1660,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureResourceOwnersIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           resourceOwners_ = new com.google.protobuf.LazyStringArrayList(resourceOwners_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000001;
         }
       }
       /**
@@ -1564,6 +1673,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       *
+       * @return A list containing the resourceOwners.
        */
       public com.google.protobuf.ProtocolStringList getResourceOwnersList() {
         return resourceOwners_.getUnmodifiableView();
@@ -1576,6 +1687,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       *
+       * @return The count of resourceOwners.
        */
       public int getResourceOwnersCount() {
         return resourceOwners_.size();
@@ -1588,6 +1701,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The resourceOwners at the given index.
        */
       public java.lang.String getResourceOwners(int index) {
         return resourceOwners_.get(index);
@@ -1600,6 +1716,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the resourceOwners at the given index.
        */
       public com.google.protobuf.ByteString getResourceOwnersBytes(int index) {
         return resourceOwners_.getByteString(index);
@@ -1612,6 +1731,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The resourceOwners to set.
+       * @return This builder for chaining.
        */
       public Builder setResourceOwners(int index, java.lang.String value) {
         if (value == null) {
@@ -1630,6 +1753,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       *
+       * @param value The resourceOwners to add.
+       * @return This builder for chaining.
        */
       public Builder addResourceOwners(java.lang.String value) {
         if (value == null) {
@@ -1648,6 +1774,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       *
+       * @param values The resourceOwners to add.
+       * @return This builder for chaining.
        */
       public Builder addAllResourceOwners(java.lang.Iterable<java.lang.String> values) {
         ensureResourceOwnersIsMutable();
@@ -1663,10 +1792,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearResourceOwners() {
         resourceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1678,6 +1809,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
+       *
+       * @param value The bytes of the resourceOwners to add.
+       * @return This builder for chaining.
        */
       public Builder addResourceOwnersBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1746,7 +1880,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -1756,10 +1889,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * The relative resource name of this asset. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/assets/456".
+   * "organizations/{organization_id}/assets/{asset_id}".
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -1779,10 +1914,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * The relative resource name of this asset. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/assets/456".
+   * "organizations/{organization_id}/assets/{asset_id}".
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -1810,6 +1947,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
    * </code>
+   *
+   * @return Whether the securityCenterProperties field is set.
    */
   public boolean hasSecurityCenterProperties() {
     return securityCenterProperties_ != null;
@@ -1825,6 +1964,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
    * </code>
+   *
+   * @return The securityCenterProperties.
    */
   public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
       getSecurityCenterProperties() {
@@ -1966,6 +2107,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8;</code>
+   *
+   * @return Whether the securityMarks field is set.
    */
   public boolean hasSecurityMarks() {
     return securityMarks_ != null;
@@ -1979,6 +2122,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8;</code>
+   *
+   * @return The securityMarks.
    */
   public com.google.cloud.securitycenter.v1beta1.SecurityMarks getSecurityMarks() {
     return securityMarks_ == null
@@ -2010,6 +2155,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -2022,6 +2169,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -2050,6 +2199,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -2063,6 +2214,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   *
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -2444,7 +2597,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.securitycenter.v1beta1.Asset result =
           new com.google.cloud.securitycenter.v1beta1.Asset(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (securityCenterPropertiesBuilder_ == null) {
         result.securityCenterProperties_ = securityCenterProperties_;
@@ -2468,7 +2620,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2574,10 +2725,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/assets/456".
+     * "organizations/{organization_id}/assets/{asset_id}".
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2597,10 +2750,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/assets/456".
+     * "organizations/{organization_id}/assets/{asset_id}".
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -2620,10 +2775,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/assets/456".
+     * "organizations/{organization_id}/assets/{asset_id}".
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -2641,10 +2799,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/assets/456".
+     * "organizations/{organization_id}/assets/{asset_id}".
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -2659,10 +2819,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * Example:
-     * "organizations/123/assets/456".
+     * "organizations/{organization_id}/assets/{asset_id}".
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2693,6 +2856,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
      * </code>
+     *
+     * @return Whether the securityCenterProperties field is set.
      */
     public boolean hasSecurityCenterProperties() {
       return securityCenterPropertiesBuilder_ != null || securityCenterProperties_ != null;
@@ -2708,6 +2873,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
      * </code>
+     *
+     * @return The securityCenterProperties.
      */
     public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
         getSecurityCenterProperties() {
@@ -3077,6 +3244,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8;</code>
+     *
+     * @return Whether the securityMarks field is set.
      */
     public boolean hasSecurityMarks() {
       return securityMarksBuilder_ != null || securityMarks_ != null;
@@ -3090,6 +3259,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8;</code>
+     *
+     * @return The securityMarks.
      */
     public com.google.cloud.securitycenter.v1beta1.SecurityMarks getSecurityMarks() {
       if (securityMarksBuilder_ == null) {
@@ -3268,6 +3439,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -3280,6 +3453,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -3448,6 +3623,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     *
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -3461,6 +3638,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     *
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {

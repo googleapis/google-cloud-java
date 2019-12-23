@@ -27,22 +27,30 @@ public interface CreateFindingRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the new finding's parent. Its format should be
+   * Required. Resource name of the new finding's parent. Its format should be
    * "organizations/[organization_id]/sources/[source_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Resource name of the new finding's parent. Its format should be
+   * Required. Resource name of the new finding's parent. Its format should be
    * "organizations/[organization_id]/sources/[source_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -50,24 +58,28 @@ public interface CreateFindingRequestOrBuilder
    *
    *
    * <pre>
-   * Unique identifier provided by the client within the parent scope.
+   * Required. Unique identifier provided by the client within the parent scope.
    * It must be alphanumeric and less than or equal to 32 characters and
    * greater than 0 characters in length.
    * </pre>
    *
-   * <code>string finding_id = 2;</code>
+   * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The findingId.
    */
   java.lang.String getFindingId();
   /**
    *
    *
    * <pre>
-   * Unique identifier provided by the client within the parent scope.
+   * Required. Unique identifier provided by the client within the parent scope.
    * It must be alphanumeric and less than or equal to 32 characters and
    * greater than 0 characters in length.
    * </pre>
    *
-   * <code>string finding_id = 2;</code>
+   * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for findingId.
    */
   com.google.protobuf.ByteString getFindingIdBytes();
 
@@ -75,33 +87,43 @@ public interface CreateFindingRequestOrBuilder
    *
    *
    * <pre>
-   * The Finding being created. The name and security_marks will be ignored as
+   * Required. The Finding being created. The name and security_marks will be ignored as
    * they are both output only fields on this resource.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the finding field is set.
    */
   boolean hasFinding();
   /**
    *
    *
    * <pre>
-   * The Finding being created. The name and security_marks will be ignored as
+   * Required. The Finding being created. The name and security_marks will be ignored as
    * they are both output only fields on this resource.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The finding.
    */
   com.google.cloud.securitycenter.v1beta1.Finding getFinding();
   /**
    *
    *
    * <pre>
-   * The Finding being created. The name and security_marks will be ignored as
+   * Required. The Finding being created. The name and security_marks will be ignored as
    * they are both output only fields on this resource.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.securitycenter.v1beta1.FindingOrBuilder getFindingOrBuilder();
 }

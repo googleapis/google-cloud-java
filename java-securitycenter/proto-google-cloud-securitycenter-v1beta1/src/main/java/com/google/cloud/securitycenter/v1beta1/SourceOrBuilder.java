@@ -30,10 +30,12 @@ public interface SourceOrBuilder
    * The relative resource name of this source. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/sources/456"
+   * "organizations/{organization_id}/sources/{source_id}"
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,10 +45,12 @@ public interface SourceOrBuilder
    * The relative resource name of this source. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/sources/456"
+   * "organizations/{organization_id}/sources/{source_id}"
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -57,13 +61,13 @@ public interface SourceOrBuilder
    * The source's display name.
    * A source's display name must be unique amongst its siblings, for example,
    * two sources with the same parent can't share the same display name.
-   * The display name must start and end with a letter or digit, may contain
-   * letters, digits, spaces, hyphens, and underscores, and can be no longer
-   * than 32 characters. This is captured by the regular expression:
-   * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
+   * The display name must have a length between 1 and 64 characters
+   * (inclusive).
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -73,13 +77,13 @@ public interface SourceOrBuilder
    * The source's display name.
    * A source's display name must be unique amongst its siblings, for example,
    * two sources with the same parent can't share the same display name.
-   * The display name must start and end with a letter or digit, may contain
-   * letters, digits, spaces, hyphens, and underscores, and can be no longer
-   * than 32 characters. This is captured by the regular expression:
-   * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
+   * The display name must have a length between 1 and 64 characters
+   * (inclusive).
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -97,6 +101,8 @@ public interface SourceOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -113,6 +119,8 @@ public interface SourceOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 }

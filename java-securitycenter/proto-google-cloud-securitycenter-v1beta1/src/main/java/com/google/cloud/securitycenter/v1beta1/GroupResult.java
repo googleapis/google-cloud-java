@@ -40,6 +40,12 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
   private GroupResult() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GroupResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -129,7 +135,6 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v1beta1.GroupResult.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROPERTIES_FIELD_NUMBER = 1;
 
   private static final class PropertiesDefaultEntryHolder {
@@ -239,6 +244,8 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 count = 2;</code>
+   *
+   * @return The count.
    */
   public long getCount() {
     return count_;
@@ -516,11 +523,9 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.securitycenter.v1beta1.GroupResult result =
           new com.google.cloud.securitycenter.v1beta1.GroupResult(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.properties_ = internalGetProperties();
       result.properties_.makeImmutable();
       result.count_ = count_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -774,6 +779,8 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 count = 2;</code>
+     *
+     * @return The count.
      */
     public long getCount() {
       return count_;
@@ -786,6 +793,9 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 count = 2;</code>
+     *
+     * @param value The count to set.
+     * @return This builder for chaining.
      */
     public Builder setCount(long value) {
 
@@ -801,6 +811,8 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 count = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCount() {
 

@@ -45,6 +45,12 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GroupAssetsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -178,6 +183,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -201,6 +208,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -255,14 +264,19 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * * security_marks.marks: `=`, `:`
    * * security_center_properties.resource_name: `=`, `:`
+   * * security_center_properties.resource_display_name: `=`, `:`
    * * security_center_properties.resource_type: `=`, `:`
    * * security_center_properties.resource_parent: `=`, `:`
+   * * security_center_properties.resource_parent_display_name: `=`, `:`
    * * security_center_properties.resource_project: `=`, `:`
+   * * security_center_properties.resource_project_display_name: `=`, `:`
    * * security_center_properties.resource_owners: `=`, `:`
    * For example, `resource_properties.size = 100` is a valid filter string.
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -314,14 +328,19 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * * security_marks.marks: `=`, `:`
    * * security_center_properties.resource_name: `=`, `:`
+   * * security_center_properties.resource_display_name: `=`, `:`
    * * security_center_properties.resource_type: `=`, `:`
    * * security_center_properties.resource_parent: `=`, `:`
+   * * security_center_properties.resource_parent_display_name: `=`, `:`
    * * security_center_properties.resource_project: `=`, `:`
+   * * security_center_properties.resource_project_display_name: `=`, `:`
    * * security_center_properties.resource_owners: `=`, `:`
    * For example, `resource_properties.size = 100` is a valid filter string.
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
@@ -347,13 +366,19 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    * "security_center_properties.resource_project,security_center_properties.project".
    * The following fields are supported when compare_duration is not set:
    * * security_center_properties.resource_project
+   * * security_center_properties.resource_project_display_name
    * * security_center_properties.resource_type
    * * security_center_properties.resource_parent
+   * * security_center_properties.resource_parent_display_name
    * The following fields are supported when compare_duration is set:
    * * security_center_properties.resource_type
+   * * security_center_properties.resource_project_display_name
+   * * security_center_properties.resource_parent_display_name
    * </pre>
    *
    * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The groupBy.
    */
   public java.lang.String getGroupBy() {
     java.lang.Object ref = groupBy_;
@@ -376,13 +401,19 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    * "security_center_properties.resource_project,security_center_properties.project".
    * The following fields are supported when compare_duration is not set:
    * * security_center_properties.resource_project
+   * * security_center_properties.resource_project_display_name
    * * security_center_properties.resource_type
    * * security_center_properties.resource_parent
+   * * security_center_properties.resource_parent_display_name
    * The following fields are supported when compare_duration is set:
    * * security_center_properties.resource_type
+   * * security_center_properties.resource_project_display_name
+   * * security_center_properties.resource_parent_display_name
    * </pre>
    *
    * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for groupBy.
    */
   public com.google.protobuf.ByteString getGroupByBytes() {
     java.lang.Object ref = groupBy_;
@@ -427,6 +458,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.Duration compare_duration = 4;</code>
+   *
+   * @return Whether the compareDuration field is set.
    */
   public boolean hasCompareDuration() {
     return compareDuration_ != null;
@@ -460,6 +493,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.Duration compare_duration = 4;</code>
+   *
+   * @return The compareDuration.
    */
   public com.google.protobuf.Duration getCompareDuration() {
     return compareDuration_ == null
@@ -513,6 +548,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 5;</code>
+   *
+   * @return Whether the readTime field is set.
    */
   public boolean hasReadTime() {
     return readTime_ != null;
@@ -528,6 +565,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 5;</code>
+   *
+   * @return The readTime.
    */
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
@@ -560,6 +599,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string page_token = 7;</code>
+   *
+   * @return The pageToken.
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -582,6 +623,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string page_token = 7;</code>
+   *
+   * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -606,6 +649,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>int32 page_size = 8;</code>
+   *
+   * @return The pageSize.
    */
   public int getPageSize() {
     return pageSize_;
@@ -1061,6 +1106,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1084,6 +1131,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1107,6 +1156,9 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1128,6 +1180,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1146,6 +1200,9 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1198,14 +1255,19 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * * security_marks.marks: `=`, `:`
      * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_display_name: `=`, `:`
      * * security_center_properties.resource_type: `=`, `:`
      * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_parent_display_name: `=`, `:`
      * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_project_display_name: `=`, `:`
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -1257,14 +1319,19 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * * security_marks.marks: `=`, `:`
      * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_display_name: `=`, `:`
      * * security_center_properties.resource_type: `=`, `:`
      * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_parent_display_name: `=`, `:`
      * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_project_display_name: `=`, `:`
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
@@ -1316,14 +1383,20 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * * security_marks.marks: `=`, `:`
      * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_display_name: `=`, `:`
      * * security_center_properties.resource_type: `=`, `:`
      * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_parent_display_name: `=`, `:`
      * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_project_display_name: `=`, `:`
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
@@ -1373,14 +1446,19 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * * security_marks.marks: `=`, `:`
      * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_display_name: `=`, `:`
      * * security_center_properties.resource_type: `=`, `:`
      * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_parent_display_name: `=`, `:`
      * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_project_display_name: `=`, `:`
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
 
@@ -1427,14 +1505,20 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * * security_marks.marks: `=`, `:`
      * * security_center_properties.resource_name: `=`, `:`
+     * * security_center_properties.resource_display_name: `=`, `:`
      * * security_center_properties.resource_type: `=`, `:`
      * * security_center_properties.resource_parent: `=`, `:`
+     * * security_center_properties.resource_parent_display_name: `=`, `:`
      * * security_center_properties.resource_project: `=`, `:`
+     * * security_center_properties.resource_project_display_name: `=`, `:`
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1458,13 +1542,19 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * "security_center_properties.resource_project,security_center_properties.project".
      * The following fields are supported when compare_duration is not set:
      * * security_center_properties.resource_project
+     * * security_center_properties.resource_project_display_name
      * * security_center_properties.resource_type
      * * security_center_properties.resource_parent
+     * * security_center_properties.resource_parent_display_name
      * The following fields are supported when compare_duration is set:
      * * security_center_properties.resource_type
+     * * security_center_properties.resource_project_display_name
+     * * security_center_properties.resource_parent_display_name
      * </pre>
      *
      * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The groupBy.
      */
     public java.lang.String getGroupBy() {
       java.lang.Object ref = groupBy_;
@@ -1487,13 +1577,19 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * "security_center_properties.resource_project,security_center_properties.project".
      * The following fields are supported when compare_duration is not set:
      * * security_center_properties.resource_project
+     * * security_center_properties.resource_project_display_name
      * * security_center_properties.resource_type
      * * security_center_properties.resource_parent
+     * * security_center_properties.resource_parent_display_name
      * The following fields are supported when compare_duration is set:
      * * security_center_properties.resource_type
+     * * security_center_properties.resource_project_display_name
+     * * security_center_properties.resource_parent_display_name
      * </pre>
      *
      * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for groupBy.
      */
     public com.google.protobuf.ByteString getGroupByBytes() {
       java.lang.Object ref = groupBy_;
@@ -1516,13 +1612,20 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * "security_center_properties.resource_project,security_center_properties.project".
      * The following fields are supported when compare_duration is not set:
      * * security_center_properties.resource_project
+     * * security_center_properties.resource_project_display_name
      * * security_center_properties.resource_type
      * * security_center_properties.resource_parent
+     * * security_center_properties.resource_parent_display_name
      * The following fields are supported when compare_duration is set:
      * * security_center_properties.resource_type
+     * * security_center_properties.resource_project_display_name
+     * * security_center_properties.resource_parent_display_name
      * </pre>
      *
      * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The groupBy to set.
+     * @return This builder for chaining.
      */
     public Builder setGroupBy(java.lang.String value) {
       if (value == null) {
@@ -1543,13 +1646,19 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * "security_center_properties.resource_project,security_center_properties.project".
      * The following fields are supported when compare_duration is not set:
      * * security_center_properties.resource_project
+     * * security_center_properties.resource_project_display_name
      * * security_center_properties.resource_type
      * * security_center_properties.resource_parent
+     * * security_center_properties.resource_parent_display_name
      * The following fields are supported when compare_duration is set:
      * * security_center_properties.resource_type
+     * * security_center_properties.resource_project_display_name
+     * * security_center_properties.resource_parent_display_name
      * </pre>
      *
      * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGroupBy() {
 
@@ -1567,13 +1676,20 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * "security_center_properties.resource_project,security_center_properties.project".
      * The following fields are supported when compare_duration is not set:
      * * security_center_properties.resource_project
+     * * security_center_properties.resource_project_display_name
      * * security_center_properties.resource_type
      * * security_center_properties.resource_parent
+     * * security_center_properties.resource_parent_display_name
      * The following fields are supported when compare_duration is set:
      * * security_center_properties.resource_type
+     * * security_center_properties.resource_project_display_name
+     * * security_center_properties.resource_parent_display_name
      * </pre>
      *
      * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for groupBy to set.
+     * @return This builder for chaining.
      */
     public Builder setGroupByBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1621,6 +1737,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.Duration compare_duration = 4;</code>
+     *
+     * @return Whether the compareDuration field is set.
      */
     public boolean hasCompareDuration() {
       return compareDurationBuilder_ != null || compareDuration_ != null;
@@ -1654,6 +1772,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.Duration compare_duration = 4;</code>
+     *
+     * @return The compareDuration.
      */
     public com.google.protobuf.Duration getCompareDuration() {
       if (compareDurationBuilder_ == null) {
@@ -1973,6 +2093,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 5;</code>
+     *
+     * @return Whether the readTime field is set.
      */
     public boolean hasReadTime() {
       return readTimeBuilder_ != null || readTime_ != null;
@@ -1988,6 +2110,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 5;</code>
+     *
+     * @return The readTime.
      */
     public com.google.protobuf.Timestamp getReadTime() {
       if (readTimeBuilder_ == null) {
@@ -2169,6 +2293,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string page_token = 7;</code>
+     *
+     * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -2191,6 +2317,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string page_token = 7;</code>
+     *
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -2213,6 +2341,9 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string page_token = 7;</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -2233,6 +2364,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string page_token = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageToken() {
 
@@ -2250,6 +2383,9 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string page_token = 7;</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2272,6 +2408,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 page_size = 8;</code>
+     *
+     * @return The pageSize.
      */
     public int getPageSize() {
       return pageSize_;
@@ -2285,6 +2423,9 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 page_size = 8;</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
@@ -2301,6 +2442,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 page_size = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPageSize() {
 

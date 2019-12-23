@@ -43,6 +43,12 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListAssetsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -158,6 +164,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Asset asset = 1;</code>
+     *
+     * @return Whether the asset field is set.
      */
     boolean hasAsset();
     /**
@@ -168,6 +176,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Asset asset = 1;</code>
+     *
+     * @return The asset.
      */
     com.google.cloud.securitycenter.v1.Asset getAsset();
     /**
@@ -191,6 +201,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult.StateChange state_change = 2;
      * </code>
+     *
+     * @return The enum numeric value on the wire for stateChange.
      */
     int getStateChangeValue();
     /**
@@ -203,6 +215,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult.StateChange state_change = 2;
      * </code>
+     *
+     * @return The stateChange.
      */
     com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult.StateChange
         getStateChange();
@@ -231,6 +245,12 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ListAssetsResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -243,7 +263,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -418,12 +437,20 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         return value;
       }
 
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static StateChange valueOf(int value) {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static StateChange forNumber(int value) {
         switch (value) {
           case 0:
@@ -496,6 +523,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Asset asset = 1;</code>
+     *
+     * @return Whether the asset field is set.
      */
     public boolean hasAsset() {
       return asset_ != null;
@@ -508,6 +537,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Asset asset = 1;</code>
+     *
+     * @return The asset.
      */
     public com.google.cloud.securitycenter.v1.Asset getAsset() {
       return asset_ == null
@@ -539,6 +570,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult.StateChange state_change = 2;
      * </code>
+     *
+     * @return The enum numeric value on the wire for stateChange.
      */
     public int getStateChangeValue() {
       return stateChange_;
@@ -553,6 +586,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * <code>
      * .google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult.StateChange state_change = 2;
      * </code>
+     *
+     * @return The stateChange.
      */
     public com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult.StateChange
         getStateChange() {
@@ -948,6 +983,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.Asset asset = 1;</code>
+       *
+       * @return Whether the asset field is set.
        */
       public boolean hasAsset() {
         return assetBuilder_ != null || asset_ != null;
@@ -960,6 +997,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.Asset asset = 1;</code>
+       *
+       * @return The asset.
        */
       public com.google.cloud.securitycenter.v1.Asset getAsset() {
         if (assetBuilder_ == null) {
@@ -1126,6 +1165,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
        * <code>
        * .google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult.StateChange state_change = 2;
        * </code>
+       *
+       * @return The enum numeric value on the wire for stateChange.
        */
       public int getStateChangeValue() {
         return stateChange_;
@@ -1140,6 +1181,9 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
        * <code>
        * .google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult.StateChange state_change = 2;
        * </code>
+       *
+       * @param value The enum numeric value on the wire for stateChange to set.
+       * @return This builder for chaining.
        */
       public Builder setStateChangeValue(int value) {
         stateChange_ = value;
@@ -1156,6 +1200,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
        * <code>
        * .google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult.StateChange state_change = 2;
        * </code>
+       *
+       * @return The stateChange.
        */
       public com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult.StateChange
           getStateChange() {
@@ -1178,6 +1224,9 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
        * <code>
        * .google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult.StateChange state_change = 2;
        * </code>
+       *
+       * @param value The stateChange to set.
+       * @return This builder for chaining.
        */
       public Builder setStateChange(
           com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult.StateChange
@@ -1200,6 +1249,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
        * <code>
        * .google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult.StateChange state_change = 2;
        * </code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearStateChange() {
 
@@ -1264,7 +1315,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  private int bitField0_;
   public static final int LIST_ASSETS_RESULTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult>
       listAssetsResults_;
@@ -1354,6 +1404,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
+   *
+   * @return Whether the readTime field is set.
    */
   public boolean hasReadTime() {
     return readTime_ != null;
@@ -1366,6 +1418,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
+   *
+   * @return The readTime.
    */
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
@@ -1394,6 +1448,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -1415,6 +1471,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -1438,6 +1496,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>int32 total_size = 4;</code>
+   *
+   * @return The totalSize.
    */
   public int getTotalSize() {
     return totalSize_;
@@ -1729,7 +1789,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       com.google.cloud.securitycenter.v1.ListAssetsResponse result =
           new com.google.cloud.securitycenter.v1.ListAssetsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (listAssetsResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           listAssetsResults_ = java.util.Collections.unmodifiableList(listAssetsResults_);
@@ -1746,7 +1805,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       result.nextPageToken_ = nextPageToken_;
       result.totalSize_ = totalSize_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2296,6 +2354,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
+     *
+     * @return Whether the readTime field is set.
      */
     public boolean hasReadTime() {
       return readTimeBuilder_ != null || readTime_ != null;
@@ -2308,6 +2368,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
+     *
+     * @return The readTime.
      */
     public com.google.protobuf.Timestamp getReadTime() {
       if (readTimeBuilder_ == null) {
@@ -2467,6 +2529,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -2488,6 +2552,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -2509,6 +2575,9 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -2528,6 +2597,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -2544,6 +2615,9 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2565,6 +2639,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 total_size = 4;</code>
+     *
+     * @return The totalSize.
      */
     public int getTotalSize() {
       return totalSize_;
@@ -2577,6 +2653,9 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 total_size = 4;</code>
+     *
+     * @param value The totalSize to set.
+     * @return This builder for chaining.
      */
     public Builder setTotalSize(int value) {
 
@@ -2592,6 +2671,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int32 total_size = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTotalSize() {
 

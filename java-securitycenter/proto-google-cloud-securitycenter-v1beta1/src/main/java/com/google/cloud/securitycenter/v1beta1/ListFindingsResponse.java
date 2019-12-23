@@ -43,6 +43,12 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListFindingsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -142,7 +148,6 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.securitycenter.v1beta1.ListFindingsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int FINDINGS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.securitycenter.v1beta1.Finding> findings_;
   /**
@@ -217,6 +222,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
+   *
+   * @return Whether the readTime field is set.
    */
   public boolean hasReadTime() {
     return readTime_ != null;
@@ -229,6 +236,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
+   *
+   * @return The readTime.
    */
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
@@ -257,6 +266,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -278,6 +289,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -301,6 +314,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>int32 total_size = 4;</code>
+   *
+   * @return The totalSize.
    */
   public int getTotalSize() {
     return totalSize_;
@@ -592,7 +607,6 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       com.google.cloud.securitycenter.v1beta1.ListFindingsResponse result =
           new com.google.cloud.securitycenter.v1beta1.ListFindingsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (findingsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           findings_ = java.util.Collections.unmodifiableList(findings_);
@@ -609,7 +623,6 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
       result.nextPageToken_ = nextPageToken_;
       result.totalSize_ = totalSize_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1096,6 +1109,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
+     *
+     * @return Whether the readTime field is set.
      */
     public boolean hasReadTime() {
       return readTimeBuilder_ != null || readTime_ != null;
@@ -1108,6 +1123,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
+     *
+     * @return The readTime.
      */
     public com.google.protobuf.Timestamp getReadTime() {
       if (readTimeBuilder_ == null) {
@@ -1267,6 +1284,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -1288,6 +1307,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1309,6 +1330,9 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1328,6 +1352,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1344,6 +1370,9 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1365,6 +1394,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>int32 total_size = 4;</code>
+     *
+     * @return The totalSize.
      */
     public int getTotalSize() {
       return totalSize_;
@@ -1377,6 +1408,9 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>int32 total_size = 4;</code>
+     *
+     * @param value The totalSize to set.
+     * @return This builder for chaining.
      */
     public Builder setTotalSize(int value) {
 
@@ -1392,6 +1426,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>int32 total_size = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTotalSize() {
 

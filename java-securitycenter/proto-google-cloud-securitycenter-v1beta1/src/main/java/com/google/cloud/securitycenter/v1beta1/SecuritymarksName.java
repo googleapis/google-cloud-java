@@ -18,7 +18,7 @@ package com.google.cloud.securitycenter.v1beta1;
 
 import com.google.api.resourcenames.ResourceName;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+/** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public abstract class SecuritymarksName implements ResourceName {
   protected SecuritymarksName() {}

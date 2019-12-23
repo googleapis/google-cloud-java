@@ -36,6 +36,8 @@ public interface GroupFindingsRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -51,6 +53,8 @@ public interface GroupFindingsRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -93,6 +97,8 @@ public interface GroupFindingsRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -134,6 +140,8 @@ public interface GroupFindingsRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -154,6 +162,8 @@ public interface GroupFindingsRequestOrBuilder
    * </pre>
    *
    * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The groupBy.
    */
   java.lang.String getGroupBy();
   /**
@@ -173,6 +183,8 @@ public interface GroupFindingsRequestOrBuilder
    * </pre>
    *
    * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for groupBy.
    */
   com.google.protobuf.ByteString getGroupByBytes();
 
@@ -187,6 +199,8 @@ public interface GroupFindingsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 4;</code>
+   *
+   * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
   /**
@@ -200,6 +214,8 @@ public interface GroupFindingsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 4;</code>
+   *
+   * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
@@ -244,6 +260,8 @@ public interface GroupFindingsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration compare_duration = 5;</code>
+   *
+   * @return Whether the compareDuration field is set.
    */
   boolean hasCompareDuration();
   /**
@@ -274,6 +292,8 @@ public interface GroupFindingsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration compare_duration = 5;</code>
+   *
+   * @return The compareDuration.
    */
   com.google.protobuf.Duration getCompareDuration();
   /**
@@ -317,6 +337,8 @@ public interface GroupFindingsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 7;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -329,6 +351,8 @@ public interface GroupFindingsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 7;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -341,6 +365,8 @@ public interface GroupFindingsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 8;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 }

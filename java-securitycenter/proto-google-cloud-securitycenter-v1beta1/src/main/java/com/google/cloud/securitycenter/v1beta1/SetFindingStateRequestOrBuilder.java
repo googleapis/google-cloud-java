@@ -27,26 +27,34 @@ public interface SetFindingStateRequestOrBuilder
    *
    *
    * <pre>
-   * The relative resource name of the finding. See:
+   * Required. The relative resource name of the finding. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/sources/456/finding/789".
+   * "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * The relative resource name of the finding. See:
+   * Required. The relative resource name of the finding. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * Example:
-   * "organizations/123/sources/456/finding/789".
+   * "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -54,20 +62,28 @@ public interface SetFindingStateRequestOrBuilder
    *
    *
    * <pre>
-   * The desired State of the finding.
+   * Required. The desired State of the finding.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Finding.State state = 2;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
    *
    *
    * <pre>
-   * The desired State of the finding.
+   * Required. The desired State of the finding.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Finding.State state = 2;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.Finding.State state = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The state.
    */
   com.google.cloud.securitycenter.v1beta1.Finding.State getState();
 
@@ -75,30 +91,37 @@ public interface SetFindingStateRequestOrBuilder
    *
    *
    * <pre>
-   * The time at which the updated state takes effect.
+   * Required. The time at which the updated state takes effect.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 3;</code>
+   * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
    *
    *
    * <pre>
-   * The time at which the updated state takes effect.
+   * Required. The time at which the updated state takes effect.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 3;</code>
+   * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
    *
    *
    * <pre>
-   * The time at which the updated state takes effect.
+   * Required. The time at which the updated state takes effect.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 3;</code>
+   * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 }

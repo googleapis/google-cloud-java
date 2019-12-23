@@ -27,22 +27,30 @@ public interface ListSourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the parent of sources to list. Its format should be
+   * Required. Resource name of the parent of sources to list. Its format should be
    * "organizations/[organization_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Resource name of the parent of sources to list. Its format should be
+   * Required. Resource name of the parent of sources to list. Its format should be
    * "organizations/[organization_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -56,6 +64,8 @@ public interface ListSourcesRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -68,6 +78,8 @@ public interface ListSourcesRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -80,6 +92,8 @@ public interface ListSourcesRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 7;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 }

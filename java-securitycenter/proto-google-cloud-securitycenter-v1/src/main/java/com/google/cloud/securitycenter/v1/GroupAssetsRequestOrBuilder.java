@@ -34,6 +34,8 @@ public interface GroupAssetsRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface GroupAssetsRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -89,14 +93,19 @@ public interface GroupAssetsRequestOrBuilder
    * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * * security_marks.marks: `=`, `:`
    * * security_center_properties.resource_name: `=`, `:`
+   * * security_center_properties.resource_display_name: `=`, `:`
    * * security_center_properties.resource_type: `=`, `:`
    * * security_center_properties.resource_parent: `=`, `:`
+   * * security_center_properties.resource_parent_display_name: `=`, `:`
    * * security_center_properties.resource_project: `=`, `:`
+   * * security_center_properties.resource_project_display_name: `=`, `:`
    * * security_center_properties.resource_owners: `=`, `:`
    * For example, `resource_properties.size = 100` is a valid filter string.
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -138,14 +147,19 @@ public interface GroupAssetsRequestOrBuilder
    * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * * security_marks.marks: `=`, `:`
    * * security_center_properties.resource_name: `=`, `:`
+   * * security_center_properties.resource_display_name: `=`, `:`
    * * security_center_properties.resource_type: `=`, `:`
    * * security_center_properties.resource_parent: `=`, `:`
+   * * security_center_properties.resource_parent_display_name: `=`, `:`
    * * security_center_properties.resource_project: `=`, `:`
+   * * security_center_properties.resource_project_display_name: `=`, `:`
    * * security_center_properties.resource_owners: `=`, `:`
    * For example, `resource_properties.size = 100` is a valid filter string.
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -159,13 +173,19 @@ public interface GroupAssetsRequestOrBuilder
    * "security_center_properties.resource_project,security_center_properties.project".
    * The following fields are supported when compare_duration is not set:
    * * security_center_properties.resource_project
+   * * security_center_properties.resource_project_display_name
    * * security_center_properties.resource_type
    * * security_center_properties.resource_parent
+   * * security_center_properties.resource_parent_display_name
    * The following fields are supported when compare_duration is set:
    * * security_center_properties.resource_type
+   * * security_center_properties.resource_project_display_name
+   * * security_center_properties.resource_parent_display_name
    * </pre>
    *
    * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The groupBy.
    */
   java.lang.String getGroupBy();
   /**
@@ -178,13 +198,19 @@ public interface GroupAssetsRequestOrBuilder
    * "security_center_properties.resource_project,security_center_properties.project".
    * The following fields are supported when compare_duration is not set:
    * * security_center_properties.resource_project
+   * * security_center_properties.resource_project_display_name
    * * security_center_properties.resource_type
    * * security_center_properties.resource_parent
+   * * security_center_properties.resource_parent_display_name
    * The following fields are supported when compare_duration is set:
    * * security_center_properties.resource_type
+   * * security_center_properties.resource_project_display_name
+   * * security_center_properties.resource_parent_display_name
    * </pre>
    *
    * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for groupBy.
    */
   com.google.protobuf.ByteString getGroupByBytes();
 
@@ -217,6 +243,8 @@ public interface GroupAssetsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration compare_duration = 4;</code>
+   *
+   * @return Whether the compareDuration field is set.
    */
   boolean hasCompareDuration();
   /**
@@ -248,6 +276,8 @@ public interface GroupAssetsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration compare_duration = 4;</code>
+   *
+   * @return The compareDuration.
    */
   com.google.protobuf.Duration getCompareDuration();
   /**
@@ -293,6 +323,8 @@ public interface GroupAssetsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 5;</code>
+   *
+   * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
   /**
@@ -306,6 +338,8 @@ public interface GroupAssetsRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 5;</code>
+   *
+   * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
@@ -332,6 +366,8 @@ public interface GroupAssetsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 7;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -344,6 +380,8 @@ public interface GroupAssetsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 7;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -356,6 +394,8 @@ public interface GroupAssetsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 8;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 }

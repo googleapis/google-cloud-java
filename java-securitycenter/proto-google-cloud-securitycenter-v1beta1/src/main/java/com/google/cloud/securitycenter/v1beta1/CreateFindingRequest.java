@@ -43,6 +43,12 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateFindingRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -136,11 +141,15 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Resource name of the new finding's parent. Its format should be
+   * Required. Resource name of the new finding's parent. Its format should be
    * "organizations/[organization_id]/sources/[source_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -157,11 +166,15 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Resource name of the new finding's parent. Its format should be
+   * Required. Resource name of the new finding's parent. Its format should be
    * "organizations/[organization_id]/sources/[source_id]".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -181,12 +194,14 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Unique identifier provided by the client within the parent scope.
+   * Required. Unique identifier provided by the client within the parent scope.
    * It must be alphanumeric and less than or equal to 32 characters and
    * greater than 0 characters in length.
    * </pre>
    *
-   * <code>string finding_id = 2;</code>
+   * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The findingId.
    */
   public java.lang.String getFindingId() {
     java.lang.Object ref = findingId_;
@@ -203,12 +218,14 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Unique identifier provided by the client within the parent scope.
+   * Required. Unique identifier provided by the client within the parent scope.
    * It must be alphanumeric and less than or equal to 32 characters and
    * greater than 0 characters in length.
    * </pre>
    *
-   * <code>string finding_id = 2;</code>
+   * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for findingId.
    */
   public com.google.protobuf.ByteString getFindingIdBytes() {
     java.lang.Object ref = findingId_;
@@ -228,11 +245,15 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The Finding being created. The name and security_marks will be ignored as
+   * Required. The Finding being created. The name and security_marks will be ignored as
    * they are both output only fields on this resource.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the finding field is set.
    */
   public boolean hasFinding() {
     return finding_ != null;
@@ -241,11 +262,15 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The Finding being created. The name and security_marks will be ignored as
+   * Required. The Finding being created. The name and security_marks will be ignored as
    * they are both output only fields on this resource.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The finding.
    */
   public com.google.cloud.securitycenter.v1beta1.Finding getFinding() {
     return finding_ == null
@@ -256,11 +281,13 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The Finding being created. The name and security_marks will be ignored as
+   * Required. The Finding being created. The name and security_marks will be ignored as
    * they are both output only fields on this resource.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.securitycenter.v1beta1.FindingOrBuilder getFindingOrBuilder() {
     return getFinding();
@@ -636,11 +663,15 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Resource name of the new finding's parent. Its format should be
+     * Required. Resource name of the new finding's parent. Its format should be
      * "organizations/[organization_id]/sources/[source_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -657,11 +688,15 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Resource name of the new finding's parent. Its format should be
+     * Required. Resource name of the new finding's parent. Its format should be
      * "organizations/[organization_id]/sources/[source_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -678,11 +713,16 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Resource name of the new finding's parent. Its format should be
+     * Required. Resource name of the new finding's parent. Its format should be
      * "organizations/[organization_id]/sources/[source_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -697,11 +737,15 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Resource name of the new finding's parent. Its format should be
+     * Required. Resource name of the new finding's parent. Its format should be
      * "organizations/[organization_id]/sources/[source_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -713,11 +757,16 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Resource name of the new finding's parent. Its format should be
+     * Required. Resource name of the new finding's parent. Its format should be
      * "organizations/[organization_id]/sources/[source_id]".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -735,12 +784,14 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Unique identifier provided by the client within the parent scope.
+     * Required. Unique identifier provided by the client within the parent scope.
      * It must be alphanumeric and less than or equal to 32 characters and
      * greater than 0 characters in length.
      * </pre>
      *
-     * <code>string finding_id = 2;</code>
+     * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The findingId.
      */
     public java.lang.String getFindingId() {
       java.lang.Object ref = findingId_;
@@ -757,12 +808,14 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Unique identifier provided by the client within the parent scope.
+     * Required. Unique identifier provided by the client within the parent scope.
      * It must be alphanumeric and less than or equal to 32 characters and
      * greater than 0 characters in length.
      * </pre>
      *
-     * <code>string finding_id = 2;</code>
+     * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for findingId.
      */
     public com.google.protobuf.ByteString getFindingIdBytes() {
       java.lang.Object ref = findingId_;
@@ -779,12 +832,15 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Unique identifier provided by the client within the parent scope.
+     * Required. Unique identifier provided by the client within the parent scope.
      * It must be alphanumeric and less than or equal to 32 characters and
      * greater than 0 characters in length.
      * </pre>
      *
-     * <code>string finding_id = 2;</code>
+     * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The findingId to set.
+     * @return This builder for chaining.
      */
     public Builder setFindingId(java.lang.String value) {
       if (value == null) {
@@ -799,12 +855,14 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Unique identifier provided by the client within the parent scope.
+     * Required. Unique identifier provided by the client within the parent scope.
      * It must be alphanumeric and less than or equal to 32 characters and
      * greater than 0 characters in length.
      * </pre>
      *
-     * <code>string finding_id = 2;</code>
+     * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFindingId() {
 
@@ -816,12 +874,15 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Unique identifier provided by the client within the parent scope.
+     * Required. Unique identifier provided by the client within the parent scope.
      * It must be alphanumeric and less than or equal to 32 characters and
      * greater than 0 characters in length.
      * </pre>
      *
-     * <code>string finding_id = 2;</code>
+     * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for findingId to set.
+     * @return This builder for chaining.
      */
     public Builder setFindingIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -844,11 +905,15 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Finding being created. The name and security_marks will be ignored as
+     * Required. The Finding being created. The name and security_marks will be ignored as
      * they are both output only fields on this resource.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the finding field is set.
      */
     public boolean hasFinding() {
       return findingBuilder_ != null || finding_ != null;
@@ -857,11 +922,15 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Finding being created. The name and security_marks will be ignored as
+     * Required. The Finding being created. The name and security_marks will be ignored as
      * they are both output only fields on this resource.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The finding.
      */
     public com.google.cloud.securitycenter.v1beta1.Finding getFinding() {
       if (findingBuilder_ == null) {
@@ -876,11 +945,13 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Finding being created. The name and security_marks will be ignored as
+     * Required. The Finding being created. The name and security_marks will be ignored as
      * they are both output only fields on this resource.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFinding(com.google.cloud.securitycenter.v1beta1.Finding value) {
       if (findingBuilder_ == null) {
@@ -899,11 +970,13 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Finding being created. The name and security_marks will be ignored as
+     * Required. The Finding being created. The name and security_marks will be ignored as
      * they are both output only fields on this resource.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFinding(
         com.google.cloud.securitycenter.v1beta1.Finding.Builder builderForValue) {
@@ -920,11 +993,13 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Finding being created. The name and security_marks will be ignored as
+     * Required. The Finding being created. The name and security_marks will be ignored as
      * they are both output only fields on this resource.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeFinding(com.google.cloud.securitycenter.v1beta1.Finding value) {
       if (findingBuilder_ == null) {
@@ -947,11 +1022,13 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Finding being created. The name and security_marks will be ignored as
+     * Required. The Finding being created. The name and security_marks will be ignored as
      * they are both output only fields on this resource.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearFinding() {
       if (findingBuilder_ == null) {
@@ -968,11 +1045,13 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Finding being created. The name and security_marks will be ignored as
+     * Required. The Finding being created. The name and security_marks will be ignored as
      * they are both output only fields on this resource.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1beta1.Finding.Builder getFindingBuilder() {
 
@@ -983,11 +1062,13 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Finding being created. The name and security_marks will be ignored as
+     * Required. The Finding being created. The name and security_marks will be ignored as
      * they are both output only fields on this resource.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.securitycenter.v1beta1.FindingOrBuilder getFindingOrBuilder() {
       if (findingBuilder_ != null) {
@@ -1002,11 +1083,13 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Finding being created. The name and security_marks will be ignored as
+     * Required. The Finding being created. The name and security_marks will be ignored as
      * they are both output only fields on this resource.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Finding finding = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.securitycenter.v1beta1.Finding,

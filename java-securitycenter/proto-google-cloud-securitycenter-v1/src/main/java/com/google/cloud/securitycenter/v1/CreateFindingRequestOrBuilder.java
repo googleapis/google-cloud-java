@@ -34,6 +34,8 @@ public interface CreateFindingRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface CreateFindingRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -60,6 +64,8 @@ public interface CreateFindingRequestOrBuilder
    * </pre>
    *
    * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The findingId.
    */
   java.lang.String getFindingId();
   /**
@@ -72,6 +78,8 @@ public interface CreateFindingRequestOrBuilder
    * </pre>
    *
    * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for findingId.
    */
   com.google.protobuf.ByteString getFindingIdBytes();
 
@@ -86,6 +94,8 @@ public interface CreateFindingRequestOrBuilder
    * <code>
    * .google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the finding field is set.
    */
   boolean hasFinding();
   /**
@@ -99,6 +109,8 @@ public interface CreateFindingRequestOrBuilder
    * <code>
    * .google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The finding.
    */
   com.google.cloud.securitycenter.v1.Finding getFinding();
   /**

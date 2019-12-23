@@ -34,6 +34,8 @@ public interface OrganizationSettingsOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface OrganizationSettingsOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -61,6 +65,8 @@ public interface OrganizationSettingsOrBuilder
    * </pre>
    *
    * <code>bool enable_asset_discovery = 2;</code>
+   *
+   * @return The enableAssetDiscovery.
    */
   boolean getEnableAssetDiscovery();
 
@@ -74,6 +80,8 @@ public interface OrganizationSettingsOrBuilder
    * <code>
    * .google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
    * </code>
+   *
+   * @return Whether the assetDiscoveryConfig field is set.
    */
   boolean hasAssetDiscoveryConfig();
   /**
@@ -86,6 +94,8 @@ public interface OrganizationSettingsOrBuilder
    * <code>
    * .google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
    * </code>
+   *
+   * @return The assetDiscoveryConfig.
    */
   com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig
       getAssetDiscoveryConfig();
