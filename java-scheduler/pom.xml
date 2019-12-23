@@ -63,7 +63,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-scheduler-parent</site.installationModule>
-    <google.core.version>1.91.1</google.core.version>
+    <google.core.version>1.92.0</google.core.version>
     <google.api-common.version>1.8.1</google.api-common.version>
     <google.common-protos.version>1.17.0</google.common-protos.version>
     <gax.version>1.52.0</gax.version>
@@ -142,6 +142,11 @@
         <version>${google.common-protos.version}</version>
       </dependency>
       <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-core</artifactId>
+        <version>${google.core.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.threeten</groupId>
         <artifactId>threetenbp</artifactId>
         <version>${threeten.version}</version>
@@ -161,6 +166,18 @@
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>${junit.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-pubsub</artifactId>
+        <version>1.102.0</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-pubsub-v1</artifactId>
+        <version>1.84.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
