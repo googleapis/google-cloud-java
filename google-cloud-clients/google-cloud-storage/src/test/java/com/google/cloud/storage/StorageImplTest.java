@@ -16,11 +16,13 @@
 
 package com.google.cloud.storage;
 
+import static com.google.cloud.storage.SignedUrlEncodingHelper.Rfc3986UriEncode;
 import static com.google.cloud.storage.testing.ApiPolicyMatcher.eqApiPolicy;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
@@ -55,7 +57,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.io.BaseEncoding;
-import com.google.common.net.UrlEscapers;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -79,6 +80,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.crypto.spec.SecretKeySpec;
 import org.easymock.Capture;
 import org.easymock.EasyMock;
@@ -335,6 +338,39 @@ public class StorageImplTest {
           return 42_000L;
         }
       };
+
+  // List of chars under test were taken from
+  // https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters
+  private static final Map<Character, String> RFC3986_URI_ENCODING_MAP =
+      ImmutableMap.<Character, String>builder()
+          .put('!', "%21")
+          .put('#', "%23")
+          .put('$', "%24")
+          .put('&', "%26")
+          .put('\'', "%27")
+          .put('(', "%28")
+          .put(')', "%29")
+          .put('*', "%2A")
+          .put('+', "%2B")
+          .put(',', "%2C")
+          // NOTE: Whether the forward slash character should be encoded depends on the URI segment
+          // being encoded. The path segment should not encode forward slashes, but others (e.g.
+          // query parameter keys and values) should encode them. Tests verifying encoding behavior
+          // in path segments should make a copy of this map and replace the mapping for '/' to "/".
+          .put('/', "%2F")
+          .put(':', "%3A")
+          .put(';', "%3B")
+          .put('=', "%3D")
+          .put('?', "%3F")
+          .put('@', "%40")
+          .put('[', "%5B")
+          .put(']', "%5D")
+          // In addition to [a-zA-Z0-9], these chars should not be URI-encoded:
+          .put('-', "-")
+          .put('_', "_")
+          .put('.', ".")
+          .put('~', "~")
+          .build();
 
   private static final String ACCOUNT = "account";
   private static PrivateKey privateKey;
@@ -1767,12 +1803,12 @@ public class StorageImplTest {
     storage = options.toBuilder().setCredentials(credentials).build().getService();
     URL url =
         storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
-    String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
+    String expectedResourcePath = "/b1";
     String stringUrl = url.toString();
     String expectedUrl =
         new StringBuilder("https://storage.googleapis.com/")
             .append(BUCKET_NAME1)
-            .append(escapedBlobName)
+            .append(expectedResourcePath)
             .append("?GoogleAccessId=")
             .append(ACCOUNT)
             .append("&Expires=")
@@ -1789,7 +1825,7 @@ public class StorageImplTest {
         .append(42L + 1209600)
         .append("\n/")
         .append(BUCKET_NAME1)
-        .append(escapedBlobName);
+        .append(expectedResourcePath);
 
     Signature signer = Signature.getInstance("SHA256withRSA");
     signer.initVerify(publicKey);
@@ -1816,7 +1852,7 @@ public class StorageImplTest {
             14,
             TimeUnit.DAYS,
             Storage.SignUrlOption.withHostName("https://example.com"));
-    String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
+    String escapedBlobName = Rfc3986UriEncode(blobName, false);
     String stringUrl = url.toString();
     String expectedUrl =
         new StringBuilder("https://example.com/")
@@ -1962,12 +1998,6 @@ public class StorageImplTest {
   public void testSignUrlForBlobWithSpecialChars()
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
-    // List of chars under test were taken from
-    // https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters
-    char[] specialChars =
-        new char[] {
-          '!', '#', '$', '&', '\'', '(', ')', '*', '+', ',', ':', ';', '=', '?', '@', '[', ']'
-        };
     EasyMock.replay(storageRpcMock);
     ServiceAccountCredentials credentials =
         ServiceAccountCredentials.newBuilder()
@@ -1976,17 +2006,20 @@ public class StorageImplTest {
             .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
 
-    for (char specialChar : specialChars) {
-      String blobName = "/a" + specialChar + "b";
+    Map<Character, String> encodingCharsToTest =
+        new HashMap<Character, String>(RFC3986_URI_ENCODING_MAP);
+    // Signed URL specs say that '/' is not encoded in the resource name (path segment of the URI).
+    encodingCharsToTest.put('/', "/");
+    for (Map.Entry<Character, String> entry : encodingCharsToTest.entrySet()) {
+      String blobName = "/a" + entry.getKey() + "b";
       URL url =
           storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
-      String escapedBlobName =
-          UrlEscapers.urlFragmentEscaper().escape(blobName).replace("?", "%3F").replace(";", "%3B");
+      String expectedBlobName = "/a" + entry.getValue() + "b";
       String stringUrl = url.toString();
       String expectedUrl =
           new StringBuilder("https://storage.googleapis.com/")
               .append(BUCKET_NAME1)
-              .append(escapedBlobName)
+              .append(expectedBlobName)
               .append("?GoogleAccessId=")
               .append(ACCOUNT)
               .append("&Expires=")
@@ -2003,7 +2036,7 @@ public class StorageImplTest {
           .append(42L + 1209600)
           .append("\n/")
           .append(BUCKET_NAME1)
-          .append(escapedBlobName);
+          .append(expectedBlobName);
 
       Signature signer = Signature.getInstance("SHA256withRSA");
       signer.initVerify(publicKey);
@@ -2017,12 +2050,6 @@ public class StorageImplTest {
   public void testSignUrlForBlobWithSpecialCharsAndHostName()
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
-    // List of chars under test were taken from
-    // https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters
-    char[] specialChars =
-        new char[] {
-          '!', '#', '$', '&', '\'', '(', ')', '*', '+', ',', ':', ';', '=', '?', '@', '[', ']'
-        };
     EasyMock.replay(storageRpcMock);
     ServiceAccountCredentials credentials =
         ServiceAccountCredentials.newBuilder()
@@ -2031,21 +2058,24 @@ public class StorageImplTest {
             .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
 
-    for (char specialChar : specialChars) {
-      String blobName = "/a" + specialChar + "b";
+    Map<Character, String> encodingCharsToTest =
+        new HashMap<Character, String>(RFC3986_URI_ENCODING_MAP);
+    // Signed URL specs say that '/' is not encoded in the resource name (path segment of the URI).
+    encodingCharsToTest.put('/', "/");
+    for (Map.Entry<Character, String> entry : encodingCharsToTest.entrySet()) {
+      String blobName = "/a" + entry.getKey() + "b";
       URL url =
           storage.signUrl(
               BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(),
               14,
               TimeUnit.DAYS,
               Storage.SignUrlOption.withHostName("https://example.com"));
-      String escapedBlobName =
-          UrlEscapers.urlFragmentEscaper().escape(blobName).replace("?", "%3F").replace(";", "%3B");
+      String expectedBlobName = "/a" + entry.getValue() + "b";
       String stringUrl = url.toString();
       String expectedUrl =
           new StringBuilder("https://example.com/")
               .append(BUCKET_NAME1)
-              .append(escapedBlobName)
+              .append(expectedBlobName)
               .append("?GoogleAccessId=")
               .append(ACCOUNT)
               .append("&Expires=")
@@ -2062,7 +2092,7 @@ public class StorageImplTest {
           .append(42L + 1209600)
           .append("\n/")
           .append(BUCKET_NAME1)
-          .append(escapedBlobName);
+          .append(expectedBlobName);
 
       Signature signer = Signature.getInstance("SHA256withRSA");
       signer.initVerify(publicKey);
@@ -2208,7 +2238,7 @@ public class StorageImplTest {
     String blobName = "/foo/bar/baz #%20other cool stuff.txt";
     URL url =
         storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
-    String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
+    String escapedBlobName = Rfc3986UriEncode(blobName, false);
     String stringUrl = url.toString();
     String expectedUrl =
         new StringBuilder("https://storage.googleapis.com/")
@@ -2258,7 +2288,7 @@ public class StorageImplTest {
             14,
             TimeUnit.DAYS,
             Storage.SignUrlOption.withHostName("https://example.com"));
-    String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
+    String escapedBlobName = Rfc3986UriEncode(blobName, false);
     String stringUrl = url.toString();
     String expectedUrl =
         new StringBuilder("https://example.com/")
@@ -2287,6 +2317,132 @@ public class StorageImplTest {
     signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
     assertTrue(
         signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+  }
+
+  @Test
+  public void testV2SignUrlWithQueryParams()
+      throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
+          UnsupportedEncodingException {
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+
+    String dispositionNotEncoded = "attachment; filename=\"" + BLOB_NAME1 + "\"";
+    String dispositionEncoded = "attachment%3B%20filename%3D%22" + BLOB_NAME1 + "%22";
+    URL url =
+        storage.signUrl(
+            BLOB_INFO1,
+            14,
+            TimeUnit.DAYS,
+            Storage.SignUrlOption.withPathStyle(),
+            Storage.SignUrlOption.withV2Signature(),
+            Storage.SignUrlOption.withQueryParams(
+                ImmutableMap.<String, String>of(
+                    "response-content-disposition", dispositionNotEncoded)));
+
+    String stringUrl = url.toString();
+
+    String expectedPrefix =
+        new StringBuilder("https://storage.googleapis.com/")
+            .append(BUCKET_NAME1)
+            .append('/')
+            .append(BLOB_NAME1)
+            // Query params aren't sorted for V2 signatures; user-supplied params are inserted at
+            // the start of the query string, before the required auth params.
+            .append("?response-content-disposition=")
+            .append(dispositionEncoded)
+            .append("&GoogleAccessId=")
+            .append(ACCOUNT)
+            .append("&Expires=")
+            .append(42L + 1209600)
+            .append("&Signature=")
+            .toString();
+    assertTrue(stringUrl.startsWith(expectedPrefix));
+    String signature = stringUrl.substring(expectedPrefix.length());
+
+    StringBuilder signedMessageBuilder = new StringBuilder();
+    signedMessageBuilder
+        .append(HttpMethod.GET)
+        .append('\n')
+        // No value for Content-MD5, blank
+        .append('\n')
+        // No value for Content-Type, blank
+        .append('\n')
+        // Expiration line:
+        .append(42L + 1209600)
+        .append('\n')
+        // Resource line:
+        .append('/')
+        .append(BUCKET_NAME1)
+        .append('/')
+        .append(BLOB_NAME1);
+
+    Signature signer = Signature.getInstance("SHA256withRSA");
+    signer.initVerify(publicKey);
+    signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+    assertTrue(
+        signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+  }
+
+  // TODO(b/144304815): Remove this test once all conformance tests contain query param test cases.
+  @Test
+  public void testV4SignUrlWithQueryParams() {
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+
+    String dispositionNotEncoded = "attachment; filename=\"" + BLOB_NAME1 + "\"";
+    String dispositionEncoded = "attachment%3B%20filename%3D%22" + BLOB_NAME1 + "%22";
+    URL url =
+        storage.signUrl(
+            BLOB_INFO1,
+            6,
+            TimeUnit.DAYS,
+            Storage.SignUrlOption.withPathStyle(),
+            Storage.SignUrlOption.withV4Signature(),
+            Storage.SignUrlOption.withQueryParams(
+                ImmutableMap.<String, String>of(
+                    "response-content-disposition", dispositionNotEncoded)));
+    String stringUrl = url.toString();
+    String expectedPrefix =
+        new StringBuilder("https://storage.googleapis.com/")
+            .append(BUCKET_NAME1)
+            .append('/')
+            .append(BLOB_NAME1)
+            .append('?')
+            .toString();
+    assertTrue(stringUrl.startsWith(expectedPrefix));
+    String restOfUrl = stringUrl.substring(expectedPrefix.length());
+
+    Pattern pattern =
+        Pattern.compile(
+            // We use the same code to construct the canonical request query string as we do to
+            // construct the query string used in the final URL, so this query string should also be
+            // sorted correctly, except for the trailing x-goog-signature param.
+            new StringBuilder("X-Goog-Algorithm=GOOG4-RSA-SHA256")
+                .append("&X-Goog-Credential=[^&]+")
+                .append("&X-Goog-Date=[^&]+")
+                .append("&X-Goog-Expires=[^&]+")
+                .append("&X-Goog-SignedHeaders=[^&]+")
+                .append("&response-content-disposition=[^&]+")
+                // Signature is always tacked onto the end of the final URL; it's not sorted w/ the
+                // other params above, since the signature is not known when you're constructing the
+                // query string line of the canonical request string.
+                .append("&X-Goog-Signature=.*")
+                .toString());
+    Matcher matcher = pattern.matcher(restOfUrl);
+    assertTrue(restOfUrl, matcher.matches());
+
+    // Make sure query param was encoded properly.
+    assertNotEquals(-1, restOfUrl.indexOf("&response-content-disposition=" + dispositionEncoded));
   }
 
   @Test

@@ -112,7 +112,7 @@
       <dependency>
         <groupId>com.google.protobuf</groupId>
         <artifactId>protobuf-bom</artifactId>
-        <version>3.11.0</version>
+        <version>3.11.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -160,31 +160,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-bigquerydatatransfer-v1</artifactId>
-        <version>0.85.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerydatatransfer-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-bigquerydatatransfer-v1</artifactId>
-        <version>0.85.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerydatatransfer-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-bigquerystorage-v1beta1</artifactId>
-        <version>0.85.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1beta1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-bigquerystorage-v1beta1</artifactId>
-        <version>0.85.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1beta1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-datastore-v1</artifactId>
-        <version>0.85.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-spanner-v1</artifactId>
         <version>1.47.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-v1:current} -->
       </dependency>
@@ -217,15 +192,10 @@
   </dependencyManagement>
 
   <modules>
-    <module>grpc-google-cloud-bigquerydatatransfer-v1</module>
-    <module>grpc-google-cloud-bigquerystorage-v1beta1</module>
     <module>grpc-google-cloud-spanner-admin-database-v1</module>
     <module>grpc-google-cloud-spanner-admin-instance-v1</module>
     <module>grpc-google-cloud-spanner-v1</module>
 
-    <module>proto-google-cloud-bigquerydatatransfer-v1</module>
-    <module>proto-google-cloud-bigquerystorage-v1beta1</module>
-    <module>proto-google-cloud-datastore-v1</module>
     <module>proto-google-cloud-spanner-admin-database-v1</module>
     <module>proto-google-cloud-spanner-admin-instance-v1</module>
     <module>proto-google-cloud-spanner-v1</module>
@@ -275,7 +245,7 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.4</version>
+        <version>0.8.5</version>
         <executions>
           <execution>
             <goals>
@@ -393,7 +363,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
-            <version>3.1.0</version>
+            <version>3.2.0</version>
             <executions>
               <execution>
                 <id>attach-sources</id>

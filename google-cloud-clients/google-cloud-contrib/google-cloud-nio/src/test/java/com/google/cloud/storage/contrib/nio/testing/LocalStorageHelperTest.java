@@ -23,9 +23,12 @@ import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
+import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.file.Files;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -74,11 +77,15 @@ public class LocalStorageHelperTest {
   }
 
   @Test
-  public void testCopyCanBeRead() {
+  public void testCopyCanBeRead() throws Exception {
     Storage.CopyRequest request = copyRequest();
     localStorageService.copy(request).getResult();
     Blob obj = localStorageService.get(BlobId.of(testBucket, destinationFile));
     String copiedContents = new String(obj.getContent(Blob.BlobSourceOption.generationMatch()));
+    File file = File.createTempFile("file", ".txt");
+    file.deleteOnExit();
+    obj.downloadTo(file.toPath());
+    Assert.assertArrayEquals(payload.getBytes(), Files.readAllBytes(file.toPath()));
 
     assertThat(copiedContents).isEqualTo(payload);
     assertThat(obj.getGeneration()).isEqualTo(1);

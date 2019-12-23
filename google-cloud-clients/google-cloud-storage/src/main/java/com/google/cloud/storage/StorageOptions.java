@@ -34,6 +34,7 @@ public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
   private static final String API_SHORT_NAME = "Storage";
   private static final String GCS_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
   private static final Set<String> SCOPES = ImmutableSet.of(GCS_SCOPE);
+  private static final String DEFAULT_HOST = "https://storage.googleapis.com";
 
   public static class DefaultStorageFactory implements StorageFactory {
 
@@ -133,7 +134,7 @@ public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
   @SuppressWarnings("unchecked")
   @Override
   public Builder toBuilder() {
-    return new Builder(this).setHost("storage.googleapis.com");
+    return new Builder(this).setHost(DEFAULT_HOST);
   }
 
   @Override
@@ -147,6 +148,6 @@ public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
   }
 
   public static Builder newBuilder() {
-    return new Builder();
+    return new Builder().setHost(DEFAULT_HOST);
   }
 }

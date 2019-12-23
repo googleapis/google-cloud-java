@@ -19,6 +19,7 @@ package com.google.cloud.storage;
 import static com.google.cloud.RetryHelper.runWithRetries;
 import static com.google.cloud.storage.PolicyHelper.convertFromApiPolicy;
 import static com.google.cloud.storage.PolicyHelper.convertToApiPolicy;
+import static com.google.cloud.storage.SignedUrlEncodingHelper.Rfc3986UriEncode;
 import static com.google.cloud.storage.spi.v1.StorageRpc.Option.DELIMITER;
 import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_GENERATION_MATCH;
 import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_GENERATION_NOT_MATCH;
@@ -63,7 +64,6 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
-import com.google.common.net.UrlEscapers;
 import com.google.common.primitives.Ints;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -666,11 +666,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     String bucketName = slashlessBucketNameFromBlobInfo(blobInfo);
     String escapedBlobName = "";
     if (!Strings.isNullOrEmpty(blobInfo.getName())) {
-      escapedBlobName =
-          UrlEscapers.urlFragmentEscaper()
-              .escape(blobInfo.getName())
-              .replace("?", "%3F")
-              .replace(";", "%3B");
+      escapedBlobName = Rfc3986UriEncode(blobInfo.getName(), false);
     }
 
     boolean usePathStyle = shouldUsePathStyleForSignedUrl(optionMap);
@@ -703,13 +699,22 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       if (isV4) {
         BaseEncoding encoding = BaseEncoding.base16().lowerCase();
         String signature = URLEncoder.encode(encoding.encode(signatureBytes), UTF_8.name());
-        stBuilder.append("?");
-        stBuilder.append(signatureInfo.constructV4QueryString());
-        stBuilder.append("&X-Goog-Signature=").append(signature);
+        String v4QueryString = signatureInfo.constructV4QueryString();
+
+        stBuilder.append('?');
+        if (!Strings.isNullOrEmpty(v4QueryString)) {
+          stBuilder.append(v4QueryString).append('&');
+        }
+        stBuilder.append("X-Goog-Signature=").append(signature);
       } else {
         BaseEncoding encoding = BaseEncoding.base64();
         String signature = URLEncoder.encode(encoding.encode(signatureBytes), UTF_8.name());
-        stBuilder.append("?");
+        String v2QueryString = signatureInfo.constructV2QueryString();
+
+        stBuilder.append('?');
+        if (!Strings.isNullOrEmpty(v2QueryString)) {
+          stBuilder.append(v2QueryString).append('&');
+        }
         stBuilder.append("GoogleAccessId=").append(credentials.getAccount());
         stBuilder.append("&Expires=").append(expiration);
         stBuilder.append("&Signature=").append(signature);
@@ -819,7 +824,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
     signatureInfoBuilder.setTimestamp(getOptions().getClock().millisTime());
 
-    ImmutableMap.Builder<String, String> extHeaders = new ImmutableMap.Builder<String, String>();
+    ImmutableMap.Builder<String, String> extHeadersBuilder =
+        new ImmutableMap.Builder<String, String>();
 
     boolean isV4 =
         SignUrlOption.SignatureVersion.V4.equals(
@@ -827,20 +833,29 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     if (isV4) { // We don't sign the host header for V2 signed URLs; only do this for V4.
       // Add the host here first, allowing it to be overridden in the EXT_HEADERS option below.
       if (optionMap.containsKey(SignUrlOption.Option.VIRTUAL_HOSTED_STYLE)) {
-        extHeaders.put(
+        extHeadersBuilder.put(
             "host",
             slashlessBucketNameFromBlobInfo(blobInfo) + "." + getBaseStorageHostName(optionMap));
       } else if (optionMap.containsKey(SignUrlOption.Option.HOST_NAME)) {
-        extHeaders.put("host", getBaseStorageHostName(optionMap));
+        extHeadersBuilder.put("host", getBaseStorageHostName(optionMap));
       }
     }
 
     if (optionMap.containsKey(SignUrlOption.Option.EXT_HEADERS)) {
-      extHeaders.putAll((Map<String, String>) optionMap.get(SignUrlOption.Option.EXT_HEADERS));
+      extHeadersBuilder.putAll(
+          (Map<String, String>) optionMap.get(SignUrlOption.Option.EXT_HEADERS));
+    }
+
+    ImmutableMap.Builder<String, String> queryParamsBuilder =
+        new ImmutableMap.Builder<String, String>();
+    if (optionMap.containsKey(SignUrlOption.Option.QUERY_PARAMS)) {
+      queryParamsBuilder.putAll(
+          (Map<String, String>) optionMap.get(SignUrlOption.Option.QUERY_PARAMS));
     }
 
     return signatureInfoBuilder
-        .setCanonicalizedExtensionHeaders((Map<String, String>) extHeaders.build())
+        .setCanonicalizedExtensionHeaders((Map<String, String>) extHeadersBuilder.build())
+        .setCanonicalizedQueryParams((Map<String, String>) queryParamsBuilder.build())
         .build();
   }
 

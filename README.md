@@ -11,9 +11,9 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 - [Client Library Documentation][client-lib-docs]
 
 This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
--  [BigQuery](google-cloud-clients/google-cloud-bigquery) (GA)
+-  [BigQuery](https://github.com/googleapis/java-bigquery) (GA)
 -  [Cloud Bigtable](https://github.com/googleapis/java-bigtable) (GA)
--  [Cloud Datastore](google-cloud-clients/google-cloud-datastore) (GA)
+-  [Cloud Datastore](https://github.com/googleapis/java-datastore/google-cloud-datastore) (GA)
 -  [Cloud Firestore](https://github.com/googleapis/java-firestore/google-cloud-firestore) (GA)
 -  [Cloud KMS](https://github.com/googleapis/java-kms) (GA)
 -  [Cloud Natural Language](https://github.com/googleapis/java-language) (GA)
@@ -30,10 +30,10 @@ This library supports the following Google Cloud Platform services with clients 
 
 This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
--  [BigQuery Data Transfer](google-cloud-clients/google-cloud-bigquerydatatransfer) (Beta)
+-  [BigQuery Data Transfer](https://github.com/googleapis/java-bigquerydatatransfer) (Beta)
 -  [Cloud Asset](https://github.com/googleapis/java-asset) (Beta)
 -  [Cloud AutoML](https://github.com/googleapis/java-automl) (Beta)
--  [Cloud Container Analysis](ghttps://github.com/googleapis/java-containeranalysis) (Beta)
+-  [Cloud Container Analysis](https://github.com/googleapis/java-containeranalysis) (Beta)
 -  [Cloud Dataproc](https://github.com/googleapis/java-dataproc) (Beta)
 -  [Cloud Data Loss Prevention](https://github.com/googleapis/java-dlp) (Beta)
 -  [Cloud IoT Core](https://github.com/googleapis/java-iot) (Beta)
@@ -49,7 +49,7 @@ This library supports the following Google Cloud Platform services with clients 
 
 This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
--  [BigQuery Storage](google-cloud-clients/google-cloud-bigquerystorage) (Alpha)
+-  [BigQuery Storage](https://github.com/googleapis/java-bigquerystorage) (Alpha)
 -  [Cloud Compute](https://github.com/googleapis/java-compute) (Alpha)
 -  [Cloud Data Catalog](https://github.com/googleapis/java-datacatalog) (Alpha)
 -  [Cloud Data Labeling](https://github.com/googleapis/java-datalabeling) (Alpha)

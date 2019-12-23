@@ -1845,6 +1845,73 @@ public class ITStorageTest {
   }
 
   @Test
+  public void testGetV2SignedUrlWithAddlQueryParam() throws IOException {
+    if (storage.getOptions().getCredentials() != null) {
+      assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
+    }
+    String blobName = "test-get-v2-with-generation-param";
+    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
+    Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteBlob);
+    for (Storage.SignUrlOption urlStyle :
+        Arrays.asList(
+            Storage.SignUrlOption.withPathStyle(),
+            Storage.SignUrlOption.withVirtualHostedStyle())) {
+      String generationStr = remoteBlob.getGeneration().toString();
+      URL url =
+          storage.signUrl(
+              blob,
+              1,
+              TimeUnit.HOURS,
+              urlStyle,
+              Storage.SignUrlOption.withV2Signature(),
+              Storage.SignUrlOption.withQueryParams(
+                  ImmutableMap.<String, String>of("generation", generationStr)));
+      // Finally, verify that the URL works and we can get the object as expected:
+      URLConnection connection = url.openConnection();
+      byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
+      try (InputStream responseStream = connection.getInputStream()) {
+        assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
+        assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+      }
+    }
+  }
+
+  // TODO(b/144304815): Remove this test once all conformance tests contain query param test cases.
+  @Test
+  public void testGetV4SignedUrlWithAddlQueryParam() throws IOException {
+    if (storage.getOptions().getCredentials() != null) {
+      assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
+    }
+    String blobName = "test-get-v4-with-generation-param";
+    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
+    Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteBlob);
+    for (Storage.SignUrlOption urlStyle :
+        Arrays.asList(
+            Storage.SignUrlOption.withPathStyle(),
+            Storage.SignUrlOption.withVirtualHostedStyle())) {
+      String generationStr = remoteBlob.getGeneration().toString();
+      URL url =
+          storage.signUrl(
+              blob,
+              1,
+              TimeUnit.HOURS,
+              urlStyle,
+              Storage.SignUrlOption.withV4Signature(),
+              Storage.SignUrlOption.withQueryParams(
+                  ImmutableMap.<String, String>of("generation", generationStr)));
+      // Finally, verify that the URL works and we can get the object as expected:
+      URLConnection connection = url.openConnection();
+      byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
+      try (InputStream responseStream = connection.getInputStream()) {
+        assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
+        assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+      }
+    }
+  }
+
+  @Test
   public void testPostSignedUrl() throws IOException {
     if (storage.getOptions().getCredentials() != null) {
       assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);

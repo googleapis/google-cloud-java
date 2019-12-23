@@ -327,8 +327,11 @@ class FakeStorageRpc implements StorageRpc {
       // special case: you're trying to read past the end
       return 0;
     }
-    byte[] ret = new byte[bytes];
-    System.arraycopy(full, (int) position, ret, 0, bytes);
+    try {
+      outputStream.write(full, (int) position, bytes);
+    } catch (IOException e) {
+      throw new StorageException(500, "Failed to write to file", e);
+    }
     return bytes;
   }
 

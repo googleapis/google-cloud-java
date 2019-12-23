@@ -42,7 +42,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-kms-v1</artifactId>
-      <version>0.82.0</version>
+      <version>0.82.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
