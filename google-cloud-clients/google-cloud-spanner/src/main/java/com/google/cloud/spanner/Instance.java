@@ -21,6 +21,8 @@ import com.google.api.gax.paging.Page;
 import com.google.cloud.Policy;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
+
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -80,6 +82,18 @@ public class Instance extends InstanceInfo {
     @Override
     public Builder putAllLabels(Map<String, String> labels) {
       infoBuilder.putAllLabels(labels);
+      return this;
+    }
+
+    @Override
+    public InstanceInfo.Builder addEndpointUri(String endpointUrl) {
+      infoBuilder.addEndpointUri(endpointUrl);
+      return this;
+    }
+
+    @Override
+    public InstanceInfo.Builder addAllEndpointUris(List<String> endpointUris) {
+      infoBuilder.addAllEndpointUris(endpointUris);
       return this;
     }
 
@@ -177,6 +191,7 @@ public class Instance extends InstanceInfo {
             .setInstanceConfigId(InstanceConfigId.of(proto.getConfig()))
             .setDisplayName(proto.getDisplayName())
             .setNodeCount(proto.getNodeCount());
+    builder.addAllEndpointUris(proto.getEndpointUrisList());
     State state;
     switch (proto.getState()) {
       case STATE_UNSPECIFIED:

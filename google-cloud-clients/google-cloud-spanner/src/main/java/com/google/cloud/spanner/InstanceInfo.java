@@ -20,9 +20,13 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.FieldSelector;
 import com.google.common.base.MoreObjects;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.FieldMask;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -76,6 +80,10 @@ public class InstanceInfo {
 
     public abstract Builder putAllLabels(Map<String, String> labels);
 
+    public abstract Builder addEndpointUri(String endpointUrl);
+
+    public abstract Builder addAllEndpointUris(List<String> endpointUris);
+
     public abstract InstanceInfo build();
   }
 
@@ -86,10 +94,12 @@ public class InstanceInfo {
     private int nodeCount;
     private State state;
     private Map<String, String> labels;
+    private List<String> endpointUris;
 
     BuilderImpl(InstanceId id) {
       this.id = id;
       this.labels = new HashMap<>();
+      this.endpointUris = new ArrayList<>();
     }
 
     BuilderImpl(InstanceInfo instance) {
@@ -99,6 +109,7 @@ public class InstanceInfo {
       this.nodeCount = instance.nodeCount;
       this.state = instance.state;
       this.labels = new HashMap<>(instance.labels);
+      this.endpointUris = new ArrayList<>(instance.endpointUris);
     }
 
     @Override
@@ -138,6 +149,18 @@ public class InstanceInfo {
     }
 
     @Override
+    public Builder addEndpointUri(String endpointUrl) {
+      this.endpointUris.add(endpointUrl);
+      return this;
+    }
+
+    @Override
+    public Builder addAllEndpointUris(List<String> endpointUris) {
+      this.endpointUris.addAll(endpointUris);
+      return this;
+    }
+
+    @Override
     public InstanceInfo build() {
       return new InstanceInfo(this);
     }
@@ -149,6 +172,7 @@ public class InstanceInfo {
   private final int nodeCount;
   private final State state;
   private final ImmutableMap<String, String> labels;
+  private final ImmutableList<String> endpointUris;
 
   InstanceInfo(BuilderImpl builder) {
     this.id = builder.id;
@@ -157,6 +181,7 @@ public class InstanceInfo {
     this.nodeCount = builder.nodeCount;
     this.state = builder.state;
     this.labels = ImmutableMap.copyOf(builder.labels);
+    this.endpointUris = ImmutableList.copyOf(builder.endpointUris);
   }
 
   /** Returns the identifier of the instance. */
@@ -189,6 +214,11 @@ public class InstanceInfo {
     return labels;
   }
 
+  /** Returns the endpoint uris for this instance. */
+  public ImmutableList<String> getEndpointUris() {
+    return endpointUris;
+  }
+
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
@@ -202,6 +232,7 @@ public class InstanceInfo {
         .add("nodeCount", nodeCount)
         .add("state", state)
         .add("labels", labels)
+        .add("endpointUris", endpointUris)
         .toString();
   }
 
@@ -219,12 +250,13 @@ public class InstanceInfo {
         && Objects.equals(displayName, that.displayName)
         && nodeCount == that.nodeCount
         && state == that.state
-        && Objects.equals(labels, that.labels);
+        && Objects.equals(labels, that.labels)
+        && Objects.equals(endpointUris, that.endpointUris);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, configId, displayName, nodeCount, state, labels);
+    return Objects.hash(id, configId, displayName, nodeCount, state, labels, endpointUris);
   }
 
   com.google.spanner.admin.instance.v1.Instance toProto() {
@@ -232,7 +264,8 @@ public class InstanceInfo {
         com.google.spanner.admin.instance.v1.Instance.newBuilder()
             .setName(getId().getName())
             .setNodeCount(getNodeCount())
-            .putAllLabels(getLabels());
+            .putAllLabels(getLabels())
+            .addAllEndpointUris(getEndpointUris());
     if (getDisplayName() != null) {
       builder.setDisplayName(getDisplayName());
     }
