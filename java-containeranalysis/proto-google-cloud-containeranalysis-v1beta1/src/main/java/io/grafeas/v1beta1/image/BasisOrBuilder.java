@@ -27,8 +27,8 @@ public interface BasisOrBuilder
    *
    *
    * <pre>
-   * The resource_url for the resource representing the basis of
-   * associated occurrence images.
+   * Required. Immutable. The resource_url for the resource representing the
+   * basis of associated occurrence images.
    * </pre>
    *
    * <code>string resource_url = 1;</code>
@@ -40,8 +40,8 @@ public interface BasisOrBuilder
    *
    *
    * <pre>
-   * The resource_url for the resource representing the basis of
-   * associated occurrence images.
+   * Required. Immutable. The resource_url for the resource representing the
+   * basis of associated occurrence images.
    * </pre>
    *
    * <code>string resource_url = 1;</code>
@@ -54,7 +54,7 @@ public interface BasisOrBuilder
    *
    *
    * <pre>
-   * The fingerprint of the base image.
+   * Required. Immutable. The fingerprint of the base image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
@@ -66,7 +66,7 @@ public interface BasisOrBuilder
    *
    *
    * <pre>
-   * The fingerprint of the base image.
+   * Required. Immutable. The fingerprint of the base image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>
@@ -78,7 +78,7 @@ public interface BasisOrBuilder
    *
    *
    * <pre>
-   * The fingerprint of the base image.
+   * Required. Immutable. The fingerprint of the base image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 2;</code>

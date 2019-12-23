@@ -27,7 +27,7 @@ public interface HashOrBuilder
    *
    *
    * <pre>
-   * The type of hash that was performed.
+   * Required. The type of hash that was performed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
@@ -39,7 +39,7 @@ public interface HashOrBuilder
    *
    *
    * <pre>
-   * The type of hash that was performed.
+   * Required. The type of hash that was performed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
@@ -52,7 +52,7 @@ public interface HashOrBuilder
    *
    *
    * <pre>
-   * The hash value.
+   * Required. The hash value.
    * </pre>
    *
    * <code>bytes value = 2;</code>

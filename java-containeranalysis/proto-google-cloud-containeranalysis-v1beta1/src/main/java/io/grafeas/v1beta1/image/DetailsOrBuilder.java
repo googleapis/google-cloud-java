@@ -27,7 +27,7 @@ public interface DetailsOrBuilder
    *
    *
    * <pre>
-   * The child image derived from the base image.
+   * Required. Immutable. The child image derived from the base image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Derived derived_image = 1;</code>
@@ -39,7 +39,7 @@ public interface DetailsOrBuilder
    *
    *
    * <pre>
-   * The child image derived from the base image.
+   * Required. Immutable. The child image derived from the base image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Derived derived_image = 1;</code>
@@ -51,7 +51,7 @@ public interface DetailsOrBuilder
    *
    *
    * <pre>
-   * The child image derived from the base image.
+   * Required. Immutable. The child image derived from the base image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Derived derived_image = 1;</code>

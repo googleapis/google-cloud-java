@@ -176,8 +176,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the command, as presented on the command line, or if the command is
-   * packaged as a Docker container, as presented to `docker pull`.
+   * Required. Name of the command, as presented on the command line, or if the
+   * command is packaged as a Docker container, as presented to `docker pull`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -199,8 +199,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the command, as presented on the command line, or if the command is
-   * packaged as a Docker container, as presented to `docker pull`.
+   * Required. Name of the command, as presented on the command line, or if the
+   * command is packaged as a Docker container, as presented to `docker pull`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -953,8 +953,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the command, as presented on the command line, or if the command is
-     * packaged as a Docker container, as presented to `docker pull`.
+     * Required. Name of the command, as presented on the command line, or if the
+     * command is packaged as a Docker container, as presented to `docker pull`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -976,8 +976,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the command, as presented on the command line, or if the command is
-     * packaged as a Docker container, as presented to `docker pull`.
+     * Required. Name of the command, as presented on the command line, or if the
+     * command is packaged as a Docker container, as presented to `docker pull`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -999,8 +999,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the command, as presented on the command line, or if the command is
-     * packaged as a Docker container, as presented to `docker pull`.
+     * Required. Name of the command, as presented on the command line, or if the
+     * command is packaged as a Docker container, as presented to `docker pull`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1021,8 +1021,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the command, as presented on the command line, or if the command is
-     * packaged as a Docker container, as presented to `docker pull`.
+     * Required. Name of the command, as presented on the command line, or if the
+     * command is packaged as a Docker container, as presented to `docker pull`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1039,8 +1039,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the command, as presented on the command line, or if the command is
-     * packaged as a Docker container, as presented to `docker pull`.
+     * Required. Name of the command, as presented on the command line, or if the
+     * command is packaged as a Docker container, as presented to `docker pull`.
      * </pre>
      *
      * <code>string name = 1;</code>

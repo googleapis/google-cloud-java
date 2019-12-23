@@ -27,7 +27,7 @@ public interface PackageOrBuilder
    *
    *
    * <pre>
-   * The name of the package.
+   * Required. Immutable. The name of the package.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -39,7 +39,7 @@ public interface PackageOrBuilder
    *
    *
    * <pre>
-   * The name of the package.
+   * Required. Immutable. The name of the package.
    * </pre>
    *
    * <code>string name = 1;</code>

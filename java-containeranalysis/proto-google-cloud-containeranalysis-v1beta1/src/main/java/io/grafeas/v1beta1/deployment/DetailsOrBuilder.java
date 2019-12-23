@@ -27,7 +27,7 @@ public interface DetailsOrBuilder
    *
    *
    * <pre>
-   * Deployment history for the resource.
+   * Required. Deployment history for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -39,7 +39,7 @@ public interface DetailsOrBuilder
    *
    *
    * <pre>
-   * Deployment history for the resource.
+   * Required. Deployment history for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -51,7 +51,7 @@ public interface DetailsOrBuilder
    *
    *
    * <pre>
-   * Deployment history for the resource.
+   * Required. Deployment history for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>

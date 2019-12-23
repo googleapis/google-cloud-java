@@ -23,7 +23,7 @@ package io.grafeas.v1beta1.pkg;
  *
  * <pre>
  * An occurrence of a particular package installation found within a system's
- * filesystem. E.g., glibc was found in /var/lib/dpkg/status.
+ * filesystem. E.g., glibc was found in `/var/lib/dpkg/status`.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1beta1.package.Location}
@@ -140,7 +140,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+   * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
@@ -163,7 +163,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+   * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
@@ -458,7 +458,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * An occurrence of a particular package installation found within a system's
-   * filesystem. E.g., glibc was found in /var/lib/dpkg/status.
+   * filesystem. E.g., glibc was found in `/var/lib/dpkg/status`.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1beta1.package.Location}
@@ -635,7 +635,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
@@ -658,7 +658,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
@@ -681,7 +681,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
@@ -703,7 +703,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
@@ -721,7 +721,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *

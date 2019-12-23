@@ -27,7 +27,7 @@ public interface DetailsOrBuilder
    *
    *
    * <pre>
-   * The actual provenance for the build.
+   * Required. The actual provenance for the build.
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
@@ -39,7 +39,7 @@ public interface DetailsOrBuilder
    *
    *
    * <pre>
-   * The actual provenance for the build.
+   * Required. The actual provenance for the build.
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
@@ -51,7 +51,7 @@ public interface DetailsOrBuilder
    *
    *
    * <pre>
-   * The actual provenance for the build.
+   * Required. The actual provenance for the build.
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
@@ -63,7 +63,7 @@ public interface DetailsOrBuilder
    *
    * <pre>
    * Serialized JSON representation of the provenance, used in generating the
-   * `BuildSignature` in the corresponding Result. After verifying the
+   * build signature in the corresponding build note. After verifying the
    * signature, `provenance_bytes` can be unmarshalled and compared to the
    * provenance to confirm that it is unchanged. A base64-encoded string
    * representation of the provenance bytes is used for the signature in order
@@ -84,7 +84,7 @@ public interface DetailsOrBuilder
    *
    * <pre>
    * Serialized JSON representation of the provenance, used in generating the
-   * `BuildSignature` in the corresponding Result. After verifying the
+   * build signature in the corresponding build note. After verifying the
    * signature, `provenance_bytes` can be unmarshalled and compared to the
    * provenance to confirm that it is unchanged. A base64-encoded string
    * representation of the provenance bytes is used for the signature in order

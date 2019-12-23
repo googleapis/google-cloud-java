@@ -276,7 +276,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Unique identifier of the build.
+   * Required. Unique identifier of the build.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -298,7 +298,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Unique identifier of the build.
+   * Required. Unique identifier of the build.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -1625,7 +1625,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Unique identifier of the build.
+     * Required. Unique identifier of the build.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1647,7 +1647,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Unique identifier of the build.
+     * Required. Unique identifier of the build.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1669,7 +1669,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Unique identifier of the build.
+     * Required. Unique identifier of the build.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1690,7 +1690,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Unique identifier of the build.
+     * Required. Unique identifier of the build.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1707,7 +1707,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Unique identifier of the build.
+     * Required. Unique identifier of the build.
      * </pre>
      *
      * <code>string id = 1;</code>

@@ -27,7 +27,7 @@ public interface BuildProvenanceOrBuilder
    *
    *
    * <pre>
-   * Unique identifier of the build.
+   * Required. Unique identifier of the build.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -39,7 +39,7 @@ public interface BuildProvenanceOrBuilder
    *
    *
    * <pre>
-   * Unique identifier of the build.
+   * Required. Unique identifier of the build.
    * </pre>
    *
    * <code>string id = 1;</code>

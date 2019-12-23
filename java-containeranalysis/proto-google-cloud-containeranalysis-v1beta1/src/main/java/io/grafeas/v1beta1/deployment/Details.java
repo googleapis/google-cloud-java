@@ -124,7 +124,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deployment history for the resource.
+   * Required. Deployment history for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -138,7 +138,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deployment history for the resource.
+   * Required. Deployment history for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -154,7 +154,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deployment history for the resource.
+   * Required. Deployment history for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -499,7 +499,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -513,7 +513,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -533,7 +533,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -555,7 +555,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -574,7 +574,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -600,7 +600,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -620,7 +620,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -634,7 +634,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
@@ -652,7 +652,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deployment history for the resource.
+     * Required. Deployment history for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>

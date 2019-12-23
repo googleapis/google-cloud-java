@@ -121,7 +121,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the hash algorithm, if any.
+   * Specifies the hash algorithm.
    * </pre>
    *
    * Protobuf enum {@code grafeas.v1beta1.provenance.Hash.HashType}
@@ -254,7 +254,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of hash that was performed.
+   * Required. The type of hash that was performed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
@@ -268,7 +268,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of hash that was performed.
+   * Required. The type of hash that was performed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
@@ -288,7 +288,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The hash value.
+   * Required. The hash value.
    * </pre>
    *
    * <code>bytes value = 2;</code>
@@ -631,7 +631,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of hash that was performed.
+     * Required. The type of hash that was performed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
@@ -645,7 +645,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of hash that was performed.
+     * Required. The type of hash that was performed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
@@ -662,7 +662,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of hash that was performed.
+     * Required. The type of hash that was performed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
@@ -679,7 +679,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of hash that was performed.
+     * Required. The type of hash that was performed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
@@ -700,7 +700,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of hash that was performed.
+     * Required. The type of hash that was performed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
@@ -719,7 +719,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The hash value.
+     * Required. The hash value.
      * </pre>
      *
      * <code>bytes value = 2;</code>
@@ -733,7 +733,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The hash value.
+     * Required. The hash value.
      * </pre>
      *
      * <code>bytes value = 2;</code>
@@ -754,7 +754,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The hash value.
+     * Required. The hash value.
      * </pre>
      *
      * <code>bytes value = 2;</code>

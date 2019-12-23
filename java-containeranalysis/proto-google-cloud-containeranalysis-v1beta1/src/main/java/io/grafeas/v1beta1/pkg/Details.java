@@ -123,7 +123,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Where the package was installed.
+   * Required. Where the package was installed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -137,7 +137,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Where the package was installed.
+   * Required. Where the package was installed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -153,7 +153,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Where the package was installed.
+   * Required. Where the package was installed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -496,7 +496,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -510,7 +510,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -530,7 +530,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -552,7 +552,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -571,7 +571,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -597,7 +597,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -617,7 +617,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -631,7 +631,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -649,7 +649,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Where the package was installed.
+     * Required. Where the package was installed.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>

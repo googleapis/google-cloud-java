@@ -22,7 +22,7 @@ package io.grafeas.v1beta1.provenance;
  *
  *
  * <pre>
- * Container message for hashes of byte content of files, used in Source
+ * Container message for hashes of byte content of files, used in source
  * messages to verify integrity of source input to the build.
  * </pre>
  *
@@ -126,7 +126,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -138,7 +138,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -151,7 +151,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -163,7 +163,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -175,7 +175,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -348,7 +348,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Container message for hashes of byte content of files, used in Source
+   * Container message for hashes of byte content of files, used in source
    * messages to verify integrity of source input to the build.
    * </pre>
    *
@@ -562,7 +562,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -578,7 +578,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -594,7 +594,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -610,7 +610,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -632,7 +632,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -652,7 +652,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -674,7 +674,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -696,7 +696,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -715,7 +715,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -735,7 +735,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -755,7 +755,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -774,7 +774,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -793,7 +793,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -805,7 +805,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -821,7 +821,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -838,7 +838,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -851,7 +851,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -864,7 +864,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Collection of file hashes.
+     * Required. Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>

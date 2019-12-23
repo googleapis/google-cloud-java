@@ -27,7 +27,7 @@ public interface DerivedOrBuilder
    *
    *
    * <pre>
-   * The fingerprint of the derived image.
+   * Required. The fingerprint of the derived image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
@@ -39,7 +39,7 @@ public interface DerivedOrBuilder
    *
    *
    * <pre>
-   * The fingerprint of the derived image.
+   * Required. The fingerprint of the derived image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>
@@ -51,7 +51,7 @@ public interface DerivedOrBuilder
    *
    *
    * <pre>
-   * The fingerprint of the derived image.
+   * Required. The fingerprint of the derived image.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Fingerprint fingerprint = 1;</code>

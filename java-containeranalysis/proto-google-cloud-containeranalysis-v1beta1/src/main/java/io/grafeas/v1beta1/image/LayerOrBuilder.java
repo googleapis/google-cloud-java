@@ -27,7 +27,7 @@ public interface LayerOrBuilder
    *
    *
    * <pre>
-   * The recovered Dockerfile directive used to construct this layer.
+   * Required. The recovered Dockerfile directive used to construct this layer.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
@@ -39,7 +39,7 @@ public interface LayerOrBuilder
    *
    *
    * <pre>
-   * The recovered Dockerfile directive used to construct this layer.
+   * Required. The recovered Dockerfile directive used to construct this layer.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>

@@ -155,7 +155,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A standard package version, defined by the other fields.
+     * A standard package version.
      * </pre>
      *
      * <code>NORMAL = 1;</code>
@@ -165,8 +165,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A special version representing negative infinity, other fields are
-     * ignored.
+     * A special version representing negative infinity.
      * </pre>
      *
      * <code>MINIMUM = 2;</code>
@@ -176,8 +175,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A special version representing positive infinity, other fields are
-     * ignored.
+     * A special version representing positive infinity.
      * </pre>
      *
      * <code>MAXIMUM = 3;</code>
@@ -200,7 +198,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A standard package version, defined by the other fields.
+     * A standard package version.
      * </pre>
      *
      * <code>NORMAL = 1;</code>
@@ -210,8 +208,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A special version representing negative infinity, other fields are
-     * ignored.
+     * A special version representing negative infinity.
      * </pre>
      *
      * <code>MINIMUM = 2;</code>
@@ -221,8 +218,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A special version representing positive infinity, other fields are
-     * ignored.
+     * A special version representing positive infinity.
      * </pre>
      *
      * <code>MAXIMUM = 3;</code>
@@ -333,7 +329,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The main part of the version name.
+   * Required only when version kind is NORMAL. The main part of the version
+   * name.
    * </pre>
    *
    * <code>string name = 2;</code>
@@ -355,7 +352,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The main part of the version name.
+   * Required only when version kind is NORMAL. The main part of the version
+   * name.
    * </pre>
    *
    * <code>string name = 2;</code>
@@ -427,8 +425,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Distinguish between sentinel MIN/MAX versions and normal versions. If
-   * kind is not NORMAL, then the other fields are ignored.
+   * Required. Distinguishes between sentinel MIN/MAX versions and normal
+   * versions.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
@@ -442,8 +440,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Distinguish between sentinel MIN/MAX versions and normal versions. If
-   * kind is not NORMAL, then the other fields are ignored.
+   * Required. Distinguishes between sentinel MIN/MAX versions and normal
+   * versions.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
@@ -871,7 +869,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The main part of the version name.
+     * Required only when version kind is NORMAL. The main part of the version
+     * name.
      * </pre>
      *
      * <code>string name = 2;</code>
@@ -893,7 +892,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The main part of the version name.
+     * Required only when version kind is NORMAL. The main part of the version
+     * name.
      * </pre>
      *
      * <code>string name = 2;</code>
@@ -915,7 +915,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The main part of the version name.
+     * Required only when version kind is NORMAL. The main part of the version
+     * name.
      * </pre>
      *
      * <code>string name = 2;</code>
@@ -936,7 +937,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The main part of the version name.
+     * Required only when version kind is NORMAL. The main part of the version
+     * name.
      * </pre>
      *
      * <code>string name = 2;</code>
@@ -953,7 +955,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The main part of the version name.
+     * Required only when version kind is NORMAL. The main part of the version
+     * name.
      * </pre>
      *
      * <code>string name = 2;</code>
@@ -1083,8 +1086,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Distinguish between sentinel MIN/MAX versions and normal versions. If
-     * kind is not NORMAL, then the other fields are ignored.
+     * Required. Distinguishes between sentinel MIN/MAX versions and normal
+     * versions.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
@@ -1098,8 +1101,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Distinguish between sentinel MIN/MAX versions and normal versions. If
-     * kind is not NORMAL, then the other fields are ignored.
+     * Required. Distinguishes between sentinel MIN/MAX versions and normal
+     * versions.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
@@ -1116,8 +1119,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Distinguish between sentinel MIN/MAX versions and normal versions. If
-     * kind is not NORMAL, then the other fields are ignored.
+     * Required. Distinguishes between sentinel MIN/MAX versions and normal
+     * versions.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
@@ -1134,8 +1137,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Distinguish between sentinel MIN/MAX versions and normal versions. If
-     * kind is not NORMAL, then the other fields are ignored.
+     * Required. Distinguishes between sentinel MIN/MAX versions and normal
+     * versions.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
@@ -1156,8 +1159,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Distinguish between sentinel MIN/MAX versions and normal versions. If
-     * kind is not NORMAL, then the other fields are ignored.
+     * Required. Distinguishes between sentinel MIN/MAX versions and normal
+     * versions.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>

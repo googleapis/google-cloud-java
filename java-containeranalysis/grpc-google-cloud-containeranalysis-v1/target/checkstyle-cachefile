@@ -1,4 +1,0 @@
-#Fri Nov 01 15:41:19 MDT 2019
-configuration*?=92476D5669833AA6261531ED82F130AAED5EE97E
-module-resource*?\:file\:/Users/codyoss/oss/java-containeranalysis/grpc-google-cloud-containeranalysis-v1/target/checkstyle-header.txt=25F6DC6B0E0E8C43BA44E8B5F4839CB7BE8256A7
-/Users/codyoss/oss/java-containeranalysis/grpc-google-cloud-containeranalysis-v1/src/main/java/com/google/containeranalysis/v1/ContainerAnalysisGrpc.java=1572640656337

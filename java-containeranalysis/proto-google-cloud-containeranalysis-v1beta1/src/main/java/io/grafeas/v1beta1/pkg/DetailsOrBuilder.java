@@ -27,7 +27,7 @@ public interface DetailsOrBuilder
    *
    *
    * <pre>
-   * Where the package was installed.
+   * Required. Where the package was installed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -39,7 +39,7 @@ public interface DetailsOrBuilder
    *
    *
    * <pre>
-   * Where the package was installed.
+   * Required. Where the package was installed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
@@ -51,7 +51,7 @@ public interface DetailsOrBuilder
    *
    *
    * <pre>
-   * Where the package was installed.
+   * Required. Where the package was installed.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>

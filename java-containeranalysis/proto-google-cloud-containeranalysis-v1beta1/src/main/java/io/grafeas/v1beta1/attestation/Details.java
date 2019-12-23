@@ -124,7 +124,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Attestation for the resource.
+   * Required. Attestation for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -138,7 +138,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Attestation for the resource.
+   * Required. Attestation for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -154,7 +154,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Attestation for the resource.
+   * Required. Attestation for the resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -500,7 +500,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -514,7 +514,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -534,7 +534,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -556,7 +556,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -576,7 +576,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -602,7 +602,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -622,7 +622,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -636,7 +636,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
@@ -654,7 +654,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Attestation for the resource.
+     * Required. Attestation for the resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>

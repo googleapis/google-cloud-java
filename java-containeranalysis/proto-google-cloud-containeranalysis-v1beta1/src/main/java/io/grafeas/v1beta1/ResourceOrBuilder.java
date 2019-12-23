@@ -54,7 +54,7 @@ public interface ResourceOrBuilder
    *
    *
    * <pre>
-   * The unique URI of the resource. For example,
+   * Required. The unique URI of the resource. For example,
    * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
    * </pre>
    *
@@ -67,7 +67,7 @@ public interface ResourceOrBuilder
    *
    *
    * <pre>
-   * The unique URI of the resource. For example,
+   * Required. The unique URI of the resource. For example,
    * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
    * </pre>
    *

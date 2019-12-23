@@ -119,7 +119,8 @@ public final class Discovery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The kind of analysis that is handled by this discovery.
+   * Required. Immutable. The kind of analysis that is handled by this
+   * discovery.
    * </pre>
    *
    * <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
@@ -133,7 +134,8 @@ public final class Discovery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The kind of analysis that is handled by this discovery.
+   * Required. Immutable. The kind of analysis that is handled by this
+   * discovery.
    * </pre>
    *
    * <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
@@ -468,7 +470,8 @@ public final class Discovery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The kind of analysis that is handled by this discovery.
+     * Required. Immutable. The kind of analysis that is handled by this
+     * discovery.
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
@@ -482,7 +485,8 @@ public final class Discovery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The kind of analysis that is handled by this discovery.
+     * Required. Immutable. The kind of analysis that is handled by this
+     * discovery.
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
@@ -499,7 +503,8 @@ public final class Discovery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The kind of analysis that is handled by this discovery.
+     * Required. Immutable. The kind of analysis that is handled by this
+     * discovery.
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
@@ -516,7 +521,8 @@ public final class Discovery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The kind of analysis that is handled by this discovery.
+     * Required. Immutable. The kind of analysis that is handled by this
+     * discovery.
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>
@@ -537,7 +543,8 @@ public final class Discovery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The kind of analysis that is handled by this discovery.
+     * Required. Immutable. The kind of analysis that is handled by this
+     * discovery.
      * </pre>
      *
      * <code>.grafeas.v1beta1.NoteKind analysis_kind = 1;</code>

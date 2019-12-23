@@ -124,7 +124,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Analysis status for the discovered resource.
+   * Required. Analysis status for the discovered resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -138,7 +138,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Analysis status for the discovered resource.
+   * Required. Analysis status for the discovered resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -154,7 +154,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Analysis status for the discovered resource.
+   * Required. Analysis status for the discovered resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -498,7 +498,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -512,7 +512,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -532,7 +532,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -554,7 +554,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -573,7 +573,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -599,7 +599,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -619,7 +619,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -633,7 +633,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -651,7 +651,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Analysis status for the discovered resource.
+     * Required. Analysis status for the discovered resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>

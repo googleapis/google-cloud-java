@@ -447,8 +447,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Immutable. The analysis note associated with this occurrence, in
-   * the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
-   * as a filter in list requests.
+   * the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be
+   * used as a filter in list requests.
    * </pre>
    *
    * <code>string note_name = 3;</code>
@@ -471,8 +471,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Immutable. The analysis note associated with this occurrence, in
-   * the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
-   * as a filter in list requests.
+   * the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be
+   * used as a filter in list requests.
    * </pre>
    *
    * <code>string note_name = 3;</code>
@@ -1956,8 +1956,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Immutable. The analysis note associated with this occurrence, in
-     * the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
-     * as a filter in list requests.
+     * the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be
+     * used as a filter in list requests.
      * </pre>
      *
      * <code>string note_name = 3;</code>
@@ -1980,8 +1980,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Immutable. The analysis note associated with this occurrence, in
-     * the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
-     * as a filter in list requests.
+     * the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be
+     * used as a filter in list requests.
      * </pre>
      *
      * <code>string note_name = 3;</code>
@@ -2004,8 +2004,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Immutable. The analysis note associated with this occurrence, in
-     * the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
-     * as a filter in list requests.
+     * the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be
+     * used as a filter in list requests.
      * </pre>
      *
      * <code>string note_name = 3;</code>
@@ -2027,8 +2027,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Immutable. The analysis note associated with this occurrence, in
-     * the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
-     * as a filter in list requests.
+     * the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be
+     * used as a filter in list requests.
      * </pre>
      *
      * <code>string note_name = 3;</code>
@@ -2046,8 +2046,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Immutable. The analysis note associated with this occurrence, in
-     * the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
-     * as a filter in list requests.
+     * the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be
+     * used as a filter in list requests.
      * </pre>
      *
      * <code>string note_name = 3;</code>

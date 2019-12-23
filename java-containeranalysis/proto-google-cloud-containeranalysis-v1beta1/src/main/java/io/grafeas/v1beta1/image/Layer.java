@@ -141,7 +141,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#maintainer
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>MAINTAINER = 1;</code>
@@ -151,7 +151,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#run
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>RUN = 2;</code>
@@ -161,7 +161,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#cmd
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>CMD = 3;</code>
@@ -171,7 +171,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#label
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>LABEL = 4;</code>
@@ -181,7 +181,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#expose
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>EXPOSE = 5;</code>
@@ -191,7 +191,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#env
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ENV = 6;</code>
@@ -201,7 +201,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#add
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ADD = 7;</code>
@@ -211,7 +211,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#copy
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>COPY = 8;</code>
@@ -221,7 +221,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#entrypoint
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ENTRYPOINT = 9;</code>
@@ -231,7 +231,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#volume
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>VOLUME = 10;</code>
@@ -241,7 +241,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#user
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>USER = 11;</code>
@@ -251,7 +251,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#workdir
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>WORKDIR = 12;</code>
@@ -261,7 +261,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#arg
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ARG = 13;</code>
@@ -271,7 +271,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#onbuild
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ONBUILD = 14;</code>
@@ -281,7 +281,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#stopsignal
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>STOPSIGNAL = 15;</code>
@@ -291,7 +291,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#healthcheck
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>HEALTHCHECK = 16;</code>
@@ -301,7 +301,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#shell
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>SHELL = 17;</code>
@@ -324,7 +324,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#maintainer
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>MAINTAINER = 1;</code>
@@ -334,7 +334,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#run
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>RUN = 2;</code>
@@ -344,7 +344,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#cmd
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>CMD = 3;</code>
@@ -354,7 +354,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#label
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>LABEL = 4;</code>
@@ -364,7 +364,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#expose
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>EXPOSE = 5;</code>
@@ -374,7 +374,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#env
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ENV = 6;</code>
@@ -384,7 +384,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#add
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ADD = 7;</code>
@@ -394,7 +394,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#copy
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>COPY = 8;</code>
@@ -404,7 +404,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#entrypoint
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ENTRYPOINT = 9;</code>
@@ -414,7 +414,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#volume
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>VOLUME = 10;</code>
@@ -424,7 +424,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#user
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>USER = 11;</code>
@@ -434,7 +434,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#workdir
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>WORKDIR = 12;</code>
@@ -444,7 +444,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#arg
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ARG = 13;</code>
@@ -454,7 +454,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#onbuild
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>ONBUILD = 14;</code>
@@ -464,7 +464,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#stopsignal
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>STOPSIGNAL = 15;</code>
@@ -474,7 +474,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#healthcheck
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>HEALTHCHECK = 16;</code>
@@ -484,7 +484,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * https://docs.docker.com/reference/builder/#shell
+     * https://docs.docker.com/engine/reference/builder/
      * </pre>
      *
      * <code>SHELL = 17;</code>
@@ -606,7 +606,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The recovered Dockerfile directive used to construct this layer.
+   * Required. The recovered Dockerfile directive used to construct this layer.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
@@ -620,7 +620,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The recovered Dockerfile directive used to construct this layer.
+   * Required. The recovered Dockerfile directive used to construct this layer.
    * </pre>
    *
    * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
@@ -1011,7 +1011,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The recovered Dockerfile directive used to construct this layer.
+     * Required. The recovered Dockerfile directive used to construct this layer.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
@@ -1025,7 +1025,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The recovered Dockerfile directive used to construct this layer.
+     * Required. The recovered Dockerfile directive used to construct this layer.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
@@ -1042,7 +1042,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The recovered Dockerfile directive used to construct this layer.
+     * Required. The recovered Dockerfile directive used to construct this layer.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
@@ -1059,7 +1059,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The recovered Dockerfile directive used to construct this layer.
+     * Required. The recovered Dockerfile directive used to construct this layer.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>
@@ -1080,7 +1080,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The recovered Dockerfile directive used to construct this layer.
+     * Required. The recovered Dockerfile directive used to construct this layer.
      * </pre>
      *
      * <code>.grafeas.v1beta1.image.Layer.Directive directive = 1;</code>

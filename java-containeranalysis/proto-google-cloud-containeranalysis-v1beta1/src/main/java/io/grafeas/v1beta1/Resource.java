@@ -186,7 +186,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The unique URI of the resource. For example,
+   * Required. The unique URI of the resource. For example,
    * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
    * </pre>
    *
@@ -209,7 +209,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The unique URI of the resource. For example,
+   * Required. The unique URI of the resource. For example,
    * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
    * </pre>
    *
@@ -743,7 +743,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique URI of the resource. For example,
+     * Required. The unique URI of the resource. For example,
      * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
      * </pre>
      *
@@ -766,7 +766,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique URI of the resource. For example,
+     * Required. The unique URI of the resource. For example,
      * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
      * </pre>
      *
@@ -789,7 +789,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique URI of the resource. For example,
+     * Required. The unique URI of the resource. For example,
      * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
      * </pre>
      *
@@ -811,7 +811,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique URI of the resource. For example,
+     * Required. The unique URI of the resource. For example,
      * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
      * </pre>
      *
@@ -829,7 +829,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique URI of the resource. For example,
+     * Required. The unique URI of the resource. For example,
      * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
      * </pre>
      *

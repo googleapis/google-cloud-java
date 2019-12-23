@@ -23,7 +23,7 @@ package io.grafeas.v1beta1.build;
  *
  * <pre>
  * Note holding the version of the provider's builder and the signature of the
- * provenance message in linked BuildDetails.
+ * provenance message in the build details occurrence.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1beta1.build.Build}
@@ -133,7 +133,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Version of the builder which produced this Note.
+   * Required. Immutable. Version of the builder which produced this build.
    * </pre>
    *
    * <code>string builder_version = 1;</code>
@@ -155,7 +155,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Version of the builder which produced this Note.
+   * Required. Immutable. Version of the builder which produced this build.
    * </pre>
    *
    * <code>string builder_version = 1;</code>
@@ -180,8 +180,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Signature of the build in Occurrences pointing to the Note containing this
-   * `BuilderDetails`.
+   * Signature of the build in occurrences pointing to this build note
+   * containing build details.
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -195,8 +195,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Signature of the build in Occurrences pointing to the Note containing this
-   * `BuilderDetails`.
+   * Signature of the build in occurrences pointing to this build note
+   * containing build details.
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -212,8 +212,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Signature of the build in Occurrences pointing to the Note containing this
-   * `BuilderDetails`.
+   * Signature of the build in occurrences pointing to this build note
+   * containing build details.
    * </pre>
    *
    * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -398,7 +398,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Note holding the version of the provider's builder and the signature of the
-   * provenance message in linked BuildDetails.
+   * provenance message in the build details occurrence.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1beta1.build.Build}
@@ -568,7 +568,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of the builder which produced this Note.
+     * Required. Immutable. Version of the builder which produced this build.
      * </pre>
      *
      * <code>string builder_version = 1;</code>
@@ -590,7 +590,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of the builder which produced this Note.
+     * Required. Immutable. Version of the builder which produced this build.
      * </pre>
      *
      * <code>string builder_version = 1;</code>
@@ -612,7 +612,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of the builder which produced this Note.
+     * Required. Immutable. Version of the builder which produced this build.
      * </pre>
      *
      * <code>string builder_version = 1;</code>
@@ -633,7 +633,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of the builder which produced this Note.
+     * Required. Immutable. Version of the builder which produced this build.
      * </pre>
      *
      * <code>string builder_version = 1;</code>
@@ -650,7 +650,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of the builder which produced this Note.
+     * Required. Immutable. Version of the builder which produced this build.
      * </pre>
      *
      * <code>string builder_version = 1;</code>
@@ -679,8 +679,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -694,8 +694,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -715,8 +715,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -738,8 +738,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -758,8 +758,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -785,8 +785,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -806,8 +806,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -821,8 +821,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
@@ -840,8 +840,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Signature of the build in Occurrences pointing to the Note containing this
-     * `BuilderDetails`.
+     * Signature of the build in occurrences pointing to this build note
+     * containing build details.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>

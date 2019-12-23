@@ -124,7 +124,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource URI for the artifact being deployed.
+   * Required. Resource URI for the artifact being deployed.
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
@@ -138,7 +138,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource URI for the artifact being deployed.
+   * Required. Resource URI for the artifact being deployed.
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
@@ -152,7 +152,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource URI for the artifact being deployed.
+   * Required. Resource URI for the artifact being deployed.
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
@@ -167,7 +167,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource URI for the artifact being deployed.
+   * Required. Resource URI for the artifact being deployed.
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
@@ -527,7 +527,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource URI for the artifact being deployed.
+     * Required. Resource URI for the artifact being deployed.
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>
@@ -541,7 +541,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource URI for the artifact being deployed.
+     * Required. Resource URI for the artifact being deployed.
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>
@@ -555,7 +555,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource URI for the artifact being deployed.
+     * Required. Resource URI for the artifact being deployed.
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>
@@ -570,7 +570,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource URI for the artifact being deployed.
+     * Required. Resource URI for the artifact being deployed.
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>
@@ -585,7 +585,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource URI for the artifact being deployed.
+     * Required. Resource URI for the artifact being deployed.
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>
@@ -607,7 +607,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource URI for the artifact being deployed.
+     * Required. Resource URI for the artifact being deployed.
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>
@@ -628,7 +628,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource URI for the artifact being deployed.
+     * Required. Resource URI for the artifact being deployed.
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>
@@ -646,7 +646,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource URI for the artifact being deployed.
+     * Required. Resource URI for the artifact being deployed.
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>
@@ -663,7 +663,7 @@ public final class Deployable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource URI for the artifact being deployed.
+     * Required. Resource URI for the artifact being deployed.
      * </pre>
      *
      * <code>repeated string resource_uri = 1;</code>

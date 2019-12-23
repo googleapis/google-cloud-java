@@ -27,7 +27,8 @@ public interface FingerprintOrBuilder
    *
    *
    * <pre>
-   * The layer-id of the final layer in the Docker image's v1 representation.
+   * Required. The layer ID of the final layer in the Docker image's v1
+   * representation.
    * </pre>
    *
    * <code>string v1_name = 1;</code>
@@ -39,7 +40,8 @@ public interface FingerprintOrBuilder
    *
    *
    * <pre>
-   * The layer-id of the final layer in the Docker image's v1 representation.
+   * Required. The layer ID of the final layer in the Docker image's v1
+   * representation.
    * </pre>
    *
    * <code>string v1_name = 1;</code>
@@ -52,7 +54,7 @@ public interface FingerprintOrBuilder
    *
    *
    * <pre>
-   * The ordered list of v2 blobs that represent a given image.
+   * Required. The ordered list of v2 blobs that represent a given image.
    * </pre>
    *
    * <code>repeated string v2_blob = 2;</code>
@@ -64,7 +66,7 @@ public interface FingerprintOrBuilder
    *
    *
    * <pre>
-   * The ordered list of v2 blobs that represent a given image.
+   * Required. The ordered list of v2 blobs that represent a given image.
    * </pre>
    *
    * <code>repeated string v2_blob = 2;</code>
@@ -76,7 +78,7 @@ public interface FingerprintOrBuilder
    *
    *
    * <pre>
-   * The ordered list of v2 blobs that represent a given image.
+   * Required. The ordered list of v2 blobs that represent a given image.
    * </pre>
    *
    * <code>repeated string v2_blob = 2;</code>
@@ -89,7 +91,7 @@ public interface FingerprintOrBuilder
    *
    *
    * <pre>
-   * The ordered list of v2 blobs that represent a given image.
+   * Required. The ordered list of v2 blobs that represent a given image.
    * </pre>
    *
    * <code>repeated string v2_blob = 2;</code>

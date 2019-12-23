@@ -27,7 +27,7 @@ public interface FileHashesOrBuilder
    *
    *
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -37,7 +37,7 @@ public interface FileHashesOrBuilder
    *
    *
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -47,7 +47,7 @@ public interface FileHashesOrBuilder
    *
    *
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -57,7 +57,7 @@ public interface FileHashesOrBuilder
    *
    *
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
@@ -67,7 +67,7 @@ public interface FileHashesOrBuilder
    *
    *
    * <pre>
-   * Collection of file hashes.
+   * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>

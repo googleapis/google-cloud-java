@@ -134,7 +134,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the package.
+   * Required. Immutable. The name of the package.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -156,7 +156,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the package.
+   * Required. Immutable. The name of the package.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -616,7 +616,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the package.
+     * Required. Immutable. The name of the package.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -638,7 +638,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the package.
+     * Required. Immutable. The name of the package.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -660,7 +660,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the package.
+     * Required. Immutable. The name of the package.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -681,7 +681,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the package.
+     * Required. Immutable. The name of the package.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -698,7 +698,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the package.
+     * Required. Immutable. The name of the package.
      * </pre>
      *
      * <code>string name = 1;</code>

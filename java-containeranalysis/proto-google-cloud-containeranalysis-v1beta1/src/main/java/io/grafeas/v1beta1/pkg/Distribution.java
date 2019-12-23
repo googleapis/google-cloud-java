@@ -165,7 +165,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+   * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
@@ -188,7 +188,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+   * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
@@ -250,8 +250,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The latest available version of this package in this distribution
-   * channel.
+   * The latest available version of this package in this distribution channel.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -265,8 +264,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The latest available version of this package in this distribution
-   * channel.
+   * The latest available version of this package in this distribution channel.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -282,8 +280,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The latest available version of this package in this distribution
-   * channel.
+   * The latest available version of this package in this distribution channel.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -843,7 +840,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
@@ -866,7 +863,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
@@ -889,7 +886,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
@@ -911,7 +908,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
@@ -929,7 +926,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
+     * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
@@ -1052,8 +1049,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -1067,8 +1063,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -1088,8 +1083,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -1111,8 +1105,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -1131,8 +1124,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -1158,8 +1150,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -1179,8 +1170,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -1194,8 +1184,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
@@ -1213,8 +1202,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest available version of this package in this distribution
-     * channel.
+     * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>

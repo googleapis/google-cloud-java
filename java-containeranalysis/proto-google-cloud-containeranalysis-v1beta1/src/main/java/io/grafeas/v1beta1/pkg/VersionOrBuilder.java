@@ -40,7 +40,8 @@ public interface VersionOrBuilder
    *
    *
    * <pre>
-   * The main part of the version name.
+   * Required only when version kind is NORMAL. The main part of the version
+   * name.
    * </pre>
    *
    * <code>string name = 2;</code>
@@ -52,7 +53,8 @@ public interface VersionOrBuilder
    *
    *
    * <pre>
-   * The main part of the version name.
+   * Required only when version kind is NORMAL. The main part of the version
+   * name.
    * </pre>
    *
    * <code>string name = 2;</code>
@@ -90,8 +92,8 @@ public interface VersionOrBuilder
    *
    *
    * <pre>
-   * Distinguish between sentinel MIN/MAX versions and normal versions. If
-   * kind is not NORMAL, then the other fields are ignored.
+   * Required. Distinguishes between sentinel MIN/MAX versions and normal
+   * versions.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>
@@ -103,8 +105,8 @@ public interface VersionOrBuilder
    *
    *
    * <pre>
-   * Distinguish between sentinel MIN/MAX versions and normal versions. If
-   * kind is not NORMAL, then the other fields are ignored.
+   * Required. Distinguishes between sentinel MIN/MAX versions and normal
+   * versions.
    * </pre>
    *
    * <code>.grafeas.v1beta1.package.Version.VersionKind kind = 4;</code>

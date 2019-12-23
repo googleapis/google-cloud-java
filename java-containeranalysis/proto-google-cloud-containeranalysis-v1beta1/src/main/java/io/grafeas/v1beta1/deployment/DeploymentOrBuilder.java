@@ -52,7 +52,7 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * Beginning of the lifetime of this deployment.
+   * Required. Beginning of the lifetime of this deployment.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
@@ -64,7 +64,7 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * Beginning of the lifetime of this deployment.
+   * Required. Beginning of the lifetime of this deployment.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
@@ -76,7 +76,7 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * Beginning of the lifetime of this deployment.
+   * Required. Beginning of the lifetime of this deployment.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp deploy_time = 2;</code>

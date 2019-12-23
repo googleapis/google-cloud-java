@@ -27,9 +27,9 @@ public interface PgpSignedAttestationOrBuilder
    *
    *
    * <pre>
-   * The raw content of the signature, as output by GNU Privacy Guard (GPG) or
-   * equivalent.  Since this message only supports attached signatures, the
-   * payload that was signed must be attached. While the signature format
+   * Required. The raw content of the signature, as output by GNU Privacy Guard
+   * (GPG) or equivalent. Since this message only supports attached signatures,
+   * the payload that was signed must be attached. While the signature format
    * supported is dependent on the verification implementation, currently only
    * ASCII-armored (`--armor` to gpg), non-clearsigned (`--sign` rather than
    * `--clearsign` to gpg) are supported. Concretely, `gpg --sign --armor
@@ -47,9 +47,9 @@ public interface PgpSignedAttestationOrBuilder
    *
    *
    * <pre>
-   * The raw content of the signature, as output by GNU Privacy Guard (GPG) or
-   * equivalent.  Since this message only supports attached signatures, the
-   * payload that was signed must be attached. While the signature format
+   * Required. The raw content of the signature, as output by GNU Privacy Guard
+   * (GPG) or equivalent. Since this message only supports attached signatures,
+   * the payload that was signed must be attached. While the signature format
    * supported is dependent on the verification implementation, currently only
    * ASCII-armored (`--armor` to gpg), non-clearsigned (`--sign` rather than
    * `--clearsign` to gpg) are supported. Concretely, `gpg --sign --armor

@@ -27,7 +27,7 @@ public interface DetailsOrBuilder
    *
    *
    * <pre>
-   * Analysis status for the discovered resource.
+   * Required. Analysis status for the discovered resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -39,7 +39,7 @@ public interface DetailsOrBuilder
    *
    *
    * <pre>
-   * Analysis status for the discovered resource.
+   * Required. Analysis status for the discovered resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
@@ -51,7 +51,7 @@ public interface DetailsOrBuilder
    *
    *
    * <pre>
-   * Analysis status for the discovered resource.
+   * Required. Analysis status for the discovered resource.
    * </pre>
    *
    * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
