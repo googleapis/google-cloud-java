@@ -17,23 +17,34 @@
 package com.example.bigquery;
 
 import static com.google.common.truth.Truth.assertThat;
+import static junit.framework.TestCase.assertNotNull;
 
-import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.LegacySQLTypeName;
-import com.google.cloud.bigquery.Schema;
-import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class CreateTableIT {
+public class ExtractTableToJsonIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
+  private static final String GCS_BUCKET = System.getenv("GCS_BUCKET");
+
+  private static void requireEnvVar(String varName) {
+    assertNotNull(
+        "Environment variable '%s' is required to perform these tests.".format(varName),
+        System.getenv(varName));
+  }
+
+  @BeforeClass
+  public static void checkRequirements() {
+    requireEnvVar("GCS_BUCKET");
+  }
+
   @Before
-  public void setUp() {
+  public void setUp() throws Exception {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -45,20 +56,16 @@ public class CreateTableIT {
   }
 
   @Test
-  public void testCreateTable() {
-    String generatedDatasetName = RemoteBigQueryHelper.generateDatasetName();
+  public void testExtractTableToJson() {
+    String projectId = "bigquery-public-data";
+    String datasetName = "samples";
+    String tableName = "shakespeare";
+    String destinationUri = "gs://" + GCS_BUCKET + "/extractTest.csv";
+    System.out.println(destinationUri);
 
-    // Create a new dataset to create a table in
-    CreateDataset.createDataset(generatedDatasetName);
-
-    // Create an empty table with specific schema in the dataset just created
-    String tableName = "MY_TABLE_NAME";
-    Schema schema =
-        Schema.of(
-            Field.of("stringField", LegacySQLTypeName.STRING),
-            Field.of("booleanField", LegacySQLTypeName.BOOLEAN));
-    CreateTable.createTable(generatedDatasetName, tableName, schema);
-
-    assertThat(bout.toString()).contains("Table created successfully");
+    // Extract table content to GCS in CSV format
+    ExtractTableToJson.extractTableToJson(projectId, datasetName, tableName, destinationUri);
+    assertThat(bout.toString())
+        .contains("Table export successful. Check in GCS bucket for the CSV file.");
   }
 }

@@ -30,28 +30,27 @@ public class UpdateDatasetAccess {
 
   public static void runUpdateDatasetAccess() {
     // TODO(developer): Replace these variables before running the sample.
-    String datasetName = "my-dataset-name";
+    String datasetName = "MY_DATASET_NAME";
     updateDatasetAccess(datasetName);
   }
 
   public static void updateDatasetAccess(String datasetName) {
-    // Initialize client that will be used to send requests. This client only needs to be created
-    // once, and can be reused for multiple requests.
-    BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-
-    Dataset dataset = bigquery.getDataset(datasetName);
-
-    // Create a new ACL granting the READER role to "sample.bigquery.dev@gmail.com"
-    // For more information on the types of ACLs available see:
-    // https://cloud.google.com/storage/docs/access-control/lists
-    Acl newEntry = Acl.of(new User("sample.bigquery.dev@gmail.com"), Role.READER);
-
-    // Get a copy of the ACLs list from the dataset and append the new entry
-    ArrayList<Acl> acls = new ArrayList<>(dataset.getAcl());
-    acls.add(newEntry);
-
-    // Update the dataset to use the new ACLs
     try {
+      // Initialize client that will be used to send requests. This client only needs to be created
+      // once, and can be reused for multiple requests.
+      BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+
+      Dataset dataset = bigquery.getDataset(datasetName);
+
+      // Create a new ACL granting the READER role to "sample.bigquery.dev@gmail.com"
+      // For more information on the types of ACLs available see:
+      // https://cloud.google.com/storage/docs/access-control/lists
+      Acl newEntry = Acl.of(new User("sample.bigquery.dev@gmail.com"), Role.READER);
+
+      // Get a copy of the ACLs list from the dataset and append the new entry
+      ArrayList<Acl> acls = new ArrayList<>(dataset.getAcl());
+      acls.add(newEntry);
+
       bigquery.update(dataset.toBuilder().setAcl(acls).build());
       System.out.println("Dataset Access Control updated successfully");
     } catch (BigQueryException e) {

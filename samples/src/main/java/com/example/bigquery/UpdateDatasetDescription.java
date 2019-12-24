@@ -26,20 +26,18 @@ public class UpdateDatasetDescription {
 
   public static void runUpdateDatasetDescription() {
     // TODO(developer): Replace these variables before running the sample.
-    String datasetName = "my-dataset-name";
+    String datasetName = "MY_DATASET_NAME";
     String newDescription = "this is the new dataset description";
     updateDatasetDescription(datasetName, newDescription);
   }
 
   public static void updateDatasetDescription(String datasetName, String newDescription) {
-    // Initialize client that will be used to send requests. This client only needs to be created
-    // once, and can be reused for multiple requests.
-    BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-
-    Dataset dataset = bigquery.getDataset(datasetName);
-
-    // Update dataset description
     try {
+      // Initialize client that will be used to send requests. This client only needs to be created
+      // once, and can be reused for multiple requests.
+      BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+
+      Dataset dataset = bigquery.getDataset(datasetName);
       bigquery.update(dataset.toBuilder().setDescription(newDescription).build());
       System.out.println("Dataset description updated successfully to " + newDescription);
     } catch (BigQueryException e) {
