@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionDisks.setLabels. Sets the labels on the target regional
- * disk. (== suppress_warning http-rest-shadowed ==)
+ * disk.
  */
 public final class SetLabelsRegionDiskHttpRequest implements ApiMessage {
   private final String access_token;

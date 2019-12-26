@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetPools.addHealthCheck. Adds health check URLs to a target
- * pool. (== suppress_warning http-rest-shadowed ==)
+ * pool.
  */
 public final class AddHealthCheckTargetPoolHttpRequest implements ApiMessage {
   private final String access_token;

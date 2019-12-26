@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetHttpProxies.setUrlMap. Changes the URL map for
- * TargetHttpProxy. (== suppress_warning http-rest-shadowed ==)
+ * TargetHttpProxy.
  */
 public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
   private final String access_token;

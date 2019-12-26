@@ -37,8 +37,7 @@ import javax.annotation.Nullable;
  * to 60 seconds after the connection draining duration has elapsed before the VM instance is
  * removed or deleted.
  *
- * <p>You can specify a maximum of 1000 instances with this method per request. (== suppress_warning
- * http-rest-shadowed ==)
+ * <p>You can specify a maximum of 1000 instances with this method per request.
  */
 public final class AbandonInstancesInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;

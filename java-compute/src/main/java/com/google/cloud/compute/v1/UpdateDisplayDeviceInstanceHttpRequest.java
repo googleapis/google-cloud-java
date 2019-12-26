@@ -28,8 +28,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.instances.updateDisplayDevice. Updates the Display config for a
  * VM instance. You can only use this method on a stopped VM instance. This method supports PATCH
- * semantics and uses the JSON merge patch format and processing rules. (== suppress_warning
- * http-rest-shadowed ==)
+ * semantics and uses the JSON merge patch format and processing rules.
  */
 public final class UpdateDisplayDeviceInstanceHttpRequest implements ApiMessage {
   private final String access_token;

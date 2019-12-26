@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.sslCertificates.delete. Deletes the specified SslCertificate
- * resource. (== suppress_warning http-rest-shadowed ==)
+ * resource.
  */
 public final class DeleteSslCertificateHttpRequest implements ApiMessage {
   private final String access_token;

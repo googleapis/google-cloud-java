@@ -185,6 +185,7 @@ public class RegionAutoscalerClientTest {
     String id = "id3355";
     String kind = "kind3292052";
     String name = "name3373707";
+    Integer recommendedSize = 1889567899;
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String selfLink = "selfLink-1691268851";
     String status = "status-892481550";
@@ -197,6 +198,7 @@ public class RegionAutoscalerClientTest {
             .setId(id)
             .setKind(kind)
             .setName(name)
+            .setRecommendedSize(recommendedSize)
             .setRegion(region.toString())
             .setSelfLink(selfLink)
             .setStatus(status)

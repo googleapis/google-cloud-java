@@ -27,8 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.instanceGroups.addInstances. Adds a list of instances to the
  * specified instance group. All of the instances in the instance group must be in the same
- * network/subnetwork. Read Adding instances for more information. (== suppress_warning
- * http-rest-shadowed ==)
+ * network/subnetwork. Read Adding instances for more information.
  */
 public final class AddInstancesInstanceGroupHttpRequest implements ApiMessage {
   private final String access_token;

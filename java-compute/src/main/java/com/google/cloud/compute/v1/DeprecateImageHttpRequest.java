@@ -27,8 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.images.deprecate. Sets the deprecation status of an image.
  *
- * <p>If an empty request body is given, clears the deprecation status instead. (== suppress_warning
- * http-rest-shadowed ==)
+ * <p>If an empty request body is given, clears the deprecation status instead.
  */
 public final class DeprecateImageHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.nodeTemplates.delete. Deletes the specified NodeTemplate
- * resource. (== suppress_warning http-rest-shadowed ==)
+ * resource.
  */
 public final class DeleteNodeTemplateHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.disks.aggregatedList. Retrieves an aggregated list of
- * persistent disks. (== suppress_warning http-rest-shadowed ==)
+ * persistent disks.
  */
 public final class AggregatedListDisksHttpRequest implements ApiMessage {
   private final String access_token;

@@ -24,10 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/**
- * Request object for method compute.subnetworks.delete. Deletes the specified subnetwork. (==
- * suppress_warning http-rest-shadowed ==)
- */
+/** Request object for method compute.subnetworks.delete. Deletes the specified subnetwork. */
 public final class DeleteSubnetworkHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

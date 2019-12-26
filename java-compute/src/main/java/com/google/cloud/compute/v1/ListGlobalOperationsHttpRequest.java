@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.globalOperations.list. Retrieves a list of Operation resources
- * contained within the specified project. (== suppress_warning http-rest-shadowed ==)
+ * contained within the specified project.
  */
 public final class ListGlobalOperationsHttpRequest implements ApiMessage {
   private final String access_token;

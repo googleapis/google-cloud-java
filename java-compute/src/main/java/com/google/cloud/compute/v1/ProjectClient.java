@@ -153,7 +153,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Disable this project as a shared VPC host project. (== suppress_warning http-rest-shadowed ==)
+   * Disable this project as a shared VPC host project.
    *
    * <p>Sample code:
    *
@@ -179,7 +179,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Disable this project as a shared VPC host project. (== suppress_warning http-rest-shadowed ==)
+   * Disable this project as a shared VPC host project.
    *
    * <p>Sample code:
    *
@@ -203,7 +203,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Disable this project as a shared VPC host project. (== suppress_warning http-rest-shadowed ==)
+   * Disable this project as a shared VPC host project.
    *
    * <p>Sample code:
    *
@@ -227,7 +227,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Disable this project as a shared VPC host project. (== suppress_warning http-rest-shadowed ==)
+   * Disable this project as a shared VPC host project.
    *
    * <p>Sample code:
    *
@@ -252,7 +252,6 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Disable a service resource (also known as service project) associated with this host project.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -284,7 +283,6 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Disable a service resource (also known as service project) associated with this host project.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -315,7 +313,6 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Disable a service resource (also known as service project) associated with this host project.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -342,7 +339,6 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Disable a service resource (also known as service project) associated with this host project.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -368,7 +364,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Enable this project as a shared VPC host project. (== suppress_warning http-rest-shadowed ==)
+   * Enable this project as a shared VPC host project.
    *
    * <p>Sample code:
    *
@@ -394,7 +390,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Enable this project as a shared VPC host project. (== suppress_warning http-rest-shadowed ==)
+   * Enable this project as a shared VPC host project.
    *
    * <p>Sample code:
    *
@@ -418,7 +414,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Enable this project as a shared VPC host project. (== suppress_warning http-rest-shadowed ==)
+   * Enable this project as a shared VPC host project.
    *
    * <p>Sample code:
    *
@@ -442,7 +438,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Enable this project as a shared VPC host project. (== suppress_warning http-rest-shadowed ==)
+   * Enable this project as a shared VPC host project.
    *
    * <p>Sample code:
    *
@@ -467,8 +463,7 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Enable service resource (a.k.a service project) for a host project, so that subnets in the host
-   * project can be used by instances in the service project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * project can be used by instances in the service project.
    *
    * <p>Sample code:
    *
@@ -500,8 +495,7 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Enable service resource (a.k.a service project) for a host project, so that subnets in the host
-   * project can be used by instances in the service project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * project can be used by instances in the service project.
    *
    * <p>Sample code:
    *
@@ -532,8 +526,7 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Enable service resource (a.k.a service project) for a host project, so that subnets in the host
-   * project can be used by instances in the service project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * project can be used by instances in the service project.
    *
    * <p>Sample code:
    *
@@ -560,8 +553,7 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Enable service resource (a.k.a service project) for a host project, so that subnets in the host
-   * project can be used by instances in the service project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * project can be used by instances in the service project.
    *
    * <p>Sample code:
    *
@@ -587,7 +579,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Project resource. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified Project resource.
    *
    * <p>Sample code:
    *
@@ -613,7 +605,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Project resource. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified Project resource.
    *
    * <p>Sample code:
    *
@@ -636,7 +628,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Project resource. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified Project resource.
    *
    * <p>Sample code:
    *
@@ -660,7 +652,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Project resource. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified Project resource.
    *
    * <p>Sample code:
    *
@@ -684,7 +676,6 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the shared VPC host project that this project links to. May be empty if no link exists.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -711,7 +702,6 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the shared VPC host project that this project links to. May be empty if no link exists.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -736,7 +726,6 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the shared VPC host project that this project links to. May be empty if no link exists.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -761,7 +750,6 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the shared VPC host project that this project links to. May be empty if no link exists.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -784,8 +772,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets service resources (a.k.a service project) associated with this host project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Gets service resources (a.k.a service project) associated with this host project.
    *
    * <p>Sample code:
    *
@@ -812,8 +799,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets service resources (a.k.a service project) associated with this host project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Gets service resources (a.k.a service project) associated with this host project.
    *
    * <p>Sample code:
    *
@@ -838,8 +824,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets service resources (a.k.a service project) associated with this host project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Gets service resources (a.k.a service project) associated with this host project.
    *
    * <p>Sample code:
    *
@@ -866,8 +851,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets service resources (a.k.a service project) associated with this host project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Gets service resources (a.k.a service project) associated with this host project.
    *
    * <p>Sample code:
    *
@@ -894,8 +878,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets service resources (a.k.a service project) associated with this host project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Gets service resources (a.k.a service project) associated with this host project.
    *
    * <p>Sample code:
    *
@@ -928,8 +911,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all shared VPC host projects visible to the user in an organization. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Lists all shared VPC host projects visible to the user in an organization.
    *
    * <p>Sample code:
    *
@@ -960,8 +942,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all shared VPC host projects visible to the user in an organization. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Lists all shared VPC host projects visible to the user in an organization.
    *
    * <p>Sample code:
    *
@@ -992,8 +973,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all shared VPC host projects visible to the user in an organization. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Lists all shared VPC host projects visible to the user in an organization.
    *
    * <p>Sample code:
    *
@@ -1022,8 +1002,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all shared VPC host projects visible to the user in an organization. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Lists all shared VPC host projects visible to the user in an organization.
    *
    * <p>Sample code:
    *
@@ -1051,8 +1030,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all shared VPC host projects visible to the user in an organization. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Lists all shared VPC host projects visible to the user in an organization.
    *
    * <p>Sample code:
    *
@@ -1087,7 +1065,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Moves a persistent disk from one zone to another. (== suppress_warning http-rest-shadowed ==)
+   * Moves a persistent disk from one zone to another.
    *
    * <p>Sample code:
    *
@@ -1117,7 +1095,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Moves a persistent disk from one zone to another. (== suppress_warning http-rest-shadowed ==)
+   * Moves a persistent disk from one zone to another.
    *
    * <p>Sample code:
    *
@@ -1146,7 +1124,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Moves a persistent disk from one zone to another. (== suppress_warning http-rest-shadowed ==)
+   * Moves a persistent disk from one zone to another.
    *
    * <p>Sample code:
    *
@@ -1172,7 +1150,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Moves a persistent disk from one zone to another. (== suppress_warning http-rest-shadowed ==)
+   * Moves a persistent disk from one zone to another.
    *
    * <p>Sample code:
    *
@@ -1197,8 +1175,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Moves an instance and its attached persistent disks from one zone to another. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Moves an instance and its attached persistent disks from one zone to another.
    *
    * <p>Sample code:
    *
@@ -1228,8 +1205,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Moves an instance and its attached persistent disks from one zone to another. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Moves an instance and its attached persistent disks from one zone to another.
    *
    * <p>Sample code:
    *
@@ -1259,8 +1235,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Moves an instance and its attached persistent disks from one zone to another. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Moves an instance and its attached persistent disks from one zone to another.
    *
    * <p>Sample code:
    *
@@ -1286,8 +1261,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Moves an instance and its attached persistent disks from one zone to another. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Moves an instance and its attached persistent disks from one zone to another.
    *
    * <p>Sample code:
    *
@@ -1314,7 +1288,7 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets metadata common to all instances within the specified project using the data included in
-   * the request. (== suppress_warning http-rest-shadowed ==)
+   * the request.
    *
    * <p>Sample code:
    *
@@ -1345,7 +1319,7 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets metadata common to all instances within the specified project using the data included in
-   * the request. (== suppress_warning http-rest-shadowed ==)
+   * the request.
    *
    * <p>Sample code:
    *
@@ -1376,7 +1350,7 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets metadata common to all instances within the specified project using the data included in
-   * the request. (== suppress_warning http-rest-shadowed ==)
+   * the request.
    *
    * <p>Sample code:
    *
@@ -1404,7 +1378,7 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets metadata common to all instances within the specified project using the data included in
-   * the request. (== suppress_warning http-rest-shadowed ==)
+   * the request.
    *
    * <p>Sample code:
    *
@@ -1431,8 +1405,7 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the default network tier of the project. The default network tier is used when an
-   * address/forwardingRule/instance is created without specifying the network tier field. (==
-   * suppress_warning http-rest-shadowed ==)
+   * address/forwardingRule/instance is created without specifying the network tier field.
    *
    * <p>Sample code:
    *
@@ -1465,8 +1438,7 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the default network tier of the project. The default network tier is used when an
-   * address/forwardingRule/instance is created without specifying the network tier field. (==
-   * suppress_warning http-rest-shadowed ==)
+   * address/forwardingRule/instance is created without specifying the network tier field.
    *
    * <p>Sample code:
    *
@@ -1499,8 +1471,7 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the default network tier of the project. The default network tier is used when an
-   * address/forwardingRule/instance is created without specifying the network tier field. (==
-   * suppress_warning http-rest-shadowed ==)
+   * address/forwardingRule/instance is created without specifying the network tier field.
    *
    * <p>Sample code:
    *
@@ -1528,8 +1499,7 @@ public class ProjectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the default network tier of the project. The default network tier is used when an
-   * address/forwardingRule/instance is created without specifying the network tier field. (==
-   * suppress_warning http-rest-shadowed ==)
+   * address/forwardingRule/instance is created without specifying the network tier field.
    *
    * <p>Sample code:
    *
@@ -1557,7 +1527,6 @@ public class ProjectClient implements BackgroundResource {
   /**
    * Enables the usage export feature and sets the usage export bucket where reports are stored. If
    * you provide an empty request body using this method, the usage export feature will be disabled.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1590,7 +1559,6 @@ public class ProjectClient implements BackgroundResource {
   /**
    * Enables the usage export feature and sets the usage export bucket where reports are stored. If
    * you provide an empty request body using this method, the usage export feature will be disabled.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1623,7 +1591,6 @@ public class ProjectClient implements BackgroundResource {
   /**
    * Enables the usage export feature and sets the usage export bucket where reports are stored. If
    * you provide an empty request body using this method, the usage export feature will be disabled.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1652,7 +1619,6 @@ public class ProjectClient implements BackgroundResource {
   /**
    * Enables the usage export feature and sets the usage export bucket where reports are stored. If
    * you provide an empty request body using this method, the usage export feature will be disabled.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

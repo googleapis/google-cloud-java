@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
  * Request object for method compute.regionBackendServices.insert. Creates a regional BackendService
  * resource in the specified project using the data included in the request. There are several
  * restrictions and guidelines to keep in mind when creating a regional backend service. Read
- * Restrictions and Guidelines for more information. (== suppress_warning http-rest-shadowed ==)
+ * Restrictions and Guidelines for more information.
  */
 public final class InsertRegionBackendServiceHttpRequest implements ApiMessage {
   private final String access_token;

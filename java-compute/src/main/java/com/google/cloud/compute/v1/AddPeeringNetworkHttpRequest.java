@@ -26,7 +26,6 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.networks.addPeering. Adds a peering to the specified network.
- * (== suppress_warning http-rest-shadowed ==)
  */
 public final class AddPeeringNetworkHttpRequest implements ApiMessage {
   private final String access_token;

@@ -171,8 +171,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
    * removed or deleted.
    *
-   * <p>You can specify a maximum of 1000 instances with this method per request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -218,8 +217,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
    * removed or deleted.
    *
-   * <p>You can specify a maximum of 1000 instances with this method per request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -264,8 +262,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
    * removed or deleted.
    *
-   * <p>You can specify a maximum of 1000 instances with this method per request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -304,8 +301,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
    * removed or deleted.
    *
-   * <p>You can specify a maximum of 1000 instances with this method per request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -331,8 +327,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified managed instance group and all of the instances in that group. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Deletes the specified managed instance group and all of the instances in that group.
    *
    * <p>Sample code:
    *
@@ -360,8 +355,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified managed instance group and all of the instances in that group. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Deletes the specified managed instance group and all of the instances in that group.
    *
    * <p>Sample code:
    *
@@ -387,8 +381,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified managed instance group and all of the instances in that group. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Deletes the specified managed instance group and all of the instances in that group.
    *
    * <p>Sample code:
    *
@@ -413,8 +406,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified managed instance group and all of the instances in that group. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Deletes the specified managed instance group and all of the instances in that group.
    *
    * <p>Sample code:
    *
@@ -449,8 +441,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
    * removed or deleted.
    *
-   * <p>You can specify a maximum of 1000 instances with this method per request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -495,8 +486,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
    * removed or deleted.
    *
-   * <p>You can specify a maximum of 1000 instances with this method per request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -540,8 +530,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
    * removed or deleted.
    *
-   * <p>You can specify a maximum of 1000 instances with this method per request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -579,8 +568,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
    * removed or deleted.
    *
-   * <p>You can specify a maximum of 1000 instances with this method per request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -606,8 +594,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns all of the details about the specified managed instance group. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns all of the details about the specified managed instance group.
    *
    * <p>Sample code:
    *
@@ -635,8 +622,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns all of the details about the specified managed instance group. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns all of the details about the specified managed instance group.
    *
    * <p>Sample code:
    *
@@ -662,8 +648,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns all of the details about the specified managed instance group. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns all of the details about the specified managed instance group.
    *
    * <p>Sample code:
    *
@@ -688,8 +673,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns all of the details about the specified managed instance group. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns all of the details about the specified managed instance group.
    *
    * <p>Sample code:
    *
@@ -719,8 +703,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * have not yet been created. You must separately verify the status of the individual instances
    * with the listmanagedinstances method.
    *
-   * <p>A regional managed instance group can contain up to 2000 instances. (== suppress_warning
-   * http-rest-shadowed ==)
+   * <p>A regional managed instance group can contain up to 2000 instances.
    *
    * <p>Sample code:
    *
@@ -763,8 +746,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * have not yet been created. You must separately verify the status of the individual instances
    * with the listmanagedinstances method.
    *
-   * <p>A regional managed instance group can contain up to 2000 instances. (== suppress_warning
-   * http-rest-shadowed ==)
+   * <p>A regional managed instance group can contain up to 2000 instances.
    *
    * <p>Sample code:
    *
@@ -807,8 +789,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * have not yet been created. You must separately verify the status of the individual instances
    * with the listmanagedinstances method.
    *
-   * <p>A regional managed instance group can contain up to 2000 instances. (== suppress_warning
-   * http-rest-shadowed ==)
+   * <p>A regional managed instance group can contain up to 2000 instances.
    *
    * <p>Sample code:
    *
@@ -841,8 +822,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * have not yet been created. You must separately verify the status of the individual instances
    * with the listmanagedinstances method.
    *
-   * <p>A regional managed instance group can contain up to 2000 instances. (== suppress_warning
-   * http-rest-shadowed ==)
+   * <p>A regional managed instance group can contain up to 2000 instances.
    *
    * <p>Sample code:
    *
@@ -869,7 +849,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of managed instance groups that are contained within the specified region.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -898,7 +877,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of managed instance groups that are contained within the specified region.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -925,7 +903,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of managed instance groups that are contained within the specified region.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -953,7 +930,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of managed instance groups that are contained within the specified region.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -981,7 +957,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of managed instance groups that are contained within the specified region.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1017,7 +992,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Lists the instances in the managed instance group and instances that are scheduled to be
    * created. The list includes any current actions that the group has scheduled for its instances.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1048,7 +1022,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Lists the instances in the managed instance group and instances that are scheduled to be
    * created. The list includes any current actions that the group has scheduled for its instances.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1077,7 +1050,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Lists the instances in the managed instance group and instances that are scheduled to be
    * created. The list includes any current actions that the group has scheduled for its instances.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1105,7 +1077,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Lists the instances in the managed instance group and instances that are scheduled to be
    * created. The list includes any current actions that the group has scheduled for its instances.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1135,7 +1106,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * operation is marked as DONE when the group is patched even if the instances in the group are
    * still in the process of being patched. You must separately verify the status of the individual
    * instances with the listmanagedinstances method. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
+   * the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1185,7 +1156,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * operation is marked as DONE when the group is patched even if the instances in the group are
    * still in the process of being patched. You must separately verify the status of the individual
    * instances with the listmanagedinstances method. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
+   * the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1234,7 +1205,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * operation is marked as DONE when the group is patched even if the instances in the group are
    * still in the process of being patched. You must separately verify the status of the individual
    * instances with the listmanagedinstances method. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
+   * the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1267,7 +1238,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * operation is marked as DONE when the group is patched even if the instances in the group are
    * still in the process of being patched. You must separately verify the status of the individual
    * instances with the listmanagedinstances method. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
+   * the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1305,8 +1276,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
    * removed or deleted.
    *
-   * <p>You can specify a maximum of 1000 instances with this method per request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -1350,8 +1320,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
    * removed or deleted.
    *
-   * <p>You can specify a maximum of 1000 instances with this method per request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -1394,8 +1363,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
    * removed or deleted.
    *
-   * <p>You can specify a maximum of 1000 instances with this method per request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -1432,8 +1400,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
    * removed or deleted.
    *
-   * <p>You can specify a maximum of 1000 instances with this method per request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * <p>You can specify a maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -1469,7 +1436,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
-   * removed or deleted. (== suppress_warning http-rest-shadowed ==)
+   * removed or deleted.
    *
    * <p>Sample code:
    *
@@ -1510,7 +1477,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
-   * removed or deleted. (== suppress_warning http-rest-shadowed ==)
+   * removed or deleted.
    *
    * <p>Sample code:
    *
@@ -1550,7 +1517,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
-   * removed or deleted. (== suppress_warning http-rest-shadowed ==)
+   * removed or deleted.
    *
    * <p>Sample code:
    *
@@ -1587,7 +1554,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
-   * removed or deleted. (== suppress_warning http-rest-shadowed ==)
+   * removed or deleted.
    *
    * <p>Sample code:
    *
@@ -1614,7 +1581,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the instance template to use when creating new instances or recreating instances in this
-   * group. Existing instances are not affected. (== suppress_warning http-rest-shadowed ==)
+   * group. Existing instances are not affected.
    *
    * <p>Sample code:
    *
@@ -1649,7 +1616,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the instance template to use when creating new instances or recreating instances in this
-   * group. Existing instances are not affected. (== suppress_warning http-rest-shadowed ==)
+   * group. Existing instances are not affected.
    *
    * <p>Sample code:
    *
@@ -1683,7 +1650,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the instance template to use when creating new instances or recreating instances in this
-   * group. Existing instances are not affected. (== suppress_warning http-rest-shadowed ==)
+   * group. Existing instances are not affected.
    *
    * <p>Sample code:
    *
@@ -1711,7 +1678,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the instance template to use when creating new instances or recreating instances in this
-   * group. Existing instances are not affected. (== suppress_warning http-rest-shadowed ==)
+   * group. Existing instances are not affected.
    *
    * <p>Sample code:
    *
@@ -1738,7 +1705,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Modifies the target pools to which all new instances in this group are assigned. Existing
-   * instances in the group are not affected. (== suppress_warning http-rest-shadowed ==)
+   * instances in the group are not affected.
    *
    * <p>Sample code:
    *
@@ -1773,7 +1740,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Modifies the target pools to which all new instances in this group are assigned. Existing
-   * instances in the group are not affected. (== suppress_warning http-rest-shadowed ==)
+   * instances in the group are not affected.
    *
    * <p>Sample code:
    *
@@ -1807,7 +1774,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Modifies the target pools to which all new instances in this group are assigned. Existing
-   * instances in the group are not affected. (== suppress_warning http-rest-shadowed ==)
+   * instances in the group are not affected.
    *
    * <p>Sample code:
    *
@@ -1835,7 +1802,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Modifies the target pools to which all new instances in this group are assigned. Existing
-   * instances in the group are not affected. (== suppress_warning http-rest-shadowed ==)
+   * instances in the group are not affected.
    *
    * <p>Sample code:
    *

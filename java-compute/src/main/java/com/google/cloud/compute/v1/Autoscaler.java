@@ -45,6 +45,7 @@ public final class Autoscaler implements ApiMessage {
   private final String id;
   private final String kind;
   private final String name;
+  private final Integer recommendedSize;
   private final String region;
   private final String selfLink;
   private final String status;
@@ -59,6 +60,7 @@ public final class Autoscaler implements ApiMessage {
     this.id = null;
     this.kind = null;
     this.name = null;
+    this.recommendedSize = null;
     this.region = null;
     this.selfLink = null;
     this.status = null;
@@ -74,6 +76,7 @@ public final class Autoscaler implements ApiMessage {
       String id,
       String kind,
       String name,
+      Integer recommendedSize,
       String region,
       String selfLink,
       String status,
@@ -86,6 +89,7 @@ public final class Autoscaler implements ApiMessage {
     this.id = id;
     this.kind = kind;
     this.name = name;
+    this.recommendedSize = recommendedSize;
     this.region = region;
     this.selfLink = selfLink;
     this.status = status;
@@ -113,6 +117,9 @@ public final class Autoscaler implements ApiMessage {
     }
     if ("name".equals(fieldName)) {
       return name;
+    }
+    if ("recommendedSize".equals(fieldName)) {
+      return recommendedSize;
     }
     if ("region".equals(fieldName)) {
       return region;
@@ -201,6 +208,16 @@ public final class Autoscaler implements ApiMessage {
   }
 
   /**
+   * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler.
+   * Autoscaler calculates recommended MIG size even when autoscaling policy mode is different from
+   * ON. This field is empty when autoscaler is not connected to the existing managed instance group
+   * or autoscaler did not generate its prediction.
+   */
+  public Integer getRecommendedSize() {
+    return recommendedSize;
+  }
+
+  /**
    * [Output Only] URL of the region where the instance group resides (for autoscalers living in
    * regional scope).
    */
@@ -275,6 +292,7 @@ public final class Autoscaler implements ApiMessage {
     private String id;
     private String kind;
     private String name;
+    private Integer recommendedSize;
     private String region;
     private String selfLink;
     private String status;
@@ -304,6 +322,9 @@ public final class Autoscaler implements ApiMessage {
       if (other.getName() != null) {
         this.name = other.name;
       }
+      if (other.getRecommendedSize() != null) {
+        this.recommendedSize = other.recommendedSize;
+      }
       if (other.getRegion() != null) {
         this.region = other.region;
       }
@@ -332,6 +353,7 @@ public final class Autoscaler implements ApiMessage {
       this.id = source.id;
       this.kind = source.kind;
       this.name = source.name;
+      this.recommendedSize = source.recommendedSize;
       this.region = source.region;
       this.selfLink = source.selfLink;
       this.status = source.status;
@@ -439,6 +461,27 @@ public final class Autoscaler implements ApiMessage {
      */
     public Builder setName(String name) {
       this.name = name;
+      return this;
+    }
+
+    /**
+     * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler.
+     * Autoscaler calculates recommended MIG size even when autoscaling policy mode is different
+     * from ON. This field is empty when autoscaler is not connected to the existing managed
+     * instance group or autoscaler did not generate its prediction.
+     */
+    public Integer getRecommendedSize() {
+      return recommendedSize;
+    }
+
+    /**
+     * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler.
+     * Autoscaler calculates recommended MIG size even when autoscaling policy mode is different
+     * from ON. This field is empty when autoscaler is not connected to the existing managed
+     * instance group or autoscaler did not generate its prediction.
+     */
+    public Builder setRecommendedSize(Integer recommendedSize) {
+      this.recommendedSize = recommendedSize;
       return this;
     }
 
@@ -567,6 +610,7 @@ public final class Autoscaler implements ApiMessage {
           id,
           kind,
           name,
+          recommendedSize,
           region,
           selfLink,
           status,
@@ -583,6 +627,7 @@ public final class Autoscaler implements ApiMessage {
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
       newBuilder.setName(this.name);
+      newBuilder.setRecommendedSize(this.recommendedSize);
       newBuilder.setRegion(this.region);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.setStatus(this.status);
@@ -613,6 +658,9 @@ public final class Autoscaler implements ApiMessage {
         + ", "
         + "name="
         + name
+        + ", "
+        + "recommendedSize="
+        + recommendedSize
         + ", "
         + "region="
         + region
@@ -647,6 +695,7 @@ public final class Autoscaler implements ApiMessage {
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.recommendedSize, that.getRecommendedSize())
           && Objects.equals(this.region, that.getRegion())
           && Objects.equals(this.selfLink, that.getSelfLink())
           && Objects.equals(this.status, that.getStatus())
@@ -666,6 +715,7 @@ public final class Autoscaler implements ApiMessage {
         id,
         kind,
         name,
+        recommendedSize,
         region,
         selfLink,
         status,

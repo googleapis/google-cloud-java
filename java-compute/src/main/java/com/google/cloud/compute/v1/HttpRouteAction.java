@@ -152,7 +152,7 @@ public final class HttpRouteAction implements ApiMessage {
 
   /**
    * The spec to modify the URL of the request, prior to forwarding the request to the matched
-   * service
+   * service.
    */
   public UrlRewrite getUrlRewrite() {
     return urlRewrite;
@@ -336,7 +336,7 @@ public final class HttpRouteAction implements ApiMessage {
 
     /**
      * The spec to modify the URL of the request, prior to forwarding the request to the matched
-     * service
+     * service.
      */
     public UrlRewrite getUrlRewrite() {
       return urlRewrite;
@@ -344,7 +344,7 @@ public final class HttpRouteAction implements ApiMessage {
 
     /**
      * The spec to modify the URL of the request, prior to forwarding the request to the matched
-     * service
+     * service.
      */
     public Builder setUrlRewrite(UrlRewrite urlRewrite) {
       this.urlRewrite = urlRewrite;

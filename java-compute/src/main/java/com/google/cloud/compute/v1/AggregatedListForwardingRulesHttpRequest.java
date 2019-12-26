@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.forwardingRules.aggregatedList. Retrieves an aggregated list of
- * forwarding rules. (== suppress_warning http-rest-shadowed ==)
+ * forwarding rules.
  */
 public final class AggregatedListForwardingRulesHttpRequest implements ApiMessage {
   private final String access_token;

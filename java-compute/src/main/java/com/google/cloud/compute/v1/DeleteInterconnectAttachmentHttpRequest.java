@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.interconnectAttachments.delete. Deletes the specified
- * interconnect attachment. (== suppress_warning http-rest-shadowed ==)
+ * interconnect attachment.
  */
 public final class DeleteInterconnectAttachmentHttpRequest implements ApiMessage {
   private final String access_token;

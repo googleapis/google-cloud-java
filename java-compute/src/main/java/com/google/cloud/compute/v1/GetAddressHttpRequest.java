@@ -24,10 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/**
- * Request object for method compute.addresses.get. Returns the specified address resource. (==
- * suppress_warning http-rest-shadowed ==)
- */
+/** Request object for method compute.addresses.get. Returns the specified address resource. */
 public final class GetAddressHttpRequest implements ApiMessage {
   private final String access_token;
   private final String address;

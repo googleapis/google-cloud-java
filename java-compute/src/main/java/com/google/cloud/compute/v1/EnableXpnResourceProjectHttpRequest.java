@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.projects.enableXpnResource. Enable service resource (a.k.a
  * service project) for a host project, so that subnets in the host project can be used by instances
- * in the service project. (== suppress_warning http-rest-shadowed ==)
+ * in the service project.
  */
 public final class EnableXpnResourceProjectHttpRequest implements ApiMessage {
   private final String access_token;

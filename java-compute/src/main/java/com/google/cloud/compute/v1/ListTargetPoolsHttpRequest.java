@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetPools.list. Retrieves a list of target pools available to
- * the specified project and region. (== suppress_warning http-rest-shadowed ==)
+ * the specified project and region.
  */
 public final class ListTargetPoolsHttpRequest implements ApiMessage {
   private final String access_token;

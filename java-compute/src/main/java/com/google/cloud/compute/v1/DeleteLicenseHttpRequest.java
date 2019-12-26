@@ -24,10 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/**
- * Request object for method compute.licenses.delete. Deletes the specified license. (==
- * suppress_warning http-rest-shadowed ==)
- */
+/** Request object for method compute.licenses.delete. Deletes the specified license. */
 public final class DeleteLicenseHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

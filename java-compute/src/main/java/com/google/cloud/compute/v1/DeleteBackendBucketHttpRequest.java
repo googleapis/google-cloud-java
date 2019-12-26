@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.backendBuckets.delete. Deletes the specified BackendBucket
- * resource. (== suppress_warning http-rest-shadowed ==)
+ * resource.
  */
 public final class DeleteBackendBucketHttpRequest implements ApiMessage {
   private final String access_token;

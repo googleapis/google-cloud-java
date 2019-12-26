@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.networks.switchToCustomMode. Switches the network mode from
- * auto subnet mode to custom subnet mode. (== suppress_warning http-rest-shadowed ==)
+ * auto subnet mode to custom subnet mode.
  */
 public final class SwitchToCustomModeNetworkHttpRequest implements ApiMessage {
   private final String access_token;

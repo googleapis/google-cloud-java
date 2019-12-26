@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetSslProxies.setSslCertificates. Changes SslCertificates
- * for TargetSslProxy. (== suppress_warning http-rest-shadowed ==)
+ * for TargetSslProxy.
  */
 public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMessage {
   private final String access_token;

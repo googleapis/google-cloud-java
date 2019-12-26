@@ -24,10 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/**
- * Request object for method compute.projects.get. Returns the specified Project resource. (==
- * suppress_warning http-rest-shadowed ==)
- */
+/** Request object for method compute.projects.get. Returns the specified Project resource. */
 public final class GetProjectHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

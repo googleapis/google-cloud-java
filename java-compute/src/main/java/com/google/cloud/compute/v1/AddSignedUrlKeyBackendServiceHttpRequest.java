@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.backendServices.addSignedUrlKey. Adds a key for validating
- * requests with signed URLs for this backend service. (== suppress_warning http-rest-shadowed ==)
+ * requests with signed URLs for this backend service.
  */
 public final class AddSignedUrlKeyBackendServiceHttpRequest implements ApiMessage {
   private final String access_token;

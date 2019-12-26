@@ -154,8 +154,7 @@ public class SslPolicyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified SSL policy. The SSL policy resource can be deleted only if it is not in
-   * use by any TargetHttpsProxy or TargetSslProxy resources. (== suppress_warning
-   * http-rest-shadowed ==)
+   * use by any TargetHttpsProxy or TargetSslProxy resources.
    *
    * <p>Sample code:
    *
@@ -183,8 +182,7 @@ public class SslPolicyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified SSL policy. The SSL policy resource can be deleted only if it is not in
-   * use by any TargetHttpsProxy or TargetSslProxy resources. (== suppress_warning
-   * http-rest-shadowed ==)
+   * use by any TargetHttpsProxy or TargetSslProxy resources.
    *
    * <p>Sample code:
    *
@@ -210,8 +208,7 @@ public class SslPolicyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified SSL policy. The SSL policy resource can be deleted only if it is not in
-   * use by any TargetHttpsProxy or TargetSslProxy resources. (== suppress_warning
-   * http-rest-shadowed ==)
+   * use by any TargetHttpsProxy or TargetSslProxy resources.
    *
    * <p>Sample code:
    *
@@ -236,8 +233,7 @@ public class SslPolicyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified SSL policy. The SSL policy resource can be deleted only if it is not in
-   * use by any TargetHttpsProxy or TargetSslProxy resources. (== suppress_warning
-   * http-rest-shadowed ==)
+   * use by any TargetHttpsProxy or TargetSslProxy resources.
    *
    * <p>Sample code:
    *
@@ -260,8 +256,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all of the ordered rules present in a single specified policy. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Lists all of the ordered rules present in a single specified policy.
    *
    * <p>Sample code:
    *
@@ -288,8 +283,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all of the ordered rules present in a single specified policy. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Lists all of the ordered rules present in a single specified policy.
    *
    * <p>Sample code:
    *
@@ -314,8 +308,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all of the ordered rules present in a single specified policy. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Lists all of the ordered rules present in a single specified policy.
    *
    * <p>Sample code:
    *
@@ -339,8 +332,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all of the ordered rules present in a single specified policy. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Lists all of the ordered rules present in a single specified policy.
    *
    * <p>Sample code:
    *
@@ -364,7 +356,7 @@ public class SslPolicyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified SSL policy resource. Gets a list of available SSL policies by making a
-   * list() request. (== suppress_warning http-rest-shadowed ==)
+   * list() request.
    *
    * <p>Sample code:
    *
@@ -397,7 +389,7 @@ public class SslPolicyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified SSL policy resource. Gets a list of available SSL policies by making a
-   * list() request. (== suppress_warning http-rest-shadowed ==)
+   * list() request.
    *
    * <p>Sample code:
    *
@@ -430,7 +422,7 @@ public class SslPolicyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified SSL policy resource. Gets a list of available SSL policies by making a
-   * list() request. (== suppress_warning http-rest-shadowed ==)
+   * list() request.
    *
    * <p>Sample code:
    *
@@ -457,7 +449,7 @@ public class SslPolicyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified SSL policy resource. Gets a list of available SSL policies by making a
-   * list() request. (== suppress_warning http-rest-shadowed ==)
+   * list() request.
    *
    * <p>Sample code:
    *
@@ -482,8 +474,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all the SSL policies that have been configured for the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Lists all the SSL policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *
@@ -510,8 +501,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all the SSL policies that have been configured for the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Lists all the SSL policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *
@@ -536,8 +526,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all the SSL policies that have been configured for the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Lists all the SSL policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *
@@ -563,8 +552,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all the SSL policies that have been configured for the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Lists all the SSL policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *
@@ -590,8 +578,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all the SSL policies that have been configured for the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Lists all the SSL policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *
@@ -624,8 +611,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all features that can be specified in the SSL policy when using custom profile. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Lists all features that can be specified in the SSL policy when using custom profile.
    *
    * <p>Sample code:
    *
@@ -652,8 +638,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all features that can be specified in the SSL policy when using custom profile. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Lists all features that can be specified in the SSL policy when using custom profile.
    *
    * <p>Sample code:
    *
@@ -678,8 +663,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all features that can be specified in the SSL policy when using custom profile. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Lists all features that can be specified in the SSL policy when using custom profile.
    *
    * <p>Sample code:
    *
@@ -704,8 +688,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all features that can be specified in the SSL policy when using custom profile. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Lists all features that can be specified in the SSL policy when using custom profile.
    *
    * <p>Sample code:
    *
@@ -730,8 +713,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified SSL policy with the data included in the request. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Patches the specified SSL policy with the data included in the request.
    *
    * <p>Sample code:
    *
@@ -771,8 +753,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified SSL policy with the data included in the request. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Patches the specified SSL policy with the data included in the request.
    *
    * <p>Sample code:
    *
@@ -812,8 +793,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified SSL policy with the data included in the request. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Patches the specified SSL policy with the data included in the request.
    *
    * <p>Sample code:
    *
@@ -841,8 +821,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified SSL policy with the data included in the request. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Patches the specified SSL policy with the data included in the request.
    *
    * <p>Sample code:
    *

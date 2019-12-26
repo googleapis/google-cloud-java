@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionUrlMaps.get. Returns the specified UrlMap resource. Gets
- * a list of available URL maps by making a list() request. (== suppress_warning http-rest-shadowed
- * ==)
+ * a list of available URL maps by making a list() request.
  */
 public final class GetRegionUrlMapHttpRequest implements ApiMessage {
   private final String access_token;

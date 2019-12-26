@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instances.deleteAccessConfig. Deletes an access config from an
- * instance's network interface. (== suppress_warning http-rest-shadowed ==)
+ * instance's network interface.
  */
 public final class DeleteAccessConfigInstanceHttpRequest implements ApiMessage {
   private final String accessConfig;

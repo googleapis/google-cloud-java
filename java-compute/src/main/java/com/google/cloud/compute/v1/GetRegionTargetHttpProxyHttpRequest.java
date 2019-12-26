@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.regionTargetHttpProxies.get. Returns the specified
  * TargetHttpProxy resource in the specified region. Gets a list of available target HTTP proxies by
- * making a list() request. (== suppress_warning http-rest-shadowed ==)
+ * making a list() request.
  */
 public final class GetRegionTargetHttpProxyHttpRequest implements ApiMessage {
   private final String access_token;

@@ -153,7 +153,7 @@ public class VpnTunnelClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of VPN tunnels. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of VPN tunnels.
    *
    * <p>Sample code:
    *
@@ -180,7 +180,7 @@ public class VpnTunnelClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of VPN tunnels. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of VPN tunnels.
    *
    * <p>Sample code:
    *
@@ -205,7 +205,7 @@ public class VpnTunnelClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of VPN tunnels. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of VPN tunnels.
    *
    * <p>Sample code:
    *
@@ -232,7 +232,7 @@ public class VpnTunnelClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of VPN tunnels. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of VPN tunnels.
    *
    * <p>Sample code:
    *
@@ -259,7 +259,7 @@ public class VpnTunnelClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of VPN tunnels. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of VPN tunnels.
    *
    * <p>Sample code:
    *
@@ -292,7 +292,7 @@ public class VpnTunnelClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified VpnTunnel resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified VpnTunnel resource.
    *
    * <p>Sample code:
    *
@@ -318,7 +318,7 @@ public class VpnTunnelClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified VpnTunnel resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified VpnTunnel resource.
    *
    * <p>Sample code:
    *
@@ -342,7 +342,7 @@ public class VpnTunnelClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified VpnTunnel resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified VpnTunnel resource.
    *
    * <p>Sample code:
    *
@@ -366,7 +366,7 @@ public class VpnTunnelClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified VpnTunnel resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified VpnTunnel resource.
    *
    * <p>Sample code:
    *
@@ -390,7 +390,7 @@ public class VpnTunnelClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified VpnTunnel resource. Gets a list of available VPN tunnels by making a
-   * list() request. (== suppress_warning http-rest-shadowed ==)
+   * list() request.
    *
    * <p>Sample code:
    *
@@ -417,7 +417,7 @@ public class VpnTunnelClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified VpnTunnel resource. Gets a list of available VPN tunnels by making a
-   * list() request. (== suppress_warning http-rest-shadowed ==)
+   * list() request.
    *
    * <p>Sample code:
    *
@@ -442,7 +442,7 @@ public class VpnTunnelClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified VpnTunnel resource. Gets a list of available VPN tunnels by making a
-   * list() request. (== suppress_warning http-rest-shadowed ==)
+   * list() request.
    *
    * <p>Sample code:
    *
@@ -467,7 +467,7 @@ public class VpnTunnelClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified VpnTunnel resource. Gets a list of available VPN tunnels by making a
-   * list() request. (== suppress_warning http-rest-shadowed ==)
+   * list() request.
    *
    * <p>Sample code:
    *
@@ -491,7 +491,7 @@ public class VpnTunnelClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a VpnTunnel resource in the specified project and region using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -523,7 +523,7 @@ public class VpnTunnelClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a VpnTunnel resource in the specified project and region using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -555,7 +555,7 @@ public class VpnTunnelClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a VpnTunnel resource in the specified project and region using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -582,7 +582,7 @@ public class VpnTunnelClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a VpnTunnel resource in the specified project and region using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -607,8 +607,7 @@ public class VpnTunnelClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of VpnTunnel resources contained in the specified project and region. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of VpnTunnel resources contained in the specified project and region.
    *
    * <p>Sample code:
    *
@@ -635,8 +634,7 @@ public class VpnTunnelClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of VpnTunnel resources contained in the specified project and region. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of VpnTunnel resources contained in the specified project and region.
    *
    * <p>Sample code:
    *
@@ -661,8 +659,7 @@ public class VpnTunnelClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of VpnTunnel resources contained in the specified project and region. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of VpnTunnel resources contained in the specified project and region.
    *
    * <p>Sample code:
    *
@@ -688,8 +685,7 @@ public class VpnTunnelClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of VpnTunnel resources contained in the specified project and region. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of VpnTunnel resources contained in the specified project and region.
    *
    * <p>Sample code:
    *
@@ -715,8 +711,7 @@ public class VpnTunnelClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of VpnTunnel resources contained in the specified project and region. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of VpnTunnel resources contained in the specified project and region.
    *
    * <p>Sample code:
    *

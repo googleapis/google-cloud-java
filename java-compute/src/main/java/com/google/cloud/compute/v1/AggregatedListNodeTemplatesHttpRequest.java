@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.nodeTemplates.aggregatedList. Retrieves an aggregated list of
- * node templates. (== suppress_warning http-rest-shadowed ==)
+ * node templates.
  */
 public final class AggregatedListNodeTemplatesHttpRequest implements ApiMessage {
   private final String access_token;

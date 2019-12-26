@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instances.setMachineResources. Changes the number and/or type
- * of accelerator for a stopped instance to the values specified in the request. (==
- * suppress_warning http-rest-shadowed ==)
+ * of accelerator for a stopped instance to the values specified in the request.
  */
 public final class SetMachineResourcesInstanceHttpRequest implements ApiMessage {
   private final String access_token;

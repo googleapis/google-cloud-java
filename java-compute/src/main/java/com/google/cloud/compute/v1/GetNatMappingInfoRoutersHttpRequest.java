@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.routers.getNatMappingInfo. Retrieves runtime Nat mapping
- * information of VM endpoints. (== suppress_warning http-rest-shadowed ==)
+ * information of VM endpoints.
  */
 public final class GetNatMappingInfoRoutersHttpRequest implements ApiMessage {
   private final String access_token;

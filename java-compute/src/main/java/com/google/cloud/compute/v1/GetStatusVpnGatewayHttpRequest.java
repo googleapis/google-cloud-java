@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.vpnGateways.getStatus. Returns the status for the specified VPN
- * gateway. (== suppress_warning http-rest-shadowed ==)
+ * gateway.
  */
 public final class GetStatusVpnGatewayHttpRequest implements ApiMessage {
   private final String access_token;

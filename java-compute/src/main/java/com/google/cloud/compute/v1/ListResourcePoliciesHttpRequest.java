@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.resourcePolicies.list. A list all the resource policies that
- * have been configured for the specified project in specified region. (== suppress_warning
- * http-rest-shadowed ==)
+ * have been configured for the specified project in specified region.
  */
 public final class ListResourcePoliciesHttpRequest implements ApiMessage {
   private final String access_token;

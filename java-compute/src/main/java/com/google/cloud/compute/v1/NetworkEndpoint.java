@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** The network endpoint. */
+/** The network endpoint. Next ID: 7 */
 public final class NetworkEndpoint implements ApiMessage {
   private final String instance;
   private final String ipAddress;

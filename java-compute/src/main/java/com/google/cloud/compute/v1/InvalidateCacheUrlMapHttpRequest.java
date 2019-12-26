@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.urlMaps.invalidateCache. Initiates a cache invalidation
- * operation, invalidating the specified path, scoped to the specified UrlMap. (== suppress_warning
- * http-rest-shadowed ==)
+ * operation, invalidating the specified path, scoped to the specified UrlMap.
  */
 public final class InvalidateCacheUrlMapHttpRequest implements ApiMessage {
   private final String access_token;

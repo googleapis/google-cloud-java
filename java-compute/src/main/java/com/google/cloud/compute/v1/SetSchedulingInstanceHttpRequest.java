@@ -26,7 +26,6 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instances.setScheduling. Sets an instance's scheduling options.
- * (== suppress_warning http-rest-shadowed ==)
  */
 public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
   private final String access_token;

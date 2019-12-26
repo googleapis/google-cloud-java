@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.nodeGroups.aggregatedList. Retrieves an aggregated list of node
- * groups. Note: use nodeGroups.listNodes for more details about each group. (== suppress_warning
- * http-rest-shadowed ==)
+ * groups. Note: use nodeGroups.listNodes for more details about each group.
  */
 public final class AggregatedListNodeGroupsHttpRequest implements ApiMessage {
   private final String access_token;

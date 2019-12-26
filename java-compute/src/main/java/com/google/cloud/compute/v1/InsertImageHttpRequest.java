@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.images.insert. Creates an image in the specified project using
- * the data included in the request. (== suppress_warning http-rest-shadowed ==)
+ * the data included in the request.
  */
 public final class InsertImageHttpRequest implements ApiMessage {
   private final String access_token;

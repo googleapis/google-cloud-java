@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionSslCertificates.insert. Creates a SslCertificate resource
- * in the specified project and region using the data included in the request (== suppress_warning
- * http-rest-shadowed ==)
+ * in the specified project and region using the data included in the request
  */
 public final class InsertRegionSslCertificateHttpRequest implements ApiMessage {
   private final String access_token;
@@ -194,7 +193,8 @@ public final class InsertRegionSslCertificateHttpRequest implements ApiMessage {
    * <p>This SSL certificate resource also contains a private key. You can use SSL keys and
    * certificates to secure connections to a load balancer. For more information, read Creating and
    * Using SSL Certificates. (== resource_for beta.sslCertificates ==) (== resource_for
-   * v1.sslCertificates ==)
+   * v1.sslCertificates ==) (== resource_for beta.regionSslCertificates ==) (== resource_for
+   * v1.regionSslCertificates ==) Next ID: 17
    */
   public SslCertificate getSslCertificateResource() {
     return sslCertificateResource;
@@ -419,7 +419,8 @@ public final class InsertRegionSslCertificateHttpRequest implements ApiMessage {
      * <p>This SSL certificate resource also contains a private key. You can use SSL keys and
      * certificates to secure connections to a load balancer. For more information, read Creating
      * and Using SSL Certificates. (== resource_for beta.sslCertificates ==) (== resource_for
-     * v1.sslCertificates ==)
+     * v1.sslCertificates ==) (== resource_for beta.regionSslCertificates ==) (== resource_for
+     * v1.regionSslCertificates ==) Next ID: 17
      */
     public SslCertificate getSslCertificateResource() {
       return sslCertificateResource;
@@ -431,7 +432,8 @@ public final class InsertRegionSslCertificateHttpRequest implements ApiMessage {
      * <p>This SSL certificate resource also contains a private key. You can use SSL keys and
      * certificates to secure connections to a load balancer. For more information, read Creating
      * and Using SSL Certificates. (== resource_for beta.sslCertificates ==) (== resource_for
-     * v1.sslCertificates ==)
+     * v1.sslCertificates ==) (== resource_for beta.regionSslCertificates ==) (== resource_for
+     * v1.regionSslCertificates ==) Next ID: 17
      */
     public Builder setSslCertificateResource(SslCertificate sslCertificateResource) {
       this.sslCertificateResource = sslCertificateResource;

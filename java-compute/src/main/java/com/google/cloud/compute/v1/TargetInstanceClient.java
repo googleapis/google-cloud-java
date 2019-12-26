@@ -155,7 +155,7 @@ public class TargetInstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of target instances. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of target instances.
    *
    * <p>Sample code:
    *
@@ -183,7 +183,7 @@ public class TargetInstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of target instances. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of target instances.
    *
    * <p>Sample code:
    *
@@ -209,7 +209,7 @@ public class TargetInstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of target instances. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of target instances.
    *
    * <p>Sample code:
    *
@@ -236,7 +236,7 @@ public class TargetInstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of target instances. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of target instances.
    *
    * <p>Sample code:
    *
@@ -263,7 +263,7 @@ public class TargetInstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of target instances. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of target instances.
    *
    * <p>Sample code:
    *
@@ -296,7 +296,7 @@ public class TargetInstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetInstance resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified TargetInstance resource.
    *
    * <p>Sample code:
    *
@@ -322,7 +322,7 @@ public class TargetInstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetInstance resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified TargetInstance resource.
    *
    * <p>Sample code:
    *
@@ -346,7 +346,7 @@ public class TargetInstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetInstance resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified TargetInstance resource.
    *
    * <p>Sample code:
    *
@@ -370,7 +370,7 @@ public class TargetInstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetInstance resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified TargetInstance resource.
    *
    * <p>Sample code:
    *
@@ -395,7 +395,7 @@ public class TargetInstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetInstance resource. Gets a list of available target instances by
-   * making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * making a list() request.
    *
    * <p>Sample code:
    *
@@ -422,7 +422,7 @@ public class TargetInstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetInstance resource. Gets a list of available target instances by
-   * making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * making a list() request.
    *
    * <p>Sample code:
    *
@@ -447,7 +447,7 @@ public class TargetInstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetInstance resource. Gets a list of available target instances by
-   * making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * making a list() request.
    *
    * <p>Sample code:
    *
@@ -472,7 +472,7 @@ public class TargetInstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetInstance resource. Gets a list of available target instances by
-   * making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * making a list() request.
    *
    * <p>Sample code:
    *
@@ -497,7 +497,7 @@ public class TargetInstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetInstance resource in the specified project and zone using the data included in
-   * the request. (== suppress_warning http-rest-shadowed ==)
+   * the request.
    *
    * <p>Sample code:
    *
@@ -532,7 +532,7 @@ public class TargetInstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetInstance resource in the specified project and zone using the data included in
-   * the request. (== suppress_warning http-rest-shadowed ==)
+   * the request.
    *
    * <p>Sample code:
    *
@@ -566,7 +566,7 @@ public class TargetInstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetInstance resource in the specified project and zone using the data included in
-   * the request. (== suppress_warning http-rest-shadowed ==)
+   * the request.
    *
    * <p>Sample code:
    *
@@ -593,7 +593,7 @@ public class TargetInstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetInstance resource in the specified project and zone using the data included in
-   * the request. (== suppress_warning http-rest-shadowed ==)
+   * the request.
    *
    * <p>Sample code:
    *
@@ -619,8 +619,7 @@ public class TargetInstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of TargetInstance resources available to the specified project and zone. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of TargetInstance resources available to the specified project and zone.
    *
    * <p>Sample code:
    *
@@ -647,8 +646,7 @@ public class TargetInstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of TargetInstance resources available to the specified project and zone. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of TargetInstance resources available to the specified project and zone.
    *
    * <p>Sample code:
    *
@@ -673,8 +671,7 @@ public class TargetInstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of TargetInstance resources available to the specified project and zone. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of TargetInstance resources available to the specified project and zone.
    *
    * <p>Sample code:
    *
@@ -701,8 +698,7 @@ public class TargetInstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of TargetInstance resources available to the specified project and zone. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of TargetInstance resources available to the specified project and zone.
    *
    * <p>Sample code:
    *
@@ -728,8 +724,7 @@ public class TargetInstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of TargetInstance resources available to the specified project and zone. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of TargetInstance resources available to the specified project and zone.
    *
    * <p>Sample code:
    *

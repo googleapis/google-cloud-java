@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.resourcePolicies.get. Retrieves all information of the
- * specified resource policy. (== suppress_warning http-rest-shadowed ==)
+ * specified resource policy.
  */
 public final class GetResourcePolicyHttpRequest implements ApiMessage {
   private final String access_token;

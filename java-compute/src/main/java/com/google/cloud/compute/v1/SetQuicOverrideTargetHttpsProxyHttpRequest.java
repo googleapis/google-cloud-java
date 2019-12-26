@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetHttpsProxies.setQuicOverride. Sets the QUIC override
- * policy for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+ * policy for TargetHttpsProxy.
  */
 public final class SetQuicOverrideTargetHttpsProxyHttpRequest implements ApiMessage {
   private final String access_token;

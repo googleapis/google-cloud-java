@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionBackendServices.list. Retrieves the list of regional
- * BackendService resources available to the specified project in the given region. (==
- * suppress_warning http-rest-shadowed ==)
+ * BackendService resources available to the specified project in the given region.
  */
 public final class ListRegionBackendServicesHttpRequest implements ApiMessage {
   private final String access_token;

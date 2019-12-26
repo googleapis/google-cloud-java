@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.securityPolicies.get. List all of the ordered rules present in
- * a single specified policy. (== suppress_warning http-rest-shadowed ==)
+ * a single specified policy.
  */
 public final class GetSecurityPolicyHttpRequest implements ApiMessage {
   private final String access_token;

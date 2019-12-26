@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.licenses.insert. Create a License resource in the specified
- * project. (== suppress_warning http-rest-shadowed ==)
+ * project.
  */
 public final class InsertLicenseHttpRequest implements ApiMessage {
   private final String access_token;

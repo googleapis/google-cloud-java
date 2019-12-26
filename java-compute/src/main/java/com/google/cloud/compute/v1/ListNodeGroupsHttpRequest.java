@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.nodeGroups.list. Retrieves a list of node groups available to
- * the specified project. Note: use nodeGroups.listNodes for more details about each group. (==
- * suppress_warning http-rest-shadowed ==)
+ * the specified project. Note: use nodeGroups.listNodes for more details about each group.
  */
 public final class ListNodeGroupsHttpRequest implements ApiMessage {
   private final String access_token;

@@ -156,8 +156,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified GlobalForwardingRule resource. (== suppress_warning http-rest-shadowed
-   * ==)
+   * Deletes the specified GlobalForwardingRule resource.
    *
    * <p>Sample code:
    *
@@ -184,8 +183,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified GlobalForwardingRule resource. (== suppress_warning http-rest-shadowed
-   * ==)
+   * Deletes the specified GlobalForwardingRule resource.
    *
    * <p>Sample code:
    *
@@ -211,8 +209,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified GlobalForwardingRule resource. (== suppress_warning http-rest-shadowed
-   * ==)
+   * Deletes the specified GlobalForwardingRule resource.
    *
    * <p>Sample code:
    *
@@ -236,8 +233,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified GlobalForwardingRule resource. (== suppress_warning http-rest-shadowed
-   * ==)
+   * Deletes the specified GlobalForwardingRule resource.
    *
    * <p>Sample code:
    *
@@ -262,7 +258,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified GlobalForwardingRule resource. Gets a list of available forwarding rules
-   * by making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * by making a list() request.
    *
    * <p>Sample code:
    *
@@ -290,7 +286,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified GlobalForwardingRule resource. Gets a list of available forwarding rules
-   * by making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * by making a list() request.
    *
    * <p>Sample code:
    *
@@ -315,7 +311,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified GlobalForwardingRule resource. Gets a list of available forwarding rules
-   * by making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * by making a list() request.
    *
    * <p>Sample code:
    *
@@ -340,7 +336,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified GlobalForwardingRule resource. Gets a list of available forwarding rules
-   * by making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * by making a list() request.
    *
    * <p>Sample code:
    *
@@ -365,7 +361,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a GlobalForwardingRule resource in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -404,7 +400,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a GlobalForwardingRule resource in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -443,7 +439,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a GlobalForwardingRule resource in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -470,7 +466,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a GlobalForwardingRule resource in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -496,8 +492,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of GlobalForwardingRule resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of GlobalForwardingRule resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -525,8 +520,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of GlobalForwardingRule resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of GlobalForwardingRule resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -551,8 +545,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of GlobalForwardingRule resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of GlobalForwardingRule resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -579,8 +572,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of GlobalForwardingRule resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of GlobalForwardingRule resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -607,8 +599,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of GlobalForwardingRule resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of GlobalForwardingRule resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -642,7 +633,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes target URL for the GlobalForwardingRule resource. The new target should be of the same
-   * type as the old target. (== suppress_warning http-rest-shadowed ==)
+   * type as the old target.
    *
    * <p>Sample code:
    *
@@ -673,7 +664,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes target URL for the GlobalForwardingRule resource. The new target should be of the same
-   * type as the old target. (== suppress_warning http-rest-shadowed ==)
+   * type as the old target.
    *
    * <p>Sample code:
    *
@@ -704,7 +695,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes target URL for the GlobalForwardingRule resource. The new target should be of the same
-   * type as the old target. (== suppress_warning http-rest-shadowed ==)
+   * type as the old target.
    *
    * <p>Sample code:
    *
@@ -732,7 +723,7 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes target URL for the GlobalForwardingRule resource. The new target should be of the same
-   * type as the old target. (== suppress_warning http-rest-shadowed ==)
+   * type as the old target.
    *
    * <p>Sample code:
    *

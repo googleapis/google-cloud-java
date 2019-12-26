@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
  * Request object for method compute.targetSslProxies.setSslPolicy. Sets the SSL policy for
  * TargetSslProxy. The SSL policy specifies the server-side support for SSL features. This affects
  * connections between clients and the SSL proxy load balancer. They do not affect the connection
- * between the load balancer and the backends. (== suppress_warning http-rest-shadowed ==)
+ * between the load balancer and the backends.
  */
 public final class SetSslPolicyTargetSslProxyHttpRequest implements ApiMessage {
   private final String access_token;

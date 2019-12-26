@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instances.startWithEncryptionKey. Starts an instance that was
- * stopped using the instances().stop method. For more information, see Restart an instance. (==
- * suppress_warning http-rest-shadowed ==)
+ * stopped using the instances().stop method. For more information, see Restart an instance.
  */
 public final class StartWithEncryptionKeyInstanceHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.disks.testIamPermissions. Returns permissions that a caller has
- * on the specified resource. (== suppress_warning http-rest-shadowed ==)
+ * on the specified resource.
  */
 public final class TestIamPermissionsDiskHttpRequest implements ApiMessage {
   private final String access_token;

@@ -24,10 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/**
- * Request object for method compute.reservations.delete. Deletes the specified reservation. (==
- * suppress_warning http-rest-shadowed ==)
- */
+/** Request object for method compute.reservations.delete. Deletes the specified reservation. */
 public final class DeleteReservationHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

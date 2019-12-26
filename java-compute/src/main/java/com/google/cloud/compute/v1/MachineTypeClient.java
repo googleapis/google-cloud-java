@@ -154,7 +154,7 @@ public class MachineTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of machine types. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of machine types.
    *
    * <p>Sample code:
    *
@@ -182,7 +182,7 @@ public class MachineTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of machine types. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of machine types.
    *
    * <p>Sample code:
    *
@@ -207,7 +207,7 @@ public class MachineTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of machine types. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of machine types.
    *
    * <p>Sample code:
    *
@@ -234,7 +234,7 @@ public class MachineTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of machine types. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of machine types.
    *
    * <p>Sample code:
    *
@@ -261,7 +261,7 @@ public class MachineTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of machine types. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of machine types.
    *
    * <p>Sample code:
    *
@@ -295,7 +295,7 @@ public class MachineTypeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified machine type. Gets a list of available machine types by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -322,7 +322,7 @@ public class MachineTypeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified machine type. Gets a list of available machine types by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -347,7 +347,7 @@ public class MachineTypeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified machine type. Gets a list of available machine types by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -372,7 +372,7 @@ public class MachineTypeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified machine type. Gets a list of available machine types by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -395,8 +395,7 @@ public class MachineTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of machine types available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of machine types available to the specified project.
    *
    * <p>Sample code:
    *
@@ -423,8 +422,7 @@ public class MachineTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of machine types available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of machine types available to the specified project.
    *
    * <p>Sample code:
    *
@@ -449,8 +447,7 @@ public class MachineTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of machine types available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of machine types available to the specified project.
    *
    * <p>Sample code:
    *
@@ -476,8 +473,7 @@ public class MachineTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of machine types available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of machine types available to the specified project.
    *
    * <p>Sample code:
    *
@@ -503,8 +499,7 @@ public class MachineTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of machine types available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of machine types available to the specified project.
    *
    * <p>Sample code:
    *

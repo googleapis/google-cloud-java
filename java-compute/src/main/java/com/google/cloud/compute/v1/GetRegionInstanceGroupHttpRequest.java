@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionInstanceGroups.get. Returns the specified instance group
- * resource. (== suppress_warning http-rest-shadowed ==)
+ * resource.
  */
 public final class GetRegionInstanceGroupHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.networks.removePeering. Removes a peering from the specified
- * network. (== suppress_warning http-rest-shadowed ==)
+ * network.
  */
 public final class RemovePeeringNetworkHttpRequest implements ApiMessage {
   private final String access_token;

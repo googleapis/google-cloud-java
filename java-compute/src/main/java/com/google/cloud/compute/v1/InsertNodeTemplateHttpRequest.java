@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.nodeTemplates.insert. Creates a NodeTemplate resource in the
- * specified project using the data included in the request. (== suppress_warning http-rest-shadowed
- * ==)
+ * specified project using the data included in the request.
  */
 public final class InsertNodeTemplateHttpRequest implements ApiMessage {
   private final String access_token;
@@ -155,7 +154,7 @@ public final class InsertNodeTemplateHttpRequest implements ApiMessage {
    *
    * <p>You can use a template to define properties for nodes in a node group. For more information,
    * read Creating node groups and instances. (== resource_for beta.nodeTemplates ==) (==
-   * resource_for v1.nodeTemplates ==) (== NextID: 16 ==)
+   * resource_for v1.nodeTemplates ==)
    */
   public NodeTemplate getNodeTemplateResource() {
     return nodeTemplateResource;
@@ -337,7 +336,7 @@ public final class InsertNodeTemplateHttpRequest implements ApiMessage {
      *
      * <p>You can use a template to define properties for nodes in a node group. For more
      * information, read Creating node groups and instances. (== resource_for beta.nodeTemplates ==)
-     * (== resource_for v1.nodeTemplates ==) (== NextID: 16 ==)
+     * (== resource_for v1.nodeTemplates ==)
      */
     public NodeTemplate getNodeTemplateResource() {
       return nodeTemplateResource;
@@ -348,7 +347,7 @@ public final class InsertNodeTemplateHttpRequest implements ApiMessage {
      *
      * <p>You can use a template to define properties for nodes in a node group. For more
      * information, read Creating node groups and instances. (== resource_for beta.nodeTemplates ==)
-     * (== resource_for v1.nodeTemplates ==) (== NextID: 16 ==)
+     * (== resource_for v1.nodeTemplates ==)
      */
     public Builder setNodeTemplateResource(NodeTemplate nodeTemplateResource) {
       this.nodeTemplateResource = nodeTemplateResource;

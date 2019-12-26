@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetPools.removeInstance. Removes instance URL from a target
- * pool. (== suppress_warning http-rest-shadowed ==)
+ * pool.
  */
 public final class RemoveInstanceTargetPoolHttpRequest implements ApiMessage {
   private final String access_token;

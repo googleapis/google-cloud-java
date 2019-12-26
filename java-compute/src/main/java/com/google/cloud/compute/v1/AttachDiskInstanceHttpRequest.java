@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
  * Request object for method compute.instances.attachDisk. Attaches an existing Disk resource to an
  * instance. You must first create the disk before you can attach it. It is not possible to create
  * and attach a disk at the same time. For more information, read Adding a persistent disk to your
- * instance. (== suppress_warning http-rest-shadowed ==)
+ * instance.
  */
 public final class AttachDiskInstanceHttpRequest implements ApiMessage {
   private final String access_token;

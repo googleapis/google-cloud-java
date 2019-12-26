@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.regionUrlMaps.validate. Runs static validation for the UrlMap.
  * In particular, the tests of the provided UrlMap will be run. Calling this method does NOT create
- * the UrlMap. (== suppress_warning http-rest-shadowed ==)
+ * the UrlMap.
  */
 public final class ValidateRegionUrlMapHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.acceleratorTypes.aggregatedList. Retrieves an aggregated list
- * of accelerator types. (== suppress_warning http-rest-shadowed ==)
+ * of accelerator types.
  */
 public final class AggregatedListAcceleratorTypesHttpRequest implements ApiMessage {
   private final String access_token;

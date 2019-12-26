@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.instances.listReferrers. Retrieves the list of referrers to
  * instances contained within the specified zone. For more information, read Viewing Referrers to VM
- * Instances. (== suppress_warning http-rest-shadowed ==)
+ * Instances.
  */
 public final class ListReferrersInstancesHttpRequest implements ApiMessage {
   private final String access_token;

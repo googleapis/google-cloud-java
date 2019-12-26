@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionBackendServices.delete. Deletes the specified regional
- * BackendService resource. (== suppress_warning http-rest-shadowed ==)
+ * BackendService resource.
  */
 public final class DeleteRegionBackendServiceHttpRequest implements ApiMessage {
   private final String access_token;

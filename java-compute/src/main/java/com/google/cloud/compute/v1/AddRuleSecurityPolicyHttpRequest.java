@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.securityPolicies.addRule. Inserts a rule into a security
- * policy. (== suppress_warning http-rest-shadowed ==)
+ * policy.
  */
 public final class AddRuleSecurityPolicyHttpRequest implements ApiMessage {
   private final String access_token;

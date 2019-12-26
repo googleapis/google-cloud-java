@@ -28,8 +28,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.interconnectAttachments.patch. Updates the specified
  * interconnect attachment with the data included in the request. This method supports PATCH
- * semantics and uses the JSON merge patch format and processing rules. (== suppress_warning
- * http-rest-shadowed ==)
+ * semantics and uses the JSON merge patch format and processing rules.
  */
 public final class PatchInterconnectAttachmentHttpRequest implements ApiMessage {
   private final String access_token;

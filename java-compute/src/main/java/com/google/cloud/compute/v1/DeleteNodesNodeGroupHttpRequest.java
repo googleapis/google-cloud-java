@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.nodeGroups.deleteNodes. Deletes specified nodes from the node
- * group. (== suppress_warning http-rest-shadowed ==)
+ * group.
  */
 public final class DeleteNodesNodeGroupHttpRequest implements ApiMessage {
   private final String access_token;

@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionUrlMaps.update. Updates the specified UrlMap resource
- * with the data included in the request. (== suppress_warning http-rest-shadowed ==)
+ * with the data included in the request.
  */
 public final class UpdateRegionUrlMapHttpRequest implements ApiMessage {
   private final String access_token;

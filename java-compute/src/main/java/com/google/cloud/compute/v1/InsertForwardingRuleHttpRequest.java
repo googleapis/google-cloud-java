@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.forwardingRules.insert. Creates a ForwardingRule resource in
- * the specified project and region using the data included in the request. (== suppress_warning
- * http-rest-shadowed ==)
+ * the specified project and region using the data included in the request.
  */
 public final class InsertForwardingRuleHttpRequest implements ApiMessage {
   private final String access_token;

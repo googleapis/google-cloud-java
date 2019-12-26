@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.instanceGroupManagers.get. Returns all of the details about the
  * specified managed instance group. Gets a list of available managed instance groups by making a
- * list() request. (== suppress_warning http-rest-shadowed ==)
+ * list() request.
  */
 public final class GetInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;

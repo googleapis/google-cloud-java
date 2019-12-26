@@ -28,7 +28,6 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.networks.patch. Patches the specified network with the data
  * included in the request. Only the following fields can be modified: routingConfig.routingMode.
- * (== suppress_warning http-rest-shadowed ==)
  */
 public final class PatchNetworkHttpRequest implements ApiMessage {
   private final String access_token;

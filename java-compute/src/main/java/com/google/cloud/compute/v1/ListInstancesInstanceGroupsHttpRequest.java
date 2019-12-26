@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instanceGroups.listInstances. Lists the instances in the
- * specified instance group. (== suppress_warning http-rest-shadowed ==)
+ * specified instance group.
  */
 public final class ListInstancesInstanceGroupsHttpRequest implements ApiMessage {
   private final String access_token;

@@ -29,7 +29,7 @@ import javax.annotation.Nullable;
  * Request object for method compute.routers.update. Updates the specified Router resource with the
  * data included in the request. This method conforms to PUT semantics, which requests that the
  * state of the target resource be created or replaced with the state defined by the representation
- * enclosed in the request message payload. (== suppress_warning http-rest-shadowed ==)
+ * enclosed in the request message payload.
  */
 public final class UpdateRouterHttpRequest implements ApiMessage {
   private final String access_token;

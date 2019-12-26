@@ -156,7 +156,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance group resource. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified instance group resource.
    *
    * <p>Sample code:
    *
@@ -182,7 +182,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance group resource. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified instance group resource.
    *
    * <p>Sample code:
    *
@@ -206,7 +206,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance group resource. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified instance group resource.
    *
    * <p>Sample code:
    *
@@ -230,7 +230,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance group resource. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified instance group resource.
    *
    * <p>Sample code:
    *
@@ -254,8 +254,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instance group resources contained within the specified region. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of instance group resources contained within the specified region.
    *
    * <p>Sample code:
    *
@@ -283,8 +282,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instance group resources contained within the specified region. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of instance group resources contained within the specified region.
    *
    * <p>Sample code:
    *
@@ -309,8 +307,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instance group resources contained within the specified region. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of instance group resources contained within the specified region.
    *
    * <p>Sample code:
    *
@@ -337,8 +334,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instance group resources contained within the specified region. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of instance group resources contained within the specified region.
    *
    * <p>Sample code:
    *
@@ -365,8 +361,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instance group resources contained within the specified region. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of instance group resources contained within the specified region.
    *
    * <p>Sample code:
    *
@@ -401,7 +396,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   /**
    * Lists the instances in the specified instance group and displays information about the named
    * ports. Depending on the specified options, this method can list all instances or only the
-   * instances that are running. (== suppress_warning http-rest-shadowed ==)
+   * instances that are running.
    *
    * <p>Sample code:
    *
@@ -437,7 +432,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   /**
    * Lists the instances in the specified instance group and displays information about the named
    * ports. Depending on the specified options, this method can list all instances or only the
-   * instances that are running. (== suppress_warning http-rest-shadowed ==)
+   * instances that are running.
    *
    * <p>Sample code:
    *
@@ -473,7 +468,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   /**
    * Lists the instances in the specified instance group and displays information about the named
    * ports. Depending on the specified options, this method can list all instances or only the
-   * instances that are running. (== suppress_warning http-rest-shadowed ==)
+   * instances that are running.
    *
    * <p>Sample code:
    *
@@ -504,7 +499,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   /**
    * Lists the instances in the specified instance group and displays information about the named
    * ports. Depending on the specified options, this method can list all instances or only the
-   * instances that are running. (== suppress_warning http-rest-shadowed ==)
+   * instances that are running.
    *
    * <p>Sample code:
    *
@@ -536,7 +531,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   /**
    * Lists the instances in the specified instance group and displays information about the named
    * ports. Depending on the specified options, this method can list all instances or only the
-   * instances that are running. (== suppress_warning http-rest-shadowed ==)
+   * instances that are running.
    *
    * <p>Sample code:
    *
@@ -572,8 +567,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the named ports for the specified regional instance group. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Sets the named ports for the specified regional instance group.
    *
    * <p>Sample code:
    *
@@ -605,8 +599,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the named ports for the specified regional instance group. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Sets the named ports for the specified regional instance group.
    *
    * <p>Sample code:
    *
@@ -638,8 +631,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the named ports for the specified regional instance group. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Sets the named ports for the specified regional instance group.
    *
    * <p>Sample code:
    *
@@ -666,8 +658,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the named ports for the specified regional instance group. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Sets the named ports for the specified regional instance group.
    *
    * <p>Sample code:
    *

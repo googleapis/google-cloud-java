@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Represents a VPN gateway resource. */
+/** Represents a VPN gateway resource. Next ID: 13 */
 public final class VpnGateway implements ApiMessage {
   private final String creationTimestamp;
   private final String description;

@@ -148,8 +148,8 @@ public final class PathMatcher implements ApiMessage {
   }
 
   /**
-   * When when none of the specified pathRules or routeRules match, the request is redirected to a
-   * URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or
+   * When none of the specified pathRules or routeRules match, the request is redirected to a URL
+   * specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or
    * defaultRouteAction must not be set.
    */
   public HttpRedirectAction getDefaultUrlRedirect() {
@@ -189,11 +189,10 @@ public final class PathMatcher implements ApiMessage {
   }
 
   /**
-   * The list of ordered HTTP route rules. Use this list instead of pathRules when advanced route
-   * matching and routing actions are desired. The order of specifying routeRules matters: the first
-   * rule that matches will cause its specified routing action to take effect. Within a given
-   * pathMatcher, only one of pathRules or routeRules must be set. routeRules are not supported in
-   * UrlMaps intended for External Load balancers.
+   * The list of HTTP route rules. Use this list instead of pathRules when advanced route matching
+   * and routing actions are desired. routeRules are evaluated in order of priority, from the lowest
+   * to highest number. Within a given pathMatcher, only one of pathRules or routeRules must be set.
+   * routeRules are not supported in UrlMaps intended for External Load balancers.
    */
   public List<HttpRouteRule> getRouteRulesList() {
     return routeRules;
@@ -338,8 +337,8 @@ public final class PathMatcher implements ApiMessage {
     }
 
     /**
-     * When when none of the specified pathRules or routeRules match, the request is redirected to a
-     * URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or
+     * When none of the specified pathRules or routeRules match, the request is redirected to a URL
+     * specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or
      * defaultRouteAction must not be set.
      */
     public HttpRedirectAction getDefaultUrlRedirect() {
@@ -347,8 +346,8 @@ public final class PathMatcher implements ApiMessage {
     }
 
     /**
-     * When when none of the specified pathRules or routeRules match, the request is redirected to a
-     * URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or
+     * When none of the specified pathRules or routeRules match, the request is redirected to a URL
+     * specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or
      * defaultRouteAction must not be set.
      */
     public Builder setDefaultUrlRedirect(HttpRedirectAction defaultUrlRedirect) {
@@ -446,22 +445,20 @@ public final class PathMatcher implements ApiMessage {
     }
 
     /**
-     * The list of ordered HTTP route rules. Use this list instead of pathRules when advanced route
-     * matching and routing actions are desired. The order of specifying routeRules matters: the
-     * first rule that matches will cause its specified routing action to take effect. Within a
-     * given pathMatcher, only one of pathRules or routeRules must be set. routeRules are not
-     * supported in UrlMaps intended for External Load balancers.
+     * The list of HTTP route rules. Use this list instead of pathRules when advanced route matching
+     * and routing actions are desired. routeRules are evaluated in order of priority, from the
+     * lowest to highest number. Within a given pathMatcher, only one of pathRules or routeRules
+     * must be set. routeRules are not supported in UrlMaps intended for External Load balancers.
      */
     public List<HttpRouteRule> getRouteRulesList() {
       return routeRules;
     }
 
     /**
-     * The list of ordered HTTP route rules. Use this list instead of pathRules when advanced route
-     * matching and routing actions are desired. The order of specifying routeRules matters: the
-     * first rule that matches will cause its specified routing action to take effect. Within a
-     * given pathMatcher, only one of pathRules or routeRules must be set. routeRules are not
-     * supported in UrlMaps intended for External Load balancers.
+     * The list of HTTP route rules. Use this list instead of pathRules when advanced route matching
+     * and routing actions are desired. routeRules are evaluated in order of priority, from the
+     * lowest to highest number. Within a given pathMatcher, only one of pathRules or routeRules
+     * must be set. routeRules are not supported in UrlMaps intended for External Load balancers.
      */
     public Builder addAllRouteRules(List<HttpRouteRule> routeRules) {
       if (this.routeRules == null) {
@@ -472,11 +469,10 @@ public final class PathMatcher implements ApiMessage {
     }
 
     /**
-     * The list of ordered HTTP route rules. Use this list instead of pathRules when advanced route
-     * matching and routing actions are desired. The order of specifying routeRules matters: the
-     * first rule that matches will cause its specified routing action to take effect. Within a
-     * given pathMatcher, only one of pathRules or routeRules must be set. routeRules are not
-     * supported in UrlMaps intended for External Load balancers.
+     * The list of HTTP route rules. Use this list instead of pathRules when advanced route matching
+     * and routing actions are desired. routeRules are evaluated in order of priority, from the
+     * lowest to highest number. Within a given pathMatcher, only one of pathRules or routeRules
+     * must be set. routeRules are not supported in UrlMaps intended for External Load balancers.
      */
     public Builder addRouteRules(HttpRouteRule routeRules) {
       if (this.routeRules == null) {

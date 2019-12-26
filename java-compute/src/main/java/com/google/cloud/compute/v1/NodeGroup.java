@@ -31,7 +31,7 @@ import javax.annotation.Nullable;
  * your specific project. Use sole-tenant nodes to keep your instances physically separated from
  * instances in other projects, or to group your instances together on the same host hardware. For
  * more information, read Sole-tenant nodes. (== resource_for beta.nodeGroups ==) (== resource_for
- * v1.nodeGroups ==) NextID: 16
+ * v1.nodeGroups ==)
  */
 public final class NodeGroup implements ApiMessage {
   private final String creationTimestamp;

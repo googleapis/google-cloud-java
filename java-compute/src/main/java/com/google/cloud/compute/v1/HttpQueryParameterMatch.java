@@ -83,7 +83,7 @@ public final class HttpQueryParameterMatch implements ApiMessage {
 
   /**
    * The queryParameterMatch matches if the value of the parameter exactly matches the contents of
-   * exactMatch. Only one of presentMatch, exactMatch and regexMatch must be set.
+   * exactMatch. Only one of presentMatch, exactMatch or regexMatch must be set.
    */
   public String getExactMatch() {
     return exactMatch;
@@ -100,7 +100,7 @@ public final class HttpQueryParameterMatch implements ApiMessage {
   /**
    * Specifies that the queryParameterMatch matches if the request contains the query parameter,
    * irrespective of whether the parameter has a value or not. Only one of presentMatch, exactMatch
-   * and regexMatch must be set.
+   * or regexMatch must be set.
    */
   public Boolean getPresentMatch() {
     return presentMatch;
@@ -109,7 +109,7 @@ public final class HttpQueryParameterMatch implements ApiMessage {
   /**
    * The queryParameterMatch matches if the value of the parameter matches the regular expression
    * specified by regexMatch. For the regular expression grammar, please see
-   * en.cppreference.com/w/cpp/regex/ecmascript Only one of presentMatch, exactMatch and regexMatch
+   * en.cppreference.com/w/cpp/regex/ecmascript Only one of presentMatch, exactMatch or regexMatch
    * must be set.
    */
   public String getRegexMatch() {
@@ -172,7 +172,7 @@ public final class HttpQueryParameterMatch implements ApiMessage {
 
     /**
      * The queryParameterMatch matches if the value of the parameter exactly matches the contents of
-     * exactMatch. Only one of presentMatch, exactMatch and regexMatch must be set.
+     * exactMatch. Only one of presentMatch, exactMatch or regexMatch must be set.
      */
     public String getExactMatch() {
       return exactMatch;
@@ -180,7 +180,7 @@ public final class HttpQueryParameterMatch implements ApiMessage {
 
     /**
      * The queryParameterMatch matches if the value of the parameter exactly matches the contents of
-     * exactMatch. Only one of presentMatch, exactMatch and regexMatch must be set.
+     * exactMatch. Only one of presentMatch, exactMatch or regexMatch must be set.
      */
     public Builder setExactMatch(String exactMatch) {
       this.exactMatch = exactMatch;
@@ -207,7 +207,7 @@ public final class HttpQueryParameterMatch implements ApiMessage {
     /**
      * Specifies that the queryParameterMatch matches if the request contains the query parameter,
      * irrespective of whether the parameter has a value or not. Only one of presentMatch,
-     * exactMatch and regexMatch must be set.
+     * exactMatch or regexMatch must be set.
      */
     public Boolean getPresentMatch() {
       return presentMatch;
@@ -216,7 +216,7 @@ public final class HttpQueryParameterMatch implements ApiMessage {
     /**
      * Specifies that the queryParameterMatch matches if the request contains the query parameter,
      * irrespective of whether the parameter has a value or not. Only one of presentMatch,
-     * exactMatch and regexMatch must be set.
+     * exactMatch or regexMatch must be set.
      */
     public Builder setPresentMatch(Boolean presentMatch) {
       this.presentMatch = presentMatch;
@@ -226,8 +226,8 @@ public final class HttpQueryParameterMatch implements ApiMessage {
     /**
      * The queryParameterMatch matches if the value of the parameter matches the regular expression
      * specified by regexMatch. For the regular expression grammar, please see
-     * en.cppreference.com/w/cpp/regex/ecmascript Only one of presentMatch, exactMatch and
-     * regexMatch must be set.
+     * en.cppreference.com/w/cpp/regex/ecmascript Only one of presentMatch, exactMatch or regexMatch
+     * must be set.
      */
     public String getRegexMatch() {
       return regexMatch;
@@ -236,8 +236,8 @@ public final class HttpQueryParameterMatch implements ApiMessage {
     /**
      * The queryParameterMatch matches if the value of the parameter matches the regular expression
      * specified by regexMatch. For the regular expression grammar, please see
-     * en.cppreference.com/w/cpp/regex/ecmascript Only one of presentMatch, exactMatch and
-     * regexMatch must be set.
+     * en.cppreference.com/w/cpp/regex/ecmascript Only one of presentMatch, exactMatch or regexMatch
+     * must be set.
      */
     public Builder setRegexMatch(String regexMatch) {
       this.regexMatch = regexMatch;

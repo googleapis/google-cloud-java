@@ -24,10 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/**
- * Request object for method compute.images.delete. Deletes the specified image. (==
- * suppress_warning http-rest-shadowed ==)
- */
+/** Request object for method compute.images.delete. Deletes the specified image. */
 public final class DeleteImageHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

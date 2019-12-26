@@ -153,7 +153,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified license. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified license.
    *
    * <p>Sample code:
    *
@@ -179,7 +179,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified license. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified license.
    *
    * <p>Sample code:
    *
@@ -203,7 +203,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified license. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified license.
    *
    * <p>Sample code:
    *
@@ -227,7 +227,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified license. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified license.
    *
    * <p>Sample code:
    *
@@ -250,7 +250,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified License resource. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified License resource.
    *
    * <p>Sample code:
    *
@@ -276,7 +276,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified License resource. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified License resource.
    *
    * <p>Sample code:
    *
@@ -299,7 +299,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified License resource. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified License resource.
    *
    * <p>Sample code:
    *
@@ -323,7 +323,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified License resource. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified License resource.
    *
    * <p>Sample code:
    *
@@ -347,7 +347,7 @@ public class LicenseClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -374,7 +374,7 @@ public class LicenseClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -399,7 +399,7 @@ public class LicenseClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -424,7 +424,7 @@ public class LicenseClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -447,7 +447,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Create a License resource in the specified project. (== suppress_warning http-rest-shadowed ==)
+   * Create a License resource in the specified project.
    *
    * <p>Sample code:
    *
@@ -476,7 +476,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Create a License resource in the specified project. (== suppress_warning http-rest-shadowed ==)
+   * Create a License resource in the specified project.
    *
    * <p>Sample code:
    *
@@ -505,7 +505,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Create a License resource in the specified project. (== suppress_warning http-rest-shadowed ==)
+   * Create a License resource in the specified project.
    *
    * <p>Sample code:
    *
@@ -531,7 +531,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Create a License resource in the specified project. (== suppress_warning http-rest-shadowed ==)
+   * Create a License resource in the specified project.
    *
    * <p>Sample code:
    *
@@ -560,7 +560,7 @@ public class LicenseClient implements BackgroundResource {
    * licenses that belong to other projects, including licenses attached to publicly-available
    * images, like Debian 9. If you want to get a list of publicly-available licenses, use this
    * method to make a request to the respective image project, such as debian-cloud or
-   * windows-cloud. (== suppress_warning http-rest-shadowed ==)
+   * windows-cloud.
    *
    * <p>Sample code:
    *
@@ -591,7 +591,7 @@ public class LicenseClient implements BackgroundResource {
    * licenses that belong to other projects, including licenses attached to publicly-available
    * images, like Debian 9. If you want to get a list of publicly-available licenses, use this
    * method to make a request to the respective image project, such as debian-cloud or
-   * windows-cloud. (== suppress_warning http-rest-shadowed ==)
+   * windows-cloud.
    *
    * <p>Sample code:
    *
@@ -620,7 +620,7 @@ public class LicenseClient implements BackgroundResource {
    * licenses that belong to other projects, including licenses attached to publicly-available
    * images, like Debian 9. If you want to get a list of publicly-available licenses, use this
    * method to make a request to the respective image project, such as debian-cloud or
-   * windows-cloud. (== suppress_warning http-rest-shadowed ==)
+   * windows-cloud.
    *
    * <p>Sample code:
    *
@@ -650,7 +650,7 @@ public class LicenseClient implements BackgroundResource {
    * licenses that belong to other projects, including licenses attached to publicly-available
    * images, like Debian 9. If you want to get a list of publicly-available licenses, use this
    * method to make a request to the respective image project, such as debian-cloud or
-   * windows-cloud. (== suppress_warning http-rest-shadowed ==)
+   * windows-cloud.
    *
    * <p>Sample code:
    *
@@ -680,7 +680,7 @@ public class LicenseClient implements BackgroundResource {
    * licenses that belong to other projects, including licenses attached to publicly-available
    * images, like Debian 9. If you want to get a list of publicly-available licenses, use this
    * method to make a request to the respective image project, such as debian-cloud or
-   * windows-cloud. (== suppress_warning http-rest-shadowed ==)
+   * windows-cloud.
    *
    * <p>Sample code:
    *
@@ -712,8 +712,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -744,8 +743,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -775,8 +773,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -802,8 +799,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -828,8 +824,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -860,8 +855,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -891,8 +885,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -919,8 +912,7 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *

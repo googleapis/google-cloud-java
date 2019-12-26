@@ -33,6 +33,7 @@ public final class AutoscalingPolicy implements ApiMessage {
   private final AutoscalingPolicyLoadBalancingUtilization loadBalancingUtilization;
   private final Integer maxNumReplicas;
   private final Integer minNumReplicas;
+  private final String mode;
 
   private AutoscalingPolicy() {
     this.coolDownPeriodSec = null;
@@ -41,6 +42,7 @@ public final class AutoscalingPolicy implements ApiMessage {
     this.loadBalancingUtilization = null;
     this.maxNumReplicas = null;
     this.minNumReplicas = null;
+    this.mode = null;
   }
 
   private AutoscalingPolicy(
@@ -49,13 +51,15 @@ public final class AutoscalingPolicy implements ApiMessage {
       List<AutoscalingPolicyCustomMetricUtilization> customMetricUtilizations,
       AutoscalingPolicyLoadBalancingUtilization loadBalancingUtilization,
       Integer maxNumReplicas,
-      Integer minNumReplicas) {
+      Integer minNumReplicas,
+      String mode) {
     this.coolDownPeriodSec = coolDownPeriodSec;
     this.cpuUtilization = cpuUtilization;
     this.customMetricUtilizations = customMetricUtilizations;
     this.loadBalancingUtilization = loadBalancingUtilization;
     this.maxNumReplicas = maxNumReplicas;
     this.minNumReplicas = minNumReplicas;
+    this.mode = mode;
   }
 
   @Override
@@ -77,6 +81,9 @@ public final class AutoscalingPolicy implements ApiMessage {
     }
     if ("minNumReplicas".equals(fieldName)) {
       return minNumReplicas;
+    }
+    if ("mode".equals(fieldName)) {
+      return mode;
     }
     return null;
   }
@@ -149,6 +156,11 @@ public final class AutoscalingPolicy implements ApiMessage {
     return minNumReplicas;
   }
 
+  /** Defines operating mode for this policy. */
+  public String getMode() {
+    return mode;
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
@@ -178,6 +190,7 @@ public final class AutoscalingPolicy implements ApiMessage {
     private AutoscalingPolicyLoadBalancingUtilization loadBalancingUtilization;
     private Integer maxNumReplicas;
     private Integer minNumReplicas;
+    private String mode;
 
     Builder() {}
 
@@ -201,6 +214,9 @@ public final class AutoscalingPolicy implements ApiMessage {
       if (other.getMinNumReplicas() != null) {
         this.minNumReplicas = other.minNumReplicas;
       }
+      if (other.getMode() != null) {
+        this.mode = other.mode;
+      }
       return this;
     }
 
@@ -211,6 +227,7 @@ public final class AutoscalingPolicy implements ApiMessage {
       this.loadBalancingUtilization = source.loadBalancingUtilization;
       this.maxNumReplicas = source.maxNumReplicas;
       this.minNumReplicas = source.minNumReplicas;
+      this.mode = source.mode;
     }
 
     /**
@@ -334,6 +351,17 @@ public final class AutoscalingPolicy implements ApiMessage {
       return this;
     }
 
+    /** Defines operating mode for this policy. */
+    public String getMode() {
+      return mode;
+    }
+
+    /** Defines operating mode for this policy. */
+    public Builder setMode(String mode) {
+      this.mode = mode;
+      return this;
+    }
+
     public AutoscalingPolicy build() {
 
       return new AutoscalingPolicy(
@@ -342,7 +370,8 @@ public final class AutoscalingPolicy implements ApiMessage {
           customMetricUtilizations,
           loadBalancingUtilization,
           maxNumReplicas,
-          minNumReplicas);
+          minNumReplicas,
+          mode);
     }
 
     public Builder clone() {
@@ -353,6 +382,7 @@ public final class AutoscalingPolicy implements ApiMessage {
       newBuilder.setLoadBalancingUtilization(this.loadBalancingUtilization);
       newBuilder.setMaxNumReplicas(this.maxNumReplicas);
       newBuilder.setMinNumReplicas(this.minNumReplicas);
+      newBuilder.setMode(this.mode);
       return newBuilder;
     }
   }
@@ -377,6 +407,9 @@ public final class AutoscalingPolicy implements ApiMessage {
         + ", "
         + "minNumReplicas="
         + minNumReplicas
+        + ", "
+        + "mode="
+        + mode
         + "}";
   }
 
@@ -392,7 +425,8 @@ public final class AutoscalingPolicy implements ApiMessage {
           && Objects.equals(this.customMetricUtilizations, that.getCustomMetricUtilizationsList())
           && Objects.equals(this.loadBalancingUtilization, that.getLoadBalancingUtilization())
           && Objects.equals(this.maxNumReplicas, that.getMaxNumReplicas())
-          && Objects.equals(this.minNumReplicas, that.getMinNumReplicas());
+          && Objects.equals(this.minNumReplicas, that.getMinNumReplicas())
+          && Objects.equals(this.mode, that.getMode());
     }
     return false;
   }
@@ -405,6 +439,7 @@ public final class AutoscalingPolicy implements ApiMessage {
         customMetricUtilizations,
         loadBalancingUtilization,
         maxNumReplicas,
-        minNumReplicas);
+        minNumReplicas,
+        mode);
   }
 }

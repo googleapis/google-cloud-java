@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.snapshots.get. Returns the specified Snapshot resource. Gets a
- * list of available snapshots by making a list() request. (== suppress_warning http-rest-shadowed
- * ==)
+ * list of available snapshots by making a list() request.
  */
 public final class GetSnapshotHttpRequest implements ApiMessage {
   private final String access_token;

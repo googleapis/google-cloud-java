@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.securityPolicies.patchRule. Patches a rule at the specified
- * priority. (== suppress_warning http-rest-shadowed ==)
+ * priority.
  */
 public final class PatchRuleSecurityPolicyHttpRequest implements ApiMessage {
   private final String access_token;

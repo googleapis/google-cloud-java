@@ -156,7 +156,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of accelerator types. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of accelerator types.
    *
    * <p>Sample code:
    *
@@ -184,7 +184,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of accelerator types. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of accelerator types.
    *
    * <p>Sample code:
    *
@@ -210,7 +210,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of accelerator types. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of accelerator types.
    *
    * <p>Sample code:
    *
@@ -237,7 +237,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of accelerator types. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of accelerator types.
    *
    * <p>Sample code:
    *
@@ -264,7 +264,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of accelerator types. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of accelerator types.
    *
    * <p>Sample code:
    *
@@ -298,7 +298,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified accelerator type. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified accelerator type.
    *
    * <p>Sample code:
    *
@@ -324,7 +324,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified accelerator type. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified accelerator type.
    *
    * <p>Sample code:
    *
@@ -348,7 +348,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified accelerator type. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified accelerator type.
    *
    * <p>Sample code:
    *
@@ -372,7 +372,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified accelerator type. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified accelerator type.
    *
    * <p>Sample code:
    *
@@ -396,8 +396,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of accelerator types available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of accelerator types available to the specified project.
    *
    * <p>Sample code:
    *
@@ -424,8 +423,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of accelerator types available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of accelerator types available to the specified project.
    *
    * <p>Sample code:
    *
@@ -450,8 +448,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of accelerator types available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of accelerator types available to the specified project.
    *
    * <p>Sample code:
    *
@@ -478,8 +475,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of accelerator types available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of accelerator types available to the specified project.
    *
    * <p>Sample code:
    *
@@ -505,8 +501,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of accelerator types available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of accelerator types available to the specified project.
    *
    * <p>Sample code:
    *

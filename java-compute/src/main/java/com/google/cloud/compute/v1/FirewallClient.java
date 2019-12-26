@@ -153,7 +153,7 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified firewall. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified firewall.
    *
    * <p>Sample code:
    *
@@ -179,7 +179,7 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified firewall. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified firewall.
    *
    * <p>Sample code:
    *
@@ -203,7 +203,7 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified firewall. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified firewall.
    *
    * <p>Sample code:
    *
@@ -227,7 +227,7 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified firewall. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified firewall.
    *
    * <p>Sample code:
    *
@@ -250,7 +250,7 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified firewall. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified firewall.
    *
    * <p>Sample code:
    *
@@ -276,7 +276,7 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified firewall. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified firewall.
    *
    * <p>Sample code:
    *
@@ -300,7 +300,7 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified firewall. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified firewall.
    *
    * <p>Sample code:
    *
@@ -324,7 +324,7 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified firewall. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified firewall.
    *
    * <p>Sample code:
    *
@@ -347,8 +347,7 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a firewall rule in the specified project using the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Creates a firewall rule in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -379,8 +378,7 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a firewall rule in the specified project using the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Creates a firewall rule in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -411,8 +409,7 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a firewall rule in the specified project using the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Creates a firewall rule in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -438,8 +435,7 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a firewall rule in the specified project using the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Creates a firewall rule in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -464,8 +460,7 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of firewall rules available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of firewall rules available to the specified project.
    *
    * <p>Sample code:
    *
@@ -492,8 +487,7 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of firewall rules available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of firewall rules available to the specified project.
    *
    * <p>Sample code:
    *
@@ -518,8 +512,7 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of firewall rules available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of firewall rules available to the specified project.
    *
    * <p>Sample code:
    *
@@ -545,8 +538,7 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of firewall rules available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of firewall rules available to the specified project.
    *
    * <p>Sample code:
    *
@@ -572,8 +564,7 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of firewall rules available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of firewall rules available to the specified project.
    *
    * <p>Sample code:
    *
@@ -606,8 +597,7 @@ public class FirewallClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified firewall rule with the data included in the request. This method supports
-   * PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning
-   * http-rest-shadowed ==)
+   * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -646,8 +636,7 @@ public class FirewallClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified firewall rule with the data included in the request. This method supports
-   * PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning
-   * http-rest-shadowed ==)
+   * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -686,8 +675,7 @@ public class FirewallClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified firewall rule with the data included in the request. This method supports
-   * PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning
-   * http-rest-shadowed ==)
+   * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -716,8 +704,7 @@ public class FirewallClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified firewall rule with the data included in the request. This method supports
-   * PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning
-   * http-rest-shadowed ==)
+   * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -746,7 +733,7 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Updates the specified firewall rule with the data included in the request. Note that all fields
    * will be updated if using PUT, even fields that are not specified. To update individual fields,
-   * please use PATCH instead. (== suppress_warning http-rest-shadowed ==)
+   * please use PATCH instead.
    *
    * <p>Sample code:
    *
@@ -786,7 +773,7 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Updates the specified firewall rule with the data included in the request. Note that all fields
    * will be updated if using PUT, even fields that are not specified. To update individual fields,
-   * please use PATCH instead. (== suppress_warning http-rest-shadowed ==)
+   * please use PATCH instead.
    *
    * <p>Sample code:
    *
@@ -826,7 +813,7 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Updates the specified firewall rule with the data included in the request. Note that all fields
    * will be updated if using PUT, even fields that are not specified. To update individual fields,
-   * please use PATCH instead. (== suppress_warning http-rest-shadowed ==)
+   * please use PATCH instead.
    *
    * <p>Sample code:
    *
@@ -856,7 +843,7 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Updates the specified firewall rule with the data included in the request. Note that all fields
    * will be updated if using PUT, even fields that are not specified. To update individual fields,
-   * please use PATCH instead. (== suppress_warning http-rest-shadowed ==)
+   * please use PATCH instead.
    *
    * <p>Sample code:
    *

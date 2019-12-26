@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.disks.createSnapshot. Creates a snapshot of a specified
- * persistent disk. (== suppress_warning http-rest-shadowed ==)
+ * persistent disk.
  */
 public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
   private final String access_token;

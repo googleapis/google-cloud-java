@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.addresses.insert. Creates an address resource in the specified
- * project by using the data included in the request. (== suppress_warning http-rest-shadowed ==)
+ * project by using the data included in the request.
  */
 public final class InsertAddressHttpRequest implements ApiMessage {
   private final String access_token;

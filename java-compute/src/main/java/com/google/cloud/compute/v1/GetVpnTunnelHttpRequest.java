@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.vpnTunnels.get. Returns the specified VpnTunnel resource. Gets
- * a list of available VPN tunnels by making a list() request. (== suppress_warning
- * http-rest-shadowed ==)
+ * a list of available VPN tunnels by making a list() request.
  */
 public final class GetVpnTunnelHttpRequest implements ApiMessage {
   private final String access_token;

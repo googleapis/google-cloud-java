@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
  *
  * <p>You can use a template to define properties for nodes in a node group. For more information,
  * read Creating node groups and instances. (== resource_for beta.nodeTemplates ==) (== resource_for
- * v1.nodeTemplates ==) (== NextID: 16 ==)
+ * v1.nodeTemplates ==)
  */
 public final class NodeTemplate implements ApiMessage {
   private final String creationTimestamp;

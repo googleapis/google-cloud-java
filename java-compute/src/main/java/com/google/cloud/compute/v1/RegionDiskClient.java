@@ -155,8 +155,7 @@ public class RegionDiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Adds existing resource policies to a regional disk. You can only add one policy which will be
-   * applied to this disk for scheduling snapshot creation. (== suppress_warning http-rest-shadowed
-   * ==)
+   * applied to this disk for scheduling snapshot creation.
    *
    * <p>Sample code:
    *
@@ -189,8 +188,7 @@ public class RegionDiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Adds existing resource policies to a regional disk. You can only add one policy which will be
-   * applied to this disk for scheduling snapshot creation. (== suppress_warning http-rest-shadowed
-   * ==)
+   * applied to this disk for scheduling snapshot creation.
    *
    * <p>Sample code:
    *
@@ -223,8 +221,7 @@ public class RegionDiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Adds existing resource policies to a regional disk. You can only add one policy which will be
-   * applied to this disk for scheduling snapshot creation. (== suppress_warning http-rest-shadowed
-   * ==)
+   * applied to this disk for scheduling snapshot creation.
    *
    * <p>Sample code:
    *
@@ -252,8 +249,7 @@ public class RegionDiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Adds existing resource policies to a regional disk. You can only add one policy which will be
-   * applied to this disk for scheduling snapshot creation. (== suppress_warning http-rest-shadowed
-   * ==)
+   * applied to this disk for scheduling snapshot creation.
    *
    * <p>Sample code:
    *
@@ -279,7 +275,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a snapshot of this regional disk. (== suppress_warning http-rest-shadowed ==)
+   * Creates a snapshot of this regional disk.
    *
    * <p>Sample code:
    *
@@ -312,7 +308,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a snapshot of this regional disk. (== suppress_warning http-rest-shadowed ==)
+   * Creates a snapshot of this regional disk.
    *
    * <p>Sample code:
    *
@@ -344,7 +340,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a snapshot of this regional disk. (== suppress_warning http-rest-shadowed ==)
+   * Creates a snapshot of this regional disk.
    *
    * <p>Sample code:
    *
@@ -370,7 +366,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a snapshot of this regional disk. (== suppress_warning http-rest-shadowed ==)
+   * Creates a snapshot of this regional disk.
    *
    * <p>Sample code:
    *
@@ -398,8 +394,7 @@ public class RegionDiskClient implements BackgroundResource {
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
-   * any snapshots previously made from the disk. You must separately delete snapshots. (==
-   * suppress_warning http-rest-shadowed ==)
+   * any snapshots previously made from the disk. You must separately delete snapshots.
    *
    * <p>Sample code:
    *
@@ -427,8 +422,7 @@ public class RegionDiskClient implements BackgroundResource {
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
-   * any snapshots previously made from the disk. You must separately delete snapshots. (==
-   * suppress_warning http-rest-shadowed ==)
+   * any snapshots previously made from the disk. You must separately delete snapshots.
    *
    * <p>Sample code:
    *
@@ -454,8 +448,7 @@ public class RegionDiskClient implements BackgroundResource {
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
-   * any snapshots previously made from the disk. You must separately delete snapshots. (==
-   * suppress_warning http-rest-shadowed ==)
+   * any snapshots previously made from the disk. You must separately delete snapshots.
    *
    * <p>Sample code:
    *
@@ -481,8 +474,7 @@ public class RegionDiskClient implements BackgroundResource {
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
-   * any snapshots previously made from the disk. You must separately delete snapshots. (==
-   * suppress_warning http-rest-shadowed ==)
+   * any snapshots previously made from the disk. You must separately delete snapshots.
    *
    * <p>Sample code:
    *
@@ -505,7 +497,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns a specified regional persistent disk. (== suppress_warning http-rest-shadowed ==)
+   * Returns a specified regional persistent disk.
    *
    * <p>Sample code:
    *
@@ -531,7 +523,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns a specified regional persistent disk. (== suppress_warning http-rest-shadowed ==)
+   * Returns a specified regional persistent disk.
    *
    * <p>Sample code:
    *
@@ -554,7 +546,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns a specified regional persistent disk. (== suppress_warning http-rest-shadowed ==)
+   * Returns a specified regional persistent disk.
    *
    * <p>Sample code:
    *
@@ -578,7 +570,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns a specified regional persistent disk. (== suppress_warning http-rest-shadowed ==)
+   * Returns a specified regional persistent disk.
    *
    * <p>Sample code:
    *
@@ -602,7 +594,7 @@ public class RegionDiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a persistent regional disk in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -640,7 +632,7 @@ public class RegionDiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a persistent regional disk in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -678,7 +670,7 @@ public class RegionDiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a persistent regional disk in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -705,7 +697,7 @@ public class RegionDiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a persistent regional disk in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -730,8 +722,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of persistent disks contained within the specified region. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of persistent disks contained within the specified region.
    *
    * <p>Sample code:
    *
@@ -758,8 +749,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of persistent disks contained within the specified region. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of persistent disks contained within the specified region.
    *
    * <p>Sample code:
    *
@@ -784,8 +774,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of persistent disks contained within the specified region. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of persistent disks contained within the specified region.
    *
    * <p>Sample code:
    *
@@ -811,8 +800,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of persistent disks contained within the specified region. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of persistent disks contained within the specified region.
    *
    * <p>Sample code:
    *
@@ -838,8 +826,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of persistent disks contained within the specified region. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of persistent disks contained within the specified region.
    *
    * <p>Sample code:
    *
@@ -871,7 +858,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes resource policies from a regional disk. (== suppress_warning http-rest-shadowed ==)
+   * Removes resource policies from a regional disk.
    *
    * <p>Sample code:
    *
@@ -903,7 +890,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes resource policies from a regional disk. (== suppress_warning http-rest-shadowed ==)
+   * Removes resource policies from a regional disk.
    *
    * <p>Sample code:
    *
@@ -935,7 +922,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes resource policies from a regional disk. (== suppress_warning http-rest-shadowed ==)
+   * Removes resource policies from a regional disk.
    *
    * <p>Sample code:
    *
@@ -962,7 +949,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes resource policies from a regional disk. (== suppress_warning http-rest-shadowed ==)
+   * Removes resource policies from a regional disk.
    *
    * <p>Sample code:
    *
@@ -988,7 +975,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resizes the specified regional persistent disk. (== suppress_warning http-rest-shadowed ==)
+   * Resizes the specified regional persistent disk.
    *
    * <p>Sample code:
    *
@@ -1018,7 +1005,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resizes the specified regional persistent disk. (== suppress_warning http-rest-shadowed ==)
+   * Resizes the specified regional persistent disk.
    *
    * <p>Sample code:
    *
@@ -1048,7 +1035,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resizes the specified regional persistent disk. (== suppress_warning http-rest-shadowed ==)
+   * Resizes the specified regional persistent disk.
    *
    * <p>Sample code:
    *
@@ -1074,7 +1061,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resizes the specified regional persistent disk. (== suppress_warning http-rest-shadowed ==)
+   * Resizes the specified regional persistent disk.
    *
    * <p>Sample code:
    *
@@ -1099,7 +1086,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the labels on the target regional disk. (== suppress_warning http-rest-shadowed ==)
+   * Sets the labels on the target regional disk.
    *
    * <p>Sample code:
    *
@@ -1130,7 +1117,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the labels on the target regional disk. (== suppress_warning http-rest-shadowed ==)
+   * Sets the labels on the target regional disk.
    *
    * <p>Sample code:
    *
@@ -1160,7 +1147,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the labels on the target regional disk. (== suppress_warning http-rest-shadowed ==)
+   * Sets the labels on the target regional disk.
    *
    * <p>Sample code:
    *
@@ -1186,7 +1173,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the labels on the target regional disk. (== suppress_warning http-rest-shadowed ==)
+   * Sets the labels on the target regional disk.
    *
    * <p>Sample code:
    *
@@ -1212,8 +1199,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -1244,8 +1230,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -1275,8 +1260,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -1303,8 +1287,7 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *

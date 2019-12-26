@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.sslPolicies.delete. Deletes the specified SSL policy. The SSL
  * policy resource can be deleted only if it is not in use by any TargetHttpsProxy or TargetSslProxy
- * resources. (== suppress_warning http-rest-shadowed ==)
+ * resources.
  */
 public final class DeleteSslPolicyHttpRequest implements ApiMessage {
   private final String access_token;

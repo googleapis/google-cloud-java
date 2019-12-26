@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.disks.removeResourcePolicies. Removes resource policies from a
- * disk. (== suppress_warning http-rest-shadowed ==)
+ * disk.
  */
 public final class RemoveResourcePoliciesDiskHttpRequest implements ApiMessage {
   private final String access_token;

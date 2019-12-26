@@ -29,7 +29,6 @@ import javax.annotation.Nullable;
  * Request object for method compute.instances.setShieldedInstanceIntegrityPolicy. Sets the Shielded
  * Instance integrity policy for an instance. You can only use this method on a running instance.
  * This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
- * (== suppress_warning http-rest-shadowed ==)
  */
 public final class SetShieldedInstanceIntegrityPolicyInstanceHttpRequest implements ApiMessage {
   private final String access_token;

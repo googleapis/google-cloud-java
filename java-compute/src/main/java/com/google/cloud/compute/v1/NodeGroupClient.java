@@ -154,7 +154,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds specified number of nodes to the node group. (== suppress_warning http-rest-shadowed ==)
+   * Adds specified number of nodes to the node group.
    *
    * <p>Sample code:
    *
@@ -185,7 +185,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds specified number of nodes to the node group. (== suppress_warning http-rest-shadowed ==)
+   * Adds specified number of nodes to the node group.
    *
    * <p>Sample code:
    *
@@ -215,7 +215,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds specified number of nodes to the node group. (== suppress_warning http-rest-shadowed ==)
+   * Adds specified number of nodes to the node group.
    *
    * <p>Sample code:
    *
@@ -241,7 +241,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds specified number of nodes to the node group. (== suppress_warning http-rest-shadowed ==)
+   * Adds specified number of nodes to the node group.
    *
    * <p>Sample code:
    *
@@ -267,7 +267,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details
-   * about each group. (== suppress_warning http-rest-shadowed ==)
+   * about each group.
    *
    * <p>Sample code:
    *
@@ -295,7 +295,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details
-   * about each group. (== suppress_warning http-rest-shadowed ==)
+   * about each group.
    *
    * <p>Sample code:
    *
@@ -321,7 +321,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details
-   * about each group. (== suppress_warning http-rest-shadowed ==)
+   * about each group.
    *
    * <p>Sample code:
    *
@@ -349,7 +349,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details
-   * about each group. (== suppress_warning http-rest-shadowed ==)
+   * about each group.
    *
    * <p>Sample code:
    *
@@ -377,7 +377,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details
-   * about each group. (== suppress_warning http-rest-shadowed ==)
+   * about each group.
    *
    * <p>Sample code:
    *
@@ -410,7 +410,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified NodeGroup resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified NodeGroup resource.
    *
    * <p>Sample code:
    *
@@ -436,7 +436,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified NodeGroup resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified NodeGroup resource.
    *
    * <p>Sample code:
    *
@@ -460,7 +460,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified NodeGroup resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified NodeGroup resource.
    *
    * <p>Sample code:
    *
@@ -484,7 +484,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified NodeGroup resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified NodeGroup resource.
    *
    * <p>Sample code:
    *
@@ -507,7 +507,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes specified nodes from the node group. (== suppress_warning http-rest-shadowed ==)
+   * Deletes specified nodes from the node group.
    *
    * <p>Sample code:
    *
@@ -538,7 +538,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes specified nodes from the node group. (== suppress_warning http-rest-shadowed ==)
+   * Deletes specified nodes from the node group.
    *
    * <p>Sample code:
    *
@@ -568,7 +568,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes specified nodes from the node group. (== suppress_warning http-rest-shadowed ==)
+   * Deletes specified nodes from the node group.
    *
    * <p>Sample code:
    *
@@ -594,7 +594,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes specified nodes from the node group. (== suppress_warning http-rest-shadowed ==)
+   * Deletes specified nodes from the node group.
    *
    * <p>Sample code:
    *
@@ -621,8 +621,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified NodeGroup. Get a list of available NodeGroups by making a list() request.
-   * Note: the "nodes" field should not be used. Use nodeGroups.listNodes instead. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Note: the "nodes" field should not be used. Use nodeGroups.listNodes instead.
    *
    * <p>Sample code:
    *
@@ -649,8 +648,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified NodeGroup. Get a list of available NodeGroups by making a list() request.
-   * Note: the "nodes" field should not be used. Use nodeGroups.listNodes instead. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Note: the "nodes" field should not be used. Use nodeGroups.listNodes instead.
    *
    * <p>Sample code:
    *
@@ -675,8 +673,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified NodeGroup. Get a list of available NodeGroups by making a list() request.
-   * Note: the "nodes" field should not be used. Use nodeGroups.listNodes instead. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Note: the "nodes" field should not be used. Use nodeGroups.listNodes instead.
    *
    * <p>Sample code:
    *
@@ -701,8 +698,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified NodeGroup. Get a list of available NodeGroups by making a list() request.
-   * Note: the "nodes" field should not be used. Use nodeGroups.listNodes instead. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Note: the "nodes" field should not be used. Use nodeGroups.listNodes instead.
    *
    * <p>Sample code:
    *
@@ -726,7 +722,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -753,7 +749,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -778,7 +774,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -803,7 +799,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -828,7 +824,6 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a NodeGroup resource in the specified project using the data included in the request.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -848,7 +843,7 @@ public class NodeGroupClient implements BackgroundResource {
    *     for your specific project. Use sole-tenant nodes to keep your instances physically
    *     separated from instances in other projects, or to group your instances together on the same
    *     host hardware. For more information, read Sole-tenant nodes. (== resource_for
-   *     beta.nodeGroups ==) (== resource_for v1.nodeGroups ==) NextID: 16
+   *     beta.nodeGroups ==) (== resource_for v1.nodeGroups ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -867,7 +862,6 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a NodeGroup resource in the specified project using the data included in the request.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -887,7 +881,7 @@ public class NodeGroupClient implements BackgroundResource {
    *     for your specific project. Use sole-tenant nodes to keep your instances physically
    *     separated from instances in other projects, or to group your instances together on the same
    *     host hardware. For more information, read Sole-tenant nodes. (== resource_for
-   *     beta.nodeGroups ==) (== resource_for v1.nodeGroups ==) NextID: 16
+   *     beta.nodeGroups ==) (== resource_for v1.nodeGroups ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -906,7 +900,6 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a NodeGroup resource in the specified project using the data included in the request.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -935,7 +928,6 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a NodeGroup resource in the specified project using the data included in the request.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -963,8 +955,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves a list of node groups available to the specified project. Note: use
-   * nodeGroups.listNodes for more details about each group. (== suppress_warning http-rest-shadowed
-   * ==)
+   * nodeGroups.listNodes for more details about each group.
    *
    * <p>Sample code:
    *
@@ -992,8 +983,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves a list of node groups available to the specified project. Note: use
-   * nodeGroups.listNodes for more details about each group. (== suppress_warning http-rest-shadowed
-   * ==)
+   * nodeGroups.listNodes for more details about each group.
    *
    * <p>Sample code:
    *
@@ -1019,8 +1009,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves a list of node groups available to the specified project. Note: use
-   * nodeGroups.listNodes for more details about each group. (== suppress_warning http-rest-shadowed
-   * ==)
+   * nodeGroups.listNodes for more details about each group.
    *
    * <p>Sample code:
    *
@@ -1047,8 +1036,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves a list of node groups available to the specified project. Note: use
-   * nodeGroups.listNodes for more details about each group. (== suppress_warning http-rest-shadowed
-   * ==)
+   * nodeGroups.listNodes for more details about each group.
    *
    * <p>Sample code:
    *
@@ -1075,8 +1063,7 @@ public class NodeGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves a list of node groups available to the specified project. Note: use
-   * nodeGroups.listNodes for more details about each group. (== suppress_warning http-rest-shadowed
-   * ==)
+   * nodeGroups.listNodes for more details about each group.
    *
    * <p>Sample code:
    *
@@ -1108,7 +1095,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists nodes in the node group. (== suppress_warning http-rest-shadowed ==)
+   * Lists nodes in the node group.
    *
    * <p>Sample code:
    *
@@ -1136,7 +1123,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists nodes in the node group. (== suppress_warning http-rest-shadowed ==)
+   * Lists nodes in the node group.
    *
    * <p>Sample code:
    *
@@ -1161,7 +1148,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists nodes in the node group. (== suppress_warning http-rest-shadowed ==)
+   * Lists nodes in the node group.
    *
    * <p>Sample code:
    *
@@ -1188,7 +1175,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists nodes in the node group. (== suppress_warning http-rest-shadowed ==)
+   * Lists nodes in the node group.
    *
    * <p>Sample code:
    *
@@ -1214,7 +1201,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists nodes in the node group. (== suppress_warning http-rest-shadowed ==)
+   * Lists nodes in the node group.
    *
    * <p>Sample code:
    *
@@ -1247,8 +1234,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -1279,8 +1265,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -1310,8 +1295,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -1337,8 +1321,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -1364,7 +1347,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the node template of the node group. (== suppress_warning http-rest-shadowed ==)
+   * Updates the node template of the node group.
    *
    * <p>Sample code:
    *
@@ -1395,7 +1378,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the node template of the node group. (== suppress_warning http-rest-shadowed ==)
+   * Updates the node template of the node group.
    *
    * <p>Sample code:
    *
@@ -1425,7 +1408,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the node template of the node group. (== suppress_warning http-rest-shadowed ==)
+   * Updates the node template of the node group.
    *
    * <p>Sample code:
    *
@@ -1451,7 +1434,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the node template of the node group. (== suppress_warning http-rest-shadowed ==)
+   * Updates the node template of the node group.
    *
    * <p>Sample code:
    *
@@ -1477,8 +1460,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -1509,8 +1491,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -1540,8 +1521,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -1568,8 +1548,7 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *

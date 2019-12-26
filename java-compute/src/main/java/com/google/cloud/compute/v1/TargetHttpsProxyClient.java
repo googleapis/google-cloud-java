@@ -157,7 +157,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of all TargetHttpsProxy resources, regional and global, available to the
-   * specified project. (== suppress_warning http-rest-shadowed ==)
+   * specified project.
    *
    * <p>Sample code:
    *
@@ -186,7 +186,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of all TargetHttpsProxy resources, regional and global, available to the
-   * specified project. (== suppress_warning http-rest-shadowed ==)
+   * specified project.
    *
    * <p>Sample code:
    *
@@ -213,7 +213,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of all TargetHttpsProxy resources, regional and global, available to the
-   * specified project. (== suppress_warning http-rest-shadowed ==)
+   * specified project.
    *
    * <p>Sample code:
    *
@@ -241,7 +241,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of all TargetHttpsProxy resources, regional and global, available to the
-   * specified project. (== suppress_warning http-rest-shadowed ==)
+   * specified project.
    *
    * <p>Sample code:
    *
@@ -270,7 +270,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of all TargetHttpsProxy resources, regional and global, available to the
-   * specified project. (== suppress_warning http-rest-shadowed ==)
+   * specified project.
    *
    * <p>Sample code:
    *
@@ -304,7 +304,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetHttpsProxy resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified TargetHttpsProxy resource.
    *
    * <p>Sample code:
    *
@@ -331,7 +331,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetHttpsProxy resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified TargetHttpsProxy resource.
    *
    * <p>Sample code:
    *
@@ -357,7 +357,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetHttpsProxy resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified TargetHttpsProxy resource.
    *
    * <p>Sample code:
    *
@@ -381,7 +381,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetHttpsProxy resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified TargetHttpsProxy resource.
    *
    * <p>Sample code:
    *
@@ -406,7 +406,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetHttpsProxy resource. Gets a list of available target HTTPS proxies
-   * by making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * by making a list() request.
    *
    * <p>Sample code:
    *
@@ -434,7 +434,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetHttpsProxy resource. Gets a list of available target HTTPS proxies
-   * by making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * by making a list() request.
    *
    * <p>Sample code:
    *
@@ -459,7 +459,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetHttpsProxy resource. Gets a list of available target HTTPS proxies
-   * by making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * by making a list() request.
    *
    * <p>Sample code:
    *
@@ -484,7 +484,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetHttpsProxy resource. Gets a list of available target HTTPS proxies
-   * by making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * by making a list() request.
    *
    * <p>Sample code:
    *
@@ -509,7 +509,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetHttpsProxy resource in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -523,10 +523,11 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param targetHttpsProxyResource Represents a Target HTTPS Proxy resource.
-   *     <p>A target HTTPS proxy is a component of certain types of load balancers. Global
-   *     forwarding rules reference a target HTTPS proxy, and the target proxy then references a URL
-   *     map. For more information, read Using Target Proxies. (== resource_for
-   *     beta.targetHttpsProxies ==) (== resource_for v1.targetHttpsProxies ==)
+   *     <p>A target HTTPS proxy is a component of GCP HTTPS load balancers. Forwarding rules
+   *     reference a target HTTPS proxy, and the target proxy then references a URL map. For more
+   *     information, read Using Target Proxies and Forwarding rule concepts. (== resource_for
+   *     beta.targetHttpsProxies ==) (== resource_for v1.targetHttpsProxies ==) (== resource_for
+   *     beta.regionTargetHttpsProxies ==) (== resource_for v1.regionTargetHttpsProxies ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -544,7 +545,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetHttpsProxy resource in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -558,10 +559,11 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param targetHttpsProxyResource Represents a Target HTTPS Proxy resource.
-   *     <p>A target HTTPS proxy is a component of certain types of load balancers. Global
-   *     forwarding rules reference a target HTTPS proxy, and the target proxy then references a URL
-   *     map. For more information, read Using Target Proxies. (== resource_for
-   *     beta.targetHttpsProxies ==) (== resource_for v1.targetHttpsProxies ==)
+   *     <p>A target HTTPS proxy is a component of GCP HTTPS load balancers. Forwarding rules
+   *     reference a target HTTPS proxy, and the target proxy then references a URL map. For more
+   *     information, read Using Target Proxies and Forwarding rule concepts. (== resource_for
+   *     beta.targetHttpsProxies ==) (== resource_for v1.targetHttpsProxies ==) (== resource_for
+   *     beta.regionTargetHttpsProxies ==) (== resource_for v1.regionTargetHttpsProxies ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -579,7 +581,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetHttpsProxy resource in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -606,7 +608,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetHttpsProxy resource in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -632,8 +634,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of TargetHttpsProxy resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of TargetHttpsProxy resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -660,8 +661,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of TargetHttpsProxy resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of TargetHttpsProxy resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -686,8 +686,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of TargetHttpsProxy resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of TargetHttpsProxy resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -714,8 +713,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of TargetHttpsProxy resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of TargetHttpsProxy resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -741,8 +739,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of TargetHttpsProxy resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of TargetHttpsProxy resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -775,7 +772,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the QUIC override policy for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+   * Sets the QUIC override policy for TargetHttpsProxy.
    *
    * <p>Sample code:
    *
@@ -808,7 +805,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the QUIC override policy for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+   * Sets the QUIC override policy for TargetHttpsProxy.
    *
    * <p>Sample code:
    *
@@ -841,7 +838,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the QUIC override policy for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+   * Sets the QUIC override policy for TargetHttpsProxy.
    *
    * <p>Sample code:
    *
@@ -868,7 +865,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the QUIC override policy for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+   * Sets the QUIC override policy for TargetHttpsProxy.
    *
    * <p>Sample code:
    *
@@ -894,7 +891,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Replaces SslCertificates for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+   * Replaces SslCertificates for TargetHttpsProxy.
    *
    * <p>Sample code:
    *
@@ -928,7 +925,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Replaces SslCertificates for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+   * Replaces SslCertificates for TargetHttpsProxy.
    *
    * <p>Sample code:
    *
@@ -962,7 +959,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Replaces SslCertificates for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+   * Replaces SslCertificates for TargetHttpsProxy.
    *
    * <p>Sample code:
    *
@@ -989,7 +986,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Replaces SslCertificates for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+   * Replaces SslCertificates for TargetHttpsProxy.
    *
    * <p>Sample code:
    *
@@ -1017,8 +1014,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   /**
    * Sets the SSL policy for TargetHttpsProxy. The SSL policy specifies the server-side support for
    * SSL features. This affects connections between clients and the HTTPS proxy load balancer. They
-   * do not affect the connection between the load balancer and the backends. (== suppress_warning
-   * http-rest-shadowed ==)
+   * do not affect the connection between the load balancer and the backends.
    *
    * <p>Sample code:
    *
@@ -1052,8 +1048,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   /**
    * Sets the SSL policy for TargetHttpsProxy. The SSL policy specifies the server-side support for
    * SSL features. This affects connections between clients and the HTTPS proxy load balancer. They
-   * do not affect the connection between the load balancer and the backends. (== suppress_warning
-   * http-rest-shadowed ==)
+   * do not affect the connection between the load balancer and the backends.
    *
    * <p>Sample code:
    *
@@ -1086,8 +1081,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   /**
    * Sets the SSL policy for TargetHttpsProxy. The SSL policy specifies the server-side support for
    * SSL features. This affects connections between clients and the HTTPS proxy load balancer. They
-   * do not affect the connection between the load balancer and the backends. (== suppress_warning
-   * http-rest-shadowed ==)
+   * do not affect the connection between the load balancer and the backends.
    *
    * <p>Sample code:
    *
@@ -1116,8 +1110,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   /**
    * Sets the SSL policy for TargetHttpsProxy. The SSL policy specifies the server-side support for
    * SSL features. This affects connections between clients and the HTTPS proxy load balancer. They
-   * do not affect the connection between the load balancer and the backends. (== suppress_warning
-   * http-rest-shadowed ==)
+   * do not affect the connection between the load balancer and the backends.
    *
    * <p>Sample code:
    *
@@ -1143,7 +1136,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the URL map for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+   * Changes the URL map for TargetHttpsProxy.
    *
    * <p>Sample code:
    *
@@ -1173,7 +1166,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the URL map for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+   * Changes the URL map for TargetHttpsProxy.
    *
    * <p>Sample code:
    *
@@ -1203,7 +1196,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the URL map for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+   * Changes the URL map for TargetHttpsProxy.
    *
    * <p>Sample code:
    *
@@ -1229,7 +1222,7 @@ public class TargetHttpsProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the URL map for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+   * Changes the URL map for TargetHttpsProxy.
    *
    * <p>Sample code:
    *

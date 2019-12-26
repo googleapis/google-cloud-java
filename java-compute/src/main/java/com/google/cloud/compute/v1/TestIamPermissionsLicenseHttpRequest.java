@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.licenses.testIamPermissions. Returns permissions that a caller
- * has on the specified resource. (== suppress_warning http-rest-shadowed ==)
+ * has on the specified resource.
  */
 public final class TestIamPermissionsLicenseHttpRequest implements ApiMessage {
   private final String access_token;

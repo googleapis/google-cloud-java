@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionDiskTypes.get. Returns the specified regional disk type.
- * Gets a list of available disk types by making a list() request. (== suppress_warning
- * http-rest-shadowed ==)
+ * Gets a list of available disk types by making a list() request.
  */
 public final class GetRegionDiskTypeHttpRequest implements ApiMessage {
   private final String access_token;

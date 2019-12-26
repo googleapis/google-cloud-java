@@ -28,8 +28,7 @@ import javax.annotation.Nullable;
  * Request object for method compute.instanceTemplates.insert. Creates an instance template in the
  * specified project using the data that is included in the request. If you are creating a new
  * template to update an existing instance group, your new instance template must use the same
- * network or, if applicable, the same subnetwork as the original template. (== suppress_warning
- * http-rest-shadowed ==)
+ * network or, if applicable, the same subnetwork as the original template.
  */
 public final class InsertInstanceTemplateHttpRequest implements ApiMessage {
   private final String access_token;

@@ -153,7 +153,7 @@ public class NodeTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of node types. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of node types.
    *
    * <p>Sample code:
    *
@@ -180,7 +180,7 @@ public class NodeTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of node types. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of node types.
    *
    * <p>Sample code:
    *
@@ -205,7 +205,7 @@ public class NodeTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of node types. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of node types.
    *
    * <p>Sample code:
    *
@@ -232,7 +232,7 @@ public class NodeTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of node types. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of node types.
    *
    * <p>Sample code:
    *
@@ -259,7 +259,7 @@ public class NodeTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of node types. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of node types.
    *
    * <p>Sample code:
    *
@@ -293,7 +293,7 @@ public class NodeTypeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified node type. Gets a list of available node types by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -320,7 +320,7 @@ public class NodeTypeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified node type. Gets a list of available node types by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -345,7 +345,7 @@ public class NodeTypeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified node type. Gets a list of available node types by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -370,7 +370,7 @@ public class NodeTypeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified node type. Gets a list of available node types by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -393,8 +393,7 @@ public class NodeTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of node types available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of node types available to the specified project.
    *
    * <p>Sample code:
    *
@@ -421,8 +420,7 @@ public class NodeTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of node types available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of node types available to the specified project.
    *
    * <p>Sample code:
    *
@@ -446,8 +444,7 @@ public class NodeTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of node types available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of node types available to the specified project.
    *
    * <p>Sample code:
    *
@@ -473,8 +470,7 @@ public class NodeTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of node types available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of node types available to the specified project.
    *
    * <p>Sample code:
    *
@@ -500,8 +496,7 @@ public class NodeTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of node types available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of node types available to the specified project.
    *
    * <p>Sample code:
    *

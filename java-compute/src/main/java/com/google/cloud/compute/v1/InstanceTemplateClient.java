@@ -158,7 +158,7 @@ public class InstanceTemplateClient implements BackgroundResource {
   /**
    * Deletes the specified instance template. Deleting an instance template is permanent and cannot
    * be undone. It is not possible to delete templates that are already in use by a managed instance
-   * group. (== suppress_warning http-rest-shadowed ==)
+   * group.
    *
    * <p>Sample code:
    *
@@ -187,7 +187,7 @@ public class InstanceTemplateClient implements BackgroundResource {
   /**
    * Deletes the specified instance template. Deleting an instance template is permanent and cannot
    * be undone. It is not possible to delete templates that are already in use by a managed instance
-   * group. (== suppress_warning http-rest-shadowed ==)
+   * group.
    *
    * <p>Sample code:
    *
@@ -215,7 +215,7 @@ public class InstanceTemplateClient implements BackgroundResource {
   /**
    * Deletes the specified instance template. Deleting an instance template is permanent and cannot
    * be undone. It is not possible to delete templates that are already in use by a managed instance
-   * group. (== suppress_warning http-rest-shadowed ==)
+   * group.
    *
    * <p>Sample code:
    *
@@ -241,7 +241,7 @@ public class InstanceTemplateClient implements BackgroundResource {
   /**
    * Deletes the specified instance template. Deleting an instance template is permanent and cannot
    * be undone. It is not possible to delete templates that are already in use by a managed instance
-   * group. (== suppress_warning http-rest-shadowed ==)
+   * group.
    *
    * <p>Sample code:
    *
@@ -266,7 +266,7 @@ public class InstanceTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified instance template. Gets a list of available instance templates by making
-   * a list() request. (== suppress_warning http-rest-shadowed ==)
+   * a list() request.
    *
    * <p>Sample code:
    *
@@ -294,7 +294,7 @@ public class InstanceTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified instance template. Gets a list of available instance templates by making
-   * a list() request. (== suppress_warning http-rest-shadowed ==)
+   * a list() request.
    *
    * <p>Sample code:
    *
@@ -319,7 +319,7 @@ public class InstanceTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified instance template. Gets a list of available instance templates by making
-   * a list() request. (== suppress_warning http-rest-shadowed ==)
+   * a list() request.
    *
    * <p>Sample code:
    *
@@ -344,7 +344,7 @@ public class InstanceTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified instance template. Gets a list of available instance templates by making
-   * a list() request. (== suppress_warning http-rest-shadowed ==)
+   * a list() request.
    *
    * <p>Sample code:
    *
@@ -369,7 +369,7 @@ public class InstanceTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -397,7 +397,7 @@ public class InstanceTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -422,7 +422,7 @@ public class InstanceTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -448,7 +448,7 @@ public class InstanceTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -475,7 +475,7 @@ public class InstanceTemplateClient implements BackgroundResource {
    * Creates an instance template in the specified project using the data that is included in the
    * request. If you are creating a new template to update an existing instance group, your new
    * instance template must use the same network or, if applicable, the same subnetwork as the
-   * original template. (== suppress_warning http-rest-shadowed ==)
+   * original template.
    *
    * <p>Sample code:
    *
@@ -511,7 +511,7 @@ public class InstanceTemplateClient implements BackgroundResource {
    * Creates an instance template in the specified project using the data that is included in the
    * request. If you are creating a new template to update an existing instance group, your new
    * instance template must use the same network or, if applicable, the same subnetwork as the
-   * original template. (== suppress_warning http-rest-shadowed ==)
+   * original template.
    *
    * <p>Sample code:
    *
@@ -547,7 +547,7 @@ public class InstanceTemplateClient implements BackgroundResource {
    * Creates an instance template in the specified project using the data that is included in the
    * request. If you are creating a new template to update an existing instance group, your new
    * instance template must use the same network or, if applicable, the same subnetwork as the
-   * original template. (== suppress_warning http-rest-shadowed ==)
+   * original template.
    *
    * <p>Sample code:
    *
@@ -576,7 +576,7 @@ public class InstanceTemplateClient implements BackgroundResource {
    * Creates an instance template in the specified project using the data that is included in the
    * request. If you are creating a new template to update an existing instance group, your new
    * instance template must use the same network or, if applicable, the same subnetwork as the
-   * original template. (== suppress_warning http-rest-shadowed ==)
+   * original template.
    *
    * <p>Sample code:
    *
@@ -602,8 +602,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -630,8 +629,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -656,8 +654,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -684,8 +681,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -711,8 +707,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -745,8 +740,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -777,8 +771,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -808,8 +801,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -836,8 +828,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -863,8 +854,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -895,8 +885,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -926,8 +915,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -954,8 +942,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *

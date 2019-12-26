@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.urlMaps.list. Retrieves the list of UrlMap resources available
- * to the specified project. (== suppress_warning http-rest-shadowed ==)
+ * to the specified project.
  */
 public final class ListUrlMapsHttpRequest implements ApiMessage {
   private final String access_token;

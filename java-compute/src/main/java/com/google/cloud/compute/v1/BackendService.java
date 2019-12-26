@@ -399,6 +399,9 @@ public final class BackendService implements ApiMessage {
    * <p>This field is applicable to either: - A regional backend service with the service_protocol
    * set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global
    * backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+   *
+   * <p>If sessionAffinity is not NONE, and this field is not set to &gt;MAGLEV or RING_HASH,
+   * session affinity settings will not take effect.
    */
   public String getLocalityLbPolicy() {
     return localityLbPolicy;
@@ -492,8 +495,8 @@ public final class BackendService implements ApiMessage {
    * <p>When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP,
    * CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
    *
-   * <p>When the loadBalancingScheme is INTERNAL_SELF_MANAGED, possible values are NONE, CLIENT_IP,
-   * GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
+   * <p>When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values
+   * are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
    */
   public String getSessionAffinity() {
     return sessionAffinity;
@@ -1007,6 +1010,9 @@ public final class BackendService implements ApiMessage {
      * <p>This field is applicable to either: - A regional backend service with the service_protocol
      * set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global
      * backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     *
+     * <p>If sessionAffinity is not NONE, and this field is not set to &gt;MAGLEV or RING_HASH,
+     * session affinity settings will not take effect.
      */
     public String getLocalityLbPolicy() {
       return localityLbPolicy;
@@ -1030,6 +1036,9 @@ public final class BackendService implements ApiMessage {
      * <p>This field is applicable to either: - A regional backend service with the service_protocol
      * set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global
      * backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     *
+     * <p>If sessionAffinity is not NONE, and this field is not set to &gt;MAGLEV or RING_HASH,
+     * session affinity settings will not take effect.
      */
     public Builder setLocalityLbPolicy(String localityLbPolicy) {
       this.localityLbPolicy = localityLbPolicy;
@@ -1212,8 +1221,8 @@ public final class BackendService implements ApiMessage {
      * <p>When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP,
      * CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      *
-     * <p>When the loadBalancingScheme is INTERNAL_SELF_MANAGED, possible values are NONE,
-     * CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
+     * <p>When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible
+     * values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
      */
     public String getSessionAffinity() {
       return sessionAffinity;
@@ -1229,8 +1238,8 @@ public final class BackendService implements ApiMessage {
      * <p>When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP,
      * CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      *
-     * <p>When the loadBalancingScheme is INTERNAL_SELF_MANAGED, possible values are NONE,
-     * CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
+     * <p>When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible
+     * values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
      */
     public Builder setSessionAffinity(String sessionAffinity) {
       this.sessionAffinity = sessionAffinity;

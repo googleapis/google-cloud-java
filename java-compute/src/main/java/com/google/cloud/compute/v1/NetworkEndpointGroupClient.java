@@ -157,8 +157,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of network endpoint groups and sorts them by zone. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of network endpoint groups and sorts them by zone.
    *
    * <p>Sample code:
    *
@@ -186,8 +185,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of network endpoint groups and sorts them by zone. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of network endpoint groups and sorts them by zone.
    *
    * <p>Sample code:
    *
@@ -213,8 +211,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of network endpoint groups and sorts them by zone. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of network endpoint groups and sorts them by zone.
    *
    * <p>Sample code:
    *
@@ -241,8 +238,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of network endpoint groups and sorts them by zone. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of network endpoint groups and sorts them by zone.
    *
    * <p>Sample code:
    *
@@ -270,8 +266,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of network endpoint groups and sorts them by zone. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of network endpoint groups and sorts them by zone.
    *
    * <p>Sample code:
    *
@@ -305,8 +300,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Attach a list of network endpoints to the specified network endpoint group. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Attach a list of network endpoints to the specified network endpoint group.
    *
    * <p>Sample code:
    *
@@ -341,8 +335,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Attach a list of network endpoints to the specified network endpoint group. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Attach a list of network endpoints to the specified network endpoint group.
    *
    * <p>Sample code:
    *
@@ -376,8 +369,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Attach a list of network endpoints to the specified network endpoint group. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Attach a list of network endpoints to the specified network endpoint group.
    *
    * <p>Sample code:
    *
@@ -404,8 +396,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Attach a list of network endpoints to the specified network endpoint group. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Attach a list of network endpoints to the specified network endpoint group.
    *
    * <p>Sample code:
    *
@@ -433,8 +424,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   /**
    * Deletes the specified network endpoint group. The network endpoints in the NEG and the VM
    * instances they belong to are not terminated when the NEG is deleted. Note that the NEG cannot
-   * be deleted if there are backend services referencing it. (== suppress_warning
-   * http-rest-shadowed ==)
+   * be deleted if there are backend services referencing it.
    *
    * <p>Sample code:
    *
@@ -465,8 +455,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   /**
    * Deletes the specified network endpoint group. The network endpoints in the NEG and the VM
    * instances they belong to are not terminated when the NEG is deleted. Note that the NEG cannot
-   * be deleted if there are backend services referencing it. (== suppress_warning
-   * http-rest-shadowed ==)
+   * be deleted if there are backend services referencing it.
    *
    * <p>Sample code:
    *
@@ -495,8 +484,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   /**
    * Deletes the specified network endpoint group. The network endpoints in the NEG and the VM
    * instances they belong to are not terminated when the NEG is deleted. Note that the NEG cannot
-   * be deleted if there are backend services referencing it. (== suppress_warning
-   * http-rest-shadowed ==)
+   * be deleted if there are backend services referencing it.
    *
    * <p>Sample code:
    *
@@ -522,8 +510,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   /**
    * Deletes the specified network endpoint group. The network endpoints in the NEG and the VM
    * instances they belong to are not terminated when the NEG is deleted. Note that the NEG cannot
-   * be deleted if there are backend services referencing it. (== suppress_warning
-   * http-rest-shadowed ==)
+   * be deleted if there are backend services referencing it.
    *
    * <p>Sample code:
    *
@@ -547,8 +534,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Detach a list of network endpoints from the specified network endpoint group. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Detach a list of network endpoints from the specified network endpoint group.
    *
    * <p>Sample code:
    *
@@ -583,8 +569,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Detach a list of network endpoints from the specified network endpoint group. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Detach a list of network endpoints from the specified network endpoint group.
    *
    * <p>Sample code:
    *
@@ -618,8 +603,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Detach a list of network endpoints from the specified network endpoint group. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Detach a list of network endpoints from the specified network endpoint group.
    *
    * <p>Sample code:
    *
@@ -646,8 +630,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Detach a list of network endpoints from the specified network endpoint group. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Detach a list of network endpoints from the specified network endpoint group.
    *
    * <p>Sample code:
    *
@@ -674,7 +657,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified network endpoint group. Gets a list of available network endpoint groups
-   * by making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * by making a list() request.
    *
    * <p>Sample code:
    *
@@ -704,7 +687,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified network endpoint group. Gets a list of available network endpoint groups
-   * by making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * by making a list() request.
    *
    * <p>Sample code:
    *
@@ -732,7 +715,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified network endpoint group. Gets a list of available network endpoint groups
-   * by making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * by making a list() request.
    *
    * <p>Sample code:
    *
@@ -758,7 +741,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified network endpoint group. Gets a list of available network endpoint groups
-   * by making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * by making a list() request.
    *
    * <p>Sample code:
    *
@@ -783,7 +766,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a network endpoint group in the specified project using the parameters that are
-   * included in the request. (== suppress_warning http-rest-shadowed ==)
+   * included in the request.
    *
    * <p>Sample code:
    *
@@ -800,6 +783,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
    * @param networkEndpointGroupResource Represents a collection of network endpoints.
    *     <p>For more information read Setting up network endpoint groups in load balancing. (==
    *     resource_for v1.networkEndpointGroups ==) (== resource_for beta.networkEndpointGroups ==)
+   *     Next ID: 21
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -817,7 +801,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a network endpoint group in the specified project using the parameters that are
-   * included in the request. (== suppress_warning http-rest-shadowed ==)
+   * included in the request.
    *
    * <p>Sample code:
    *
@@ -834,6 +818,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
    * @param networkEndpointGroupResource Represents a collection of network endpoints.
    *     <p>For more information read Setting up network endpoint groups in load balancing. (==
    *     resource_for v1.networkEndpointGroups ==) (== resource_for beta.networkEndpointGroups ==)
+   *     Next ID: 21
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -851,7 +836,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a network endpoint group in the specified project using the parameters that are
-   * included in the request. (== suppress_warning http-rest-shadowed ==)
+   * included in the request.
    *
    * <p>Sample code:
    *
@@ -878,7 +863,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a network endpoint group in the specified project using the parameters that are
-   * included in the request. (== suppress_warning http-rest-shadowed ==)
+   * included in the request.
    *
    * <p>Sample code:
    *
@@ -905,7 +890,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of network endpoint groups that are located in the specified project and
-   * zone. (== suppress_warning http-rest-shadowed ==)
+   * zone.
    *
    * <p>Sample code:
    *
@@ -935,7 +920,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of network endpoint groups that are located in the specified project and
-   * zone. (== suppress_warning http-rest-shadowed ==)
+   * zone.
    *
    * <p>Sample code:
    *
@@ -962,7 +947,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of network endpoint groups that are located in the specified project and
-   * zone. (== suppress_warning http-rest-shadowed ==)
+   * zone.
    *
    * <p>Sample code:
    *
@@ -990,7 +975,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of network endpoint groups that are located in the specified project and
-   * zone. (== suppress_warning http-rest-shadowed ==)
+   * zone.
    *
    * <p>Sample code:
    *
@@ -1018,7 +1003,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of network endpoint groups that are located in the specified project and
-   * zone. (== suppress_warning http-rest-shadowed ==)
+   * zone.
    *
    * <p>Sample code:
    *
@@ -1051,8 +1036,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the network endpoints in the specified network endpoint group. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Lists the network endpoints in the specified network endpoint group.
    *
    * <p>Sample code:
    *
@@ -1089,8 +1073,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the network endpoints in the specified network endpoint group. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Lists the network endpoints in the specified network endpoint group.
    *
    * <p>Sample code:
    *
@@ -1126,8 +1109,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the network endpoints in the specified network endpoint group. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Lists the network endpoints in the specified network endpoint group.
    *
    * <p>Sample code:
    *
@@ -1157,8 +1139,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the network endpoints in the specified network endpoint group. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Lists the network endpoints in the specified network endpoint group.
    *
    * <p>Sample code:
    *
@@ -1188,8 +1169,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the network endpoints in the specified network endpoint group. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Lists the network endpoints in the specified network endpoint group.
    *
    * <p>Sample code:
    *
@@ -1226,8 +1206,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -1258,8 +1237,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -1289,8 +1267,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -1317,8 +1294,7 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *

@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.regionInstanceGroupManagers.setInstanceTemplate. Sets the
  * instance template to use when creating new instances or recreating instances in this group.
- * Existing instances are not affected. (== suppress_warning http-rest-shadowed ==)
+ * Existing instances are not affected.
  */
 public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;

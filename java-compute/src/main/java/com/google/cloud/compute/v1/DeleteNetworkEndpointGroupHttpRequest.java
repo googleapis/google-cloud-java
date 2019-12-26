@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
  * Request object for method compute.networkEndpointGroups.delete. Deletes the specified network
  * endpoint group. The network endpoints in the NEG and the VM instances they belong to are not
  * terminated when the NEG is deleted. Note that the NEG cannot be deleted if there are backend
- * services referencing it. (== suppress_warning http-rest-shadowed ==)
+ * services referencing it.
  */
 public final class DeleteNetworkEndpointGroupHttpRequest implements ApiMessage {
   private final String access_token;

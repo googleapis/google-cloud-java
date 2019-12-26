@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.regionSslCertificates.get. Returns the specified SslCertificate
  * resource in the specified region. Get a list of available SSL certificates by making a list()
- * request. (== suppress_warning http-rest-shadowed ==)
+ * request.
  */
 public final class GetRegionSslCertificateHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instanceGroups.aggregatedList. Retrieves the list of instance
- * groups and sorts them by zone. (== suppress_warning http-rest-shadowed ==)
+ * groups and sorts them by zone.
  */
 public final class AggregatedListInstanceGroupsHttpRequest implements ApiMessage {
   private final String access_token;

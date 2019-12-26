@@ -26,7 +26,6 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionDisks.get. Returns a specified regional persistent disk.
- * (== suppress_warning http-rest-shadowed ==)
  */
 public final class GetRegionDiskHttpRequest implements ApiMessage {
   private final String access_token;

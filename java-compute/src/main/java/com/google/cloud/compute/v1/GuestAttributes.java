@@ -106,8 +106,8 @@ public final class GuestAttributes implements ApiMessage {
   }
 
   /**
-   * The path to be queried. This can be the default namespace ('/') or a nested namespace ('//') or
-   * a specified key ('//')
+   * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/\/')
+   * or a specified key ('/\/\')
    */
   public String getQueryPath() {
     return queryPath;
@@ -215,16 +215,16 @@ public final class GuestAttributes implements ApiMessage {
     }
 
     /**
-     * The path to be queried. This can be the default namespace ('/') or a nested namespace ('//')
-     * or a specified key ('//')
+     * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/\/')
+     * or a specified key ('/\/\')
      */
     public String getQueryPath() {
       return queryPath;
     }
 
     /**
-     * The path to be queried. This can be the default namespace ('/') or a nested namespace ('//')
-     * or a specified key ('//')
+     * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/\/')
+     * or a specified key ('/\/\')
      */
     public Builder setQueryPath(String queryPath) {
       this.queryPath = queryPath;

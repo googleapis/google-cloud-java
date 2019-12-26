@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instances.setTags. Sets network tags for the specified instance
- * to the data included in the request. (== suppress_warning http-rest-shadowed ==)
+ * to the data included in the request.
  */
 public final class SetTagsInstanceHttpRequest implements ApiMessage {
   private final String access_token;

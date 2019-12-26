@@ -26,7 +26,6 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.globalAddresses.delete. Deletes the specified address resource.
- * (== suppress_warning http-rest-shadowed ==)
  */
 public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
   private final String access_token;

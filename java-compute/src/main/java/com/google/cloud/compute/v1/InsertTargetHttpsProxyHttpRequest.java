@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetHttpsProxies.insert. Creates a TargetHttpsProxy resource
- * in the specified project using the data included in the request. (== suppress_warning
- * http-rest-shadowed ==)
+ * in the specified project using the data included in the request.
  */
 public final class InsertTargetHttpsProxyHttpRequest implements ApiMessage {
   private final String access_token;
@@ -191,10 +190,11 @@ public final class InsertTargetHttpsProxyHttpRequest implements ApiMessage {
   /**
    * Represents a Target HTTPS Proxy resource.
    *
-   * <p>A target HTTPS proxy is a component of certain types of load balancers. Global forwarding
-   * rules reference a target HTTPS proxy, and the target proxy then references a URL map. For more
-   * information, read Using Target Proxies. (== resource_for beta.targetHttpsProxies ==) (==
-   * resource_for v1.targetHttpsProxies ==)
+   * <p>A target HTTPS proxy is a component of GCP HTTPS load balancers. Forwarding rules reference
+   * a target HTTPS proxy, and the target proxy then references a URL map. For more information,
+   * read Using Target Proxies and Forwarding rule concepts. (== resource_for
+   * beta.targetHttpsProxies ==) (== resource_for v1.targetHttpsProxies ==) (== resource_for
+   * beta.regionTargetHttpsProxies ==) (== resource_for v1.regionTargetHttpsProxies ==)
    */
   public TargetHttpsProxy getTargetHttpsProxyResource() {
     return targetHttpsProxyResource;
@@ -416,10 +416,11 @@ public final class InsertTargetHttpsProxyHttpRequest implements ApiMessage {
     /**
      * Represents a Target HTTPS Proxy resource.
      *
-     * <p>A target HTTPS proxy is a component of certain types of load balancers. Global forwarding
-     * rules reference a target HTTPS proxy, and the target proxy then references a URL map. For
-     * more information, read Using Target Proxies. (== resource_for beta.targetHttpsProxies ==) (==
-     * resource_for v1.targetHttpsProxies ==)
+     * <p>A target HTTPS proxy is a component of GCP HTTPS load balancers. Forwarding rules
+     * reference a target HTTPS proxy, and the target proxy then references a URL map. For more
+     * information, read Using Target Proxies and Forwarding rule concepts. (== resource_for
+     * beta.targetHttpsProxies ==) (== resource_for v1.targetHttpsProxies ==) (== resource_for
+     * beta.regionTargetHttpsProxies ==) (== resource_for v1.regionTargetHttpsProxies ==)
      */
     public TargetHttpsProxy getTargetHttpsProxyResource() {
       return targetHttpsProxyResource;
@@ -428,10 +429,11 @@ public final class InsertTargetHttpsProxyHttpRequest implements ApiMessage {
     /**
      * Represents a Target HTTPS Proxy resource.
      *
-     * <p>A target HTTPS proxy is a component of certain types of load balancers. Global forwarding
-     * rules reference a target HTTPS proxy, and the target proxy then references a URL map. For
-     * more information, read Using Target Proxies. (== resource_for beta.targetHttpsProxies ==) (==
-     * resource_for v1.targetHttpsProxies ==)
+     * <p>A target HTTPS proxy is a component of GCP HTTPS load balancers. Forwarding rules
+     * reference a target HTTPS proxy, and the target proxy then references a URL map. For more
+     * information, read Using Target Proxies and Forwarding rule concepts. (== resource_for
+     * beta.targetHttpsProxies ==) (== resource_for v1.targetHttpsProxies ==) (== resource_for
+     * beta.regionTargetHttpsProxies ==) (== resource_for v1.regionTargetHttpsProxies ==)
      */
     public Builder setTargetHttpsProxyResource(TargetHttpsProxy targetHttpsProxyResource) {
       this.targetHttpsProxyResource = targetHttpsProxyResource;

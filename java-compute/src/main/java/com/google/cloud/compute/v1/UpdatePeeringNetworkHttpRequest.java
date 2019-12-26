@@ -28,8 +28,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.networks.updatePeering. Updates the specified network peering
  * with the data included in the request Only the following fields can be modified:
- * NetworkPeering.export_custom_routes, and NetworkPeering.import_custom_routes (== suppress_warning
- * http-rest-shadowed ==)
+ * NetworkPeering.export_custom_routes, and NetworkPeering.import_custom_routes
  */
 public final class UpdatePeeringNetworkHttpRequest implements ApiMessage {
   private final String access_token;

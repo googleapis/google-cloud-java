@@ -24,10 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/**
- * Request object for method compute.instances.detachDisk. Detaches a disk from an instance. (==
- * suppress_warning http-rest-shadowed ==)
- */
+/** Request object for method compute.instances.detachDisk. Detaches a disk from an instance. */
 public final class DetachDiskInstanceHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

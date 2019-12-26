@@ -25,12 +25,14 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
+  private final String instanceRedistributionType;
   private final FixedOrPercent maxSurge;
   private final FixedOrPercent maxUnavailable;
   private final String minimalAction;
   private final String type;
 
   private InstanceGroupManagerUpdatePolicy() {
+    this.instanceRedistributionType = null;
     this.maxSurge = null;
     this.maxUnavailable = null;
     this.minimalAction = null;
@@ -38,7 +40,12 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
   }
 
   private InstanceGroupManagerUpdatePolicy(
-      FixedOrPercent maxSurge, FixedOrPercent maxUnavailable, String minimalAction, String type) {
+      String instanceRedistributionType,
+      FixedOrPercent maxSurge,
+      FixedOrPercent maxUnavailable,
+      String minimalAction,
+      String type) {
+    this.instanceRedistributionType = instanceRedistributionType;
     this.maxSurge = maxSurge;
     this.maxUnavailable = maxUnavailable;
     this.minimalAction = minimalAction;
@@ -47,6 +54,9 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("instanceRedistributionType".equals(fieldName)) {
+      return instanceRedistributionType;
+    }
     if ("maxSurge".equals(fieldName)) {
       return maxSurge;
     }
@@ -78,6 +88,15 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
    */
   public List<String> getFieldMask() {
     return null;
+  }
+
+  /**
+   * The instance redistribution policy for regional managed instance groups. Valid values are: -
+   * PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across
+   * zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is disabled.
+   */
+  public String getInstanceRedistributionType() {
+    return instanceRedistributionType;
   }
 
   /**
@@ -155,6 +174,7 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
   }
 
   public static class Builder {
+    private String instanceRedistributionType;
     private FixedOrPercent maxSurge;
     private FixedOrPercent maxUnavailable;
     private String minimalAction;
@@ -164,6 +184,9 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
 
     public Builder mergeFrom(InstanceGroupManagerUpdatePolicy other) {
       if (other == InstanceGroupManagerUpdatePolicy.getDefaultInstance()) return this;
+      if (other.getInstanceRedistributionType() != null) {
+        this.instanceRedistributionType = other.instanceRedistributionType;
+      }
       if (other.getMaxSurge() != null) {
         this.maxSurge = other.maxSurge;
       }
@@ -180,10 +203,32 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
     }
 
     Builder(InstanceGroupManagerUpdatePolicy source) {
+      this.instanceRedistributionType = source.instanceRedistributionType;
       this.maxSurge = source.maxSurge;
       this.maxUnavailable = source.maxUnavailable;
       this.minimalAction = source.minimalAction;
       this.type = source.type;
+    }
+
+    /**
+     * The instance redistribution policy for regional managed instance groups. Valid values are: -
+     * PROACTIVE (default): The group attempts to maintain an even distribution of VM instances
+     * across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is
+     * disabled.
+     */
+    public String getInstanceRedistributionType() {
+      return instanceRedistributionType;
+    }
+
+    /**
+     * The instance redistribution policy for regional managed instance groups. Valid values are: -
+     * PROACTIVE (default): The group attempts to maintain an even distribution of VM instances
+     * across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is
+     * disabled.
+     */
+    public Builder setInstanceRedistributionType(String instanceRedistributionType) {
+      this.instanceRedistributionType = instanceRedistributionType;
+      return this;
     }
 
     /**
@@ -296,11 +341,13 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
 
     public InstanceGroupManagerUpdatePolicy build() {
 
-      return new InstanceGroupManagerUpdatePolicy(maxSurge, maxUnavailable, minimalAction, type);
+      return new InstanceGroupManagerUpdatePolicy(
+          instanceRedistributionType, maxSurge, maxUnavailable, minimalAction, type);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.setInstanceRedistributionType(this.instanceRedistributionType);
       newBuilder.setMaxSurge(this.maxSurge);
       newBuilder.setMaxUnavailable(this.maxUnavailable);
       newBuilder.setMinimalAction(this.minimalAction);
@@ -312,6 +359,9 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
   @Override
   public String toString() {
     return "InstanceGroupManagerUpdatePolicy{"
+        + "instanceRedistributionType="
+        + instanceRedistributionType
+        + ", "
         + "maxSurge="
         + maxSurge
         + ", "
@@ -333,7 +383,8 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
     }
     if (o instanceof InstanceGroupManagerUpdatePolicy) {
       InstanceGroupManagerUpdatePolicy that = (InstanceGroupManagerUpdatePolicy) o;
-      return Objects.equals(this.maxSurge, that.getMaxSurge())
+      return Objects.equals(this.instanceRedistributionType, that.getInstanceRedistributionType())
+          && Objects.equals(this.maxSurge, that.getMaxSurge())
           && Objects.equals(this.maxUnavailable, that.getMaxUnavailable())
           && Objects.equals(this.minimalAction, that.getMinimalAction())
           && Objects.equals(this.type, that.getType());
@@ -343,6 +394,6 @@ public final class InstanceGroupManagerUpdatePolicy implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(maxSurge, maxUnavailable, minimalAction, type);
+    return Objects.hash(instanceRedistributionType, maxSurge, maxUnavailable, minimalAction, type);
   }
 }

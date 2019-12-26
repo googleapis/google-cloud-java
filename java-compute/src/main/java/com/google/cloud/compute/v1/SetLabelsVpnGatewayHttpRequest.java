@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.vpnGateways.setLabels. Sets the labels on a VpnGateway. To
- * learn more about labels, read the Labeling Resources documentation. (== suppress_warning
- * http-rest-shadowed ==)
+ * learn more about labels, read the Labeling Resources documentation.
  */
 public final class SetLabelsVpnGatewayHttpRequest implements ApiMessage {
   private final String access_token;

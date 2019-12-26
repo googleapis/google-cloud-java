@@ -153,7 +153,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of autoscalers. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of autoscalers.
    *
    * <p>Sample code:
    *
@@ -181,7 +181,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of autoscalers. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of autoscalers.
    *
    * <p>Sample code:
    *
@@ -206,7 +206,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of autoscalers. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of autoscalers.
    *
    * <p>Sample code:
    *
@@ -233,7 +233,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of autoscalers. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of autoscalers.
    *
    * <p>Sample code:
    *
@@ -260,7 +260,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of autoscalers. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of autoscalers.
    *
    * <p>Sample code:
    *
@@ -293,7 +293,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified autoscaler. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified autoscaler.
    *
    * <p>Sample code:
    *
@@ -319,7 +319,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified autoscaler. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified autoscaler.
    *
    * <p>Sample code:
    *
@@ -343,7 +343,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified autoscaler. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified autoscaler.
    *
    * <p>Sample code:
    *
@@ -367,7 +367,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified autoscaler. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified autoscaler.
    *
    * <p>Sample code:
    *
@@ -391,7 +391,7 @@ public class AutoscalerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified autoscaler resource. Gets a list of available autoscalers by making a
-   * list() request. (== suppress_warning http-rest-shadowed ==)
+   * list() request.
    *
    * <p>Sample code:
    *
@@ -418,7 +418,7 @@ public class AutoscalerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified autoscaler resource. Gets a list of available autoscalers by making a
-   * list() request. (== suppress_warning http-rest-shadowed ==)
+   * list() request.
    *
    * <p>Sample code:
    *
@@ -443,7 +443,7 @@ public class AutoscalerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified autoscaler resource. Gets a list of available autoscalers by making a
-   * list() request. (== suppress_warning http-rest-shadowed ==)
+   * list() request.
    *
    * <p>Sample code:
    *
@@ -468,7 +468,7 @@ public class AutoscalerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified autoscaler resource. Gets a list of available autoscalers by making a
-   * list() request. (== suppress_warning http-rest-shadowed ==)
+   * list() request.
    *
    * <p>Sample code:
    *
@@ -491,8 +491,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an autoscaler in the specified project using the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Creates an autoscaler in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -528,8 +527,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an autoscaler in the specified project using the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Creates an autoscaler in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -565,8 +563,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an autoscaler in the specified project using the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Creates an autoscaler in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -592,8 +589,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an autoscaler in the specified project using the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Creates an autoscaler in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -618,8 +614,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of autoscalers contained within the specified zone. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of autoscalers contained within the specified zone.
    *
    * <p>Sample code:
    *
@@ -646,8 +641,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of autoscalers contained within the specified zone. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of autoscalers contained within the specified zone.
    *
    * <p>Sample code:
    *
@@ -672,8 +666,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of autoscalers contained within the specified zone. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of autoscalers contained within the specified zone.
    *
    * <p>Sample code:
    *
@@ -699,8 +692,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of autoscalers contained within the specified zone. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of autoscalers contained within the specified zone.
    *
    * <p>Sample code:
    *
@@ -726,8 +718,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of autoscalers contained within the specified zone. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of autoscalers contained within the specified zone.
    *
    * <p>Sample code:
    *
@@ -760,8 +751,7 @@ public class AutoscalerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates an autoscaler in the specified project using the data included in the request. This
-   * method supports PATCH semantics and uses the JSON merge patch format and processing rules. (==
-   * suppress_warning http-rest-shadowed ==)
+   * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -811,8 +801,7 @@ public class AutoscalerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates an autoscaler in the specified project using the data included in the request. This
-   * method supports PATCH semantics and uses the JSON merge patch format and processing rules. (==
-   * suppress_warning http-rest-shadowed ==)
+   * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -859,8 +848,7 @@ public class AutoscalerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates an autoscaler in the specified project using the data included in the request. This
-   * method supports PATCH semantics and uses the JSON merge patch format and processing rules. (==
-   * suppress_warning http-rest-shadowed ==)
+   * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -891,8 +879,7 @@ public class AutoscalerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates an autoscaler in the specified project using the data included in the request. This
-   * method supports PATCH semantics and uses the JSON merge patch format and processing rules. (==
-   * suppress_warning http-rest-shadowed ==)
+   * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -921,8 +908,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an autoscaler in the specified project using the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Updates an autoscaler in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -971,8 +957,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an autoscaler in the specified project using the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Updates an autoscaler in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -1018,8 +1003,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an autoscaler in the specified project using the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Updates an autoscaler in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -1049,8 +1033,7 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an autoscaler in the specified project using the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Updates an autoscaler in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.reservations.insert. Creates a new reservation. For more
- * information, read Reserving zonal resources. (== suppress_warning http-rest-shadowed ==)
+ * information, read Reserving zonal resources.
  */
 public final class InsertReservationHttpRequest implements ApiMessage {
   private final String access_token;

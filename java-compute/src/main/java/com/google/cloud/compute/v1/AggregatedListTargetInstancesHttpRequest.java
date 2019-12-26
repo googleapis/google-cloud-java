@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetInstances.aggregatedList. Retrieves an aggregated list of
- * target instances. (== suppress_warning http-rest-shadowed ==)
+ * target instances.
  */
 public final class AggregatedListTargetInstancesHttpRequest implements ApiMessage {
   private final String access_token;

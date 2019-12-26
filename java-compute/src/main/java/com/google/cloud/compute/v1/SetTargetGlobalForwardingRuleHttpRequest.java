@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.globalForwardingRules.setTarget. Changes target URL for the
- * GlobalForwardingRule resource. The new target should be of the same type as the old target. (==
- * suppress_warning http-rest-shadowed ==)
+ * GlobalForwardingRule resource. The new target should be of the same type as the old target.
  */
 public final class SetTargetGlobalForwardingRuleHttpRequest implements ApiMessage {
   private final String access_token;

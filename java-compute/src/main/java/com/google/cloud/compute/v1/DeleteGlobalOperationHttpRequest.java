@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.globalOperations.delete. Deletes the specified Operations
- * resource. (== suppress_warning http-rest-shadowed ==)
+ * resource.
  */
 public final class DeleteGlobalOperationHttpRequest implements ApiMessage {
   private final String access_token;

@@ -156,8 +156,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified regional BackendService resource. (== suppress_warning http-rest-shadowed
-   * ==)
+   * Deletes the specified regional BackendService resource.
    *
    * <p>Sample code:
    *
@@ -184,8 +183,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified regional BackendService resource. (== suppress_warning http-rest-shadowed
-   * ==)
+   * Deletes the specified regional BackendService resource.
    *
    * <p>Sample code:
    *
@@ -211,8 +209,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified regional BackendService resource. (== suppress_warning http-rest-shadowed
-   * ==)
+   * Deletes the specified regional BackendService resource.
    *
    * <p>Sample code:
    *
@@ -236,8 +233,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified regional BackendService resource. (== suppress_warning http-rest-shadowed
-   * ==)
+   * Deletes the specified regional BackendService resource.
    *
    * <p>Sample code:
    *
@@ -261,8 +257,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified regional BackendService resource. (== suppress_warning http-rest-shadowed
-   * ==)
+   * Returns the specified regional BackendService resource.
    *
    * <p>Sample code:
    *
@@ -289,8 +284,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified regional BackendService resource. (== suppress_warning http-rest-shadowed
-   * ==)
+   * Returns the specified regional BackendService resource.
    *
    * <p>Sample code:
    *
@@ -314,8 +308,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified regional BackendService resource. (== suppress_warning http-rest-shadowed
-   * ==)
+   * Returns the specified regional BackendService resource.
    *
    * <p>Sample code:
    *
@@ -339,8 +332,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified regional BackendService resource. (== suppress_warning http-rest-shadowed
-   * ==)
+   * Returns the specified regional BackendService resource.
    *
    * <p>Sample code:
    *
@@ -364,8 +356,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the most recent health check results for this regional BackendService. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Gets the most recent health check results for this regional BackendService.
    *
    * <p>Sample code:
    *
@@ -396,8 +387,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the most recent health check results for this regional BackendService. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Gets the most recent health check results for this regional BackendService.
    *
    * <p>Sample code:
    *
@@ -427,8 +417,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the most recent health check results for this regional BackendService. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Gets the most recent health check results for this regional BackendService.
    *
    * <p>Sample code:
    *
@@ -455,8 +444,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the most recent health check results for this regional BackendService. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Gets the most recent health check results for this regional BackendService.
    *
    * <p>Sample code:
    *
@@ -484,8 +472,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
    * the request. There are several restrictions and guidelines to keep in mind when creating a
-   * regional backend service. Read Restrictions and Guidelines for more information. (==
-   * suppress_warning http-rest-shadowed ==)
+   * regional backend service. Read Restrictions and Guidelines for more information.
    *
    * <p>Sample code:
    *
@@ -521,8 +508,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
    * the request. There are several restrictions and guidelines to keep in mind when creating a
-   * regional backend service. Read Restrictions and Guidelines for more information. (==
-   * suppress_warning http-rest-shadowed ==)
+   * regional backend service. Read Restrictions and Guidelines for more information.
    *
    * <p>Sample code:
    *
@@ -558,8 +544,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
    * the request. There are several restrictions and guidelines to keep in mind when creating a
-   * regional backend service. Read Restrictions and Guidelines for more information. (==
-   * suppress_warning http-rest-shadowed ==)
+   * regional backend service. Read Restrictions and Guidelines for more information.
    *
    * <p>Sample code:
    *
@@ -587,8 +572,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
    * the request. There are several restrictions and guidelines to keep in mind when creating a
-   * regional backend service. Read Restrictions and Guidelines for more information. (==
-   * suppress_warning http-rest-shadowed ==)
+   * regional backend service. Read Restrictions and Guidelines for more information.
    *
    * <p>Sample code:
    *
@@ -615,7 +599,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of regional BackendService resources available to the specified project in
-   * the given region. (== suppress_warning http-rest-shadowed ==)
+   * the given region.
    *
    * <p>Sample code:
    *
@@ -644,7 +628,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of regional BackendService resources available to the specified project in
-   * the given region. (== suppress_warning http-rest-shadowed ==)
+   * the given region.
    *
    * <p>Sample code:
    *
@@ -670,7 +654,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of regional BackendService resources available to the specified project in
-   * the given region. (== suppress_warning http-rest-shadowed ==)
+   * the given region.
    *
    * <p>Sample code:
    *
@@ -698,7 +682,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of regional BackendService resources available to the specified project in
-   * the given region. (== suppress_warning http-rest-shadowed ==)
+   * the given region.
    *
    * <p>Sample code:
    *
@@ -726,7 +710,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of regional BackendService resources available to the specified project in
-   * the given region. (== suppress_warning http-rest-shadowed ==)
+   * the given region.
    *
    * <p>Sample code:
    *
@@ -762,8 +746,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * Updates the specified regional BackendService resource with the data included in the request.
    * There are several restrictions and guidelines to keep in mind when updating a backend service.
    * Read Restrictions and Guidelines for more information. This method supports PATCH semantics and
-   * uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed
-   * ==)
+   * uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -808,8 +791,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * Updates the specified regional BackendService resource with the data included in the request.
    * There are several restrictions and guidelines to keep in mind when updating a backend service.
    * Read Restrictions and Guidelines for more information. This method supports PATCH semantics and
-   * uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed
-   * ==)
+   * uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -852,8 +834,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * Updates the specified regional BackendService resource with the data included in the request.
    * There are several restrictions and guidelines to keep in mind when updating a backend service.
    * Read Restrictions and Guidelines for more information. This method supports PATCH semantics and
-   * uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed
-   * ==)
+   * uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -884,8 +865,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * Updates the specified regional BackendService resource with the data included in the request.
    * There are several restrictions and guidelines to keep in mind when updating a backend service.
    * Read Restrictions and Guidelines for more information. This method supports PATCH semantics and
-   * uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed
-   * ==)
+   * uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -915,8 +895,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
    * There are several restrictions and guidelines to keep in mind when updating a backend service.
-   * Read Restrictions and Guidelines for more information. (== suppress_warning http-rest-shadowed
-   * ==)
+   * Read Restrictions and Guidelines for more information.
    *
    * <p>Sample code:
    *
@@ -960,8 +939,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
    * There are several restrictions and guidelines to keep in mind when updating a backend service.
-   * Read Restrictions and Guidelines for more information. (== suppress_warning http-rest-shadowed
-   * ==)
+   * Read Restrictions and Guidelines for more information.
    *
    * <p>Sample code:
    *
@@ -1003,8 +981,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
    * There are several restrictions and guidelines to keep in mind when updating a backend service.
-   * Read Restrictions and Guidelines for more information. (== suppress_warning http-rest-shadowed
-   * ==)
+   * Read Restrictions and Guidelines for more information.
    *
    * <p>Sample code:
    *
@@ -1034,8 +1011,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
    * There are several restrictions and guidelines to keep in mind when updating a backend service.
-   * Read Restrictions and Guidelines for more information. (== suppress_warning http-rest-shadowed
-   * ==)
+   * Read Restrictions and Guidelines for more information.
    *
    * <p>Sample code:
    *

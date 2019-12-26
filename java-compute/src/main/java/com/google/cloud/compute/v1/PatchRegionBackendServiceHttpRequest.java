@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
  * BackendService resource with the data included in the request. There are several restrictions and
  * guidelines to keep in mind when updating a backend service. Read Restrictions and Guidelines for
  * more information. This method supports PATCH semantics and uses the JSON merge patch format and
- * processing rules. (== suppress_warning http-rest-shadowed ==)
+ * processing rules.
  */
 public final class PatchRegionBackendServiceHttpRequest implements ApiMessage {
   private final String access_token;

@@ -27,8 +27,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.httpsHealthChecks.update. Updates a HttpsHealthCheck resource
- * in the specified project using the data included in the request. (== suppress_warning
- * http-rest-shadowed ==)
+ * in the specified project using the data included in the request.
  */
 public final class UpdateHttpsHealthCheckHttpRequest implements ApiMessage {
   private final String access_token;

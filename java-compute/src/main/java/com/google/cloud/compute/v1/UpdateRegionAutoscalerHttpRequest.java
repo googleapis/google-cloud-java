@@ -27,8 +27,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionAutoscalers.update. Updates an autoscaler in the
- * specified project using the data included in the request. (== suppress_warning http-rest-shadowed
- * ==)
+ * specified project using the data included in the request.
  */
 public final class UpdateRegionAutoscalerHttpRequest implements ApiMessage {
   private final String access_token;

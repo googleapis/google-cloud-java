@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.nodeGroups.get. Returns the specified NodeGroup. Get a list of
  * available NodeGroups by making a list() request. Note: the "nodes" field should not be used. Use
- * nodeGroups.listNodes instead. (== suppress_warning http-rest-shadowed ==)
+ * nodeGroups.listNodes instead.
  */
 public final class GetNodeGroupHttpRequest implements ApiMessage {
   private final String access_token;

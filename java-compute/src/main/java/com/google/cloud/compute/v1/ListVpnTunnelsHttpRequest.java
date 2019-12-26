@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.vpnTunnels.list. Retrieves a list of VpnTunnel resources
- * contained in the specified project and region. (== suppress_warning http-rest-shadowed ==)
+ * contained in the specified project and region.
  */
 public final class ListVpnTunnelsHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.disks.get. Returns a specified persistent disk. Gets a list of
- * available persistent disks by making a list() request. (== suppress_warning http-rest-shadowed
- * ==)
+ * available persistent disks by making a list() request.
  */
 public final class GetDiskHttpRequest implements ApiMessage {
   private final String access_token;

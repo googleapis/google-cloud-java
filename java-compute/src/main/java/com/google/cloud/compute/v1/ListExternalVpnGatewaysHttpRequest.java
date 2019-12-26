@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.externalVpnGateways.list. Retrieves the list of
- * ExternalVpnGateway available to the specified project. (== suppress_warning http-rest-shadowed
- * ==)
+ * ExternalVpnGateway available to the specified project.
  */
 public final class ListExternalVpnGatewaysHttpRequest implements ApiMessage {
   private final String access_token;

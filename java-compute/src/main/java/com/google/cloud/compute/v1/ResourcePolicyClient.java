@@ -155,7 +155,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of resource policies. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of resource policies.
    *
    * <p>Sample code:
    *
@@ -183,7 +183,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of resource policies. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of resource policies.
    *
    * <p>Sample code:
    *
@@ -209,7 +209,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of resource policies. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of resource policies.
    *
    * <p>Sample code:
    *
@@ -236,7 +236,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of resource policies. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of resource policies.
    *
    * <p>Sample code:
    *
@@ -263,7 +263,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of resource policies. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of resource policies.
    *
    * <p>Sample code:
    *
@@ -297,7 +297,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified resource policy. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified resource policy.
    *
    * <p>Sample code:
    *
@@ -323,7 +323,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified resource policy. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified resource policy.
    *
    * <p>Sample code:
    *
@@ -347,7 +347,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified resource policy. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified resource policy.
    *
    * <p>Sample code:
    *
@@ -371,7 +371,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified resource policy. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified resource policy.
    *
    * <p>Sample code:
    *
@@ -395,8 +395,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves all information of the specified resource policy. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves all information of the specified resource policy.
    *
    * <p>Sample code:
    *
@@ -422,8 +421,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves all information of the specified resource policy. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves all information of the specified resource policy.
    *
    * <p>Sample code:
    *
@@ -447,8 +445,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves all information of the specified resource policy. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves all information of the specified resource policy.
    *
    * <p>Sample code:
    *
@@ -472,8 +469,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves all information of the specified resource policy. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves all information of the specified resource policy.
    *
    * <p>Sample code:
    *
@@ -498,7 +494,7 @@ public class ResourcePolicyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -525,7 +521,7 @@ public class ResourcePolicyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -550,7 +546,7 @@ public class ResourcePolicyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -575,7 +571,7 @@ public class ResourcePolicyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -599,7 +595,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new resource policy. (== suppress_warning http-rest-shadowed ==)
+   * Creates a new resource policy.
    *
    * <p>Sample code:
    *
@@ -629,7 +625,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new resource policy. (== suppress_warning http-rest-shadowed ==)
+   * Creates a new resource policy.
    *
    * <p>Sample code:
    *
@@ -659,7 +655,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new resource policy. (== suppress_warning http-rest-shadowed ==)
+   * Creates a new resource policy.
    *
    * <p>Sample code:
    *
@@ -685,7 +681,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new resource policy. (== suppress_warning http-rest-shadowed ==)
+   * Creates a new resource policy.
    *
    * <p>Sample code:
    *
@@ -712,7 +708,7 @@ public class ResourcePolicyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * A list all the resource policies that have been configured for the specified project in
-   * specified region. (== suppress_warning http-rest-shadowed ==)
+   * specified region.
    *
    * <p>Sample code:
    *
@@ -740,7 +736,7 @@ public class ResourcePolicyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * A list all the resource policies that have been configured for the specified project in
-   * specified region. (== suppress_warning http-rest-shadowed ==)
+   * specified region.
    *
    * <p>Sample code:
    *
@@ -766,7 +762,7 @@ public class ResourcePolicyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * A list all the resource policies that have been configured for the specified project in
-   * specified region. (== suppress_warning http-rest-shadowed ==)
+   * specified region.
    *
    * <p>Sample code:
    *
@@ -794,7 +790,7 @@ public class ResourcePolicyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * A list all the resource policies that have been configured for the specified project in
-   * specified region. (== suppress_warning http-rest-shadowed ==)
+   * specified region.
    *
    * <p>Sample code:
    *
@@ -821,7 +817,7 @@ public class ResourcePolicyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * A list all the resource policies that have been configured for the specified project in
-   * specified region. (== suppress_warning http-rest-shadowed ==)
+   * specified region.
    *
    * <p>Sample code:
    *
@@ -854,8 +850,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -886,8 +881,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -917,8 +911,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -944,8 +937,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -971,8 +963,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -1003,8 +994,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -1034,8 +1024,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -1062,8 +1051,7 @@ public class ResourcePolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *

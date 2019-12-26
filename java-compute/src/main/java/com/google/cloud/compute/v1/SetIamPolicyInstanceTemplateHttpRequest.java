@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instanceTemplates.setIamPolicy. Sets the access control policy
- * on the specified resource. Replaces any existing policy. (== suppress_warning http-rest-shadowed
- * ==)
+ * on the specified resource. Replaces any existing policy.
  */
 public final class SetIamPolicyInstanceTemplateHttpRequest implements ApiMessage {
   private final String access_token;

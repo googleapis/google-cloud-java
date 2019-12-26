@@ -156,8 +156,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds a key for validating requests with signed URLs for this backend bucket. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Adds a key for validating requests with signed URLs for this backend bucket.
    *
    * <p>Sample code:
    *
@@ -189,8 +188,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds a key for validating requests with signed URLs for this backend bucket. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Adds a key for validating requests with signed URLs for this backend bucket.
    *
    * <p>Sample code:
    *
@@ -222,8 +220,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds a key for validating requests with signed URLs for this backend bucket. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Adds a key for validating requests with signed URLs for this backend bucket.
    *
    * <p>Sample code:
    *
@@ -250,8 +247,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds a key for validating requests with signed URLs for this backend bucket. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Adds a key for validating requests with signed URLs for this backend bucket.
    *
    * <p>Sample code:
    *
@@ -277,7 +273,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified BackendBucket resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified BackendBucket resource.
    *
    * <p>Sample code:
    *
@@ -303,7 +299,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified BackendBucket resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified BackendBucket resource.
    *
    * <p>Sample code:
    *
@@ -327,7 +323,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified BackendBucket resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified BackendBucket resource.
    *
    * <p>Sample code:
    *
@@ -351,7 +347,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified BackendBucket resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified BackendBucket resource.
    *
    * <p>Sample code:
    *
@@ -375,8 +371,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a key for validating requests with signed URLs for this backend bucket. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Deletes a key for validating requests with signed URLs for this backend bucket.
    *
    * <p>Sample code:
    *
@@ -407,8 +402,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a key for validating requests with signed URLs for this backend bucket. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Deletes a key for validating requests with signed URLs for this backend bucket.
    *
    * <p>Sample code:
    *
@@ -438,8 +432,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a key for validating requests with signed URLs for this backend bucket. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Deletes a key for validating requests with signed URLs for this backend bucket.
    *
    * <p>Sample code:
    *
@@ -466,8 +459,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a key for validating requests with signed URLs for this backend bucket. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Deletes a key for validating requests with signed URLs for this backend bucket.
    *
    * <p>Sample code:
    *
@@ -494,7 +486,7 @@ public class BackendBucketClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified BackendBucket resource. Gets a list of available backend buckets by
-   * making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * making a list() request.
    *
    * <p>Sample code:
    *
@@ -521,7 +513,7 @@ public class BackendBucketClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified BackendBucket resource. Gets a list of available backend buckets by
-   * making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * making a list() request.
    *
    * <p>Sample code:
    *
@@ -546,7 +538,7 @@ public class BackendBucketClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified BackendBucket resource. Gets a list of available backend buckets by
-   * making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * making a list() request.
    *
    * <p>Sample code:
    *
@@ -571,7 +563,7 @@ public class BackendBucketClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified BackendBucket resource. Gets a list of available backend buckets by
-   * making a list() request. (== suppress_warning http-rest-shadowed ==)
+   * making a list() request.
    *
    * <p>Sample code:
    *
@@ -596,7 +588,7 @@ public class BackendBucketClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a BackendBucket resource in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -629,7 +621,7 @@ public class BackendBucketClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a BackendBucket resource in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -661,7 +653,7 @@ public class BackendBucketClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a BackendBucket resource in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -688,7 +680,7 @@ public class BackendBucketClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a BackendBucket resource in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -714,8 +706,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of BackendBucket resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of BackendBucket resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -742,8 +733,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of BackendBucket resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of BackendBucket resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -768,8 +758,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of BackendBucket resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of BackendBucket resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -796,8 +785,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of BackendBucket resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of BackendBucket resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -823,8 +811,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of BackendBucket resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of BackendBucket resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -858,8 +845,7 @@ public class BackendBucketClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified BackendBucket resource with the data included in the request. This method
-   * supports PATCH semantics and uses the JSON merge patch format and processing rules. (==
-   * suppress_warning http-rest-shadowed ==)
+   * supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -900,8 +886,7 @@ public class BackendBucketClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified BackendBucket resource with the data included in the request. This method
-   * supports PATCH semantics and uses the JSON merge patch format and processing rules. (==
-   * suppress_warning http-rest-shadowed ==)
+   * supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -940,8 +925,7 @@ public class BackendBucketClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified BackendBucket resource with the data included in the request. This method
-   * supports PATCH semantics and uses the JSON merge patch format and processing rules. (==
-   * suppress_warning http-rest-shadowed ==)
+   * supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -970,8 +954,7 @@ public class BackendBucketClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified BackendBucket resource with the data included in the request. This method
-   * supports PATCH semantics and uses the JSON merge patch format and processing rules. (==
-   * suppress_warning http-rest-shadowed ==)
+   * supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -999,8 +982,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified BackendBucket resource with the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Updates the specified BackendBucket resource with the data included in the request.
    *
    * <p>Sample code:
    *
@@ -1040,8 +1022,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified BackendBucket resource with the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Updates the specified BackendBucket resource with the data included in the request.
    *
    * <p>Sample code:
    *
@@ -1079,8 +1060,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified BackendBucket resource with the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Updates the specified BackendBucket resource with the data included in the request.
    *
    * <p>Sample code:
    *
@@ -1108,8 +1088,7 @@ public class BackendBucketClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified BackendBucket resource with the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Updates the specified BackendBucket resource with the data included in the request.
    *
    * <p>Sample code:
    *

@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.reservations.resize. Resizes the reservation (applicable to
- * standalone reservations only). For more information, read Modifying reservations. (==
- * suppress_warning http-rest-shadowed ==)
+ * standalone reservations only). For more information, read Modifying reservations.
  */
 public final class ResizeReservationHttpRequest implements ApiMessage {
   private final String access_token;

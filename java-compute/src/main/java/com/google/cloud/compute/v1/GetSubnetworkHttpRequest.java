@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.subnetworks.get. Returns the specified subnetwork. Gets a list
- * of available subnetworks list() request. (== suppress_warning http-rest-shadowed ==)
+ * of available subnetworks list() request.
  */
 public final class GetSubnetworkHttpRequest implements ApiMessage {
   private final String access_token;

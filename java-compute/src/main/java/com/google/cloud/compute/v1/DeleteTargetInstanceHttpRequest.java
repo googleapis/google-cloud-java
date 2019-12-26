@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetInstances.delete. Deletes the specified TargetInstance
- * resource. (== suppress_warning http-rest-shadowed ==)
+ * resource.
  */
 public final class DeleteTargetInstanceHttpRequest implements ApiMessage {
   private final String access_token;

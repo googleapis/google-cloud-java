@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.projects.moveInstance. Moves an instance and its attached
- * persistent disks from one zone to another. (== suppress_warning http-rest-shadowed ==)
+ * persistent disks from one zone to another.
  */
 public final class MoveInstanceProjectHttpRequest implements ApiMessage {
   private final String access_token;

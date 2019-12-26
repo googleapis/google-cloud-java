@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.projects.setCommonInstanceMetadata. Sets metadata common to all
- * instances within the specified project using the data included in the request. (==
- * suppress_warning http-rest-shadowed ==)
+ * instances within the specified project using the data included in the request.
  */
 public final class SetCommonInstanceMetadataProjectHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.subnetworks.aggregatedList. Retrieves an aggregated list of
- * subnetworks. (== suppress_warning http-rest-shadowed ==)
+ * subnetworks.
  */
 public final class AggregatedListSubnetworksHttpRequest implements ApiMessage {
   private final String access_token;

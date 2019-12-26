@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instances.getGuestAttributes. Returns the specified guest
- * attributes entry. (== suppress_warning http-rest-shadowed ==)
+ * attributes entry.
  */
 public final class GetGuestAttributesInstanceHttpRequest implements ApiMessage {
   private final String access_token;

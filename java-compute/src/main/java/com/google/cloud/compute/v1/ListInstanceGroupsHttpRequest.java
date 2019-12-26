@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instanceGroups.list. Retrieves the list of instance groups that
- * are located in the specified project and zone. (== suppress_warning http-rest-shadowed ==)
+ * are located in the specified project and zone.
  */
 public final class ListInstanceGroupsHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instances.delete. Deletes the specified Instance resource. For
- * more information, see Stopping or Deleting an Instance. (== suppress_warning http-rest-shadowed
- * ==)
+ * more information, see Stopping or Deleting an Instance.
  */
 public final class DeleteInstanceHttpRequest implements ApiMessage {
   private final String access_token;

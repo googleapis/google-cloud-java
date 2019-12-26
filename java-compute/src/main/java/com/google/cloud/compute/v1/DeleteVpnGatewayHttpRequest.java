@@ -24,10 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/**
- * Request object for method compute.vpnGateways.delete. Deletes the specified VPN gateway. (==
- * suppress_warning http-rest-shadowed ==)
- */
+/** Request object for method compute.vpnGateways.delete. Deletes the specified VPN gateway. */
 public final class DeleteVpnGatewayHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

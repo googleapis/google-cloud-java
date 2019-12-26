@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.disks.setLabels. Sets the labels on a disk. To learn more about
- * labels, read the Labeling Resources documentation. (== suppress_warning http-rest-shadowed ==)
+ * labels, read the Labeling Resources documentation.
  */
 public final class SetLabelsDiskHttpRequest implements ApiMessage {
   private final String access_token;

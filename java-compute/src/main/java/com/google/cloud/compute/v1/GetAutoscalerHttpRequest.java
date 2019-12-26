@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.autoscalers.get. Returns the specified autoscaler resource.
- * Gets a list of available autoscalers by making a list() request. (== suppress_warning
- * http-rest-shadowed ==)
+ * Gets a list of available autoscalers by making a list() request.
  */
 public final class GetAutoscalerHttpRequest implements ApiMessage {
   private final String access_token;

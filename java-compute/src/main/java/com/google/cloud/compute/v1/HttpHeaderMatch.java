@@ -148,8 +148,8 @@ public final class HttpHeaderMatch implements ApiMessage {
 
   /**
    * A header with the contents of headerName must exist. The match takes place whether or not the
-   * request's header has a value or not. Only one of exactMatch, prefixMatch, suffixMatch,
-   * regexMatch, presentMatch or rangeMatch must be set.
+   * request's header has a value. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch,
+   * presentMatch or rangeMatch must be set.
    */
   public Boolean getPresentMatch() {
     return presentMatch;
@@ -333,8 +333,8 @@ public final class HttpHeaderMatch implements ApiMessage {
 
     /**
      * A header with the contents of headerName must exist. The match takes place whether or not the
-     * request's header has a value or not. Only one of exactMatch, prefixMatch, suffixMatch,
-     * regexMatch, presentMatch or rangeMatch must be set.
+     * request's header has a value. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch,
+     * presentMatch or rangeMatch must be set.
      */
     public Boolean getPresentMatch() {
       return presentMatch;
@@ -342,8 +342,8 @@ public final class HttpHeaderMatch implements ApiMessage {
 
     /**
      * A header with the contents of headerName must exist. The match takes place whether or not the
-     * request's header has a value or not. Only one of exactMatch, prefixMatch, suffixMatch,
-     * regexMatch, presentMatch or rangeMatch must be set.
+     * request's header has a value. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch,
+     * presentMatch or rangeMatch must be set.
      */
     public Builder setPresentMatch(Boolean presentMatch) {
       this.presentMatch = presentMatch;

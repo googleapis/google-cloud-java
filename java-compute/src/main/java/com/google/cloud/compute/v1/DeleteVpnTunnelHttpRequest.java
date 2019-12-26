@@ -26,7 +26,6 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.vpnTunnels.delete. Deletes the specified VpnTunnel resource.
- * (== suppress_warning http-rest-shadowed ==)
  */
 public final class DeleteVpnTunnelHttpRequest implements ApiMessage {
   private final String access_token;

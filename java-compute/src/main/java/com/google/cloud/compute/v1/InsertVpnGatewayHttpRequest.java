@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.vpnGateways.insert. Creates a VPN gateway in the specified
- * project and region using the data included in the request. (== suppress_warning
- * http-rest-shadowed ==)
+ * project and region using the data included in the request.
  */
 public final class InsertVpnGatewayHttpRequest implements ApiMessage {
   private final String access_token;
@@ -193,7 +192,7 @@ public final class InsertVpnGatewayHttpRequest implements ApiMessage {
     return userIp;
   }
 
-  /** Represents a VPN gateway resource. */
+  /** Represents a VPN gateway resource. Next ID: 13 */
   public VpnGateway getVpnGatewayResource() {
     return vpnGatewayResource;
   }
@@ -417,12 +416,12 @@ public final class InsertVpnGatewayHttpRequest implements ApiMessage {
       return this;
     }
 
-    /** Represents a VPN gateway resource. */
+    /** Represents a VPN gateway resource. Next ID: 13 */
     public VpnGateway getVpnGatewayResource() {
       return vpnGatewayResource;
     }
 
-    /** Represents a VPN gateway resource. */
+    /** Represents a VPN gateway resource. Next ID: 13 */
     public Builder setVpnGatewayResource(VpnGateway vpnGatewayResource) {
       this.vpnGatewayResource = vpnGatewayResource;
       return this;

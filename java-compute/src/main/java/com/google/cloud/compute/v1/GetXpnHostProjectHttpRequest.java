@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.projects.getXpnHost. Gets the shared VPC host project that this
- * project links to. May be empty if no link exists. (== suppress_warning http-rest-shadowed ==)
+ * project links to. May be empty if no link exists.
  */
 public final class GetXpnHostProjectHttpRequest implements ApiMessage {
   private final String access_token;

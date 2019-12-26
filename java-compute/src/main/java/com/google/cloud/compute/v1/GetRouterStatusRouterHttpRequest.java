@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.routers.getRouterStatus. Retrieves runtime information of the
- * specified router. (== suppress_warning http-rest-shadowed ==)
+ * specified router.
  */
 public final class GetRouterStatusRouterHttpRequest implements ApiMessage {
   private final String access_token;

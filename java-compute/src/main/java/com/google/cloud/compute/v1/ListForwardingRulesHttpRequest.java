@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.forwardingRules.list. Retrieves a list of ForwardingRule
- * resources available to the specified project and region. (== suppress_warning http-rest-shadowed
- * ==)
+ * resources available to the specified project and region.
  */
 public final class ListForwardingRulesHttpRequest implements ApiMessage {
   private final String access_token;

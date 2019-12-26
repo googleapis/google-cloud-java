@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetPools.aggregatedList. Retrieves an aggregated list of
- * target pools. (== suppress_warning http-rest-shadowed ==)
+ * target pools.
  */
 public final class AggregatedListTargetPoolsHttpRequest implements ApiMessage {
   private final String access_token;

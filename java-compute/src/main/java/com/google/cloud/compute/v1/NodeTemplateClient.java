@@ -154,7 +154,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of node templates. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of node templates.
    *
    * <p>Sample code:
    *
@@ -182,7 +182,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of node templates. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of node templates.
    *
    * <p>Sample code:
    *
@@ -208,7 +208,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of node templates. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of node templates.
    *
    * <p>Sample code:
    *
@@ -235,7 +235,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of node templates. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of node templates.
    *
    * <p>Sample code:
    *
@@ -262,7 +262,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of node templates. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of node templates.
    *
    * <p>Sample code:
    *
@@ -295,7 +295,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified NodeTemplate resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified NodeTemplate resource.
    *
    * <p>Sample code:
    *
@@ -321,7 +321,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified NodeTemplate resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified NodeTemplate resource.
    *
    * <p>Sample code:
    *
@@ -345,7 +345,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified NodeTemplate resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified NodeTemplate resource.
    *
    * <p>Sample code:
    *
@@ -369,7 +369,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified NodeTemplate resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified NodeTemplate resource.
    *
    * <p>Sample code:
    *
@@ -394,7 +394,7 @@ public class NodeTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified node template. Gets a list of available node templates by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -421,7 +421,7 @@ public class NodeTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified node template. Gets a list of available node templates by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -446,7 +446,7 @@ public class NodeTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified node template. Gets a list of available node templates by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -471,7 +471,7 @@ public class NodeTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified node template. Gets a list of available node templates by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -495,7 +495,7 @@ public class NodeTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -522,7 +522,7 @@ public class NodeTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -547,7 +547,7 @@ public class NodeTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -572,7 +572,7 @@ public class NodeTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -597,7 +597,7 @@ public class NodeTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a NodeTemplate resource in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -613,7 +613,7 @@ public class NodeTemplateClient implements BackgroundResource {
    * @param nodeTemplateResource Represent a sole-tenant Node Template resource.
    *     <p>You can use a template to define properties for nodes in a node group. For more
    *     information, read Creating node groups and instances. (== resource_for beta.nodeTemplates
-   *     ==) (== resource_for v1.nodeTemplates ==) (== NextID: 16 ==)
+   *     ==) (== resource_for v1.nodeTemplates ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -631,7 +631,7 @@ public class NodeTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a NodeTemplate resource in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -647,7 +647,7 @@ public class NodeTemplateClient implements BackgroundResource {
    * @param nodeTemplateResource Represent a sole-tenant Node Template resource.
    *     <p>You can use a template to define properties for nodes in a node group. For more
    *     information, read Creating node groups and instances. (== resource_for beta.nodeTemplates
-   *     ==) (== resource_for v1.nodeTemplates ==) (== NextID: 16 ==)
+   *     ==) (== resource_for v1.nodeTemplates ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -664,7 +664,7 @@ public class NodeTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a NodeTemplate resource in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -691,7 +691,7 @@ public class NodeTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a NodeTemplate resource in the specified project using the data included in the
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -717,8 +717,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of node templates available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of node templates available to the specified project.
    *
    * <p>Sample code:
    *
@@ -745,8 +744,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of node templates available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of node templates available to the specified project.
    *
    * <p>Sample code:
    *
@@ -771,8 +769,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of node templates available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of node templates available to the specified project.
    *
    * <p>Sample code:
    *
@@ -799,8 +796,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of node templates available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of node templates available to the specified project.
    *
    * <p>Sample code:
    *
@@ -826,8 +822,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of node templates available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves a list of node templates available to the specified project.
    *
    * <p>Sample code:
    *
@@ -860,8 +855,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -892,8 +886,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -923,8 +916,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -950,8 +942,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -977,8 +968,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -1009,8 +999,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -1040,8 +1029,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -1068,8 +1056,7 @@ public class NodeTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *

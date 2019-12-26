@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.httpHealthChecks.get. Returns the specified HttpHealthCheck
- * resource. Gets a list of available HTTP health checks by making a list() request. (==
- * suppress_warning http-rest-shadowed ==)
+ * resource. Gets a list of available HTTP health checks by making a list() request.
  */
 public final class GetHttpHealthCheckHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.images.getFromFamily. Returns the latest image that is part of
- * an image family and is not deprecated. (== suppress_warning http-rest-shadowed ==)
+ * an image family and is not deprecated.
  */
 public final class GetFromFamilyImageHttpRequest implements ApiMessage {
   private final String access_token;

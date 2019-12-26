@@ -28,8 +28,7 @@ import javax.annotation.Nullable;
  * Request object for method compute.disks.insert. Creates a persistent disk in the specified
  * project using the data in the request. You can create a disk with a sourceImage, a
  * sourceSnapshot, or create an empty 500 GB data disk by omitting all properties. You can also
- * create a disk that is larger than the default size by specifying the sizeGb property. (==
- * suppress_warning http-rest-shadowed ==)
+ * create a disk that is larger than the default size by specifying the sizeGb property.
  */
 public final class InsertDiskHttpRequest implements ApiMessage {
   private final String access_token;

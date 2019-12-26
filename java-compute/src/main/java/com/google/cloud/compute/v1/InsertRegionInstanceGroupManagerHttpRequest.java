@@ -32,8 +32,7 @@ import javax.annotation.Nullable;
  * created. You must separately verify the status of the individual instances with the
  * listmanagedinstances method.
  *
- * <p>A regional managed instance group can contain up to 2000 instances. (== suppress_warning
- * http-rest-shadowed ==)
+ * <p>A regional managed instance group can contain up to 2000 instances.
  */
 public final class InsertRegionInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;

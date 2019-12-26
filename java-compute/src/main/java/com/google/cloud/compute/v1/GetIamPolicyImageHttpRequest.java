@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.images.getIamPolicy. Gets the access control policy for a
- * resource. May be empty if no such policy or resource exists. (== suppress_warning
- * http-rest-shadowed ==)
+ * resource. May be empty if no such policy or resource exists.
  */
 public final class GetIamPolicyImageHttpRequest implements ApiMessage {
   private final String access_token;

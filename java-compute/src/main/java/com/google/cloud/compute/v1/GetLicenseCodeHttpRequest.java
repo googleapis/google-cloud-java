@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.licenseCodes.get. Return a specified license code. License
- * codes are mirrored across all projects that have permissions to read the License Code. (==
- * suppress_warning http-rest-shadowed ==)
+ * codes are mirrored across all projects that have permissions to read the License Code.
  */
 public final class GetLicenseCodeHttpRequest implements ApiMessage {
   private final String access_token;

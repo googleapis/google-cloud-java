@@ -29,7 +29,7 @@ import javax.annotation.Nullable;
  * Request object for method compute.backendServices.update. Updates the specified BackendService
  * resource with the data included in the request. There are several restrictions and guidelines to
  * keep in mind when updating a backend service. Read Restrictions and Guidelines for more
- * information. (== suppress_warning http-rest-shadowed ==)
+ * information.
  */
 public final class UpdateBackendServiceHttpRequest implements ApiMessage {
   private final String access_token;

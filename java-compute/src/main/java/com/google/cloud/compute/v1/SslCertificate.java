@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
  * <p>This SSL certificate resource also contains a private key. You can use SSL keys and
  * certificates to secure connections to a load balancer. For more information, read Creating and
  * Using SSL Certificates. (== resource_for beta.sslCertificates ==) (== resource_for
- * v1.sslCertificates ==)
+ * v1.sslCertificates ==) (== resource_for beta.regionSslCertificates ==) (== resource_for
+ * v1.regionSslCertificates ==) Next ID: 17
  */
 public final class SslCertificate implements ApiMessage {
   private final String certificate;

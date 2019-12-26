@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.projects.getXpnResources. Gets service resources (a.k.a service
- * project) associated with this host project. (== suppress_warning http-rest-shadowed ==)
+ * project) associated with this host project.
  */
 public final class GetXpnResourcesProjectsHttpRequest implements ApiMessage {
   private final String access_token;

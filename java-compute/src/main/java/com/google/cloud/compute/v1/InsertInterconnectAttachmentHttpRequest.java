@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.interconnectAttachments.insert. Creates an
- * InterconnectAttachment in the specified project using the data included in the request. (==
- * suppress_warning http-rest-shadowed ==)
+ * InterconnectAttachment in the specified project using the data included in the request.
  */
 public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage {
   private final String access_token;
@@ -40,6 +39,7 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
   private final String region;
   private final String requestId;
   private final String userIp;
+  private final Boolean validateOnly;
 
   private InsertInterconnectAttachmentHttpRequest() {
     this.access_token = null;
@@ -52,6 +52,7 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
     this.region = null;
     this.requestId = null;
     this.userIp = null;
+    this.validateOnly = null;
   }
 
   private InsertInterconnectAttachmentHttpRequest(
@@ -64,7 +65,8 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
       String quotaUser,
       String region,
       String requestId,
-      String userIp) {
+      String userIp,
+      Boolean validateOnly) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -75,6 +77,7 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
     this.region = region;
     this.requestId = requestId;
     this.userIp = userIp;
+    this.validateOnly = validateOnly;
   }
 
   @Override
@@ -108,6 +111,9 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
     }
     if ("userIp".equals(fieldName)) {
       return userIp;
+    }
+    if ("validateOnly".equals(fieldName)) {
+      return validateOnly;
     }
     return null;
   }
@@ -205,6 +211,11 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
     return userIp;
   }
 
+  /** If true, the request will not be committed. */
+  public Boolean getValidateOnly() {
+    return validateOnly;
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
@@ -238,6 +249,7 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
     private String region;
     private String requestId;
     private String userIp;
+    private Boolean validateOnly;
 
     Builder() {}
 
@@ -273,6 +285,9 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
       }
+      if (other.getValidateOnly() != null) {
+        this.validateOnly = other.validateOnly;
+      }
       return this;
     }
 
@@ -287,6 +302,7 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
       this.region = source.region;
       this.requestId = source.requestId;
       this.userIp = source.userIp;
+      this.validateOnly = source.validateOnly;
     }
 
     /** OAuth 2.0 token for the current user. */
@@ -452,6 +468,17 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
       return this;
     }
 
+    /** If true, the request will not be committed. */
+    public Boolean getValidateOnly() {
+      return validateOnly;
+    }
+
+    /** If true, the request will not be committed. */
+    public Builder setValidateOnly(Boolean validateOnly) {
+      this.validateOnly = validateOnly;
+      return this;
+    }
+
     public InsertInterconnectAttachmentHttpRequest build() {
       String missing = "";
 
@@ -472,7 +499,8 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
           quotaUser,
           region,
           requestId,
-          userIp);
+          userIp,
+          validateOnly);
     }
 
     public Builder clone() {
@@ -487,6 +515,7 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
       newBuilder.setRegion(this.region);
       newBuilder.setRequestId(this.requestId);
       newBuilder.setUserIp(this.userIp);
+      newBuilder.setValidateOnly(this.validateOnly);
       return newBuilder;
     }
   }
@@ -523,6 +552,9 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
         + ", "
         + "userIp="
         + userIp
+        + ", "
+        + "validateOnly="
+        + validateOnly
         + "}";
   }
 
@@ -543,7 +575,8 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
           && Objects.equals(this.quotaUser, that.getQuotaUser())
           && Objects.equals(this.region, that.getRegion())
           && Objects.equals(this.requestId, that.getRequestId())
-          && Objects.equals(this.userIp, that.getUserIp());
+          && Objects.equals(this.userIp, that.getUserIp())
+          && Objects.equals(this.validateOnly, that.getValidateOnly());
     }
     return false;
   }
@@ -560,6 +593,7 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
         quotaUser,
         region,
         requestId,
-        userIp);
+        userIp,
+        validateOnly);
   }
 }

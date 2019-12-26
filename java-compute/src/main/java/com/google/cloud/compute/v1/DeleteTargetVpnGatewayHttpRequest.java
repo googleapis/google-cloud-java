@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetVpnGateways.delete. Deletes the specified target VPN
- * gateway. (== suppress_warning http-rest-shadowed ==)
+ * gateway.
  */
 public final class DeleteTargetVpnGatewayHttpRequest implements ApiMessage {
   private final String access_token;

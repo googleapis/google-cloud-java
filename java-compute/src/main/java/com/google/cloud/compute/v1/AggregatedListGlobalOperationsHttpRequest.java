@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.globalOperations.aggregatedList. Retrieves an aggregated list
- * of all operations. (== suppress_warning http-rest-shadowed ==)
+ * of all operations.
  */
 public final class AggregatedListGlobalOperationsHttpRequest implements ApiMessage {
   private final String access_token;

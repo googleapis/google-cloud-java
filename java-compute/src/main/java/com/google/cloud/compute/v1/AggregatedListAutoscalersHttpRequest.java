@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.autoscalers.aggregatedList. Retrieves an aggregated list of
- * autoscalers. (== suppress_warning http-rest-shadowed ==)
+ * autoscalers.
  */
 public final class AggregatedListAutoscalersHttpRequest implements ApiMessage {
   private final String access_token;

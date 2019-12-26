@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.backendBuckets.update. Updates the specified BackendBucket
- * resource with the data included in the request. (== suppress_warning http-rest-shadowed ==)
+ * resource with the data included in the request.
  */
 public final class UpdateBackendBucketHttpRequest implements ApiMessage {
   private final String access_token;

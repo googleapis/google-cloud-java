@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.networkEndpointGroups.insert. Creates a network endpoint group
- * in the specified project using the parameters that are included in the request. (==
- * suppress_warning http-rest-shadowed ==)
+ * in the specified project using the parameters that are included in the request.
  */
 public final class InsertNetworkEndpointGroupHttpRequest implements ApiMessage {
   private final String access_token;
@@ -154,7 +153,8 @@ public final class InsertNetworkEndpointGroupHttpRequest implements ApiMessage {
    * Represents a collection of network endpoints.
    *
    * <p>For more information read Setting up network endpoint groups in load balancing. (==
-   * resource_for v1.networkEndpointGroups ==) (== resource_for beta.networkEndpointGroups ==)
+   * resource_for v1.networkEndpointGroups ==) (== resource_for beta.networkEndpointGroups ==) Next
+   * ID: 21
    */
   public NetworkEndpointGroup getNetworkEndpointGroupResource() {
     return networkEndpointGroupResource;
@@ -337,6 +337,7 @@ public final class InsertNetworkEndpointGroupHttpRequest implements ApiMessage {
      *
      * <p>For more information read Setting up network endpoint groups in load balancing. (==
      * resource_for v1.networkEndpointGroups ==) (== resource_for beta.networkEndpointGroups ==)
+     * Next ID: 21
      */
     public NetworkEndpointGroup getNetworkEndpointGroupResource() {
       return networkEndpointGroupResource;
@@ -347,6 +348,7 @@ public final class InsertNetworkEndpointGroupHttpRequest implements ApiMessage {
      *
      * <p>For more information read Setting up network endpoint groups in load balancing. (==
      * resource_for v1.networkEndpointGroups ==) (== resource_for beta.networkEndpointGroups ==)
+     * Next ID: 21
      */
     public Builder setNetworkEndpointGroupResource(
         NetworkEndpointGroup networkEndpointGroupResource) {

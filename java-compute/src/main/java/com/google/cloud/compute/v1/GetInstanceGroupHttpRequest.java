@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instanceGroups.get. Returns the specified instance group. Gets
- * a list of available instance groups by making a list() request. (== suppress_warning
- * http-rest-shadowed ==)
+ * a list of available instance groups by making a list() request.
  */
 public final class GetInstanceGroupHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionCommitments.aggregatedList. Retrieves an aggregated list
- * of commitments. (== suppress_warning http-rest-shadowed ==)
+ * of commitments.
  */
 public final class AggregatedListRegionCommitmentsHttpRequest implements ApiMessage {
   private final String access_token;

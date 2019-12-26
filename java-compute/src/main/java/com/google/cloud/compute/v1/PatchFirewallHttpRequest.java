@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.firewalls.patch. Updates the specified firewall rule with the
  * data included in the request. This method supports PATCH semantics and uses the JSON merge patch
- * format and processing rules. (== suppress_warning http-rest-shadowed ==)
+ * format and processing rules.
  */
 public final class PatchFirewallHttpRequest implements ApiMessage {
   private final String access_token;

@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
  * automatically apply to all of the instances in the managed instance group. This operation is
  * marked DONE when you make the request even if the instances have not yet been added to their
  * target pools. The change might take some time to apply to all of the instances in the group
- * depending on the size of the group. (== suppress_warning http-rest-shadowed ==)
+ * depending on the size of the group.
  */
 public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;

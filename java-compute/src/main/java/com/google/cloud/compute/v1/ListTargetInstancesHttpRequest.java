@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetInstances.list. Retrieves a list of TargetInstance
- * resources available to the specified project and zone. (== suppress_warning http-rest-shadowed
- * ==)
+ * resources available to the specified project and zone.
  */
 public final class ListTargetInstancesHttpRequest implements ApiMessage {
   private final String access_token;

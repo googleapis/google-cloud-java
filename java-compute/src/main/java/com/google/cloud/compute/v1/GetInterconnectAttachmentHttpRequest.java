@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.interconnectAttachments.get. Returns the specified interconnect
- * attachment. (== suppress_warning http-rest-shadowed ==)
+ * attachment.
  */
 public final class GetInterconnectAttachmentHttpRequest implements ApiMessage {
   private final String access_token;

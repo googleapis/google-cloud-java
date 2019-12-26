@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.globalForwardingRules.delete. Deletes the specified
- * GlobalForwardingRule resource. (== suppress_warning http-rest-shadowed ==)
+ * GlobalForwardingRule resource.
  */
 public final class DeleteGlobalForwardingRuleHttpRequest implements ApiMessage {
   private final String access_token;

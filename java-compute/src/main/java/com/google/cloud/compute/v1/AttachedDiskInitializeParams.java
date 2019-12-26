@@ -150,8 +150,9 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
   }
 
   /**
-   * Specifies the size of the disk in base-2 GB. If not specified, the disk will be the same size
-   * as the image (usually 10GB). If specified, the size must be equal to or larger than 10GB.
+   * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a
+   * sourceImage, which is required for boot disks, the default size is the size of the sourceImage.
+   * If you do not specify a sourceImage, the default disk size is 500 GB.
    */
   public String getDiskSizeGb() {
     return diskSizeGb;
@@ -359,16 +360,18 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     }
 
     /**
-     * Specifies the size of the disk in base-2 GB. If not specified, the disk will be the same size
-     * as the image (usually 10GB). If specified, the size must be equal to or larger than 10GB.
+     * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify
+     * a sourceImage, which is required for boot disks, the default size is the size of the
+     * sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
      */
     public String getDiskSizeGb() {
       return diskSizeGb;
     }
 
     /**
-     * Specifies the size of the disk in base-2 GB. If not specified, the disk will be the same size
-     * as the image (usually 10GB). If specified, the size must be equal to or larger than 10GB.
+     * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify
+     * a sourceImage, which is required for boot disks, the default size is the size of the
+     * sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
      */
     public Builder setDiskSizeGb(String diskSizeGb) {
       this.diskSizeGb = diskSizeGb;

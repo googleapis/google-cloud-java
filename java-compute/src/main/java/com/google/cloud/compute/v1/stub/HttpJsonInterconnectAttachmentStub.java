@@ -141,7 +141,7 @@ public class HttpJsonInterconnectAttachmentStub extends InterconnectAttachmentSt
                       .<InsertInterconnectAttachmentHttpRequest>newBuilder()
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/interconnectAttachments"))
-                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId", "validateOnly"))
                       .setResourceNameFactory(ProjectRegionName.newFactory())
                       .setResourceNameField("region")
                       .build())

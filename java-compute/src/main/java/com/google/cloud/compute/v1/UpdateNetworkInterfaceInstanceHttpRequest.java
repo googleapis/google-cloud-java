@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instances.updateNetworkInterface. Updates an instance's network
- * interface. This method follows PATCH semantics. (== suppress_warning http-rest-shadowed ==)
+ * interface. This method follows PATCH semantics.
  */
 public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessage {
   private final String access_token;

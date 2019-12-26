@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instances.start. Starts an instance that was stopped using the
- * instances().stop method. For more information, see Restart an instance. (== suppress_warning
- * http-rest-shadowed ==)
+ * instances().stop method. For more information, see Restart an instance.
  */
 public final class StartInstanceHttpRequest implements ApiMessage {
   private final String access_token;

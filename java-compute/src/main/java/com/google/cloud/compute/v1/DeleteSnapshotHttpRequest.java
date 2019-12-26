@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
  * snapshot. If any data on the snapshot that is marked for deletion is needed for subsequent
  * snapshots, the data will be moved to the next corresponding snapshot.
  *
- * <p>For more information, see Deleting snapshots. (== suppress_warning http-rest-shadowed ==)
+ * <p>For more information, see Deleting snapshots.
  */
 public final class DeleteSnapshotHttpRequest implements ApiMessage {
   private final String access_token;

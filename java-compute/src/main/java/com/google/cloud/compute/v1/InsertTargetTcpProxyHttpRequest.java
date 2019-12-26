@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetTcpProxies.insert. Creates a TargetTcpProxy resource in
- * the specified project using the data included in the request. (== suppress_warning
- * http-rest-shadowed ==)
+ * the specified project using the data included in the request.
  */
 public final class InsertTargetTcpProxyHttpRequest implements ApiMessage {
   private final String access_token;

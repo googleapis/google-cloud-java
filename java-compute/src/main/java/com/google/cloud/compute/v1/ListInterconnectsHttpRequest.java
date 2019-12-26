@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.interconnects.list. Retrieves the list of interconnect
- * available to the specified project. (== suppress_warning http-rest-shadowed ==)
+ * available to the specified project.
  */
 public final class ListInterconnectsHttpRequest implements ApiMessage {
   private final String access_token;

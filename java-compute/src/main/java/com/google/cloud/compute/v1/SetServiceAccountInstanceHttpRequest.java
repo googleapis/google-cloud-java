@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.instances.setServiceAccount. Sets the service account on the
  * instance. For more information, read Changing the service account and access scopes for an
- * instance. (== suppress_warning http-rest-shadowed ==)
+ * instance.
  */
 public final class SetServiceAccountInstanceHttpRequest implements ApiMessage {
   private final String access_token;

@@ -154,7 +154,7 @@ public class RegionClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Region resource. Gets a list of available regions by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -181,7 +181,7 @@ public class RegionClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Region resource. Gets a list of available regions by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -205,7 +205,7 @@ public class RegionClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Region resource. Gets a list of available regions by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -230,7 +230,7 @@ public class RegionClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Region resource. Gets a list of available regions by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -253,8 +253,7 @@ public class RegionClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of region resources available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of region resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -281,8 +280,7 @@ public class RegionClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of region resources available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of region resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -307,8 +305,7 @@ public class RegionClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of region resources available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of region resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -334,8 +331,7 @@ public class RegionClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of region resources available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of region resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -361,8 +357,7 @@ public class RegionClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of region resources available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of region resources available to the specified project.
    *
    * <p>Sample code:
    *

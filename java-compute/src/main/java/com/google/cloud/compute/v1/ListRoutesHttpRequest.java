@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.routes.list. Retrieves the list of Route resources available to
- * the specified project. (== suppress_warning http-rest-shadowed ==)
+ * the specified project.
  */
 public final class ListRoutesHttpRequest implements ApiMessage {
   private final String access_token;

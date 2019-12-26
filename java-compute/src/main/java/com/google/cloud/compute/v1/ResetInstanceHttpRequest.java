@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.instances.reset. Performs a reset on the instance. This is a
  * hard reset the VM does not do a graceful shutdown. For more information, see Resetting an
- * instance. (== suppress_warning http-rest-shadowed ==)
+ * instance.
  */
 public final class ResetInstanceHttpRequest implements ApiMessage {
   private final String access_token;

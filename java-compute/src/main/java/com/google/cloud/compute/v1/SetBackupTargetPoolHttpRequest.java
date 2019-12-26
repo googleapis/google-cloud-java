@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetPools.setBackup. Changes a backup target pool's
- * configurations. (== suppress_warning http-rest-shadowed ==)
+ * configurations.
  */
 public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
   private final String access_token;

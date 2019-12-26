@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.disks.list. Retrieves a list of persistent disks contained
- * within the specified zone. (== suppress_warning http-rest-shadowed ==)
+ * within the specified zone.
  */
 public final class ListDisksHttpRequest implements ApiMessage {
   private final String access_token;

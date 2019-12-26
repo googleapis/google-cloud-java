@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.projects.disableXpnResource. Disable a service resource (also
- * known as service project) associated with this host project. (== suppress_warning
- * http-rest-shadowed ==)
+ * known as service project) associated with this host project.
  */
 public final class DisableXpnResourceProjectHttpRequest implements ApiMessage {
   private final String access_token;

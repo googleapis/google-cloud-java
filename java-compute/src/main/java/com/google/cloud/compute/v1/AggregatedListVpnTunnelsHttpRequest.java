@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.vpnTunnels.aggregatedList. Retrieves an aggregated list of VPN
- * tunnels. (== suppress_warning http-rest-shadowed ==)
+ * tunnels.
  */
 public final class AggregatedListVpnTunnelsHttpRequest implements ApiMessage {
   private final String access_token;

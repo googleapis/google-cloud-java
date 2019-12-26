@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.interconnectAttachments.aggregatedList. Retrieves an aggregated
- * list of interconnect attachments. (== suppress_warning http-rest-shadowed ==)
+ * list of interconnect attachments.
  */
 public final class AggregatedListInterconnectAttachmentsHttpRequest implements ApiMessage {
   private final String access_token;

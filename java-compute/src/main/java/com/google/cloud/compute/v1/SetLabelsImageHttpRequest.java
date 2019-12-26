@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.images.setLabels. Sets the labels on an image. To learn more
- * about labels, read the Labeling Resources documentation. (== suppress_warning http-rest-shadowed
- * ==)
+ * about labels, read the Labeling Resources documentation.
  */
 public final class SetLabelsImageHttpRequest implements ApiMessage {
   private final String access_token;

@@ -155,8 +155,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds an access config to an instance's network interface. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Adds an access config to an instance's network interface.
    *
    * <p>Sample code:
    *
@@ -192,8 +191,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds an access config to an instance's network interface. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Adds an access config to an instance's network interface.
    *
    * <p>Sample code:
    *
@@ -227,8 +225,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds an access config to an instance's network interface. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Adds an access config to an instance's network interface.
    *
    * <p>Sample code:
    *
@@ -256,8 +253,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds an access config to an instance's network interface. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Adds an access config to an instance's network interface.
    *
    * <p>Sample code:
    *
@@ -286,7 +282,6 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves aggregated list of all of the instances in your project across all regions and zones.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -314,7 +309,6 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves aggregated list of all of the instances in your project across all regions and zones.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -340,7 +334,6 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves aggregated list of all of the instances in your project across all regions and zones.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -368,7 +361,6 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves aggregated list of all of the instances in your project across all regions and zones.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -396,7 +388,6 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves aggregated list of all of the instances in your project across all regions and zones.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -431,8 +422,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Attaches an existing Disk resource to an instance. You must first create the disk before you
    * can attach it. It is not possible to create and attach a disk at the same time. For more
-   * information, read Adding a persistent disk to your instance. (== suppress_warning
-   * http-rest-shadowed ==)
+   * information, read Adding a persistent disk to your instance.
    *
    * <p>Sample code:
    *
@@ -468,8 +458,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Attaches an existing Disk resource to an instance. You must first create the disk before you
    * can attach it. It is not possible to create and attach a disk at the same time. For more
-   * information, read Adding a persistent disk to your instance. (== suppress_warning
-   * http-rest-shadowed ==)
+   * information, read Adding a persistent disk to your instance.
    *
    * <p>Sample code:
    *
@@ -505,8 +494,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Attaches an existing Disk resource to an instance. You must first create the disk before you
    * can attach it. It is not possible to create and attach a disk at the same time. For more
-   * information, read Adding a persistent disk to your instance. (== suppress_warning
-   * http-rest-shadowed ==)
+   * information, read Adding a persistent disk to your instance.
    *
    * <p>Sample code:
    *
@@ -536,8 +524,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Attaches an existing Disk resource to an instance. You must first create the disk before you
    * can attach it. It is not possible to create and attach a disk at the same time. For more
-   * information, read Adding a persistent disk to your instance. (== suppress_warning
-   * http-rest-shadowed ==)
+   * information, read Adding a persistent disk to your instance.
    *
    * <p>Sample code:
    *
@@ -566,7 +553,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified Instance resource. For more information, see Stopping or Deleting an
-   * Instance. (== suppress_warning http-rest-shadowed ==)
+   * Instance.
    *
    * <p>Sample code:
    *
@@ -593,7 +580,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified Instance resource. For more information, see Stopping or Deleting an
-   * Instance. (== suppress_warning http-rest-shadowed ==)
+   * Instance.
    *
    * <p>Sample code:
    *
@@ -618,7 +605,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified Instance resource. For more information, see Stopping or Deleting an
-   * Instance. (== suppress_warning http-rest-shadowed ==)
+   * Instance.
    *
    * <p>Sample code:
    *
@@ -643,7 +630,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified Instance resource. For more information, see Stopping or Deleting an
-   * Instance. (== suppress_warning http-rest-shadowed ==)
+   * Instance.
    *
    * <p>Sample code:
    *
@@ -666,8 +653,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an access config from an instance's network interface. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Deletes an access config from an instance's network interface.
    *
    * <p>Sample code:
    *
@@ -700,8 +686,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an access config from an instance's network interface. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Deletes an access config from an instance's network interface.
    *
    * <p>Sample code:
    *
@@ -734,8 +719,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an access config from an instance's network interface. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Deletes an access config from an instance's network interface.
    *
    * <p>Sample code:
    *
@@ -763,8 +747,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an access config from an instance's network interface. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Deletes an access config from an instance's network interface.
    *
    * <p>Sample code:
    *
@@ -792,7 +775,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Detaches a disk from an instance. (== suppress_warning http-rest-shadowed ==)
+   * Detaches a disk from an instance.
    *
    * <p>Sample code:
    *
@@ -822,7 +805,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Detaches a disk from an instance. (== suppress_warning http-rest-shadowed ==)
+   * Detaches a disk from an instance.
    *
    * <p>Sample code:
    *
@@ -852,7 +835,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Detaches a disk from an instance. (== suppress_warning http-rest-shadowed ==)
+   * Detaches a disk from an instance.
    *
    * <p>Sample code:
    *
@@ -878,7 +861,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Detaches a disk from an instance. (== suppress_warning http-rest-shadowed ==)
+   * Detaches a disk from an instance.
    *
    * <p>Sample code:
    *
@@ -905,7 +888,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Instance resource. Gets a list of available instances by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -932,7 +915,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Instance resource. Gets a list of available instances by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -957,7 +940,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Instance resource. Gets a list of available instances by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -982,7 +965,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Instance resource. Gets a list of available instances by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -1005,7 +988,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified guest attributes entry. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified guest attributes entry.
    *
    * <p>Sample code:
    *
@@ -1038,7 +1021,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified guest attributes entry. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified guest attributes entry.
    *
    * <p>Sample code:
    *
@@ -1071,7 +1054,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified guest attributes entry. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified guest attributes entry.
    *
    * <p>Sample code:
    *
@@ -1100,7 +1083,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified guest attributes entry. (== suppress_warning http-rest-shadowed ==)
+   * Returns the specified guest attributes entry.
    *
    * <p>Sample code:
    *
@@ -1129,7 +1112,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -1156,7 +1139,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -1181,7 +1164,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -1206,7 +1189,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. (== suppress_warning http-rest-shadowed ==)
+   * exists.
    *
    * <p>Sample code:
    *
@@ -1230,8 +1213,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the last 1 MB of serial port output from the specified instance. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns the last 1 MB of serial port output from the specified instance.
    *
    * <p>Sample code:
    *
@@ -1267,8 +1249,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the last 1 MB of serial port output from the specified instance. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns the last 1 MB of serial port output from the specified instance.
    *
    * <p>Sample code:
    *
@@ -1304,8 +1285,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the last 1 MB of serial port output from the specified instance. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns the last 1 MB of serial port output from the specified instance.
    *
    * <p>Sample code:
    *
@@ -1334,8 +1314,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the last 1 MB of serial port output from the specified instance. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns the last 1 MB of serial port output from the specified instance.
    *
    * <p>Sample code:
    *
@@ -1363,8 +1342,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the Shielded Instance Identity of an instance (== suppress_warning http-rest-shadowed
-   * ==)
+   * Returns the Shielded Instance Identity of an instance
    *
    * <p>Sample code:
    *
@@ -1391,8 +1369,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the Shielded Instance Identity of an instance (== suppress_warning http-rest-shadowed
-   * ==)
+   * Returns the Shielded Instance Identity of an instance
    *
    * <p>Sample code:
    *
@@ -1416,8 +1393,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the Shielded Instance Identity of an instance (== suppress_warning http-rest-shadowed
-   * ==)
+   * Returns the Shielded Instance Identity of an instance
    *
    * <p>Sample code:
    *
@@ -1442,8 +1418,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the Shielded Instance Identity of an instance (== suppress_warning http-rest-shadowed
-   * ==)
+   * Returns the Shielded Instance Identity of an instance
    *
    * <p>Sample code:
    *
@@ -1469,7 +1444,6 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an instance resource in the specified project using the data included in the request.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1502,7 +1476,6 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an instance resource in the specified project using the data included in the request.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1535,7 +1508,6 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an instance resource in the specified project using the data included in the request.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1562,7 +1534,6 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an instance resource in the specified project using the data included in the request.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1587,8 +1558,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instances contained within the specified zone. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of instances contained within the specified zone.
    *
    * <p>Sample code:
    *
@@ -1615,8 +1585,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instances contained within the specified zone. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of instances contained within the specified zone.
    *
    * <p>Sample code:
    *
@@ -1640,8 +1609,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instances contained within the specified zone. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of instances contained within the specified zone.
    *
    * <p>Sample code:
    *
@@ -1667,8 +1635,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instances contained within the specified zone. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of instances contained within the specified zone.
    *
    * <p>Sample code:
    *
@@ -1694,8 +1661,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instances contained within the specified zone. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of instances contained within the specified zone.
    *
    * <p>Sample code:
    *
@@ -1728,8 +1694,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of referrers to instances contained within the specified zone. For more
-   * information, read Viewing Referrers to VM Instances. (== suppress_warning http-rest-shadowed
-   * ==)
+   * information, read Viewing Referrers to VM Instances.
    *
    * <p>Sample code:
    *
@@ -1759,8 +1724,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of referrers to instances contained within the specified zone. For more
-   * information, read Viewing Referrers to VM Instances. (== suppress_warning http-rest-shadowed
-   * ==)
+   * information, read Viewing Referrers to VM Instances.
    *
    * <p>Sample code:
    *
@@ -1787,8 +1751,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of referrers to instances contained within the specified zone. For more
-   * information, read Viewing Referrers to VM Instances. (== suppress_warning http-rest-shadowed
-   * ==)
+   * information, read Viewing Referrers to VM Instances.
    *
    * <p>Sample code:
    *
@@ -1816,8 +1779,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of referrers to instances contained within the specified zone. For more
-   * information, read Viewing Referrers to VM Instances. (== suppress_warning http-rest-shadowed
-   * ==)
+   * information, read Viewing Referrers to VM Instances.
    *
    * <p>Sample code:
    *
@@ -1844,8 +1806,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of referrers to instances contained within the specified zone. For more
-   * information, read Viewing Referrers to VM Instances. (== suppress_warning http-rest-shadowed
-   * ==)
+   * information, read Viewing Referrers to VM Instances.
    *
    * <p>Sample code:
    *
@@ -1879,7 +1840,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown.
-   * For more information, see Resetting an instance. (== suppress_warning http-rest-shadowed ==)
+   * For more information, see Resetting an instance.
    *
    * <p>Sample code:
    *
@@ -1906,7 +1867,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown.
-   * For more information, see Resetting an instance. (== suppress_warning http-rest-shadowed ==)
+   * For more information, see Resetting an instance.
    *
    * <p>Sample code:
    *
@@ -1931,7 +1892,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown.
-   * For more information, see Resetting an instance. (== suppress_warning http-rest-shadowed ==)
+   * For more information, see Resetting an instance.
    *
    * <p>Sample code:
    *
@@ -1956,7 +1917,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown.
-   * For more information, see Resetting an instance. (== suppress_warning http-rest-shadowed ==)
+   * For more information, see Resetting an instance.
    *
    * <p>Sample code:
    *
@@ -1979,7 +1940,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets deletion protection on the instance. (== suppress_warning http-rest-shadowed ==)
+   * Sets deletion protection on the instance.
    *
    * <p>Sample code:
    *
@@ -2009,7 +1970,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets deletion protection on the instance. (== suppress_warning http-rest-shadowed ==)
+   * Sets deletion protection on the instance.
    *
    * <p>Sample code:
    *
@@ -2039,7 +2000,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets deletion protection on the instance. (== suppress_warning http-rest-shadowed ==)
+   * Sets deletion protection on the instance.
    *
    * <p>Sample code:
    *
@@ -2066,7 +2027,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets deletion protection on the instance. (== suppress_warning http-rest-shadowed ==)
+   * Sets deletion protection on the instance.
    *
    * <p>Sample code:
    *
@@ -2092,8 +2053,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the auto-delete flag for a disk attached to an instance. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Sets the auto-delete flag for a disk attached to an instance.
    *
    * <p>Sample code:
    *
@@ -2127,8 +2087,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the auto-delete flag for a disk attached to an instance. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Sets the auto-delete flag for a disk attached to an instance.
    *
    * <p>Sample code:
    *
@@ -2162,8 +2121,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the auto-delete flag for a disk attached to an instance. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Sets the auto-delete flag for a disk attached to an instance.
    *
    * <p>Sample code:
    *
@@ -2191,8 +2149,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the auto-delete flag for a disk attached to an instance. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Sets the auto-delete flag for a disk attached to an instance.
    *
    * <p>Sample code:
    *
@@ -2220,8 +2177,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -2251,8 +2207,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -2282,8 +2237,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -2309,8 +2263,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Sample code:
    *
@@ -2337,7 +2290,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets labels on an instance. To learn more about labels, read the Labeling Resources
-   * documentation. (== suppress_warning http-rest-shadowed ==)
+   * documentation.
    *
    * <p>Sample code:
    *
@@ -2369,7 +2322,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets labels on an instance. To learn more about labels, read the Labeling Resources
-   * documentation. (== suppress_warning http-rest-shadowed ==)
+   * documentation.
    *
    * <p>Sample code:
    *
@@ -2400,7 +2353,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets labels on an instance. To learn more about labels, read the Labeling Resources
-   * documentation. (== suppress_warning http-rest-shadowed ==)
+   * documentation.
    *
    * <p>Sample code:
    *
@@ -2427,7 +2380,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets labels on an instance. To learn more about labels, read the Labeling Resources
-   * documentation. (== suppress_warning http-rest-shadowed ==)
+   * documentation.
    *
    * <p>Sample code:
    *
@@ -2453,7 +2406,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes the number and/or type of accelerator for a stopped instance to the values specified in
-   * the request. (== suppress_warning http-rest-shadowed ==)
+   * the request.
    *
    * <p>Sample code:
    *
@@ -2486,7 +2439,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes the number and/or type of accelerator for a stopped instance to the values specified in
-   * the request. (== suppress_warning http-rest-shadowed ==)
+   * the request.
    *
    * <p>Sample code:
    *
@@ -2519,7 +2472,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes the number and/or type of accelerator for a stopped instance to the values specified in
-   * the request. (== suppress_warning http-rest-shadowed ==)
+   * the request.
    *
    * <p>Sample code:
    *
@@ -2547,7 +2500,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes the number and/or type of accelerator for a stopped instance to the values specified in
-   * the request. (== suppress_warning http-rest-shadowed ==)
+   * the request.
    *
    * <p>Sample code:
    *
@@ -2574,7 +2527,6 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes the machine type for a stopped instance to the machine type specified in the request.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -2606,7 +2558,6 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes the machine type for a stopped instance to the machine type specified in the request.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -2637,7 +2588,6 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes the machine type for a stopped instance to the machine type specified in the request.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -2664,7 +2614,6 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes the machine type for a stopped instance to the machine type specified in the request.
-   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -2690,8 +2639,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets metadata for the specified instance to the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets metadata for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
@@ -2721,8 +2669,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets metadata for the specified instance to the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets metadata for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
@@ -2751,8 +2698,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets metadata for the specified instance to the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets metadata for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
@@ -2778,8 +2724,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets metadata for the specified instance to the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets metadata for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
@@ -2806,8 +2751,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes the minimum CPU platform that this instance should use. This method can only be called
-   * on a stopped instance. For more information, read Specifying a Minimum CPU Platform. (==
-   * suppress_warning http-rest-shadowed ==)
+   * on a stopped instance. For more information, read Specifying a Minimum CPU Platform.
    *
    * <p>Sample code:
    *
@@ -2839,8 +2783,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes the minimum CPU platform that this instance should use. This method can only be called
-   * on a stopped instance. For more information, read Specifying a Minimum CPU Platform. (==
-   * suppress_warning http-rest-shadowed ==)
+   * on a stopped instance. For more information, read Specifying a Minimum CPU Platform.
    *
    * <p>Sample code:
    *
@@ -2872,8 +2815,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes the minimum CPU platform that this instance should use. This method can only be called
-   * on a stopped instance. For more information, read Specifying a Minimum CPU Platform. (==
-   * suppress_warning http-rest-shadowed ==)
+   * on a stopped instance. For more information, read Specifying a Minimum CPU Platform.
    *
    * <p>Sample code:
    *
@@ -2900,8 +2842,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes the minimum CPU platform that this instance should use. This method can only be called
-   * on a stopped instance. For more information, read Specifying a Minimum CPU Platform. (==
-   * suppress_warning http-rest-shadowed ==)
+   * on a stopped instance. For more information, read Specifying a Minimum CPU Platform.
    *
    * <p>Sample code:
    *
@@ -2927,7 +2868,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets an instance's scheduling options. (== suppress_warning http-rest-shadowed ==)
+   * Sets an instance's scheduling options.
    *
    * <p>Sample code:
    *
@@ -2957,7 +2898,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets an instance's scheduling options. (== suppress_warning http-rest-shadowed ==)
+   * Sets an instance's scheduling options.
    *
    * <p>Sample code:
    *
@@ -2986,7 +2927,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets an instance's scheduling options. (== suppress_warning http-rest-shadowed ==)
+   * Sets an instance's scheduling options.
    *
    * <p>Sample code:
    *
@@ -3012,7 +2953,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets an instance's scheduling options. (== suppress_warning http-rest-shadowed ==)
+   * Sets an instance's scheduling options.
    *
    * <p>Sample code:
    *
@@ -3039,7 +2980,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the service account on the instance. For more information, read Changing the service
-   * account and access scopes for an instance. (== suppress_warning http-rest-shadowed ==)
+   * account and access scopes for an instance.
    *
    * <p>Sample code:
    *
@@ -3071,7 +3012,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the service account on the instance. For more information, read Changing the service
-   * account and access scopes for an instance. (== suppress_warning http-rest-shadowed ==)
+   * account and access scopes for an instance.
    *
    * <p>Sample code:
    *
@@ -3103,7 +3044,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the service account on the instance. For more information, read Changing the service
-   * account and access scopes for an instance. (== suppress_warning http-rest-shadowed ==)
+   * account and access scopes for an instance.
    *
    * <p>Sample code:
    *
@@ -3130,7 +3071,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the service account on the instance. For more information, read Changing the service
-   * account and access scopes for an instance. (== suppress_warning http-rest-shadowed ==)
+   * account and access scopes for an instance.
    *
    * <p>Sample code:
    *
@@ -3158,7 +3099,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Sets the Shielded Instance integrity policy for an instance. You can only use this method on a
    * running instance. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules. (== suppress_warning http-rest-shadowed ==)
+   * processing rules.
    *
    * <p>Sample code:
    *
@@ -3199,7 +3140,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Sets the Shielded Instance integrity policy for an instance. You can only use this method on a
    * running instance. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules. (== suppress_warning http-rest-shadowed ==)
+   * processing rules.
    *
    * <p>Sample code:
    *
@@ -3240,7 +3181,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Sets the Shielded Instance integrity policy for an instance. You can only use this method on a
    * running instance. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules. (== suppress_warning http-rest-shadowed ==)
+   * processing rules.
    *
    * <p>Sample code:
    *
@@ -3271,7 +3212,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Sets the Shielded Instance integrity policy for an instance. You can only use this method on a
    * running instance. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules. (== suppress_warning http-rest-shadowed ==)
+   * processing rules.
    *
    * <p>Sample code:
    *
@@ -3299,8 +3240,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets network tags for the specified instance to the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets network tags for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
@@ -3329,8 +3269,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets network tags for the specified instance to the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets network tags for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
@@ -3359,8 +3298,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets network tags for the specified instance to the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets network tags for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
@@ -3386,8 +3324,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets network tags for the specified instance to the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Sets network tags for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
@@ -3412,7 +3349,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Simulates a maintenance event on the instance. (== suppress_warning http-rest-shadowed ==)
+   * Simulates a maintenance event on the instance.
    *
    * <p>Sample code:
    *
@@ -3438,7 +3375,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Simulates a maintenance event on the instance. (== suppress_warning http-rest-shadowed ==)
+   * Simulates a maintenance event on the instance.
    *
    * <p>Sample code:
    *
@@ -3462,7 +3399,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Simulates a maintenance event on the instance. (== suppress_warning http-rest-shadowed ==)
+   * Simulates a maintenance event on the instance.
    *
    * <p>Sample code:
    *
@@ -3487,7 +3424,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Simulates a maintenance event on the instance. (== suppress_warning http-rest-shadowed ==)
+   * Simulates a maintenance event on the instance.
    *
    * <p>Sample code:
    *
@@ -3512,7 +3449,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Starts an instance that was stopped using the instances().stop method. For more information,
-   * see Restart an instance. (== suppress_warning http-rest-shadowed ==)
+   * see Restart an instance.
    *
    * <p>Sample code:
    *
@@ -3539,7 +3476,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Starts an instance that was stopped using the instances().stop method. For more information,
-   * see Restart an instance. (== suppress_warning http-rest-shadowed ==)
+   * see Restart an instance.
    *
    * <p>Sample code:
    *
@@ -3564,7 +3501,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Starts an instance that was stopped using the instances().stop method. For more information,
-   * see Restart an instance. (== suppress_warning http-rest-shadowed ==)
+   * see Restart an instance.
    *
    * <p>Sample code:
    *
@@ -3589,7 +3526,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Starts an instance that was stopped using the instances().stop method. For more information,
-   * see Restart an instance. (== suppress_warning http-rest-shadowed ==)
+   * see Restart an instance.
    *
    * <p>Sample code:
    *
@@ -3613,7 +3550,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Starts an instance that was stopped using the instances().stop method. For more information,
-   * see Restart an instance. (== suppress_warning http-rest-shadowed ==)
+   * see Restart an instance.
    *
    * <p>Sample code:
    *
@@ -3646,7 +3583,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Starts an instance that was stopped using the instances().stop method. For more information,
-   * see Restart an instance. (== suppress_warning http-rest-shadowed ==)
+   * see Restart an instance.
    *
    * <p>Sample code:
    *
@@ -3679,7 +3616,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Starts an instance that was stopped using the instances().stop method. For more information,
-   * see Restart an instance. (== suppress_warning http-rest-shadowed ==)
+   * see Restart an instance.
    *
    * <p>Sample code:
    *
@@ -3707,7 +3644,7 @@ public class InstanceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Starts an instance that was stopped using the instances().stop method. For more information,
-   * see Restart an instance. (== suppress_warning http-rest-shadowed ==)
+   * see Restart an instance.
    *
    * <p>Sample code:
    *
@@ -3736,8 +3673,7 @@ public class InstanceClient implements BackgroundResource {
    * Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a
    * later time. Stopped instances do not incur VM usage charges while they are stopped. However,
    * resources that the VM is using, such as persistent disks and static IP addresses, will continue
-   * to be charged until they are deleted. For more information, see Stopping an instance. (==
-   * suppress_warning http-rest-shadowed ==)
+   * to be charged until they are deleted. For more information, see Stopping an instance.
    *
    * <p>Sample code:
    *
@@ -3766,8 +3702,7 @@ public class InstanceClient implements BackgroundResource {
    * Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a
    * later time. Stopped instances do not incur VM usage charges while they are stopped. However,
    * resources that the VM is using, such as persistent disks and static IP addresses, will continue
-   * to be charged until they are deleted. For more information, see Stopping an instance. (==
-   * suppress_warning http-rest-shadowed ==)
+   * to be charged until they are deleted. For more information, see Stopping an instance.
    *
    * <p>Sample code:
    *
@@ -3794,8 +3729,7 @@ public class InstanceClient implements BackgroundResource {
    * Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a
    * later time. Stopped instances do not incur VM usage charges while they are stopped. However,
    * resources that the VM is using, such as persistent disks and static IP addresses, will continue
-   * to be charged until they are deleted. For more information, see Stopping an instance. (==
-   * suppress_warning http-rest-shadowed ==)
+   * to be charged until they are deleted. For more information, see Stopping an instance.
    *
    * <p>Sample code:
    *
@@ -3822,8 +3756,7 @@ public class InstanceClient implements BackgroundResource {
    * Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a
    * later time. Stopped instances do not incur VM usage charges while they are stopped. However,
    * resources that the VM is using, such as persistent disks and static IP addresses, will continue
-   * to be charged until they are deleted. For more information, see Stopping an instance. (==
-   * suppress_warning http-rest-shadowed ==)
+   * to be charged until they are deleted. For more information, see Stopping an instance.
    *
    * <p>Sample code:
    *
@@ -3846,8 +3779,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -3878,8 +3810,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -3909,8 +3840,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -3937,8 +3867,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
    *
@@ -3966,7 +3895,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Updates the specified access config from an instance's network interface with the data included
    * in the request. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules. (== suppress_warning http-rest-shadowed ==)
+   * processing rules.
    *
    * <p>Sample code:
    *
@@ -4004,7 +3933,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Updates the specified access config from an instance's network interface with the data included
    * in the request. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules. (== suppress_warning http-rest-shadowed ==)
+   * processing rules.
    *
    * <p>Sample code:
    *
@@ -4040,7 +3969,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Updates the specified access config from an instance's network interface with the data included
    * in the request. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules. (== suppress_warning http-rest-shadowed ==)
+   * processing rules.
    *
    * <p>Sample code:
    *
@@ -4070,7 +3999,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Updates the specified access config from an instance's network interface with the data included
    * in the request. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules. (== suppress_warning http-rest-shadowed ==)
+   * processing rules.
    *
    * <p>Sample code:
    *
@@ -4100,7 +4029,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Updates the Display config for a VM instance. You can only use this method on a stopped VM
    * instance. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules. (== suppress_warning http-rest-shadowed ==)
+   * processing rules.
    *
    * <p>Sample code:
    *
@@ -4140,7 +4069,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Updates the Display config for a VM instance. You can only use this method on a stopped VM
    * instance. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules. (== suppress_warning http-rest-shadowed ==)
+   * processing rules.
    *
    * <p>Sample code:
    *
@@ -4178,7 +4107,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Updates the Display config for a VM instance. You can only use this method on a stopped VM
    * instance. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules. (== suppress_warning http-rest-shadowed ==)
+   * processing rules.
    *
    * <p>Sample code:
    *
@@ -4209,7 +4138,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Updates the Display config for a VM instance. You can only use this method on a stopped VM
    * instance. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules. (== suppress_warning http-rest-shadowed ==)
+   * processing rules.
    *
    * <p>Sample code:
    *
@@ -4237,8 +4166,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an instance's network interface. This method follows PATCH semantics. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Updates an instance's network interface. This method follows PATCH semantics.
    *
    * <p>Sample code:
    *
@@ -4280,8 +4208,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an instance's network interface. This method follows PATCH semantics. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Updates an instance's network interface. This method follows PATCH semantics.
    *
    * <p>Sample code:
    *
@@ -4323,8 +4250,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an instance's network interface. This method follows PATCH semantics. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Updates an instance's network interface. This method follows PATCH semantics.
    *
    * <p>Sample code:
    *
@@ -4355,8 +4281,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an instance's network interface. This method follows PATCH semantics. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Updates an instance's network interface. This method follows PATCH semantics.
    *
    * <p>Sample code:
    *
@@ -4388,7 +4313,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Updates the Shielded Instance config for an instance. You can only use this method on a stopped
    * instance. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules. (== suppress_warning http-rest-shadowed ==)
+   * processing rules.
    *
    * <p>Sample code:
    *
@@ -4428,7 +4353,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Updates the Shielded Instance config for an instance. You can only use this method on a stopped
    * instance. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules. (== suppress_warning http-rest-shadowed ==)
+   * processing rules.
    *
    * <p>Sample code:
    *
@@ -4468,7 +4393,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Updates the Shielded Instance config for an instance. You can only use this method on a stopped
    * instance. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules. (== suppress_warning http-rest-shadowed ==)
+   * processing rules.
    *
    * <p>Sample code:
    *
@@ -4499,7 +4424,7 @@ public class InstanceClient implements BackgroundResource {
   /**
    * Updates the Shielded Instance config for an instance. You can only use this method on a stopped
    * instance. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules. (== suppress_warning http-rest-shadowed ==)
+   * processing rules.
    *
    * <p>Sample code:
    *

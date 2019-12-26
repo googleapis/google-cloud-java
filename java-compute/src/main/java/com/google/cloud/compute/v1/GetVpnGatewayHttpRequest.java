@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.vpnGateways.get. Returns the specified VPN gateway. Gets a list
- * of available VPN gateways by making a list() request. (== suppress_warning http-rest-shadowed ==)
+ * of available VPN gateways by making a list() request.
  */
 public final class GetVpnGatewayHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionBackendServices.getHealth. Gets the most recent health
- * check results for this regional BackendService. (== suppress_warning http-rest-shadowed ==)
+ * check results for this regional BackendService.
  */
 public final class GetHealthRegionBackendServiceHttpRequest implements ApiMessage {
   private final String access_token;

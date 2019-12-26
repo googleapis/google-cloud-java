@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.diskTypes.list. Retrieves a list of disk types available to the
- * specified project. (== suppress_warning http-rest-shadowed ==)
+ * specified project.
  */
 public final class ListDiskTypesHttpRequest implements ApiMessage {
   private final String access_token;

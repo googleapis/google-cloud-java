@@ -154,7 +154,7 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified interconnect. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified interconnect.
    *
    * <p>Sample code:
    *
@@ -180,7 +180,7 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified interconnect. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified interconnect.
    *
    * <p>Sample code:
    *
@@ -204,7 +204,7 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified interconnect. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified interconnect.
    *
    * <p>Sample code:
    *
@@ -228,7 +228,7 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified interconnect. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified interconnect.
    *
    * <p>Sample code:
    *
@@ -253,7 +253,7 @@ public class InterconnectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified interconnect. Get a list of available interconnects by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -280,7 +280,7 @@ public class InterconnectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified interconnect. Get a list of available interconnects by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -305,7 +305,7 @@ public class InterconnectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified interconnect. Get a list of available interconnects by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -330,7 +330,7 @@ public class InterconnectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified interconnect. Get a list of available interconnects by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -353,8 +353,7 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the interconnectDiagnostics for the specified interconnect. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns the interconnectDiagnostics for the specified interconnect.
    *
    * <p>Sample code:
    *
@@ -381,8 +380,7 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the interconnectDiagnostics for the specified interconnect. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns the interconnectDiagnostics for the specified interconnect.
    *
    * <p>Sample code:
    *
@@ -406,8 +404,7 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the interconnectDiagnostics for the specified interconnect. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns the interconnectDiagnostics for the specified interconnect.
    *
    * <p>Sample code:
    *
@@ -432,8 +429,7 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the interconnectDiagnostics for the specified interconnect. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Returns the interconnectDiagnostics for the specified interconnect.
    *
    * <p>Sample code:
    *
@@ -458,8 +454,7 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a Interconnect in the specified project using the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Creates a Interconnect in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -492,8 +487,7 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a Interconnect in the specified project using the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Creates a Interconnect in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -525,8 +519,7 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a Interconnect in the specified project using the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Creates a Interconnect in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -552,8 +545,7 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a Interconnect in the specified project using the data included in the request. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Creates a Interconnect in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -579,8 +571,7 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of interconnect available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of interconnect available to the specified project.
    *
    * <p>Sample code:
    *
@@ -607,8 +598,7 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of interconnect available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of interconnect available to the specified project.
    *
    * <p>Sample code:
    *
@@ -633,8 +623,7 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of interconnect available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of interconnect available to the specified project.
    *
    * <p>Sample code:
    *
@@ -661,8 +650,7 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of interconnect available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of interconnect available to the specified project.
    *
    * <p>Sample code:
    *
@@ -688,8 +676,7 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of interconnect available to the specified project. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the list of interconnect available to the specified project.
    *
    * <p>Sample code:
    *
@@ -723,8 +710,7 @@ public class InterconnectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified interconnect with the data included in the request. This method supports
-   * PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning
-   * http-rest-shadowed ==)
+   * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -766,8 +752,7 @@ public class InterconnectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified interconnect with the data included in the request. This method supports
-   * PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning
-   * http-rest-shadowed ==)
+   * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -807,8 +792,7 @@ public class InterconnectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified interconnect with the data included in the request. This method supports
-   * PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning
-   * http-rest-shadowed ==)
+   * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -837,8 +821,7 @@ public class InterconnectClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified interconnect with the data included in the request. This method supports
-   * PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning
-   * http-rest-shadowed ==)
+   * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *

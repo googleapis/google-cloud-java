@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionOperations.get. Retrieves the specified region-specific
- * Operations resource. (== suppress_warning http-rest-shadowed ==)
+ * Operations resource.
  */
 public final class GetRegionOperationHttpRequest implements ApiMessage {
   private final String access_token;

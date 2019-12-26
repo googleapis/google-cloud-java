@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.addresses.aggregatedList. Retrieves an aggregated list of
- * addresses. (== suppress_warning http-rest-shadowed ==)
+ * addresses.
  */
 public final class AggregatedListAddressesHttpRequest implements ApiMessage {
   private final String access_token;

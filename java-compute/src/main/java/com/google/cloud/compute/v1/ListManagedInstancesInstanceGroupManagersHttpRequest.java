@@ -29,8 +29,7 @@ import javax.annotation.Nullable;
  * instances in the managed instance group. Each instance in the list has a currentAction, which
  * indicates the action that the managed instance group is performing on the instance. For example,
  * if the group is still creating an instance, the currentAction is CREATING. If a previous action
- * failed, the list displays the errors for that failed action. (== suppress_warning
- * http-rest-shadowed ==)
+ * failed, the list displays the errors for that failed action.
  */
 public final class ListManagedInstancesInstanceGroupManagersHttpRequest implements ApiMessage {
   private final String access_token;

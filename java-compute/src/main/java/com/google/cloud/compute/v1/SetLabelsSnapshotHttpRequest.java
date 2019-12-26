@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.snapshots.setLabels. Sets the labels on a snapshot. To learn
- * more about labels, read the Labeling Resources documentation. (== suppress_warning
- * http-rest-shadowed ==)
+ * more about labels, read the Labeling Resources documentation.
  */
 public final class SetLabelsSnapshotHttpRequest implements ApiMessage {
   private final String access_token;

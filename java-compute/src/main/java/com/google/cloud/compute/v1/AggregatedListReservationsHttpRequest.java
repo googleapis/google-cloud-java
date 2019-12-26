@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.reservations.aggregatedList. Retrieves an aggregated list of
- * reservations. (== suppress_warning http-rest-shadowed ==)
+ * reservations.
  */
 public final class AggregatedListReservationsHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.backendBuckets.insert. Creates a BackendBucket resource in the
- * specified project using the data included in the request. (== suppress_warning http-rest-shadowed
- * ==)
+ * specified project using the data included in the request.
  */
 public final class InsertBackendBucketHttpRequest implements ApiMessage {
   private final String access_token;

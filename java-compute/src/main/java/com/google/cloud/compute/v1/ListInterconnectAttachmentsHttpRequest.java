@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.interconnectAttachments.list. Retrieves the list of
- * interconnect attachments contained within the specified region. (== suppress_warning
- * http-rest-shadowed ==)
+ * interconnect attachments contained within the specified region.
  */
 public final class ListInterconnectAttachmentsHttpRequest implements ApiMessage {
   private final String access_token;

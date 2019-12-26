@@ -155,8 +155,7 @@ public class ZoneOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified zone-specific Operations resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Deletes the specified zone-specific Operations resource.
    *
    * <p>Sample code:
    *
@@ -182,8 +181,7 @@ public class ZoneOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified zone-specific Operations resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Deletes the specified zone-specific Operations resource.
    *
    * <p>Sample code:
    *
@@ -207,8 +205,7 @@ public class ZoneOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified zone-specific Operations resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Deletes the specified zone-specific Operations resource.
    *
    * <p>Sample code:
    *
@@ -232,8 +229,7 @@ public class ZoneOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified zone-specific Operations resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Deletes the specified zone-specific Operations resource.
    *
    * <p>Sample code:
    *
@@ -256,8 +252,7 @@ public class ZoneOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the specified zone-specific Operations resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the specified zone-specific Operations resource.
    *
    * <p>Sample code:
    *
@@ -283,8 +278,7 @@ public class ZoneOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the specified zone-specific Operations resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the specified zone-specific Operations resource.
    *
    * <p>Sample code:
    *
@@ -308,8 +302,7 @@ public class ZoneOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the specified zone-specific Operations resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the specified zone-specific Operations resource.
    *
    * <p>Sample code:
    *
@@ -333,8 +326,7 @@ public class ZoneOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the specified zone-specific Operations resource. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Retrieves the specified zone-specific Operations resource.
    *
    * <p>Sample code:
    *
@@ -357,8 +349,7 @@ public class ZoneOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Operation resources contained within the specified zone. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of Operation resources contained within the specified zone.
    *
    * <p>Sample code:
    *
@@ -385,8 +376,7 @@ public class ZoneOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Operation resources contained within the specified zone. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of Operation resources contained within the specified zone.
    *
    * <p>Sample code:
    *
@@ -411,8 +401,7 @@ public class ZoneOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Operation resources contained within the specified zone. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of Operation resources contained within the specified zone.
    *
    * <p>Sample code:
    *
@@ -439,8 +428,7 @@ public class ZoneOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Operation resources contained within the specified zone. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of Operation resources contained within the specified zone.
    *
    * <p>Sample code:
    *
@@ -466,8 +454,7 @@ public class ZoneOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Operation resources contained within the specified zone. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of Operation resources contained within the specified zone.
    *
    * <p>Sample code:
    *

@@ -156,8 +156,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds a key for validating requests with signed URLs for this backend service. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Adds a key for validating requests with signed URLs for this backend service.
    *
    * <p>Sample code:
    *
@@ -189,8 +188,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds a key for validating requests with signed URLs for this backend service. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Adds a key for validating requests with signed URLs for this backend service.
    *
    * <p>Sample code:
    *
@@ -222,8 +220,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds a key for validating requests with signed URLs for this backend service. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Adds a key for validating requests with signed URLs for this backend service.
    *
    * <p>Sample code:
    *
@@ -250,8 +247,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds a key for validating requests with signed URLs for this backend service. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Adds a key for validating requests with signed URLs for this backend service.
    *
    * <p>Sample code:
    *
@@ -278,7 +274,7 @@ public class BackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of all BackendService resources, regional and global, available to the
-   * specified project. (== suppress_warning http-rest-shadowed ==)
+   * specified project.
    *
    * <p>Sample code:
    *
@@ -307,7 +303,7 @@ public class BackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of all BackendService resources, regional and global, available to the
-   * specified project. (== suppress_warning http-rest-shadowed ==)
+   * specified project.
    *
    * <p>Sample code:
    *
@@ -334,7 +330,7 @@ public class BackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of all BackendService resources, regional and global, available to the
-   * specified project. (== suppress_warning http-rest-shadowed ==)
+   * specified project.
    *
    * <p>Sample code:
    *
@@ -362,7 +358,7 @@ public class BackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of all BackendService resources, regional and global, available to the
-   * specified project. (== suppress_warning http-rest-shadowed ==)
+   * specified project.
    *
    * <p>Sample code:
    *
@@ -390,7 +386,7 @@ public class BackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of all BackendService resources, regional and global, available to the
-   * specified project. (== suppress_warning http-rest-shadowed ==)
+   * specified project.
    *
    * <p>Sample code:
    *
@@ -423,7 +419,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified BackendService resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified BackendService resource.
    *
    * <p>Sample code:
    *
@@ -449,7 +445,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified BackendService resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified BackendService resource.
    *
    * <p>Sample code:
    *
@@ -473,7 +469,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified BackendService resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified BackendService resource.
    *
    * <p>Sample code:
    *
@@ -497,7 +493,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified BackendService resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified BackendService resource.
    *
    * <p>Sample code:
    *
@@ -521,8 +517,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a key for validating requests with signed URLs for this backend service. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Deletes a key for validating requests with signed URLs for this backend service.
    *
    * <p>Sample code:
    *
@@ -553,8 +548,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a key for validating requests with signed URLs for this backend service. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Deletes a key for validating requests with signed URLs for this backend service.
    *
    * <p>Sample code:
    *
@@ -584,8 +578,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a key for validating requests with signed URLs for this backend service. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Deletes a key for validating requests with signed URLs for this backend service.
    *
    * <p>Sample code:
    *
@@ -612,8 +605,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a key for validating requests with signed URLs for this backend service. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Deletes a key for validating requests with signed URLs for this backend service.
    *
    * <p>Sample code:
    *
@@ -639,8 +631,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified BackendService resource. Gets a list of available backend services. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Returns the specified BackendService resource. Gets a list of available backend services.
    *
    * <p>Sample code:
    *
@@ -666,8 +657,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified BackendService resource. Gets a list of available backend services. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Returns the specified BackendService resource. Gets a list of available backend services.
    *
    * <p>Sample code:
    *
@@ -691,8 +681,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified BackendService resource. Gets a list of available backend services. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Returns the specified BackendService resource. Gets a list of available backend services.
    *
    * <p>Sample code:
    *
@@ -716,8 +705,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified BackendService resource. Gets a list of available backend services. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Returns the specified BackendService resource. Gets a list of available backend services.
    *
    * <p>Sample code:
    *
@@ -741,8 +729,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the most recent health check results for this BackendService. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Gets the most recent health check results for this BackendService.
    *
    * <p>Sample code:
    *
@@ -774,8 +761,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the most recent health check results for this BackendService. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Gets the most recent health check results for this BackendService.
    *
    * <p>Sample code:
    *
@@ -806,8 +792,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the most recent health check results for this BackendService. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Gets the most recent health check results for this BackendService.
    *
    * <p>Sample code:
    *
@@ -834,8 +819,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the most recent health check results for this BackendService. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Gets the most recent health check results for this BackendService.
    *
    * <p>Sample code:
    *
@@ -863,8 +847,7 @@ public class BackendServiceClient implements BackgroundResource {
   /**
    * Creates a BackendService resource in the specified project using the data included in the
    * request. There are several restrictions and guidelines to keep in mind when creating a backend
-   * service. Read Restrictions and Guidelines for more information. (== suppress_warning
-   * http-rest-shadowed ==)
+   * service. Read Restrictions and Guidelines for more information.
    *
    * <p>Sample code:
    *
@@ -900,8 +883,7 @@ public class BackendServiceClient implements BackgroundResource {
   /**
    * Creates a BackendService resource in the specified project using the data included in the
    * request. There are several restrictions and guidelines to keep in mind when creating a backend
-   * service. Read Restrictions and Guidelines for more information. (== suppress_warning
-   * http-rest-shadowed ==)
+   * service. Read Restrictions and Guidelines for more information.
    *
    * <p>Sample code:
    *
@@ -937,8 +919,7 @@ public class BackendServiceClient implements BackgroundResource {
   /**
    * Creates a BackendService resource in the specified project using the data included in the
    * request. There are several restrictions and guidelines to keep in mind when creating a backend
-   * service. Read Restrictions and Guidelines for more information. (== suppress_warning
-   * http-rest-shadowed ==)
+   * service. Read Restrictions and Guidelines for more information.
    *
    * <p>Sample code:
    *
@@ -966,8 +947,7 @@ public class BackendServiceClient implements BackgroundResource {
   /**
    * Creates a BackendService resource in the specified project using the data included in the
    * request. There are several restrictions and guidelines to keep in mind when creating a backend
-   * service. Read Restrictions and Guidelines for more information. (== suppress_warning
-   * http-rest-shadowed ==)
+   * service. Read Restrictions and Guidelines for more information.
    *
    * <p>Sample code:
    *
@@ -993,8 +973,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of BackendService resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of BackendService resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -1021,8 +1000,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of BackendService resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of BackendService resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -1047,8 +1025,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of BackendService resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of BackendService resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -1075,8 +1052,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of BackendService resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of BackendService resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -1102,8 +1078,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of BackendService resources available to the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves the list of BackendService resources available to the specified project.
    *
    * <p>Sample code:
    *
@@ -1139,7 +1114,7 @@ public class BackendServiceClient implements BackgroundResource {
    * Patches the specified BackendService resource with the data included in the request. There are
    * several restrictions and guidelines to keep in mind when updating a backend service. Read
    * Restrictions and Guidelines for more information. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
+   * the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1184,7 +1159,7 @@ public class BackendServiceClient implements BackgroundResource {
    * Patches the specified BackendService resource with the data included in the request. There are
    * several restrictions and guidelines to keep in mind when updating a backend service. Read
    * Restrictions and Guidelines for more information. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
+   * the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1227,7 +1202,7 @@ public class BackendServiceClient implements BackgroundResource {
    * Patches the specified BackendService resource with the data included in the request. There are
    * several restrictions and guidelines to keep in mind when updating a backend service. Read
    * Restrictions and Guidelines for more information. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
+   * the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1258,7 +1233,7 @@ public class BackendServiceClient implements BackgroundResource {
    * Patches the specified BackendService resource with the data included in the request. There are
    * several restrictions and guidelines to keep in mind when updating a backend service. Read
    * Restrictions and Guidelines for more information. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
+   * the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1286,8 +1261,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the security policy for the specified backend service. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Sets the security policy for the specified backend service.
    *
    * <p>Sample code:
    *
@@ -1319,8 +1293,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the security policy for the specified backend service. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Sets the security policy for the specified backend service.
    *
    * <p>Sample code:
    *
@@ -1351,8 +1324,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the security policy for the specified backend service. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Sets the security policy for the specified backend service.
    *
    * <p>Sample code:
    *
@@ -1379,8 +1351,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the security policy for the specified backend service. (== suppress_warning
-   * http-rest-shadowed ==)
+   * Sets the security policy for the specified backend service.
    *
    * <p>Sample code:
    *
@@ -1408,7 +1379,7 @@ public class BackendServiceClient implements BackgroundResource {
   /**
    * Updates the specified BackendService resource with the data included in the request. There are
    * several restrictions and guidelines to keep in mind when updating a backend service. Read
-   * Restrictions and Guidelines for more information. (== suppress_warning http-rest-shadowed ==)
+   * Restrictions and Guidelines for more information.
    *
    * <p>Sample code:
    *
@@ -1452,7 +1423,7 @@ public class BackendServiceClient implements BackgroundResource {
   /**
    * Updates the specified BackendService resource with the data included in the request. There are
    * several restrictions and guidelines to keep in mind when updating a backend service. Read
-   * Restrictions and Guidelines for more information. (== suppress_warning http-rest-shadowed ==)
+   * Restrictions and Guidelines for more information.
    *
    * <p>Sample code:
    *
@@ -1494,7 +1465,7 @@ public class BackendServiceClient implements BackgroundResource {
   /**
    * Updates the specified BackendService resource with the data included in the request. There are
    * several restrictions and guidelines to keep in mind when updating a backend service. Read
-   * Restrictions and Guidelines for more information. (== suppress_warning http-rest-shadowed ==)
+   * Restrictions and Guidelines for more information.
    *
    * <p>Sample code:
    *
@@ -1524,7 +1495,7 @@ public class BackendServiceClient implements BackgroundResource {
   /**
    * Updates the specified BackendService resource with the data included in the request. There are
    * several restrictions and guidelines to keep in mind when updating a backend service. Read
-   * Restrictions and Guidelines for more information. (== suppress_warning http-rest-shadowed ==)
+   * Restrictions and Guidelines for more information.
    *
    * <p>Sample code:
    *

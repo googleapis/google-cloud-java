@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instances.getSerialPortOutput. Returns the last 1 MB of serial
- * port output from the specified instance. (== suppress_warning http-rest-shadowed ==)
+ * port output from the specified instance.
  */
 public final class GetSerialPortOutputInstanceHttpRequest implements ApiMessage {
   private final String access_token;

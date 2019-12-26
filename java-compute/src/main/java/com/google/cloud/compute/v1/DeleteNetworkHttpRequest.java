@@ -24,10 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/**
- * Request object for method compute.networks.delete. Deletes the specified network. (==
- * suppress_warning http-rest-shadowed ==)
- */
+/** Request object for method compute.networks.delete. Deletes the specified network. */
 public final class DeleteNetworkHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

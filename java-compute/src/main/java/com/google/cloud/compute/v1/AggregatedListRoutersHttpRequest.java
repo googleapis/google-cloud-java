@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.routers.aggregatedList. Retrieves an aggregated list of
- * routers. (== suppress_warning http-rest-shadowed ==)
+ * routers.
  */
 public final class AggregatedListRoutersHttpRequest implements ApiMessage {
   private final String access_token;

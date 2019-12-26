@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetTcpProxies.setBackendService. Changes the BackendService
- * for TargetTcpProxy. (== suppress_warning http-rest-shadowed ==)
+ * for TargetTcpProxy.
  */
 public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMessage {
   private final String access_token;

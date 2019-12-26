@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.networks.get. Returns the specified network. Gets a list of
- * available networks by making a list() request. (== suppress_warning http-rest-shadowed ==)
+ * available networks by making a list() request.
  */
 public final class GetNetworkHttpRequest implements ApiMessage {
   private final String access_token;

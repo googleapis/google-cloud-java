@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetTcpProxies.setProxyHeader. Changes the ProxyHeaderType
- * for TargetTcpProxy. (== suppress_warning http-rest-shadowed ==)
+ * for TargetTcpProxy.
  */
 public final class SetProxyHeaderTargetTcpProxyHttpRequest implements ApiMessage {
   private final String access_token;

@@ -156,7 +156,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of all operations. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of all operations.
    *
    * <p>Sample code:
    *
@@ -184,7 +184,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of all operations. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of all operations.
    *
    * <p>Sample code:
    *
@@ -210,7 +210,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of all operations. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of all operations.
    *
    * <p>Sample code:
    *
@@ -237,7 +237,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of all operations. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of all operations.
    *
    * <p>Sample code:
    *
@@ -264,7 +264,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of all operations. (== suppress_warning http-rest-shadowed ==)
+   * Retrieves an aggregated list of all operations.
    *
    * <p>Sample code:
    *
@@ -297,7 +297,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Operations resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified Operations resource.
    *
    * <p>Sample code:
    *
@@ -323,7 +323,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Operations resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified Operations resource.
    *
    * <p>Sample code:
    *
@@ -347,7 +347,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Operations resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified Operations resource.
    *
    * <p>Sample code:
    *
@@ -371,7 +371,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Operations resource. (== suppress_warning http-rest-shadowed ==)
+   * Deletes the specified Operations resource.
    *
    * <p>Sample code:
    *
@@ -396,7 +396,7 @@ public class GlobalOperationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the specified Operations resource. Gets a list of operations by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -423,7 +423,7 @@ public class GlobalOperationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the specified Operations resource. Gets a list of operations by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -448,7 +448,7 @@ public class GlobalOperationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the specified Operations resource. Gets a list of operations by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -473,7 +473,7 @@ public class GlobalOperationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the specified Operations resource. Gets a list of operations by making a list()
-   * request. (== suppress_warning http-rest-shadowed ==)
+   * request.
    *
    * <p>Sample code:
    *
@@ -497,8 +497,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Operation resources contained within the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of Operation resources contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -525,8 +524,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Operation resources contained within the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of Operation resources contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -551,8 +549,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Operation resources contained within the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of Operation resources contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -579,8 +576,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Operation resources contained within the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of Operation resources contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -606,8 +602,7 @@ public class GlobalOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Operation resources contained within the specified project. (==
-   * suppress_warning http-rest-shadowed ==)
+   * Retrieves a list of Operation resources contained within the specified project.
    *
    * <p>Sample code:
    *

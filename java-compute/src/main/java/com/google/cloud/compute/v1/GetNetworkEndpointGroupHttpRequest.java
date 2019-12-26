@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.networkEndpointGroups.get. Returns the specified network
- * endpoint group. Gets a list of available network endpoint groups by making a list() request. (==
- * suppress_warning http-rest-shadowed ==)
+ * endpoint group. Gets a list of available network endpoint groups by making a list() request.
  */
 public final class GetNetworkEndpointGroupHttpRequest implements ApiMessage {
   private final String access_token;

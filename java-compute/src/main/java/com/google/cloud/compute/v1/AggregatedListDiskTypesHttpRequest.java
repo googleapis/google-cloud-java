@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.diskTypes.aggregatedList. Retrieves an aggregated list of disk
- * types. (== suppress_warning http-rest-shadowed ==)
+ * types.
  */
 public final class AggregatedListDiskTypesHttpRequest implements ApiMessage {
   private final String access_token;

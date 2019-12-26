@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.images.get. Returns the specified image. Gets a list of
- * available images by making a list() request. (== suppress_warning http-rest-shadowed ==)
+ * available images by making a list() request.
  */
 public final class GetImageHttpRequest implements ApiMessage {
   private final String access_token;

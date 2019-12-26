@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.sslPolicies.patch. Patches the specified SSL policy with the
- * data included in the request. (== suppress_warning http-rest-shadowed ==)
+ * data included in the request.
  */
 public final class PatchSslPolicyHttpRequest implements ApiMessage {
   private final String access_token;

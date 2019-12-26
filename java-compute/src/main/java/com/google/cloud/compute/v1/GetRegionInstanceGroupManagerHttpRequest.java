@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionInstanceGroupManagers.get. Returns all of the details
- * about the specified managed instance group. (== suppress_warning http-rest-shadowed ==)
+ * about the specified managed instance group.
  */
 public final class GetRegionInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;

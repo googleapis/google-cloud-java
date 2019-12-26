@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.healthChecks.list. Retrieves the list of HealthCheck resources
- * available to the specified project. (== suppress_warning http-rest-shadowed ==)
+ * available to the specified project.
  */
 public final class ListHealthChecksHttpRequest implements ApiMessage {
   private final String access_token;

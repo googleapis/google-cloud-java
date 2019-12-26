@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionDisks.createSnapshot. Creates a snapshot of this regional
- * disk. (== suppress_warning http-rest-shadowed ==)
+ * disk.
  */
 public final class CreateSnapshotRegionDiskHttpRequest implements ApiMessage {
   private final String access_token;

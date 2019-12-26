@@ -32,7 +32,7 @@ import javax.annotation.Nullable;
  * separately verify the status of the individual instances with the listmanagedinstances method.
  *
  * <p>A managed instance group can have up to 1000 VM instances per group. Please contact Cloud
- * Support if you need an increase in this limit. (== suppress_warning http-rest-shadowed ==)
+ * Support if you need an increase in this limit.
  */
 public final class InsertInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;

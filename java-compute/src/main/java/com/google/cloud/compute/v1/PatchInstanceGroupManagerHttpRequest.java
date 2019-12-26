@@ -31,7 +31,7 @@ import javax.annotation.Nullable;
  * group is patched even if the instances in the group are still in the process of being patched.
  * You must separately verify the status of the individual instances with the listManagedInstances
  * method. This method supports PATCH semantics and uses the JSON merge patch format and processing
- * rules. (== suppress_warning http-rest-shadowed ==)
+ * rules.
  */
 public final class PatchInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;

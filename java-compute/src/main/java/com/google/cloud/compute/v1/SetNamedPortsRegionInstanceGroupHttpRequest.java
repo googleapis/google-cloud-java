@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionInstanceGroups.setNamedPorts. Sets the named ports for
- * the specified regional instance group. (== suppress_warning http-rest-shadowed ==)
+ * the specified regional instance group.
  */
 public final class SetNamedPortsRegionInstanceGroupHttpRequest implements ApiMessage {
   private final String access_token;
