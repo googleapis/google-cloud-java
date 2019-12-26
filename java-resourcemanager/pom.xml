@@ -75,7 +75,7 @@
     <objenesis.version>2.6</objenesis.version>
     <google.auth.version>0.19.0</google.auth.version>
     <http-client-bom.version>1.33.0</http-client-bom.version>
-    <protobuf.version>3.11.0</protobuf.version>
+    <protobuf.version>3.11.1</protobuf.version>
     <errorprone.version>2.3.3</errorprone.version>
   </properties>
 
