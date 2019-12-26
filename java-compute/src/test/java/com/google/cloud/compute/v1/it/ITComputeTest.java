@@ -24,6 +24,8 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.compute.v1.AttachedDisk;
+import com.google.cloud.compute.v1.AttachedDiskInitializeParams;
 import com.google.cloud.compute.v1.DiskType;
 import com.google.cloud.compute.v1.DiskTypeClient;
 import com.google.cloud.compute.v1.DiskTypeClient.AggregatedListDiskTypesPagedResponse;
@@ -54,6 +56,8 @@ public class ITComputeTest {
   private static final String ZONE = "us-central1-a";
   private static final String DISK_TYPE = "local-ssd";
   private static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
+  private static final String DEFAULT_IMAGE =
+      "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150710";
 
   private static DiskTypeClient diskTypeClient;
   private static DiskTypeSettings diskTypeSettings;
@@ -105,8 +109,20 @@ public class ITComputeTest {
   public void testInsertInstance() {
     String machineType =
         ProjectZoneMachineTypeName.of("n1-standard-1", DEFAULT_PROJECT, ZONE).toString();
+    AttachedDisk disk =
+        AttachedDisk.newBuilder()
+            .setBoot(true)
+            .setAutoDelete(true)
+            .setType("PERSISTENT")
+            .setInitializeParams(
+                AttachedDiskInitializeParams.newBuilder().setSourceImage(DEFAULT_IMAGE).build())
+            .build();
     Instance instance =
-        Instance.newBuilder().setName("mytestinstancetemplate").setMachineType(machineType).build();
+        Instance.newBuilder()
+            .setName("mytestinstancetemplate")
+            .setMachineType(machineType)
+            .addDisks(disk)
+            .build();
     try {
       instanceClient.insertInstance(ProjectZoneName.of(DEFAULT_PROJECT, ZONE), instance);
     } catch (InvalidArgumentException e) {
