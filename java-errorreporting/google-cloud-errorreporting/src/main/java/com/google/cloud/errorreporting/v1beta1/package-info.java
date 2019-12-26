@@ -19,23 +19,7 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>========================= ReportErrorsServiceClient =========================
- *
- * <p>Service Description: An API for reporting error events.
- *
- * <p>Sample for ReportErrorsServiceClient:
- *
- * <pre>
- * <code>
- * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
- *   ProjectName projectName = ProjectName.of("[PROJECT]");
- *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
- *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);
- * }
- * </code>
- * </pre>
- *
- * ======================= ErrorStatsServiceClient =======================
+ * <p>======================= ErrorStatsServiceClient =======================
  *
  * <p>Service Description: An API for retrieving and managing error statistics as well as data for
  * individual events.
@@ -62,6 +46,22 @@
  * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
  *   ErrorGroupName groupName = ErrorGroupName.of("[PROJECT]", "[GROUP]");
  *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ========================= ReportErrorsServiceClient =========================
+ *
+ * <p>Service Description: An API for reporting error events.
+ *
+ * <p>Sample for ReportErrorsServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
+ *   ProjectName projectName = ProjectName.of("[PROJECT]");
+ *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
+ *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);
  * }
  * </code>
  * </pre>

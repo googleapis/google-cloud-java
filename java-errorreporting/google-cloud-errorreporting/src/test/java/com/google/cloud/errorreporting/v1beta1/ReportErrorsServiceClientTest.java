@@ -42,23 +42,23 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class ReportErrorsServiceClientTest {
-  private static MockReportErrorsService mockReportErrorsService;
   private static MockErrorStatsService mockErrorStatsService;
   private static MockErrorGroupService mockErrorGroupService;
+  private static MockReportErrorsService mockReportErrorsService;
   private static MockServiceHelper serviceHelper;
   private ReportErrorsServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockReportErrorsService = new MockReportErrorsService();
     mockErrorStatsService = new MockErrorStatsService();
     mockErrorGroupService = new MockErrorGroupService();
+    mockReportErrorsService = new MockReportErrorsService();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
-                mockReportErrorsService, mockErrorStatsService, mockErrorGroupService));
+                mockErrorStatsService, mockErrorGroupService, mockReportErrorsService));
     serviceHelper.start();
   }
 
