@@ -28,6 +28,14 @@
     },
     {
       "packagePatterns": [
+        "^com.google.http-client:",
+        "^com.google.oauth-client:",
+        "^com.google.api-client:"
+      ],
+      "groupName": "core transport dependencies"
+    },
+    {
+      "packagePatterns": [
         "*"
       ],
       "semanticCommitType": "deps",
