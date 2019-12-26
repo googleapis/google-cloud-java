@@ -31,8 +31,10 @@ public interface UpdateKeyRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.Key key = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.recaptchaenterprise.v1beta1.Key key = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the key field is set.
    */
   boolean hasKey();
   /**
@@ -43,8 +45,10 @@ public interface UpdateKeyRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.Key key = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.recaptchaenterprise.v1beta1.Key key = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The key.
    */
   com.google.recaptchaenterprise.v1beta1.Key getKey();
   /**
@@ -55,7 +59,7 @@ public interface UpdateKeyRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.Key key = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.recaptchaenterprise.v1beta1.Key key = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.recaptchaenterprise.v1beta1.KeyOrBuilder getKeyOrBuilder();
@@ -70,6 +74,8 @@ public interface UpdateKeyRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -82,6 +88,8 @@ public interface UpdateKeyRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

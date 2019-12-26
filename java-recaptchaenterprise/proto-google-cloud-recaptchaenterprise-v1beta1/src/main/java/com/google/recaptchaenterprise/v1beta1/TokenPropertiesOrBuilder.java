@@ -31,6 +31,8 @@ public interface TokenPropertiesOrBuilder
    * </pre>
    *
    * <code>bool valid = 1;</code>
+   *
+   * @return The valid.
    */
   boolean getValid();
 
@@ -44,6 +46,8 @@ public interface TokenPropertiesOrBuilder
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason invalid_reason = 2;
    * </code>
+   *
+   * @return The enum numeric value on the wire for invalidReason.
    */
   int getInvalidReasonValue();
   /**
@@ -56,6 +60,8 @@ public interface TokenPropertiesOrBuilder
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason invalid_reason = 2;
    * </code>
+   *
+   * @return The invalidReason.
    */
   com.google.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason getInvalidReason();
 
@@ -67,6 +73,8 @@ public interface TokenPropertiesOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -77,6 +85,8 @@ public interface TokenPropertiesOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -98,6 +108,8 @@ public interface TokenPropertiesOrBuilder
    * </pre>
    *
    * <code>string hostname = 4;</code>
+   *
+   * @return The hostname.
    */
   java.lang.String getHostname();
   /**
@@ -108,6 +120,8 @@ public interface TokenPropertiesOrBuilder
    * </pre>
    *
    * <code>string hostname = 4;</code>
+   *
+   * @return The bytes for hostname.
    */
   com.google.protobuf.ByteString getHostnameBytes();
 
@@ -119,6 +133,8 @@ public interface TokenPropertiesOrBuilder
    * </pre>
    *
    * <code>string action = 5;</code>
+   *
+   * @return The action.
    */
   java.lang.String getAction();
   /**
@@ -129,6 +145,8 @@ public interface TokenPropertiesOrBuilder
    * </pre>
    *
    * <code>string action = 5;</code>
+   *
+   * @return The bytes for action.
    */
   com.google.protobuf.ByteString getActionBytes();
 }

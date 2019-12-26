@@ -38,6 +38,12 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Event();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -50,7 +56,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -141,6 +146,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The token.
    */
   public java.lang.String getToken() {
     java.lang.Object ref = token_;
@@ -162,6 +169,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for token.
    */
   public com.google.protobuf.ByteString getTokenBytes() {
     java.lang.Object ref = token_;
@@ -186,6 +195,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The siteKey.
    */
   public java.lang.String getSiteKey() {
     java.lang.Object ref = siteKey_;
@@ -207,6 +218,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for siteKey.
    */
   public com.google.protobuf.ByteString getSiteKeyBytes() {
     java.lang.Object ref = siteKey_;
@@ -231,6 +244,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The userAgent.
    */
   public java.lang.String getUserAgent() {
     java.lang.Object ref = userAgent_;
@@ -252,6 +267,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for userAgent.
    */
   public com.google.protobuf.ByteString getUserAgentBytes() {
     java.lang.Object ref = userAgent_;
@@ -275,6 +292,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The userIpAddress.
    */
   public java.lang.String getUserIpAddress() {
     java.lang.Object ref = userIpAddress_;
@@ -295,6 +314,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for userIpAddress.
    */
   public com.google.protobuf.ByteString getUserIpAddressBytes() {
     java.lang.Object ref = userIpAddress_;
@@ -320,6 +341,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The expectedAction.
    */
   public java.lang.String getExpectedAction() {
     java.lang.Object ref = expectedAction_;
@@ -342,6 +365,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for expectedAction.
    */
   public com.google.protobuf.ByteString getExpectedActionBytes() {
     java.lang.Object ref = expectedAction_;
@@ -737,6 +762,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The token.
      */
     public java.lang.String getToken() {
       java.lang.Object ref = token_;
@@ -758,6 +785,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for token.
      */
     public com.google.protobuf.ByteString getTokenBytes() {
       java.lang.Object ref = token_;
@@ -779,6 +808,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The token to set.
+     * @return This builder for chaining.
      */
     public Builder setToken(java.lang.String value) {
       if (value == null) {
@@ -798,6 +830,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearToken() {
 
@@ -814,6 +848,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for token to set.
+     * @return This builder for chaining.
      */
     public Builder setTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -836,6 +873,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The siteKey.
      */
     public java.lang.String getSiteKey() {
       java.lang.Object ref = siteKey_;
@@ -857,6 +896,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for siteKey.
      */
     public com.google.protobuf.ByteString getSiteKeyBytes() {
       java.lang.Object ref = siteKey_;
@@ -878,6 +919,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The siteKey to set.
+     * @return This builder for chaining.
      */
     public Builder setSiteKey(java.lang.String value) {
       if (value == null) {
@@ -897,6 +941,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSiteKey() {
 
@@ -913,6 +959,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for siteKey to set.
+     * @return This builder for chaining.
      */
     public Builder setSiteKeyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -935,6 +984,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The userAgent.
      */
     public java.lang.String getUserAgent() {
       java.lang.Object ref = userAgent_;
@@ -956,6 +1007,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for userAgent.
      */
     public com.google.protobuf.ByteString getUserAgentBytes() {
       java.lang.Object ref = userAgent_;
@@ -977,6 +1030,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The userAgent to set.
+     * @return This builder for chaining.
      */
     public Builder setUserAgent(java.lang.String value) {
       if (value == null) {
@@ -996,6 +1052,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUserAgent() {
 
@@ -1012,6 +1070,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for userAgent to set.
+     * @return This builder for chaining.
      */
     public Builder setUserAgentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1033,6 +1094,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The userIpAddress.
      */
     public java.lang.String getUserIpAddress() {
       java.lang.Object ref = userIpAddress_;
@@ -1053,6 +1116,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for userIpAddress.
      */
     public com.google.protobuf.ByteString getUserIpAddressBytes() {
       java.lang.Object ref = userIpAddress_;
@@ -1073,6 +1138,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The userIpAddress to set.
+     * @return This builder for chaining.
      */
     public Builder setUserIpAddress(java.lang.String value) {
       if (value == null) {
@@ -1091,6 +1159,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUserIpAddress() {
 
@@ -1106,6 +1176,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for userIpAddress to set.
+     * @return This builder for chaining.
      */
     public Builder setUserIpAddressBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1129,6 +1202,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The expectedAction.
      */
     public java.lang.String getExpectedAction() {
       java.lang.Object ref = expectedAction_;
@@ -1151,6 +1226,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for expectedAction.
      */
     public com.google.protobuf.ByteString getExpectedActionBytes() {
       java.lang.Object ref = expectedAction_;
@@ -1173,6 +1250,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The expectedAction to set.
+     * @return This builder for chaining.
      */
     public Builder setExpectedAction(java.lang.String value) {
       if (value == null) {
@@ -1193,6 +1273,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearExpectedAction() {
 
@@ -1210,6 +1292,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for expectedAction to set.
+     * @return This builder for chaining.
      */
     public Builder setExpectedActionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

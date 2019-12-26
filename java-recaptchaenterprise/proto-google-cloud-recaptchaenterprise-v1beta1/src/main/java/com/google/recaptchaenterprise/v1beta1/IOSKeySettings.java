@@ -42,6 +42,12 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new IOSKeySettings();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -123,6 +129,8 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string allowed_bundle_ids = 1;</code>
+   *
+   * @return A list containing the allowedBundleIds.
    */
   public com.google.protobuf.ProtocolStringList getAllowedBundleIdsList() {
     return allowedBundleIds_;
@@ -136,6 +144,8 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string allowed_bundle_ids = 1;</code>
+   *
+   * @return The count of allowedBundleIds.
    */
   public int getAllowedBundleIdsCount() {
     return allowedBundleIds_.size();
@@ -149,6 +159,9 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string allowed_bundle_ids = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The allowedBundleIds at the given index.
    */
   public java.lang.String getAllowedBundleIds(int index) {
     return allowedBundleIds_.get(index);
@@ -162,6 +175,9 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string allowed_bundle_ids = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the allowedBundleIds at the given index.
    */
   public com.google.protobuf.ByteString getAllowedBundleIdsBytes(int index) {
     return allowedBundleIds_.getByteString(index);
@@ -524,6 +540,8 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_bundle_ids = 1;</code>
+     *
+     * @return A list containing the allowedBundleIds.
      */
     public com.google.protobuf.ProtocolStringList getAllowedBundleIdsList() {
       return allowedBundleIds_.getUnmodifiableView();
@@ -537,6 +555,8 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_bundle_ids = 1;</code>
+     *
+     * @return The count of allowedBundleIds.
      */
     public int getAllowedBundleIdsCount() {
       return allowedBundleIds_.size();
@@ -550,6 +570,9 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_bundle_ids = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The allowedBundleIds at the given index.
      */
     public java.lang.String getAllowedBundleIds(int index) {
       return allowedBundleIds_.get(index);
@@ -563,6 +586,9 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_bundle_ids = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the allowedBundleIds at the given index.
      */
     public com.google.protobuf.ByteString getAllowedBundleIdsBytes(int index) {
       return allowedBundleIds_.getByteString(index);
@@ -576,6 +602,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_bundle_ids = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The allowedBundleIds to set.
+     * @return This builder for chaining.
      */
     public Builder setAllowedBundleIds(int index, java.lang.String value) {
       if (value == null) {
@@ -595,6 +625,9 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_bundle_ids = 1;</code>
+     *
+     * @param value The allowedBundleIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllowedBundleIds(java.lang.String value) {
       if (value == null) {
@@ -614,6 +647,9 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_bundle_ids = 1;</code>
+     *
+     * @param values The allowedBundleIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAllowedBundleIds(java.lang.Iterable<java.lang.String> values) {
       ensureAllowedBundleIdsIsMutable();
@@ -630,6 +666,8 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_bundle_ids = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAllowedBundleIds() {
       allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -646,6 +684,9 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_bundle_ids = 1;</code>
+     *
+     * @param value The bytes of the allowedBundleIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllowedBundleIdsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

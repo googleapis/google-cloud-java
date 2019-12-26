@@ -31,6 +31,8 @@ public interface WebKeySettingsOrBuilder
    * </pre>
    *
    * <code>bool enforce_allowed_domains = 3;</code>
+   *
+   * @return The enforceAllowedDomains.
    */
   boolean getEnforceAllowedDomains();
 
@@ -45,6 +47,8 @@ public interface WebKeySettingsOrBuilder
    * </pre>
    *
    * <code>repeated string allowed_domains = 1;</code>
+   *
+   * @return A list containing the allowedDomains.
    */
   java.util.List<java.lang.String> getAllowedDomainsList();
   /**
@@ -58,6 +62,8 @@ public interface WebKeySettingsOrBuilder
    * </pre>
    *
    * <code>repeated string allowed_domains = 1;</code>
+   *
+   * @return The count of allowedDomains.
    */
   int getAllowedDomainsCount();
   /**
@@ -71,6 +77,9 @@ public interface WebKeySettingsOrBuilder
    * </pre>
    *
    * <code>repeated string allowed_domains = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The allowedDomains at the given index.
    */
   java.lang.String getAllowedDomains(int index);
   /**
@@ -84,6 +93,9 @@ public interface WebKeySettingsOrBuilder
    * </pre>
    *
    * <code>repeated string allowed_domains = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the allowedDomains at the given index.
    */
   com.google.protobuf.ByteString getAllowedDomainsBytes(int index);
 
@@ -95,6 +107,8 @@ public interface WebKeySettingsOrBuilder
    * </pre>
    *
    * <code>bool allow_amp_traffic = 2;</code>
+   *
+   * @return The allowAmpTraffic.
    */
   boolean getAllowAmpTraffic();
 
@@ -108,6 +122,8 @@ public interface WebKeySettingsOrBuilder
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.IntegrationType integration_type = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for integrationType.
    */
   int getIntegrationTypeValue();
   /**
@@ -120,6 +136,8 @@ public interface WebKeySettingsOrBuilder
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.IntegrationType integration_type = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The integrationType.
    */
   com.google.recaptchaenterprise.v1beta1.WebKeySettings.IntegrationType getIntegrationType();
 
@@ -135,6 +153,8 @@ public interface WebKeySettingsOrBuilder
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
    * </code>
+   *
+   * @return The enum numeric value on the wire for challengeSecurityPreference.
    */
   int getChallengeSecurityPreferenceValue();
   /**
@@ -149,6 +169,8 @@ public interface WebKeySettingsOrBuilder
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
    * </code>
+   *
+   * @return The challengeSecurityPreference.
    */
   com.google.recaptchaenterprise.v1beta1.WebKeySettings.ChallengeSecurityPreference
       getChallengeSecurityPreference();

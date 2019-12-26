@@ -43,6 +43,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Assessment();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -114,9 +120,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
           case 40:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 reasons_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               reasons_.add(rawValue);
               break;
@@ -127,9 +133,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   reasons_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000010;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 reasons_.add(rawValue);
               }
@@ -150,7 +156,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         reasons_ = java.util.Collections.unmodifiableList(reasons_);
       }
       this.unknownFields = unknownFields.build();
@@ -320,12 +326,20 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ClassificationReason valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ClassificationReason forNumber(int value) {
       switch (value) {
         case 0:
@@ -394,7 +408,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -406,6 +419,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -427,6 +442,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -450,6 +467,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.recaptchaenterprise.v1beta1.Event event = 2;</code>
+   *
+   * @return Whether the event field is set.
    */
   public boolean hasEvent() {
     return event_ != null;
@@ -462,6 +481,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.recaptchaenterprise.v1beta1.Event event = 2;</code>
+   *
+   * @return The event.
    */
   public com.google.recaptchaenterprise.v1beta1.Event getEvent() {
     return event_ == null
@@ -493,6 +514,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float score = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The score.
    */
   public float getScore() {
     return score_;
@@ -510,6 +533,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties token_properties = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the tokenProperties field is set.
    */
   public boolean hasTokenProperties() {
     return tokenProperties_ != null;
@@ -524,6 +549,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties token_properties = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The tokenProperties.
    */
   public com.google.recaptchaenterprise.v1beta1.TokenProperties getTokenProperties() {
     return tokenProperties_ == null
@@ -576,6 +603,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return A list containing the reasons.
    */
   public java.util.List<com.google.recaptchaenterprise.v1beta1.Assessment.ClassificationReason>
       getReasonsList() {
@@ -593,6 +622,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @param value The reasons to add.
    */
   public int getReasonsCount() {
     return reasons_.size();
@@ -607,6 +638,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The reasons at the given index.
    */
   public com.google.recaptchaenterprise.v1beta1.Assessment.ClassificationReason getReasons(
       int index) {
@@ -622,6 +656,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for reasons.
    */
   public java.util.List<java.lang.Integer> getReasonsValueList() {
     return reasons_;
@@ -636,6 +672,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of reasons at the given index.
    */
   public int getReasonsValue(int index) {
     return reasons_.get(index);
@@ -927,7 +966,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         tokenPropertiesBuilder_ = null;
       }
       reasons_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -956,7 +995,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       com.google.recaptchaenterprise.v1beta1.Assessment result =
           new com.google.recaptchaenterprise.v1beta1.Assessment(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (eventBuilder_ == null) {
         result.event_ = event_;
@@ -969,12 +1007,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.tokenProperties_ = tokenPropertiesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         reasons_ = java.util.Collections.unmodifiableList(reasons_);
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.reasons_ = reasons_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1041,7 +1078,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       if (!other.reasons_.isEmpty()) {
         if (reasons_.isEmpty()) {
           reasons_ = other.reasons_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureReasonsIsMutable();
           reasons_.addAll(other.reasons_);
@@ -1090,6 +1127,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1111,6 +1150,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1132,6 +1173,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1151,6 +1195,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1167,6 +1213,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1193,6 +1242,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.recaptchaenterprise.v1beta1.Event event = 2;</code>
+     *
+     * @return Whether the event field is set.
      */
     public boolean hasEvent() {
       return eventBuilder_ != null || event_ != null;
@@ -1205,6 +1256,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.recaptchaenterprise.v1beta1.Event event = 2;</code>
+     *
+     * @return The event.
      */
     public com.google.recaptchaenterprise.v1beta1.Event getEvent() {
       if (eventBuilder_ == null) {
@@ -1371,6 +1424,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float score = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The score.
      */
     public float getScore() {
       return score_;
@@ -1385,6 +1440,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float score = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The score to set.
+     * @return This builder for chaining.
      */
     public Builder setScore(float value) {
 
@@ -1402,6 +1460,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float score = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScore() {
 
@@ -1426,6 +1486,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties token_properties = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return Whether the tokenProperties field is set.
      */
     public boolean hasTokenProperties() {
       return tokenPropertiesBuilder_ != null || tokenProperties_ != null;
@@ -1440,6 +1502,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties token_properties = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The tokenProperties.
      */
     public com.google.recaptchaenterprise.v1beta1.TokenProperties getTokenProperties() {
       if (tokenPropertiesBuilder_ == null) {
@@ -1617,9 +1681,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> reasons_ = java.util.Collections.emptyList();
 
     private void ensureReasonsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         reasons_ = new java.util.ArrayList<java.lang.Integer>(reasons_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1632,6 +1696,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return A list containing the reasons.
      */
     public java.util.List<com.google.recaptchaenterprise.v1beta1.Assessment.ClassificationReason>
         getReasonsList() {
@@ -1650,6 +1716,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The count of reasons.
      */
     public int getReasonsCount() {
       return reasons_.size();
@@ -1664,6 +1732,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The reasons at the given index.
      */
     public com.google.recaptchaenterprise.v1beta1.Assessment.ClassificationReason getReasons(
         int index) {
@@ -1679,6 +1750,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The reasons to set.
+     * @return This builder for chaining.
      */
     public Builder setReasons(
         int index, com.google.recaptchaenterprise.v1beta1.Assessment.ClassificationReason value) {
@@ -1700,6 +1775,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The reasons to add.
+     * @return This builder for chaining.
      */
     public Builder addReasons(
         com.google.recaptchaenterprise.v1beta1.Assessment.ClassificationReason value) {
@@ -1721,6 +1799,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param values The reasons to add.
+     * @return This builder for chaining.
      */
     public Builder addAllReasons(
         java.lang.Iterable<
@@ -1743,10 +1824,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearReasons() {
       reasons_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1760,6 +1843,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for reasons.
      */
     public java.util.List<java.lang.Integer> getReasonsValueList() {
       return java.util.Collections.unmodifiableList(reasons_);
@@ -1774,6 +1859,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of reasons at the given index.
      */
     public int getReasonsValue(int index) {
       return reasons_.get(index);
@@ -1788,6 +1876,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of reasons at the given index.
+     * @return This builder for chaining.
      */
     public Builder setReasonsValue(int index, int value) {
       ensureReasonsIsMutable();
@@ -1805,6 +1897,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for reasons to add.
+     * @return This builder for chaining.
      */
     public Builder addReasonsValue(int value) {
       ensureReasonsIsMutable();
@@ -1822,6 +1917,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param values The enum numeric values on the wire for reasons to add.
+     * @return This builder for chaining.
      */
     public Builder addAllReasonsValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureReasonsIsMutable();

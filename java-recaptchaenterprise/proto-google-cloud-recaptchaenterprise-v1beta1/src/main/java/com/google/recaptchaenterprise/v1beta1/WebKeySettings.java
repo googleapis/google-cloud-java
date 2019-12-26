@@ -44,6 +44,12 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new WebKeySettings();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -70,9 +76,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
           case 10:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 allowedDomains_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               allowedDomains_.add(s);
               break;
@@ -115,7 +121,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         allowedDomains_ = allowedDomains_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -250,12 +256,20 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static IntegrationType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static IntegrationType forNumber(int value) {
       switch (value) {
         case 0:
@@ -423,12 +437,20 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ChallengeSecurityPreference valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ChallengeSecurityPreference forNumber(int value) {
       switch (value) {
         case 0:
@@ -493,7 +515,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.ChallengeSecurityPreference)
   }
 
-  private int bitField0_;
   public static final int ENFORCE_ALLOWED_DOMAINS_FIELD_NUMBER = 3;
   private boolean enforceAllowedDomains_;
   /**
@@ -504,6 +525,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool enforce_allowed_domains = 3;</code>
+   *
+   * @return The enforceAllowedDomains.
    */
   public boolean getEnforceAllowedDomains() {
     return enforceAllowedDomains_;
@@ -522,6 +545,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string allowed_domains = 1;</code>
+   *
+   * @return A list containing the allowedDomains.
    */
   public com.google.protobuf.ProtocolStringList getAllowedDomainsList() {
     return allowedDomains_;
@@ -537,6 +562,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string allowed_domains = 1;</code>
+   *
+   * @return The count of allowedDomains.
    */
   public int getAllowedDomainsCount() {
     return allowedDomains_.size();
@@ -552,6 +579,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string allowed_domains = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The allowedDomains at the given index.
    */
   public java.lang.String getAllowedDomains(int index) {
     return allowedDomains_.get(index);
@@ -567,6 +597,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string allowed_domains = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the allowedDomains at the given index.
    */
   public com.google.protobuf.ByteString getAllowedDomainsBytes(int index) {
     return allowedDomains_.getByteString(index);
@@ -582,6 +615,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool allow_amp_traffic = 2;</code>
+   *
+   * @return The allowAmpTraffic.
    */
   public boolean getAllowAmpTraffic() {
     return allowAmpTraffic_;
@@ -599,6 +634,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.IntegrationType integration_type = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for integrationType.
    */
   public int getIntegrationTypeValue() {
     return integrationType_;
@@ -613,6 +650,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.IntegrationType integration_type = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The integrationType.
    */
   public com.google.recaptchaenterprise.v1beta1.WebKeySettings.IntegrationType
       getIntegrationType() {
@@ -639,6 +678,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
    * </code>
+   *
+   * @return The enum numeric value on the wire for challengeSecurityPreference.
    */
   public int getChallengeSecurityPreferenceValue() {
     return challengeSecurityPreference_;
@@ -655,6 +696,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
    * </code>
+   *
+   * @return The challengeSecurityPreference.
    */
   public com.google.recaptchaenterprise.v1beta1.WebKeySettings.ChallengeSecurityPreference
       getChallengeSecurityPreference() {
@@ -932,7 +975,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       enforceAllowedDomains_ = false;
 
       allowedDomains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       allowAmpTraffic_ = false;
 
       integrationType_ = 0;
@@ -967,17 +1010,15 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       com.google.recaptchaenterprise.v1beta1.WebKeySettings result =
           new com.google.recaptchaenterprise.v1beta1.WebKeySettings(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.enforceAllowedDomains_ = enforceAllowedDomains_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         allowedDomains_ = allowedDomains_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.allowedDomains_ = allowedDomains_;
       result.allowAmpTraffic_ = allowAmpTraffic_;
       result.integrationType_ = integrationType_;
       result.challengeSecurityPreference_ = challengeSecurityPreference_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1034,7 +1075,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       if (!other.allowedDomains_.isEmpty()) {
         if (allowedDomains_.isEmpty()) {
           allowedDomains_ = other.allowedDomains_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureAllowedDomainsIsMutable();
           allowedDomains_.addAll(other.allowedDomains_);
@@ -1091,6 +1132,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool enforce_allowed_domains = 3;</code>
+     *
+     * @return The enforceAllowedDomains.
      */
     public boolean getEnforceAllowedDomains() {
       return enforceAllowedDomains_;
@@ -1103,6 +1146,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool enforce_allowed_domains = 3;</code>
+     *
+     * @param value The enforceAllowedDomains to set.
+     * @return This builder for chaining.
      */
     public Builder setEnforceAllowedDomains(boolean value) {
 
@@ -1118,6 +1164,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool enforce_allowed_domains = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEnforceAllowedDomains() {
 
@@ -1130,9 +1178,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAllowedDomainsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         allowedDomains_ = new com.google.protobuf.LazyStringArrayList(allowedDomains_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1146,6 +1194,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_domains = 1;</code>
+     *
+     * @return A list containing the allowedDomains.
      */
     public com.google.protobuf.ProtocolStringList getAllowedDomainsList() {
       return allowedDomains_.getUnmodifiableView();
@@ -1161,6 +1211,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_domains = 1;</code>
+     *
+     * @return The count of allowedDomains.
      */
     public int getAllowedDomainsCount() {
       return allowedDomains_.size();
@@ -1176,6 +1228,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_domains = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The allowedDomains at the given index.
      */
     public java.lang.String getAllowedDomains(int index) {
       return allowedDomains_.get(index);
@@ -1191,6 +1246,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_domains = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the allowedDomains at the given index.
      */
     public com.google.protobuf.ByteString getAllowedDomainsBytes(int index) {
       return allowedDomains_.getByteString(index);
@@ -1206,6 +1264,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_domains = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The allowedDomains to set.
+     * @return This builder for chaining.
      */
     public Builder setAllowedDomains(int index, java.lang.String value) {
       if (value == null) {
@@ -1227,6 +1289,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_domains = 1;</code>
+     *
+     * @param value The allowedDomains to add.
+     * @return This builder for chaining.
      */
     public Builder addAllowedDomains(java.lang.String value) {
       if (value == null) {
@@ -1248,6 +1313,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_domains = 1;</code>
+     *
+     * @param values The allowedDomains to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAllowedDomains(java.lang.Iterable<java.lang.String> values) {
       ensureAllowedDomainsIsMutable();
@@ -1266,10 +1334,12 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_domains = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAllowedDomains() {
       allowedDomains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1284,6 +1354,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string allowed_domains = 1;</code>
+     *
+     * @param value The bytes of the allowedDomains to add.
+     * @return This builder for chaining.
      */
     public Builder addAllowedDomainsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1305,6 +1378,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool allow_amp_traffic = 2;</code>
+     *
+     * @return The allowAmpTraffic.
      */
     public boolean getAllowAmpTraffic() {
       return allowAmpTraffic_;
@@ -1317,6 +1392,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool allow_amp_traffic = 2;</code>
+     *
+     * @param value The allowAmpTraffic to set.
+     * @return This builder for chaining.
      */
     public Builder setAllowAmpTraffic(boolean value) {
 
@@ -1332,6 +1410,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool allow_amp_traffic = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAllowAmpTraffic() {
 
@@ -1351,6 +1431,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.IntegrationType integration_type = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The enum numeric value on the wire for integrationType.
      */
     public int getIntegrationTypeValue() {
       return integrationType_;
@@ -1365,6 +1447,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.IntegrationType integration_type = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for integrationType to set.
+     * @return This builder for chaining.
      */
     public Builder setIntegrationTypeValue(int value) {
       integrationType_ = value;
@@ -1381,6 +1466,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.IntegrationType integration_type = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The integrationType.
      */
     public com.google.recaptchaenterprise.v1beta1.WebKeySettings.IntegrationType
         getIntegrationType() {
@@ -1402,6 +1489,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.IntegrationType integration_type = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @param value The integrationType to set.
+     * @return This builder for chaining.
      */
     public Builder setIntegrationType(
         com.google.recaptchaenterprise.v1beta1.WebKeySettings.IntegrationType value) {
@@ -1423,6 +1513,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.IntegrationType integration_type = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIntegrationType() {
 
@@ -1444,6 +1536,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
      * </code>
+     *
+     * @return The enum numeric value on the wire for challengeSecurityPreference.
      */
     public int getChallengeSecurityPreferenceValue() {
       return challengeSecurityPreference_;
@@ -1460,6 +1554,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for challengeSecurityPreference to set.
+     * @return This builder for chaining.
      */
     public Builder setChallengeSecurityPreferenceValue(int value) {
       challengeSecurityPreference_ = value;
@@ -1478,6 +1575,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
      * </code>
+     *
+     * @return The challengeSecurityPreference.
      */
     public com.google.recaptchaenterprise.v1beta1.WebKeySettings.ChallengeSecurityPreference
         getChallengeSecurityPreference() {
@@ -1502,6 +1601,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
      * </code>
+     *
+     * @param value The challengeSecurityPreference to set.
+     * @return This builder for chaining.
      */
     public Builder setChallengeSecurityPreference(
         com.google.recaptchaenterprise.v1beta1.WebKeySettings.ChallengeSecurityPreference value) {
@@ -1525,6 +1627,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.recaptchaenterprise.v1beta1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearChallengeSecurityPreference() {
 

@@ -571,9 +571,9 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    *
    * <pre><code>
    * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   KeyName key = KeyName.of("[PROJECT]", "[KEY]");
+   *   Key key = Key.newBuilder().build();
    *   UpdateKeyRequest request = UpdateKeyRequest.newBuilder()
-   *     .setKey(key.toString())
+   *     .setKey(key)
    *     .build();
    *   Key response = recaptchaEnterpriseServiceV1Beta1Client.updateKey(request);
    * }
@@ -594,9 +594,9 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    *
    * <pre><code>
    * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   KeyName key = KeyName.of("[PROJECT]", "[KEY]");
+   *   Key key = Key.newBuilder().build();
    *   UpdateKeyRequest request = UpdateKeyRequest.newBuilder()
-   *     .setKey(key.toString())
+   *     .setKey(key)
    *     .build();
    *   ApiFuture&lt;Key&gt; future = recaptchaEnterpriseServiceV1Beta1Client.updateKeyCallable().futureCall(request);
    *   // Do something

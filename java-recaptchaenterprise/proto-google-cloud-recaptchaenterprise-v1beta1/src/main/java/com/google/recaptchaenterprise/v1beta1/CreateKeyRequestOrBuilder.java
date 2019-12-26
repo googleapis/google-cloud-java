@@ -34,6 +34,8 @@ public interface CreateKeyRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface CreateKeyRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -60,6 +64,8 @@ public interface CreateKeyRequestOrBuilder
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.Key key = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the key field is set.
    */
   boolean hasKey();
   /**
@@ -72,6 +78,8 @@ public interface CreateKeyRequestOrBuilder
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.Key key = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The key.
    */
   com.google.recaptchaenterprise.v1beta1.Key getKey();
   /**

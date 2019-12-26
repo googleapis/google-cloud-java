@@ -32,6 +32,8 @@ public interface KeyOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface KeyOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -54,6 +58,8 @@ public interface KeyOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -64,6 +70,8 @@ public interface KeyOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -75,6 +83,8 @@ public interface KeyOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recaptchaenterprise.v1beta1.WebKeySettings web_settings = 3;</code>
+   *
+   * @return Whether the webSettings field is set.
    */
   boolean hasWebSettings();
   /**
@@ -85,6 +95,8 @@ public interface KeyOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recaptchaenterprise.v1beta1.WebKeySettings web_settings = 3;</code>
+   *
+   * @return The webSettings.
    */
   com.google.recaptchaenterprise.v1beta1.WebKeySettings getWebSettings();
   /**
@@ -106,6 +118,8 @@ public interface KeyOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recaptchaenterprise.v1beta1.AndroidKeySettings android_settings = 4;</code>
+   *
+   * @return Whether the androidSettings field is set.
    */
   boolean hasAndroidSettings();
   /**
@@ -116,6 +130,8 @@ public interface KeyOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recaptchaenterprise.v1beta1.AndroidKeySettings android_settings = 4;</code>
+   *
+   * @return The androidSettings.
    */
   com.google.recaptchaenterprise.v1beta1.AndroidKeySettings getAndroidSettings();
   /**
@@ -137,6 +153,8 @@ public interface KeyOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recaptchaenterprise.v1beta1.IOSKeySettings ios_settings = 5;</code>
+   *
+   * @return Whether the iosSettings field is set.
    */
   boolean hasIosSettings();
   /**
@@ -147,6 +165,8 @@ public interface KeyOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recaptchaenterprise.v1beta1.IOSKeySettings ios_settings = 5;</code>
+   *
+   * @return The iosSettings.
    */
   com.google.recaptchaenterprise.v1beta1.IOSKeySettings getIosSettings();
   /**

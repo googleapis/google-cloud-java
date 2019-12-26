@@ -32,6 +32,8 @@ public interface EventOrBuilder
    * </pre>
    *
    * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The token.
    */
   java.lang.String getToken();
   /**
@@ -43,6 +45,8 @@ public interface EventOrBuilder
    * </pre>
    *
    * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for token.
    */
   com.google.protobuf.ByteString getTokenBytes();
 
@@ -55,6 +59,8 @@ public interface EventOrBuilder
    * </pre>
    *
    * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The siteKey.
    */
   java.lang.String getSiteKey();
   /**
@@ -66,6 +72,8 @@ public interface EventOrBuilder
    * </pre>
    *
    * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for siteKey.
    */
   com.google.protobuf.ByteString getSiteKeyBytes();
 
@@ -78,6 +86,8 @@ public interface EventOrBuilder
    * </pre>
    *
    * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The userAgent.
    */
   java.lang.String getUserAgent();
   /**
@@ -89,6 +99,8 @@ public interface EventOrBuilder
    * </pre>
    *
    * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for userAgent.
    */
   com.google.protobuf.ByteString getUserAgentBytes();
 
@@ -100,6 +112,8 @@ public interface EventOrBuilder
    * </pre>
    *
    * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The userIpAddress.
    */
   java.lang.String getUserIpAddress();
   /**
@@ -110,6 +124,8 @@ public interface EventOrBuilder
    * </pre>
    *
    * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for userIpAddress.
    */
   com.google.protobuf.ByteString getUserIpAddressBytes();
 
@@ -123,6 +139,8 @@ public interface EventOrBuilder
    * </pre>
    *
    * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The expectedAction.
    */
   java.lang.String getExpectedAction();
   /**
@@ -135,6 +153,8 @@ public interface EventOrBuilder
    * </pre>
    *
    * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for expectedAction.
    */
   com.google.protobuf.ByteString getExpectedActionBytes();
 }

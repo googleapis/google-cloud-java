@@ -32,6 +32,8 @@ public interface IOSKeySettingsOrBuilder
    * </pre>
    *
    * <code>repeated string allowed_bundle_ids = 1;</code>
+   *
+   * @return A list containing the allowedBundleIds.
    */
   java.util.List<java.lang.String> getAllowedBundleIdsList();
   /**
@@ -43,6 +45,8 @@ public interface IOSKeySettingsOrBuilder
    * </pre>
    *
    * <code>repeated string allowed_bundle_ids = 1;</code>
+   *
+   * @return The count of allowedBundleIds.
    */
   int getAllowedBundleIdsCount();
   /**
@@ -54,6 +58,9 @@ public interface IOSKeySettingsOrBuilder
    * </pre>
    *
    * <code>repeated string allowed_bundle_ids = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The allowedBundleIds at the given index.
    */
   java.lang.String getAllowedBundleIds(int index);
   /**
@@ -65,6 +72,9 @@ public interface IOSKeySettingsOrBuilder
    * </pre>
    *
    * <code>repeated string allowed_bundle_ids = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the allowedBundleIds at the given index.
    */
   com.google.protobuf.ByteString getAllowedBundleIdsBytes(int index);
 }

@@ -36,6 +36,12 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TokenProperties();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -48,7 +54,6 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -303,12 +308,20 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static InvalidReason valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static InvalidReason forNumber(int value) {
       switch (value) {
         case 0:
@@ -386,6 +399,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>bool valid = 1;</code>
+   *
+   * @return The valid.
    */
   public boolean getValid() {
     return valid_;
@@ -403,6 +418,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason invalid_reason = 2;
    * </code>
+   *
+   * @return The enum numeric value on the wire for invalidReason.
    */
   public int getInvalidReasonValue() {
     return invalidReason_;
@@ -417,6 +434,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason invalid_reason = 2;
    * </code>
+   *
+   * @return The invalidReason.
    */
   public com.google.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason getInvalidReason() {
     @SuppressWarnings("deprecation")
@@ -438,6 +457,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -450,6 +471,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -477,6 +500,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string hostname = 4;</code>
+   *
+   * @return The hostname.
    */
   public java.lang.String getHostname() {
     java.lang.Object ref = hostname_;
@@ -497,6 +522,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string hostname = 4;</code>
+   *
+   * @return The bytes for hostname.
    */
   public com.google.protobuf.ByteString getHostnameBytes() {
     java.lang.Object ref = hostname_;
@@ -520,6 +547,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string action = 5;</code>
+   *
+   * @return The action.
    */
   public java.lang.String getAction() {
     java.lang.Object ref = action_;
@@ -540,6 +569,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string action = 5;</code>
+   *
+   * @return The bytes for action.
    */
   public com.google.protobuf.ByteString getActionBytes() {
     java.lang.Object ref = action_;
@@ -953,6 +984,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool valid = 1;</code>
+     *
+     * @return The valid.
      */
     public boolean getValid() {
       return valid_;
@@ -965,6 +998,9 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool valid = 1;</code>
+     *
+     * @param value The valid to set.
+     * @return This builder for chaining.
      */
     public Builder setValid(boolean value) {
 
@@ -980,6 +1016,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>bool valid = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearValid() {
 
@@ -999,6 +1037,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason invalid_reason = 2;
      * </code>
+     *
+     * @return The enum numeric value on the wire for invalidReason.
      */
     public int getInvalidReasonValue() {
       return invalidReason_;
@@ -1013,6 +1053,9 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason invalid_reason = 2;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for invalidReason to set.
+     * @return This builder for chaining.
      */
     public Builder setInvalidReasonValue(int value) {
       invalidReason_ = value;
@@ -1029,6 +1072,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason invalid_reason = 2;
      * </code>
+     *
+     * @return The invalidReason.
      */
     public com.google.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason getInvalidReason() {
       @SuppressWarnings("deprecation")
@@ -1049,6 +1094,9 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason invalid_reason = 2;
      * </code>
+     *
+     * @param value The invalidReason to set.
+     * @return This builder for chaining.
      */
     public Builder setInvalidReason(
         com.google.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason value) {
@@ -1070,6 +1118,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>
      * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason invalid_reason = 2;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInvalidReason() {
 
@@ -1092,6 +1142,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -1104,6 +1156,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1266,6 +1320,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string hostname = 4;</code>
+     *
+     * @return The hostname.
      */
     public java.lang.String getHostname() {
       java.lang.Object ref = hostname_;
@@ -1286,6 +1342,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string hostname = 4;</code>
+     *
+     * @return The bytes for hostname.
      */
     public com.google.protobuf.ByteString getHostnameBytes() {
       java.lang.Object ref = hostname_;
@@ -1306,6 +1364,9 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string hostname = 4;</code>
+     *
+     * @param value The hostname to set.
+     * @return This builder for chaining.
      */
     public Builder setHostname(java.lang.String value) {
       if (value == null) {
@@ -1324,6 +1385,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string hostname = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHostname() {
 
@@ -1339,6 +1402,9 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string hostname = 4;</code>
+     *
+     * @param value The bytes for hostname to set.
+     * @return This builder for chaining.
      */
     public Builder setHostnameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1360,6 +1426,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string action = 5;</code>
+     *
+     * @return The action.
      */
     public java.lang.String getAction() {
       java.lang.Object ref = action_;
@@ -1380,6 +1448,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string action = 5;</code>
+     *
+     * @return The bytes for action.
      */
     public com.google.protobuf.ByteString getActionBytes() {
       java.lang.Object ref = action_;
@@ -1400,6 +1470,9 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string action = 5;</code>
+     *
+     * @param value The action to set.
+     * @return This builder for chaining.
      */
     public Builder setAction(java.lang.String value) {
       if (value == null) {
@@ -1418,6 +1491,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string action = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAction() {
 
@@ -1433,6 +1508,9 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string action = 5;</code>
+     *
+     * @param value The bytes for action to set.
+     * @return This builder for chaining.
      */
     public Builder setActionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

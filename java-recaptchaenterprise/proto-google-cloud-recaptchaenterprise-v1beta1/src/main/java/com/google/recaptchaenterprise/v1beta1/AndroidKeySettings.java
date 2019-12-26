@@ -42,6 +42,12 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AndroidKeySettings();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -123,6 +129,8 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>repeated string allowed_package_names = 1;</code>
+   *
+   * @return A list containing the allowedPackageNames.
    */
   public com.google.protobuf.ProtocolStringList getAllowedPackageNamesList() {
     return allowedPackageNames_;
@@ -136,6 +144,8 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>repeated string allowed_package_names = 1;</code>
+   *
+   * @return The count of allowedPackageNames.
    */
   public int getAllowedPackageNamesCount() {
     return allowedPackageNames_.size();
@@ -149,6 +159,9 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>repeated string allowed_package_names = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The allowedPackageNames at the given index.
    */
   public java.lang.String getAllowedPackageNames(int index) {
     return allowedPackageNames_.get(index);
@@ -162,6 +175,9 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>repeated string allowed_package_names = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the allowedPackageNames at the given index.
    */
   public com.google.protobuf.ByteString getAllowedPackageNamesBytes(int index) {
     return allowedPackageNames_.getByteString(index);
@@ -524,6 +540,8 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1;</code>
+     *
+     * @return A list containing the allowedPackageNames.
      */
     public com.google.protobuf.ProtocolStringList getAllowedPackageNamesList() {
       return allowedPackageNames_.getUnmodifiableView();
@@ -537,6 +555,8 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1;</code>
+     *
+     * @return The count of allowedPackageNames.
      */
     public int getAllowedPackageNamesCount() {
       return allowedPackageNames_.size();
@@ -550,6 +570,9 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The allowedPackageNames at the given index.
      */
     public java.lang.String getAllowedPackageNames(int index) {
       return allowedPackageNames_.get(index);
@@ -563,6 +586,9 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the allowedPackageNames at the given index.
      */
     public com.google.protobuf.ByteString getAllowedPackageNamesBytes(int index) {
       return allowedPackageNames_.getByteString(index);
@@ -576,6 +602,10 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The allowedPackageNames to set.
+     * @return This builder for chaining.
      */
     public Builder setAllowedPackageNames(int index, java.lang.String value) {
       if (value == null) {
@@ -595,6 +625,9 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1;</code>
+     *
+     * @param value The allowedPackageNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAllowedPackageNames(java.lang.String value) {
       if (value == null) {
@@ -614,6 +647,9 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1;</code>
+     *
+     * @param values The allowedPackageNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAllowedPackageNames(java.lang.Iterable<java.lang.String> values) {
       ensureAllowedPackageNamesIsMutable();
@@ -630,6 +666,8 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAllowedPackageNames() {
       allowedPackageNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -646,6 +684,9 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1;</code>
+     *
+     * @param value The bytes of the allowedPackageNames to add.
+     * @return This builder for chaining.
      */
     public Builder addAllowedPackageNamesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

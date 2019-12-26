@@ -32,6 +32,8 @@ public interface AndroidKeySettingsOrBuilder
    * </pre>
    *
    * <code>repeated string allowed_package_names = 1;</code>
+   *
+   * @return A list containing the allowedPackageNames.
    */
   java.util.List<java.lang.String> getAllowedPackageNamesList();
   /**
@@ -43,6 +45,8 @@ public interface AndroidKeySettingsOrBuilder
    * </pre>
    *
    * <code>repeated string allowed_package_names = 1;</code>
+   *
+   * @return The count of allowedPackageNames.
    */
   int getAllowedPackageNamesCount();
   /**
@@ -54,6 +58,9 @@ public interface AndroidKeySettingsOrBuilder
    * </pre>
    *
    * <code>repeated string allowed_package_names = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The allowedPackageNames at the given index.
    */
   java.lang.String getAllowedPackageNames(int index);
   /**
@@ -65,6 +72,9 @@ public interface AndroidKeySettingsOrBuilder
    * </pre>
    *
    * <code>repeated string allowed_package_names = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the allowedPackageNames at the given index.
    */
   com.google.protobuf.ByteString getAllowedPackageNamesBytes(int index);
 }

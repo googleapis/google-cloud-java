@@ -40,6 +40,12 @@ public final class AnnotateAssessmentResponse extends com.google.protobuf.Genera
   private AnnotateAssessmentResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AnnotateAssessmentResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

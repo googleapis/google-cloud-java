@@ -34,6 +34,8 @@ public interface AnnotateAssessmentRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface AnnotateAssessmentRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -60,6 +64,8 @@ public interface AnnotateAssessmentRequestOrBuilder
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The enum numeric value on the wire for annotation.
    */
   int getAnnotationValue();
   /**
@@ -72,6 +78,8 @@ public interface AnnotateAssessmentRequestOrBuilder
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The annotation.
    */
   com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation getAnnotation();
 }

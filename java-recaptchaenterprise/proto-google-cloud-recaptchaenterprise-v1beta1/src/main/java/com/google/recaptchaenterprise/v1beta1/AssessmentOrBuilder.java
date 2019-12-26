@@ -32,6 +32,8 @@ public interface AssessmentOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -43,6 +45,8 @@ public interface AssessmentOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -54,6 +58,8 @@ public interface AssessmentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recaptchaenterprise.v1beta1.Event event = 2;</code>
+   *
+   * @return Whether the event field is set.
    */
   boolean hasEvent();
   /**
@@ -64,6 +70,8 @@ public interface AssessmentOrBuilder
    * </pre>
    *
    * <code>.google.cloud.recaptchaenterprise.v1beta1.Event event = 2;</code>
+   *
+   * @return The event.
    */
   com.google.recaptchaenterprise.v1beta1.Event getEvent();
   /**
@@ -87,6 +95,8 @@ public interface AssessmentOrBuilder
    * </pre>
    *
    * <code>float score = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The score.
    */
   float getScore();
 
@@ -100,6 +110,8 @@ public interface AssessmentOrBuilder
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties token_properties = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return Whether the tokenProperties field is set.
    */
   boolean hasTokenProperties();
   /**
@@ -112,6 +124,8 @@ public interface AssessmentOrBuilder
    * <code>
    * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties token_properties = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The tokenProperties.
    */
   com.google.recaptchaenterprise.v1beta1.TokenProperties getTokenProperties();
   /**
@@ -137,6 +151,8 @@ public interface AssessmentOrBuilder
    * <code>
    * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return A list containing the reasons.
    */
   java.util.List<com.google.recaptchaenterprise.v1beta1.Assessment.ClassificationReason>
       getReasonsList();
@@ -150,6 +166,8 @@ public interface AssessmentOrBuilder
    * <code>
    * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The count of reasons.
    */
   int getReasonsCount();
   /**
@@ -162,6 +180,9 @@ public interface AssessmentOrBuilder
    * <code>
    * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The reasons at the given index.
    */
   com.google.recaptchaenterprise.v1beta1.Assessment.ClassificationReason getReasons(int index);
   /**
@@ -174,6 +195,8 @@ public interface AssessmentOrBuilder
    * <code>
    * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for reasons.
    */
   java.util.List<java.lang.Integer> getReasonsValueList();
   /**
@@ -186,6 +209,9 @@ public interface AssessmentOrBuilder
    * <code>
    * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of reasons at the given index.
    */
   int getReasonsValue(int index);
 }
