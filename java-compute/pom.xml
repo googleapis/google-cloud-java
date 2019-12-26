@@ -76,7 +76,7 @@
     <animal-sniffer.version>1.18</animal-sniffer.version>
     <http-client-bom.version>1.34.0</http-client-bom.version>
     <google.auth.version>0.19.0</google.auth.version>
-    <oauth-client.version>1.30.4</oauth-client.version>
+    <oauth-client.version>1.30.5</oauth-client.version>
     <api-client.version>1.30.6</api-client.version>
 
     <!-- test dependency versions -->
