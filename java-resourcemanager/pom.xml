@@ -67,7 +67,7 @@
     <google.api-common.version>1.8.1</google.api-common.version>
     <gax.version>1.52.0</gax.version>
     <junit.version>4.12</junit.version>
-    <guava.version>28.1-android</guava.version>
+    <guava.version>28.2-android</guava.version>
     <threeten.version>1.4.0</threeten.version>
     <google.core-http.version>1.92.0</google.core-http.version>
     <api-client.version>1.30.7</api-client.version>
