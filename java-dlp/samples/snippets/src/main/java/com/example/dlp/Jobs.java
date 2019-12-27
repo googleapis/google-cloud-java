@@ -16,7 +16,6 @@
 
 package com.example.dlp;
 
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
 import com.google.privacy.dlp.v2.DlpJob;
@@ -122,13 +121,13 @@ public class Jobs {
       cmd = parser.parse(commandLineOptions, args);
     } catch (ParseException e) {
       System.out.println(e.getMessage());
-      formatter.printHelp(Inspect.class.getName(), commandLineOptions);
+      formatter.printHelp(Jobs.class.getName(), commandLineOptions);
       System.exit(1);
       return;
     }
 
     String projectId =
-        cmd.getOptionValue(projectIdOption.getOpt(), ServiceOptions.getDefaultProjectId());
+        cmd.getOptionValue(projectIdOption.getOpt());
 
     if (cmd.hasOption(listOption.getOpt())) {
       String filter = cmd.getOptionValue(filterOption.getOpt(), "");

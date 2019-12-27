@@ -52,13 +52,9 @@ public class InspectImageFile {
 
       // Specify the type and content to be inspected.
       ByteString fileBytes = ByteString.readFrom(new FileInputStream(filePath));
-      ByteContentItem byteItem = ByteContentItem.newBuilder()
-          .setType(BytesType.IMAGE)
-          .setData(fileBytes)
-          .build();
-      ContentItem item = ContentItem.newBuilder()
-          .setByteItem(byteItem)
-          .build();
+      ByteContentItem byteItem =
+          ByteContentItem.newBuilder().setType(BytesType.IMAGE).setData(fileBytes).build();
+      ContentItem item = ContentItem.newBuilder().setByteItem(byteItem).build();
 
       // Specify the type of info the inspection will look for.
       List<InfoType> infoTypes = new ArrayList<>();
@@ -68,17 +64,16 @@ public class InspectImageFile {
       }
 
       // Construct the configuration for the Inspect request.
-      InspectConfig config = InspectConfig.newBuilder()
-          .addAllInfoTypes(infoTypes)
-          .setIncludeQuote(true)
-          .build();
+      InspectConfig config =
+          InspectConfig.newBuilder().addAllInfoTypes(infoTypes).setIncludeQuote(true).build();
 
       // Construct the Inspect request to be sent by the client.
-      InspectContentRequest request = InspectContentRequest.newBuilder()
-          .setParent(project.toString())
-          .setItem(item)
-          .setInspectConfig(config)
-          .build();
+      InspectContentRequest request =
+          InspectContentRequest.newBuilder()
+              .setParent(project.toString())
+              .setItem(item)
+              .setInspectConfig(config)
+              .build();
 
       // Use the client to send the API request.
       InspectContentResponse response = dlp.inspectContent(request);

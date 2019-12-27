@@ -16,7 +16,6 @@
 
 package com.example.dlp;
 
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.common.io.BaseEncoding;
 import com.google.privacy.dlp.v2.CharacterMaskConfig;
@@ -665,7 +664,7 @@ public class DeIdentification {
 
     // default to auto-detected project id when not explicitly provided
     String projectId =
-        cmd.getOptionValue(projectIdOption.getOpt(), ServiceOptions.getDefaultProjectId());
+        cmd.getOptionValue(projectIdOption.getOpt());
 
     List<InfoType> infoTypesList = Collections.emptyList();
     if (cmd.hasOption(infoTypesOption.getOpt())) {

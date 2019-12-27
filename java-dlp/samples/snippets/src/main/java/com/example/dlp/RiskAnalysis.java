@@ -17,7 +17,6 @@
 package com.example.dlp;
 
 import com.google.api.core.SettableApiFuture;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.cloud.pubsub.v1.Subscriber;
 import com.google.privacy.dlp.v2.Action;
@@ -799,7 +798,7 @@ public class RiskAnalysis {
     String tableId = cmd.getOptionValue(tableIdOption.getOpt());
     // use default project id when project id is not specified
     String projectId =
-        cmd.getOptionValue(projectIdOption.getOpt(), ServiceOptions.getDefaultProjectId());
+        cmd.getOptionValue(projectIdOption.getOpt());
 
     String regionCode = cmd.getOptionValue(regionCodeOption.getOpt(), "US");
 

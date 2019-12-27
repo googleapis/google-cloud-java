@@ -16,7 +16,6 @@
 
 package com.example.dlp;
 
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.privacy.dlp.v2.ByteContentItem;
 import com.google.privacy.dlp.v2.ContentItem;
@@ -78,7 +77,7 @@ public class QuickStart {
               .build();
       ContentItem contentItem = ContentItem.newBuilder().setByteItem(byteContentItem).build();
 
-      String projectId = ServiceOptions.getDefaultProjectId();
+      String projectId = "";
       InspectContentRequest request =
           InspectContentRequest.newBuilder()
               .setParent(ProjectName.of(projectId).toString())
