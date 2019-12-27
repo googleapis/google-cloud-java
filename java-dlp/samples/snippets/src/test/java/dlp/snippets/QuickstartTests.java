@@ -21,6 +21,7 @@ import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.assertThat;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
@@ -30,7 +31,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class RedactTests {
+public class QuickstartTests {
 
   private ByteArrayOutputStream bout;
 
@@ -62,10 +63,10 @@ public class RedactTests {
   }
 
   @Test
-  public void testRedactImage() {
-    RedactImageFile.redactImageFile(PROJECT_ID, "src/test/resources/test.png");
+  public void testQuickstart() throws IOException {
+    QuickStart.quickstart(PROJECT_ID);
 
     String output = bout.toString();
-    assertThat(output, containsString("Redacted image written"));
+    assertThat(output, containsString("Inspect of text complete"));
   }
 }
