@@ -385,7 +385,6 @@
   <modules>
     <module>google-cloud-contrib</module>
     <module>google-cloud-spanner</module>
-    <module>google-cloud-storage</module>
     <module>grafeas</module>
   </modules>
   <pluginRepositories>
