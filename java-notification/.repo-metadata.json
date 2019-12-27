@@ -1,0 +1,9 @@
+{
+  "name": "notification",
+  "name_pretty": "Google Cloud Pub/Sub Notifications for GCS",
+  "release_level": "beta",
+  "language": "java",
+  "repo": "googleapis/java-notification",
+  "repo_short": "java-notification",
+  "distribution_name": "com.google.cloud:google-cloud-notification"
+}
