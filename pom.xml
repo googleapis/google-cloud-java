@@ -21,7 +21,7 @@
     <logging.version>1.98.0</logging.version>
     <guava.version>28.1-android</guava.version>
     <slf4j.version>1.7.25</slf4j.version>
-    <google.auth.version>0.18.0</google.auth.version>
+    <google.auth.version>0.19.0</google.auth.version>
     <junit.version>4.12</junit.version>
     <google.api-common.version>1.8.1</google.api-common.version>
   </properties>
@@ -125,7 +125,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>1.91.3</version>
+      <version>1.92.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.auth</groupId>
