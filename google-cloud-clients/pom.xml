@@ -383,8 +383,6 @@
     </dependencies>
   </dependencyManagement>
   <modules>
-    <module>google-cloud-contrib</module>
-    <module>grafeas</module>
   </modules>
   <pluginRepositories>
     <pluginRepository>
