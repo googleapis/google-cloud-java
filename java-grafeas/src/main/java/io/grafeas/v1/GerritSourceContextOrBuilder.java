@@ -32,6 +32,8 @@ public interface GerritSourceContextOrBuilder
    * </pre>
    *
    * <code>string host_uri = 1;</code>
+   *
+   * @return The hostUri.
    */
   java.lang.String getHostUri();
   /**
@@ -42,6 +44,8 @@ public interface GerritSourceContextOrBuilder
    * </pre>
    *
    * <code>string host_uri = 1;</code>
+   *
+   * @return The bytes for hostUri.
    */
   com.google.protobuf.ByteString getHostUriBytes();
 
@@ -55,6 +59,8 @@ public interface GerritSourceContextOrBuilder
    * </pre>
    *
    * <code>string gerrit_project = 2;</code>
+   *
+   * @return The gerritProject.
    */
   java.lang.String getGerritProject();
   /**
@@ -67,6 +73,8 @@ public interface GerritSourceContextOrBuilder
    * </pre>
    *
    * <code>string gerrit_project = 2;</code>
+   *
+   * @return The bytes for gerritProject.
    */
   com.google.protobuf.ByteString getGerritProjectBytes();
 
@@ -78,6 +86,8 @@ public interface GerritSourceContextOrBuilder
    * </pre>
    *
    * <code>string revision_id = 3;</code>
+   *
+   * @return The revisionId.
    */
   java.lang.String getRevisionId();
   /**
@@ -88,6 +98,8 @@ public interface GerritSourceContextOrBuilder
    * </pre>
    *
    * <code>string revision_id = 3;</code>
+   *
+   * @return The bytes for revisionId.
    */
   com.google.protobuf.ByteString getRevisionIdBytes();
 
@@ -99,6 +111,8 @@ public interface GerritSourceContextOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.AliasContext alias_context = 4;</code>
+   *
+   * @return Whether the aliasContext field is set.
    */
   boolean hasAliasContext();
   /**
@@ -109,6 +123,8 @@ public interface GerritSourceContextOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.AliasContext alias_context = 4;</code>
+   *
+   * @return The aliasContext.
    */
   io.grafeas.v1.AliasContext getAliasContext();
   /**

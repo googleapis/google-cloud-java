@@ -63,6 +63,12 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Signature();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -75,7 +81,6 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -144,6 +149,8 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes signature = 1;</code>
+   *
+   * @return The signature.
    */
   public com.google.protobuf.ByteString getSignature() {
     return signature_;
@@ -172,6 +179,8 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string public_key_id = 2;</code>
+   *
+   * @return The publicKeyId.
    */
   public java.lang.String getPublicKeyId() {
     java.lang.Object ref = publicKeyId_;
@@ -205,6 +214,8 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string public_key_id = 2;</code>
+   *
+   * @return The bytes for publicKeyId.
    */
   public com.google.protobuf.ByteString getPublicKeyIdBytes() {
     java.lang.Object ref = publicKeyId_;
@@ -575,6 +586,8 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes signature = 1;</code>
+     *
+     * @return The signature.
      */
     public com.google.protobuf.ByteString getSignature() {
       return signature_;
@@ -592,6 +605,9 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes signature = 1;</code>
+     *
+     * @param value The signature to set.
+     * @return This builder for chaining.
      */
     public Builder setSignature(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -615,6 +631,8 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes signature = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSignature() {
 
@@ -645,6 +663,8 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string public_key_id = 2;</code>
+     *
+     * @return The publicKeyId.
      */
     public java.lang.String getPublicKeyId() {
       java.lang.Object ref = publicKeyId_;
@@ -678,6 +698,8 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string public_key_id = 2;</code>
+     *
+     * @return The bytes for publicKeyId.
      */
     public com.google.protobuf.ByteString getPublicKeyIdBytes() {
       java.lang.Object ref = publicKeyId_;
@@ -711,6 +733,9 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string public_key_id = 2;</code>
+     *
+     * @param value The publicKeyId to set.
+     * @return This builder for chaining.
      */
     public Builder setPublicKeyId(java.lang.String value) {
       if (value == null) {
@@ -742,6 +767,8 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string public_key_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPublicKeyId() {
 
@@ -770,6 +797,9 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string public_key_id = 2;</code>
+     *
+     * @param value The bytes for publicKeyId to set.
+     * @return This builder for chaining.
      */
     public Builder setPublicKeyIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

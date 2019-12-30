@@ -45,6 +45,12 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DiscoveryNote();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,6 +122,8 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1.NoteKind analysis_kind = 1;</code>
+   *
+   * @return The enum numeric value on the wire for analysisKind.
    */
   public int getAnalysisKindValue() {
     return analysisKind_;
@@ -130,6 +137,8 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1.NoteKind analysis_kind = 1;</code>
+   *
+   * @return The analysisKind.
    */
   public io.grafeas.v1.NoteKind getAnalysisKind() {
     @SuppressWarnings("deprecation")
@@ -457,6 +466,8 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.NoteKind analysis_kind = 1;</code>
+     *
+     * @return The enum numeric value on the wire for analysisKind.
      */
     public int getAnalysisKindValue() {
       return analysisKind_;
@@ -470,6 +481,9 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.NoteKind analysis_kind = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for analysisKind to set.
+     * @return This builder for chaining.
      */
     public Builder setAnalysisKindValue(int value) {
       analysisKind_ = value;
@@ -485,6 +499,8 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.NoteKind analysis_kind = 1;</code>
+     *
+     * @return The analysisKind.
      */
     public io.grafeas.v1.NoteKind getAnalysisKind() {
       @SuppressWarnings("deprecation")
@@ -500,6 +516,9 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.NoteKind analysis_kind = 1;</code>
+     *
+     * @param value The analysisKind to set.
+     * @return This builder for chaining.
      */
     public Builder setAnalysisKind(io.grafeas.v1.NoteKind value) {
       if (value == null) {
@@ -519,6 +538,8 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.NoteKind analysis_kind = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAnalysisKind() {
 

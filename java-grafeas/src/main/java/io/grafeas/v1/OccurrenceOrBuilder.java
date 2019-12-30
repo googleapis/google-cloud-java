@@ -33,6 +33,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -44,6 +46,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -57,6 +61,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>string resource_uri = 2;</code>
+   *
+   * @return The resourceUri.
    */
   java.lang.String getResourceUri();
   /**
@@ -69,6 +75,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>string resource_uri = 2;</code>
+   *
+   * @return The bytes for resourceUri.
    */
   com.google.protobuf.ByteString getResourceUriBytes();
 
@@ -82,6 +90,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>string note_name = 3;</code>
+   *
+   * @return The noteName.
    */
   java.lang.String getNoteName();
   /**
@@ -94,6 +104,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>string note_name = 3;</code>
+   *
+   * @return The bytes for noteName.
    */
   com.google.protobuf.ByteString getNoteNameBytes();
 
@@ -106,6 +118,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.NoteKind kind = 4;</code>
+   *
+   * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
   /**
@@ -117,6 +131,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.NoteKind kind = 4;</code>
+   *
+   * @return The kind.
    */
   io.grafeas.v1.NoteKind getKind();
 
@@ -128,6 +144,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>string remediation = 5;</code>
+   *
+   * @return The remediation.
    */
   java.lang.String getRemediation();
   /**
@@ -138,6 +156,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>string remediation = 5;</code>
+   *
+   * @return The bytes for remediation.
    */
   com.google.protobuf.ByteString getRemediationBytes();
 
@@ -149,6 +169,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -159,6 +181,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -180,6 +204,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -190,6 +216,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -211,6 +239,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.VulnerabilityOccurrence vulnerability = 8;</code>
+   *
+   * @return Whether the vulnerability field is set.
    */
   boolean hasVulnerability();
   /**
@@ -221,6 +251,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.VulnerabilityOccurrence vulnerability = 8;</code>
+   *
+   * @return The vulnerability.
    */
   io.grafeas.v1.VulnerabilityOccurrence getVulnerability();
   /**
@@ -242,6 +274,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.BuildOccurrence build = 9;</code>
+   *
+   * @return Whether the build field is set.
    */
   boolean hasBuild();
   /**
@@ -252,6 +286,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.BuildOccurrence build = 9;</code>
+   *
+   * @return The build.
    */
   io.grafeas.v1.BuildOccurrence getBuild();
   /**
@@ -274,6 +310,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.ImageOccurrence image = 10;</code>
+   *
+   * @return Whether the image field is set.
    */
   boolean hasImage();
   /**
@@ -285,6 +323,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.ImageOccurrence image = 10;</code>
+   *
+   * @return The image.
    */
   io.grafeas.v1.ImageOccurrence getImage();
   /**
@@ -307,6 +347,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.PackageOccurrence package = 11;</code>
+   *
+   * @return Whether the package field is set.
    */
   boolean hasPackage();
   /**
@@ -317,6 +359,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.PackageOccurrence package = 11;</code>
+   *
+   * @return The package.
    */
   io.grafeas.v1.PackageOccurrence getPackage();
   /**
@@ -338,6 +382,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.DeploymentOccurrence deployment = 12;</code>
+   *
+   * @return Whether the deployment field is set.
    */
   boolean hasDeployment();
   /**
@@ -348,6 +394,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.DeploymentOccurrence deployment = 12;</code>
+   *
+   * @return The deployment.
    */
   io.grafeas.v1.DeploymentOccurrence getDeployment();
   /**
@@ -369,6 +417,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.DiscoveryOccurrence discovery = 13;</code>
+   *
+   * @return Whether the discovery field is set.
    */
   boolean hasDiscovery();
   /**
@@ -379,6 +429,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.DiscoveryOccurrence discovery = 13;</code>
+   *
+   * @return The discovery.
    */
   io.grafeas.v1.DiscoveryOccurrence getDiscovery();
   /**
@@ -400,6 +452,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.AttestationOccurrence attestation = 14;</code>
+   *
+   * @return Whether the attestation field is set.
    */
   boolean hasAttestation();
   /**
@@ -410,6 +464,8 @@ public interface OccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.AttestationOccurrence attestation = 14;</code>
+   *
+   * @return The attestation.
    */
   io.grafeas.v1.AttestationOccurrence getAttestation();
   /**

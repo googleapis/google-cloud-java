@@ -59,20 +59,12 @@ public final class Attestation {
           + "s.v1P\001Z8google.golang.org/genproto/googl"
           + "eapis/grafeas/v1;grafeas\242\002\003GRAb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.grafeas.v1.Common.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              io.grafeas.v1.Common.getDescriptor(),
+            });
     internal_static_grafeas_v1_AttestationNote_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_grafeas_v1_AttestationNote_fieldAccessorTable =

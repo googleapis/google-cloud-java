@@ -33,6 +33,8 @@ public interface ImageNoteOrBuilder
    * </pre>
    *
    * <code>string resource_url = 1;</code>
+   *
+   * @return The resourceUrl.
    */
   java.lang.String getResourceUrl();
   /**
@@ -44,6 +46,8 @@ public interface ImageNoteOrBuilder
    * </pre>
    *
    * <code>string resource_url = 1;</code>
+   *
+   * @return The bytes for resourceUrl.
    */
   com.google.protobuf.ByteString getResourceUrlBytes();
 
@@ -55,6 +59,8 @@ public interface ImageNoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.Fingerprint fingerprint = 2;</code>
+   *
+   * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
   /**
@@ -65,6 +71,8 @@ public interface ImageNoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.Fingerprint fingerprint = 2;</code>
+   *
+   * @return The fingerprint.
    */
   io.grafeas.v1.Fingerprint getFingerprint();
   /**

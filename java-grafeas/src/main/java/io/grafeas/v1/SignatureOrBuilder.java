@@ -37,6 +37,8 @@ public interface SignatureOrBuilder
    * </pre>
    *
    * <code>bytes signature = 1;</code>
+   *
+   * @return The signature.
    */
   com.google.protobuf.ByteString getSignature();
 
@@ -61,6 +63,8 @@ public interface SignatureOrBuilder
    * </pre>
    *
    * <code>string public_key_id = 2;</code>
+   *
+   * @return The publicKeyId.
    */
   java.lang.String getPublicKeyId();
   /**
@@ -84,6 +88,8 @@ public interface SignatureOrBuilder
    * </pre>
    *
    * <code>string public_key_id = 2;</code>
+   *
+   * @return The bytes for publicKeyId.
    */
   com.google.protobuf.ByteString getPublicKeyIdBytes();
 }

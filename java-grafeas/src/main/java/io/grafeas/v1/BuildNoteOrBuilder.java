@@ -32,6 +32,8 @@ public interface BuildNoteOrBuilder
    * </pre>
    *
    * <code>string builder_version = 1;</code>
+   *
+   * @return The builderVersion.
    */
   java.lang.String getBuilderVersion();
   /**
@@ -42,6 +44,8 @@ public interface BuildNoteOrBuilder
    * </pre>
    *
    * <code>string builder_version = 1;</code>
+   *
+   * @return The bytes for builderVersion.
    */
   com.google.protobuf.ByteString getBuilderVersionBytes();
 }

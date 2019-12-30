@@ -33,6 +33,8 @@ public interface FingerprintOrBuilder
    * </pre>
    *
    * <code>string v1_name = 1;</code>
+   *
+   * @return The v1Name.
    */
   java.lang.String getV1Name();
   /**
@@ -44,6 +46,8 @@ public interface FingerprintOrBuilder
    * </pre>
    *
    * <code>string v1_name = 1;</code>
+   *
+   * @return The bytes for v1Name.
    */
   com.google.protobuf.ByteString getV1NameBytes();
 
@@ -55,6 +59,8 @@ public interface FingerprintOrBuilder
    * </pre>
    *
    * <code>repeated string v2_blob = 2;</code>
+   *
+   * @return A list containing the v2Blob.
    */
   java.util.List<java.lang.String> getV2BlobList();
   /**
@@ -65,6 +71,8 @@ public interface FingerprintOrBuilder
    * </pre>
    *
    * <code>repeated string v2_blob = 2;</code>
+   *
+   * @return The count of v2Blob.
    */
   int getV2BlobCount();
   /**
@@ -75,6 +83,9 @@ public interface FingerprintOrBuilder
    * </pre>
    *
    * <code>repeated string v2_blob = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The v2Blob at the given index.
    */
   java.lang.String getV2Blob(int index);
   /**
@@ -85,6 +96,9 @@ public interface FingerprintOrBuilder
    * </pre>
    *
    * <code>repeated string v2_blob = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the v2Blob at the given index.
    */
   com.google.protobuf.ByteString getV2BlobBytes(int index);
 
@@ -99,6 +113,8 @@ public interface FingerprintOrBuilder
    * </pre>
    *
    * <code>string v2_name = 3;</code>
+   *
+   * @return The v2Name.
    */
   java.lang.String getV2Name();
   /**
@@ -112,6 +128,8 @@ public interface FingerprintOrBuilder
    * </pre>
    *
    * <code>string v2_name = 3;</code>
+   *
+   * @return The bytes for v2Name.
    */
   com.google.protobuf.ByteString getV2NameBytes();
 }

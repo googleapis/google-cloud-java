@@ -48,6 +48,12 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Distribution();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -60,7 +66,6 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -162,6 +167,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
+   *
+   * @return The cpeUri.
    */
   public java.lang.String getCpeUri() {
     java.lang.Object ref = cpeUri_;
@@ -183,6 +190,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
+   *
+   * @return The bytes for cpeUri.
    */
   public com.google.protobuf.ByteString getCpeUriBytes() {
     java.lang.Object ref = cpeUri_;
@@ -207,6 +216,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1.Architecture architecture = 2;</code>
+   *
+   * @return The enum numeric value on the wire for architecture.
    */
   public int getArchitectureValue() {
     return architecture_;
@@ -220,6 +231,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1.Architecture architecture = 2;</code>
+   *
+   * @return The architecture.
    */
   public io.grafeas.v1.Architecture getArchitecture() {
     @SuppressWarnings("deprecation")
@@ -237,6 +250,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1.Version latest_version = 3;</code>
+   *
+   * @return Whether the latestVersion field is set.
    */
   public boolean hasLatestVersion() {
     return latestVersion_ != null;
@@ -249,6 +264,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1.Version latest_version = 3;</code>
+   *
+   * @return The latestVersion.
    */
   public io.grafeas.v1.Version getLatestVersion() {
     return latestVersion_ == null ? io.grafeas.v1.Version.getDefaultInstance() : latestVersion_;
@@ -276,6 +293,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string maintainer = 4;</code>
+   *
+   * @return The maintainer.
    */
   public java.lang.String getMaintainer() {
     java.lang.Object ref = maintainer_;
@@ -296,6 +315,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string maintainer = 4;</code>
+   *
+   * @return The bytes for maintainer.
    */
   public com.google.protobuf.ByteString getMaintainerBytes() {
     java.lang.Object ref = maintainer_;
@@ -319,6 +340,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string url = 5;</code>
+   *
+   * @return The url.
    */
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
@@ -339,6 +362,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string url = 5;</code>
+   *
+   * @return The bytes for url.
    */
   public com.google.protobuf.ByteString getUrlBytes() {
     java.lang.Object ref = url_;
@@ -362,6 +387,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 6;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -382,6 +409,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 6;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -806,6 +835,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     *
+     * @return The cpeUri.
      */
     public java.lang.String getCpeUri() {
       java.lang.Object ref = cpeUri_;
@@ -827,6 +858,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     *
+     * @return The bytes for cpeUri.
      */
     public com.google.protobuf.ByteString getCpeUriBytes() {
       java.lang.Object ref = cpeUri_;
@@ -848,6 +881,9 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     *
+     * @param value The cpeUri to set.
+     * @return This builder for chaining.
      */
     public Builder setCpeUri(java.lang.String value) {
       if (value == null) {
@@ -867,6 +903,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCpeUri() {
 
@@ -883,6 +921,9 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
+     *
+     * @param value The bytes for cpeUri to set.
+     * @return This builder for chaining.
      */
     public Builder setCpeUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -905,6 +946,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.Architecture architecture = 2;</code>
+     *
+     * @return The enum numeric value on the wire for architecture.
      */
     public int getArchitectureValue() {
       return architecture_;
@@ -918,6 +961,9 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.Architecture architecture = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for architecture to set.
+     * @return This builder for chaining.
      */
     public Builder setArchitectureValue(int value) {
       architecture_ = value;
@@ -933,6 +979,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.Architecture architecture = 2;</code>
+     *
+     * @return The architecture.
      */
     public io.grafeas.v1.Architecture getArchitecture() {
       @SuppressWarnings("deprecation")
@@ -948,6 +996,9 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.Architecture architecture = 2;</code>
+     *
+     * @param value The architecture to set.
+     * @return This builder for chaining.
      */
     public Builder setArchitecture(io.grafeas.v1.Architecture value) {
       if (value == null) {
@@ -967,6 +1018,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.Architecture architecture = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearArchitecture() {
 
@@ -987,6 +1040,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.Version latest_version = 3;</code>
+     *
+     * @return Whether the latestVersion field is set.
      */
     public boolean hasLatestVersion() {
       return latestVersionBuilder_ != null || latestVersion_ != null;
@@ -999,6 +1054,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.Version latest_version = 3;</code>
+     *
+     * @return The latestVersion.
      */
     public io.grafeas.v1.Version getLatestVersion() {
       if (latestVersionBuilder_ == null) {
@@ -1155,6 +1212,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string maintainer = 4;</code>
+     *
+     * @return The maintainer.
      */
     public java.lang.String getMaintainer() {
       java.lang.Object ref = maintainer_;
@@ -1175,6 +1234,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string maintainer = 4;</code>
+     *
+     * @return The bytes for maintainer.
      */
     public com.google.protobuf.ByteString getMaintainerBytes() {
       java.lang.Object ref = maintainer_;
@@ -1195,6 +1256,9 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string maintainer = 4;</code>
+     *
+     * @param value The maintainer to set.
+     * @return This builder for chaining.
      */
     public Builder setMaintainer(java.lang.String value) {
       if (value == null) {
@@ -1213,6 +1277,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string maintainer = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMaintainer() {
 
@@ -1228,6 +1294,9 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string maintainer = 4;</code>
+     *
+     * @param value The bytes for maintainer to set.
+     * @return This builder for chaining.
      */
     public Builder setMaintainerBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1249,6 +1318,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 5;</code>
+     *
+     * @return The url.
      */
     public java.lang.String getUrl() {
       java.lang.Object ref = url_;
@@ -1269,6 +1340,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 5;</code>
+     *
+     * @return The bytes for url.
      */
     public com.google.protobuf.ByteString getUrlBytes() {
       java.lang.Object ref = url_;
@@ -1289,6 +1362,9 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 5;</code>
+     *
+     * @param value The url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrl(java.lang.String value) {
       if (value == null) {
@@ -1307,6 +1383,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUrl() {
 
@@ -1322,6 +1400,9 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 5;</code>
+     *
+     * @param value The bytes for url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1343,6 +1424,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1363,6 +1446,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1383,6 +1468,9 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1401,6 +1489,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1416,6 +1506,9 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

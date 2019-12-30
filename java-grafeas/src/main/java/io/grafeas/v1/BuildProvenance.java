@@ -51,6 +51,12 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BuildProvenance();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -90,18 +96,18 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 commands_ = new java.util.ArrayList<io.grafeas.v1.Command>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               commands_.add(input.readMessage(io.grafeas.v1.Command.parser(), extensionRegistry));
               break;
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 builtArtifacts_ = new java.util.ArrayList<io.grafeas.v1.Artifact>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000002;
               }
               builtArtifacts_.add(
                   input.readMessage(io.grafeas.v1.Artifact.parser(), extensionRegistry));
@@ -190,11 +196,11 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             }
           case 98:
             {
-              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 buildOptions_ =
                     com.google.protobuf.MapField.newMapField(
                         BuildOptionsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000800;
+                mutable_bitField0_ |= 0x00000004;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> buildOptions__ =
                   input.readMessage(
@@ -224,10 +230,10 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         commands_ = java.util.Collections.unmodifiableList(commands_);
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         builtArtifacts_ = java.util.Collections.unmodifiableList(builtArtifacts_);
       }
       this.unknownFields = unknownFields.build();
@@ -258,7 +264,6 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             io.grafeas.v1.BuildProvenance.class, io.grafeas.v1.BuildProvenance.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
@@ -269,6 +274,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -289,6 +296,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
@@ -312,6 +321,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string project_id = 2;</code>
+   *
+   * @return The projectId.
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -332,6 +343,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string project_id = 2;</code>
+   *
+   * @return The bytes for projectId.
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -482,6 +495,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -494,6 +509,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -521,6 +538,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 6;</code>
+   *
+   * @return Whether the startTime field is set.
    */
   public boolean hasStartTime() {
     return startTime_ != null;
@@ -533,6 +552,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 6;</code>
+   *
+   * @return The startTime.
    */
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -560,6 +581,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 7;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -572,6 +595,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 7;</code>
+   *
+   * @return The endTime.
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -601,6 +626,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string creator = 8;</code>
+   *
+   * @return The creator.
    */
   public java.lang.String getCreator() {
     java.lang.Object ref = creator_;
@@ -623,6 +650,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string creator = 8;</code>
+   *
+   * @return The bytes for creator.
    */
   public com.google.protobuf.ByteString getCreatorBytes() {
     java.lang.Object ref = creator_;
@@ -646,6 +675,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string logs_uri = 9;</code>
+   *
+   * @return The logsUri.
    */
   public java.lang.String getLogsUri() {
     java.lang.Object ref = logsUri_;
@@ -666,6 +697,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string logs_uri = 9;</code>
+   *
+   * @return The bytes for logsUri.
    */
   public com.google.protobuf.ByteString getLogsUriBytes() {
     java.lang.Object ref = logsUri_;
@@ -689,6 +722,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.grafeas.v1.Source source_provenance = 10;</code>
+   *
+   * @return Whether the sourceProvenance field is set.
    */
   public boolean hasSourceProvenance() {
     return sourceProvenance_ != null;
@@ -701,6 +736,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.grafeas.v1.Source source_provenance = 10;</code>
+   *
+   * @return The sourceProvenance.
    */
   public io.grafeas.v1.Source getSourceProvenance() {
     return sourceProvenance_ == null
@@ -730,6 +767,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string trigger_id = 11;</code>
+   *
+   * @return The triggerId.
    */
   public java.lang.String getTriggerId() {
     java.lang.Object ref = triggerId_;
@@ -750,6 +789,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string trigger_id = 11;</code>
+   *
+   * @return The bytes for triggerId.
    */
   public com.google.protobuf.ByteString getTriggerIdBytes() {
     java.lang.Object ref = triggerId_;
@@ -873,6 +914,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string builder_version = 13;</code>
+   *
+   * @return The builderVersion.
    */
   public java.lang.String getBuilderVersion() {
     java.lang.Object ref = builderVersion_;
@@ -893,6 +936,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string builder_version = 13;</code>
+   *
+   * @return The bytes for builderVersion.
    */
   public com.google.protobuf.ByteString getBuilderVersionBytes() {
     java.lang.Object ref = builderVersion_;
@@ -1275,13 +1320,13 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
 
       if (commandsBuilder_ == null) {
         commands_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         commandsBuilder_.clear();
       }
       if (builtArtifactsBuilder_ == null) {
         builtArtifacts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         builtArtifactsBuilder_.clear();
       }
@@ -1344,22 +1389,21 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     public io.grafeas.v1.BuildProvenance buildPartial() {
       io.grafeas.v1.BuildProvenance result = new io.grafeas.v1.BuildProvenance(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.id_ = id_;
       result.projectId_ = projectId_;
       if (commandsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           commands_ = java.util.Collections.unmodifiableList(commands_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.commands_ = commands_;
       } else {
         result.commands_ = commandsBuilder_.build();
       }
       if (builtArtifactsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           builtArtifacts_ = java.util.Collections.unmodifiableList(builtArtifacts_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.builtArtifacts_ = builtArtifacts_;
       } else {
@@ -1391,7 +1435,6 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       result.buildOptions_ = internalGetBuildOptions();
       result.buildOptions_.makeImmutable();
       result.builderVersion_ = builderVersion_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1453,7 +1496,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         if (!other.commands_.isEmpty()) {
           if (commands_.isEmpty()) {
             commands_ = other.commands_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureCommandsIsMutable();
             commands_.addAll(other.commands_);
@@ -1466,7 +1509,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             commandsBuilder_.dispose();
             commandsBuilder_ = null;
             commands_ = other.commands_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             commandsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCommandsFieldBuilder()
@@ -1480,7 +1523,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         if (!other.builtArtifacts_.isEmpty()) {
           if (builtArtifacts_.isEmpty()) {
             builtArtifacts_ = other.builtArtifacts_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureBuiltArtifactsIsMutable();
             builtArtifacts_.addAll(other.builtArtifacts_);
@@ -1493,7 +1536,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             builtArtifactsBuilder_.dispose();
             builtArtifactsBuilder_ = null;
             builtArtifacts_ = other.builtArtifacts_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
             builtArtifactsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getBuiltArtifactsFieldBuilder()
@@ -1572,6 +1615,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -1592,6 +1637,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
@@ -1612,6 +1659,9 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(java.lang.String value) {
       if (value == null) {
@@ -1630,6 +1680,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearId() {
 
@@ -1645,6 +1697,9 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1666,6 +1721,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -1686,6 +1743,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -1706,6 +1765,9 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
+     * @param value The projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -1724,6 +1786,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjectId() {
 
@@ -1739,6 +1803,9 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1754,9 +1821,9 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     private java.util.List<io.grafeas.v1.Command> commands_ = java.util.Collections.emptyList();
 
     private void ensureCommandsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         commands_ = new java.util.ArrayList<io.grafeas.v1.Command>(commands_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1966,7 +2033,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     public Builder clearCommands() {
       if (commandsBuilder_ == null) {
         commands_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         commandsBuilder_.clear();
@@ -2083,7 +2150,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
                 io.grafeas.v1.Command,
                 io.grafeas.v1.Command.Builder,
                 io.grafeas.v1.CommandOrBuilder>(
-                commands_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                commands_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         commands_ = null;
       }
       return commandsBuilder_;
@@ -2093,9 +2160,9 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureBuiltArtifactsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         builtArtifacts_ = new java.util.ArrayList<io.grafeas.v1.Artifact>(builtArtifacts_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2306,7 +2373,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     public Builder clearBuiltArtifacts() {
       if (builtArtifactsBuilder_ == null) {
         builtArtifacts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         builtArtifactsBuilder_.clear();
@@ -2426,7 +2493,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
                 io.grafeas.v1.Artifact.Builder,
                 io.grafeas.v1.ArtifactOrBuilder>(
                 builtArtifacts_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         builtArtifacts_ = null;
@@ -2448,6 +2515,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -2460,6 +2529,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -2627,6 +2698,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 6;</code>
+     *
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
@@ -2639,6 +2712,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 6;</code>
+     *
+     * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
@@ -2802,6 +2877,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 7;</code>
+     *
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -2814,6 +2891,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 7;</code>
+     *
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {
@@ -2974,6 +3053,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string creator = 8;</code>
+     *
+     * @return The creator.
      */
     public java.lang.String getCreator() {
       java.lang.Object ref = creator_;
@@ -2996,6 +3077,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string creator = 8;</code>
+     *
+     * @return The bytes for creator.
      */
     public com.google.protobuf.ByteString getCreatorBytes() {
       java.lang.Object ref = creator_;
@@ -3018,6 +3101,9 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string creator = 8;</code>
+     *
+     * @param value The creator to set.
+     * @return This builder for chaining.
      */
     public Builder setCreator(java.lang.String value) {
       if (value == null) {
@@ -3038,6 +3124,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string creator = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCreator() {
 
@@ -3055,6 +3143,9 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string creator = 8;</code>
+     *
+     * @param value The bytes for creator to set.
+     * @return This builder for chaining.
      */
     public Builder setCreatorBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3076,6 +3167,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string logs_uri = 9;</code>
+     *
+     * @return The logsUri.
      */
     public java.lang.String getLogsUri() {
       java.lang.Object ref = logsUri_;
@@ -3096,6 +3189,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string logs_uri = 9;</code>
+     *
+     * @return The bytes for logsUri.
      */
     public com.google.protobuf.ByteString getLogsUriBytes() {
       java.lang.Object ref = logsUri_;
@@ -3116,6 +3211,9 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string logs_uri = 9;</code>
+     *
+     * @param value The logsUri to set.
+     * @return This builder for chaining.
      */
     public Builder setLogsUri(java.lang.String value) {
       if (value == null) {
@@ -3134,6 +3232,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string logs_uri = 9;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLogsUri() {
 
@@ -3149,6 +3249,9 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string logs_uri = 9;</code>
+     *
+     * @param value The bytes for logsUri to set.
+     * @return This builder for chaining.
      */
     public Builder setLogsUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3173,6 +3276,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.grafeas.v1.Source source_provenance = 10;</code>
+     *
+     * @return Whether the sourceProvenance field is set.
      */
     public boolean hasSourceProvenance() {
       return sourceProvenanceBuilder_ != null || sourceProvenance_ != null;
@@ -3185,6 +3290,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.grafeas.v1.Source source_provenance = 10;</code>
+     *
+     * @return The sourceProvenance.
      */
     public io.grafeas.v1.Source getSourceProvenance() {
       if (sourceProvenanceBuilder_ == null) {
@@ -3343,6 +3450,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string trigger_id = 11;</code>
+     *
+     * @return The triggerId.
      */
     public java.lang.String getTriggerId() {
       java.lang.Object ref = triggerId_;
@@ -3363,6 +3472,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string trigger_id = 11;</code>
+     *
+     * @return The bytes for triggerId.
      */
     public com.google.protobuf.ByteString getTriggerIdBytes() {
       java.lang.Object ref = triggerId_;
@@ -3383,6 +3494,9 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string trigger_id = 11;</code>
+     *
+     * @param value The triggerId to set.
+     * @return This builder for chaining.
      */
     public Builder setTriggerId(java.lang.String value) {
       if (value == null) {
@@ -3401,6 +3515,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string trigger_id = 11;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTriggerId() {
 
@@ -3416,6 +3532,9 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string trigger_id = 11;</code>
+     *
+     * @param value The bytes for triggerId to set.
+     * @return This builder for chaining.
      */
     public Builder setTriggerIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3599,6 +3718,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string builder_version = 13;</code>
+     *
+     * @return The builderVersion.
      */
     public java.lang.String getBuilderVersion() {
       java.lang.Object ref = builderVersion_;
@@ -3619,6 +3740,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string builder_version = 13;</code>
+     *
+     * @return The bytes for builderVersion.
      */
     public com.google.protobuf.ByteString getBuilderVersionBytes() {
       java.lang.Object ref = builderVersion_;
@@ -3639,6 +3762,9 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string builder_version = 13;</code>
+     *
+     * @param value The builderVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setBuilderVersion(java.lang.String value) {
       if (value == null) {
@@ -3657,6 +3783,8 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string builder_version = 13;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBuilderVersion() {
 
@@ -3672,6 +3800,9 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string builder_version = 13;</code>
+     *
+     * @param value The bytes for builderVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setBuilderVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
