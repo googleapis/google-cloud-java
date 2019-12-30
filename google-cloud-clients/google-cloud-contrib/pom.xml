@@ -18,8 +18,6 @@
     <site.installationModule>google-cloud-contrib</site.installationModule>
   </properties>
   <modules>
-    <module>google-cloud-nio</module>
-    <module>google-cloud-nio-examples</module>
   </modules>
   <dependencies>
   </dependencies>
