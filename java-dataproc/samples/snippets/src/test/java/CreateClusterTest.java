@@ -38,18 +38,17 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class CreateClusterTest {
 
-  private static final String BASE_CLUSTER_NAME = "test-cluster";
+  private static final String CLUSTER_NAME =
+      String.format("java-cc-test-%s", UUID.randomUUID().toString());
   private static final String REGION = "us-central1";
+  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
 
-  private static String projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private String clusterName;
   private ByteArrayOutputStream bout;
 
   private static void requireEnv(String varName) {
     assertNotNull(
-        System.getenv(varName),
-        String.format("Environment variable '%s' is required to perform these tests.", varName)
-    );
+        String.format("Environment variable '%s' is required to perform these tests.", varName),
+        System.getenv(varName));
   }
 
   @BeforeClass
@@ -60,35 +59,30 @@ public class CreateClusterTest {
 
   @Before
   public void setUp() {
-    clusterName = String.format("%s-%s", BASE_CLUSTER_NAME, UUID.randomUUID().toString());
-
     bout = new ByteArrayOutputStream();
     System.setOut(new PrintStream(bout));
   }
 
   @Test
   public void createClusterTest() throws IOException, InterruptedException {
-    CreateCluster.createCluster(projectId, REGION, clusterName);
+    CreateCluster.createCluster(PROJECT_ID, REGION, CLUSTER_NAME);
     String output = bout.toString();
 
-    assertThat(output, CoreMatchers.containsString(clusterName));
+    assertThat(output, CoreMatchers.containsString(CLUSTER_NAME));
   }
 
   @After
-  public void tearDown() throws IOException, InterruptedException {
+  public void tearDown() throws IOException, InterruptedException, ExecutionException {
     String myEndpoint = String.format("%s-dataproc.googleapis.com:443", REGION);
 
     ClusterControllerSettings clusterControllerSettings =
         ClusterControllerSettings.newBuilder().setEndpoint(myEndpoint).build();
 
-    try (ClusterControllerClient clusterControllerClient = ClusterControllerClient
-        .create(clusterControllerSettings)) {
+    try (ClusterControllerClient clusterControllerClient =
+        ClusterControllerClient.create(clusterControllerSettings)) {
       OperationFuture<Empty, ClusterOperationMetadata> deleteClusterAsyncRequest =
-          clusterControllerClient.deleteClusterAsync(projectId, REGION, clusterName);
+          clusterControllerClient.deleteClusterAsync(PROJECT_ID, REGION, CLUSTER_NAME);
       deleteClusterAsyncRequest.get();
-
-    } catch (ExecutionException e) {
-      System.out.println("Error during cluster deletion: \n" + e.toString());
     }
   }
 }

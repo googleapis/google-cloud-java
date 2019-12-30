@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google Inc.
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,56 +27,57 @@ import java.util.concurrent.ExecutionException;
 
 public class CreateCluster {
 
+  public static void createCluster() throws IOException, InterruptedException {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = "your-project-id";
+    String region = "your-project-region";
+    String clusterName = "your-cluster-name";
+    createCluster(projectId, region, clusterName);
+  }
+
   public static void createCluster(String projectId, String region, String clusterName)
       throws IOException, InterruptedException {
     String myEndpoint = String.format("%s-dataproc.googleapis.com:443", region);
 
-    // Configure the settings for the cluster controller client
+    // Configure the settings for the cluster controller client.
     ClusterControllerSettings clusterControllerSettings =
         ClusterControllerSettings.newBuilder().setEndpoint(myEndpoint).build();
 
-    // Create a cluster controller client with the configured settings. We only need to create
-    // the client once, and can be reused for multiple requests. Using a try-with-resources
-    // will close the client for us, but this can also be done manually with the .close() method.
-    try (ClusterControllerClient clusterControllerClient = ClusterControllerClient
-        .create(clusterControllerSettings)) {
-      // Configure the settings for our cluster
-      InstanceGroupConfig masterConfig = InstanceGroupConfig.newBuilder()
-          .setMachineTypeUri("n1-standard-1")
-          .setNumInstances(1)
-          .build();
-      InstanceGroupConfig workerConfig = InstanceGroupConfig.newBuilder()
-          .setMachineTypeUri("n1-standard-1")
-          .setNumInstances(2)
-          .build();
-      ClusterConfig clusterConfig = ClusterConfig.newBuilder()
-          .setMasterConfig(masterConfig)
-          .setWorkerConfig(workerConfig)
-          .build();
-      // Create the cluster object with the desired cluster config
-      Cluster cluster = Cluster.newBuilder()
-          .setClusterName(clusterName)
-          .setConfig(clusterConfig)
-          .build();
+    // Create a cluster controller client with the configured settings. The client only needs to be
+    // created once and can be reused for multiple requests. Using a try-with-resources
+    // closes the client, but this can also be done manually with the .close() method.
+    try (ClusterControllerClient clusterControllerClient =
+        ClusterControllerClient.create(clusterControllerSettings)) {
+      // Configure the settings for our cluster.
+      InstanceGroupConfig masterConfig =
+          InstanceGroupConfig.newBuilder()
+              .setMachineTypeUri("n1-standard-1")
+              .setNumInstances(1)
+              .build();
+      InstanceGroupConfig workerConfig =
+          InstanceGroupConfig.newBuilder()
+              .setMachineTypeUri("n1-standard-1")
+              .setNumInstances(2)
+              .build();
+      ClusterConfig clusterConfig =
+          ClusterConfig.newBuilder()
+              .setMasterConfig(masterConfig)
+              .setWorkerConfig(workerConfig)
+              .build();
+      // Create the cluster object with the desired cluster config.
+      Cluster cluster =
+          Cluster.newBuilder().setClusterName(clusterName).setConfig(clusterConfig).build();
 
-      // Create the Cloud Dataproc cluster
+      // Create the Cloud Dataproc cluster.
       OperationFuture<Cluster, ClusterOperationMetadata> createClusterAsyncRequest =
           clusterControllerClient.createClusterAsync(projectId, region, cluster);
       Cluster response = createClusterAsyncRequest.get();
 
-      // Print out a success message
-      System.out.println(
-          String.format("Cluster created successfully: %s", response.getClusterName())
-      );
+      // Print out a success message.
+      System.out.printf("Cluster created successfully: %s", response.getClusterName());
 
-    } catch (IOException e) {
-      // Likely this would occur due to issues authenticating with GCP. Make sure the environment
-      // variable GOOGLE_APPLICATION_CREDENTIALS is configured.
-      System.out.println("Error creating the cluster controller client: \n" + e.toString());
     } catch (ExecutionException e) {
-      // Common issues for this include needing to increase compute engine quotas or a cluster of
-      // the same name already exists.
-      System.out.println("Error during cluster creation request: \n" + e.toString());
+      System.err.println(String.format("Error executing createCluster: %s ", e.getMessage()));
     }
   }
 }
