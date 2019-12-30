@@ -18,9 +18,7 @@
     <site.installationModule>google-cloud-contrib</site.installationModule>
   </properties>
   <modules>
-    <module>google-cloud-logging-logback</module>
     <module>google-cloud-notification</module>
-    <module>google-cloud-spanner-jdbc</module>
   </modules>
   <dependencies>
   </dependencies>
