@@ -21,7 +21,6 @@
     <module>google-cloud-nio</module>
     <module>google-cloud-nio-examples</module>
     <module>google-cloud-notification</module>
-    <module>google-cloud-spanner-jdbc</module>
   </modules>
   <dependencies>
   </dependencies>
