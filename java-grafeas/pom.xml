@@ -15,25 +15,178 @@
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-clients</artifactId>
-    <version>0.120.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+    <artifactId>google-cloud-shared-config</artifactId>
+    <version>0.3.0</version>
   </parent>
+  <developers>
+    <developer>
+      <id>chingor</id>
+      <name>Jeff Ching</name>
+      <email>chingor@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <organization>
+    <name>Google LLC</name>
+  </organization>
+  <scm>
+    <connection>scm:git:git@github.com:googleapis/java-grafeas.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/java-grafeas.git</developerConnection>
+    <url>https://github.com/googleapis/java-grafeas</url>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <url>https://github.com/googleapis/java-grafeas/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
   <properties>
     <site.installationModule>grafeas</site.installationModule>
+    <grpc.version>1.25.0</grpc.version>
+    <api-client.version>1.30.7</api-client.version>
+    <google.core.version>1.92.0</google.core.version>
+    <gax.version>1.52.0</gax.version>
+    <http-client-bom.version>1.34.0</http-client-bom.version>
+    <guava.version>28.2-android</guava.version>
+    <junit.version>4.12</junit.version>
+    <google.common-protos.version>1.17.0</google.common-protos.version>
+    <protobuf.version>3.11.1</protobuf.version>
+    <threeten.version>1.4.0</threeten.version>
+    <google.api-common.version>1.8.1</google.api-common.version>
+    <junit.version>4.12</junit.version>
   </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.grpc</groupId>
+        <artifactId>grpc-bom</artifactId>
+        <version>${grpc.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api-client</groupId>
+        <artifactId>google-api-client-bom</artifactId>
+        <version>${api-client.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-core-bom</artifactId>
+        <version>${google.core.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax-bom</artifactId>
+        <version>${gax.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax-bom</artifactId>
+        <version>${gax.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.http-client</groupId>
+        <artifactId>google-http-client-bom</artifactId>
+        <version>${http-client-bom.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava-bom</artifactId>
+        <version>${guava.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
     <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-core-grpc</artifactId>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-common-protos</artifactId>
+      <version>${google.common-protos.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+      <version>${protobuf.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-grpc</artifactId>
+      <version>${gax.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${guava.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+      <version>${gax.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.threeten</groupId>
+      <artifactId>threetenbp</artifactId>
+      <version>${threeten.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-api</artifactId>
+      <version>${grpc.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-protobuf</artifactId>
+      <version>${grpc.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-stub</artifactId>
+      <version>${grpc.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
+      <version>${google.api-common.version}</version>
     </dependency>
 
     <!-- Test dependencies -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
-    <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
@@ -90,12 +243,67 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>3.0.0</version>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>index</report>
+              <report>dependency-info</report>
+              <report>team</report>
+              <report>ci-management</report>
+              <report>issue-management</report>
+              <report>licenses</report>
+              <report>scm</report>
+              <report>dependency-management</report>
+              <report>distribution-management</report>
+              <report>summary</report>
+              <report>modules</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+        <configuration>
+          <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
+          <artifactId>${site.installationModule}</artifactId>
+          <packaging>jar</packaging>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>3.1.1</version>
+        <reportSets>
+          <reportSet>
+            <id>html</id>
+            <reports>
+              <report>aggregate</report>
+              <report>javadoc</report>
+            </reports>
+          </reportSet>
+        </reportSets>
         <configuration>
+          <doclint>none</doclint>
           <show>protected</show>
           <nohelp>true</nohelp>
-          <doclint>none</doclint>
+          <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
+          <groups>
+            <group>
+              <title>Test helpers packages</title>
+              <packages>com.google.cloud.testing</packages>
+            </group>
+            <group>
+              <title>SPI packages</title>
+              <packages>com.google.cloud.spi*</packages>
+            </group>
+          </groups>
+
+          <links>
+            <link>https://grpc.io/grpc-java/javadoc/</link>
+            <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
+            <link>https://googleapis.dev/java/google-auth-library/latest/</link>
+            <link>https://googleapis.dev/java/gax/latest/</link>
+            <link>https://googleapis.github.io/api-common-java/${google.api-common.version}/apidocs/</link>
+          </links>
         </configuration>
       </plugin>
     </plugins>
