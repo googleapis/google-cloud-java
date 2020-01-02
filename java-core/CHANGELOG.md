@@ -1,5 +1,16 @@
 # Changelog
 
+### [1.92.1](https://www.github.com/googleapis/java-core/compare/v1.92.0...v1.92.1) (2020-01-02)
+
+
+### Dependencies
+
+* update dependency com.google.errorprone:error_prone_annotations to v2.3.4 ([#105](https://www.github.com/googleapis/java-core/issues/105)) ([52f47c5](https://www.github.com/googleapis/java-core/commit/52f47c5ed84742b4b41417c486bfbb3c817b4a23))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#113](https://www.github.com/googleapis/java-core/issues/113)) ([8b11b1a](https://www.github.com/googleapis/java-core/commit/8b11b1a8d452ab823f35509ae42263c4a69f2a5a))
+* update dependency com.google.http-client:google-http-client-bom to v1.34.0 ([#98](https://www.github.com/googleapis/java-core/issues/98)) ([d8e946d](https://www.github.com/googleapis/java-core/commit/d8e946dfd3866380406b02ad908925c4250cc34a))
+* update dependency com.google.protobuf:protobuf-bom to v3.11.1 ([#106](https://www.github.com/googleapis/java-core/issues/106)) ([6d36434](https://www.github.com/googleapis/java-core/commit/6d364341bc5552e98590f9344b0e2d8cf4e68f0c))
+* update dependency io.grpc:grpc-bom to v1.26.0 ([#107](https://www.github.com/googleapis/java-core/issues/107)) ([fca41a7](https://www.github.com/googleapis/java-core/commit/fca41a73fb6ca42eb4014d3cec6b32cc8e97ded9))
+
 ## [1.92.0](https://www.github.com/googleapis/java-core/compare/v1.91.3...v1.92.0) (2019-12-13)
 
 
