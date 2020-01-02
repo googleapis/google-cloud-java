@@ -279,7 +279,7 @@ public abstract class BaseSystemTest {
     int allowedDeleteAttempts = 5;
     boolean deleted = false;
     while (!deleted && deleteAttempts < allowedDeleteAttempts) {
-      Thread.sleep(1000);
+      Thread.sleep(5000);
       deleted = logging().deleteLog(logId);
       deleteAttempts++;
     }
