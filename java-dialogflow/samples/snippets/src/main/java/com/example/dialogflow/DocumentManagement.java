@@ -134,7 +134,7 @@ public class DocumentManagement {
   public static void deleteDocument(String documentName) throws Exception {
     // Instantiates a client
     try (DocumentsClient documentsClient = DocumentsClient.create()) {
-      documentsClient.deleteDocumentAsync(documentName).getInitialFuture().get();
+      documentsClient.deleteDocumentAsync(documentName).get();
       System.out.format("The document has been deleted.");
     }
   }
