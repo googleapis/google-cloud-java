@@ -23,5 +23,10 @@ common_templates = gcp.CommonTemplates()
 templates = common_templates.java_library()
 s.copy(templates, excludes=[
     'README.md',
-    '.kokoro/common.cfg'
+    '.kokoro/continuous/java8-samples.cfg',
+    '.kokoro/continuous/java11-samples.cfg',
+    '.kokoro/nightly/java8-samples.cfg',
+    '.kokoro/nightly/java11-samples.cfg',
+    '.kokoro/presubmit/java8-samples.cfg',
+    '.kokoro/presubmit/java11-samples.cfg',
 ])
