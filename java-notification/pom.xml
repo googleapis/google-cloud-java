@@ -59,7 +59,7 @@
   </licenses>
   <properties>
     <site.installationModule>google-cloud-notification</site.installationModule>
-    <junit.version>4.12</junit.version>
+    <junit.version>4.13</junit.version>
     <grpc.version>1.25.0</grpc.version>
     <google.api-common.version>1.8.1</google.api-common.version>
     <api-client.version>1.30.7</api-client.version>
