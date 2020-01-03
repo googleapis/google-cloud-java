@@ -2,4 +2,8 @@
 *.iml
 target/
 __pycache__
+.project
+.settings
+.classpath
+.DS_Store
 
