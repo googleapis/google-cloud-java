@@ -101,8 +101,8 @@ Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
-[api-reference]: https://cloud.google.com/recommendations-ai/docs/apis
-[product-docs]: https://cloud.google.com/recommendations/docs
+[api-reference]: https://cloud.google.com/recommender/docs/apis
+[product-docs]: https://cloud.google.com/recommender/docs/
 [javadocs]: https://googleapis.dev/java/google-cloud-recommender/latest
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-recommender/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-recommender/java7.html
