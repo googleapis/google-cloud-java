@@ -42,10 +42,9 @@ import java.util.Random;
 import org.easymock.Capture;
 import org.easymock.CaptureType;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class TableDataWriteChannelTest {
 
@@ -66,8 +65,6 @@ public class TableDataWriteChannelTest {
   private static final LoadJobConfiguration JOB_CONFIGURATION =
       LoadJobConfiguration.of(TABLE_ID, "URI");
   private static final JobInfo JOB_INFO = JobInfo.of(JobId.of(), JOB_CONFIGURATION);
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   private BigQueryOptions options;
   private BigQueryRpcFactory rpcFactoryMock;
@@ -141,16 +138,21 @@ public class TableDataWriteChannelTest {
   }
 
   @Test
-  public void testCreateNonRetryableError() {
+  public void testCreateNonRetryableError() throws IOException {
+    RuntimeException ex = new RuntimeException("expected");
     expect(
             bigqueryRpcMock.open(
                 new com.google.api.services.bigquery.model.Job()
                     .setJobReference(JOB_INFO.getJobId().toPb())
                     .setConfiguration(LOAD_CONFIGURATION.toPb())))
-        .andThrow(new RuntimeException());
+        .andThrow(ex);
     replay(bigqueryRpcMock);
-    thrown.expect(RuntimeException.class);
-    new TableDataWriteChannel(options, JOB_INFO.getJobId(), LOAD_CONFIGURATION);
+    try (TableDataWriteChannel channel =
+        new TableDataWriteChannel(options, JOB_INFO.getJobId(), LOAD_CONFIGURATION)) {
+      Assert.fail();
+    } catch (RuntimeException expected) {
+      Assert.assertEquals("java.lang.RuntimeException: expected", expected.getMessage());
+    }
   }
 
   @Test

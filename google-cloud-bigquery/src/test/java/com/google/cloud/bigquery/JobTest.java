@@ -40,9 +40,8 @@ import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.common.collect.ImmutableList;
 import java.util.Collections;
 import org.junit.After;
-import org.junit.Rule;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.threeten.bp.Duration;
 
 public class JobTest {
@@ -84,8 +83,6 @@ public class JobTest {
   private BigQuery bigquery;
   private Job expectedJob;
   private Job job;
-
-  @Rule public final ExpectedException thrown = ExpectedException.none();
 
   private void initializeExpectedJob(int optionsCalls, JobInfo jobInfo) {
     expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
@@ -253,34 +250,6 @@ public class JobTest {
     expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock()).times(2);
     Job completedJob = expectedJob.toBuilder().setStatus(status).build();
-    // TODO(pongad): remove when we bump gax to 1.15.
-    Page<FieldValueList> emptyPage =
-        new Page<FieldValueList>() {
-          @Override
-          public boolean hasNextPage() {
-            return false;
-          }
-
-          @Override
-          public String getNextPageToken() {
-            return "";
-          }
-
-          @Override
-          public Page<FieldValueList> getNextPage() {
-            return null;
-          }
-
-          @Override
-          public Iterable<FieldValueList> iterateAll() {
-            return Collections.emptyList();
-          }
-
-          @Override
-          public Iterable<FieldValueList> getValues() {
-            return Collections.emptyList();
-          }
-        };
     QueryResponse completedQuery =
         QueryResponse.newBuilder()
             .setCompleted(true)
@@ -435,8 +404,13 @@ public class JobTest {
     expect(bigquery.getOptions()).andReturn(mockOptions);
     replay(bigquery, mockOptions);
     initializeJob();
-    thrown.expect(UnsupportedOperationException.class);
-    job.getQueryResults();
+
+    try {
+      job.getQueryResults();
+      Assert.fail();
+    } catch (UnsupportedOperationException expected) {
+      Assert.assertNotNull(expected.getMessage());
+    }
   }
 
   @Test
@@ -510,9 +484,13 @@ public class JobTest {
     expect(bigquery.getJob(JOB_INFO.getJobId(), expectedOptions)).andReturn(runningJob);
     replay(status, bigquery, clock, mockOptions);
     initializeJob();
-    thrown.expect(BigQueryException.class);
-    job.waitFor(concat(TEST_RETRY_OPTIONS, RetryOption.totalTimeout(Duration.ofMillis(3))));
-    verify(status, clock, mockOptions);
+
+    try {
+      job.waitFor(concat(TEST_RETRY_OPTIONS, RetryOption.totalTimeout(Duration.ofMillis(3))));
+      Assert.fail();
+    } catch (BigQueryException expected) {
+      Assert.assertNotNull(expected.getMessage());
+    }
   }
 
   @Test

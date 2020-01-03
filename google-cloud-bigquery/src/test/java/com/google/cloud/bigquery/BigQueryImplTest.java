@@ -58,10 +58,9 @@ import java.util.Map;
 import org.easymock.Capture;
 import org.easymock.EasyMock;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class BigQueryImplTest {
 
@@ -133,19 +132,14 @@ public class BigQueryImplTest {
           .setCreationTime(TABLE_CREATION_TIME)
           .build();
 
-  private static final ModelId MODEL_ID = ModelId.of(DATASET, MODEL);
   private static final ModelId OTHER_MODEL_ID = ModelId.of(DATASET, OTHER_MODEL);
   private static final ModelId MODEL_ID_WITH_PROJECT = ModelId.of(PROJECT, DATASET, MODEL);
 
-  private static final ModelInfo MODEL_INFO = ModelInfo.of(MODEL_ID);
   private static final ModelInfo OTHER_MODEL_INFO = ModelInfo.of(OTHER_MODEL_ID);
   private static final ModelInfo MODEL_INFO_WITH_PROJECT = ModelInfo.of(MODEL_ID_WITH_PROJECT);
 
-  private static final LoadJobConfiguration LOAD_JOB_CONFIGURATION =
-      LoadJobConfiguration.of(TABLE_ID, "URI");
   private static final LoadJobConfiguration LOAD_JOB_CONFIGURATION_WITH_PROJECT =
       LoadJobConfiguration.of(TABLE_ID_WITH_PROJECT, "URI");
-  private static final JobInfo LOAD_JOB = JobInfo.of(LOAD_JOB_CONFIGURATION);
   private static final JobInfo COMPLETE_LOAD_JOB =
       JobInfo.of(JobId.of(PROJECT, JOB), LOAD_JOB_CONFIGURATION_WITH_PROJECT);
   private static final CopyJobConfiguration COPY_JOB_CONFIGURATION =
@@ -166,16 +160,8 @@ public class BigQueryImplTest {
           .setDefaultDataset(DatasetId.of(PROJECT, DATASET))
           .setDestinationTable(TABLE_ID_WITH_PROJECT)
           .build();
-  private static final JobInfo QUERY_JOB = JobInfo.of(QUERY_JOB_CONFIGURATION);
   private static final JobInfo COMPLETE_QUERY_JOB =
       JobInfo.of(JobId.of(PROJECT, JOB), QUERY_JOB_CONFIGURATION_WITH_PROJECT);
-  private static final ExtractJobConfiguration EXTRACT_JOB_CONFIGURATION =
-      ExtractJobConfiguration.of(TABLE_ID, "URI");
-  private static final ExtractJobConfiguration EXTRACT_JOB_CONFIGURATION_WITH_PROJECT =
-      ExtractJobConfiguration.of(TABLE_ID_WITH_PROJECT, "URI");
-  private static final JobInfo EXTRACT_JOB = JobInfo.of(EXTRACT_JOB_CONFIGURATION);
-  private static final JobInfo COMPLETE_EXTRACT_JOB =
-      JobInfo.of(JobId.of(PROJECT, JOB), EXTRACT_JOB_CONFIGURATION_WITH_PROJECT);
   private static final TableCell BOOLEAN_FIELD = new TableCell().setV("false");
   private static final TableCell INTEGER_FIELD = new TableCell().setV("1");
   private static final TableRow TABLE_ROW =
@@ -429,8 +415,6 @@ public class BigQueryImplTest {
   private BigQueryRpc bigqueryRpcMock;
   private BigQuery bigquery;
 
-  @Rule public ExpectedException thrown = ExpectedException.none();
-
   private BigQueryOptions createBigQueryOptionsForProject(
       String project, BigQueryRpcFactory rpcFactory) {
     return BigQueryOptions.newBuilder()
@@ -533,8 +517,12 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     options.setThrowNotFound(true);
     bigquery = options.getService();
-    thrown.expect(BigQueryException.class);
-    bigquery.getDataset("dataset-not-found");
+    try {
+      bigquery.getDataset("dataset-not-found");
+      Assert.fail();
+    } catch (BigQueryException ex) {
+      Assert.assertNotNull(ex.getMessage());
+    }
   }
 
   @Test
@@ -817,8 +805,12 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     options.setThrowNotFound(true);
     bigquery = options.getService();
-    thrown.expect(BigQueryException.class);
-    bigquery.getTable(DATASET, "table-not-found");
+    try {
+      bigquery.getTable(DATASET, "table-not-found");
+      Assert.fail();
+    } catch (BigQueryException ex) {
+      Assert.assertNotNull(ex.getMessage());
+    }
   }
 
   @Test
@@ -1161,8 +1153,12 @@ public class BigQueryImplTest {
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
-    thrown.expect(BigQueryException.class);
-    bigquery.insertAll(request);
+    try {
+      bigquery.insertAll(request);
+      Assert.fail();
+    } catch (BigQueryException ex) {
+      Assert.assertNotNull(ex.getMessage());
+    }
   }
 
   @Test
@@ -1477,8 +1473,12 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     options.setThrowNotFound(true);
     bigquery = options.getService();
-    thrown.expect(BigQueryException.class);
-    bigquery.getJob("job-not-found");
+    try {
+      bigquery.getJob("job-not-found");
+      Assert.fail();
+    } catch (BigQueryException ex) {
+      Assert.assertNotNull(ex.getMessage());
+    }
   }
 
   @Test
@@ -1901,9 +1901,13 @@ public class BigQueryImplTest {
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
-    thrown.expect(BigQueryException.class);
-    thrown.expectMessage(exceptionMessage);
-    bigquery.getDataset(DatasetId.of(DATASET));
+
+    try {
+      bigquery.getDataset(DatasetId.of(DATASET));
+      Assert.fail();
+    } catch (BigQueryException ex) {
+      Assert.assertEquals(exceptionMessage, ex.getMessage());
+    }
   }
 
   @Test
@@ -1918,21 +1922,28 @@ public class BigQueryImplTest {
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
-    thrown.expect(BigQueryException.class);
-    thrown.expectMessage(exceptionMessage);
-    bigquery.getDataset(DATASET);
+    try {
+      bigquery.getDataset(DATASET);
+      Assert.fail();
+    } catch (BigQueryException ex) {
+      Assert.assertTrue(ex.getMessage().endsWith(exceptionMessage));
+    }
   }
 
   @Test
   public void testQueryDryRun() throws Exception {
     // https://github.com/googleapis/google-cloud-java/issues/2479
     EasyMock.replay(bigqueryRpcMock);
-    thrown.expect(UnsupportedOperationException.class);
-    options
-        .toBuilder()
-        .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
-        .build()
-        .getService()
-        .query(QueryJobConfiguration.newBuilder("foo").setDryRun(true).build());
+    try {
+      options
+          .toBuilder()
+          .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+          .build()
+          .getService()
+          .query(QueryJobConfiguration.newBuilder("foo").setDryRun(true).build());
+      Assert.fail();
+    } catch (UnsupportedOperationException ex) {
+      Assert.assertNotNull(ex.getMessage());
+    }
   }
 }

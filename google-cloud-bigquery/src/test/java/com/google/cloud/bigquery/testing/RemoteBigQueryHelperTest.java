@@ -27,9 +27,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.concurrent.ExecutionException;
 import org.easymock.EasyMock;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.threeten.bp.Duration;
 
 public class RemoteBigQueryHelperTest {
@@ -64,8 +62,6 @@ public class RemoteBigQueryHelperTest {
           + "  \"type\": \"service_account\"\n"
           + "}";
   private static final InputStream JSON_KEY_STREAM = new ByteArrayInputStream(JSON_KEY.getBytes());
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testForceDelete() throws InterruptedException, ExecutionException {
