@@ -34,6 +34,8 @@ public interface StackdriverLoggingConfigOrBuilder
    * </pre>
    *
    * <code>double sampling_ratio = 1;</code>
+   *
+   * @return The samplingRatio.
    */
   double getSamplingRatio();
 }

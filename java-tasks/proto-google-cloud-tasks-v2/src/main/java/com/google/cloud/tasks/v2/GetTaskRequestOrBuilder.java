@@ -34,6 +34,8 @@ public interface GetTaskRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface GetTaskRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -67,6 +71,8 @@ public interface GetTaskRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2.Task.View response_view = 2;</code>
+   *
+   * @return The enum numeric value on the wire for responseView.
    */
   int getResponseViewValue();
   /**
@@ -86,6 +92,8 @@ public interface GetTaskRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2.Task.View response_view = 2;</code>
+   *
+   * @return The responseView.
    */
   com.google.cloud.tasks.v2.Task.View getResponseView();
 }

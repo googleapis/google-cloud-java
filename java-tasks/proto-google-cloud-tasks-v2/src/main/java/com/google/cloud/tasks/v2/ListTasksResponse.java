@@ -43,6 +43,12 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListTasksResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -120,7 +126,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
             com.google.cloud.tasks.v2.ListTasksResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int TASKS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.tasks.v2.Task> tasks_;
   /**
@@ -198,6 +203,8 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -222,6 +229,8 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -488,7 +497,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       com.google.cloud.tasks.v2.ListTasksResponse result =
           new com.google.cloud.tasks.v2.ListTasksResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (tasksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           tasks_ = java.util.Collections.unmodifiableList(tasks_);
@@ -499,7 +507,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
         result.tasks_ = tasksBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -969,6 +976,8 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -993,6 +1002,8 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1017,6 +1028,9 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1039,6 +1053,8 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1058,6 +1074,9 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -34,6 +34,8 @@ public interface CancelLeaseRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface CancelLeaseRequestOrBuilder
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -63,6 +67,8 @@ public interface CancelLeaseRequestOrBuilder
    *
    * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the scheduleTime field is set.
    */
   boolean hasScheduleTime();
   /**
@@ -78,6 +84,8 @@ public interface CancelLeaseRequestOrBuilder
    *
    * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The scheduleTime.
    */
   com.google.protobuf.Timestamp getScheduleTime();
   /**
@@ -113,6 +121,8 @@ public interface CancelLeaseRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 3;</code>
+   *
+   * @return The enum numeric value on the wire for responseView.
    */
   int getResponseViewValue();
   /**
@@ -132,6 +142,8 @@ public interface CancelLeaseRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 3;</code>
+   *
+   * @return The responseView.
    */
   com.google.cloud.tasks.v2beta2.Task.View getResponseView();
 }

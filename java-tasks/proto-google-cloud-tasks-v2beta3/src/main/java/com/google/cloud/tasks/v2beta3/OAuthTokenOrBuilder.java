@@ -35,6 +35,8 @@ public interface OAuthTokenOrBuilder
    * </pre>
    *
    * <code>string service_account_email = 1;</code>
+   *
+   * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
   /**
@@ -49,6 +51,8 @@ public interface OAuthTokenOrBuilder
    * </pre>
    *
    * <code>string service_account_email = 1;</code>
+   *
+   * @return The bytes for serviceAccountEmail.
    */
   com.google.protobuf.ByteString getServiceAccountEmailBytes();
 
@@ -62,6 +66,8 @@ public interface OAuthTokenOrBuilder
    * </pre>
    *
    * <code>string scope = 2;</code>
+   *
+   * @return The scope.
    */
   java.lang.String getScope();
   /**
@@ -74,6 +80,8 @@ public interface OAuthTokenOrBuilder
    * </pre>
    *
    * <code>string scope = 2;</code>
+   *
+   * @return The bytes for scope.
    */
   com.google.protobuf.ByteString getScopeBytes();
 }

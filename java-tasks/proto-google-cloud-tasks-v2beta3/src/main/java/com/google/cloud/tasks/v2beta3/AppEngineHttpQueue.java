@@ -49,6 +49,12 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
   private AppEngineHttpQueue() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AppEngineHttpQueue();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -61,7 +67,6 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -136,6 +141,8 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing_override = 1;</code>
+   *
+   * @return Whether the appEngineRoutingOverride field is set.
    */
   public boolean hasAppEngineRoutingOverride() {
     return appEngineRoutingOverride_ != null;
@@ -152,6 +159,8 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing_override = 1;</code>
+   *
+   * @return The appEngineRoutingOverride.
    */
   public com.google.cloud.tasks.v2beta3.AppEngineRouting getAppEngineRoutingOverride() {
     return appEngineRoutingOverride_ == null
@@ -535,6 +544,8 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing_override = 1;</code>
+     *
+     * @return Whether the appEngineRoutingOverride field is set.
      */
     public boolean hasAppEngineRoutingOverride() {
       return appEngineRoutingOverrideBuilder_ != null || appEngineRoutingOverride_ != null;
@@ -551,6 +562,8 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing_override = 1;</code>
+     *
+     * @return The appEngineRoutingOverride.
      */
     public com.google.cloud.tasks.v2beta3.AppEngineRouting getAppEngineRoutingOverride() {
       if (appEngineRoutingOverrideBuilder_ == null) {

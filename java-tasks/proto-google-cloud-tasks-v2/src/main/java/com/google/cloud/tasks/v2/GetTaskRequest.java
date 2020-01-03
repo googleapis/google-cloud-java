@@ -43,6 +43,12 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GetTaskRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -127,6 +132,8 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -150,6 +157,8 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -182,6 +191,8 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2.Task.View response_view = 2;</code>
+   *
+   * @return The enum numeric value on the wire for responseView.
    */
   public int getResponseViewValue() {
     return responseView_;
@@ -203,6 +214,8 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2.Task.View response_view = 2;</code>
+   *
+   * @return The responseView.
    */
   public com.google.cloud.tasks.v2.Task.View getResponseView() {
     @SuppressWarnings("deprecation")
@@ -553,6 +566,8 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -576,6 +591,8 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -599,6 +616,9 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -620,6 +640,8 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -638,6 +660,9 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -668,6 +693,8 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2.Task.View response_view = 2;</code>
+     *
+     * @return The enum numeric value on the wire for responseView.
      */
     public int getResponseViewValue() {
       return responseView_;
@@ -689,6 +716,9 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2.Task.View response_view = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for responseView to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseViewValue(int value) {
       responseView_ = value;
@@ -712,6 +742,8 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2.Task.View response_view = 2;</code>
+     *
+     * @return The responseView.
      */
     public com.google.cloud.tasks.v2.Task.View getResponseView() {
       @SuppressWarnings("deprecation")
@@ -736,6 +768,9 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2.Task.View response_view = 2;</code>
+     *
+     * @param value The responseView to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseView(com.google.cloud.tasks.v2.Task.View value) {
       if (value == null) {
@@ -763,6 +798,8 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2.Task.View response_view = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResponseView() {
 

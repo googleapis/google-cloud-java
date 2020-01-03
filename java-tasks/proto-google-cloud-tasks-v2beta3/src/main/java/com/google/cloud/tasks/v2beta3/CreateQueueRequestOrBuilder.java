@@ -37,6 +37,8 @@ public interface CreateQueueRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -53,6 +55,8 @@ public interface CreateQueueRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -66,6 +70,8 @@ public interface CreateQueueRequestOrBuilder
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the queue field is set.
    */
   boolean hasQueue();
   /**
@@ -78,6 +84,8 @@ public interface CreateQueueRequestOrBuilder
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The queue.
    */
   com.google.cloud.tasks.v2beta3.Queue getQueue();
   /**

@@ -41,6 +41,12 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
   private StackdriverLoggingConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StackdriverLoggingConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -116,6 +121,8 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>double sampling_ratio = 1;</code>
+   *
+   * @return The samplingRatio.
    */
   public double getSamplingRatio() {
     return samplingRatio_;
@@ -456,6 +463,8 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>double sampling_ratio = 1;</code>
+     *
+     * @return The samplingRatio.
      */
     public double getSamplingRatio() {
       return samplingRatio_;
@@ -471,6 +480,9 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>double sampling_ratio = 1;</code>
+     *
+     * @param value The samplingRatio to set.
+     * @return This builder for chaining.
      */
     public Builder setSamplingRatio(double value) {
 
@@ -489,6 +501,8 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>double sampling_ratio = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSamplingRatio() {
 

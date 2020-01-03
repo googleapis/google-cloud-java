@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -421,7 +422,7 @@ public class CloudTasksClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockCloudTasks.addResponse(expectedResponse);
 
-    QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+    ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -444,7 +445,7 @@ public class CloudTasksClientTest {
     mockCloudTasks.addException(exception);
 
     try {
-      QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+      ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
 
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
@@ -461,7 +462,7 @@ public class CloudTasksClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockCloudTasks.addResponse(expectedResponse);
 
-    QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+    ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -486,7 +487,7 @@ public class CloudTasksClientTest {
     mockCloudTasks.addException(exception);
 
     try {
-      QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+      ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
       Policy policy = Policy.newBuilder().build();
 
       client.setIamPolicy(resource, policy);
@@ -502,7 +503,7 @@ public class CloudTasksClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockCloudTasks.addResponse(expectedResponse);
 
-    QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+    ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -527,7 +528,7 @@ public class CloudTasksClientTest {
     mockCloudTasks.addException(exception);
 
     try {
-      QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+      ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
       List<String> permissions = new ArrayList<>();
 
       client.testIamPermissions(resource, permissions);

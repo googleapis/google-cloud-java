@@ -25,7 +25,7 @@ package com.google.cloud.tasks.v2beta3;
  * HTTP request.
  * The task will be pushed to the worker as an HTTP request. If the worker
  * or the redirected worker acknowledges the task by returning a successful HTTP
- * response code ([`200` - `299`]), the task will removed from the queue. If
+ * response code ([`200` - `299`]), the task will be removed from the queue. If
  * any other HTTP response code is returned or no response is received, the
  * task will be retried according to the following:
  * * User-specified throttling: [retry configuration][google.cloud.tasks.v2beta3.Queue.retry_config],
@@ -39,7 +39,7 @@ package com.google.cloud.tasks.v2beta3;
  *     `429` (Too Many Requests), `503` (Service Unavailable), or the rate of
  *     errors is high, Cloud Tasks will use a higher backoff rate. The retry
  *     specified in the `Retry-After` HTTP response header is considered.
- *   * To prevent traffic spikes and to smooth sudden large traffic spikes,
+ *   * To prevent traffic spikes and to smooth sudden increases in traffic,
  *     dispatches ramp up slowly when the queue is newly created or idle and
  *     if large numbers of tasks suddenly become available to dispatch (due to
  *     spikes in create task rates, the queue being unpaused, or many tasks
@@ -62,6 +62,12 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     url_ = "";
     httpMethod_ = 0;
     body_ = com.google.protobuf.ByteString.EMPTY;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new HttpRequest();
   }
 
   @java.lang.Override
@@ -104,11 +110,11 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 headers_ =
                     com.google.protobuf.MapField.newMapField(
                         HeadersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
                   input.readMessage(
@@ -202,11 +208,13 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tasks.v2beta3.HttpRequest.Builder.class);
   }
 
-  private int bitField0_;
   private int authorizationHeaderCase_ = 0;
   private java.lang.Object authorizationHeader_;
 
-  public enum AuthorizationHeaderCase implements com.google.protobuf.Internal.EnumLite {
+  public enum AuthorizationHeaderCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     OAUTH_TOKEN(5),
     OIDC_TOKEN(6),
     AUTHORIZATIONHEADER_NOT_SET(0);
@@ -215,7 +223,11 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     private AuthorizationHeaderCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static AuthorizationHeaderCase valueOf(int value) {
       return forNumber(value);
@@ -259,6 +271,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string url = 1;</code>
+   *
+   * @return The url.
    */
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
@@ -285,6 +299,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string url = 1;</code>
+   *
+   * @return The bytes for url.
    */
   public com.google.protobuf.ByteString getUrlBytes() {
     java.lang.Object ref = url_;
@@ -308,6 +324,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 2;</code>
+   *
+   * @return The enum numeric value on the wire for httpMethod.
    */
   public int getHttpMethodValue() {
     return httpMethod_;
@@ -320,6 +338,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 2;</code>
+   *
+   * @return The httpMethod.
    */
   public com.google.cloud.tasks.v2beta3.HttpMethod getHttpMethod() {
     @SuppressWarnings("deprecation")
@@ -514,6 +534,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes body = 4;</code>
+   *
+   * @return The body.
    */
   public com.google.protobuf.ByteString getBody() {
     return body_;
@@ -533,6 +555,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+   *
+   * @return Whether the oauthToken field is set.
    */
   public boolean hasOauthToken() {
     return authorizationHeaderCase_ == 5;
@@ -550,6 +574,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+   *
+   * @return The oauthToken.
    */
   public com.google.cloud.tasks.v2beta3.OAuthToken getOauthToken() {
     if (authorizationHeaderCase_ == 5) {
@@ -593,6 +619,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+   *
+   * @return Whether the oidcToken field is set.
    */
   public boolean hasOidcToken() {
     return authorizationHeaderCase_ == 6;
@@ -611,6 +639,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+   *
+   * @return The oidcToken.
    */
   public com.google.cloud.tasks.v2beta3.OidcToken getOidcToken() {
     if (authorizationHeaderCase_ == 6) {
@@ -882,7 +912,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * HTTP request.
    * The task will be pushed to the worker as an HTTP request. If the worker
    * or the redirected worker acknowledges the task by returning a successful HTTP
-   * response code ([`200` - `299`]), the task will removed from the queue. If
+   * response code ([`200` - `299`]), the task will be removed from the queue. If
    * any other HTTP response code is returned or no response is received, the
    * task will be retried according to the following:
    * * User-specified throttling: [retry configuration][google.cloud.tasks.v2beta3.Queue.retry_config],
@@ -896,7 +926,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    *     `429` (Too Many Requests), `503` (Service Unavailable), or the rate of
    *     errors is high, Cloud Tasks will use a higher backoff rate. The retry
    *     specified in the `Retry-After` HTTP response header is considered.
-   *   * To prevent traffic spikes and to smooth sudden large traffic spikes,
+   *   * To prevent traffic spikes and to smooth sudden increases in traffic,
    *     dispatches ramp up slowly when the queue is newly created or idle and
    *     if large numbers of tasks suddenly become available to dispatch (due to
    *     spikes in create task rates, the queue being unpaused, or many tasks
@@ -998,7 +1028,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.tasks.v2beta3.HttpRequest result =
           new com.google.cloud.tasks.v2beta3.HttpRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.url_ = url_;
       result.httpMethod_ = httpMethod_;
       result.headers_ = internalGetHeaders();
@@ -1018,7 +1047,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
           result.authorizationHeader_ = oidcTokenBuilder_.build();
         }
       }
-      result.bitField0_ = to_bitField0_;
       result.authorizationHeaderCase_ = authorizationHeaderCase_;
       onBuilt();
       return result;
@@ -1156,6 +1184,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 1;</code>
+     *
+     * @return The url.
      */
     public java.lang.String getUrl() {
       java.lang.Object ref = url_;
@@ -1182,6 +1212,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 1;</code>
+     *
+     * @return The bytes for url.
      */
     public com.google.protobuf.ByteString getUrlBytes() {
       java.lang.Object ref = url_;
@@ -1208,6 +1240,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 1;</code>
+     *
+     * @param value The url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrl(java.lang.String value) {
       if (value == null) {
@@ -1232,6 +1267,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUrl() {
 
@@ -1253,6 +1290,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string url = 1;</code>
+     *
+     * @param value The bytes for url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1274,6 +1314,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 2;</code>
+     *
+     * @return The enum numeric value on the wire for httpMethod.
      */
     public int getHttpMethodValue() {
       return httpMethod_;
@@ -1286,6 +1328,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for httpMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setHttpMethodValue(int value) {
       httpMethod_ = value;
@@ -1300,6 +1345,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 2;</code>
+     *
+     * @return The httpMethod.
      */
     public com.google.cloud.tasks.v2beta3.HttpMethod getHttpMethod() {
       @SuppressWarnings("deprecation")
@@ -1315,6 +1362,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 2;</code>
+     *
+     * @param value The httpMethod to set.
+     * @return This builder for chaining.
      */
     public Builder setHttpMethod(com.google.cloud.tasks.v2beta3.HttpMethod value) {
       if (value == null) {
@@ -1333,6 +1383,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHttpMethod() {
 
@@ -1645,6 +1697,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes body = 4;</code>
+     *
+     * @return The body.
      */
     public com.google.protobuf.ByteString getBody() {
       return body_;
@@ -1660,6 +1714,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes body = 4;</code>
+     *
+     * @param value The body to set.
+     * @return This builder for chaining.
      */
     public Builder setBody(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1681,6 +1738,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes body = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBody() {
 
@@ -1707,6 +1766,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+     *
+     * @return Whether the oauthToken field is set.
      */
     public boolean hasOauthToken() {
       return authorizationHeaderCase_ == 5;
@@ -1724,6 +1785,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+     *
+     * @return The oauthToken.
      */
     public com.google.cloud.tasks.v2beta3.OAuthToken getOauthToken() {
       if (oauthTokenBuilder_ == null) {
@@ -1956,6 +2019,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+     *
+     * @return Whether the oidcToken field is set.
      */
     public boolean hasOidcToken() {
       return authorizationHeaderCase_ == 6;
@@ -1974,6 +2039,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+     *
+     * @return The oidcToken.
      */
     public com.google.cloud.tasks.v2beta3.OidcToken getOidcToken() {
       if (oidcTokenBuilder_ == null) {

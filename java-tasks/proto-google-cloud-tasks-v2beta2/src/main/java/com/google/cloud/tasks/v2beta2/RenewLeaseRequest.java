@@ -44,6 +44,12 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RenewLeaseRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -158,6 +163,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -181,6 +188,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -209,6 +218,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the scheduleTime field is set.
    */
   public boolean hasScheduleTime() {
     return scheduleTime_ != null;
@@ -226,6 +237,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The scheduleTime.
    */
   public com.google.protobuf.Timestamp getScheduleTime() {
     return scheduleTime_ == null
@@ -263,6 +276,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.Duration lease_duration = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the leaseDuration field is set.
    */
   public boolean hasLeaseDuration() {
     return leaseDuration_ != null;
@@ -278,6 +293,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.Duration lease_duration = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The leaseDuration.
    */
   public com.google.protobuf.Duration getLeaseDuration() {
     return leaseDuration_ == null
@@ -319,6 +336,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
+   *
+   * @return The enum numeric value on the wire for responseView.
    */
   public int getResponseViewValue() {
     return responseView_;
@@ -340,6 +359,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
+   *
+   * @return The responseView.
    */
   public com.google.cloud.tasks.v2beta2.Task.View getResponseView() {
     @SuppressWarnings("deprecation")
@@ -749,6 +770,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -772,6 +795,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -795,6 +820,9 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -816,6 +844,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -834,6 +864,9 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -865,6 +898,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the scheduleTime field is set.
      */
     public boolean hasScheduleTime() {
       return scheduleTimeBuilder_ != null || scheduleTime_ != null;
@@ -882,6 +917,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The scheduleTime.
      */
     public com.google.protobuf.Timestamp getScheduleTime() {
       if (scheduleTimeBuilder_ == null) {
@@ -1089,6 +1126,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.protobuf.Duration lease_duration = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the leaseDuration field is set.
      */
     public boolean hasLeaseDuration() {
       return leaseDurationBuilder_ != null || leaseDuration_ != null;
@@ -1104,6 +1143,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.protobuf.Duration lease_duration = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The leaseDuration.
      */
     public com.google.protobuf.Duration getLeaseDuration() {
       if (leaseDurationBuilder_ == null) {
@@ -1298,6 +1339,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
+     *
+     * @return The enum numeric value on the wire for responseView.
      */
     public int getResponseViewValue() {
       return responseView_;
@@ -1319,6 +1362,9 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for responseView to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseViewValue(int value) {
       responseView_ = value;
@@ -1342,6 +1388,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
+     *
+     * @return The responseView.
      */
     public com.google.cloud.tasks.v2beta2.Task.View getResponseView() {
       @SuppressWarnings("deprecation")
@@ -1366,6 +1414,9 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
+     *
+     * @param value The responseView to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseView(com.google.cloud.tasks.v2beta2.Task.View value) {
       if (value == null) {
@@ -1393,6 +1444,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResponseView() {
 

@@ -44,6 +44,8 @@ public interface AppEngineRoutingOrBuilder
    * </pre>
    *
    * <code>string service = 1;</code>
+   *
+   * @return The service.
    */
   java.lang.String getService();
   /**
@@ -67,6 +69,8 @@ public interface AppEngineRoutingOrBuilder
    * </pre>
    *
    * <code>string service = 1;</code>
+   *
+   * @return The bytes for service.
    */
   com.google.protobuf.ByteString getServiceBytes();
 
@@ -91,6 +95,8 @@ public interface AppEngineRoutingOrBuilder
    * </pre>
    *
    * <code>string version = 2;</code>
+   *
+   * @return The version.
    */
   java.lang.String getVersion();
   /**
@@ -114,6 +120,8 @@ public interface AppEngineRoutingOrBuilder
    * </pre>
    *
    * <code>string version = 2;</code>
+   *
+   * @return The bytes for version.
    */
   com.google.protobuf.ByteString getVersionBytes();
 
@@ -135,6 +143,8 @@ public interface AppEngineRoutingOrBuilder
    * </pre>
    *
    * <code>string instance = 3;</code>
+   *
+   * @return The instance.
    */
   java.lang.String getInstance();
   /**
@@ -155,6 +165,8 @@ public interface AppEngineRoutingOrBuilder
    * </pre>
    *
    * <code>string instance = 3;</code>
+   *
+   * @return The bytes for instance.
    */
   com.google.protobuf.ByteString getInstanceBytes();
 
@@ -210,6 +222,8 @@ public interface AppEngineRoutingOrBuilder
    * </pre>
    *
    * <code>string host = 4;</code>
+   *
+   * @return The host.
    */
   java.lang.String getHost();
   /**
@@ -264,6 +278,8 @@ public interface AppEngineRoutingOrBuilder
    * </pre>
    *
    * <code>string host = 4;</code>
+   *
+   * @return The bytes for host.
    */
   com.google.protobuf.ByteString getHostBytes();
 }

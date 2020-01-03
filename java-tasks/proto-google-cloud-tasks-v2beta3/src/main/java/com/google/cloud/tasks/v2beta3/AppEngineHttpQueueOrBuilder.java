@@ -35,6 +35,8 @@ public interface AppEngineHttpQueueOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing_override = 1;</code>
+   *
+   * @return Whether the appEngineRoutingOverride field is set.
    */
   boolean hasAppEngineRoutingOverride();
   /**
@@ -49,6 +51,8 @@ public interface AppEngineHttpQueueOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing_override = 1;</code>
+   *
+   * @return The appEngineRoutingOverride.
    */
   com.google.cloud.tasks.v2beta3.AppEngineRouting getAppEngineRoutingOverride();
   /**

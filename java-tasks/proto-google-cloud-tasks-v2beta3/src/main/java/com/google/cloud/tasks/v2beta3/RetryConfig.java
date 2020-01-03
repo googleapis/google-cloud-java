@@ -41,6 +41,12 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
   private RetryConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RetryConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -172,6 +177,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 max_attempts = 1;</code>
+   *
+   * @return The maxAttempts.
    */
   public int getMaxAttempts() {
     return maxAttempts_;
@@ -199,6 +206,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration max_retry_duration = 2;</code>
+   *
+   * @return Whether the maxRetryDuration field is set.
    */
   public boolean hasMaxRetryDuration() {
     return maxRetryDuration_ != null;
@@ -223,6 +232,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration max_retry_duration = 2;</code>
+   *
+   * @return The maxRetryDuration.
    */
   public com.google.protobuf.Duration getMaxRetryDuration() {
     return maxRetryDuration_ == null
@@ -274,6 +285,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration min_backoff = 3;</code>
+   *
+   * @return Whether the minBackoff field is set.
    */
   public boolean hasMinBackoff() {
     return minBackoff_ != null;
@@ -296,6 +309,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration min_backoff = 3;</code>
+   *
+   * @return The minBackoff.
    */
   public com.google.protobuf.Duration getMinBackoff() {
     return minBackoff_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minBackoff_;
@@ -343,6 +358,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration max_backoff = 4;</code>
+   *
+   * @return Whether the maxBackoff field is set.
    */
   public boolean hasMaxBackoff() {
     return maxBackoff_ != null;
@@ -365,6 +382,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration max_backoff = 4;</code>
+   *
+   * @return The maxBackoff.
    */
   public com.google.protobuf.Duration getMaxBackoff() {
     return maxBackoff_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxBackoff_;
@@ -422,6 +441,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 max_doublings = 5;</code>
+   *
+   * @return The maxDoublings.
    */
   public int getMaxDoublings() {
     return maxDoublings_;
@@ -860,6 +881,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_attempts = 1;</code>
+     *
+     * @return The maxAttempts.
      */
     public int getMaxAttempts() {
       return maxAttempts_;
@@ -881,6 +904,9 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_attempts = 1;</code>
+     *
+     * @param value The maxAttempts to set.
+     * @return This builder for chaining.
      */
     public Builder setMaxAttempts(int value) {
 
@@ -905,6 +931,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_attempts = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMaxAttempts() {
 
@@ -939,6 +967,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration max_retry_duration = 2;</code>
+     *
+     * @return Whether the maxRetryDuration field is set.
      */
     public boolean hasMaxRetryDuration() {
       return maxRetryDurationBuilder_ != null || maxRetryDuration_ != null;
@@ -963,6 +993,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration max_retry_duration = 2;</code>
+     *
+     * @return The maxRetryDuration.
      */
     public com.google.protobuf.Duration getMaxRetryDuration() {
       if (maxRetryDurationBuilder_ == null) {
@@ -1226,6 +1258,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration min_backoff = 3;</code>
+     *
+     * @return Whether the minBackoff field is set.
      */
     public boolean hasMinBackoff() {
       return minBackoffBuilder_ != null || minBackoff_ != null;
@@ -1248,6 +1282,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration min_backoff = 3;</code>
+     *
+     * @return The minBackoff.
      */
     public com.google.protobuf.Duration getMinBackoff() {
       if (minBackoffBuilder_ == null) {
@@ -1495,6 +1531,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration max_backoff = 4;</code>
+     *
+     * @return Whether the maxBackoff field is set.
      */
     public boolean hasMaxBackoff() {
       return maxBackoffBuilder_ != null || maxBackoff_ != null;
@@ -1517,6 +1555,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration max_backoff = 4;</code>
+     *
+     * @return The maxBackoff.
      */
     public com.google.protobuf.Duration getMaxBackoff() {
       if (maxBackoffBuilder_ == null) {
@@ -1769,6 +1809,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_doublings = 5;</code>
+     *
+     * @return The maxDoublings.
      */
     public int getMaxDoublings() {
       return maxDoublings_;
@@ -1801,6 +1843,9 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_doublings = 5;</code>
+     *
+     * @param value The maxDoublings to set.
+     * @return This builder for chaining.
      */
     public Builder setMaxDoublings(int value) {
 
@@ -1836,6 +1881,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_doublings = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMaxDoublings() {
 

@@ -36,6 +36,8 @@ public interface UpdateQueueRequestOrBuilder
    *
    * <code>.google.cloud.tasks.v2beta2.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the queue field is set.
    */
   boolean hasQueue();
   /**
@@ -51,6 +53,8 @@ public interface UpdateQueueRequestOrBuilder
    *
    * <code>.google.cloud.tasks.v2beta2.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The queue.
    */
   com.google.cloud.tasks.v2beta2.Queue getQueue();
   /**
@@ -78,6 +82,8 @@ public interface UpdateQueueRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -89,6 +95,8 @@ public interface UpdateQueueRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

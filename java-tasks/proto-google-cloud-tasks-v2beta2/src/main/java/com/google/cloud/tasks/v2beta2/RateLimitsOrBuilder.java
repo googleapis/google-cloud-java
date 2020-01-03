@@ -41,6 +41,8 @@ public interface RateLimitsOrBuilder
    * </pre>
    *
    * <code>double max_tasks_dispatched_per_second = 1;</code>
+   *
+   * @return The maxTasksDispatchedPerSecond.
    */
   double getMaxTasksDispatchedPerSecond();
 
@@ -79,6 +81,8 @@ public interface RateLimitsOrBuilder
    * </pre>
    *
    * <code>int32 max_burst_size = 2;</code>
+   *
+   * @return The maxBurstSize.
    */
   int getMaxBurstSize();
 
@@ -102,6 +106,8 @@ public interface RateLimitsOrBuilder
    * </pre>
    *
    * <code>int32 max_concurrent_tasks = 3;</code>
+   *
+   * @return The maxConcurrentTasks.
    */
   int getMaxConcurrentTasks();
 }

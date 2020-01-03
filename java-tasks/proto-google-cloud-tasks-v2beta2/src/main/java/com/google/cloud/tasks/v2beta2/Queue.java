@@ -45,6 +45,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Queue();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -344,12 +349,20 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0:
@@ -412,7 +425,10 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
   private int targetTypeCase_ = 0;
   private java.lang.Object targetType_;
 
-  public enum TargetTypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TargetTypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     APP_ENGINE_HTTP_TARGET(3),
     PULL_TARGET(4),
     TARGETTYPE_NOT_SET(0);
@@ -421,7 +437,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     private TargetTypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TargetTypeCase valueOf(int value) {
       return forNumber(value);
@@ -474,6 +494,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -509,6 +531,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -532,6 +556,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineHttpTarget app_engine_http_target = 3;</code>
+   *
+   * @return Whether the appEngineHttpTarget field is set.
    */
   public boolean hasAppEngineHttpTarget() {
     return targetTypeCase_ == 3;
@@ -545,6 +571,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineHttpTarget app_engine_http_target = 3;</code>
+   *
+   * @return The appEngineHttpTarget.
    */
   public com.google.cloud.tasks.v2beta2.AppEngineHttpTarget getAppEngineHttpTarget() {
     if (targetTypeCase_ == 3) {
@@ -580,6 +608,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.PullTarget pull_target = 4;</code>
+   *
+   * @return Whether the pullTarget field is set.
    */
   public boolean hasPullTarget() {
     return targetTypeCase_ == 4;
@@ -593,6 +623,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.PullTarget pull_target = 4;</code>
+   *
+   * @return The pullTarget.
    */
   public com.google.cloud.tasks.v2beta2.PullTarget getPullTarget() {
     if (targetTypeCase_ == 4) {
@@ -639,6 +671,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.RateLimits rate_limits = 5;</code>
+   *
+   * @return Whether the rateLimits field is set.
    */
   public boolean hasRateLimits() {
     return rateLimits_ != null;
@@ -663,6 +697,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.RateLimits rate_limits = 5;</code>
+   *
+   * @return The rateLimits.
    */
   public com.google.cloud.tasks.v2beta2.RateLimits getRateLimits() {
     return rateLimits_ == null
@@ -712,6 +748,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.RetryConfig retry_config = 6;</code>
+   *
+   * @return Whether the retryConfig field is set.
    */
   public boolean hasRetryConfig() {
     return retryConfig_ != null;
@@ -732,6 +770,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.RetryConfig retry_config = 6;</code>
+   *
+   * @return The retryConfig.
    */
   public com.google.cloud.tasks.v2beta2.RetryConfig getRetryConfig() {
     return retryConfig_ == null
@@ -774,6 +814,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Queue.State state = 7;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -791,6 +833,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Queue.State state = 7;</code>
+   *
+   * @return The state.
    */
   public com.google.cloud.tasks.v2beta2.Queue.State getState() {
     @SuppressWarnings("deprecation")
@@ -816,6 +860,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp purge_time = 8;</code>
+   *
+   * @return Whether the purgeTime field is set.
    */
   public boolean hasPurgeTime() {
     return purgeTime_ != null;
@@ -835,6 +881,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp purge_time = 8;</code>
+   *
+   * @return The purgeTime.
    */
   public com.google.protobuf.Timestamp getPurgeTime() {
     return purgeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : purgeTime_;
@@ -1383,6 +1431,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1418,6 +1468,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1453,6 +1505,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1486,6 +1541,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1516,6 +1573,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1542,6 +1602,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineHttpTarget app_engine_http_target = 3;</code>
+     *
+     * @return Whether the appEngineHttpTarget field is set.
      */
     public boolean hasAppEngineHttpTarget() {
       return targetTypeCase_ == 3;
@@ -1555,6 +1617,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineHttpTarget app_engine_http_target = 3;</code>
+     *
+     * @return The appEngineHttpTarget.
      */
     public com.google.cloud.tasks.v2beta2.AppEngineHttpTarget getAppEngineHttpTarget() {
       if (appEngineHttpTargetBuilder_ == null) {
@@ -1758,6 +1822,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.PullTarget pull_target = 4;</code>
+     *
+     * @return Whether the pullTarget field is set.
      */
     public boolean hasPullTarget() {
       return targetTypeCase_ == 4;
@@ -1771,6 +1837,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.PullTarget pull_target = 4;</code>
+     *
+     * @return The pullTarget.
      */
     public com.google.cloud.tasks.v2beta2.PullTarget getPullTarget() {
       if (pullTargetBuilder_ == null) {
@@ -1981,6 +2049,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.RateLimits rate_limits = 5;</code>
+     *
+     * @return Whether the rateLimits field is set.
      */
     public boolean hasRateLimits() {
       return rateLimitsBuilder_ != null || rateLimits_ != null;
@@ -2005,6 +2075,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.RateLimits rate_limits = 5;</code>
+     *
+     * @return The rateLimits.
      */
     public com.google.cloud.tasks.v2beta2.RateLimits getRateLimits() {
       if (rateLimitsBuilder_ == null) {
@@ -2267,6 +2339,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.RetryConfig retry_config = 6;</code>
+     *
+     * @return Whether the retryConfig field is set.
      */
     public boolean hasRetryConfig() {
       return retryConfigBuilder_ != null || retryConfig_ != null;
@@ -2287,6 +2361,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.RetryConfig retry_config = 6;</code>
+     *
+     * @return The retryConfig.
      */
     public com.google.cloud.tasks.v2beta2.RetryConfig getRetryConfig() {
       if (retryConfigBuilder_ == null) {
@@ -2513,6 +2589,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Queue.State state = 7;</code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -2530,6 +2608,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Queue.State state = 7;</code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -2549,6 +2630,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Queue.State state = 7;</code>
+     *
+     * @return The state.
      */
     public com.google.cloud.tasks.v2beta2.Queue.State getState() {
       @SuppressWarnings("deprecation")
@@ -2569,6 +2652,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Queue.State state = 7;</code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.cloud.tasks.v2beta2.Queue.State value) {
       if (value == null) {
@@ -2592,6 +2678,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Queue.State state = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 
@@ -2621,6 +2709,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp purge_time = 8;</code>
+     *
+     * @return Whether the purgeTime field is set.
      */
     public boolean hasPurgeTime() {
       return purgeTimeBuilder_ != null || purgeTime_ != null;
@@ -2640,6 +2730,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp purge_time = 8;</code>
+     *
+     * @return The purgeTime.
      */
     public com.google.protobuf.Timestamp getPurgeTime() {
       if (purgeTimeBuilder_ == null) {

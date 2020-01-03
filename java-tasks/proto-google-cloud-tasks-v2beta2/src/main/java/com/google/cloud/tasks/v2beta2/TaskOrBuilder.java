@@ -47,6 +47,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -73,6 +75,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -88,6 +92,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineHttpRequest app_engine_http_request = 3;</code>
+   *
+   * @return Whether the appEngineHttpRequest field is set.
    */
   boolean hasAppEngineHttpRequest();
   /**
@@ -102,6 +108,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineHttpRequest app_engine_http_request = 3;</code>
+   *
+   * @return The appEngineHttpRequest.
    */
   com.google.cloud.tasks.v2beta2.AppEngineHttpRequest getAppEngineHttpRequest();
   /**
@@ -129,6 +137,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.PullMessage pull_message = 4;</code>
+   *
+   * @return Whether the pullMessage field is set.
    */
   boolean hasPullMessage();
   /**
@@ -141,6 +151,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.PullMessage pull_message = 4;</code>
+   *
+   * @return The pullMessage.
    */
   com.google.cloud.tasks.v2beta2.PullMessage getPullMessage();
   /**
@@ -170,6 +182,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 5;</code>
+   *
+   * @return Whether the scheduleTime field is set.
    */
   boolean hasScheduleTime();
   /**
@@ -186,6 +200,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 5;</code>
+   *
+   * @return The scheduleTime.
    */
   com.google.protobuf.Timestamp getScheduleTime();
   /**
@@ -214,6 +230,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -225,6 +243,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -247,6 +267,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.TaskStatus status = 7;</code>
+   *
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
@@ -257,6 +279,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.TaskStatus status = 7;</code>
+   *
+   * @return The status.
    */
   com.google.cloud.tasks.v2beta2.TaskStatus getStatus();
   /**
@@ -279,6 +303,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View view = 8;</code>
+   *
+   * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
   /**
@@ -290,6 +316,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View view = 8;</code>
+   *
+   * @return The view.
    */
   com.google.cloud.tasks.v2beta2.Task.View getView();
 

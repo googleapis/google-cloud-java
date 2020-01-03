@@ -40,6 +40,12 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
   private UpdateQueueRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateQueueRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -141,6 +146,8 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.tasks.v2.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the queue field is set.
    */
   public boolean hasQueue() {
     return queue_ != null;
@@ -157,6 +164,8 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.cloud.tasks.v2.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The queue.
    */
   public com.google.cloud.tasks.v2.Queue getQueue() {
     return queue_ == null ? com.google.cloud.tasks.v2.Queue.getDefaultInstance() : queue_;
@@ -189,6 +198,8 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -202,6 +213,8 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -595,6 +608,8 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.cloud.tasks.v2.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the queue field is set.
      */
     public boolean hasQueue() {
       return queueBuilder_ != null || queue_ != null;
@@ -612,6 +627,8 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.cloud.tasks.v2.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The queue.
      */
     public com.google.cloud.tasks.v2.Queue getQueue() {
       if (queueBuilder_ == null) {
@@ -811,6 +828,8 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -824,6 +843,8 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

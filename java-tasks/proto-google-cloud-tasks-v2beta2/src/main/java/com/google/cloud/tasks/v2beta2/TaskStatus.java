@@ -40,6 +40,12 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
   private TaskStatus() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TaskStatus();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -151,6 +156,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 attempt_dispatch_count = 1;</code>
+   *
+   * @return The attemptDispatchCount.
    */
   public int getAttemptDispatchCount() {
     return attemptDispatchCount_;
@@ -167,6 +174,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 attempt_response_count = 2;</code>
+   *
+   * @return The attemptResponseCount.
    */
   public int getAttemptResponseCount() {
     return attemptResponseCount_;
@@ -185,6 +194,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
+   *
+   * @return Whether the firstAttemptStatus field is set.
    */
   public boolean hasFirstAttemptStatus() {
     return firstAttemptStatus_ != null;
@@ -200,6 +211,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
+   *
+   * @return The firstAttemptStatus.
    */
   public com.google.cloud.tasks.v2beta2.AttemptStatus getFirstAttemptStatus() {
     return firstAttemptStatus_ == null
@@ -233,6 +246,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
+   *
+   * @return Whether the lastAttemptStatus field is set.
    */
   public boolean hasLastAttemptStatus() {
     return lastAttemptStatus_ != null;
@@ -246,6 +261,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
+   *
+   * @return The lastAttemptStatus.
    */
   public com.google.cloud.tasks.v2beta2.AttemptStatus getLastAttemptStatus() {
     return lastAttemptStatus_ == null
@@ -663,6 +680,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 attempt_dispatch_count = 1;</code>
+     *
+     * @return The attemptDispatchCount.
      */
     public int getAttemptDispatchCount() {
       return attemptDispatchCount_;
@@ -677,6 +696,9 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 attempt_dispatch_count = 1;</code>
+     *
+     * @param value The attemptDispatchCount to set.
+     * @return This builder for chaining.
      */
     public Builder setAttemptDispatchCount(int value) {
 
@@ -694,6 +716,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 attempt_dispatch_count = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAttemptDispatchCount() {
 
@@ -712,6 +736,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 attempt_response_count = 2;</code>
+     *
+     * @return The attemptResponseCount.
      */
     public int getAttemptResponseCount() {
       return attemptResponseCount_;
@@ -725,6 +751,9 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 attempt_response_count = 2;</code>
+     *
+     * @param value The attemptResponseCount to set.
+     * @return This builder for chaining.
      */
     public Builder setAttemptResponseCount(int value) {
 
@@ -741,6 +770,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 attempt_response_count = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAttemptResponseCount() {
 
@@ -766,6 +797,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
+     *
+     * @return Whether the firstAttemptStatus field is set.
      */
     public boolean hasFirstAttemptStatus() {
       return firstAttemptStatusBuilder_ != null || firstAttemptStatus_ != null;
@@ -781,6 +814,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
+     *
+     * @return The firstAttemptStatus.
      */
     public com.google.cloud.tasks.v2beta2.AttemptStatus getFirstAttemptStatus() {
       if (firstAttemptStatusBuilder_ == null) {
@@ -973,6 +1008,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
+     *
+     * @return Whether the lastAttemptStatus field is set.
      */
     public boolean hasLastAttemptStatus() {
       return lastAttemptStatusBuilder_ != null || lastAttemptStatus_ != null;
@@ -986,6 +1023,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
+     *
+     * @return The lastAttemptStatus.
      */
     public com.google.cloud.tasks.v2beta2.AttemptStatus getLastAttemptStatus() {
       if (lastAttemptStatusBuilder_ == null) {

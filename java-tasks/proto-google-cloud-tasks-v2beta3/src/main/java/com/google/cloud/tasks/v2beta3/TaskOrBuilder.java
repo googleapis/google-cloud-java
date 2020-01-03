@@ -47,6 +47,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -73,6 +75,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -85,6 +89,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
+   *
+   * @return Whether the appEngineHttpRequest field is set.
    */
   boolean hasAppEngineHttpRequest();
   /**
@@ -96,6 +102,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
+   *
+   * @return The appEngineHttpRequest.
    */
   com.google.cloud.tasks.v2beta3.AppEngineHttpRequest getAppEngineHttpRequest();
   /**
@@ -119,6 +127,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+   *
+   * @return Whether the httpRequest field is set.
    */
   boolean hasHttpRequest();
   /**
@@ -130,6 +140,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+   *
+   * @return The httpRequest.
    */
   com.google.cloud.tasks.v2beta3.HttpRequest getHttpRequest();
   /**
@@ -154,6 +166,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 4;</code>
+   *
+   * @return Whether the scheduleTime field is set.
    */
   boolean hasScheduleTime();
   /**
@@ -166,6 +180,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 4;</code>
+   *
+   * @return The scheduleTime.
    */
   com.google.protobuf.Timestamp getScheduleTime();
   /**
@@ -190,6 +206,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -201,6 +219,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -248,6 +268,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+   *
+   * @return Whether the dispatchDeadline field is set.
    */
   boolean hasDispatchDeadline();
   /**
@@ -283,6 +305,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+   *
+   * @return The dispatchDeadline.
    */
   com.google.protobuf.Duration getDispatchDeadline();
   /**
@@ -331,6 +355,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>int32 dispatch_count = 6;</code>
+   *
+   * @return The dispatchCount.
    */
   int getDispatchCount();
 
@@ -342,6 +368,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>int32 response_count = 7;</code>
+   *
+   * @return The responseCount.
    */
   int getResponseCount();
 
@@ -355,6 +383,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
+   *
+   * @return Whether the firstAttempt field is set.
    */
   boolean hasFirstAttempt();
   /**
@@ -367,6 +397,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
+   *
+   * @return The firstAttempt.
    */
   com.google.cloud.tasks.v2beta3.Attempt getFirstAttempt();
   /**
@@ -390,6 +422,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Attempt last_attempt = 9;</code>
+   *
+   * @return Whether the lastAttempt field is set.
    */
   boolean hasLastAttempt();
   /**
@@ -400,6 +434,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Attempt last_attempt = 9;</code>
+   *
+   * @return The lastAttempt.
    */
   com.google.cloud.tasks.v2beta3.Attempt getLastAttempt();
   /**
@@ -422,6 +458,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Task.View view = 10;</code>
+   *
+   * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
   /**
@@ -433,6 +471,8 @@ public interface TaskOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Task.View view = 10;</code>
+   *
+   * @return The view.
    */
   com.google.cloud.tasks.v2beta3.Task.View getView();
 

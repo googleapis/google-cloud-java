@@ -44,6 +44,12 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
   private RateLimits() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RateLimits();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -133,6 +138,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>double max_dispatches_per_second = 1;</code>
+   *
+   * @return The maxDispatchesPerSecond.
    */
   public double getMaxDispatchesPerSecond() {
     return maxDispatchesPerSecond_;
@@ -175,6 +182,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 max_burst_size = 2;</code>
+   *
+   * @return The maxBurstSize.
    */
   public int getMaxBurstSize() {
     return maxBurstSize_;
@@ -199,6 +208,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 max_concurrent_dispatches = 3;</code>
+   *
+   * @return The maxConcurrentDispatches.
    */
   public int getMaxConcurrentDispatches() {
     return maxConcurrentDispatches_;
@@ -573,6 +584,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double max_dispatches_per_second = 1;</code>
+     *
+     * @return The maxDispatchesPerSecond.
      */
     public double getMaxDispatchesPerSecond() {
       return maxDispatchesPerSecond_;
@@ -592,6 +605,9 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double max_dispatches_per_second = 1;</code>
+     *
+     * @param value The maxDispatchesPerSecond to set.
+     * @return This builder for chaining.
      */
     public Builder setMaxDispatchesPerSecond(double value) {
 
@@ -614,6 +630,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double max_dispatches_per_second = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMaxDispatchesPerSecond() {
 
@@ -658,6 +676,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_burst_size = 2;</code>
+     *
+     * @return The maxBurstSize.
      */
     public int getMaxBurstSize() {
       return maxBurstSize_;
@@ -697,6 +717,9 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_burst_size = 2;</code>
+     *
+     * @param value The maxBurstSize to set.
+     * @return This builder for chaining.
      */
     public Builder setMaxBurstSize(int value) {
 
@@ -739,6 +762,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_burst_size = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMaxBurstSize() {
 
@@ -765,6 +790,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_concurrent_dispatches = 3;</code>
+     *
+     * @return The maxConcurrentDispatches.
      */
     public int getMaxConcurrentDispatches() {
       return maxConcurrentDispatches_;
@@ -786,6 +813,9 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_concurrent_dispatches = 3;</code>
+     *
+     * @param value The maxConcurrentDispatches to set.
+     * @return This builder for chaining.
      */
     public Builder setMaxConcurrentDispatches(int value) {
 
@@ -810,6 +840,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_concurrent_dispatches = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMaxConcurrentDispatches() {
 

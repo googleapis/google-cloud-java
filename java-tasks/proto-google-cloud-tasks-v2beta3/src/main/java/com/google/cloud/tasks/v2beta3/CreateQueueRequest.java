@@ -42,6 +42,12 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateQueueRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -138,6 +143,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -164,6 +171,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -189,6 +198,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the queue field is set.
    */
   public boolean hasQueue() {
     return queue_ != null;
@@ -203,6 +214,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The queue.
    */
   public com.google.cloud.tasks.v2beta3.Queue getQueue() {
     return queue_ == null ? com.google.cloud.tasks.v2beta3.Queue.getDefaultInstance() : queue_;
@@ -583,6 +596,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -609,6 +624,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -635,6 +652,9 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -659,6 +679,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -680,6 +702,9 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -708,6 +733,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the queue field is set.
      */
     public boolean hasQueue() {
       return queueBuilder_ != null || queue_ != null;
@@ -722,6 +749,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The queue.
      */
     public com.google.cloud.tasks.v2beta3.Queue getQueue() {
       if (queueBuilder_ == null) {

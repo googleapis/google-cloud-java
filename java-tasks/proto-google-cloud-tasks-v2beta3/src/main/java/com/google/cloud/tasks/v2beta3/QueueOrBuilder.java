@@ -46,6 +46,8 @@ public interface QueueOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -71,6 +73,8 @@ public interface QueueOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -84,6 +88,8 @@ public interface QueueOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
+   *
+   * @return Whether the appEngineHttpQueue field is set.
    */
   boolean hasAppEngineHttpQueue();
   /**
@@ -96,6 +102,8 @@ public interface QueueOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
+   *
+   * @return The appEngineHttpQueue.
    */
   com.google.cloud.tasks.v2beta3.AppEngineHttpQueue getAppEngineHttpQueue();
   /**
@@ -138,6 +146,8 @@ public interface QueueOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
+   *
+   * @return Whether the rateLimits field is set.
    */
   boolean hasRateLimits();
   /**
@@ -167,6 +177,8 @@ public interface QueueOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
+   *
+   * @return The rateLimits.
    */
   com.google.cloud.tasks.v2beta3.RateLimits getRateLimits();
   /**
@@ -215,6 +227,8 @@ public interface QueueOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.RetryConfig retry_config = 5;</code>
+   *
+   * @return Whether the retryConfig field is set.
    */
   boolean hasRetryConfig();
   /**
@@ -233,6 +247,8 @@ public interface QueueOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.RetryConfig retry_config = 5;</code>
+   *
+   * @return The retryConfig.
    */
   com.google.cloud.tasks.v2beta3.RetryConfig getRetryConfig();
   /**
@@ -267,6 +283,8 @@ public interface QueueOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue.State state = 6;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -282,6 +300,8 @@ public interface QueueOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue.State state = 6;</code>
+   *
+   * @return The state.
    */
   com.google.cloud.tasks.v2beta3.Queue.State getState();
 
@@ -300,6 +320,8 @@ public interface QueueOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp purge_time = 7;</code>
+   *
+   * @return Whether the purgeTime field is set.
    */
   boolean hasPurgeTime();
   /**
@@ -317,6 +339,8 @@ public interface QueueOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp purge_time = 7;</code>
+   *
+   * @return The purgeTime.
    */
   com.google.protobuf.Timestamp getPurgeTime();
   /**
@@ -348,6 +372,8 @@ public interface QueueOrBuilder
    *
    * <code>.google.cloud.tasks.v2beta3.StackdriverLoggingConfig stackdriver_logging_config = 10;
    * </code>
+   *
+   * @return Whether the stackdriverLoggingConfig field is set.
    */
   boolean hasStackdriverLoggingConfig();
   /**
@@ -361,6 +387,8 @@ public interface QueueOrBuilder
    *
    * <code>.google.cloud.tasks.v2beta3.StackdriverLoggingConfig stackdriver_logging_config = 10;
    * </code>
+   *
+   * @return The stackdriverLoggingConfig.
    */
   com.google.cloud.tasks.v2beta3.StackdriverLoggingConfig getStackdriverLoggingConfig();
   /**

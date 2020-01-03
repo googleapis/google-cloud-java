@@ -38,6 +38,8 @@ public interface RateLimitsOrBuilder
    * </pre>
    *
    * <code>double max_dispatches_per_second = 1;</code>
+   *
+   * @return The maxDispatchesPerSecond.
    */
   double getMaxDispatchesPerSecond();
 
@@ -76,6 +78,8 @@ public interface RateLimitsOrBuilder
    * </pre>
    *
    * <code>int32 max_burst_size = 2;</code>
+   *
+   * @return The maxBurstSize.
    */
   int getMaxBurstSize();
 
@@ -96,6 +100,8 @@ public interface RateLimitsOrBuilder
    * </pre>
    *
    * <code>int32 max_concurrent_dispatches = 3;</code>
+   *
+   * @return The maxConcurrentDispatches.
    */
   int getMaxConcurrentDispatches();
 }

@@ -34,6 +34,8 @@ public interface LeaseTasksRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface LeaseTasksRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -64,6 +68,8 @@ public interface LeaseTasksRequestOrBuilder
    * </pre>
    *
    * <code>int32 max_tasks = 2;</code>
+   *
+   * @return The maxTasks.
    */
   int getMaxTasks();
 
@@ -90,6 +96,8 @@ public interface LeaseTasksRequestOrBuilder
    *
    * <code>.google.protobuf.Duration lease_duration = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the leaseDuration field is set.
    */
   boolean hasLeaseDuration();
   /**
@@ -115,6 +123,8 @@ public interface LeaseTasksRequestOrBuilder
    *
    * <code>.google.protobuf.Duration lease_duration = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The leaseDuration.
    */
   com.google.protobuf.Duration getLeaseDuration();
   /**
@@ -160,6 +170,8 @@ public interface LeaseTasksRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
+   *
+   * @return The enum numeric value on the wire for responseView.
    */
   int getResponseViewValue();
   /**
@@ -179,6 +191,8 @@ public interface LeaseTasksRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
+   *
+   * @return The responseView.
    */
   com.google.cloud.tasks.v2beta2.Task.View getResponseView();
 
@@ -210,6 +224,8 @@ public interface LeaseTasksRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -240,6 +256,8 @@ public interface LeaseTasksRequestOrBuilder
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 }

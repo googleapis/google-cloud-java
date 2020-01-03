@@ -33,6 +33,8 @@ public interface TaskStatusOrBuilder
    * </pre>
    *
    * <code>int32 attempt_dispatch_count = 1;</code>
+   *
+   * @return The attemptDispatchCount.
    */
   int getAttemptDispatchCount();
 
@@ -45,6 +47,8 @@ public interface TaskStatusOrBuilder
    * </pre>
    *
    * <code>int32 attempt_response_count = 2;</code>
+   *
+   * @return The attemptResponseCount.
    */
   int getAttemptResponseCount();
 
@@ -59,6 +63,8 @@ public interface TaskStatusOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
+   *
+   * @return Whether the firstAttemptStatus field is set.
    */
   boolean hasFirstAttemptStatus();
   /**
@@ -72,6 +78,8 @@ public interface TaskStatusOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
+   *
+   * @return The firstAttemptStatus.
    */
   com.google.cloud.tasks.v2beta2.AttemptStatus getFirstAttemptStatus();
   /**
@@ -97,6 +105,8 @@ public interface TaskStatusOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
+   *
+   * @return Whether the lastAttemptStatus field is set.
    */
   boolean hasLastAttemptStatus();
   /**
@@ -108,6 +118,8 @@ public interface TaskStatusOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
+   *
+   * @return The lastAttemptStatus.
    */
   com.google.cloud.tasks.v2beta2.AttemptStatus getLastAttemptStatus();
   /**

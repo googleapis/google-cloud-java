@@ -37,6 +37,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>string url = 1;</code>
+   *
+   * @return The url.
    */
   java.lang.String getUrl();
   /**
@@ -53,6 +55,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>string url = 1;</code>
+   *
+   * @return The bytes for url.
    */
   com.google.protobuf.ByteString getUrlBytes();
 
@@ -64,6 +68,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 2;</code>
+   *
+   * @return The enum numeric value on the wire for httpMethod.
    */
   int getHttpMethodValue();
   /**
@@ -74,6 +80,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 2;</code>
+   *
+   * @return The httpMethod.
    */
   com.google.cloud.tasks.v2beta3.HttpMethod getHttpMethod();
 
@@ -242,6 +250,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>bytes body = 4;</code>
+   *
+   * @return The body.
    */
   com.google.protobuf.ByteString getBody();
 
@@ -258,6 +268,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+   *
+   * @return Whether the oauthToken field is set.
    */
   boolean hasOauthToken();
   /**
@@ -273,6 +285,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+   *
+   * @return The oauthToken.
    */
   com.google.cloud.tasks.v2beta3.OAuthToken getOauthToken();
   /**
@@ -305,6 +319,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+   *
+   * @return Whether the oidcToken field is set.
    */
   boolean hasOidcToken();
   /**
@@ -321,6 +337,8 @@ public interface HttpRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+   *
+   * @return The oidcToken.
    */
   com.google.cloud.tasks.v2beta3.OidcToken getOidcToken();
   /**

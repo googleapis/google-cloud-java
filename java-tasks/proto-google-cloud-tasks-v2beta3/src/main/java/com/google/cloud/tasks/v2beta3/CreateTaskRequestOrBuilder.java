@@ -35,6 +35,8 @@ public interface CreateTaskRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -49,6 +51,8 @@ public interface CreateTaskRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -88,6 +92,8 @@ public interface CreateTaskRequestOrBuilder
    *
    * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the task field is set.
    */
   boolean hasTask();
   /**
@@ -126,6 +132,8 @@ public interface CreateTaskRequestOrBuilder
    *
    * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The task.
    */
   com.google.cloud.tasks.v2beta3.Task getTask();
   /**
@@ -184,6 +192,8 @@ public interface CreateTaskRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 3;</code>
+   *
+   * @return The enum numeric value on the wire for responseView.
    */
   int getResponseViewValue();
   /**
@@ -203,6 +213,8 @@ public interface CreateTaskRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 3;</code>
+   *
+   * @return The responseView.
    */
   com.google.cloud.tasks.v2beta3.Task.View getResponseView();
 }

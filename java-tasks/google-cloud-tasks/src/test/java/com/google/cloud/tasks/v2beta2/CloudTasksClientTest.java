@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -423,7 +424,7 @@ public class CloudTasksClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockCloudTasks.addResponse(expectedResponse);
 
-    QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+    ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -446,7 +447,7 @@ public class CloudTasksClientTest {
     mockCloudTasks.addException(exception);
 
     try {
-      QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+      ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
 
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
@@ -463,7 +464,7 @@ public class CloudTasksClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockCloudTasks.addResponse(expectedResponse);
 
-    QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+    ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -488,7 +489,7 @@ public class CloudTasksClientTest {
     mockCloudTasks.addException(exception);
 
     try {
-      QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+      ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
       Policy policy = Policy.newBuilder().build();
 
       client.setIamPolicy(resource, policy);
@@ -504,7 +505,7 @@ public class CloudTasksClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockCloudTasks.addResponse(expectedResponse);
 
-    QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+    ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -529,7 +530,7 @@ public class CloudTasksClientTest {
     mockCloudTasks.addException(exception);
 
     try {
-      QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+      ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
       List<String> permissions = new ArrayList<>();
 
       client.testIamPermissions(resource, permissions);
@@ -696,6 +697,47 @@ public class CloudTasksClientTest {
       TaskName name = TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]");
 
       client.deleteTask(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void leaseTasksTest() {
+    LeaseTasksResponse expectedResponse = LeaseTasksResponse.newBuilder().build();
+    mockCloudTasks.addResponse(expectedResponse);
+
+    QueueName parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+    Duration leaseDuration = Duration.newBuilder().build();
+
+    LeaseTasksResponse actualResponse = client.leaseTasks(parent, leaseDuration);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    LeaseTasksRequest actualRequest = (LeaseTasksRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, QueueName.parse(actualRequest.getParent()));
+    Assert.assertEquals(leaseDuration, actualRequest.getLeaseDuration());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void leaseTasksExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockCloudTasks.addException(exception);
+
+    try {
+      QueueName parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+      Duration leaseDuration = Duration.newBuilder().build();
+
+      client.leaseTasks(parent, leaseDuration);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

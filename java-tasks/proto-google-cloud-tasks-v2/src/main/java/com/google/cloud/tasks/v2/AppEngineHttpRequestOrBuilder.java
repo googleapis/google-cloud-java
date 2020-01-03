@@ -40,6 +40,8 @@ public interface AppEngineHttpRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2.HttpMethod http_method = 1;</code>
+   *
+   * @return The enum numeric value on the wire for httpMethod.
    */
   int getHttpMethodValue();
   /**
@@ -59,6 +61,8 @@ public interface AppEngineHttpRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2.HttpMethod http_method = 1;</code>
+   *
+   * @return The httpMethod.
    */
   com.google.cloud.tasks.v2.HttpMethod getHttpMethod();
 
@@ -74,6 +78,8 @@ public interface AppEngineHttpRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2.AppEngineRouting app_engine_routing = 2;</code>
+   *
+   * @return Whether the appEngineRouting field is set.
    */
   boolean hasAppEngineRouting();
   /**
@@ -88,6 +94,8 @@ public interface AppEngineHttpRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2.AppEngineRouting app_engine_routing = 2;</code>
+   *
+   * @return The appEngineRouting.
    */
   com.google.cloud.tasks.v2.AppEngineRouting getAppEngineRouting();
   /**
@@ -117,6 +125,8 @@ public interface AppEngineHttpRequestOrBuilder
    * </pre>
    *
    * <code>string relative_uri = 3;</code>
+   *
+   * @return The relativeUri.
    */
   java.lang.String getRelativeUri();
   /**
@@ -131,6 +141,8 @@ public interface AppEngineHttpRequestOrBuilder
    * </pre>
    *
    * <code>string relative_uri = 3;</code>
+   *
+   * @return The bytes for relativeUri.
    */
   com.google.protobuf.ByteString getRelativeUriBytes();
 
@@ -165,7 +177,7 @@ public interface AppEngineHttpRequestOrBuilder
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
    * [request
-   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * headers](https://cloud.google.com/tasks/docs/creating-appengine-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
@@ -207,7 +219,7 @@ public interface AppEngineHttpRequestOrBuilder
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
    * [request
-   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * headers](https://cloud.google.com/tasks/docs/creating-appengine-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
@@ -252,7 +264,7 @@ public interface AppEngineHttpRequestOrBuilder
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
    * [request
-   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * headers](https://cloud.google.com/tasks/docs/creating-appengine-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
@@ -294,7 +306,7 @@ public interface AppEngineHttpRequestOrBuilder
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
    * [request
-   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * headers](https://cloud.google.com/tasks/docs/creating-appengine-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
@@ -336,7 +348,7 @@ public interface AppEngineHttpRequestOrBuilder
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
    * [request
-   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * headers](https://cloud.google.com/tasks/docs/creating-appengine-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
@@ -358,6 +370,8 @@ public interface AppEngineHttpRequestOrBuilder
    * </pre>
    *
    * <code>bytes body = 5;</code>
+   *
+   * @return The body.
    */
   com.google.protobuf.ByteString getBody();
 }

@@ -46,6 +46,12 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PullMessage();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -125,6 +130,8 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes payload = 1;</code>
+   *
+   * @return The payload.
    */
   public com.google.protobuf.ByteString getPayload() {
     return payload_;
@@ -154,6 +161,8 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string tag = 2;</code>
+   *
+   * @return The tag.
    */
   public java.lang.String getTag() {
     java.lang.Object ref = tag_;
@@ -188,6 +197,8 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string tag = 2;</code>
+   *
+   * @return The bytes for tag.
    */
   public com.google.protobuf.ByteString getTagBytes() {
     java.lang.Object ref = tag_;
@@ -544,6 +555,8 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes payload = 1;</code>
+     *
+     * @return The payload.
      */
     public com.google.protobuf.ByteString getPayload() {
       return payload_;
@@ -556,6 +569,9 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes payload = 1;</code>
+     *
+     * @param value The payload to set.
+     * @return This builder for chaining.
      */
     public Builder setPayload(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -574,6 +590,8 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes payload = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPayload() {
 
@@ -605,6 +623,8 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag = 2;</code>
+     *
+     * @return The tag.
      */
     public java.lang.String getTag() {
       java.lang.Object ref = tag_;
@@ -639,6 +659,8 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag = 2;</code>
+     *
+     * @return The bytes for tag.
      */
     public com.google.protobuf.ByteString getTagBytes() {
       java.lang.Object ref = tag_;
@@ -673,6 +695,9 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag = 2;</code>
+     *
+     * @param value The tag to set.
+     * @return This builder for chaining.
      */
     public Builder setTag(java.lang.String value) {
       if (value == null) {
@@ -705,6 +730,8 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTag() {
 
@@ -734,6 +761,9 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string tag = 2;</code>
+     *
+     * @param value The bytes for tag to set.
+     * @return This builder for chaining.
      */
     public Builder setTagBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

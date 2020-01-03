@@ -46,6 +46,12 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new OAuthToken();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,7 +64,6 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -131,6 +136,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string service_account_email = 1;</code>
+   *
+   * @return The serviceAccountEmail.
    */
   public java.lang.String getServiceAccountEmail() {
     java.lang.Object ref = serviceAccountEmail_;
@@ -155,6 +162,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string service_account_email = 1;</code>
+   *
+   * @return The bytes for serviceAccountEmail.
    */
   public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
     java.lang.Object ref = serviceAccountEmail_;
@@ -180,6 +189,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string scope = 2;</code>
+   *
+   * @return The scope.
    */
   public java.lang.String getScope() {
     java.lang.Object ref = scope_;
@@ -202,6 +213,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string scope = 2;</code>
+   *
+   * @return The bytes for scope.
    */
   public com.google.protobuf.ByteString getScopeBytes() {
     java.lang.Object ref = scope_;
@@ -560,6 +573,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
+     *
+     * @return The serviceAccountEmail.
      */
     public java.lang.String getServiceAccountEmail() {
       java.lang.Object ref = serviceAccountEmail_;
@@ -584,6 +599,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
+     *
+     * @return The bytes for serviceAccountEmail.
      */
     public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
       java.lang.Object ref = serviceAccountEmail_;
@@ -608,6 +625,9 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
+     *
+     * @param value The serviceAccountEmail to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceAccountEmail(java.lang.String value) {
       if (value == null) {
@@ -630,6 +650,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearServiceAccountEmail() {
 
@@ -649,6 +671,9 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
+     *
+     * @param value The bytes for serviceAccountEmail to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceAccountEmailBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -672,6 +697,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string scope = 2;</code>
+     *
+     * @return The scope.
      */
     public java.lang.String getScope() {
       java.lang.Object ref = scope_;
@@ -694,6 +721,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string scope = 2;</code>
+     *
+     * @return The bytes for scope.
      */
     public com.google.protobuf.ByteString getScopeBytes() {
       java.lang.Object ref = scope_;
@@ -716,6 +745,9 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string scope = 2;</code>
+     *
+     * @param value The scope to set.
+     * @return This builder for chaining.
      */
     public Builder setScope(java.lang.String value) {
       if (value == null) {
@@ -736,6 +768,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string scope = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearScope() {
 
@@ -753,6 +787,9 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string scope = 2;</code>
+     *
+     * @param value The bytes for scope to set.
+     * @return This builder for chaining.
      */
     public Builder setScopeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

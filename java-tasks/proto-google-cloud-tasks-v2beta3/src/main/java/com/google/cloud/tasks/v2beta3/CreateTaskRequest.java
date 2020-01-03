@@ -43,6 +43,12 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateTaskRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -144,6 +149,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -168,6 +175,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -219,6 +228,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the task field is set.
    */
   public boolean hasTask() {
     return task_ != null;
@@ -259,6 +270,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The task.
    */
   public com.google.cloud.tasks.v2beta3.Task getTask() {
     return task_ == null ? com.google.cloud.tasks.v2beta3.Task.getDefaultInstance() : task_;
@@ -323,6 +336,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 3;</code>
+   *
+   * @return The enum numeric value on the wire for responseView.
    */
   public int getResponseViewValue() {
     return responseView_;
@@ -344,6 +359,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 3;</code>
+   *
+   * @return The responseView.
    */
   public com.google.cloud.tasks.v2beta3.Task.View getResponseView() {
     @SuppressWarnings("deprecation")
@@ -725,6 +742,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -749,6 +768,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -773,6 +794,9 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -795,6 +819,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -814,6 +840,9 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -868,6 +897,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the task field is set.
      */
     public boolean hasTask() {
       return taskBuilder_ != null || task_ != null;
@@ -908,6 +939,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The task.
      */
     public com.google.cloud.tasks.v2beta3.Task getTask() {
       if (taskBuilder_ == null) {
@@ -1271,6 +1304,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 3;</code>
+     *
+     * @return The enum numeric value on the wire for responseView.
      */
     public int getResponseViewValue() {
       return responseView_;
@@ -1292,6 +1327,9 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for responseView to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseViewValue(int value) {
       responseView_ = value;
@@ -1315,6 +1353,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 3;</code>
+     *
+     * @return The responseView.
      */
     public com.google.cloud.tasks.v2beta3.Task.View getResponseView() {
       @SuppressWarnings("deprecation")
@@ -1339,6 +1379,9 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 3;</code>
+     *
+     * @param value The responseView to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseView(com.google.cloud.tasks.v2beta3.Task.View value) {
       if (value == null) {
@@ -1366,6 +1409,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResponseView() {
 

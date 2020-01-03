@@ -44,6 +44,12 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LeaseTasksRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -155,6 +160,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -178,6 +185,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -207,6 +216,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>int32 max_tasks = 2;</code>
+   *
+   * @return The maxTasks.
    */
   public int getMaxTasks() {
     return maxTasks_;
@@ -237,6 +248,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.Duration lease_duration = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the leaseDuration field is set.
    */
   public boolean hasLeaseDuration() {
     return leaseDuration_ != null;
@@ -264,6 +277,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.Duration lease_duration = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The leaseDuration.
    */
   public com.google.protobuf.Duration getLeaseDuration() {
     return leaseDuration_ == null
@@ -317,6 +332,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
+   *
+   * @return The enum numeric value on the wire for responseView.
    */
   public int getResponseViewValue() {
     return responseView_;
@@ -338,6 +355,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
+   *
+   * @return The responseView.
    */
   public com.google.cloud.tasks.v2beta2.Task.View getResponseView() {
     @SuppressWarnings("deprecation")
@@ -376,6 +395,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The filter.
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -416,6 +437,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string filter = 5;</code>
+   *
+   * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
@@ -832,6 +855,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -855,6 +880,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -878,6 +905,9 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -899,6 +929,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -917,6 +949,9 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -944,6 +979,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 max_tasks = 2;</code>
+     *
+     * @return The maxTasks.
      */
     public int getMaxTasks() {
       return maxTasks_;
@@ -962,6 +999,9 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 max_tasks = 2;</code>
+     *
+     * @param value The maxTasks to set.
+     * @return This builder for chaining.
      */
     public Builder setMaxTasks(int value) {
 
@@ -983,6 +1023,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>int32 max_tasks = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMaxTasks() {
 
@@ -1020,6 +1062,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.protobuf.Duration lease_duration = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the leaseDuration field is set.
      */
     public boolean hasLeaseDuration() {
       return leaseDurationBuilder_ != null || leaseDuration_ != null;
@@ -1047,6 +1091,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.protobuf.Duration lease_duration = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The leaseDuration.
      */
     public com.google.protobuf.Duration getLeaseDuration() {
       if (leaseDurationBuilder_ == null) {
@@ -1325,6 +1371,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
+     *
+     * @return The enum numeric value on the wire for responseView.
      */
     public int getResponseViewValue() {
       return responseView_;
@@ -1346,6 +1394,9 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for responseView to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseViewValue(int value) {
       responseView_ = value;
@@ -1369,6 +1420,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
+     *
+     * @return The responseView.
      */
     public com.google.cloud.tasks.v2beta2.Task.View getResponseView() {
       @SuppressWarnings("deprecation")
@@ -1393,6 +1446,9 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
+     *
+     * @param value The responseView to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseView(com.google.cloud.tasks.v2beta2.Task.View value) {
       if (value == null) {
@@ -1420,6 +1476,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearResponseView() {
 
@@ -1457,6 +1515,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string filter = 5;</code>
+     *
+     * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -1497,6 +1557,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string filter = 5;</code>
+     *
+     * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
@@ -1537,6 +1599,9 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string filter = 5;</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
@@ -1575,6 +1640,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string filter = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilter() {
 
@@ -1610,6 +1677,9 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string filter = 5;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

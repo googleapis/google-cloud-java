@@ -40,6 +40,8 @@ public interface AppEngineHttpRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.HttpMethod http_method = 1;</code>
+   *
+   * @return The enum numeric value on the wire for httpMethod.
    */
   int getHttpMethodValue();
   /**
@@ -59,6 +61,8 @@ public interface AppEngineHttpRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.HttpMethod http_method = 1;</code>
+   *
+   * @return The httpMethod.
    */
   com.google.cloud.tasks.v2beta2.HttpMethod getHttpMethod();
 
@@ -74,6 +78,8 @@ public interface AppEngineHttpRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing = 2;</code>
+   *
+   * @return Whether the appEngineRouting field is set.
    */
   boolean hasAppEngineRouting();
   /**
@@ -88,6 +94,8 @@ public interface AppEngineHttpRequestOrBuilder
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing = 2;</code>
+   *
+   * @return The appEngineRouting.
    */
   com.google.cloud.tasks.v2beta2.AppEngineRouting getAppEngineRouting();
   /**
@@ -117,6 +125,8 @@ public interface AppEngineHttpRequestOrBuilder
    * </pre>
    *
    * <code>string relative_url = 3;</code>
+   *
+   * @return The relativeUrl.
    */
   java.lang.String getRelativeUrl();
   /**
@@ -131,6 +141,8 @@ public interface AppEngineHttpRequestOrBuilder
    * </pre>
    *
    * <code>string relative_url = 3;</code>
+   *
+   * @return The bytes for relativeUrl.
    */
   com.google.protobuf.ByteString getRelativeUrlBytes();
 
@@ -360,6 +372,8 @@ public interface AppEngineHttpRequestOrBuilder
    * </pre>
    *
    * <code>bytes payload = 5;</code>
+   *
+   * @return The payload.
    */
   com.google.protobuf.ByteString getPayload();
 }

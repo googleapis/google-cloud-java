@@ -40,6 +40,8 @@ public interface RetryConfigOrBuilder
    * </pre>
    *
    * <code>int32 max_attempts = 1;</code>
+   *
+   * @return The maxAttempts.
    */
   int getMaxAttempts();
 
@@ -63,6 +65,8 @@ public interface RetryConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration max_retry_duration = 2;</code>
+   *
+   * @return Whether the maxRetryDuration field is set.
    */
   boolean hasMaxRetryDuration();
   /**
@@ -85,6 +89,8 @@ public interface RetryConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration max_retry_duration = 2;</code>
+   *
+   * @return The maxRetryDuration.
    */
   com.google.protobuf.Duration getMaxRetryDuration();
   /**
@@ -128,6 +134,8 @@ public interface RetryConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration min_backoff = 3;</code>
+   *
+   * @return Whether the minBackoff field is set.
    */
   boolean hasMinBackoff();
   /**
@@ -148,6 +156,8 @@ public interface RetryConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration min_backoff = 3;</code>
+   *
+   * @return The minBackoff.
    */
   com.google.protobuf.Duration getMinBackoff();
   /**
@@ -189,6 +199,8 @@ public interface RetryConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration max_backoff = 4;</code>
+   *
+   * @return Whether the maxBackoff field is set.
    */
   boolean hasMaxBackoff();
   /**
@@ -209,6 +221,8 @@ public interface RetryConfigOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration max_backoff = 4;</code>
+   *
+   * @return The maxBackoff.
    */
   com.google.protobuf.Duration getMaxBackoff();
   /**
@@ -260,6 +274,8 @@ public interface RetryConfigOrBuilder
    * </pre>
    *
    * <code>int32 max_doublings = 5;</code>
+   *
+   * @return The maxDoublings.
    */
   int getMaxDoublings();
 }

@@ -24,6 +24,28 @@ service = 'tasks'
 versions = ['v2beta2', 'v2beta3', 'v2']
 config_pattern = '/google/cloud/tasks/artman_cloudtasks_{version}.yaml'
 
+GET_IAM_POLICY = """
+  public final Policy getIamPolicy(QueueName queueName) {
+    return getIamPolicy((ResourceName) queueName);
+  }
+"""
+GET_IAM_POLICY_PREVIOUS = r'(\s+public final Policy getIamPolicy\(GetIamPolicyRequest request\) {\n\s+return .*\n\s+})'
+
+SET_IAM_POLICY = """
+  public final Policy setIamPolicy(QueueName queue, Policy policy) {
+    return setIamPolicy((ResourceName) queue, policy);
+  }
+"""
+SET_IAM_POLICY_PREVIOUS = r'(\s+public final Policy setIamPolicy\(SetIamPolicyRequest request\) {\n\s+return .*\n\s+})'
+
+TEST_IAM_POLICY = """
+  public final TestIamPermissionsResponse testIamPermissions(
+      QueueName queue, List<String> permissions) {
+    return testIamPermissions((ResourceName) queue, permissions);
+  }
+"""
+TEST_IAM_POLICY_PREVIOUS = r'(\spublic final TestIamPermissionsResponse testIamPermissions\(TestIamPermissionsRequest request\) {\n\s+return .*\n\s+})'
+
 for version in versions:
     library = gapic.java_library(
         service=service,
@@ -34,6 +56,22 @@ for version in versions:
     package_name = f'com.google.cloud.{service}.{version}'
     java.fix_proto_headers(library / f'proto-google-cloud-{service}-{version}')
     java.fix_grpc_headers(library / f'grpc-google-cloud-{service}-{version}', package_name)
+
+    s.replace(
+        library / f'gapic-google-cloud-{service}-{version}/src/**/CloudTasksClient.java',
+        GET_IAM_POLICY_PREVIOUS,
+        "\g<1>\n\n" + GET_IAM_POLICY
+    )
+    s.replace(
+        library / f'gapic-google-cloud-{service}-{version}/src/**/CloudTasksClient.java',
+        SET_IAM_POLICY_PREVIOUS,
+        "\g<1>\n\n" + SET_IAM_POLICY
+    )
+    s.replace(
+        library / f'gapic-google-cloud-{service}-{version}/src/**/CloudTasksClient.java',
+        TEST_IAM_POLICY_PREVIOUS,
+        "\g<1>\n\n" + TEST_IAM_POLICY
+    )
 
     s.copy(library / f'gapic-google-cloud-{service}-{version}/src', f'google-cloud-{service}/src')
     s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'grpc-google-cloud-{service}-{version}/src')

@@ -25,6 +25,7 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.tasks.v2beta2.stub.CloudTasksStub;
 import com.google.cloud.tasks.v2beta2.stub.CloudTasksStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -1132,7 +1133,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Policy response = cloudTasksClient.getIamPolicy(resource);
    * }
    * </code></pre>
@@ -1141,7 +1142,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(QueueName resource) {
+  public final Policy getIamPolicy(ResourceName resource) {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
@@ -1164,7 +1165,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Policy response = cloudTasksClient.getIamPolicy(resource.toString());
    * }
    * </code></pre>
@@ -1193,7 +1194,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
    *     .build();
@@ -1206,6 +1207,10 @@ public class CloudTasksClient implements BackgroundResource {
    */
   public final Policy getIamPolicy(GetIamPolicyRequest request) {
     return getIamPolicyCallable().call(request);
+  }
+
+  public final Policy getIamPolicy(QueueName queueName) {
+    return getIamPolicy((ResourceName) queueName);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1222,7 +1227,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
    *     .build();
@@ -1253,7 +1258,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = cloudTasksClient.setIamPolicy(resource, policy);
    * }
@@ -1266,7 +1271,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(QueueName resource, Policy policy) {
+  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
@@ -1293,7 +1298,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = cloudTasksClient.setIamPolicy(resource.toString(), policy);
    * }
@@ -1330,7 +1335,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -1345,6 +1350,10 @@ public class CloudTasksClient implements BackgroundResource {
    */
   public final Policy setIamPolicy(SetIamPolicyRequest request) {
     return setIamPolicyCallable().call(request);
+  }
+
+  public final Policy setIamPolicy(QueueName queue, Policy policy) {
+    return setIamPolicy((ResourceName) queue, policy);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1364,7 +1373,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -1394,7 +1403,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsResponse response = cloudTasksClient.testIamPermissions(resource, permissions);
    * }
@@ -1408,7 +1417,7 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      QueueName resource, List<String> permissions) {
+      ResourceName resource, List<String> permissions) {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
@@ -1432,7 +1441,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   QueueName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsResponse response = cloudTasksClient.testIamPermissions(resource.toString(), permissions);
    * }
@@ -1470,7 +1479,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -1487,6 +1496,11 @@ public class CloudTasksClient implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
+  public final TestIamPermissionsResponse testIamPermissions(
+      QueueName queue, List<String> permissions) {
+    return testIamPermissions((ResourceName) queue, permissions);
+  }
+
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns permissions that a caller has on a [Queue][google.cloud.tasks.v2beta2.Queue]. If the
@@ -1501,7 +1515,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -2050,6 +2064,125 @@ public class CloudTasksClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteTaskRequest, Empty> deleteTaskCallable() {
     return stub.deleteTaskCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Leases tasks from a pull queue for
+   * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+   *
+   * <p>This method is invoked by the worker to obtain a lease. The worker must acknowledge the task
+   * via [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] after they have
+   * performed the work associated with the task.
+   *
+   * <p>The [payload][google.cloud.tasks.v2beta2.PullMessage.payload] is intended to store data that
+   * the worker needs to perform the work associated with the task. To return the payloads in the
+   * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse], set
+   * [response_view][google.cloud.tasks.v2beta2.LeaseTasksRequest.response_view] to
+   * [FULL][google.cloud.tasks.v2beta2.Task.View.FULL].
+   *
+   * <p>A maximum of 10 qps of [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks]
+   * requests are allowed per queue. [RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] is
+   * returned when this limit is exceeded. [RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED]
+   * is also returned when
+   * [max_tasks_dispatched_per_second][google.cloud.tasks.v2beta2.RateLimits.max_tasks_dispatched_per_second]
+   * is exceeded.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   QueueName parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   Duration leaseDuration = Duration.newBuilder().build();
+   *   LeaseTasksResponse response = cloudTasksClient.leaseTasks(parent, leaseDuration);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The queue name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+   * @param leaseDuration Required. The duration of the lease.
+   *     <p>Each task returned in the [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will
+   *     have its [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] set to the current
+   *     time plus the `lease_duration`. The task is leased until its
+   *     [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]; thus, the task will not be
+   *     returned to another [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call
+   *     before its [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
+   *     <p>After the worker has successfully finished the work associated with the task, the worker
+   *     must call via [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask]
+   *     before the [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]. Otherwise the
+   *     task will be returned to a later
+   *     [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so that another worker
+   *     can retry it.
+   *     <p>The maximum lease duration is 1 week. `lease_duration` will be truncated to the nearest
+   *     second.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LeaseTasksResponse leaseTasks(QueueName parent, Duration leaseDuration) {
+
+    LeaseTasksRequest request =
+        LeaseTasksRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setLeaseDuration(leaseDuration)
+            .build();
+    return leaseTasks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Leases tasks from a pull queue for
+   * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+   *
+   * <p>This method is invoked by the worker to obtain a lease. The worker must acknowledge the task
+   * via [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] after they have
+   * performed the work associated with the task.
+   *
+   * <p>The [payload][google.cloud.tasks.v2beta2.PullMessage.payload] is intended to store data that
+   * the worker needs to perform the work associated with the task. To return the payloads in the
+   * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse], set
+   * [response_view][google.cloud.tasks.v2beta2.LeaseTasksRequest.response_view] to
+   * [FULL][google.cloud.tasks.v2beta2.Task.View.FULL].
+   *
+   * <p>A maximum of 10 qps of [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks]
+   * requests are allowed per queue. [RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] is
+   * returned when this limit is exceeded. [RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED]
+   * is also returned when
+   * [max_tasks_dispatched_per_second][google.cloud.tasks.v2beta2.RateLimits.max_tasks_dispatched_per_second]
+   * is exceeded.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   QueueName parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   Duration leaseDuration = Duration.newBuilder().build();
+   *   LeaseTasksResponse response = cloudTasksClient.leaseTasks(parent.toString(), leaseDuration);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The queue name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+   * @param leaseDuration Required. The duration of the lease.
+   *     <p>Each task returned in the [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will
+   *     have its [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] set to the current
+   *     time plus the `lease_duration`. The task is leased until its
+   *     [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]; thus, the task will not be
+   *     returned to another [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call
+   *     before its [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
+   *     <p>After the worker has successfully finished the work associated with the task, the worker
+   *     must call via [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask]
+   *     before the [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]. Otherwise the
+   *     task will be returned to a later
+   *     [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so that another worker
+   *     can retry it.
+   *     <p>The maximum lease duration is 1 week. `lease_duration` will be truncated to the nearest
+   *     second.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LeaseTasksResponse leaseTasks(String parent, Duration leaseDuration) {
+
+    LeaseTasksRequest request =
+        LeaseTasksRequest.newBuilder().setParent(parent).setLeaseDuration(leaseDuration).build();
+    return leaseTasks(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

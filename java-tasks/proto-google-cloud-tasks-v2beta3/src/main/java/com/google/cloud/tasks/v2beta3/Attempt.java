@@ -40,6 +40,12 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
   private Attempt() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Attempt();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -168,6 +173,8 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
+   *
+   * @return Whether the scheduleTime field is set.
    */
   public boolean hasScheduleTime() {
     return scheduleTime_ != null;
@@ -181,6 +188,8 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
+   *
+   * @return The scheduleTime.
    */
   public com.google.protobuf.Timestamp getScheduleTime() {
     return scheduleTime_ == null
@@ -212,6 +221,8 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp dispatch_time = 2;</code>
+   *
+   * @return Whether the dispatchTime field is set.
    */
   public boolean hasDispatchTime() {
     return dispatchTime_ != null;
@@ -225,6 +236,8 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp dispatch_time = 2;</code>
+   *
+   * @return The dispatchTime.
    */
   public com.google.protobuf.Timestamp getDispatchTime() {
     return dispatchTime_ == null
@@ -256,6 +269,8 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp response_time = 3;</code>
+   *
+   * @return Whether the responseTime field is set.
    */
   public boolean hasResponseTime() {
     return responseTime_ != null;
@@ -269,6 +284,8 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp response_time = 3;</code>
+   *
+   * @return The responseTime.
    */
   public com.google.protobuf.Timestamp getResponseTime() {
     return responseTime_ == null
@@ -301,6 +318,8 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.rpc.Status response_status = 4;</code>
+   *
+   * @return Whether the responseStatus field is set.
    */
   public boolean hasResponseStatus() {
     return responseStatus_ != null;
@@ -315,6 +334,8 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.rpc.Status response_status = 4;</code>
+   *
+   * @return The responseStatus.
    */
   public com.google.rpc.Status getResponseStatus() {
     return responseStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : responseStatus_;
@@ -760,6 +781,8 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
+     *
+     * @return Whether the scheduleTime field is set.
      */
     public boolean hasScheduleTime() {
       return scheduleTimeBuilder_ != null || scheduleTime_ != null;
@@ -773,6 +796,8 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
+     *
+     * @return The scheduleTime.
      */
     public com.google.protobuf.Timestamp getScheduleTime() {
       if (scheduleTimeBuilder_ == null) {
@@ -950,6 +975,8 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dispatch_time = 2;</code>
+     *
+     * @return Whether the dispatchTime field is set.
      */
     public boolean hasDispatchTime() {
       return dispatchTimeBuilder_ != null || dispatchTime_ != null;
@@ -963,6 +990,8 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dispatch_time = 2;</code>
+     *
+     * @return The dispatchTime.
      */
     public com.google.protobuf.Timestamp getDispatchTime() {
       if (dispatchTimeBuilder_ == null) {
@@ -1140,6 +1169,8 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp response_time = 3;</code>
+     *
+     * @return Whether the responseTime field is set.
      */
     public boolean hasResponseTime() {
       return responseTimeBuilder_ != null || responseTime_ != null;
@@ -1153,6 +1184,8 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp response_time = 3;</code>
+     *
+     * @return The responseTime.
      */
     public com.google.protobuf.Timestamp getResponseTime() {
       if (responseTimeBuilder_ == null) {
@@ -1329,6 +1362,8 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.rpc.Status response_status = 4;</code>
+     *
+     * @return Whether the responseStatus field is set.
      */
     public boolean hasResponseStatus() {
       return responseStatusBuilder_ != null || responseStatus_ != null;
@@ -1343,6 +1378,8 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.rpc.Status response_status = 4;</code>
+     *
+     * @return The responseStatus.
      */
     public com.google.rpc.Status getResponseStatus() {
       if (responseStatusBuilder_ == null) {
