@@ -71,7 +71,7 @@
     <protobuf.version>3.11.1</protobuf.version>
     <threeten.version>1.4.0</threeten.version>
     <google.api-common.version>1.8.1</google.api-common.version>
-    <junit.version>4.12</junit.version>
+    <junit.version>4.13</junit.version>
   </properties>
 
   <dependencyManagement>
