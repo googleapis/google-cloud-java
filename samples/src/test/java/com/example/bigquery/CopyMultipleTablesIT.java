@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,16 +21,19 @@ import static junit.framework.TestCase.assertNotNull;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class ExtractTableToJsonIT {
+public class CopyMultipleTablesIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
-  private static final String GCS_BUCKET = System.getenv("GCS_BUCKET");
+  private static final String BIGQUERY_DATASET_NAME = System.getenv("BIGQUERY_DATASET_NAME");
+  private static final String BIGQUERY_TABLE1 = System.getenv("BIGQUERY_TABLE1");
+  private static final String BIGQUERY_TABLE2 = System.getenv("BIGQUERY_TABLE2");
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -40,7 +43,9 @@ public class ExtractTableToJsonIT {
 
   @BeforeClass
   public static void checkRequirements() {
-    requireEnvVar("GCS_BUCKET");
+    requireEnvVar("BIGQUERY_DATASET_NAME");
+    requireEnvVar("BIGQUERY_TABLE1");
+    requireEnvVar("BIGQUERY_TABLE2");
   }
 
   @Before
@@ -56,15 +61,13 @@ public class ExtractTableToJsonIT {
   }
 
   @Test
-  public void testExtractTableToJson() {
-    String projectId = "bigquery-public-data";
-    String datasetName = "samples";
-    String tableName = "shakespeare";
-    String destinationUri = "gs://" + GCS_BUCKET + "/extractTest.csv";
+  public void testCopyMultipleTables() {
+    // Create a new destination table for each test since existing table cannot be overwritten
+    String generatedTableName =
+        "gcloud_test_table_temp_" + UUID.randomUUID().toString().replace('-', '_');
+    CreateTable.createTable(BIGQUERY_DATASET_NAME, generatedTableName, null);
 
-    // Extract table content to GCS in CSV format
-    ExtractTableToJson.extractTableToJson(projectId, datasetName, tableName, destinationUri);
-    assertThat(bout.toString())
-        .contains("Table export successful. Check in GCS bucket for the CSV file.");
+    CopyMultipleTables.copyMultipleTables(BIGQUERY_DATASET_NAME, generatedTableName);
+    assertThat(bout.toString()).contains("Table copied successfully.");
   }
 }

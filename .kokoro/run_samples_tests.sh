@@ -30,7 +30,10 @@ mvn -v
 # Setup required env variables
 export GOOGLE_CLOUD_PROJECT=java-docs-samples-testing
 export GOOGLE_APPLICATION_CREDENTIALS=${KOKORO_GFILE_DIR}/service-acct.json
+export BIGQUERY_DATASET_NAME=bigquery_test_dataset
 export GCS_BUCKET=java-docs-samples-testing
+export BIGQUERY_TABLE1=table1
+export BIGQUERY_TABLE2=table2
 
 # Activate service account
 gcloud auth activate-service-account \
