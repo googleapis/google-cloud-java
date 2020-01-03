@@ -41,7 +41,7 @@ public final class LegacySQLTypeName extends StringEnumValue {
       };
 
   private static final StringEnumType<LegacySQLTypeName> type =
-      new StringEnumType(LegacySQLTypeName.class, CONSTRUCTOR);
+      new StringEnumType<LegacySQLTypeName>(LegacySQLTypeName.class, CONSTRUCTOR);
 
   /** Variable-length binary data. */
   public static final LegacySQLTypeName BYTES =

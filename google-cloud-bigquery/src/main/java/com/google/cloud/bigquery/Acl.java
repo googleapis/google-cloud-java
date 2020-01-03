@@ -56,7 +56,8 @@ public final class Acl implements Serializable {
           }
         };
 
-    private static final StringEnumType<Role> type = new StringEnumType(Role.class, CONSTRUCTOR);
+    private static final StringEnumType<Role> type =
+        new StringEnumType<Role>(Role.class, CONSTRUCTOR);
 
     /** Can read, query, copy or export tables in the dataset. */
     public static final Role READER = type.createAndRegister("READER");

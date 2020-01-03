@@ -21,7 +21,6 @@ import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.JobStatistics2;
 import com.google.api.services.bigquery.model.JobStatistics3;
 import com.google.api.services.bigquery.model.JobStatistics4;
-import com.google.api.services.bigquery.model.ScriptStackFrame;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import com.google.common.base.Function;
@@ -352,7 +351,7 @@ public abstract class JobStatistics implements Serializable {
           };
 
       private static final StringEnumType<StatementType> type =
-          new StringEnumType(StatementType.class, CONSTRUCTOR);
+          new StringEnumType<StatementType>(StatementType.class, CONSTRUCTOR);
 
       public static final StatementType SELECT = type.createAndRegister("SELECT");
       public static final StatementType UPDATE = type.createAndRegister("UPDATE");

@@ -47,7 +47,8 @@ public class JobStatus implements Serializable {
           }
         };
 
-    private static final StringEnumType<State> type = new StringEnumType(State.class, CONSTRUCTOR);
+    private static final StringEnumType<State> type =
+        new StringEnumType<State>(State.class, CONSTRUCTOR);
 
     /** The BigQuery Job is waiting to be executed. */
     public static final State PENDING = type.createAndRegister("PENDING");

@@ -40,7 +40,8 @@ public abstract class TableDefinition implements Serializable {
           }
         };
 
-    private static final StringEnumType<Type> type = new StringEnumType(Type.class, CONSTRUCTOR);
+    private static final StringEnumType<Type> type =
+        new StringEnumType<Type>(Type.class, CONSTRUCTOR);
 
     /**
      * A normal BigQuery table. Instances of {@code TableDefinition} for this type are implemented
