@@ -288,7 +288,9 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
    * Output only. The format of the attestation data.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+   * <code>
+   * .google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for format.
    */
@@ -302,7 +304,9 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
    * Output only. The format of the attestation data.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+   * <code>
+   * .google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The format.
    */
@@ -325,7 +329,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
    * operation was performed.
    * </pre>
    *
-   * <code>bytes content = 5;</code>
+   * <code>bytes content = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The content.
    */
@@ -680,7 +684,9 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * Output only. The format of the attestation data.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+     * <code>
+     * .google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The enum numeric value on the wire for format.
      */
@@ -694,7 +700,9 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * Output only. The format of the attestation data.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+     * <code>
+     * .google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The enum numeric value on the wire for format to set.
      * @return This builder for chaining.
@@ -711,7 +719,9 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * Output only. The format of the attestation data.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+     * <code>
+     * .google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The format.
      */
@@ -730,7 +740,9 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * Output only. The format of the attestation data.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+     * <code>
+     * .google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The format to set.
      * @return This builder for chaining.
@@ -752,7 +764,9 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * Output only. The format of the attestation data.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+     * <code>
+     * .google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -772,7 +786,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * operation was performed.
      * </pre>
      *
-     * <code>bytes content = 5;</code>
+     * <code>bytes content = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The content.
      */
@@ -787,7 +801,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * operation was performed.
      * </pre>
      *
-     * <code>bytes content = 5;</code>
+     * <code>bytes content = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The content to set.
      * @return This builder for chaining.
@@ -809,7 +823,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * operation was performed.
      * </pre>
      *
-     * <code>bytes content = 5;</code>
+     * <code>bytes content = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */

@@ -171,7 +171,9 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3;</code>
+   * <code>
+   * .google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The enum numeric value on the wire for algorithm.
    */
@@ -189,7 +191,9 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3;</code>
+   * <code>
+   * .google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The algorithm.
    */
@@ -649,7 +653,9 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3;</code>
+     * <code>
+     * .google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The enum numeric value on the wire for algorithm.
      */
@@ -667,7 +673,9 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3;</code>
+     * <code>
+     * .google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The enum numeric value on the wire for algorithm to set.
      * @return This builder for chaining.
@@ -688,7 +696,9 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3;</code>
+     * <code>
+     * .google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The algorithm.
      */
@@ -711,7 +721,9 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3;</code>
+     * <code>
+     * .google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The algorithm to set.
      * @return This builder for chaining.
@@ -737,7 +749,9 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3;</code>
+     * <code>
+     * .google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return This builder for chaining.
      */

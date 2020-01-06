@@ -61,7 +61,9 @@ public interface CryptoKeyVersionTemplateOrBuilder
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3;</code>
+   * <code>
+   * .google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The enum numeric value on the wire for algorithm.
    */
@@ -77,7 +79,9 @@ public interface CryptoKeyVersionTemplateOrBuilder
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3;</code>
+   * <code>
+   * .google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The algorithm.
    */

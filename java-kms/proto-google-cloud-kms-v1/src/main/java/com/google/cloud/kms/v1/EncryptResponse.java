@@ -123,7 +123,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption. Check
+   * this field to verify that the intended resource was used for encryption.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -145,7 +146,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption. Check
+   * this field to verify that the intended resource was used for encryption.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -516,7 +518,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption. Check
+     * this field to verify that the intended resource was used for encryption.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -538,7 +541,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption. Check
+     * this field to verify that the intended resource was used for encryption.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -560,7 +564,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption. Check
+     * this field to verify that the intended resource was used for encryption.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -581,7 +586,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption. Check
+     * this field to verify that the intended resource was used for encryption.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -598,7 +604,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption. Check
+     * this field to verify that the intended resource was used for encryption.
      * </pre>
      *
      * <code>string name = 1;</code>

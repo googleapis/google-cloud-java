@@ -150,7 +150,9 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
    * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -173,7 +175,9 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
    * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -195,13 +199,13 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
+   * Optional. Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
    * response.  Further [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
    * including the [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token] in a subsequent
    * request.  If unspecified, the server will pick an appropriate default.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -215,11 +219,11 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional pagination token, returned earlier via
+   * Optional. Optional pagination token, returned earlier via
    * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token].
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -238,11 +242,11 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional pagination token, returned earlier via
+   * Optional. Optional pagination token, returned earlier via
    * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token].
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -264,10 +268,13 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Only include resources that match the filter in the response.
+   * Optional. Only include resources that match the filter in the response. For
+   * more information, see
+   * [Sorting and filtering list
+   * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -286,10 +293,13 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Only include resources that match the filter in the response.
+   * Optional. Only include resources that match the filter in the response. For
+   * more information, see
+   * [Sorting and filtering list
+   * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -312,10 +322,12 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. Specify how the results should be sorted. If not specified, the
-   * results will be sorted in the default order.
+   * results will be sorted in the default order.  For more information, see
+   * [Sorting and filtering list
+   * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The orderBy.
    */
@@ -335,10 +347,12 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. Specify how the results should be sorted. If not specified, the
-   * results will be sorted in the default order.
+   * results will be sorted in the default order.  For more information, see
+   * [Sorting and filtering list
+   * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for orderBy.
    */
@@ -742,7 +756,9 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -765,7 +781,9 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -788,7 +806,9 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -810,7 +830,9 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -828,7 +850,9 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -849,13 +873,13 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
+     * Optional. Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
      * response.  Further [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
      * including the [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token] in a subsequent
      * request.  If unspecified, the server will pick an appropriate default.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -866,13 +890,13 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
+     * Optional. Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
      * response.  Further [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
      * including the [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token] in a subsequent
      * request.  If unspecified, the server will pick an appropriate default.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -887,13 +911,13 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
+     * Optional. Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
      * response.  Further [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
      * including the [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token] in a subsequent
      * request.  If unspecified, the server will pick an appropriate default.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -909,11 +933,11 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional pagination token, returned earlier via
+     * Optional. Optional pagination token, returned earlier via
      * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token].
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -932,11 +956,11 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional pagination token, returned earlier via
+     * Optional. Optional pagination token, returned earlier via
      * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token].
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -955,11 +979,11 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional pagination token, returned earlier via
+     * Optional. Optional pagination token, returned earlier via
      * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token].
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -977,11 +1001,11 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional pagination token, returned earlier via
+     * Optional. Optional pagination token, returned earlier via
      * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token].
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -995,11 +1019,11 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional pagination token, returned earlier via
+     * Optional. Optional pagination token, returned earlier via
      * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token].
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
@@ -1020,10 +1044,13 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Only include resources that match the filter in the response.
+     * Optional. Only include resources that match the filter in the response. For
+     * more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The filter.
      */
@@ -1042,10 +1069,13 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Only include resources that match the filter in the response.
+     * Optional. Only include resources that match the filter in the response. For
+     * more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for filter.
      */
@@ -1064,10 +1094,13 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Only include resources that match the filter in the response.
+     * Optional. Only include resources that match the filter in the response. For
+     * more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -1085,10 +1118,13 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Only include resources that match the filter in the response.
+     * Optional. Only include resources that match the filter in the response. For
+     * more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1102,10 +1138,13 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Only include resources that match the filter in the response.
+     * Optional. Only include resources that match the filter in the response. For
+     * more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -1127,10 +1166,12 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Specify how the results should be sorted. If not specified, the
-     * results will be sorted in the default order.
+     * results will be sorted in the default order.  For more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The orderBy.
      */
@@ -1150,10 +1191,12 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Specify how the results should be sorted. If not specified, the
-     * results will be sorted in the default order.
+     * results will be sorted in the default order.  For more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for orderBy.
      */
@@ -1173,10 +1216,12 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Specify how the results should be sorted. If not specified, the
-     * results will be sorted in the default order.
+     * results will be sorted in the default order.  For more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The orderBy to set.
      * @return This builder for chaining.
@@ -1195,10 +1240,12 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Specify how the results should be sorted. If not specified, the
-     * results will be sorted in the default order.
+     * results will be sorted in the default order.  For more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1213,10 +1260,12 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Specify how the results should be sorted. If not specified, the
-     * results will be sorted in the default order.
+     * results will be sorted in the default order.  For more information, see
+     * [Sorting and filtering list
+     * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for orderBy to set.
      * @return This builder for chaining.

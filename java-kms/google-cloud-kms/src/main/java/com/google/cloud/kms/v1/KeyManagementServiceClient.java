@@ -48,7 +48,8 @@ import javax.annotation.Generated;
  * following objects:
  *
  * <p>&#42; [KeyRing][google.cloud.kms.v1.KeyRing] &#42; [CryptoKey][google.cloud.kms.v1.CryptoKey]
- * &#42; [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+ * &#42; [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] &#42;
+ * [ImportJob][google.cloud.kms.v1.ImportJob]
  *
  * <p>If you are using manual gRPC libraries, see [Using gRPC with Cloud
  * KMS](https://cloud.google.com/kms/docs/grpc).
@@ -716,7 +717,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The [name][google.cloud.kms.v1.KeyRing.name] of the
+   * @param name Required. The [name][google.cloud.kms.v1.KeyRing.name] of the
    *     [KeyRing][google.cloud.kms.v1.KeyRing] to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -740,7 +741,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The [name][google.cloud.kms.v1.KeyRing.name] of the
+   * @param name Required. The [name][google.cloud.kms.v1.KeyRing.name] of the
    *     [KeyRing][google.cloud.kms.v1.KeyRing] to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -808,7 +809,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The [name][google.cloud.kms.v1.ImportJob.name] of the
+   * @param name Required. The [name][google.cloud.kms.v1.ImportJob.name] of the
    *     [ImportJob][google.cloud.kms.v1.ImportJob] to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -832,7 +833,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The [name][google.cloud.kms.v1.ImportJob.name] of the
+   * @param name Required. The [name][google.cloud.kms.v1.ImportJob.name] of the
    *     [ImportJob][google.cloud.kms.v1.ImportJob] to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -902,7 +903,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The [name][google.cloud.kms.v1.CryptoKey.name] of the
+   * @param name Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
    *     [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -928,7 +929,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The [name][google.cloud.kms.v1.CryptoKey.name] of the
+   * @param name Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
    *     [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1000,7 +1001,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   * @param name Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
    *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1026,7 +1027,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   * @param name Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
    *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1102,7 +1103,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;/locations/&#42;`.
    * @param keyRingId Required. It must be unique within a location and match the regular expression
    *     `[a-zA-Z0-9_-]{1,63}`
-   * @param keyRing A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+   * @param keyRing Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final KeyRing createKeyRing(LocationName parent, String keyRingId, KeyRing keyRing) {
@@ -1135,7 +1136,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;/locations/&#42;`.
    * @param keyRingId Required. It must be unique within a location and match the regular expression
    *     `[a-zA-Z0-9_-]{1,63}`
-   * @param keyRing A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+   * @param keyRing Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final KeyRing createKeyRing(String parent, String keyRingId, KeyRing keyRing) {
@@ -1395,7 +1396,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     with the [CryptoKeys][google.cloud.kms.v1.CryptoKey].
    * @param cryptoKeyId Required. It must be unique within a KeyRing and match the regular
    *     expression `[a-zA-Z0-9_-]{1,63}`
-   * @param cryptoKey A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+   * @param cryptoKey Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field
+   *     values.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CryptoKey createCryptoKey(
@@ -1447,7 +1449,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     with the [CryptoKeys][google.cloud.kms.v1.CryptoKey].
    * @param cryptoKeyId Required. It must be unique within a KeyRing and match the regular
    *     expression `[a-zA-Z0-9_-]{1,63}`
-   * @param cryptoKey A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+   * @param cryptoKey Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field
+   *     values.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CryptoKey createCryptoKey(String parent, String cryptoKeyId, CryptoKey cryptoKey) {
@@ -1572,8 +1575,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @param parent Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
    *     [CryptoKey][google.cloud.kms.v1.CryptoKey] associated with the
    *     [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
-   * @param cryptoKeyVersion A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial
-   *     field values.
+   * @param cryptoKeyVersion Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   *     with initial field values.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CryptoKeyVersion createCryptoKeyVersion(
@@ -1609,8 +1612,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @param parent Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
    *     [CryptoKey][google.cloud.kms.v1.CryptoKey] associated with the
    *     [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
-   * @param cryptoKeyVersion A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial
-   *     field values.
+   * @param cryptoKeyVersion Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   *     with initial field values.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CryptoKeyVersion createCryptoKeyVersion(
@@ -1762,8 +1765,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param cryptoKey [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
-   * @param updateMask Required list of fields to be updated in this request.
+   * @param cryptoKey Required. [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
+   * @param updateMask Required. List of fields to be updated in this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CryptoKey updateCryptoKey(CryptoKey cryptoKey, FieldMask updateMask) {
@@ -1847,9 +1850,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param cryptoKeyVersion [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated
-   *     values.
-   * @param updateMask Required list of fields to be updated in this request.
+   * @param cryptoKeyVersion Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   *     updated values.
+   * @param updateMask Required. List of fields to be updated in this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CryptoKeyVersion updateCryptoKeyVersion(
@@ -2196,8 +2199,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
-   * @param cryptoKeyVersionId The id of the child
+   * @param name Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
+   *     update.
+   * @param cryptoKeyVersionId Required. The id of the child
    *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2229,8 +2233,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
-   * @param cryptoKeyVersionId The id of the child
+   * @param name Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
+   *     update.
+   * @param cryptoKeyVersionId Required. The id of the child
    *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2327,8 +2332,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-   *     to destroy.
+   * @param name Required. The resource name of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CryptoKeyVersion destroyCryptoKeyVersion(CryptoKeyVersionName name) {
@@ -2366,8 +2371,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-   *     to destroy.
+   * @param name Required. The resource name of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CryptoKeyVersion destroyCryptoKeyVersion(String name) {
@@ -2469,8 +2474,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-   *     to restore.
+   * @param name Required. The resource name of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CryptoKeyVersion restoreCryptoKeyVersion(CryptoKeyVersionName name) {
@@ -2502,8 +2507,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-   *     to restore.
+   * @param name Required. The resource name of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CryptoKeyVersion restoreCryptoKeyVersion(String name) {
@@ -2589,7 +2594,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   * @param name Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
    *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2616,7 +2621,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   * @param name Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
    *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2922,6 +2927,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
+   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -2953,6 +2960,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
+   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -2981,6 +2990,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
+   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -3005,6 +3016,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
    *
    * <p>Sample code:
    *

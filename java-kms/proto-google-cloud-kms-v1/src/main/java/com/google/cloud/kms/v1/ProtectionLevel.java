@@ -60,6 +60,16 @@ public enum ProtectionLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HSM = 2;</code>
    */
   HSM(2),
+  /**
+   *
+   *
+   * <pre>
+   * Crypto operations are performed by an external key manager.
+   * </pre>
+   *
+   * <code>EXTERNAL = 3;</code>
+   */
+  EXTERNAL(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -93,6 +103,16 @@ public enum ProtectionLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HSM = 2;</code>
    */
   public static final int HSM_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Crypto operations are performed by an external key manager.
+   * </pre>
+   *
+   * <code>EXTERNAL = 3;</code>
+   */
+  public static final int EXTERNAL_VALUE = 3;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -124,6 +144,8 @@ public enum ProtectionLevel implements com.google.protobuf.ProtocolMessageEnum {
         return SOFTWARE;
       case 2:
         return HSM;
+      case 3:
+        return EXTERNAL;
       default:
         return null;
     }

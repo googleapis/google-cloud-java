@@ -30,7 +30,9 @@ public interface KeyOperationAttestationOrBuilder
    * Output only. The format of the attestation data.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+   * <code>
+   * .google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for format.
    */
@@ -42,7 +44,9 @@ public interface KeyOperationAttestationOrBuilder
    * Output only. The format of the attestation data.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4;</code>
+   * <code>
+   * .google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat format = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The format.
    */
@@ -56,7 +60,7 @@ public interface KeyOperationAttestationOrBuilder
    * operation was performed.
    * </pre>
    *
-   * <code>bytes content = 5;</code>
+   * <code>bytes content = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The content.
    */

@@ -149,7 +149,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -172,7 +174,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -198,7 +202,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
-   * <code>string crypto_key_id = 2;</code>
+   * <code>string crypto_key_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The cryptoKeyId.
    */
@@ -221,7 +225,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
-   * <code>string crypto_key_id = 2;</code>
+   * <code>string crypto_key_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for cryptoKeyId.
    */
@@ -243,10 +247,11 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+   * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the cryptoKey field is set.
    */
@@ -257,10 +262,11 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+   * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The cryptoKey.
    */
@@ -271,10 +277,11 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+   * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.kms.v1.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
     return getCryptoKey();
@@ -685,7 +692,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -708,7 +717,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -731,7 +742,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -753,7 +766,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -771,7 +786,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -796,7 +813,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string crypto_key_id = 2;</code>
+     * <code>string crypto_key_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The cryptoKeyId.
      */
@@ -819,7 +836,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string crypto_key_id = 2;</code>
+     * <code>string crypto_key_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for cryptoKeyId.
      */
@@ -842,7 +859,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string crypto_key_id = 2;</code>
+     * <code>string crypto_key_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The cryptoKeyId to set.
      * @return This builder for chaining.
@@ -864,7 +881,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string crypto_key_id = 2;</code>
+     * <code>string crypto_key_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -882,7 +899,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string crypto_key_id = 2;</code>
+     * <code>string crypto_key_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for cryptoKeyId to set.
      * @return This builder for chaining.
@@ -908,10 +925,12 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>
+     * .google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the cryptoKey field is set.
      */
@@ -922,10 +941,12 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>
+     * .google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The cryptoKey.
      */
@@ -942,10 +963,12 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>
+     * .google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setCryptoKey(com.google.cloud.kms.v1.CryptoKey value) {
       if (cryptoKeyBuilder_ == null) {
@@ -964,10 +987,12 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>
+     * .google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setCryptoKey(com.google.cloud.kms.v1.CryptoKey.Builder builderForValue) {
       if (cryptoKeyBuilder_ == null) {
@@ -983,10 +1008,12 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>
+     * .google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeCryptoKey(com.google.cloud.kms.v1.CryptoKey value) {
       if (cryptoKeyBuilder_ == null) {
@@ -1009,10 +1036,12 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>
+     * .google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearCryptoKey() {
       if (cryptoKeyBuilder_ == null) {
@@ -1029,10 +1058,12 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>
+     * .google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.kms.v1.CryptoKey.Builder getCryptoKeyBuilder() {
 
@@ -1043,10 +1074,12 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>
+     * .google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.kms.v1.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
       if (cryptoKeyBuilder_ != null) {
@@ -1061,10 +1094,12 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+     * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+     * <code>
+     * .google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.kms.v1.CryptoKey,

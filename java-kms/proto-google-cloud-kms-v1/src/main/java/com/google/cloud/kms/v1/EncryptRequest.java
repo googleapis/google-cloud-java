@@ -135,7 +135,9 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
    * [primary version][google.cloud.kms.v1.CryptoKey.primary].
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -160,7 +162,9 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
    * [primary version][google.cloud.kms.v1.CryptoKey.primary].
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -191,7 +195,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
    * 8KiB.
    * </pre>
    *
-   * <code>bytes plaintext = 2;</code>
+   * <code>bytes plaintext = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The plaintext.
    */
@@ -205,7 +209,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional data that, if specified, must also be provided during decryption
+   * Optional. Optional data that, if specified, must also be provided during decryption
    * through [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
    * The maximum size depends on the key version's
    * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
@@ -215,7 +219,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
    * 8KiB.
    * </pre>
    *
-   * <code>bytes additional_authenticated_data = 3;</code>
+   * <code>bytes additional_authenticated_data = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The additionalAuthenticatedData.
    */
@@ -581,7 +585,9 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * [primary version][google.cloud.kms.v1.CryptoKey.primary].
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -606,7 +612,9 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * [primary version][google.cloud.kms.v1.CryptoKey.primary].
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -631,7 +639,9 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * [primary version][google.cloud.kms.v1.CryptoKey.primary].
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -655,7 +665,9 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * [primary version][google.cloud.kms.v1.CryptoKey.primary].
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -675,7 +687,9 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * [primary version][google.cloud.kms.v1.CryptoKey.primary].
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -705,7 +719,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * 8KiB.
      * </pre>
      *
-     * <code>bytes plaintext = 2;</code>
+     * <code>bytes plaintext = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The plaintext.
      */
@@ -725,7 +739,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * 8KiB.
      * </pre>
      *
-     * <code>bytes plaintext = 2;</code>
+     * <code>bytes plaintext = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The plaintext to set.
      * @return This builder for chaining.
@@ -752,7 +766,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * 8KiB.
      * </pre>
      *
-     * <code>bytes plaintext = 2;</code>
+     * <code>bytes plaintext = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -769,7 +783,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional data that, if specified, must also be provided during decryption
+     * Optional. Optional data that, if specified, must also be provided during decryption
      * through [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
      * The maximum size depends on the key version's
      * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
@@ -779,7 +793,8 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * 8KiB.
      * </pre>
      *
-     * <code>bytes additional_authenticated_data = 3;</code>
+     * <code>bytes additional_authenticated_data = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The additionalAuthenticatedData.
      */
@@ -790,7 +805,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional data that, if specified, must also be provided during decryption
+     * Optional. Optional data that, if specified, must also be provided during decryption
      * through [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
      * The maximum size depends on the key version's
      * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
@@ -800,7 +815,8 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * 8KiB.
      * </pre>
      *
-     * <code>bytes additional_authenticated_data = 3;</code>
+     * <code>bytes additional_authenticated_data = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The additionalAuthenticatedData to set.
      * @return This builder for chaining.
@@ -818,7 +834,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional data that, if specified, must also be provided during decryption
+     * Optional. Optional data that, if specified, must also be provided during decryption
      * through [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
      * The maximum size depends on the key version's
      * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
@@ -828,7 +844,8 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * 8KiB.
      * </pre>
      *
-     * <code>bytes additional_authenticated_data = 3;</code>
+     * <code>bytes additional_authenticated_data = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */

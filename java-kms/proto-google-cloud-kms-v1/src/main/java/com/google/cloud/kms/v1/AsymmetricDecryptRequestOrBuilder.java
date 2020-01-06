@@ -31,7 +31,9 @@ public interface AsymmetricDecryptRequestOrBuilder
    * decryption.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -44,7 +46,9 @@ public interface AsymmetricDecryptRequestOrBuilder
    * decryption.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -58,7 +62,7 @@ public interface AsymmetricDecryptRequestOrBuilder
    * key using OAEP.
    * </pre>
    *
-   * <code>bytes ciphertext = 3;</code>
+   * <code>bytes ciphertext = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The ciphertext.
    */

@@ -27,10 +27,12 @@ public interface UpdateCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
+   * Required. [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 1;</code>
+   * <code>
+   * .google.cloud.kms.v1.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return Whether the cryptoKey field is set.
    */
@@ -39,10 +41,12 @@ public interface UpdateCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
+   * Required. [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 1;</code>
+   * <code>
+   * .google.cloud.kms.v1.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The cryptoKey.
    */
@@ -51,10 +55,12 @@ public interface UpdateCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
+   * Required. [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 1;</code>
+   * <code>
+   * .google.cloud.kms.v1.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.cloud.kms.v1.CryptoKeyOrBuilder getCryptoKeyOrBuilder();
 
@@ -62,10 +68,11 @@ public interface UpdateCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. List of fields to be updated in this request.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -74,10 +81,11 @@ public interface UpdateCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. List of fields to be updated in this request.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -86,10 +94,11 @@ public interface UpdateCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. List of fields to be updated in this request.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

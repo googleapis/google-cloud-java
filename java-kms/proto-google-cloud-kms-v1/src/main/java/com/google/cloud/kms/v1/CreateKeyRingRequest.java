@@ -144,7 +144,9 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
    * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -167,7 +169,9 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
    * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -193,7 +197,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
    * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
-   * <code>string key_ring_id = 2;</code>
+   * <code>string key_ring_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The keyRingId.
    */
@@ -216,7 +220,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
    * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
-   * <code>string key_ring_id = 2;</code>
+   * <code>string key_ring_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for keyRingId.
    */
@@ -238,10 +242,11 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+   * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+   * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the keyRing field is set.
    */
@@ -252,10 +257,11 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+   * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+   * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The keyRing.
    */
@@ -266,10 +272,11 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+   * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+   * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.kms.v1.KeyRingOrBuilder getKeyRingOrBuilder() {
     return getKeyRing();
@@ -644,7 +651,9 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -667,7 +676,9 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -690,7 +701,9 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -712,7 +725,9 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -730,7 +745,9 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -755,7 +772,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string key_ring_id = 2;</code>
+     * <code>string key_ring_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The keyRingId.
      */
@@ -778,7 +795,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string key_ring_id = 2;</code>
+     * <code>string key_ring_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for keyRingId.
      */
@@ -801,7 +818,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string key_ring_id = 2;</code>
+     * <code>string key_ring_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The keyRingId to set.
      * @return This builder for chaining.
@@ -823,7 +840,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string key_ring_id = 2;</code>
+     * <code>string key_ring_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -841,7 +858,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      * expression `[a-zA-Z0-9_-]{1,63}`
      * </pre>
      *
-     * <code>string key_ring_id = 2;</code>
+     * <code>string key_ring_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for keyRingId to set.
      * @return This builder for chaining.
@@ -867,10 +884,11 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the keyRing field is set.
      */
@@ -881,10 +899,11 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The keyRing.
      */
@@ -899,10 +918,11 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setKeyRing(com.google.cloud.kms.v1.KeyRing value) {
       if (keyRingBuilder_ == null) {
@@ -921,10 +941,11 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setKeyRing(com.google.cloud.kms.v1.KeyRing.Builder builderForValue) {
       if (keyRingBuilder_ == null) {
@@ -940,10 +961,11 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeKeyRing(com.google.cloud.kms.v1.KeyRing value) {
       if (keyRingBuilder_ == null) {
@@ -964,10 +986,11 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearKeyRing() {
       if (keyRingBuilder_ == null) {
@@ -984,10 +1007,11 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.kms.v1.KeyRing.Builder getKeyRingBuilder() {
 
@@ -998,10 +1022,11 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.kms.v1.KeyRingOrBuilder getKeyRingOrBuilder() {
       if (keyRingBuilder_ != null) {
@@ -1014,10 +1039,11 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+     * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3;</code>
+     * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.kms.v1.KeyRing,

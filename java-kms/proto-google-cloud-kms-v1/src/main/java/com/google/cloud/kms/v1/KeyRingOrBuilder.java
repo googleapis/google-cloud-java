@@ -31,7 +31,7 @@ public interface KeyRingOrBuilder
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -44,7 +44,7 @@ public interface KeyRingOrBuilder
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -57,7 +57,8 @@ public interface KeyRingOrBuilder
    * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -69,7 +70,8 @@ public interface KeyRingOrBuilder
    * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -81,7 +83,8 @@ public interface KeyRingOrBuilder
    * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 }

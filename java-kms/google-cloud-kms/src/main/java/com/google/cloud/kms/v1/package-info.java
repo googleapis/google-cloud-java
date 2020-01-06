@@ -27,7 +27,8 @@
  * following objects:
  *
  * <p>&#42; [KeyRing][google.cloud.kms.v1.KeyRing] &#42; [CryptoKey][google.cloud.kms.v1.CryptoKey]
- * &#42; [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+ * &#42; [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] &#42;
+ * [ImportJob][google.cloud.kms.v1.ImportJob]
  *
  * <p>If you are using manual gRPC libraries, see [Using gRPC with Cloud
  * KMS](https://cloud.google.com/kms/docs/grpc).

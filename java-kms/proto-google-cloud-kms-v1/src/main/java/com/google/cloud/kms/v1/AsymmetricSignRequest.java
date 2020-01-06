@@ -135,7 +135,9 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -157,7 +159,9 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -184,7 +188,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+   * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the digest field is set.
    */
@@ -200,7 +204,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+   * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The digest.
    */
@@ -216,7 +220,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+   * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.kms.v1.DigestOrBuilder getDigestOrBuilder() {
     return getDigest();
@@ -574,7 +578,9 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -596,7 +602,9 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -618,7 +626,9 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -639,7 +649,9 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -656,7 +668,9 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -687,7 +701,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the digest field is set.
      */
@@ -703,7 +718,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The digest.
      */
@@ -723,7 +739,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDigest(com.google.cloud.kms.v1.Digest value) {
       if (digestBuilder_ == null) {
@@ -747,7 +764,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDigest(com.google.cloud.kms.v1.Digest.Builder builderForValue) {
       if (digestBuilder_ == null) {
@@ -768,7 +786,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeDigest(com.google.cloud.kms.v1.Digest value) {
       if (digestBuilder_ == null) {
@@ -794,7 +813,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearDigest() {
       if (digestBuilder_ == null) {
@@ -816,7 +836,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.kms.v1.Digest.Builder getDigestBuilder() {
 
@@ -832,7 +853,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.kms.v1.DigestOrBuilder getDigestOrBuilder() {
       if (digestBuilder_ != null) {
@@ -850,7 +872,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3;</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.kms.v1.Digest,

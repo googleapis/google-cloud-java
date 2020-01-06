@@ -31,7 +31,9 @@ public interface CreateImportJobRequestOrBuilder
    * [ImportJobs][google.cloud.kms.v1.ImportJob].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -44,7 +46,9 @@ public interface CreateImportJobRequestOrBuilder
    * [ImportJobs][google.cloud.kms.v1.ImportJob].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -58,7 +62,7 @@ public interface CreateImportJobRequestOrBuilder
    * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
-   * <code>string import_job_id = 2;</code>
+   * <code>string import_job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The importJobId.
    */
@@ -71,7 +75,7 @@ public interface CreateImportJobRequestOrBuilder
    * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
-   * <code>string import_job_id = 2;</code>
+   * <code>string import_job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for importJobId.
    */
@@ -84,7 +88,8 @@ public interface CreateImportJobRequestOrBuilder
    * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+   * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the importJob field is set.
    */
@@ -96,7 +101,8 @@ public interface CreateImportJobRequestOrBuilder
    * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+   * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The importJob.
    */
@@ -108,7 +114,8 @@ public interface CreateImportJobRequestOrBuilder
    * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ImportJob import_job = 3;</code>
+   * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.kms.v1.ImportJobOrBuilder getImportJobOrBuilder();
 }

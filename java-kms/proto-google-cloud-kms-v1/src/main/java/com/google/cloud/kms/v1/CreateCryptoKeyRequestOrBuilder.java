@@ -31,7 +31,9 @@ public interface CreateCryptoKeyRequestOrBuilder
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -44,7 +46,9 @@ public interface CreateCryptoKeyRequestOrBuilder
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -58,7 +62,7 @@ public interface CreateCryptoKeyRequestOrBuilder
    * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
-   * <code>string crypto_key_id = 2;</code>
+   * <code>string crypto_key_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The cryptoKeyId.
    */
@@ -71,7 +75,7 @@ public interface CreateCryptoKeyRequestOrBuilder
    * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
-   * <code>string crypto_key_id = 2;</code>
+   * <code>string crypto_key_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for cryptoKeyId.
    */
@@ -81,10 +85,11 @@ public interface CreateCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+   * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the cryptoKey field is set.
    */
@@ -93,10 +98,11 @@ public interface CreateCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+   * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The cryptoKey.
    */
@@ -105,10 +111,11 @@ public interface CreateCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+   * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
+   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.kms.v1.CryptoKeyOrBuilder getCryptoKeyOrBuilder();
 

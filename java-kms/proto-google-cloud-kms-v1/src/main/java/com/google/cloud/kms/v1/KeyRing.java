@@ -135,7 +135,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -158,7 +158,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -183,7 +183,8 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -197,7 +198,8 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -211,7 +213,8 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
@@ -566,7 +569,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The name.
      */
@@ -589,7 +592,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for name.
      */
@@ -612,7 +615,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -634,7 +637,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -652,7 +655,7 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -681,7 +684,9 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
@@ -695,7 +700,9 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -715,7 +722,9 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -737,7 +746,9 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -756,7 +767,9 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -780,7 +793,9 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -800,7 +815,9 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
 
@@ -814,7 +831,9 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -832,7 +851,9 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,

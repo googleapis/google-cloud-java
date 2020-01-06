@@ -33,7 +33,9 @@ public interface EncryptRequestOrBuilder
    * [primary version][google.cloud.kms.v1.CryptoKey.primary].
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -48,7 +50,9 @@ public interface EncryptRequestOrBuilder
    * [primary version][google.cloud.kms.v1.CryptoKey.primary].
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -67,7 +71,7 @@ public interface EncryptRequestOrBuilder
    * 8KiB.
    * </pre>
    *
-   * <code>bytes plaintext = 2;</code>
+   * <code>bytes plaintext = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The plaintext.
    */
@@ -77,7 +81,7 @@ public interface EncryptRequestOrBuilder
    *
    *
    * <pre>
-   * Optional data that, if specified, must also be provided during decryption
+   * Optional. Optional data that, if specified, must also be provided during decryption
    * through [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
    * The maximum size depends on the key version's
    * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
@@ -87,7 +91,7 @@ public interface EncryptRequestOrBuilder
    * 8KiB.
    * </pre>
    *
-   * <code>bytes additional_authenticated_data = 3;</code>
+   * <code>bytes additional_authenticated_data = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The additionalAuthenticatedData.
    */

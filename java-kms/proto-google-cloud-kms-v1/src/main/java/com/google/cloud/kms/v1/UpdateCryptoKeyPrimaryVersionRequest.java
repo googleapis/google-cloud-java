@@ -127,10 +127,12 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
    *
    *
    * <pre>
-   * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+   * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -149,10 +151,12 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
    *
    *
    * <pre>
-   * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+   * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -174,10 +178,10 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
    *
    *
    * <pre>
-   * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+   * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
    * </pre>
    *
-   * <code>string crypto_key_version_id = 2;</code>
+   * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The cryptoKeyVersionId.
    */
@@ -196,10 +200,10 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
    *
    *
    * <pre>
-   * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+   * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
    * </pre>
    *
-   * <code>string crypto_key_version_id = 2;</code>
+   * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for cryptoKeyVersionId.
    */
@@ -557,10 +561,12 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -579,10 +585,12 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -601,10 +609,12 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -622,10 +632,12 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -639,10 +651,12 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -663,10 +677,10 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+     * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
      * </pre>
      *
-     * <code>string crypto_key_version_id = 2;</code>
+     * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The cryptoKeyVersionId.
      */
@@ -685,10 +699,10 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+     * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
      * </pre>
      *
-     * <code>string crypto_key_version_id = 2;</code>
+     * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for cryptoKeyVersionId.
      */
@@ -707,10 +721,10 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+     * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
      * </pre>
      *
-     * <code>string crypto_key_version_id = 2;</code>
+     * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The cryptoKeyVersionId to set.
      * @return This builder for chaining.
@@ -728,10 +742,10 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+     * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
      * </pre>
      *
-     * <code>string crypto_key_version_id = 2;</code>
+     * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -745,10 +759,10 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      *
      *
      * <pre>
-     * The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+     * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
      * </pre>
      *
-     * <code>string crypto_key_version_id = 2;</code>
+     * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for cryptoKeyVersionId to set.
      * @return This builder for chaining.
