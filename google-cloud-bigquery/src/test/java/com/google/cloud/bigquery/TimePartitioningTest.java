@@ -17,12 +17,12 @@
 package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import com.google.cloud.bigquery.TimePartitioning.Type;
-import org.junit.Rule;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class TimePartitioningTest {
 
@@ -36,8 +36,6 @@ public class TimePartitioningTest {
           .setRequirePartitionFilter(REQUIRE_PARTITION_FILTER)
           .setField(FIELD)
           .build();
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testOf() {
@@ -66,14 +64,22 @@ public class TimePartitioningTest {
 
   @Test
   public void testTypeOf_Npe() {
-    thrown.expect(NullPointerException.class);
-    TimePartitioning.of(null);
+    try {
+      TimePartitioning.of(null);
+      Assert.fail();
+    } catch (NullPointerException ex) {
+      assertNotNull(ex.getMessage());
+    }
   }
 
   @Test
   public void testTypeAndExpirationOf_Npe() {
-    thrown.expect(NullPointerException.class);
-    TimePartitioning.of(null, EXPIRATION_MS);
+    try {
+      TimePartitioning.of(null, EXPIRATION_MS);
+      Assert.fail();
+    } catch (NullPointerException ex) {
+      assertNotNull(ex.getMessage());
+    }
   }
 
   @Test
