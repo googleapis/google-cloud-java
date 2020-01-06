@@ -381,6 +381,7 @@
 
           <parallel>classes</parallel>
           <forkCount>2C</forkCount>
+          <threadCount>1</threadCount>
           <reuseForks>true</reuseForks>
 
           <trimStackTrace>false</trimStackTrace>
