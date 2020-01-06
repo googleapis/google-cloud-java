@@ -11,7 +11,7 @@
     <version>0.3.0</version>
   </parent>
 
-  <name>Google Cloud secretmanager BOM</name>
+  <name>Google Cloud Secret Manager BOM</name>
   <url>https://github.com/googleapis/java-secretmanager</url>
   <description>
     BOM for Google Cloud secretmanager

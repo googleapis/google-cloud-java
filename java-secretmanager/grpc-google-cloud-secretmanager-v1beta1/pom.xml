@@ -39,7 +39,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-common-protos</artifactId>
+      <artifactId>proto-google-iam-v1</artifactId>
     </dependency>
   </dependencies>
 
