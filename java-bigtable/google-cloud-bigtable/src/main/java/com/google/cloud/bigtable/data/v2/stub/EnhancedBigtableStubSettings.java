@@ -610,6 +610,22 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       return this;
     }
 
+    /**
+     * Resets the AppProfile id to the default for the instance.
+     *
+     * <p>An application profile (sometimes also shortened to "app profile") is a group of
+     * configuration parameters for an individual use case. A client will identify itself with an
+     * application profile ID at connection time, and the requests will be handled according to that
+     * application profile.
+     *
+     * <p>Every Bigtable Instance has a default application profile associated with it, this method
+     * configures the client to use it.
+     */
+    public Builder setDefaultAppProfileId() {
+      setAppProfileId(SERVER_DEFAULT_APP_PROFILE_ID);
+      return this;
+    }
+
     /** Gets the app profile id that was previously set on this Builder. */
     public String getAppProfileId() {
       return appProfileId;

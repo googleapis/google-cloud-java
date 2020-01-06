@@ -255,13 +255,31 @@ public final class BigtableDataSettings {
     }
 
     /**
-     * Sets the AppProfile to use. An application profile (sometimes also shortened to "app
-     * profile") is a group of configuration parameters for an individual use case. A client will
-     * identify itself with an application profile ID at connection time, and the requests will be
-     * handled according to that application profile.
+     * Sets the AppProfile to use.
+     *
+     * <p>An application profile (sometimes also shortened to "app profile") is a group of
+     * configuration parameters for an individual use case. A client will identify itself with an
+     * application profile ID at connection time, and the requests will be handled according to that
+     * application profile.
      */
     public Builder setAppProfileId(@Nonnull String appProfileId) {
       stubSettings.setAppProfileId(appProfileId);
+      return this;
+    }
+
+    /**
+     * Resets the AppProfile id to the default for the instance.
+     *
+     * <p>An application profile (sometimes also shortened to "app profile") is a group of
+     * configuration parameters for an individual use case. A client will identify itself with an
+     * application profile ID at connection time, and the requests will be handled according to that
+     * application profile.
+     *
+     * <p>Every Bigtable Instance has a default application profile associated with it, this method
+     * configures the client to use it.
+     */
+    public Builder setDefaultAppProfileId() {
+      stubSettings.setDefaultAppProfileId();
       return this;
     }
 
