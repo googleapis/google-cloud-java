@@ -19,9 +19,15 @@ package com.example.automl;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.automl.v1.AutoMlClient;
+import com.google.cloud.automl.v1.DeployModelRequest;
+import com.google.cloud.automl.v1.Model;
+import com.google.cloud.automl.v1.ModelName;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.concurrent.ExecutionException;
 
 import org.junit.After;
 import org.junit.Before;
@@ -30,31 +36,41 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-// Tests for automl natural language text classification "Predict" sample.
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class LanguageTextClassificationPredictIT {
+public class VisionObjectDetectionPredictTest {
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
-  private static final String modelId = System.getenv("TEXT_CLASSIFICATION_MODEL_ID");
+  private static final String MODEL_ID = System.getenv("OBJECT_DETECTION_MODEL_ID");
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
-            System.getenv(varName),
-            "Environment variable '%s' is required to perform these tests.".format(varName)
-    );
+        System.getenv(varName),
+        "Environment variable '%s' is required to perform these tests.".format(varName));
   }
 
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("AUTOML_PROJECT_ID");
-    requireEnvVar("TEXT_CLASSIFICATION_MODEL_ID");
+    requireEnvVar("OBJECT_DETECTION_MODEL_ID");
   }
 
   @Before
-  public void setUp() {
+  public void setUp() throws IOException, ExecutionException, InterruptedException {
+    // Verify that the model is deployed for prediction
+    try (AutoMlClient client = AutoMlClient.create()) {
+      ModelName modelFullId = ModelName.of(PROJECT_ID, "us-central1", MODEL_ID);
+      Model model = client.getModel(modelFullId);
+      if (model.getDeploymentState() == Model.DeploymentState.UNDEPLOYED) {
+        // Deploy the model if not deployed
+        DeployModelRequest request =
+            DeployModelRequest.newBuilder().setName(modelFullId.toString()).build();
+        client.deployModelAsync(request).get();
+      }
+    }
+
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -67,12 +83,10 @@ public class LanguageTextClassificationPredictIT {
 
   @Test
   public void testPredict() throws IOException {
-    String text = "Fruit and nut flavour";
-    // Act
-    LanguageTextClassificationPredict.predict(PROJECT_ID, modelId, text);
-
-    // Assert
+    String filePath = "resources/salad.jpg";
+    VisionObjectDetectionPredict.predict(PROJECT_ID, MODEL_ID, filePath);
     String got = bout.toString();
-    assertThat(got).contains("Predicted class name:");
+    assertThat(got).contains("X:");
+    assertThat(got).contains("Y:");
   }
 }

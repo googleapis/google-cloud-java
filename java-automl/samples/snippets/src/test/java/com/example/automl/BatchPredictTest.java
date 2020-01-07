@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,10 @@ import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
 import com.google.api.gax.paging.Page;
+import com.google.cloud.automl.v1.AutoMlClient;
+import com.google.cloud.automl.v1.DeployModelRequest;
+import com.google.cloud.automl.v1.Model;
+import com.google.cloud.automl.v1.ModelName;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
@@ -31,38 +35,46 @@ import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-// Tests for automl natural language entity extraction "Predict" sample.
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class LanguageEntityExtractionPredictIT {
+public class BatchPredictTest {
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
-  private static final String BUCKET_ID = System.getenv("GOOGLE_CLOUD_PROJECT") + "-lcm";
-  private static final String modelId = System.getenv("ENTITY_EXTRACTION_MODEL_ID");
+  private static final String BUCKET_ID = PROJECT_ID + "-lcm";
+  private static final String MODEL_ID = System.getenv("ENTITY_EXTRACTION_MODEL_ID");
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
-            System.getenv(varName),
-            "Environment variable '%s' is required to perform these tests.".format(varName)
-    );
+        System.getenv(varName),
+        "Environment variable '%s' is required to perform these tests.".format(varName));
   }
 
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("GOOGLE_CLOUD_PROJECT");
     requireEnvVar("AUTOML_PROJECT_ID");
     requireEnvVar("ENTITY_EXTRACTION_MODEL_ID");
   }
 
   @Before
-  public void setUp() {
+  public void setUp() throws IOException, ExecutionException, InterruptedException {
+    // Verify that the model is deployed for prediction
+    try (AutoMlClient client = AutoMlClient.create()) {
+      ModelName modelFullId = ModelName.of(PROJECT_ID, "us-central1", MODEL_ID);
+      Model model = client.getModel(modelFullId);
+      if (model.getDeploymentState() == Model.DeploymentState.UNDEPLOYED) {
+        // Deploy the model if not deployed
+        DeployModelRequest request =
+            DeployModelRequest.newBuilder().setName(modelFullId.toString()).build();
+        client.deployModelAsync(request).get();
+      }
+    }
+
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -70,31 +82,7 @@ public class LanguageEntityExtractionPredictIT {
 
   @After
   public void tearDown() {
-    System.setOut(null);
-  }
-
-  @Test
-  public void testPredict() throws IOException {
-    String text = "Constitutional mutations in the WT1 gene in patients with Denys-Drash syndrome.";
-    // Act
-    LanguageEntityExtractionPredict.predict(PROJECT_ID, modelId, text);
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Text Extract Entity Type:");
-  }
-
-  @Ignore
-  public void testBatchPredict() throws IOException, ExecutionException, InterruptedException {
-    String inputUri = String.format("gs://%s/entity_extraction/input.jsonl", BUCKET_ID);
-    String outputUri = String.format("gs://%s/TEST_BATCH_PREDICT/", BUCKET_ID);
-    // Act
-    BatchPredict.batchPredict(PROJECT_ID, modelId, inputUri, outputUri);
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Batch Prediction results saved to specified Cloud Storage bucket");
-
+    // Delete the created files from GCS
     Storage storage = StorageOptions.getDefaultInstance().getService();
     Page<Blob> blobs =
         storage.list(
@@ -114,5 +102,19 @@ public class LanguageEntityExtractionPredictIT {
         }
       }
     }
+
+    System.setOut(null);
+  }
+
+  @Test
+  public void testBatchPredict() throws IOException, ExecutionException, InterruptedException {
+    String inputUri = String.format("gs://%s/entity-extraction/input.jsonl", BUCKET_ID);
+    String outputUri = String.format("gs://%s/TEST_BATCH_PREDICT/", BUCKET_ID);
+    // Act
+    BatchPredict.batchPredict(PROJECT_ID, MODEL_ID, inputUri, outputUri);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("Batch Prediction results saved to specified Cloud Storage bucket");
   }
 }

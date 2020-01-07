@@ -19,9 +19,15 @@ package com.example.automl;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.automl.v1.AutoMlClient;
+import com.google.cloud.automl.v1.DeployModelRequest;
+import com.google.cloud.automl.v1.Model;
+import com.google.cloud.automl.v1.ModelName;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.concurrent.ExecutionException;
 
 import org.junit.After;
 import org.junit.Before;
@@ -30,31 +36,42 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-// Tests for automl natural language sentiment analysis "Predict" sample.
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class LanguageSentimentAnalysisPredictIT {
+public class LanguageEntityExtractionPredictTest {
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
-  private static final String modelId = System.getenv("SENTIMENT_ANALYSIS_MODEL_ID");
+  private static final String MODEL_ID = System.getenv("ENTITY_EXTRACTION_MODEL_ID");
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
-            System.getenv(varName),
-            "Environment variable '%s' is required to perform these tests.".format(varName)
-    );
+        System.getenv(varName),
+        "Environment variable '%s' is required to perform these tests.".format(varName));
   }
 
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
+    requireEnvVar("GOOGLE_CLOUD_PROJECT");
     requireEnvVar("AUTOML_PROJECT_ID");
-    requireEnvVar("SENTIMENT_ANALYSIS_MODEL_ID");
+    requireEnvVar("ENTITY_EXTRACTION_MODEL_ID");
   }
 
   @Before
-  public void setUp() {
+  public void setUp() throws IOException, ExecutionException, InterruptedException {
+    // Verify that the model is deployed for prediction
+    try (AutoMlClient client = AutoMlClient.create()) {
+      ModelName modelFullId = ModelName.of(PROJECT_ID, "us-central1", MODEL_ID);
+      Model model = client.getModel(modelFullId);
+      if (model.getDeploymentState() == Model.DeploymentState.UNDEPLOYED) {
+        // Deploy the model if not deployed
+        DeployModelRequest request =
+            DeployModelRequest.newBuilder().setName(modelFullId.toString()).build();
+        client.deployModelAsync(request).get();
+      }
+    }
+
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -67,12 +84,9 @@ public class LanguageSentimentAnalysisPredictIT {
 
   @Test
   public void testPredict() throws IOException {
-    String text = "Hopefully this Claritin kicks in soon";
-    // Act
-    LanguageSentimentAnalysisPredict.predict(PROJECT_ID, modelId, text);
-
-    // Assert
+    String text = "Constitutional mutations in the WT1 gene in patients with Denys-Drash syndrome.";
+    LanguageEntityExtractionPredict.predict(PROJECT_ID, MODEL_ID, text);
     String got = bout.toString();
-    assertThat(got).contains("Predicted sentiment score:");
+    assertThat(got).contains("Text Extract Entity Type:");
   }
 }
