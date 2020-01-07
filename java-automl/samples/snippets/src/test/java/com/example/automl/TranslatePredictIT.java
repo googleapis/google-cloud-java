@@ -35,8 +35,8 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class TranslatePredictIT {
-  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String modelId = "TRL2188848820815848149";
+  private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
+  private static final String modelId = System.getenv("TRANSLATION_MODEL_ID");
   private static final String filePath = "./resources/input.txt";
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -51,7 +51,8 @@ public class TranslatePredictIT {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("GOOGLE_CLOUD_PROJECT");
+    requireEnvVar("AUTOML_PROJECT_ID");
+    requireEnvVar("TRANSLATION_MODEL_ID");
   }
 
   @Before

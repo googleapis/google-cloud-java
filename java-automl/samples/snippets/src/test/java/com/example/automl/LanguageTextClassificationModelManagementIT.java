@@ -27,15 +27,17 @@ import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 // Tests for Automl natural language text classification models.
 @RunWith(JUnit4.class)
+@Ignore
 public class LanguageTextClassificationModelManagementIT {
-  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String MODEL_ID = "TCN6871084728972835631";
+  private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
+  private static final String MODEL_ID = System.getenv("TEXT_CLASSIFICATION_MODEL_ID");
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -49,7 +51,8 @@ public class LanguageTextClassificationModelManagementIT {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("GOOGLE_CLOUD_PROJECT");
+    requireEnvVar("AUTOML_PROJECT_ID");
+    requireEnvVar("TEXT_CLASSIFICATION_MODEL_ID");
   }
 
   @Before

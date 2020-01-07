@@ -34,7 +34,7 @@ import org.junit.runners.JUnit4;
 // Tests for Automl models.
 @RunWith(JUnit4.class)
 public class GenericModelManagementIT {
-  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
   private String modelId;
   private String modelEvaluationId;
   private ByteArrayOutputStream bout;
@@ -50,7 +50,7 @@ public class GenericModelManagementIT {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("GOOGLE_CLOUD_PROJECT");
+    requireEnvVar("AUTOML_PROJECT_ID");
   }
 
   @Before

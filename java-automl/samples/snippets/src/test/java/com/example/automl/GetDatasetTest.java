@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,27 +30,26 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-// Tests for automl natural language sentiment analysis "Predict" sample.
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class LanguageSentimentAnalysisPredictIT {
+public class GetDatasetTest {
+
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
-  private static final String modelId = System.getenv("SENTIMENT_ANALYSIS_MODEL_ID");
+  private static final String DATASET_ID = System.getenv("ENTITY_EXTRACTION_DATASET_ID");
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
-            System.getenv(varName),
-            "Environment variable '%s' is required to perform these tests.".format(varName)
-    );
+        System.getenv(varName),
+        "Environment variable '%s' is required to perform these tests.".format(varName));
   }
 
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("AUTOML_PROJECT_ID");
-    requireEnvVar("SENTIMENT_ANALYSIS_MODEL_ID");
+    requireEnvVar("ENTITY_EXTRACTION_DATASET_ID");
   }
 
   @Before
@@ -66,13 +65,9 @@ public class LanguageSentimentAnalysisPredictIT {
   }
 
   @Test
-  public void testPredict() throws IOException {
-    String text = "Hopefully this Claritin kicks in soon";
-    // Act
-    LanguageSentimentAnalysisPredict.predict(PROJECT_ID, modelId, text);
-
-    // Assert
+  public void testGetDataset() throws IOException {
+    GetDataset.getDataset(PROJECT_ID, DATASET_ID);
     String got = bout.toString();
-    assertThat(got).contains("Predicted sentiment score:");
+    assertThat(got).contains("Dataset id:");
   }
 }

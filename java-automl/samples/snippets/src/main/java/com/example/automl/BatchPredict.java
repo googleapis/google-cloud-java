@@ -62,8 +62,6 @@ class BatchPredict {
                       .setName(name.toString())
                       .setInputConfig(inputConfig)
                       .setOutputConfig(outputConfig)
-                      // [0.0-1.0] Only produce results higher than this value
-                      .putParams("score_threshold", "0.8")
                       .build();
 
       OperationFuture<BatchPredictResult, OperationMetadata> future =

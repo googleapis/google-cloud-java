@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,8 @@ import static junit.framework.TestCase.assertNotNull;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 
 import org.junit.After;
 import org.junit.Before;
@@ -30,49 +32,61 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-// Tests for automl natural language sentiment analysis "Predict" sample.
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class LanguageSentimentAnalysisPredictIT {
+public class ImportDatasetTest {
+
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
-  private static final String modelId = System.getenv("SENTIMENT_ANALYSIS_MODEL_ID");
+  private static final String BUCKET_ID = PROJECT_ID + "-lcm";
+  private static final String BUCKET = "gs://" + BUCKET_ID;
+  private String datasetId;
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
-            System.getenv(varName),
-            "Environment variable '%s' is required to perform these tests.".format(varName)
-    );
+        System.getenv(varName),
+        "Environment variable '%s' is required to perform these tests.".format(varName));
   }
 
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("AUTOML_PROJECT_ID");
-    requireEnvVar("SENTIMENT_ANALYSIS_MODEL_ID");
   }
 
   @Before
-  public void setUp() {
+  public void setUp() throws InterruptedException, ExecutionException, IOException {
+    bout = new ByteArrayOutputStream();
+    out = new PrintStream(bout);
+    System.setOut(out);
+
+    // Create a dataset that can be used for the import test
+    // Create a random dataset name with a length of 32 characters (max allowed by AutoML)
+    // To prevent name collisions when running tests in multiple java versions at once.
+    // AutoML doesn't allow "-", but accepts "_"
+    String datasetName =
+        String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
+    LanguageEntityExtractionCreateDataset.createDataset(PROJECT_ID, datasetName);
+    String got = bout.toString();
+    datasetId = got.split("Dataset id: ")[1].split("\n")[0];
+
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
   }
 
   @After
-  public void tearDown() {
+  public void tearDown() throws InterruptedException, ExecutionException, IOException {
+    // Delete the created dataset
+    DeleteDataset.deleteDataset(PROJECT_ID, datasetId);
     System.setOut(null);
   }
 
   @Test
-  public void testPredict() throws IOException {
-    String text = "Hopefully this Claritin kicks in soon";
-    // Act
-    LanguageSentimentAnalysisPredict.predict(PROJECT_ID, modelId, text);
-
-    // Assert
+  public void testImportDataset() throws IOException, ExecutionException, InterruptedException {
+    ImportDataset.importDataset(PROJECT_ID, datasetId, BUCKET + "/entity-extraction/dataset.csv");
     String got = bout.toString();
-    assertThat(got).contains("Predicted sentiment score:");
+    assertThat(got).contains("Dataset imported.");
   }
 }

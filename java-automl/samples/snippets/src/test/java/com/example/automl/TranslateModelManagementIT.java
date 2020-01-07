@@ -36,8 +36,8 @@ import org.junit.runners.JUnit4;
 // Tests for Automl translation models.
 @RunWith(JUnit4.class)
 public class TranslateModelManagementIT {
-  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String DATASET_ID = "TRL3946265060617537378";
+  private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
+  private static final String DATASET_ID = System.getenv("TRANSLATION_DATASET_ID");
   private static final String MODEL_NAME = "translation_test_create_model";
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -54,7 +54,8 @@ public class TranslateModelManagementIT {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("GOOGLE_CLOUD_PROJECT");
+    requireEnvVar("AUTOML_PROJECT_ID");
+    requireEnvVar("TRANSLATION_DATASET_ID");
   }
 
   @Before

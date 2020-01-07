@@ -27,15 +27,17 @@ import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 // Tests for Automl natural language entity extraction models.
 @RunWith(JUnit4.class)
+@Ignore
 public class LanguageEntityExtractionModelManagementIT {
-  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String MODEL_ID = "TEN1974951581904273408";
+  private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
+  private static final String MODEL_ID = System.getenv("ENTITY_EXTRACTION_MODEL_ID");
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -49,7 +51,8 @@ public class LanguageEntityExtractionModelManagementIT {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("GOOGLE_CLOUD_PROJECT");
+    requireEnvVar("AUTOML_PROJECT_ID");
+    requireEnvVar("ENTITY_EXTRACTION_MODEL_ID");
   }
 
   @Before
