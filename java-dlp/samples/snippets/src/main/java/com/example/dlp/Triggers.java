@@ -261,7 +261,7 @@ public class Triggers {
       cmd = parser.parse(commandLineOptions, args);
     } catch (ParseException e) {
       System.out.println(e.getMessage());
-      formatter.printHelp(DeIdentification.class.getName(), commandLineOptions);
+      formatter.printHelp(Triggers.class.getName(), commandLineOptions);
       System.exit(1);
       return;
     }

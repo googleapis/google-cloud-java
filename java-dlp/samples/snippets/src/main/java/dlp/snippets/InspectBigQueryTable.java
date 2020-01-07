@@ -16,7 +16,7 @@
 
 package dlp.snippets;
 
-// [START dlp_inspect_gcs]
+// [START dlp_inspect_bigquery]
 
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
@@ -162,4 +162,4 @@ public class InspectBigQueryTable {
     }
   }
 }
-// [END dlp_inspect_gcs]
+// [END dlp_inspect_bigquery]

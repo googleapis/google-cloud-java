@@ -55,7 +55,7 @@ public class InspectTests {
 
   @Before
   public void checkRequirements() {
-    // requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
+    requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("GOOGLE_CLOUD_PROJECT");
   }
 
