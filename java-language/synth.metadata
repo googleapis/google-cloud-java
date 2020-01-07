@@ -1,19 +1,19 @@
 {
-  "updateTime": "2019-12-19T08:48:35.551259Z",
+  "updateTime": "2020-01-07T08:53:40.151937Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.42.3",
-        "dockerImage": "googleapis/artman@sha256:feed210b5723c6f524b52ef6d7740a030f2d1a8f7c29a71c5e5b4481ceaad7f5"
+        "version": "0.43.0",
+        "dockerImage": "googleapis/artman@sha256:264654a37596a44b0668b8ce6ac41082d713f6ee150b3fc6425fa78cc64e4f20"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d400cb8d45df5b2ae796b909f098a215b2275c1d",
-        "internalRef": "286312673"
+        "sha": "cb79155f596e0396dd900da93872be7066f6340d",
+        "internalRef": "288441307"
       }
     },
     {
@@ -48,10 +48,7 @@
   ],
   "newFiles": [
     {
-      "path": ".gitignore"
-    },
-    {
-      "path": "README.md"
+      "path": ".repo-metadata.json"
     },
     {
       "path": "renovate.json"
@@ -60,16 +57,19 @@
       "path": "license-checks.xml"
     },
     {
-      "path": "CONTRIBUTING.md"
-    },
-    {
       "path": "synth.py"
     },
     {
-      "path": "synth.metadata"
+      "path": "CHANGELOG.md"
     },
     {
-      "path": "java.header"
+      "path": "codecov.yaml"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": ".gitignore"
     },
     {
       "path": "pom.xml"
@@ -78,169 +78,25 @@
       "path": "CODE_OF_CONDUCT.md"
     },
     {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "README.md"
+    },
+    {
       "path": "versions.txt"
     },
     {
-      "path": "CHANGELOG.md"
+      "path": "CONTRIBUTING.md"
     },
     {
-      "path": "LICENSE"
+      "path": "java.header"
     },
     {
-      "path": ".repo-metadata.json"
+      "path": "grpc-google-cloud-language-v1beta2/pom.xml"
     },
     {
-      "path": "codecov.yaml"
-    },
-    {
-      "path": "grpc-google-cloud-language-v1/pom.xml"
-    },
-    {
-      "path": "grpc-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/LanguageServiceGrpc.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/proto/google/cloud/language/v1/language_service.proto"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnnotateTextRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/Sentiment.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/SentenceOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/ClassificationCategoryOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/PartOfSpeechOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/ClassifyTextRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/ClassifyTextRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeEntitySentimentResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/EntityMention.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeSentimentRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeSentimentResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeEntitySentimentRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeEntitiesResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeEntitiesRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeSyntaxRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/ClassificationCategory.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/DependencyEdge.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/Sentence.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeSentimentResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeSyntaxResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeSyntaxResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeEntitySentimentRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/TextSpan.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/ClassifyTextResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/EncodingType.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeEntitiesRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeSentimentRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/EntityOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnnotateTextResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/SentimentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/TokenOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/DependencyEdgeOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/EntityMentionOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/LanguageServiceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/TextSpanOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/Entity.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/ClassifyTextResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnnotateTextResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeEntitiesResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/Document.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeEntitySentimentResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/PartOfSpeech.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeSyntaxRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/DocumentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/Token.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnnotateTextRequestOrBuilder.java"
+      "path": "grpc-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/LanguageServiceGrpc.java"
     },
     {
       "path": "proto-google-cloud-language-v1beta2/pom.xml"
@@ -249,73 +105,49 @@
       "path": "proto-google-cloud-language-v1beta2/src/main/proto/google/cloud/language/v1beta2/language_service.proto"
     },
     {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnnotateTextRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/Sentiment.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/SentenceOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/ClassificationCategoryOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/PartOfSpeechOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/ClassifyTextRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/ClassifyTextRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeEntitySentimentResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/EntityMention.java"
-    },
-    {
       "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeSentimentRequest.java"
     },
     {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeSentimentResponseOrBuilder.java"
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeSyntaxRequest.java"
     },
     {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeEntitySentimentRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeEntitiesResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeEntitiesRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeSyntaxRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/ClassificationCategory.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/DependencyEdge.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/Sentence.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeSentimentResponse.java"
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeEntitySentimentResponse.java"
     },
     {
       "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeSyntaxResponse.java"
     },
     {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeSyntaxResponseOrBuilder.java"
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/TextSpanOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/Token.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/SentimentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeSentimentRequestOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeEntitySentimentRequestOrBuilder.java"
     },
     {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeSyntaxResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/PartOfSpeech.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeEntitiesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnnotateTextRequestOrBuilder.java"
+    },
+    {
       "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/TextSpan.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/EntityMention.java"
     },
     {
       "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/ClassifyTextResponseOrBuilder.java"
@@ -324,94 +156,106 @@
       "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/EncodingType.java"
     },
     {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeEntitiesRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeSentimentRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/EntityOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnnotateTextResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/SentimentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/TokenOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/DependencyEdgeOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/EntityMentionOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/LanguageServiceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/TextSpanOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/Entity.java"
-    },
-    {
       "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/ClassifyTextResponse.java"
     },
     {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnnotateTextResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeEntitiesResponse.java"
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/Sentiment.java"
     },
     {
       "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/Document.java"
     },
     {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeEntitySentimentResponse.java"
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeSentimentResponseOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/PartOfSpeech.java"
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/DependencyEdgeOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeSyntaxRequest.java"
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/ClassifyTextRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/EntityMentionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/PartOfSpeechOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeEntitiesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeEntitiesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/TokenOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/DocumentOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/Token.java"
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeEntitySentimentResponseOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnnotateTextRequestOrBuilder.java"
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/ClassifyTextRequestOrBuilder.java"
     },
     {
-      "path": ".github/release-please.yml"
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/Sentence.java"
     },
     {
-      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeEntitySentimentRequest.java"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/ClassificationCategoryOrBuilder.java"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/ClassificationCategory.java"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeEntitiesRequestOrBuilder.java"
     },
     {
-      "path": ".kokoro/trampoline.sh"
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/LanguageServiceProto.java"
     },
     {
-      "path": ".kokoro/build.sh"
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeSyntaxRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/DependencyEdge.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnnotateTextResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnnotateTextRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnnotateTextResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/EntityOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/SentenceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/AnalyzeSentimentResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/Entity.java"
+    },
+    {
+      "path": "grpc-google-cloud-language-v1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/LanguageServiceGrpc.java"
+    },
+    {
+      "path": "google-cloud-language-bom/pom.xml"
     },
     {
       "path": ".kokoro/build.bat"
     },
     {
-      "path": ".kokoro/linkage-monitor.sh"
+      "path": ".kokoro/build.sh"
     },
     {
       "path": ".kokoro/dependencies.sh"
@@ -420,28 +264,64 @@
       "path": ".kokoro/common.cfg"
     },
     {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
       "path": ".kokoro/coerce_logs.sh"
     },
     {
-      "path": ".kokoro/release/common.sh"
+      "path": ".kokoro/linkage-monitor.sh"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.cfg"
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
     },
     {
       "path": ".kokoro/release/stage.cfg"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.sh"
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
     },
     {
       "path": ".kokoro/release/bump_snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.cfg"
     },
     {
       "path": ".kokoro/release/promote.sh"
@@ -450,49 +330,40 @@
       "path": ".kokoro/release/stage.sh"
     },
     {
-      "path": ".kokoro/release/bump_snapshot.sh"
+      "path": ".kokoro/release/snapshot.sh"
     },
     {
-      "path": ".kokoro/release/promote.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.sh"
+      "path": ".kokoro/release/snapshot.cfg"
     },
     {
       "path": ".kokoro/release/common.cfg"
     },
     {
-      "path": ".kokoro/release/snapshot.sh"
+      "path": ".kokoro/release/bump_snapshot.sh"
     },
     {
-      "path": ".kokoro/nightly/java11.cfg"
+      "path": ".kokoro/release/common.sh"
     },
     {
-      "path": ".kokoro/nightly/java8-win.cfg"
+      "path": ".kokoro/release/drop.cfg"
     },
     {
-      "path": ".kokoro/nightly/lint.cfg"
+      "path": ".kokoro/release/publish_javadoc.sh"
     },
     {
-      "path": ".kokoro/nightly/java8-osx.cfg"
+      "path": ".kokoro/presubmit/dependencies.cfg"
     },
     {
-      "path": ".kokoro/nightly/integration.cfg"
+      "path": ".kokoro/presubmit/samples.cfg"
     },
     {
-      "path": ".kokoro/nightly/java7.cfg"
+      "path": ".kokoro/presubmit/java7.cfg"
     },
     {
-      "path": ".kokoro/nightly/java8.cfg"
+      "path": ".kokoro/presubmit/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/nightly/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/common.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java11.cfg"
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
     },
     {
       "path": ".kokoro/presubmit/java8-win.cfg"
@@ -501,139 +372,67 @@
       "path": ".kokoro/presubmit/lint.cfg"
     },
     {
-      "path": ".kokoro/presubmit/clirr.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/integration.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java7.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+      "path": ".kokoro/presubmit/java11.cfg"
     },
     {
       "path": ".kokoro/presubmit/common.cfg"
     },
     {
-      "path": ".kokoro/continuous/propose_release.cfg"
+      "path": ".kokoro/presubmit/clirr.cfg"
     },
     {
-      "path": ".kokoro/continuous/java11.cfg"
+      "path": ".kokoro/presubmit/java8.cfg"
     },
     {
-      "path": ".kokoro/continuous/java8-win.cfg"
+      "path": ".kokoro/presubmit/integration.cfg"
     },
     {
-      "path": ".kokoro/continuous/lint.cfg"
+      "path": ".kokoro/nightly/dependencies.cfg"
     },
     {
-      "path": ".kokoro/continuous/java8-osx.cfg"
+      "path": ".kokoro/nightly/samples.cfg"
     },
     {
-      "path": ".kokoro/continuous/propose_release.sh"
+      "path": ".kokoro/nightly/java7.cfg"
     },
     {
-      "path": ".kokoro/continuous/integration.cfg"
+      "path": ".kokoro/nightly/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/continuous/java7.cfg"
+      "path": ".kokoro/nightly/java8-win.cfg"
     },
     {
-      "path": ".kokoro/continuous/java8.cfg"
+      "path": ".kokoro/nightly/lint.cfg"
     },
     {
-      "path": ".kokoro/continuous/dependencies.cfg"
+      "path": ".kokoro/nightly/java11.cfg"
     },
     {
-      "path": ".kokoro/continuous/common.cfg"
+      "path": ".kokoro/nightly/common.cfg"
     },
     {
-      "path": "google-cloud-language/pom.xml"
+      "path": ".kokoro/nightly/java8.cfg"
     },
     {
-      "path": "google-cloud-language/src/test/java/com/google/cloud/language/v1/LanguageServiceClientTest.java"
+      "path": ".kokoro/nightly/integration.cfg"
     },
     {
-      "path": "google-cloud-language/src/test/java/com/google/cloud/language/v1/MockLanguageService.java"
+      "path": ".github/release-please.yml"
     },
     {
-      "path": "google-cloud-language/src/test/java/com/google/cloud/language/v1/LanguageServiceSmokeTest.java"
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
     },
     {
-      "path": "google-cloud-language/src/test/java/com/google/cloud/language/v1/MockLanguageServiceImpl.java"
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
     },
     {
-      "path": "google-cloud-language/src/test/java/com/google/cloud/language/v1beta2/LanguageServiceClientTest.java"
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
     },
     {
-      "path": "google-cloud-language/src/test/java/com/google/cloud/language/v1beta2/MockLanguageService.java"
-    },
-    {
-      "path": "google-cloud-language/src/test/java/com/google/cloud/language/v1beta2/LanguageServiceSmokeTest.java"
-    },
-    {
-      "path": "google-cloud-language/src/test/java/com/google/cloud/language/v1beta2/MockLanguageServiceImpl.java"
-    },
-    {
-      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1/LanguageServiceSettings.java"
-    },
-    {
-      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1/LanguageServiceClient.java"
-    },
-    {
-      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1/package-info.java"
-    },
-    {
-      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1/stub/GrpcLanguageServiceStub.java"
-    },
-    {
-      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1/stub/GrpcLanguageServiceCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1/stub/LanguageServiceStubSettings.java"
-    },
-    {
-      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1/stub/LanguageServiceStub.java"
-    },
-    {
-      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/LanguageServiceSettings.java"
-    },
-    {
-      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/LanguageServiceClient.java"
-    },
-    {
-      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/package-info.java"
-    },
-    {
-      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/stub/GrpcLanguageServiceStub.java"
-    },
-    {
-      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/stub/GrpcLanguageServiceCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/stub/LanguageServiceStubSettings.java"
-    },
-    {
-      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/stub/LanguageServiceStub.java"
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
     },
     {
       "path": "__pycache__/synth.cpython-36.pyc"
-    },
-    {
-      "path": "google-cloud-language-bom/pom.xml"
-    },
-    {
-      "path": ".git/shallow"
     },
     {
       "path": ".git/index"
@@ -648,22 +447,16 @@
       "path": ".git/config"
     },
     {
-      "path": ".git/logs/HEAD"
+      "path": ".git/shallow"
     },
     {
-      "path": ".git/logs/refs/heads/autosynth"
+      "path": ".git/objects/pack/pack-29617b52ba8593bb301879c7a039f0f0657c623c.idx"
     },
     {
-      "path": ".git/logs/refs/heads/master"
+      "path": ".git/objects/pack/pack-29617b52ba8593bb301879c7a039f0f0657c623c.pack"
     },
     {
-      "path": ".git/logs/refs/remotes/origin/HEAD"
-    },
-    {
-      "path": ".git/objects/pack/pack-35cb71ce44e190e3e6c45e05f497a1e61b373e04.pack"
-    },
-    {
-      "path": ".git/objects/pack/pack-35cb71ce44e190e3e6c45e05f497a1e61b373e04.idx"
+      "path": ".git/refs/remotes/origin/HEAD"
     },
     {
       "path": ".git/refs/heads/autosynth"
@@ -672,13 +465,232 @@
       "path": ".git/refs/heads/master"
     },
     {
-      "path": ".git/refs/remotes/origin/HEAD"
+      "path": ".git/logs/HEAD"
     },
     {
-      "path": "grpc-google-cloud-language-v1beta2/pom.xml"
+      "path": ".git/logs/refs/remotes/origin/HEAD"
     },
     {
-      "path": "grpc-google-cloud-language-v1beta2/src/main/java/com/google/cloud/language/v1beta2/LanguageServiceGrpc.java"
+      "path": ".git/logs/refs/heads/autosynth"
+    },
+    {
+      "path": ".git/logs/refs/heads/master"
+    },
+    {
+      "path": "google-cloud-language/pom.xml"
+    },
+    {
+      "path": "google-cloud-language/src/test/java/com/google/cloud/language/v1/LanguageServiceSmokeTest.java"
+    },
+    {
+      "path": "google-cloud-language/src/test/java/com/google/cloud/language/v1/MockLanguageService.java"
+    },
+    {
+      "path": "google-cloud-language/src/test/java/com/google/cloud/language/v1/MockLanguageServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-language/src/test/java/com/google/cloud/language/v1/LanguageServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-language/src/test/java/com/google/cloud/language/it/ITSystemTest.java"
+    },
+    {
+      "path": "google-cloud-language/src/test/java/com/google/cloud/language/v1beta2/LanguageServiceSmokeTest.java"
+    },
+    {
+      "path": "google-cloud-language/src/test/java/com/google/cloud/language/v1beta2/MockLanguageService.java"
+    },
+    {
+      "path": "google-cloud-language/src/test/java/com/google/cloud/language/v1beta2/MockLanguageServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-language/src/test/java/com/google/cloud/language/v1beta2/LanguageServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1/LanguageServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1/package-info.java"
+    },
+    {
+      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1/LanguageServiceClient.java"
+    },
+    {
+      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1/stub/LanguageServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1/stub/LanguageServiceStub.java"
+    },
+    {
+      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1/stub/GrpcLanguageServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1/stub/GrpcLanguageServiceStub.java"
+    },
+    {
+      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/LanguageServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/package-info.java"
+    },
+    {
+      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/LanguageServiceClient.java"
+    },
+    {
+      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/stub/LanguageServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/stub/LanguageServiceStub.java"
+    },
+    {
+      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/stub/GrpcLanguageServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/stub/GrpcLanguageServiceStub.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/proto/google/cloud/language/v1/language_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeSentimentRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeSyntaxRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeEntitySentimentResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeSyntaxResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/TextSpanOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/Token.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/SentimentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeSentimentRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeEntitySentimentRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeSyntaxResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/PartOfSpeech.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeEntitiesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnnotateTextRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/TextSpan.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/EntityMention.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/ClassifyTextResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/EncodingType.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/ClassifyTextResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/Sentiment.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/Document.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeSentimentResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/DependencyEdgeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/ClassifyTextRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/EntityMentionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/PartOfSpeechOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeEntitiesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeEntitiesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/TokenOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/DocumentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeEntitySentimentResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/ClassifyTextRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/Sentence.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeEntitySentimentRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/ClassificationCategoryOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/ClassificationCategory.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeEntitiesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/LanguageServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeSyntaxRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/DependencyEdge.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnnotateTextResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnnotateTextRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnnotateTextResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/EntityOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/SentenceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/AnalyzeSentimentResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/Entity.java"
     }
   ]
 }
