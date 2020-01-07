@@ -16,14 +16,7 @@
 # `-e` enables the script to automatically fail when a command fails
 # `-o pipefail` sets the exit code to the rightmost comment to exit with a non-zero
 set -eo pipefail
-# Enables `**` to include files nested inside sub-folders
-shopt -s globstar
 
-# Update `gcloud` and log versioning for debugging.
-gcloud components install beta --quiet
-gcloud components update --quiet
-echo "********** GCLOUD INFO ***********"
-gcloud -v
 echo "********** MAVEN INFO  ***********"
 mvn -v
 
@@ -42,16 +35,5 @@ scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 cd ${scriptDir}/../samples/
 
 echo -e "\n******************** RUNNING SAMPLE TESTS ********************"
-RTN=0
 
 mvn --fail-at-end clean verify
-
-EXIT=$?
-if [[ $EXIT -ne 0 ]]; then
-  RTN=1
-  echo -e "\n Testing failed: Maven returned a non-zero exit code. \n"
-else
-  echo -e "\n Testing completed.\n"
-fi
-
-exit "$RTN"
