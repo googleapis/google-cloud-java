@@ -1,19 +1,19 @@
 {
-  "updateTime": "2019-12-19T08:55:20.737665Z",
+  "updateTime": "2020-01-07T09:03:34.946139Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.42.3",
-        "dockerImage": "googleapis/artman@sha256:feed210b5723c6f524b52ef6d7740a030f2d1a8f7c29a71c5e5b4481ceaad7f5"
+        "version": "0.43.0",
+        "dockerImage": "googleapis/artman@sha256:264654a37596a44b0668b8ce6ac41082d713f6ee150b3fc6425fa78cc64e4f20"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d400cb8d45df5b2ae796b909f098a215b2275c1d",
-        "internalRef": "286312673"
+        "sha": "cb79155f596e0396dd900da93872be7066f6340d",
+        "internalRef": "288441307"
       }
     },
     {
@@ -38,10 +38,7 @@
   ],
   "newFiles": [
     {
-      "path": ".gitignore"
-    },
-    {
-      "path": "README.md"
+      "path": ".repo-metadata.json"
     },
     {
       "path": "renovate.json"
@@ -50,16 +47,19 @@
       "path": "license-checks.xml"
     },
     {
-      "path": "CONTRIBUTING.md"
-    },
-    {
       "path": "synth.py"
     },
     {
-      "path": "synth.metadata"
+      "path": "CHANGELOG.md"
     },
     {
-      "path": "java.header"
+      "path": "codecov.yaml"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": ".gitignore"
     },
     {
       "path": "pom.xml"
@@ -68,841 +68,28 @@
       "path": "CODE_OF_CONDUCT.md"
     },
     {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "README.md"
+    },
+    {
       "path": "versions.txt"
     },
     {
-      "path": "CHANGELOG.md"
+      "path": "CONTRIBUTING.md"
     },
     {
-      "path": "LICENSE"
-    },
-    {
-      "path": ".repo-metadata.json"
-    },
-    {
-      "path": "codecov.yaml"
-    },
-    {
-      "path": ".github/release-please.yml"
-    },
-    {
-      "path": ".github/PULL_REQUEST_TEMPLATE.md"
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/support_request.md"
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+      "path": "java.header"
     },
     {
       "path": "google-cloud-talent-bom/pom.xml"
     },
     {
-      "path": "proto-google-cloud-talent-v4beta1/pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/clirr-ignored-differences.xml"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/profile.proto"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/job_service.proto"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/completion_service.proto"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/filters.proto"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/common.proto"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/job.proto"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/company.proto"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/event_service.proto"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/batch.proto"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/profile_service.proto"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/company_service.proto"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/tenant_service.proto"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/event.proto"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/histogram.proto"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/tenant.proto"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/application.proto"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/application_service.proto"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileQueryOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobQuery.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateTenantRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CertificationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/LocationFilterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/RatingOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SpellingCorrection.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyServiceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CommuteFilterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationOutcomeNotesFilterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TimestampRange.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobLevel.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompensationInfoOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobWithoutTenantName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchCreateJobsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TenantOrProjectName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobEventOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobOperationResult.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetApplicationRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/HistogramQueryResultOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateTenantRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SummarizedProfileOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EmploymentRecord.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateCompanyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Visibility.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyNames.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Company.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PostingRegion.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteProfileRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ClientEvent.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateJobRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetApplicationRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PublicationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateApplicationRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Rating.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateJobRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DegreeType.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Phone.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateCompanyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateApplicationRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileResourceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteTenantRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListProfilesResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchProto.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PersonalUri.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SearchJobsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateClientEventRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobServiceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListCompaniesResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationJobFilterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyNewName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListJobsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListCompaniesRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CommuteFilter.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Email.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/RequestMetadata.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EventProto.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SearchProfilesRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProjectName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListCompaniesRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetTenantRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteJobRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PersonNameFilter.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListTenantsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobNewName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EducationFilterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListCompaniesResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListJobsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteApplicationRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobTitleFilterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/AdditionalContactInfo.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateTenantRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Certification.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobTitleFilter.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetTenantRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListJobsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileQuery.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SkillFilter.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/HistogramProto.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteJobRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EmploymentType.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompleteQueryRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SearchProfilesResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateProfileRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CandidateAvailabilityFilterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/RequestMetadataOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ActivityOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DegreeOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/LocationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobOldName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobQueryOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TenantOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CustomAttribute.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListProfilesRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TenantOrProjectNames.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SkillProficiencyLevel.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationOutcomeNotesFilter.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TimestampRangeOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateTenantRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SummarizedProfile.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetCompanyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Profile.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobNames.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ResponseMetadata.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyResourceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationServiceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateApplicationRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobWithTenantName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ContactInfoUsage.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/WorkExperienceFilter.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SearchJobsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListTenantsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateJobRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobOperationResultOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanySize.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListProfilesResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListApplicationsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SearchJobsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/WorkExperienceFilterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/AvailabilitySignal.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EducationRecord.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ResumeOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/AvailabilitySignalOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EmployerFilter.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateCompanyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Degree.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateCompanyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/AvailabilitySignalType.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TimeFilter.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CustomAttributeOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompletionServiceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/AdditionalContactInfoOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchCreateJobsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/HtmlSanitization.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyOldName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetJobRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Job.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ResponseMetadataOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetJobRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompleteQueryResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Tenant.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileEventOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchDeleteJobsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Address.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListProfilesRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationJobFilter.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobEvent.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteTenantRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/FiltersProto.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobCategory.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteApplicationRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobResourceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ClientEventOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateClientEventRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompensationInfo.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeviceInfo.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SkillOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UntypedJobName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PersonNameFilterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SearchJobsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchOperationMetadata.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EducationRecordOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SearchProfilesResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Interview.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/InterviewOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TenantServiceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateApplicationRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetCompanyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchUpdateJobsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationDateFilterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListTenantsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListTenantsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CandidateAvailabilityFilter.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListApplicationsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CommuteMethod.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchDeleteJobsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CommonProto.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Application.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TenantName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompleteQueryResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TenantResourceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EducationFilter.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Outcome.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchOperationMetadataOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListApplicationsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Patent.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileServiceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetProfileRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PersonName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EventServiceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyWithoutTenantName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteCompanyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SearchProfilesRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/HistogramQueryOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PhoneOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/HistogramQueryResult.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Skill.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchUpdateJobsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateProfileRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/AvailabilityFilterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobBenefit.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Activity.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EmploymentRecordOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyWithTenantName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteProfileRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeviceInfoOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SkillFilterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PatentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Resume.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/AvailabilityFilter.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EmailOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/HistogramQuery.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Location.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/LocationFilter.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompensationFilterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Publication.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SpellingCorrectionOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PersonNameOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobView.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteCompanyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationDateFilter.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetProfileRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UntypedTenantOrProjectName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateProfileRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UntypedCompanyName.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileEvent.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TimeFilterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListApplicationsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateProfileRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationResourceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListJobsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompleteQueryRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PersonalUriOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/AddressOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompensationFilter.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateJobRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EmployerFilterOrBuilder.java"
-    },
-    {
-      "path": ".kokoro/trampoline.sh"
-    },
-    {
-      "path": ".kokoro/build.sh"
-    },
-    {
       "path": ".kokoro/build.bat"
     },
     {
-      "path": ".kokoro/linkage-monitor.sh"
+      "path": ".kokoro/build.sh"
     },
     {
       "path": ".kokoro/dependencies.sh"
@@ -911,28 +98,64 @@
       "path": ".kokoro/common.cfg"
     },
     {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
       "path": ".kokoro/coerce_logs.sh"
     },
     {
-      "path": ".kokoro/release/common.sh"
+      "path": ".kokoro/linkage-monitor.sh"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.cfg"
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
     },
     {
       "path": ".kokoro/release/stage.cfg"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.sh"
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
     },
     {
       "path": ".kokoro/release/bump_snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.cfg"
     },
     {
       "path": ".kokoro/release/promote.sh"
@@ -941,49 +164,40 @@
       "path": ".kokoro/release/stage.sh"
     },
     {
-      "path": ".kokoro/release/bump_snapshot.sh"
+      "path": ".kokoro/release/snapshot.sh"
     },
     {
-      "path": ".kokoro/release/promote.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.sh"
+      "path": ".kokoro/release/snapshot.cfg"
     },
     {
       "path": ".kokoro/release/common.cfg"
     },
     {
-      "path": ".kokoro/release/snapshot.sh"
+      "path": ".kokoro/release/bump_snapshot.sh"
     },
     {
-      "path": ".kokoro/nightly/java11.cfg"
+      "path": ".kokoro/release/common.sh"
     },
     {
-      "path": ".kokoro/nightly/java8-win.cfg"
+      "path": ".kokoro/release/drop.cfg"
     },
     {
-      "path": ".kokoro/nightly/lint.cfg"
+      "path": ".kokoro/release/publish_javadoc.sh"
     },
     {
-      "path": ".kokoro/nightly/java8-osx.cfg"
+      "path": ".kokoro/presubmit/dependencies.cfg"
     },
     {
-      "path": ".kokoro/nightly/integration.cfg"
+      "path": ".kokoro/presubmit/samples.cfg"
     },
     {
-      "path": ".kokoro/nightly/java7.cfg"
+      "path": ".kokoro/presubmit/java7.cfg"
     },
     {
-      "path": ".kokoro/nightly/java8.cfg"
+      "path": ".kokoro/presubmit/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/nightly/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/common.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java11.cfg"
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
     },
     {
       "path": ".kokoro/presubmit/java8-win.cfg"
@@ -992,67 +206,865 @@
       "path": ".kokoro/presubmit/lint.cfg"
     },
     {
-      "path": ".kokoro/presubmit/clirr.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/integration.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java7.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+      "path": ".kokoro/presubmit/java11.cfg"
     },
     {
       "path": ".kokoro/presubmit/common.cfg"
     },
     {
-      "path": ".kokoro/continuous/propose_release.cfg"
+      "path": ".kokoro/presubmit/clirr.cfg"
     },
     {
-      "path": ".kokoro/continuous/java11.cfg"
+      "path": ".kokoro/presubmit/java8.cfg"
     },
     {
-      "path": ".kokoro/continuous/java8-win.cfg"
+      "path": ".kokoro/presubmit/integration.cfg"
     },
     {
-      "path": ".kokoro/continuous/lint.cfg"
+      "path": ".kokoro/nightly/dependencies.cfg"
     },
     {
-      "path": ".kokoro/continuous/java8-osx.cfg"
+      "path": ".kokoro/nightly/samples.cfg"
     },
     {
-      "path": ".kokoro/continuous/propose_release.sh"
+      "path": ".kokoro/nightly/java7.cfg"
     },
     {
-      "path": ".kokoro/continuous/integration.cfg"
+      "path": ".kokoro/nightly/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/continuous/java7.cfg"
+      "path": ".kokoro/nightly/java8-win.cfg"
     },
     {
-      "path": ".kokoro/continuous/java8.cfg"
+      "path": ".kokoro/nightly/lint.cfg"
     },
     {
-      "path": ".kokoro/continuous/dependencies.cfg"
+      "path": ".kokoro/nightly/java11.cfg"
     },
     {
-      "path": ".kokoro/continuous/common.cfg"
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/application.proto"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/company.proto"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/application_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/job.proto"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/filters.proto"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/profile.proto"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/common.proto"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/tenant.proto"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/event_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/job_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/tenant_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/histogram.proto"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/profile_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/event.proto"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/batch.proto"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/company_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/proto/google/cloud/talent/v4beta1/completion_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Visibility.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/FiltersProto.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateTenantRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompleteQueryRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationDateFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteApplicationRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SkillFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobEvent.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TenantOrProjectNames.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileEvent.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/HistogramQueryResultOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationJobFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Interview.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetTenantRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyWithoutTenantName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/HistogramProto.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListApplicationsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobView.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchDeleteJobsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteApplicationRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/AvailabilitySignal.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SkillProficiencyLevel.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileQueryOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobTitleFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListJobsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ClientEvent.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/HtmlSanitization.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SpellingCorrection.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteCompanyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SearchProfilesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanySize.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Location.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/AvailabilityFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompleteQueryResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobOperationResultOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/LocationFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Patent.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateApplicationRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListTenantsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateProfileRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListProfilesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteTenantRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListJobsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/InterviewOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/WorkExperienceFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompleteQueryResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListJobsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EmploymentRecordOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/AddressOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobOldName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListCompaniesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EmploymentType.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SearchProfilesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompleteQueryRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileResourceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListCompaniesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetCompanyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListApplicationsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TenantResourceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TimeFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Publication.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationOutcomeNotesFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateCompanyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateProfileRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Application.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PersonNameFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CommuteMethod.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchCreateJobsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EmailOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SearchProfilesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ClientEventOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EventServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListApplicationsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Activity.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/LocationFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UntypedCompanyName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/AvailabilitySignalType.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobEventOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UntypedJobName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobNames.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Phone.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetTenantRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateApplicationRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/HistogramQuery.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TimeFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EducationFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TimestampRange.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Certification.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompensationInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CustomAttribute.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyNames.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListJobsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PersonalUriOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateTenantRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TimestampRangeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CandidateAvailabilityFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompensationInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListProfilesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ResponseMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/WorkExperienceFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SkillFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Outcome.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PhoneOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TenantOrProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TenantOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationOutcomeNotesFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EmployerFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyWithTenantName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobWithoutTenantName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetApplicationRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteProfileRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Address.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListApplicationsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobQuery.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ActivityOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/HistogramQueryOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/AvailabilitySignalOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Profile.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/AdditionalContactInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateCompanyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SpellingCorrectionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Degree.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyResourceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchProto.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobTitleFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/RequestMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateCompanyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SearchProfilesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateProfileRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyOldName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CommonProto.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationJobFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompensationFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PatentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileEventOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PersonNameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateProfileRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DegreeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileQuery.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetProfileRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CommuteFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PersonName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/RequestMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Company.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteProfileRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyNewName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PersonNameFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Rating.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateApplicationRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ResponseMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CandidateAvailabilityFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListProfilesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EducationRecord.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PersonalUri.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CommuteFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SearchJobsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Resume.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Email.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EventProto.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SummarizedProfileOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompletionServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UntypedTenantOrProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SearchJobsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SkillOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchUpdateJobsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EmploymentRecord.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/HistogramQueryResult.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetApplicationRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SummarizedProfile.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Tenant.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobResourceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ResumeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/AvailabilityFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateApplicationRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompensationFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobLevel.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListTenantsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchUpdateJobsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationDateFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeviceInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EducationRecordOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetCompanyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SearchJobsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/AdditionalContactInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteTenantRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EducationFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListTenantsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PostingRegion.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/SearchJobsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TenantServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/UpdateTenantRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DegreeType.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationResourceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateClientEventRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobOperationResult.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobBenefit.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobQueryOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CustomAttributeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchCreateJobsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateTenantRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ContactInfoUsage.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CertificationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/PublicationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Skill.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListCompaniesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/GetProfileRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListCompaniesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobCategory.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobWithTenantName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListTenantsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeviceInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/LocationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ListProfilesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TenantName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/RatingOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/DeleteCompanyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/Job.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EmployerFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateCompanyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CreateClientEventRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobNewName.java"
+    },
+    {
+      "path": "proto-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/BatchDeleteJobsRequestOrBuilder.java"
+    },
+    {
+      "path": "__pycache__/synth.cpython-36.pyc"
     },
     {
       "path": "grpc-google-cloud-talent-v4beta1/pom.xml"
     },
     {
-      "path": "grpc-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationServiceGrpc.java"
+      "path": "grpc-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyServiceGrpc.java"
     },
     {
       "path": "grpc-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/JobServiceGrpc.java"
@@ -1061,220 +1073,16 @@
       "path": "grpc-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/EventServiceGrpc.java"
     },
     {
-      "path": "grpc-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileServiceGrpc.java"
+      "path": "grpc-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TenantServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ApplicationServiceGrpc.java"
     },
     {
       "path": "grpc-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompletionGrpc.java"
     },
     {
-      "path": "grpc-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/CompanyServiceGrpc.java"
-    },
-    {
-      "path": "grpc-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/TenantServiceGrpc.java"
-    },
-    {
-      "path": "__pycache__/synth.cpython-36.pyc"
-    },
-    {
-      "path": "google-cloud-talent/pom.xml"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockProfileServiceImpl.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/EventServiceClientTest.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockCompanyServiceImpl.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/TenantServiceClientTest.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockEventService.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockTenantService.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockCompletionImpl.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/ApplicationServiceClientTest.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockJobServiceImpl.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/CompletionClientTest.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/JobServiceClientTest.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockApplicationServiceImpl.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/CompanyServiceClientTest.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockCompanyService.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockJobService.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/ProfileServiceClientTest.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockEventServiceImpl.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockCompletion.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockProfileService.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockApplicationService.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockTenantServiceImpl.java"
-    },
-    {
-      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/it/ITSystemTest.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/CompletionSettings.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/CompanyServiceSettings.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/JobServiceClient.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/TenantServiceClient.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/CompanyServiceClient.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/TenantServiceSettings.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/ApplicationServiceSettings.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/CompletionClient.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/JobServiceSettings.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/ProfileServiceSettings.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/EventServiceSettings.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/ApplicationServiceClient.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/ProfileServiceClient.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/EventServiceClient.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/package-info.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcCompanyServiceCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcTenantServiceStub.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/ProfileServiceStubSettings.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/ApplicationServiceStubSettings.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcApplicationServiceCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcJobServiceStub.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/CompletionStub.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/CompanyServiceStub.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/TenantServiceStub.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcEventServiceStub.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcProfileServiceCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcJobServiceCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcProfileServiceStub.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcCompletionCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcCompletionStub.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/TenantServiceStubSettings.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/ProfileServiceStub.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcCompanyServiceStub.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcEventServiceCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/CompletionStubSettings.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/EventServiceStubSettings.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/ApplicationServiceStub.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/EventServiceStub.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcTenantServiceCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/JobServiceStubSettings.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/CompanyServiceStubSettings.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcApplicationServiceStub.java"
-    },
-    {
-      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/JobServiceStub.java"
-    },
-    {
-      "path": ".git/shallow"
+      "path": "grpc-google-cloud-talent-v4beta1/src/main/java/com/google/cloud/talent/v4beta1/ProfileServiceGrpc.java"
     },
     {
       "path": ".git/index"
@@ -1289,22 +1097,13 @@
       "path": ".git/config"
     },
     {
-      "path": ".git/logs/HEAD"
+      "path": ".git/objects/pack/pack-35e8ce4b78321c4309b93677ae633ac1b4eaaba1.pack"
     },
     {
-      "path": ".git/logs/refs/heads/autosynth"
+      "path": ".git/objects/pack/pack-35e8ce4b78321c4309b93677ae633ac1b4eaaba1.idx"
     },
     {
-      "path": ".git/logs/refs/heads/master"
-    },
-    {
-      "path": ".git/logs/refs/remotes/origin/HEAD"
-    },
-    {
-      "path": ".git/objects/pack/pack-174b5092934e41cfec1c3095366b9f9788c1bfa9.pack"
-    },
-    {
-      "path": ".git/objects/pack/pack-174b5092934e41cfec1c3095366b9f9788c1bfa9.idx"
+      "path": ".git/refs/remotes/origin/HEAD"
     },
     {
       "path": ".git/refs/heads/autosynth"
@@ -1313,7 +1112,214 @@
       "path": ".git/refs/heads/master"
     },
     {
-      "path": ".git/refs/remotes/origin/HEAD"
+      "path": ".git/logs/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/remotes/origin/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/heads/autosynth"
+    },
+    {
+      "path": ".git/logs/refs/heads/master"
+    },
+    {
+      "path": "google-cloud-talent/pom.xml"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/CompletionClientTest.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockTenantService.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockApplicationService.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockApplicationServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/EventServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/ApplicationServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockJobService.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/TenantServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockProfileService.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockEventService.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/ProfileServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockCompanyServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockCompanyService.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/CompanyServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockProfileServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockCompletionImpl.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockTenantServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockEventServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockCompletion.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/MockJobServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/JobServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-talent/src/test/java/com/google/cloud/talent/v4beta1/it/ITSystemTest.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/ProfileServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/JobServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/TenantServiceClient.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/ApplicationServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/CompletionClient.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/TenantServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/EventServiceClient.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/EventServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/CompletionSettings.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/package-info.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/JobServiceClient.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/CompanyServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/CompanyServiceClient.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/ProfileServiceClient.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/ApplicationServiceClient.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcEventServiceStub.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/CompletionStubSettings.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcTenantServiceStub.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcJobServiceStub.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/CompanyServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/JobServiceStub.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/ProfileServiceStub.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcApplicationServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/EventServiceStub.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/TenantServiceStub.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/ApplicationServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/TenantServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/JobServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/CompletionStub.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcCompletionStub.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcProfileServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcEventServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/EventServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/ProfileServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcCompletionCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcProfileServiceStub.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/CompanyServiceStub.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcApplicationServiceStub.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcCompanyServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcJobServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcCompanyServiceStub.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/GrpcTenantServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/ApplicationServiceStub.java"
     }
   ]
 }
