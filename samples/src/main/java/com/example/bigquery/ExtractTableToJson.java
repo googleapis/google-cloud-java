@@ -17,12 +17,14 @@
 package com.example.bigquery;
 
 // [START bigquery_extract_table]
+import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
+import org.threeten.bp.Duration;
 
 public class ExtractTableToJson {
 
@@ -54,7 +56,10 @@ public class ExtractTableToJson {
       Job job = table.extract("CSV", destinationUri);
 
       // Blocks until this job completes its execution, either failing or succeeding.
-      Job completedJob = job.waitFor();
+      Job completedJob =
+          job.waitFor(
+              RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+              RetryOption.totalTimeout(Duration.ofMinutes(3)));
       if (completedJob == null) {
         System.out.println("Job not executed since it no longer exists.");
         return;
