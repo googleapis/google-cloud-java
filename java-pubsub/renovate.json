@@ -52,6 +52,12 @@
       ],
       "semanticCommitType": "build",
       "semanticCommitScope": "deps"
+    },
+    {
+      "packagePatterns": [
+        "^com.google.cloud:google-cloud-"
+      ],
+      "ignoreUnstable": false
     }
   ],
   "semanticCommits": true
