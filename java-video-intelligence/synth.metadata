@@ -1,19 +1,19 @@
 {
-  "updateTime": "2019-12-19T08:59:46.971356Z",
+  "updateTime": "2020-01-07T09:09:20.463990Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.42.3",
-        "dockerImage": "googleapis/artman@sha256:feed210b5723c6f524b52ef6d7740a030f2d1a8f7c29a71c5e5b4481ceaad7f5"
+        "version": "0.43.0",
+        "dockerImage": "googleapis/artman@sha256:264654a37596a44b0668b8ce6ac41082d713f6ee150b3fc6425fa78cc64e4f20"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d400cb8d45df5b2ae796b909f098a215b2275c1d",
-        "internalRef": "286312673"
+        "sha": "cb79155f596e0396dd900da93872be7066f6340d",
+        "internalRef": "288441307"
       }
     },
     {
@@ -78,10 +78,7 @@
   ],
   "newFiles": [
     {
-      "path": ".gitignore"
-    },
-    {
-      "path": "README.md"
+      "path": ".repo-metadata.json"
     },
     {
       "path": "renovate.json"
@@ -90,16 +87,19 @@
       "path": "license-checks.xml"
     },
     {
-      "path": "CONTRIBUTING.md"
-    },
-    {
       "path": "synth.py"
     },
     {
-      "path": "synth.metadata"
+      "path": "CHANGELOG.md"
     },
     {
-      "path": "java.header"
+      "path": "codecov.yaml"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": ".gitignore"
     },
     {
       "path": "pom.xml"
@@ -108,19 +108,19 @@
       "path": "CODE_OF_CONDUCT.md"
     },
     {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "README.md"
+    },
+    {
       "path": "versions.txt"
     },
     {
-      "path": "CHANGELOG.md"
+      "path": "CONTRIBUTING.md"
     },
     {
-      "path": "LICENSE"
-    },
-    {
-      "path": ".repo-metadata.json"
-    },
-    {
-      "path": "codecov.yaml"
+      "path": "java.header"
     },
     {
       "path": "proto-google-cloud-video-intelligence-v1beta2/pom.xml"
@@ -129,709 +129,142 @@
       "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/proto/google/cloud/videointelligence/v1beta2/video_intelligence.proto"
     },
     {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoAnnotationResults.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/FaceDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/LabelDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/FaceAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoContextOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/Likelihood.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/ExplicitContentDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoAnnotationProgress.java"
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/LabelSegment.java"
     },
     {
       "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoSegment.java"
     },
     {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/LabelFrame.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/LabelDetectionMode.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/LabelSegmentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/ExplicitContentFrame.java"
-    },
-    {
       "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/ExplicitContentAnnotation.java"
     },
     {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/FaceAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/AnnotateVideoRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoIntelligenceServiceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/Feature.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/ShotChangeDetectionConfig.java"
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/FaceAnnotationOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoAnnotationProgressOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/FaceSegmentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/FaceDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/FaceFrame.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/LabelAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoSegmentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/LabelDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoContext.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/EntityOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/AnnotateVideoResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/AnnotateVideoRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/AnnotateVideoResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoAnnotationResultsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/LabelAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/LabelSegment.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/AnnotateVideoProgressOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/ShotChangeDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/ExplicitContentFrameOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/ExplicitContentDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/Entity.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/AnnotateVideoProgress.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/FaceFrameOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/FaceSegment.java"
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/LabelDetectionConfig.java"
     },
     {
       "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/NormalizedBoundingBoxOrBuilder.java"
     },
     {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/AnnotateVideoResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/FaceDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/LabelFrame.java"
+    },
+    {
       "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/ExplicitContentAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/ExplicitContentFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoContext.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/FaceSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/FaceSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/ExplicitContentDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/FaceFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/FaceFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoIntelligenceServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/LabelAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoAnnotationResultsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/FaceAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/ExplicitContentFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/ShotChangeDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/LabelAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/AnnotateVideoRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/Feature.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/AnnotateVideoProgressOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/AnnotateVideoProgress.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoAnnotationResults.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/FaceDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/LabelDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/ExplicitContentDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoAnnotationProgress.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/AnnotateVideoRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/LabelSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/ShotChangeDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/LabelDetectionMode.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/EntityOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/LabelFrameOrBuilder.java"
     },
     {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/Likelihood.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/AnnotateVideoResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/Entity.java"
+    },
+    {
       "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/NormalizedBoundingBox.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/clirr-ignored-differences.xml"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/proto/google/cloud/videointelligence/v1p3beta1/video_intelligence.proto"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/Celebrity.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoAnnotationResults.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/CelebrityOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingShotChangeDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ObjectTrackingConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingShotChangeDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TextSegment.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingExplicitContentDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TextAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoContextOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/Likelihood.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ExplicitContentDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingLabelDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingAnnotateVideoRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoAnnotationProgress.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/SpeechRecognitionAlternativeOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoSegment.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TimestampedObject.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ObjectTrackingAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LogoRecognitionAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/WordInfo.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingObjectTrackingConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelFrame.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/CelebrityTrack.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/DetectedAttribute.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingLabelDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelDetectionMode.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelSegmentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ExplicitContentFrame.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ExplicitContentAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/AnnotateVideoRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingExplicitContentDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingStorageConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/WordInfoOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoIntelligenceServiceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/Feature.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ObjectTrackingFrameOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LogoRecognitionAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/SpeechContext.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ShotChangeDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/Track.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TextSegmentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoAnnotationProgressOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/CelebrityTrackOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TextFrameOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TrackOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TextDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/NormalizedVertexOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoSegmentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoAnnotationResults.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/SpeechContextOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingAnnotateVideoResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/SpeechTranscriptionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoContext.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingAutomlClassificationConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/EntityOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TimestampedObjectOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/AnnotateVideoResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/NormalizedBoundingPolyOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TextDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/AnnotateVideoRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/AnnotateVideoResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoAnnotationResultsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TextFrame.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelSegment.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/AnnotateVideoProgressOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TextAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingAutomlClassificationConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ShotChangeDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ExplicitContentFrameOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/NormalizedVertex.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ObjectTrackingAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ObjectTrackingFrame.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ExplicitContentDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/Entity.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoAnnotationResultsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingObjectTrackingConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/AnnotateVideoProgress.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/SpeechTranscription.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingAnnotateVideoRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingStorageConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/SpeechRecognitionAlternative.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingAutomlObjectTrackingConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/SpeechTranscriptionOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/NormalizedBoundingPoly.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ObjectTrackingConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/SpeechTranscriptionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingAnnotateVideoResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/NormalizedBoundingBoxOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/DetectedAttributeOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ExplicitContentAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelFrameOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/NormalizedBoundingBox.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingAutomlObjectTrackingConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingFeature.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/CelebrityRecognitionAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/CelebrityRecognitionAnnotationOrBuilder.java"
-    },
-    {
-      "path": "grpc-google-cloud-video-intelligence-v1beta2/pom.xml"
-    },
-    {
-      "path": "grpc-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoIntelligenceServiceGrpc.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/proto/google/cloud/videointelligence/v1/video_intelligence.proto"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoAnnotationResults.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ObjectTrackingConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/TextSegment.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/TextAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoContextOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/Likelihood.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ExplicitContentDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoAnnotationProgress.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/SpeechRecognitionAlternativeOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoSegment.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ObjectTrackingAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/WordInfo.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelFrame.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelDetectionMode.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelSegmentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ExplicitContentFrame.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ExplicitContentAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/AnnotateVideoRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/WordInfoOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/Feature.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ObjectTrackingFrameOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/SpeechContext.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ShotChangeDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/TextSegmentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoAnnotationProgressOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceSegmentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/TextFrameOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceFrame.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/TextDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/NormalizedVertexOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoSegmentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/SpeechContextOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/SpeechTranscriptionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoContext.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/EntityOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/AnnotateVideoResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/NormalizedBoundingPolyOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/TextDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/AnnotateVideoRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/AnnotateVideoResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoAnnotationResultsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/TextFrame.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelSegment.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/AnnotateVideoProgressOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/TextAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ShotChangeDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ExplicitContentFrameOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/NormalizedVertex.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ObjectTrackingAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ObjectTrackingFrame.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ExplicitContentDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/Entity.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/AnnotateVideoProgress.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/SpeechTranscription.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceFrameOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/SpeechRecognitionAlternative.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/SpeechTranscriptionOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/NormalizedBoundingPoly.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ObjectTrackingConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceSegment.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/SpeechTranscriptionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/NormalizedBoundingBoxOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ExplicitContentAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelFrameOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/NormalizedBoundingBox.java"
-    },
-    {
-      "path": ".github/release-please.yml"
-    },
-    {
-      "path": ".github/PULL_REQUEST_TEMPLATE.md"
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/support_request.md"
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
     },
     {
       "path": "grpc-google-cloud-video-intelligence-v1p1beta1/pom.xml"
@@ -840,505 +273,10 @@
       "path": "grpc-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceGrpc.java"
     },
     {
-      "path": "grpc-google-cloud-video-intelligence-v1p2beta1/pom.xml"
-    },
-    {
-      "path": "grpc-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoIntelligenceServiceGrpc.java"
-    },
-    {
-      "path": ".kokoro/trampoline.sh"
-    },
-    {
-      "path": ".kokoro/build.sh"
-    },
-    {
-      "path": ".kokoro/build.bat"
-    },
-    {
-      "path": ".kokoro/linkage-monitor.sh"
-    },
-    {
-      "path": ".kokoro/dependencies.sh"
-    },
-    {
-      "path": ".kokoro/common.cfg"
-    },
-    {
-      "path": ".kokoro/coerce_logs.sh"
-    },
-    {
-      "path": ".kokoro/release/common.sh"
-    },
-    {
-      "path": ".kokoro/release/publish_javadoc.cfg"
-    },
-    {
-      "path": ".kokoro/release/stage.cfg"
-    },
-    {
-      "path": ".kokoro/release/publish_javadoc.sh"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/promote.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.sh"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.sh"
-    },
-    {
-      "path": ".kokoro/release/promote.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.sh"
-    },
-    {
-      "path": ".kokoro/release/common.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.sh"
-    },
-    {
-      "path": ".kokoro/nightly/java11.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/lint.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/integration.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java7.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/common.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java11.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/lint.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/clirr.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/integration.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java7.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/linkage-monitor.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/common.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java11.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/lint.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.sh"
-    },
-    {
-      "path": ".kokoro/continuous/integration.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java7.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/common.cfg"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/proto/google/cloud/videointelligence/v1p1beta1/video_intelligence.proto"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoAnnotationResults.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoContextOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/Likelihood.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/ExplicitContentDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoAnnotationProgress.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/SpeechRecognitionAlternativeOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoSegment.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/WordInfo.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelFrame.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelDetectionMode.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelSegmentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/ExplicitContentFrame.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/ExplicitContentAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/AnnotateVideoRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/WordInfoOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/Feature.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/SpeechContext.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/ShotChangeDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoAnnotationProgressOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoSegmentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/SpeechContextOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/SpeechTranscriptionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoContext.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/EntityOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/AnnotateVideoResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/AnnotateVideoRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/AnnotateVideoResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoAnnotationResultsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelSegment.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/AnnotateVideoProgressOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/ShotChangeDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/ExplicitContentFrameOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/ExplicitContentDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/Entity.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/AnnotateVideoProgress.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/SpeechTranscription.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/SpeechRecognitionAlternative.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/SpeechTranscriptionOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/SpeechTranscriptionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/ExplicitContentAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelFrameOrBuilder.java"
-    },
-    {
-      "path": "grpc-google-cloud-video-intelligence-v1p3beta1/pom.xml"
-    },
-    {
-      "path": "grpc-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoIntelligenceServiceGrpc.java"
-    },
-    {
-      "path": "grpc-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoIntelligenceServiceGrpc.java"
-    },
-    {
       "path": "samples/src/main/java/com/google/cloud/examples/videointelligence/v1p3beta1/VideoDetectLogoGcsBeta.java"
     },
     {
       "path": "samples/src/main/java/com/google/cloud/examples/videointelligence/v1p3beta1/VideoDetectLogoBeta.java"
-    },
-    {
-      "path": "grpc-google-cloud-video-intelligence-v1/pom.xml"
-    },
-    {
-      "path": "grpc-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceGrpc.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/proto/google/cloud/videointelligence/v1p2beta1/video_intelligence.proto"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoAnnotationResults.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/TextSegment.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/TextAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoContextOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/Likelihood.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ExplicitContentDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoAnnotationProgress.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoSegment.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ObjectTrackingAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelFrame.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelDetectionMode.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelSegmentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ExplicitContentFrame.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ExplicitContentAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/AnnotateVideoRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoIntelligenceServiceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/Feature.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ObjectTrackingFrameOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ShotChangeDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/TextSegmentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoAnnotationProgressOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/TextFrameOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/TextDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/NormalizedVertexOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoSegmentOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoContext.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/EntityOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/AnnotateVideoResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/NormalizedBoundingPolyOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/TextDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/AnnotateVideoRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/AnnotateVideoResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoAnnotationResultsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/TextFrame.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelAnnotation.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelSegment.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/AnnotateVideoProgressOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/TextAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ShotChangeDetectionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ExplicitContentFrameOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/NormalizedVertex.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ObjectTrackingAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ObjectTrackingFrame.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ExplicitContentDetectionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/Entity.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/AnnotateVideoProgress.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/NormalizedBoundingPoly.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/NormalizedBoundingBoxOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ExplicitContentAnnotationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelFrameOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/NormalizedBoundingBox.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence-bom/pom.xml"
-    },
-    {
-      "path": "__pycache__/synth.cpython-36.pyc"
     },
     {
       "path": "google-cloud-video-intelligence/pom.xml"
@@ -1347,37 +285,43 @@
       "path": "google-cloud-video-intelligence/clirr-ignored-differences.xml"
     },
     {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceSmokeTest.java"
+      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p2beta1/VideoIntelligenceServiceClientTest.java"
     },
     {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p1beta1/MockVideoIntelligenceServiceImpl.java"
+      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p2beta1/MockVideoIntelligenceServiceImpl.java"
     },
     {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p1beta1/MockVideoIntelligenceService.java"
+      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p2beta1/VideoIntelligenceServiceSmokeTest.java"
     },
     {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceClientTest.java"
+      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p2beta1/MockVideoIntelligenceService.java"
     },
     {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p1beta1/it/ITSystemTest.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceSmokeTest.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1/MockVideoIntelligenceServiceImpl.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1/MockVideoIntelligenceService.java"
+      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p2beta1/it/ITSystemTest.java"
     },
     {
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceClientTest.java"
     },
     {
+      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1/MockVideoIntelligenceServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceSmokeTest.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1/MockVideoIntelligenceService.java"
+    },
+    {
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1/it/ITSystemTest.java"
     },
     {
+      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/VideoIntelligenceServiceClientTest.java"
+    },
+    {
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/MockStreamingVideoIntelligenceService.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/MockVideoIntelligenceServiceImpl.java"
     },
     {
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/VideoIntelligenceServiceSmokeTest.java"
@@ -1386,19 +330,31 @@
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoIntelligenceServiceClientTest.java"
     },
     {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/MockVideoIntelligenceServiceImpl.java"
+      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/MockStreamingVideoIntelligenceServiceImpl.java"
     },
     {
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/MockVideoIntelligenceService.java"
     },
     {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/VideoIntelligenceServiceClientTest.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/MockStreamingVideoIntelligenceServiceImpl.java"
-    },
-    {
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/it/ITSystemTest.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p1beta1/MockVideoIntelligenceServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceSmokeTest.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p1beta1/MockVideoIntelligenceService.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p1beta1/it/ITSystemTest.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1beta2/VideoIntelligenceServiceClientTest.java"
     },
     {
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1beta2/MockVideoIntelligenceServiceImpl.java"
@@ -1407,127 +363,7 @@
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1beta2/MockVideoIntelligenceService.java"
     },
     {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1beta2/VideoIntelligenceServiceClientTest.java"
-    },
-    {
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1beta2/it/ITSystemTest.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p2beta1/VideoIntelligenceServiceSmokeTest.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p2beta1/MockVideoIntelligenceServiceImpl.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p2beta1/MockVideoIntelligenceService.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p2beta1/VideoIntelligenceServiceClientTest.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p2beta1/it/ITSystemTest.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceSettings.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceClient.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/package-info.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/stub/GrpcVideoIntelligenceServiceCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/stub/VideoIntelligenceServiceStubSettings.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/stub/VideoIntelligenceServiceStub.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/stub/GrpcVideoIntelligenceServiceStub.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceSettings.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceClient.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/package-info.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/stub/GrpcVideoIntelligenceServiceCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/stub/VideoIntelligenceServiceStubSettings.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/stub/VideoIntelligenceServiceStub.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/stub/GrpcVideoIntelligenceServiceStub.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoIntelligenceServiceSettings.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoIntelligenceServiceClient.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoIntelligenceServiceSettings.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoIntelligenceServiceClient.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/package-info.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/GrpcVideoIntelligenceServiceCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/VideoIntelligenceServiceStubSettings.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/GrpcStreamingVideoIntelligenceServiceStub.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/StreamingVideoIntelligenceServiceStubSettings.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/GrpcStreamingVideoIntelligenceServiceCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/VideoIntelligenceServiceStub.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/StreamingVideoIntelligenceServiceStub.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/GrpcVideoIntelligenceServiceStub.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoIntelligenceServiceSettings.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoIntelligenceServiceClient.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/package-info.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/stub/GrpcVideoIntelligenceServiceCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/stub/VideoIntelligenceServiceStubSettings.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/stub/VideoIntelligenceServiceStub.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/stub/GrpcVideoIntelligenceServiceStub.java"
     },
     {
       "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoIntelligenceServiceSettings.java"
@@ -1551,7 +387,937 @@
       "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p2beta1/stub/GrpcVideoIntelligenceServiceStub.java"
     },
     {
-      "path": ".git/shallow"
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceClient.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/package-info.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/stub/GrpcVideoIntelligenceServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/stub/VideoIntelligenceServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/stub/VideoIntelligenceServiceStub.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/stub/GrpcVideoIntelligenceServiceStub.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoIntelligenceServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoIntelligenceServiceClient.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoIntelligenceServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoIntelligenceServiceClient.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/package-info.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/GrpcStreamingVideoIntelligenceServiceStub.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/StreamingVideoIntelligenceServiceStub.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/GrpcVideoIntelligenceServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/VideoIntelligenceServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/VideoIntelligenceServiceStub.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/StreamingVideoIntelligenceServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/GrpcVideoIntelligenceServiceStub.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/GrpcStreamingVideoIntelligenceServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceClient.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/package-info.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/stub/GrpcVideoIntelligenceServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/stub/VideoIntelligenceServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/stub/VideoIntelligenceServiceStub.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/stub/GrpcVideoIntelligenceServiceStub.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoIntelligenceServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoIntelligenceServiceClient.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/package-info.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/stub/GrpcVideoIntelligenceServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/stub/VideoIntelligenceServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/stub/VideoIntelligenceServiceStub.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/stub/GrpcVideoIntelligenceServiceStub.java"
+    },
+    {
+      "path": "google-cloud-video-intelligence-bom/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-video-intelligence-v1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-video-intelligence-v1p3beta1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoIntelligenceServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoIntelligenceServiceGrpc.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/proto/google/cloud/videointelligence/v1p1beta1/video_intelligence.proto"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/SpeechRecognitionAlternativeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/SpeechTranscriptionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/ExplicitContentAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoAnnotationProgressOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/AnnotateVideoResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/SpeechRecognitionAlternative.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/ExplicitContentAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/WordInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/ExplicitContentFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoContext.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/ExplicitContentDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/SpeechContext.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoAnnotationResultsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/ExplicitContentFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/ShotChangeDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/WordInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/SpeechTranscriptionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/AnnotateVideoRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/SpeechTranscriptionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/Feature.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/SpeechTranscription.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/AnnotateVideoProgressOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/AnnotateVideoProgress.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoAnnotationResults.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/ExplicitContentDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoAnnotationProgress.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/AnnotateVideoRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/ShotChangeDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelDetectionMode.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/EntityOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/LabelFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/Likelihood.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/SpeechContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/AnnotateVideoResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/Entity.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/proto/google/cloud/videointelligence/v1p2beta1/video_intelligence.proto"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ExplicitContentAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/TextDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoAnnotationProgressOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ObjectTrackingAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ObjectTrackingFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/NormalizedBoundingBoxOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/AnnotateVideoResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/TextDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ObjectTrackingFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/NormalizedVertex.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ExplicitContentAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ExplicitContentFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoContext.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/NormalizedBoundingPolyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ExplicitContentDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/NormalizedBoundingPoly.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoIntelligenceServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoAnnotationResultsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/TextAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ExplicitContentFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ShotChangeDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/AnnotateVideoRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/Feature.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/TextFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/TextAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/AnnotateVideoProgressOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/TextFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/AnnotateVideoProgress.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoAnnotationResults.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ExplicitContentDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoAnnotationProgress.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/AnnotateVideoRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ShotChangeDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelDetectionMode.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/TextSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/EntityOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/LabelFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/ObjectTrackingAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/Likelihood.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/NormalizedVertexOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/TextSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/AnnotateVideoResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/Entity.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/NormalizedBoundingBox.java"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/proto/google/cloud/videointelligence/v1p3beta1/video_intelligence.proto"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/CelebrityRecognitionAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/SpeechRecognitionAlternativeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingStorageConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingAutomlObjectTrackingConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TrackOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/SpeechTranscriptionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TimestampedObject.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ExplicitContentAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoAnnotationResults.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TextDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoAnnotationProgressOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ObjectTrackingConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ObjectTrackingAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingShotChangeDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingAutomlObjectTrackingConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ObjectTrackingFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/NormalizedBoundingBoxOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/AnnotateVideoResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/SpeechRecognitionAlternative.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TextDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ObjectTrackingFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/NormalizedVertex.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ExplicitContentAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LogoRecognitionAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/Track.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/WordInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ExplicitContentFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoContext.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingLabelDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/NormalizedBoundingPolyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ExplicitContentDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LogoRecognitionAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/NormalizedBoundingPoly.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/SpeechContext.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoIntelligenceServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoAnnotationResultsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TextAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ExplicitContentFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ShotChangeDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/WordInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/SpeechTranscriptionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/AnnotateVideoRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/SpeechTranscriptionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingLabelDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingAnnotateVideoRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ObjectTrackingConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingObjectTrackingConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/Feature.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/SpeechTranscription.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TextFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TextAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/AnnotateVideoProgressOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoAnnotationResultsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/CelebrityTrackOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/Celebrity.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TextFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/AnnotateVideoProgress.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoAnnotationResults.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingExplicitContentDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ExplicitContentDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingShotChangeDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/DetectedAttribute.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoAnnotationProgress.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingFeature.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingAnnotateVideoResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingStorageConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/CelebrityOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/AnnotateVideoRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingAutomlClassificationConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingAutomlClassificationConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/CelebrityRecognitionAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingExplicitContentDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ShotChangeDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingObjectTrackingConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingAnnotateVideoResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelDetectionMode.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TextSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/EntityOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/LabelFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TimestampedObjectOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/ObjectTrackingAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/Likelihood.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/SpeechContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/NormalizedVertexOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/TextSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/AnnotateVideoResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/CelebrityTrack.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/DetectedAttributeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/Entity.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingAnnotateVideoRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/NormalizedBoundingBox.java"
+    },
+    {
+      "path": "__pycache__/synth.cpython-36.pyc"
     },
     {
       "path": ".git/index"
@@ -1566,22 +1332,16 @@
       "path": ".git/config"
     },
     {
-      "path": ".git/logs/HEAD"
+      "path": ".git/shallow"
     },
     {
-      "path": ".git/logs/refs/heads/autosynth"
+      "path": ".git/objects/pack/pack-2156f00698e03b6847d13839be3b7654ae1e6d28.pack"
     },
     {
-      "path": ".git/logs/refs/heads/master"
+      "path": ".git/objects/pack/pack-2156f00698e03b6847d13839be3b7654ae1e6d28.idx"
     },
     {
-      "path": ".git/logs/refs/remotes/origin/HEAD"
-    },
-    {
-      "path": ".git/objects/pack/pack-12691f8305740fd48e46e08b6396ed9966c3fe4a.idx"
-    },
-    {
-      "path": ".git/objects/pack/pack-12691f8305740fd48e46e08b6396ed9966c3fe4a.pack"
+      "path": ".git/refs/remotes/origin/HEAD"
     },
     {
       "path": ".git/refs/heads/autosynth"
@@ -1590,7 +1350,256 @@
       "path": ".git/refs/heads/master"
     },
     {
-      "path": ".git/refs/remotes/origin/HEAD"
+      "path": ".git/logs/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/remotes/origin/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/heads/autosynth"
+    },
+    {
+      "path": ".git/logs/refs/heads/master"
+    },
+    {
+      "path": "grpc-google-cloud-video-intelligence-v1beta2/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoIntelligenceServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-video-intelligence-v1p2beta1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoIntelligenceServiceGrpc.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/proto/google/cloud/videointelligence/v1/video_intelligence.proto"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/SpeechRecognitionAlternativeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/SpeechTranscriptionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ExplicitContentAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/TextDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoAnnotationProgressOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ObjectTrackingConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ObjectTrackingAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ObjectTrackingFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/NormalizedBoundingBoxOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/AnnotateVideoResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/SpeechRecognitionAlternative.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/TextDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ObjectTrackingFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/NormalizedVertex.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ExplicitContentAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/WordInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ExplicitContentFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoContext.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/NormalizedBoundingPolyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ExplicitContentDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/NormalizedBoundingPoly.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/SpeechContext.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoAnnotationResultsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/TextAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ExplicitContentFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ShotChangeDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/WordInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/SpeechTranscriptionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/AnnotateVideoRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/SpeechTranscriptionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ObjectTrackingConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/Feature.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/SpeechTranscription.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/TextFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/TextAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/AnnotateVideoProgressOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/TextFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/AnnotateVideoProgress.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoAnnotationResults.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ExplicitContentDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoAnnotationProgress.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/AnnotateVideoRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ShotChangeDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelDetectionMode.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/TextSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/EntityOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/LabelFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ObjectTrackingAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/Likelihood.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/SpeechContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/NormalizedVertexOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/TextSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/AnnotateVideoResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/Entity.java"
+    },
+    {
+      "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/NormalizedBoundingBox.java"
     }
   ]
 }
