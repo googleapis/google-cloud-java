@@ -31,20 +31,16 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-// Tests for Automl models.
 @RunWith(JUnit4.class)
-public class GenericModelManagementIT {
+public class DeleteModelTest {
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
-  private String modelId;
-  private String modelEvaluationId;
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
-            System.getenv(varName),
-            "Environment variable '%s' is required to perform these tests.".format(varName)
-    );
+        System.getenv(varName),
+        "Environment variable '%s' is required to perform these tests.".format(varName));
   }
 
   @BeforeClass
@@ -63,59 +59,6 @@ public class GenericModelManagementIT {
   @After
   public void tearDown() {
     System.setOut(null);
-  }
-
-  @Test
-  public void testModelApi() throws IOException {
-    // LIST MODELS
-    ListModels.listModels(PROJECT_ID);
-    String got = bout.toString();
-    modelId = got.split("Model id: ")[1].split("\n")[0];
-    assertThat(got).contains("Model id:");
-
-    // GET MODEL
-    bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
-    GetModel.getModel(PROJECT_ID, modelId);
-    got = bout.toString();
-    assertThat(got).contains("Model id: " + modelId);
-
-    // LIST MODEL EVALUATIONS
-    bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
-    ListModelEvaluations.listModelEvaluations(PROJECT_ID, modelId);
-    got = bout.toString();
-    modelEvaluationId = got.split(modelId + "/modelEvaluations/")[1].split("\n")[0];
-    assertThat(got).contains("Model Evaluation Name:");
-
-    // GET MODEL EVALUATION
-    bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
-    GetModelEvaluation.getModelEvaluation(PROJECT_ID, modelId, modelEvaluationId);
-    got = bout.toString();
-    assertThat(got).contains("Model Evaluation Name:");
-  }
-
-  @Test
-  public void testOperationStatus() throws IOException {
-    // Act
-    ListOperationStatus.listOperationStatus(PROJECT_ID);
-
-    // Assert
-    String got = bout.toString();
-    String operationId = got.split("\n")[1].split(":")[1].trim();
-    assertThat(got).contains("Operation details:");
-
-    // Act
-    bout.reset();
-    GetOperationStatus.getOperationStatus(operationId);
-
-    // Assert
-    got = bout.toString();
-    assertThat(got).contains("Operation details:");
   }
 
   @Test
