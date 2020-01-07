@@ -1,19 +1,19 @@
 {
-  "updateTime": "2019-12-12T08:39:10.399247Z",
+  "updateTime": "2020-01-07T08:44:00.440306Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.42.2",
-        "dockerImage": "googleapis/artman@sha256:a86051ce32e2454ca2558ec9e437d46c2184b6dd291f57b0686676d77242658e"
+        "version": "0.43.0",
+        "dockerImage": "googleapis/artman@sha256:264654a37596a44b0668b8ce6ac41082d713f6ee150b3fc6425fa78cc64e4f20"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "19c4589a3cb44b3679f7b3fba88365b3d055d5f8",
-        "internalRef": "285013366"
+        "sha": "cb79155f596e0396dd900da93872be7066f6340d",
+        "internalRef": "288441307"
       }
     },
     {
@@ -34,6 +34,1208 @@
         "generator": "gapic",
         "config": "google/cloud/datalabeling/artman_datalabeling_v1beta1.yaml"
       }
+    }
+  ],
+  "newFiles": [
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": ".gitignore"
+    },
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "versions.txt"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/proto/google/cloud/datalabeling/v1beta1/evaluation_job.proto"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/proto/google/cloud/datalabeling/v1beta1/instruction.proto"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/proto/google/cloud/datalabeling/v1beta1/annotation.proto"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/proto/google/cloud/datalabeling/v1beta1/dataset.proto"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/proto/google/cloud/datalabeling/v1beta1/human_annotation_config.proto"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/proto/google/cloud/datalabeling/v1beta1/data_labeling_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/proto/google/cloud/datalabeling/v1beta1/evaluation.proto"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/proto/google/cloud/datalabeling/v1beta1/data_payloads.proto"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/proto/google/cloud/datalabeling/v1beta1/operations.proto"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/proto/google/cloud/datalabeling/v1beta1/annotation_spec_set.proto"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/TextClassificationConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GetEvaluationRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/Attempt.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ObjectDetectionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/SentimentConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DeleteEvaluationJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GcsFolderDestinationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListAnnotationSpecSetsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GcsSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListDatasetsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotationSpecSetOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/Instruction.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/VideoPayload.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListExamplesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelImageBoundingPolyOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/CreateDatasetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ClassificationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelImageBoundingBoxOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListDataItemsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GetDatasetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelImageClassificationOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ObjectTrackingConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GetDataItemRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/StringAggregationType.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/EvaluationJobConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotationSpecSet.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImageClassificationConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/HumanAnnotationConfigOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/NormalizedPolyline.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/EvaluationName.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImportDataOperationResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListAnnotationSpecSetsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListAnnotationSpecSetsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/TimeSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListEvaluationJobsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListEvaluationJobsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotationSource.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelVideoClassificationOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ObjectTrackingFrameOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/CreateInstructionMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/EvaluationJobAlertConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GcsSource.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ObjectTrackingFrame.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListInstructionsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelTextRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImportDataOperationResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GetEvaluationRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListDataItemsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/BigQuerySourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/TextPayload.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/NormalizedVertex.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/TextPayloadOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DataItemName.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelVideoEventOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/PolylineConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImportDataOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/Operations.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GcsDestinationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/InstructionOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/PolylineConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListAnnotatedDatasetsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/EvaluationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GetExampleRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DeleteAnnotatedDatasetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/BigQuerySource.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/InputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/VideoPayloadOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/PauseEvaluationJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/Dataset.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ObjectDetectionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/PdfInstructionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/VideoClassificationConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListDatasetsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImageSegmentationAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelImageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GetExampleRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListAnnotationSpecSetsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/NormalizedBoundingPolyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DataLabelingServiceOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GetEvaluationJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotationSpecOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ExportDataRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/VideoObjectTrackingAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotationSpec.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/SearchEvaluationsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/TextClassificationConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImageBoundingPolyAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/Annotation.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListAnnotatedDatasetsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GetAnnotationSpecSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ObjectDetectionMetricsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/NormalizedPolylineOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelVideoObjectTrackingOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GcsFolderDestination.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListDataItemsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/EventConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DataType.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/TextEntityExtractionAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImagePolylineAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelVideoObjectDetectionOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/NormalizedBoundingPoly.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DeleteInstructionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotationSentiment.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/OperatorMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListInstructionsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ConfusionMatrix.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImageSegmentationAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/BoundingPolyConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/CreateInstructionMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListExamplesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GcsDestination.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/HumanAnnotationConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/SearchExampleComparisonsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/CreateInstructionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/TextMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/OperatorMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/UpdateEvaluationJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/VideoEventAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImportDataRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/SegmentationConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/VideoThumbnail.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelImagePolylineOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/PrCurveOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/PrCurve.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelImageSegmentationOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelImageBoundingBoxOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/TextClassificationAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/CreateInstructionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImageBoundingPolyAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelVideoObjectTrackingOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DataItemOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/VideoThumbnailOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ResumeEvaluationJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DatasetOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImportDataOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListInstructionsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/InputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImageClassificationAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ObjectTrackingConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotationSpecSetName.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ResumeEvaluationJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/Vertex.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/BoundingBoxEvaluationOptionsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelStatsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/VideoObjectTrackingAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelImagePolylineOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotationType.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/CreateDatasetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GetDataItemRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/BoundingPolyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelTextEntityExtractionOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/EvaluationConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DeleteAnnotatedDatasetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ConfusionMatrixOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/CreateEvaluationJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/EvaluationConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelVideoRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListAnnotatedDatasetsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/EvaluationMetrics.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/VideoEventAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelImageClassificationOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelImageOrientedBoundingBoxOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/SearchEvaluationsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImagePolylineAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DeleteDatasetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/TextEntityExtractionAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotatedDataset.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/Example.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelVideoEventOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AttemptOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GetAnnotatedDatasetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DeleteInstructionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/SentimentConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/VideoClassificationAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/VideoClassificationAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GetAnnotatedDatasetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelImageOrientedBoundingBoxOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotatedDatasetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/SequentialSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelTextClassificationOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImportDataRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotationSpecSetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/BoundingPoly.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ExampleOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ObjectDetectionMetrics.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelImageBoundingPolyOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotatedDatasetMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ExportDataOperationResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/VertexOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/EvaluationJobName.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ClassificationMetrics.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotationValueOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/CsvInstructionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImageClassificationConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/EvaluationMetricsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ExportDataOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DeleteAnnotationSpecSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelTextEntityExtractionOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/TimeSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelVideoClassificationOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/TextMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelImageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/CreateAnnotationSpecSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListDataItemsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListAnnotatedDatasetsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ExportDataRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DatasetName.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListExamplesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/PolylineOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/EvaluationJobOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/Polyline.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/TextClassificationAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GetEvaluationJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/SequentialSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/CreateEvaluationJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotatedDatasetMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ExportDataOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ClassificationMetricsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListInstructionsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DeleteEvaluationJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/PdfInstruction.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/OutputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/EvaluationJob.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DatasetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/SearchExampleComparisonsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/SegmentationConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotationOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/SearchExampleComparisonsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DeleteDatasetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/EvaluationJobOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/TextEntityExtractionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/SearchEvaluationsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotationValue.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListExamplesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/UpdateEvaluationJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/TextEntityExtractionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/OutputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ClassificationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImagePayloadOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/EventConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListDatasetsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/HumanAnnotationConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelVideoObjectDetectionOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/InstructionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotatedDatasetName.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListEvaluationJobsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/SearchEvaluationsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/SearchExampleComparisonsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/PauseEvaluationJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GetInstructionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GetInstructionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelTextClassificationOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelStats.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ExampleName.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/AnnotationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/VideoClassificationConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImagePayload.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/EvaluationJobConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GetAnnotationSpecSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelVideoRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/Evaluation.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DeleteAnnotationSpecSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/InstructionName.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/BoundingPolyConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListEvaluationJobsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/NormalizedVertexOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DataPayloads.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/CsvInstruction.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/GetDatasetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DataItem.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ExportDataOperationResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelTextRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/EvaluationJobAlertConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/CreateAnnotationSpecSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/LabelImageSegmentationOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/EvaluationOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/BoundingBoxEvaluationOptions.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ListDatasetsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/ImageClassificationAnnotationOrBuilder.java"
+    },
+    {
+      "path": "grpc-google-cloud-datalabeling-v1beta1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-datalabeling-v1beta1/src/main/java/com/google/cloud/datalabeling/v1beta1/DataLabelingServiceGrpc.java"
+    },
+    {
+      "path": "google-cloud-datalabeling/pom.xml"
+    },
+    {
+      "path": "google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/v1beta1/MockDataLabelingServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/v1beta1/MockDataLabelingService.java"
+    },
+    {
+      "path": "google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/v1beta1/DataLabelingServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/v1beta1/it/ITSystemTest.java"
+    },
+    {
+      "path": "google-cloud-datalabeling/src/main/java/com/google/cloud/datalabeling/v1beta1/DataLabelingServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-datalabeling/src/main/java/com/google/cloud/datalabeling/v1beta1/package-info.java"
+    },
+    {
+      "path": "google-cloud-datalabeling/src/main/java/com/google/cloud/datalabeling/v1beta1/DataLabelingServiceClient.java"
+    },
+    {
+      "path": "google-cloud-datalabeling/src/main/java/com/google/cloud/datalabeling/v1beta1/stub/DataLabelingServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-datalabeling/src/main/java/com/google/cloud/datalabeling/v1beta1/stub/GrpcDataLabelingServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-datalabeling/src/main/java/com/google/cloud/datalabeling/v1beta1/stub/GrpcDataLabelingServiceStub.java"
+    },
+    {
+      "path": "google-cloud-datalabeling/src/main/java/com/google/cloud/datalabeling/v1beta1/stub/DataLabelingServiceStub.java"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": "__pycache__/synth.cpython-36.pyc"
+    },
+    {
+      "path": "google-cloud-datalabeling-bom/pom.xml"
+    },
+    {
+      "path": ".git/index"
+    },
+    {
+      "path": ".git/packed-refs"
+    },
+    {
+      "path": ".git/HEAD"
+    },
+    {
+      "path": ".git/config"
+    },
+    {
+      "path": ".git/shallow"
+    },
+    {
+      "path": ".git/objects/pack/pack-31bf2ad4b7a3cf5079f956c8995841b913f94471.pack"
+    },
+    {
+      "path": ".git/objects/pack/pack-31bf2ad4b7a3cf5079f956c8995841b913f94471.idx"
+    },
+    {
+      "path": ".git/refs/remotes/origin/HEAD"
+    },
+    {
+      "path": ".git/refs/heads/autosynth"
+    },
+    {
+      "path": ".git/refs/heads/master"
+    },
+    {
+      "path": ".git/logs/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/remotes/origin/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/heads/autosynth"
+    },
+    {
+      "path": ".git/logs/refs/heads/master"
     }
   ]
 }
