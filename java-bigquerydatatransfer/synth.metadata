@@ -1,19 +1,19 @@
 {
-  "updateTime": "2019-12-14T08:34:17.285250Z",
+  "updateTime": "2020-01-07T08:36:36.501750Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.42.3",
-        "dockerImage": "googleapis/artman@sha256:feed210b5723c6f524b52ef6d7740a030f2d1a8f7c29a71c5e5b4481ceaad7f5"
+        "version": "0.43.0",
+        "dockerImage": "googleapis/artman@sha256:264654a37596a44b0668b8ce6ac41082d713f6ee150b3fc6425fa78cc64e4f20"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "2085a0d3c76180ee843cf2ecef2b94ca5266be31",
-        "internalRef": "285233245"
+        "sha": "cb79155f596e0396dd900da93872be7066f6340d",
+        "internalRef": "288441307"
       }
     },
     {
@@ -34,6 +34,662 @@
         "generator": "gapic",
         "config": "google/cloud/bigquery/datatransfer/artman_bigquerydatatransfer.yaml"
       }
+    }
+  ],
+  "newFiles": [
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": ".gitignore"
+    },
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "versions.txt"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "grpc-google-cloud-bigquerydatatransfer-v1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataSourceServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataTransferServiceGrpc.java"
+    },
+    {
+      "path": "google-cloud-bigquerydatatransfer/pom.xml"
+    },
+    {
+      "path": "google-cloud-bigquerydatatransfer/src/test/java/com/google/cloud/bigquery/datatransfer/v1/MockDataTransferService.java"
+    },
+    {
+      "path": "google-cloud-bigquerydatatransfer/src/test/java/com/google/cloud/bigquery/datatransfer/v1/DataTransferServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-bigquerydatatransfer/src/test/java/com/google/cloud/bigquery/datatransfer/v1/MockDataTransferServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-bigquerydatatransfer/src/test/java/com/google/cloud/bigquery/datatransfer/v1/DataTransferServiceSmokeTest.java"
+    },
+    {
+      "path": "google-cloud-bigquerydatatransfer/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataTransferServiceClient.java"
+    },
+    {
+      "path": "google-cloud-bigquerydatatransfer/src/main/java/com/google/cloud/bigquery/datatransfer/v1/SampleApp.java"
+    },
+    {
+      "path": "google-cloud-bigquerydatatransfer/src/main/java/com/google/cloud/bigquery/datatransfer/v1/package-info.java"
+    },
+    {
+      "path": "google-cloud-bigquerydatatransfer/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataTransferServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-bigquerydatatransfer/src/main/java/com/google/cloud/bigquery/datatransfer/v1/stub/GrpcDataTransferServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-bigquerydatatransfer/src/main/java/com/google/cloud/bigquery/datatransfer/v1/stub/DataTransferServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-bigquerydatatransfer/src/main/java/com/google/cloud/bigquery/datatransfer/v1/stub/DataTransferServiceStub.java"
+    },
+    {
+      "path": "google-cloud-bigquerydatatransfer/src/main/java/com/google/cloud/bigquery/datatransfer/v1/stub/GrpcDataTransferServiceStub.java"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": "__pycache__/synth.cpython-36.pyc"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/proto/google/cloud/bigquery/datatransfer/v1/resourcestate.proto"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/proto/google/cloud/bigquery/datatransfer/v1/transfer.proto"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/proto/google/cloud/bigquery/datatransfer/v1/datatransfer.proto"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/proto/google/cloud/bigquery/datatransfer/v1/datasource.proto"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ScheduleOptionsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/LocationName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/GetDataSourceDefinitionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/UpdateTransferRunRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/GetDataSourceRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferConfigName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/FinishRunRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataSourceParameter.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListDataSourceDefinitionsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/EmailPreferences.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/GetTransferConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataSource.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferMessageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/StartManualTransferRunsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/RunName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListDataSourcesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DeleteTransferRunRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/StartManualTransferRunsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/CreateTransferConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/UntypedRunName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/StartBigQueryJobsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListDataSourceDefinitionsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferMessage.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListTransferConfigsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/UpdateTransferConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListTransferConfigsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/LogTransferRunMessagesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/GetTransferRunRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/GetTransferRunRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/CheckValidCredsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/CheckValidCredsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/CheckValidCredsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/UpdateTransferRunRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataSourceName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DeleteTransferConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ProjectDataSourceName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ScheduleTransferRunsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/LogTransferRunMessagesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ScheduleTransferRunsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListTransferRunsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ImportedDataInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListTransferRunsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ScheduleTransferRunsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DeleteTransferRunRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/FinishRunRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/GetTransferConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/RunNames.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/WriteDisposition.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListTransferRunsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListTransferConfigsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListDataSourceDefinitionsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/StartManualTransferRunsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ParentNames.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/CreateDataSourceDefinitionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/LocationDataSourceName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ImportedDataInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListTransferConfigsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/LocationRunName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListTransferLogsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListDataSourcesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListDataSourceDefinitionsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/GetDataSourceRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/UpdateTransferConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataSourceDefinition.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/CheckValidCredsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListTransferRunsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DeleteTransferConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/CreateDataSourceDefinitionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferRun.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListDataSourcesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataSourceDefinitionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListTransferLogsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/StartBigQueryJobsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataSourceNames.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/UntypedDataSourceName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferConfigNames.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListTransferLogsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferRunOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListTransferLogsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferType.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ProjectRunName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataSourceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/GetDataSourceDefinitionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ProjectTransferConfigName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ScheduleTransferRunsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferState.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ListDataSourcesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DeleteDataSourceDefinitionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ScheduleOptions.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/CreateTransferConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/LocationTransferConfigName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/UpdateDataSourceDefinitionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/ParentName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/UntypedParentName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/UpdateDataSourceDefinitionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/StartManualTransferRunsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/UntypedTransferConfigName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataSourceParameterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/EmailPreferencesOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataTransferProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DeleteDataSourceDefinitionRequestOrBuilder.java"
+    },
+    {
+      "path": ".git/index"
+    },
+    {
+      "path": ".git/packed-refs"
+    },
+    {
+      "path": ".git/HEAD"
+    },
+    {
+      "path": ".git/config"
+    },
+    {
+      "path": ".git/shallow"
+    },
+    {
+      "path": ".git/objects/pack/pack-c6f60e040effcd6236e2e0ea34b2cec405743459.idx"
+    },
+    {
+      "path": ".git/objects/pack/pack-c6f60e040effcd6236e2e0ea34b2cec405743459.pack"
+    },
+    {
+      "path": ".git/refs/remotes/origin/HEAD"
+    },
+    {
+      "path": ".git/refs/heads/autosynth"
+    },
+    {
+      "path": ".git/refs/heads/master"
+    },
+    {
+      "path": ".git/logs/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/remotes/origin/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/heads/autosynth"
+    },
+    {
+      "path": ".git/logs/refs/heads/master"
+    },
+    {
+      "path": "google-cloud-bigquerydatatransfer-bom/pom.xml"
     }
   ]
 }
