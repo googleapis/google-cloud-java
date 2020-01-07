@@ -21,6 +21,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -37,7 +38,8 @@ public class BudgetServiceClientTest {
   public static void startStaticServer() {
     mockBudgetService = new MockBudgetService();
     serviceHelper =
-        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockBudgetService));
+        new MockServiceHelper(
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockBudgetService));
     serviceHelper.start();
   }
 
