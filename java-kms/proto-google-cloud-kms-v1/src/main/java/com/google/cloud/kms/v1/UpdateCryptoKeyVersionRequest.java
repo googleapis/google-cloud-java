@@ -143,7 +143,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the cryptoKeyVersion field is set.
@@ -159,7 +159,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The cryptoKeyVersion.
@@ -177,7 +177,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getCryptoKeyVersionOrBuilder() {
@@ -603,7 +603,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the cryptoKeyVersion field is set.
@@ -619,7 +619,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The cryptoKeyVersion.
@@ -641,7 +641,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setCryptoKeyVersion(com.google.cloud.kms.v1.CryptoKeyVersion value) {
@@ -665,7 +665,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setCryptoKeyVersion(
@@ -687,7 +687,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeCryptoKeyVersion(com.google.cloud.kms.v1.CryptoKeyVersion value) {
@@ -715,7 +715,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearCryptoKeyVersion() {
@@ -737,7 +737,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion.Builder getCryptoKeyVersionBuilder() {
@@ -753,7 +753,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getCryptoKeyVersionOrBuilder() {
@@ -773,7 +773,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

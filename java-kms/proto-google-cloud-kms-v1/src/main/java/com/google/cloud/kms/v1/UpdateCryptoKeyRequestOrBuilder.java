@@ -30,8 +30,7 @@ public interface UpdateCryptoKeyRequestOrBuilder
    * Required. [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.kms.v1.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the cryptoKey field is set.
@@ -44,8 +43,7 @@ public interface UpdateCryptoKeyRequestOrBuilder
    * Required. [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.kms.v1.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The cryptoKey.
@@ -58,8 +56,7 @@ public interface UpdateCryptoKeyRequestOrBuilder
    * Required. [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.kms.v1.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.kms.v1.CryptoKeyOrBuilder getCryptoKeyOrBuilder();

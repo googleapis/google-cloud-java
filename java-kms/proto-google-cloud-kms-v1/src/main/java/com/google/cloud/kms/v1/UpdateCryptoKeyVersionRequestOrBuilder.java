@@ -31,7 +31,7 @@ public interface UpdateCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the cryptoKeyVersion field is set.
@@ -45,7 +45,7 @@ public interface UpdateCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The cryptoKeyVersion.
@@ -59,7 +59,7 @@ public interface UpdateCryptoKeyVersionRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getCryptoKeyVersionOrBuilder();
