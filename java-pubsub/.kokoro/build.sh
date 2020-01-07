@@ -44,13 +44,26 @@ test)
     bash .kokoro/coerce_logs.sh
     ;;
 lint)
-    mvn com.coveo:fmt-maven-plugin:check
+    mvn \
+      -Penable-samples \
+      com.coveo:fmt-maven-plugin:check
     ;;
 javadoc)
     mvn javadoc:javadoc javadoc:test-javadoc
     ;;
 integration)
     mvn -B ${INTEGRATION_TEST_ARGS} \
+      -Penable-integration-tests \
+      -DtrimStackTrace=false \
+      -Dclirr.skip=true \
+      -Denforcer.skip=true \
+      -fae \
+      verify
+    bash .kokoro/coerce_logs.sh
+    ;;
+samples)
+    mvn -B \
+      -Penable-samples \
       -DtrimStackTrace=false \
       -Dclirr.skip=true \
       -Denforcer.skip=true \
