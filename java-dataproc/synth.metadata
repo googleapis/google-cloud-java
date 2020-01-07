@@ -1,19 +1,19 @@
 {
-  "updateTime": "2019-12-19T08:42:14.120575Z",
+  "updateTime": "2020-01-07T08:45:18.993130Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.42.3",
-        "dockerImage": "googleapis/artman@sha256:feed210b5723c6f524b52ef6d7740a030f2d1a8f7c29a71c5e5b4481ceaad7f5"
+        "version": "0.43.0",
+        "dockerImage": "googleapis/artman@sha256:264654a37596a44b0668b8ce6ac41082d713f6ee150b3fc6425fa78cc64e4f20"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d400cb8d45df5b2ae796b909f098a215b2275c1d",
-        "internalRef": "286312673"
+        "sha": "cb79155f596e0396dd900da93872be7066f6340d",
+        "internalRef": "288441307"
       }
     },
     {
@@ -48,10 +48,7 @@
   ],
   "newFiles": [
     {
-      "path": ".gitignore"
-    },
-    {
-      "path": "README.md"
+      "path": ".repo-metadata.json"
     },
     {
       "path": "renovate.json"
@@ -60,16 +57,19 @@
       "path": "license-checks.xml"
     },
     {
-      "path": "CONTRIBUTING.md"
-    },
-    {
       "path": "synth.py"
     },
     {
-      "path": "synth.metadata"
+      "path": "CHANGELOG.md"
     },
     {
-      "path": "java.header"
+      "path": "codecov.yaml"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": ".gitignore"
     },
     {
       "path": "pom.xml"
@@ -78,19 +78,562 @@
       "path": "CODE_OF_CONDUCT.md"
     },
     {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "README.md"
+    },
+    {
       "path": "versions.txt"
     },
     {
-      "path": "CHANGELOG.md"
+      "path": "CONTRIBUTING.md"
     },
     {
-      "path": "LICENSE"
+      "path": "java.header"
     },
     {
-      "path": ".repo-metadata.json"
+      "path": "google-cloud-dataproc-bom/pom.xml"
     },
     {
-      "path": "codecov.yaml"
+      "path": "grpc-google-cloud-dataproc-v1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplateServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterControllerGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/AutoscalingPolicyServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobControllerGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-dataproc-v1beta2/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplateServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterControllerGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingPolicyServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobControllerGrpc.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/proto/google/cloud/dataproc/v1/autoscaling_policies.proto"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/proto/google/cloud/dataproc/v1/operations.proto"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/proto/google/cloud/dataproc/v1/clusters.proto"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/proto/google/cloud/dataproc/v1/shared.proto"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/proto/google/cloud/dataproc/v1/jobs.proto"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/proto/google/cloud/dataproc/v1/workflow_templates.proto"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListWorkflowTemplatesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/PigJobOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterMetricsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstantiateWorkflowTemplateRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetWorkflowTemplateRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DeleteWorkflowTemplateRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DeleteJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/NodeInitializationActionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/OperationsProto.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstantiateInlineWorkflowTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterSelector.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListClustersResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetAutoscalingPolicyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplateOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobSchedulingOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/LoggingConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListAutoscalingPoliciesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/CancelJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobReferenceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplatesProto.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/PySparkJobOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/TemplateParameterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ParameterValidationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/Component.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListJobsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetClusterRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/OrderedJobOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobPlacementOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobScheduling.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SoftwareConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstanceGroupAutoscalingPolicyConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/AutoscalingConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/KerberosConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListJobsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DiagnoseClusterRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListClustersRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterStatusOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListJobsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListWorkflowTemplatesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/BasicAutoscalingAlgorithm.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/TemplateParameter.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SecurityConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/KerberosConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/CreateWorkflowTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetAutoscalingPolicyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetClusterRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/HadoopJob.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/AcceleratorConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DiskConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DeleteClusterRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstanceGroupAutoscalingPolicyConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListClustersRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowGraph.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/CreateAutoscalingPolicyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/UpdateJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/EncryptionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SecurityConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/RegionName.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/AcceleratorConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/UpdateWorkflowTemplateRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/RegexValidation.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListJobsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/CreateClusterRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ManagedClusterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ValueValidation.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/AutoscalingPoliciesProto.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/UpdateClusterRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListAutoscalingPoliciesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/CancelJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowNode.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterOperation.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplatePlacementOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/HiveJobOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/CreateWorkflowTemplateRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/HadoopJobOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DiskConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplateName.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/PySparkJob.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/CreateClusterRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/QueryListOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DeleteJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClustersProto.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/UpdateAutoscalingPolicyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterOperationStatus.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/AutoscalingPolicyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DeleteClusterRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/OrderedJob.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/UpdateAutoscalingPolicyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/UpdateClusterRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/AutoscalingConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DiagnoseClusterResults.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterOperationStatusOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/BasicYarnAutoscalingConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListAutoscalingPoliciesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/BasicYarnAutoscalingConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterOperationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstanceGroupConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/CreateAutoscalingPolicyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobStatus.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobStatusOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListAutoscalingPoliciesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListWorkflowTemplatesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/HiveJob.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/Cluster.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ValueValidationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/UpdateJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ManagedCluster.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/AutoscalingPolicy.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SparkSqlJobOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SparkSqlJob.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/PigJob.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/QueryList.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/RegexValidationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SharedProto.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListClustersResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DeleteAutoscalingPolicyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstanceGroupConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DiagnoseClusterResultsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterStatus.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SubmitJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplatePlacement.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetWorkflowTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/YarnApplicationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterMetrics.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DeleteAutoscalingPolicyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ParameterValidation.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/YarnApplication.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterSelectorOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowNodeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/LoggingConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SoftwareConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SubmitJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/NodeInitializationAction.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobReference.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobsProto.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SparkJob.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/BasicAutoscalingAlgorithmOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstantiateWorkflowTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstantiateInlineWorkflowTemplateRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplate.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/UpdateWorkflowTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GceClusterConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListWorkflowTemplatesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/EncryptionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SparkJobOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowGraphOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ManagedGroupConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DeleteWorkflowTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GceClusterConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/Job.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobPlacement.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ManagedGroupConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DiagnoseClusterRequest.java"
     },
     {
       "path": "proto-google-cloud-dataproc-v1beta2/pom.xml"
@@ -99,772 +642,541 @@
       "path": "proto-google-cloud-dataproc-v1beta2/src/main/proto/google/cloud/dataproc/v1beta2/autoscaling_policies.proto"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/proto/google/cloud/dataproc/v1beta2/shared.proto"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/proto/google/cloud/dataproc/v1beta2/operations.proto"
     },
     {
       "path": "proto-google-cloud-dataproc-v1beta2/src/main/proto/google/cloud/dataproc/v1beta2/clusters.proto"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/proto/google/cloud/dataproc/v1beta2/jobs.proto"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/proto/google/cloud/dataproc/v1beta2/shared.proto"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/proto/google/cloud/dataproc/v1beta2/operations.proto"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/proto/google/cloud/dataproc/v1beta2/jobs.proto"
     },
     {
       "path": "proto-google-cloud-dataproc-v1beta2/src/main/proto/google/cloud/dataproc/v1beta2/workflow_templates.proto"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListClustersRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/LoggingConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/LoggingConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SoftwareConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListWorkflowTemplatesResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobScheduling.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterOperationStatusOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobPlacementOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/UpdateClusterRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DeleteWorkflowTemplateRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListAutoscalingPoliciesResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SecurityConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SparkJob.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplatesProto.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterOperationStatus.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SubmitJobRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/PySparkJob.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListAutoscalingPoliciesRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/InstantiateWorkflowTemplateRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/UpdateWorkflowTemplateRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobReferenceOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/BasicAutoscalingAlgorithmOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/UpdateJobRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplate.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GetWorkflowTemplateRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SparkSqlJob.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListAutoscalingPoliciesResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GetAutoscalingPolicyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SparkRJobOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/HiveJobOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterOperationMetadata.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/Cluster.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobsProto.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/InstanceGroupConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/CancelJobRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/CreateAutoscalingPolicyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/InstanceGroupAutoscalingPolicyConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ManagedCluster.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListWorkflowTemplatesResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/EndpointConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobStatusOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/CancelJobRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListJobsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ManagedGroupConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/KerberosConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplatePlacementOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/QueryList.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AcceleratorConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DeleteJobRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterStatusOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DiagnoseClusterResultsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterSelectorOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/UpdateAutoscalingPolicyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingPolicyName.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/InstantiateInlineWorkflowTemplateRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListJobsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingPoliciesProto.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowMetadata.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ManagedGroupConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListJobsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplateOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/BasicYarnAutoscalingConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DeleteJobRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListClustersResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/InstanceGroupAutoscalingPolicyConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DeleteAutoscalingPolicyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/TemplateParameter.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SharedProto.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplateName.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/UpdateClusterRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/Component.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowMetadataOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DiskConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AcceleratorConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SparkJobOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/RegexValidation.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/NodeInitializationAction.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/EncryptionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GceClusterConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterSelector.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/LifecycleConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DeleteAutoscalingPolicyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowNode.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/HadoopJob.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowGraphOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GetAutoscalingPolicyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SparkRJob.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/PySparkJobOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListWorkflowTemplatesRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ParameterValidation.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobStatus.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/CreateAutoscalingPolicyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/OrderedJobOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/RegexValidationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobPlacement.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListClustersRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SubmitJobRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GetClusterRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ManagedClusterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/CreateClusterRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DiagnoseClusterResults.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/CreateClusterRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/EndpointConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListClustersResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/OperationsProto.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterMetricsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/TemplateParameterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DiagnoseClusterRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowNodeOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/UpdateAutoscalingPolicyRequestOrBuilder.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListWorkflowTemplatesRequestOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/PigJobOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GetJobRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/Job.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingPolicy.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GetJobRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/NodeInitializationActionOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClustersProto.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SecurityConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/EncryptionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DiskConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/UpdateWorkflowTemplateRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/InstanceGroupConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/YarnApplication.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterStatus.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/InstantiateInlineWorkflowTemplateRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListAutoscalingPoliciesRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/YarnApplicationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobSchedulingOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/CreateWorkflowTemplateRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ValueValidation.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/LifecycleConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/PigJob.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingPolicyOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DeleteClusterRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterOperationMetadataOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/OrderedJob.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/KerberosConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterMetrics.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterOperation.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListWorkflowTemplatesRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GetWorkflowTemplateRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SparkSqlJobOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplatePlacement.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ReservationAffinityOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DeleteClusterRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/BasicYarnAutoscalingConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/RegionName.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ValueValidationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SoftwareConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GetClusterRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/HadoopJobOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/QueryListOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/HiveJob.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DeleteWorkflowTemplateRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/CreateWorkflowTemplateRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/BasicAutoscalingAlgorithm.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DiagnoseClusterRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterOperationOrBuilder.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterMetricsOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/InstantiateWorkflowTemplateRequest.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListJobsResponseOrBuilder.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GetWorkflowTemplateRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DeleteWorkflowTemplateRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingPolicyName.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DeleteJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/NodeInitializationActionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/OperationsProto.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/InstantiateInlineWorkflowTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterSelector.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListClustersResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SparkRJob.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/EndpointConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GetAutoscalingPolicyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplateOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobSchedulingOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/LoggingConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListAutoscalingPoliciesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/CancelJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobReferenceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplatesProto.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/PySparkJobOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/TemplateParameterOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ParameterValidationOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ReservationAffinity.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/Component.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListJobsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GetClusterRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/OrderedJobOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobPlacementOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobScheduling.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SoftwareConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/InstanceGroupAutoscalingPolicyConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ReservationAffinityOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/KerberosConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListJobsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DiagnoseClusterRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListClustersRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterStatusOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListJobsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListWorkflowTemplatesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/BasicAutoscalingAlgorithm.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/TemplateParameter.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SecurityConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/KerberosConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/CreateWorkflowTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GetAutoscalingPolicyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GetClusterRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/HadoopJob.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GetJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AcceleratorConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DiskConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DeleteClusterRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/InstanceGroupAutoscalingPolicyConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListClustersRequest.java"
     },
     {
       "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowGraph.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobReference.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GceClusterConfigOrBuilder.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/CreateAutoscalingPolicyRequestOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/UpdateJobRequestOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/pom.xml"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/EncryptionConfigOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/WorkflowTemplateServiceClientTest.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SecurityConfig.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/MockJobControllerImpl.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/RegionName.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/MockWorkflowTemplateServiceImpl.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AcceleratorConfig.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/MockClusterControllerImpl.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/UpdateWorkflowTemplateRequest.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/ClusterControllerSmokeTest.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/RegexValidation.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/ClusterControllerClientTest.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListJobsResponseOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/MockJobController.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/CreateClusterRequest.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/JobControllerClientTest.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ManagedClusterOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/MockClusterController.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ValueValidation.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/MockWorkflowTemplateService.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingPoliciesProto.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/it/ITSystemTest.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/UpdateClusterRequestOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplateServiceClientTest.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ReservationAffinity.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/MockJobControllerImpl.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListAutoscalingPoliciesRequest.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/MockWorkflowTemplateServiceImpl.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/CancelJobRequestOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/MockClusterControllerImpl.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowNode.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/ClusterControllerSmokeTest.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterOperation.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/ClusterControllerClientTest.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplatePlacementOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/MockJobController.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/HiveJobOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/JobControllerClientTest.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SparkRJobOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/MockClusterController.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/CreateWorkflowTemplateRequest.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/AutoscalingPolicyServiceClientTest.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/HadoopJobOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/MockAutoscalingPolicyServiceImpl.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DiskConfigOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/MockWorkflowTemplateService.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplateName.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/MockAutoscalingPolicyService.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/PySparkJob.java"
     },
     {
-      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/it/ITSystemTest.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/CreateClusterRequestOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/ClusterControllerSettings.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/QueryListOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplateServiceClient.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterOperationMetadata.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/JobControllerSettings.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DeleteJobRequestOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplateServiceSettings.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClustersProto.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/JobControllerClient.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/UpdateAutoscalingPolicyRequest.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/ClusterControllerClient.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterOperationStatus.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/package-info.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingPolicyOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/GrpcWorkflowTemplateServiceStub.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DeleteClusterRequest.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/GrpcClusterControllerCallableFactory.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/OrderedJob.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/GrpcClusterControllerStub.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/UpdateAutoscalingPolicyRequestOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/ClusterControllerStub.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/UpdateClusterRequest.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/GrpcJobControllerStub.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingConfigOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/GrpcJobControllerCallableFactory.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DiagnoseClusterResults.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/JobControllerStub.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/ClusterControllerStubSettings.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterOperationStatusOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/GrpcWorkflowTemplateServiceCallableFactory.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/BasicYarnAutoscalingConfig.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/WorkflowTemplateServiceStubSettings.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListAutoscalingPoliciesResponseOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/WorkflowTemplateServiceStub.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/BasicYarnAutoscalingConfigOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/JobControllerStubSettings.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterOperationOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingPolicyServiceClient.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/InstanceGroupConfig.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterControllerSettings.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/CreateAutoscalingPolicyRequest.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplateServiceClient.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobStatus.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingPolicyServiceSettings.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobStatusOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/JobControllerSettings.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListAutoscalingPoliciesResponse.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplateServiceSettings.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListWorkflowTemplatesRequest.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/JobControllerClient.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/HiveJob.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterControllerClient.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/Cluster.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/package-info.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ValueValidationOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/GrpcWorkflowTemplateServiceStub.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/UpdateJobRequest.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/GrpcClusterControllerCallableFactory.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/EndpointConfigOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/GrpcClusterControllerStub.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ManagedCluster.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/ClusterControllerStub.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingPolicy.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/GrpcJobControllerStub.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SparkSqlJobOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/GrpcJobControllerCallableFactory.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SparkSqlJob.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/AutoscalingPolicyServiceStubSettings.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/PigJob.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/GrpcAutoscalingPolicyServiceCallableFactory.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/QueryList.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/JobControllerStub.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/RegexValidationOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/ClusterControllerStubSettings.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SharedProto.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/GrpcAutoscalingPolicyServiceStub.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListClustersResponse.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/AutoscalingPolicyServiceStub.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GetJobRequest.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/GrpcWorkflowTemplateServiceCallableFactory.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DeleteAutoscalingPolicyRequest.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/WorkflowTemplateServiceStubSettings.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/InstanceGroupConfigOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/WorkflowTemplateServiceStub.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DiagnoseClusterResultsOrBuilder.java"
     },
     {
-      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/JobControllerStubSettings.java"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterStatus.java"
     },
     {
-      "path": ".github/release-please.yml"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/LifecycleConfig.java"
     },
     {
-      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SubmitJobRequest.java"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplatePlacement.java"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GetWorkflowTemplateRequestOrBuilder.java"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterOperationMetadataOrBuilder.java"
     },
     {
-      "path": ".kokoro/trampoline.sh"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/YarnApplicationOrBuilder.java"
     },
     {
-      "path": ".kokoro/build.sh"
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterMetrics.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DeleteAutoscalingPolicyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ParameterValidation.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/YarnApplication.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterSelectorOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowNodeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/LoggingConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SoftwareConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SubmitJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/NodeInitializationAction.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobReference.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobsProto.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SparkJob.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/BasicAutoscalingAlgorithmOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/LifecycleConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/InstantiateWorkflowTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/InstantiateInlineWorkflowTemplateRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplate.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/UpdateWorkflowTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GceClusterConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ListWorkflowTemplatesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/EncryptionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/SparkJobOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowGraphOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ManagedGroupConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DeleteWorkflowTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/GceClusterConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/Job.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobPlacement.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ManagedGroupConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/DiagnoseClusterRequest.java"
     },
     {
       "path": ".kokoro/build.bat"
     },
     {
-      "path": ".kokoro/linkage-monitor.sh"
+      "path": ".kokoro/build.sh"
     },
     {
       "path": ".kokoro/dependencies.sh"
@@ -873,28 +1185,64 @@
       "path": ".kokoro/common.cfg"
     },
     {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
       "path": ".kokoro/coerce_logs.sh"
     },
     {
-      "path": ".kokoro/release/common.sh"
+      "path": ".kokoro/linkage-monitor.sh"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.cfg"
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
     },
     {
       "path": ".kokoro/release/stage.cfg"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.sh"
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
     },
     {
       "path": ".kokoro/release/bump_snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.cfg"
     },
     {
       "path": ".kokoro/release/promote.sh"
@@ -903,49 +1251,40 @@
       "path": ".kokoro/release/stage.sh"
     },
     {
-      "path": ".kokoro/release/bump_snapshot.sh"
+      "path": ".kokoro/release/snapshot.sh"
     },
     {
-      "path": ".kokoro/release/promote.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.sh"
+      "path": ".kokoro/release/snapshot.cfg"
     },
     {
       "path": ".kokoro/release/common.cfg"
     },
     {
-      "path": ".kokoro/release/snapshot.sh"
+      "path": ".kokoro/release/bump_snapshot.sh"
     },
     {
-      "path": ".kokoro/nightly/java11.cfg"
+      "path": ".kokoro/release/common.sh"
     },
     {
-      "path": ".kokoro/nightly/java8-win.cfg"
+      "path": ".kokoro/release/drop.cfg"
     },
     {
-      "path": ".kokoro/nightly/lint.cfg"
+      "path": ".kokoro/release/publish_javadoc.sh"
     },
     {
-      "path": ".kokoro/nightly/java8-osx.cfg"
+      "path": ".kokoro/presubmit/dependencies.cfg"
     },
     {
-      "path": ".kokoro/nightly/integration.cfg"
+      "path": ".kokoro/presubmit/samples.cfg"
     },
     {
-      "path": ".kokoro/nightly/java7.cfg"
+      "path": ".kokoro/presubmit/java7.cfg"
     },
     {
-      "path": ".kokoro/nightly/java8.cfg"
+      "path": ".kokoro/presubmit/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/nightly/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/common.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java11.cfg"
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
     },
     {
       "path": ".kokoro/presubmit/java8-win.cfg"
@@ -954,100 +1293,67 @@
       "path": ".kokoro/presubmit/lint.cfg"
     },
     {
-      "path": ".kokoro/presubmit/clirr.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/integration.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java7.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+      "path": ".kokoro/presubmit/java11.cfg"
     },
     {
       "path": ".kokoro/presubmit/common.cfg"
     },
     {
-      "path": ".kokoro/continuous/propose_release.cfg"
+      "path": ".kokoro/presubmit/clirr.cfg"
     },
     {
-      "path": ".kokoro/continuous/java11.cfg"
+      "path": ".kokoro/presubmit/java8.cfg"
     },
     {
-      "path": ".kokoro/continuous/java8-win.cfg"
+      "path": ".kokoro/presubmit/integration.cfg"
     },
     {
-      "path": ".kokoro/continuous/lint.cfg"
+      "path": ".kokoro/nightly/dependencies.cfg"
     },
     {
-      "path": ".kokoro/continuous/java8-osx.cfg"
+      "path": ".kokoro/nightly/samples.cfg"
     },
     {
-      "path": ".kokoro/continuous/propose_release.sh"
+      "path": ".kokoro/nightly/java7.cfg"
     },
     {
-      "path": ".kokoro/continuous/integration.cfg"
+      "path": ".kokoro/nightly/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/continuous/java7.cfg"
+      "path": ".kokoro/nightly/java8-win.cfg"
     },
     {
-      "path": ".kokoro/continuous/java8.cfg"
+      "path": ".kokoro/nightly/lint.cfg"
     },
     {
-      "path": ".kokoro/continuous/dependencies.cfg"
+      "path": ".kokoro/nightly/java11.cfg"
     },
     {
-      "path": ".kokoro/continuous/common.cfg"
+      "path": ".kokoro/nightly/common.cfg"
     },
     {
-      "path": "grpc-google-cloud-dataproc-v1beta2/pom.xml"
+      "path": ".kokoro/nightly/java8.cfg"
     },
     {
-      "path": "grpc-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/JobControllerGrpc.java"
+      "path": ".kokoro/nightly/integration.cfg"
     },
     {
-      "path": "grpc-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterControllerGrpc.java"
+      "path": ".github/release-please.yml"
     },
     {
-      "path": "grpc-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplateServiceGrpc.java"
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
     },
     {
-      "path": "grpc-google-cloud-dataproc-v1beta2/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingPolicyServiceGrpc.java"
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
     },
     {
-      "path": "google-cloud-dataproc-bom/pom.xml"
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
     },
     {
       "path": "__pycache__/synth.cpython-36.pyc"
-    },
-    {
-      "path": "grpc-google-cloud-dataproc-v1/pom.xml"
-    },
-    {
-      "path": "grpc-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobControllerGrpc.java"
-    },
-    {
-      "path": "grpc-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterControllerGrpc.java"
-    },
-    {
-      "path": "grpc-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplateServiceGrpc.java"
-    },
-    {
-      "path": "grpc-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/AutoscalingPolicyServiceGrpc.java"
-    },
-    {
-      "path": ".git/shallow"
     },
     {
       "path": ".git/index"
@@ -1062,22 +1368,13 @@
       "path": ".git/config"
     },
     {
-      "path": ".git/logs/HEAD"
+      "path": ".git/objects/pack/pack-27d82333f4c2e600dec2241741703cab8dd2f717.idx"
     },
     {
-      "path": ".git/logs/refs/heads/autosynth"
+      "path": ".git/objects/pack/pack-27d82333f4c2e600dec2241741703cab8dd2f717.pack"
     },
     {
-      "path": ".git/logs/refs/heads/master"
-    },
-    {
-      "path": ".git/logs/refs/remotes/origin/HEAD"
-    },
-    {
-      "path": ".git/objects/pack/pack-0e1ebd057cb815de98ae44e95065b4dd13d2fc96.idx"
-    },
-    {
-      "path": ".git/objects/pack/pack-0e1ebd057cb815de98ae44e95065b4dd13d2fc96.pack"
+      "path": ".git/refs/remotes/origin/HEAD"
     },
     {
       "path": ".git/refs/heads/autosynth"
@@ -1086,517 +1383,226 @@
       "path": ".git/refs/heads/master"
     },
     {
-      "path": ".git/refs/remotes/origin/HEAD"
+      "path": ".git/logs/HEAD"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/pom.xml"
+      "path": ".git/logs/refs/remotes/origin/HEAD"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/proto/google/cloud/dataproc/v1/autoscaling_policies.proto"
+      "path": ".git/logs/refs/heads/autosynth"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/proto/google/cloud/dataproc/v1/shared.proto"
+      "path": ".git/logs/refs/heads/master"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/proto/google/cloud/dataproc/v1/clusters.proto"
+      "path": "google-cloud-dataproc/pom.xml"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/proto/google/cloud/dataproc/v1/jobs.proto"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/MockClusterControllerImpl.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/proto/google/cloud/dataproc/v1/operations.proto"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/MockWorkflowTemplateServiceImpl.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/proto/google/cloud/dataproc/v1/workflow_templates.proto"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/MockWorkflowTemplateService.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListClustersRequestOrBuilder.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/ClusterControllerSmokeTest.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/LoggingConfig.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/WorkflowTemplateServiceClientTest.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/LoggingConfigOrBuilder.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/MockJobControllerImpl.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SoftwareConfigOrBuilder.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/ClusterControllerClientTest.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListWorkflowTemplatesResponseOrBuilder.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/MockJobController.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobScheduling.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/JobControllerClientTest.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterOperationStatusOrBuilder.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/MockClusterController.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobPlacementOrBuilder.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1/it/ITSystemTest.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/UpdateClusterRequest.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/MockClusterControllerImpl.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DeleteWorkflowTemplateRequestOrBuilder.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/MockWorkflowTemplateServiceImpl.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListAutoscalingPoliciesResponseOrBuilder.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/AutoscalingPolicyServiceClientTest.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SecurityConfig.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/MockWorkflowTemplateService.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SparkJob.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/MockAutoscalingPolicyService.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplatesProto.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/ClusterControllerSmokeTest.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterOperationStatus.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplateServiceClientTest.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SubmitJobRequest.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/MockJobControllerImpl.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/PySparkJob.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/ClusterControllerClientTest.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListAutoscalingPoliciesRequest.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/MockJobController.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstantiateWorkflowTemplateRequestOrBuilder.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/JobControllerClientTest.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/UpdateWorkflowTemplateRequest.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/MockClusterController.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobReferenceOrBuilder.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/MockAutoscalingPolicyServiceImpl.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/BasicAutoscalingAlgorithmOrBuilder.java"
+      "path": "google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v1beta2/it/ITSystemTest.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/UpdateJobRequest.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/JobControllerClient.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterConfigOrBuilder.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/ClusterControllerClient.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplate.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/ClusterControllerSettings.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetWorkflowTemplateRequest.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplateServiceClient.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SparkSqlJob.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/JobControllerSettings.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListAutoscalingPoliciesResponse.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/package-info.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetAutoscalingPolicyRequest.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplateServiceSettings.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/HiveJobOrBuilder.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/GrpcJobControllerStub.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterOperationMetadata.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/GrpcClusterControllerCallableFactory.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/Cluster.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/GrpcWorkflowTemplateServiceCallableFactory.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobsProto.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/WorkflowTemplateServiceStub.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstanceGroupConfigOrBuilder.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/WorkflowTemplateServiceStubSettings.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/CancelJobRequest.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/ClusterControllerStubSettings.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/CreateAutoscalingPolicyRequest.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/GrpcClusterControllerStub.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstanceGroupAutoscalingPolicyConfig.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/JobControllerStub.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ManagedCluster.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/JobControllerStubSettings.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListWorkflowTemplatesResponse.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/GrpcWorkflowTemplateServiceStub.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobStatusOrBuilder.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/ClusterControllerStub.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/CancelJobRequestOrBuilder.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/GrpcJobControllerCallableFactory.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListJobsResponse.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/JobControllerClient.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ManagedGroupConfig.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterControllerClient.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/KerberosConfig.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingPolicyServiceClient.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplatePlacementOrBuilder.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/ClusterControllerSettings.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterOrBuilder.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplateServiceClient.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/QueryList.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/JobControllerSettings.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/AutoscalingConfig.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/package-info.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/AcceleratorConfig.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/AutoscalingPolicyServiceSettings.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DeleteJobRequest.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplateServiceSettings.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterStatusOrBuilder.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/GrpcJobControllerStub.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DiagnoseClusterResultsOrBuilder.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/GrpcAutoscalingPolicyServiceStub.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterSelectorOrBuilder.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/GrpcClusterControllerCallableFactory.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/UpdateAutoscalingPolicyRequest.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/GrpcWorkflowTemplateServiceCallableFactory.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstantiateInlineWorkflowTemplateRequest.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/WorkflowTemplateServiceStub.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListJobsRequestOrBuilder.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/WorkflowTemplateServiceStubSettings.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/AutoscalingPoliciesProto.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/ClusterControllerStubSettings.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowMetadata.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/GrpcClusterControllerStub.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ManagedGroupConfigOrBuilder.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/JobControllerStub.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListJobsRequest.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/GrpcAutoscalingPolicyServiceCallableFactory.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplateOrBuilder.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/JobControllerStubSettings.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/BasicYarnAutoscalingConfig.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/AutoscalingPolicyServiceStub.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DeleteJobRequestOrBuilder.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/GrpcWorkflowTemplateServiceStub.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListClustersResponseOrBuilder.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/AutoscalingPolicyServiceStubSettings.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstanceGroupAutoscalingPolicyConfigOrBuilder.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/ClusterControllerStub.java"
     },
     {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DeleteAutoscalingPolicyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/TemplateParameter.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SharedProto.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplateName.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/UpdateClusterRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/Component.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowMetadataOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DiskConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/AcceleratorConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SparkJobOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/RegexValidation.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/NodeInitializationAction.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/EncryptionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GceClusterConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterSelector.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DeleteAutoscalingPolicyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowNode.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/HadoopJob.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowGraphOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetAutoscalingPolicyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/PySparkJobOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListWorkflowTemplatesRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ParameterValidation.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobStatus.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/CreateAutoscalingPolicyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/OrderedJobOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/RegexValidationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobPlacement.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListClustersRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SubmitJobRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetClusterRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ManagedClusterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/CreateClusterRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DiagnoseClusterResults.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/CreateClusterRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListClustersResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/OperationsProto.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterMetricsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/AutoscalingConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/TemplateParameterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DiagnoseClusterRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowNodeOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/UpdateAutoscalingPolicyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/PigJobOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetJobRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/Job.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/AutoscalingPolicy.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetJobRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/NodeInitializationActionOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClustersProto.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SecurityConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/EncryptionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DiskConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/UpdateWorkflowTemplateRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstanceGroupConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/YarnApplication.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterStatus.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstantiateInlineWorkflowTemplateRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListAutoscalingPoliciesRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/YarnApplicationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobSchedulingOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/CreateWorkflowTemplateRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ValueValidation.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/PigJob.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/AutoscalingPolicyOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DeleteClusterRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterOperationMetadataOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/OrderedJob.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/KerberosConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterMetrics.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterOperation.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListWorkflowTemplatesRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetWorkflowTemplateRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SparkSqlJobOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplatePlacement.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DeleteClusterRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/BasicYarnAutoscalingConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/RegionName.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ValueValidationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SoftwareConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetClusterRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/HadoopJobOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/QueryListOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/HiveJob.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DeleteWorkflowTemplateRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/CreateWorkflowTemplateRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/BasicAutoscalingAlgorithm.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/DiagnoseClusterRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterOperationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstantiateWorkflowTemplateRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ListJobsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ParameterValidationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/WorkflowGraph.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/JobReference.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GceClusterConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/UpdateJobRequestOrBuilder.java"
+      "path": "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/GrpcJobControllerCallableFactory.java"
     }
   ]
 }
