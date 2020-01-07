@@ -34,6 +34,8 @@ public interface CreateBudgetRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -47,6 +49,8 @@ public interface CreateBudgetRequestOrBuilder
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -60,6 +64,8 @@ public interface CreateBudgetRequestOrBuilder
    * <code>
    * .google.cloud.billing.budgets.v1beta1.Budget budget = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the budget field is set.
    */
   boolean hasBudget();
   /**
@@ -72,6 +78,8 @@ public interface CreateBudgetRequestOrBuilder
    * <code>
    * .google.cloud.billing.budgets.v1beta1.Budget budget = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The budget.
    */
   com.google.cloud.billing.budgets.v1beta1.Budget getBudget();
   /**

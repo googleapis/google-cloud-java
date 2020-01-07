@@ -41,6 +41,8 @@ public interface AllUpdatesRuleOrBuilder
    * </pre>
    *
    * <code>string pubsub_topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The pubsubTopic.
    */
   java.lang.String getPubsubTopic();
   /**
@@ -61,6 +63,8 @@ public interface AllUpdatesRuleOrBuilder
    * </pre>
    *
    * <code>string pubsub_topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for pubsubTopic.
    */
   com.google.protobuf.ByteString getPubsubTopicBytes();
 
@@ -74,6 +78,8 @@ public interface AllUpdatesRuleOrBuilder
    * </pre>
    *
    * <code>string schema_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The schemaVersion.
    */
   java.lang.String getSchemaVersion();
   /**
@@ -86,6 +92,8 @@ public interface AllUpdatesRuleOrBuilder
    * </pre>
    *
    * <code>string schema_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for schemaVersion.
    */
   com.google.protobuf.ByteString getSchemaVersionBytes();
 }

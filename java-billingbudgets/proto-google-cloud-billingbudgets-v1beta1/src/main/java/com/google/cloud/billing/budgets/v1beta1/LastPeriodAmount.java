@@ -44,6 +44,12 @@ public final class LastPeriodAmount extends com.google.protobuf.GeneratedMessage
   private LastPeriodAmount() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LastPeriodAmount();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

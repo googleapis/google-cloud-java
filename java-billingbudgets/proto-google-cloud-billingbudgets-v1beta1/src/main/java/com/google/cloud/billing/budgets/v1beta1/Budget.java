@@ -49,6 +49,12 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Budget();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -121,11 +127,11 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 thresholdRules_ =
                     new java.util.ArrayList<
                         com.google.cloud.billing.budgets.v1beta1.ThresholdRule>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               thresholdRules_.add(
                   input.readMessage(
@@ -171,7 +177,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         thresholdRules_ = java.util.Collections.unmodifiableList(thresholdRules_);
       }
       this.unknownFields = unknownFields.build();
@@ -194,7 +200,6 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.billing.budgets.v1beta1.Budget.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -207,6 +212,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -229,6 +236,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -253,6 +262,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -274,6 +285,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -300,6 +313,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.billing.budgets.v1beta1.Filter budget_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the budgetFilter field is set.
    */
   public boolean hasBudgetFilter() {
     return budgetFilter_ != null;
@@ -315,6 +330,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.billing.budgets.v1beta1.Filter budget_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The budgetFilter.
    */
   public com.google.cloud.billing.budgets.v1beta1.Filter getBudgetFilter() {
     return budgetFilter_ == null
@@ -349,6 +366,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.billing.budgets.v1beta1.BudgetAmount amount = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the amount field is set.
    */
   public boolean hasAmount() {
     return amount_ != null;
@@ -363,6 +382,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.billing.budgets.v1beta1.BudgetAmount amount = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The amount.
    */
   public com.google.cloud.billing.budgets.v1beta1.BudgetAmount getAmount() {
     return amount_ == null
@@ -478,6 +499,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.billing.budgets.v1beta1.AllUpdatesRule all_updates_rule = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the allUpdatesRule field is set.
    */
   public boolean hasAllUpdatesRule() {
     return allUpdatesRule_ != null;
@@ -493,6 +516,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.billing.budgets.v1beta1.AllUpdatesRule all_updates_rule = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The allUpdatesRule.
    */
   public com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule getAllUpdatesRule() {
     return allUpdatesRule_ == null
@@ -528,6 +553,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The etag.
    */
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
@@ -550,6 +577,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for etag.
    */
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
@@ -862,7 +891,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
       }
       if (thresholdRulesBuilder_ == null) {
         thresholdRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         thresholdRulesBuilder_.clear();
       }
@@ -902,7 +931,6 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.billing.budgets.v1beta1.Budget result =
           new com.google.cloud.billing.budgets.v1beta1.Budget(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       if (budgetFilterBuilder_ == null) {
@@ -916,9 +944,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
         result.amount_ = amountBuilder_.build();
       }
       if (thresholdRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           thresholdRules_ = java.util.Collections.unmodifiableList(thresholdRules_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.thresholdRules_ = thresholdRules_;
       } else {
@@ -930,7 +958,6 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
         result.allUpdatesRule_ = allUpdatesRuleBuilder_.build();
       }
       result.etag_ = etag_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -999,7 +1026,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
         if (!other.thresholdRules_.isEmpty()) {
           if (thresholdRules_.isEmpty()) {
             thresholdRules_ = other.thresholdRules_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureThresholdRulesIsMutable();
             thresholdRules_.addAll(other.thresholdRules_);
@@ -1012,7 +1039,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
             thresholdRulesBuilder_.dispose();
             thresholdRulesBuilder_ = null;
             thresholdRules_ = other.thresholdRules_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
             thresholdRulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getThresholdRulesFieldBuilder()
@@ -1071,6 +1098,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1093,6 +1122,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1115,6 +1146,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1135,6 +1169,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1152,6 +1188,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1174,6 +1213,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1195,6 +1236,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -1216,6 +1259,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1235,6 +1281,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -1251,6 +1299,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1280,6 +1331,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.billing.budgets.v1beta1.Filter budget_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return Whether the budgetFilter field is set.
      */
     public boolean hasBudgetFilter() {
       return budgetFilterBuilder_ != null || budgetFilter_ != null;
@@ -1295,6 +1348,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.billing.budgets.v1beta1.Filter budget_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The budgetFilter.
      */
     public com.google.cloud.billing.budgets.v1beta1.Filter getBudgetFilter() {
       if (budgetFilterBuilder_ == null) {
@@ -1488,6 +1543,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.billing.budgets.v1beta1.BudgetAmount amount = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the amount field is set.
      */
     public boolean hasAmount() {
       return amountBuilder_ != null || amount_ != null;
@@ -1502,6 +1559,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.billing.budgets.v1beta1.BudgetAmount amount = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The amount.
      */
     public com.google.cloud.billing.budgets.v1beta1.BudgetAmount getAmount() {
       if (amountBuilder_ == null) {
@@ -1676,11 +1735,11 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureThresholdRulesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         thresholdRules_ =
             new java.util.ArrayList<com.google.cloud.billing.budgets.v1beta1.ThresholdRule>(
                 thresholdRules_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1933,7 +1992,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
     public Builder clearThresholdRules() {
       if (thresholdRulesBuilder_ == null) {
         thresholdRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         thresholdRulesBuilder_.clear();
@@ -2082,7 +2141,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Builder,
                 com.google.cloud.billing.budgets.v1beta1.ThresholdRuleOrBuilder>(
                 thresholdRules_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         thresholdRules_ = null;
@@ -2107,6 +2166,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.billing.budgets.v1beta1.AllUpdatesRule all_updates_rule = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return Whether the allUpdatesRule field is set.
      */
     public boolean hasAllUpdatesRule() {
       return allUpdatesRuleBuilder_ != null || allUpdatesRule_ != null;
@@ -2122,6 +2183,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.billing.budgets.v1beta1.AllUpdatesRule all_updates_rule = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The allUpdatesRule.
      */
     public com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule getAllUpdatesRule() {
       if (allUpdatesRuleBuilder_ == null) {
@@ -2314,6 +2377,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The etag.
      */
     public java.lang.String getEtag() {
       java.lang.Object ref = etag_;
@@ -2336,6 +2401,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for etag.
      */
     public com.google.protobuf.ByteString getEtagBytes() {
       java.lang.Object ref = etag_;
@@ -2358,6 +2425,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
      */
     public Builder setEtag(java.lang.String value) {
       if (value == null) {
@@ -2378,6 +2448,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEtag() {
 
@@ -2395,6 +2467,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
      */
     public Builder setEtagBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

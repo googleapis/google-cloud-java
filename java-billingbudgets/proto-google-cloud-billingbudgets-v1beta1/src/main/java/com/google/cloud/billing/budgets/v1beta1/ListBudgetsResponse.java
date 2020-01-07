@@ -43,6 +43,12 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListBudgetsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -122,7 +128,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
             com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int BUDGETS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.billing.budgets.v1beta1.Budget> budgets_;
   /**
@@ -198,6 +203,8 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -219,6 +226,8 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -487,7 +496,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
       com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse result =
           new com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (budgetsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           budgets_ = java.util.Collections.unmodifiableList(budgets_);
@@ -498,7 +506,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
         result.budgets_ = budgetsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -974,6 +981,8 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -995,6 +1004,8 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1016,6 +1027,9 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1035,6 +1049,8 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1051,6 +1067,9 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

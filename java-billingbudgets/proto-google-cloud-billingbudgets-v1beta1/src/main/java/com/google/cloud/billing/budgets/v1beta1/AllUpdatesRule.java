@@ -45,6 +45,12 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AllUpdatesRule();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -136,6 +141,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string pubsub_topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The pubsubTopic.
    */
   public java.lang.String getPubsubTopic() {
     java.lang.Object ref = pubsubTopic_;
@@ -166,6 +173,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string pubsub_topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for pubsubTopic.
    */
   public com.google.protobuf.ByteString getPubsubTopicBytes() {
     java.lang.Object ref = pubsubTopic_;
@@ -191,6 +200,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string schema_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The schemaVersion.
    */
   public java.lang.String getSchemaVersion() {
     java.lang.Object ref = schemaVersion_;
@@ -213,6 +224,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string schema_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for schemaVersion.
    */
   public com.google.protobuf.ByteString getSchemaVersionBytes() {
     java.lang.Object ref = schemaVersion_;
@@ -582,6 +595,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pubsub_topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The pubsubTopic.
      */
     public java.lang.String getPubsubTopic() {
       java.lang.Object ref = pubsubTopic_;
@@ -612,6 +627,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pubsub_topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for pubsubTopic.
      */
     public com.google.protobuf.ByteString getPubsubTopicBytes() {
       java.lang.Object ref = pubsubTopic_;
@@ -642,6 +659,9 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pubsub_topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The pubsubTopic to set.
+     * @return This builder for chaining.
      */
     public Builder setPubsubTopic(java.lang.String value) {
       if (value == null) {
@@ -670,6 +690,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pubsub_topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPubsubTopic() {
 
@@ -695,6 +717,9 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string pubsub_topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for pubsubTopic to set.
+     * @return This builder for chaining.
      */
     public Builder setPubsubTopicBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -718,6 +743,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schema_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The schemaVersion.
      */
     public java.lang.String getSchemaVersion() {
       java.lang.Object ref = schemaVersion_;
@@ -740,6 +767,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schema_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for schemaVersion.
      */
     public com.google.protobuf.ByteString getSchemaVersionBytes() {
       java.lang.Object ref = schemaVersion_;
@@ -762,6 +791,9 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schema_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The schemaVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setSchemaVersion(java.lang.String value) {
       if (value == null) {
@@ -782,6 +814,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schema_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSchemaVersion() {
 
@@ -799,6 +833,9 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string schema_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for schemaVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setSchemaVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

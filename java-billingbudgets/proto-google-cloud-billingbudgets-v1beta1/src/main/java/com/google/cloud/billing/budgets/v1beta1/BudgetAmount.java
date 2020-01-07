@@ -40,6 +40,12 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
   private BudgetAmount() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BudgetAmount();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -134,7 +139,10 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
   private int budgetAmountCase_ = 0;
   private java.lang.Object budgetAmount_;
 
-  public enum BudgetAmountCase implements com.google.protobuf.Internal.EnumLite {
+  public enum BudgetAmountCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SPECIFIED_AMOUNT(1),
     LAST_PERIOD_AMOUNT(2),
     BUDGETAMOUNT_NOT_SET(0);
@@ -143,7 +151,11 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
     private BudgetAmountCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static BudgetAmountCase valueOf(int value) {
       return forNumber(value);
@@ -183,6 +195,8 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Money specified_amount = 1;</code>
+   *
+   * @return Whether the specifiedAmount field is set.
    */
   public boolean hasSpecifiedAmount() {
     return budgetAmountCase_ == 1;
@@ -198,6 +212,8 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Money specified_amount = 1;</code>
+   *
+   * @return The specifiedAmount.
    */
   public com.google.type.Money getSpecifiedAmount() {
     if (budgetAmountCase_ == 1) {
@@ -233,6 +249,8 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.billing.budgets.v1beta1.LastPeriodAmount last_period_amount = 2;</code>
+   *
+   * @return Whether the lastPeriodAmount field is set.
    */
   public boolean hasLastPeriodAmount() {
     return budgetAmountCase_ == 2;
@@ -245,6 +263,8 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.cloud.billing.budgets.v1beta1.LastPeriodAmount last_period_amount = 2;</code>
+   *
+   * @return The lastPeriodAmount.
    */
   public com.google.cloud.billing.budgets.v1beta1.LastPeriodAmount getLastPeriodAmount() {
     if (budgetAmountCase_ == 2) {
@@ -673,6 +693,8 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Money specified_amount = 1;</code>
+     *
+     * @return Whether the specifiedAmount field is set.
      */
     public boolean hasSpecifiedAmount() {
       return budgetAmountCase_ == 1;
@@ -688,6 +710,8 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Money specified_amount = 1;</code>
+     *
+     * @return The specifiedAmount.
      */
     public com.google.type.Money getSpecifiedAmount() {
       if (specifiedAmountBuilder_ == null) {
@@ -892,6 +916,8 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.billing.budgets.v1beta1.LastPeriodAmount last_period_amount = 2;</code>
+     *
+     * @return Whether the lastPeriodAmount field is set.
      */
     public boolean hasLastPeriodAmount() {
       return budgetAmountCase_ == 2;
@@ -904,6 +930,8 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.cloud.billing.budgets.v1beta1.LastPeriodAmount last_period_amount = 2;</code>
+     *
+     * @return The lastPeriodAmount.
      */
     public com.google.cloud.billing.budgets.v1beta1.LastPeriodAmount getLastPeriodAmount() {
       if (lastPeriodAmountBuilder_ == null) {

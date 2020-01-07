@@ -42,6 +42,12 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateBudgetRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -135,6 +140,8 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -158,6 +165,8 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -183,6 +192,8 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.billing.budgets.v1beta1.Budget budget = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the budget field is set.
    */
   public boolean hasBudget() {
     return budget_ != null;
@@ -197,6 +208,8 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.billing.budgets.v1beta1.Budget budget = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The budget.
    */
   public com.google.cloud.billing.budgets.v1beta1.Budget getBudget() {
     return budget_ == null
@@ -579,6 +592,8 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -602,6 +617,8 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -625,6 +642,9 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -646,6 +666,8 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -664,6 +686,9 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -692,6 +717,8 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.billing.budgets.v1beta1.Budget budget = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the budget field is set.
      */
     public boolean hasBudget() {
       return budgetBuilder_ != null || budget_ != null;
@@ -706,6 +733,8 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.billing.budgets.v1beta1.Budget budget = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The budget.
      */
     public com.google.cloud.billing.budgets.v1beta1.Budget getBudget() {
       if (budgetBuilder_ == null) {

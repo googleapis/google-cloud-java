@@ -48,6 +48,12 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ThresholdRule();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -60,7 +66,6 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -201,12 +206,20 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Basis valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Basis forNumber(int value) {
       switch (value) {
         case 0:
@@ -278,6 +291,8 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>double threshold_percent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The thresholdPercent.
    */
   public double getThresholdPercent() {
     return thresholdPercent_;
@@ -296,6 +311,8 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis spend_basis = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The enum numeric value on the wire for spendBasis.
    */
   public int getSpendBasisValue() {
     return spendBasis_;
@@ -311,6 +328,8 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis spend_basis = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The spendBasis.
    */
   public com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis getSpendBasis() {
     @SuppressWarnings("deprecation")
@@ -679,6 +698,8 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double threshold_percent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The thresholdPercent.
      */
     public double getThresholdPercent() {
       return thresholdPercent_;
@@ -693,6 +714,9 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double threshold_percent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The thresholdPercent to set.
+     * @return This builder for chaining.
      */
     public Builder setThresholdPercent(double value) {
 
@@ -710,6 +734,8 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double threshold_percent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearThresholdPercent() {
 
@@ -730,6 +756,8 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis spend_basis = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The enum numeric value on the wire for spendBasis.
      */
     public int getSpendBasisValue() {
       return spendBasis_;
@@ -745,6 +773,9 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis spend_basis = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for spendBasis to set.
+     * @return This builder for chaining.
      */
     public Builder setSpendBasisValue(int value) {
       spendBasis_ = value;
@@ -762,6 +793,8 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis spend_basis = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The spendBasis.
      */
     public com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis getSpendBasis() {
       @SuppressWarnings("deprecation")
@@ -782,6 +815,9 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis spend_basis = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The spendBasis to set.
+     * @return This builder for chaining.
      */
     public Builder setSpendBasis(
         com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis value) {
@@ -804,6 +840,8 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis spend_basis = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSpendBasis() {
 

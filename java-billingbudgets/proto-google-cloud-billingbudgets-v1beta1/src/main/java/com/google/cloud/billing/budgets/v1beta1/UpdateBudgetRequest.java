@@ -40,6 +40,12 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
   private UpdateBudgetRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateBudgetRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -141,6 +146,8 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.billing.budgets.v1beta1.Budget budget = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the budget field is set.
    */
   public boolean hasBudget() {
     return budget_ != null;
@@ -156,6 +163,8 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
    * <code>
    * .google.cloud.billing.budgets.v1beta1.Budget budget = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The budget.
    */
   public com.google.cloud.billing.budgets.v1beta1.Budget getBudget() {
     return budget_ == null
@@ -194,6 +203,8 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -212,6 +223,8 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -613,6 +626,8 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.billing.budgets.v1beta1.Budget budget = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the budget field is set.
      */
     public boolean hasBudget() {
       return budgetBuilder_ != null || budget_ != null;
@@ -628,6 +643,8 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
      * <code>
      * .google.cloud.billing.budgets.v1beta1.Budget budget = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The budget.
      */
     public com.google.cloud.billing.budgets.v1beta1.Budget getBudget() {
       if (budgetBuilder_ == null) {
@@ -825,6 +842,8 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -843,6 +862,8 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {

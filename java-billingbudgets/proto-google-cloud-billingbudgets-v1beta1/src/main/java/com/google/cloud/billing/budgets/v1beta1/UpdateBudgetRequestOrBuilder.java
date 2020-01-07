@@ -34,6 +34,8 @@ public interface UpdateBudgetRequestOrBuilder
    * <code>
    * .google.cloud.billing.budgets.v1beta1.Budget budget = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the budget field is set.
    */
   boolean hasBudget();
   /**
@@ -47,6 +49,8 @@ public interface UpdateBudgetRequestOrBuilder
    * <code>
    * .google.cloud.billing.budgets.v1beta1.Budget budget = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The budget.
    */
   com.google.cloud.billing.budgets.v1beta1.Budget getBudget();
   /**
@@ -77,6 +81,8 @@ public interface UpdateBudgetRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -93,6 +99,8 @@ public interface UpdateBudgetRequestOrBuilder
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

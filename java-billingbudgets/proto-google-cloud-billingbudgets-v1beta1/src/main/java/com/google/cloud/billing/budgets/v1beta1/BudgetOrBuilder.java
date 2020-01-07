@@ -33,6 +33,8 @@ public interface BudgetOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface BudgetOrBuilder
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -57,6 +61,8 @@ public interface BudgetOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -68,6 +74,8 @@ public interface BudgetOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -82,6 +90,8 @@ public interface BudgetOrBuilder
    * <code>
    * .google.cloud.billing.budgets.v1beta1.Filter budget_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the budgetFilter field is set.
    */
   boolean hasBudgetFilter();
   /**
@@ -95,6 +105,8 @@ public interface BudgetOrBuilder
    * <code>
    * .google.cloud.billing.budgets.v1beta1.Filter budget_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The budgetFilter.
    */
   com.google.cloud.billing.budgets.v1beta1.Filter getBudgetFilter();
   /**
@@ -121,6 +133,8 @@ public interface BudgetOrBuilder
    * <code>
    * .google.cloud.billing.budgets.v1beta1.BudgetAmount amount = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return Whether the amount field is set.
    */
   boolean hasAmount();
   /**
@@ -133,6 +147,8 @@ public interface BudgetOrBuilder
    * <code>
    * .google.cloud.billing.budgets.v1beta1.BudgetAmount amount = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
+   *
+   * @return The amount.
    */
   com.google.cloud.billing.budgets.v1beta1.BudgetAmount getAmount();
   /**
@@ -227,6 +243,8 @@ public interface BudgetOrBuilder
    * <code>
    * .google.cloud.billing.budgets.v1beta1.AllUpdatesRule all_updates_rule = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the allUpdatesRule field is set.
    */
   boolean hasAllUpdatesRule();
   /**
@@ -240,6 +258,8 @@ public interface BudgetOrBuilder
    * <code>
    * .google.cloud.billing.budgets.v1beta1.AllUpdatesRule all_updates_rule = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The allUpdatesRule.
    */
   com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule getAllUpdatesRule();
   /**
@@ -266,6 +286,8 @@ public interface BudgetOrBuilder
    * </pre>
    *
    * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The etag.
    */
   java.lang.String getEtag();
   /**
@@ -278,6 +300,8 @@ public interface BudgetOrBuilder
    * </pre>
    *
    * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
 }

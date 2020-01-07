@@ -44,6 +44,12 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Filter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -80,9 +86,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 services_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               services_.add(s);
               break;
@@ -111,7 +117,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         projects_ = projects_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         services_ = services_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -205,12 +211,20 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static CreditTypesTreatment valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static CreditTypesTreatment forNumber(int value) {
       switch (value) {
         case 0:
@@ -271,7 +285,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment)
   }
 
-  private int bitField0_;
   public static final int PROJECTS_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList projects_;
   /**
@@ -286,6 +299,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the projects.
    */
   public com.google.protobuf.ProtocolStringList getProjectsList() {
     return projects_;
@@ -302,6 +317,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of projects.
    */
   public int getProjectsCount() {
     return projects_.size();
@@ -318,6 +335,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The projects at the given index.
    */
   public java.lang.String getProjects(int index) {
     return projects_.get(index);
@@ -334,6 +354,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the projects at the given index.
    */
   public com.google.protobuf.ByteString getProjectsBytes(int index) {
     return projects_.getByteString(index);
@@ -351,6 +374,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment credit_types_treatment = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The enum numeric value on the wire for creditTypesTreatment.
    */
   public int getCreditTypesTreatmentValue() {
     return creditTypesTreatment_;
@@ -365,6 +390,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment credit_types_treatment = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The creditTypesTreatment.
    */
   public com.google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment
       getCreditTypesTreatment() {
@@ -392,6 +419,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string services = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the services.
    */
   public com.google.protobuf.ProtocolStringList getServicesList() {
     return services_;
@@ -409,6 +438,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string services = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of services.
    */
   public int getServicesCount() {
     return services_.size();
@@ -426,6 +457,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string services = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The services at the given index.
    */
   public java.lang.String getServices(int index) {
     return services_.get(index);
@@ -443,6 +477,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string services = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the services at the given index.
    */
   public com.google.protobuf.ByteString getServicesBytes(int index) {
     return services_.getByteString(index);
@@ -695,7 +732,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       creditTypesTreatment_ = 0;
 
       services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -724,19 +761,17 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.billing.budgets.v1beta1.Filter result =
           new com.google.cloud.billing.budgets.v1beta1.Filter(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         projects_ = projects_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.projects_ = projects_;
       result.creditTypesTreatment_ = creditTypesTreatment_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         services_ = services_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.services_ = services_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -803,7 +838,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       if (!other.services_.isEmpty()) {
         if (services_.isEmpty()) {
           services_ = other.services_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureServicesIsMutable();
           services_.addAll(other.services_);
@@ -862,6 +897,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the projects.
      */
     public com.google.protobuf.ProtocolStringList getProjectsList() {
       return projects_.getUnmodifiableView();
@@ -878,6 +915,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of projects.
      */
     public int getProjectsCount() {
       return projects_.size();
@@ -894,6 +933,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The projects at the given index.
      */
     public java.lang.String getProjects(int index) {
       return projects_.get(index);
@@ -910,6 +952,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the projects at the given index.
      */
     public com.google.protobuf.ByteString getProjectsBytes(int index) {
       return projects_.getByteString(index);
@@ -926,6 +971,10 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The projects to set.
+     * @return This builder for chaining.
      */
     public Builder setProjects(int index, java.lang.String value) {
       if (value == null) {
@@ -948,6 +997,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The projects to add.
+     * @return This builder for chaining.
      */
     public Builder addProjects(java.lang.String value) {
       if (value == null) {
@@ -970,6 +1022,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The projects to add.
+     * @return This builder for chaining.
      */
     public Builder addAllProjects(java.lang.Iterable<java.lang.String> values) {
       ensureProjectsIsMutable();
@@ -989,6 +1044,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProjects() {
       projects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1008,6 +1065,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the projects to add.
+     * @return This builder for chaining.
      */
     public Builder addProjectsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1031,6 +1091,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment credit_types_treatment = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The enum numeric value on the wire for creditTypesTreatment.
      */
     public int getCreditTypesTreatmentValue() {
       return creditTypesTreatment_;
@@ -1045,6 +1107,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment credit_types_treatment = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The enum numeric value on the wire for creditTypesTreatment to set.
+     * @return This builder for chaining.
      */
     public Builder setCreditTypesTreatmentValue(int value) {
       creditTypesTreatment_ = value;
@@ -1061,6 +1126,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment credit_types_treatment = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return The creditTypesTreatment.
      */
     public com.google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment
         getCreditTypesTreatment() {
@@ -1082,6 +1149,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment credit_types_treatment = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @param value The creditTypesTreatment to set.
+     * @return This builder for chaining.
      */
     public Builder setCreditTypesTreatment(
         com.google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment value) {
@@ -1103,6 +1173,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment credit_types_treatment = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCreditTypesTreatment() {
 
@@ -1115,9 +1187,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureServicesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         services_ = new com.google.protobuf.LazyStringArrayList(services_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1133,6 +1205,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string services = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the services.
      */
     public com.google.protobuf.ProtocolStringList getServicesList() {
       return services_.getUnmodifiableView();
@@ -1150,6 +1224,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string services = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of services.
      */
     public int getServicesCount() {
       return services_.size();
@@ -1167,6 +1243,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string services = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The services at the given index.
      */
     public java.lang.String getServices(int index) {
       return services_.get(index);
@@ -1184,6 +1263,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string services = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the services at the given index.
      */
     public com.google.protobuf.ByteString getServicesBytes(int index) {
       return services_.getByteString(index);
@@ -1201,6 +1283,10 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string services = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The services to set.
+     * @return This builder for chaining.
      */
     public Builder setServices(int index, java.lang.String value) {
       if (value == null) {
@@ -1224,6 +1310,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string services = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The services to add.
+     * @return This builder for chaining.
      */
     public Builder addServices(java.lang.String value) {
       if (value == null) {
@@ -1247,6 +1336,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string services = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The services to add.
+     * @return This builder for chaining.
      */
     public Builder addAllServices(java.lang.Iterable<java.lang.String> values) {
       ensureServicesIsMutable();
@@ -1267,10 +1359,12 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string services = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearServices() {
       services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1287,6 +1381,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string services = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the services to add.
+     * @return This builder for chaining.
      */
     public Builder addServicesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

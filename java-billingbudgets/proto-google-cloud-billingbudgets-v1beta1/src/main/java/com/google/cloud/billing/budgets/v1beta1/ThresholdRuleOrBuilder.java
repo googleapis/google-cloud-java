@@ -33,6 +33,8 @@ public interface ThresholdRuleOrBuilder
    * </pre>
    *
    * <code>double threshold_percent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The thresholdPercent.
    */
   double getThresholdPercent();
 
@@ -47,6 +49,8 @@ public interface ThresholdRuleOrBuilder
    * <code>
    * .google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis spend_basis = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The enum numeric value on the wire for spendBasis.
    */
   int getSpendBasisValue();
   /**
@@ -60,6 +64,8 @@ public interface ThresholdRuleOrBuilder
    * <code>
    * .google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis spend_basis = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The spendBasis.
    */
   com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis getSpendBasis();
 }

@@ -35,6 +35,8 @@ public interface FilterOrBuilder
    * </pre>
    *
    * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the projects.
    */
   java.util.List<java.lang.String> getProjectsList();
   /**
@@ -49,6 +51,8 @@ public interface FilterOrBuilder
    * </pre>
    *
    * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of projects.
    */
   int getProjectsCount();
   /**
@@ -63,6 +67,9 @@ public interface FilterOrBuilder
    * </pre>
    *
    * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The projects at the given index.
    */
   java.lang.String getProjects(int index);
   /**
@@ -77,6 +84,9 @@ public interface FilterOrBuilder
    * </pre>
    *
    * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the projects at the given index.
    */
   com.google.protobuf.ByteString getProjectsBytes(int index);
 
@@ -90,6 +100,8 @@ public interface FilterOrBuilder
    * <code>
    * .google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment credit_types_treatment = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The enum numeric value on the wire for creditTypesTreatment.
    */
   int getCreditTypesTreatmentValue();
   /**
@@ -102,6 +114,8 @@ public interface FilterOrBuilder
    * <code>
    * .google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment credit_types_treatment = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The creditTypesTreatment.
    */
   com.google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment getCreditTypesTreatment();
 
@@ -118,6 +132,8 @@ public interface FilterOrBuilder
    * </pre>
    *
    * <code>repeated string services = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the services.
    */
   java.util.List<java.lang.String> getServicesList();
   /**
@@ -133,6 +149,8 @@ public interface FilterOrBuilder
    * </pre>
    *
    * <code>repeated string services = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of services.
    */
   int getServicesCount();
   /**
@@ -148,6 +166,9 @@ public interface FilterOrBuilder
    * </pre>
    *
    * <code>repeated string services = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The services at the given index.
    */
   java.lang.String getServices(int index);
   /**
@@ -163,6 +184,9 @@ public interface FilterOrBuilder
    * </pre>
    *
    * <code>repeated string services = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the services at the given index.
    */
   com.google.protobuf.ByteString getServicesBytes(int index);
 }

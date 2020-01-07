@@ -34,6 +34,8 @@ public interface BudgetAmountOrBuilder
    * </pre>
    *
    * <code>.google.type.Money specified_amount = 1;</code>
+   *
+   * @return Whether the specifiedAmount field is set.
    */
   boolean hasSpecifiedAmount();
   /**
@@ -47,6 +49,8 @@ public interface BudgetAmountOrBuilder
    * </pre>
    *
    * <code>.google.type.Money specified_amount = 1;</code>
+   *
+   * @return The specifiedAmount.
    */
   com.google.type.Money getSpecifiedAmount();
   /**
@@ -71,6 +75,8 @@ public interface BudgetAmountOrBuilder
    * </pre>
    *
    * <code>.google.cloud.billing.budgets.v1beta1.LastPeriodAmount last_period_amount = 2;</code>
+   *
+   * @return Whether the lastPeriodAmount field is set.
    */
   boolean hasLastPeriodAmount();
   /**
@@ -81,6 +87,8 @@ public interface BudgetAmountOrBuilder
    * </pre>
    *
    * <code>.google.cloud.billing.budgets.v1beta1.LastPeriodAmount last_period_amount = 2;</code>
+   *
+   * @return The lastPeriodAmount.
    */
   com.google.cloud.billing.budgets.v1beta1.LastPeriodAmount getLastPeriodAmount();
   /**
