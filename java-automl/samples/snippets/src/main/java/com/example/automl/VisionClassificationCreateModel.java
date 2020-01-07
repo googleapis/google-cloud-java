@@ -49,10 +49,7 @@ class VisionClassificationCreateModel {
       LocationName projectLocation = LocationName.of(projectId, "us-central1");
       // Set model metadata.
       ImageClassificationModelMetadata metadata =
-          ImageClassificationModelMetadata.newBuilder()
-              .setTrainBudgetMilliNodeHours(
-                  8) // The train budget of creating this model, expressed in hours.
-              .build();
+          ImageClassificationModelMetadata.newBuilder().setTrainBudgetMilliNodeHours(24000).build();
       Model model =
           Model.newBuilder()
               .setDisplayName(displayName)
