@@ -1,19 +1,19 @@
 {
-  "updateTime": "2019-12-12T08:47:15.667744Z",
+  "updateTime": "2020-01-07T08:55:35.079251Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.42.2",
-        "dockerImage": "googleapis/artman@sha256:a86051ce32e2454ca2558ec9e437d46c2184b6dd291f57b0686676d77242658e"
+        "version": "0.43.0",
+        "dockerImage": "googleapis/artman@sha256:264654a37596a44b0668b8ce6ac41082d713f6ee150b3fc6425fa78cc64e4f20"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "19c4589a3cb44b3679f7b3fba88365b3d055d5f8",
-        "internalRef": "285013366"
+        "sha": "cb79155f596e0396dd900da93872be7066f6340d",
+        "internalRef": "288441307"
       }
     },
     {
@@ -34,6 +34,407 @@
         "generator": "gapic",
         "config": "google/cloud/oslogin/artman_oslogin_v1.yaml"
       }
+    }
+  ],
+  "newFiles": [
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": ".gitignore"
+    },
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "versions.txt"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "grpc-google-cloud-os-login-v1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/OsLoginServiceGrpc.java"
+    },
+    {
+      "path": "google-cloud-os-login/pom.xml"
+    },
+    {
+      "path": "google-cloud-os-login/src/test/java/com/google/cloud/oslogin/v1/OsLoginServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-os-login/src/test/java/com/google/cloud/oslogin/v1/MockOsLoginServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-os-login/src/test/java/com/google/cloud/oslogin/v1/MockOsLoginService.java"
+    },
+    {
+      "path": "google-cloud-os-login/src/test/java/com/google/cloud/oslogin/v1/it/ITSystemTest.java"
+    },
+    {
+      "path": "google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/OsLoginServiceClient.java"
+    },
+    {
+      "path": "google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/package-info.java"
+    },
+    {
+      "path": "google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/OsLoginServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/stub/GrpcOsLoginServiceStub.java"
+    },
+    {
+      "path": "google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/stub/OsLoginServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/stub/GrpcOsLoginServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/stub/OsLoginServiceStub.java"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": "__pycache__/synth.cpython-36.pyc"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/proto/google/cloud/oslogin/v1/oslogin.proto"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/proto/google/cloud/oslogin/common/common.proto"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/UpdateSshPublicKeyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/GetLoginProfileRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/LoginProfile.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/DeletePosixAccountRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/ImportSshPublicKeyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/ImportSshPublicKeyResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/GetSshPublicKeyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/FingerprintName.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/DeletePosixAccountRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/OsLoginProto.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/DeleteSshPublicKeyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/UserName.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/GetSshPublicKeyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/GetLoginProfileRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/ImportSshPublicKeyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/DeleteSshPublicKeyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/LoginProfileOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/ImportSshPublicKeyResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/UpdateSshPublicKeyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/FingerprintName.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/OsLoginProto.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/UserName.java"
+    },
+    {
+      "path": ".git/index"
+    },
+    {
+      "path": ".git/packed-refs"
+    },
+    {
+      "path": ".git/HEAD"
+    },
+    {
+      "path": ".git/config"
+    },
+    {
+      "path": ".git/shallow"
+    },
+    {
+      "path": ".git/objects/pack/pack-ef9b332c3721dafbcdc96495d9e6d2c39ec75434.idx"
+    },
+    {
+      "path": ".git/objects/pack/pack-ef9b332c3721dafbcdc96495d9e6d2c39ec75434.pack"
+    },
+    {
+      "path": ".git/refs/remotes/origin/HEAD"
+    },
+    {
+      "path": ".git/refs/heads/autosynth"
+    },
+    {
+      "path": ".git/refs/heads/master"
+    },
+    {
+      "path": ".git/logs/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/remotes/origin/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/heads/autosynth"
+    },
+    {
+      "path": ".git/logs/refs/heads/master"
+    },
+    {
+      "path": "google-cloud-os-login-bom/pom.xml"
     }
   ]
 }
