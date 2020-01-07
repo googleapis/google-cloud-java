@@ -1,19 +1,19 @@
 {
-  "updateTime": "2019-12-19T08:51:03.612648Z",
+  "updateTime": "2020-01-07T08:57:47.015591Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.42.3",
-        "dockerImage": "googleapis/artman@sha256:feed210b5723c6f524b52ef6d7740a030f2d1a8f7c29a71c5e5b4481ceaad7f5"
+        "version": "0.43.0",
+        "dockerImage": "googleapis/artman@sha256:264654a37596a44b0668b8ce6ac41082d713f6ee150b3fc6425fa78cc64e4f20"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d400cb8d45df5b2ae796b909f098a215b2275c1d",
-        "internalRef": "286312673"
+        "sha": "cb79155f596e0396dd900da93872be7066f6340d",
+        "internalRef": "288441307"
       }
     },
     {
@@ -38,10 +38,7 @@
   ],
   "newFiles": [
     {
-      "path": ".gitignore"
-    },
-    {
-      "path": "README.md"
+      "path": ".repo-metadata.json"
     },
     {
       "path": "renovate.json"
@@ -50,16 +47,19 @@
       "path": "license-checks.xml"
     },
     {
-      "path": "CONTRIBUTING.md"
-    },
-    {
       "path": "synth.py"
     },
     {
-      "path": "synth.metadata"
+      "path": "CHANGELOG.md"
     },
     {
-      "path": "java.header"
+      "path": "codecov.yaml"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": ".gitignore"
     },
     {
       "path": "pom.xml"
@@ -68,205 +68,25 @@
       "path": "CODE_OF_CONDUCT.md"
     },
     {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "README.md"
+    },
+    {
       "path": "versions.txt"
     },
     {
-      "path": "CHANGELOG.md"
+      "path": "CONTRIBUTING.md"
     },
     {
-      "path": "LICENSE"
-    },
-    {
-      "path": ".repo-metadata.json"
-    },
-    {
-      "path": "codecov.yaml"
-    },
-    {
-      "path": "google-cloud-recommender-bom/pom.xml"
-    },
-    {
-      "path": ".github/release-please.yml"
-    },
-    {
-      "path": ".github/PULL_REQUEST_TEMPLATE.md"
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/support_request.md"
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
-    },
-    {
-      "path": "grpc-google-cloud-recommender-v1beta1/pom.xml"
-    },
-    {
-      "path": "grpc-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommenderGrpc.java"
-    },
-    {
-      "path": ".kokoro/trampoline.sh"
-    },
-    {
-      "path": ".kokoro/build.sh"
-    },
-    {
-      "path": ".kokoro/build.bat"
-    },
-    {
-      "path": ".kokoro/linkage-monitor.sh"
-    },
-    {
-      "path": ".kokoro/dependencies.sh"
-    },
-    {
-      "path": ".kokoro/common.cfg"
-    },
-    {
-      "path": ".kokoro/coerce_logs.sh"
-    },
-    {
-      "path": ".kokoro/release/common.sh"
-    },
-    {
-      "path": ".kokoro/release/publish_javadoc.cfg"
-    },
-    {
-      "path": ".kokoro/release/stage.cfg"
-    },
-    {
-      "path": ".kokoro/release/publish_javadoc.sh"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/promote.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.sh"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.sh"
-    },
-    {
-      "path": ".kokoro/release/promote.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.sh"
-    },
-    {
-      "path": ".kokoro/release/common.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.sh"
-    },
-    {
-      "path": ".kokoro/nightly/java11.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/lint.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/integration.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java7.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/common.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java11.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/lint.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/clirr.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/integration.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java7.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/linkage-monitor.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/common.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java11.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/lint.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.sh"
-    },
-    {
-      "path": ".kokoro/continuous/integration.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java7.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/common.cfg"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/recommender/v1beta1/SampleListRecommendations.java"
+      "path": "java.header"
     },
     {
       "path": "samples/src/main/java/com/google/cloud/examples/recommender/v1beta1/recommender.v1beta1.java.yaml"
+    },
+    {
+      "path": "samples/src/main/java/com/google/cloud/examples/recommender/v1beta1/SampleListRecommendations.java"
     },
     {
       "path": "google-cloud-recommender/pom.xml"
@@ -275,34 +95,34 @@
       "path": "google-cloud-recommender/clirr-ignored-differences.xml"
     },
     {
-      "path": "google-cloud-recommender/src/test/java/com/google/cloud/recommender/v1beta1/MockRecommender.java"
+      "path": "google-cloud-recommender/src/test/java/com/google/cloud/recommender/v1beta1/RecommenderClientTest.java"
     },
     {
       "path": "google-cloud-recommender/src/test/java/com/google/cloud/recommender/v1beta1/MockRecommenderImpl.java"
     },
     {
-      "path": "google-cloud-recommender/src/test/java/com/google/cloud/recommender/v1beta1/RecommenderClientTest.java"
-    },
-    {
-      "path": "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1beta1/RecommenderClient.java"
+      "path": "google-cloud-recommender/src/test/java/com/google/cloud/recommender/v1beta1/MockRecommender.java"
     },
     {
       "path": "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1beta1/RecommenderSettings.java"
     },
     {
-      "path": "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1beta1/package-info.java"
+      "path": "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1beta1/RecommenderClient.java"
     },
     {
-      "path": "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1beta1/stub/RecommenderStub.java"
+      "path": "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1beta1/package-info.java"
     },
     {
       "path": "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1beta1/stub/GrpcRecommenderCallableFactory.java"
     },
     {
-      "path": "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1beta1/stub/RecommenderStubSettings.java"
+      "path": "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1beta1/stub/RecommenderStub.java"
     },
     {
       "path": "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1beta1/stub/GrpcRecommenderStub.java"
+    },
+    {
+      "path": "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1beta1/stub/RecommenderStubSettings.java"
     },
     {
       "path": "proto-google-cloud-recommender-v1beta1/pom.xml"
@@ -311,73 +131,85 @@
       "path": "proto-google-cloud-recommender-v1beta1/clirr-ignored-differences.xml"
     },
     {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/proto/google/cloud/recommender/v1beta1/recommendation.proto"
-    },
-    {
       "path": "proto-google-cloud-recommender-v1beta1/src/main/proto/google/cloud/recommender/v1beta1/recommender_service.proto"
     },
     {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/OperationGroup.java"
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/proto/google/cloud/recommender/v1beta1/recommendation.proto"
     },
     {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/ImpactOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/MarkRecommendationFailedRequestOrBuilder.java"
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommendationOuterClass.java"
     },
     {
       "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommendationOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/GetRecommendationRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommendationStateInfo.java"
-    },
-    {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/Operation.java"
-    },
-    {
       "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommendationContent.java"
     },
     {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/ListRecommendationsRequest.java"
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/ValueMatcherOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/ListRecommendationsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/ListRecommendationsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/CostProjection.java"
-    },
-    {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/MarkRecommendationSucceededRequestOrBuilder.java"
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/ValueMatcher.java"
     },
     {
       "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/CostProjectionOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommendationName.java"
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommendationStateInfoOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommendationContentOrBuilder.java"
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/GetRecommendationRequestOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/GetRecommendationRequest.java"
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/OperationGroupOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommenderName.java"
     },
     {
       "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/ListRecommendationsResponse.java"
     },
     {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommendationStateInfoOrBuilder.java"
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/GetRecommendationRequest.java"
     },
     {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/MarkRecommendationFailedRequest.java"
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/MarkRecommendationSucceededRequest.java"
     },
     {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/OperationGroupOrBuilder.java"
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/Operation.java"
+    },
+    {
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommendationName.java"
+    },
+    {
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/OperationGroup.java"
+    },
+    {
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/MarkRecommendationClaimedRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/ListRecommendationsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/MarkRecommendationFailedRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommenderProto.java"
+    },
+    {
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommendationStateInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommendationContentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/ListRecommendationsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/MarkRecommendationSucceededRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/ListRecommendationsRequest.java"
     },
     {
       "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/OperationOrBuilder.java"
@@ -389,34 +221,208 @@
       "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/Recommendation.java"
     },
     {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/MarkRecommendationSucceededRequest.java"
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/MarkRecommendationFailedRequest.java"
     },
     {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommendationOuterClass.java"
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/CostProjection.java"
     },
     {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommenderProto.java"
-    },
-    {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/ValueMatcher.java"
-    },
-    {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommenderName.java"
-    },
-    {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/MarkRecommendationClaimedRequestOrBuilder.java"
+      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/ImpactOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/MarkRecommendationClaimedRequest.java"
     },
     {
-      "path": "proto-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/ValueMatcherOrBuilder.java"
+      "path": "google-cloud-recommender-bom/pom.xml"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
     },
     {
       "path": "__pycache__/synth.cpython-36.pyc"
     },
     {
-      "path": ".git/shallow"
+      "path": "grpc-google-cloud-recommender-v1beta1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-recommender-v1beta1/src/main/java/com/google/cloud/recommender/v1beta1/RecommenderGrpc.java"
     },
     {
       "path": ".git/index"
@@ -431,22 +437,16 @@
       "path": ".git/config"
     },
     {
-      "path": ".git/logs/HEAD"
+      "path": ".git/shallow"
     },
     {
-      "path": ".git/logs/refs/heads/autosynth"
+      "path": ".git/objects/pack/pack-8788ec50cbddbbb6a9fed5a7ce397a166f8923f1.idx"
     },
     {
-      "path": ".git/logs/refs/heads/master"
+      "path": ".git/objects/pack/pack-8788ec50cbddbbb6a9fed5a7ce397a166f8923f1.pack"
     },
     {
-      "path": ".git/logs/refs/remotes/origin/HEAD"
-    },
-    {
-      "path": ".git/objects/pack/pack-ca3d77b28f746c6a67333116806a8a9260bcfc59.pack"
-    },
-    {
-      "path": ".git/objects/pack/pack-ca3d77b28f746c6a67333116806a8a9260bcfc59.idx"
+      "path": ".git/refs/remotes/origin/HEAD"
     },
     {
       "path": ".git/refs/heads/autosynth"
@@ -455,7 +455,16 @@
       "path": ".git/refs/heads/master"
     },
     {
-      "path": ".git/refs/remotes/origin/HEAD"
+      "path": ".git/logs/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/remotes/origin/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/heads/autosynth"
+    },
+    {
+      "path": ".git/logs/refs/heads/master"
     }
   ]
 }
