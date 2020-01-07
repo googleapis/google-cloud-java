@@ -1,19 +1,19 @@
 {
-  "updateTime": "2019-12-19T09:04:11.573354Z",
+  "updateTime": "2020-01-07T09:13:45.298978Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.42.3",
-        "dockerImage": "googleapis/artman@sha256:feed210b5723c6f524b52ef6d7740a030f2d1a8f7c29a71c5e5b4481ceaad7f5"
+        "version": "0.43.0",
+        "dockerImage": "googleapis/artman@sha256:264654a37596a44b0668b8ce6ac41082d713f6ee150b3fc6425fa78cc64e4f20"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d400cb8d45df5b2ae796b909f098a215b2275c1d",
-        "internalRef": "286312673"
+        "sha": "cb79155f596e0396dd900da93872be7066f6340d",
+        "internalRef": "288441307"
       }
     },
     {
@@ -48,10 +48,7 @@
   ],
   "newFiles": [
     {
-      "path": ".gitignore"
-    },
-    {
-      "path": "README.md"
+      "path": ".repo-metadata.json"
     },
     {
       "path": "renovate.json"
@@ -60,16 +57,19 @@
       "path": "license-checks.xml"
     },
     {
-      "path": "CONTRIBUTING.md"
-    },
-    {
       "path": "synth.py"
     },
     {
-      "path": "synth.metadata"
+      "path": "CHANGELOG.md"
     },
     {
-      "path": "java.header"
+      "path": "codecov.yaml"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": ".gitignore"
     },
     {
       "path": "pom.xml"
@@ -78,22 +78,190 @@
       "path": "CODE_OF_CONDUCT.md"
     },
     {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "README.md"
+    },
+    {
       "path": "versions.txt"
     },
     {
-      "path": "CHANGELOG.md"
+      "path": "CONTRIBUTING.md"
     },
     {
-      "path": "LICENSE"
+      "path": "java.header"
     },
     {
-      "path": ".repo-metadata.json"
+      "path": "grpc-google-cloud-websecurityscanner-v1alpha/pom.xml"
     },
     {
-      "path": "codecov.yaml"
+      "path": "grpc-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/WebSecurityScannerGrpc.java"
     },
     {
-      "path": "google-cloud-websecurityscanner-bom/pom.xml"
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
     },
     {
       "path": "google-cloud-websecurityscanner/pom.xml"
@@ -102,22 +270,13 @@
       "path": "google-cloud-websecurityscanner/clirr-ignored-differences.xml"
     },
     {
-      "path": "google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/v1beta/WebSecurityScannerClientTest.java"
-    },
-    {
-      "path": "google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/v1beta/MockWebSecurityScannerImpl.java"
-    },
-    {
-      "path": "google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/v1beta/MockWebSecurityScanner.java"
-    },
-    {
-      "path": "google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/v1alpha/WebSecurityScannerClientTest.java"
+      "path": "google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/v1alpha/MockWebSecurityScanner.java"
     },
     {
       "path": "google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/v1alpha/MockWebSecurityScannerImpl.java"
     },
     {
-      "path": "google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/v1alpha/MockWebSecurityScanner.java"
+      "path": "google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/v1alpha/WebSecurityScannerClientTest.java"
     },
     {
       "path": "google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlNegativeTest.java"
@@ -126,25 +285,13 @@
       "path": "google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlPositiveTest.java"
     },
     {
-      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/WebSecurityScannerSettings.java"
+      "path": "google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/v1beta/MockWebSecurityScanner.java"
     },
     {
-      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/WebSecurityScannerClient.java"
+      "path": "google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/v1beta/MockWebSecurityScannerImpl.java"
     },
     {
-      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/package-info.java"
-    },
-    {
-      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/stub/GrpcWebSecurityScannerCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/stub/GrpcWebSecurityScannerStub.java"
-    },
-    {
-      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/stub/WebSecurityScannerStub.java"
-    },
-    {
-      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/stub/WebSecurityScannerStubSettings.java"
+      "path": "google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/v1beta/WebSecurityScannerClientTest.java"
     },
     {
       "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1alpha/WebSecurityScannerSettings.java"
@@ -156,16 +303,37 @@
       "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1alpha/package-info.java"
     },
     {
+      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1alpha/stub/GrpcWebSecurityScannerStub.java"
+    },
+    {
       "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1alpha/stub/GrpcWebSecurityScannerCallableFactory.java"
     },
     {
-      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1alpha/stub/GrpcWebSecurityScannerStub.java"
+      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1alpha/stub/WebSecurityScannerStubSettings.java"
     },
     {
       "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1alpha/stub/WebSecurityScannerStub.java"
     },
     {
-      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1alpha/stub/WebSecurityScannerStubSettings.java"
+      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/WebSecurityScannerSettings.java"
+    },
+    {
+      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/WebSecurityScannerClient.java"
+    },
+    {
+      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/package-info.java"
+    },
+    {
+      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/stub/GrpcWebSecurityScannerStub.java"
+    },
+    {
+      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/stub/GrpcWebSecurityScannerCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/stub/WebSecurityScannerStubSettings.java"
+    },
+    {
+      "path": "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/stub/WebSecurityScannerStub.java"
     },
     {
       "path": ".github/release-please.yml"
@@ -174,661 +342,13 @@
       "path": ".github/PULL_REQUEST_TEMPLATE.md"
     },
     {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
       "path": ".github/ISSUE_TEMPLATE/support_request.md"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/feature_request.md"
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/crawled_url.proto"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/finding_type_stats.proto"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/scan_config_error.proto"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/web_security_scanner.proto"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/scan_run.proto"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/scan_run_warning_trace.proto"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/scan_config.proto"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/finding_addon.proto"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/finding.proto"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/scan_run_error_trace.proto"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListScanConfigsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListScanRunsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunWarningTrace.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunErrorTraceOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunWarningTraceOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanConfigProto.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/GetFindingRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListScanConfigsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/VulnerableParameters.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/VulnerableParametersOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/FindingTypeStatsProto.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/VulnerableHeadersOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/FindingOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanConfigError.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListScanRunsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/FindingProto.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListCrawledUrlsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/FindingAddonProto.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/StartScanRunRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/FindingName.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/WebSecurityScannerProto.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/OutdatedLibrary.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/StopScanRunRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ProjectName.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/GetScanConfigRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListCrawledUrlsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanConfigName.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunProto.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/FindingTypeStats.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanConfigErrorProto.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListFindingsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/XssOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/FormOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/StartScanRunRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListScanConfigsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRun.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListCrawledUrlsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/GetScanRunRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ViolatingResourceOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListFindingsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/FindingTypeStatsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/CreateScanConfigRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunWarningTraceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/GetScanConfigRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListFindingsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/CrawledUrl.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/CrawledUrlOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ViolatingResource.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/OutdatedLibraryOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListScanConfigsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/Xss.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/CrawledUrlProto.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListFindingsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/GetFindingRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/Form.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListFindingTypeStatsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/StopScanRunRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/UpdateScanConfigRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunErrorTrace.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/GetScanRunRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/DeleteScanConfigRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunName.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListFindingTypeStatsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/VulnerableHeaders.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListFindingTypeStatsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/Finding.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListScanRunsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanConfigErrorOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/UpdateScanConfigRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListScanRunsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListCrawledUrlsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListFindingTypeStatsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/CreateScanConfigRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/DeleteScanConfigRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunErrorTraceProto.java"
-    },
-    {
-      "path": ".kokoro/trampoline.sh"
-    },
-    {
-      "path": ".kokoro/build.sh"
-    },
-    {
-      "path": ".kokoro/build.bat"
-    },
-    {
-      "path": ".kokoro/linkage-monitor.sh"
-    },
-    {
-      "path": ".kokoro/dependencies.sh"
-    },
-    {
-      "path": ".kokoro/common.cfg"
-    },
-    {
-      "path": ".kokoro/coerce_logs.sh"
-    },
-    {
-      "path": ".kokoro/release/common.sh"
-    },
-    {
-      "path": ".kokoro/release/publish_javadoc.cfg"
-    },
-    {
-      "path": ".kokoro/release/stage.cfg"
-    },
-    {
-      "path": ".kokoro/release/publish_javadoc.sh"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/promote.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.sh"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.sh"
-    },
-    {
-      "path": ".kokoro/release/promote.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.sh"
-    },
-    {
-      "path": ".kokoro/release/common.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.sh"
-    },
-    {
-      "path": ".kokoro/nightly/java11.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/lint.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/integration.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java7.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/common.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java11.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/lint.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/clirr.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/integration.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java7.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/linkage-monitor.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/common.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java11.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/lint.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.sh"
-    },
-    {
-      "path": ".kokoro/continuous/integration.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java7.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/common.cfg"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/proto/google/cloud/websecurityscanner/v1alpha/crawled_url.proto"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/proto/google/cloud/websecurityscanner/v1alpha/finding_type_stats.proto"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/proto/google/cloud/websecurityscanner/v1alpha/web_security_scanner.proto"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/proto/google/cloud/websecurityscanner/v1alpha/scan_run.proto"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/proto/google/cloud/websecurityscanner/v1alpha/scan_config.proto"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/proto/google/cloud/websecurityscanner/v1alpha/finding_addon.proto"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/proto/google/cloud/websecurityscanner/v1alpha/finding.proto"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListScanConfigsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListScanRunsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ScanRunOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ScanConfigProto.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/GetFindingRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListScanConfigsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/VulnerableParameters.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/VulnerableParametersOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/FindingTypeStatsProto.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/VulnerableHeadersOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/FindingOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListScanRunsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/FindingProto.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListCrawledUrlsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/FindingAddonProto.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/StartScanRunRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/FindingName.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/WebSecurityScannerProto.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/OutdatedLibrary.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/StopScanRunRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ScanConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ProjectName.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/GetScanConfigRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListCrawledUrlsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ScanConfigName.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ScanRunProto.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/FindingTypeStats.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListFindingsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/XssOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/StartScanRunRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListScanConfigsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ScanRun.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListCrawledUrlsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ScanConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/GetScanRunRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ViolatingResourceOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListFindingsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/FindingTypeStatsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/CreateScanConfigRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/GetScanConfigRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListFindingsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/CrawledUrl.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/CrawledUrlOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ViolatingResource.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/OutdatedLibraryOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListScanConfigsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/Xss.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/CrawledUrlProto.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListFindingsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/GetFindingRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListFindingTypeStatsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/StopScanRunRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/UpdateScanConfigRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/GetScanRunRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/DeleteScanConfigRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ScanRunName.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListFindingTypeStatsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/VulnerableHeaders.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListFindingTypeStatsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/Finding.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListScanRunsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/UpdateScanConfigRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListScanRunsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListCrawledUrlsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListFindingTypeStatsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/CreateScanConfigRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/DeleteScanConfigRequest.java"
     },
     {
       "path": "__pycache__/synth.cpython-36.pyc"
@@ -840,7 +360,229 @@
       "path": "grpc-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/WebSecurityScannerGrpc.java"
     },
     {
-      "path": ".git/shallow"
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/proto/google/cloud/websecurityscanner/v1alpha/crawled_url.proto"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/proto/google/cloud/websecurityscanner/v1alpha/finding.proto"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/proto/google/cloud/websecurityscanner/v1alpha/web_security_scanner.proto"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/proto/google/cloud/websecurityscanner/v1alpha/scan_run.proto"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/proto/google/cloud/websecurityscanner/v1alpha/finding_type_stats.proto"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/proto/google/cloud/websecurityscanner/v1alpha/scan_config.proto"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/proto/google/cloud/websecurityscanner/v1alpha/finding_addon.proto"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListScanConfigsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ScanConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ScanRunProto.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/VulnerableHeaders.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/DeleteScanConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListScanRunsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/GetScanConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListFindingsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/FindingName.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListFindingTypeStatsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/VulnerableHeadersOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListFindingTypeStatsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/GetScanRunRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/FindingProto.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListFindingsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListScanRunsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/FindingOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ScanConfigName.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/GetFindingRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListFindingsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ScanConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/OutdatedLibrary.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/Xss.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/FindingTypeStats.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/StopScanRunRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/CrawledUrlOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListCrawledUrlsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/XssOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ScanRun.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/VulnerableParameters.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/VulnerableParametersOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/CreateScanConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListScanConfigsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ViolatingResource.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/CrawledUrlProto.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/CrawledUrl.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/DeleteScanConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/GetScanRunRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListCrawledUrlsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListCrawledUrlsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/StartScanRunRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/UpdateScanConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/GetFindingRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/CreateScanConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListFindingTypeStatsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListScanRunsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/WebSecurityScannerProto.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListScanConfigsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/GetScanConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/UpdateScanConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListScanConfigsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ViolatingResourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ScanConfigProto.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListFindingTypeStatsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/StartScanRunRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/FindingTypeStatsProto.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListFindingsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/Finding.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/StopScanRunRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/FindingTypeStatsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListCrawledUrlsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/OutdatedLibraryOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ListScanRunsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/FindingAddonProto.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ScanRunName.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/ScanRunOrBuilder.java"
     },
     {
       "path": ".git/index"
@@ -852,25 +594,22 @@
       "path": ".git/HEAD"
     },
     {
+      "path": ".git/description"
+    },
+    {
       "path": ".git/config"
     },
     {
-      "path": ".git/logs/HEAD"
+      "path": ".git/shallow"
     },
     {
-      "path": ".git/logs/refs/heads/autosynth"
+      "path": ".git/objects/pack/pack-48a4993712e3d0ee6ce6ce54910aebe853f9a263.idx"
     },
     {
-      "path": ".git/logs/refs/heads/master"
+      "path": ".git/objects/pack/pack-48a4993712e3d0ee6ce6ce54910aebe853f9a263.pack"
     },
     {
-      "path": ".git/logs/refs/remotes/origin/HEAD"
-    },
-    {
-      "path": ".git/objects/pack/pack-44d2a5d75c0dedc2a91abbb78713936b40e1eac6.pack"
-    },
-    {
-      "path": ".git/objects/pack/pack-44d2a5d75c0dedc2a91abbb78713936b40e1eac6.idx"
+      "path": ".git/refs/remotes/origin/HEAD"
     },
     {
       "path": ".git/refs/heads/autosynth"
@@ -879,13 +618,322 @@
       "path": ".git/refs/heads/master"
     },
     {
-      "path": ".git/refs/remotes/origin/HEAD"
+      "path": ".git/hooks/pre-applypatch.sample"
     },
     {
-      "path": "grpc-google-cloud-websecurityscanner-v1alpha/pom.xml"
+      "path": ".git/hooks/pre-commit.sample"
     },
     {
-      "path": "grpc-google-cloud-websecurityscanner-v1alpha/src/main/java/com/google/cloud/websecurityscanner/v1alpha/WebSecurityScannerGrpc.java"
+      "path": ".git/hooks/fsmonitor-watchman.sample"
+    },
+    {
+      "path": ".git/hooks/pre-rebase.sample"
+    },
+    {
+      "path": ".git/hooks/update.sample"
+    },
+    {
+      "path": ".git/hooks/pre-push.sample"
+    },
+    {
+      "path": ".git/hooks/applypatch-msg.sample"
+    },
+    {
+      "path": ".git/hooks/prepare-commit-msg.sample"
+    },
+    {
+      "path": ".git/hooks/commit-msg.sample"
+    },
+    {
+      "path": ".git/hooks/post-update.sample"
+    },
+    {
+      "path": ".git/hooks/pre-receive.sample"
+    },
+    {
+      "path": ".git/info/exclude"
+    },
+    {
+      "path": ".git/logs/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/remotes/origin/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/heads/autosynth"
+    },
+    {
+      "path": ".git/logs/refs/heads/master"
+    },
+    {
+      "path": "google-cloud-websecurityscanner-bom/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/crawled_url.proto"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/finding.proto"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/web_security_scanner.proto"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/scan_run.proto"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/scan_run_warning_trace.proto"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/scan_config_error.proto"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/scan_run_error_trace.proto"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/finding_type_stats.proto"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/scan_config.proto"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/proto/google/cloud/websecurityscanner/v1beta/finding_addon.proto"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListScanConfigsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunProto.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/VulnerableHeaders.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/DeleteScanConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListScanRunsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/GetScanConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanConfigError.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListFindingsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/FindingName.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListFindingTypeStatsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/VulnerableHeadersOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListFindingTypeStatsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/GetScanRunRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/FindingProto.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListFindingsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListScanRunsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/FindingOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanConfigName.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/GetFindingRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListFindingsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunWarningTrace.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunErrorTraceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/OutdatedLibrary.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/FormOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/Xss.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/FindingTypeStats.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/StopScanRunRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunWarningTraceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/CrawledUrlOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListCrawledUrlsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/XssOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRun.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/VulnerableParameters.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/VulnerableParametersOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/CreateScanConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListScanConfigsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ViolatingResource.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/CrawledUrlProto.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/CrawledUrl.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanConfigErrorProto.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/DeleteScanConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/GetScanRunRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListCrawledUrlsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListCrawledUrlsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/StartScanRunRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunWarningTraceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunErrorTraceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/UpdateScanConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/GetFindingRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/CreateScanConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListFindingTypeStatsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListScanRunsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/WebSecurityScannerProto.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListScanConfigsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanConfigErrorOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/GetScanConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/UpdateScanConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListScanConfigsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ViolatingResourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanConfigProto.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListFindingTypeStatsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/StartScanRunRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/FindingTypeStatsProto.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListFindingsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/Finding.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/Form.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/StopScanRunRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/FindingTypeStatsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListCrawledUrlsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunErrorTrace.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/OutdatedLibraryOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ListScanRunsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/FindingAddonProto.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunName.java"
+    },
+    {
+      "path": "proto-google-cloud-websecurityscanner-v1beta/src/main/java/com/google/cloud/websecurityscanner/v1beta/ScanRunOrBuilder.java"
     }
   ]
 }
