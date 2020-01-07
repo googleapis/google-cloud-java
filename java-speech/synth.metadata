@@ -1,19 +1,19 @@
 {
-  "updateTime": "2019-12-19T08:54:27.920085Z",
+  "updateTime": "2020-01-07T09:02:38.285344Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.42.3",
-        "dockerImage": "googleapis/artman@sha256:feed210b5723c6f524b52ef6d7740a030f2d1a8f7c29a71c5e5b4481ceaad7f5"
+        "version": "0.43.0",
+        "dockerImage": "googleapis/artman@sha256:264654a37596a44b0668b8ce6ac41082d713f6ee150b3fc6425fa78cc64e4f20"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d400cb8d45df5b2ae796b909f098a215b2275c1d",
-        "internalRef": "286312673"
+        "sha": "cb79155f596e0396dd900da93872be7066f6340d",
+        "internalRef": "288441307"
       }
     },
     {
@@ -48,10 +48,7 @@
   ],
   "newFiles": [
     {
-      "path": ".gitignore"
-    },
-    {
-      "path": "README.md"
+      "path": ".repo-metadata.json"
     },
     {
       "path": "renovate.json"
@@ -60,16 +57,19 @@
       "path": "license-checks.xml"
     },
     {
-      "path": "CONTRIBUTING.md"
-    },
-    {
       "path": "synth.py"
     },
     {
-      "path": "synth.metadata"
+      "path": "CHANGELOG.md"
     },
     {
-      "path": "java.header"
+      "path": "codecov.yaml"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": ".gitignore"
     },
     {
       "path": "pom.xml"
@@ -78,277 +78,205 @@
       "path": "CODE_OF_CONDUCT.md"
     },
     {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "README.md"
+    },
+    {
       "path": "versions.txt"
     },
     {
-      "path": "CHANGELOG.md"
+      "path": "CONTRIBUTING.md"
     },
     {
-      "path": "LICENSE"
+      "path": "java.header"
     },
     {
-      "path": ".repo-metadata.json"
+      "path": "proto-google-cloud-speech-v1p1beta1/pom.xml"
     },
     {
-      "path": "codecov.yaml"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/proto/google/cloud/speech/v1p1beta1/cloud_speech.proto"
     },
     {
-      "path": "google-cloud-speech/pom.xml"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognizeResponse.java"
     },
     {
-      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/SpeechSmokeTest.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognitionMetadata.java"
     },
     {
-      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/SpeechClientTest.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechRecognitionAlternativeOrBuilder.java"
     },
     {
-      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/MockSpeech.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognitionAudio.java"
     },
     {
-      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/MockSpeechImpl.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognitionConfigOrBuilder.java"
     },
     {
-      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1/SpeechSmokeTest.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechProto.java"
     },
     {
-      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1/SpeechClientTest.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognitionResult.java"
     },
     {
-      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1/MockSpeech.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechRecognitionAlternative.java"
     },
     {
-      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1/MockSpeechImpl.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/LongRunningRecognizeRequestOrBuilder.java"
     },
     {
-      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1/it/ITSpeechTest.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/LongRunningRecognizeResponse.java"
     },
     {
-      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechSettings.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/WordInfoOrBuilder.java"
     },
     {
-      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechClient.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognizeRequestOrBuilder.java"
     },
     {
-      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/package-info.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/LongRunningRecognizeMetadata.java"
     },
     {
-      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/stub/SpeechStub.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognizeRequestOrBuilder.java"
     },
     {
-      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/stub/SpeechStubSettings.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechRecognitionResult.java"
     },
     {
-      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/stub/GrpcSpeechStub.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechContext.java"
     },
     {
-      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/stub/GrpcSpeechCallableFactory.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognizeResponseOrBuilder.java"
     },
     {
-      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/SpeechSettings.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechRecognitionResultOrBuilder.java"
     },
     {
-      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/SpeechClient.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/WordInfo.java"
     },
     {
-      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/package-info.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognitionConfigOrBuilder.java"
     },
     {
-      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/stub/SpeechStub.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeakerDiarizationConfigOrBuilder.java"
     },
     {
-      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/stub/SpeechStubSettings.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognitionMetadataOrBuilder.java"
     },
     {
-      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/stub/GrpcSpeechStub.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognizeResponse.java"
     },
     {
-      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/stub/GrpcSpeechCallableFactory.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/LongRunningRecognizeMetadataOrBuilder.java"
     },
     {
-      "path": "google-cloud-speech-bom/pom.xml"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognizeRequest.java"
     },
     {
-      "path": ".github/release-please.yml"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognizeRequest.java"
     },
     {
-      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognitionConfig.java"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/LongRunningRecognizeResponseOrBuilder.java"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognitionAudioOrBuilder.java"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeakerDiarizationConfig.java"
     },
     {
-      "path": "grpc-google-cloud-speech-v1p1beta1/pom.xml"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognitionResultOrBuilder.java"
     },
     {
-      "path": "grpc-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechGrpc.java"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognizeResponseOrBuilder.java"
     },
     {
-      "path": ".kokoro/trampoline.sh"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechContextOrBuilder.java"
     },
     {
-      "path": ".kokoro/build.sh"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/LongRunningRecognizeRequest.java"
     },
     {
-      "path": ".kokoro/build.bat"
+      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognitionConfig.java"
     },
     {
-      "path": ".kokoro/linkage-monitor.sh"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeMultichannelGcs.java"
     },
     {
-      "path": ".kokoro/dependencies.sh"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/speech.java.20191017.083206.manifest.yaml"
     },
     {
-      "path": ".kokoro/common.cfg"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeSyncGcs.java"
     },
     {
-      "path": ".kokoro/coerce_logs.sh"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeSync.java"
     },
     {
-      "path": ".kokoro/release/common.sh"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeEnhancedModel.java"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.cfg"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeModelSelection.java"
     },
     {
-      "path": ".kokoro/release/stage.cfg"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeAsyncGcs.java"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.sh"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeAsync.java"
     },
     {
-      "path": ".kokoro/release/bump_snapshot.cfg"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeModelSelectionGcs.java"
     },
     {
-      "path": ".kokoro/release/drop.cfg"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeMultichannel.java"
     },
     {
-      "path": ".kokoro/release/snapshot.cfg"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeAsyncWordTimeOffsetsGcs.java"
     },
     {
-      "path": ".kokoro/release/promote.sh"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/speech.v1.java.yaml"
     },
     {
-      "path": ".kokoro/release/stage.sh"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_sync_gcs.test.yaml"
     },
     {
-      "path": ".kokoro/release/bump_snapshot.sh"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_multichannel_gcs.test.yaml"
     },
     {
-      "path": ".kokoro/release/promote.cfg"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_model_selection_gcs.test.yaml"
     },
     {
-      "path": ".kokoro/release/drop.sh"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_sync.test.yaml"
     },
     {
-      "path": ".kokoro/release/common.cfg"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_async_word_time_offsets_gcs.test.yaml"
     },
     {
-      "path": ".kokoro/release/snapshot.sh"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_async.test.yaml"
     },
     {
-      "path": ".kokoro/nightly/java11.cfg"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_enhanced_model.test.yaml"
     },
     {
-      "path": ".kokoro/nightly/java8-win.cfg"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_model_selection.test.yaml"
     },
     {
-      "path": ".kokoro/nightly/lint.cfg"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_async_gcs.test.yaml"
     },
     {
-      "path": ".kokoro/nightly/java8-osx.cfg"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_multichannel.test.yaml"
     },
     {
-      "path": ".kokoro/nightly/integration.cfg"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeMultilanguageBeta.java"
     },
     {
-      "path": ".kokoro/nightly/java7.cfg"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeWordLevelConfidenceBeta.java"
     },
     {
-      "path": ".kokoro/nightly/java8.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/common.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java11.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/lint.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/clirr.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/integration.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java7.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/linkage-monitor.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/common.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java11.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/lint.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.sh"
-    },
-    {
-      "path": ".kokoro/continuous/integration.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java7.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/common.cfg"
-    },
-    {
-      "path": "grpc-google-cloud-speech-v1beta1/pom.xml"
-    },
-    {
-      "path": "grpc-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SpeechGrpc.java"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/speech.v1p1beta1.java.yaml"
     },
     {
       "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/speech.java.20191017.083221.manifest.yaml"
@@ -360,13 +288,7 @@
       "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeDiarizationBeta.java"
     },
     {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeWordLevelConfidenceBeta.java"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechQuickstartBeta.java"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeMultilanguageBeta.java"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechContextsClassesBeta.java"
     },
     {
       "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeAutoPunctuationBeta.java"
@@ -375,13 +297,16 @@
       "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeRecognitionMetadataBeta.java"
     },
     {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechContextsClassesBeta.java"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechQuickstartBeta.java"
     },
     {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/speech.v1p1beta1.java.yaml"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/test/speech_adaptation_beta.test.yaml"
     },
     {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/test/speech_quickstart_beta.test.yaml"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/test/speech_transcribe_auto_punctuation_beta.test.yaml"
+    },
+    {
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/test/speech_transcribe_multilanguage_beta.test.yaml"
     },
     {
       "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/test/speech_contexts_classes_beta.test.yaml"
@@ -390,85 +315,25 @@
       "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/test/speech_transcribe_recognition_metadata_beta.test.yaml"
     },
     {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/test/speech_transcribe_multilanguage_beta.test.yaml"
+      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/test/speech_quickstart_beta.test.yaml"
     },
     {
       "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/test/speech_transcribe_diarization_beta.test.yaml"
     },
     {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/test/speech_transcribe_auto_punctuation_beta.test.yaml"
-    },
-    {
       "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/test/speech_transcribe_word_level_confidence_beta.test.yaml"
     },
     {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1p1beta1/test/speech_adaptation_beta.test.yaml"
+      "path": "grpc-google-cloud-speech-v1p1beta1/pom.xml"
     },
     {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeAsyncWordTimeOffsetsGcs.java"
+      "path": "grpc-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechGrpc.java"
     },
     {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/speech.java.20191017.083206.manifest.yaml"
+      "path": "grpc-google-cloud-speech-v1beta1/pom.xml"
     },
     {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeModelSelection.java"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeAsync.java"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeAsyncGcs.java"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeMultichannel.java"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeEnhancedModel.java"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeModelSelectionGcs.java"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeSyncGcs.java"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/speech.v1.java.yaml"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeMultichannelGcs.java"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeSync.java"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_sync_gcs.test.yaml"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_sync.test.yaml"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_async_word_time_offsets_gcs.test.yaml"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_model_selection.test.yaml"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_model_selection_gcs.test.yaml"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_enhanced_model.test.yaml"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_async_gcs.test.yaml"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_multichannel.test.yaml"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_async.test.yaml"
-    },
-    {
-      "path": "samples/src/main/java/com/google/cloud/examples/speech/v1/test/speech_transcribe_multichannel_gcs.test.yaml"
+      "path": "grpc-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SpeechGrpc.java"
     },
     {
       "path": "grpc-google-cloud-speech-v1/pom.xml"
@@ -477,118 +342,190 @@
       "path": "grpc-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeechGrpc.java"
     },
     {
-      "path": "proto-google-cloud-speech-v1/pom.xml"
+      "path": "google-cloud-speech-bom/pom.xml"
     },
     {
-      "path": "proto-google-cloud-speech-v1/clirr-ignored-differences.xml"
+      "path": ".kokoro/build.bat"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/proto/google/cloud/speech/v1/cloud_speech.proto"
+      "path": ".kokoro/build.sh"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognitionConfig.java"
+      "path": ".kokoro/dependencies.sh"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognitionMetadataOrBuilder.java"
+      "path": ".kokoro/common.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognizeRequest.java"
+      "path": ".kokoro/trampoline.sh"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeechRecognitionAlternativeOrBuilder.java"
+      "path": ".kokoro/coerce_logs.sh"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/WordInfo.java"
+      "path": ".kokoro/linkage-monitor.sh"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognizeResponseOrBuilder.java"
+      "path": ".kokoro/continuous/dependencies.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognizeRequestOrBuilder.java"
+      "path": ".kokoro/continuous/samples.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/LongRunningRecognizeRequestOrBuilder.java"
+      "path": ".kokoro/continuous/java7.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeakerDiarizationConfig.java"
+      "path": ".kokoro/continuous/java8-osx.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeechRecognitionResultOrBuilder.java"
+      "path": ".kokoro/continuous/java8-win.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/WordInfoOrBuilder.java"
+      "path": ".kokoro/continuous/propose_release.sh"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/StreamingRecognitionConfigOrBuilder.java"
+      "path": ".kokoro/continuous/lint.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognitionAudio.java"
+      "path": ".kokoro/continuous/java11.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeechContext.java"
+      "path": ".kokoro/continuous/common.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/LongRunningRecognizeResponse.java"
+      "path": ".kokoro/continuous/propose_release.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/LongRunningRecognizeRequest.java"
+      "path": ".kokoro/continuous/java8.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/LongRunningRecognizeMetadataOrBuilder.java"
+      "path": ".kokoro/continuous/integration.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeakerDiarizationConfigOrBuilder.java"
+      "path": ".kokoro/release/drop.sh"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognitionMetadata.java"
+      "path": ".kokoro/release/stage.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognitionConfigOrBuilder.java"
+      "path": ".kokoro/release/promote.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/StreamingRecognizeRequestOrBuilder.java"
+      "path": ".kokoro/release/publish_javadoc.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/StreamingRecognitionResultOrBuilder.java"
+      "path": ".kokoro/release/bump_snapshot.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/StreamingRecognizeResponse.java"
+      "path": ".kokoro/release/promote.sh"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeechContextOrBuilder.java"
+      "path": ".kokoro/release/stage.sh"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognizeResponse.java"
+      "path": ".kokoro/release/snapshot.sh"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/StreamingRecognitionConfig.java"
+      "path": ".kokoro/release/snapshot.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/StreamingRecognitionResult.java"
+      "path": ".kokoro/release/common.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/StreamingRecognizeResponseOrBuilder.java"
+      "path": ".kokoro/release/bump_snapshot.sh"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognitionAudioOrBuilder.java"
+      "path": ".kokoro/release/common.sh"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeechRecognitionResult.java"
+      "path": ".kokoro/release/drop.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeechRecognitionAlternative.java"
+      "path": ".kokoro/release/publish_javadoc.sh"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/StreamingRecognizeRequest.java"
+      "path": ".kokoro/presubmit/dependencies.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeechProto.java"
+      "path": ".kokoro/presubmit/samples.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/LongRunningRecognizeMetadata.java"
+      "path": ".kokoro/presubmit/java7.cfg"
     },
     {
-      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/LongRunningRecognizeResponseOrBuilder.java"
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": "__pycache__/synth.cpython-36.pyc"
     },
     {
       "path": "proto-google-cloud-speech-v1beta1/pom.xml"
@@ -597,208 +534,91 @@
       "path": "proto-google-cloud-speech-v1beta1/src/main/proto/google/cloud/speech/v1beta1/cloud_speech.proto"
     },
     {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/AsyncRecognizeMetadataOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/RecognitionConfig.java"
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/StreamingRecognizeResponse.java"
     },
     {
       "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SpeechRecognitionAlternativeOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SyncRecognizeRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SpeechRecognitionResultOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SyncRecognizeResponse.java"
-    },
-    {
       "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/AsyncRecognizeResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SyncRecognizeRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/StreamingRecognitionConfigOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/RecognitionAudio.java"
     },
     {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SpeechContext.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/AsyncRecognizeRequestOrBuilder.java"
-    },
-    {
       "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/RecognitionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/StreamingRecognizeRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/StreamingRecognitionResultOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/StreamingRecognizeResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SpeechContextOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/AsyncRecognizeMetadata.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/StreamingRecognitionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/StreamingRecognitionResult.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/AsyncRecognizeResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/StreamingRecognizeResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/RecognitionAudioOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SpeechRecognitionResult.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SpeechRecognitionAlternative.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SyncRecognizeResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/StreamingRecognizeRequest.java"
     },
     {
       "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SpeechProto.java"
     },
     {
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/StreamingRecognitionResult.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SpeechRecognitionAlternative.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/StreamingRecognizeRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/AsyncRecognizeRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SpeechRecognitionResult.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SpeechContext.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/StreamingRecognizeResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SpeechRecognitionResultOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/AsyncRecognizeMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/StreamingRecognitionConfigOrBuilder.java"
+    },
+    {
       "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/AsyncRecognizeRequest.java"
     },
     {
-      "path": "__pycache__/synth.cpython-36.pyc"
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/AsyncRecognizeResponse.java"
     },
     {
-      "path": "proto-google-cloud-speech-v1p1beta1/pom.xml"
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SyncRecognizeResponseOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/proto/google/cloud/speech/v1p1beta1/cloud_speech.proto"
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/AsyncRecognizeMetadata.java"
     },
     {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognitionConfig.java"
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/StreamingRecognizeRequest.java"
     },
     {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognitionMetadataOrBuilder.java"
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SyncRecognizeRequest.java"
     },
     {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognizeRequest.java"
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/StreamingRecognitionConfig.java"
     },
     {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechRecognitionAlternativeOrBuilder.java"
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/RecognitionAudioOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/WordInfo.java"
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SyncRecognizeResponse.java"
     },
     {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognizeResponseOrBuilder.java"
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/StreamingRecognitionResultOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognizeRequestOrBuilder.java"
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SpeechContextOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/LongRunningRecognizeRequestOrBuilder.java"
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/RecognitionConfig.java"
     },
     {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeakerDiarizationConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechRecognitionResultOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/WordInfoOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognitionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognitionAudio.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechContext.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/LongRunningRecognizeResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/LongRunningRecognizeRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/LongRunningRecognizeMetadataOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeakerDiarizationConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognitionMetadata.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognitionConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognizeRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognitionResultOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognizeResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechContextOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognizeResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognitionConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognitionResult.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognizeResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognitionAudioOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechRecognitionResult.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechRecognitionAlternative.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognizeRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechProto.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/LongRunningRecognizeMetadata.java"
-    },
-    {
-      "path": "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/LongRunningRecognizeResponseOrBuilder.java"
-    },
-    {
-      "path": ".git/shallow"
+      "path": "proto-google-cloud-speech-v1beta1/src/main/java/com/google/cloud/speech/v1beta1/SyncRecognizeRequestOrBuilder.java"
     },
     {
       "path": ".git/index"
@@ -813,22 +633,16 @@
       "path": ".git/config"
     },
     {
-      "path": ".git/logs/HEAD"
+      "path": ".git/shallow"
     },
     {
-      "path": ".git/logs/refs/heads/autosynth"
+      "path": ".git/objects/pack/pack-a61cd6d55ebab8f71342bc8d80b1ff5aec9aedbd.pack"
     },
     {
-      "path": ".git/logs/refs/heads/master"
+      "path": ".git/objects/pack/pack-a61cd6d55ebab8f71342bc8d80b1ff5aec9aedbd.idx"
     },
     {
-      "path": ".git/logs/refs/remotes/origin/HEAD"
-    },
-    {
-      "path": ".git/objects/pack/pack-c22dd88fd309362a272671400d5bcae671a1c1e9.idx"
-    },
-    {
-      "path": ".git/objects/pack/pack-c22dd88fd309362a272671400d5bcae671a1c1e9.pack"
+      "path": ".git/refs/remotes/origin/HEAD"
     },
     {
       "path": ".git/refs/heads/autosynth"
@@ -837,7 +651,202 @@
       "path": ".git/refs/heads/master"
     },
     {
-      "path": ".git/refs/remotes/origin/HEAD"
+      "path": ".git/logs/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/remotes/origin/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/heads/autosynth"
+    },
+    {
+      "path": ".git/logs/refs/heads/master"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/proto/google/cloud/speech/v1/cloud_speech.proto"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/StreamingRecognizeResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognitionMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeechRecognitionAlternativeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognitionAudio.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognitionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeechProto.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/StreamingRecognitionResult.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeechRecognitionAlternative.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/LongRunningRecognizeRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/LongRunningRecognizeResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/WordInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/StreamingRecognizeRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/LongRunningRecognizeMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognizeRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeechRecognitionResult.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeechContext.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/StreamingRecognizeResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeechRecognitionResultOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/WordInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/StreamingRecognitionConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeakerDiarizationConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognitionMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognizeResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/LongRunningRecognizeMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognizeRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/StreamingRecognizeRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/StreamingRecognitionConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/LongRunningRecognizeResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognitionAudioOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeakerDiarizationConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/StreamingRecognitionResultOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognizeResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeechContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/LongRunningRecognizeRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/RecognitionConfig.java"
+    },
+    {
+      "path": "google-cloud-speech/pom.xml"
+    },
+    {
+      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1/MockSpeech.java"
+    },
+    {
+      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1/MockSpeechImpl.java"
+    },
+    {
+      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1/SpeechClientTest.java"
+    },
+    {
+      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1/SpeechSmokeTest.java"
+    },
+    {
+      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1/it/ITSpeechTest.java"
+    },
+    {
+      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/MockSpeech.java"
+    },
+    {
+      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/MockSpeechImpl.java"
+    },
+    {
+      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/SpeechClientTest.java"
+    },
+    {
+      "path": "google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/SpeechSmokeTest.java"
+    },
+    {
+      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/SpeechSettings.java"
+    },
+    {
+      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/package-info.java"
+    },
+    {
+      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/SpeechClient.java"
+    },
+    {
+      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/stub/SpeechStub.java"
+    },
+    {
+      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/stub/GrpcSpeechCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/stub/SpeechStubSettings.java"
+    },
+    {
+      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/stub/GrpcSpeechStub.java"
+    },
+    {
+      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechSettings.java"
+    },
+    {
+      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/package-info.java"
+    },
+    {
+      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechClient.java"
+    },
+    {
+      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/stub/SpeechStub.java"
+    },
+    {
+      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/stub/GrpcSpeechCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/stub/SpeechStubSettings.java"
+    },
+    {
+      "path": "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/stub/GrpcSpeechStub.java"
     }
   ]
 }
