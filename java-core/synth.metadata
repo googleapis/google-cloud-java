@@ -1,5 +1,5 @@
 {
-  "updateTime": "2019-12-19T09:04:21.054357Z",
+  "updateTime": "2020-01-07T09:14:00.627745Z",
   "sources": [
     {
       "template": {
@@ -11,10 +11,7 @@
   ],
   "newFiles": [
     {
-      "path": ".gitignore"
-    },
-    {
-      "path": "README.md"
+      "path": ".repo-metadata.json"
     },
     {
       "path": "renovate.json"
@@ -23,16 +20,19 @@
       "path": "license-checks.xml"
     },
     {
-      "path": "CONTRIBUTING.md"
-    },
-    {
       "path": "synth.py"
     },
     {
-      "path": "synth.metadata"
+      "path": "CHANGELOG.md"
     },
     {
-      "path": "java.header"
+      "path": "codecov.yaml"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": ".gitignore"
     },
     {
       "path": "pom.xml"
@@ -41,19 +41,22 @@
       "path": "CODE_OF_CONDUCT.md"
     },
     {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "README.md"
+    },
+    {
       "path": "versions.txt"
     },
     {
-      "path": "CHANGELOG.md"
+      "path": "CONTRIBUTING.md"
     },
     {
-      "path": "LICENSE"
+      "path": "java.header"
     },
     {
-      "path": ".repo-metadata.json"
-    },
-    {
-      "path": "codecov.yaml"
+      "path": "google-cloud-core-bom/pom.xml"
     },
     {
       "path": "google-cloud-core/pom.xml"
@@ -62,52 +65,25 @@
       "path": "google-cloud-core/src/test/java/com/google/cloud/StringEnumTest.java"
     },
     {
-      "path": "google-cloud-core/src/test/java/com/google/cloud/TimestampTest.java"
-    },
-    {
-      "path": "google-cloud-core/src/test/java/com/google/cloud/ByteArrayTest.java"
-    },
-    {
-      "path": "google-cloud-core/src/test/java/com/google/cloud/AsyncPageImplTest.java"
-    },
-    {
-      "path": "google-cloud-core/src/test/java/com/google/cloud/ExceptionHandlerTest.java"
-    },
-    {
       "path": "google-cloud-core/src/test/java/com/google/cloud/FieldSelectorHelperTest.java"
-    },
-    {
-      "path": "google-cloud-core/src/test/java/com/google/cloud/MonitoredResourceDescriptorTest.java"
-    },
-    {
-      "path": "google-cloud-core/src/test/java/com/google/cloud/BaseWriteChannelTest.java"
-    },
-    {
-      "path": "google-cloud-core/src/test/java/com/google/cloud/IdentityTest.java"
-    },
-    {
-      "path": "google-cloud-core/src/test/java/com/google/cloud/ServiceOptionsTest.java"
-    },
-    {
-      "path": "google-cloud-core/src/test/java/com/google/cloud/PolicyTest.java"
-    },
-    {
-      "path": "google-cloud-core/src/test/java/com/google/cloud/RoleTest.java"
-    },
-    {
-      "path": "google-cloud-core/src/test/java/com/google/cloud/BaseSerializationTest.java"
-    },
-    {
-      "path": "google-cloud-core/src/test/java/com/google/cloud/PageImplTest.java"
     },
     {
       "path": "google-cloud-core/src/test/java/com/google/cloud/BatchResultTest.java"
     },
     {
-      "path": "google-cloud-core/src/test/java/com/google/cloud/DateTest.java"
+      "path": "google-cloud-core/src/test/java/com/google/cloud/AsyncPageImplTest.java"
     },
     {
-      "path": "google-cloud-core/src/test/java/com/google/cloud/RetryOptionTest.java"
+      "path": "google-cloud-core/src/test/java/com/google/cloud/PageImplTest.java"
+    },
+    {
+      "path": "google-cloud-core/src/test/java/com/google/cloud/MonitoredResourceDescriptorTest.java"
+    },
+    {
+      "path": "google-cloud-core/src/test/java/com/google/cloud/IdentityTest.java"
+    },
+    {
+      "path": "google-cloud-core/src/test/java/com/google/cloud/TimestampTest.java"
     },
     {
       "path": "google-cloud-core/src/test/java/com/google/cloud/BaseServiceExceptionTest.java"
@@ -116,73 +92,118 @@
       "path": "google-cloud-core/src/test/java/com/google/cloud/MonitoredResourceTest.java"
     },
     {
+      "path": "google-cloud-core/src/test/java/com/google/cloud/ExceptionHandlerTest.java"
+    },
+    {
+      "path": "google-cloud-core/src/test/java/com/google/cloud/ByteArrayTest.java"
+    },
+    {
+      "path": "google-cloud-core/src/test/java/com/google/cloud/ServiceOptionsTest.java"
+    },
+    {
       "path": "google-cloud-core/src/test/java/com/google/cloud/SerializationTest.java"
     },
     {
-      "path": "google-cloud-core/src/test/java/com/google/cloud/testing/BlockingProcessStreamReaderTest.java"
+      "path": "google-cloud-core/src/test/java/com/google/cloud/BaseSerializationTest.java"
     },
     {
-      "path": "google-cloud-core/src/test/java/com/google/cloud/testing/BaseEmulatorHelperTest.java"
+      "path": "google-cloud-core/src/test/java/com/google/cloud/BaseWriteChannelTest.java"
     },
     {
-      "path": "google-cloud-core/src/test/java/com/google/cloud/testing/VersionTest.java"
+      "path": "google-cloud-core/src/test/java/com/google/cloud/DateTest.java"
+    },
+    {
+      "path": "google-cloud-core/src/test/java/com/google/cloud/RoleTest.java"
+    },
+    {
+      "path": "google-cloud-core/src/test/java/com/google/cloud/RetryOptionTest.java"
+    },
+    {
+      "path": "google-cloud-core/src/test/java/com/google/cloud/PolicyTest.java"
     },
     {
       "path": "google-cloud-core/src/test/java/com/google/cloud/testing/CommandWrapperTest.java"
     },
     {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/BatchResult.java"
+      "path": "google-cloud-core/src/test/java/com/google/cloud/testing/BaseEmulatorHelperTest.java"
     },
     {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/Restorable.java"
+      "path": "google-cloud-core/src/test/java/com/google/cloud/testing/BlockingProcessStreamReaderTest.java"
     },
     {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/ServiceOptions.java"
+      "path": "google-cloud-core/src/test/java/com/google/cloud/testing/VersionTest.java"
     },
     {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/Date.java"
+      "path": "google-cloud-core/src/main/java/com/google/cloud/ServiceDefaults.java"
     },
     {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/RetryOption.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/Policy.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/TransportOptions.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/BaseWriteChannel.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/RestorableState.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/BaseServiceException.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/Timestamp.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/ReadChannel.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/ByteArray.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/MonitoredResource.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/Role.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/WriteChannel.java"
+      "path": "google-cloud-core/src/main/java/com/google/cloud/ServiceFactory.java"
     },
     {
       "path": "google-cloud-core/src/main/java/com/google/cloud/GcpLaunchStage.java"
     },
     {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/FieldSelector.java"
+      "path": "google-cloud-core/src/main/java/com/google/cloud/AsyncPageImpl.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/Restorable.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/WriteChannel.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/BaseService.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/StringEnumType.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/PlatformInformation.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/StringEnumValue.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/Identity.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/BaseServiceException.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/BaseWriteChannel.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/ReadChannel.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/ServiceOptions.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/Timestamp.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/PageImpl.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/BatchResult.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/MonitoredResource.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/ByteArray.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/Role.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/Policy.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/package-info.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/MonitoredResourceDescriptor.java"
     },
     {
       "path": "google-cloud-core/src/main/java/com/google/cloud/RetryHelper.java"
@@ -191,82 +212,64 @@
       "path": "google-cloud-core/src/main/java/com/google/cloud/NoCredentials.java"
     },
     {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/PlatformInformation.java"
-    },
-    {
       "path": "google-cloud-core/src/main/java/com/google/cloud/ExceptionHandler.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/ServiceFactory.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/PageImpl.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/Service.java"
     },
     {
       "path": "google-cloud-core/src/main/java/com/google/cloud/MetadataConfig.java"
     },
     {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/StringEnumValue.java"
+      "path": "google-cloud-core/src/main/java/com/google/cloud/TransportOptions.java"
     },
     {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/ServiceDefaults.java"
+      "path": "google-cloud-core/src/main/java/com/google/cloud/RestorableState.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/FieldSelector.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/RetryOption.java"
     },
     {
       "path": "google-cloud-core/src/main/java/com/google/cloud/Tuple.java"
     },
     {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/MonitoredResourceDescriptor.java"
+      "path": "google-cloud-core/src/main/java/com/google/cloud/Date.java"
     },
     {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/BaseService.java"
+      "path": "google-cloud-core/src/main/java/com/google/cloud/Service.java"
     },
     {
       "path": "google-cloud-core/src/main/java/com/google/cloud/ServiceRpc.java"
     },
     {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/StringEnumType.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/AsyncPageImpl.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/Identity.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/package-info.java"
-    },
-    {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/spi/ServiceRpcFactory.java"
+      "path": "google-cloud-core/src/main/java/com/google/cloud/testing/BlockingProcessStreamReader.java"
     },
     {
       "path": "google-cloud-core/src/main/java/com/google/cloud/testing/Version.java"
     },
     {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/testing/BaseEmulatorHelper.java"
-    },
-    {
       "path": "google-cloud-core/src/main/java/com/google/cloud/testing/CommandWrapper.java"
     },
     {
-      "path": "google-cloud-core/src/main/java/com/google/cloud/testing/BlockingProcessStreamReader.java"
+      "path": "google-cloud-core/src/main/java/com/google/cloud/testing/BaseEmulatorHelper.java"
+    },
+    {
+      "path": "google-cloud-core/src/main/java/com/google/cloud/spi/ServiceRpcFactory.java"
     },
     {
       "path": "google-cloud-core-grpc/pom.xml"
     },
     {
-      "path": "google-cloud-core-grpc/src/test/java/com/google/cloud/grpc/BaseGrpcServiceExceptionTest.java"
-    },
-    {
       "path": "google-cloud-core-grpc/src/test/java/com/google/cloud/grpc/GrpcTransportOptionsTest.java"
     },
     {
-      "path": "google-cloud-core-grpc/src/main/java/com/google/cloud/grpc/GrpcTransportOptions.java"
+      "path": "google-cloud-core-grpc/src/test/java/com/google/cloud/grpc/BaseGrpcServiceExceptionTest.java"
     },
     {
       "path": "google-cloud-core-grpc/src/main/java/com/google/cloud/grpc/BaseGrpcServiceException.java"
+    },
+    {
+      "path": "google-cloud-core-grpc/src/main/java/com/google/cloud/grpc/GrpcTransportOptions.java"
     },
     {
       "path": "google-cloud-core-http/pom.xml"
@@ -275,46 +278,25 @@
       "path": "google-cloud-core-http/src/test/java/com/google/cloud/http/HttpTransportOptionsTest.java"
     },
     {
-      "path": "google-cloud-core-http/src/test/java/com/google/cloud/http/CensusHttpModuleTest.java"
-    },
-    {
       "path": "google-cloud-core-http/src/test/java/com/google/cloud/http/BaseHttpServiceExceptionTest.java"
     },
     {
-      "path": "google-cloud-core-http/src/main/java/com/google/cloud/http/HttpTransportOptions.java"
+      "path": "google-cloud-core-http/src/test/java/com/google/cloud/http/CensusHttpModuleTest.java"
     },
     {
       "path": "google-cloud-core-http/src/main/java/com/google/cloud/http/BaseHttpServiceException.java"
     },
     {
+      "path": "google-cloud-core-http/src/main/java/com/google/cloud/http/HttpTransportOptions.java"
+    },
+    {
       "path": "google-cloud-core-http/src/main/java/com/google/cloud/http/CensusHttpModule.java"
-    },
-    {
-      "path": ".github/release-please.yml"
-    },
-    {
-      "path": ".github/PULL_REQUEST_TEMPLATE.md"
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/support_request.md"
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
-    },
-    {
-      "path": ".kokoro/trampoline.sh"
-    },
-    {
-      "path": ".kokoro/build.sh"
     },
     {
       "path": ".kokoro/build.bat"
     },
     {
-      "path": ".kokoro/linkage-monitor.sh"
+      "path": ".kokoro/build.sh"
     },
     {
       "path": ".kokoro/dependencies.sh"
@@ -323,28 +305,64 @@
       "path": ".kokoro/common.cfg"
     },
     {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
       "path": ".kokoro/coerce_logs.sh"
     },
     {
-      "path": ".kokoro/release/common.sh"
+      "path": ".kokoro/linkage-monitor.sh"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.cfg"
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
     },
     {
       "path": ".kokoro/release/stage.cfg"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.sh"
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
     },
     {
       "path": ".kokoro/release/bump_snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.cfg"
     },
     {
       "path": ".kokoro/release/promote.sh"
@@ -353,49 +371,40 @@
       "path": ".kokoro/release/stage.sh"
     },
     {
-      "path": ".kokoro/release/bump_snapshot.sh"
+      "path": ".kokoro/release/snapshot.sh"
     },
     {
-      "path": ".kokoro/release/promote.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.sh"
+      "path": ".kokoro/release/snapshot.cfg"
     },
     {
       "path": ".kokoro/release/common.cfg"
     },
     {
-      "path": ".kokoro/release/snapshot.sh"
+      "path": ".kokoro/release/bump_snapshot.sh"
     },
     {
-      "path": ".kokoro/nightly/java11.cfg"
+      "path": ".kokoro/release/common.sh"
     },
     {
-      "path": ".kokoro/nightly/java8-win.cfg"
+      "path": ".kokoro/release/drop.cfg"
     },
     {
-      "path": ".kokoro/nightly/lint.cfg"
+      "path": ".kokoro/release/publish_javadoc.sh"
     },
     {
-      "path": ".kokoro/nightly/java8-osx.cfg"
+      "path": ".kokoro/presubmit/dependencies.cfg"
     },
     {
-      "path": ".kokoro/nightly/integration.cfg"
+      "path": ".kokoro/presubmit/samples.cfg"
     },
     {
-      "path": ".kokoro/nightly/java7.cfg"
+      "path": ".kokoro/presubmit/java7.cfg"
     },
     {
-      "path": ".kokoro/nightly/java8.cfg"
+      "path": ".kokoro/presubmit/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/nightly/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/common.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java11.cfg"
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
     },
     {
       "path": ".kokoro/presubmit/java8-win.cfg"
@@ -404,70 +413,67 @@
       "path": ".kokoro/presubmit/lint.cfg"
     },
     {
-      "path": ".kokoro/presubmit/clirr.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/integration.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java7.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+      "path": ".kokoro/presubmit/java11.cfg"
     },
     {
       "path": ".kokoro/presubmit/common.cfg"
     },
     {
-      "path": ".kokoro/continuous/propose_release.cfg"
+      "path": ".kokoro/presubmit/clirr.cfg"
     },
     {
-      "path": ".kokoro/continuous/java11.cfg"
+      "path": ".kokoro/presubmit/java8.cfg"
     },
     {
-      "path": ".kokoro/continuous/java8-win.cfg"
+      "path": ".kokoro/presubmit/integration.cfg"
     },
     {
-      "path": ".kokoro/continuous/lint.cfg"
+      "path": ".kokoro/nightly/dependencies.cfg"
     },
     {
-      "path": ".kokoro/continuous/java8-osx.cfg"
+      "path": ".kokoro/nightly/samples.cfg"
     },
     {
-      "path": ".kokoro/continuous/propose_release.sh"
+      "path": ".kokoro/nightly/java7.cfg"
     },
     {
-      "path": ".kokoro/continuous/integration.cfg"
+      "path": ".kokoro/nightly/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/continuous/java7.cfg"
+      "path": ".kokoro/nightly/java8-win.cfg"
     },
     {
-      "path": ".kokoro/continuous/java8.cfg"
+      "path": ".kokoro/nightly/lint.cfg"
     },
     {
-      "path": ".kokoro/continuous/dependencies.cfg"
+      "path": ".kokoro/nightly/java11.cfg"
     },
     {
-      "path": ".kokoro/continuous/common.cfg"
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
     },
     {
       "path": "__pycache__/synth.cpython-36.pyc"
-    },
-    {
-      "path": "google-cloud-core-bom/pom.xml"
-    },
-    {
-      "path": ".git/shallow"
     },
     {
       "path": ".git/index"
@@ -479,25 +485,22 @@
       "path": ".git/HEAD"
     },
     {
+      "path": ".git/description"
+    },
+    {
       "path": ".git/config"
     },
     {
-      "path": ".git/logs/HEAD"
+      "path": ".git/shallow"
     },
     {
-      "path": ".git/logs/refs/heads/autosynth"
+      "path": ".git/objects/pack/pack-0bf53eb9962b8fdfc2878a86d862322de07c0a0b.pack"
     },
     {
-      "path": ".git/logs/refs/heads/master"
+      "path": ".git/objects/pack/pack-0bf53eb9962b8fdfc2878a86d862322de07c0a0b.idx"
     },
     {
-      "path": ".git/logs/refs/remotes/origin/HEAD"
-    },
-    {
-      "path": ".git/objects/pack/pack-a5d6f9382dda21b97ddbde6b57fd00761ba537a6.idx"
-    },
-    {
-      "path": ".git/objects/pack/pack-a5d6f9382dda21b97ddbde6b57fd00761ba537a6.pack"
+      "path": ".git/refs/remotes/origin/HEAD"
     },
     {
       "path": ".git/refs/heads/autosynth"
@@ -506,7 +509,52 @@
       "path": ".git/refs/heads/master"
     },
     {
-      "path": ".git/refs/remotes/origin/HEAD"
+      "path": ".git/hooks/pre-applypatch.sample"
+    },
+    {
+      "path": ".git/hooks/pre-commit.sample"
+    },
+    {
+      "path": ".git/hooks/fsmonitor-watchman.sample"
+    },
+    {
+      "path": ".git/hooks/pre-rebase.sample"
+    },
+    {
+      "path": ".git/hooks/update.sample"
+    },
+    {
+      "path": ".git/hooks/pre-push.sample"
+    },
+    {
+      "path": ".git/hooks/applypatch-msg.sample"
+    },
+    {
+      "path": ".git/hooks/prepare-commit-msg.sample"
+    },
+    {
+      "path": ".git/hooks/commit-msg.sample"
+    },
+    {
+      "path": ".git/hooks/post-update.sample"
+    },
+    {
+      "path": ".git/hooks/pre-receive.sample"
+    },
+    {
+      "path": ".git/info/exclude"
+    },
+    {
+      "path": ".git/logs/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/remotes/origin/HEAD"
+    },
+    {
+      "path": ".git/logs/refs/heads/autosynth"
+    },
+    {
+      "path": ".git/logs/refs/heads/master"
     }
   ]
 }
