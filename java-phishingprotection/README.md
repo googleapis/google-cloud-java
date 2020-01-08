@@ -40,16 +40,16 @@ If you are using Maven without a BOM, add this to your dependencies.
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-phishingprotection</artifactId>
-  <version>0.28.0</version>
+  <version>0.28.1</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-phishingprotection:0.28.0'
+compile 'com.google.cloud:google-cloud-phishingprotection:0.28.1'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-phishingprotection" % "0.28.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-phishingprotection" % "0.28.1"
 ```
 [//]: # ({x-version-update-end})
 
