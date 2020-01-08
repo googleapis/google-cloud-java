@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.28.0](https://www.github.com/googleapis/java-tasks/compare/v1.27.0...v1.28.0) (2020-01-08)
+
+
+### Features
+
+* **regen:** adds ResourceName overloads for get/set/testIamPolicy methods ([#24](https://www.github.com/googleapis/java-tasks/issues/24)) ([0a8b3b5](https://www.github.com/googleapis/java-tasks/commit/0a8b3b5ef6f3a93454c59039201bfd54d27192eb))
+
+
+### Dependencies
+
+* update core dependencies ([#37](https://www.github.com/googleapis/java-tasks/issues/37)) ([57f9c1e](https://www.github.com/googleapis/java-tasks/commit/57f9c1ec08f7f83fac4205506d489c4e8cf5759c))
+* update dependency com.google.protobuf:protobuf-java to v3.11.1 ([#25](https://www.github.com/googleapis/java-tasks/issues/25)) ([0e87fb5](https://www.github.com/googleapis/java-tasks/commit/0e87fb511de2b898cbdf2a25902081790771aa9d))
+* update dependency io.grpc:grpc-bom to v1.26.0 ([#32](https://www.github.com/googleapis/java-tasks/issues/32)) ([b40f2f3](https://www.github.com/googleapis/java-tasks/commit/b40f2f3739e0cef165dec74260191ca548bf3696))
+* update gax.version to v1.51.0 ([#26](https://www.github.com/googleapis/java-tasks/issues/26)) ([cb113e5](https://www.github.com/googleapis/java-tasks/commit/cb113e520ab99ebde9b74b66b2897aeb6a590881))
+
 ## [1.27.0](https://www.github.com/googleapis/java-tasks/compare/v1.26.0...v1.27.0) (2019-11-11)
 
 
