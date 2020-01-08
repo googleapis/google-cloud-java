@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-cloud-websecurityscanner-v1beta:0.81.1:0.81.1
-proto-google-cloud-websecurityscanner-v1alpha:0.81.1:0.81.1
-grpc-google-cloud-websecurityscanner-v1alpha:0.81.1:0.81.1
-grpc-google-cloud-websecurityscanner-v1beta:0.81.1:0.81.1
-google-cloud-websecurityscanner:0.116.1:0.116.1
+proto-google-cloud-websecurityscanner-v1beta:0.81.1:0.81.2-SNAPSHOT
+proto-google-cloud-websecurityscanner-v1alpha:0.81.1:0.81.2-SNAPSHOT
+grpc-google-cloud-websecurityscanner-v1alpha:0.81.1:0.81.2-SNAPSHOT
+grpc-google-cloud-websecurityscanner-v1beta:0.81.1:0.81.2-SNAPSHOT
+google-cloud-websecurityscanner:0.116.1:0.116.2-SNAPSHOT
