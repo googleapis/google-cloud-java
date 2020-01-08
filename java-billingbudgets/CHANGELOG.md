@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.1.2](https://www.github.com/googleapis/java-billingbudgets/compare/v0.1.1...v0.1.2) (2020-01-07)
+
+
+### Documentation
+
+* **regen:** updated javadoc from protoc update ([#43](https://www.github.com/googleapis/java-billingbudgets/issues/43)) ([71e8999](https://www.github.com/googleapis/java-billingbudgets/commit/71e899962543dc148f6d9541dd9ab0ad03b5e2d9))
+
+
+### Dependencies
+
+* update core dependencies ([#32](https://www.github.com/googleapis/java-billingbudgets/issues/32)) ([9fcacec](https://www.github.com/googleapis/java-billingbudgets/commit/9fcacec10908d7a83ab51f97405793efd24b5992))
+* update dependency com.google.http-client:google-http-client-bom to v1.34.0 ([#36](https://www.github.com/googleapis/java-billingbudgets/issues/36)) ([2b188c1](https://www.github.com/googleapis/java-billingbudgets/commit/2b188c11cc4dfa342373fddf406b6ff4b0a5b1a3))
+* update dependency com.google.protobuf:protobuf-java to v3.11.1 ([#33](https://www.github.com/googleapis/java-billingbudgets/issues/33)) ([8418fd6](https://www.github.com/googleapis/java-billingbudgets/commit/8418fd60cd759f34b3fe25d7e7c3fcc9aaaf074c))
+
 ### [0.1.1](https://www.github.com/googleapis/java-billingbudgets/compare/v0.1.0...v0.1.1) (2019-11-18)
 
 
