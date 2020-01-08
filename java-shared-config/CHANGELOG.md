@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-shared-config/compare/v0.3.1...v0.4.0) (2020-01-08)
+
+
+### Features
+
+* add new enable-integration-tests profile ([#75](https://www.github.com/googleapis/java-shared-config/issues/75)) ([836c442](https://www.github.com/googleapis/java-shared-config/commit/836c44294a3cae9ea38b1464431ebac1bef6633d))
+
 ### [0.3.1](https://www.github.com/googleapis/java-shared-config/compare/v0.3.0...v0.3.1) (2020-01-03)
 
 
