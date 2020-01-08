@@ -59,6 +59,7 @@
     <!-- Template values used in site generation -->
     <site.installationModule>${project.artifactId}</site.installationModule>
     <report.jxr.inherited>false</report.jxr.inherited>
+    <skipITs>true</skipITs>
   </properties>
 
   <build>
@@ -555,6 +556,12 @@
           </plugin>
         </plugins>
       </build>
+    </profile>
+    <profile>
+      <id>enable-integration-tests</id>
+      <properties>
+        <skipITs>false</skipITs>
+      </properties>
     </profile>
   </profiles>
 </project>
