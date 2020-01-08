@@ -22,16 +22,16 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-os-login</artifactId>
-  <version>0.117.0-alpha</version>
+  <version>0.117.1-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-os-login:0.117.0-alpha'
+compile 'com.google.cloud:google-cloud-os-login:0.117.1-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-os-login" % "0.117.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-os-login" % "0.117.1-alpha"
 ```
 [//]: # ({x-version-update-end})
 
