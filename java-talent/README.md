@@ -40,16 +40,16 @@ If you are using Maven without Bom, Add this to your dependencies.
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-talent</artifactId>
-  <version>0.35.0-beta</version>
+  <version>0.35.1-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-talent:0.35.0-beta'
+compile 'com.google.cloud:google-cloud-talent:0.35.1-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-talent" % "0.35.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-talent" % "0.35.1-beta"
 ```
 [//]: # ({x-version-update-end})
 
