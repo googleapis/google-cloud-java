@@ -39,7 +39,7 @@ import org.junit.runners.JUnit4;
 import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
-public class LocalDatastoreHelperTest {
+public class ITLocalDatastoreHelperTest {
 
   private static final double TOLERANCE = 0.00001;
   private static final String PROJECT_ID_PREFIX = "test-project-";
