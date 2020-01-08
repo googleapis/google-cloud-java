@@ -1,5 +1,21 @@
 # Changelog
 
+### [0.2.1](https://www.github.com/googleapis/java-recommender/compare/v0.2.0...v0.2.1) (2020-01-07)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core-grpc to v1.92.1 ([#64](https://www.github.com/googleapis/java-recommender/issues/64)) ([007eda8](https://www.github.com/googleapis/java-recommender/commit/007eda864a704480a03283114b244910c8a16a8d))
+* update dependency io.grpc:grpc-bom to v1.26.0 ([#55](https://www.github.com/googleapis/java-recommender/issues/55)) ([93c483f](https://www.github.com/googleapis/java-recommender/commit/93c483f78b96161a7a25af4ff0c5abedb8343550))
+* update dependency junit:junit to v4.13 ([#63](https://www.github.com/googleapis/java-recommender/issues/63)) ([1916104](https://www.github.com/googleapis/java-recommender/commit/1916104d747d4579b562d1de40ac50b7617154ad))
+* update gax.version to v1.51.0 ([#42](https://www.github.com/googleapis/java-recommender/issues/42)) ([10d2b5c](https://www.github.com/googleapis/java-recommender/commit/10d2b5c319582ce966158492b96a9937b4f3163e))
+* update gax.version to v1.52.0 ([#49](https://www.github.com/googleapis/java-recommender/issues/49)) ([cbd2303](https://www.github.com/googleapis/java-recommender/commit/cbd23039af79688128bb5399e65a4aad57c7d20e))
+
+
+### Documentation
+
+* **regen:** updated javadocs from protoc update ([#48](https://www.github.com/googleapis/java-recommender/issues/48)) ([556abc0](https://www.github.com/googleapis/java-recommender/commit/556abc062afc77af1612ca42f387fe8da0e595fa))
+
 ## [0.2.0](https://www.github.com/googleapis/java-recommender/compare/v0.1.2...v0.2.0) (2019-12-05)
 
 
