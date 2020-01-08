@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.22.1](https://www.github.com/googleapis/java-scheduler/compare/v1.22.0...v1.22.1) (2020-01-07)
+
+
+### Dependencies
+
+* update dependency io.grpc:grpc-bom to v1.26.0 ([#27](https://www.github.com/googleapis/java-scheduler/issues/27)) ([f8ec893](https://www.github.com/googleapis/java-scheduler/commit/f8ec8930b2f322c6df1eaadc4361860d15caaf74))
+* update gax.version to v1.52.0 ([#19](https://www.github.com/googleapis/java-scheduler/issues/19)) ([0feacbd](https://www.github.com/googleapis/java-scheduler/commit/0feacbd39e08e18aac5967fd14dbab5c52d652df))
+
+
+### Documentation
+
+* **regen:** updated javadocs from protoc update ([#20](https://www.github.com/googleapis/java-scheduler/issues/20)) ([f10df3a](https://www.github.com/googleapis/java-scheduler/commit/f10df3a8519f2825cd8dabf8a2d077e598a85474))
+
 ## [1.22.0](https://www.github.com/googleapis/java-scheduler/compare/1.21.0...v1.22.0) (2019-12-04)
 
 
