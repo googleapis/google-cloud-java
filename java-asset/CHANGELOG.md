@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.116.1](https://www.github.com/googleapis/java-asset/compare/v0.116.0...v0.116.1) (2020-01-08)
+
+
+### Dependencies
+
+* update core dependencies to v1.52.0 ([bfc319f](https://www.github.com/googleapis/java-asset/commit/bfc319fa7adaacc106c42ee73640caf12f0c2897))
+* update dependency io.grpc:grpc-bom to v1.26.0 ([e0222e9](https://www.github.com/googleapis/java-asset/commit/e0222e97506807ac0ae26aec27bacfa31e41afaa))
+
 ## [0.116.0](https://www.github.com/googleapis/java-asset/compare/v0.115.0...v0.116.0) (2019-12-13)
 
 
