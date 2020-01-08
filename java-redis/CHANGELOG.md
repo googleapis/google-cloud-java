@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.117.1](https://www.github.com/googleapis/java-redis/compare/v0.117.0...v0.117.1) (2020-01-07)
+
+
+### Dependencies
+
+* update core dependencies ([#24](https://www.github.com/googleapis/java-redis/issues/24)) ([09f2044](https://www.github.com/googleapis/java-redis/commit/09f2044f73ef9e0477e677b55ffbb82d0c0f072f))
+
+
+### Documentation
+
+* **regen:** updated javadocs from protoc update ([#17](https://www.github.com/googleapis/java-redis/issues/17)) ([fcdc115](https://www.github.com/googleapis/java-redis/commit/fcdc115d9a9a08ebf4bf1288db015ac6fedad74b))
+
 ## [0.117.0](https://www.github.com/googleapis/java-redis/compare/0.116.0...v0.117.0) (2019-12-04)
 
 
