@@ -1,0 +1,12 @@
+{
+  "name": "monitoring-dashboards",
+  "name_pretty": "Google Cloud Monitoring Dashboards",
+  "product_documentation": "https://cloud.google.com/monitoring/charts/dashboards",
+  "client_documentation": "https://googleapis.dev/java/java-monitoring-dashboards/latest",
+  "release_level": "beta",
+  "language": "java",
+  "repo": "googleapis/java-monitoring-dashboards",
+  "repo_short": "java-monitoring-dashboards",
+  "distribution_name": "com.google.cloud:google-cloud-monitoring-dashboards",
+  "api_id": "monitoring.googleapis.com"
+}
