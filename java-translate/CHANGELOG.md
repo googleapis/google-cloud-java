@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.94.2](https://www.github.com/googleapis/java-translate/compare/v1.94.1...v1.94.2) (2020-01-07)
+
+
+### Dependencies
+
+* update core dependencies ([#55](https://www.github.com/googleapis/java-translate/issues/55)) ([328b4d3](https://www.github.com/googleapis/java-translate/commit/328b4d38428497a734abc1b333e336c26523ff4b))
+* update dependency com.google.auth:google-auth-library-bom to v0.19.0 ([#44](https://www.github.com/googleapis/java-translate/issues/44)) ([c38a9d8](https://www.github.com/googleapis/java-translate/commit/c38a9d8b33294abd59485569a7b2e2b5ff8d38dd))
+* update dependency com.google.http-client:google-http-client-bom to v1.34.0 ([#46](https://www.github.com/googleapis/java-translate/issues/46)) ([4a50694](https://www.github.com/googleapis/java-translate/commit/4a50694307d218e37f02601534b4dece8a0da94e))
+* update dependency com.google.protobuf:protobuf-java to v3.11.1 ([894fffc](https://www.github.com/googleapis/java-translate/commit/894fffc3ecd6df1f37feb5203e1368c87cf586c4))
+
+
+### Documentation
+
+* **regen:** updated javadocs from protoc update ([#43](https://www.github.com/googleapis/java-translate/issues/43)) ([23c923b](https://www.github.com/googleapis/java-translate/commit/23c923b4ff9ea7ac4825259c42c5f2a3e7d76ac9))
+
 ### [1.94.1](https://www.github.com/googleapis/java-translate/compare/v1.94.0...v1.94.1) (2019-11-22)
 
 
