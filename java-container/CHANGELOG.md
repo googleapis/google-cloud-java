@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.119.0](https://www.github.com/googleapis/java-container/compare/v0.118.0...v0.119.0) (2020-01-07)
+
+
+### Features
+
+* add ListUsableSubnetworks rpc, k8s taint support, many Cluster configuration options ([#30](https://www.github.com/googleapis/java-container/issues/30)) ([1a5918d](https://www.github.com/googleapis/java-container/commit/1a5918db443548b396e4d9f0ad2b9bdb01523553))
+
+
+### Dependencies
+
+* update core dependencies ([#33](https://www.github.com/googleapis/java-container/issues/33)) ([8e2a8e5](https://www.github.com/googleapis/java-container/commit/8e2a8e5e5718ba88577311a7b483acf22c9e806c))
+* update dependency io.grpc:grpc-bom to v1.26.0 ([734a0c8](https://www.github.com/googleapis/java-container/commit/734a0c875fd4c85adde8b3363e112c8b3a98c30d))
+
 ## [0.118.0](https://www.github.com/googleapis/java-container/compare/0.117.0...v0.118.0) (2019-12-05)
 
 
