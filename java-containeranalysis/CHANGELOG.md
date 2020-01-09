@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.119.0](https://www.github.com/googleapis/java-containeranalysis/compare/v0.118.0...v0.119.0) (2020-01-07)
+
+
+### Features
+
+* add WindowsDetail to v1beta1 vulnerability ([#31](https://www.github.com/googleapis/java-containeranalysis/issues/31)) ([450696d](https://www.github.com/googleapis/java-containeranalysis/commit/450696d16a94aae7ab3f24678bfbee5ae103d3e7))
+
+
+### Dependencies
+
+* update dependency io.grpc:grpc-bom to v1.26.0 ([fc2d3ca](https://www.github.com/googleapis/java-containeranalysis/commit/fc2d3ca0d8eb0fb31ade4a6f941006f01e8b796e))
+* update gax.version to v1.52.0 ([#25](https://www.github.com/googleapis/java-containeranalysis/issues/25)) ([736032b](https://www.github.com/googleapis/java-containeranalysis/commit/736032b0fd5ad313336bf7eb5dc60ec32e199160))
+
+
+### Documentation
+
+* **regen:** updated docs from protoc update ([#24](https://www.github.com/googleapis/java-containeranalysis/issues/24)) ([bbbd3a2](https://www.github.com/googleapis/java-containeranalysis/commit/bbbd3a2c53832b42c56e478f376db170e2afe975))
+
 ## [0.118.0](https://www.github.com/googleapis/java-containeranalysis/compare/0.117.0...v0.118.0) (2019-12-05)
 
 
