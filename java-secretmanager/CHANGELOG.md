@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-secretmanager/compare/v0.1.0...v0.2.0) (2020-01-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* proto/grpc classes moved to com.google.cloud.secretmanager package (#20)
+
+### Features
+
+* proto/grpc classes moved to com.google.cloud.secretmanager package ([#20](https://www.github.com/googleapis/java-secretmanager/issues/20)) ([710d449](https://www.github.com/googleapis/java-secretmanager/commit/710d4495bb74a9caf7e122c8ec7011fac9444149))
+
 ## 0.1.0 (2020-01-06)
 
 
