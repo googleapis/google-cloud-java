@@ -1,5 +1,23 @@
 # Changelog
 
+### [1.22.2](https://www.github.com/googleapis/java-speech/compare/v1.22.1...v1.22.2) (2020-01-07)
+
+
+### Bug Fixes
+
+* update timeout settings ([#56](https://www.github.com/googleapis/java-speech/issues/56)) ([1403d85](https://www.github.com/googleapis/java-speech/commit/1403d857201b14630694937f2890f10c9557a360))
+* **regen:** update timeout configs, javadoc from protoc update ([#62](https://www.github.com/googleapis/java-speech/issues/62)) ([505ecb7](https://www.github.com/googleapis/java-speech/commit/505ecb7c4e715d2c2477ef192094a6b0ef437e1a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core-grpc to v1.92.0 ([#66](https://www.github.com/googleapis/java-speech/issues/66)) ([b8c7cb1](https://www.github.com/googleapis/java-speech/commit/b8c7cb103223f503c507bcd31d0068a4b359c615))
+* update dependency com.google.errorprone:error_prone_annotations to v2.3.4 ([#51](https://www.github.com/googleapis/java-speech/issues/51)) ([c4487f7](https://www.github.com/googleapis/java-speech/commit/c4487f770704b6fd08456e09f7dfb17723524985))
+* update dependency com.google.guava:guava-bom to v28.2-android ([cf2d614](https://www.github.com/googleapis/java-speech/commit/cf2d6142e1e588330e4a15ae97206c3853995707))
+* update dependency com.google.protobuf:protobuf-java to v3.11.1 ([86baa06](https://www.github.com/googleapis/java-speech/commit/86baa06fd63e06231eaae3c13be978340804fa31))
+* update dependency io.grpc:grpc-bom to v1.26.0 ([#64](https://www.github.com/googleapis/java-speech/issues/64)) ([0deab5b](https://www.github.com/googleapis/java-speech/commit/0deab5b971baf0f7799d4a3d7d49d2b569ccae21))
+* update gax.version to v1.52.0 ([#52](https://www.github.com/googleapis/java-speech/issues/52)) ([508d25d](https://www.github.com/googleapis/java-speech/commit/508d25d512078058422aa33a37e89186cc99448c))
+
 ### [1.22.1](https://www.github.com/googleapis/java-speech/compare/v1.22.0...v1.22.1) (2019-11-21)
 
 
