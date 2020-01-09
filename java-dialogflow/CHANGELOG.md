@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.120.0](https://www.github.com/googleapis/java-dialogflow/compare/v0.119.0...v0.120.0) (2020-01-07)
+
+
+### Features
+
+* **regen:** add SpeechContext ([#45](https://www.github.com/googleapis/java-dialogflow/issues/45)) ([f1bb5d6](https://www.github.com/googleapis/java-dialogflow/commit/f1bb5d614c71d9d7b666fe78472907065392f909))
+
+
+### Bug Fixes
+
+* **regen:** fix longrunning operation metadata in protos ([#43](https://www.github.com/googleapis/java-dialogflow/issues/43)) ([934c211](https://www.github.com/googleapis/java-dialogflow/commit/934c21144689aa875bf375d111ffb0fa08f615ca))
+
+
+### Dependencies
+
+* update dependency io.grpc:grpc-bom to v1.26.0 ([#41](https://www.github.com/googleapis/java-dialogflow/issues/41)) ([c65f04b](https://www.github.com/googleapis/java-dialogflow/commit/c65f04b697debc9205e33fee84ba22eeb56bcdb3))
+
 ## [0.119.0](https://www.github.com/googleapis/java-dialogflow/compare/v0.118.0...v0.119.0) (2019-12-17)
 
 

@@ -39,16 +39,16 @@ If you are using Maven without a BOM, add this to your dependencies.
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dialogflow</artifactId>
-  <version>0.119.0</version>
+  <version>0.120.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-dialogflow:0.119.0'
+compile 'com.google.cloud:google-cloud-dialogflow:0.120.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow" % "0.119.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow" % "0.120.0"
 ```
 [//]: # ({x-version-update-end})
 
