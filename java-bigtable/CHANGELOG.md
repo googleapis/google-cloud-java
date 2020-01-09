@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.9.1](https://www.github.com/googleapis/java-bigtable/compare/v1.9.0...v1.9.1) (2020-01-09)
+
+
+### Dependencies
+
+* upgrade gax to 1.53.0 ([#145](https://www.github.com/googleapis/java-bigtable/issues/145)) ([c3fc40d](https://www.github.com/googleapis/java-bigtable/commit/c3fc40df4358bd68cddcfc6f0a3fedb74dcdf465))
+
 ## [1.9.0](https://www.github.com/googleapis/java-bigtable/compare/v1.8.0...v1.9.0) (2020-01-06)
 
 
