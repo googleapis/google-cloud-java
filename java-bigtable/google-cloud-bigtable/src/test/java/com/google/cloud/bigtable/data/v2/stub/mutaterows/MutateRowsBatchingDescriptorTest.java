@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.data.v2.stub.mutaterows;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.batching.BatchEntry;
 import com.google.api.gax.batching.BatchingRequestBuilder;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.DeadlineExceededException;
@@ -77,29 +78,43 @@ public class MutateRowsBatchingDescriptorTest {
 
   @Test
   public void splitResponseTest() {
-    List<SettableApiFuture<Void>> batchResponse =
-        ImmutableList.of(SettableApiFuture.<Void>create(), SettableApiFuture.<Void>create());
-    assertThat(batchResponse.get(0).isDone()).isFalse();
-    assertThat(batchResponse.get(1).isDone()).isFalse();
+    BatchEntry<RowMutationEntry, Void> batchEntry1 =
+        BatchEntry.create(
+            RowMutationEntry.create("key1").deleteRow(), SettableApiFuture.<Void>create());
+    BatchEntry<RowMutationEntry, Void> batchEntry2 =
+        BatchEntry.create(
+            RowMutationEntry.create("key2").deleteRow(), SettableApiFuture.<Void>create());
+
+    List<BatchEntry<RowMutationEntry, Void>> batchResponse =
+        ImmutableList.of(batchEntry1, batchEntry2);
+    assertThat(batchResponse.get(0).getResultFuture().isDone()).isFalse();
+    assertThat(batchResponse.get(1).getResultFuture().isDone()).isFalse();
 
     MutateRowsBatchingDescriptor underTest = new MutateRowsBatchingDescriptor();
     underTest.splitResponse(null, batchResponse);
-    assertThat(batchResponse.get(0).isDone()).isTrue();
-    assertThat(batchResponse.get(1).isDone()).isTrue();
+    assertThat(batchResponse.get(0).getResultFuture().isDone()).isTrue();
+    assertThat(batchResponse.get(1).getResultFuture().isDone()).isTrue();
   }
 
   @Test
   public void splitExceptionTest() {
+    BatchEntry<RowMutationEntry, Void> batchEntry1 =
+        BatchEntry.create(
+            RowMutationEntry.create("key1").deleteRow(), SettableApiFuture.<Void>create());
+    BatchEntry<RowMutationEntry, Void> batchEntry2 =
+        BatchEntry.create(
+            RowMutationEntry.create("key2").deleteRow(), SettableApiFuture.<Void>create());
+
     MutateRowsBatchingDescriptor underTest = new MutateRowsBatchingDescriptor();
     final RuntimeException expectedEx = new RuntimeException("Caused while batching");
-    List<SettableApiFuture<Void>> batchResponses =
-        ImmutableList.of(SettableApiFuture.<Void>create(), SettableApiFuture.<Void>create());
+    List<BatchEntry<RowMutationEntry, Void>> batchResponses =
+        ImmutableList.of(batchEntry1, batchEntry2);
 
     underTest.splitException(expectedEx, batchResponses);
 
-    for (SettableApiFuture fu : batchResponses) {
+    for (BatchEntry<RowMutationEntry, Void> response : batchResponses) {
       try {
-        fu.get();
+        response.getResultFuture().get();
       } catch (ExecutionException | InterruptedException ex) {
         assertThat(ex).hasCauseThat().isSameInstanceAs(expectedEx);
       }
@@ -110,9 +125,15 @@ public class MutateRowsBatchingDescriptorTest {
   public void splitExceptionWithFailedMutationsTest() {
     MutateRowsBatchingDescriptor underTest = new MutateRowsBatchingDescriptor();
     Throwable actualThrowable = null;
-    SettableApiFuture<Void> resultFuture1 = SettableApiFuture.create();
-    SettableApiFuture<Void> resultFuture2 = SettableApiFuture.create();
-    SettableApiFuture<Void> resultFuture3 = SettableApiFuture.create();
+    BatchEntry<RowMutationEntry, Void> batchEntry1 =
+        BatchEntry.create(
+            RowMutationEntry.create("key1").deleteRow(), SettableApiFuture.<Void>create());
+    BatchEntry<RowMutationEntry, Void> batchEntry2 =
+        BatchEntry.create(
+            RowMutationEntry.create("key2").deleteRow(), SettableApiFuture.<Void>create());
+    BatchEntry<RowMutationEntry, Void> batchEntry3 =
+        BatchEntry.create(
+            RowMutationEntry.create("key3").deleteRow(), SettableApiFuture.<Void>create());
 
     // Threw an exception at 1st and 3rd entry
     MutateRowsException serverError =
@@ -128,11 +149,10 @@ public class MutateRowsBatchingDescriptorTest {
                     new DeadlineExceededException(
                         null, GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED), true))),
             true);
-    underTest.splitException(
-        serverError, ImmutableList.of(resultFuture1, resultFuture2, resultFuture3));
+    underTest.splitException(serverError, ImmutableList.of(batchEntry1, batchEntry2, batchEntry3));
 
     try {
-      resultFuture1.get();
+      batchEntry1.getResultFuture().get();
     } catch (ExecutionException | InterruptedException e) {
       actualThrowable = e;
     }
@@ -143,7 +163,7 @@ public class MutateRowsBatchingDescriptorTest {
     // As there is no exception for 2nd entry so it should not throw any exception
     actualThrowable = null;
     try {
-      resultFuture2.get();
+      batchEntry2.getResultFuture().get();
     } catch (ExecutionException | InterruptedException e) {
       actualThrowable = e;
     }
@@ -151,7 +171,7 @@ public class MutateRowsBatchingDescriptorTest {
 
     actualThrowable = null;
     try {
-      resultFuture3.get();
+      batchEntry3.getResultFuture().get();
     } catch (ExecutionException | InterruptedException e) {
       actualThrowable = e;
     }

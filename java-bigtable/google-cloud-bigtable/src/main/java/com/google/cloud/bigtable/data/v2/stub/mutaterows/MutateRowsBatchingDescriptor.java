@@ -16,7 +16,7 @@
 package com.google.cloud.bigtable.data.v2.stub.mutaterows;
 
 import com.google.api.core.InternalApi;
-import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.batching.BatchEntry;
 import com.google.api.gax.batching.BatchingDescriptor;
 import com.google.api.gax.batching.BatchingRequestBuilder;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
@@ -45,9 +45,9 @@ public class MutateRowsBatchingDescriptor
   }
 
   @Override
-  public void splitResponse(Void response, List<SettableApiFuture<Void>> batch) {
-    for (SettableApiFuture<Void> batchResponse : batch) {
-      batchResponse.set(null);
+  public void splitResponse(Void response, List<BatchEntry<RowMutationEntry, Void>> entries) {
+    for (BatchEntry<RowMutationEntry, Void> batchResponse : entries) {
+      batchResponse.getResultFuture().set(null);
     }
   }
 
@@ -58,10 +58,11 @@ public class MutateRowsBatchingDescriptor
    * entries whose index is mentioned {@link MutateRowsException#getFailedMutations()}.
    */
   @Override
-  public void splitException(Throwable throwable, List<SettableApiFuture<Void>> batch) {
+  public void splitException(
+      Throwable throwable, List<BatchEntry<RowMutationEntry, Void>> entries) {
     if (!(throwable instanceof MutateRowsException)) {
-      for (SettableApiFuture<Void> future : batch) {
-        future.setException(throwable);
+      for (BatchEntry<RowMutationEntry, Void> entry : entries) {
+        entry.getResultFuture().setException(throwable);
       }
       return;
     }
@@ -74,12 +75,12 @@ public class MutateRowsBatchingDescriptor
     }
 
     int i = 0;
-    for (SettableApiFuture<Void> entryResultFuture : batch) {
+    for (BatchEntry<RowMutationEntry, Void> entry : entries) {
       Throwable entryError = entryErrors.get(i++);
       if (entryError == null) {
-        entryResultFuture.set(null);
+        entry.getResultFuture().set(null);
       } else {
-        entryResultFuture.setException(entryError);
+        entry.getResultFuture().setException(entryError);
       }
     }
   }
