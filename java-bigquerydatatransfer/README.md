@@ -25,7 +25,7 @@ If you are using Maven with Bom, Add this to your pom.xml file.
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>0.120.0-beta</version>
+        <version>0.121.0-beta</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
@@ -42,16 +42,16 @@ If you are using Maven without Bom, Add this to your dependencies.
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquerydatatransfer</artifactId>
-    <version>0.120.0-beta</version>
+    <version>0.121.0-beta</version>
   </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquerydatatransfer:0.120.0-beta'
+compile 'com.google.cloud:google-cloud-bigquerydatatransfer:0.121.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatatransfer" % "0.120.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatatransfer" % "0.121.0-beta"
 ```
 [//]: # ({x-version-update-end})
 
