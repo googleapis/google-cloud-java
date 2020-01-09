@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.119.0](https://www.github.com/googleapis/java-errorreporting/compare/v0.118.1...v0.119.0) (2020-01-07)
+
+
+### Features
+
+* deprecate GroupName in favor of ErrorGroupName ([#30](https://www.github.com/googleapis/java-errorreporting/issues/30)) ([5c2b4e2](https://www.github.com/googleapis/java-errorreporting/commit/5c2b4e28ed226d7f6911240ff1b2ed66ceeed257))
+
+
+### Dependencies
+
+* update core dependencies ([#36](https://www.github.com/googleapis/java-errorreporting/issues/36)) ([5136ad3](https://www.github.com/googleapis/java-errorreporting/commit/5136ad39d77f2cb2d51101753eeed628143fe910))
+* update dependency io.grpc:grpc-bom to v1.26.0 ([f939c9d](https://www.github.com/googleapis/java-errorreporting/commit/f939c9d741de27f419c01b907401fc952d188821))
+
 ### [0.118.1](https://www.github.com/googleapis/java-errorreporting/compare/v0.118.0...v0.118.1) (2019-12-06)
 
 
