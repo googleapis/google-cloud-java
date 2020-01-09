@@ -1,5 +1,21 @@
 # Changelog
 
+### [1.99.1](https://www.github.com/googleapis/java-vision/compare/v1.99.0...v1.99.1) (2020-01-03)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java to v3.11.1 ([#23](https://www.github.com/googleapis/java-vision/issues/23)) ([0716a27](https://www.github.com/googleapis/java-vision/commit/0716a27f6e1f4b728f1f439976c08bbc9da91320))
+* update dependency io.grpc:grpc-bom to v1.26.0 ([#32](https://www.github.com/googleapis/java-vision/issues/32)) ([a5dc67c](https://www.github.com/googleapis/java-vision/commit/a5dc67cdb126f83abc7e9bc3cb08dc54ac7ca008))
+* update dependency junit:junit to v4.13 ([#37](https://www.github.com/googleapis/java-vision/issues/37)) ([5c45da1](https://www.github.com/googleapis/java-vision/commit/5c45da1b9e588cb5e4071cc02fd4df8eca17bac3))
+* update gax.version to v1.51.0 ([#24](https://www.github.com/googleapis/java-vision/issues/24)) ([8445988](https://www.github.com/googleapis/java-vision/commit/8445988bf4d514c827326def363e53ac358bf176))
+* update gax.version to v1.52.0 ([#27](https://www.github.com/googleapis/java-vision/issues/27)) ([284cc55](https://www.github.com/googleapis/java-vision/commit/284cc5562c97142903a98d94d94d017803f33c66))
+
+
+### Documentation
+
+* **regen:** updated docs from protoc update ([#26](https://www.github.com/googleapis/java-vision/issues/26)) ([f9132b6](https://www.github.com/googleapis/java-vision/commit/f9132b68596b5da42897042a12b70abb755080c0))
+
 ## [1.99.0](https://www.github.com/googleapis/java-vision/compare/v1.98.1...v1.99.0) (2019-11-14)
 
 
