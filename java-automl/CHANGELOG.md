@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.115.2](https://www.github.com/googleapis/java-automl/compare/v0.115.1...v0.115.2) (2020-01-07)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java to v3.11.1 ([#57](https://www.github.com/googleapis/java-automl/issues/57)) ([413ad08](https://www.github.com/googleapis/java-automl/commit/413ad0891bf410b921d5c819a54e06378f4116b1))
+* update dependency io.grpc:grpc-bom to v1.26.0 ([fd7a702](https://www.github.com/googleapis/java-automl/commit/fd7a70299148bce6649271d2589b1986d21fbe83))
+* update gax.version to v1.52.0 ([#59](https://www.github.com/googleapis/java-automl/issues/59)) ([a3dab69](https://www.github.com/googleapis/java-automl/commit/a3dab69f66cc8aa0353a0d10d2b5ccfdbd861110))
+
+
+### Documentation
+
+* **regen:** proto class changes from protoc update ([#60](https://www.github.com/googleapis/java-automl/issues/60)) ([0b04ce1](https://www.github.com/googleapis/java-automl/commit/0b04ce12554c53d2cbf8e2ea1b0ebcdcd8462c97))
+
 ### [0.115.1](https://www.github.com/googleapis/java-automl/compare/v0.115.0...v0.115.1) (2019-11-18)
 
 
