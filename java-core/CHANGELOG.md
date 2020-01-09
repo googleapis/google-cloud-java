@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.92.2](https://www.github.com/googleapis/java-core/compare/v1.92.1...v1.92.2) (2020-01-09)
+
+
+### Bug Fixes
+
+* cast to proper interface ([#124](https://www.github.com/googleapis/java-core/issues/124)) ([cd6eabf](https://www.github.com/googleapis/java-core/commit/cd6eabffcdeed485aba088336fa473a6b85c752d)), closes [#123](https://www.github.com/googleapis/java-core/issues/123)
+
 ### [1.92.1](https://www.github.com/googleapis/java-core/compare/v1.92.0...v1.92.1) (2020-01-02)
 
 
