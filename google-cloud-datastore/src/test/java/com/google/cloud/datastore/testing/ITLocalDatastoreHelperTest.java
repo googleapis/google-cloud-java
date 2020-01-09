@@ -31,9 +31,8 @@ import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
-import org.junit.Rule;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.threeten.bp.Duration;
@@ -44,8 +43,6 @@ public class ITLocalDatastoreHelperTest {
   private static final double TOLERANCE = 0.00001;
   private static final String PROJECT_ID_PREFIX = "test-project-";
   private static final String NAMESPACE = "namespace";
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testCreate() {
@@ -90,16 +87,20 @@ public class ITLocalDatastoreHelperTest {
 
   @Test
   public void testStartStopReset() throws IOException, InterruptedException, TimeoutException {
-    LocalDatastoreHelper helper = LocalDatastoreHelper.create();
-    helper.start();
-    Datastore datastore = helper.getOptions().getService();
-    Key key = datastore.newKeyFactory().setKind("kind").newKey("name");
-    datastore.put(Entity.newBuilder(key).build());
-    assertNotNull(datastore.get(key));
-    helper.reset();
-    assertNull(datastore.get(key));
-    helper.stop(Duration.ofMinutes(1));
-    thrown.expect(DatastoreException.class);
-    datastore.get(key);
+    try {
+      LocalDatastoreHelper helper = LocalDatastoreHelper.create();
+      helper.start();
+      Datastore datastore = helper.getOptions().getService();
+      Key key = datastore.newKeyFactory().setKind("kind").newKey("name");
+      datastore.put(Entity.newBuilder(key).build());
+      assertNotNull(datastore.get(key));
+      helper.reset();
+      assertNull(datastore.get(key));
+      helper.stop(Duration.ofMinutes(1));
+      datastore.get(key);
+      Assert.fail();
+    } catch (DatastoreException ex) {
+      assertNotNull(ex.getMessage());
+    }
   }
 }

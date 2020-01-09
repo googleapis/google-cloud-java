@@ -21,14 +21,10 @@ import static junit.framework.TestCase.assertTrue;
 
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.ExceptionHandler;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 /** Tests for {@link TransactionExceptionHandler}. */
 public class TransactionExceptionHandlerTest {
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testShouldTry() {

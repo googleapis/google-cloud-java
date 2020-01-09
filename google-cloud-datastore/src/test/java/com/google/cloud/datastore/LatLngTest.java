@@ -19,13 +19,10 @@ package com.google.cloud.datastore;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-import org.junit.Rule;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class LatLngTest {
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   private static LatLng gp1 = new LatLng(37.422035, -122.084124);
   private static LatLng gp2 = new LatLng(0.0, 0.0);
@@ -49,33 +46,45 @@ public class LatLngTest {
 
   @Test
   public void testUpperLatRange() {
-    new LatLng(90, 0);
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage(INVALID_LAT_MESSAGE);
-    new LatLng(91, 0);
+    try {
+      new LatLng(90, 0);
+      new LatLng(91, 0);
+      Assert.fail();
+    } catch (IllegalArgumentException ex) {
+      assertEquals(INVALID_LAT_MESSAGE, ex.getMessage());
+    }
   }
 
   @Test
   public void testLowerLatRange() {
-    new LatLng(-90, 0);
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage(INVALID_LAT_MESSAGE);
-    new LatLng(-91, 0);
+    try {
+      new LatLng(-90, 0);
+      new LatLng(-91, 0);
+      Assert.fail();
+    } catch (IllegalArgumentException ex) {
+      assertEquals(INVALID_LAT_MESSAGE, ex.getMessage());
+    }
   }
 
   @Test
   public void testUpperLngRange() {
-    new LatLng(0, 180);
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage(INVALID_LNG_MESSAGE);
-    new LatLng(0, 181);
+    try {
+      new LatLng(0, 180);
+      new LatLng(0, 181);
+      Assert.fail();
+    } catch (IllegalArgumentException ex) {
+      assertEquals(INVALID_LNG_MESSAGE, ex.getMessage());
+    }
   }
 
   @Test
   public void testLowerLngRange() {
-    new LatLng(0, 180);
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage(INVALID_LNG_MESSAGE);
-    new LatLng(0, -181);
+    try {
+      new LatLng(0, 180);
+      new LatLng(0, -181);
+      Assert.fail();
+    } catch (IllegalArgumentException ex) {
+      assertEquals(INVALID_LNG_MESSAGE, ex.getMessage());
+    }
   }
 }
