@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.118.1](https://www.github.com/googleapis/java-dlp/compare/v0.118.0...v0.118.1) (2020-01-07)
+
+
+### Dependencies
+
+* update dependency io.grpc:grpc-bom to v1.26.0 ([b5e0cd0](https://www.github.com/googleapis/java-dlp/commit/b5e0cd051e8280efe81fd44ad304e9e73c73035d))
+* update gax.version to v1.52.0 ([#37](https://www.github.com/googleapis/java-dlp/issues/37)) ([466bd34](https://www.github.com/googleapis/java-dlp/commit/466bd3437e636774ad2ddc445a0e48067475f55c))
+
+
+### Documentation
+
+* **regen:** updated javadocs from protoc update ([#36](https://www.github.com/googleapis/java-dlp/issues/36)) ([e07135c](https://www.github.com/googleapis/java-dlp/commit/e07135c7aa9750a1c8e5d66d89094232a9c6c0a9))
+
 ## [0.118.0](https://www.github.com/googleapis/java-dlp/compare/v0.117.0...v0.118.0) (2019-12-09)
 
 
