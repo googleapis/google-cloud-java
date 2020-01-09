@@ -27,7 +27,7 @@ for version in versions:
     library = java.bazel_library(
         service=service,
         version=version,
-        package_pattern='com.google.cloud.secrets.{version}',
+        package_pattern='com.google.cloud.{service}.{version}',
         gapic=gapic,
         proto_path=f'google/cloud/secrets/{version}',
         bazel_target=f'//google/cloud/secrets/{version}:google-cloud-{service}-{version}-java',
@@ -36,5 +36,5 @@ for version in versions:
 common_templates = gcp.CommonTemplates()
 templates = common_templates.java_library()
 s.copy(templates, excludes=[
-    # 'README.md',
+  'README.md',
 ])

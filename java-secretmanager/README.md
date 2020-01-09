@@ -19,16 +19,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-secretmanager</artifactId>
-  <version>0.0.0</version>
+  <version>0.102.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-secretmanager:0.0.0'
+compile 'com.google.cloud:google-cloud-secretmanager:0.102.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-secretmanager" % "0.0.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-secretmanager" % "0.102.0-beta"
 ```
 [//]: # ({x-version-update-end})
 
@@ -101,7 +101,7 @@ Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
-[api-reference]: https://cloud.google.com/solutions/secrets-management/
+[api-reference]: 
 [product-docs]: https://cloud.google.com/solutions/secrets-management/
 [javadocs]: https://googleapis.dev/java/java-secretmanager/latest
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-secretmanager/java7.svg

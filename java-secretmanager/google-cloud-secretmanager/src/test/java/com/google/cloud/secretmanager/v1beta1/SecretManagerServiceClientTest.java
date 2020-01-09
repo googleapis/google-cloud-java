@@ -25,27 +25,6 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
-import com.google.cloud.secrets.v1beta1.AccessSecretVersionRequest;
-import com.google.cloud.secrets.v1beta1.AccessSecretVersionResponse;
-import com.google.cloud.secrets.v1beta1.AddSecretVersionRequest;
-import com.google.cloud.secrets.v1beta1.CreateSecretRequest;
-import com.google.cloud.secrets.v1beta1.DeleteSecretRequest;
-import com.google.cloud.secrets.v1beta1.DestroySecretVersionRequest;
-import com.google.cloud.secrets.v1beta1.DisableSecretVersionRequest;
-import com.google.cloud.secrets.v1beta1.EnableSecretVersionRequest;
-import com.google.cloud.secrets.v1beta1.GetSecretRequest;
-import com.google.cloud.secrets.v1beta1.GetSecretVersionRequest;
-import com.google.cloud.secrets.v1beta1.ListSecretVersionsRequest;
-import com.google.cloud.secrets.v1beta1.ListSecretVersionsResponse;
-import com.google.cloud.secrets.v1beta1.ListSecretsRequest;
-import com.google.cloud.secrets.v1beta1.ListSecretsResponse;
-import com.google.cloud.secrets.v1beta1.ProjectName;
-import com.google.cloud.secrets.v1beta1.Secret;
-import com.google.cloud.secrets.v1beta1.SecretName;
-import com.google.cloud.secrets.v1beta1.SecretPayload;
-import com.google.cloud.secrets.v1beta1.SecretVersion;
-import com.google.cloud.secrets.v1beta1.SecretVersionName;
-import com.google.cloud.secrets.v1beta1.UpdateSecretRequest;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
@@ -55,6 +34,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -74,7 +54,7 @@ public class SecretManagerServiceClientTest {
     mockSecretManagerService = new MockSecretManagerService();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1", Arrays.<MockGrpcService>asList(mockSecretManagerService));
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockSecretManagerService));
     serviceHelper.start();
   }
 

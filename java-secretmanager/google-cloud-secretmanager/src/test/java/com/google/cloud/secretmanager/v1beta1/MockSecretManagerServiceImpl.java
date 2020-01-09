@@ -16,24 +16,7 @@
 package com.google.cloud.secretmanager.v1beta1;
 
 import com.google.api.core.BetaApi;
-import com.google.cloud.secrets.v1beta1.AccessSecretVersionRequest;
-import com.google.cloud.secrets.v1beta1.AccessSecretVersionResponse;
-import com.google.cloud.secrets.v1beta1.AddSecretVersionRequest;
-import com.google.cloud.secrets.v1beta1.CreateSecretRequest;
-import com.google.cloud.secrets.v1beta1.DeleteSecretRequest;
-import com.google.cloud.secrets.v1beta1.DestroySecretVersionRequest;
-import com.google.cloud.secrets.v1beta1.DisableSecretVersionRequest;
-import com.google.cloud.secrets.v1beta1.EnableSecretVersionRequest;
-import com.google.cloud.secrets.v1beta1.GetSecretRequest;
-import com.google.cloud.secrets.v1beta1.GetSecretVersionRequest;
-import com.google.cloud.secrets.v1beta1.ListSecretVersionsRequest;
-import com.google.cloud.secrets.v1beta1.ListSecretVersionsResponse;
-import com.google.cloud.secrets.v1beta1.ListSecretsRequest;
-import com.google.cloud.secrets.v1beta1.ListSecretsResponse;
-import com.google.cloud.secrets.v1beta1.Secret;
-import com.google.cloud.secrets.v1beta1.SecretManagerServiceGrpc.SecretManagerServiceImplBase;
-import com.google.cloud.secrets.v1beta1.SecretVersion;
-import com.google.cloud.secrets.v1beta1.UpdateSecretRequest;
+import com.google.cloud.secretmanager.v1beta1.SecretManagerServiceGrpc.SecretManagerServiceImplBase;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
