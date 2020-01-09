@@ -218,7 +218,7 @@ public abstract class ServiceOptions<
       }
 
       if (this.quotaProjectId == null && credentials instanceof QuotaProjectIdProvider) {
-        this.quotaProjectId = ((ServiceAccountCredentials) credentials).getQuotaProjectId();
+        this.quotaProjectId = ((QuotaProjectIdProvider) credentials).getQuotaProjectId();
       }
       return self();
     }
