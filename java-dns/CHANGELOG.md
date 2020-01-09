@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.117.3](https://www.github.com/googleapis/java-dns/compare/v0.117.2...v0.117.3) (2020-01-07)
+
+
+### Dependencies
+
+* update core dependencies ([#37](https://www.github.com/googleapis/java-dns/issues/37)) ([e2e7ed6](https://www.github.com/googleapis/java-dns/commit/e2e7ed67896d026cc343ffdeb892d30907f02971))
+* update core dependencies to v1.92.1 ([#42](https://www.github.com/googleapis/java-dns/issues/42)) ([ab2abd9](https://www.github.com/googleapis/java-dns/commit/ab2abd95ff2ecfd2321f8de46f98d2abbf7e9e2f))
+* update dependency com.google.api-client:google-api-client-bom to v1.30.7 ([#28](https://www.github.com/googleapis/java-dns/issues/28)) ([23fef1d](https://www.github.com/googleapis/java-dns/commit/23fef1d2d818ac2bac86b347a223de47e84ac867))
+* update dependency com.google.apis:google-api-services-dns to v1-rev20191205-1.30.3 ([#45](https://www.github.com/googleapis/java-dns/issues/45)) ([a3877c2](https://www.github.com/googleapis/java-dns/commit/a3877c2a3869a9790203003e2da4fec73e940251))
+* update dependency com.google.auth:google-auth-library-bom to v0.19.0 ([#30](https://www.github.com/googleapis/java-dns/issues/30)) ([c7ee82d](https://www.github.com/googleapis/java-dns/commit/c7ee82dae2aec00f2610dba7dc7c7572855090d0))
+* update dependency com.google.guava:guava-bom to v28.2-android ([f703969](https://www.github.com/googleapis/java-dns/commit/f70396932ac9d50c00c8c38242ded3321cbc39bd))
+* update dependency com.google.http-client:google-http-client-bom to v1.34.0 ([#32](https://www.github.com/googleapis/java-dns/issues/32)) ([44f5459](https://www.github.com/googleapis/java-dns/commit/44f54593857e2604e6cfc9ea14daa7e150dd83fe))
+
 ### [0.117.2](https://www.github.com/googleapis/java-dns/compare/v0.117.1...v0.117.2) (2019-11-15)
 
 
