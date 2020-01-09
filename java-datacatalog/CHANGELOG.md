@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.31.0](https://www.github.com/googleapis/java-datacatalog/compare/v0.30.0...v0.31.0) (2020-01-07)
+
+
+### Features
+
+* add isRequired to TagTemplateField ([#49](https://www.github.com/googleapis/java-datacatalog/issues/49)) ([f6f2480](https://www.github.com/googleapis/java-datacatalog/commit/f6f2480e7ddb63ba7a0419534236397fb2460e74))
+
+
+### Dependencies
+
+* update core dependencies ([#52](https://www.github.com/googleapis/java-datacatalog/issues/52)) ([1d69141](https://www.github.com/googleapis/java-datacatalog/commit/1d69141a604769e12e31a6976383b64a90b40011))
+* update dependency com.google.protobuf:protobuf-java to v3.11.1 ([2a4e568](https://www.github.com/googleapis/java-datacatalog/commit/2a4e568e36e54bb4fb81dd300858778c1def203b))
+* update dependency io.grpc:grpc-bom to v1.26.0 ([#48](https://www.github.com/googleapis/java-datacatalog/issues/48)) ([1e625eb](https://www.github.com/googleapis/java-datacatalog/commit/1e625eb09e4069aa805455c21e3be4c8022b31a1))
+
+
+### Documentation
+
+* **regen:** updated docs from protoc update ([#42](https://www.github.com/googleapis/java-datacatalog/issues/42)) ([87883e1](https://www.github.com/googleapis/java-datacatalog/commit/87883e1effed1815dd53adf1f5fc39b86508b2e2))
+
 ## [0.30.0](https://www.github.com/googleapis/java-datacatalog/compare/v0.29.0...v0.30.0) (2019-11-20)
 
 
