@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.116.2](https://www.github.com/googleapis/java-video-intelligence/compare/v0.116.1...v0.116.2) (2020-01-07)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java to v3.11.1 ([edf6a3e](https://www.github.com/googleapis/java-video-intelligence/commit/edf6a3e79dc72de62ed46a7a2cb1ddb3ee343b22))
+* update dependency io.grpc:grpc-bom to v1.26.0 ([#40](https://www.github.com/googleapis/java-video-intelligence/issues/40)) ([0620647](https://www.github.com/googleapis/java-video-intelligence/commit/0620647fb6ad97ecde5d5736eb054b8d52e4f99f))
+* update gax.version to v1.52.0 ([#31](https://www.github.com/googleapis/java-video-intelligence/issues/31)) ([92df752](https://www.github.com/googleapis/java-video-intelligence/commit/92df752e2f9b52e0b967b2fcdb32511429fe9408))
+
+
+### Documentation
+
+* **regen:** updated javadocs from protoc update ([#34](https://www.github.com/googleapis/java-video-intelligence/issues/34)) ([fdc1bb5](https://www.github.com/googleapis/java-video-intelligence/commit/fdc1bb5d136d36aa3919a56557e62c1b8d24220f))
+
 ### [0.116.1](https://www.github.com/googleapis/java-video-intelligence/compare/v0.116.0...v0.116.1) (2019-11-26)
 
 
