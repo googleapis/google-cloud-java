@@ -1,5 +1,20 @@
 # Changelog
 
+### [0.118.1](https://www.github.com/googleapis/java-dataproc/compare/v0.118.0...v0.118.1) (2020-01-07)
+
+
+### Dependencies
+
+* update core dependencies ([#42](https://www.github.com/googleapis/java-dataproc/issues/42)) ([0f76b61](https://www.github.com/googleapis/java-dataproc/commit/0f76b61bdc53738e941da9fc6987c141bea4df68))
+* update dependency io.grpc:grpc-bom to v1.26.0 ([#39](https://www.github.com/googleapis/java-dataproc/issues/39)) ([1156a6b](https://www.github.com/googleapis/java-dataproc/commit/1156a6b21b8fde07a56d4ab4a8c280266ef78249))
+* update gax.version to v1.51.0 ([#28](https://www.github.com/googleapis/java-dataproc/issues/28)) ([45314dc](https://www.github.com/googleapis/java-dataproc/commit/45314dc50947d5375378baea07db76020940789f))
+
+
+### Documentation
+
+* **regen:** updated javadocs from protoc update ([#34](https://www.github.com/googleapis/java-dataproc/issues/34)) ([a87d161](https://www.github.com/googleapis/java-dataproc/commit/a87d1614eeacf5e1b5ff303f8e09ab930737061b))
+* **regen:** updated javadocs from protos ([#40](https://www.github.com/googleapis/java-dataproc/issues/40)) ([f174b99](https://www.github.com/googleapis/java-dataproc/commit/f174b992fa65dbade37dc1df210b477d44af6758))
+
 ## [0.118.0](https://www.github.com/googleapis/java-dataproc/compare/0.117.0...v0.118.0) (2019-12-05)
 
 
