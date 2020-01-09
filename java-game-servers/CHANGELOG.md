@@ -1,5 +1,14 @@
 # Changelog
 
+### [0.18.1](https://www.github.com/googleapis/java-gameservices/compare/v0.18.0...v0.18.1) (2020-01-03)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java to v3.11.1 ([b6ba2b1](https://www.github.com/googleapis/java-gameservices/commit/b6ba2b119f7c8dd29248a5998d6fb04bf4424d5b))
+* update dependency io.grpc:grpc-bom to v1.26.0 ([#31](https://www.github.com/googleapis/java-gameservices/issues/31)) ([72425d9](https://www.github.com/googleapis/java-gameservices/commit/72425d92ec72677a83dc36a5c8d99b30595ac4f7))
+* update gax.version to v1.52.0 ([#26](https://www.github.com/googleapis/java-gameservices/issues/26)) ([76daba9](https://www.github.com/googleapis/java-gameservices/commit/76daba944b5a5e883e812f9116fcce95db16b7ed))
+
 ## [0.18.0](https://www.github.com/googleapis/java-gameservices/compare/v0.17.0...v0.18.0) (2019-11-18)
 
 
