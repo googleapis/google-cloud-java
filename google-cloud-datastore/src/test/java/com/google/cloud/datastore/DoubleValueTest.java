@@ -27,14 +27,14 @@ public class DoubleValueTest {
   private static final Double CONTENT = 1.25;
 
   @Test
-  public void testToBuilder() throws Exception {
+  public void testToBuilder() {
     DoubleValue value = DoubleValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testOf() throws Exception {
+  public void testOf() {
     DoubleValue value = DoubleValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
@@ -42,7 +42,7 @@ public class DoubleValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() throws Exception {
+  public void testBuilder() {
     DoubleValue.Builder builder = DoubleValue.newBuilder(CONTENT);
     DoubleValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

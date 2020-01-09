@@ -52,7 +52,7 @@ public class BaseKeyTest {
   }
 
   @Test
-  public void testProjectId() throws Exception {
+  public void testProjectId() {
     Builder builder = new Builder("ds1", "k");
     BaseKey key = builder.build();
     assertEquals("ds1", key.getProjectId());
@@ -61,18 +61,18 @@ public class BaseKeyTest {
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testBadDatasetInConstructor() throws Exception {
+  public void testBadDatasetInConstructor() {
     new Builder(" ", "k");
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testBadDatasetInSetter() throws Exception {
+  public void testBadDatasetInSetter() {
     Builder builder = new Builder("d", "k");
     builder.setProjectId(" ");
   }
 
   @Test
-  public void testNamespace() throws Exception {
+  public void testNamespace() {
     Builder builder = new Builder("ds", "k");
     BaseKey key = builder.build();
     assertTrue(key.getNamespace() != null);
@@ -82,7 +82,7 @@ public class BaseKeyTest {
   }
 
   @Test
-  public void testKind() throws Exception {
+  public void testKind() {
     Builder builder = new Builder("ds", "k1");
     BaseKey key = builder.build();
     assertEquals("k1", key.getKind());

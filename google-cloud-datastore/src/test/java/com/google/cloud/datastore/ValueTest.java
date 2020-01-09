@@ -114,14 +114,14 @@ public class ValueTest {
   }
 
   @Test
-  public void testType() throws Exception {
+  public void testType() {
     for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
       assertEquals(entry.getKey(), entry.getValue().getType());
     }
   }
 
   @Test
-  public void testExcludeFromIndexes() throws Exception {
+  public void testExcludeFromIndexes() {
     for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
       assertFalse(entry.getValue().excludeFromIndexes());
     }
@@ -133,13 +133,13 @@ public class ValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testMeaning() throws Exception {
+  public void testMeaning() {
     TestBuilder builder = new TestBuilder();
     assertEquals(10, builder.setMeaning(10).build().getMeaning());
   }
 
   @Test
-  public void testGet() throws Exception {
+  public void testGet() {
     for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
       ValueType valueType = entry.getKey();
       Value<?> value = entry.getValue();
@@ -153,7 +153,7 @@ public class ValueTest {
 
   @SuppressWarnings({"unchecked", "deprecation"})
   @Test
-  public void testToBuilder() throws Exception {
+  public void testToBuilder() {
     Set<String> content = Collections.singleton("bla");
     @SuppressWarnings("rawtypes")
     ValueBuilder builder = new TestBuilder();

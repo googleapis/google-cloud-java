@@ -27,13 +27,13 @@ public class BlobValueTest {
   private static final Blob CONTENT = Blob.copyFrom(new byte[] {1, 2});
 
   @Test
-  public void testToBuilder() throws Exception {
+  public void testToBuilder() {
     BlobValue value = BlobValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @Test
-  public void testOf() throws Exception {
+  public void testOf() {
     BlobValue value = BlobValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
@@ -41,7 +41,7 @@ public class BlobValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() throws Exception {
+  public void testBuilder() {
     BlobValue.Builder builder = BlobValue.newBuilder(CONTENT);
     BlobValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

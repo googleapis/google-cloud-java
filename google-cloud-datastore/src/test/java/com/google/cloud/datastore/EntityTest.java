@@ -32,14 +32,14 @@ public class EntityTest {
       Entity.newBuilder(INCOMPLETE_KEY).set("a", "b").build();
 
   @Test
-  public void testEntity() throws Exception {
+  public void testEntity() {
     assertTrue(ENTITY.hasKey());
     assertEquals(KEY1, ENTITY.getKey());
     assertEquals("bar", ENTITY.getString("foo"));
   }
 
   @Test
-  public void testCopyFrom() throws Exception {
+  public void testCopyFrom() {
     Entity.Builder builder = Entity.newBuilder(ENTITY);
     assertEquals(ENTITY, builder.build());
     Entity entity = builder.setKey(KEY2).build();
@@ -49,7 +49,7 @@ public class EntityTest {
   }
 
   @Test
-  public void testCopyFromIncompleteEntity() throws Exception {
+  public void testCopyFromIncompleteEntity() {
     Entity.Builder builder = Entity.newBuilder(KEY2, INCOMPLETE_ENTITY);
     Entity entity = builder.build();
     assertNotEquals(INCOMPLETE_ENTITY, entity);

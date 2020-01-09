@@ -26,13 +26,13 @@ import org.junit.Test;
 public class NullValueTest {
 
   @Test
-  public void testToBuilder() throws Exception {
+  public void testToBuilder() {
     NullValue value = NullValue.of();
     assertEquals(value, value.toBuilder().build());
   }
 
   @Test
-  public void testOf() throws Exception {
+  public void testOf() {
     NullValue value = NullValue.of();
     assertNull(value.get());
     assertFalse(value.excludeFromIndexes());
@@ -40,7 +40,7 @@ public class NullValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() throws Exception {
+  public void testBuilder() {
     NullValue.Builder builder = NullValue.newBuilder();
     NullValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertNull(value.get());

@@ -45,26 +45,26 @@ public class BlobTest {
   }
 
   @Test
-  public void testEquals() throws Exception {
+  public void testEquals() {
     assertEquals(blob1, blob1);
     assertEquals(blob1, Blob.copyFrom(bytes1));
     assertNotEquals(blob1, blob2);
   }
 
   @Test
-  public void testLength() throws Exception {
+  public void testLength() {
     assertEquals(bytes1.length, blob1.getLength());
     assertEquals(bytes2.length, blob2.getLength());
   }
 
   @Test
-  public void testToByteArray() throws Exception {
+  public void testToByteArray() {
     assertArrayEquals(bytes1, blob1.toByteArray());
     assertArrayEquals(bytes2, blob2.toByteArray());
   }
 
   @Test
-  public void testAsReadOnlyByteBuffer() throws Exception {
+  public void testAsReadOnlyByteBuffer() {
     ByteBuffer buffer = blob1.asReadOnlyByteBuffer();
     byte[] bytes = new byte[bytes1.length];
     buffer.get(bytes);
@@ -82,7 +82,7 @@ public class BlobTest {
   }
 
   @Test
-  public void testCopyTo() throws Exception {
+  public void testCopyTo() {
     byte[] bytes = new byte[bytes1.length];
     blob1.copyTo(bytes);
     assertArrayEquals(bytes1, bytes);

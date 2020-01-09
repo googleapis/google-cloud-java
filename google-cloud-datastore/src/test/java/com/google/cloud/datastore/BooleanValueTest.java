@@ -25,13 +25,13 @@ import org.junit.Test;
 public class BooleanValueTest {
 
   @Test
-  public void testToBuilder() throws Exception {
+  public void testToBuilder() {
     BooleanValue value = BooleanValue.of(true);
     assertEquals(value, value.toBuilder().build());
   }
 
   @Test
-  public void testOf() throws Exception {
+  public void testOf() {
     BooleanValue value = BooleanValue.of(false);
     assertFalse(value.get());
     assertFalse(value.excludeFromIndexes());
@@ -39,7 +39,7 @@ public class BooleanValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() throws Exception {
+  public void testBuilder() {
     BooleanValue.Builder builder = BooleanValue.newBuilder(true);
     BooleanValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertTrue(value.get());

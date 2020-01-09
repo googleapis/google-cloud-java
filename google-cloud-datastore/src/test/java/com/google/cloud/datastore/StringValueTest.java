@@ -27,13 +27,13 @@ public class StringValueTest {
   private static final String CONTENT = "hello world";
 
   @Test
-  public void testToBuilder() throws Exception {
+  public void testToBuilder() {
     StringValue value = StringValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @Test
-  public void testOf() throws Exception {
+  public void testOf() {
     StringValue value = StringValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
@@ -41,7 +41,7 @@ public class StringValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() throws Exception {
+  public void testBuilder() {
     StringValue.Builder builder = StringValue.newBuilder(CONTENT);
     StringValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

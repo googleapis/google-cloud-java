@@ -48,7 +48,7 @@ public class DatastoreHelperTest {
   }
 
   @Test
-  public void testAllocateId() throws Exception {
+  public void testAllocateId() {
     Datastore datastore = createStrictMock(Datastore.class);
     IncompleteKey pKey1 = IncompleteKey.newBuilder("ds", "k").build();
     Key key1 = Key.newBuilder(pKey1, 1).build();

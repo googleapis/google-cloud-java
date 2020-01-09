@@ -28,13 +28,13 @@ public class TimestampValueTest {
   private static final Timestamp CONTENT = Timestamp.now();
 
   @Test
-  public void testToBuilder() throws Exception {
+  public void testToBuilder() {
     TimestampValue value = TimestampValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @Test
-  public void testOf() throws Exception {
+  public void testOf() {
     TimestampValue value = TimestampValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
@@ -42,7 +42,7 @@ public class TimestampValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() throws Exception {
+  public void testBuilder() {
     TimestampValue.Builder builder = TimestampValue.newBuilder(CONTENT);
     TimestampValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

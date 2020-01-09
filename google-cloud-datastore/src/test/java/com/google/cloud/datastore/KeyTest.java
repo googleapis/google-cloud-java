@@ -25,7 +25,7 @@ import org.junit.Test;
 public class KeyTest {
 
   @Test
-  public void testHasId() throws Exception {
+  public void testHasId() {
     Key.Builder builder = Key.newBuilder("d", "k", 10);
     Key key = builder.build();
     assertTrue(key.hasId());
@@ -34,7 +34,7 @@ public class KeyTest {
   }
 
   @Test
-  public void testId() throws Exception {
+  public void testId() {
     Key.Builder builder = Key.newBuilder("d", "k", 10);
     Key key = builder.build();
     assertEquals(Long.valueOf(10), key.getId());
@@ -43,7 +43,7 @@ public class KeyTest {
   }
 
   @Test
-  public void testHasName() throws Exception {
+  public void testHasName() {
     Key.Builder builder = Key.newBuilder("d", "k", "n");
     Key key = builder.build();
     assertTrue(key.hasName());
@@ -52,7 +52,7 @@ public class KeyTest {
   }
 
   @Test
-  public void testName() throws Exception {
+  public void testName() {
     Key.Builder builder = Key.newBuilder("d", "k", "n");
     Key key = builder.build();
     assertEquals("n", key.getName());
@@ -61,7 +61,7 @@ public class KeyTest {
   }
 
   @Test
-  public void testNameOrId() throws Exception {
+  public void testNameOrId() {
     Key.Builder builder = Key.newBuilder("d", "k", "n");
     Key key = builder.build();
     assertEquals("n", key.getNameOrId());
@@ -70,7 +70,7 @@ public class KeyTest {
   }
 
   @Test
-  public void testToAndFromUrlSafe() throws Exception {
+  public void testToAndFromUrlSafe() {
     Key key = Key.newBuilder("d", "k", "n").build();
     String urlSafe = key.toUrlSafe();
     Key copy = Key.fromUrlSafe(urlSafe);

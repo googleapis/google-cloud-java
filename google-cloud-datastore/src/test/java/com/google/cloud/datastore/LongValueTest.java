@@ -27,14 +27,14 @@ public class LongValueTest {
   private static final Long CONTENT = 125L;
 
   @Test
-  public void testToBuilder() throws Exception {
+  public void testToBuilder() {
     LongValue value = LongValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testOf() throws Exception {
+  public void testOf() {
     LongValue value = LongValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
@@ -42,7 +42,7 @@ public class LongValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() throws Exception {
+  public void testBuilder() {
     LongValue.Builder builder = LongValue.newBuilder(CONTENT);
     LongValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

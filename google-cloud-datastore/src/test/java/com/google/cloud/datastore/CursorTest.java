@@ -31,19 +31,19 @@ public class CursorTest {
   private Cursor cursor2;
 
   @Before
-  public void setUp() throws Exception {
+  public void setUp() {
     cursor1 = new Cursor(ByteString.copyFrom(bytes1));
     cursor2 = new Cursor(ByteString.copyFrom(bytes2));
   }
 
   @Test
-  public void testToFromUrlSafe() throws Exception {
+  public void testToFromUrlSafe() {
     String urlSafe = cursor1.toUrlSafe();
     assertEquals(cursor1, Cursor.fromUrlSafe(urlSafe));
   }
 
   @Test
-  public void testCopyFrom() throws Exception {
+  public void testCopyFrom() {
     Cursor cursor = Cursor.copyFrom(bytes2);
     assertEquals(cursor2, cursor);
     assertNotEquals(cursor1, cursor);

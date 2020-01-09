@@ -36,7 +36,7 @@ import org.junit.Test;
 public class DatastoreExceptionTest {
 
   @Test
-  public void testDatastoreException() throws Exception {
+  public void testDatastoreException() {
     DatastoreException exception = new DatastoreException(10, "message", "ABORTED");
     assertEquals(10, exception.getCode());
     assertEquals("ABORTED", exception.getReason());
@@ -79,7 +79,7 @@ public class DatastoreExceptionTest {
   }
 
   @Test
-  public void testTranslateAndThrow() throws Exception {
+  public void testTranslateAndThrow() {
     Exception cause = new DatastoreException(14, "message", "UNAVAILABLE");
     RetryHelper.RetryHelperException exceptionMock =
         createMock(RetryHelper.RetryHelperException.class);
@@ -112,7 +112,7 @@ public class DatastoreExceptionTest {
   }
 
   @Test
-  public void testThrowInvalidRequest() throws Exception {
+  public void testThrowInvalidRequest() {
     try {
       DatastoreException.throwInvalidRequest("message %s %d", "a", 1);
       fail("Exception expected");

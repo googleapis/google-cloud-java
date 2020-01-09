@@ -76,7 +76,7 @@ public class KeyFactoryTest {
   }
 
   @Test
-  public void testNewKey() throws Exception {
+  public void testNewKey() {
     Key key = keyFactory.newKey(1);
     verifyKey(key, 1L, "");
     key = keyFactory.newKey("n");
@@ -88,7 +88,7 @@ public class KeyFactoryTest {
   }
 
   @Test
-  public void testNewIncompleteKey() throws Exception {
+  public void testNewIncompleteKey() {
     IncompleteKey key = keyFactory.newKey();
     verifyIncompleteKey(key, "");
     PathElement p1 = PathElement.of("k1", "n");

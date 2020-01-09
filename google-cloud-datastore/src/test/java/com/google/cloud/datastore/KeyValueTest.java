@@ -27,14 +27,14 @@ public class KeyValueTest {
   private static final Key CONTENT = Key.newBuilder("ds", "kind", 1).build();
 
   @Test
-  public void testToBuilder() throws Exception {
+  public void testToBuilder() {
     KeyValue value = KeyValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testOf() throws Exception {
+  public void testOf() {
     KeyValue value = KeyValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
@@ -42,7 +42,7 @@ public class KeyValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() throws Exception {
+  public void testBuilder() {
     KeyValue.Builder builder = KeyValue.newBuilder(CONTENT);
     KeyValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

@@ -30,42 +30,42 @@ public class PathElementTest {
   private static final PathElement PE_3 = PathElement.of("k3", 1);
 
   @Test
-  public void testKind() throws Exception {
+  public void testKind() {
     assertEquals("k1", PE_1.getKind());
     assertEquals("k2", PE_2.getKind());
     assertEquals("k3", PE_3.getKind());
   }
 
   @Test
-  public void testHasId() throws Exception {
+  public void testHasId() {
     assertFalse(PE_1.hasId());
     assertFalse(PE_2.hasId());
     assertTrue(PE_3.hasId());
   }
 
   @Test
-  public void testId() throws Exception {
+  public void testId() {
     assertNull(PE_1.getId());
     assertNull(PE_2.getId());
     assertEquals(Long.valueOf(1), PE_3.getId());
   }
 
   @Test
-  public void testHasName() throws Exception {
+  public void testHasName() {
     assertFalse(PE_1.hasName());
     assertTrue(PE_2.hasName());
     assertFalse(PE_3.hasName());
   }
 
   @Test
-  public void testName() throws Exception {
+  public void testName() {
     assertNull(PE_1.getName());
     assertEquals("n", PE_2.getName());
     assertNull(PE_3.getName());
   }
 
   @Test
-  public void testNameOrId() throws Exception {
+  public void testNameOrId() {
     assertNull(PE_1.getNameOrId());
     assertEquals("n", PE_2.getNameOrId());
     assertEquals(Long.valueOf(1), PE_3.getNameOrId());

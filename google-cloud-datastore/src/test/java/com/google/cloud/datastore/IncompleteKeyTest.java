@@ -37,7 +37,7 @@ public class IncompleteKeyTest {
   }
 
   @Test
-  public void testBuilders() throws Exception {
+  public void testBuilders() {
     assertEquals("ds", pk1.getProjectId());
     assertEquals("kind1", pk1.getKind());
     assertTrue(pk1.getAncestors().isEmpty());

@@ -36,7 +36,7 @@ public class FullEntityTest {
       Entity.newBuilder(INCOMPLETE_KEY).set("a", "b").build();
 
   @Test
-  public void testFullEntity() throws Exception {
+  public void testFullEntity() {
     assertTrue(COMPLETE_ENTITY1.hasKey());
     assertEquals(KEY1, COMPLETE_ENTITY1.getKey());
     assertEquals("bar", COMPLETE_ENTITY1.getString("foo"));
@@ -47,7 +47,7 @@ public class FullEntityTest {
   }
 
   @Test
-  public void testNoKey() throws Exception {
+  public void testNoKey() {
     FullEntity<IncompleteKey> entity = FullEntity.newBuilder().set("foo", "bar").build();
     assertFalse(entity.hasKey());
     assertNull(entity.getKey());
@@ -59,7 +59,7 @@ public class FullEntityTest {
   }
 
   @Test
-  public void testCopyFrom() throws Exception {
+  public void testCopyFrom() {
     FullEntity.Builder<Key> builder1 = FullEntity.newBuilder(ENTITY);
     assertEquals(ENTITY, builder1.build());
 

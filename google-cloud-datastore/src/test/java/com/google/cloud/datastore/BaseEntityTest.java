@@ -79,7 +79,7 @@ public class BaseEntityTest {
   }
 
   @Test
-  public void testContains() throws Exception {
+  public void testContains() {
     BaseEntity<Key> entity = builder.build();
     assertTrue(entity.contains("list1"));
     assertFalse(entity.contains("bla"));
@@ -88,19 +88,19 @@ public class BaseEntityTest {
   }
 
   @Test
-  public void testGetValue() throws Exception {
+  public void testGetValue() {
     BaseEntity<Key> entity = builder.build();
     assertEquals(BlobValue.of(BLOB), entity.getValue("blob"));
   }
 
   @Test(expected = DatastoreException.class)
-  public void testGetValueNotFound() throws Exception {
+  public void testGetValueNotFound() {
     BaseEntity<Key> entity = builder.clear().build();
     entity.getValue("blob");
   }
 
   @Test
-  public void testIsNull() throws Exception {
+  public void testIsNull() {
     BaseEntity<Key> entity = builder.build();
     assertTrue(entity.isNull("null"));
     assertFalse(entity.isNull("blob"));
@@ -109,13 +109,13 @@ public class BaseEntityTest {
   }
 
   @Test(expected = DatastoreException.class)
-  public void testIsNullNotFound() throws Exception {
+  public void testIsNullNotFound() {
     BaseEntity<Key> entity = builder.clear().build();
     entity.isNull("null");
   }
 
   @Test
-  public void testGetString() throws Exception {
+  public void testGetString() {
     BaseEntity<Key> entity = builder.build();
     assertEquals("hello world", entity.getString("string"));
     assertEquals("bla", entity.getString("stringValue"));
@@ -124,7 +124,7 @@ public class BaseEntityTest {
   }
 
   @Test
-  public void testGetLong() throws Exception {
+  public void testGetLong() {
     BaseEntity<Key> entity = builder.build();
     assertEquals(125, entity.getLong("long"));
     entity = builder.set("long", LongValue.of(10)).build();
@@ -132,7 +132,7 @@ public class BaseEntityTest {
   }
 
   @Test
-  public void testGetDouble() throws Exception {
+  public void testGetDouble() {
     BaseEntity<Key> entity = builder.build();
     assertEquals(1.25, entity.getDouble("double"), 0);
     entity = builder.set("double", DoubleValue.of(10)).build();
@@ -148,7 +148,7 @@ public class BaseEntityTest {
   }
 
   @Test
-  public void testGetTimestamp() throws Exception {
+  public void testGetTimestamp() {
     BaseEntity<Key> entity = builder.build();
     assertEquals(TIMESTAMP, entity.getTimestamp("timestamp"));
     Calendar cal = Calendar.getInstance();
@@ -159,13 +159,13 @@ public class BaseEntityTest {
   }
 
   @Test
-  public void testGetLatLng() throws Exception {
+  public void testGetLatLng() {
     BaseEntity<Key> entity = builder.build();
     assertEquals(LAT_LNG, entity.getLatLng("latLng"));
   }
 
   @Test
-  public void testGetKey() throws Exception {
+  public void testGetKey() {
     BaseEntity<Key> entity = builder.build();
     assertEquals(KEY, entity.getKey("key"));
     Key key = Key.newBuilder(KEY).setName("BLA").build();
@@ -174,7 +174,7 @@ public class BaseEntityTest {
   }
 
   @Test
-  public void testGetEntity() throws Exception {
+  public void testGetEntity() {
     BaseEntity<Key> entity = builder.build();
     assertEquals(ENTITY, entity.getEntity("entity"));
     assertEquals(PARTIAL_ENTITY, entity.getEntity("partialEntity"));
@@ -183,7 +183,7 @@ public class BaseEntityTest {
   }
 
   @Test
-  public void testGetList() throws Exception {
+  public void testGetList() {
     BaseEntity<Key> entity = builder.build();
     List<? extends Value<?>> list = entity.getList("list1");
     assertEquals(3, list.size());
@@ -213,7 +213,7 @@ public class BaseEntityTest {
   }
 
   @Test
-  public void testGetBlob() throws Exception {
+  public void testGetBlob() {
     BaseEntity<Key> entity = builder.build();
     assertEquals(BLOB, entity.getBlob("blob"));
     Blob blob = Blob.copyFrom(new byte[] {});
@@ -222,7 +222,7 @@ public class BaseEntityTest {
   }
 
   @Test
-  public void testNames() throws Exception {
+  public void testNames() {
     Set<String> names =
         ImmutableSet.<String>builder()
             .add("string", "stringValue", "boolean", "double", "long", "list1", "list2", "list3")
@@ -236,7 +236,7 @@ public class BaseEntityTest {
   }
 
   @Test
-  public void testKey() throws Exception {
+  public void testKey() {
     builder.setKey(KEY);
     BaseEntity<Key> entity = builder.build();
     assertEquals(KEY, entity.getKey());

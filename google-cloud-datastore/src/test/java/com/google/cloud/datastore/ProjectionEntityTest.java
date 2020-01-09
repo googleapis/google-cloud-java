@@ -49,25 +49,25 @@ public class ProjectionEntityTest {
           .build();
 
   @Test
-  public void testHasKey() throws Exception {
+  public void testHasKey() {
     assertTrue(ENTITY1.hasKey());
     assertFalse(ENTITY2.hasKey());
   }
 
   @Test
-  public void testKey() throws Exception {
+  public void testKey() {
     assertEquals(KEY, ENTITY1.getKey());
     assertNull(ENTITY2.getKey());
   }
 
   @Test
-  public void testGetBlob() throws Exception {
+  public void testGetBlob() {
     assertArrayEquals(STRING_INDEX_VALUE.get().getBytes(), ENTITY2.getBlob("a").toByteArray());
     assertEquals(BLOB_VALUE.get(), ENTITY2.getBlob("b"));
   }
 
   @Test
-  public void testGetTimestamp() throws Exception {
+  public void testGetTimestamp() {
     assertEquals(TIMESTAMP_VALUE.get(), ENTITY2.getTimestamp("c"));
     assertEquals(TIMESTAMP_VALUE.get(), ENTITY2.getTimestamp("d"));
   }

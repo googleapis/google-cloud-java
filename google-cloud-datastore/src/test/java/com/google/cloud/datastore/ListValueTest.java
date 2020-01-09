@@ -50,13 +50,13 @@ public class ListValueTest {
   private static final Blob BLOB2 = Blob.copyFrom(new byte[] {0xB, 0x0, 0x0, 0x0});
 
   @Test
-  public void testToBuilder() throws Exception {
+  public void testToBuilder() {
     ListValue value = ListValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @Test
-  public void testOf() throws Exception {
+  public void testOf() {
     ListValue value = ListValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
@@ -106,7 +106,7 @@ public class ListValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() throws Exception {
+  public void testBuilder() {
     ListValue.Builder builder = ListValue.newBuilder().set(CONTENT);
     ListValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

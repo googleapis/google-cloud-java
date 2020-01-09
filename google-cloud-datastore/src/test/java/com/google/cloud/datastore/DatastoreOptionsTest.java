@@ -53,28 +53,28 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testProjectId() throws Exception {
+  public void testProjectId() {
     assertEquals(PROJECT_ID, options.build().getProjectId());
   }
 
   @Test
-  public void testHost() throws Exception {
+  public void testHost() {
     assertEquals("http://localhost:" + PORT, options.build().getHost());
   }
 
   @Test
-  public void testNamespace() throws Exception {
+  public void testNamespace() {
     assertTrue(options.build().getNamespace().isEmpty());
     assertEquals("ns1", options.setNamespace("ns1").build().getNamespace());
   }
 
   @Test
-  public void testDatastore() throws Exception {
+  public void testDatastore() {
     assertSame(datastoreRpc, options.build().getRpc());
   }
 
   @Test
-  public void testToBuilder() throws Exception {
+  public void testToBuilder() {
     DatastoreOptions original = options.setNamespace("ns1").build();
     DatastoreOptions copy = original.toBuilder().build();
     assertEquals(original.getProjectId(), copy.getProjectId());

@@ -28,14 +28,14 @@ public class EntityValueTest {
   private static final Entity CONTENT = Entity.newBuilder(KEY).set("FOO", "BAR").build();
 
   @Test
-  public void testToBuilder() throws Exception {
+  public void testToBuilder() {
     EntityValue value = EntityValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testOf() throws Exception {
+  public void testOf() {
     EntityValue value = EntityValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
@@ -43,7 +43,7 @@ public class EntityValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() throws Exception {
+  public void testBuilder() {
     EntityValue.Builder builder = EntityValue.newBuilder(CONTENT);
     EntityValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

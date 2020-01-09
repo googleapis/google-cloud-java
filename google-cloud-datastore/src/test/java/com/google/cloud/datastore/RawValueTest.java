@@ -27,13 +27,13 @@ public class RawValueTest {
   private static final com.google.datastore.v1.Value CONTENT = StringValue.of("hello").toPb();
 
   @Test
-  public void testToBuilder() throws Exception {
+  public void testToBuilder() {
     RawValue value = RawValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @Test
-  public void testOf() throws Exception {
+  public void testOf() {
     RawValue value = RawValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
@@ -41,7 +41,7 @@ public class RawValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() throws Exception {
+  public void testBuilder() {
     RawValue.Builder builder = RawValue.newBuilder(CONTENT);
     RawValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

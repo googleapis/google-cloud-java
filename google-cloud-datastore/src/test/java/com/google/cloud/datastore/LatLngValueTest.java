@@ -27,14 +27,14 @@ public class LatLngValueTest {
   private static final LatLng CONTENT = new LatLng(37.4, -122.1);
 
   @Test
-  public void testToBuilder() throws Exception {
+  public void testToBuilder() {
     LatLngValue value = LatLngValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testOf() throws Exception {
+  public void testOf() {
     LatLngValue value = LatLngValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
@@ -42,7 +42,7 @@ public class LatLngValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() throws Exception {
+  public void testBuilder() {
     LatLngValue.Builder builder = LatLngValue.newBuilder(CONTENT);
     LatLngValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());
