@@ -5,9 +5,9 @@
   <artifactId>google-cloud-monitoring-dashboard</artifactId>
   <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring-dashboard:current} -->
   <packaging>jar</packaging>
-  <name>Google Cloud monitoring-dashboard</name>
+  <name>Google Cloud Monitoring Dashboard</name>
   <url>https://github.com/googleapis/java-monitoring-dashboard</url>
-  <description>Java idiomatic client for Google Cloud monitoring-dashboard</description>
+  <description>Java idiomatic client for Google Cloud Monitoring Dashboard</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-monitoring-dashboard-parent</artifactId>
