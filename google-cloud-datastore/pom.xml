@@ -34,11 +34,11 @@
       <groupId>io.grpc</groupId>
       <artifactId>grpc-api</artifactId>
       <exclusions>
-        <!-- currently collides with animal-sniffer-annotations from guava -->
-        <!-- TODO(#3) try to remove after the next bump of guava -->
+        <!-- currently collides with error_prone_annotations from grpc -->
+        <!-- TODO: try to remove after the next bump of grpc -->
         <exclusion>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>animal-sniffer-annotations</artifactId>
+          <groupId>com.google.errorprone</groupId>
+          <artifactId>error_prone_annotations</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
