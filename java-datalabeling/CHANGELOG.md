@@ -1,5 +1,21 @@
 # Changelog
 
+### [0.116.3](https://www.github.com/googleapis/java-datalabeling/compare/v0.116.2...v0.116.3) (2020-01-07)
+
+
+### Dependencies
+
+* update core dependencies ([0093046](https://www.github.com/googleapis/java-datalabeling/commit/00930467e8070cee7edd18db840e2407b91bd171))
+* update dependency com.google.cloud:google-cloud-core to v1.91.3 ([#23](https://www.github.com/googleapis/java-datalabeling/issues/23)) ([c6ff47e](https://www.github.com/googleapis/java-datalabeling/commit/c6ff47e979c5dec772865c173f19b4b16e0de018))
+* update dependency com.google.protobuf:protobuf-java to v3.11.1 ([35bc5f9](https://www.github.com/googleapis/java-datalabeling/commit/35bc5f98302da827a8a51b76b1ad1e63428f5a36))
+* update dependency io.grpc:grpc-bom to v1.26.0 ([#46](https://www.github.com/googleapis/java-datalabeling/issues/46)) ([8c4172d](https://www.github.com/googleapis/java-datalabeling/commit/8c4172d76edf8162263e8b0281a8e57b89c4e270))
+
+
+### Documentation
+
+* regenerate javadoc, update common templates ([#35](https://www.github.com/googleapis/java-datalabeling/issues/35)) ([9d8bb12](https://www.github.com/googleapis/java-datalabeling/commit/9d8bb12f08b74316bec9f25f0de5fa01247e17ce))
+* **regen:** updated javadocs from protoc update ([#41](https://www.github.com/googleapis/java-datalabeling/issues/41)) ([1598b96](https://www.github.com/googleapis/java-datalabeling/commit/1598b96e7002cfe4ac4e4c660ef6b1d56d09b902))
+
 ### [0.116.2](https://www.github.com/googleapis/java-datalabeling/compare/v0.116.1...v0.116.2) (2019-10-23)
 
 
