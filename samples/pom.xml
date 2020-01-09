@@ -27,7 +27,6 @@
     <groupId>com.google.cloud.samples</groupId>
     <artifactId>shared-configuration</artifactId>
     <version>1.0.11</version>
-    <relativePath></relativePath>
   </parent>
 
   <properties>
