@@ -38,10 +38,10 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## About Google Cloud Secret Management
 
-[Google Cloud Secret Management][api-reference] is a suite of Machine Learning products.
+[Google Secrets Management][api-reference] lets developers encrypt, store, manage, and audit infrastructure and application-level secrets.
 
-See the [Google Cloud Secret Management client library docs][javadocs] to learn how to
-use this Google Cloud Secret Management Client Library.
+See the [Google Secrets Management client library docs][javadocs] to learn how to
+use this Google Secrets Management Client Library.
 
 ## Getting Started
 
