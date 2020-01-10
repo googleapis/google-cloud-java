@@ -16,17 +16,16 @@
 package com.google.cloud;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import com.google.api.core.ApiFunction;
 import com.google.common.testing.EqualsTester;
 import java.util.Arrays;
-import org.junit.Rule;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class StringEnumTest {
-
-  @Rule public ExpectedException expectedException = ExpectedException.none();
 
   public static class Letter extends StringEnumValue {
     private static final long serialVersionUID = -1717976087182628526L;
@@ -65,16 +64,19 @@ public class StringEnumTest {
     }
   }
 
-  @Test
+  @Test(expected = NullPointerException.class)
   public void testNullClass() {
-    expectedException.expect(NullPointerException.class);
     new StringEnumType<Letter>(null, Letter.CONSTRUCTOR);
   }
 
   @Test
   public void testNullConstructor() {
-    expectedException.expect(NullPointerException.class);
-    new StringEnumType<Letter>(Letter.class, null);
+    try {
+      new StringEnumType<Letter>(Letter.class, null);
+      Assert.fail();
+    } catch (NullPointerException ex) {
+      assertNull(ex.getMessage());
+    }
   }
 
   @Test
@@ -110,8 +112,12 @@ public class StringEnumTest {
 
   @Test
   public void testValueOfStrict_invalid() {
-    expectedException.expect(IllegalArgumentException.class);
-    Letter.valueOfStrict("NonExistentLetter");
+    try {
+      Letter.valueOfStrict("NonExistentLetter");
+      Assert.fail();
+    } catch (IllegalArgumentException ex) {
+      assertNotNull(ex.getMessage());
+    }
   }
 
   @Test

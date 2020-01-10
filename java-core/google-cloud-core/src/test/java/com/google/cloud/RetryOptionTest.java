@@ -20,13 +20,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import com.google.api.gax.retrying.RetrySettings;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.threeten.bp.Duration;
 
 public class RetryOptionTest {
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   private static final RetryOption TOTAL_TIMEOUT =
       RetryOption.totalTimeout(Duration.ofMillis(420L));

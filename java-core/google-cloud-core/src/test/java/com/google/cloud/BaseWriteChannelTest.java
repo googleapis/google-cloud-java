@@ -31,9 +31,7 @@ import java.nio.channels.ClosedChannelException;
 import java.util.Arrays;
 import java.util.Random;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class BaseWriteChannelTest {
 
@@ -59,8 +57,6 @@ public class BaseWriteChannelTest {
   private static final int DEFAULT_CHUNK_SIZE = 60 * MIN_CHUNK_SIZE; // 15MiB
   private static final Random RANDOM = new Random();
   private static BaseWriteChannel channel;
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Before
   public void setUp() {
@@ -100,10 +96,9 @@ public class BaseWriteChannelTest {
     assertNull(channel.getBuffer());
   }
 
-  @Test
+  @Test(expected = ClosedChannelException.class)
   public void testValidateOpen() throws IOException {
     channel.close();
-    thrown.expect(ClosedChannelException.class);
     channel.write(ByteBuffer.allocate(42));
   }
 

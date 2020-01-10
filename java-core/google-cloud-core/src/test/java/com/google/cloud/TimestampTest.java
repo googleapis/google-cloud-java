@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertNotNull;
 
 import com.google.common.testing.EqualsTester;
 import java.util.Calendar;
@@ -25,9 +26,8 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
-import org.junit.Rule;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -42,8 +42,6 @@ public class TimestampTest {
   private static final long TEST_TIME_MILLISECONDS_NEGATIVE = -1000L;
   private static final Date TEST_DATE = new Date(TEST_TIME_MILLISECONDS);
   private static final Date TEST_DATE_PRE_EPOCH = new Date(TEST_TIME_MILLISECONDS_NEGATIVE);
-
-  @Rule public ExpectedException expectedException = ExpectedException.none();
 
   @Test
   public void minValue() {
@@ -119,38 +117,62 @@ public class TimestampTest {
 
   @Test
   public void boundsSecondsMin() {
-    expectedException.expect(IllegalArgumentException.class);
-    Timestamp.ofTimeSecondsAndNanos(Timestamp.MIN_VALUE.getSeconds() - 1, 999999999);
+    try {
+      Timestamp.ofTimeSecondsAndNanos(Timestamp.MIN_VALUE.getSeconds() - 1, 999999999);
+      Assert.fail();
+    } catch (IllegalArgumentException ex) {
+      assertNotNull(ex.getMessage());
+    }
   }
 
   @Test
   public void boundsSecondsMax() {
-    expectedException.expect(IllegalArgumentException.class);
-    Timestamp.ofTimeSecondsAndNanos(Timestamp.MAX_VALUE.getSeconds() + 1, 0);
+    try {
+      Timestamp.ofTimeSecondsAndNanos(Timestamp.MAX_VALUE.getSeconds() + 1, 0);
+      Assert.fail();
+    } catch (IllegalArgumentException ex) {
+      assertNotNull(ex.getMessage());
+    }
   }
 
   @Test
   public void boundsNanosMin() {
-    expectedException.expect(IllegalArgumentException.class);
-    Timestamp.ofTimeSecondsAndNanos(TEST_TIME_SECONDS, -1);
+    try {
+      Timestamp.ofTimeSecondsAndNanos(TEST_TIME_SECONDS, -1);
+      Assert.fail();
+    } catch (IllegalArgumentException ex) {
+      assertNotNull(ex.getMessage());
+    }
   }
 
   @Test
   public void boundsNanosMax() {
-    expectedException.expect(IllegalArgumentException.class);
-    Timestamp.ofTimeSecondsAndNanos(TEST_TIME_SECONDS, 1000000000);
+    try {
+      Timestamp.ofTimeSecondsAndNanos(TEST_TIME_SECONDS, 1000000000);
+      Assert.fail();
+    } catch (IllegalArgumentException ex) {
+      assertNotNull(ex.getMessage());
+    }
   }
 
   @Test
   public void boundsSqlTimestampMin() {
-    expectedException.expect(IllegalArgumentException.class);
-    Timestamp.of(new java.sql.Timestamp((Timestamp.MIN_VALUE.getSeconds() - 1) * 1000));
+    try {
+      Timestamp.of(new java.sql.Timestamp((Timestamp.MIN_VALUE.getSeconds() - 1) * 1000));
+      Assert.fail();
+    } catch (IllegalArgumentException ex) {
+      assertNotNull(ex.getMessage());
+    }
   }
 
   @Test
   public void boundsSqlTimestampMax() {
-    expectedException.expect(IllegalArgumentException.class);
-    Timestamp.of(new java.sql.Timestamp((Timestamp.MAX_VALUE.getSeconds() + 1) * 1000));
+    try {
+      Timestamp.of(new java.sql.Timestamp((Timestamp.MAX_VALUE.getSeconds() + 1) * 1000));
+      Assert.fail();
+    } catch (IllegalArgumentException ex) {
+      assertNotNull(ex.getMessage());
+    }
   }
 
   @Test

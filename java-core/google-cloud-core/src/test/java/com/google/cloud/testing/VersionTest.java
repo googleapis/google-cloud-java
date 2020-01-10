@@ -17,15 +17,14 @@
 package com.google.cloud.testing;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Rule;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class VersionTest {
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testFromString() {
@@ -41,32 +40,52 @@ public class VersionTest {
 
   @Test
   public void testFromStringWithAlphas() {
-    thrown.expect(IllegalArgumentException.class);
-    Version.fromString("2016.01.hello");
+    try {
+      Version.fromString("2016.01.hello");
+      Assert.fail();
+    } catch (IllegalArgumentException ex) {
+      assertNotNull(ex.getMessage());
+    }
   }
 
   @Test
   public void testFromStringMissingPatch() {
-    thrown.expect(IllegalArgumentException.class);
-    Version.fromString("2016.01");
+    try {
+      Version.fromString("2016.01");
+      Assert.fail();
+    } catch (IllegalArgumentException ex) {
+      assertNotNull(ex.getMessage());
+    }
   }
 
   @Test
   public void testFromStringMissingMinor() {
-    thrown.expect(IllegalArgumentException.class);
-    Version.fromString("2016");
+    try {
+      Version.fromString("2016");
+      Assert.fail();
+    } catch (IllegalArgumentException ex) {
+      assertNotNull(ex.getMessage());
+    }
   }
 
   @Test
   public void testFromStringEmpty() {
-    thrown.expect(IllegalArgumentException.class);
-    Version.fromString("");
+    try {
+      Version.fromString("");
+      Assert.fail();
+    } catch (IllegalArgumentException ex) {
+      assertNotNull(ex.getMessage());
+    }
   }
 
   @Test
   public void testFromStringNull() {
-    thrown.expect(NullPointerException.class);
-    Version.fromString(null);
+    try {
+      Version.fromString(null);
+      Assert.fail();
+    } catch (NullPointerException ex) {
+      assertNull(ex.getMessage());
+    }
   }
 
   @Test

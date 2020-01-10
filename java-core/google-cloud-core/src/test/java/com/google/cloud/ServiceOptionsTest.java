@@ -48,9 +48,7 @@ import java.io.InputStream;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class ServiceOptionsTest {
   private static GoogleCredentials credentials;
@@ -184,8 +182,6 @@ public class ServiceOptionsTest {
   private static final TestServiceOptions OPTIONS_COPY = OPTIONS.toBuilder().build();
   private static final String LIBRARY_NAME = "gcloud-java";
   private static final Pattern APPLICATION_NAME_PATTERN = Pattern.compile(LIBRARY_NAME + "/.*");
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   private static class TestClock implements ApiClock {
     @Override
@@ -361,9 +357,8 @@ public class ServiceOptionsTest {
     assertEquals("quota-project-id", OPTIONS.getQuotaProjectId());
   }
 
-  @Test
+  @Test(expected = NullPointerException.class)
   public void testBuilderNullCredentials() {
-    thrown.expect(NullPointerException.class);
     TestServiceOptions.newBuilder().setCredentials(null).build();
   }
 

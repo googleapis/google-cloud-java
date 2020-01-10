@@ -27,14 +27,10 @@ import java.io.IOException;
 import java.nio.channels.ClosedByInterruptException;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 /** Tests for {@link ExceptionHandler}. */
 public class ExceptionHandlerTest {
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testVerifyCaller() {
@@ -170,7 +166,7 @@ public class ExceptionHandlerTest {
     assertFalse(handler.shouldRetry(new NullPointerException(), null));
   }
 
-  @Test
+  @Test(expected = NullPointerException.class)
   public void testNullRetryResultFromBeforeEval() {
     @SuppressWarnings("serial")
     Interceptor interceptor =
@@ -188,11 +184,10 @@ public class ExceptionHandlerTest {
         };
 
     ExceptionHandler handler = ExceptionHandler.newBuilder().addInterceptors(interceptor).build();
-    thrown.expect(NullPointerException.class);
     handler.shouldRetry(new Exception(), null);
   }
 
-  @Test
+  @Test(expected = NullPointerException.class)
   public void testNullRetryResultFromAfterEval() {
     @SuppressWarnings("serial")
     Interceptor interceptor =
@@ -210,7 +205,6 @@ public class ExceptionHandlerTest {
         };
 
     ExceptionHandler handler = ExceptionHandler.newBuilder().addInterceptors(interceptor).build();
-    thrown.expect(NullPointerException.class);
     handler.shouldRetry(new Exception(), null);
   }
 }
