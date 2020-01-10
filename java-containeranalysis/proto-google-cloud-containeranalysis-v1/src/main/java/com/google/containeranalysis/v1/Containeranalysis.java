@@ -38,47 +38,56 @@ public final class Containeranalysis {
       "\n<google/devtools/containeranalysis/v1/c"
           + "ontaineranalysis.proto\022$google.devtools."
           + "containeranalysis.v1\032\034google/api/annotat"
-          + "ions.proto\032\036google/iam/v1/iam_policy.pro"
-          + "to\032\032google/iam/v1/policy.proto\032\037google/p"
-          + "rotobuf/timestamp.proto2\206\005\n\021ContainerAna"
-          + "lysis\022\277\001\n\014SetIamPolicy\022\".google.iam.v1.S"
-          + "etIamPolicyRequest\032\025.google.iam.v1.Polic"
-          + "y\"t\202\323\344\223\002n\"./v1/{resource=projects/*/note"
-          + "s/*}:setIamPolicy:\001*Z9\"4/v1/{resource=pr"
-          + "ojects/*/occurrences/*}:setIamPolicy:\001*\022"
-          + "\277\001\n\014GetIamPolicy\022\".google.iam.v1.GetIamP"
-          + "olicyRequest\032\025.google.iam.v1.Policy\"t\202\323\344"
-          + "\223\002n\"./v1/{resource=projects/*/notes/*}:g"
-          + "etIamPolicy:\001*Z9\"4/v1/{resource=projects"
-          + "/*/occurrences/*}:getIamPolicy:\001*\022\354\001\n\022Te"
-          + "stIamPermissions\022(.google.iam.v1.TestIam"
-          + "PermissionsRequest\032).google.iam.v1.TestI"
-          + "amPermissionsResponse\"\200\001\202\323\344\223\002z\"4/v1/{res"
-          + "ource=projects/*/notes/*}:testIamPermiss"
-          + "ions:\001*Z?\":/v1/{resource=projects/*/occu"
-          + "rrences/*}:testIamPermissions:\001*B\324\001\n\037com"
-          + ".google.containeranalysis.v1P\001ZUgoogle.g"
-          + "olang.org/genproto/googleapis/devtools/c"
-          + "ontaineranalysis/v1;containeranalysis\242\002\003"
-          + "GCA\252\002*Google.Cloud.DevTools.ContainerAna"
-          + "lysis.V1\352\002$Google::Cloud::ContainerAnaly"
-          + "sis::V1b\006proto3"
+          + "ions.proto\032\027google/api/client.proto\032\036goo"
+          + "gle/iam/v1/iam_policy.proto\032\032google/iam/"
+          + "v1/policy.proto\032\037google/protobuf/timesta"
+          + "mp.proto2\221\006\n\021ContainerAnalysis\022\322\001\n\014SetIa"
+          + "mPolicy\022\".google.iam.v1.SetIamPolicyRequ"
+          + "est\032\025.google.iam.v1.Policy\"\206\001\202\323\344\223\002n\"./v1"
+          + "/{resource=projects/*/notes/*}:setIamPol"
+          + "icy:\001*Z9\"4/v1/{resource=projects/*/occur"
+          + "rences/*}:setIamPolicy:\001*\332A\017resource,pol"
+          + "icy\022\312\001\n\014GetIamPolicy\022\".google.iam.v1.Get"
+          + "IamPolicyRequest\032\025.google.iam.v1.Policy\""
+          + "\177\202\323\344\223\002n\"./v1/{resource=projects/*/notes/"
+          + "*}:getIamPolicy:\001*Z9\"4/v1/{resource=proj"
+          + "ects/*/occurrences/*}:getIamPolicy:\001*\332A\010"
+          + "resource\022\203\002\n\022TestIamPermissions\022(.google"
+          + ".iam.v1.TestIamPermissionsRequest\032).goog"
+          + "le.iam.v1.TestIamPermissionsResponse\"\227\001\202"
+          + "\323\344\223\002z\"4/v1/{resource=projects/*/notes/*}"
+          + ":testIamPermissions:\001*Z?\":/v1/{resource="
+          + "projects/*/occurrences/*}:testIamPermiss"
+          + "ions:\001*\332A\024resource,permissions\032T\312A conta"
+          + "ineranalysis.googleapis.com\322A.https://ww"
+          + "w.googleapis.com/auth/cloud-platformB\324\001\n"
+          + "\037com.google.containeranalysis.v1P\001ZUgoog"
+          + "le.golang.org/genproto/googleapis/devtoo"
+          + "ls/containeranalysis/v1;containeranalysi"
+          + "s\242\002\003GCA\252\002*Google.Cloud.DevTools.Containe"
+          + "rAnalysis.V1\352\002$Google::Cloud::ContainerA"
+          + "nalysis::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.iam.v1.IamPolicyProto.getDescriptor(),
               com.google.iam.v1.PolicyProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.iam.v1.IamPolicyProto.getDescriptor();
     com.google.iam.v1.PolicyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
