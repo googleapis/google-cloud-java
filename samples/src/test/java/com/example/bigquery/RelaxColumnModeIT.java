@@ -68,10 +68,6 @@ public class RelaxColumnModeIT {
         "gcloud_test_table_temp_" + UUID.randomUUID().toString().replace('-', '_');
     Schema originalSchema =
         Schema.of(
-            // The only supported modification you can make to a column's mode is changing it from
-            // REQUIRED to NULLABLE
-            // Changing a column's mode from REQUIRED to NULLABLE is also called column relaxation
-            // INFO: LegacySQLTypeName will be updated to StandardSQLTypeName in release 1.103.0
             Field.newBuilder("word", LegacySQLTypeName.STRING).setMode(Mode.REQUIRED).build(),
             Field.newBuilder("word_count", LegacySQLTypeName.STRING)
                 .setMode(Field.Mode.REQUIRED)
@@ -87,5 +83,8 @@ public class RelaxColumnModeIT {
     // Relax table column mode
     RelaxColumnMode.relaxColumnMode(BIGQUERY_DATASET_NAME, generatedTableName);
     assertThat(bout.toString()).contains("Table schema successfully relaxed.");
+
+    // Clean up
+    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, generatedTableName);
   }
 }
