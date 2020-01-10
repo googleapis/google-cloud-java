@@ -21,9 +21,7 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 
 import com.google.cloud.translate.spi.v2.TranslateRpc;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class OptionTest {
 
@@ -33,8 +31,6 @@ public class OptionTest {
   private static final Option OPTION = new Option(RPC_OPTION, VALUE) {};
   private static final Option OPTION_EQUALS = new Option(RPC_OPTION, VALUE) {};
   private static final Option OPTION_NOT_EQUALS = new Option(RPC_OPTION, OTHER_VALUE) {};
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testEquals() {
@@ -47,14 +43,13 @@ public class OptionTest {
     assertEquals(OPTION.hashCode(), OPTION_EQUALS.hashCode());
   }
 
-  @Test
+  @Test(expected = NullPointerException.class)
   public void testConstructor() {
     assertEquals(RPC_OPTION, OPTION.getRpcOption());
     assertEquals(VALUE, OPTION.getValue());
     Option option = new Option(RPC_OPTION, null) {};
     assertEquals(RPC_OPTION, option.getRpcOption());
     assertNull(option.getValue());
-    thrown.expect(NullPointerException.class);
     new Option(null, VALUE) {};
   }
 }

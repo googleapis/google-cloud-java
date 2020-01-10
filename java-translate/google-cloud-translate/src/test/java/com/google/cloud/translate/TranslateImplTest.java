@@ -17,8 +17,10 @@
 package com.google.cloud.translate;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.fail;
 
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.services.translate.model.DetectionsResourceItems;
@@ -37,13 +39,10 @@ import java.util.List;
 import java.util.Map;
 import org.easymock.EasyMock;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class TranslateImplTest {
 
-  private static final String API_KEY = "api_key";
   private static final String TARGET_LANGUAGE = "es";
 
   private static final LanguagesResource LANGUAGE1_PB =
@@ -106,8 +105,6 @@ public class TranslateImplTest {
   private TranslateRpc translateRpcMock;
   private Translate translate;
 
-  @Rule public ExpectedException thrown = ExpectedException.none();
-
   @Before
   public void setUp() {
     rpcFactoryMock = EasyMock.createMock(TranslateRpcFactory.class);
@@ -117,7 +114,6 @@ public class TranslateImplTest {
     EasyMock.replay(rpcFactoryMock);
     options =
         TranslateOptions.newBuilder()
-            .setApiKey(API_KEY)
             .setServiceRpcFactory(rpcFactoryMock)
             .setRetrySettings(NO_RETRY_SETTINGS)
             .build();
@@ -182,9 +178,13 @@ public class TranslateImplTest {
                 ImmutableList.of(DETECTION1_PB, DETECTION2_PB)));
     EasyMock.replay(translateRpcMock);
     initializeService();
-    thrown.expect(IllegalStateException.class);
-    thrown.expectMessage("Multiple detections found for text: text");
-    translate.detect(text);
+    try {
+      translate.detect(text);
+      fail();
+    } catch (IllegalStateException ex) {
+      assertEquals("Multiple detections found for text: text", ex.getMessage());
+    }
+
     verify();
   }
 
@@ -197,9 +197,13 @@ public class TranslateImplTest {
                 ImmutableList.<DetectionsResourceItems>of()));
     EasyMock.replay(translateRpcMock);
     initializeService();
-    thrown.expect(IllegalStateException.class);
-    thrown.expectMessage("No detection found for text: text");
-    translate.detect(text);
+    try {
+      translate.detect(text);
+      fail();
+    } catch (IllegalStateException ex) {
+      assertEquals("No detection found for text: text", ex.getMessage());
+    }
+
     verify();
   }
 
@@ -229,9 +233,12 @@ public class TranslateImplTest {
                 ImmutableList.of(DETECTION1_PB, DETECTION2_PB), ImmutableList.of(DETECTION1_PB)));
     EasyMock.replay(translateRpcMock);
     initializeService();
-    thrown.expect(IllegalStateException.class);
-    thrown.expectMessage("Multiple detections found for text: text");
-    translate.detect(texts);
+    try {
+      translate.detect(texts);
+      fail();
+    } catch (IllegalStateException ex) {
+      assertEquals("Multiple detections found for text: text", ex.getMessage());
+    }
     verify();
   }
 
@@ -246,9 +253,12 @@ public class TranslateImplTest {
                 ImmutableList.of(DETECTION1_PB), ImmutableList.<DetectionsResourceItems>of()));
     EasyMock.replay(translateRpcMock);
     initializeService();
-    thrown.expect(IllegalStateException.class);
-    thrown.expectMessage("No detection found for text: other text");
-    translate.detect(texts);
+    try {
+      translate.detect(texts);
+      fail();
+    } catch (IllegalStateException ex) {
+      assertEquals("No detection found for text: other text", ex.getMessage());
+    }
     verify();
   }
 
@@ -276,9 +286,13 @@ public class TranslateImplTest {
                 ImmutableList.of(DETECTION1_PB, DETECTION2_PB), ImmutableList.of(DETECTION1_PB)));
     EasyMock.replay(translateRpcMock);
     initializeService();
-    thrown.expect(IllegalStateException.class);
-    thrown.expectMessage("Multiple detections found for text: text");
-    translate.detect(text1, text2);
+    try {
+      translate.detect(text1, text2);
+      fail();
+    } catch (IllegalStateException ex) {
+      assertEquals("Multiple detections found for text: text", ex.getMessage());
+    }
+
     verify();
   }
 
@@ -292,9 +306,12 @@ public class TranslateImplTest {
                 ImmutableList.of(DETECTION1_PB), ImmutableList.<DetectionsResourceItems>of()));
     EasyMock.replay(translateRpcMock);
     initializeService();
-    thrown.expect(IllegalStateException.class);
-    thrown.expectMessage("No detection found for text: other text");
-    translate.detect(text1, text2);
+    try {
+      translate.detect(text1, text2);
+      fail();
+    } catch (IllegalStateException ex) {
+      assertEquals("No detection found for text: other text", ex.getMessage());
+    }
     verify();
   }
 
@@ -379,9 +396,12 @@ public class TranslateImplTest {
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
-    thrown.expect(TranslateException.class);
-    thrown.expectMessage(exceptionMessage);
-    translate.listSupportedLanguages();
+    try {
+      translate.listSupportedLanguages();
+      fail();
+    } catch (TranslateException ex) {
+      assertEquals(exceptionMessage, ex.getMessage());
+    }
     verify();
   }
 
@@ -397,9 +417,12 @@ public class TranslateImplTest {
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
-    thrown.expect(TranslateException.class);
-    thrown.expectMessage(exceptionMessage);
-    translate.listSupportedLanguages();
+    try {
+      translate.listSupportedLanguages();
+      fail();
+    } catch (RuntimeException ex) {
+      assertNotNull(ex.getMessage());
+    }
     verify();
   }
 

@@ -157,8 +157,7 @@ public class ITTranslateTest {
 
   @Test
   public void testTranslateTextWithApiKey() {
-    Translate translate =
-        RemoteTranslateHelper.create(TranslateOptions.getDefaultApiKey()).getOptions().getService();
+    Translate translate = RemoteTranslateHelper.create().getOptions().getService();
     Translation translation = translate.translate("ocho");
     assertEquals("eight", translation.getTranslatedText());
     assertEquals("es", translation.getSourceLanguage());

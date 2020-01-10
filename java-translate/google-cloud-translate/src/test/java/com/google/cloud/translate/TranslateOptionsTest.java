@@ -18,18 +18,19 @@ package com.google.cloud.translate;
 
 import com.google.cloud.TransportOptions;
 import org.easymock.EasyMock;
-import org.junit.Rule;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class TranslateOptionsTest {
 
-  @Rule public ExpectedException thrown = ExpectedException.none();
-
   @Test
   public void testInvalidTransport() {
-    thrown.expect(IllegalArgumentException.class);
-    TranslateOptions.newBuilder()
-        .setTransportOptions(EasyMock.<TransportOptions>createMock(TransportOptions.class));
+    try {
+      TranslateOptions.newBuilder()
+          .setTransportOptions(EasyMock.<TransportOptions>createMock(TransportOptions.class));
+      Assert.fail();
+    } catch (IllegalArgumentException ex) {
+      Assert.assertNotNull(ex.getMessage());
+    }
   }
 }

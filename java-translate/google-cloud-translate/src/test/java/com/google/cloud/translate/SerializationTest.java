@@ -25,7 +25,6 @@ import java.io.Serializable;
 
 public class SerializationTest extends BaseSerializationTest {
 
-  private static final String API_KEY = "apiKey";
   private static final String LANGUAGE = "en";
   private static final float CONFIDENCE = 0.42F;
   private static final DetectionsResourceItems DETECTION_PB =
@@ -47,10 +46,7 @@ public class SerializationTest extends BaseSerializationTest {
   @Override
   protected Serializable[] serializableObjects() {
     TranslateOptions options =
-        TranslateOptions.newBuilder()
-            .setApiKey(API_KEY)
-            .setCredentials(NoCredentials.getInstance())
-            .build();
+        TranslateOptions.newBuilder().setCredentials(NoCredentials.getInstance()).build();
     TranslateOptions otherOptions = options.toBuilder().build();
     return new Serializable[] {
       DETECTION,
