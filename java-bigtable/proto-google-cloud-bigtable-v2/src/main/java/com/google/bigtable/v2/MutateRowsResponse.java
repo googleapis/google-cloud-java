@@ -42,6 +42,12 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new MutateRowsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -128,6 +134,8 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int64 index = 1;</code>
+     *
+     * @return The index.
      */
     long getIndex();
 
@@ -142,6 +150,8 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
+     *
+     * @return Whether the status field is set.
      */
     boolean hasStatus();
     /**
@@ -155,6 +165,8 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
+     *
+     * @return The status.
      */
     com.google.rpc.Status getStatus();
     /**
@@ -171,7 +183,15 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
      */
     com.google.rpc.StatusOrBuilder getStatusOrBuilder();
   }
-  /** Protobuf type {@code google.bigtable.v2.MutateRowsResponse.Entry} */
+  /**
+   *
+   *
+   * <pre>
+   * The result of applying a passed mutation in the original request.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.v2.MutateRowsResponse.Entry}
+   */
   public static final class Entry extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.bigtable.v2.MutateRowsResponse.Entry)
@@ -183,6 +203,12 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private Entry() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Entry();
+    }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -197,7 +223,6 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -272,6 +297,8 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>int64 index = 1;</code>
+     *
+     * @return The index.
      */
     public long getIndex() {
       return index_;
@@ -290,6 +317,8 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
+     *
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return status_ != null;
@@ -305,6 +334,8 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
+     *
+     * @return The status.
      */
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
@@ -499,7 +530,15 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-    /** Protobuf type {@code google.bigtable.v2.MutateRowsResponse.Entry} */
+    /**
+     *
+     *
+     * <pre>
+     * The result of applying a passed mutation in the original request.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.v2.MutateRowsResponse.Entry}
+     */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements
@@ -676,6 +715,8 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>int64 index = 1;</code>
+       *
+       * @return The index.
        */
       public long getIndex() {
         return index_;
@@ -689,6 +730,9 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>int64 index = 1;</code>
+       *
+       * @param value The index to set.
+       * @return This builder for chaining.
        */
       public Builder setIndex(long value) {
 
@@ -705,6 +749,8 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>int64 index = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearIndex() {
 
@@ -728,6 +774,8 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
+       *
+       * @return Whether the status field is set.
        */
       public boolean hasStatus() {
         return statusBuilder_ != null || status_ != null;
@@ -743,6 +791,8 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
+       *
+       * @return The status.
        */
       public com.google.rpc.Status getStatus() {
         if (statusBuilder_ == null) {

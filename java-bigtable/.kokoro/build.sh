@@ -27,6 +27,7 @@ echo ${JOB_TYPE}
 mvn install -B -V \
   -DskipTests=true \
   -Dclirr.skip=true \
+  -Denforcer.skip=true \
   -Dmaven.javadoc.skip=true \
   -Dgcloud.download.skip=true \
   -T 1C
@@ -38,22 +39,40 @@ fi
 
 case ${JOB_TYPE} in
 test)
-    mvn test -B -Dclirr.skip=true
+    mvn test -B -Dclirr.skip=true -Denforcer.skip=true
     bash ${KOKORO_GFILE_DIR}/codecov.sh
     bash .kokoro/coerce_logs.sh
     ;;
 lint)
-    mvn com.coveo:fmt-maven-plugin:check
+    mvn \
+      -Penable-samples \
+      com.coveo:fmt-maven-plugin:check
     ;;
 javadoc)
     mvn javadoc:javadoc javadoc:test-javadoc
     ;;
 integration)
-    mvn -B ${INTEGRATION_TEST_ARGS} -DtrimStackTrace=false -Dclirr.skip=true -fae verify
+    mvn -B ${INTEGRATION_TEST_ARGS} \
+      -Penable-integration-tests \
+      -DtrimStackTrace=false \
+      -Dclirr.skip=true \
+      -Denforcer.skip=true \
+      -fae \
+      verify
+    bash .kokoro/coerce_logs.sh
+    ;;
+samples)
+    mvn -B \
+      -Penable-samples \
+      -DtrimStackTrace=false \
+      -Dclirr.skip=true \
+      -Denforcer.skip=true \
+      -fae \
+      verify
     bash .kokoro/coerce_logs.sh
     ;;
 clirr)
-    mvn -B clirr:check
+    mvn -B -Denforcer.skip=true clirr:check
     ;;
 *)
     ;;

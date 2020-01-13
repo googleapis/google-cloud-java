@@ -32,6 +32,8 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -55,6 +59,8 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    * </pre>
    *
    * <code>string table_id = 2;</code>
+   *
+   * @return The tableId.
    */
   java.lang.String getTableId();
   /**
@@ -66,6 +72,8 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    * </pre>
    *
    * <code>string table_id = 2;</code>
+   *
+   * @return The bytes for tableId.
    */
   com.google.protobuf.ByteString getTableIdBytes();
 
@@ -80,6 +88,8 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    * </pre>
    *
    * <code>string source_snapshot = 3;</code>
+   *
+   * @return The sourceSnapshot.
    */
   java.lang.String getSourceSnapshot();
   /**
@@ -93,6 +103,8 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    * </pre>
    *
    * <code>string source_snapshot = 3;</code>
+   *
+   * @return The bytes for sourceSnapshot.
    */
   com.google.protobuf.ByteString getSourceSnapshotBytes();
 }

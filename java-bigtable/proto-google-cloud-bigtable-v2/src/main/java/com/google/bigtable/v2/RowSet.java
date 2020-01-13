@@ -43,6 +43,12 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RowSet();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -133,6 +139,8 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated bytes row_keys = 1;</code>
+   *
+   * @return A list containing the rowKeys.
    */
   public java.util.List<com.google.protobuf.ByteString> getRowKeysList() {
     return rowKeys_;
@@ -145,6 +153,8 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated bytes row_keys = 1;</code>
+   *
+   * @return The count of rowKeys.
    */
   public int getRowKeysCount() {
     return rowKeys_.size();
@@ -157,6 +167,9 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated bytes row_keys = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The rowKeys at the given index.
    */
   public com.google.protobuf.ByteString getRowKeys(int index) {
     return rowKeys_.get(index);
@@ -628,6 +641,8 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated bytes row_keys = 1;</code>
+     *
+     * @return A list containing the rowKeys.
      */
     public java.util.List<com.google.protobuf.ByteString> getRowKeysList() {
       return ((bitField0_ & 0x00000001) != 0)
@@ -642,6 +657,8 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated bytes row_keys = 1;</code>
+     *
+     * @return The count of rowKeys.
      */
     public int getRowKeysCount() {
       return rowKeys_.size();
@@ -654,6 +671,9 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated bytes row_keys = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The rowKeys at the given index.
      */
     public com.google.protobuf.ByteString getRowKeys(int index) {
       return rowKeys_.get(index);
@@ -666,6 +686,10 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated bytes row_keys = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The rowKeys to set.
+     * @return This builder for chaining.
      */
     public Builder setRowKeys(int index, com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -684,6 +708,9 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated bytes row_keys = 1;</code>
+     *
+     * @param value The rowKeys to add.
+     * @return This builder for chaining.
      */
     public Builder addRowKeys(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -702,6 +729,9 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated bytes row_keys = 1;</code>
+     *
+     * @param values The rowKeys to add.
+     * @return This builder for chaining.
      */
     public Builder addAllRowKeys(
         java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
@@ -718,6 +748,8 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated bytes row_keys = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRowKeys() {
       rowKeys_ = java.util.Collections.emptyList();

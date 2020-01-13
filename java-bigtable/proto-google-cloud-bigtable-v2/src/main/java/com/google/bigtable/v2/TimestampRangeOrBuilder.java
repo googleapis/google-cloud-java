@@ -31,6 +31,8 @@ public interface TimestampRangeOrBuilder
    * </pre>
    *
    * <code>int64 start_timestamp_micros = 1;</code>
+   *
+   * @return The startTimestampMicros.
    */
   long getStartTimestampMicros();
 
@@ -42,6 +44,8 @@ public interface TimestampRangeOrBuilder
    * </pre>
    *
    * <code>int64 end_timestamp_micros = 2;</code>
+   *
+   * @return The endTimestampMicros.
    */
   long getEndTimestampMicros();
 }

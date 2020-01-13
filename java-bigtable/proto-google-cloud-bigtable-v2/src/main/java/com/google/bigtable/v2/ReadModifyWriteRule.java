@@ -44,6 +44,12 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReadModifyWriteRule();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -128,7 +133,10 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
   private int ruleCase_ = 0;
   private java.lang.Object rule_;
 
-  public enum RuleCase implements com.google.protobuf.Internal.EnumLite {
+  public enum RuleCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     APPEND_VALUE(3),
     INCREMENT_AMOUNT(4),
     RULE_NOT_SET(0);
@@ -137,7 +145,11 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
     private RuleCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static RuleCase valueOf(int value) {
       return forNumber(value);
@@ -176,6 +188,8 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string family_name = 1;</code>
+   *
+   * @return The familyName.
    */
   public java.lang.String getFamilyName() {
     java.lang.Object ref = familyName_;
@@ -197,6 +211,8 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string family_name = 1;</code>
+   *
+   * @return The bytes for familyName.
    */
   public com.google.protobuf.ByteString getFamilyNameBytes() {
     java.lang.Object ref = familyName_;
@@ -222,6 +238,8 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>bytes column_qualifier = 2;</code>
+   *
+   * @return The columnQualifier.
    */
   public com.google.protobuf.ByteString getColumnQualifier() {
     return columnQualifier_;
@@ -238,6 +256,8 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>bytes append_value = 3;</code>
+   *
+   * @return The appendValue.
    */
   public com.google.protobuf.ByteString getAppendValue() {
     if (ruleCase_ == 3) {
@@ -258,6 +278,8 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>int64 increment_amount = 4;</code>
+   *
+   * @return The incrementAmount.
    */
   public long getIncrementAmount() {
     if (ruleCase_ == 4) {
@@ -686,6 +708,8 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return The familyName.
      */
     public java.lang.String getFamilyName() {
       java.lang.Object ref = familyName_;
@@ -707,6 +731,8 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return The bytes for familyName.
      */
     public com.google.protobuf.ByteString getFamilyNameBytes() {
       java.lang.Object ref = familyName_;
@@ -728,6 +754,9 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @param value The familyName to set.
+     * @return This builder for chaining.
      */
     public Builder setFamilyName(java.lang.String value) {
       if (value == null) {
@@ -747,6 +776,8 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFamilyName() {
 
@@ -763,6 +794,9 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @param value The bytes for familyName to set.
+     * @return This builder for chaining.
      */
     public Builder setFamilyNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -786,6 +820,8 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes column_qualifier = 2;</code>
+     *
+     * @return The columnQualifier.
      */
     public com.google.protobuf.ByteString getColumnQualifier() {
       return columnQualifier_;
@@ -800,6 +836,9 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes column_qualifier = 2;</code>
+     *
+     * @param value The columnQualifier to set.
+     * @return This builder for chaining.
      */
     public Builder setColumnQualifier(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -820,6 +859,8 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes column_qualifier = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearColumnQualifier() {
 
@@ -838,6 +879,8 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes append_value = 3;</code>
+     *
+     * @return The appendValue.
      */
     public com.google.protobuf.ByteString getAppendValue() {
       if (ruleCase_ == 3) {
@@ -855,6 +898,9 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes append_value = 3;</code>
+     *
+     * @param value The appendValue to set.
+     * @return This builder for chaining.
      */
     public Builder setAppendValue(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -875,6 +921,8 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>bytes append_value = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAppendValue() {
       if (ruleCase_ == 3) {
@@ -896,6 +944,8 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int64 increment_amount = 4;</code>
+     *
+     * @return The incrementAmount.
      */
     public long getIncrementAmount() {
       if (ruleCase_ == 4) {
@@ -914,6 +964,9 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int64 increment_amount = 4;</code>
+     *
+     * @param value The incrementAmount to set.
+     * @return This builder for chaining.
      */
     public Builder setIncrementAmount(long value) {
       ruleCase_ = 4;
@@ -932,6 +985,8 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>int64 increment_amount = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIncrementAmount() {
       if (ruleCase_ == 4) {

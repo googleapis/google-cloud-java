@@ -32,6 +32,8 @@ public interface ReadModifyWriteRuleOrBuilder
    * </pre>
    *
    * <code>string family_name = 1;</code>
+   *
+   * @return The familyName.
    */
   java.lang.String getFamilyName();
   /**
@@ -43,6 +45,8 @@ public interface ReadModifyWriteRuleOrBuilder
    * </pre>
    *
    * <code>string family_name = 1;</code>
+   *
+   * @return The bytes for familyName.
    */
   com.google.protobuf.ByteString getFamilyNameBytes();
 
@@ -56,6 +60,8 @@ public interface ReadModifyWriteRuleOrBuilder
    * </pre>
    *
    * <code>bytes column_qualifier = 2;</code>
+   *
+   * @return The columnQualifier.
    */
   com.google.protobuf.ByteString getColumnQualifier();
 
@@ -69,6 +75,8 @@ public interface ReadModifyWriteRuleOrBuilder
    * </pre>
    *
    * <code>bytes append_value = 3;</code>
+   *
+   * @return The appendValue.
    */
   com.google.protobuf.ByteString getAppendValue();
 
@@ -83,6 +91,8 @@ public interface ReadModifyWriteRuleOrBuilder
    * </pre>
    *
    * <code>int64 increment_amount = 4;</code>
+   *
+   * @return The incrementAmount.
    */
   long getIncrementAmount();
 

@@ -44,6 +44,12 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new MutateRowsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,10 +82,10 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entries_ =
                     new java.util.ArrayList<com.google.bigtable.v2.MutateRowsRequest.Entry>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               entries_.add(
                   input.readMessage(
@@ -107,7 +113,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         entries_ = java.util.Collections.unmodifiableList(entries_);
       }
       this.unknownFields = unknownFields.build();
@@ -143,6 +149,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bytes row_key = 1;</code>
+     *
+     * @return The rowKey.
      */
     com.google.protobuf.ByteString getRowKey();
 
@@ -150,69 +158,87 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Changes to be atomically applied to the specified row. Mutations are
+     * Required. Changes to be atomically applied to the specified row. Mutations are
      * applied in order, meaning that earlier mutations can be masked by
      * later ones.
      * You must specify at least one mutation.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     java.util.List<com.google.bigtable.v2.Mutation> getMutationsList();
     /**
      *
      *
      * <pre>
-     * Changes to be atomically applied to the specified row. Mutations are
+     * Required. Changes to be atomically applied to the specified row. Mutations are
      * applied in order, meaning that earlier mutations can be masked by
      * later ones.
      * You must specify at least one mutation.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.bigtable.v2.Mutation getMutations(int index);
     /**
      *
      *
      * <pre>
-     * Changes to be atomically applied to the specified row. Mutations are
+     * Required. Changes to be atomically applied to the specified row. Mutations are
      * applied in order, meaning that earlier mutations can be masked by
      * later ones.
      * You must specify at least one mutation.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     int getMutationsCount();
     /**
      *
      *
      * <pre>
-     * Changes to be atomically applied to the specified row. Mutations are
+     * Required. Changes to be atomically applied to the specified row. Mutations are
      * applied in order, meaning that earlier mutations can be masked by
      * later ones.
      * You must specify at least one mutation.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     java.util.List<? extends com.google.bigtable.v2.MutationOrBuilder> getMutationsOrBuilderList();
     /**
      *
      *
      * <pre>
-     * Changes to be atomically applied to the specified row. Mutations are
+     * Required. Changes to be atomically applied to the specified row. Mutations are
      * applied in order, meaning that earlier mutations can be masked by
      * later ones.
      * You must specify at least one mutation.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.bigtable.v2.MutationOrBuilder getMutationsOrBuilder(int index);
   }
-  /** Protobuf type {@code google.bigtable.v2.MutateRowsRequest.Entry} */
+  /**
+   *
+   *
+   * <pre>
+   * A mutation for a given row.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.v2.MutateRowsRequest.Entry}
+   */
   public static final class Entry extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.bigtable.v2.MutateRowsRequest.Entry)
@@ -226,6 +252,12 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
     private Entry() {
       rowKey_ = com.google.protobuf.ByteString.EMPTY;
       mutations_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Entry();
     }
 
     @java.lang.Override
@@ -259,9 +291,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
               }
             case 18:
               {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   mutations_ = new java.util.ArrayList<com.google.bigtable.v2.Mutation>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 mutations_.add(
                     input.readMessage(com.google.bigtable.v2.Mutation.parser(), extensionRegistry));
@@ -281,7 +313,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           mutations_ = java.util.Collections.unmodifiableList(mutations_);
         }
         this.unknownFields = unknownFields.build();
@@ -304,7 +336,6 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
               com.google.bigtable.v2.MutateRowsRequest.Entry.Builder.class);
     }
 
-    private int bitField0_;
     public static final int ROW_KEY_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString rowKey_;
     /**
@@ -315,6 +346,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>bytes row_key = 1;</code>
+     *
+     * @return The rowKey.
      */
     public com.google.protobuf.ByteString getRowKey() {
       return rowKey_;
@@ -326,13 +359,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Changes to be atomically applied to the specified row. Mutations are
+     * Required. Changes to be atomically applied to the specified row. Mutations are
      * applied in order, meaning that earlier mutations can be masked by
      * later ones.
      * You must specify at least one mutation.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.bigtable.v2.Mutation> getMutationsList() {
       return mutations_;
@@ -341,13 +376,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Changes to be atomically applied to the specified row. Mutations are
+     * Required. Changes to be atomically applied to the specified row. Mutations are
      * applied in order, meaning that earlier mutations can be masked by
      * later ones.
      * You must specify at least one mutation.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.bigtable.v2.MutationOrBuilder>
         getMutationsOrBuilderList() {
@@ -357,13 +394,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Changes to be atomically applied to the specified row. Mutations are
+     * Required. Changes to be atomically applied to the specified row. Mutations are
      * applied in order, meaning that earlier mutations can be masked by
      * later ones.
      * You must specify at least one mutation.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getMutationsCount() {
       return mutations_.size();
@@ -372,13 +411,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Changes to be atomically applied to the specified row. Mutations are
+     * Required. Changes to be atomically applied to the specified row. Mutations are
      * applied in order, meaning that earlier mutations can be masked by
      * later ones.
      * You must specify at least one mutation.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.v2.Mutation getMutations(int index) {
       return mutations_.get(index);
@@ -387,13 +428,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Changes to be atomically applied to the specified row. Mutations are
+     * Required. Changes to be atomically applied to the specified row. Mutations are
      * applied in order, meaning that earlier mutations can be masked by
      * later ones.
      * You must specify at least one mutation.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.v2.MutationOrBuilder getMutationsOrBuilder(int index) {
       return mutations_.get(index);
@@ -570,7 +613,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-    /** Protobuf type {@code google.bigtable.v2.MutateRowsRequest.Entry} */
+    /**
+     *
+     *
+     * <pre>
+     * A mutation for a given row.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.v2.MutateRowsRequest.Entry}
+     */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements
@@ -614,7 +665,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
 
         if (mutationsBuilder_ == null) {
           mutations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           mutationsBuilder_.clear();
         }
@@ -646,18 +697,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
         com.google.bigtable.v2.MutateRowsRequest.Entry result =
             new com.google.bigtable.v2.MutateRowsRequest.Entry(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.rowKey_ = rowKey_;
         if (mutationsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             mutations_ = java.util.Collections.unmodifiableList(mutations_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.mutations_ = mutations_;
         } else {
           result.mutations_ = mutationsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -717,7 +766,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
           if (!other.mutations_.isEmpty()) {
             if (mutations_.isEmpty()) {
               mutations_ = other.mutations_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureMutationsIsMutable();
               mutations_.addAll(other.mutations_);
@@ -730,7 +779,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
               mutationsBuilder_.dispose();
               mutationsBuilder_ = null;
               mutations_ = other.mutations_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               mutationsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getMutationsFieldBuilder()
@@ -780,6 +829,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>bytes row_key = 1;</code>
+       *
+       * @return The rowKey.
        */
       public com.google.protobuf.ByteString getRowKey() {
         return rowKey_;
@@ -792,6 +843,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>bytes row_key = 1;</code>
+       *
+       * @param value The rowKey to set.
+       * @return This builder for chaining.
        */
       public Builder setRowKey(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -810,6 +864,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        * </pre>
        *
        * <code>bytes row_key = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearRowKey() {
 
@@ -822,9 +878,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
           java.util.Collections.emptyList();
 
       private void ensureMutationsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           mutations_ = new java.util.ArrayList<com.google.bigtable.v2.Mutation>(mutations_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
         }
       }
 
@@ -838,13 +894,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public java.util.List<com.google.bigtable.v2.Mutation> getMutationsList() {
         if (mutationsBuilder_ == null) {
@@ -857,13 +915,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public int getMutationsCount() {
         if (mutationsBuilder_ == null) {
@@ -876,13 +936,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.bigtable.v2.Mutation getMutations(int index) {
         if (mutationsBuilder_ == null) {
@@ -895,13 +957,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setMutations(int index, com.google.bigtable.v2.Mutation value) {
         if (mutationsBuilder_ == null) {
@@ -920,13 +984,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setMutations(
           int index, com.google.bigtable.v2.Mutation.Builder builderForValue) {
@@ -943,13 +1009,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder addMutations(com.google.bigtable.v2.Mutation value) {
         if (mutationsBuilder_ == null) {
@@ -968,13 +1036,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder addMutations(int index, com.google.bigtable.v2.Mutation value) {
         if (mutationsBuilder_ == null) {
@@ -993,13 +1063,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder addMutations(com.google.bigtable.v2.Mutation.Builder builderForValue) {
         if (mutationsBuilder_ == null) {
@@ -1015,13 +1087,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder addMutations(
           int index, com.google.bigtable.v2.Mutation.Builder builderForValue) {
@@ -1038,13 +1112,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder addAllMutations(
           java.lang.Iterable<? extends com.google.bigtable.v2.Mutation> values) {
@@ -1061,18 +1137,20 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder clearMutations() {
         if (mutationsBuilder_ == null) {
           mutations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           mutationsBuilder_.clear();
@@ -1083,13 +1161,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder removeMutations(int index) {
         if (mutationsBuilder_ == null) {
@@ -1105,13 +1185,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.bigtable.v2.Mutation.Builder getMutationsBuilder(int index) {
         return getMutationsFieldBuilder().getBuilder(index);
@@ -1120,13 +1202,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.bigtable.v2.MutationOrBuilder getMutationsOrBuilder(int index) {
         if (mutationsBuilder_ == null) {
@@ -1139,13 +1223,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public java.util.List<? extends com.google.bigtable.v2.MutationOrBuilder>
           getMutationsOrBuilderList() {
@@ -1159,13 +1245,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.bigtable.v2.Mutation.Builder addMutationsBuilder() {
         return getMutationsFieldBuilder()
@@ -1175,13 +1263,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.bigtable.v2.Mutation.Builder addMutationsBuilder(int index) {
         return getMutationsFieldBuilder()
@@ -1191,13 +1281,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Changes to be atomically applied to the specified row. Mutations are
+       * Required. Changes to be atomically applied to the specified row. Mutations are
        * applied in order, meaning that earlier mutations can be masked by
        * later ones.
        * You must specify at least one mutation.
        * </pre>
        *
-       * <code>repeated .google.bigtable.v2.Mutation mutations = 2;</code>
+       * <code>
+       * repeated .google.bigtable.v2.Mutation mutations = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public java.util.List<com.google.bigtable.v2.Mutation.Builder> getMutationsBuilderList() {
         return getMutationsFieldBuilder().getBuilderList();
@@ -1214,7 +1306,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
                   com.google.bigtable.v2.Mutation,
                   com.google.bigtable.v2.Mutation.Builder,
                   com.google.bigtable.v2.MutationOrBuilder>(
-                  mutations_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                  mutations_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           mutations_ = null;
         }
         return mutationsBuilder_;
@@ -1272,17 +1364,20 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
     }
   }
 
-  private int bitField0_;
   public static final int TABLE_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object tableName_;
   /**
    *
    *
    * <pre>
-   * The unique name of the table to which the mutations should be applied.
+   * Required. The unique name of the table to which the mutations should be applied.
    * </pre>
    *
-   * <code>string table_name = 1;</code>
+   * <code>
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The tableName.
    */
   public java.lang.String getTableName() {
     java.lang.Object ref = tableName_;
@@ -1299,10 +1394,14 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The unique name of the table to which the mutations should be applied.
+   * Required. The unique name of the table to which the mutations should be applied.
    * </pre>
    *
-   * <code>string table_name = 1;</code>
+   * <code>
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for tableName.
    */
   public com.google.protobuf.ByteString getTableNameBytes() {
     java.lang.Object ref = tableName_;
@@ -1327,6 +1426,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string app_profile_id = 3;</code>
+   *
+   * @return The appProfileId.
    */
   public java.lang.String getAppProfileId() {
     java.lang.Object ref = appProfileId_;
@@ -1348,6 +1449,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string app_profile_id = 3;</code>
+   *
+   * @return The bytes for appProfileId.
    */
   public com.google.protobuf.ByteString getAppProfileIdBytes() {
     java.lang.Object ref = appProfileId_;
@@ -1367,14 +1470,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The row keys and corresponding mutations to be applied in bulk.
+   * Required. The row keys and corresponding mutations to be applied in bulk.
    * Each entry is applied as an atomic mutation, but the entries may be
    * applied in arbitrary order (even between entries for the same row).
    * At least one entry must be specified, and in total the entries can
    * contain at most 100000 mutations.
    * </pre>
    *
-   * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+   * <code>
+   * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.bigtable.v2.MutateRowsRequest.Entry> getEntriesList() {
     return entries_;
@@ -1383,14 +1488,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The row keys and corresponding mutations to be applied in bulk.
+   * Required. The row keys and corresponding mutations to be applied in bulk.
    * Each entry is applied as an atomic mutation, but the entries may be
    * applied in arbitrary order (even between entries for the same row).
    * At least one entry must be specified, and in total the entries can
    * contain at most 100000 mutations.
    * </pre>
    *
-   * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+   * <code>
+   * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<? extends com.google.bigtable.v2.MutateRowsRequest.EntryOrBuilder>
       getEntriesOrBuilderList() {
@@ -1400,14 +1507,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The row keys and corresponding mutations to be applied in bulk.
+   * Required. The row keys and corresponding mutations to be applied in bulk.
    * Each entry is applied as an atomic mutation, but the entries may be
    * applied in arbitrary order (even between entries for the same row).
    * At least one entry must be specified, and in total the entries can
    * contain at most 100000 mutations.
    * </pre>
    *
-   * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+   * <code>
+   * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getEntriesCount() {
     return entries_.size();
@@ -1416,14 +1525,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The row keys and corresponding mutations to be applied in bulk.
+   * Required. The row keys and corresponding mutations to be applied in bulk.
    * Each entry is applied as an atomic mutation, but the entries may be
    * applied in arbitrary order (even between entries for the same row).
    * At least one entry must be specified, and in total the entries can
    * contain at most 100000 mutations.
    * </pre>
    *
-   * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+   * <code>
+   * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.bigtable.v2.MutateRowsRequest.Entry getEntries(int index) {
     return entries_.get(index);
@@ -1432,14 +1543,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The row keys and corresponding mutations to be applied in bulk.
+   * Required. The row keys and corresponding mutations to be applied in bulk.
    * Each entry is applied as an atomic mutation, but the entries may be
    * applied in arbitrary order (even between entries for the same row).
    * At least one entry must be specified, and in total the entries can
    * contain at most 100000 mutations.
    * </pre>
    *
-   * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+   * <code>
+   * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.bigtable.v2.MutateRowsRequest.EntryOrBuilder getEntriesOrBuilder(int index) {
     return entries_.get(index);
@@ -1676,7 +1789,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
 
       if (entriesBuilder_ == null) {
         entries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         entriesBuilder_.clear();
       }
@@ -1708,19 +1821,17 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
       com.google.bigtable.v2.MutateRowsRequest result =
           new com.google.bigtable.v2.MutateRowsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.tableName_ = tableName_;
       result.appProfileId_ = appProfileId_;
       if (entriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.entries_ = entries_;
       } else {
         result.entries_ = entriesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1782,7 +1893,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
         if (!other.entries_.isEmpty()) {
           if (entries_.isEmpty()) {
             entries_ = other.entries_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureEntriesIsMutable();
             entries_.addAll(other.entries_);
@@ -1795,7 +1906,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
             entriesBuilder_.dispose();
             entriesBuilder_ = null;
             entries_ = other.entries_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             entriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEntriesFieldBuilder()
@@ -1841,10 +1952,14 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The unique name of the table to which the mutations should be applied.
+     * Required. The unique name of the table to which the mutations should be applied.
      * </pre>
      *
-     * <code>string table_name = 1;</code>
+     * <code>
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The tableName.
      */
     public java.lang.String getTableName() {
       java.lang.Object ref = tableName_;
@@ -1861,10 +1976,14 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The unique name of the table to which the mutations should be applied.
+     * Required. The unique name of the table to which the mutations should be applied.
      * </pre>
      *
-     * <code>string table_name = 1;</code>
+     * <code>
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for tableName.
      */
     public com.google.protobuf.ByteString getTableNameBytes() {
       java.lang.Object ref = tableName_;
@@ -1881,10 +2000,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The unique name of the table to which the mutations should be applied.
+     * Required. The unique name of the table to which the mutations should be applied.
      * </pre>
      *
-     * <code>string table_name = 1;</code>
+     * <code>
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The tableName to set.
+     * @return This builder for chaining.
      */
     public Builder setTableName(java.lang.String value) {
       if (value == null) {
@@ -1899,10 +2023,14 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The unique name of the table to which the mutations should be applied.
+     * Required. The unique name of the table to which the mutations should be applied.
      * </pre>
      *
-     * <code>string table_name = 1;</code>
+     * <code>
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTableName() {
 
@@ -1914,10 +2042,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The unique name of the table to which the mutations should be applied.
+     * Required. The unique name of the table to which the mutations should be applied.
      * </pre>
      *
-     * <code>string table_name = 1;</code>
+     * <code>
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for tableName to set.
+     * @return This builder for chaining.
      */
     public Builder setTableNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1940,6 +2073,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string app_profile_id = 3;</code>
+     *
+     * @return The appProfileId.
      */
     public java.lang.String getAppProfileId() {
       java.lang.Object ref = appProfileId_;
@@ -1961,6 +2096,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string app_profile_id = 3;</code>
+     *
+     * @return The bytes for appProfileId.
      */
     public com.google.protobuf.ByteString getAppProfileIdBytes() {
       java.lang.Object ref = appProfileId_;
@@ -1982,6 +2119,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string app_profile_id = 3;</code>
+     *
+     * @param value The appProfileId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppProfileId(java.lang.String value) {
       if (value == null) {
@@ -2001,6 +2141,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string app_profile_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAppProfileId() {
 
@@ -2017,6 +2159,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string app_profile_id = 3;</code>
+     *
+     * @param value The bytes for appProfileId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppProfileIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2033,10 +2178,10 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         entries_ =
             new java.util.ArrayList<com.google.bigtable.v2.MutateRowsRequest.Entry>(entries_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2050,14 +2195,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.bigtable.v2.MutateRowsRequest.Entry> getEntriesList() {
       if (entriesBuilder_ == null) {
@@ -2070,14 +2217,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getEntriesCount() {
       if (entriesBuilder_ == null) {
@@ -2090,14 +2239,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.v2.MutateRowsRequest.Entry getEntries(int index) {
       if (entriesBuilder_ == null) {
@@ -2110,14 +2261,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEntries(int index, com.google.bigtable.v2.MutateRowsRequest.Entry value) {
       if (entriesBuilder_ == null) {
@@ -2136,14 +2289,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEntries(
         int index, com.google.bigtable.v2.MutateRowsRequest.Entry.Builder builderForValue) {
@@ -2160,14 +2315,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntries(com.google.bigtable.v2.MutateRowsRequest.Entry value) {
       if (entriesBuilder_ == null) {
@@ -2186,14 +2343,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntries(int index, com.google.bigtable.v2.MutateRowsRequest.Entry value) {
       if (entriesBuilder_ == null) {
@@ -2212,14 +2371,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntries(
         com.google.bigtable.v2.MutateRowsRequest.Entry.Builder builderForValue) {
@@ -2236,14 +2397,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntries(
         int index, com.google.bigtable.v2.MutateRowsRequest.Entry.Builder builderForValue) {
@@ -2260,14 +2423,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllEntries(
         java.lang.Iterable<? extends com.google.bigtable.v2.MutateRowsRequest.Entry> values) {
@@ -2284,19 +2449,21 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearEntries() {
       if (entriesBuilder_ == null) {
         entries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         entriesBuilder_.clear();
@@ -2307,14 +2474,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeEntries(int index) {
       if (entriesBuilder_ == null) {
@@ -2330,14 +2499,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.v2.MutateRowsRequest.Entry.Builder getEntriesBuilder(int index) {
       return getEntriesFieldBuilder().getBuilder(index);
@@ -2346,14 +2517,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.v2.MutateRowsRequest.EntryOrBuilder getEntriesOrBuilder(int index) {
       if (entriesBuilder_ == null) {
@@ -2366,14 +2539,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.bigtable.v2.MutateRowsRequest.EntryOrBuilder>
         getEntriesOrBuilderList() {
@@ -2387,14 +2562,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.v2.MutateRowsRequest.Entry.Builder addEntriesBuilder() {
       return getEntriesFieldBuilder()
@@ -2404,14 +2581,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.bigtable.v2.MutateRowsRequest.Entry.Builder addEntriesBuilder(int index) {
       return getEntriesFieldBuilder()
@@ -2421,14 +2600,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The row keys and corresponding mutations to be applied in bulk.
+     * Required. The row keys and corresponding mutations to be applied in bulk.
      * Each entry is applied as an atomic mutation, but the entries may be
      * applied in arbitrary order (even between entries for the same row).
      * At least one entry must be specified, and in total the entries can
      * contain at most 100000 mutations.
      * </pre>
      *
-     * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+     * <code>
+     * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.bigtable.v2.MutateRowsRequest.Entry.Builder>
         getEntriesBuilderList() {
@@ -2446,7 +2627,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
                 com.google.bigtable.v2.MutateRowsRequest.Entry,
                 com.google.bigtable.v2.MutateRowsRequest.Entry.Builder,
                 com.google.bigtable.v2.MutateRowsRequest.EntryOrBuilder>(
-                entries_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                entries_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         entries_ = null;
       }
       return entriesBuilder_;

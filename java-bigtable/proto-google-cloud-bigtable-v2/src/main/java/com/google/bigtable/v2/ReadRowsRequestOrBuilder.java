@@ -27,24 +27,32 @@ public interface ReadRowsRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the table from which to read.
+   * Required. The unique name of the table from which to read.
    * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
    * </pre>
    *
-   * <code>string table_name = 1;</code>
+   * <code>
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The tableName.
    */
   java.lang.String getTableName();
   /**
    *
    *
    * <pre>
-   * The unique name of the table from which to read.
+   * Required. The unique name of the table from which to read.
    * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
    * </pre>
    *
-   * <code>string table_name = 1;</code>
+   * <code>
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for tableName.
    */
   com.google.protobuf.ByteString getTableNameBytes();
 
@@ -57,6 +65,8 @@ public interface ReadRowsRequestOrBuilder
    * </pre>
    *
    * <code>string app_profile_id = 5;</code>
+   *
+   * @return The appProfileId.
    */
   java.lang.String getAppProfileId();
   /**
@@ -68,6 +78,8 @@ public interface ReadRowsRequestOrBuilder
    * </pre>
    *
    * <code>string app_profile_id = 5;</code>
+   *
+   * @return The bytes for appProfileId.
    */
   com.google.protobuf.ByteString getAppProfileIdBytes();
 
@@ -79,6 +91,8 @@ public interface ReadRowsRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.RowSet rows = 2;</code>
+   *
+   * @return Whether the rows field is set.
    */
   boolean hasRows();
   /**
@@ -89,6 +103,8 @@ public interface ReadRowsRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.RowSet rows = 2;</code>
+   *
+   * @return The rows.
    */
   com.google.bigtable.v2.RowSet getRows();
   /**
@@ -111,6 +127,8 @@ public interface ReadRowsRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.RowFilter filter = 3;</code>
+   *
+   * @return Whether the filter field is set.
    */
   boolean hasFilter();
   /**
@@ -122,6 +140,8 @@ public interface ReadRowsRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.RowFilter filter = 3;</code>
+   *
+   * @return The filter.
    */
   com.google.bigtable.v2.RowFilter getFilter();
   /**
@@ -145,6 +165,8 @@ public interface ReadRowsRequestOrBuilder
    * </pre>
    *
    * <code>int64 rows_limit = 4;</code>
+   *
+   * @return The rowsLimit.
    */
   long getRowsLimit();
 }

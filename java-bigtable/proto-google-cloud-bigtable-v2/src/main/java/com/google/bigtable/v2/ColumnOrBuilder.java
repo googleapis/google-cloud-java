@@ -35,6 +35,8 @@ public interface ColumnOrBuilder
    * </pre>
    *
    * <code>bytes qualifier = 1;</code>
+   *
+   * @return The qualifier.
    */
   com.google.protobuf.ByteString getQualifier();
 

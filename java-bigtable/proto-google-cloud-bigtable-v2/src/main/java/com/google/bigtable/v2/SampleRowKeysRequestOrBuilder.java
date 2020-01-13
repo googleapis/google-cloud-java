@@ -27,24 +27,32 @@ public interface SampleRowKeysRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the table from which to sample row keys.
+   * Required. The unique name of the table from which to sample row keys.
    * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
    * </pre>
    *
-   * <code>string table_name = 1;</code>
+   * <code>
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The tableName.
    */
   java.lang.String getTableName();
   /**
    *
    *
    * <pre>
-   * The unique name of the table from which to sample row keys.
+   * Required. The unique name of the table from which to sample row keys.
    * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
    * </pre>
    *
-   * <code>string table_name = 1;</code>
+   * <code>
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for tableName.
    */
   com.google.protobuf.ByteString getTableNameBytes();
 
@@ -57,6 +65,8 @@ public interface SampleRowKeysRequestOrBuilder
    * </pre>
    *
    * <code>string app_profile_id = 2;</code>
+   *
+   * @return The appProfileId.
    */
   java.lang.String getAppProfileId();
   /**
@@ -68,6 +78,8 @@ public interface SampleRowKeysRequestOrBuilder
    * </pre>
    *
    * <code>string app_profile_id = 2;</code>
+   *
+   * @return The bytes for appProfileId.
    */
   com.google.protobuf.ByteString getAppProfileIdBytes();
 }

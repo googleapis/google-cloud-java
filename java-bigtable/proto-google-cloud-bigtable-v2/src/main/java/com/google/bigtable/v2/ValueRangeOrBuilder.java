@@ -31,6 +31,8 @@ public interface ValueRangeOrBuilder
    * </pre>
    *
    * <code>bytes start_value_closed = 1;</code>
+   *
+   * @return The startValueClosed.
    */
   com.google.protobuf.ByteString getStartValueClosed();
 
@@ -42,6 +44,8 @@ public interface ValueRangeOrBuilder
    * </pre>
    *
    * <code>bytes start_value_open = 2;</code>
+   *
+   * @return The startValueOpen.
    */
   com.google.protobuf.ByteString getStartValueOpen();
 
@@ -53,6 +57,8 @@ public interface ValueRangeOrBuilder
    * </pre>
    *
    * <code>bytes end_value_closed = 3;</code>
+   *
+   * @return The endValueClosed.
    */
   com.google.protobuf.ByteString getEndValueClosed();
 
@@ -64,6 +70,8 @@ public interface ValueRangeOrBuilder
    * </pre>
    *
    * <code>bytes end_value_open = 4;</code>
+   *
+   * @return The endValueOpen.
    */
   com.google.protobuf.ByteString getEndValueOpen();
 

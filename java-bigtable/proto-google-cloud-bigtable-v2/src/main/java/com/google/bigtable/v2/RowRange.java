@@ -40,6 +40,12 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
   private RowRange() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RowRange();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -122,7 +127,10 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
   private int startKeyCase_ = 0;
   private java.lang.Object startKey_;
 
-  public enum StartKeyCase implements com.google.protobuf.Internal.EnumLite {
+  public enum StartKeyCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     START_KEY_CLOSED(1),
     START_KEY_OPEN(2),
     STARTKEY_NOT_SET(0);
@@ -131,7 +139,11 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
     private StartKeyCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static StartKeyCase valueOf(int value) {
       return forNumber(value);
@@ -162,7 +174,10 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
   private int endKeyCase_ = 0;
   private java.lang.Object endKey_;
 
-  public enum EndKeyCase implements com.google.protobuf.Internal.EnumLite {
+  public enum EndKeyCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     END_KEY_OPEN(3),
     END_KEY_CLOSED(4),
     ENDKEY_NOT_SET(0);
@@ -171,7 +186,11 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
     private EndKeyCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static EndKeyCase valueOf(int value) {
       return forNumber(value);
@@ -208,6 +227,8 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes start_key_closed = 1;</code>
+   *
+   * @return The startKeyClosed.
    */
   public com.google.protobuf.ByteString getStartKeyClosed() {
     if (startKeyCase_ == 1) {
@@ -225,6 +246,8 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes start_key_open = 2;</code>
+   *
+   * @return The startKeyOpen.
    */
   public com.google.protobuf.ByteString getStartKeyOpen() {
     if (startKeyCase_ == 2) {
@@ -242,6 +265,8 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes end_key_open = 3;</code>
+   *
+   * @return The endKeyOpen.
    */
   public com.google.protobuf.ByteString getEndKeyOpen() {
     if (endKeyCase_ == 3) {
@@ -259,6 +284,8 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes end_key_closed = 4;</code>
+   *
+   * @return The endKeyClosed.
    */
   public com.google.protobuf.ByteString getEndKeyClosed() {
     if (endKeyCase_ == 4) {
@@ -727,6 +754,8 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_key_closed = 1;</code>
+     *
+     * @return The startKeyClosed.
      */
     public com.google.protobuf.ByteString getStartKeyClosed() {
       if (startKeyCase_ == 1) {
@@ -742,6 +771,9 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_key_closed = 1;</code>
+     *
+     * @param value The startKeyClosed to set.
+     * @return This builder for chaining.
      */
     public Builder setStartKeyClosed(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -760,6 +792,8 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_key_closed = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStartKeyClosed() {
       if (startKeyCase_ == 1) {
@@ -778,6 +812,8 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_key_open = 2;</code>
+     *
+     * @return The startKeyOpen.
      */
     public com.google.protobuf.ByteString getStartKeyOpen() {
       if (startKeyCase_ == 2) {
@@ -793,6 +829,9 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_key_open = 2;</code>
+     *
+     * @param value The startKeyOpen to set.
+     * @return This builder for chaining.
      */
     public Builder setStartKeyOpen(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -811,6 +850,8 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_key_open = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStartKeyOpen() {
       if (startKeyCase_ == 2) {
@@ -829,6 +870,8 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_key_open = 3;</code>
+     *
+     * @return The endKeyOpen.
      */
     public com.google.protobuf.ByteString getEndKeyOpen() {
       if (endKeyCase_ == 3) {
@@ -844,6 +887,9 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_key_open = 3;</code>
+     *
+     * @param value The endKeyOpen to set.
+     * @return This builder for chaining.
      */
     public Builder setEndKeyOpen(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -862,6 +908,8 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_key_open = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEndKeyOpen() {
       if (endKeyCase_ == 3) {
@@ -880,6 +928,8 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_key_closed = 4;</code>
+     *
+     * @return The endKeyClosed.
      */
     public com.google.protobuf.ByteString getEndKeyClosed() {
       if (endKeyCase_ == 4) {
@@ -895,6 +945,9 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_key_closed = 4;</code>
+     *
+     * @param value The endKeyClosed to set.
+     * @return This builder for chaining.
      */
     public Builder setEndKeyClosed(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -913,6 +966,8 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_key_closed = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEndKeyClosed() {
       if (endKeyCase_ == 4) {

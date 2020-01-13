@@ -32,6 +32,8 @@ public interface CreateInstanceRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface CreateInstanceRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -56,6 +60,8 @@ public interface CreateInstanceRequestOrBuilder
    * </pre>
    *
    * <code>string instance_id = 2;</code>
+   *
+   * @return The instanceId.
    */
   java.lang.String getInstanceId();
   /**
@@ -68,6 +74,8 @@ public interface CreateInstanceRequestOrBuilder
    * </pre>
    *
    * <code>string instance_id = 2;</code>
+   *
+   * @return The bytes for instanceId.
    */
   com.google.protobuf.ByteString getInstanceIdBytes();
 
@@ -80,6 +88,8 @@ public interface CreateInstanceRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+   *
+   * @return Whether the instance field is set.
    */
   boolean hasInstance();
   /**
@@ -91,6 +101,8 @@ public interface CreateInstanceRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+   *
+   * @return The instance.
    */
   com.google.bigtable.admin.v2.Instance getInstance();
   /**

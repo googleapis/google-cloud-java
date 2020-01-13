@@ -40,6 +40,12 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
   private TimestampRange() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TimestampRange();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,6 +122,8 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 start_timestamp_micros = 1;</code>
+   *
+   * @return The startTimestampMicros.
    */
   public long getStartTimestampMicros() {
     return startTimestampMicros_;
@@ -132,6 +139,8 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 end_timestamp_micros = 2;</code>
+   *
+   * @return The endTimestampMicros.
    */
   public long getEndTimestampMicros() {
     return endTimestampMicros_;
@@ -474,6 +483,8 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 start_timestamp_micros = 1;</code>
+     *
+     * @return The startTimestampMicros.
      */
     public long getStartTimestampMicros() {
       return startTimestampMicros_;
@@ -486,6 +497,9 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 start_timestamp_micros = 1;</code>
+     *
+     * @param value The startTimestampMicros to set.
+     * @return This builder for chaining.
      */
     public Builder setStartTimestampMicros(long value) {
 
@@ -501,6 +515,8 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 start_timestamp_micros = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStartTimestampMicros() {
 
@@ -518,6 +534,8 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 end_timestamp_micros = 2;</code>
+     *
+     * @return The endTimestampMicros.
      */
     public long getEndTimestampMicros() {
       return endTimestampMicros_;
@@ -530,6 +548,9 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 end_timestamp_micros = 2;</code>
+     *
+     * @param value The endTimestampMicros to set.
+     * @return This builder for chaining.
      */
     public Builder setEndTimestampMicros(long value) {
 
@@ -545,6 +566,8 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 end_timestamp_micros = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEndTimestampMicros() {
 

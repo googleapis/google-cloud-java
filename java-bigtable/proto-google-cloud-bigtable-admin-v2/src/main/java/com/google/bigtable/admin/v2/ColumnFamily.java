@@ -40,6 +40,12 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
   private ColumnFamily() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ColumnFamily();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -127,6 +132,8 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.GcRule gc_rule = 1;</code>
+   *
+   * @return Whether the gcRule field is set.
    */
   public boolean hasGcRule() {
     return gcRule_ != null;
@@ -143,6 +150,8 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.GcRule gc_rule = 1;</code>
+   *
+   * @return The gcRule.
    */
   public com.google.bigtable.admin.v2.GcRule getGcRule() {
     return gcRule_ == null ? com.google.bigtable.admin.v2.GcRule.getDefaultInstance() : gcRule_;
@@ -510,6 +519,8 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.GcRule gc_rule = 1;</code>
+     *
+     * @return Whether the gcRule field is set.
      */
     public boolean hasGcRule() {
       return gcRuleBuilder_ != null || gcRule_ != null;
@@ -526,6 +537,8 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.GcRule gc_rule = 1;</code>
+     *
+     * @return The gcRule.
      */
     public com.google.bigtable.admin.v2.GcRule getGcRule() {
       if (gcRuleBuilder_ == null) {

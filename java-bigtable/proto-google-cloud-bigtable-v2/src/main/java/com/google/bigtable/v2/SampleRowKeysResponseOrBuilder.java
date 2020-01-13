@@ -37,6 +37,8 @@ public interface SampleRowKeysResponseOrBuilder
    * </pre>
    *
    * <code>bytes row_key = 1;</code>
+   *
+   * @return The rowKey.
    */
   com.google.protobuf.ByteString getRowKey();
 
@@ -51,6 +53,8 @@ public interface SampleRowKeysResponseOrBuilder
    * </pre>
    *
    * <code>int64 offset_bytes = 2;</code>
+   *
+   * @return The offsetBytes.
    */
   long getOffsetBytes();
 }

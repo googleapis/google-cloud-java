@@ -48,6 +48,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Instance();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -101,10 +107,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -243,12 +249,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0:
@@ -406,12 +420,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Type valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Type forNumber(int value) {
       switch (value) {
         case 0:
@@ -469,7 +491,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.bigtable.admin.v2.Instance.Type)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -482,6 +503,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -504,6 +527,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -529,6 +554,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -551,6 +578,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -575,6 +604,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -588,6 +619,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+   *
+   * @return The state.
    */
   public com.google.bigtable.admin.v2.Instance.State getState() {
     @SuppressWarnings("deprecation")
@@ -606,6 +639,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Instance.Type type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   public int getTypeValue() {
     return type_;
@@ -618,6 +653,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Instance.Type type = 4;</code>
+   *
+   * @return The type.
    */
   public com.google.bigtable.admin.v2.Instance.Type getType() {
     @SuppressWarnings("deprecation")
@@ -1061,14 +1098,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       com.google.bigtable.admin.v2.Instance result =
           new com.google.bigtable.admin.v2.Instance(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.state_ = state_;
       result.type_ = type_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1175,6 +1210,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1197,6 +1234,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1219,6 +1258,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1239,6 +1281,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1256,6 +1300,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1279,6 +1326,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1301,6 +1350,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -1323,6 +1374,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1343,6 +1397,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
 
@@ -1360,6 +1416,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string display_name = 2;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1382,6 +1441,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -1395,6 +1456,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -1410,6 +1474,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+     *
+     * @return The state.
      */
     public com.google.bigtable.admin.v2.Instance.State getState() {
       @SuppressWarnings("deprecation")
@@ -1426,6 +1492,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.bigtable.admin.v2.Instance.State value) {
       if (value == null) {
@@ -1445,6 +1514,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 
@@ -1462,6 +1533,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Instance.Type type = 4;</code>
+     *
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
@@ -1474,6 +1547,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Instance.Type type = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -1488,6 +1564,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Instance.Type type = 4;</code>
+     *
+     * @return The type.
      */
     public com.google.bigtable.admin.v2.Instance.Type getType() {
       @SuppressWarnings("deprecation")
@@ -1503,6 +1581,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Instance.Type type = 4;</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(com.google.bigtable.admin.v2.Instance.Type value) {
       if (value == null) {
@@ -1521,6 +1602,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Instance.Type type = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearType() {
 

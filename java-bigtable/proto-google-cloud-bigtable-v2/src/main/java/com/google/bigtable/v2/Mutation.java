@@ -40,6 +40,12 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
   private Mutation() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Mutation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -176,6 +181,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return The familyName.
      */
     java.lang.String getFamilyName();
     /**
@@ -187,6 +194,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return The bytes for familyName.
      */
     com.google.protobuf.ByteString getFamilyNameBytes();
 
@@ -199,6 +208,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes column_qualifier = 2;</code>
+     *
+     * @return The columnQualifier.
      */
     com.google.protobuf.ByteString getColumnQualifier();
 
@@ -214,6 +225,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 timestamp_micros = 3;</code>
+     *
+     * @return The timestampMicros.
      */
     long getTimestampMicros();
 
@@ -225,6 +238,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes value = 4;</code>
+     *
+     * @return The value.
      */
     com.google.protobuf.ByteString getValue();
   }
@@ -254,6 +269,12 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SetCell();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -266,7 +287,6 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -344,6 +364,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return The familyName.
      */
     public java.lang.String getFamilyName() {
       java.lang.Object ref = familyName_;
@@ -365,6 +387,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return The bytes for familyName.
      */
     public com.google.protobuf.ByteString getFamilyNameBytes() {
       java.lang.Object ref = familyName_;
@@ -389,6 +413,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes column_qualifier = 2;</code>
+     *
+     * @return The columnQualifier.
      */
     public com.google.protobuf.ByteString getColumnQualifier() {
       return columnQualifier_;
@@ -408,6 +434,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 timestamp_micros = 3;</code>
+     *
+     * @return The timestampMicros.
      */
     public long getTimestampMicros() {
       return timestampMicros_;
@@ -423,6 +451,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes value = 4;</code>
+     *
+     * @return The value.
      */
     public com.google.protobuf.ByteString getValue() {
       return value_;
@@ -802,6 +832,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 1;</code>
+       *
+       * @return The familyName.
        */
       public java.lang.String getFamilyName() {
         java.lang.Object ref = familyName_;
@@ -823,6 +855,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 1;</code>
+       *
+       * @return The bytes for familyName.
        */
       public com.google.protobuf.ByteString getFamilyNameBytes() {
         java.lang.Object ref = familyName_;
@@ -844,6 +878,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 1;</code>
+       *
+       * @param value The familyName to set.
+       * @return This builder for chaining.
        */
       public Builder setFamilyName(java.lang.String value) {
         if (value == null) {
@@ -863,6 +900,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearFamilyName() {
 
@@ -879,6 +918,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 1;</code>
+       *
+       * @param value The bytes for familyName to set.
+       * @return This builder for chaining.
        */
       public Builder setFamilyNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -902,6 +944,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bytes column_qualifier = 2;</code>
+       *
+       * @return The columnQualifier.
        */
       public com.google.protobuf.ByteString getColumnQualifier() {
         return columnQualifier_;
@@ -915,6 +959,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bytes column_qualifier = 2;</code>
+       *
+       * @param value The columnQualifier to set.
+       * @return This builder for chaining.
        */
       public Builder setColumnQualifier(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -934,6 +981,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bytes column_qualifier = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearColumnQualifier() {
 
@@ -955,6 +1004,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int64 timestamp_micros = 3;</code>
+       *
+       * @return The timestampMicros.
        */
       public long getTimestampMicros() {
         return timestampMicros_;
@@ -971,6 +1022,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int64 timestamp_micros = 3;</code>
+       *
+       * @param value The timestampMicros to set.
+       * @return This builder for chaining.
        */
       public Builder setTimestampMicros(long value) {
 
@@ -990,6 +1044,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>int64 timestamp_micros = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearTimestampMicros() {
 
@@ -1007,6 +1063,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bytes value = 4;</code>
+       *
+       * @return The value.
        */
       public com.google.protobuf.ByteString getValue() {
         return value_;
@@ -1019,6 +1077,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bytes value = 4;</code>
+       *
+       * @param value The value to set.
+       * @return This builder for chaining.
        */
       public Builder setValue(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1037,6 +1098,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bytes value = 4;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearValue() {
 
@@ -1111,6 +1174,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return The familyName.
      */
     java.lang.String getFamilyName();
     /**
@@ -1122,6 +1187,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return The bytes for familyName.
      */
     com.google.protobuf.ByteString getFamilyNameBytes();
 
@@ -1134,6 +1201,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes column_qualifier = 2;</code>
+     *
+     * @return The columnQualifier.
      */
     com.google.protobuf.ByteString getColumnQualifier();
 
@@ -1145,6 +1214,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.v2.TimestampRange time_range = 3;</code>
+     *
+     * @return Whether the timeRange field is set.
      */
     boolean hasTimeRange();
     /**
@@ -1155,6 +1226,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.v2.TimestampRange time_range = 3;</code>
+     *
+     * @return The timeRange.
      */
     com.google.bigtable.v2.TimestampRange getTimeRange();
     /**
@@ -1194,6 +1267,12 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DeleteFromColumn();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1206,7 +1285,6 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1290,6 +1368,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return The familyName.
      */
     public java.lang.String getFamilyName() {
       java.lang.Object ref = familyName_;
@@ -1311,6 +1391,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return The bytes for familyName.
      */
     public com.google.protobuf.ByteString getFamilyNameBytes() {
       java.lang.Object ref = familyName_;
@@ -1335,6 +1417,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes column_qualifier = 2;</code>
+     *
+     * @return The columnQualifier.
      */
     public com.google.protobuf.ByteString getColumnQualifier() {
       return columnQualifier_;
@@ -1350,6 +1434,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.v2.TimestampRange time_range = 3;</code>
+     *
+     * @return Whether the timeRange field is set.
      */
     public boolean hasTimeRange() {
       return timeRange_ != null;
@@ -1362,6 +1448,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.v2.TimestampRange time_range = 3;</code>
+     *
+     * @return The timeRange.
      */
     public com.google.bigtable.v2.TimestampRange getTimeRange() {
       return timeRange_ == null
@@ -1757,6 +1845,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 1;</code>
+       *
+       * @return The familyName.
        */
       public java.lang.String getFamilyName() {
         java.lang.Object ref = familyName_;
@@ -1778,6 +1868,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 1;</code>
+       *
+       * @return The bytes for familyName.
        */
       public com.google.protobuf.ByteString getFamilyNameBytes() {
         java.lang.Object ref = familyName_;
@@ -1799,6 +1891,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 1;</code>
+       *
+       * @param value The familyName to set.
+       * @return This builder for chaining.
        */
       public Builder setFamilyName(java.lang.String value) {
         if (value == null) {
@@ -1818,6 +1913,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearFamilyName() {
 
@@ -1834,6 +1931,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 1;</code>
+       *
+       * @param value The bytes for familyName to set.
+       * @return This builder for chaining.
        */
       public Builder setFamilyNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1857,6 +1957,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bytes column_qualifier = 2;</code>
+       *
+       * @return The columnQualifier.
        */
       public com.google.protobuf.ByteString getColumnQualifier() {
         return columnQualifier_;
@@ -1870,6 +1972,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bytes column_qualifier = 2;</code>
+       *
+       * @param value The columnQualifier to set.
+       * @return This builder for chaining.
        */
       public Builder setColumnQualifier(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1889,6 +1994,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bytes column_qualifier = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearColumnQualifier() {
 
@@ -1911,6 +2018,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.bigtable.v2.TimestampRange time_range = 3;</code>
+       *
+       * @return Whether the timeRange field is set.
        */
       public boolean hasTimeRange() {
         return timeRangeBuilder_ != null || timeRange_ != null;
@@ -1923,6 +2032,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>.google.bigtable.v2.TimestampRange time_range = 3;</code>
+       *
+       * @return The timeRange.
        */
       public com.google.bigtable.v2.TimestampRange getTimeRange() {
         if (timeRangeBuilder_ == null) {
@@ -2144,6 +2255,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return The familyName.
      */
     java.lang.String getFamilyName();
     /**
@@ -2155,6 +2268,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return The bytes for familyName.
      */
     com.google.protobuf.ByteString getFamilyNameBytes();
   }
@@ -2182,6 +2297,12 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DeleteFromFamily();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -2194,7 +2315,6 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2257,6 +2377,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return The familyName.
      */
     public java.lang.String getFamilyName() {
       java.lang.Object ref = familyName_;
@@ -2278,6 +2400,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return The bytes for familyName.
      */
     public com.google.protobuf.ByteString getFamilyNameBytes() {
       java.lang.Object ref = familyName_;
@@ -2623,6 +2747,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 1;</code>
+       *
+       * @return The familyName.
        */
       public java.lang.String getFamilyName() {
         java.lang.Object ref = familyName_;
@@ -2644,6 +2770,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 1;</code>
+       *
+       * @return The bytes for familyName.
        */
       public com.google.protobuf.ByteString getFamilyNameBytes() {
         java.lang.Object ref = familyName_;
@@ -2665,6 +2793,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 1;</code>
+       *
+       * @param value The familyName to set.
+       * @return This builder for chaining.
        */
       public Builder setFamilyName(java.lang.String value) {
         if (value == null) {
@@ -2684,6 +2815,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearFamilyName() {
 
@@ -2700,6 +2833,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string family_name = 1;</code>
+       *
+       * @param value The bytes for familyName to set.
+       * @return This builder for chaining.
        */
       public Builder setFamilyNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2788,6 +2924,12 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private DeleteFromRow() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DeleteFromRow();
+    }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -3206,7 +3348,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
   private int mutationCase_ = 0;
   private java.lang.Object mutation_;
 
-  public enum MutationCase implements com.google.protobuf.Internal.EnumLite {
+  public enum MutationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SET_CELL(1),
     DELETE_FROM_COLUMN(2),
     DELETE_FROM_FAMILY(3),
@@ -3217,7 +3362,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     private MutationCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static MutationCase valueOf(int value) {
       return forNumber(value);
@@ -3258,6 +3407,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.v2.Mutation.SetCell set_cell = 1;</code>
+   *
+   * @return Whether the setCell field is set.
    */
   public boolean hasSetCell() {
     return mutationCase_ == 1;
@@ -3270,6 +3421,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.v2.Mutation.SetCell set_cell = 1;</code>
+   *
+   * @return The setCell.
    */
   public com.google.bigtable.v2.Mutation.SetCell getSetCell() {
     if (mutationCase_ == 1) {
@@ -3302,6 +3455,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.v2.Mutation.DeleteFromColumn delete_from_column = 2;</code>
+   *
+   * @return Whether the deleteFromColumn field is set.
    */
   public boolean hasDeleteFromColumn() {
     return mutationCase_ == 2;
@@ -3314,6 +3469,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.v2.Mutation.DeleteFromColumn delete_from_column = 2;</code>
+   *
+   * @return The deleteFromColumn.
    */
   public com.google.bigtable.v2.Mutation.DeleteFromColumn getDeleteFromColumn() {
     if (mutationCase_ == 2) {
@@ -3346,6 +3503,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.v2.Mutation.DeleteFromFamily delete_from_family = 3;</code>
+   *
+   * @return Whether the deleteFromFamily field is set.
    */
   public boolean hasDeleteFromFamily() {
     return mutationCase_ == 3;
@@ -3358,6 +3517,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.v2.Mutation.DeleteFromFamily delete_from_family = 3;</code>
+   *
+   * @return The deleteFromFamily.
    */
   public com.google.bigtable.v2.Mutation.DeleteFromFamily getDeleteFromFamily() {
     if (mutationCase_ == 3) {
@@ -3390,6 +3551,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.v2.Mutation.DeleteFromRow delete_from_row = 4;</code>
+   *
+   * @return Whether the deleteFromRow field is set.
    */
   public boolean hasDeleteFromRow() {
     return mutationCase_ == 4;
@@ -3402,6 +3565,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.v2.Mutation.DeleteFromRow delete_from_row = 4;</code>
+   *
+   * @return The deleteFromRow.
    */
   public com.google.bigtable.v2.Mutation.DeleteFromRow getDeleteFromRow() {
     if (mutationCase_ == 4) {
@@ -3874,6 +4039,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.v2.Mutation.SetCell set_cell = 1;</code>
+     *
+     * @return Whether the setCell field is set.
      */
     public boolean hasSetCell() {
       return mutationCase_ == 1;
@@ -3886,6 +4053,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.v2.Mutation.SetCell set_cell = 1;</code>
+     *
+     * @return The setCell.
      */
     public com.google.bigtable.v2.Mutation.SetCell getSetCell() {
       if (setCellBuilder_ == null) {
@@ -4075,6 +4244,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.v2.Mutation.DeleteFromColumn delete_from_column = 2;</code>
+     *
+     * @return Whether the deleteFromColumn field is set.
      */
     public boolean hasDeleteFromColumn() {
       return mutationCase_ == 2;
@@ -4087,6 +4258,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.v2.Mutation.DeleteFromColumn delete_from_column = 2;</code>
+     *
+     * @return The deleteFromColumn.
      */
     public com.google.bigtable.v2.Mutation.DeleteFromColumn getDeleteFromColumn() {
       if (deleteFromColumnBuilder_ == null) {
@@ -4278,6 +4451,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.v2.Mutation.DeleteFromFamily delete_from_family = 3;</code>
+     *
+     * @return Whether the deleteFromFamily field is set.
      */
     public boolean hasDeleteFromFamily() {
       return mutationCase_ == 3;
@@ -4290,6 +4465,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.v2.Mutation.DeleteFromFamily delete_from_family = 3;</code>
+     *
+     * @return The deleteFromFamily.
      */
     public com.google.bigtable.v2.Mutation.DeleteFromFamily getDeleteFromFamily() {
       if (deleteFromFamilyBuilder_ == null) {
@@ -4481,6 +4658,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.v2.Mutation.DeleteFromRow delete_from_row = 4;</code>
+     *
+     * @return Whether the deleteFromRow field is set.
      */
     public boolean hasDeleteFromRow() {
       return mutationCase_ == 4;
@@ -4493,6 +4672,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.v2.Mutation.DeleteFromRow delete_from_row = 4;</code>
+     *
+     * @return The deleteFromRow.
      */
     public com.google.bigtable.v2.Mutation.DeleteFromRow getDeleteFromRow() {
       if (deleteFromRowBuilder_ == null) {

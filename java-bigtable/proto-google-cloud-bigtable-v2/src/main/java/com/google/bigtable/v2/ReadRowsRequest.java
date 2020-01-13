@@ -43,6 +43,12 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReadRowsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -154,12 +159,16 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The unique name of the table from which to read.
+   * Required. The unique name of the table from which to read.
    * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
    * </pre>
    *
-   * <code>string table_name = 1;</code>
+   * <code>
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The tableName.
    */
   public java.lang.String getTableName() {
     java.lang.Object ref = tableName_;
@@ -176,12 +185,16 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The unique name of the table from which to read.
+   * Required. The unique name of the table from which to read.
    * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
    * </pre>
    *
-   * <code>string table_name = 1;</code>
+   * <code>
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for tableName.
    */
   public com.google.protobuf.ByteString getTableNameBytes() {
     java.lang.Object ref = tableName_;
@@ -206,6 +219,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string app_profile_id = 5;</code>
+   *
+   * @return The appProfileId.
    */
   public java.lang.String getAppProfileId() {
     java.lang.Object ref = appProfileId_;
@@ -227,6 +242,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string app_profile_id = 5;</code>
+   *
+   * @return The bytes for appProfileId.
    */
   public com.google.protobuf.ByteString getAppProfileIdBytes() {
     java.lang.Object ref = appProfileId_;
@@ -250,6 +267,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.bigtable.v2.RowSet rows = 2;</code>
+   *
+   * @return Whether the rows field is set.
    */
   public boolean hasRows() {
     return rows_ != null;
@@ -262,6 +281,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.bigtable.v2.RowSet rows = 2;</code>
+   *
+   * @return The rows.
    */
   public com.google.bigtable.v2.RowSet getRows() {
     return rows_ == null ? com.google.bigtable.v2.RowSet.getDefaultInstance() : rows_;
@@ -290,6 +311,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.bigtable.v2.RowFilter filter = 3;</code>
+   *
+   * @return Whether the filter field is set.
    */
   public boolean hasFilter() {
     return filter_ != null;
@@ -303,6 +326,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.google.bigtable.v2.RowFilter filter = 3;</code>
+   *
+   * @return The filter.
    */
   public com.google.bigtable.v2.RowFilter getFilter() {
     return filter_ == null ? com.google.bigtable.v2.RowFilter.getDefaultInstance() : filter_;
@@ -332,6 +357,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>int64 rows_limit = 4;</code>
+   *
+   * @return The rowsLimit.
    */
   public long getRowsLimit() {
     return rowsLimit_;
@@ -744,12 +771,16 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The unique name of the table from which to read.
+     * Required. The unique name of the table from which to read.
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
-     * <code>string table_name = 1;</code>
+     * <code>
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The tableName.
      */
     public java.lang.String getTableName() {
       java.lang.Object ref = tableName_;
@@ -766,12 +797,16 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The unique name of the table from which to read.
+     * Required. The unique name of the table from which to read.
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
-     * <code>string table_name = 1;</code>
+     * <code>
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for tableName.
      */
     public com.google.protobuf.ByteString getTableNameBytes() {
       java.lang.Object ref = tableName_;
@@ -788,12 +823,17 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The unique name of the table from which to read.
+     * Required. The unique name of the table from which to read.
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
-     * <code>string table_name = 1;</code>
+     * <code>
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The tableName to set.
+     * @return This builder for chaining.
      */
     public Builder setTableName(java.lang.String value) {
       if (value == null) {
@@ -808,12 +848,16 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The unique name of the table from which to read.
+     * Required. The unique name of the table from which to read.
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
-     * <code>string table_name = 1;</code>
+     * <code>
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTableName() {
 
@@ -825,12 +869,17 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The unique name of the table from which to read.
+     * Required. The unique name of the table from which to read.
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
-     * <code>string table_name = 1;</code>
+     * <code>
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for tableName to set.
+     * @return This builder for chaining.
      */
     public Builder setTableNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -853,6 +902,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string app_profile_id = 5;</code>
+     *
+     * @return The appProfileId.
      */
     public java.lang.String getAppProfileId() {
       java.lang.Object ref = appProfileId_;
@@ -874,6 +925,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string app_profile_id = 5;</code>
+     *
+     * @return The bytes for appProfileId.
      */
     public com.google.protobuf.ByteString getAppProfileIdBytes() {
       java.lang.Object ref = appProfileId_;
@@ -895,6 +948,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string app_profile_id = 5;</code>
+     *
+     * @param value The appProfileId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppProfileId(java.lang.String value) {
       if (value == null) {
@@ -914,6 +970,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string app_profile_id = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAppProfileId() {
 
@@ -930,6 +988,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string app_profile_id = 5;</code>
+     *
+     * @param value The bytes for appProfileId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppProfileIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -956,6 +1017,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.bigtable.v2.RowSet rows = 2;</code>
+     *
+     * @return Whether the rows field is set.
      */
     public boolean hasRows() {
       return rowsBuilder_ != null || rows_ != null;
@@ -968,6 +1031,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.bigtable.v2.RowSet rows = 2;</code>
+     *
+     * @return The rows.
      */
     public com.google.bigtable.v2.RowSet getRows() {
       if (rowsBuilder_ == null) {
@@ -1131,6 +1196,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.bigtable.v2.RowFilter filter = 3;</code>
+     *
+     * @return Whether the filter field is set.
      */
     public boolean hasFilter() {
       return filterBuilder_ != null || filter_ != null;
@@ -1144,6 +1211,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.google.bigtable.v2.RowFilter filter = 3;</code>
+     *
+     * @return The filter.
      */
     public com.google.bigtable.v2.RowFilter getFilter() {
       if (filterBuilder_ == null) {
@@ -1310,6 +1379,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>int64 rows_limit = 4;</code>
+     *
+     * @return The rowsLimit.
      */
     public long getRowsLimit() {
       return rowsLimit_;
@@ -1323,6 +1394,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>int64 rows_limit = 4;</code>
+     *
+     * @param value The rowsLimit to set.
+     * @return This builder for chaining.
      */
     public Builder setRowsLimit(long value) {
 
@@ -1339,6 +1413,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>int64 rows_limit = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRowsLimit() {
 

@@ -43,6 +43,12 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateAppProfileRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -147,6 +152,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -169,6 +176,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -194,6 +203,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string app_profile_id = 2;</code>
+   *
+   * @return The appProfileId.
    */
   public java.lang.String getAppProfileId() {
     java.lang.Object ref = appProfileId_;
@@ -216,6 +227,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string app_profile_id = 2;</code>
+   *
+   * @return The bytes for appProfileId.
    */
   public com.google.protobuf.ByteString getAppProfileIdBytes() {
     java.lang.Object ref = appProfileId_;
@@ -240,6 +253,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+   *
+   * @return Whether the appProfile field is set.
    */
   public boolean hasAppProfile() {
     return appProfile_ != null;
@@ -253,6 +268,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+   *
+   * @return The appProfile.
    */
   public com.google.bigtable.admin.v2.AppProfile getAppProfile() {
     return appProfile_ == null
@@ -283,6 +300,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>bool ignore_warnings = 4;</code>
+   *
+   * @return The ignoreWarnings.
    */
   public boolean getIgnoreWarnings() {
     return ignoreWarnings_;
@@ -676,6 +695,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -698,6 +719,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -720,6 +743,9 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -740,6 +766,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -757,6 +785,9 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -780,6 +811,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string app_profile_id = 2;</code>
+     *
+     * @return The appProfileId.
      */
     public java.lang.String getAppProfileId() {
       java.lang.Object ref = appProfileId_;
@@ -802,6 +835,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string app_profile_id = 2;</code>
+     *
+     * @return The bytes for appProfileId.
      */
     public com.google.protobuf.ByteString getAppProfileIdBytes() {
       java.lang.Object ref = appProfileId_;
@@ -824,6 +859,9 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string app_profile_id = 2;</code>
+     *
+     * @param value The appProfileId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppProfileId(java.lang.String value) {
       if (value == null) {
@@ -844,6 +882,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string app_profile_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAppProfileId() {
 
@@ -861,6 +901,9 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string app_profile_id = 2;</code>
+     *
+     * @param value The bytes for appProfileId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppProfileIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -888,6 +931,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+     *
+     * @return Whether the appProfile field is set.
      */
     public boolean hasAppProfile() {
       return appProfileBuilder_ != null || appProfile_ != null;
@@ -901,6 +946,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+     *
+     * @return The appProfile.
      */
     public com.google.bigtable.admin.v2.AppProfile getAppProfile() {
       if (appProfileBuilder_ == null) {
@@ -1072,6 +1119,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>bool ignore_warnings = 4;</code>
+     *
+     * @return The ignoreWarnings.
      */
     public boolean getIgnoreWarnings() {
       return ignoreWarnings_;
@@ -1084,6 +1133,9 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>bool ignore_warnings = 4;</code>
+     *
+     * @param value The ignoreWarnings to set.
+     * @return This builder for chaining.
      */
     public Builder setIgnoreWarnings(boolean value) {
 
@@ -1099,6 +1151,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>bool ignore_warnings = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIgnoreWarnings() {
 

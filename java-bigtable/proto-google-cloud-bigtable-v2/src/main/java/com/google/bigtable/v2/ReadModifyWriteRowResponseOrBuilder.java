@@ -31,6 +31,8 @@ public interface ReadModifyWriteRowResponseOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.Row row = 1;</code>
+   *
+   * @return Whether the row field is set.
    */
   boolean hasRow();
   /**
@@ -41,6 +43,8 @@ public interface ReadModifyWriteRowResponseOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.Row row = 1;</code>
+   *
+   * @return The row.
    */
   com.google.bigtable.v2.Row getRow();
   /**

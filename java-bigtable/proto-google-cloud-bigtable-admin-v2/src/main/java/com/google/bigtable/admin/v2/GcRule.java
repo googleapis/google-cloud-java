@@ -40,6 +40,12 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
   private GcRule() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GcRule();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -226,6 +231,12 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
 
     private Intersection() {
       rules_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Intersection();
     }
 
     @java.lang.Override
@@ -1208,6 +1219,12 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Union();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -2108,7 +2125,10 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
   private int ruleCase_ = 0;
   private java.lang.Object rule_;
 
-  public enum RuleCase implements com.google.protobuf.Internal.EnumLite {
+  public enum RuleCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     MAX_NUM_VERSIONS(1),
     MAX_AGE(2),
     INTERSECTION(3),
@@ -2119,7 +2139,11 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
     private RuleCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static RuleCase valueOf(int value) {
       return forNumber(value);
@@ -2160,6 +2184,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 max_num_versions = 1;</code>
+   *
+   * @return The maxNumVersions.
    */
   public int getMaxNumVersions() {
     if (ruleCase_ == 1) {
@@ -2179,6 +2205,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration max_age = 2;</code>
+   *
+   * @return Whether the maxAge field is set.
    */
   public boolean hasMaxAge() {
     return ruleCase_ == 2;
@@ -2193,6 +2221,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration max_age = 2;</code>
+   *
+   * @return The maxAge.
    */
   public com.google.protobuf.Duration getMaxAge() {
     if (ruleCase_ == 2) {
@@ -2227,6 +2257,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.GcRule.Intersection intersection = 3;</code>
+   *
+   * @return Whether the intersection field is set.
    */
   public boolean hasIntersection() {
     return ruleCase_ == 3;
@@ -2239,6 +2271,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.GcRule.Intersection intersection = 3;</code>
+   *
+   * @return The intersection.
    */
   public com.google.bigtable.admin.v2.GcRule.Intersection getIntersection() {
     if (ruleCase_ == 3) {
@@ -2271,6 +2305,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.GcRule.Union union = 4;</code>
+   *
+   * @return Whether the union field is set.
    */
   public boolean hasUnion() {
     return ruleCase_ == 4;
@@ -2283,6 +2319,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.GcRule.Union union = 4;</code>
+   *
+   * @return The union.
    */
   public com.google.bigtable.admin.v2.GcRule.Union getUnion() {
     if (ruleCase_ == 4) {
@@ -2747,6 +2785,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_num_versions = 1;</code>
+     *
+     * @return The maxNumVersions.
      */
     public int getMaxNumVersions() {
       if (ruleCase_ == 1) {
@@ -2762,6 +2802,9 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_num_versions = 1;</code>
+     *
+     * @param value The maxNumVersions to set.
+     * @return This builder for chaining.
      */
     public Builder setMaxNumVersions(int value) {
       ruleCase_ = 1;
@@ -2777,6 +2820,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 max_num_versions = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMaxNumVersions() {
       if (ruleCase_ == 1) {
@@ -2802,6 +2847,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration max_age = 2;</code>
+     *
+     * @return Whether the maxAge field is set.
      */
     public boolean hasMaxAge() {
       return ruleCase_ == 2;
@@ -2816,6 +2863,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration max_age = 2;</code>
+     *
+     * @return The maxAge.
      */
     public com.google.protobuf.Duration getMaxAge() {
       if (maxAgeBuilder_ == null) {
@@ -3015,6 +3064,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.GcRule.Intersection intersection = 3;</code>
+     *
+     * @return Whether the intersection field is set.
      */
     public boolean hasIntersection() {
       return ruleCase_ == 3;
@@ -3027,6 +3078,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.GcRule.Intersection intersection = 3;</code>
+     *
+     * @return The intersection.
      */
     public com.google.bigtable.admin.v2.GcRule.Intersection getIntersection() {
       if (intersectionBuilder_ == null) {
@@ -3217,6 +3270,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.GcRule.Union union = 4;</code>
+     *
+     * @return Whether the union field is set.
      */
     public boolean hasUnion() {
       return ruleCase_ == 4;
@@ -3229,6 +3284,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.GcRule.Union union = 4;</code>
+     *
+     * @return The union.
      */
     public com.google.bigtable.admin.v2.GcRule.Union getUnion() {
       if (unionBuilder_ == null) {

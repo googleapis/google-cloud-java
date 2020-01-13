@@ -33,6 +33,8 @@ public interface GetTableRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface GetTableRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -57,6 +61,8 @@ public interface GetTableRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table.View view = 2;</code>
+   *
+   * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
   /**
@@ -68,6 +74,8 @@ public interface GetTableRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table.View view = 2;</code>
+   *
+   * @return The view.
    */
   com.google.bigtable.admin.v2.Table.View getView();
 }

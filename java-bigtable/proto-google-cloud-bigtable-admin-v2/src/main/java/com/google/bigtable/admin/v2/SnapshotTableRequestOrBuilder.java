@@ -33,6 +33,8 @@ public interface SnapshotTableRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface SnapshotTableRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -58,6 +62,8 @@ public interface SnapshotTableRequestOrBuilder
    * </pre>
    *
    * <code>string cluster = 2;</code>
+   *
+   * @return The cluster.
    */
   java.lang.String getCluster();
   /**
@@ -70,6 +76,8 @@ public interface SnapshotTableRequestOrBuilder
    * </pre>
    *
    * <code>string cluster = 2;</code>
+   *
+   * @return The bytes for cluster.
    */
   com.google.protobuf.ByteString getClusterBytes();
 
@@ -84,6 +92,8 @@ public interface SnapshotTableRequestOrBuilder
    * </pre>
    *
    * <code>string snapshot_id = 3;</code>
+   *
+   * @return The snapshotId.
    */
   java.lang.String getSnapshotId();
   /**
@@ -97,6 +107,8 @@ public interface SnapshotTableRequestOrBuilder
    * </pre>
    *
    * <code>string snapshot_id = 3;</code>
+   *
+   * @return The bytes for snapshotId.
    */
   com.google.protobuf.ByteString getSnapshotIdBytes();
 
@@ -111,6 +123,8 @@ public interface SnapshotTableRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 4;</code>
+   *
+   * @return Whether the ttl field is set.
    */
   boolean hasTtl();
   /**
@@ -124,6 +138,8 @@ public interface SnapshotTableRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 4;</code>
+   *
+   * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
   /**
@@ -148,6 +164,8 @@ public interface SnapshotTableRequestOrBuilder
    * </pre>
    *
    * <code>string description = 5;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -158,6 +176,8 @@ public interface SnapshotTableRequestOrBuilder
    * </pre>
    *
    * <code>string description = 5;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 }

@@ -31,6 +31,8 @@ public interface RowRangeOrBuilder
    * </pre>
    *
    * <code>bytes start_key_closed = 1;</code>
+   *
+   * @return The startKeyClosed.
    */
   com.google.protobuf.ByteString getStartKeyClosed();
 
@@ -42,6 +44,8 @@ public interface RowRangeOrBuilder
    * </pre>
    *
    * <code>bytes start_key_open = 2;</code>
+   *
+   * @return The startKeyOpen.
    */
   com.google.protobuf.ByteString getStartKeyOpen();
 
@@ -53,6 +57,8 @@ public interface RowRangeOrBuilder
    * </pre>
    *
    * <code>bytes end_key_open = 3;</code>
+   *
+   * @return The endKeyOpen.
    */
   com.google.protobuf.ByteString getEndKeyOpen();
 
@@ -64,6 +70,8 @@ public interface RowRangeOrBuilder
    * </pre>
    *
    * <code>bytes end_key_closed = 4;</code>
+   *
+   * @return The endKeyClosed.
    */
   com.google.protobuf.ByteString getEndKeyClosed();
 

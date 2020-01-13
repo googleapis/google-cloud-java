@@ -40,6 +40,12 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
   private ValueRange() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ValueRange();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,7 +129,10 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
   private int startValueCase_ = 0;
   private java.lang.Object startValue_;
 
-  public enum StartValueCase implements com.google.protobuf.Internal.EnumLite {
+  public enum StartValueCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     START_VALUE_CLOSED(1),
     START_VALUE_OPEN(2),
     STARTVALUE_NOT_SET(0);
@@ -133,7 +141,11 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
     private StartValueCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static StartValueCase valueOf(int value) {
       return forNumber(value);
@@ -164,7 +176,10 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
   private int endValueCase_ = 0;
   private java.lang.Object endValue_;
 
-  public enum EndValueCase implements com.google.protobuf.Internal.EnumLite {
+  public enum EndValueCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     END_VALUE_CLOSED(3),
     END_VALUE_OPEN(4),
     ENDVALUE_NOT_SET(0);
@@ -173,7 +188,11 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
     private EndValueCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static EndValueCase valueOf(int value) {
       return forNumber(value);
@@ -210,6 +229,8 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes start_value_closed = 1;</code>
+   *
+   * @return The startValueClosed.
    */
   public com.google.protobuf.ByteString getStartValueClosed() {
     if (startValueCase_ == 1) {
@@ -227,6 +248,8 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes start_value_open = 2;</code>
+   *
+   * @return The startValueOpen.
    */
   public com.google.protobuf.ByteString getStartValueOpen() {
     if (startValueCase_ == 2) {
@@ -244,6 +267,8 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes end_value_closed = 3;</code>
+   *
+   * @return The endValueClosed.
    */
   public com.google.protobuf.ByteString getEndValueClosed() {
     if (endValueCase_ == 3) {
@@ -261,6 +286,8 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes end_value_open = 4;</code>
+   *
+   * @return The endValueOpen.
    */
   public com.google.protobuf.ByteString getEndValueOpen() {
     if (endValueCase_ == 4) {
@@ -730,6 +757,8 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_value_closed = 1;</code>
+     *
+     * @return The startValueClosed.
      */
     public com.google.protobuf.ByteString getStartValueClosed() {
       if (startValueCase_ == 1) {
@@ -745,6 +774,9 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_value_closed = 1;</code>
+     *
+     * @param value The startValueClosed to set.
+     * @return This builder for chaining.
      */
     public Builder setStartValueClosed(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -763,6 +795,8 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_value_closed = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStartValueClosed() {
       if (startValueCase_ == 1) {
@@ -781,6 +815,8 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_value_open = 2;</code>
+     *
+     * @return The startValueOpen.
      */
     public com.google.protobuf.ByteString getStartValueOpen() {
       if (startValueCase_ == 2) {
@@ -796,6 +832,9 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_value_open = 2;</code>
+     *
+     * @param value The startValueOpen to set.
+     * @return This builder for chaining.
      */
     public Builder setStartValueOpen(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -814,6 +853,8 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_value_open = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStartValueOpen() {
       if (startValueCase_ == 2) {
@@ -832,6 +873,8 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_value_closed = 3;</code>
+     *
+     * @return The endValueClosed.
      */
     public com.google.protobuf.ByteString getEndValueClosed() {
       if (endValueCase_ == 3) {
@@ -847,6 +890,9 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_value_closed = 3;</code>
+     *
+     * @param value The endValueClosed to set.
+     * @return This builder for chaining.
      */
     public Builder setEndValueClosed(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -865,6 +911,8 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_value_closed = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEndValueClosed() {
       if (endValueCase_ == 3) {
@@ -883,6 +931,8 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_value_open = 4;</code>
+     *
+     * @return The endValueOpen.
      */
     public com.google.protobuf.ByteString getEndValueOpen() {
       if (endValueCase_ == 4) {
@@ -898,6 +948,9 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_value_open = 4;</code>
+     *
+     * @param value The endValueOpen to set.
+     * @return This builder for chaining.
      */
     public Builder setEndValueOpen(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -916,6 +969,8 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_value_open = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEndValueOpen() {
       if (endValueCase_ == 4) {

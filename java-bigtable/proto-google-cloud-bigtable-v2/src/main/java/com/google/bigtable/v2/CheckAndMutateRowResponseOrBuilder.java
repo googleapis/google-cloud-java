@@ -32,6 +32,8 @@ public interface CheckAndMutateRowResponseOrBuilder
    * </pre>
    *
    * <code>bool predicate_matched = 1;</code>
+   *
+   * @return The predicateMatched.
    */
   boolean getPredicateMatched();
 }

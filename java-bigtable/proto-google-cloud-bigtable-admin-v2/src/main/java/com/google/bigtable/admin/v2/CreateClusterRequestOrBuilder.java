@@ -33,6 +33,8 @@ public interface CreateClusterRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -45,6 +47,8 @@ public interface CreateClusterRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -58,6 +62,8 @@ public interface CreateClusterRequestOrBuilder
    * </pre>
    *
    * <code>string cluster_id = 2;</code>
+   *
+   * @return The clusterId.
    */
   java.lang.String getClusterId();
   /**
@@ -70,6 +76,8 @@ public interface CreateClusterRequestOrBuilder
    * </pre>
    *
    * <code>string cluster_id = 2;</code>
+   *
+   * @return The bytes for clusterId.
    */
   com.google.protobuf.ByteString getClusterIdBytes();
 
@@ -82,6 +90,8 @@ public interface CreateClusterRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Cluster cluster = 3;</code>
+   *
+   * @return Whether the cluster field is set.
    */
   boolean hasCluster();
   /**
@@ -93,6 +103,8 @@ public interface CreateClusterRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Cluster cluster = 3;</code>
+   *
+   * @return The cluster.
    */
   com.google.bigtable.admin.v2.Cluster getCluster();
   /**

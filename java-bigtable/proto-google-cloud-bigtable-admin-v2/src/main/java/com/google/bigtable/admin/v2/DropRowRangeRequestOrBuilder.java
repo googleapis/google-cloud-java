@@ -33,6 +33,8 @@ public interface DropRowRangeRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface DropRowRangeRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -57,6 +61,8 @@ public interface DropRowRangeRequestOrBuilder
    * </pre>
    *
    * <code>bytes row_key_prefix = 2;</code>
+   *
+   * @return The rowKeyPrefix.
    */
   com.google.protobuf.ByteString getRowKeyPrefix();
 
@@ -68,6 +74,8 @@ public interface DropRowRangeRequestOrBuilder
    * </pre>
    *
    * <code>bool delete_all_data_from_table = 3;</code>
+   *
+   * @return The deleteAllDataFromTable.
    */
   boolean getDeleteAllDataFromTable();
 

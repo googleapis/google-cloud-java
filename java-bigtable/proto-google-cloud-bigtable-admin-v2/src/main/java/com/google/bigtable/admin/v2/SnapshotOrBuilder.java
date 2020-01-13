@@ -34,6 +34,8 @@ public interface SnapshotOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -47,6 +49,8 @@ public interface SnapshotOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -59,6 +63,8 @@ public interface SnapshotOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+   *
+   * @return Whether the sourceTable field is set.
    */
   boolean hasSourceTable();
   /**
@@ -70,6 +76,8 @@ public interface SnapshotOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+   *
+   * @return The sourceTable.
    */
   com.google.bigtable.admin.v2.Table getSourceTable();
   /**
@@ -95,6 +103,8 @@ public interface SnapshotOrBuilder
    * </pre>
    *
    * <code>int64 data_size_bytes = 3;</code>
+   *
+   * @return The dataSizeBytes.
    */
   long getDataSizeBytes();
 
@@ -107,6 +117,8 @@ public interface SnapshotOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -118,6 +130,8 @@ public interface SnapshotOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -143,6 +157,8 @@ public interface SnapshotOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+   *
+   * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
   /**
@@ -156,6 +172,8 @@ public interface SnapshotOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+   *
+   * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
   /**
@@ -181,6 +199,8 @@ public interface SnapshotOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -192,6 +212,8 @@ public interface SnapshotOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+   *
+   * @return The state.
    */
   com.google.bigtable.admin.v2.Snapshot.State getState();
 
@@ -204,6 +226,8 @@ public interface SnapshotOrBuilder
    * </pre>
    *
    * <code>string description = 7;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -215,6 +239,8 @@ public interface SnapshotOrBuilder
    * </pre>
    *
    * <code>string description = 7;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 }

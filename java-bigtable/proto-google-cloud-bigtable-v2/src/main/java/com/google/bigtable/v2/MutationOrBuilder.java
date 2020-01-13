@@ -31,6 +31,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.Mutation.SetCell set_cell = 1;</code>
+   *
+   * @return Whether the setCell field is set.
    */
   boolean hasSetCell();
   /**
@@ -41,6 +43,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.Mutation.SetCell set_cell = 1;</code>
+   *
+   * @return The setCell.
    */
   com.google.bigtable.v2.Mutation.SetCell getSetCell();
   /**
@@ -62,6 +66,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.Mutation.DeleteFromColumn delete_from_column = 2;</code>
+   *
+   * @return Whether the deleteFromColumn field is set.
    */
   boolean hasDeleteFromColumn();
   /**
@@ -72,6 +78,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.Mutation.DeleteFromColumn delete_from_column = 2;</code>
+   *
+   * @return The deleteFromColumn.
    */
   com.google.bigtable.v2.Mutation.DeleteFromColumn getDeleteFromColumn();
   /**
@@ -93,6 +101,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.Mutation.DeleteFromFamily delete_from_family = 3;</code>
+   *
+   * @return Whether the deleteFromFamily field is set.
    */
   boolean hasDeleteFromFamily();
   /**
@@ -103,6 +113,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.Mutation.DeleteFromFamily delete_from_family = 3;</code>
+   *
+   * @return The deleteFromFamily.
    */
   com.google.bigtable.v2.Mutation.DeleteFromFamily getDeleteFromFamily();
   /**
@@ -124,6 +136,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.Mutation.DeleteFromRow delete_from_row = 4;</code>
+   *
+   * @return Whether the deleteFromRow field is set.
    */
   boolean hasDeleteFromRow();
   /**
@@ -134,6 +148,8 @@ public interface MutationOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.Mutation.DeleteFromRow delete_from_row = 4;</code>
+   *
+   * @return The deleteFromRow.
    */
   com.google.bigtable.v2.Mutation.DeleteFromRow getDeleteFromRow();
   /**

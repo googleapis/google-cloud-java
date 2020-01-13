@@ -27,20 +27,28 @@ public interface MutateRowsRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the table to which the mutations should be applied.
+   * Required. The unique name of the table to which the mutations should be applied.
    * </pre>
    *
-   * <code>string table_name = 1;</code>
+   * <code>
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The tableName.
    */
   java.lang.String getTableName();
   /**
    *
    *
    * <pre>
-   * The unique name of the table to which the mutations should be applied.
+   * Required. The unique name of the table to which the mutations should be applied.
    * </pre>
    *
-   * <code>string table_name = 1;</code>
+   * <code>
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for tableName.
    */
   com.google.protobuf.ByteString getTableNameBytes();
 
@@ -53,6 +61,8 @@ public interface MutateRowsRequestOrBuilder
    * </pre>
    *
    * <code>string app_profile_id = 3;</code>
+   *
+   * @return The appProfileId.
    */
   java.lang.String getAppProfileId();
   /**
@@ -64,6 +74,8 @@ public interface MutateRowsRequestOrBuilder
    * </pre>
    *
    * <code>string app_profile_id = 3;</code>
+   *
+   * @return The bytes for appProfileId.
    */
   com.google.protobuf.ByteString getAppProfileIdBytes();
 
@@ -71,56 +83,64 @@ public interface MutateRowsRequestOrBuilder
    *
    *
    * <pre>
-   * The row keys and corresponding mutations to be applied in bulk.
+   * Required. The row keys and corresponding mutations to be applied in bulk.
    * Each entry is applied as an atomic mutation, but the entries may be
    * applied in arbitrary order (even between entries for the same row).
    * At least one entry must be specified, and in total the entries can
    * contain at most 100000 mutations.
    * </pre>
    *
-   * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+   * <code>
+   * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.bigtable.v2.MutateRowsRequest.Entry> getEntriesList();
   /**
    *
    *
    * <pre>
-   * The row keys and corresponding mutations to be applied in bulk.
+   * Required. The row keys and corresponding mutations to be applied in bulk.
    * Each entry is applied as an atomic mutation, but the entries may be
    * applied in arbitrary order (even between entries for the same row).
    * At least one entry must be specified, and in total the entries can
    * contain at most 100000 mutations.
    * </pre>
    *
-   * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+   * <code>
+   * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.bigtable.v2.MutateRowsRequest.Entry getEntries(int index);
   /**
    *
    *
    * <pre>
-   * The row keys and corresponding mutations to be applied in bulk.
+   * Required. The row keys and corresponding mutations to be applied in bulk.
    * Each entry is applied as an atomic mutation, but the entries may be
    * applied in arbitrary order (even between entries for the same row).
    * At least one entry must be specified, and in total the entries can
    * contain at most 100000 mutations.
    * </pre>
    *
-   * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+   * <code>
+   * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getEntriesCount();
   /**
    *
    *
    * <pre>
-   * The row keys and corresponding mutations to be applied in bulk.
+   * Required. The row keys and corresponding mutations to be applied in bulk.
    * Each entry is applied as an atomic mutation, but the entries may be
    * applied in arbitrary order (even between entries for the same row).
    * At least one entry must be specified, and in total the entries can
    * contain at most 100000 mutations.
    * </pre>
    *
-   * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+   * <code>
+   * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.bigtable.v2.MutateRowsRequest.EntryOrBuilder>
       getEntriesOrBuilderList();
@@ -128,14 +148,16 @@ public interface MutateRowsRequestOrBuilder
    *
    *
    * <pre>
-   * The row keys and corresponding mutations to be applied in bulk.
+   * Required. The row keys and corresponding mutations to be applied in bulk.
    * Each entry is applied as an atomic mutation, but the entries may be
    * applied in arbitrary order (even between entries for the same row).
    * At least one entry must be specified, and in total the entries can
    * contain at most 100000 mutations.
    * </pre>
    *
-   * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
+   * <code>
+   * repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.bigtable.v2.MutateRowsRequest.EntryOrBuilder getEntriesOrBuilder(int index);
 }

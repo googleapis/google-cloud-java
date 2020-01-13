@@ -31,6 +31,8 @@ public interface GcRuleOrBuilder
    * </pre>
    *
    * <code>int32 max_num_versions = 1;</code>
+   *
+   * @return The maxNumVersions.
    */
   int getMaxNumVersions();
 
@@ -44,6 +46,8 @@ public interface GcRuleOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration max_age = 2;</code>
+   *
+   * @return Whether the maxAge field is set.
    */
   boolean hasMaxAge();
   /**
@@ -56,6 +60,8 @@ public interface GcRuleOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration max_age = 2;</code>
+   *
+   * @return The maxAge.
    */
   com.google.protobuf.Duration getMaxAge();
   /**
@@ -79,6 +85,8 @@ public interface GcRuleOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.GcRule.Intersection intersection = 3;</code>
+   *
+   * @return Whether the intersection field is set.
    */
   boolean hasIntersection();
   /**
@@ -89,6 +97,8 @@ public interface GcRuleOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.GcRule.Intersection intersection = 3;</code>
+   *
+   * @return The intersection.
    */
   com.google.bigtable.admin.v2.GcRule.Intersection getIntersection();
   /**
@@ -110,6 +120,8 @@ public interface GcRuleOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.GcRule.Union union = 4;</code>
+   *
+   * @return Whether the union field is set.
    */
   boolean hasUnion();
   /**
@@ -120,6 +132,8 @@ public interface GcRuleOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.GcRule.Union union = 4;</code>
+   *
+   * @return The union.
    */
   com.google.bigtable.admin.v2.GcRule.Union getUnion();
   /**

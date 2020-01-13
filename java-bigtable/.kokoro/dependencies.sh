@@ -23,5 +23,9 @@ echo $JOB_TYPE
 
 export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
 
-mvn install -DskipTests=true -B -V
+# this should run maven enforcer
+mvn install -B -V \
+  -DskipTests=true \
+  -Dclirr.skip=true
+
 mvn -B dependency:analyze -DfailOnWarning=true

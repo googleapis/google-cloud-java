@@ -33,6 +33,8 @@ public interface CheckConsistencyRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface CheckConsistencyRequestOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -56,6 +60,8 @@ public interface CheckConsistencyRequestOrBuilder
    * </pre>
    *
    * <code>string consistency_token = 2;</code>
+   *
+   * @return The consistencyToken.
    */
   java.lang.String getConsistencyToken();
   /**
@@ -66,6 +72,8 @@ public interface CheckConsistencyRequestOrBuilder
    * </pre>
    *
    * <code>string consistency_token = 2;</code>
+   *
+   * @return The bytes for consistencyToken.
    */
   com.google.protobuf.ByteString getConsistencyTokenBytes();
 }

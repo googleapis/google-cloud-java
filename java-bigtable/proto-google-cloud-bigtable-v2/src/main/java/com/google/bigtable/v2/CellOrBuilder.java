@@ -36,6 +36,8 @@ public interface CellOrBuilder
    * </pre>
    *
    * <code>int64 timestamp_micros = 1;</code>
+   *
+   * @return The timestampMicros.
    */
   long getTimestampMicros();
 
@@ -49,6 +51,8 @@ public interface CellOrBuilder
    * </pre>
    *
    * <code>bytes value = 2;</code>
+   *
+   * @return The value.
    */
   com.google.protobuf.ByteString getValue();
 
@@ -60,6 +64,8 @@ public interface CellOrBuilder
    * </pre>
    *
    * <code>repeated string labels = 3;</code>
+   *
+   * @return A list containing the labels.
    */
   java.util.List<java.lang.String> getLabelsList();
   /**
@@ -70,6 +76,8 @@ public interface CellOrBuilder
    * </pre>
    *
    * <code>repeated string labels = 3;</code>
+   *
+   * @return The count of labels.
    */
   int getLabelsCount();
   /**
@@ -80,6 +88,9 @@ public interface CellOrBuilder
    * </pre>
    *
    * <code>repeated string labels = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The labels at the given index.
    */
   java.lang.String getLabels(int index);
   /**
@@ -90,6 +101,9 @@ public interface CellOrBuilder
    * </pre>
    *
    * <code>repeated string labels = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the labels at the given index.
    */
   com.google.protobuf.ByteString getLabelsBytes(int index);
 }

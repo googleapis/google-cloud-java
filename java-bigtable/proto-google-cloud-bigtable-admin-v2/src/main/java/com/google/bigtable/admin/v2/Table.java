@@ -44,6 +44,12 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Table();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,11 +82,11 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 clusterStates_ =
                     com.google.protobuf.MapField.newMapField(
                         ClusterStatesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<
                       java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
@@ -95,11 +101,11 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 columnFamilies_ =
                     com.google.protobuf.MapField.newMapField(
                         ColumnFamiliesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<
                       java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
@@ -231,12 +237,20 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static TimestampGranularity valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static TimestampGranularity forNumber(int value) {
       switch (value) {
         case 0:
@@ -419,12 +433,20 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static View valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static View forNumber(int value) {
       switch (value) {
         case 0:
@@ -501,6 +523,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
      * </code>
+     *
+     * @return The enum numeric value on the wire for replicationState.
      */
     int getReplicationStateValue();
     /**
@@ -513,6 +537,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
      * </code>
+     *
+     * @return The replicationState.
      */
     com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState getReplicationState();
   }
@@ -540,6 +566,12 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ClusterState();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -552,7 +584,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -738,12 +769,20 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return value;
       }
 
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static ReplicationState valueOf(int value) {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static ReplicationState forNumber(int value) {
         switch (value) {
           case 0:
@@ -822,6 +861,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
      * </code>
+     *
+     * @return The enum numeric value on the wire for replicationState.
      */
     public int getReplicationStateValue() {
       return replicationState_;
@@ -836,6 +877,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
      * </code>
+     *
+     * @return The replicationState.
      */
     public com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState getReplicationState() {
       @SuppressWarnings("deprecation")
@@ -1183,6 +1226,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
        * </code>
+       *
+       * @return The enum numeric value on the wire for replicationState.
        */
       public int getReplicationStateValue() {
         return replicationState_;
@@ -1197,6 +1242,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
        * </code>
+       *
+       * @param value The enum numeric value on the wire for replicationState to set.
+       * @return This builder for chaining.
        */
       public Builder setReplicationStateValue(int value) {
         replicationState_ = value;
@@ -1213,6 +1261,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
        * </code>
+       *
+       * @return The replicationState.
        */
       public com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState
           getReplicationState() {
@@ -1234,6 +1284,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
        * </code>
+       *
+       * @param value The replicationState to set.
+       * @return This builder for chaining.
        */
       public Builder setReplicationState(
           com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState value) {
@@ -1255,6 +1308,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
        * </code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearReplicationState() {
 
@@ -1315,7 +1370,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -1329,6 +1383,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -1352,6 +1408,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -1623,6 +1681,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
+   *
+   * @return The enum numeric value on the wire for granularity.
    */
   public int getGranularityValue() {
     return granularity_;
@@ -1639,6 +1699,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
+   *
+   * @return The granularity.
    */
   public com.google.bigtable.admin.v2.Table.TimestampGranularity getGranularity() {
     @SuppressWarnings("deprecation")
@@ -1959,14 +2021,12 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Table buildPartial() {
       com.google.bigtable.admin.v2.Table result = new com.google.bigtable.admin.v2.Table(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.clusterStates_ = internalGetClusterStates();
       result.clusterStates_.makeImmutable();
       result.columnFamilies_ = internalGetColumnFamilies();
       result.columnFamilies_.makeImmutable();
       result.granularity_ = granularity_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2068,6 +2128,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2091,6 +2153,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -2114,6 +2178,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -2135,6 +2202,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -2153,6 +2222,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2568,6 +2640,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
+     *
+     * @return The enum numeric value on the wire for granularity.
      */
     public int getGranularityValue() {
       return granularity_;
@@ -2584,6 +2658,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for granularity to set.
+     * @return This builder for chaining.
      */
     public Builder setGranularityValue(int value) {
       granularity_ = value;
@@ -2602,6 +2679,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
+     *
+     * @return The granularity.
      */
     public com.google.bigtable.admin.v2.Table.TimestampGranularity getGranularity() {
       @SuppressWarnings("deprecation")
@@ -2623,6 +2702,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
+     *
+     * @param value The granularity to set.
+     * @return This builder for chaining.
      */
     public Builder setGranularity(com.google.bigtable.admin.v2.Table.TimestampGranularity value) {
       if (value == null) {
@@ -2645,6 +2727,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGranularity() {
 

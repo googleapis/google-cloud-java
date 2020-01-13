@@ -47,6 +47,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Cluster();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -59,7 +65,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -273,12 +278,20 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0:
@@ -352,6 +365,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -374,6 +389,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -401,6 +418,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string location = 2;</code>
+   *
+   * @return The location.
    */
   public java.lang.String getLocation() {
     java.lang.Object ref = location_;
@@ -425,6 +444,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string location = 2;</code>
+   *
+   * @return The bytes for location.
    */
   public com.google.protobuf.ByteString getLocationBytes() {
     java.lang.Object ref = location_;
@@ -449,6 +470,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -462,6 +485,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+   *
+   * @return The state.
    */
   public com.google.bigtable.admin.v2.Cluster.State getState() {
     @SuppressWarnings("deprecation")
@@ -481,6 +506,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 serve_nodes = 4;</code>
+   *
+   * @return The serveNodes.
    */
   public int getServeNodes() {
     return serveNodes_;
@@ -498,6 +525,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+   *
+   * @return The enum numeric value on the wire for defaultStorageType.
    */
   public int getDefaultStorageTypeValue() {
     return defaultStorageType_;
@@ -512,6 +541,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+   *
+   * @return The defaultStorageType.
    */
   public com.google.bigtable.admin.v2.StorageType getDefaultStorageType() {
     @SuppressWarnings("deprecation")
@@ -909,6 +940,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -931,6 +964,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -953,6 +988,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -973,6 +1011,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -990,6 +1030,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1015,6 +1058,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 2;</code>
+     *
+     * @return The location.
      */
     public java.lang.String getLocation() {
       java.lang.Object ref = location_;
@@ -1039,6 +1084,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 2;</code>
+     *
+     * @return The bytes for location.
      */
     public com.google.protobuf.ByteString getLocationBytes() {
       java.lang.Object ref = location_;
@@ -1063,6 +1110,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 2;</code>
+     *
+     * @param value The location to set.
+     * @return This builder for chaining.
      */
     public Builder setLocation(java.lang.String value) {
       if (value == null) {
@@ -1085,6 +1135,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocation() {
 
@@ -1104,6 +1156,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location = 2;</code>
+     *
+     * @param value The bytes for location to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1126,6 +1181,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -1139,6 +1196,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -1154,6 +1214,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+     *
+     * @return The state.
      */
     public com.google.bigtable.admin.v2.Cluster.State getState() {
       @SuppressWarnings("deprecation")
@@ -1170,6 +1232,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.bigtable.admin.v2.Cluster.State value) {
       if (value == null) {
@@ -1189,6 +1254,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 
@@ -1207,6 +1274,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 serve_nodes = 4;</code>
+     *
+     * @return The serveNodes.
      */
     public int getServeNodes() {
       return serveNodes_;
@@ -1220,6 +1289,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 serve_nodes = 4;</code>
+     *
+     * @param value The serveNodes to set.
+     * @return This builder for chaining.
      */
     public Builder setServeNodes(int value) {
 
@@ -1236,6 +1308,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 serve_nodes = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearServeNodes() {
 
@@ -1255,6 +1329,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+     *
+     * @return The enum numeric value on the wire for defaultStorageType.
      */
     public int getDefaultStorageTypeValue() {
       return defaultStorageType_;
@@ -1269,6 +1345,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+     *
+     * @param value The enum numeric value on the wire for defaultStorageType to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultStorageTypeValue(int value) {
       defaultStorageType_ = value;
@@ -1285,6 +1364,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+     *
+     * @return The defaultStorageType.
      */
     public com.google.bigtable.admin.v2.StorageType getDefaultStorageType() {
       @SuppressWarnings("deprecation")
@@ -1302,6 +1383,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+     *
+     * @param value The defaultStorageType to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultStorageType(com.google.bigtable.admin.v2.StorageType value) {
       if (value == null) {
@@ -1322,6 +1406,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDefaultStorageType() {
 

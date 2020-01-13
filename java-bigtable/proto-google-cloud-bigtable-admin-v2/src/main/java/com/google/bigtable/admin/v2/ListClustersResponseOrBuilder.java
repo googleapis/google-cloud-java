@@ -87,6 +87,8 @@ public interface ListClustersResponseOrBuilder
    * </pre>
    *
    * <code>repeated string failed_locations = 2;</code>
+   *
+   * @return A list containing the failedLocations.
    */
   java.util.List<java.lang.String> getFailedLocationsList();
   /**
@@ -101,6 +103,8 @@ public interface ListClustersResponseOrBuilder
    * </pre>
    *
    * <code>repeated string failed_locations = 2;</code>
+   *
+   * @return The count of failedLocations.
    */
   int getFailedLocationsCount();
   /**
@@ -115,6 +119,9 @@ public interface ListClustersResponseOrBuilder
    * </pre>
    *
    * <code>repeated string failed_locations = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The failedLocations at the given index.
    */
   java.lang.String getFailedLocations(int index);
   /**
@@ -129,6 +136,9 @@ public interface ListClustersResponseOrBuilder
    * </pre>
    *
    * <code>repeated string failed_locations = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the failedLocations at the given index.
    */
   com.google.protobuf.ByteString getFailedLocationsBytes(int index);
 
@@ -140,6 +150,8 @@ public interface ListClustersResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
@@ -150,6 +162,8 @@ public interface ListClustersResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
 }

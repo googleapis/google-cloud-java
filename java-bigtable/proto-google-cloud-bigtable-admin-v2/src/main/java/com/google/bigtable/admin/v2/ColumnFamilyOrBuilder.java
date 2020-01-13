@@ -35,6 +35,8 @@ public interface ColumnFamilyOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.GcRule gc_rule = 1;</code>
+   *
+   * @return Whether the gcRule field is set.
    */
   boolean hasGcRule();
   /**
@@ -49,6 +51,8 @@ public interface ColumnFamilyOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.GcRule gc_rule = 1;</code>
+   *
+   * @return The gcRule.
    */
   com.google.bigtable.admin.v2.GcRule getGcRule();
   /**

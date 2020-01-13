@@ -1154,8 +1154,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the access control policy for an instance resource. Returns an empty policy if an table
-   * exists but does not have a policy set.
+   * Gets the access control policy for a table resource. Returns an empty policy if an table exists
+   * but does not have a policy set.
    *
    * <p>Sample code:
    *
@@ -1178,8 +1178,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the access control policy for an instance resource. Returns an empty policy if an table
-   * exists but does not have a policy set.
+   * Gets the access control policy for a table resource. Returns an empty policy if an table exists
+   * but does not have a policy set.
    *
    * <p>Sample code:
    *
@@ -1202,8 +1202,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the access control policy for an instance resource. Returns an empty policy if an table
-   * exists but does not have a policy set.
+   * Gets the access control policy for a table resource. Returns an empty policy if an table exists
+   * but does not have a policy set.
    *
    * <p>Sample code:
    *

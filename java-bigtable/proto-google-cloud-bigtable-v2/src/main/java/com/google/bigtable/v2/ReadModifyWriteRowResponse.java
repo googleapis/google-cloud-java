@@ -40,6 +40,12 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
   private ReadModifyWriteRowResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReadModifyWriteRowResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,7 +58,6 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -121,6 +126,8 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.bigtable.v2.Row row = 1;</code>
+   *
+   * @return Whether the row field is set.
    */
   public boolean hasRow() {
     return row_ != null;
@@ -133,6 +140,8 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>.google.bigtable.v2.Row row = 1;</code>
+   *
+   * @return The row.
    */
   public com.google.bigtable.v2.Row getRow() {
     return row_ == null ? com.google.bigtable.v2.Row.getDefaultInstance() : row_;
@@ -494,6 +503,8 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.bigtable.v2.Row row = 1;</code>
+     *
+     * @return Whether the row field is set.
      */
     public boolean hasRow() {
       return rowBuilder_ != null || row_ != null;
@@ -506,6 +517,8 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>.google.bigtable.v2.Row row = 1;</code>
+     *
+     * @return The row.
      */
     public com.google.bigtable.v2.Row getRow() {
       if (rowBuilder_ == null) {

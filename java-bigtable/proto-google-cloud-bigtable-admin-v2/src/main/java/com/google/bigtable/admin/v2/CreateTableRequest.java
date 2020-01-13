@@ -45,6 +45,12 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateTableRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -99,11 +105,11 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 initialSplits_ =
                     new java.util.ArrayList<
                         com.google.bigtable.admin.v2.CreateTableRequest.Split>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               initialSplits_.add(
                   input.readMessage(
@@ -125,7 +131,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         initialSplits_ = java.util.Collections.unmodifiableList(initialSplits_);
       }
       this.unknownFields = unknownFields.build();
@@ -161,6 +167,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bytes key = 1;</code>
+     *
+     * @return The key.
      */
     com.google.protobuf.ByteString getKey();
   }
@@ -188,6 +196,12 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Split();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -200,7 +214,6 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -260,6 +273,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bytes key = 1;</code>
+     *
+     * @return The key.
      */
     public com.google.protobuf.ByteString getKey() {
       return key_;
@@ -596,6 +611,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>bytes key = 1;</code>
+       *
+       * @return The key.
        */
       public com.google.protobuf.ByteString getKey() {
         return key_;
@@ -608,6 +625,9 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>bytes key = 1;</code>
+       *
+       * @param value The key to set.
+       * @return This builder for chaining.
        */
       public Builder setKey(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -626,6 +646,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>bytes key = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearKey() {
 
@@ -686,7 +708,6 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -698,6 +719,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -719,6 +742,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -743,6 +768,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string table_id = 2;</code>
+   *
+   * @return The tableId.
    */
   public java.lang.String getTableId() {
     java.lang.Object ref = tableId_;
@@ -764,6 +791,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string table_id = 2;</code>
+   *
+   * @return The bytes for tableId.
    */
   public com.google.protobuf.ByteString getTableIdBytes() {
     java.lang.Object ref = tableId_;
@@ -787,6 +816,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+   *
+   * @return Whether the table field is set.
    */
   public boolean hasTable() {
     return table_ != null;
@@ -799,6 +830,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+   *
+   * @return The table.
    */
   public com.google.bigtable.admin.v2.Table getTable() {
     return table_ == null ? com.google.bigtable.admin.v2.Table.getDefaultInstance() : table_;
@@ -1200,7 +1233,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
       }
       if (initialSplitsBuilder_ == null) {
         initialSplits_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         initialSplitsBuilder_.clear();
       }
@@ -1232,7 +1265,6 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
       com.google.bigtable.admin.v2.CreateTableRequest result =
           new com.google.bigtable.admin.v2.CreateTableRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.tableId_ = tableId_;
       if (tableBuilder_ == null) {
@@ -1241,15 +1273,14 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
         result.table_ = tableBuilder_.build();
       }
       if (initialSplitsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           initialSplits_ = java.util.Collections.unmodifiableList(initialSplits_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.initialSplits_ = initialSplits_;
       } else {
         result.initialSplits_ = initialSplitsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1315,7 +1346,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
         if (!other.initialSplits_.isEmpty()) {
           if (initialSplits_.isEmpty()) {
             initialSplits_ = other.initialSplits_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureInitialSplitsIsMutable();
             initialSplits_.addAll(other.initialSplits_);
@@ -1328,7 +1359,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
             initialSplitsBuilder_.dispose();
             initialSplitsBuilder_ = null;
             initialSplits_ = other.initialSplits_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             initialSplitsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInitialSplitsFieldBuilder()
@@ -1379,6 +1410,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1400,6 +1433,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1421,6 +1456,9 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1440,6 +1478,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -1456,6 +1496,9 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1478,6 +1521,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string table_id = 2;</code>
+     *
+     * @return The tableId.
      */
     public java.lang.String getTableId() {
       java.lang.Object ref = tableId_;
@@ -1499,6 +1544,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string table_id = 2;</code>
+     *
+     * @return The bytes for tableId.
      */
     public com.google.protobuf.ByteString getTableIdBytes() {
       java.lang.Object ref = tableId_;
@@ -1520,6 +1567,9 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string table_id = 2;</code>
+     *
+     * @param value The tableId to set.
+     * @return This builder for chaining.
      */
     public Builder setTableId(java.lang.String value) {
       if (value == null) {
@@ -1539,6 +1589,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string table_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTableId() {
 
@@ -1555,6 +1607,9 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string table_id = 2;</code>
+     *
+     * @param value The bytes for tableId to set.
+     * @return This builder for chaining.
      */
     public Builder setTableIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1581,6 +1636,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+     *
+     * @return Whether the table field is set.
      */
     public boolean hasTable() {
       return tableBuilder_ != null || table_ != null;
@@ -1593,6 +1650,8 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+     *
+     * @return The table.
      */
     public com.google.bigtable.admin.v2.Table getTable() {
       if (tableBuilder_ == null) {
@@ -1746,11 +1805,11 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureInitialSplitsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         initialSplits_ =
             new java.util.ArrayList<com.google.bigtable.admin.v2.CreateTableRequest.Split>(
                 initialSplits_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2113,7 +2172,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
     public Builder clearInitialSplits() {
       if (initialSplitsBuilder_ == null) {
         initialSplits_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         initialSplitsBuilder_.clear();
@@ -2331,7 +2390,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
                 com.google.bigtable.admin.v2.CreateTableRequest.Split.Builder,
                 com.google.bigtable.admin.v2.CreateTableRequest.SplitOrBuilder>(
                 initialSplits_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         initialSplits_ = null;

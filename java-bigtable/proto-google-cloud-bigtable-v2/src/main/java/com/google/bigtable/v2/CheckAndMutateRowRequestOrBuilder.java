@@ -27,26 +27,34 @@ public interface CheckAndMutateRowRequestOrBuilder
    *
    *
    * <pre>
-   * The unique name of the table to which the conditional mutation should be
+   * Required. The unique name of the table to which the conditional mutation should be
    * applied.
    * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
    * </pre>
    *
-   * <code>string table_name = 1;</code>
+   * <code>
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The tableName.
    */
   java.lang.String getTableName();
   /**
    *
    *
    * <pre>
-   * The unique name of the table to which the conditional mutation should be
+   * Required. The unique name of the table to which the conditional mutation should be
    * applied.
    * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
    * </pre>
    *
-   * <code>string table_name = 1;</code>
+   * <code>
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for tableName.
    */
   com.google.protobuf.ByteString getTableNameBytes();
 
@@ -59,6 +67,8 @@ public interface CheckAndMutateRowRequestOrBuilder
    * </pre>
    *
    * <code>string app_profile_id = 7;</code>
+   *
+   * @return The appProfileId.
    */
   java.lang.String getAppProfileId();
   /**
@@ -70,6 +80,8 @@ public interface CheckAndMutateRowRequestOrBuilder
    * </pre>
    *
    * <code>string app_profile_id = 7;</code>
+   *
+   * @return The bytes for appProfileId.
    */
   com.google.protobuf.ByteString getAppProfileIdBytes();
 
@@ -77,10 +89,12 @@ public interface CheckAndMutateRowRequestOrBuilder
    *
    *
    * <pre>
-   * The key of the row to which the conditional mutation should be applied.
+   * Required. The key of the row to which the conditional mutation should be applied.
    * </pre>
    *
-   * <code>bytes row_key = 2;</code>
+   * <code>bytes row_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The rowKey.
    */
   com.google.protobuf.ByteString getRowKey();
 
@@ -95,6 +109,8 @@ public interface CheckAndMutateRowRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.RowFilter predicate_filter = 6;</code>
+   *
+   * @return Whether the predicateFilter field is set.
    */
   boolean hasPredicateFilter();
   /**
@@ -108,6 +124,8 @@ public interface CheckAndMutateRowRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.RowFilter predicate_filter = 6;</code>
+   *
+   * @return The predicateFilter.
    */
   com.google.bigtable.v2.RowFilter getPredicateFilter();
   /**

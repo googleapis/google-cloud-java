@@ -44,6 +44,12 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListClustersResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -135,7 +141,6 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
             com.google.bigtable.admin.v2.ListClustersResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int CLUSTERS_FIELD_NUMBER = 1;
   private java.util.List<com.google.bigtable.admin.v2.Cluster> clusters_;
   /**
@@ -214,6 +219,8 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string failed_locations = 2;</code>
+   *
+   * @return A list containing the failedLocations.
    */
   public com.google.protobuf.ProtocolStringList getFailedLocationsList() {
     return failedLocations_;
@@ -230,6 +237,8 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string failed_locations = 2;</code>
+   *
+   * @return The count of failedLocations.
    */
   public int getFailedLocationsCount() {
     return failedLocations_.size();
@@ -246,6 +255,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string failed_locations = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The failedLocations at the given index.
    */
   public java.lang.String getFailedLocations(int index) {
     return failedLocations_.get(index);
@@ -262,6 +274,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>repeated string failed_locations = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the failedLocations at the given index.
    */
   public com.google.protobuf.ByteString getFailedLocationsBytes(int index) {
     return failedLocations_.getByteString(index);
@@ -277,6 +292,8 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -297,6 +314,8 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -581,7 +600,6 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
       com.google.bigtable.admin.v2.ListClustersResponse result =
           new com.google.bigtable.admin.v2.ListClustersResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (clustersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           clusters_ = java.util.Collections.unmodifiableList(clusters_);
@@ -597,7 +615,6 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
       }
       result.failedLocations_ = failedLocations_;
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1090,6 +1107,8 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
+     *
+     * @return A list containing the failedLocations.
      */
     public com.google.protobuf.ProtocolStringList getFailedLocationsList() {
       return failedLocations_.getUnmodifiableView();
@@ -1106,6 +1125,8 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
+     *
+     * @return The count of failedLocations.
      */
     public int getFailedLocationsCount() {
       return failedLocations_.size();
@@ -1122,6 +1143,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The failedLocations at the given index.
      */
     public java.lang.String getFailedLocations(int index) {
       return failedLocations_.get(index);
@@ -1138,6 +1162,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the failedLocations at the given index.
      */
     public com.google.protobuf.ByteString getFailedLocationsBytes(int index) {
       return failedLocations_.getByteString(index);
@@ -1154,6 +1181,10 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The failedLocations to set.
+     * @return This builder for chaining.
      */
     public Builder setFailedLocations(int index, java.lang.String value) {
       if (value == null) {
@@ -1176,6 +1207,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
+     *
+     * @param value The failedLocations to add.
+     * @return This builder for chaining.
      */
     public Builder addFailedLocations(java.lang.String value) {
       if (value == null) {
@@ -1198,6 +1232,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
+     *
+     * @param values The failedLocations to add.
+     * @return This builder for chaining.
      */
     public Builder addAllFailedLocations(java.lang.Iterable<java.lang.String> values) {
       ensureFailedLocationsIsMutable();
@@ -1217,6 +1254,8 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFailedLocations() {
       failedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1236,6 +1275,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>repeated string failed_locations = 2;</code>
+     *
+     * @param value The bytes of the failedLocations to add.
+     * @return This builder for chaining.
      */
     public Builder addFailedLocationsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1257,6 +1299,8 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -1277,6 +1321,8 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1297,6 +1343,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1315,6 +1364,8 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1330,6 +1381,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

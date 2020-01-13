@@ -32,6 +32,8 @@ public interface ListTablesRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface ListTablesRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -55,6 +59,8 @@ public interface ListTablesRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table.View view = 2;</code>
+   *
+   * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
   /**
@@ -66,6 +72,8 @@ public interface ListTablesRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table.View view = 2;</code>
+   *
+   * @return The view.
    */
   com.google.bigtable.admin.v2.Table.View getView();
 
@@ -78,6 +86,8 @@ public interface ListTablesRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -89,6 +99,8 @@ public interface ListTablesRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -99,6 +111,8 @@ public interface ListTablesRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 }

@@ -42,6 +42,12 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SampleRowKeysResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -125,6 +130,8 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>bytes row_key = 1;</code>
+   *
+   * @return The rowKey.
    */
   public com.google.protobuf.ByteString getRowKey() {
     return rowKey_;
@@ -143,6 +150,8 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>int64 offset_bytes = 2;</code>
+   *
+   * @return The offsetBytes.
    */
   public long getOffsetBytes() {
     return offsetBytes_;
@@ -493,6 +502,8 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>bytes row_key = 1;</code>
+     *
+     * @return The rowKey.
      */
     public com.google.protobuf.ByteString getRowKey() {
       return rowKey_;
@@ -511,6 +522,9 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>bytes row_key = 1;</code>
+     *
+     * @param value The rowKey to set.
+     * @return This builder for chaining.
      */
     public Builder setRowKey(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -535,6 +549,8 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>bytes row_key = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRowKey() {
 
@@ -555,6 +571,8 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int64 offset_bytes = 2;</code>
+     *
+     * @return The offsetBytes.
      */
     public long getOffsetBytes() {
       return offsetBytes_;
@@ -570,6 +588,9 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int64 offset_bytes = 2;</code>
+     *
+     * @param value The offsetBytes to set.
+     * @return This builder for chaining.
      */
     public Builder setOffsetBytes(long value) {
 
@@ -588,6 +609,8 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>int64 offset_bytes = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearOffsetBytes() {
 

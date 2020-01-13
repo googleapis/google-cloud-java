@@ -33,6 +33,8 @@ public interface AppProfileOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface AppProfileOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -63,6 +67,8 @@ public interface AppProfileOrBuilder
    * </pre>
    *
    * <code>string etag = 2;</code>
+   *
+   * @return The etag.
    */
   java.lang.String getEtag();
   /**
@@ -80,6 +86,8 @@ public interface AppProfileOrBuilder
    * </pre>
    *
    * <code>string etag = 2;</code>
+   *
+   * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
 
@@ -91,6 +99,8 @@ public interface AppProfileOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -101,6 +111,8 @@ public interface AppProfileOrBuilder
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -114,6 +126,8 @@ public interface AppProfileOrBuilder
    * <code>
    * .google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny multi_cluster_routing_use_any = 5;
    * </code>
+   *
+   * @return Whether the multiClusterRoutingUseAny field is set.
    */
   boolean hasMultiClusterRoutingUseAny();
   /**
@@ -126,6 +140,8 @@ public interface AppProfileOrBuilder
    * <code>
    * .google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny multi_cluster_routing_use_any = 5;
    * </code>
+   *
+   * @return The multiClusterRoutingUseAny.
    */
   com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny getMultiClusterRoutingUseAny();
   /**
@@ -151,6 +167,8 @@ public interface AppProfileOrBuilder
    *
    * <code>.google.bigtable.admin.v2.AppProfile.SingleClusterRouting single_cluster_routing = 6;
    * </code>
+   *
+   * @return Whether the singleClusterRouting field is set.
    */
   boolean hasSingleClusterRouting();
   /**
@@ -162,6 +180,8 @@ public interface AppProfileOrBuilder
    *
    * <code>.google.bigtable.admin.v2.AppProfile.SingleClusterRouting single_cluster_routing = 6;
    * </code>
+   *
+   * @return The singleClusterRouting.
    */
   com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting getSingleClusterRouting();
   /**

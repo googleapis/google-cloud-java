@@ -45,6 +45,12 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ColumnRange();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -136,7 +141,10 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
   private int startQualifierCase_ = 0;
   private java.lang.Object startQualifier_;
 
-  public enum StartQualifierCase implements com.google.protobuf.Internal.EnumLite {
+  public enum StartQualifierCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     START_QUALIFIER_CLOSED(2),
     START_QUALIFIER_OPEN(3),
     STARTQUALIFIER_NOT_SET(0);
@@ -145,7 +153,11 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
     private StartQualifierCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static StartQualifierCase valueOf(int value) {
       return forNumber(value);
@@ -176,7 +188,10 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
   private int endQualifierCase_ = 0;
   private java.lang.Object endQualifier_;
 
-  public enum EndQualifierCase implements com.google.protobuf.Internal.EnumLite {
+  public enum EndQualifierCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     END_QUALIFIER_CLOSED(4),
     END_QUALIFIER_OPEN(5),
     ENDQUALIFIER_NOT_SET(0);
@@ -185,7 +200,11 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
     private EndQualifierCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static EndQualifierCase valueOf(int value) {
       return forNumber(value);
@@ -223,6 +242,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string family_name = 1;</code>
+   *
+   * @return The familyName.
    */
   public java.lang.String getFamilyName() {
     java.lang.Object ref = familyName_;
@@ -243,6 +264,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string family_name = 1;</code>
+   *
+   * @return The bytes for familyName.
    */
   public com.google.protobuf.ByteString getFamilyNameBytes() {
     java.lang.Object ref = familyName_;
@@ -265,6 +288,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes start_qualifier_closed = 2;</code>
+   *
+   * @return The startQualifierClosed.
    */
   public com.google.protobuf.ByteString getStartQualifierClosed() {
     if (startQualifierCase_ == 2) {
@@ -282,6 +307,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes start_qualifier_open = 3;</code>
+   *
+   * @return The startQualifierOpen.
    */
   public com.google.protobuf.ByteString getStartQualifierOpen() {
     if (startQualifierCase_ == 3) {
@@ -299,6 +326,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes end_qualifier_closed = 4;</code>
+   *
+   * @return The endQualifierClosed.
    */
   public com.google.protobuf.ByteString getEndQualifierClosed() {
     if (endQualifierCase_ == 4) {
@@ -316,6 +345,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes end_qualifier_open = 5;</code>
+   *
+   * @return The endQualifierOpen.
    */
   public com.google.protobuf.ByteString getEndQualifierOpen() {
     if (endQualifierCase_ == 5) {
@@ -805,6 +836,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return The familyName.
      */
     public java.lang.String getFamilyName() {
       java.lang.Object ref = familyName_;
@@ -825,6 +858,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return The bytes for familyName.
      */
     public com.google.protobuf.ByteString getFamilyNameBytes() {
       java.lang.Object ref = familyName_;
@@ -845,6 +880,9 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @param value The familyName to set.
+     * @return This builder for chaining.
      */
     public Builder setFamilyName(java.lang.String value) {
       if (value == null) {
@@ -863,6 +901,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFamilyName() {
 
@@ -878,6 +918,9 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string family_name = 1;</code>
+     *
+     * @param value The bytes for familyName to set.
+     * @return This builder for chaining.
      */
     public Builder setFamilyNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -898,6 +941,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_qualifier_closed = 2;</code>
+     *
+     * @return The startQualifierClosed.
      */
     public com.google.protobuf.ByteString getStartQualifierClosed() {
       if (startQualifierCase_ == 2) {
@@ -913,6 +958,9 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_qualifier_closed = 2;</code>
+     *
+     * @param value The startQualifierClosed to set.
+     * @return This builder for chaining.
      */
     public Builder setStartQualifierClosed(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -931,6 +979,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_qualifier_closed = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStartQualifierClosed() {
       if (startQualifierCase_ == 2) {
@@ -949,6 +999,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_qualifier_open = 3;</code>
+     *
+     * @return The startQualifierOpen.
      */
     public com.google.protobuf.ByteString getStartQualifierOpen() {
       if (startQualifierCase_ == 3) {
@@ -964,6 +1016,9 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_qualifier_open = 3;</code>
+     *
+     * @param value The startQualifierOpen to set.
+     * @return This builder for chaining.
      */
     public Builder setStartQualifierOpen(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -982,6 +1037,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes start_qualifier_open = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStartQualifierOpen() {
       if (startQualifierCase_ == 3) {
@@ -1000,6 +1057,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_qualifier_closed = 4;</code>
+     *
+     * @return The endQualifierClosed.
      */
     public com.google.protobuf.ByteString getEndQualifierClosed() {
       if (endQualifierCase_ == 4) {
@@ -1015,6 +1074,9 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_qualifier_closed = 4;</code>
+     *
+     * @param value The endQualifierClosed to set.
+     * @return This builder for chaining.
      */
     public Builder setEndQualifierClosed(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1033,6 +1095,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_qualifier_closed = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEndQualifierClosed() {
       if (endQualifierCase_ == 4) {
@@ -1051,6 +1115,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_qualifier_open = 5;</code>
+     *
+     * @return The endQualifierOpen.
      */
     public com.google.protobuf.ByteString getEndQualifierOpen() {
       if (endQualifierCase_ == 5) {
@@ -1066,6 +1132,9 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_qualifier_open = 5;</code>
+     *
+     * @param value The endQualifierOpen to set.
+     * @return This builder for chaining.
      */
     public Builder setEndQualifierOpen(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1084,6 +1153,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes end_qualifier_open = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEndQualifierOpen() {
       if (endQualifierCase_ == 5) {

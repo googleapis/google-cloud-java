@@ -31,6 +31,8 @@ public interface RowSetOrBuilder
    * </pre>
    *
    * <code>repeated bytes row_keys = 1;</code>
+   *
+   * @return A list containing the rowKeys.
    */
   java.util.List<com.google.protobuf.ByteString> getRowKeysList();
   /**
@@ -41,6 +43,8 @@ public interface RowSetOrBuilder
    * </pre>
    *
    * <code>repeated bytes row_keys = 1;</code>
+   *
+   * @return The count of rowKeys.
    */
   int getRowKeysCount();
   /**
@@ -51,6 +55,9 @@ public interface RowSetOrBuilder
    * </pre>
    *
    * <code>repeated bytes row_keys = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The rowKeys at the given index.
    */
   com.google.protobuf.ByteString getRowKeys(int index);
 

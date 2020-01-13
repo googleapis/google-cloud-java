@@ -49,6 +49,12 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Snapshot();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -61,7 +67,6 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -263,12 +268,20 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static State forNumber(int value) {
       switch (value) {
         case 0:
@@ -339,6 +352,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -362,6 +377,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -386,6 +403,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+   *
+   * @return Whether the sourceTable field is set.
    */
   public boolean hasSourceTable() {
     return sourceTable_ != null;
@@ -399,6 +418,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+   *
+   * @return The sourceTable.
    */
   public com.google.bigtable.admin.v2.Table getSourceTable() {
     return sourceTable_ == null
@@ -432,6 +453,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 data_size_bytes = 3;</code>
+   *
+   * @return The dataSizeBytes.
    */
   public long getDataSizeBytes() {
     return dataSizeBytes_;
@@ -448,6 +471,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -461,6 +486,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -492,6 +519,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+   *
+   * @return Whether the deleteTime field is set.
    */
   public boolean hasDeleteTime() {
     return deleteTime_ != null;
@@ -507,6 +536,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+   *
+   * @return The deleteTime.
    */
   public com.google.protobuf.Timestamp getDeleteTime() {
     return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
@@ -538,6 +569,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   public int getStateValue() {
     return state_;
@@ -551,6 +584,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+   *
+   * @return The state.
    */
   public com.google.bigtable.admin.v2.Snapshot.State getState() {
     @SuppressWarnings("deprecation")
@@ -570,6 +605,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 7;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -591,6 +628,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 7;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -1065,6 +1104,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1088,6 +1129,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1111,6 +1154,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1132,6 +1178,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1150,6 +1198,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1177,6 +1228,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+     *
+     * @return Whether the sourceTable field is set.
      */
     public boolean hasSourceTable() {
       return sourceTableBuilder_ != null || sourceTable_ != null;
@@ -1190,6 +1243,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
+     *
+     * @return The sourceTable.
      */
     public com.google.bigtable.admin.v2.Table getSourceTable() {
       if (sourceTableBuilder_ == null) {
@@ -1364,6 +1419,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 data_size_bytes = 3;</code>
+     *
+     * @return The dataSizeBytes.
      */
     public long getDataSizeBytes() {
       return dataSizeBytes_;
@@ -1379,6 +1436,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 data_size_bytes = 3;</code>
+     *
+     * @param value The dataSizeBytes to set.
+     * @return This builder for chaining.
      */
     public Builder setDataSizeBytes(long value) {
 
@@ -1397,6 +1457,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 data_size_bytes = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDataSizeBytes() {
 
@@ -1420,6 +1482,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -1433,6 +1497,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1610,6 +1676,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+     *
+     * @return Whether the deleteTime field is set.
      */
     public boolean hasDeleteTime() {
       return deleteTimeBuilder_ != null || deleteTime_ != null;
@@ -1625,6 +1693,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+     *
+     * @return The deleteTime.
      */
     public com.google.protobuf.Timestamp getDeleteTime() {
       if (deleteTimeBuilder_ == null) {
@@ -1809,6 +1879,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+     *
+     * @return The enum numeric value on the wire for state.
      */
     public int getStateValue() {
       return state_;
@@ -1822,6 +1894,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -1837,6 +1912,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+     *
+     * @return The state.
      */
     public com.google.bigtable.admin.v2.Snapshot.State getState() {
       @SuppressWarnings("deprecation")
@@ -1853,6 +1930,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
      */
     public Builder setState(com.google.bigtable.admin.v2.Snapshot.State value) {
       if (value == null) {
@@ -1872,6 +1952,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearState() {
 
@@ -1890,6 +1972,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 7;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1911,6 +1995,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 7;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1932,6 +2018,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 7;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1951,6 +2040,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1967,6 +2058,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 7;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

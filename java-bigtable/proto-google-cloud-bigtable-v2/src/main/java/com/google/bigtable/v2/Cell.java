@@ -43,6 +43,12 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Cell();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -79,9 +85,9 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               labels_.add(s);
               break;
@@ -100,7 +106,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         labels_ = labels_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -121,7 +127,6 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.v2.Cell.class, com.google.bigtable.v2.Cell.Builder.class);
   }
 
-  private int bitField0_;
   public static final int TIMESTAMP_MICROS_FIELD_NUMBER = 1;
   private long timestampMicros_;
   /**
@@ -137,6 +142,8 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 timestamp_micros = 1;</code>
+   *
+   * @return The timestampMicros.
    */
   public long getTimestampMicros() {
     return timestampMicros_;
@@ -154,6 +161,8 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes value = 2;</code>
+   *
+   * @return The value.
    */
   public com.google.protobuf.ByteString getValue() {
     return value_;
@@ -169,6 +178,8 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string labels = 3;</code>
+   *
+   * @return A list containing the labels.
    */
   public com.google.protobuf.ProtocolStringList getLabelsList() {
     return labels_;
@@ -181,6 +192,8 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string labels = 3;</code>
+   *
+   * @return The count of labels.
    */
   public int getLabelsCount() {
     return labels_.size();
@@ -193,6 +206,9 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string labels = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The labels at the given index.
    */
   public java.lang.String getLabels(int index) {
     return labels_.get(index);
@@ -205,6 +221,9 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string labels = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the labels at the given index.
    */
   public com.google.protobuf.ByteString getLabelsBytes(int index) {
     return labels_.getByteString(index);
@@ -440,7 +459,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
       value_ = com.google.protobuf.ByteString.EMPTY;
 
       labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -467,15 +486,13 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.v2.Cell buildPartial() {
       com.google.bigtable.v2.Cell result = new com.google.bigtable.v2.Cell(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.timestampMicros_ = timestampMicros_;
       result.value_ = value_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         labels_ = labels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.labels_ = labels_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -534,7 +551,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
       if (!other.labels_.isEmpty()) {
         if (labels_.isEmpty()) {
           labels_ = other.labels_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureLabelsIsMutable();
           labels_.addAll(other.labels_);
@@ -586,6 +603,8 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 timestamp_micros = 1;</code>
+     *
+     * @return The timestampMicros.
      */
     public long getTimestampMicros() {
       return timestampMicros_;
@@ -603,6 +622,9 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 timestamp_micros = 1;</code>
+     *
+     * @param value The timestampMicros to set.
+     * @return This builder for chaining.
      */
     public Builder setTimestampMicros(long value) {
 
@@ -623,6 +645,8 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 timestamp_micros = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTimestampMicros() {
 
@@ -642,6 +666,8 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes value = 2;</code>
+     *
+     * @return The value.
      */
     public com.google.protobuf.ByteString getValue() {
       return value_;
@@ -656,6 +682,9 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes value = 2;</code>
+     *
+     * @param value The value to set.
+     * @return This builder for chaining.
      */
     public Builder setValue(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -676,6 +705,8 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes value = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearValue() {
 
@@ -688,9 +719,9 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLabelsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         labels_ = new com.google.protobuf.LazyStringArrayList(labels_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -701,6 +732,8 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string labels = 3;</code>
+     *
+     * @return A list containing the labels.
      */
     public com.google.protobuf.ProtocolStringList getLabelsList() {
       return labels_.getUnmodifiableView();
@@ -713,6 +746,8 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string labels = 3;</code>
+     *
+     * @return The count of labels.
      */
     public int getLabelsCount() {
       return labels_.size();
@@ -725,6 +760,9 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string labels = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The labels at the given index.
      */
     public java.lang.String getLabels(int index) {
       return labels_.get(index);
@@ -737,6 +775,9 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string labels = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the labels at the given index.
      */
     public com.google.protobuf.ByteString getLabelsBytes(int index) {
       return labels_.getByteString(index);
@@ -749,6 +790,10 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string labels = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The labels to set.
+     * @return This builder for chaining.
      */
     public Builder setLabels(int index, java.lang.String value) {
       if (value == null) {
@@ -767,6 +812,9 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string labels = 3;</code>
+     *
+     * @param value The labels to add.
+     * @return This builder for chaining.
      */
     public Builder addLabels(java.lang.String value) {
       if (value == null) {
@@ -785,6 +833,9 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string labels = 3;</code>
+     *
+     * @param values The labels to add.
+     * @return This builder for chaining.
      */
     public Builder addAllLabels(java.lang.Iterable<java.lang.String> values) {
       ensureLabelsIsMutable();
@@ -800,10 +851,12 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string labels = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLabels() {
       labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -815,6 +868,9 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string labels = 3;</code>
+     *
+     * @param value The bytes of the labels to add.
+     * @return This builder for chaining.
      */
     public Builder addLabelsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

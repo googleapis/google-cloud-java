@@ -31,6 +31,8 @@ public interface UpdateAppProfileRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
+   *
+   * @return Whether the appProfile field is set.
    */
   boolean hasAppProfile();
   /**
@@ -41,6 +43,8 @@ public interface UpdateAppProfileRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
+   *
+   * @return The appProfile.
    */
   com.google.bigtable.admin.v2.AppProfile getAppProfile();
   /**
@@ -63,6 +67,8 @@ public interface UpdateAppProfileRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -74,6 +80,8 @@ public interface UpdateAppProfileRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -96,6 +104,8 @@ public interface UpdateAppProfileRequestOrBuilder
    * </pre>
    *
    * <code>bool ignore_warnings = 3;</code>
+   *
+   * @return The ignoreWarnings.
    */
   boolean getIgnoreWarnings();
 }

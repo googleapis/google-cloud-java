@@ -44,6 +44,12 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Column();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -74,9 +80,9 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 cells_ = new java.util.ArrayList<com.google.bigtable.v2.Cell>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               cells_.add(
                   input.readMessage(com.google.bigtable.v2.Cell.parser(), extensionRegistry));
@@ -96,7 +102,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         cells_ = java.util.Collections.unmodifiableList(cells_);
       }
       this.unknownFields = unknownFields.build();
@@ -117,7 +123,6 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.v2.Column.class, com.google.bigtable.v2.Column.Builder.class);
   }
 
-  private int bitField0_;
   public static final int QUALIFIER_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString qualifier_;
   /**
@@ -132,6 +137,8 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes qualifier = 1;</code>
+   *
+   * @return The qualifier.
    */
   public com.google.protobuf.ByteString getQualifier() {
     return qualifier_;
@@ -418,7 +425,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
 
       if (cellsBuilder_ == null) {
         cells_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         cellsBuilder_.clear();
       }
@@ -448,18 +455,16 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.v2.Column buildPartial() {
       com.google.bigtable.v2.Column result = new com.google.bigtable.v2.Column(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.qualifier_ = qualifier_;
       if (cellsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           cells_ = java.util.Collections.unmodifiableList(cells_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.cells_ = cells_;
       } else {
         result.cells_ = cellsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -516,7 +521,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
         if (!other.cells_.isEmpty()) {
           if (cells_.isEmpty()) {
             cells_ = other.cells_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureCellsIsMutable();
             cells_.addAll(other.cells_);
@@ -529,7 +534,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
             cellsBuilder_.dispose();
             cellsBuilder_ = null;
             cells_ = other.cells_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             cellsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCellsFieldBuilder()
@@ -583,6 +588,8 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes qualifier = 1;</code>
+     *
+     * @return The qualifier.
      */
     public com.google.protobuf.ByteString getQualifier() {
       return qualifier_;
@@ -599,6 +606,9 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes qualifier = 1;</code>
+     *
+     * @param value The qualifier to set.
+     * @return This builder for chaining.
      */
     public Builder setQualifier(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -621,6 +631,8 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes qualifier = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearQualifier() {
 
@@ -632,9 +644,9 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<com.google.bigtable.v2.Cell> cells_ = java.util.Collections.emptyList();
 
     private void ensureCellsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         cells_ = new java.util.ArrayList<com.google.bigtable.v2.Cell>(cells_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -846,7 +858,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCells() {
       if (cellsBuilder_ == null) {
         cells_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         cellsBuilder_.clear();
@@ -965,7 +977,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
                 com.google.bigtable.v2.Cell,
                 com.google.bigtable.v2.Cell.Builder,
                 com.google.bigtable.v2.CellOrBuilder>(
-                cells_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                cells_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         cells_ = null;
       }
       return cellsBuilder_;

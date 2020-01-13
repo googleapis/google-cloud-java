@@ -32,6 +32,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.RowFilter.Chain chain = 1;</code>
+   *
+   * @return Whether the chain field is set.
    */
   boolean hasChain();
   /**
@@ -43,6 +45,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.RowFilter.Chain chain = 1;</code>
+   *
+   * @return The chain.
    */
   com.google.bigtable.v2.RowFilter.Chain getChain();
   /**
@@ -66,6 +70,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.RowFilter.Interleave interleave = 2;</code>
+   *
+   * @return Whether the interleave field is set.
    */
   boolean hasInterleave();
   /**
@@ -77,6 +83,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.RowFilter.Interleave interleave = 2;</code>
+   *
+   * @return The interleave.
    */
   com.google.bigtable.v2.RowFilter.Interleave getInterleave();
   /**
@@ -100,6 +108,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.RowFilter.Condition condition = 3;</code>
+   *
+   * @return Whether the condition field is set.
    */
   boolean hasCondition();
   /**
@@ -111,6 +121,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.RowFilter.Condition condition = 3;</code>
+   *
+   * @return The condition.
    */
   com.google.bigtable.v2.RowFilter.Condition getCondition();
   /**
@@ -186,6 +198,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>bool sink = 16;</code>
+   *
+   * @return The sink.
    */
   boolean getSink();
 
@@ -198,6 +212,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>bool pass_all_filter = 17;</code>
+   *
+   * @return The passAllFilter.
    */
   boolean getPassAllFilter();
 
@@ -210,6 +226,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>bool block_all_filter = 18;</code>
+   *
+   * @return The blockAllFilter.
    */
   boolean getBlockAllFilter();
 
@@ -227,6 +245,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>bytes row_key_regex_filter = 4;</code>
+   *
+   * @return The rowKeyRegexFilter.
    */
   com.google.protobuf.ByteString getRowKeyRegexFilter();
 
@@ -239,6 +259,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>double row_sample_filter = 14;</code>
+   *
+   * @return The rowSampleFilter.
    */
   double getRowSampleFilter();
 
@@ -255,6 +277,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>string family_name_regex_filter = 5;</code>
+   *
+   * @return The familyNameRegexFilter.
    */
   java.lang.String getFamilyNameRegexFilter();
   /**
@@ -270,6 +294,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>string family_name_regex_filter = 5;</code>
+   *
+   * @return The bytes for familyNameRegexFilter.
    */
   com.google.protobuf.ByteString getFamilyNameRegexFilterBytes();
 
@@ -286,6 +312,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>bytes column_qualifier_regex_filter = 6;</code>
+   *
+   * @return The columnQualifierRegexFilter.
    */
   com.google.protobuf.ByteString getColumnQualifierRegexFilter();
 
@@ -297,6 +325,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.ColumnRange column_range_filter = 7;</code>
+   *
+   * @return Whether the columnRangeFilter field is set.
    */
   boolean hasColumnRangeFilter();
   /**
@@ -307,6 +337,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.ColumnRange column_range_filter = 7;</code>
+   *
+   * @return The columnRangeFilter.
    */
   com.google.bigtable.v2.ColumnRange getColumnRangeFilter();
   /**
@@ -328,6 +360,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.TimestampRange timestamp_range_filter = 8;</code>
+   *
+   * @return Whether the timestampRangeFilter field is set.
    */
   boolean hasTimestampRangeFilter();
   /**
@@ -338,6 +372,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.TimestampRange timestamp_range_filter = 8;</code>
+   *
+   * @return The timestampRangeFilter.
    */
   com.google.bigtable.v2.TimestampRange getTimestampRangeFilter();
   /**
@@ -363,6 +399,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>bytes value_regex_filter = 9;</code>
+   *
+   * @return The valueRegexFilter.
    */
   com.google.protobuf.ByteString getValueRegexFilter();
 
@@ -374,6 +412,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.ValueRange value_range_filter = 15;</code>
+   *
+   * @return Whether the valueRangeFilter field is set.
    */
   boolean hasValueRangeFilter();
   /**
@@ -384,6 +424,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.v2.ValueRange value_range_filter = 15;</code>
+   *
+   * @return The valueRangeFilter.
    */
   com.google.bigtable.v2.ValueRange getValueRangeFilter();
   /**
@@ -407,6 +449,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>int32 cells_per_row_offset_filter = 10;</code>
+   *
+   * @return The cellsPerRowOffsetFilter.
    */
   int getCellsPerRowOffsetFilter();
 
@@ -420,6 +464,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>int32 cells_per_row_limit_filter = 11;</code>
+   *
+   * @return The cellsPerRowLimitFilter.
    */
   int getCellsPerRowLimitFilter();
 
@@ -436,6 +482,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>int32 cells_per_column_limit_filter = 12;</code>
+   *
+   * @return The cellsPerColumnLimitFilter.
    */
   int getCellsPerColumnLimitFilter();
 
@@ -447,6 +495,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>bool strip_value_transformer = 13;</code>
+   *
+   * @return The stripValueTransformer.
    */
   boolean getStripValueTransformer();
 
@@ -468,6 +518,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>string apply_label_transformer = 19;</code>
+   *
+   * @return The applyLabelTransformer.
    */
   java.lang.String getApplyLabelTransformer();
   /**
@@ -488,6 +540,8 @@ public interface RowFilterOrBuilder
    * </pre>
    *
    * <code>string apply_label_transformer = 19;</code>
+   *
+   * @return The bytes for applyLabelTransformer.
    */
   com.google.protobuf.ByteString getApplyLabelTransformerBytes();
 

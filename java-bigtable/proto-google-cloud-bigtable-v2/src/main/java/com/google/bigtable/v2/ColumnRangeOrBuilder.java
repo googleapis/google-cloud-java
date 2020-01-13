@@ -31,6 +31,8 @@ public interface ColumnRangeOrBuilder
    * </pre>
    *
    * <code>string family_name = 1;</code>
+   *
+   * @return The familyName.
    */
   java.lang.String getFamilyName();
   /**
@@ -41,6 +43,8 @@ public interface ColumnRangeOrBuilder
    * </pre>
    *
    * <code>string family_name = 1;</code>
+   *
+   * @return The bytes for familyName.
    */
   com.google.protobuf.ByteString getFamilyNameBytes();
 
@@ -52,6 +56,8 @@ public interface ColumnRangeOrBuilder
    * </pre>
    *
    * <code>bytes start_qualifier_closed = 2;</code>
+   *
+   * @return The startQualifierClosed.
    */
   com.google.protobuf.ByteString getStartQualifierClosed();
 
@@ -63,6 +69,8 @@ public interface ColumnRangeOrBuilder
    * </pre>
    *
    * <code>bytes start_qualifier_open = 3;</code>
+   *
+   * @return The startQualifierOpen.
    */
   com.google.protobuf.ByteString getStartQualifierOpen();
 
@@ -74,6 +82,8 @@ public interface ColumnRangeOrBuilder
    * </pre>
    *
    * <code>bytes end_qualifier_closed = 4;</code>
+   *
+   * @return The endQualifierClosed.
    */
   com.google.protobuf.ByteString getEndQualifierClosed();
 
@@ -85,6 +95,8 @@ public interface ColumnRangeOrBuilder
    * </pre>
    *
    * <code>bytes end_qualifier_open = 5;</code>
+   *
+   * @return The endQualifierOpen.
    */
   com.google.protobuf.ByteString getEndQualifierOpen();
 

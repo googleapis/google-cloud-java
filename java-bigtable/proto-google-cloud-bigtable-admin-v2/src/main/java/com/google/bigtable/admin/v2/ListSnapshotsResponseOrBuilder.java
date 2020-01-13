@@ -85,6 +85,8 @@ public interface ListSnapshotsResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
@@ -97,6 +99,8 @@ public interface ListSnapshotsResponseOrBuilder
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
 }

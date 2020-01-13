@@ -41,6 +41,12 @@ public final class CheckConsistencyResponse extends com.google.protobuf.Generate
   private CheckConsistencyResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CheckConsistencyResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class CheckConsistencyResponse extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -114,6 +119,8 @@ public final class CheckConsistencyResponse extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>bool consistent = 1;</code>
+   *
+   * @return The consistent.
    */
   public boolean getConsistent() {
     return consistent_;
@@ -448,6 +455,8 @@ public final class CheckConsistencyResponse extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>bool consistent = 1;</code>
+     *
+     * @return The consistent.
      */
     public boolean getConsistent() {
       return consistent_;
@@ -461,6 +470,9 @@ public final class CheckConsistencyResponse extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>bool consistent = 1;</code>
+     *
+     * @param value The consistent to set.
+     * @return This builder for chaining.
      */
     public Builder setConsistent(boolean value) {
 
@@ -477,6 +489,8 @@ public final class CheckConsistencyResponse extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>bool consistent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearConsistent() {
 

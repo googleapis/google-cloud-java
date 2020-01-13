@@ -45,6 +45,12 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AppProfile();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -194,6 +199,12 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private MultiClusterRoutingUseAny() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new MultiClusterRoutingUseAny();
+    }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -638,6 +649,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_id = 1;</code>
+     *
+     * @return The clusterId.
      */
     java.lang.String getClusterId();
     /**
@@ -648,6 +661,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_id = 1;</code>
+     *
+     * @return The bytes for clusterId.
      */
     com.google.protobuf.ByteString getClusterIdBytes();
 
@@ -661,6 +676,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool allow_transactional_writes = 2;</code>
+     *
+     * @return The allowTransactionalWrites.
      */
     boolean getAllowTransactionalWrites();
   }
@@ -690,6 +707,12 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SingleClusterRouting();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -702,7 +725,6 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -769,6 +791,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_id = 1;</code>
+     *
+     * @return The clusterId.
      */
     public java.lang.String getClusterId() {
       java.lang.Object ref = clusterId_;
@@ -789,6 +813,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cluster_id = 1;</code>
+     *
+     * @return The bytes for clusterId.
      */
     public com.google.protobuf.ByteString getClusterIdBytes() {
       java.lang.Object ref = clusterId_;
@@ -814,6 +840,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool allow_transactional_writes = 2;</code>
+     *
+     * @return The allowTransactionalWrites.
      */
     public boolean getAllowTransactionalWrites() {
       return allowTransactionalWrites_;
@@ -1171,6 +1199,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string cluster_id = 1;</code>
+       *
+       * @return The clusterId.
        */
       public java.lang.String getClusterId() {
         java.lang.Object ref = clusterId_;
@@ -1191,6 +1221,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string cluster_id = 1;</code>
+       *
+       * @return The bytes for clusterId.
        */
       public com.google.protobuf.ByteString getClusterIdBytes() {
         java.lang.Object ref = clusterId_;
@@ -1211,6 +1243,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string cluster_id = 1;</code>
+       *
+       * @param value The clusterId to set.
+       * @return This builder for chaining.
        */
       public Builder setClusterId(java.lang.String value) {
         if (value == null) {
@@ -1229,6 +1264,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string cluster_id = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearClusterId() {
 
@@ -1244,6 +1281,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>string cluster_id = 1;</code>
+       *
+       * @param value The bytes for clusterId to set.
+       * @return This builder for chaining.
        */
       public Builder setClusterIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1267,6 +1307,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool allow_transactional_writes = 2;</code>
+       *
+       * @return The allowTransactionalWrites.
        */
       public boolean getAllowTransactionalWrites() {
         return allowTransactionalWrites_;
@@ -1281,6 +1323,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool allow_transactional_writes = 2;</code>
+       *
+       * @param value The allowTransactionalWrites to set.
+       * @return This builder for chaining.
        */
       public Builder setAllowTransactionalWrites(boolean value) {
 
@@ -1298,6 +1343,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>bool allow_transactional_writes = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearAllowTransactionalWrites() {
 
@@ -1364,7 +1411,10 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
   private int routingPolicyCase_ = 0;
   private java.lang.Object routingPolicy_;
 
-  public enum RoutingPolicyCase implements com.google.protobuf.Internal.EnumLite {
+  public enum RoutingPolicyCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     MULTI_CLUSTER_ROUTING_USE_ANY(5),
     SINGLE_CLUSTER_ROUTING(6),
     ROUTINGPOLICY_NOT_SET(0);
@@ -1373,7 +1423,11 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     private RoutingPolicyCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static RoutingPolicyCase valueOf(int value) {
       return forNumber(value);
@@ -1413,6 +1467,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -1435,6 +1491,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -1465,6 +1523,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string etag = 2;</code>
+   *
+   * @return The etag.
    */
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
@@ -1492,6 +1552,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string etag = 2;</code>
+   *
+   * @return The bytes for etag.
    */
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
@@ -1515,6 +1577,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -1535,6 +1599,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 3;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -1559,6 +1625,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny multi_cluster_routing_use_any = 5;
    * </code>
+   *
+   * @return Whether the multiClusterRoutingUseAny field is set.
    */
   public boolean hasMultiClusterRoutingUseAny() {
     return routingPolicyCase_ == 5;
@@ -1573,6 +1641,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * <code>
    * .google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny multi_cluster_routing_use_any = 5;
    * </code>
+   *
+   * @return The multiClusterRoutingUseAny.
    */
   public com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
       getMultiClusterRoutingUseAny() {
@@ -1610,6 +1680,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.bigtable.admin.v2.AppProfile.SingleClusterRouting single_cluster_routing = 6;
    * </code>
+   *
+   * @return Whether the singleClusterRouting field is set.
    */
   public boolean hasSingleClusterRouting() {
     return routingPolicyCase_ == 6;
@@ -1623,6 +1695,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.bigtable.admin.v2.AppProfile.SingleClusterRouting single_cluster_routing = 6;
    * </code>
+   *
+   * @return The singleClusterRouting.
    */
   public com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting getSingleClusterRouting() {
     if (routingPolicyCase_ == 6) {
@@ -2097,6 +2171,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2119,6 +2195,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -2141,6 +2219,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -2161,6 +2242,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -2178,6 +2261,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2206,6 +2292,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 2;</code>
+     *
+     * @return The etag.
      */
     public java.lang.String getEtag() {
       java.lang.Object ref = etag_;
@@ -2233,6 +2321,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 2;</code>
+     *
+     * @return The bytes for etag.
      */
     public com.google.protobuf.ByteString getEtagBytes() {
       java.lang.Object ref = etag_;
@@ -2260,6 +2350,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 2;</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
      */
     public Builder setEtag(java.lang.String value) {
       if (value == null) {
@@ -2285,6 +2378,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearEtag() {
 
@@ -2307,6 +2402,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string etag = 2;</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
      */
     public Builder setEtagBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2328,6 +2426,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -2348,6 +2448,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -2368,6 +2470,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -2386,6 +2491,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -2401,6 +2508,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 3;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2428,6 +2538,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny multi_cluster_routing_use_any = 5;
      * </code>
+     *
+     * @return Whether the multiClusterRoutingUseAny field is set.
      */
     public boolean hasMultiClusterRoutingUseAny() {
       return routingPolicyCase_ == 5;
@@ -2442,6 +2554,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>
      * .google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny multi_cluster_routing_use_any = 5;
      * </code>
+     *
+     * @return The multiClusterRoutingUseAny.
      */
     public com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
         getMultiClusterRoutingUseAny() {
@@ -2660,6 +2774,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.admin.v2.AppProfile.SingleClusterRouting single_cluster_routing = 6;
      * </code>
+     *
+     * @return Whether the singleClusterRouting field is set.
      */
     public boolean hasSingleClusterRouting() {
       return routingPolicyCase_ == 6;
@@ -2673,6 +2789,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.admin.v2.AppProfile.SingleClusterRouting single_cluster_routing = 6;
      * </code>
+     *
+     * @return The singleClusterRouting.
      */
     public com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting getSingleClusterRouting() {
       if (singleClusterRoutingBuilder_ == null) {

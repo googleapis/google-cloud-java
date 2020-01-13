@@ -31,6 +31,8 @@ public interface GenerateConsistencyTokenResponseOrBuilder
    * </pre>
    *
    * <code>string consistency_token = 1;</code>
+   *
+   * @return The consistencyToken.
    */
   java.lang.String getConsistencyToken();
   /**
@@ -41,6 +43,8 @@ public interface GenerateConsistencyTokenResponseOrBuilder
    * </pre>
    *
    * <code>string consistency_token = 1;</code>
+   *
+   * @return The bytes for consistencyToken.
    */
   com.google.protobuf.ByteString getConsistencyTokenBytes();
 }

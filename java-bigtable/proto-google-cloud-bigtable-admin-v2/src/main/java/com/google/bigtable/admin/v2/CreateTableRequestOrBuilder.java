@@ -32,6 +32,8 @@ public interface CreateTableRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -43,6 +45,8 @@ public interface CreateTableRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -55,6 +59,8 @@ public interface CreateTableRequestOrBuilder
    * </pre>
    *
    * <code>string table_id = 2;</code>
+   *
+   * @return The tableId.
    */
   java.lang.String getTableId();
   /**
@@ -66,6 +72,8 @@ public interface CreateTableRequestOrBuilder
    * </pre>
    *
    * <code>string table_id = 2;</code>
+   *
+   * @return The bytes for tableId.
    */
   com.google.protobuf.ByteString getTableIdBytes();
 
@@ -77,6 +85,8 @@ public interface CreateTableRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+   *
+   * @return Whether the table field is set.
    */
   boolean hasTable();
   /**
@@ -87,6 +97,8 @@ public interface CreateTableRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table table = 3;</code>
+   *
+   * @return The table.
    */
   com.google.bigtable.admin.v2.Table getTable();
   /**

@@ -33,6 +33,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -60,6 +64,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>string location = 2;</code>
+   *
+   * @return The location.
    */
   java.lang.String getLocation();
   /**
@@ -74,6 +80,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>string location = 2;</code>
+   *
+   * @return The bytes for location.
    */
   com.google.protobuf.ByteString getLocationBytes();
 
@@ -86,6 +94,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -97,6 +107,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Cluster.State state = 3;</code>
+   *
+   * @return The state.
    */
   com.google.bigtable.admin.v2.Cluster.State getState();
 
@@ -109,6 +121,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>int32 serve_nodes = 4;</code>
+   *
+   * @return The serveNodes.
    */
   int getServeNodes();
 
@@ -122,6 +136,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+   *
+   * @return The enum numeric value on the wire for defaultStorageType.
    */
   int getDefaultStorageTypeValue();
   /**
@@ -134,6 +150,8 @@ public interface ClusterOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+   *
+   * @return The defaultStorageType.
    */
   com.google.bigtable.admin.v2.StorageType getDefaultStorageType();
 }

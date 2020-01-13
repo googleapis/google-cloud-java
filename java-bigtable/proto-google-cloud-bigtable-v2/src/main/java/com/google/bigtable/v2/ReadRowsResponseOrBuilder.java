@@ -23,16 +23,56 @@ public interface ReadRowsResponseOrBuilder
     // @@protoc_insertion_point(interface_extends:google.bigtable.v2.ReadRowsResponse)
     com.google.protobuf.MessageOrBuilder {
 
-  /** <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * A collection of a row's contents as part of the read request.
+   * </pre>
+   *
+   * <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code>
+   */
   java.util.List<com.google.bigtable.v2.ReadRowsResponse.CellChunk> getChunksList();
-  /** <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * A collection of a row's contents as part of the read request.
+   * </pre>
+   *
+   * <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code>
+   */
   com.google.bigtable.v2.ReadRowsResponse.CellChunk getChunks(int index);
-  /** <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * A collection of a row's contents as part of the read request.
+   * </pre>
+   *
+   * <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code>
+   */
   int getChunksCount();
-  /** <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * A collection of a row's contents as part of the read request.
+   * </pre>
+   *
+   * <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code>
+   */
   java.util.List<? extends com.google.bigtable.v2.ReadRowsResponse.CellChunkOrBuilder>
       getChunksOrBuilderList();
-  /** <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * A collection of a row's contents as part of the read request.
+   * </pre>
+   *
+   * <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code>
+   */
   com.google.bigtable.v2.ReadRowsResponse.CellChunkOrBuilder getChunksOrBuilder(int index);
 
   /**
@@ -49,6 +89,8 @@ public interface ReadRowsResponseOrBuilder
    * </pre>
    *
    * <code>bytes last_scanned_row_key = 2;</code>
+   *
+   * @return The lastScannedRowKey.
    */
   com.google.protobuf.ByteString getLastScannedRowKey();
 }

@@ -33,6 +33,8 @@ public interface RowOrBuilder
    * </pre>
    *
    * <code>bytes key = 1;</code>
+   *
+   * @return The key.
    */
   com.google.protobuf.ByteString getKey();
 

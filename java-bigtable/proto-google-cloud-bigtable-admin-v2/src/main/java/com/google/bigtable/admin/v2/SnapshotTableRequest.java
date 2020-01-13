@@ -50,6 +50,12 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SnapshotTableRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -62,7 +68,6 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -161,6 +166,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -183,6 +190,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -208,6 +217,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string cluster = 2;</code>
+   *
+   * @return The cluster.
    */
   public java.lang.String getCluster() {
     java.lang.Object ref = cluster_;
@@ -230,6 +241,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string cluster = 2;</code>
+   *
+   * @return The bytes for cluster.
    */
   public com.google.protobuf.ByteString getClusterBytes() {
     java.lang.Object ref = cluster_;
@@ -256,6 +269,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string snapshot_id = 3;</code>
+   *
+   * @return The snapshotId.
    */
   public java.lang.String getSnapshotId() {
     java.lang.Object ref = snapshotId_;
@@ -279,6 +294,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string snapshot_id = 3;</code>
+   *
+   * @return The bytes for snapshotId.
    */
   public com.google.protobuf.ByteString getSnapshotIdBytes() {
     java.lang.Object ref = snapshotId_;
@@ -305,6 +322,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 4;</code>
+   *
+   * @return Whether the ttl field is set.
    */
   public boolean hasTtl() {
     return ttl_ != null;
@@ -320,6 +339,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 4;</code>
+   *
+   * @return The ttl.
    */
   public com.google.protobuf.Duration getTtl() {
     return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
@@ -350,6 +371,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string description = 5;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -370,6 +393,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string description = 5;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -793,6 +818,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -815,6 +842,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -837,6 +866,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -857,6 +889,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -874,6 +908,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -897,6 +934,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string cluster = 2;</code>
+     *
+     * @return The cluster.
      */
     public java.lang.String getCluster() {
       java.lang.Object ref = cluster_;
@@ -919,6 +958,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string cluster = 2;</code>
+     *
+     * @return The bytes for cluster.
      */
     public com.google.protobuf.ByteString getClusterBytes() {
       java.lang.Object ref = cluster_;
@@ -941,6 +982,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string cluster = 2;</code>
+     *
+     * @param value The cluster to set.
+     * @return This builder for chaining.
      */
     public Builder setCluster(java.lang.String value) {
       if (value == null) {
@@ -961,6 +1005,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string cluster = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCluster() {
 
@@ -978,6 +1024,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string cluster = 2;</code>
+     *
+     * @param value The bytes for cluster to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1002,6 +1051,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string snapshot_id = 3;</code>
+     *
+     * @return The snapshotId.
      */
     public java.lang.String getSnapshotId() {
       java.lang.Object ref = snapshotId_;
@@ -1025,6 +1076,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string snapshot_id = 3;</code>
+     *
+     * @return The bytes for snapshotId.
      */
     public com.google.protobuf.ByteString getSnapshotIdBytes() {
       java.lang.Object ref = snapshotId_;
@@ -1048,6 +1101,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string snapshot_id = 3;</code>
+     *
+     * @param value The snapshotId to set.
+     * @return This builder for chaining.
      */
     public Builder setSnapshotId(java.lang.String value) {
       if (value == null) {
@@ -1069,6 +1125,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string snapshot_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearSnapshotId() {
 
@@ -1087,6 +1145,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string snapshot_id = 3;</code>
+     *
+     * @param value The bytes for snapshotId to set.
+     * @return This builder for chaining.
      */
     public Builder setSnapshotIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1116,6 +1177,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 4;</code>
+     *
+     * @return Whether the ttl field is set.
      */
     public boolean hasTtl() {
       return ttlBuilder_ != null || ttl_ != null;
@@ -1131,6 +1194,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 4;</code>
+     *
+     * @return The ttl.
      */
     public com.google.protobuf.Duration getTtl() {
       if (ttlBuilder_ == null) {
@@ -1308,6 +1373,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string description = 5;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1328,6 +1395,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string description = 5;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1348,6 +1417,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string description = 5;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1366,6 +1438,8 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string description = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1381,6 +1455,9 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string description = 5;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

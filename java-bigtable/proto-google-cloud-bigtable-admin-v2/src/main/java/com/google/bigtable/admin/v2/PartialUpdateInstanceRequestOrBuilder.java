@@ -31,6 +31,8 @@ public interface PartialUpdateInstanceRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Instance instance = 1;</code>
+   *
+   * @return Whether the instance field is set.
    */
   boolean hasInstance();
   /**
@@ -41,6 +43,8 @@ public interface PartialUpdateInstanceRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Instance instance = 1;</code>
+   *
+   * @return The instance.
    */
   com.google.bigtable.admin.v2.Instance getInstance();
   /**
@@ -63,6 +67,8 @@ public interface PartialUpdateInstanceRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -74,6 +80,8 @@ public interface PartialUpdateInstanceRequestOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**

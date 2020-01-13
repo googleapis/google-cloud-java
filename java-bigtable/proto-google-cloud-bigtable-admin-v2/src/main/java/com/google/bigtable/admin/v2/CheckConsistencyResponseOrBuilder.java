@@ -32,6 +32,8 @@ public interface CheckConsistencyResponseOrBuilder
    * </pre>
    *
    * <code>bool consistent = 1;</code>
+   *
+   * @return The consistent.
    */
   boolean getConsistent();
 }

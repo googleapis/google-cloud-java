@@ -33,6 +33,8 @@ public interface CreateAppProfileRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -45,6 +47,8 @@ public interface CreateAppProfileRequestOrBuilder
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -58,6 +62,8 @@ public interface CreateAppProfileRequestOrBuilder
    * </pre>
    *
    * <code>string app_profile_id = 2;</code>
+   *
+   * @return The appProfileId.
    */
   java.lang.String getAppProfileId();
   /**
@@ -70,6 +76,8 @@ public interface CreateAppProfileRequestOrBuilder
    * </pre>
    *
    * <code>string app_profile_id = 2;</code>
+   *
+   * @return The bytes for appProfileId.
    */
   com.google.protobuf.ByteString getAppProfileIdBytes();
 
@@ -82,6 +90,8 @@ public interface CreateAppProfileRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+   *
+   * @return Whether the appProfile field is set.
    */
   boolean hasAppProfile();
   /**
@@ -93,6 +103,8 @@ public interface CreateAppProfileRequestOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.AppProfile app_profile = 3;</code>
+   *
+   * @return The appProfile.
    */
   com.google.bigtable.admin.v2.AppProfile getAppProfile();
   /**
@@ -115,6 +127,8 @@ public interface CreateAppProfileRequestOrBuilder
    * </pre>
    *
    * <code>bool ignore_warnings = 4;</code>
+   *
+   * @return The ignoreWarnings.
    */
   boolean getIgnoreWarnings();
 }

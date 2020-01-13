@@ -43,6 +43,12 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SampleRowKeysRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -120,12 +125,16 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The unique name of the table from which to sample row keys.
+   * Required. The unique name of the table from which to sample row keys.
    * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
    * </pre>
    *
-   * <code>string table_name = 1;</code>
+   * <code>
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The tableName.
    */
   public java.lang.String getTableName() {
     java.lang.Object ref = tableName_;
@@ -142,12 +151,16 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The unique name of the table from which to sample row keys.
+   * Required. The unique name of the table from which to sample row keys.
    * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
    * </pre>
    *
-   * <code>string table_name = 1;</code>
+   * <code>
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for tableName.
    */
   public com.google.protobuf.ByteString getTableNameBytes() {
     java.lang.Object ref = tableName_;
@@ -172,6 +185,8 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string app_profile_id = 2;</code>
+   *
+   * @return The appProfileId.
    */
   public java.lang.String getAppProfileId() {
     java.lang.Object ref = appProfileId_;
@@ -193,6 +208,8 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>string app_profile_id = 2;</code>
+   *
+   * @return The bytes for appProfileId.
    */
   public com.google.protobuf.ByteString getAppProfileIdBytes() {
     java.lang.Object ref = appProfileId_;
@@ -543,12 +560,16 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the table from which to sample row keys.
+     * Required. The unique name of the table from which to sample row keys.
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
-     * <code>string table_name = 1;</code>
+     * <code>
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The tableName.
      */
     public java.lang.String getTableName() {
       java.lang.Object ref = tableName_;
@@ -565,12 +586,16 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the table from which to sample row keys.
+     * Required. The unique name of the table from which to sample row keys.
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
-     * <code>string table_name = 1;</code>
+     * <code>
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for tableName.
      */
     public com.google.protobuf.ByteString getTableNameBytes() {
       java.lang.Object ref = tableName_;
@@ -587,12 +612,17 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the table from which to sample row keys.
+     * Required. The unique name of the table from which to sample row keys.
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
-     * <code>string table_name = 1;</code>
+     * <code>
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The tableName to set.
+     * @return This builder for chaining.
      */
     public Builder setTableName(java.lang.String value) {
       if (value == null) {
@@ -607,12 +637,16 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the table from which to sample row keys.
+     * Required. The unique name of the table from which to sample row keys.
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
-     * <code>string table_name = 1;</code>
+     * <code>
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTableName() {
 
@@ -624,12 +658,17 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The unique name of the table from which to sample row keys.
+     * Required. The unique name of the table from which to sample row keys.
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
-     * <code>string table_name = 1;</code>
+     * <code>
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for tableName to set.
+     * @return This builder for chaining.
      */
     public Builder setTableNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -652,6 +691,8 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string app_profile_id = 2;</code>
+     *
+     * @return The appProfileId.
      */
     public java.lang.String getAppProfileId() {
       java.lang.Object ref = appProfileId_;
@@ -673,6 +714,8 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string app_profile_id = 2;</code>
+     *
+     * @return The bytes for appProfileId.
      */
     public com.google.protobuf.ByteString getAppProfileIdBytes() {
       java.lang.Object ref = appProfileId_;
@@ -694,6 +737,9 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string app_profile_id = 2;</code>
+     *
+     * @param value The appProfileId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppProfileId(java.lang.String value) {
       if (value == null) {
@@ -713,6 +759,8 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string app_profile_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAppProfileId() {
 
@@ -729,6 +777,9 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>string app_profile_id = 2;</code>
+     *
+     * @param value The bytes for appProfileId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppProfileIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

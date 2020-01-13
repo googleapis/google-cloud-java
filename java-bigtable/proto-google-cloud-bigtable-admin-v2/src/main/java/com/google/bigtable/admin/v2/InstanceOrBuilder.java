@@ -33,6 +33,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -45,6 +47,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -58,6 +62,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -70,6 +76,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -82,6 +90,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+   *
+   * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
@@ -93,6 +103,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+   *
+   * @return The state.
    */
   com.google.bigtable.admin.v2.Instance.State getState();
 
@@ -104,6 +116,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Instance.Type type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
   /**
@@ -114,6 +128,8 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Instance.Type type = 4;</code>
+   *
+   * @return The type.
    */
   com.google.bigtable.admin.v2.Instance.Type getType();
 

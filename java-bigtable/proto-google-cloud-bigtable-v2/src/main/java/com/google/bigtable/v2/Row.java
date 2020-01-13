@@ -44,6 +44,12 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Row();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -74,9 +80,9 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 families_ = new java.util.ArrayList<com.google.bigtable.v2.Family>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               families_.add(
                   input.readMessage(com.google.bigtable.v2.Family.parser(), extensionRegistry));
@@ -96,7 +102,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         families_ = java.util.Collections.unmodifiableList(families_);
       }
       this.unknownFields = unknownFields.build();
@@ -117,7 +123,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.v2.Row.class, com.google.bigtable.v2.Row.Builder.class);
   }
 
-  private int bitField0_;
   public static final int KEY_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString key_;
   /**
@@ -130,6 +135,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes key = 1;</code>
+   *
+   * @return The key.
    */
   public com.google.protobuf.ByteString getKey() {
     return key_;
@@ -422,7 +429,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
 
       if (familiesBuilder_ == null) {
         families_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         familiesBuilder_.clear();
       }
@@ -452,18 +459,16 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.v2.Row buildPartial() {
       com.google.bigtable.v2.Row result = new com.google.bigtable.v2.Row(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.key_ = key_;
       if (familiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           families_ = java.util.Collections.unmodifiableList(families_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.families_ = families_;
       } else {
         result.families_ = familiesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -520,7 +525,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         if (!other.families_.isEmpty()) {
           if (families_.isEmpty()) {
             families_ = other.families_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureFamiliesIsMutable();
             families_.addAll(other.families_);
@@ -533,7 +538,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
             familiesBuilder_.dispose();
             familiesBuilder_ = null;
             families_ = other.families_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             familiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFamiliesFieldBuilder()
@@ -585,6 +590,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes key = 1;</code>
+     *
+     * @return The key.
      */
     public com.google.protobuf.ByteString getKey() {
       return key_;
@@ -599,6 +606,9 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes key = 1;</code>
+     *
+     * @param value The key to set.
+     * @return This builder for chaining.
      */
     public Builder setKey(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -619,6 +629,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes key = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearKey() {
 
@@ -631,9 +643,9 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureFamiliesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         families_ = new java.util.ArrayList<com.google.bigtable.v2.Family>(families_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -857,7 +869,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFamilies() {
       if (familiesBuilder_ == null) {
         families_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         familiesBuilder_.clear();
@@ -985,7 +997,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
                 com.google.bigtable.v2.Family,
                 com.google.bigtable.v2.Family.Builder,
                 com.google.bigtable.v2.FamilyOrBuilder>(
-                families_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                families_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         families_ = null;
       }
       return familiesBuilder_;

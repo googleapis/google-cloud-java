@@ -43,6 +43,12 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateInstanceRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -98,11 +104,11 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 clusters_ =
                     com.google.protobuf.MapField.newMapField(
                         ClustersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, com.google.bigtable.admin.v2.Cluster>
                   clusters__ =
@@ -157,7 +163,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
             com.google.bigtable.admin.v2.CreateInstanceRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -169,6 +174,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -190,6 +197,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -215,6 +224,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string instance_id = 2;</code>
+   *
+   * @return The instanceId.
    */
   public java.lang.String getInstanceId() {
     java.lang.Object ref = instanceId_;
@@ -237,6 +248,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>string instance_id = 2;</code>
+   *
+   * @return The bytes for instanceId.
    */
   public com.google.protobuf.ByteString getInstanceIdBytes() {
     java.lang.Object ref = instanceId_;
@@ -261,6 +274,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+   *
+   * @return Whether the instance field is set.
    */
   public boolean hasInstance() {
     return instance_ != null;
@@ -274,6 +289,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+   *
+   * @return The instance.
    */
   public com.google.bigtable.admin.v2.Instance getInstance() {
     return instance_ == null
@@ -715,7 +732,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       com.google.bigtable.admin.v2.CreateInstanceRequest result =
           new com.google.bigtable.admin.v2.CreateInstanceRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.instanceId_ = instanceId_;
       if (instanceBuilder_ == null) {
@@ -725,7 +741,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       }
       result.clusters_ = internalGetClusters();
       result.clusters_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -830,6 +845,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -851,6 +868,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -872,6 +891,9 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -891,6 +913,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -907,6 +931,9 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -930,6 +957,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string instance_id = 2;</code>
+     *
+     * @return The instanceId.
      */
     public java.lang.String getInstanceId() {
       java.lang.Object ref = instanceId_;
@@ -952,6 +981,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string instance_id = 2;</code>
+     *
+     * @return The bytes for instanceId.
      */
     public com.google.protobuf.ByteString getInstanceIdBytes() {
       java.lang.Object ref = instanceId_;
@@ -974,6 +1005,9 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string instance_id = 2;</code>
+     *
+     * @param value The instanceId to set.
+     * @return This builder for chaining.
      */
     public Builder setInstanceId(java.lang.String value) {
       if (value == null) {
@@ -994,6 +1028,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string instance_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearInstanceId() {
 
@@ -1011,6 +1047,9 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>string instance_id = 2;</code>
+     *
+     * @param value The bytes for instanceId to set.
+     * @return This builder for chaining.
      */
     public Builder setInstanceIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1038,6 +1077,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+     *
+     * @return Whether the instance field is set.
      */
     public boolean hasInstance() {
       return instanceBuilder_ != null || instance_ != null;
@@ -1051,6 +1092,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Instance instance = 3;</code>
+     *
+     * @return The instance.
      */
     public com.google.bigtable.admin.v2.Instance getInstance() {
       if (instanceBuilder_ == null) {
