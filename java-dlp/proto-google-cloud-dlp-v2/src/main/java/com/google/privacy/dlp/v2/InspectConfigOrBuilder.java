@@ -144,18 +144,38 @@ public interface InspectConfigOrBuilder
   com.google.privacy.dlp.v2.Likelihood getMinLikelihood();
 
   /**
+   *
+   *
+   * <pre>
+   * Configuration to control the number of findings returned.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
    *
    * @return Whether the limits field is set.
    */
   boolean hasLimits();
   /**
+   *
+   *
+   * <pre>
+   * Configuration to control the number of findings returned.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
    *
    * @return The limits.
    */
   com.google.privacy.dlp.v2.InspectConfig.FindingLimits getLimits();
-  /** <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Configuration to control the number of findings returned.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
+   */
   com.google.privacy.dlp.v2.InspectConfig.FindingLimitsOrBuilder getLimitsOrBuilder();
 
   /**

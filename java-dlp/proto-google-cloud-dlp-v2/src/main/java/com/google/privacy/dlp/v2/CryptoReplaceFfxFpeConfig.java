@@ -191,7 +191,15 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * Protobuf enum {@code google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet}
    */
   public enum FfxCommonNativeAlphabet implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unused.
+     * </pre>
+     *
+     * <code>FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED = 0;</code>
+     */
     FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED(0),
     /**
      *
@@ -236,7 +244,15 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unused.
+     * </pre>
+     *
+     * <code>FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED = 0;</code>
+     */
     public static final int FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED_VALUE = 0;
     /**
      *
@@ -423,10 +439,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The key used by the encryption algorithm. [required]
+   * Required. The key used by the encryption algorithm.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   * <code>
+   * .google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the cryptoKey field is set.
    */
@@ -437,10 +455,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The key used by the encryption algorithm. [required]
+   * Required. The key used by the encryption algorithm.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   * <code>
+   * .google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The cryptoKey.
    */
@@ -453,10 +473,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The key used by the encryption algorithm. [required]
+   * Required. The key used by the encryption algorithm.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   * <code>
+   * .google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.privacy.dlp.v2.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
     return getCryptoKey();
@@ -546,6 +568,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
 
   public static final int COMMON_ALPHABET_FIELD_NUMBER = 4;
   /**
+   *
+   *
+   * <pre>
+   * Common alphabets.
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
    * </code>
@@ -559,6 +587,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
     return 0;
   }
   /**
+   *
+   *
+   * <pre>
+   * Common alphabets.
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
    * </code>
@@ -1282,10 +1316,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>
+     * .google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the cryptoKey field is set.
      */
@@ -1296,10 +1332,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>
+     * .google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The cryptoKey.
      */
@@ -1316,10 +1354,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>
+     * .google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setCryptoKey(com.google.privacy.dlp.v2.CryptoKey value) {
       if (cryptoKeyBuilder_ == null) {
@@ -1338,10 +1378,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>
+     * .google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setCryptoKey(com.google.privacy.dlp.v2.CryptoKey.Builder builderForValue) {
       if (cryptoKeyBuilder_ == null) {
@@ -1357,10 +1399,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>
+     * .google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeCryptoKey(com.google.privacy.dlp.v2.CryptoKey value) {
       if (cryptoKeyBuilder_ == null) {
@@ -1383,10 +1427,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>
+     * .google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearCryptoKey() {
       if (cryptoKeyBuilder_ == null) {
@@ -1403,10 +1449,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>
+     * .google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.CryptoKey.Builder getCryptoKeyBuilder() {
 
@@ -1417,10 +1465,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>
+     * .google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
       if (cryptoKeyBuilder_ != null) {
@@ -1435,10 +1485,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The key used by the encryption algorithm. [required]
+     * Required. The key used by the encryption algorithm.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+     * <code>
+     * .google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.CryptoKey,
@@ -1756,6 +1808,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Common alphabets.
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
      * </code>
@@ -1769,6 +1827,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
       return 0;
     }
     /**
+     *
+     *
+     * <pre>
+     * Common alphabets.
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
      * </code>
@@ -1783,6 +1847,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Common alphabets.
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
      * </code>
@@ -1805,6 +1875,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
           .FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED;
     }
     /**
+     *
+     *
+     * <pre>
+     * Common alphabets.
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
      * </code>
@@ -1823,6 +1899,12 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Common alphabets.
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
      * </code>

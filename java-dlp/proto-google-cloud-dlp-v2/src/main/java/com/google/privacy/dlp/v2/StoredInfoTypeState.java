@@ -28,7 +28,15 @@ package com.google.privacy.dlp.v2;
  * Protobuf enum {@code google.privacy.dlp.v2.StoredInfoTypeState}
  */
 public enum StoredInfoTypeState implements com.google.protobuf.ProtocolMessageEnum {
-  /** <code>STORED_INFO_TYPE_STATE_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Unused
+   * </pre>
+   *
+   * <code>STORED_INFO_TYPE_STATE_UNSPECIFIED = 0;</code>
+   */
   STORED_INFO_TYPE_STATE_UNSPECIFIED(0),
   /**
    *
@@ -76,7 +84,15 @@ public enum StoredInfoTypeState implements com.google.protobuf.ProtocolMessageEn
   UNRECOGNIZED(-1),
   ;
 
-  /** <code>STORED_INFO_TYPE_STATE_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Unused
+   * </pre>
+   *
+   * <code>STORED_INFO_TYPE_STATE_UNSPECIFIED = 0;</code>
+   */
   public static final int STORED_INFO_TYPE_STATE_UNSPECIFIED_VALUE = 0;
   /**
    *

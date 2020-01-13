@@ -56,7 +56,7 @@ public interface ListJobTriggersRequestOrBuilder
    *
    *
    * <pre>
-   * Optional page token to continue retrieval. Comes from previous call
+   * Page token to continue retrieval. Comes from previous call
    * to ListJobTriggers. `order_by` field must not
    * change for subsequent calls.
    * </pre>
@@ -70,7 +70,7 @@ public interface ListJobTriggersRequestOrBuilder
    *
    *
    * <pre>
-   * Optional page token to continue retrieval. Comes from previous call
+   * Page token to continue retrieval. Comes from previous call
    * to ListJobTriggers. `order_by` field must not
    * change for subsequent calls.
    * </pre>
@@ -85,7 +85,7 @@ public interface ListJobTriggersRequestOrBuilder
    *
    *
    * <pre>
-   * Optional size of the page, can be limited by a server.
+   * Size of the page, can be limited by a server.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
@@ -98,7 +98,7 @@ public interface ListJobTriggersRequestOrBuilder
    *
    *
    * <pre>
-   * Optional comma separated list of triggeredJob fields to order by,
+   * Comma separated list of triggeredJob fields to order by,
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.
@@ -121,7 +121,7 @@ public interface ListJobTriggersRequestOrBuilder
    *
    *
    * <pre>
-   * Optional comma separated list of triggeredJob fields to order by,
+   * Comma separated list of triggeredJob fields to order by,
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.
@@ -145,12 +145,12 @@ public interface ListJobTriggersRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Allows filtering.
+   * Allows filtering.
    * Supported syntax:
    * * Filter expressions are made up of one or more restrictions.
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
-   * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+   * * A restriction has the form of `{field} {operator} {value}`.
    * * Supported fields/values for inspect jobs:
    *     - `status` - HEALTHY|PAUSED|CANCELLED
    *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -175,12 +175,12 @@ public interface ListJobTriggersRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Allows filtering.
+   * Allows filtering.
    * Supported syntax:
    * * Filter expressions are made up of one or more restrictions.
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
-   * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+   * * A restriction has the form of `{field} {operator} {value}`.
    * * Supported fields/values for inspect jobs:
    *     - `status` - HEALTHY|PAUSED|CANCELLED
    *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY

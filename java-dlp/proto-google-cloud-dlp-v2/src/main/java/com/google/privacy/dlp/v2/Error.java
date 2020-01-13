@@ -24,7 +24,6 @@ package com.google.privacy.dlp.v2;
  * <pre>
  * Details information about an error encountered during job execution or
  * the results of an unsuccessful activation of the JobTrigger.
- * Output only field.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.Error}
@@ -136,6 +135,12 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   public static final int DETAILS_FIELD_NUMBER = 1;
   private com.google.rpc.Status details_;
   /**
+   *
+   *
+   * <pre>
+   * Detailed error codes and messages.
+   * </pre>
+   *
    * <code>.google.rpc.Status details = 1;</code>
    *
    * @return Whether the details field is set.
@@ -144,6 +149,12 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     return details_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * Detailed error codes and messages.
+   * </pre>
+   *
    * <code>.google.rpc.Status details = 1;</code>
    *
    * @return The details.
@@ -151,7 +162,15 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getDetails() {
     return details_ == null ? com.google.rpc.Status.getDefaultInstance() : details_;
   }
-  /** <code>.google.rpc.Status details = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Detailed error codes and messages.
+   * </pre>
+   *
+   * <code>.google.rpc.Status details = 1;</code>
+   */
   public com.google.rpc.StatusOrBuilder getDetailsOrBuilder() {
     return getDetails();
   }
@@ -399,7 +418,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Details information about an error encountered during job execution or
    * the results of an unsuccessful activation of the JobTrigger.
-   * Output only field.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.Error}
@@ -609,6 +627,12 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         detailsBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
      * <code>.google.rpc.Status details = 1;</code>
      *
      * @return Whether the details field is set.
@@ -617,6 +641,12 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       return detailsBuilder_ != null || details_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
      * <code>.google.rpc.Status details = 1;</code>
      *
      * @return The details.
@@ -628,7 +658,15 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return detailsBuilder_.getMessage();
       }
     }
-    /** <code>.google.rpc.Status details = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
+     * <code>.google.rpc.Status details = 1;</code>
+     */
     public Builder setDetails(com.google.rpc.Status value) {
       if (detailsBuilder_ == null) {
         if (value == null) {
@@ -642,7 +680,15 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.rpc.Status details = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
+     * <code>.google.rpc.Status details = 1;</code>
+     */
     public Builder setDetails(com.google.rpc.Status.Builder builderForValue) {
       if (detailsBuilder_ == null) {
         details_ = builderForValue.build();
@@ -653,7 +699,15 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.rpc.Status details = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
+     * <code>.google.rpc.Status details = 1;</code>
+     */
     public Builder mergeDetails(com.google.rpc.Status value) {
       if (detailsBuilder_ == null) {
         if (details_ != null) {
@@ -668,7 +722,15 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.rpc.Status details = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
+     * <code>.google.rpc.Status details = 1;</code>
+     */
     public Builder clearDetails() {
       if (detailsBuilder_ == null) {
         details_ = null;
@@ -680,13 +742,29 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.rpc.Status details = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
+     * <code>.google.rpc.Status details = 1;</code>
+     */
     public com.google.rpc.Status.Builder getDetailsBuilder() {
 
       onChanged();
       return getDetailsFieldBuilder().getBuilder();
     }
-    /** <code>.google.rpc.Status details = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
+     * <code>.google.rpc.Status details = 1;</code>
+     */
     public com.google.rpc.StatusOrBuilder getDetailsOrBuilder() {
       if (detailsBuilder_ != null) {
         return detailsBuilder_.getMessageOrBuilder();
@@ -694,7 +772,15 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return details_ == null ? com.google.rpc.Status.getDefaultInstance() : details_;
       }
     }
-    /** <code>.google.rpc.Status details = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Detailed error codes and messages.
+     * </pre>
+     *
+     * <code>.google.rpc.Status details = 1;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         getDetailsFieldBuilder() {

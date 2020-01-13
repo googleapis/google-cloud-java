@@ -22,13 +22,21 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * An enum to represent the various type of DLP jobs.
+ * An enum to represent the various types of DLP jobs.
  * </pre>
  *
  * Protobuf enum {@code google.privacy.dlp.v2.DlpJobType}
  */
 public enum DlpJobType implements com.google.protobuf.ProtocolMessageEnum {
-  /** <code>DLP_JOB_TYPE_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Unused
+   * </pre>
+   *
+   * <code>DLP_JOB_TYPE_UNSPECIFIED = 0;</code>
+   */
   DLP_JOB_TYPE_UNSPECIFIED(0),
   /**
    *
@@ -53,7 +61,15 @@ public enum DlpJobType implements com.google.protobuf.ProtocolMessageEnum {
   UNRECOGNIZED(-1),
   ;
 
-  /** <code>DLP_JOB_TYPE_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Unused
+   * </pre>
+   *
+   * <code>DLP_JOB_TYPE_UNSPECIFIED = 0;</code>
+   */
   public static final int DLP_JOB_TYPE_UNSPECIFIED_VALUE = 0;
   /**
    *

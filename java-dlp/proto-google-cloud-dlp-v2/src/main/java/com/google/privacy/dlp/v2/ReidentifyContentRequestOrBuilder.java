@@ -185,7 +185,7 @@ public interface ReidentifyContentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional template to use. Any configuration directly specified in
+   * Template to use. Any configuration directly specified in
    * `inspect_config` will override those set in the template. Singular fields
    * that are set in this request will replace their corresponding fields in the
    * template. Repeated fields are appended. Singular sub-messages and groups
@@ -201,7 +201,7 @@ public interface ReidentifyContentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional template to use. Any configuration directly specified in
+   * Template to use. Any configuration directly specified in
    * `inspect_config` will override those set in the template. Singular fields
    * that are set in this request will replace their corresponding fields in the
    * template. Repeated fields are appended. Singular sub-messages and groups
@@ -218,7 +218,7 @@ public interface ReidentifyContentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional template to use. References an instance of `DeidentifyTemplate`.
+   * Template to use. References an instance of `DeidentifyTemplate`.
    * Any configuration directly specified in `reidentify_config` or
    * `inspect_config` will override those set in the template. Singular fields
    * that are set in this request will replace their corresponding fields in the
@@ -235,7 +235,7 @@ public interface ReidentifyContentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional template to use. References an instance of `DeidentifyTemplate`.
+   * Template to use. References an instance of `DeidentifyTemplate`.
    * Any configuration directly specified in `reidentify_config` or
    * `inspect_config` will override those set in the template. Singular fields
    * that are set in this request will replace their corresponding fields in the

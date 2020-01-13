@@ -240,7 +240,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    * Protobuf enum {@code google.privacy.dlp.v2.JobTrigger.Status}
    */
   public enum Status implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>STATUS_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unused.
+     * </pre>
+     *
+     * <code>STATUS_UNSPECIFIED = 0;</code>
+     */
     STATUS_UNSPECIFIED(0),
     /**
      *
@@ -275,7 +283,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>STATUS_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unused.
+     * </pre>
+     *
+     * <code>STATUS_UNSPECIFIED = 0;</code>
+     */
     public static final int STATUS_UNSPECIFIED_VALUE = 0;
     /**
      *
@@ -1432,6 +1448,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INSPECT_JOB_FIELD_NUMBER = 4;
   /**
+   *
+   *
+   * <pre>
+   * For inspect jobs, a snapshot of the configuration.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
    *
    * @return Whether the inspectJob field is set.
@@ -1440,6 +1462,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     return jobCase_ == 4;
   }
   /**
+   *
+   *
+   * <pre>
+   * For inspect jobs, a snapshot of the configuration.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
    *
    * @return The inspectJob.
@@ -1450,7 +1478,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance();
   }
-  /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * For inspect jobs, a snapshot of the configuration.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
+   */
   public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder() {
     if (jobCase_ == 4) {
       return (com.google.privacy.dlp.v2.InspectJobConfig) job_;
@@ -1538,13 +1574,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A stream of errors encountered when the trigger was activated. Repeated
+   * Output only. A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
-   * this list will be cleared. Output only field.
+   * this list will be cleared.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList() {
     return errors_;
@@ -1553,13 +1591,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A stream of errors encountered when the trigger was activated. Repeated
+   * Output only. A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
-   * this list will be cleared. Output only field.
+   * this list will be cleared.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder>
       getErrorsOrBuilderList() {
@@ -1569,13 +1609,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A stream of errors encountered when the trigger was activated. Repeated
+   * Output only. A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
-   * this list will be cleared. Output only field.
+   * this list will be cleared.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getErrorsCount() {
     return errors_.size();
@@ -1584,13 +1626,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A stream of errors encountered when the trigger was activated. Repeated
+   * Output only. A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
-   * this list will be cleared. Output only field.
+   * this list will be cleared.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.privacy.dlp.v2.Error getErrors(int index) {
     return errors_.get(index);
@@ -1599,13 +1643,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A stream of errors encountered when the trigger was activated. Repeated
+   * Output only. A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
-   * this list will be cleared. Output only field.
+   * this list will be cleared.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index) {
     return errors_.get(index);
@@ -1617,10 +1663,11 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The creation timestamp of a triggeredJob, output only field.
+   * Output only. The creation timestamp of a triggeredJob.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -1631,10 +1678,11 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The creation timestamp of a triggeredJob, output only field.
+   * Output only. The creation timestamp of a triggeredJob.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -1645,10 +1693,11 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The creation timestamp of a triggeredJob, output only field.
+   * Output only. The creation timestamp of a triggeredJob.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
@@ -1660,10 +1709,11 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The last update timestamp of a triggeredJob, output only field.
+   * Output only. The last update timestamp of a triggeredJob.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the updateTime field is set.
    */
@@ -1674,10 +1724,11 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The last update timestamp of a triggeredJob, output only field.
+   * Output only. The last update timestamp of a triggeredJob.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The updateTime.
    */
@@ -1688,10 +1739,11 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The last update timestamp of a triggeredJob, output only field.
+   * Output only. The last update timestamp of a triggeredJob.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
@@ -1703,10 +1755,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The timestamp of the last time this trigger executed, output only field.
+   * Output only. The timestamp of the last time this trigger executed.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the lastRunTime field is set.
    */
@@ -1717,10 +1771,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The timestamp of the last time this trigger executed, output only field.
+   * Output only. The timestamp of the last time this trigger executed.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The lastRunTime.
    */
@@ -1731,10 +1787,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The timestamp of the last time this trigger executed, output only field.
+   * Output only. The timestamp of the last time this trigger executed.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getLastRunTimeOrBuilder() {
     return getLastRunTime();
@@ -1746,10 +1804,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A status for this trigger. [required]
+   * Required. A status for this trigger.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10;</code>
+   * <code>
+   * .google.privacy.dlp.v2.JobTrigger.Status status = 10 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The enum numeric value on the wire for status.
    */
@@ -1760,10 +1820,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A status for this trigger. [required]
+   * Required. A status for this trigger.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10;</code>
+   * <code>
+   * .google.privacy.dlp.v2.JobTrigger.Status status = 10 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The status.
    */
@@ -2724,6 +2786,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.InspectJobConfigOrBuilder>
         inspectJobBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
      *
      * @return Whether the inspectJob field is set.
@@ -2732,6 +2800,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       return jobCase_ == 4;
     }
     /**
+     *
+     *
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
      *
      * @return The inspectJob.
@@ -2749,7 +2823,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
+     */
     public Builder setInspectJob(com.google.privacy.dlp.v2.InspectJobConfig value) {
       if (inspectJobBuilder_ == null) {
         if (value == null) {
@@ -2763,7 +2845,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       jobCase_ = 4;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
+     */
     public Builder setInspectJob(
         com.google.privacy.dlp.v2.InspectJobConfig.Builder builderForValue) {
       if (inspectJobBuilder_ == null) {
@@ -2775,7 +2865,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       jobCase_ = 4;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
+     */
     public Builder mergeInspectJob(com.google.privacy.dlp.v2.InspectJobConfig value) {
       if (inspectJobBuilder_ == null) {
         if (jobCase_ == 4
@@ -2798,7 +2896,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       jobCase_ = 4;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
+     */
     public Builder clearInspectJob() {
       if (inspectJobBuilder_ == null) {
         if (jobCase_ == 4) {
@@ -2815,11 +2921,27 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
+     */
     public com.google.privacy.dlp.v2.InspectJobConfig.Builder getInspectJobBuilder() {
       return getInspectJobFieldBuilder().getBuilder();
     }
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
+     */
     public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder() {
       if ((jobCase_ == 4) && (inspectJobBuilder_ != null)) {
         return inspectJobBuilder_.getMessageOrBuilder();
@@ -2830,7 +2952,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For inspect jobs, a snapshot of the configuration.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.InspectJobConfig,
             com.google.privacy.dlp.v2.InspectJobConfig.Builder,
@@ -3263,13 +3393,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList() {
       if (errorsBuilder_ == null) {
@@ -3282,13 +3414,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getErrorsCount() {
       if (errorsBuilder_ == null) {
@@ -3301,13 +3435,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.privacy.dlp.v2.Error getErrors(int index) {
       if (errorsBuilder_ == null) {
@@ -3320,13 +3456,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setErrors(int index, com.google.privacy.dlp.v2.Error value) {
       if (errorsBuilder_ == null) {
@@ -3345,13 +3483,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setErrors(int index, com.google.privacy.dlp.v2.Error.Builder builderForValue) {
       if (errorsBuilder_ == null) {
@@ -3367,13 +3507,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addErrors(com.google.privacy.dlp.v2.Error value) {
       if (errorsBuilder_ == null) {
@@ -3392,13 +3534,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addErrors(int index, com.google.privacy.dlp.v2.Error value) {
       if (errorsBuilder_ == null) {
@@ -3417,13 +3561,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addErrors(com.google.privacy.dlp.v2.Error.Builder builderForValue) {
       if (errorsBuilder_ == null) {
@@ -3439,13 +3585,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addErrors(int index, com.google.privacy.dlp.v2.Error.Builder builderForValue) {
       if (errorsBuilder_ == null) {
@@ -3461,13 +3609,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllErrors(
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.Error> values) {
@@ -3484,13 +3634,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
@@ -3506,13 +3658,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeErrors(int index) {
       if (errorsBuilder_ == null) {
@@ -3528,13 +3682,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.privacy.dlp.v2.Error.Builder getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
@@ -3543,13 +3699,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index) {
       if (errorsBuilder_ == null) {
@@ -3562,13 +3720,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder>
         getErrorsOrBuilderList() {
@@ -3582,13 +3742,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.privacy.dlp.v2.Error.Builder addErrorsBuilder() {
       return getErrorsFieldBuilder()
@@ -3598,13 +3760,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.privacy.dlp.v2.Error.Builder addErrorsBuilder(int index) {
       return getErrorsFieldBuilder()
@@ -3614,13 +3778,15 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A stream of errors encountered when the trigger was activated. Repeated
+     * Output only. A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
-     * this list will be cleared. Output only field.
+     * this list will be cleared.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.privacy.dlp.v2.Error.Builder> getErrorsBuilderList() {
       return getErrorsFieldBuilder().getBuilderList();
@@ -3653,10 +3819,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
@@ -3667,10 +3835,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -3687,10 +3857,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -3709,10 +3881,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -3728,10 +3902,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -3752,10 +3928,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -3772,10 +3950,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
 
@@ -3786,10 +3966,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -3804,10 +3986,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The creation timestamp of a triggeredJob, output only field.
+     * Output only. The creation timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -3836,10 +4020,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the updateTime field is set.
      */
@@ -3850,10 +4036,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The updateTime.
      */
@@ -3870,10 +4058,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -3892,10 +4082,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
@@ -3911,10 +4103,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -3935,10 +4129,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -3955,10 +4151,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
 
@@ -3969,10 +4167,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -3987,10 +4187,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last update timestamp of a triggeredJob, output only field.
+     * Output only. The last update timestamp of a triggeredJob.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -4019,10 +4221,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the lastRunTime field is set.
      */
@@ -4033,10 +4237,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The lastRunTime.
      */
@@ -4053,10 +4259,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setLastRunTime(com.google.protobuf.Timestamp value) {
       if (lastRunTimeBuilder_ == null) {
@@ -4075,10 +4283,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setLastRunTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastRunTimeBuilder_ == null) {
@@ -4094,10 +4304,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeLastRunTime(com.google.protobuf.Timestamp value) {
       if (lastRunTimeBuilder_ == null) {
@@ -4120,10 +4332,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearLastRunTime() {
       if (lastRunTimeBuilder_ == null) {
@@ -4140,10 +4354,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastRunTimeBuilder() {
 
@@ -4154,10 +4370,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getLastRunTimeOrBuilder() {
       if (lastRunTimeBuilder_ != null) {
@@ -4172,10 +4390,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp of the last time this trigger executed, output only field.
+     * Output only. The timestamp of the last time this trigger executed.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -4199,10 +4419,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A status for this trigger. [required]
+     * Required. A status for this trigger.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10;</code>
+     * <code>
+     * .google.privacy.dlp.v2.JobTrigger.Status status = 10 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The enum numeric value on the wire for status.
      */
@@ -4213,10 +4435,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A status for this trigger. [required]
+     * Required. A status for this trigger.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10;</code>
+     * <code>
+     * .google.privacy.dlp.v2.JobTrigger.Status status = 10 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The enum numeric value on the wire for status to set.
      * @return This builder for chaining.
@@ -4230,10 +4454,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A status for this trigger. [required]
+     * Required. A status for this trigger.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10;</code>
+     * <code>
+     * .google.privacy.dlp.v2.JobTrigger.Status status = 10 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The status.
      */
@@ -4247,10 +4473,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A status for this trigger. [required]
+     * Required. A status for this trigger.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10;</code>
+     * <code>
+     * .google.privacy.dlp.v2.JobTrigger.Status status = 10 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The status to set.
      * @return This builder for chaining.
@@ -4268,10 +4496,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A status for this trigger. [required]
+     * Required. A status for this trigger.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10;</code>
+     * <code>
+     * .google.privacy.dlp.v2.JobTrigger.Status status = 10 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return This builder for chaining.
      */

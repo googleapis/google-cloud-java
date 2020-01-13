@@ -117,42 +117,178 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.ByteContentItem.Builder.class);
   }
 
-  /** Protobuf enum {@code google.privacy.dlp.v2.ByteContentItem.BytesType} */
+  /**
+   *
+   *
+   * <pre>
+   * The type of data being sent to in data.
+   * </pre>
+   *
+   * Protobuf enum {@code google.privacy.dlp.v2.ByteContentItem.BytesType}
+   */
   public enum BytesType implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>BYTES_TYPE_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unused
+     * </pre>
+     *
+     * <code>BYTES_TYPE_UNSPECIFIED = 0;</code>
+     */
     BYTES_TYPE_UNSPECIFIED(0),
-    /** <code>IMAGE = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Any image type.
+     * </pre>
+     *
+     * <code>IMAGE = 6;</code>
+     */
     IMAGE(6),
-    /** <code>IMAGE_JPEG = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * jpeg
+     * </pre>
+     *
+     * <code>IMAGE_JPEG = 1;</code>
+     */
     IMAGE_JPEG(1),
-    /** <code>IMAGE_BMP = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * bmp
+     * </pre>
+     *
+     * <code>IMAGE_BMP = 2;</code>
+     */
     IMAGE_BMP(2),
-    /** <code>IMAGE_PNG = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * png
+     * </pre>
+     *
+     * <code>IMAGE_PNG = 3;</code>
+     */
     IMAGE_PNG(3),
-    /** <code>IMAGE_SVG = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * svg
+     * </pre>
+     *
+     * <code>IMAGE_SVG = 4;</code>
+     */
     IMAGE_SVG(4),
-    /** <code>TEXT_UTF8 = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * plain text
+     * </pre>
+     *
+     * <code>TEXT_UTF8 = 5;</code>
+     */
     TEXT_UTF8(5),
-    /** <code>AVRO = 11;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * avro
+     * </pre>
+     *
+     * <code>AVRO = 11;</code>
+     */
     AVRO(11),
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>BYTES_TYPE_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unused
+     * </pre>
+     *
+     * <code>BYTES_TYPE_UNSPECIFIED = 0;</code>
+     */
     public static final int BYTES_TYPE_UNSPECIFIED_VALUE = 0;
-    /** <code>IMAGE = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Any image type.
+     * </pre>
+     *
+     * <code>IMAGE = 6;</code>
+     */
     public static final int IMAGE_VALUE = 6;
-    /** <code>IMAGE_JPEG = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * jpeg
+     * </pre>
+     *
+     * <code>IMAGE_JPEG = 1;</code>
+     */
     public static final int IMAGE_JPEG_VALUE = 1;
-    /** <code>IMAGE_BMP = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * bmp
+     * </pre>
+     *
+     * <code>IMAGE_BMP = 2;</code>
+     */
     public static final int IMAGE_BMP_VALUE = 2;
-    /** <code>IMAGE_PNG = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * png
+     * </pre>
+     *
+     * <code>IMAGE_PNG = 3;</code>
+     */
     public static final int IMAGE_PNG_VALUE = 3;
-    /** <code>IMAGE_SVG = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * svg
+     * </pre>
+     *
+     * <code>IMAGE_SVG = 4;</code>
+     */
     public static final int IMAGE_SVG_VALUE = 4;
-    /** <code>TEXT_UTF8 = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * plain text
+     * </pre>
+     *
+     * <code>TEXT_UTF8 = 5;</code>
+     */
     public static final int TEXT_UTF8_VALUE = 5;
-    /** <code>AVRO = 11;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * avro
+     * </pre>
+     *
+     * <code>AVRO = 11;</code>
+     */
     public static final int AVRO_VALUE = 11;
 
     public final int getNumber() {

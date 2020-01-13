@@ -28,7 +28,15 @@ package com.google.privacy.dlp.v2;
  * Protobuf enum {@code google.privacy.dlp.v2.InfoTypeSupportedBy}
  */
 public enum InfoTypeSupportedBy implements com.google.protobuf.ProtocolMessageEnum {
-  /** <code>ENUM_TYPE_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Unused.
+   * </pre>
+   *
+   * <code>ENUM_TYPE_UNSPECIFIED = 0;</code>
+   */
   ENUM_TYPE_UNSPECIFIED(0),
   /**
    *
@@ -53,7 +61,15 @@ public enum InfoTypeSupportedBy implements com.google.protobuf.ProtocolMessageEn
   UNRECOGNIZED(-1),
   ;
 
-  /** <code>ENUM_TYPE_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Unused.
+   * </pre>
+   *
+   * <code>ENUM_TYPE_UNSPECIFIED = 0;</code>
+   */
   public static final int ENUM_TYPE_UNSPECIFIED_VALUE = 0;
   /**
    *
@@ -133,7 +149,7 @@ public enum InfoTypeSupportedBy implements com.google.protobuf.ProtocolMessageEn
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(2);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final InfoTypeSupportedBy[] VALUES = values();

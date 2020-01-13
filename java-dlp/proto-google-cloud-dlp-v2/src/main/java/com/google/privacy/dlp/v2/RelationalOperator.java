@@ -28,7 +28,15 @@ package com.google.privacy.dlp.v2;
  * Protobuf enum {@code google.privacy.dlp.v2.RelationalOperator}
  */
 public enum RelationalOperator implements com.google.protobuf.ProtocolMessageEnum {
-  /** <code>RELATIONAL_OPERATOR_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Unused
+   * </pre>
+   *
+   * <code>RELATIONAL_OPERATOR_UNSPECIFIED = 0;</code>
+   */
   RELATIONAL_OPERATOR_UNSPECIFIED(0),
   /**
    *
@@ -103,7 +111,15 @@ public enum RelationalOperator implements com.google.protobuf.ProtocolMessageEnu
   UNRECOGNIZED(-1),
   ;
 
-  /** <code>RELATIONAL_OPERATOR_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Unused
+   * </pre>
+   *
+   * <code>RELATIONAL_OPERATOR_UNSPECIFIED = 0;</code>
+   */
   public static final int RELATIONAL_OPERATOR_UNSPECIFIED_VALUE = 0;
   /**
    *
@@ -242,7 +258,7 @@ public enum RelationalOperator implements com.google.protobuf.ProtocolMessageEnu
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(3);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final RelationalOperator[] VALUES = values();

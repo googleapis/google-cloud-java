@@ -58,10 +58,12 @@ public interface CreateInspectTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The InspectTemplate to create.
+   * Required. The InspectTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the inspectTemplate field is set.
    */
@@ -70,10 +72,12 @@ public interface CreateInspectTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The InspectTemplate to create.
+   * Required. The InspectTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The inspectTemplate.
    */
@@ -82,10 +86,12 @@ public interface CreateInspectTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The InspectTemplate to create.
+   * Required. The InspectTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.privacy.dlp.v2.InspectTemplateOrBuilder getInspectTemplateOrBuilder();
 

@@ -56,12 +56,12 @@ public interface ListDlpJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Allows filtering.
+   * Allows filtering.
    * Supported syntax:
    * * Filter expressions are made up of one or more restrictions.
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
-   * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+   * * A restriction has the form of `{field} {operator} {value}`.
    * * Supported fields/values for inspect jobs:
    *     - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED
    *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -90,12 +90,12 @@ public interface ListDlpJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Allows filtering.
+   * Allows filtering.
    * Supported syntax:
    * * Filter expressions are made up of one or more restrictions.
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
-   * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+   * * A restriction has the form of `{field} {operator} {value}`.
    * * Supported fields/values for inspect jobs:
    *     - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED
    *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
@@ -188,7 +188,7 @@ public interface ListDlpJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional comma separated list of fields to order by,
+   * Comma separated list of fields to order by,
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.
@@ -209,7 +209,7 @@ public interface ListDlpJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional comma separated list of fields to order by,
+   * Comma separated list of fields to order by,
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.

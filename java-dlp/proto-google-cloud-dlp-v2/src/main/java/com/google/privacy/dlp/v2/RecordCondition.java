@@ -129,10 +129,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Field within the record this condition is evaluated against. [required]
+     * Required. Field within the record this condition is evaluated against.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the field field is set.
      */
@@ -141,10 +142,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Field within the record this condition is evaluated against. [required]
+     * Required. Field within the record this condition is evaluated against.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The field.
      */
@@ -153,10 +155,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Field within the record this condition is evaluated against. [required]
+     * Required. Field within the record this condition is evaluated against.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder();
 
@@ -164,10 +167,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Operator used to compare the field or infoType to the value. [required]
+     * Required. Operator used to compare the field or infoType to the value.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The enum numeric value on the wire for operator.
      */
@@ -176,10 +181,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Operator used to compare the field or infoType to the value. [required]
+     * Required. Operator used to compare the field or infoType to the value.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The operator.
      */
@@ -189,7 +196,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Value to compare against. [Required, except for `EXISTS` tests.]
+     * Value to compare against. [Mandatory, except for `EXISTS` tests.]
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -201,7 +208,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Value to compare against. [Required, except for `EXISTS` tests.]
+     * Value to compare against. [Mandatory, except for `EXISTS` tests.]
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -213,7 +220,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Value to compare against. [Required, except for `EXISTS` tests.]
+     * Value to compare against. [Mandatory, except for `EXISTS` tests.]
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -366,10 +373,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Field within the record this condition is evaluated against. [required]
+     * Required. Field within the record this condition is evaluated against.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the field field is set.
      */
@@ -380,10 +388,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Field within the record this condition is evaluated against. [required]
+     * Required. Field within the record this condition is evaluated against.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The field.
      */
@@ -394,10 +403,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Field within the record this condition is evaluated against. [required]
+     * Required. Field within the record this condition is evaluated against.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
       return getField();
@@ -409,10 +419,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Operator used to compare the field or infoType to the value. [required]
+     * Required. Operator used to compare the field or infoType to the value.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The enum numeric value on the wire for operator.
      */
@@ -423,10 +435,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Operator used to compare the field or infoType to the value. [required]
+     * Required. Operator used to compare the field or infoType to the value.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The operator.
      */
@@ -443,7 +457,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Value to compare against. [Required, except for `EXISTS` tests.]
+     * Value to compare against. [Mandatory, except for `EXISTS` tests.]
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -457,7 +471,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Value to compare against. [Required, except for `EXISTS` tests.]
+     * Value to compare against. [Mandatory, except for `EXISTS` tests.]
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -471,7 +485,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Value to compare against. [Required, except for `EXISTS` tests.]
+     * Value to compare against. [Mandatory, except for `EXISTS` tests.]
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -888,10 +902,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return Whether the field field is set.
        */
@@ -902,10 +917,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The field.
        */
@@ -920,10 +936,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setField(com.google.privacy.dlp.v2.FieldId value) {
         if (fieldBuilder_ == null) {
@@ -942,10 +959,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setField(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
         if (fieldBuilder_ == null) {
@@ -961,10 +979,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder mergeField(com.google.privacy.dlp.v2.FieldId value) {
         if (fieldBuilder_ == null) {
@@ -987,10 +1006,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder clearField() {
         if (fieldBuilder_ == null) {
@@ -1007,10 +1027,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.privacy.dlp.v2.FieldId.Builder getFieldBuilder() {
 
@@ -1021,10 +1042,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
         if (fieldBuilder_ != null) {
@@ -1037,10 +1059,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Field within the record this condition is evaluated against. [required]
+       * Required. Field within the record this condition is evaluated against.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.FieldId,
@@ -1064,10 +1087,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Operator used to compare the field or infoType to the value. [required]
+       * Required. Operator used to compare the field or infoType to the value.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The enum numeric value on the wire for operator.
        */
@@ -1078,10 +1103,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Operator used to compare the field or infoType to the value. [required]
+       * Required. Operator used to compare the field or infoType to the value.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @param value The enum numeric value on the wire for operator to set.
        * @return This builder for chaining.
@@ -1095,10 +1122,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Operator used to compare the field or infoType to the value. [required]
+       * Required. Operator used to compare the field or infoType to the value.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The operator.
        */
@@ -1112,10 +1141,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Operator used to compare the field or infoType to the value. [required]
+       * Required. Operator used to compare the field or infoType to the value.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @param value The operator to set.
        * @return This builder for chaining.
@@ -1133,10 +1164,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Operator used to compare the field or infoType to the value. [required]
+       * Required. Operator used to compare the field or infoType to the value.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.RelationalOperator operator = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.RelationalOperator operator = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -1157,7 +1190,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -1171,7 +1204,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -1189,7 +1222,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -1211,7 +1244,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -1230,7 +1263,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -1254,7 +1287,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -1274,7 +1307,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -1288,7 +1321,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -1304,7 +1337,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Value to compare against. [Required, except for `EXISTS` tests.]
+       * Value to compare against. [Mandatory, except for `EXISTS` tests.]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
@@ -1383,16 +1416,56 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.RecordCondition.Conditions)
       com.google.protobuf.MessageOrBuilder {
 
-    /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+     */
     java.util.List<com.google.privacy.dlp.v2.RecordCondition.Condition> getConditionsList();
-    /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+     */
     com.google.privacy.dlp.v2.RecordCondition.Condition getConditions(int index);
-    /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+     */
     int getConditionsCount();
-    /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+     */
     java.util.List<? extends com.google.privacy.dlp.v2.RecordCondition.ConditionOrBuilder>
         getConditionsOrBuilderList();
-    /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+     */
     com.google.privacy.dlp.v2.RecordCondition.ConditionOrBuilder getConditionsOrBuilder(int index);
   }
   /**
@@ -1501,24 +1574,64 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
 
     public static final int CONDITIONS_FIELD_NUMBER = 1;
     private java.util.List<com.google.privacy.dlp.v2.RecordCondition.Condition> conditions_;
-    /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+     */
     public java.util.List<com.google.privacy.dlp.v2.RecordCondition.Condition> getConditionsList() {
       return conditions_;
     }
-    /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+     */
     public java.util.List<? extends com.google.privacy.dlp.v2.RecordCondition.ConditionOrBuilder>
         getConditionsOrBuilderList() {
       return conditions_;
     }
-    /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+     */
     public int getConditionsCount() {
       return conditions_.size();
     }
-    /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+     */
     public com.google.privacy.dlp.v2.RecordCondition.Condition getConditions(int index) {
       return conditions_.get(index);
     }
-    /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A collection of conditions.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+     */
     public com.google.privacy.dlp.v2.RecordCondition.ConditionOrBuilder getConditionsOrBuilder(
         int index) {
       return conditions_.get(index);
@@ -1907,7 +2020,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
               com.google.privacy.dlp.v2.RecordCondition.ConditionOrBuilder>
           conditionsBuilder_;
 
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public java.util.List<com.google.privacy.dlp.v2.RecordCondition.Condition>
           getConditionsList() {
         if (conditionsBuilder_ == null) {
@@ -1916,7 +2037,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
           return conditionsBuilder_.getMessageList();
         }
       }
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public int getConditionsCount() {
         if (conditionsBuilder_ == null) {
           return conditions_.size();
@@ -1924,7 +2053,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
           return conditionsBuilder_.getCount();
         }
       }
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public com.google.privacy.dlp.v2.RecordCondition.Condition getConditions(int index) {
         if (conditionsBuilder_ == null) {
           return conditions_.get(index);
@@ -1932,7 +2069,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
           return conditionsBuilder_.getMessage(index);
         }
       }
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public Builder setConditions(
           int index, com.google.privacy.dlp.v2.RecordCondition.Condition value) {
         if (conditionsBuilder_ == null) {
@@ -1947,7 +2092,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public Builder setConditions(
           int index, com.google.privacy.dlp.v2.RecordCondition.Condition.Builder builderForValue) {
         if (conditionsBuilder_ == null) {
@@ -1959,7 +2112,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public Builder addConditions(com.google.privacy.dlp.v2.RecordCondition.Condition value) {
         if (conditionsBuilder_ == null) {
           if (value == null) {
@@ -1973,7 +2134,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public Builder addConditions(
           int index, com.google.privacy.dlp.v2.RecordCondition.Condition value) {
         if (conditionsBuilder_ == null) {
@@ -1988,7 +2157,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public Builder addConditions(
           com.google.privacy.dlp.v2.RecordCondition.Condition.Builder builderForValue) {
         if (conditionsBuilder_ == null) {
@@ -2000,7 +2177,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public Builder addConditions(
           int index, com.google.privacy.dlp.v2.RecordCondition.Condition.Builder builderForValue) {
         if (conditionsBuilder_ == null) {
@@ -2012,7 +2197,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public Builder addAllConditions(
           java.lang.Iterable<? extends com.google.privacy.dlp.v2.RecordCondition.Condition>
               values) {
@@ -2025,7 +2218,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public Builder clearConditions() {
         if (conditionsBuilder_ == null) {
           conditions_ = java.util.Collections.emptyList();
@@ -2036,7 +2237,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public Builder removeConditions(int index) {
         if (conditionsBuilder_ == null) {
           ensureConditionsIsMutable();
@@ -2047,12 +2256,28 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public com.google.privacy.dlp.v2.RecordCondition.Condition.Builder getConditionsBuilder(
           int index) {
         return getConditionsFieldBuilder().getBuilder(index);
       }
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public com.google.privacy.dlp.v2.RecordCondition.ConditionOrBuilder getConditionsOrBuilder(
           int index) {
         if (conditionsBuilder_ == null) {
@@ -2061,7 +2286,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
           return conditionsBuilder_.getMessageOrBuilder(index);
         }
       }
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public java.util.List<? extends com.google.privacy.dlp.v2.RecordCondition.ConditionOrBuilder>
           getConditionsOrBuilderList() {
         if (conditionsBuilder_ != null) {
@@ -2070,19 +2303,43 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
           return java.util.Collections.unmodifiableList(conditions_);
         }
       }
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public com.google.privacy.dlp.v2.RecordCondition.Condition.Builder addConditionsBuilder() {
         return getConditionsFieldBuilder()
             .addBuilder(com.google.privacy.dlp.v2.RecordCondition.Condition.getDefaultInstance());
       }
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public com.google.privacy.dlp.v2.RecordCondition.Condition.Builder addConditionsBuilder(
           int index) {
         return getConditionsFieldBuilder()
             .addBuilder(
                 index, com.google.privacy.dlp.v2.RecordCondition.Condition.getDefaultInstance());
       }
-      /** <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * A collection of conditions.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.RecordCondition.Condition conditions = 1;</code>
+       */
       public java.util.List<com.google.privacy.dlp.v2.RecordCondition.Condition.Builder>
           getConditionsBuilderList() {
         return getConditionsFieldBuilder().getBuilderList();
@@ -2194,18 +2451,38 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
     com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator getLogicalOperator();
 
     /**
+     *
+     *
+     * <pre>
+     * Conditions to apply to the expression.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
      *
      * @return Whether the conditions field is set.
      */
     boolean hasConditions();
     /**
+     *
+     *
+     * <pre>
+     * Conditions to apply to the expression.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
      *
      * @return The conditions.
      */
     com.google.privacy.dlp.v2.RecordCondition.Conditions getConditions();
-    /** <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Conditions to apply to the expression.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+     */
     com.google.privacy.dlp.v2.RecordCondition.ConditionsOrBuilder getConditionsOrBuilder();
 
     public com.google.privacy.dlp.v2.RecordCondition.Expressions.TypeCase getTypeCase();
@@ -2322,18 +2599,58 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
               com.google.privacy.dlp.v2.RecordCondition.Expressions.Builder.class);
     }
 
-    /** Protobuf enum {@code google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator} */
+    /**
+     *
+     *
+     * <pre>
+     * Logical operators for conditional checks.
+     * </pre>
+     *
+     * Protobuf enum {@code google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator}
+     */
     public enum LogicalOperator implements com.google.protobuf.ProtocolMessageEnum {
-      /** <code>LOGICAL_OPERATOR_UNSPECIFIED = 0;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Unused
+       * </pre>
+       *
+       * <code>LOGICAL_OPERATOR_UNSPECIFIED = 0;</code>
+       */
       LOGICAL_OPERATOR_UNSPECIFIED(0),
-      /** <code>AND = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Conditional AND
+       * </pre>
+       *
+       * <code>AND = 1;</code>
+       */
       AND(1),
       UNRECOGNIZED(-1),
       ;
 
-      /** <code>LOGICAL_OPERATOR_UNSPECIFIED = 0;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Unused
+       * </pre>
+       *
+       * <code>LOGICAL_OPERATOR_UNSPECIFIED = 0;</code>
+       */
       public static final int LOGICAL_OPERATOR_UNSPECIFIED_VALUE = 0;
-      /** <code>AND = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Conditional AND
+       * </pre>
+       *
+       * <code>AND = 1;</code>
+       */
       public static final int AND_VALUE = 1;
 
       public final int getNumber() {
@@ -2508,6 +2825,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
 
     public static final int CONDITIONS_FIELD_NUMBER = 3;
     /**
+     *
+     *
+     * <pre>
+     * Conditions to apply to the expression.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
      *
      * @return Whether the conditions field is set.
@@ -2516,6 +2839,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       return typeCase_ == 3;
     }
     /**
+     *
+     *
+     * <pre>
+     * Conditions to apply to the expression.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
      *
      * @return The conditions.
@@ -2526,7 +2855,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       }
       return com.google.privacy.dlp.v2.RecordCondition.Conditions.getDefaultInstance();
     }
-    /** <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Conditions to apply to the expression.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+     */
     public com.google.privacy.dlp.v2.RecordCondition.ConditionsOrBuilder getConditionsOrBuilder() {
       if (typeCase_ == 3) {
         return (com.google.privacy.dlp.v2.RecordCondition.Conditions) type_;
@@ -3035,6 +3372,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
               com.google.privacy.dlp.v2.RecordCondition.ConditionsOrBuilder>
           conditionsBuilder_;
       /**
+       *
+       *
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
        *
        * @return Whether the conditions field is set.
@@ -3043,6 +3386,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         return typeCase_ == 3;
       }
       /**
+       *
+       *
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
        *
        * @return The conditions.
@@ -3060,7 +3409,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
           return com.google.privacy.dlp.v2.RecordCondition.Conditions.getDefaultInstance();
         }
       }
-      /** <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+       */
       public Builder setConditions(com.google.privacy.dlp.v2.RecordCondition.Conditions value) {
         if (conditionsBuilder_ == null) {
           if (value == null) {
@@ -3074,7 +3431,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         typeCase_ = 3;
         return this;
       }
-      /** <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+       */
       public Builder setConditions(
           com.google.privacy.dlp.v2.RecordCondition.Conditions.Builder builderForValue) {
         if (conditionsBuilder_ == null) {
@@ -3086,7 +3451,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         typeCase_ = 3;
         return this;
       }
-      /** <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+       */
       public Builder mergeConditions(com.google.privacy.dlp.v2.RecordCondition.Conditions value) {
         if (conditionsBuilder_ == null) {
           if (typeCase_ == 3
@@ -3110,7 +3483,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         typeCase_ = 3;
         return this;
       }
-      /** <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+       */
       public Builder clearConditions() {
         if (conditionsBuilder_ == null) {
           if (typeCase_ == 3) {
@@ -3127,11 +3508,27 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-      /** <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+       */
       public com.google.privacy.dlp.v2.RecordCondition.Conditions.Builder getConditionsBuilder() {
         return getConditionsFieldBuilder().getBuilder();
       }
-      /** <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+       */
       public com.google.privacy.dlp.v2.RecordCondition.ConditionsOrBuilder
           getConditionsOrBuilder() {
         if ((typeCase_ == 3) && (conditionsBuilder_ != null)) {
@@ -3143,7 +3540,15 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
           return com.google.privacy.dlp.v2.RecordCondition.Conditions.getDefaultInstance();
         }
       }
-      /** <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Conditions to apply to the expression.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.RecordCondition.Conditions conditions = 3;</code>
+       */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.RecordCondition.Conditions,
               com.google.privacy.dlp.v2.RecordCondition.Conditions.Builder,

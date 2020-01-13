@@ -58,10 +58,12 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Configuration of the storedInfoType to create.
+   * Required. Configuration of the storedInfoType to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the config field is set.
    */
@@ -70,10 +72,12 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Configuration of the storedInfoType to create.
+   * Required. Configuration of the storedInfoType to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The config.
    */
@@ -82,10 +86,12 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Configuration of the storedInfoType to create.
+   * Required. Configuration of the storedInfoType to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder getConfigOrBuilder();
 

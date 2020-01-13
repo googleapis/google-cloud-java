@@ -197,10 +197,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Primitive transformation to apply to the infoType. [required]
+     * Required. Primitive transformation to apply to the infoType.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the primitiveTransformation field is set.
      */
@@ -209,10 +211,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Primitive transformation to apply to the infoType. [required]
+     * Required. Primitive transformation to apply to the infoType.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The primitiveTransformation.
      */
@@ -221,10 +225,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Primitive transformation to apply to the infoType. [required]
+     * Required. Primitive transformation to apply to the infoType.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder
         getPrimitiveTransformationOrBuilder();
@@ -429,10 +435,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Primitive transformation to apply to the infoType. [required]
+     * Required. Primitive transformation to apply to the infoType.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the primitiveTransformation field is set.
      */
@@ -443,10 +451,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Primitive transformation to apply to the infoType. [required]
+     * Required. Primitive transformation to apply to the infoType.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The primitiveTransformation.
      */
@@ -459,10 +469,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Primitive transformation to apply to the infoType. [required]
+     * Required. Primitive transformation to apply to the infoType.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder
         getPrimitiveTransformationOrBuilder() {
@@ -1278,10 +1290,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>
+       * .google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return Whether the primitiveTransformation field is set.
        */
@@ -1292,10 +1306,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>
+       * .google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The primitiveTransformation.
        */
@@ -1312,10 +1328,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>
+       * .google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setPrimitiveTransformation(
           com.google.privacy.dlp.v2.PrimitiveTransformation value) {
@@ -1335,10 +1353,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>
+       * .google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setPrimitiveTransformation(
           com.google.privacy.dlp.v2.PrimitiveTransformation.Builder builderForValue) {
@@ -1355,10 +1375,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>
+       * .google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder mergePrimitiveTransformation(
           com.google.privacy.dlp.v2.PrimitiveTransformation value) {
@@ -1383,10 +1405,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>
+       * .google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder clearPrimitiveTransformation() {
         if (primitiveTransformationBuilder_ == null) {
@@ -1403,10 +1427,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>
+       * .google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.privacy.dlp.v2.PrimitiveTransformation.Builder
           getPrimitiveTransformationBuilder() {
@@ -1418,10 +1444,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>
+       * .google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder
           getPrimitiveTransformationOrBuilder() {
@@ -1437,10 +1465,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Primitive transformation to apply to the infoType. [required]
+       * Required. Primitive transformation to apply to the infoType.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
+       * <code>
+       * .google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.PrimitiveTransformation,
@@ -1522,12 +1552,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Transformation for each infoType. Cannot specify more than one
-   * for a given infoType. [required]
+   * Required. Transformation for each infoType. Cannot specify more than one
+   * for a given infoType.
    * </pre>
    *
    * <code>
-   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation>
@@ -1538,12 +1568,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Transformation for each infoType. Cannot specify more than one
-   * for a given infoType. [required]
+   * Required. Transformation for each infoType. Cannot specify more than one
+   * for a given infoType.
    * </pre>
    *
    * <code>
-   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public java.util.List<
@@ -1556,12 +1586,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Transformation for each infoType. Cannot specify more than one
-   * for a given infoType. [required]
+   * Required. Transformation for each infoType. Cannot specify more than one
+   * for a given infoType.
    * </pre>
    *
    * <code>
-   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public int getTransformationsCount() {
@@ -1571,12 +1601,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Transformation for each infoType. Cannot specify more than one
-   * for a given infoType. [required]
+   * Required. Transformation for each infoType. Cannot specify more than one
+   * for a given infoType.
    * </pre>
    *
    * <code>
-   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
@@ -1587,12 +1617,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Transformation for each infoType. Cannot specify more than one
-   * for a given infoType. [required]
+   * Required. Transformation for each infoType. Cannot specify more than one
+   * for a given infoType.
    * </pre>
    *
    * <code>
-   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder
@@ -1986,12 +2016,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation>
@@ -2006,12 +2036,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public int getTransformationsCount() {
@@ -2025,12 +2055,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
@@ -2045,12 +2075,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTransformations(
@@ -2071,12 +2101,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTransformations(
@@ -2096,12 +2126,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addTransformations(
@@ -2122,12 +2152,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addTransformations(
@@ -2148,12 +2178,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addTransformations(
@@ -2172,12 +2202,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addTransformations(
@@ -2197,12 +2227,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addAllTransformations(
@@ -2222,12 +2252,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearTransformations() {
@@ -2244,12 +2274,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder removeTransformations(int index) {
@@ -2266,12 +2296,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder
@@ -2282,12 +2312,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder
@@ -2302,12 +2332,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public java.util.List<
@@ -2324,12 +2354,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder
@@ -2343,12 +2373,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder
@@ -2363,12 +2393,12 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Transformation for each infoType. Cannot specify more than one
-     * for a given infoType. [required]
+     * Required. Transformation for each infoType. Cannot specify more than one
+     * for a given infoType.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public java.util.List<

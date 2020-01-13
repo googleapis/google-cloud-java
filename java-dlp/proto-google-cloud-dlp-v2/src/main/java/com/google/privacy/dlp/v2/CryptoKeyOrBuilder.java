@@ -24,48 +24,108 @@ public interface CryptoKeyOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * Transient crypto key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
    *
    * @return Whether the transient field is set.
    */
   boolean hasTransient();
   /**
+   *
+   *
+   * <pre>
+   * Transient crypto key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
    *
    * @return The transient.
    */
   com.google.privacy.dlp.v2.TransientCryptoKey getTransient();
-  /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Transient crypto key
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
+   */
   com.google.privacy.dlp.v2.TransientCryptoKeyOrBuilder getTransientOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Unwrapped crypto key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
    *
    * @return Whether the unwrapped field is set.
    */
   boolean hasUnwrapped();
   /**
+   *
+   *
+   * <pre>
+   * Unwrapped crypto key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
    *
    * @return The unwrapped.
    */
   com.google.privacy.dlp.v2.UnwrappedCryptoKey getUnwrapped();
-  /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Unwrapped crypto key
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
+   */
   com.google.privacy.dlp.v2.UnwrappedCryptoKeyOrBuilder getUnwrappedOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Kms wrapped key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
    *
    * @return Whether the kmsWrapped field is set.
    */
   boolean hasKmsWrapped();
   /**
+   *
+   *
+   * <pre>
+   * Kms wrapped key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
    *
    * @return The kmsWrapped.
    */
   com.google.privacy.dlp.v2.KmsWrappedCryptoKey getKmsWrapped();
-  /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Kms wrapped key
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
+   */
   com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder getKmsWrappedOrBuilder();
 
   public com.google.privacy.dlp.v2.CryptoKey.SourceCase getSourceCase();

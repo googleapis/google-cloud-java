@@ -94,6 +94,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
   com.google.privacy.dlp.v2.BigQueryTableOrBuilder getRequestedSourceTableOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Numerical stats result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
    * </code>
@@ -102,6 +108,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    */
   boolean hasNumericalStatsResult();
   /**
+   *
+   *
+   * <pre>
+   * Numerical stats result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
    * </code>
@@ -111,6 +123,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult
       getNumericalStatsResult();
   /**
+   *
+   *
+   * <pre>
+   * Numerical stats result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
    * </code>
@@ -119,6 +137,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
       getNumericalStatsResultOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Categorical stats result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
    * </code>
@@ -127,6 +151,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    */
   boolean hasCategoricalStatsResult();
   /**
+   *
+   *
+   * <pre>
+   * Categorical stats result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
    * </code>
@@ -136,6 +166,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult
       getCategoricalStatsResult();
   /**
+   *
+   *
+   * <pre>
+   * Categorical stats result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
    * </code>
@@ -144,6 +180,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
       getCategoricalStatsResultOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * K-anonymity result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
    * </code>
@@ -152,6 +194,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    */
   boolean hasKAnonymityResult();
   /**
+   *
+   *
+   * <pre>
+   * K-anonymity result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
    * </code>
@@ -160,6 +208,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult getKAnonymityResult();
   /**
+   *
+   *
+   * <pre>
+   * K-anonymity result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
    * </code>
@@ -168,6 +222,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
       getKAnonymityResultOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * L-divesity result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
    * </code>
@@ -176,6 +236,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    */
   boolean hasLDiversityResult();
   /**
+   *
+   *
+   * <pre>
+   * L-divesity result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
    * </code>
@@ -184,6 +250,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult getLDiversityResult();
   /**
+   *
+   *
+   * <pre>
+   * L-divesity result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
    * </code>
@@ -192,6 +264,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
       getLDiversityResultOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * K-map result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
    * </code>
@@ -200,6 +278,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    */
   boolean hasKMapEstimationResult();
   /**
+   *
+   *
+   * <pre>
+   * K-map result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
    * </code>
@@ -209,6 +293,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
       getKMapEstimationResult();
   /**
+   *
+   *
+   * <pre>
+   * K-map result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
    * </code>
@@ -217,6 +307,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
       getKMapEstimationResultOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Delta-presence result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
    * </code>
@@ -225,6 +321,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    */
   boolean hasDeltaPresenceEstimationResult();
   /**
+   *
+   *
+   * <pre>
+   * Delta-presence result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
    * </code>
@@ -234,6 +336,12 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
       getDeltaPresenceEstimationResult();
   /**
+   *
+   *
+   * <pre>
+   * Delta-presence result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
    * </code>

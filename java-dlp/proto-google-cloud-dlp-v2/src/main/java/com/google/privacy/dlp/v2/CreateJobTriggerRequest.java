@@ -200,10 +200,12 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The JobTrigger to create.
+   * Required. The JobTrigger to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the jobTrigger field is set.
    */
@@ -214,10 +216,12 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The JobTrigger to create.
+   * Required. The JobTrigger to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The jobTrigger.
    */
@@ -230,10 +234,12 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The JobTrigger to create.
+   * Required. The JobTrigger to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.privacy.dlp.v2.JobTriggerOrBuilder getJobTriggerOrBuilder() {
     return getJobTrigger();
@@ -845,10 +851,12 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The JobTrigger to create.
+     * Required. The JobTrigger to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the jobTrigger field is set.
      */
@@ -859,10 +867,12 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The JobTrigger to create.
+     * Required. The JobTrigger to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The jobTrigger.
      */
@@ -879,10 +889,12 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The JobTrigger to create.
+     * Required. The JobTrigger to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJobTrigger(com.google.privacy.dlp.v2.JobTrigger value) {
       if (jobTriggerBuilder_ == null) {
@@ -901,10 +913,12 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The JobTrigger to create.
+     * Required. The JobTrigger to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJobTrigger(com.google.privacy.dlp.v2.JobTrigger.Builder builderForValue) {
       if (jobTriggerBuilder_ == null) {
@@ -920,10 +934,12 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The JobTrigger to create.
+     * Required. The JobTrigger to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeJobTrigger(com.google.privacy.dlp.v2.JobTrigger value) {
       if (jobTriggerBuilder_ == null) {
@@ -946,10 +962,12 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The JobTrigger to create.
+     * Required. The JobTrigger to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearJobTrigger() {
       if (jobTriggerBuilder_ == null) {
@@ -966,10 +984,12 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The JobTrigger to create.
+     * Required. The JobTrigger to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.JobTrigger.Builder getJobTriggerBuilder() {
 
@@ -980,10 +1000,12 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The JobTrigger to create.
+     * Required. The JobTrigger to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.JobTriggerOrBuilder getJobTriggerOrBuilder() {
       if (jobTriggerBuilder_ != null) {
@@ -998,10 +1020,12 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The JobTrigger to create.
+     * Required. The JobTrigger to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.JobTrigger,

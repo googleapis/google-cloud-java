@@ -127,10 +127,10 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The wrapped data crypto key. [required]
+   * Required. The wrapped data crypto key.
    * </pre>
    *
-   * <code>bytes wrapped_key = 1;</code>
+   * <code>bytes wrapped_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The wrappedKey.
    */
@@ -144,10 +144,10 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The resource name of the KMS CryptoKey to use for unwrapping. [required]
+   * Required. The resource name of the KMS CryptoKey to use for unwrapping.
    * </pre>
    *
-   * <code>string crypto_key_name = 2;</code>
+   * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The cryptoKeyName.
    */
@@ -166,10 +166,10 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The resource name of the KMS CryptoKey to use for unwrapping. [required]
+   * Required. The resource name of the KMS CryptoKey to use for unwrapping.
    * </pre>
    *
-   * <code>string crypto_key_name = 2;</code>
+   * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for cryptoKeyName.
    */
@@ -525,10 +525,10 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The wrapped data crypto key. [required]
+     * Required. The wrapped data crypto key.
      * </pre>
      *
-     * <code>bytes wrapped_key = 1;</code>
+     * <code>bytes wrapped_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The wrappedKey.
      */
@@ -539,10 +539,10 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The wrapped data crypto key. [required]
+     * Required. The wrapped data crypto key.
      * </pre>
      *
-     * <code>bytes wrapped_key = 1;</code>
+     * <code>bytes wrapped_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The wrappedKey to set.
      * @return This builder for chaining.
@@ -560,10 +560,10 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The wrapped data crypto key. [required]
+     * Required. The wrapped data crypto key.
      * </pre>
      *
-     * <code>bytes wrapped_key = 1;</code>
+     * <code>bytes wrapped_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -579,10 +579,10 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of the KMS CryptoKey to use for unwrapping. [required]
+     * Required. The resource name of the KMS CryptoKey to use for unwrapping.
      * </pre>
      *
-     * <code>string crypto_key_name = 2;</code>
+     * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The cryptoKeyName.
      */
@@ -601,10 +601,10 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of the KMS CryptoKey to use for unwrapping. [required]
+     * Required. The resource name of the KMS CryptoKey to use for unwrapping.
      * </pre>
      *
-     * <code>string crypto_key_name = 2;</code>
+     * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for cryptoKeyName.
      */
@@ -623,10 +623,10 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of the KMS CryptoKey to use for unwrapping. [required]
+     * Required. The resource name of the KMS CryptoKey to use for unwrapping.
      * </pre>
      *
-     * <code>string crypto_key_name = 2;</code>
+     * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The cryptoKeyName to set.
      * @return This builder for chaining.
@@ -644,10 +644,10 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of the KMS CryptoKey to use for unwrapping. [required]
+     * Required. The resource name of the KMS CryptoKey to use for unwrapping.
      * </pre>
      *
-     * <code>string crypto_key_name = 2;</code>
+     * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -661,10 +661,10 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of the KMS CryptoKey to use for unwrapping. [required]
+     * Required. The resource name of the KMS CryptoKey to use for unwrapping.
      * </pre>
      *
-     * <code>string crypto_key_name = 2;</code>
+     * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for cryptoKeyName to set.
      * @return This builder for chaining.

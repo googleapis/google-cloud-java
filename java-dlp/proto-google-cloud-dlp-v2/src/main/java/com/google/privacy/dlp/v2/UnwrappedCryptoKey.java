@@ -116,10 +116,10 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A 128/192/256 bit key. [required]
+   * Required. A 128/192/256 bit key.
    * </pre>
    *
-   * <code>bytes key = 1;</code>
+   * <code>bytes key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The key.
    */
@@ -448,10 +448,10 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A 128/192/256 bit key. [required]
+     * Required. A 128/192/256 bit key.
      * </pre>
      *
-     * <code>bytes key = 1;</code>
+     * <code>bytes key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The key.
      */
@@ -462,10 +462,10 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A 128/192/256 bit key. [required]
+     * Required. A 128/192/256 bit key.
      * </pre>
      *
-     * <code>bytes key = 1;</code>
+     * <code>bytes key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The key to set.
      * @return This builder for chaining.
@@ -483,10 +483,10 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A 128/192/256 bit key. [required]
+     * Required. A 128/192/256 bit key.
      * </pre>
      *
-     * <code>bytes key = 1;</code>
+     * <code>bytes key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */

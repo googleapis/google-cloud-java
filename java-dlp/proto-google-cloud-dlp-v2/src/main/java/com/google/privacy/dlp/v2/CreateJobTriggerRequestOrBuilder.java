@@ -56,10 +56,12 @@ public interface CreateJobTriggerRequestOrBuilder
    *
    *
    * <pre>
-   * The JobTrigger to create.
+   * Required. The JobTrigger to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the jobTrigger field is set.
    */
@@ -68,10 +70,12 @@ public interface CreateJobTriggerRequestOrBuilder
    *
    *
    * <pre>
-   * The JobTrigger to create.
+   * Required. The JobTrigger to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The jobTrigger.
    */
@@ -80,10 +84,12 @@ public interface CreateJobTriggerRequestOrBuilder
    *
    *
    * <pre>
-   * The JobTrigger to create.
+   * Required. The JobTrigger to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.privacy.dlp.v2.JobTriggerOrBuilder getJobTriggerOrBuilder();
 

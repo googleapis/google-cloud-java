@@ -27,12 +27,12 @@ public interface InfoTypeTransformationsOrBuilder
    *
    *
    * <pre>
-   * Transformation for each infoType. Cannot specify more than one
-   * for a given infoType. [required]
+   * Required. Transformation for each infoType. Cannot specify more than one
+   * for a given infoType.
    * </pre>
    *
    * <code>
-   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation>
@@ -41,12 +41,12 @@ public interface InfoTypeTransformationsOrBuilder
    *
    *
    * <pre>
-   * Transformation for each infoType. Cannot specify more than one
-   * for a given infoType. [required]
+   * Required. Transformation for each infoType. Cannot specify more than one
+   * for a given infoType.
    * </pre>
    *
    * <code>
-   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation getTransformations(
@@ -55,12 +55,12 @@ public interface InfoTypeTransformationsOrBuilder
    *
    *
    * <pre>
-   * Transformation for each infoType. Cannot specify more than one
-   * for a given infoType. [required]
+   * Required. Transformation for each infoType. Cannot specify more than one
+   * for a given infoType.
    * </pre>
    *
    * <code>
-   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   int getTransformationsCount();
@@ -68,12 +68,12 @@ public interface InfoTypeTransformationsOrBuilder
    *
    *
    * <pre>
-   * Transformation for each infoType. Cannot specify more than one
-   * for a given infoType. [required]
+   * Required. Transformation for each infoType. Cannot specify more than one
+   * for a given infoType.
    * </pre>
    *
    * <code>
-   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   java.util.List<
@@ -84,12 +84,12 @@ public interface InfoTypeTransformationsOrBuilder
    *
    *
    * <pre>
-   * Transformation for each infoType. Cannot specify more than one
-   * for a given infoType. [required]
+   * Required. Transformation for each infoType. Cannot specify more than one
+   * for a given infoType.
    * </pre>
    *
    * <code>
-   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder

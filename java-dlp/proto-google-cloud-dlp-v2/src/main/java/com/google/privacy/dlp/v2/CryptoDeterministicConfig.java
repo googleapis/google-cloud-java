@@ -205,7 +205,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    * This annotation will be applied to the surrogate by prefixing it with
    * the name of the custom info type followed by the number of
    * characters comprising the surrogate. The following scheme defines the
-   * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+   * format: {info type name}({surrogate character count}):{surrogate}
    * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -213,7 +213,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    * custom info type 'Surrogate'. This facilitates reversal of the
    * surrogate when it occurs in free text.
    * Note: For record transformations where the entire cell in a table is being
-   * transformed, surrogates are optional to use. Surrogates are used to denote
+   * transformed, surrogates are not mandatory. Surrogates are used to denote
    * the location of the token and are necessary for re-identification in free
    * form text.
    * In order for inspection to work properly, the name of this info type must
@@ -244,7 +244,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    * This annotation will be applied to the surrogate by prefixing it with
    * the name of the custom info type followed by the number of
    * characters comprising the surrogate. The following scheme defines the
-   * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+   * format: {info type name}({surrogate character count}):{surrogate}
    * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -252,7 +252,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    * custom info type 'Surrogate'. This facilitates reversal of the
    * surrogate when it occurs in free text.
    * Note: For record transformations where the entire cell in a table is being
-   * transformed, surrogates are optional to use. Surrogates are used to denote
+   * transformed, surrogates are not mandatory. Surrogates are used to denote
    * the location of the token and are necessary for re-identification in free
    * form text.
    * In order for inspection to work properly, the name of this info type must
@@ -285,7 +285,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    * This annotation will be applied to the surrogate by prefixing it with
    * the name of the custom info type followed by the number of
    * characters comprising the surrogate. The following scheme defines the
-   * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+   * format: {info type name}({surrogate character count}):{surrogate}
    * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -293,7 +293,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    * custom info type 'Surrogate'. This facilitates reversal of the
    * surrogate when it occurs in free text.
    * Note: For record transformations where the entire cell in a table is being
-   * transformed, surrogates are optional to use. Surrogates are used to denote
+   * transformed, surrogates are not mandatory. Surrogates are used to denote
    * the location of the token and are necessary for re-identification in free
    * form text.
    * In order for inspection to work properly, the name of this info type must
@@ -321,7 +321,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A context may be used for higher security and maintaining
+   * A context may be used for higher security and maintaining
    * referential integrity such that the same identifier in two different
    * contexts will be given a distinct surrogate. The context is appended to
    * plaintext value being encrypted. On decryption the provided context is
@@ -348,7 +348,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A context may be used for higher security and maintaining
+   * A context may be used for higher security and maintaining
    * referential integrity such that the same identifier in two different
    * contexts will be given a distinct surrogate. The context is appended to
    * plaintext value being encrypted. On decryption the provided context is
@@ -375,7 +375,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A context may be used for higher security and maintaining
+   * A context may be used for higher security and maintaining
    * referential integrity such that the same identifier in two different
    * contexts will be given a distinct surrogate. The context is appended to
    * plaintext value being encrypted. On decryption the provided context is
@@ -984,7 +984,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -992,7 +992,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -1023,7 +1023,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -1031,7 +1031,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -1068,7 +1068,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -1076,7 +1076,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -1115,7 +1115,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -1123,7 +1123,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -1160,7 +1160,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -1168,7 +1168,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -1211,7 +1211,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -1219,7 +1219,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -1256,7 +1256,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -1264,7 +1264,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -1295,7 +1295,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -1303,7 +1303,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -1338,7 +1338,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * This annotation will be applied to the surrogate by prefixing it with
      * the name of the custom info type followed by the number of
      * characters comprising the surrogate. The following scheme defines the
-     * format: &lt;info type name&gt;(&lt;surrogate character count&gt;):&lt;surrogate&gt;
+     * format: {info type name}({surrogate character count}):{surrogate}
      * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
@@ -1346,7 +1346,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * custom info type 'Surrogate'. This facilitates reversal of the
      * surrogate when it occurs in free text.
      * Note: For record transformations where the entire cell in a table is being
-     * transformed, surrogates are optional to use. Surrogates are used to denote
+     * transformed, surrogates are not mandatory. Surrogates are used to denote
      * the location of the token and are necessary for re-identification in free
      * form text.
      * In order for inspection to work properly, the name of this info type must
@@ -1391,7 +1391,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -1418,7 +1418,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -1449,7 +1449,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -1484,7 +1484,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -1516,7 +1516,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -1555,7 +1555,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -1588,7 +1588,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -1615,7 +1615,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is
@@ -1644,7 +1644,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A context may be used for higher security and maintaining
+     * A context may be used for higher security and maintaining
      * referential integrity such that the same identifier in two different
      * contexts will be given a distinct surrogate. The context is appended to
      * plaintext value being encrypted. On decryption the provided context is

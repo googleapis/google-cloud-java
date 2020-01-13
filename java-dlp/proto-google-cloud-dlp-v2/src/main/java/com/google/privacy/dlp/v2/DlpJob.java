@@ -231,9 +231,25 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.DlpJob.class, com.google.privacy.dlp.v2.DlpJob.Builder.class);
   }
 
-  /** Protobuf enum {@code google.privacy.dlp.v2.DlpJob.JobState} */
+  /**
+   *
+   *
+   * <pre>
+   * Possible states of a job.
+   * </pre>
+   *
+   * Protobuf enum {@code google.privacy.dlp.v2.DlpJob.JobState}
+   */
   public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>JOB_STATE_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unused.
+     * </pre>
+     *
+     * <code>JOB_STATE_UNSPECIFIED = 0;</code>
+     */
     JOB_STATE_UNSPECIFIED(0),
     /**
      *
@@ -288,7 +304,15 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>JOB_STATE_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unused.
+     * </pre>
+     *
+     * <code>JOB_STATE_UNSPECIFIED = 0;</code>
+     */
     public static final int JOB_STATE_UNSPECIFIED_VALUE = 0;
     /**
      *

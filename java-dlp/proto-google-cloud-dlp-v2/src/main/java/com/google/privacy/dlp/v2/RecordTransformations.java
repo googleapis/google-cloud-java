@@ -210,7 +210,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
-   * match any suppression rule are omitted from the output [optional].
+   * match any suppression rule are omitted from the output.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -223,7 +223,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
-   * match any suppression rule are omitted from the output [optional].
+   * match any suppression rule are omitted from the output.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -237,7 +237,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
-   * match any suppression rule are omitted from the output [optional].
+   * match any suppression rule are omitted from the output.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -250,7 +250,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
-   * match any suppression rule are omitted from the output [optional].
+   * match any suppression rule are omitted from the output.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -263,7 +263,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
-   * match any suppression rule are omitted from the output [optional].
+   * match any suppression rule are omitted from the output.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1073,7 +1073,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1090,7 +1090,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1107,7 +1107,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1124,7 +1124,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1148,7 +1148,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1169,7 +1169,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1192,7 +1192,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1216,7 +1216,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1237,7 +1237,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1258,7 +1258,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1279,7 +1279,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1299,7 +1299,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1319,7 +1319,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1333,7 +1333,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1351,7 +1351,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1369,7 +1369,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1383,7 +1383,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
@@ -1398,7 +1398,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Configuration defining which records get suppressed entirely. Records that
-     * match any suppression rule are omitted from the output [optional].
+     * match any suppression rule are omitted from the output.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>

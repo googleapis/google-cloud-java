@@ -165,27 +165,63 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
+     * <pre>
+     * Identifies the column.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
      *
      * @return Whether the field field is set.
      */
     boolean hasField();
     /**
+     *
+     *
+     * <pre>
+     * Identifies the column.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
      *
      * @return The field.
      */
     com.google.privacy.dlp.v2.FieldId getField();
-    /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Identifies the column.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     */
     com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder();
 
     /**
+     *
+     *
+     * <pre>
+     * A column can be tagged with a custom tag. In this case, the user must
+     * indicate an auxiliary table that contains statistical information on
+     * the possible values of this column (below).
+     * </pre>
+     *
      * <code>string custom_tag = 2;</code>
      *
      * @return The customTag.
      */
     java.lang.String getCustomTag();
     /**
+     *
+     *
+     * <pre>
+     * A column can be tagged with a custom tag. In this case, the user must
+     * indicate an auxiliary table that contains statistical information on
+     * the possible values of this column (below).
+     * </pre>
+     *
      * <code>string custom_tag = 2;</code>
      *
      * @return The bytes for customTag.
@@ -305,6 +341,12 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
     public static final int FIELD_FIELD_NUMBER = 1;
     private com.google.privacy.dlp.v2.FieldId field_;
     /**
+     *
+     *
+     * <pre>
+     * Identifies the column.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
      *
      * @return Whether the field field is set.
@@ -313,6 +355,12 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
       return field_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * Identifies the column.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
      *
      * @return The field.
@@ -320,7 +368,15 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
     public com.google.privacy.dlp.v2.FieldId getField() {
       return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
     }
-    /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Identifies the column.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     */
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
       return getField();
     }
@@ -328,6 +384,14 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
     public static final int CUSTOM_TAG_FIELD_NUMBER = 2;
     private volatile java.lang.Object customTag_;
     /**
+     *
+     *
+     * <pre>
+     * A column can be tagged with a custom tag. In this case, the user must
+     * indicate an auxiliary table that contains statistical information on
+     * the possible values of this column (below).
+     * </pre>
+     *
      * <code>string custom_tag = 2;</code>
      *
      * @return The customTag.
@@ -344,6 +408,14 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * A column can be tagged with a custom tag. In this case, the user must
+     * indicate an auxiliary table that contains statistical information on
+     * the possible values of this column (below).
+     * </pre>
+     *
      * <code>string custom_tag = 2;</code>
      *
      * @return The bytes for customTag.
@@ -725,6 +797,12 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
               com.google.privacy.dlp.v2.FieldIdOrBuilder>
           fieldBuilder_;
       /**
+       *
+       *
+       * <pre>
+       * Identifies the column.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
        *
        * @return Whether the field field is set.
@@ -733,6 +811,12 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
         return fieldBuilder_ != null || field_ != null;
       }
       /**
+       *
+       *
+       * <pre>
+       * Identifies the column.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
        *
        * @return The field.
@@ -744,7 +828,15 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
           return fieldBuilder_.getMessage();
         }
       }
-      /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Identifies the column.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       */
       public Builder setField(com.google.privacy.dlp.v2.FieldId value) {
         if (fieldBuilder_ == null) {
           if (value == null) {
@@ -758,7 +850,15 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
 
         return this;
       }
-      /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Identifies the column.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       */
       public Builder setField(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
         if (fieldBuilder_ == null) {
           field_ = builderForValue.build();
@@ -769,7 +869,15 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
 
         return this;
       }
-      /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Identifies the column.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       */
       public Builder mergeField(com.google.privacy.dlp.v2.FieldId value) {
         if (fieldBuilder_ == null) {
           if (field_ != null) {
@@ -787,7 +895,15 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
 
         return this;
       }
-      /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Identifies the column.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       */
       public Builder clearField() {
         if (fieldBuilder_ == null) {
           field_ = null;
@@ -799,13 +915,29 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
 
         return this;
       }
-      /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Identifies the column.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       */
       public com.google.privacy.dlp.v2.FieldId.Builder getFieldBuilder() {
 
         onChanged();
         return getFieldFieldBuilder().getBuilder();
       }
-      /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Identifies the column.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       */
       public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
         if (fieldBuilder_ != null) {
           return fieldBuilder_.getMessageOrBuilder();
@@ -813,7 +945,15 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
           return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
         }
       }
-      /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Identifies the column.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.FieldId,
               com.google.privacy.dlp.v2.FieldId.Builder,
@@ -833,6 +973,14 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
 
       private java.lang.Object customTag_ = "";
       /**
+       *
+       *
+       * <pre>
+       * A column can be tagged with a custom tag. In this case, the user must
+       * indicate an auxiliary table that contains statistical information on
+       * the possible values of this column (below).
+       * </pre>
+       *
        * <code>string custom_tag = 2;</code>
        *
        * @return The customTag.
@@ -849,6 +997,14 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
         }
       }
       /**
+       *
+       *
+       * <pre>
+       * A column can be tagged with a custom tag. In this case, the user must
+       * indicate an auxiliary table that contains statistical information on
+       * the possible values of this column (below).
+       * </pre>
+       *
        * <code>string custom_tag = 2;</code>
        *
        * @return The bytes for customTag.
@@ -865,6 +1021,14 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
         }
       }
       /**
+       *
+       *
+       * <pre>
+       * A column can be tagged with a custom tag. In this case, the user must
+       * indicate an auxiliary table that contains statistical information on
+       * the possible values of this column (below).
+       * </pre>
+       *
        * <code>string custom_tag = 2;</code>
        *
        * @param value The customTag to set.
@@ -880,6 +1044,14 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * A column can be tagged with a custom tag. In this case, the user must
+       * indicate an auxiliary table that contains statistical information on
+       * the possible values of this column (below).
+       * </pre>
+       *
        * <code>string custom_tag = 2;</code>
        *
        * @return This builder for chaining.
@@ -891,6 +1063,14 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * A column can be tagged with a custom tag. In this case, the user must
+       * indicate an auxiliary table that contains statistical information on
+       * the possible values of this column (below).
+       * </pre>
+       *
        * <code>string custom_tag = 2;</code>
        *
        * @param value The bytes for customTag to set.
@@ -968,10 +1148,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Auxiliary table location. [required]
+   * Required. Auxiliary table location.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+   * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the table field is set.
    */
@@ -982,10 +1163,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Auxiliary table location. [required]
+   * Required. Auxiliary table location.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+   * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The table.
    */
@@ -996,10 +1178,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Auxiliary table location. [required]
+   * Required. Auxiliary table location.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+   * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder() {
     return getTable();
@@ -1011,10 +1194,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Quasi-identifier columns. [required]
+   * Required. Quasi-identifier columns.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+   * <code>
+   * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public java.util.List<com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField>
@@ -1025,10 +1209,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Quasi-identifier columns. [required]
+   * Required. Quasi-identifier columns.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+   * <code>
+   * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public java.util.List<
@@ -1040,10 +1225,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Quasi-identifier columns. [required]
+   * Required. Quasi-identifier columns.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+   * <code>
+   * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public int getQuasiIdsCount() {
@@ -1053,10 +1239,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Quasi-identifier columns. [required]
+   * Required. Quasi-identifier columns.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+   * <code>
+   * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField getQuasiIds(int index) {
@@ -1066,10 +1253,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Quasi-identifier columns. [required]
+   * Required. Quasi-identifier columns.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+   * <code>
+   * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierFieldOrBuilder
@@ -1083,12 +1271,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The relative frequency column must contain a floating-point number
+   * Required. The relative frequency column must contain a floating-point number
    * between 0 and 1 (inclusive). Null values are assumed to be zero.
-   * [required]
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the relativeFrequency field is set.
    */
@@ -1099,12 +1288,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The relative frequency column must contain a floating-point number
+   * Required. The relative frequency column must contain a floating-point number
    * between 0 and 1 (inclusive). Null values are assumed to be zero.
-   * [required]
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The relativeFrequency.
    */
@@ -1117,12 +1307,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The relative frequency column must contain a floating-point number
+   * Required. The relative frequency column must contain a floating-point number
    * between 0 and 1 (inclusive). Null values are assumed to be zero.
-   * [required]
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getRelativeFrequencyOrBuilder() {
     return getRelativeFrequency();
@@ -1558,10 +1749,12 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Auxiliary table location. [required]
+     * Required. Auxiliary table location.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the table field is set.
      */
@@ -1572,10 +1765,12 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Auxiliary table location. [required]
+     * Required. Auxiliary table location.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The table.
      */
@@ -1592,10 +1787,12 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Auxiliary table location. [required]
+     * Required. Auxiliary table location.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTable(com.google.privacy.dlp.v2.BigQueryTable value) {
       if (tableBuilder_ == null) {
@@ -1614,10 +1811,12 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Auxiliary table location. [required]
+     * Required. Auxiliary table location.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTable(com.google.privacy.dlp.v2.BigQueryTable.Builder builderForValue) {
       if (tableBuilder_ == null) {
@@ -1633,10 +1832,12 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Auxiliary table location. [required]
+     * Required. Auxiliary table location.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTable(com.google.privacy.dlp.v2.BigQueryTable value) {
       if (tableBuilder_ == null) {
@@ -1659,10 +1860,12 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Auxiliary table location. [required]
+     * Required. Auxiliary table location.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTable() {
       if (tableBuilder_ == null) {
@@ -1679,10 +1882,12 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Auxiliary table location. [required]
+     * Required. Auxiliary table location.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.BigQueryTable.Builder getTableBuilder() {
 
@@ -1693,10 +1898,12 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Auxiliary table location. [required]
+     * Required. Auxiliary table location.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder() {
       if (tableBuilder_ != null) {
@@ -1711,10 +1918,12 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Auxiliary table location. [required]
+     * Required. Auxiliary table location.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.BigQueryTable,
@@ -1755,10 +1964,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public java.util.List<com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField>
@@ -1773,10 +1983,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public int getQuasiIdsCount() {
@@ -1790,10 +2001,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField getQuasiIds(int index) {
@@ -1807,10 +2019,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setQuasiIds(
@@ -1831,10 +2044,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setQuasiIds(
@@ -1853,10 +2067,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addQuasiIds(
@@ -1877,10 +2092,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addQuasiIds(
@@ -1901,10 +2117,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addQuasiIds(
@@ -1922,10 +2139,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addQuasiIds(
@@ -1944,10 +2162,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder addAllQuasiIds(
@@ -1967,10 +2186,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearQuasiIds() {
@@ -1987,10 +2207,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder removeQuasiIds(int index) {
@@ -2007,10 +2228,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField.Builder
@@ -2021,10 +2243,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierFieldOrBuilder
@@ -2039,10 +2262,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public java.util.List<
@@ -2058,10 +2282,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField.Builder
@@ -2074,10 +2299,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField.Builder
@@ -2091,10 +2317,11 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quasi-identifier columns. [required]
+     * Required. Quasi-identifier columns.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+     * <code>
+     * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public java.util.List<com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField.Builder>
@@ -2129,12 +2356,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The relative frequency column must contain a floating-point number
+     * Required. The relative frequency column must contain a floating-point number
      * between 0 and 1 (inclusive). Null values are assumed to be zero.
-     * [required]
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the relativeFrequency field is set.
      */
@@ -2145,12 +2373,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The relative frequency column must contain a floating-point number
+     * Required. The relative frequency column must contain a floating-point number
      * between 0 and 1 (inclusive). Null values are assumed to be zero.
-     * [required]
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The relativeFrequency.
      */
@@ -2167,12 +2396,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The relative frequency column must contain a floating-point number
+     * Required. The relative frequency column must contain a floating-point number
      * between 0 and 1 (inclusive). Null values are assumed to be zero.
-     * [required]
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRelativeFrequency(com.google.privacy.dlp.v2.FieldId value) {
       if (relativeFrequencyBuilder_ == null) {
@@ -2191,12 +2421,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The relative frequency column must contain a floating-point number
+     * Required. The relative frequency column must contain a floating-point number
      * between 0 and 1 (inclusive). Null values are assumed to be zero.
-     * [required]
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRelativeFrequency(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (relativeFrequencyBuilder_ == null) {
@@ -2212,12 +2443,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The relative frequency column must contain a floating-point number
+     * Required. The relative frequency column must contain a floating-point number
      * between 0 and 1 (inclusive). Null values are assumed to be zero.
-     * [required]
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeRelativeFrequency(com.google.privacy.dlp.v2.FieldId value) {
       if (relativeFrequencyBuilder_ == null) {
@@ -2240,12 +2472,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The relative frequency column must contain a floating-point number
+     * Required. The relative frequency column must contain a floating-point number
      * between 0 and 1 (inclusive). Null values are assumed to be zero.
-     * [required]
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearRelativeFrequency() {
       if (relativeFrequencyBuilder_ == null) {
@@ -2262,12 +2495,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The relative frequency column must contain a floating-point number
+     * Required. The relative frequency column must contain a floating-point number
      * between 0 and 1 (inclusive). Null values are assumed to be zero.
-     * [required]
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder getRelativeFrequencyBuilder() {
 
@@ -2278,12 +2512,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The relative frequency column must contain a floating-point number
+     * Required. The relative frequency column must contain a floating-point number
      * between 0 and 1 (inclusive). Null values are assumed to be zero.
-     * [required]
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getRelativeFrequencyOrBuilder() {
       if (relativeFrequencyBuilder_ != null) {
@@ -2298,12 +2533,13 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The relative frequency column must contain a floating-point number
+     * Required. The relative frequency column must contain a floating-point number
      * between 0 and 1 (inclusive). Null values are assumed to be zero.
-     * [required]
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.FieldId,

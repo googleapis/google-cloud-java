@@ -27,10 +27,12 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    *
    *
    * <pre>
-   * The key used by the encryption algorithm. [required]
+   * Required. The key used by the encryption algorithm.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   * <code>
+   * .google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the cryptoKey field is set.
    */
@@ -39,10 +41,12 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    *
    *
    * <pre>
-   * The key used by the encryption algorithm. [required]
+   * Required. The key used by the encryption algorithm.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   * <code>
+   * .google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The cryptoKey.
    */
@@ -51,10 +55,12 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    *
    *
    * <pre>
-   * The key used by the encryption algorithm. [required]
+   * Required. The key used by the encryption algorithm.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
+   * <code>
+   * .google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.privacy.dlp.v2.CryptoKeyOrBuilder getCryptoKeyOrBuilder();
 
@@ -133,6 +139,12 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
   com.google.privacy.dlp.v2.FieldIdOrBuilder getContextOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Common alphabets.
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
    * </code>
@@ -141,6 +153,12 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    */
   int getCommonAlphabetValue();
   /**
+   *
+   *
+   * <pre>
+   * Common alphabets.
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
    * </code>

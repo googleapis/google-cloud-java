@@ -53,33 +53,73 @@ public interface CreateDlpJobRequestOrBuilder
   com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * Set to control what and how to inspect.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
    *
    * @return Whether the inspectJob field is set.
    */
   boolean hasInspectJob();
   /**
+   *
+   *
+   * <pre>
+   * Set to control what and how to inspect.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
    *
    * @return The inspectJob.
    */
   com.google.privacy.dlp.v2.InspectJobConfig getInspectJob();
-  /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Set to control what and how to inspect.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+   */
   com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Set to choose what metric to calculate.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
    *
    * @return Whether the riskJob field is set.
    */
   boolean hasRiskJob();
   /**
+   *
+   *
+   * <pre>
+   * Set to choose what metric to calculate.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
    *
    * @return The riskJob.
    */
   com.google.privacy.dlp.v2.RiskAnalysisJobConfig getRiskJob();
-  /** <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Set to choose what metric to calculate.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+   */
   com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder getRiskJobOrBuilder();
 
   /**

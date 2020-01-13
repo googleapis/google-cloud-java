@@ -175,7 +175,15 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      */
     int getOffsetMinutes();
   }
-  /** Protobuf type {@code google.privacy.dlp.v2.DateTime.TimeZone} */
+  /**
+   *
+   *
+   * <pre>
+   * Time zone of the date time object.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.DateTime.TimeZone}
+   */
   public static final class TimeZone extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DateTime.TimeZone)
@@ -434,7 +442,15 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-    /** Protobuf type {@code google.privacy.dlp.v2.DateTime.TimeZone} */
+    /**
+     *
+     *
+     * <pre>
+     * Time zone of the date time object.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.DateTime.TimeZone}
+     */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements
@@ -697,8 +713,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One or more of the following must be set. All fields are optional, but
-   * when set must be valid date or time values.
+   * One or more of the following must be set.
+   * Must be a valid date or time value.
    * </pre>
    *
    * <code>.google.type.Date date = 1;</code>
@@ -712,8 +728,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One or more of the following must be set. All fields are optional, but
-   * when set must be valid date or time values.
+   * One or more of the following must be set.
+   * Must be a valid date or time value.
    * </pre>
    *
    * <code>.google.type.Date date = 1;</code>
@@ -727,8 +743,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One or more of the following must be set. All fields are optional, but
-   * when set must be valid date or time values.
+   * One or more of the following must be set.
+   * Must be a valid date or time value.
    * </pre>
    *
    * <code>.google.type.Date date = 1;</code>
@@ -740,6 +756,12 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
   public static final int DAY_OF_WEEK_FIELD_NUMBER = 2;
   private int dayOfWeek_;
   /**
+   *
+   *
+   * <pre>
+   * Day of week
+   * </pre>
+   *
    * <code>.google.type.DayOfWeek day_of_week = 2;</code>
    *
    * @return The enum numeric value on the wire for dayOfWeek.
@@ -748,6 +770,12 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
     return dayOfWeek_;
   }
   /**
+   *
+   *
+   * <pre>
+   * Day of week
+   * </pre>
+   *
    * <code>.google.type.DayOfWeek day_of_week = 2;</code>
    *
    * @return The dayOfWeek.
@@ -761,6 +789,12 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
   public static final int TIME_FIELD_NUMBER = 3;
   private com.google.type.TimeOfDay time_;
   /**
+   *
+   *
+   * <pre>
+   * Time of day
+   * </pre>
+   *
    * <code>.google.type.TimeOfDay time = 3;</code>
    *
    * @return Whether the time field is set.
@@ -769,6 +803,12 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
     return time_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * Time of day
+   * </pre>
+   *
    * <code>.google.type.TimeOfDay time = 3;</code>
    *
    * @return The time.
@@ -776,7 +816,15 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.TimeOfDay getTime() {
     return time_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : time_;
   }
-  /** <code>.google.type.TimeOfDay time = 3;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Time of day
+   * </pre>
+   *
+   * <code>.google.type.TimeOfDay time = 3;</code>
+   */
   public com.google.type.TimeOfDayOrBuilder getTimeOrBuilder() {
     return getTime();
   }
@@ -784,6 +832,12 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
   public static final int TIME_ZONE_FIELD_NUMBER = 4;
   private com.google.privacy.dlp.v2.DateTime.TimeZone timeZone_;
   /**
+   *
+   *
+   * <pre>
+   * Time zone
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
    *
    * @return Whether the timeZone field is set.
@@ -792,6 +846,12 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
     return timeZone_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * Time zone
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
    *
    * @return The timeZone.
@@ -801,7 +861,15 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
         ? com.google.privacy.dlp.v2.DateTime.TimeZone.getDefaultInstance()
         : timeZone_;
   }
-  /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Time zone
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+   */
   public com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder getTimeZoneOrBuilder() {
     return getTimeZone();
   }
@@ -1211,8 +1279,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
@@ -1226,8 +1294,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
@@ -1245,8 +1313,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
@@ -1268,8 +1336,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
@@ -1288,8 +1356,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
@@ -1312,8 +1380,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
@@ -1333,8 +1401,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
@@ -1348,8 +1416,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
@@ -1365,8 +1433,8 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more of the following must be set. All fields are optional, but
-     * when set must be valid date or time values.
+     * One or more of the following must be set.
+     * Must be a valid date or time value.
      * </pre>
      *
      * <code>.google.type.Date date = 1;</code>
@@ -1386,6 +1454,12 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
 
     private int dayOfWeek_ = 0;
     /**
+     *
+     *
+     * <pre>
+     * Day of week
+     * </pre>
+     *
      * <code>.google.type.DayOfWeek day_of_week = 2;</code>
      *
      * @return The enum numeric value on the wire for dayOfWeek.
@@ -1394,6 +1468,12 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       return dayOfWeek_;
     }
     /**
+     *
+     *
+     * <pre>
+     * Day of week
+     * </pre>
+     *
      * <code>.google.type.DayOfWeek day_of_week = 2;</code>
      *
      * @param value The enum numeric value on the wire for dayOfWeek to set.
@@ -1405,6 +1485,12 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Day of week
+     * </pre>
+     *
      * <code>.google.type.DayOfWeek day_of_week = 2;</code>
      *
      * @return The dayOfWeek.
@@ -1415,6 +1501,12 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
+     * <pre>
+     * Day of week
+     * </pre>
+     *
      * <code>.google.type.DayOfWeek day_of_week = 2;</code>
      *
      * @param value The dayOfWeek to set.
@@ -1430,6 +1522,12 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Day of week
+     * </pre>
+     *
      * <code>.google.type.DayOfWeek day_of_week = 2;</code>
      *
      * @return This builder for chaining.
@@ -1448,6 +1546,12 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
             com.google.type.TimeOfDayOrBuilder>
         timeBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time = 3;</code>
      *
      * @return Whether the time field is set.
@@ -1456,6 +1560,12 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       return timeBuilder_ != null || time_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * Time of day
+     * </pre>
+     *
      * <code>.google.type.TimeOfDay time = 3;</code>
      *
      * @return The time.
@@ -1467,7 +1577,15 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
         return timeBuilder_.getMessage();
       }
     }
-    /** <code>.google.type.TimeOfDay time = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time of day
+     * </pre>
+     *
+     * <code>.google.type.TimeOfDay time = 3;</code>
+     */
     public Builder setTime(com.google.type.TimeOfDay value) {
       if (timeBuilder_ == null) {
         if (value == null) {
@@ -1481,7 +1599,15 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.type.TimeOfDay time = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time of day
+     * </pre>
+     *
+     * <code>.google.type.TimeOfDay time = 3;</code>
+     */
     public Builder setTime(com.google.type.TimeOfDay.Builder builderForValue) {
       if (timeBuilder_ == null) {
         time_ = builderForValue.build();
@@ -1492,7 +1618,15 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.type.TimeOfDay time = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time of day
+     * </pre>
+     *
+     * <code>.google.type.TimeOfDay time = 3;</code>
+     */
     public Builder mergeTime(com.google.type.TimeOfDay value) {
       if (timeBuilder_ == null) {
         if (time_ != null) {
@@ -1507,7 +1641,15 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.type.TimeOfDay time = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time of day
+     * </pre>
+     *
+     * <code>.google.type.TimeOfDay time = 3;</code>
+     */
     public Builder clearTime() {
       if (timeBuilder_ == null) {
         time_ = null;
@@ -1519,13 +1661,29 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.type.TimeOfDay time = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time of day
+     * </pre>
+     *
+     * <code>.google.type.TimeOfDay time = 3;</code>
+     */
     public com.google.type.TimeOfDay.Builder getTimeBuilder() {
 
       onChanged();
       return getTimeFieldBuilder().getBuilder();
     }
-    /** <code>.google.type.TimeOfDay time = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time of day
+     * </pre>
+     *
+     * <code>.google.type.TimeOfDay time = 3;</code>
+     */
     public com.google.type.TimeOfDayOrBuilder getTimeOrBuilder() {
       if (timeBuilder_ != null) {
         return timeBuilder_.getMessageOrBuilder();
@@ -1533,7 +1691,15 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
         return time_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : time_;
       }
     }
-    /** <code>.google.type.TimeOfDay time = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time of day
+     * </pre>
+     *
+     * <code>.google.type.TimeOfDay time = 3;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.TimeOfDay,
             com.google.type.TimeOfDay.Builder,
@@ -1557,6 +1723,12 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder>
         timeZoneBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Time zone
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
      *
      * @return Whether the timeZone field is set.
@@ -1565,6 +1737,12 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       return timeZoneBuilder_ != null || timeZone_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * Time zone
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
      *
      * @return The timeZone.
@@ -1578,7 +1756,15 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
         return timeZoneBuilder_.getMessage();
       }
     }
-    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time zone
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+     */
     public Builder setTimeZone(com.google.privacy.dlp.v2.DateTime.TimeZone value) {
       if (timeZoneBuilder_ == null) {
         if (value == null) {
@@ -1592,7 +1778,15 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time zone
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+     */
     public Builder setTimeZone(
         com.google.privacy.dlp.v2.DateTime.TimeZone.Builder builderForValue) {
       if (timeZoneBuilder_ == null) {
@@ -1604,7 +1798,15 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time zone
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+     */
     public Builder mergeTimeZone(com.google.privacy.dlp.v2.DateTime.TimeZone value) {
       if (timeZoneBuilder_ == null) {
         if (timeZone_ != null) {
@@ -1622,7 +1824,15 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time zone
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+     */
     public Builder clearTimeZone() {
       if (timeZoneBuilder_ == null) {
         timeZone_ = null;
@@ -1634,13 +1844,29 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time zone
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+     */
     public com.google.privacy.dlp.v2.DateTime.TimeZone.Builder getTimeZoneBuilder() {
 
       onChanged();
       return getTimeZoneFieldBuilder().getBuilder();
     }
-    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time zone
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+     */
     public com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder getTimeZoneOrBuilder() {
       if (timeZoneBuilder_ != null) {
         return timeZoneBuilder_.getMessageOrBuilder();
@@ -1650,7 +1876,15 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
             : timeZone_;
       }
     }
-    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time zone
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.DateTime.TimeZone,
             com.google.privacy.dlp.v2.DateTime.TimeZone.Builder,

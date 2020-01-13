@@ -378,6 +378,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
 
   public static final int REPLACE_CONFIG_FIELD_NUMBER = 1;
   /**
+   *
+   *
+   * <pre>
+   * Replace
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
    *
    * @return Whether the replaceConfig field is set.
@@ -386,6 +392,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return transformationCase_ == 1;
   }
   /**
+   *
+   *
+   * <pre>
+   * Replace
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
    *
    * @return The replaceConfig.
@@ -396,7 +408,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.ReplaceValueConfig.getDefaultInstance();
   }
-  /** <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Replace
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
+   */
   public com.google.privacy.dlp.v2.ReplaceValueConfigOrBuilder getReplaceConfigOrBuilder() {
     if (transformationCase_ == 1) {
       return (com.google.privacy.dlp.v2.ReplaceValueConfig) transformation_;
@@ -406,6 +426,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
 
   public static final int REDACT_CONFIG_FIELD_NUMBER = 2;
   /**
+   *
+   *
+   * <pre>
+   * Redact
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
    *
    * @return Whether the redactConfig field is set.
@@ -414,6 +440,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return transformationCase_ == 2;
   }
   /**
+   *
+   *
+   * <pre>
+   * Redact
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
    *
    * @return The redactConfig.
@@ -424,7 +456,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.RedactConfig.getDefaultInstance();
   }
-  /** <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Redact
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
+   */
   public com.google.privacy.dlp.v2.RedactConfigOrBuilder getRedactConfigOrBuilder() {
     if (transformationCase_ == 2) {
       return (com.google.privacy.dlp.v2.RedactConfig) transformation_;
@@ -434,6 +474,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
 
   public static final int CHARACTER_MASK_CONFIG_FIELD_NUMBER = 3;
   /**
+   *
+   *
+   * <pre>
+   * Mask
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
    *
    * @return Whether the characterMaskConfig field is set.
@@ -442,6 +488,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return transformationCase_ == 3;
   }
   /**
+   *
+   *
+   * <pre>
+   * Mask
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
    *
    * @return The characterMaskConfig.
@@ -452,7 +504,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.CharacterMaskConfig.getDefaultInstance();
   }
-  /** <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Mask
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
+   */
   public com.google.privacy.dlp.v2.CharacterMaskConfigOrBuilder getCharacterMaskConfigOrBuilder() {
     if (transformationCase_ == 3) {
       return (com.google.privacy.dlp.v2.CharacterMaskConfig) transformation_;
@@ -462,6 +522,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
 
   public static final int CRYPTO_REPLACE_FFX_FPE_CONFIG_FIELD_NUMBER = 4;
   /**
+   *
+   *
+   * <pre>
+   * Ffx-Fpe
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;
    * </code>
    *
@@ -471,6 +537,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return transformationCase_ == 4;
   }
   /**
+   *
+   *
+   * <pre>
+   * Ffx-Fpe
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;
    * </code>
    *
@@ -483,6 +555,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * Ffx-Fpe
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;
    * </code>
    */
@@ -496,6 +574,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
 
   public static final int FIXED_SIZE_BUCKETING_CONFIG_FIELD_NUMBER = 5;
   /**
+   *
+   *
+   * <pre>
+   * Fixed size bucketing
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
    *
    * @return Whether the fixedSizeBucketingConfig field is set.
@@ -504,6 +588,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return transformationCase_ == 5;
   }
   /**
+   *
+   *
+   * <pre>
+   * Fixed size bucketing
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
    *
    * @return The fixedSizeBucketingConfig.
@@ -515,6 +605,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return com.google.privacy.dlp.v2.FixedSizeBucketingConfig.getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * Fixed size bucketing
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
    */
   public com.google.privacy.dlp.v2.FixedSizeBucketingConfigOrBuilder
@@ -527,6 +623,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
 
   public static final int BUCKETING_CONFIG_FIELD_NUMBER = 6;
   /**
+   *
+   *
+   * <pre>
+   * Bucketing
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
    *
    * @return Whether the bucketingConfig field is set.
@@ -535,6 +637,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return transformationCase_ == 6;
   }
   /**
+   *
+   *
+   * <pre>
+   * Bucketing
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
    *
    * @return The bucketingConfig.
@@ -545,7 +653,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.BucketingConfig.getDefaultInstance();
   }
-  /** <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Bucketing
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
+   */
   public com.google.privacy.dlp.v2.BucketingConfigOrBuilder getBucketingConfigOrBuilder() {
     if (transformationCase_ == 6) {
       return (com.google.privacy.dlp.v2.BucketingConfig) transformation_;
@@ -555,6 +671,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
 
   public static final int REPLACE_WITH_INFO_TYPE_CONFIG_FIELD_NUMBER = 7;
   /**
+   *
+   *
+   * <pre>
+   * Replace with infotype
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;
    * </code>
    *
@@ -564,6 +686,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return transformationCase_ == 7;
   }
   /**
+   *
+   *
+   * <pre>
+   * Replace with infotype
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;
    * </code>
    *
@@ -576,6 +704,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig.getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * Replace with infotype
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;
    * </code>
    */
@@ -589,6 +723,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
 
   public static final int TIME_PART_CONFIG_FIELD_NUMBER = 8;
   /**
+   *
+   *
+   * <pre>
+   * Time extraction
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
    *
    * @return Whether the timePartConfig field is set.
@@ -597,6 +737,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return transformationCase_ == 8;
   }
   /**
+   *
+   *
+   * <pre>
+   * Time extraction
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
    *
    * @return The timePartConfig.
@@ -607,7 +753,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.TimePartConfig.getDefaultInstance();
   }
-  /** <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Time extraction
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
+   */
   public com.google.privacy.dlp.v2.TimePartConfigOrBuilder getTimePartConfigOrBuilder() {
     if (transformationCase_ == 8) {
       return (com.google.privacy.dlp.v2.TimePartConfig) transformation_;
@@ -617,6 +771,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
 
   public static final int CRYPTO_HASH_CONFIG_FIELD_NUMBER = 9;
   /**
+   *
+   *
+   * <pre>
+   * Crypto
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
    *
    * @return Whether the cryptoHashConfig field is set.
@@ -625,6 +785,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return transformationCase_ == 9;
   }
   /**
+   *
+   *
+   * <pre>
+   * Crypto
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
    *
    * @return The cryptoHashConfig.
@@ -635,7 +801,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.CryptoHashConfig.getDefaultInstance();
   }
-  /** <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Crypto
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
+   */
   public com.google.privacy.dlp.v2.CryptoHashConfigOrBuilder getCryptoHashConfigOrBuilder() {
     if (transformationCase_ == 9) {
       return (com.google.privacy.dlp.v2.CryptoHashConfig) transformation_;
@@ -645,6 +819,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
 
   public static final int DATE_SHIFT_CONFIG_FIELD_NUMBER = 11;
   /**
+   *
+   *
+   * <pre>
+   * Date Shift
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
    *
    * @return Whether the dateShiftConfig field is set.
@@ -653,6 +833,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return transformationCase_ == 11;
   }
   /**
+   *
+   *
+   * <pre>
+   * Date Shift
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
    *
    * @return The dateShiftConfig.
@@ -663,7 +849,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.DateShiftConfig.getDefaultInstance();
   }
-  /** <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Date Shift
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
+   */
   public com.google.privacy.dlp.v2.DateShiftConfigOrBuilder getDateShiftConfigOrBuilder() {
     if (transformationCase_ == 11) {
       return (com.google.privacy.dlp.v2.DateShiftConfig) transformation_;
@@ -673,6 +867,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
 
   public static final int CRYPTO_DETERMINISTIC_CONFIG_FIELD_NUMBER = 12;
   /**
+   *
+   *
+   * <pre>
+   * Deterministic Crypto
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
    *
    * @return Whether the cryptoDeterministicConfig field is set.
@@ -681,6 +881,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return transformationCase_ == 12;
   }
   /**
+   *
+   *
+   * <pre>
+   * Deterministic Crypto
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
    *
    * @return The cryptoDeterministicConfig.
@@ -692,6 +898,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return com.google.privacy.dlp.v2.CryptoDeterministicConfig.getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * Deterministic Crypto
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
    */
   public com.google.privacy.dlp.v2.CryptoDeterministicConfigOrBuilder
@@ -1344,6 +1556,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.ReplaceValueConfigOrBuilder>
         replaceConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Replace
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
      *
      * @return Whether the replaceConfig field is set.
@@ -1352,6 +1570,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return transformationCase_ == 1;
     }
     /**
+     *
+     *
+     * <pre>
+     * Replace
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
      *
      * @return The replaceConfig.
@@ -1369,7 +1593,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.ReplaceValueConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Replace
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
+     */
     public Builder setReplaceConfig(com.google.privacy.dlp.v2.ReplaceValueConfig value) {
       if (replaceConfigBuilder_ == null) {
         if (value == null) {
@@ -1383,7 +1615,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 1;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Replace
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
+     */
     public Builder setReplaceConfig(
         com.google.privacy.dlp.v2.ReplaceValueConfig.Builder builderForValue) {
       if (replaceConfigBuilder_ == null) {
@@ -1395,7 +1635,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 1;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Replace
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
+     */
     public Builder mergeReplaceConfig(com.google.privacy.dlp.v2.ReplaceValueConfig value) {
       if (replaceConfigBuilder_ == null) {
         if (transformationCase_ == 1
@@ -1419,7 +1667,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 1;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Replace
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
+     */
     public Builder clearReplaceConfig() {
       if (replaceConfigBuilder_ == null) {
         if (transformationCase_ == 1) {
@@ -1436,11 +1692,27 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Replace
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
+     */
     public com.google.privacy.dlp.v2.ReplaceValueConfig.Builder getReplaceConfigBuilder() {
       return getReplaceConfigFieldBuilder().getBuilder();
     }
-    /** <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Replace
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
+     */
     public com.google.privacy.dlp.v2.ReplaceValueConfigOrBuilder getReplaceConfigOrBuilder() {
       if ((transformationCase_ == 1) && (replaceConfigBuilder_ != null)) {
         return replaceConfigBuilder_.getMessageOrBuilder();
@@ -1451,7 +1723,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.ReplaceValueConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Replace
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.ReplaceValueConfig,
             com.google.privacy.dlp.v2.ReplaceValueConfig.Builder,
@@ -1483,6 +1763,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.RedactConfigOrBuilder>
         redactConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Redact
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
      *
      * @return Whether the redactConfig field is set.
@@ -1491,6 +1777,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return transformationCase_ == 2;
     }
     /**
+     *
+     *
+     * <pre>
+     * Redact
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
      *
      * @return The redactConfig.
@@ -1508,7 +1800,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.RedactConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Redact
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
+     */
     public Builder setRedactConfig(com.google.privacy.dlp.v2.RedactConfig value) {
       if (redactConfigBuilder_ == null) {
         if (value == null) {
@@ -1522,7 +1822,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 2;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Redact
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
+     */
     public Builder setRedactConfig(com.google.privacy.dlp.v2.RedactConfig.Builder builderForValue) {
       if (redactConfigBuilder_ == null) {
         transformation_ = builderForValue.build();
@@ -1533,7 +1841,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 2;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Redact
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
+     */
     public Builder mergeRedactConfig(com.google.privacy.dlp.v2.RedactConfig value) {
       if (redactConfigBuilder_ == null) {
         if (transformationCase_ == 2
@@ -1556,7 +1872,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 2;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Redact
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
+     */
     public Builder clearRedactConfig() {
       if (redactConfigBuilder_ == null) {
         if (transformationCase_ == 2) {
@@ -1573,11 +1897,27 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Redact
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
+     */
     public com.google.privacy.dlp.v2.RedactConfig.Builder getRedactConfigBuilder() {
       return getRedactConfigFieldBuilder().getBuilder();
     }
-    /** <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Redact
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
+     */
     public com.google.privacy.dlp.v2.RedactConfigOrBuilder getRedactConfigOrBuilder() {
       if ((transformationCase_ == 2) && (redactConfigBuilder_ != null)) {
         return redactConfigBuilder_.getMessageOrBuilder();
@@ -1588,7 +1928,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.RedactConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Redact
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.RedactConfig,
             com.google.privacy.dlp.v2.RedactConfig.Builder,
@@ -1620,6 +1968,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.CharacterMaskConfigOrBuilder>
         characterMaskConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Mask
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
      *
      * @return Whether the characterMaskConfig field is set.
@@ -1628,6 +1982,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return transformationCase_ == 3;
     }
     /**
+     *
+     *
+     * <pre>
+     * Mask
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
      *
      * @return The characterMaskConfig.
@@ -1645,7 +2005,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.CharacterMaskConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Mask
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
+     */
     public Builder setCharacterMaskConfig(com.google.privacy.dlp.v2.CharacterMaskConfig value) {
       if (characterMaskConfigBuilder_ == null) {
         if (value == null) {
@@ -1659,7 +2027,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 3;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Mask
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
+     */
     public Builder setCharacterMaskConfig(
         com.google.privacy.dlp.v2.CharacterMaskConfig.Builder builderForValue) {
       if (characterMaskConfigBuilder_ == null) {
@@ -1671,7 +2047,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 3;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Mask
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
+     */
     public Builder mergeCharacterMaskConfig(com.google.privacy.dlp.v2.CharacterMaskConfig value) {
       if (characterMaskConfigBuilder_ == null) {
         if (transformationCase_ == 3
@@ -1695,7 +2079,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 3;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Mask
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
+     */
     public Builder clearCharacterMaskConfig() {
       if (characterMaskConfigBuilder_ == null) {
         if (transformationCase_ == 3) {
@@ -1712,11 +2104,27 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Mask
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
+     */
     public com.google.privacy.dlp.v2.CharacterMaskConfig.Builder getCharacterMaskConfigBuilder() {
       return getCharacterMaskConfigFieldBuilder().getBuilder();
     }
-    /** <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Mask
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
+     */
     public com.google.privacy.dlp.v2.CharacterMaskConfigOrBuilder
         getCharacterMaskConfigOrBuilder() {
       if ((transformationCase_ == 3) && (characterMaskConfigBuilder_ != null)) {
@@ -1728,7 +2136,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.CharacterMaskConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Mask
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.CharacterMaskConfig,
             com.google.privacy.dlp.v2.CharacterMaskConfig.Builder,
@@ -1760,6 +2176,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfigOrBuilder>
         cryptoReplaceFfxFpeConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;
      * </code>
      *
@@ -1769,6 +2191,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return transformationCase_ == 4;
     }
     /**
+     *
+     *
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;
      * </code>
      *
@@ -1788,6 +2216,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;
      * </code>
      */
@@ -1806,6 +2240,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;
      * </code>
      */
@@ -1821,6 +2261,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;
      * </code>
      */
@@ -1849,6 +2295,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;
      * </code>
      */
@@ -1869,6 +2321,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;
      * </code>
      */
@@ -1877,6 +2335,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return getCryptoReplaceFfxFpeConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;
      * </code>
      */
@@ -1892,6 +2356,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Ffx-Fpe
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;
      * </code>
      */
@@ -1927,6 +2397,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.FixedSizeBucketingConfigOrBuilder>
         fixedSizeBucketingConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
      *
      * @return Whether the fixedSizeBucketingConfig field is set.
@@ -1935,6 +2411,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return transformationCase_ == 5;
     }
     /**
+     *
+     *
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
      *
      * @return The fixedSizeBucketingConfig.
@@ -1953,6 +2435,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
      */
     public Builder setFixedSizeBucketingConfig(
@@ -1970,6 +2458,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
      */
     public Builder setFixedSizeBucketingConfig(
@@ -1984,6 +2478,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
      */
     public Builder mergeFixedSizeBucketingConfig(
@@ -2011,6 +2511,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
      */
     public Builder clearFixedSizeBucketingConfig() {
@@ -2030,6 +2536,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
      */
     public com.google.privacy.dlp.v2.FixedSizeBucketingConfig.Builder
@@ -2037,6 +2549,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return getFixedSizeBucketingConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
      */
     public com.google.privacy.dlp.v2.FixedSizeBucketingConfigOrBuilder
@@ -2051,6 +2569,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Fixed size bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2084,6 +2608,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.BucketingConfigOrBuilder>
         bucketingConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
      *
      * @return Whether the bucketingConfig field is set.
@@ -2092,6 +2622,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return transformationCase_ == 6;
     }
     /**
+     *
+     *
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
      *
      * @return The bucketingConfig.
@@ -2109,7 +2645,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.BucketingConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
+     */
     public Builder setBucketingConfig(com.google.privacy.dlp.v2.BucketingConfig value) {
       if (bucketingConfigBuilder_ == null) {
         if (value == null) {
@@ -2123,7 +2667,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 6;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
+     */
     public Builder setBucketingConfig(
         com.google.privacy.dlp.v2.BucketingConfig.Builder builderForValue) {
       if (bucketingConfigBuilder_ == null) {
@@ -2135,7 +2687,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 6;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
+     */
     public Builder mergeBucketingConfig(com.google.privacy.dlp.v2.BucketingConfig value) {
       if (bucketingConfigBuilder_ == null) {
         if (transformationCase_ == 6
@@ -2158,7 +2718,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 6;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
+     */
     public Builder clearBucketingConfig() {
       if (bucketingConfigBuilder_ == null) {
         if (transformationCase_ == 6) {
@@ -2175,11 +2743,27 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
+     */
     public com.google.privacy.dlp.v2.BucketingConfig.Builder getBucketingConfigBuilder() {
       return getBucketingConfigFieldBuilder().getBuilder();
     }
-    /** <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
+     */
     public com.google.privacy.dlp.v2.BucketingConfigOrBuilder getBucketingConfigOrBuilder() {
       if ((transformationCase_ == 6) && (bucketingConfigBuilder_ != null)) {
         return bucketingConfigBuilder_.getMessageOrBuilder();
@@ -2190,7 +2774,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.BucketingConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Bucketing
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.BucketingConfig,
             com.google.privacy.dlp.v2.BucketingConfig.Builder,
@@ -2222,6 +2814,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfigOrBuilder>
         replaceWithInfoTypeConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;
      * </code>
      *
@@ -2231,6 +2829,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return transformationCase_ == 7;
     }
     /**
+     *
+     *
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;
      * </code>
      *
@@ -2250,6 +2854,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;
      * </code>
      */
@@ -2268,6 +2878,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;
      * </code>
      */
@@ -2283,6 +2899,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;
      * </code>
      */
@@ -2311,6 +2933,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;
      * </code>
      */
@@ -2331,6 +2959,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;
      * </code>
      */
@@ -2339,6 +2973,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return getReplaceWithInfoTypeConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;
      * </code>
      */
@@ -2354,6 +2994,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Replace with infotype
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;
      * </code>
      */
@@ -2389,6 +3035,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.TimePartConfigOrBuilder>
         timePartConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
      *
      * @return Whether the timePartConfig field is set.
@@ -2397,6 +3049,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return transformationCase_ == 8;
     }
     /**
+     *
+     *
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
      *
      * @return The timePartConfig.
@@ -2414,7 +3072,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.TimePartConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
+     */
     public Builder setTimePartConfig(com.google.privacy.dlp.v2.TimePartConfig value) {
       if (timePartConfigBuilder_ == null) {
         if (value == null) {
@@ -2428,7 +3094,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 8;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
+     */
     public Builder setTimePartConfig(
         com.google.privacy.dlp.v2.TimePartConfig.Builder builderForValue) {
       if (timePartConfigBuilder_ == null) {
@@ -2440,7 +3114,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 8;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
+     */
     public Builder mergeTimePartConfig(com.google.privacy.dlp.v2.TimePartConfig value) {
       if (timePartConfigBuilder_ == null) {
         if (transformationCase_ == 8
@@ -2463,7 +3145,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 8;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
+     */
     public Builder clearTimePartConfig() {
       if (timePartConfigBuilder_ == null) {
         if (transformationCase_ == 8) {
@@ -2480,11 +3170,27 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
+     */
     public com.google.privacy.dlp.v2.TimePartConfig.Builder getTimePartConfigBuilder() {
       return getTimePartConfigFieldBuilder().getBuilder();
     }
-    /** <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
+     */
     public com.google.privacy.dlp.v2.TimePartConfigOrBuilder getTimePartConfigOrBuilder() {
       if ((transformationCase_ == 8) && (timePartConfigBuilder_ != null)) {
         return timePartConfigBuilder_.getMessageOrBuilder();
@@ -2495,7 +3201,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.TimePartConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Time extraction
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.TimePartConfig,
             com.google.privacy.dlp.v2.TimePartConfig.Builder,
@@ -2527,6 +3241,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.CryptoHashConfigOrBuilder>
         cryptoHashConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
      *
      * @return Whether the cryptoHashConfig field is set.
@@ -2535,6 +3255,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return transformationCase_ == 9;
     }
     /**
+     *
+     *
+     * <pre>
+     * Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
      *
      * @return The cryptoHashConfig.
@@ -2552,7 +3278,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.CryptoHashConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Crypto
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
+     */
     public Builder setCryptoHashConfig(com.google.privacy.dlp.v2.CryptoHashConfig value) {
       if (cryptoHashConfigBuilder_ == null) {
         if (value == null) {
@@ -2566,7 +3300,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 9;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Crypto
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
+     */
     public Builder setCryptoHashConfig(
         com.google.privacy.dlp.v2.CryptoHashConfig.Builder builderForValue) {
       if (cryptoHashConfigBuilder_ == null) {
@@ -2578,7 +3320,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 9;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Crypto
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
+     */
     public Builder mergeCryptoHashConfig(com.google.privacy.dlp.v2.CryptoHashConfig value) {
       if (cryptoHashConfigBuilder_ == null) {
         if (transformationCase_ == 9
@@ -2601,7 +3351,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 9;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Crypto
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
+     */
     public Builder clearCryptoHashConfig() {
       if (cryptoHashConfigBuilder_ == null) {
         if (transformationCase_ == 9) {
@@ -2618,11 +3376,27 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Crypto
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
+     */
     public com.google.privacy.dlp.v2.CryptoHashConfig.Builder getCryptoHashConfigBuilder() {
       return getCryptoHashConfigFieldBuilder().getBuilder();
     }
-    /** <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Crypto
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
+     */
     public com.google.privacy.dlp.v2.CryptoHashConfigOrBuilder getCryptoHashConfigOrBuilder() {
       if ((transformationCase_ == 9) && (cryptoHashConfigBuilder_ != null)) {
         return cryptoHashConfigBuilder_.getMessageOrBuilder();
@@ -2633,7 +3407,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.CryptoHashConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Crypto
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.CryptoHashConfig,
             com.google.privacy.dlp.v2.CryptoHashConfig.Builder,
@@ -2665,6 +3447,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.DateShiftConfigOrBuilder>
         dateShiftConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
      *
      * @return Whether the dateShiftConfig field is set.
@@ -2673,6 +3461,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return transformationCase_ == 11;
     }
     /**
+     *
+     *
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
      *
      * @return The dateShiftConfig.
@@ -2690,7 +3484,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.DateShiftConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
+     */
     public Builder setDateShiftConfig(com.google.privacy.dlp.v2.DateShiftConfig value) {
       if (dateShiftConfigBuilder_ == null) {
         if (value == null) {
@@ -2704,7 +3506,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 11;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
+     */
     public Builder setDateShiftConfig(
         com.google.privacy.dlp.v2.DateShiftConfig.Builder builderForValue) {
       if (dateShiftConfigBuilder_ == null) {
@@ -2716,7 +3526,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 11;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
+     */
     public Builder mergeDateShiftConfig(com.google.privacy.dlp.v2.DateShiftConfig value) {
       if (dateShiftConfigBuilder_ == null) {
         if (transformationCase_ == 11
@@ -2739,7 +3557,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 11;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
+     */
     public Builder clearDateShiftConfig() {
       if (dateShiftConfigBuilder_ == null) {
         if (transformationCase_ == 11) {
@@ -2756,11 +3582,27 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
+     */
     public com.google.privacy.dlp.v2.DateShiftConfig.Builder getDateShiftConfigBuilder() {
       return getDateShiftConfigFieldBuilder().getBuilder();
     }
-    /** <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
+     */
     public com.google.privacy.dlp.v2.DateShiftConfigOrBuilder getDateShiftConfigOrBuilder() {
       if ((transformationCase_ == 11) && (dateShiftConfigBuilder_ != null)) {
         return dateShiftConfigBuilder_.getMessageOrBuilder();
@@ -2771,7 +3613,15 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.DateShiftConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Date Shift
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.DateShiftConfig,
             com.google.privacy.dlp.v2.DateShiftConfig.Builder,
@@ -2803,6 +3653,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.CryptoDeterministicConfigOrBuilder>
         cryptoDeterministicConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
      * </code>
      *
@@ -2812,6 +3668,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return transformationCase_ == 12;
     }
     /**
+     *
+     *
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
      * </code>
      *
@@ -2831,6 +3693,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
      * </code>
      */
@@ -2849,6 +3717,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
      * </code>
      */
@@ -2864,6 +3738,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
      * </code>
      */
@@ -2892,6 +3772,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
      * </code>
      */
@@ -2912,6 +3798,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
      * </code>
      */
@@ -2920,6 +3812,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return getCryptoDeterministicConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
      * </code>
      */
@@ -2935,6 +3833,12 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Deterministic Crypto
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
      * </code>
      */

@@ -209,10 +209,11 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identifies the column. [required]
+   * Required. Identifies the column.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+   * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the field field is set.
    */
@@ -223,10 +224,11 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identifies the column. [required]
+   * Required. Identifies the column.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+   * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The field.
    */
@@ -237,10 +239,11 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identifies the column. [required]
+   * Required. Identifies the column.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+   * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
     return getField();
@@ -861,10 +864,11 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the field field is set.
      */
@@ -875,10 +879,11 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The field.
      */
@@ -893,10 +898,11 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setField(com.google.privacy.dlp.v2.FieldId value) {
       if (fieldBuilder_ == null) {
@@ -915,10 +921,11 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setField(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (fieldBuilder_ == null) {
@@ -934,10 +941,11 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeField(com.google.privacy.dlp.v2.FieldId value) {
       if (fieldBuilder_ == null) {
@@ -958,10 +966,11 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearField() {
       if (fieldBuilder_ == null) {
@@ -978,10 +987,11 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder getFieldBuilder() {
 
@@ -992,10 +1002,11 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
       if (fieldBuilder_ != null) {
@@ -1008,10 +1019,11 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the column. [required]
+     * Required. Identifies the column.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+     * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.FieldId,

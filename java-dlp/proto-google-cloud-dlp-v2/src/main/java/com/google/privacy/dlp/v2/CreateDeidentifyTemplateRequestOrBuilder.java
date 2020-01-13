@@ -58,10 +58,12 @@ public interface CreateDeidentifyTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The DeidentifyTemplate to create.
+   * Required. The DeidentifyTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the deidentifyTemplate field is set.
    */
@@ -70,10 +72,12 @@ public interface CreateDeidentifyTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The DeidentifyTemplate to create.
+   * Required. The DeidentifyTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The deidentifyTemplate.
    */
@@ -82,10 +86,12 @@ public interface CreateDeidentifyTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The DeidentifyTemplate to create.
+   * Required. The DeidentifyTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder getDeidentifyTemplateOrBuilder();
 

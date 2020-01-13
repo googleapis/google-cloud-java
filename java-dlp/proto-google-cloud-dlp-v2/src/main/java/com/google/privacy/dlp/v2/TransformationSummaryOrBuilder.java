@@ -227,23 +227,53 @@ public interface TransformationSummaryOrBuilder
   com.google.privacy.dlp.v2.RecordSuppressionOrBuilder getRecordSuppressOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Collection of all transformations that took place or had an error.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.TransformationSummary.SummaryResult> getResultsList();
   /**
+   *
+   *
+   * <pre>
+   * Collection of all transformations that took place or had an error.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   com.google.privacy.dlp.v2.TransformationSummary.SummaryResult getResults(int index);
   /**
+   *
+   *
+   * <pre>
+   * Collection of all transformations that took place or had an error.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   int getResultsCount();
   /**
+   *
+   *
+   * <pre>
+   * Collection of all transformations that took place or had an error.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.TransformationSummary.SummaryResultOrBuilder>
       getResultsOrBuilderList();
   /**
+   *
+   *
+   * <pre>
+   * Collection of all transformations that took place or had an error.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   com.google.privacy.dlp.v2.TransformationSummary.SummaryResultOrBuilder getResultsOrBuilder(

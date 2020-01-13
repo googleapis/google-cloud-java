@@ -181,21 +181,49 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     com.google.privacy.dlp.v2.InspectTemplateOrBuilder getSnapshotInspectTemplateOrBuilder();
 
     /**
+     *
+     *
+     * <pre>
+     * Inspect config.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
      *
      * @return Whether the jobConfig field is set.
      */
     boolean hasJobConfig();
     /**
+     *
+     *
+     * <pre>
+     * Inspect config.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
      *
      * @return The jobConfig.
      */
     com.google.privacy.dlp.v2.InspectJobConfig getJobConfig();
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Inspect config.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
+     */
     com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getJobConfigOrBuilder();
   }
-  /** Protobuf type {@code google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions} */
+  /**
+   *
+   *
+   * <pre>
+   * Snapshot of the inspection configuration.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions}
+   */
   public static final class RequestedOptions extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions)
@@ -355,6 +383,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     public static final int JOB_CONFIG_FIELD_NUMBER = 3;
     private com.google.privacy.dlp.v2.InspectJobConfig jobConfig_;
     /**
+     *
+     *
+     * <pre>
+     * Inspect config.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
      *
      * @return Whether the jobConfig field is set.
@@ -363,6 +397,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       return jobConfig_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * Inspect config.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
      *
      * @return The jobConfig.
@@ -372,7 +412,15 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           ? com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance()
           : jobConfig_;
     }
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Inspect config.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
+     */
     public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getJobConfigOrBuilder() {
       return getJobConfig();
     }
@@ -560,7 +608,15 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
-    /** Protobuf type {@code google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions} */
+    /**
+     *
+     *
+     * <pre>
+     * Snapshot of the inspection configuration.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions}
+     */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements
@@ -945,6 +1001,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
               com.google.privacy.dlp.v2.InspectJobConfigOrBuilder>
           jobConfigBuilder_;
       /**
+       *
+       *
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
        *
        * @return Whether the jobConfig field is set.
@@ -953,6 +1015,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         return jobConfigBuilder_ != null || jobConfig_ != null;
       }
       /**
+       *
+       *
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
        *
        * @return The jobConfig.
@@ -966,7 +1034,15 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           return jobConfigBuilder_.getMessage();
         }
       }
-      /** <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
+       */
       public Builder setJobConfig(com.google.privacy.dlp.v2.InspectJobConfig value) {
         if (jobConfigBuilder_ == null) {
           if (value == null) {
@@ -980,7 +1056,15 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
 
         return this;
       }
-      /** <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
+       */
       public Builder setJobConfig(
           com.google.privacy.dlp.v2.InspectJobConfig.Builder builderForValue) {
         if (jobConfigBuilder_ == null) {
@@ -992,7 +1076,15 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
 
         return this;
       }
-      /** <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
+       */
       public Builder mergeJobConfig(com.google.privacy.dlp.v2.InspectJobConfig value) {
         if (jobConfigBuilder_ == null) {
           if (jobConfig_ != null) {
@@ -1010,7 +1102,15 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
 
         return this;
       }
-      /** <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
+       */
       public Builder clearJobConfig() {
         if (jobConfigBuilder_ == null) {
           jobConfig_ = null;
@@ -1022,13 +1122,29 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
 
         return this;
       }
-      /** <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
+       */
       public com.google.privacy.dlp.v2.InspectJobConfig.Builder getJobConfigBuilder() {
 
         onChanged();
         return getJobConfigFieldBuilder().getBuilder();
       }
-      /** <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
+       */
       public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getJobConfigOrBuilder() {
         if (jobConfigBuilder_ != null) {
           return jobConfigBuilder_.getMessageOrBuilder();
@@ -1038,7 +1154,15 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
               : jobConfig_;
         }
       }
-      /** <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Inspect config.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
+       */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.InspectJobConfig,
               com.google.privacy.dlp.v2.InspectJobConfig.Builder,

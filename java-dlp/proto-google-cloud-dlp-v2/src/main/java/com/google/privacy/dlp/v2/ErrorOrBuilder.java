@@ -24,18 +24,38 @@ public interface ErrorOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * Detailed error codes and messages.
+   * </pre>
+   *
    * <code>.google.rpc.Status details = 1;</code>
    *
    * @return Whether the details field is set.
    */
   boolean hasDetails();
   /**
+   *
+   *
+   * <pre>
+   * Detailed error codes and messages.
+   * </pre>
+   *
    * <code>.google.rpc.Status details = 1;</code>
    *
    * @return The details.
    */
   com.google.rpc.Status getDetails();
-  /** <code>.google.rpc.Status details = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Detailed error codes and messages.
+   * </pre>
+   *
+   * <code>.google.rpc.Status details = 1;</code>
+   */
   com.google.rpc.StatusOrBuilder getDetailsOrBuilder();
 
   /**

@@ -133,7 +133,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional BCP-47 language code for localized infoType friendly
+   * BCP-47 language code for localized infoType friendly
    * names. If omitted, or if localized strings are not available,
    * en-US strings will be returned.
    * </pre>
@@ -157,7 +157,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional BCP-47 language code for localized infoType friendly
+   * BCP-47 language code for localized infoType friendly
    * names. If omitted, or if localized strings are not available,
    * en-US strings will be returned.
    * </pre>
@@ -184,7 +184,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional filter to only return infoTypes supported by certain parts of the
+   * filter to only return infoTypes supported by certain parts of the
    * API. Defaults to supported_by=INSPECT.
    * </pre>
    *
@@ -207,7 +207,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional filter to only return infoTypes supported by certain parts of the
+   * filter to only return infoTypes supported by certain parts of the
    * API. Defaults to supported_by=INSPECT.
    * </pre>
    *
@@ -629,7 +629,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional BCP-47 language code for localized infoType friendly
+     * BCP-47 language code for localized infoType friendly
      * names. If omitted, or if localized strings are not available,
      * en-US strings will be returned.
      * </pre>
@@ -653,7 +653,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional BCP-47 language code for localized infoType friendly
+     * BCP-47 language code for localized infoType friendly
      * names. If omitted, or if localized strings are not available,
      * en-US strings will be returned.
      * </pre>
@@ -677,7 +677,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional BCP-47 language code for localized infoType friendly
+     * BCP-47 language code for localized infoType friendly
      * names. If omitted, or if localized strings are not available,
      * en-US strings will be returned.
      * </pre>
@@ -700,7 +700,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional BCP-47 language code for localized infoType friendly
+     * BCP-47 language code for localized infoType friendly
      * names. If omitted, or if localized strings are not available,
      * en-US strings will be returned.
      * </pre>
@@ -719,7 +719,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional BCP-47 language code for localized infoType friendly
+     * BCP-47 language code for localized infoType friendly
      * names. If omitted, or if localized strings are not available,
      * en-US strings will be returned.
      * </pre>
@@ -745,7 +745,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional filter to only return infoTypes supported by certain parts of the
+     * filter to only return infoTypes supported by certain parts of the
      * API. Defaults to supported_by=INSPECT.
      * </pre>
      *
@@ -768,7 +768,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional filter to only return infoTypes supported by certain parts of the
+     * filter to only return infoTypes supported by certain parts of the
      * API. Defaults to supported_by=INSPECT.
      * </pre>
      *
@@ -791,7 +791,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional filter to only return infoTypes supported by certain parts of the
+     * filter to only return infoTypes supported by certain parts of the
      * API. Defaults to supported_by=INSPECT.
      * </pre>
      *
@@ -813,7 +813,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional filter to only return infoTypes supported by certain parts of the
+     * filter to only return infoTypes supported by certain parts of the
      * API. Defaults to supported_by=INSPECT.
      * </pre>
      *
@@ -831,7 +831,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional filter to only return infoTypes supported by certain parts of the
+     * filter to only return infoTypes supported by certain parts of the
      * API. Defaults to supported_by=INSPECT.
      * </pre>
      *

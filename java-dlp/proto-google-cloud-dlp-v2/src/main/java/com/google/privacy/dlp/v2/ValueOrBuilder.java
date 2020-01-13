@@ -24,6 +24,12 @@ public interface ValueOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * integer
+   * </pre>
+   *
    * <code>int64 integer_value = 1;</code>
    *
    * @return The integerValue.
@@ -31,6 +37,12 @@ public interface ValueOrBuilder
   long getIntegerValue();
 
   /**
+   *
+   *
+   * <pre>
+   * float
+   * </pre>
+   *
    * <code>double float_value = 2;</code>
    *
    * @return The floatValue.
@@ -38,12 +50,24 @@ public interface ValueOrBuilder
   double getFloatValue();
 
   /**
+   *
+   *
+   * <pre>
+   * string
+   * </pre>
+   *
    * <code>string string_value = 3;</code>
    *
    * @return The stringValue.
    */
   java.lang.String getStringValue();
   /**
+   *
+   *
+   * <pre>
+   * string
+   * </pre>
+   *
    * <code>string string_value = 3;</code>
    *
    * @return The bytes for stringValue.
@@ -51,6 +75,12 @@ public interface ValueOrBuilder
   com.google.protobuf.ByteString getStringValueBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * boolean
+   * </pre>
+   *
    * <code>bool boolean_value = 4;</code>
    *
    * @return The booleanValue.
@@ -58,57 +88,129 @@ public interface ValueOrBuilder
   boolean getBooleanValue();
 
   /**
+   *
+   *
+   * <pre>
+   * timestamp
+   * </pre>
+   *
    * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
    *
    * @return Whether the timestampValue field is set.
    */
   boolean hasTimestampValue();
   /**
+   *
+   *
+   * <pre>
+   * timestamp
+   * </pre>
+   *
    * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
    *
    * @return The timestampValue.
    */
   com.google.protobuf.Timestamp getTimestampValue();
-  /** <code>.google.protobuf.Timestamp timestamp_value = 5;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * timestamp
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
+   */
   com.google.protobuf.TimestampOrBuilder getTimestampValueOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * time of day
+   * </pre>
+   *
    * <code>.google.type.TimeOfDay time_value = 6;</code>
    *
    * @return Whether the timeValue field is set.
    */
   boolean hasTimeValue();
   /**
+   *
+   *
+   * <pre>
+   * time of day
+   * </pre>
+   *
    * <code>.google.type.TimeOfDay time_value = 6;</code>
    *
    * @return The timeValue.
    */
   com.google.type.TimeOfDay getTimeValue();
-  /** <code>.google.type.TimeOfDay time_value = 6;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * time of day
+   * </pre>
+   *
+   * <code>.google.type.TimeOfDay time_value = 6;</code>
+   */
   com.google.type.TimeOfDayOrBuilder getTimeValueOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * date
+   * </pre>
+   *
    * <code>.google.type.Date date_value = 7;</code>
    *
    * @return Whether the dateValue field is set.
    */
   boolean hasDateValue();
   /**
+   *
+   *
+   * <pre>
+   * date
+   * </pre>
+   *
    * <code>.google.type.Date date_value = 7;</code>
    *
    * @return The dateValue.
    */
   com.google.type.Date getDateValue();
-  /** <code>.google.type.Date date_value = 7;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * date
+   * </pre>
+   *
+   * <code>.google.type.Date date_value = 7;</code>
+   */
   com.google.type.DateOrBuilder getDateValueOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * day of week
+   * </pre>
+   *
    * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
    *
    * @return The enum numeric value on the wire for dayOfWeekValue.
    */
   int getDayOfWeekValueValue();
   /**
+   *
+   *
+   * <pre>
+   * day of week
+   * </pre>
+   *
    * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
    *
    * @return The dayOfWeekValue.

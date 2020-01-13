@@ -27,10 +27,11 @@ public interface StatisticalTableOrBuilder
    *
    *
    * <pre>
-   * Auxiliary table location. [required]
+   * Required. Auxiliary table location.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+   * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the table field is set.
    */
@@ -39,10 +40,11 @@ public interface StatisticalTableOrBuilder
    *
    *
    * <pre>
-   * Auxiliary table location. [required]
+   * Required. Auxiliary table location.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+   * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The table.
    */
@@ -51,10 +53,11 @@ public interface StatisticalTableOrBuilder
    *
    *
    * <pre>
-   * Auxiliary table location. [required]
+   * Required. Auxiliary table location.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+   * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder();
 
@@ -62,10 +65,11 @@ public interface StatisticalTableOrBuilder
    *
    *
    * <pre>
-   * Quasi-identifier columns. [required]
+   * Required. Quasi-identifier columns.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+   * <code>
+   * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   java.util.List<com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField> getQuasiIdsList();
@@ -73,10 +77,11 @@ public interface StatisticalTableOrBuilder
    *
    *
    * <pre>
-   * Quasi-identifier columns. [required]
+   * Required. Quasi-identifier columns.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+   * <code>
+   * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField getQuasiIds(int index);
@@ -84,10 +89,11 @@ public interface StatisticalTableOrBuilder
    *
    *
    * <pre>
-   * Quasi-identifier columns. [required]
+   * Required. Quasi-identifier columns.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+   * <code>
+   * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   int getQuasiIdsCount();
@@ -95,10 +101,11 @@ public interface StatisticalTableOrBuilder
    *
    *
    * <pre>
-   * Quasi-identifier columns. [required]
+   * Required. Quasi-identifier columns.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+   * <code>
+   * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierFieldOrBuilder>
@@ -107,10 +114,11 @@ public interface StatisticalTableOrBuilder
    *
    *
    * <pre>
-   * Quasi-identifier columns. [required]
+   * Required. Quasi-identifier columns.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1;
+   * <code>
+   * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierFieldOrBuilder getQuasiIdsOrBuilder(
@@ -120,12 +128,13 @@ public interface StatisticalTableOrBuilder
    *
    *
    * <pre>
-   * The relative frequency column must contain a floating-point number
+   * Required. The relative frequency column must contain a floating-point number
    * between 0 and 1 (inclusive). Null values are assumed to be zero.
-   * [required]
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the relativeFrequency field is set.
    */
@@ -134,12 +143,13 @@ public interface StatisticalTableOrBuilder
    *
    *
    * <pre>
-   * The relative frequency column must contain a floating-point number
+   * Required. The relative frequency column must contain a floating-point number
    * between 0 and 1 (inclusive). Null values are assumed to be zero.
-   * [required]
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The relativeFrequency.
    */
@@ -148,12 +158,13 @@ public interface StatisticalTableOrBuilder
    *
    *
    * <pre>
-   * The relative frequency column must contain a floating-point number
+   * Required. The relative frequency column must contain a floating-point number
    * between 0 and 1 (inclusive). Null values are assumed to be zero.
-   * [required]
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.privacy.dlp.v2.FieldIdOrBuilder getRelativeFrequencyOrBuilder();
 }

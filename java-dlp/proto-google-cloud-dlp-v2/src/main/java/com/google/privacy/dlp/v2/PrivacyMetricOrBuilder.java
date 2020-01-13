@@ -24,6 +24,12 @@ public interface PrivacyMetricOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * Numerical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
    * </code>
    *
@@ -31,6 +37,12 @@ public interface PrivacyMetricOrBuilder
    */
   boolean hasNumericalStatsConfig();
   /**
+   *
+   *
+   * <pre>
+   * Numerical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
    * </code>
    *
@@ -38,6 +50,12 @@ public interface PrivacyMetricOrBuilder
    */
   com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig getNumericalStatsConfig();
   /**
+   *
+   *
+   * <pre>
+   * Numerical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
    * </code>
    */
@@ -45,6 +63,12 @@ public interface PrivacyMetricOrBuilder
       getNumericalStatsConfigOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Categorical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
    * </code>
    *
@@ -52,6 +76,12 @@ public interface PrivacyMetricOrBuilder
    */
   boolean hasCategoricalStatsConfig();
   /**
+   *
+   *
+   * <pre>
+   * Categorical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
    * </code>
    *
@@ -59,6 +89,12 @@ public interface PrivacyMetricOrBuilder
    */
   com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig getCategoricalStatsConfig();
   /**
+   *
+   *
+   * <pre>
+   * Categorical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
    * </code>
    */
@@ -66,36 +102,82 @@ public interface PrivacyMetricOrBuilder
       getCategoricalStatsConfigOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * K-anonymity
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
    *
    * @return Whether the kAnonymityConfig field is set.
    */
   boolean hasKAnonymityConfig();
   /**
+   *
+   *
+   * <pre>
+   * K-anonymity
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
    *
    * @return The kAnonymityConfig.
    */
   com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig getKAnonymityConfig();
-  /** <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * K-anonymity
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
+   */
   com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder getKAnonymityConfigOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * l-diversity
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
    *
    * @return Whether the lDiversityConfig field is set.
    */
   boolean hasLDiversityConfig();
   /**
+   *
+   *
+   * <pre>
+   * l-diversity
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
    *
    * @return The lDiversityConfig.
    */
   com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig getLDiversityConfig();
-  /** <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * l-diversity
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
+   */
   com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder getLDiversityConfigOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * k-map
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
    * </code>
    *
@@ -103,6 +185,12 @@ public interface PrivacyMetricOrBuilder
    */
   boolean hasKMapEstimationConfig();
   /**
+   *
+   *
+   * <pre>
+   * k-map
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
    * </code>
    *
@@ -110,6 +198,12 @@ public interface PrivacyMetricOrBuilder
    */
   com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig getKMapEstimationConfig();
   /**
+   *
+   *
+   * <pre>
+   * k-map
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
    * </code>
    */
@@ -117,6 +211,12 @@ public interface PrivacyMetricOrBuilder
       getKMapEstimationConfigOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * delta-presence
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
    * </code>
@@ -125,6 +225,12 @@ public interface PrivacyMetricOrBuilder
    */
   boolean hasDeltaPresenceEstimationConfig();
   /**
+   *
+   *
+   * <pre>
+   * delta-presence
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
    * </code>
@@ -134,6 +240,12 @@ public interface PrivacyMetricOrBuilder
   com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
       getDeltaPresenceEstimationConfig();
   /**
+   *
+   *
+   * <pre>
+   * delta-presence
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
    * </code>

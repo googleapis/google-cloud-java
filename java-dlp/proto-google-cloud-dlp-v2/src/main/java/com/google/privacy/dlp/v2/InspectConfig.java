@@ -318,7 +318,15 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimitOrBuilder
         getMaxFindingsPerInfoTypeOrBuilder(int index);
   }
-  /** Protobuf type {@code google.privacy.dlp.v2.InspectConfig.FindingLimits} */
+  /**
+   *
+   *
+   * <pre>
+   * Configuration to control the number of findings returned.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.InspectConfig.FindingLimits}
+   */
   public static final class FindingLimits extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InspectConfig.FindingLimits)
@@ -1649,7 +1657,15 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-    /** Protobuf type {@code google.privacy.dlp.v2.InspectConfig.FindingLimits} */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration to control the number of findings returned.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.InspectConfig.FindingLimits}
+     */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements
@@ -2586,6 +2602,12 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int LIMITS_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.InspectConfig.FindingLimits limits_;
   /**
+   *
+   *
+   * <pre>
+   * Configuration to control the number of findings returned.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
    *
    * @return Whether the limits field is set.
@@ -2594,6 +2616,12 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     return limits_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * Configuration to control the number of findings returned.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
    *
    * @return The limits.
@@ -2603,7 +2631,15 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.privacy.dlp.v2.InspectConfig.FindingLimits.getDefaultInstance()
         : limits_;
   }
-  /** <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Configuration to control the number of findings returned.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
+   */
   public com.google.privacy.dlp.v2.InspectConfig.FindingLimitsOrBuilder getLimitsOrBuilder() {
     return getLimits();
   }
@@ -4062,6 +4098,12 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.InspectConfig.FindingLimitsOrBuilder>
         limitsBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Configuration to control the number of findings returned.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
      *
      * @return Whether the limits field is set.
@@ -4070,6 +4112,12 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       return limitsBuilder_ != null || limits_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * Configuration to control the number of findings returned.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
      *
      * @return The limits.
@@ -4083,7 +4131,15 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         return limitsBuilder_.getMessage();
       }
     }
-    /** <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration to control the number of findings returned.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
+     */
     public Builder setLimits(com.google.privacy.dlp.v2.InspectConfig.FindingLimits value) {
       if (limitsBuilder_ == null) {
         if (value == null) {
@@ -4097,7 +4153,15 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration to control the number of findings returned.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
+     */
     public Builder setLimits(
         com.google.privacy.dlp.v2.InspectConfig.FindingLimits.Builder builderForValue) {
       if (limitsBuilder_ == null) {
@@ -4109,7 +4173,15 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration to control the number of findings returned.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
+     */
     public Builder mergeLimits(com.google.privacy.dlp.v2.InspectConfig.FindingLimits value) {
       if (limitsBuilder_ == null) {
         if (limits_ != null) {
@@ -4127,7 +4199,15 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration to control the number of findings returned.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
+     */
     public Builder clearLimits() {
       if (limitsBuilder_ == null) {
         limits_ = null;
@@ -4139,13 +4219,29 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration to control the number of findings returned.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
+     */
     public com.google.privacy.dlp.v2.InspectConfig.FindingLimits.Builder getLimitsBuilder() {
 
       onChanged();
       return getLimitsFieldBuilder().getBuilder();
     }
-    /** <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration to control the number of findings returned.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
+     */
     public com.google.privacy.dlp.v2.InspectConfig.FindingLimitsOrBuilder getLimitsOrBuilder() {
       if (limitsBuilder_ != null) {
         return limitsBuilder_.getMessageOrBuilder();
@@ -4155,7 +4251,15 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
             : limits_;
       }
     }
-    /** <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration to control the number of findings returned.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.InspectConfig.FindingLimits,
             com.google.privacy.dlp.v2.InspectConfig.FindingLimits.Builder,

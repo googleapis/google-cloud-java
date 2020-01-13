@@ -219,18 +219,38 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
+     * <pre>
+     * Location to store findings outside of DLP.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
      *
      * @return Whether the outputConfig field is set.
      */
     boolean hasOutputConfig();
     /**
+     *
+     *
+     * <pre>
+     * Location to store findings outside of DLP.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
      *
      * @return The outputConfig.
      */
     com.google.privacy.dlp.v2.OutputStorageConfig getOutputConfig();
-    /** <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Location to store findings outside of DLP.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+     */
     com.google.privacy.dlp.v2.OutputStorageConfigOrBuilder getOutputConfigOrBuilder();
   }
   /**
@@ -339,6 +359,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public static final int OUTPUT_CONFIG_FIELD_NUMBER = 1;
     private com.google.privacy.dlp.v2.OutputStorageConfig outputConfig_;
     /**
+     *
+     *
+     * <pre>
+     * Location to store findings outside of DLP.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
      *
      * @return Whether the outputConfig field is set.
@@ -347,6 +373,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       return outputConfig_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * Location to store findings outside of DLP.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
      *
      * @return The outputConfig.
@@ -356,7 +388,15 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           ? com.google.privacy.dlp.v2.OutputStorageConfig.getDefaultInstance()
           : outputConfig_;
     }
-    /** <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Location to store findings outside of DLP.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+     */
     public com.google.privacy.dlp.v2.OutputStorageConfigOrBuilder getOutputConfigOrBuilder() {
       return getOutputConfig();
     }
@@ -704,6 +744,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               com.google.privacy.dlp.v2.OutputStorageConfigOrBuilder>
           outputConfigBuilder_;
       /**
+       *
+       *
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
        *
        * @return Whether the outputConfig field is set.
@@ -712,6 +758,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return outputConfigBuilder_ != null || outputConfig_ != null;
       }
       /**
+       *
+       *
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
        *
        * @return The outputConfig.
@@ -725,7 +777,15 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return outputConfigBuilder_.getMessage();
         }
       }
-      /** <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+       */
       public Builder setOutputConfig(com.google.privacy.dlp.v2.OutputStorageConfig value) {
         if (outputConfigBuilder_ == null) {
           if (value == null) {
@@ -739,7 +799,15 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
         return this;
       }
-      /** <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+       */
       public Builder setOutputConfig(
           com.google.privacy.dlp.v2.OutputStorageConfig.Builder builderForValue) {
         if (outputConfigBuilder_ == null) {
@@ -751,7 +819,15 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
         return this;
       }
-      /** <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+       */
       public Builder mergeOutputConfig(com.google.privacy.dlp.v2.OutputStorageConfig value) {
         if (outputConfigBuilder_ == null) {
           if (outputConfig_ != null) {
@@ -769,7 +845,15 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
         return this;
       }
-      /** <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+       */
       public Builder clearOutputConfig() {
         if (outputConfigBuilder_ == null) {
           outputConfig_ = null;
@@ -781,13 +865,29 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
         return this;
       }
-      /** <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+       */
       public com.google.privacy.dlp.v2.OutputStorageConfig.Builder getOutputConfigBuilder() {
 
         onChanged();
         return getOutputConfigFieldBuilder().getBuilder();
       }
-      /** <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+       */
       public com.google.privacy.dlp.v2.OutputStorageConfigOrBuilder getOutputConfigOrBuilder() {
         if (outputConfigBuilder_ != null) {
           return outputConfigBuilder_.getMessageOrBuilder();
@@ -797,7 +897,15 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               : outputConfig_;
         }
       }
-      /** <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Location to store findings outside of DLP.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
+       */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.OutputStorageConfig,
               com.google.privacy.dlp.v2.OutputStorageConfig.Builder,
@@ -3662,7 +3770,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Enable email notification to project owners and editors on job's
+   * Enable email notification for project owners and editors on job's
    * completion/failure.
    * </pre>
    *
@@ -3677,7 +3785,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Enable email notification to project owners and editors on job's
+   * Enable email notification for project owners and editors on job's
    * completion/failure.
    * </pre>
    *
@@ -3695,7 +3803,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Enable email notification to project owners and editors on job's
+   * Enable email notification for project owners and editors on job's
    * completion/failure.
    * </pre>
    *
@@ -5121,7 +5229,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *
@@ -5136,7 +5244,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *
@@ -5161,7 +5269,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *
@@ -5185,7 +5293,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *
@@ -5206,7 +5314,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *
@@ -5240,7 +5348,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *
@@ -5266,7 +5374,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *
@@ -5280,7 +5388,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *
@@ -5301,7 +5409,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification to project owners and editors on job's
+     * Enable email notification for project owners and editors on job's
      * completion/failure.
      * </pre>
      *

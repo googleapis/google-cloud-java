@@ -261,6 +261,12 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
 
   public static final int INSPECT_JOB_FIELD_NUMBER = 2;
   /**
+   *
+   *
+   * <pre>
+   * Set to control what and how to inspect.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
    *
    * @return Whether the inspectJob field is set.
@@ -269,6 +275,12 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
     return jobCase_ == 2;
   }
   /**
+   *
+   *
+   * <pre>
+   * Set to control what and how to inspect.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
    *
    * @return The inspectJob.
@@ -279,7 +291,15 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
     }
     return com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance();
   }
-  /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Set to control what and how to inspect.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+   */
   public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder() {
     if (jobCase_ == 2) {
       return (com.google.privacy.dlp.v2.InspectJobConfig) job_;
@@ -289,6 +309,12 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
 
   public static final int RISK_JOB_FIELD_NUMBER = 3;
   /**
+   *
+   *
+   * <pre>
+   * Set to choose what metric to calculate.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
    *
    * @return Whether the riskJob field is set.
@@ -297,6 +323,12 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
     return jobCase_ == 3;
   }
   /**
+   *
+   *
+   * <pre>
+   * Set to choose what metric to calculate.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
    *
    * @return The riskJob.
@@ -307,7 +339,15 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
     }
     return com.google.privacy.dlp.v2.RiskAnalysisJobConfig.getDefaultInstance();
   }
-  /** <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Set to choose what metric to calculate.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+   */
   public com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder getRiskJobOrBuilder() {
     if (jobCase_ == 3) {
       return (com.google.privacy.dlp.v2.RiskAnalysisJobConfig) job_;
@@ -975,6 +1015,12 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.InspectJobConfigOrBuilder>
         inspectJobBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
      *
      * @return Whether the inspectJob field is set.
@@ -983,6 +1029,12 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
       return jobCase_ == 2;
     }
     /**
+     *
+     *
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
      *
      * @return The inspectJob.
@@ -1000,7 +1052,15 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
         return com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+     */
     public Builder setInspectJob(com.google.privacy.dlp.v2.InspectJobConfig value) {
       if (inspectJobBuilder_ == null) {
         if (value == null) {
@@ -1014,7 +1074,15 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
       jobCase_ = 2;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+     */
     public Builder setInspectJob(
         com.google.privacy.dlp.v2.InspectJobConfig.Builder builderForValue) {
       if (inspectJobBuilder_ == null) {
@@ -1026,7 +1094,15 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
       jobCase_ = 2;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+     */
     public Builder mergeInspectJob(com.google.privacy.dlp.v2.InspectJobConfig value) {
       if (inspectJobBuilder_ == null) {
         if (jobCase_ == 2
@@ -1049,7 +1125,15 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
       jobCase_ = 2;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+     */
     public Builder clearInspectJob() {
       if (inspectJobBuilder_ == null) {
         if (jobCase_ == 2) {
@@ -1066,11 +1150,27 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+     */
     public com.google.privacy.dlp.v2.InspectJobConfig.Builder getInspectJobBuilder() {
       return getInspectJobFieldBuilder().getBuilder();
     }
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+     */
     public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder() {
       if ((jobCase_ == 2) && (inspectJobBuilder_ != null)) {
         return inspectJobBuilder_.getMessageOrBuilder();
@@ -1081,7 +1181,15 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
         return com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Set to control what and how to inspect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.InspectJobConfig,
             com.google.privacy.dlp.v2.InspectJobConfig.Builder,
@@ -1113,6 +1221,12 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder>
         riskJobBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
      *
      * @return Whether the riskJob field is set.
@@ -1121,6 +1235,12 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
       return jobCase_ == 3;
     }
     /**
+     *
+     *
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
      *
      * @return The riskJob.
@@ -1138,7 +1258,15 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
         return com.google.privacy.dlp.v2.RiskAnalysisJobConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+     */
     public Builder setRiskJob(com.google.privacy.dlp.v2.RiskAnalysisJobConfig value) {
       if (riskJobBuilder_ == null) {
         if (value == null) {
@@ -1152,7 +1280,15 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
       jobCase_ = 3;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+     */
     public Builder setRiskJob(
         com.google.privacy.dlp.v2.RiskAnalysisJobConfig.Builder builderForValue) {
       if (riskJobBuilder_ == null) {
@@ -1164,7 +1300,15 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
       jobCase_ = 3;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+     */
     public Builder mergeRiskJob(com.google.privacy.dlp.v2.RiskAnalysisJobConfig value) {
       if (riskJobBuilder_ == null) {
         if (jobCase_ == 3
@@ -1187,7 +1331,15 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
       jobCase_ = 3;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+     */
     public Builder clearRiskJob() {
       if (riskJobBuilder_ == null) {
         if (jobCase_ == 3) {
@@ -1204,11 +1356,27 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+     */
     public com.google.privacy.dlp.v2.RiskAnalysisJobConfig.Builder getRiskJobBuilder() {
       return getRiskJobFieldBuilder().getBuilder();
     }
-    /** <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+     */
     public com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder getRiskJobOrBuilder() {
       if ((jobCase_ == 3) && (riskJobBuilder_ != null)) {
         return riskJobBuilder_.getMessageOrBuilder();
@@ -1219,7 +1387,15 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
         return com.google.privacy.dlp.v2.RiskAnalysisJobConfig.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Set to choose what metric to calculate.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.RiskAnalysisJobConfig,
             com.google.privacy.dlp.v2.RiskAnalysisJobConfig.Builder,

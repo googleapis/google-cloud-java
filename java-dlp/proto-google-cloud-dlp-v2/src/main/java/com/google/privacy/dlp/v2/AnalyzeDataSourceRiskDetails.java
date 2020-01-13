@@ -2237,6 +2237,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       long getBucketValueCount();
     }
     /**
+     *
+     *
+     * <pre>
+     * Histogram of value frequencies in the column.
+     * </pre>
+     *
      * Protobuf type {@code
      * google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket}
      */
@@ -2726,6 +2732,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         return builder;
       }
       /**
+       *
+       *
+       * <pre>
+       * Histogram of value frequencies in the column.
+       * </pre>
+       *
        * Protobuf type {@code
        * google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket}
        */
@@ -6149,6 +6161,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       long getBucketValueCount();
     }
     /**
+     *
+     *
+     * <pre>
+     * Histogram of k-anonymity equivalence classes.
+     * </pre>
+     *
      * Protobuf type {@code
      * google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket}
      */
@@ -6672,6 +6690,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         return builder;
       }
       /**
+       *
+       *
+       * <pre>
+       * Histogram of k-anonymity equivalence classes.
+       * </pre>
+       *
        * Protobuf type {@code
        * google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket}
        */
@@ -10802,6 +10826,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       long getBucketValueCount();
     }
     /**
+     *
+     *
+     * <pre>
+     * Histogram of l-diversity equivalence class sensitive value frequencies.
+     * </pre>
+     *
      * Protobuf type {@code
      * google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket}
      */
@@ -11327,6 +11357,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         return builder;
       }
       /**
+       *
+       *
+       * <pre>
+       * Histogram of l-diversity equivalence class sensitive value frequencies.
+       * </pre>
+       *
        * Protobuf type {@code
        * google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket}
        */
@@ -21926,6 +21962,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
 
   public static final int NUMERICAL_STATS_RESULT_FIELD_NUMBER = 3;
   /**
+   *
+   *
+   * <pre>
+   * Numerical stats result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
    * </code>
@@ -21936,6 +21978,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     return resultCase_ == 3;
   }
   /**
+   *
+   *
+   * <pre>
+   * Numerical stats result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
    * </code>
@@ -21951,6 +21999,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         .getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * Numerical stats result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
    * </code>
@@ -21966,6 +22020,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
 
   public static final int CATEGORICAL_STATS_RESULT_FIELD_NUMBER = 4;
   /**
+   *
+   *
+   * <pre>
+   * Categorical stats result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
    * </code>
@@ -21976,6 +22036,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     return resultCase_ == 4;
   }
   /**
+   *
+   *
+   * <pre>
+   * Categorical stats result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
    * </code>
@@ -21992,6 +22058,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         .getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * Categorical stats result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
    * </code>
@@ -22008,6 +22080,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
 
   public static final int K_ANONYMITY_RESULT_FIELD_NUMBER = 5;
   /**
+   *
+   *
+   * <pre>
+   * K-anonymity result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
    * </code>
@@ -22018,6 +22096,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     return resultCase_ == 5;
   }
   /**
+   *
+   *
+   * <pre>
+   * K-anonymity result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
    * </code>
@@ -22033,6 +22117,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         .getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * K-anonymity result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
    * </code>
@@ -22048,6 +22138,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
 
   public static final int L_DIVERSITY_RESULT_FIELD_NUMBER = 6;
   /**
+   *
+   *
+   * <pre>
+   * L-divesity result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
    * </code>
@@ -22058,6 +22154,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     return resultCase_ == 6;
   }
   /**
+   *
+   *
+   * <pre>
+   * L-divesity result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
    * </code>
@@ -22073,6 +22175,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         .getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * L-divesity result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
    * </code>
@@ -22088,6 +22196,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
 
   public static final int K_MAP_ESTIMATION_RESULT_FIELD_NUMBER = 7;
   /**
+   *
+   *
+   * <pre>
+   * K-map result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
    * </code>
@@ -22098,6 +22212,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     return resultCase_ == 7;
   }
   /**
+   *
+   *
+   * <pre>
+   * K-map result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
    * </code>
@@ -22113,6 +22233,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         .getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * K-map result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
    * </code>
@@ -22128,6 +22254,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
 
   public static final int DELTA_PRESENCE_ESTIMATION_RESULT_FIELD_NUMBER = 9;
   /**
+   *
+   *
+   * <pre>
+   * Delta-presence result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
    * </code>
@@ -22138,6 +22270,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     return resultCase_ == 9;
   }
   /**
+   *
+   *
+   * <pre>
+   * Delta-presence result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
    * </code>
@@ -22154,6 +22292,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         .getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * Delta-presence result
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
    * </code>
@@ -23120,6 +23264,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResultOrBuilder>
         numericalStatsResultBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
      * </code>
@@ -23130,6 +23280,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return resultCase_ == 3;
     }
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
      * </code>
@@ -23154,6 +23310,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
      * </code>
@@ -23173,6 +23335,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
      * </code>
@@ -23190,6 +23358,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
      * </code>
@@ -23222,6 +23396,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
      * </code>
@@ -23243,6 +23423,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
      * </code>
@@ -23252,6 +23438,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return getNumericalStatsResultFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
      * </code>
@@ -23270,6 +23462,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
      * </code>
@@ -23309,6 +23507,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResultOrBuilder>
         categoricalStatsResultBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
      * </code>
@@ -23319,6 +23523,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return resultCase_ == 4;
     }
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
      * </code>
@@ -23343,6 +23553,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
      * </code>
@@ -23362,6 +23578,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
      * </code>
@@ -23379,6 +23601,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
      * </code>
@@ -23412,6 +23640,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
      * </code>
@@ -23433,6 +23667,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
      * </code>
@@ -23442,6 +23682,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return getCategoricalStatsResultFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
      * </code>
@@ -23460,6 +23706,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
      * </code>
@@ -23500,6 +23752,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResultOrBuilder>
         kAnonymityResultBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
      * </code>
@@ -23510,6 +23768,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return resultCase_ == 5;
     }
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
      * </code>
@@ -23533,6 +23797,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
      * </code>
@@ -23552,6 +23822,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
      * </code>
@@ -23569,6 +23845,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
      * </code>
@@ -23600,6 +23882,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
      * </code>
@@ -23621,6 +23909,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
      * </code>
@@ -23630,6 +23924,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return getKAnonymityResultFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
      * </code>
@@ -23647,6 +23947,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
      * </code>
@@ -23684,6 +23990,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResultOrBuilder>
         lDiversityResultBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
      * </code>
@@ -23694,6 +24006,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return resultCase_ == 6;
     }
     /**
+     *
+     *
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
      * </code>
@@ -23717,6 +24035,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
      * </code>
@@ -23736,6 +24060,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
      * </code>
@@ -23753,6 +24083,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
      * </code>
@@ -23784,6 +24120,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
      * </code>
@@ -23805,6 +24147,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
      * </code>
@@ -23814,6 +24162,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return getLDiversityResultFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
      * </code>
@@ -23831,6 +24185,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * L-divesity result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
      * </code>
@@ -23868,6 +24228,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResultOrBuilder>
         kMapEstimationResultBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
      * </code>
@@ -23878,6 +24244,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return resultCase_ == 7;
     }
     /**
+     *
+     *
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
      * </code>
@@ -23902,6 +24274,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
      * </code>
@@ -23921,6 +24299,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
      * </code>
@@ -23938,6 +24322,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
      * </code>
@@ -23970,6 +24360,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
      * </code>
@@ -23991,6 +24387,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
      * </code>
@@ -24000,6 +24402,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return getKMapEstimationResultFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
      * </code>
@@ -24018,6 +24426,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * K-map result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
      * </code>
@@ -24059,6 +24473,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 .DeltaPresenceEstimationResultOrBuilder>
         deltaPresenceEstimationResultBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
      * </code>
@@ -24069,6 +24489,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return resultCase_ == 9;
     }
     /**
+     *
+     *
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
      * </code>
@@ -24094,6 +24520,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
      * </code>
@@ -24114,6 +24546,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
      * </code>
@@ -24131,6 +24569,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
      * </code>
@@ -24165,6 +24609,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
      * </code>
@@ -24186,6 +24636,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
      * </code>
@@ -24196,6 +24652,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return getDeltaPresenceEstimationResultFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
      * </code>
@@ -24216,6 +24678,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Delta-presence result
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
      * </code>

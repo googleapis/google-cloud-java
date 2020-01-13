@@ -202,10 +202,12 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The InspectTemplate to create.
+   * Required. The InspectTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the inspectTemplate field is set.
    */
@@ -216,10 +218,12 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The InspectTemplate to create.
+   * Required. The InspectTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The inspectTemplate.
    */
@@ -232,10 +236,12 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The InspectTemplate to create.
+   * Required. The InspectTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.privacy.dlp.v2.InspectTemplateOrBuilder getInspectTemplateOrBuilder() {
     return getInspectTemplate();
@@ -853,10 +859,12 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The InspectTemplate to create.
+     * Required. The InspectTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the inspectTemplate field is set.
      */
@@ -867,10 +875,12 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The InspectTemplate to create.
+     * Required. The InspectTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The inspectTemplate.
      */
@@ -887,10 +897,12 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The InspectTemplate to create.
+     * Required. The InspectTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInspectTemplate(com.google.privacy.dlp.v2.InspectTemplate value) {
       if (inspectTemplateBuilder_ == null) {
@@ -909,10 +921,12 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The InspectTemplate to create.
+     * Required. The InspectTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInspectTemplate(
         com.google.privacy.dlp.v2.InspectTemplate.Builder builderForValue) {
@@ -929,10 +943,12 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The InspectTemplate to create.
+     * Required. The InspectTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeInspectTemplate(com.google.privacy.dlp.v2.InspectTemplate value) {
       if (inspectTemplateBuilder_ == null) {
@@ -955,10 +971,12 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The InspectTemplate to create.
+     * Required. The InspectTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearInspectTemplate() {
       if (inspectTemplateBuilder_ == null) {
@@ -975,10 +993,12 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The InspectTemplate to create.
+     * Required. The InspectTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.InspectTemplate.Builder getInspectTemplateBuilder() {
 
@@ -989,10 +1009,12 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The InspectTemplate to create.
+     * Required. The InspectTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.InspectTemplateOrBuilder getInspectTemplateOrBuilder() {
       if (inspectTemplateBuilder_ != null) {
@@ -1007,10 +1029,12 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The InspectTemplate to create.
+     * Required. The InspectTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectTemplate inspect_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.InspectTemplate,

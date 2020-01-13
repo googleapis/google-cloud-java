@@ -137,7 +137,15 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    * Protobuf enum {@code google.privacy.dlp.v2.OutputStorageConfig.OutputSchema}
    */
   public enum OutputSchema implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>OUTPUT_SCHEMA_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unused.
+     * </pre>
+     *
+     * <code>OUTPUT_SCHEMA_UNSPECIFIED = 0;</code>
+     */
     OUTPUT_SCHEMA_UNSPECIFIED(0),
     /**
      *
@@ -193,7 +201,15 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>OUTPUT_SCHEMA_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unused.
+     * </pre>
+     *
+     * <code>OUTPUT_SCHEMA_UNSPECIFIED = 0;</code>
+     */
     public static final int OUTPUT_SCHEMA_UNSPECIFIED_VALUE = 0;
     /**
      *

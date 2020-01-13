@@ -1884,7 +1884,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional message indicating that multiple rows might be associated to a
+     * Message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
      * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
@@ -1904,7 +1904,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional message indicating that multiple rows might be associated to a
+     * Message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
      * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
@@ -1924,7 +1924,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional message indicating that multiple rows might be associated to a
+     * Message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
      * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
@@ -2146,7 +2146,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional message indicating that multiple rows might be associated to a
+     * Message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
      * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
@@ -2168,7 +2168,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional message indicating that multiple rows might be associated to a
+     * Message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
      * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
@@ -2192,7 +2192,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional message indicating that multiple rows might be associated to a
+     * Message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
      * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
@@ -3032,7 +3032,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -3054,7 +3054,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -3082,7 +3082,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -3112,7 +3112,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -3139,7 +3139,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -3173,7 +3173,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -3201,7 +3201,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -3223,7 +3223,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -3249,7 +3249,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional message indicating that multiple rows might be associated to a
+       * Message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
        * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
@@ -4693,12 +4693,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField>
@@ -4707,12 +4707,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField getQuasiIds(int index);
@@ -4720,12 +4720,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     int getQuasiIdsCount();
@@ -4733,12 +4733,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     java.util.List<
@@ -4749,12 +4749,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder
@@ -4765,7 +4765,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-     * Required if no column is tagged with a region-specific InfoType (like
+     * Set if no column is tagged with a region-specific InfoType (like
      * US_ZIP_5) or a region code.
      * </pre>
      *
@@ -4779,7 +4779,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-     * Required if no column is tagged with a region-specific InfoType (like
+     * Set if no column is tagged with a region-specific InfoType (like
      * US_ZIP_5) or a region code.
      * </pre>
      *
@@ -4877,7 +4877,6 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    * using publicly available data (like the US Census), or using a custom
    * statistical model (indicated as one or several BigQuery tables), or by
    * extrapolating from the distribution of values in the input dataset.
-   * A column with a semantic tag attached.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig}
@@ -5016,10 +5015,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Identifies the column. [required]
+       * Required. Identifies the column.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return Whether the field field is set.
        */
@@ -5028,10 +5028,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Identifies the column. [required]
+       * Required. Identifies the column.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The field.
        */
@@ -5040,10 +5041,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Identifies the column. [required]
+       * Required. Identifies the column.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder();
 
@@ -5165,6 +5167,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
           getTagCase();
     }
     /**
+     *
+     *
+     * <pre>
+     * A column with a semantic tag attached.
+     * </pre>
+     *
      * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField}
      */
     public static final class TaggedField extends com.google.protobuf.GeneratedMessageV3
@@ -5353,10 +5361,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Identifies the column. [required]
+       * Required. Identifies the column.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return Whether the field field is set.
        */
@@ -5367,10 +5376,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Identifies the column. [required]
+       * Required. Identifies the column.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The field.
        */
@@ -5381,10 +5391,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Identifies the column. [required]
+       * Required. Identifies the column.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+       * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
         return getField();
@@ -5789,6 +5800,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
         return builder;
       }
       /**
+       *
+       *
+       * <pre>
+       * A column with a semantic tag attached.
+       * </pre>
+       *
        * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField}
        */
       public static final class Builder
@@ -6030,10 +6047,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          *
          * @return Whether the field field is set.
          */
@@ -6044,10 +6062,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          *
          * @return The field.
          */
@@ -6062,10 +6081,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public Builder setField(com.google.privacy.dlp.v2.FieldId value) {
           if (fieldBuilder_ == null) {
@@ -6084,10 +6104,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public Builder setField(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
           if (fieldBuilder_ == null) {
@@ -6103,10 +6124,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public Builder mergeField(com.google.privacy.dlp.v2.FieldId value) {
           if (fieldBuilder_ == null) {
@@ -6129,10 +6151,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public Builder clearField() {
           if (fieldBuilder_ == null) {
@@ -6149,10 +6172,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public com.google.privacy.dlp.v2.FieldId.Builder getFieldBuilder() {
 
@@ -6163,10 +6187,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
           if (fieldBuilder_ != null) {
@@ -6179,10 +6204,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Identifies the column. [required]
+         * Required. Identifies the column.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.privacy.dlp.v2.FieldId,
@@ -6841,10 +6867,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Auxiliary table location. [required]
+       * Required. Auxiliary table location.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return Whether the table field is set.
        */
@@ -6853,10 +6881,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Auxiliary table location. [required]
+       * Required. Auxiliary table location.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The table.
        */
@@ -6865,10 +6895,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Auxiliary table location. [required]
+       * Required. Auxiliary table location.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder();
 
@@ -6876,11 +6908,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       java.util.List<
@@ -6891,11 +6923,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField
@@ -6904,11 +6936,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       int getQuasiIdsCount();
@@ -6916,11 +6948,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       java.util.List<
@@ -6932,11 +6964,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
@@ -6947,12 +6979,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The relative frequency column must contain a floating-point number
+       * Required. The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
-       * [required]
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+       * <code>
+       * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return Whether the relativeFrequency field is set.
        */
@@ -6961,12 +6994,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The relative frequency column must contain a floating-point number
+       * Required. The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
-       * [required]
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+       * <code>
+       * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The relativeFrequency.
        */
@@ -6975,12 +7009,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The relative frequency column must contain a floating-point number
+       * Required. The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
-       * [required]
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+       * <code>
+       * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       com.google.privacy.dlp.v2.FieldIdOrBuilder getRelativeFrequencyOrBuilder();
     }
@@ -7136,27 +7171,59 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.MessageOrBuilder {
 
         /**
+         *
+         *
+         * <pre>
+         * Identifies the column.
+         * </pre>
+         *
          * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
          *
          * @return Whether the field field is set.
          */
         boolean hasField();
         /**
+         *
+         *
+         * <pre>
+         * Identifies the column.
+         * </pre>
+         *
          * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
          *
          * @return The field.
          */
         com.google.privacy.dlp.v2.FieldId getField();
-        /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the column.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         */
         com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder();
 
         /**
+         *
+         *
+         * <pre>
+         * A auxiliary field.
+         * </pre>
+         *
          * <code>string custom_tag = 2;</code>
          *
          * @return The customTag.
          */
         java.lang.String getCustomTag();
         /**
+         *
+         *
+         * <pre>
+         * A auxiliary field.
+         * </pre>
+         *
          * <code>string custom_tag = 2;</code>
          *
          * @return The bytes for customTag.
@@ -7280,6 +7347,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
         public static final int FIELD_FIELD_NUMBER = 1;
         private com.google.privacy.dlp.v2.FieldId field_;
         /**
+         *
+         *
+         * <pre>
+         * Identifies the column.
+         * </pre>
+         *
          * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
          *
          * @return Whether the field field is set.
@@ -7288,6 +7361,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
           return field_ != null;
         }
         /**
+         *
+         *
+         * <pre>
+         * Identifies the column.
+         * </pre>
+         *
          * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
          *
          * @return The field.
@@ -7295,7 +7374,15 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
         public com.google.privacy.dlp.v2.FieldId getField() {
           return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
         }
-        /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the column.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+         */
         public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
           return getField();
         }
@@ -7303,6 +7390,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
         public static final int CUSTOM_TAG_FIELD_NUMBER = 2;
         private volatile java.lang.Object customTag_;
         /**
+         *
+         *
+         * <pre>
+         * A auxiliary field.
+         * </pre>
+         *
          * <code>string custom_tag = 2;</code>
          *
          * @return The customTag.
@@ -7319,6 +7412,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
           }
         }
         /**
+         *
+         *
+         * <pre>
+         * A auxiliary field.
+         * </pre>
+         *
          * <code>string custom_tag = 2;</code>
          *
          * @return The bytes for customTag.
@@ -7752,6 +7851,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
                   com.google.privacy.dlp.v2.FieldIdOrBuilder>
               fieldBuilder_;
           /**
+           *
+           *
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
            * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
            *
            * @return Whether the field field is set.
@@ -7760,6 +7865,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
             return fieldBuilder_ != null || field_ != null;
           }
           /**
+           *
+           *
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
            * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
            *
            * @return The field.
@@ -7773,7 +7884,15 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
               return fieldBuilder_.getMessage();
             }
           }
-          /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
+           * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+           */
           public Builder setField(com.google.privacy.dlp.v2.FieldId value) {
             if (fieldBuilder_ == null) {
               if (value == null) {
@@ -7787,7 +7906,15 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
 
             return this;
           }
-          /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
+           * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+           */
           public Builder setField(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
             if (fieldBuilder_ == null) {
               field_ = builderForValue.build();
@@ -7798,7 +7925,15 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
 
             return this;
           }
-          /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
+           * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+           */
           public Builder mergeField(com.google.privacy.dlp.v2.FieldId value) {
             if (fieldBuilder_ == null) {
               if (field_ != null) {
@@ -7816,7 +7951,15 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
 
             return this;
           }
-          /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
+           * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+           */
           public Builder clearField() {
             if (fieldBuilder_ == null) {
               field_ = null;
@@ -7828,13 +7971,29 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
 
             return this;
           }
-          /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
+           * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+           */
           public com.google.privacy.dlp.v2.FieldId.Builder getFieldBuilder() {
 
             onChanged();
             return getFieldFieldBuilder().getBuilder();
           }
-          /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
+           * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+           */
           public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
             if (fieldBuilder_ != null) {
               return fieldBuilder_.getMessageOrBuilder();
@@ -7844,7 +8003,15 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
                   : field_;
             }
           }
-          /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+          /**
+           *
+           *
+           * <pre>
+           * Identifies the column.
+           * </pre>
+           *
+           * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+           */
           private com.google.protobuf.SingleFieldBuilderV3<
                   com.google.privacy.dlp.v2.FieldId,
                   com.google.privacy.dlp.v2.FieldId.Builder,
@@ -7864,6 +8031,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
 
           private java.lang.Object customTag_ = "";
           /**
+           *
+           *
+           * <pre>
+           * A auxiliary field.
+           * </pre>
+           *
            * <code>string custom_tag = 2;</code>
            *
            * @return The customTag.
@@ -7880,6 +8053,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
             }
           }
           /**
+           *
+           *
+           * <pre>
+           * A auxiliary field.
+           * </pre>
+           *
            * <code>string custom_tag = 2;</code>
            *
            * @return The bytes for customTag.
@@ -7896,6 +8075,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
             }
           }
           /**
+           *
+           *
+           * <pre>
+           * A auxiliary field.
+           * </pre>
+           *
            * <code>string custom_tag = 2;</code>
            *
            * @param value The customTag to set.
@@ -7911,6 +8096,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
             return this;
           }
           /**
+           *
+           *
+           * <pre>
+           * A auxiliary field.
+           * </pre>
+           *
            * <code>string custom_tag = 2;</code>
            *
            * @return This builder for chaining.
@@ -7922,6 +8113,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
             return this;
           }
           /**
+           *
+           *
+           * <pre>
+           * A auxiliary field.
+           * </pre>
+           *
            * <code>string custom_tag = 2;</code>
            *
            * @param value The bytes for customTag to set.
@@ -8004,10 +8201,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Auxiliary table location. [required]
+       * Required. Auxiliary table location.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return Whether the table field is set.
        */
@@ -8018,10 +8217,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Auxiliary table location. [required]
+       * Required. Auxiliary table location.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The table.
        */
@@ -8034,10 +8235,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Auxiliary table location. [required]
+       * Required. Auxiliary table location.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder() {
         return getTable();
@@ -8052,11 +8255,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public java.util.List<
@@ -8069,11 +8272,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public java.util.List<
@@ -8087,11 +8290,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public int getQuasiIdsCount() {
@@ -8101,11 +8304,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
@@ -8117,11 +8320,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Quasi-identifier columns. [required]
+       * Required. Quasi-identifier columns.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
@@ -8136,12 +8339,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The relative frequency column must contain a floating-point number
+       * Required. The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
-       * [required]
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+       * <code>
+       * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return Whether the relativeFrequency field is set.
        */
@@ -8152,12 +8356,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The relative frequency column must contain a floating-point number
+       * Required. The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
-       * [required]
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+       * <code>
+       * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The relativeFrequency.
        */
@@ -8170,12 +8375,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The relative frequency column must contain a floating-point number
+       * Required. The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
-       * [required]
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+       * <code>
+       * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.privacy.dlp.v2.FieldIdOrBuilder getRelativeFrequencyOrBuilder() {
         return getRelativeFrequency();
@@ -8644,10 +8850,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          *
          * @return Whether the table field is set.
          */
@@ -8658,10 +8866,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          *
          * @return The table.
          */
@@ -8678,10 +8888,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public Builder setTable(com.google.privacy.dlp.v2.BigQueryTable value) {
           if (tableBuilder_ == null) {
@@ -8700,10 +8912,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public Builder setTable(com.google.privacy.dlp.v2.BigQueryTable.Builder builderForValue) {
           if (tableBuilder_ == null) {
@@ -8719,10 +8933,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public Builder mergeTable(com.google.privacy.dlp.v2.BigQueryTable value) {
           if (tableBuilder_ == null) {
@@ -8745,10 +8961,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public Builder clearTable() {
           if (tableBuilder_ == null) {
@@ -8765,10 +8983,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public com.google.privacy.dlp.v2.BigQueryTable.Builder getTableBuilder() {
 
@@ -8779,10 +8999,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder() {
           if (tableBuilder_ != null) {
@@ -8797,10 +9019,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Auxiliary table location. [required]
+         * Required. Auxiliary table location.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.privacy.dlp.v2.BigQueryTable,
@@ -8847,11 +9071,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public java.util.List<
@@ -8868,11 +9092,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public int getQuasiIdsCount() {
@@ -8886,11 +9110,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
@@ -8906,11 +9130,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder setQuasiIds(
@@ -8933,11 +9157,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder setQuasiIds(
@@ -8958,11 +9182,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addQuasiIds(
@@ -8984,11 +9208,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addQuasiIds(
@@ -9011,11 +9235,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addQuasiIds(
@@ -9035,11 +9259,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addQuasiIds(
@@ -9060,11 +9284,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addAllQuasiIds(
@@ -9086,11 +9310,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder clearQuasiIds() {
@@ -9107,11 +9331,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder removeQuasiIds(int index) {
@@ -9128,11 +9352,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
@@ -9144,11 +9368,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
@@ -9164,11 +9388,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public java.util.List<
@@ -9186,11 +9410,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
@@ -9205,11 +9429,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
@@ -9225,11 +9449,11 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Quasi-identifier columns. [required]
+         * Required. Quasi-identifier columns.
          * </pre>
          *
          * <code>
-         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public java.util.List<
@@ -9272,12 +9496,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>
+         * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          *
          * @return Whether the relativeFrequency field is set.
          */
@@ -9288,12 +9513,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>
+         * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          *
          * @return The relativeFrequency.
          */
@@ -9310,12 +9536,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>
+         * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public Builder setRelativeFrequency(com.google.privacy.dlp.v2.FieldId value) {
           if (relativeFrequencyBuilder_ == null) {
@@ -9334,12 +9561,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>
+         * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public Builder setRelativeFrequency(
             com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
@@ -9356,12 +9584,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>
+         * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public Builder mergeRelativeFrequency(com.google.privacy.dlp.v2.FieldId value) {
           if (relativeFrequencyBuilder_ == null) {
@@ -9384,12 +9613,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>
+         * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public Builder clearRelativeFrequency() {
           if (relativeFrequencyBuilder_ == null) {
@@ -9406,12 +9636,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>
+         * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public com.google.privacy.dlp.v2.FieldId.Builder getRelativeFrequencyBuilder() {
 
@@ -9422,12 +9653,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>
+         * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public com.google.privacy.dlp.v2.FieldIdOrBuilder getRelativeFrequencyOrBuilder() {
           if (relativeFrequencyBuilder_ != null) {
@@ -9442,12 +9674,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The relative frequency column must contain a floating-point number
+         * Required. The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
-         * [required]
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
+         * <code>
+         * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.privacy.dlp.v2.FieldId,
@@ -9530,12 +9763,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField>
@@ -9546,12 +9779,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public java.util.List<
@@ -9564,12 +9797,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public int getQuasiIdsCount() {
@@ -9579,12 +9812,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField getQuasiIds(
@@ -9595,12 +9828,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two columns can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two columns can have the
+     * same tag.
      * </pre>
      *
      * <code>
-     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder
@@ -9615,7 +9848,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-     * Required if no column is tagged with a region-specific InfoType (like
+     * Set if no column is tagged with a region-specific InfoType (like
      * US_ZIP_5) or a region code.
      * </pre>
      *
@@ -9639,7 +9872,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-     * Required if no column is tagged with a region-specific InfoType (like
+     * Set if no column is tagged with a region-specific InfoType (like
      * US_ZIP_5) or a region code.
      * </pre>
      *
@@ -9946,7 +10179,6 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * using publicly available data (like the US Census), or using a custom
      * statistical model (indicated as one or several BigQuery tables), or by
      * extrapolating from the distribution of values in the input dataset.
-     * A column with a semantic tag attached.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig}
@@ -10221,12 +10453,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public java.util.List<
@@ -10242,12 +10474,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public int getQuasiIdsCount() {
@@ -10261,12 +10493,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField getQuasiIds(
@@ -10281,12 +10513,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder setQuasiIds(
@@ -10308,12 +10540,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder setQuasiIds(
@@ -10333,12 +10565,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder addQuasiIds(
@@ -10359,12 +10591,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder addQuasiIds(
@@ -10386,12 +10618,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder addQuasiIds(
@@ -10410,12 +10642,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder addQuasiIds(
@@ -10435,12 +10667,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder addAllQuasiIds(
@@ -10461,12 +10693,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder clearQuasiIds() {
@@ -10483,12 +10715,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder removeQuasiIds(int index) {
@@ -10505,12 +10737,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder
@@ -10521,12 +10753,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder
@@ -10541,12 +10773,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public java.util.List<
@@ -10563,12 +10795,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder
@@ -10582,12 +10814,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder
@@ -10602,12 +10834,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two columns can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two columns can have the
+       * same tag.
        * </pre>
        *
        * <code>
-       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public java.util.List<
@@ -10640,7 +10872,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
@@ -10664,7 +10896,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
@@ -10688,7 +10920,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
@@ -10711,7 +10943,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
@@ -10730,7 +10962,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
@@ -11274,55 +11506,65 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     java.util.List<com.google.privacy.dlp.v2.QuasiId> getQuasiIdsList();
     /**
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.privacy.dlp.v2.QuasiId getQuasiIds(int index);
     /**
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     int getQuasiIdsCount();
     /**
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     java.util.List<? extends com.google.privacy.dlp.v2.QuasiIdOrBuilder> getQuasiIdsOrBuilderList();
     /**
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.privacy.dlp.v2.QuasiIdOrBuilder getQuasiIdsOrBuilder(int index);
 
@@ -11331,7 +11573,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-     * Required if no column is tagged with a region-specific InfoType (like
+     * Set if no column is tagged with a region-specific InfoType (like
      * US_ZIP_5) or a region code.
      * </pre>
      *
@@ -11345,7 +11587,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-     * Required if no column is tagged with a region-specific InfoType (like
+     * Set if no column is tagged with a region-specific InfoType (like
      * US_ZIP_5) or a region code.
      * </pre>
      *
@@ -11553,11 +11795,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.privacy.dlp.v2.QuasiId> getQuasiIdsList() {
       return quasiIds_;
@@ -11566,11 +11810,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.privacy.dlp.v2.QuasiIdOrBuilder>
         getQuasiIdsOrBuilderList() {
@@ -11580,11 +11826,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getQuasiIdsCount() {
       return quasiIds_.size();
@@ -11593,11 +11841,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.QuasiId getQuasiIds(int index) {
       return quasiIds_.get(index);
@@ -11606,11 +11856,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields considered to be quasi-identifiers. No two fields can have the
-     * same tag. [required]
+     * Required. Fields considered to be quasi-identifiers. No two fields can have the
+     * same tag.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.QuasiIdOrBuilder getQuasiIdsOrBuilder(int index) {
       return quasiIds_.get(index);
@@ -11623,7 +11875,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-     * Required if no column is tagged with a region-specific InfoType (like
+     * Set if no column is tagged with a region-specific InfoType (like
      * US_ZIP_5) or a region code.
      * </pre>
      *
@@ -11647,7 +11899,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-     * Required if no column is tagged with a region-specific InfoType (like
+     * Set if no column is tagged with a region-specific InfoType (like
      * US_ZIP_5) or a region code.
      * </pre>
      *
@@ -12212,11 +12464,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public java.util.List<com.google.privacy.dlp.v2.QuasiId> getQuasiIdsList() {
         if (quasiIdsBuilder_ == null) {
@@ -12229,11 +12483,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public int getQuasiIdsCount() {
         if (quasiIdsBuilder_ == null) {
@@ -12246,11 +12502,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.privacy.dlp.v2.QuasiId getQuasiIds(int index) {
         if (quasiIdsBuilder_ == null) {
@@ -12263,11 +12521,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setQuasiIds(int index, com.google.privacy.dlp.v2.QuasiId value) {
         if (quasiIdsBuilder_ == null) {
@@ -12286,11 +12546,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setQuasiIds(
           int index, com.google.privacy.dlp.v2.QuasiId.Builder builderForValue) {
@@ -12307,11 +12569,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder addQuasiIds(com.google.privacy.dlp.v2.QuasiId value) {
         if (quasiIdsBuilder_ == null) {
@@ -12330,11 +12594,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder addQuasiIds(int index, com.google.privacy.dlp.v2.QuasiId value) {
         if (quasiIdsBuilder_ == null) {
@@ -12353,11 +12619,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder addQuasiIds(com.google.privacy.dlp.v2.QuasiId.Builder builderForValue) {
         if (quasiIdsBuilder_ == null) {
@@ -12373,11 +12641,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder addQuasiIds(
           int index, com.google.privacy.dlp.v2.QuasiId.Builder builderForValue) {
@@ -12394,11 +12664,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder addAllQuasiIds(
           java.lang.Iterable<? extends com.google.privacy.dlp.v2.QuasiId> values) {
@@ -12415,11 +12687,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder clearQuasiIds() {
         if (quasiIdsBuilder_ == null) {
@@ -12435,11 +12709,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder removeQuasiIds(int index) {
         if (quasiIdsBuilder_ == null) {
@@ -12455,11 +12731,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.privacy.dlp.v2.QuasiId.Builder getQuasiIdsBuilder(int index) {
         return getQuasiIdsFieldBuilder().getBuilder(index);
@@ -12468,11 +12746,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.privacy.dlp.v2.QuasiIdOrBuilder getQuasiIdsOrBuilder(int index) {
         if (quasiIdsBuilder_ == null) {
@@ -12485,11 +12765,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public java.util.List<? extends com.google.privacy.dlp.v2.QuasiIdOrBuilder>
           getQuasiIdsOrBuilderList() {
@@ -12503,11 +12785,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.privacy.dlp.v2.QuasiId.Builder addQuasiIdsBuilder() {
         return getQuasiIdsFieldBuilder()
@@ -12517,11 +12801,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.privacy.dlp.v2.QuasiId.Builder addQuasiIdsBuilder(int index) {
         return getQuasiIdsFieldBuilder()
@@ -12531,11 +12817,13 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields considered to be quasi-identifiers. No two fields can have the
-       * same tag. [required]
+       * Required. Fields considered to be quasi-identifiers. No two fields can have the
+       * same tag.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public java.util.List<com.google.privacy.dlp.v2.QuasiId.Builder> getQuasiIdsBuilderList() {
         return getQuasiIdsFieldBuilder().getBuilderList();
@@ -12564,7 +12852,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
@@ -12588,7 +12876,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
@@ -12612,7 +12900,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
@@ -12635,7 +12923,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
@@ -12654,7 +12942,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-       * Required if no column is tagged with a region-specific InfoType (like
+       * Set if no column is tagged with a region-specific InfoType (like
        * US_ZIP_5) or a region code.
        * </pre>
        *
@@ -13186,6 +13474,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NUMERICAL_STATS_CONFIG_FIELD_NUMBER = 1;
   /**
+   *
+   *
+   * <pre>
+   * Numerical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
    * </code>
    *
@@ -13195,6 +13489,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 1;
   }
   /**
+   *
+   *
+   * <pre>
+   * Numerical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
    * </code>
    *
@@ -13207,6 +13507,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
     return com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * Numerical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
    * </code>
    */
@@ -13220,6 +13526,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CATEGORICAL_STATS_CONFIG_FIELD_NUMBER = 2;
   /**
+   *
+   *
+   * <pre>
+   * Categorical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
    * </code>
    *
@@ -13229,6 +13541,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 2;
   }
   /**
+   *
+   *
+   * <pre>
+   * Categorical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
    * </code>
    *
@@ -13242,6 +13560,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
     return com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * Categorical stats
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
    * </code>
    */
@@ -13255,6 +13579,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
 
   public static final int K_ANONYMITY_CONFIG_FIELD_NUMBER = 3;
   /**
+   *
+   *
+   * <pre>
+   * K-anonymity
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
    *
    * @return Whether the kAnonymityConfig field is set.
@@ -13263,6 +13593,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 3;
   }
   /**
+   *
+   *
+   * <pre>
+   * K-anonymity
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
    *
    * @return The kAnonymityConfig.
@@ -13273,7 +13609,15 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.getDefaultInstance();
   }
-  /** <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * K-anonymity
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
+   */
   public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder
       getKAnonymityConfigOrBuilder() {
     if (typeCase_ == 3) {
@@ -13284,6 +13628,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
 
   public static final int L_DIVERSITY_CONFIG_FIELD_NUMBER = 4;
   /**
+   *
+   *
+   * <pre>
+   * l-diversity
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
    *
    * @return Whether the lDiversityConfig field is set.
@@ -13292,6 +13642,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 4;
   }
   /**
+   *
+   *
+   * <pre>
+   * l-diversity
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
    *
    * @return The lDiversityConfig.
@@ -13302,7 +13658,15 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.getDefaultInstance();
   }
-  /** <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * l-diversity
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
+   */
   public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder
       getLDiversityConfigOrBuilder() {
     if (typeCase_ == 4) {
@@ -13313,6 +13677,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
 
   public static final int K_MAP_ESTIMATION_CONFIG_FIELD_NUMBER = 5;
   /**
+   *
+   *
+   * <pre>
+   * k-map
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
    * </code>
    *
@@ -13322,6 +13692,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 5;
   }
   /**
+   *
+   *
+   * <pre>
+   * k-map
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
    * </code>
    *
@@ -13334,6 +13710,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
     return com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * k-map
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
    * </code>
    */
@@ -13347,6 +13729,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DELTA_PRESENCE_ESTIMATION_CONFIG_FIELD_NUMBER = 6;
   /**
+   *
+   *
+   * <pre>
+   * delta-presence
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
    * </code>
@@ -13357,6 +13745,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 6;
   }
   /**
+   *
+   *
+   * <pre>
+   * delta-presence
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
    * </code>
@@ -13372,6 +13766,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
         .getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * delta-presence
+   * </pre>
+   *
    * <code>
    * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
    * </code>
@@ -13887,6 +14287,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfigOrBuilder>
         numericalStatsConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
      * </code>
      *
@@ -13896,6 +14302,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 1;
     }
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
      * </code>
      *
@@ -13915,6 +14327,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
      * </code>
      */
@@ -13933,6 +14351,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
      * </code>
      */
@@ -13948,6 +14372,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
      * </code>
      */
@@ -13977,6 +14407,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
      * </code>
      */
@@ -13997,6 +14433,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
      * </code>
      */
@@ -14005,6 +14447,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return getNumericalStatsConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
      * </code>
      */
@@ -14020,6 +14468,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Numerical stats
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
      * </code>
      */
@@ -14054,6 +14508,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder>
         categoricalStatsConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
      * </code>
@@ -14064,6 +14524,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 2;
     }
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
      * </code>
@@ -14085,6 +14551,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
      * </code>
@@ -14104,6 +14576,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
      * </code>
@@ -14120,6 +14598,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
      * </code>
@@ -14150,6 +14634,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
      * </code>
@@ -14171,6 +14661,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
      * </code>
@@ -14180,6 +14676,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return getCategoricalStatsConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
      * </code>
@@ -14196,6 +14698,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Categorical stats
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
      * </code>
@@ -14232,6 +14740,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder>
         kAnonymityConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      *
      * @return Whether the kAnonymityConfig field is set.
@@ -14240,6 +14754,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 3;
     }
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      *
      * @return The kAnonymityConfig.
@@ -14258,6 +14778,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
     public Builder setKAnonymityConfig(
@@ -14275,6 +14801,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
     public Builder setKAnonymityConfig(
@@ -14289,6 +14821,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
     public Builder mergeKAnonymityConfig(
@@ -14316,6 +14854,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
     public Builder clearKAnonymityConfig() {
@@ -14335,6 +14879,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder
@@ -14342,6 +14892,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return getKAnonymityConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder
@@ -14356,6 +14912,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * K-anonymity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -14389,6 +14951,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder>
         lDiversityConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      *
      * @return Whether the lDiversityConfig field is set.
@@ -14397,6 +14965,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 4;
     }
     /**
+     *
+     *
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      *
      * @return The lDiversityConfig.
@@ -14415,6 +14989,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
     public Builder setLDiversityConfig(
@@ -14432,6 +15012,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
     public Builder setLDiversityConfig(
@@ -14446,6 +15032,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
     public Builder mergeLDiversityConfig(
@@ -14473,6 +15065,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
     public Builder clearLDiversityConfig() {
@@ -14492,6 +15090,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder
@@ -14499,6 +15103,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return getLDiversityConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder
@@ -14513,6 +15123,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * l-diversity
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -14546,6 +15162,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder>
         kMapEstimationConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
      * </code>
      *
@@ -14555,6 +15177,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 5;
     }
     /**
+     *
+     *
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
      * </code>
      *
@@ -14574,6 +15202,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
      * </code>
      */
@@ -14592,6 +15226,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
      * </code>
      */
@@ -14607,6 +15247,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
      * </code>
      */
@@ -14636,6 +15282,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
      * </code>
      */
@@ -14656,6 +15308,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
      * </code>
      */
@@ -14664,6 +15322,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return getKMapEstimationConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
      * </code>
      */
@@ -14679,6 +15343,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * k-map
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
      * </code>
      */
@@ -14713,6 +15383,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder>
         deltaPresenceEstimationConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
      * </code>
@@ -14723,6 +15399,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 6;
     }
     /**
+     *
+     *
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
      * </code>
@@ -14746,6 +15428,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
      * </code>
@@ -14765,6 +15453,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
      * </code>
@@ -14782,6 +15476,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
      * </code>
@@ -14812,6 +15512,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
      * </code>
@@ -14833,6 +15539,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
      * </code>
@@ -14842,6 +15554,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return getDeltaPresenceEstimationConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
      * </code>
@@ -14859,6 +15577,12 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * delta-presence
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
      * </code>

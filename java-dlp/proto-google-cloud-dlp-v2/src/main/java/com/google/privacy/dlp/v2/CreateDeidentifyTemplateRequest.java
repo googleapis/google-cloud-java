@@ -203,10 +203,12 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The DeidentifyTemplate to create.
+   * Required. The DeidentifyTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the deidentifyTemplate field is set.
    */
@@ -217,10 +219,12 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The DeidentifyTemplate to create.
+   * Required. The DeidentifyTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The deidentifyTemplate.
    */
@@ -233,10 +237,12 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The DeidentifyTemplate to create.
+   * Required. The DeidentifyTemplate to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder getDeidentifyTemplateOrBuilder() {
     return getDeidentifyTemplate();
@@ -854,10 +860,12 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the deidentifyTemplate field is set.
      */
@@ -868,10 +876,12 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The deidentifyTemplate.
      */
@@ -888,10 +898,12 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDeidentifyTemplate(com.google.privacy.dlp.v2.DeidentifyTemplate value) {
       if (deidentifyTemplateBuilder_ == null) {
@@ -910,10 +922,12 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDeidentifyTemplate(
         com.google.privacy.dlp.v2.DeidentifyTemplate.Builder builderForValue) {
@@ -930,10 +944,12 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeDeidentifyTemplate(com.google.privacy.dlp.v2.DeidentifyTemplate value) {
       if (deidentifyTemplateBuilder_ == null) {
@@ -956,10 +972,12 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearDeidentifyTemplate() {
       if (deidentifyTemplateBuilder_ == null) {
@@ -976,10 +994,12 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.DeidentifyTemplate.Builder getDeidentifyTemplateBuilder() {
 
@@ -990,10 +1010,12 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder getDeidentifyTemplateOrBuilder() {
       if (deidentifyTemplateBuilder_ != null) {
@@ -1008,10 +1030,12 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The DeidentifyTemplate to create.
+     * Required. The DeidentifyTemplate to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.DeidentifyTemplate,

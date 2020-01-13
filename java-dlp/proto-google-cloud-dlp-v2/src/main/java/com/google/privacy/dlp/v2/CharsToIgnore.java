@@ -117,9 +117,25 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.CharsToIgnore.Builder.class);
   }
 
-  /** Protobuf enum {@code google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore} */
+  /**
+   *
+   *
+   * <pre>
+   * Convenience enum for indication common characters to not transform.
+   * </pre>
+   *
+   * Protobuf enum {@code google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore}
+   */
   public enum CommonCharsToIgnore implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>COMMON_CHARS_TO_IGNORE_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unused.
+     * </pre>
+     *
+     * <code>COMMON_CHARS_TO_IGNORE_UNSPECIFIED = 0;</code>
+     */
     COMMON_CHARS_TO_IGNORE_UNSPECIFIED(0),
     /**
      *
@@ -174,7 +190,15 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>COMMON_CHARS_TO_IGNORE_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unused.
+     * </pre>
+     *
+     * <code>COMMON_CHARS_TO_IGNORE_UNSPECIFIED = 0;</code>
+     */
     public static final int COMMON_CHARS_TO_IGNORE_UNSPECIFIED_VALUE = 0;
     /**
      *
@@ -364,6 +388,12 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHARACTERS_TO_SKIP_FIELD_NUMBER = 1;
   /**
+   *
+   *
+   * <pre>
+   * Characters to not transform when masking.
+   * </pre>
+   *
    * <code>string characters_to_skip = 1;</code>
    *
    * @return The charactersToSkip.
@@ -385,6 +415,12 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
     }
   }
   /**
+   *
+   *
+   * <pre>
+   * Characters to not transform when masking.
+   * </pre>
+   *
    * <code>string characters_to_skip = 1;</code>
    *
    * @return The bytes for charactersToSkip.
@@ -408,6 +444,13 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COMMON_CHARACTERS_TO_IGNORE_FIELD_NUMBER = 2;
   /**
+   *
+   *
+   * <pre>
+   * Common characters to not transform when masking. Useful to avoid removing
+   * punctuation.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
    * </code>
    *
@@ -420,6 +463,13 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
     return 0;
   }
   /**
+   *
+   *
+   * <pre>
+   * Common characters to not transform when masking. Useful to avoid removing
+   * punctuation.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
    * </code>
    *
@@ -819,6 +869,12 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Characters to not transform when masking.
+     * </pre>
+     *
      * <code>string characters_to_skip = 1;</code>
      *
      * @return The charactersToSkip.
@@ -840,6 +896,12 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Characters to not transform when masking.
+     * </pre>
+     *
      * <code>string characters_to_skip = 1;</code>
      *
      * @return The bytes for charactersToSkip.
@@ -861,6 +923,12 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Characters to not transform when masking.
+     * </pre>
+     *
      * <code>string characters_to_skip = 1;</code>
      *
      * @param value The charactersToSkip to set.
@@ -876,6 +944,12 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Characters to not transform when masking.
+     * </pre>
+     *
      * <code>string characters_to_skip = 1;</code>
      *
      * @return This builder for chaining.
@@ -889,6 +963,12 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Characters to not transform when masking.
+     * </pre>
+     *
      * <code>string characters_to_skip = 1;</code>
      *
      * @param value The bytes for charactersToSkip to set.
@@ -906,6 +986,13 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Common characters to not transform when masking. Useful to avoid removing
+     * punctuation.
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
      * </code>
@@ -919,6 +1006,13 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       return 0;
     }
     /**
+     *
+     *
+     * <pre>
+     * Common characters to not transform when masking. Useful to avoid removing
+     * punctuation.
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
      * </code>
@@ -933,6 +1027,13 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Common characters to not transform when masking. Useful to avoid removing
+     * punctuation.
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
      * </code>
@@ -954,6 +1055,13 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
           .COMMON_CHARS_TO_IGNORE_UNSPECIFIED;
     }
     /**
+     *
+     *
+     * <pre>
+     * Common characters to not transform when masking. Useful to avoid removing
+     * punctuation.
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
      * </code>
@@ -972,6 +1080,13 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Common characters to not transform when masking. Useful to avoid removing
+     * punctuation.
+     * </pre>
+     *
      * <code>
      * .google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
      * </code>

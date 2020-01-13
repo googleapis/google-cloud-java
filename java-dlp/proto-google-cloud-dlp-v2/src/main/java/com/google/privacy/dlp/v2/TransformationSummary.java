@@ -218,20 +218,68 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    * Protobuf enum {@code google.privacy.dlp.v2.TransformationSummary.TransformationResultCode}
    */
   public enum TransformationResultCode implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>TRANSFORMATION_RESULT_CODE_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unused
+     * </pre>
+     *
+     * <code>TRANSFORMATION_RESULT_CODE_UNSPECIFIED = 0;</code>
+     */
     TRANSFORMATION_RESULT_CODE_UNSPECIFIED(0),
-    /** <code>SUCCESS = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Transformation completed without an error.
+     * </pre>
+     *
+     * <code>SUCCESS = 1;</code>
+     */
     SUCCESS(1),
-    /** <code>ERROR = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Transformation had an error.
+     * </pre>
+     *
+     * <code>ERROR = 2;</code>
+     */
     ERROR(2),
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>TRANSFORMATION_RESULT_CODE_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unused
+     * </pre>
+     *
+     * <code>TRANSFORMATION_RESULT_CODE_UNSPECIFIED = 0;</code>
+     */
     public static final int TRANSFORMATION_RESULT_CODE_UNSPECIFIED_VALUE = 0;
-    /** <code>SUCCESS = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Transformation completed without an error.
+     * </pre>
+     *
+     * <code>SUCCESS = 1;</code>
+     */
     public static final int SUCCESS_VALUE = 1;
-    /** <code>ERROR = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Transformation had an error.
+     * </pre>
+     *
+     * <code>ERROR = 2;</code>
+     */
     public static final int ERROR_VALUE = 2;
 
     public final int getNumber() {
@@ -322,6 +370,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
+     * <pre>
+     * Number of transformations counted by this result.
+     * </pre>
+     *
      * <code>int64 count = 1;</code>
      *
      * @return The count.
@@ -329,12 +383,24 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
     long getCount();
 
     /**
+     *
+     *
+     * <pre>
+     * Outcome of the transformation.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TransformationSummary.TransformationResultCode code = 2;</code>
      *
      * @return The enum numeric value on the wire for code.
      */
     int getCodeValue();
     /**
+     *
+     *
+     * <pre>
+     * Outcome of the transformation.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TransformationSummary.TransformationResultCode code = 2;</code>
      *
      * @return The code.
@@ -478,6 +544,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
     public static final int COUNT_FIELD_NUMBER = 1;
     private long count_;
     /**
+     *
+     *
+     * <pre>
+     * Number of transformations counted by this result.
+     * </pre>
+     *
      * <code>int64 count = 1;</code>
      *
      * @return The count.
@@ -489,6 +561,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
     public static final int CODE_FIELD_NUMBER = 2;
     private int code_;
     /**
+     *
+     *
+     * <pre>
+     * Outcome of the transformation.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TransformationSummary.TransformationResultCode code = 2;</code>
      *
      * @return The enum numeric value on the wire for code.
@@ -497,6 +575,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       return code_;
     }
     /**
+     *
+     *
+     * <pre>
+     * Outcome of the transformation.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TransformationSummary.TransformationResultCode code = 2;</code>
      *
      * @return The code.
@@ -925,6 +1009,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
 
       private long count_;
       /**
+       *
+       *
+       * <pre>
+       * Number of transformations counted by this result.
+       * </pre>
+       *
        * <code>int64 count = 1;</code>
        *
        * @return The count.
@@ -933,6 +1023,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return count_;
       }
       /**
+       *
+       *
+       * <pre>
+       * Number of transformations counted by this result.
+       * </pre>
+       *
        * <code>int64 count = 1;</code>
        *
        * @param value The count to set.
@@ -945,6 +1041,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Number of transformations counted by this result.
+       * </pre>
+       *
        * <code>int64 count = 1;</code>
        *
        * @return This builder for chaining.
@@ -958,6 +1060,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
 
       private int code_ = 0;
       /**
+       *
+       *
+       * <pre>
+       * Outcome of the transformation.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.TransformationSummary.TransformationResultCode code = 2;
        * </code>
        *
@@ -967,6 +1075,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return code_;
       }
       /**
+       *
+       *
+       * <pre>
+       * Outcome of the transformation.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.TransformationSummary.TransformationResultCode code = 2;
        * </code>
        *
@@ -979,6 +1093,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Outcome of the transformation.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.TransformationSummary.TransformationResultCode code = 2;
        * </code>
        *
@@ -993,6 +1113,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
             : result;
       }
       /**
+       *
+       *
+       * <pre>
+       * Outcome of the transformation.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.TransformationSummary.TransformationResultCode code = 2;
        * </code>
        *
@@ -1010,6 +1136,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Outcome of the transformation.
+       * </pre>
+       *
        * <code>.google.privacy.dlp.v2.TransformationSummary.TransformationResultCode code = 2;
        * </code>
        *
@@ -1443,6 +1575,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
   public static final int RESULTS_FIELD_NUMBER = 4;
   private java.util.List<com.google.privacy.dlp.v2.TransformationSummary.SummaryResult> results_;
   /**
+   *
+   *
+   * <pre>
+   * Collection of all transformations that took place or had an error.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   public java.util.List<com.google.privacy.dlp.v2.TransformationSummary.SummaryResult>
@@ -1450,6 +1588,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
     return results_;
   }
   /**
+   *
+   *
+   * <pre>
+   * Collection of all transformations that took place or had an error.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   public java.util.List<
@@ -1458,18 +1602,36 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
     return results_;
   }
   /**
+   *
+   *
+   * <pre>
+   * Collection of all transformations that took place or had an error.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   public int getResultsCount() {
     return results_.size();
   }
   /**
+   *
+   *
+   * <pre>
+   * Collection of all transformations that took place or had an error.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   public com.google.privacy.dlp.v2.TransformationSummary.SummaryResult getResults(int index) {
     return results_.get(index);
   }
   /**
+   *
+   *
+   * <pre>
+   * Collection of all transformations that took place or had an error.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   public com.google.privacy.dlp.v2.TransformationSummary.SummaryResultOrBuilder getResultsOrBuilder(
@@ -3189,6 +3351,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         resultsBuilder_;
 
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public java.util.List<com.google.privacy.dlp.v2.TransformationSummary.SummaryResult>
@@ -3200,6 +3368,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public int getResultsCount() {
@@ -3210,6 +3384,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public com.google.privacy.dlp.v2.TransformationSummary.SummaryResult getResults(int index) {
@@ -3220,6 +3400,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public Builder setResults(
@@ -3237,6 +3423,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public Builder setResults(
@@ -3252,6 +3444,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public Builder addResults(com.google.privacy.dlp.v2.TransformationSummary.SummaryResult value) {
@@ -3268,6 +3466,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public Builder addResults(
@@ -3285,6 +3489,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public Builder addResults(
@@ -3299,6 +3509,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public Builder addResults(
@@ -3314,6 +3530,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public Builder addAllResults(
@@ -3329,6 +3551,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public Builder clearResults() {
@@ -3342,6 +3570,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public Builder removeResults(int index) {
@@ -3355,6 +3589,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public com.google.privacy.dlp.v2.TransformationSummary.SummaryResult.Builder getResultsBuilder(
@@ -3362,6 +3602,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       return getResultsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public com.google.privacy.dlp.v2.TransformationSummary.SummaryResultOrBuilder
@@ -3373,6 +3619,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public java.util.List<
@@ -3385,6 +3637,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public com.google.privacy.dlp.v2.TransformationSummary.SummaryResult.Builder
@@ -3394,6 +3652,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
               com.google.privacy.dlp.v2.TransformationSummary.SummaryResult.getDefaultInstance());
     }
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public com.google.privacy.dlp.v2.TransformationSummary.SummaryResult.Builder addResultsBuilder(
@@ -3404,6 +3668,12 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
               com.google.privacy.dlp.v2.TransformationSummary.SummaryResult.getDefaultInstance());
     }
     /**
+     *
+     *
+     * <pre>
+     * Collection of all transformations that took place or had an error.
+     * </pre>
+     *
      * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
      */
     public java.util.List<com.google.privacy.dlp.v2.TransformationSummary.SummaryResult.Builder>

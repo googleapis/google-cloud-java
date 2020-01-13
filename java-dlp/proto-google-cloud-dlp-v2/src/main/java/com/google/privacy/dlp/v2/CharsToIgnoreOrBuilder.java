@@ -24,12 +24,24 @@ public interface CharsToIgnoreOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * Characters to not transform when masking.
+   * </pre>
+   *
    * <code>string characters_to_skip = 1;</code>
    *
    * @return The charactersToSkip.
    */
   java.lang.String getCharactersToSkip();
   /**
+   *
+   *
+   * <pre>
+   * Characters to not transform when masking.
+   * </pre>
+   *
    * <code>string characters_to_skip = 1;</code>
    *
    * @return The bytes for charactersToSkip.
@@ -37,6 +49,13 @@ public interface CharsToIgnoreOrBuilder
   com.google.protobuf.ByteString getCharactersToSkipBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * Common characters to not transform when masking. Useful to avoid removing
+   * punctuation.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
    * </code>
    *
@@ -44,6 +63,13 @@ public interface CharsToIgnoreOrBuilder
    */
   int getCommonCharactersToIgnoreValue();
   /**
+   *
+   *
+   * <pre>
+   * Common characters to not transform when masking. Useful to avoid removing
+   * punctuation.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
    * </code>
    *

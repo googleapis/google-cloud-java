@@ -27,10 +27,11 @@ public interface QuasiIdOrBuilder
    *
    *
    * <pre>
-   * Identifies the column. [required]
+   * Required. Identifies the column.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+   * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the field field is set.
    */
@@ -39,10 +40,11 @@ public interface QuasiIdOrBuilder
    *
    *
    * <pre>
-   * Identifies the column. [required]
+   * Required. Identifies the column.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+   * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The field.
    */
@@ -51,10 +53,11 @@ public interface QuasiIdOrBuilder
    *
    *
    * <pre>
-   * Identifies the column. [required]
+   * Required. Identifies the column.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
+   * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder();
 

@@ -18,7 +18,15 @@
 
 package com.google.privacy.dlp.v2;
 
-/** Protobuf type {@code google.privacy.dlp.v2.InspectJobConfig} */
+/**
+ *
+ *
+ * <pre>
+ * Controls what and how to inspect for findings.
+ * </pre>
+ *
+ * Protobuf type {@code google.privacy.dlp.v2.InspectJobConfig}
+ */
 public final class InspectJobConfig extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InspectJobConfig)
@@ -553,7 +561,15 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.privacy.dlp.v2.InspectJobConfig} */
+  /**
+   *
+   *
+   * <pre>
+   * Controls what and how to inspect for findings.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.InspectJobConfig}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.InspectJobConfig)

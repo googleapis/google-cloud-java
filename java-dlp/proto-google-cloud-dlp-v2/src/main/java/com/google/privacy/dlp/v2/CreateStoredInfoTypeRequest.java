@@ -202,10 +202,12 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Configuration of the storedInfoType to create.
+   * Required. Configuration of the storedInfoType to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the config field is set.
    */
@@ -216,10 +218,12 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Configuration of the storedInfoType to create.
+   * Required. Configuration of the storedInfoType to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The config.
    */
@@ -232,10 +236,12 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Configuration of the storedInfoType to create.
+   * Required. Configuration of the storedInfoType to create.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+   * <code>
+   * .google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder getConfigOrBuilder() {
     return getConfig();
@@ -853,10 +859,12 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Configuration of the storedInfoType to create.
+     * Required. Configuration of the storedInfoType to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the config field is set.
      */
@@ -867,10 +875,12 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Configuration of the storedInfoType to create.
+     * Required. Configuration of the storedInfoType to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The config.
      */
@@ -887,10 +897,12 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Configuration of the storedInfoType to create.
+     * Required. Configuration of the storedInfoType to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setConfig(com.google.privacy.dlp.v2.StoredInfoTypeConfig value) {
       if (configBuilder_ == null) {
@@ -909,10 +921,12 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Configuration of the storedInfoType to create.
+     * Required. Configuration of the storedInfoType to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setConfig(
         com.google.privacy.dlp.v2.StoredInfoTypeConfig.Builder builderForValue) {
@@ -929,10 +943,12 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Configuration of the storedInfoType to create.
+     * Required. Configuration of the storedInfoType to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeConfig(com.google.privacy.dlp.v2.StoredInfoTypeConfig value) {
       if (configBuilder_ == null) {
@@ -955,10 +971,12 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Configuration of the storedInfoType to create.
+     * Required. Configuration of the storedInfoType to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearConfig() {
       if (configBuilder_ == null) {
@@ -975,10 +993,12 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Configuration of the storedInfoType to create.
+     * Required. Configuration of the storedInfoType to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.StoredInfoTypeConfig.Builder getConfigBuilder() {
 
@@ -989,10 +1009,12 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Configuration of the storedInfoType to create.
+     * Required. Configuration of the storedInfoType to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder getConfigOrBuilder() {
       if (configBuilder_ != null) {
@@ -1007,10 +1029,12 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Configuration of the storedInfoType to create.
+     * Required. Configuration of the storedInfoType to create.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.StoredInfoTypeConfig,

@@ -112,9 +112,25 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.TimePartConfig.Builder.class);
   }
 
-  /** Protobuf enum {@code google.privacy.dlp.v2.TimePartConfig.TimePart} */
+  /**
+   *
+   *
+   * <pre>
+   * Components that make up time.
+   * </pre>
+   *
+   * Protobuf enum {@code google.privacy.dlp.v2.TimePartConfig.TimePart}
+   */
   public enum TimePart implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>TIME_PART_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unused
+     * </pre>
+     *
+     * <code>TIME_PART_UNSPECIFIED = 0;</code>
+     */
     TIME_PART_UNSPECIFIED(0),
     /**
      *
@@ -179,7 +195,15 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>TIME_PART_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unused
+     * </pre>
+     *
+     * <code>TIME_PART_UNSPECIFIED = 0;</code>
+     */
     public static final int TIME_PART_UNSPECIFIED_VALUE = 0;
     /**
      *
@@ -332,6 +356,12 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int PART_TO_EXTRACT_FIELD_NUMBER = 1;
   private int partToExtract_;
   /**
+   *
+   *
+   * <pre>
+   * The part of the time to keep.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
    *
    * @return The enum numeric value on the wire for partToExtract.
@@ -340,6 +370,12 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
     return partToExtract_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The part of the time to keep.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
    *
    * @return The partToExtract.
@@ -670,6 +706,12 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
 
     private int partToExtract_ = 0;
     /**
+     *
+     *
+     * <pre>
+     * The part of the time to keep.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
      *
      * @return The enum numeric value on the wire for partToExtract.
@@ -678,6 +720,12 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
       return partToExtract_;
     }
     /**
+     *
+     *
+     * <pre>
+     * The part of the time to keep.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
      *
      * @param value The enum numeric value on the wire for partToExtract to set.
@@ -689,6 +737,12 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The part of the time to keep.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
      *
      * @return The partToExtract.
@@ -702,6 +756,12 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
     /**
+     *
+     *
+     * <pre>
+     * The part of the time to keep.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
      *
      * @param value The partToExtract to set.
@@ -717,6 +777,12 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The part of the time to keep.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
      *
      * @return This builder for chaining.

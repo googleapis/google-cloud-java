@@ -227,10 +227,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Input field(s) to apply the transformation to. [required]
+   * Required. Input field(s) to apply the transformation to.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.privacy.dlp.v2.FieldId> getFieldsList() {
     return fields_;
@@ -239,10 +241,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Input field(s) to apply the transformation to. [required]
+   * Required. Input field(s) to apply the transformation to.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
       getFieldsOrBuilderList() {
@@ -252,10 +256,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Input field(s) to apply the transformation to. [required]
+   * Required. Input field(s) to apply the transformation to.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getFieldsCount() {
     return fields_.size();
@@ -264,10 +270,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Input field(s) to apply the transformation to. [required]
+   * Required. Input field(s) to apply the transformation to.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.privacy.dlp.v2.FieldId getFields(int index) {
     return fields_.get(index);
@@ -276,10 +284,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Input field(s) to apply the transformation to. [required]
+   * Required. Input field(s) to apply the transformation to.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldsOrBuilder(int index) {
     return fields_.get(index);
@@ -293,7 +303,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    * <pre>
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
-   * that are not used in the actual transformation. [optional]
+   * that are not used in the actual transformation.
    * Example Use Cases:
    * - Apply a different bucket transformation to an age column if the zip code
    * column for the same record is within a specific range.
@@ -313,7 +323,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    * <pre>
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
-   * that are not used in the actual transformation. [optional]
+   * that are not used in the actual transformation.
    * Example Use Cases:
    * - Apply a different bucket transformation to an age column if the zip code
    * column for the same record is within a specific range.
@@ -335,7 +345,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    * <pre>
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
-   * that are not used in the actual transformation. [optional]
+   * that are not used in the actual transformation.
    * Example Use Cases:
    * - Apply a different bucket transformation to an age column if the zip code
    * column for the same record is within a specific range.
@@ -941,10 +951,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.privacy.dlp.v2.FieldId> getFieldsList() {
       if (fieldsBuilder_ == null) {
@@ -957,10 +969,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getFieldsCount() {
       if (fieldsBuilder_ == null) {
@@ -973,10 +987,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.FieldId getFields(int index) {
       if (fieldsBuilder_ == null) {
@@ -989,10 +1005,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFields(int index, com.google.privacy.dlp.v2.FieldId value) {
       if (fieldsBuilder_ == null) {
@@ -1011,10 +1029,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFields(int index, com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (fieldsBuilder_ == null) {
@@ -1030,10 +1050,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addFields(com.google.privacy.dlp.v2.FieldId value) {
       if (fieldsBuilder_ == null) {
@@ -1052,10 +1074,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addFields(int index, com.google.privacy.dlp.v2.FieldId value) {
       if (fieldsBuilder_ == null) {
@@ -1074,10 +1098,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addFields(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (fieldsBuilder_ == null) {
@@ -1093,10 +1119,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addFields(int index, com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (fieldsBuilder_ == null) {
@@ -1112,10 +1140,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllFields(
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.FieldId> values) {
@@ -1132,10 +1162,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearFields() {
       if (fieldsBuilder_ == null) {
@@ -1151,10 +1183,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeFields(int index) {
       if (fieldsBuilder_ == null) {
@@ -1170,10 +1204,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder getFieldsBuilder(int index) {
       return getFieldsFieldBuilder().getBuilder(index);
@@ -1182,10 +1218,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldsOrBuilder(int index) {
       if (fieldsBuilder_ == null) {
@@ -1198,10 +1236,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
         getFieldsOrBuilderList() {
@@ -1215,10 +1255,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder addFieldsBuilder() {
       return getFieldsFieldBuilder()
@@ -1228,10 +1270,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder addFieldsBuilder(int index) {
       return getFieldsFieldBuilder()
@@ -1241,10 +1285,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input field(s) to apply the transformation to. [required]
+     * Required. Input field(s) to apply the transformation to.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.privacy.dlp.v2.FieldId.Builder> getFieldsBuilderList() {
       return getFieldsFieldBuilder().getBuilderList();
@@ -1279,7 +1325,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
@@ -1299,7 +1345,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
@@ -1325,7 +1371,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
@@ -1353,7 +1399,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
@@ -1378,7 +1424,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
@@ -1410,7 +1456,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
@@ -1436,7 +1482,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
@@ -1456,7 +1502,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
@@ -1480,7 +1526,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
-     * that are not used in the actual transformation. [optional]
+     * that are not used in the actual transformation.
      * Example Use Cases:
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.

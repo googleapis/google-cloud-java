@@ -199,7 +199,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional page token to continue retrieval. Comes from previous call
+   * Page token to continue retrieval. Comes from previous call
    * to `ListStoredInfoTypes`.
    * </pre>
    *
@@ -222,7 +222,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional page token to continue retrieval. Comes from previous call
+   * Page token to continue retrieval. Comes from previous call
    * to `ListStoredInfoTypes`.
    * </pre>
    *
@@ -248,7 +248,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional size of the page, can be limited by server. If zero server returns
+   * Size of the page, can be limited by server. If zero server returns
    * a page of max size 100.
    * </pre>
    *
@@ -266,7 +266,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional comma separated list of fields to order by,
+   * Comma separated list of fields to order by,
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.
@@ -298,7 +298,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional comma separated list of fields to order by,
+   * Comma separated list of fields to order by,
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.
@@ -883,7 +883,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to `ListStoredInfoTypes`.
      * </pre>
      *
@@ -906,7 +906,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to `ListStoredInfoTypes`.
      * </pre>
      *
@@ -929,7 +929,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to `ListStoredInfoTypes`.
      * </pre>
      *
@@ -951,7 +951,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to `ListStoredInfoTypes`.
      * </pre>
      *
@@ -969,7 +969,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from previous call
      * to `ListStoredInfoTypes`.
      * </pre>
      *
@@ -994,7 +994,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional size of the page, can be limited by server. If zero server returns
+     * Size of the page, can be limited by server. If zero server returns
      * a page of max size 100.
      * </pre>
      *
@@ -1009,7 +1009,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional size of the page, can be limited by server. If zero server returns
+     * Size of the page, can be limited by server. If zero server returns
      * a page of max size 100.
      * </pre>
      *
@@ -1028,7 +1028,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional size of the page, can be limited by server. If zero server returns
+     * Size of the page, can be limited by server. If zero server returns
      * a page of max size 100.
      * </pre>
      *
@@ -1048,7 +1048,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional comma separated list of fields to order by,
+     * Comma separated list of fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -1080,7 +1080,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional comma separated list of fields to order by,
+     * Comma separated list of fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -1112,7 +1112,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional comma separated list of fields to order by,
+     * Comma separated list of fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -1143,7 +1143,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional comma separated list of fields to order by,
+     * Comma separated list of fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
@@ -1170,7 +1170,7 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional comma separated list of fields to order by,
+     * Comma separated list of fields to order by,
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.

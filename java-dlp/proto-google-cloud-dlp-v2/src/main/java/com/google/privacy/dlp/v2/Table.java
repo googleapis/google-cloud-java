@@ -139,18 +139,66 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Table.Row)
       com.google.protobuf.MessageOrBuilder {
 
-    /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+     */
     java.util.List<com.google.privacy.dlp.v2.Value> getValuesList();
-    /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+     */
     com.google.privacy.dlp.v2.Value getValues(int index);
-    /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+     */
     int getValuesCount();
-    /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+     */
     java.util.List<? extends com.google.privacy.dlp.v2.ValueOrBuilder> getValuesOrBuilderList();
-    /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+     */
     com.google.privacy.dlp.v2.ValueOrBuilder getValuesOrBuilder(int index);
   }
-  /** Protobuf type {@code google.privacy.dlp.v2.Table.Row} */
+  /**
+   *
+   *
+   * <pre>
+   * Values of the row.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.Table.Row}
+   */
   public static final class Row extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Table.Row)
@@ -244,24 +292,64 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
     public static final int VALUES_FIELD_NUMBER = 1;
     private java.util.List<com.google.privacy.dlp.v2.Value> values_;
-    /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+     */
     public java.util.List<com.google.privacy.dlp.v2.Value> getValuesList() {
       return values_;
     }
-    /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+     */
     public java.util.List<? extends com.google.privacy.dlp.v2.ValueOrBuilder>
         getValuesOrBuilderList() {
       return values_;
     }
-    /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+     */
     public int getValuesCount() {
       return values_.size();
     }
-    /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+     */
     public com.google.privacy.dlp.v2.Value getValues(int index) {
       return values_.get(index);
     }
-    /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Individual cells.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+     */
     public com.google.privacy.dlp.v2.ValueOrBuilder getValuesOrBuilder(int index) {
       return values_.get(index);
     }
@@ -426,7 +514,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-    /** Protobuf type {@code google.privacy.dlp.v2.Table.Row} */
+    /**
+     *
+     *
+     * <pre>
+     * Values of the row.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.Table.Row}
+     */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements
@@ -633,7 +729,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
               com.google.privacy.dlp.v2.ValueOrBuilder>
           valuesBuilder_;
 
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public java.util.List<com.google.privacy.dlp.v2.Value> getValuesList() {
         if (valuesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(values_);
@@ -641,7 +745,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           return valuesBuilder_.getMessageList();
         }
       }
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public int getValuesCount() {
         if (valuesBuilder_ == null) {
           return values_.size();
@@ -649,7 +761,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           return valuesBuilder_.getCount();
         }
       }
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public com.google.privacy.dlp.v2.Value getValues(int index) {
         if (valuesBuilder_ == null) {
           return values_.get(index);
@@ -657,7 +777,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           return valuesBuilder_.getMessage(index);
         }
       }
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public Builder setValues(int index, com.google.privacy.dlp.v2.Value value) {
         if (valuesBuilder_ == null) {
           if (value == null) {
@@ -671,7 +799,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public Builder setValues(int index, com.google.privacy.dlp.v2.Value.Builder builderForValue) {
         if (valuesBuilder_ == null) {
           ensureValuesIsMutable();
@@ -682,7 +818,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public Builder addValues(com.google.privacy.dlp.v2.Value value) {
         if (valuesBuilder_ == null) {
           if (value == null) {
@@ -696,7 +840,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public Builder addValues(int index, com.google.privacy.dlp.v2.Value value) {
         if (valuesBuilder_ == null) {
           if (value == null) {
@@ -710,7 +862,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public Builder addValues(com.google.privacy.dlp.v2.Value.Builder builderForValue) {
         if (valuesBuilder_ == null) {
           ensureValuesIsMutable();
@@ -721,7 +881,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public Builder addValues(int index, com.google.privacy.dlp.v2.Value.Builder builderForValue) {
         if (valuesBuilder_ == null) {
           ensureValuesIsMutable();
@@ -732,7 +900,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public Builder addAllValues(
           java.lang.Iterable<? extends com.google.privacy.dlp.v2.Value> values) {
         if (valuesBuilder_ == null) {
@@ -744,7 +920,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public Builder clearValues() {
         if (valuesBuilder_ == null) {
           values_ = java.util.Collections.emptyList();
@@ -755,7 +939,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public Builder removeValues(int index) {
         if (valuesBuilder_ == null) {
           ensureValuesIsMutable();
@@ -766,11 +958,27 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public com.google.privacy.dlp.v2.Value.Builder getValuesBuilder(int index) {
         return getValuesFieldBuilder().getBuilder(index);
       }
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public com.google.privacy.dlp.v2.ValueOrBuilder getValuesOrBuilder(int index) {
         if (valuesBuilder_ == null) {
           return values_.get(index);
@@ -778,7 +986,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           return valuesBuilder_.getMessageOrBuilder(index);
         }
       }
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public java.util.List<? extends com.google.privacy.dlp.v2.ValueOrBuilder>
           getValuesOrBuilderList() {
         if (valuesBuilder_ != null) {
@@ -787,17 +1003,41 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(values_);
         }
       }
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public com.google.privacy.dlp.v2.Value.Builder addValuesBuilder() {
         return getValuesFieldBuilder()
             .addBuilder(com.google.privacy.dlp.v2.Value.getDefaultInstance());
       }
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public com.google.privacy.dlp.v2.Value.Builder addValuesBuilder(int index) {
         return getValuesFieldBuilder()
             .addBuilder(index, com.google.privacy.dlp.v2.Value.getDefaultInstance());
       }
-      /** <code>repeated .google.privacy.dlp.v2.Value values = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * Individual cells.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
+       */
       public java.util.List<com.google.privacy.dlp.v2.Value.Builder> getValuesBuilderList() {
         return getValuesFieldBuilder().getBuilderList();
       }
@@ -873,48 +1113,128 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HEADERS_FIELD_NUMBER = 1;
   private java.util.List<com.google.privacy.dlp.v2.FieldId> headers_;
-  /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Headers of the table.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+   */
   public java.util.List<com.google.privacy.dlp.v2.FieldId> getHeadersList() {
     return headers_;
   }
-  /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Headers of the table.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+   */
   public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
       getHeadersOrBuilderList() {
     return headers_;
   }
-  /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Headers of the table.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+   */
   public int getHeadersCount() {
     return headers_.size();
   }
-  /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Headers of the table.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+   */
   public com.google.privacy.dlp.v2.FieldId getHeaders(int index) {
     return headers_.get(index);
   }
-  /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Headers of the table.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+   */
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getHeadersOrBuilder(int index) {
     return headers_.get(index);
   }
 
   public static final int ROWS_FIELD_NUMBER = 2;
   private java.util.List<com.google.privacy.dlp.v2.Table.Row> rows_;
-  /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Rows of the table.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+   */
   public java.util.List<com.google.privacy.dlp.v2.Table.Row> getRowsList() {
     return rows_;
   }
-  /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Rows of the table.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+   */
   public java.util.List<? extends com.google.privacy.dlp.v2.Table.RowOrBuilder>
       getRowsOrBuilderList() {
     return rows_;
   }
-  /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Rows of the table.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+   */
   public int getRowsCount() {
     return rows_.size();
   }
-  /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Rows of the table.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+   */
   public com.google.privacy.dlp.v2.Table.Row getRows(int index) {
     return rows_.get(index);
   }
-  /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Rows of the table.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+   */
   public com.google.privacy.dlp.v2.Table.RowOrBuilder getRowsOrBuilder(int index) {
     return rows_.get(index);
   }
@@ -1345,7 +1665,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.FieldIdOrBuilder>
         headersBuilder_;
 
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public java.util.List<com.google.privacy.dlp.v2.FieldId> getHeadersList() {
       if (headersBuilder_ == null) {
         return java.util.Collections.unmodifiableList(headers_);
@@ -1353,7 +1681,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return headersBuilder_.getMessageList();
       }
     }
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public int getHeadersCount() {
       if (headersBuilder_ == null) {
         return headers_.size();
@@ -1361,7 +1697,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return headersBuilder_.getCount();
       }
     }
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public com.google.privacy.dlp.v2.FieldId getHeaders(int index) {
       if (headersBuilder_ == null) {
         return headers_.get(index);
@@ -1369,7 +1713,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return headersBuilder_.getMessage(index);
       }
     }
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public Builder setHeaders(int index, com.google.privacy.dlp.v2.FieldId value) {
       if (headersBuilder_ == null) {
         if (value == null) {
@@ -1383,7 +1735,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public Builder setHeaders(
         int index, com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (headersBuilder_ == null) {
@@ -1395,7 +1755,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public Builder addHeaders(com.google.privacy.dlp.v2.FieldId value) {
       if (headersBuilder_ == null) {
         if (value == null) {
@@ -1409,7 +1777,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public Builder addHeaders(int index, com.google.privacy.dlp.v2.FieldId value) {
       if (headersBuilder_ == null) {
         if (value == null) {
@@ -1423,7 +1799,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public Builder addHeaders(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (headersBuilder_ == null) {
         ensureHeadersIsMutable();
@@ -1434,7 +1818,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public Builder addHeaders(
         int index, com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (headersBuilder_ == null) {
@@ -1446,7 +1838,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public Builder addAllHeaders(
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.FieldId> values) {
       if (headersBuilder_ == null) {
@@ -1458,7 +1858,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public Builder clearHeaders() {
       if (headersBuilder_ == null) {
         headers_ = java.util.Collections.emptyList();
@@ -1469,7 +1877,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public Builder removeHeaders(int index) {
       if (headersBuilder_ == null) {
         ensureHeadersIsMutable();
@@ -1480,11 +1896,27 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public com.google.privacy.dlp.v2.FieldId.Builder getHeadersBuilder(int index) {
       return getHeadersFieldBuilder().getBuilder(index);
     }
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getHeadersOrBuilder(int index) {
       if (headersBuilder_ == null) {
         return headers_.get(index);
@@ -1492,7 +1924,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return headersBuilder_.getMessageOrBuilder(index);
       }
     }
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
         getHeadersOrBuilderList() {
       if (headersBuilder_ != null) {
@@ -1501,17 +1941,41 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(headers_);
       }
     }
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public com.google.privacy.dlp.v2.FieldId.Builder addHeadersBuilder() {
       return getHeadersFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
     }
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public com.google.privacy.dlp.v2.FieldId.Builder addHeadersBuilder(int index) {
       return getHeadersFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
     }
-    /** <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Headers of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
+     */
     public java.util.List<com.google.privacy.dlp.v2.FieldId.Builder> getHeadersBuilderList() {
       return getHeadersFieldBuilder().getBuilderList();
     }
@@ -1549,7 +2013,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.Table.RowOrBuilder>
         rowsBuilder_;
 
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public java.util.List<com.google.privacy.dlp.v2.Table.Row> getRowsList() {
       if (rowsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(rows_);
@@ -1557,7 +2029,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getMessageList();
       }
     }
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public int getRowsCount() {
       if (rowsBuilder_ == null) {
         return rows_.size();
@@ -1565,7 +2045,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getCount();
       }
     }
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public com.google.privacy.dlp.v2.Table.Row getRows(int index) {
       if (rowsBuilder_ == null) {
         return rows_.get(index);
@@ -1573,7 +2061,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getMessage(index);
       }
     }
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public Builder setRows(int index, com.google.privacy.dlp.v2.Table.Row value) {
       if (rowsBuilder_ == null) {
         if (value == null) {
@@ -1587,7 +2083,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public Builder setRows(int index, com.google.privacy.dlp.v2.Table.Row.Builder builderForValue) {
       if (rowsBuilder_ == null) {
         ensureRowsIsMutable();
@@ -1598,7 +2102,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public Builder addRows(com.google.privacy.dlp.v2.Table.Row value) {
       if (rowsBuilder_ == null) {
         if (value == null) {
@@ -1612,7 +2124,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public Builder addRows(int index, com.google.privacy.dlp.v2.Table.Row value) {
       if (rowsBuilder_ == null) {
         if (value == null) {
@@ -1626,7 +2146,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public Builder addRows(com.google.privacy.dlp.v2.Table.Row.Builder builderForValue) {
       if (rowsBuilder_ == null) {
         ensureRowsIsMutable();
@@ -1637,7 +2165,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public Builder addRows(int index, com.google.privacy.dlp.v2.Table.Row.Builder builderForValue) {
       if (rowsBuilder_ == null) {
         ensureRowsIsMutable();
@@ -1648,7 +2184,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public Builder addAllRows(
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.Table.Row> values) {
       if (rowsBuilder_ == null) {
@@ -1660,7 +2204,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public Builder clearRows() {
       if (rowsBuilder_ == null) {
         rows_ = java.util.Collections.emptyList();
@@ -1671,7 +2223,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public Builder removeRows(int index) {
       if (rowsBuilder_ == null) {
         ensureRowsIsMutable();
@@ -1682,11 +2242,27 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public com.google.privacy.dlp.v2.Table.Row.Builder getRowsBuilder(int index) {
       return getRowsFieldBuilder().getBuilder(index);
     }
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public com.google.privacy.dlp.v2.Table.RowOrBuilder getRowsOrBuilder(int index) {
       if (rowsBuilder_ == null) {
         return rows_.get(index);
@@ -1694,7 +2270,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getMessageOrBuilder(index);
       }
     }
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public java.util.List<? extends com.google.privacy.dlp.v2.Table.RowOrBuilder>
         getRowsOrBuilderList() {
       if (rowsBuilder_ != null) {
@@ -1703,17 +2287,41 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(rows_);
       }
     }
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public com.google.privacy.dlp.v2.Table.Row.Builder addRowsBuilder() {
       return getRowsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.Table.Row.getDefaultInstance());
     }
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public com.google.privacy.dlp.v2.Table.Row.Builder addRowsBuilder(int index) {
       return getRowsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.Table.Row.getDefaultInstance());
     }
-    /** <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Rows of the table.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
+     */
     public java.util.List<com.google.privacy.dlp.v2.Table.Row.Builder> getRowsBuilderList() {
       return getRowsFieldBuilder().getBuilderList();
     }
