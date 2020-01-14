@@ -66,7 +66,7 @@ public class Reads {
 
     } catch (IOException e) {
       System.out.println(
-          "Unable to intailize service client, as a network error occured: \n" + e.toString());
+          "Unable to initialize service client, as a network error occurred: \n" + e.toString());
     }
   }
   // [END bigtable_reads_row]
@@ -97,7 +97,7 @@ public class Reads {
 
     } catch (IOException e) {
       System.out.println(
-          "Unable to intailize service client, as a network error occured: \n" + e.toString());
+          "Unable to initialize service client, as a network error occurred: \n" + e.toString());
     }
   }
   // [END bigtable_reads_row_partial]
@@ -124,7 +124,7 @@ public class Reads {
       }
     } catch (IOException e) {
       System.out.println(
-          "Unable to intailize service client, as a network error occured: \n" + e.toString());
+          "Unable to initialize service client, as a network error occurred: \n" + e.toString());
     }
   }
   // [END bigtable_reads_rows]
@@ -153,7 +153,7 @@ public class Reads {
       }
     } catch (IOException e) {
       System.out.println(
-          "Unable to intailize service client, as a network error occured: \n" + e.toString());
+          "Unable to initialize service client, as a network error occurred: \n" + e.toString());
     }
   }
   // [END bigtable_reads_row_range]
@@ -182,7 +182,7 @@ public class Reads {
       }
     } catch (IOException e) {
       System.out.println(
-          "Unable to intailize service client, as a network error occured: \n" + e.toString());
+          "Unable to initialize service client, as a network error occurred: \n" + e.toString());
     }
   }
   // [END bigtable_reads_row_ranges]
@@ -208,7 +208,7 @@ public class Reads {
       }
     } catch (IOException e) {
       System.out.println(
-          "Unable to intailize service client, as a network error occured: \n" + e.toString());
+          "Unable to initialize service client, as a network error occurred: \n" + e.toString());
     }
   }
   // [END bigtable_reads_prefix]
@@ -236,7 +236,7 @@ public class Reads {
       }
     } catch (IOException e) {
       System.out.println(
-          "Unable to intailize service client, as a network error occured: \n" + e.toString());
+          "Unable to initialize service client, as a network error occurred: \n" + e.toString());
     }
   }
   // [END bigtable_reads_filter]

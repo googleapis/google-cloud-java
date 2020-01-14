@@ -75,8 +75,8 @@ public class Filters {
   }
 
   public static void filterLimitRowSample(String projectId, String instanceId, String tableId) {
-    // A filter that matches cells from a row with probability .5
-    Filter filter = FILTERS.key().sample(.5);
+    // A filter that matches cells from a row with probability .75
+    Filter filter = FILTERS.key().sample(.75);
     readFilter(projectId, instanceId, tableId, filter);
   }
   // [END bigtable_filters_limit_row_sample]
@@ -415,7 +415,7 @@ public class Filters {
       }
     } catch (IOException e) {
       System.out.println(
-          "Unable to intailize service client, as a network error occured: \n" + e.toString());
+          "Unable to initialize service client, as a network error occurred: \n" + e.toString());
     }
   }
 
