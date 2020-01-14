@@ -70,7 +70,7 @@ public class CopyMultipleTablesIT {
     CopyMultipleTables.copyMultipleTables(BIGQUERY_DATASET_NAME, generatedTableName);
     assertThat(bout.toString()).contains("Table copied successfully.");
 
-    //Clean up
+    // Clean up
     DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, generatedTableName);
   }
 }
