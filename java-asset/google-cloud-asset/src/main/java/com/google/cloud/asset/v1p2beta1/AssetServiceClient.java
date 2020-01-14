@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -306,7 +306,6 @@ public class AssetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchGetAssetsHistoryResponse batchGetAssetsHistory(String parent) {
-
     BatchGetAssetsHistoryRequest request =
         BatchGetAssetsHistoryRequest.newBuilder().setParent(parent).build();
     return batchGetAssetsHistory(request);
@@ -393,7 +392,6 @@ public class AssetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Feed createFeed(String parent) {
-
     CreateFeedRequest request = CreateFeedRequest.newBuilder().setParent(parent).build();
     return createFeed(request);
   }
@@ -539,7 +537,6 @@ public class AssetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFeedsResponse listFeeds(String parent) {
-
     ListFeedsRequest request = ListFeedsRequest.newBuilder().setParent(parent).build();
     return listFeeds(request);
   }
@@ -608,7 +605,6 @@ public class AssetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Feed updateFeed(Feed feed) {
-
     UpdateFeedRequest request = UpdateFeedRequest.newBuilder().setFeed(feed).build();
     return updateFeed(request);
   }
