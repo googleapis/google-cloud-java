@@ -37,10 +37,13 @@ import org.junit.Test;
 import org.threeten.bp.Duration;
 
 public class MessageDispatcherTest {
+  private static final ByteString MESSAGE_DATA = ByteString.copyFromUtf8("message-data");
+  private static final int DELIVERY_INFO_COUNT = 3;
   private static final ReceivedMessage TEST_MESSAGE =
       ReceivedMessage.newBuilder()
           .setAckId("ackid")
-          .setMessage(PubsubMessage.newBuilder().setData(ByteString.EMPTY).build())
+          .setMessage(PubsubMessage.newBuilder().setData(MESSAGE_DATA).build())
+          .setDeliveryAttempt(DELIVERY_INFO_COUNT)
           .build();
   private static final Runnable NOOP_RUNNABLE =
       new Runnable() {
@@ -78,6 +81,9 @@ public class MessageDispatcherTest {
         new MessageReceiver() {
           @Override
           public void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer) {
+            assertThat(message.getData()).isEqualTo(MESSAGE_DATA);
+            assertThat(message.getAttributesOrThrow("googclient_deliveryattempt"))
+                .isEqualTo(Integer.toString(DELIVERY_INFO_COUNT));
             consumers.add(consumer);
           }
         };

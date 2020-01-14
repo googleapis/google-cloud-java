@@ -341,8 +341,15 @@ class MessageDispatcher {
         // This should be a blocking flow controller and never throw an exception.
         throw new IllegalStateException("Flow control unexpected exception", unexpectedException);
       }
-      processOutstandingMessage(message.receivedMessage.getMessage(), message.ackHandler);
+      processOutstandingMessage(addDeliveryInfoCount(message.receivedMessage), message.ackHandler);
     }
+  }
+
+  private PubsubMessage addDeliveryInfoCount(ReceivedMessage receivedMessage) {
+    return PubsubMessage.newBuilder(receivedMessage.getMessage())
+        .putAttributes(
+            "googclient_deliveryattempt", Integer.toString(receivedMessage.getDeliveryAttempt()))
+        .build();
   }
 
   private void processOutstandingMessage(final PubsubMessage message, final AckHandler ackHandler) {
