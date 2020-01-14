@@ -16,26 +16,24 @@
 
 package com.example.translate;
 
-// [START translate_v3_batch_translate_text_with_glossary_and_model]
+// [START translate_v3_batch_translate_text_with_model]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.translate.v3.BatchTranslateMetadata;
 import com.google.cloud.translate.v3.BatchTranslateResponse;
 import com.google.cloud.translate.v3.BatchTranslateTextRequest;
 import com.google.cloud.translate.v3.GcsDestination;
 import com.google.cloud.translate.v3.GcsSource;
-import com.google.cloud.translate.v3.GlossaryName;
 import com.google.cloud.translate.v3.InputConfig;
 import com.google.cloud.translate.v3.LocationName;
 import com.google.cloud.translate.v3.OutputConfig;
-import com.google.cloud.translate.v3.TranslateTextGlossaryConfig;
 import com.google.cloud.translate.v3.TranslationServiceClient;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
-public class BatchTranslateTextWithGlossaryAndModel {
+public class BatchTranslateTextWithModel {
 
-  public static void batchTranslateTextWithGlossaryAndModel()
+  public static void batchTranslateTextWithModel()
       throws InterruptedException, ExecutionException, IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "YOUR-PROJECT-ID";
@@ -44,20 +42,18 @@ public class BatchTranslateTextWithGlossaryAndModel {
     String targetLanguage = "your-target-language";
     String inputUri = "gs://your-gcs-bucket/path/to/input/file.txt";
     String outputUri = "gs://your-gcs-bucket/path/to/results/";
-    String glossaryId = "your-glossary-display-name";
     String modelId = "YOUR-MODEL-ID";
-    batchTranslateTextWithGlossaryAndModel(
-        projectId, sourceLanguage, targetLanguage, inputUri, outputUri, glossaryId, modelId);
+    batchTranslateTextWithModel(
+        projectId, sourceLanguage, targetLanguage, inputUri, outputUri, modelId);
   }
 
-  // Batch translate text with Model and Glossary
-  public static void batchTranslateTextWithGlossaryAndModel(
+  // Batch translate text using AutoML Translation model
+  public static void batchTranslateTextWithModel(
       String projectId,
       String sourceLanguage,
       String targetLanguage,
       String inputUri,
       String outputUri,
-      String glossaryId,
       String modelId)
       throws IOException, ExecutionException, InterruptedException {
 
@@ -83,11 +79,6 @@ public class BatchTranslateTextWithGlossaryAndModel {
       OutputConfig outputConfig =
           OutputConfig.newBuilder().setGcsDestination(gcsDestination).build();
 
-      // Configure the glossary used in the request
-      GlossaryName glossaryName = GlossaryName.of(projectId, location, glossaryId);
-      TranslateTextGlossaryConfig glossaryConfig =
-          TranslateTextGlossaryConfig.newBuilder().setGlossary(glossaryName.toString()).build();
-
       // Configure the model used in the request
       String modelPath =
           String.format("projects/%s/locations/%s/models/%s", projectId, location, modelId);
@@ -100,7 +91,6 @@ public class BatchTranslateTextWithGlossaryAndModel {
               .addTargetLanguageCodes(targetLanguage)
               .addInputConfigs(inputConfig)
               .setOutputConfig(outputConfig)
-              .putGlossaries(targetLanguage, glossaryConfig)
               .putModels(targetLanguage, modelPath)
               .build();
 
@@ -116,4 +106,4 @@ public class BatchTranslateTextWithGlossaryAndModel {
     }
   }
 }
-// [END translate_v3_batch_translate_text_with_glossary_and_model]
+// [END translate_v3_batch_translate_text_with_model]

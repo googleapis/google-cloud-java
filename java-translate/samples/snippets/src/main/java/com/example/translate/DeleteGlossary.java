@@ -51,6 +51,7 @@ public class DeleteGlossary {
       DeleteGlossaryRequest request =
           DeleteGlossaryRequest.newBuilder().setName(glossaryName.toString()).build();
 
+      // Start an asynchronous request
       OperationFuture<DeleteGlossaryResponse, DeleteGlossaryMetadata> future =
           client.deleteGlossaryAsync(request);
 

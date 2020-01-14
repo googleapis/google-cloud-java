@@ -65,6 +65,7 @@ public class CreateGlossary {
       Glossary.LanguageCodesSet languageCodesSet =
           Glossary.LanguageCodesSet.newBuilder().addAllLanguageCodes(languageCodes).build();
 
+      // Configure the source of the file from a GCS bucket
       GcsSource gcsSource = GcsSource.newBuilder().setInputUri(inputUri).build();
       GlossaryInputConfig inputConfig =
           GlossaryInputConfig.newBuilder().setGcsSource(gcsSource).build();
@@ -82,6 +83,7 @@ public class CreateGlossary {
               .setGlossary(glossary)
               .build();
 
+      // Start an asynchronous request
       OperationFuture<Glossary, CreateGlossaryMetadata> future =
           client.createGlossaryAsync(request);
 
