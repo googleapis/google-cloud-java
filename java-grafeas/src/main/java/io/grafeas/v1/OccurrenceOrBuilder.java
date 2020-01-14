@@ -479,5 +479,40 @@ public interface OccurrenceOrBuilder
    */
   io.grafeas.v1.AttestationOccurrenceOrBuilder getAttestationOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Describes an available package upgrade on the linked resource.
+   * </pre>
+   *
+   * <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
+   *
+   * @return Whether the upgrade field is set.
+   */
+  boolean hasUpgrade();
+  /**
+   *
+   *
+   * <pre>
+   * Describes an available package upgrade on the linked resource.
+   * </pre>
+   *
+   * <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
+   *
+   * @return The upgrade.
+   */
+  io.grafeas.v1.UpgradeOccurrence getUpgrade();
+  /**
+   *
+   *
+   * <pre>
+   * Describes an available package upgrade on the linked resource.
+   * </pre>
+   *
+   * <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
+   */
+  io.grafeas.v1.UpgradeOccurrenceOrBuilder getUpgradeOrBuilder();
+
   public io.grafeas.v1.Occurrence.DetailsCase getDetailsCase();
 }

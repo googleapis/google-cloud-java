@@ -114,4 +114,64 @@ public interface DiscoveryOccurrenceOrBuilder
    * <code>.google.rpc.Status analysis_status_error = 3;</code>
    */
   com.google.rpc.StatusOrBuilder getAnalysisStatusErrorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The CPE of the resource being scanned.
+   * </pre>
+   *
+   * <code>string cpe = 4;</code>
+   *
+   * @return The cpe.
+   */
+  java.lang.String getCpe();
+  /**
+   *
+   *
+   * <pre>
+   * The CPE of the resource being scanned.
+   * </pre>
+   *
+   * <code>string cpe = 4;</code>
+   *
+   * @return The bytes for cpe.
+   */
+  com.google.protobuf.ByteString getCpeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The last time this resource was scanned.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
+   *
+   * @return Whether the lastScanTime field is set.
+   */
+  boolean hasLastScanTime();
+  /**
+   *
+   *
+   * <pre>
+   * The last time this resource was scanned.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
+   *
+   * @return The lastScanTime.
+   */
+  com.google.protobuf.Timestamp getLastScanTime();
+  /**
+   *
+   *
+   * <pre>
+   * The last time this resource was scanned.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getLastScanTimeOrBuilder();
 }

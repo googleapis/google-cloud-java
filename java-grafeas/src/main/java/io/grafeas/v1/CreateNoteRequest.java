@@ -142,7 +142,9 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    * the note is to be created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -165,7 +167,9 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    * the note is to be created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -190,7 +194,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    * The ID to use for this note.
    * </pre>
    *
-   * <code>string note_id = 2;</code>
+   * <code>string note_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The noteId.
    */
@@ -212,7 +216,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    * The ID to use for this note.
    * </pre>
    *
-   * <code>string note_id = 2;</code>
+   * <code>string note_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for noteId.
    */
@@ -237,7 +241,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    * The note to create.
    * </pre>
    *
-   * <code>.grafeas.v1.Note note = 3;</code>
+   * <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the note field is set.
    */
@@ -251,7 +255,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    * The note to create.
    * </pre>
    *
-   * <code>.grafeas.v1.Note note = 3;</code>
+   * <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The note.
    */
@@ -265,7 +269,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    * The note to create.
    * </pre>
    *
-   * <code>.grafeas.v1.Note note = 3;</code>
+   * <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public io.grafeas.v1.NoteOrBuilder getNoteOrBuilder() {
     return getNote();
@@ -636,7 +640,9 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * the note is to be created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -659,7 +665,9 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * the note is to be created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -682,7 +690,9 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * the note is to be created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -704,7 +714,9 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * the note is to be created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -722,7 +734,9 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * the note is to be created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -746,7 +760,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * The ID to use for this note.
      * </pre>
      *
-     * <code>string note_id = 2;</code>
+     * <code>string note_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The noteId.
      */
@@ -768,7 +782,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * The ID to use for this note.
      * </pre>
      *
-     * <code>string note_id = 2;</code>
+     * <code>string note_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for noteId.
      */
@@ -790,7 +804,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * The ID to use for this note.
      * </pre>
      *
-     * <code>string note_id = 2;</code>
+     * <code>string note_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The noteId to set.
      * @return This builder for chaining.
@@ -811,7 +825,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * The ID to use for this note.
      * </pre>
      *
-     * <code>string note_id = 2;</code>
+     * <code>string note_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -828,7 +842,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * The ID to use for this note.
      * </pre>
      *
-     * <code>string note_id = 2;</code>
+     * <code>string note_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for noteId to set.
      * @return This builder for chaining.
@@ -855,7 +869,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * The note to create.
      * </pre>
      *
-     * <code>.grafeas.v1.Note note = 3;</code>
+     * <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return Whether the note field is set.
      */
@@ -869,7 +883,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * The note to create.
      * </pre>
      *
-     * <code>.grafeas.v1.Note note = 3;</code>
+     * <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The note.
      */
@@ -887,7 +901,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * The note to create.
      * </pre>
      *
-     * <code>.grafeas.v1.Note note = 3;</code>
+     * <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNote(io.grafeas.v1.Note value) {
       if (noteBuilder_ == null) {
@@ -909,7 +923,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * The note to create.
      * </pre>
      *
-     * <code>.grafeas.v1.Note note = 3;</code>
+     * <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNote(io.grafeas.v1.Note.Builder builderForValue) {
       if (noteBuilder_ == null) {
@@ -928,7 +942,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * The note to create.
      * </pre>
      *
-     * <code>.grafeas.v1.Note note = 3;</code>
+     * <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeNote(io.grafeas.v1.Note value) {
       if (noteBuilder_ == null) {
@@ -951,7 +965,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * The note to create.
      * </pre>
      *
-     * <code>.grafeas.v1.Note note = 3;</code>
+     * <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearNote() {
       if (noteBuilder_ == null) {
@@ -971,7 +985,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * The note to create.
      * </pre>
      *
-     * <code>.grafeas.v1.Note note = 3;</code>
+     * <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public io.grafeas.v1.Note.Builder getNoteBuilder() {
 
@@ -985,7 +999,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * The note to create.
      * </pre>
      *
-     * <code>.grafeas.v1.Note note = 3;</code>
+     * <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public io.grafeas.v1.NoteOrBuilder getNoteOrBuilder() {
       if (noteBuilder_ != null) {
@@ -1001,7 +1015,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * The note to create.
      * </pre>
      *
-     * <code>.grafeas.v1.Note note = 3;</code>
+     * <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.Note, io.grafeas.v1.Note.Builder, io.grafeas.v1.NoteOrBuilder>

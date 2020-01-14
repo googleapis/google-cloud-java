@@ -46,29 +46,34 @@ public final class Discovery {
   static {
     java.lang.String[] descriptorData = {
       "\n\032grafeas/v1/discovery.proto\022\ngrafeas.v1"
-          + "\032\027google/rpc/status.proto\032\027grafeas/v1/co"
-          + "mmon.proto\"<\n\rDiscoveryNote\022+\n\ranalysis_"
-          + "kind\030\001 \001(\0162\024.grafeas.v1.NoteKind\"\313\003\n\023Dis"
-          + "coveryOccurrence\022O\n\023continuous_analysis\030"
-          + "\001 \001(\01622.grafeas.v1.DiscoveryOccurrence.C"
-          + "ontinuousAnalysis\022G\n\017analysis_status\030\002 \001"
-          + "(\0162..grafeas.v1.DiscoveryOccurrence.Anal"
-          + "ysisStatus\0221\n\025analysis_status_error\030\003 \001("
-          + "\0132\022.google.rpc.Status\"S\n\022ContinuousAnaly"
-          + "sis\022#\n\037CONTINUOUS_ANALYSIS_UNSPECIFIED\020\000"
-          + "\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020\002\"\221\001\n\016AnalysisS"
-          + "tatus\022\037\n\033ANALYSIS_STATUS_UNSPECIFIED\020\000\022\013"
-          + "\n\007PENDING\020\001\022\014\n\010SCANNING\020\002\022\024\n\020FINISHED_SU"
-          + "CCESS\020\003\022\023\n\017FINISHED_FAILED\020\004\022\030\n\024FINISHED"
-          + "_UNSUPPORTED\020\005BQ\n\rio.grafeas.v1P\001Z8googl"
-          + "e.golang.org/genproto/googleapis/grafeas"
-          + "/v1;grafeas\242\002\003GRAb\006proto3"
+          + "\032\037google/protobuf/timestamp.proto\032\027googl"
+          + "e/rpc/status.proto\032\027grafeas/v1/common.pr"
+          + "oto\"<\n\rDiscoveryNote\022+\n\ranalysis_kind\030\001 "
+          + "\001(\0162\024.grafeas.v1.NoteKind\"\214\004\n\023DiscoveryO"
+          + "ccurrence\022O\n\023continuous_analysis\030\001 \001(\01622"
+          + ".grafeas.v1.DiscoveryOccurrence.Continuo"
+          + "usAnalysis\022G\n\017analysis_status\030\002 \001(\0162..gr"
+          + "afeas.v1.DiscoveryOccurrence.AnalysisSta"
+          + "tus\0221\n\025analysis_status_error\030\003 \001(\0132\022.goo"
+          + "gle.rpc.Status\022\013\n\003cpe\030\004 \001(\t\0222\n\016last_scan"
+          + "_time\030\005 \001(\0132\032.google.protobuf.Timestamp\""
+          + "S\n\022ContinuousAnalysis\022#\n\037CONTINUOUS_ANAL"
+          + "YSIS_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTI"
+          + "VE\020\002\"\221\001\n\016AnalysisStatus\022\037\n\033ANALYSIS_STAT"
+          + "US_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\014\n\010SCANNIN"
+          + "G\020\002\022\024\n\020FINISHED_SUCCESS\020\003\022\023\n\017FINISHED_FA"
+          + "ILED\020\004\022\030\n\024FINISHED_UNSUPPORTED\020\005BQ\n\rio.g"
+          + "rafeas.v1P\001Z8google.golang.org/genproto/"
+          + "googleapis/grafeas/v1;grafeas\242\002\003GRAb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.rpc.StatusProto.getDescriptor(), io.grafeas.v1.Common.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
+              io.grafeas.v1.Common.getDescriptor(),
             });
     internal_static_grafeas_v1_DiscoveryNote_descriptor = getDescriptor().getMessageTypes().get(0);
     internal_static_grafeas_v1_DiscoveryNote_fieldAccessorTable =
@@ -83,8 +88,9 @@ public final class Discovery {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_grafeas_v1_DiscoveryOccurrence_descriptor,
             new java.lang.String[] {
-              "ContinuousAnalysis", "AnalysisStatus", "AnalysisStatusError",
+              "ContinuousAnalysis", "AnalysisStatus", "AnalysisStatusError", "Cpe", "LastScanTime",
             });
+    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
     io.grafeas.v1.Common.getDescriptor();
   }

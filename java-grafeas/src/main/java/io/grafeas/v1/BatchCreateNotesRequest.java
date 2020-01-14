@@ -147,7 +147,9 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
    * the notes are to be created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -170,7 +172,9 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
    * the notes are to be created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -218,7 +222,8 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
    * The notes to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2;</code>
+   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean containsNotes(java.lang.String key) {
     if (key == null) {
@@ -238,7 +243,8 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
    * The notes to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2;</code>
+   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.Map<java.lang.String, io.grafeas.v1.Note> getNotesMap() {
     return internalGetNotes().getMap();
@@ -250,7 +256,8 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
    * The notes to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2;</code>
+   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public io.grafeas.v1.Note getNotesOrDefault(
       java.lang.String key, io.grafeas.v1.Note defaultValue) {
@@ -267,7 +274,8 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
    * The notes to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2;</code>
+   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public io.grafeas.v1.Note getNotesOrThrow(java.lang.String key) {
     if (key == null) {
@@ -647,7 +655,9 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      * the notes are to be created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -670,7 +680,9 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      * the notes are to be created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -693,7 +705,9 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      * the notes are to be created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -715,7 +729,9 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      * the notes are to be created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -733,7 +749,9 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      * the notes are to be created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -781,7 +799,9 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      * The notes to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2;</code>
+     * <code>
+     * map&lt;string, .grafeas.v1.Note&gt; notes = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean containsNotes(java.lang.String key) {
       if (key == null) {
@@ -801,7 +821,9 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      * The notes to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2;</code>
+     * <code>
+     * map&lt;string, .grafeas.v1.Note&gt; notes = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.Map<java.lang.String, io.grafeas.v1.Note> getNotesMap() {
       return internalGetNotes().getMap();
@@ -813,7 +835,9 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      * The notes to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2;</code>
+     * <code>
+     * map&lt;string, .grafeas.v1.Note&gt; notes = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public io.grafeas.v1.Note getNotesOrDefault(
         java.lang.String key, io.grafeas.v1.Note defaultValue) {
@@ -830,7 +854,9 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      * The notes to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2;</code>
+     * <code>
+     * map&lt;string, .grafeas.v1.Note&gt; notes = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public io.grafeas.v1.Note getNotesOrThrow(java.lang.String key) {
       if (key == null) {
@@ -854,7 +880,9 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      * The notes to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2;</code>
+     * <code>
+     * map&lt;string, .grafeas.v1.Note&gt; notes = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeNotes(java.lang.String key) {
       if (key == null) {
@@ -875,7 +903,9 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      * The notes to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2;</code>
+     * <code>
+     * map&lt;string, .grafeas.v1.Note&gt; notes = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder putNotes(java.lang.String key, io.grafeas.v1.Note value) {
       if (key == null) {
@@ -894,7 +924,9 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      * The notes to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2;</code>
+     * <code>
+     * map&lt;string, .grafeas.v1.Note&gt; notes = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder putAllNotes(java.util.Map<java.lang.String, io.grafeas.v1.Note> values) {
       internalGetMutableNotes().getMutableMap().putAll(values);

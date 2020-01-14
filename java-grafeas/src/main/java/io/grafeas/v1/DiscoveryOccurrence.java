@@ -41,6 +41,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   private DiscoveryOccurrence() {
     continuousAnalysis_ = 0;
     analysisStatus_ = 0;
+    cpe_ = "";
   }
 
   @java.lang.Override
@@ -97,6 +98,28 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
               if (subBuilder != null) {
                 subBuilder.mergeFrom(analysisStatusError_);
                 analysisStatusError_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cpe_ = s;
+              break;
+            }
+          case 42:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (lastScanTime_ != null) {
+                subBuilder = lastScanTime_.toBuilder();
+              }
+              lastScanTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastScanTime_);
+                lastScanTime_ = subBuilder.buildPartial();
               }
 
               break;
@@ -632,6 +655,98 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     return getAnalysisStatusError();
   }
 
+  public static final int CPE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object cpe_;
+  /**
+   *
+   *
+   * <pre>
+   * The CPE of the resource being scanned.
+   * </pre>
+   *
+   * <code>string cpe = 4;</code>
+   *
+   * @return The cpe.
+   */
+  public java.lang.String getCpe() {
+    java.lang.Object ref = cpe_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cpe_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The CPE of the resource being scanned.
+   * </pre>
+   *
+   * <code>string cpe = 4;</code>
+   *
+   * @return The bytes for cpe.
+   */
+  public com.google.protobuf.ByteString getCpeBytes() {
+    java.lang.Object ref = cpe_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cpe_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LAST_SCAN_TIME_FIELD_NUMBER = 5;
+  private com.google.protobuf.Timestamp lastScanTime_;
+  /**
+   *
+   *
+   * <pre>
+   * The last time this resource was scanned.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
+   *
+   * @return Whether the lastScanTime field is set.
+   */
+  public boolean hasLastScanTime() {
+    return lastScanTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The last time this resource was scanned.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
+   *
+   * @return The lastScanTime.
+   */
+  public com.google.protobuf.Timestamp getLastScanTime() {
+    return lastScanTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastScanTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The last time this resource was scanned.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getLastScanTimeOrBuilder() {
+    return getLastScanTime();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -659,6 +774,12 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (analysisStatusError_ != null) {
       output.writeMessage(3, getAnalysisStatusError());
     }
+    if (!getCpeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, cpe_);
+    }
+    if (lastScanTime_ != null) {
+      output.writeMessage(5, getLastScanTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -681,6 +802,12 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (analysisStatusError_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAnalysisStatusError());
     }
+    if (!getCpeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, cpe_);
+    }
+    if (lastScanTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getLastScanTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -702,6 +829,11 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (hasAnalysisStatusError()) {
       if (!getAnalysisStatusError().equals(other.getAnalysisStatusError())) return false;
     }
+    if (!getCpe().equals(other.getCpe())) return false;
+    if (hasLastScanTime() != other.hasLastScanTime()) return false;
+    if (hasLastScanTime()) {
+      if (!getLastScanTime().equals(other.getLastScanTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -720,6 +852,12 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (hasAnalysisStatusError()) {
       hash = (37 * hash) + ANALYSIS_STATUS_ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getAnalysisStatusError().hashCode();
+    }
+    hash = (37 * hash) + CPE_FIELD_NUMBER;
+    hash = (53 * hash) + getCpe().hashCode();
+    if (hasLastScanTime()) {
+      hash = (37 * hash) + LAST_SCAN_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getLastScanTime().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -874,6 +1012,14 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         analysisStatusError_ = null;
         analysisStatusErrorBuilder_ = null;
       }
+      cpe_ = "";
+
+      if (lastScanTimeBuilder_ == null) {
+        lastScanTime_ = null;
+      } else {
+        lastScanTime_ = null;
+        lastScanTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -905,6 +1051,12 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         result.analysisStatusError_ = analysisStatusError_;
       } else {
         result.analysisStatusError_ = analysisStatusErrorBuilder_.build();
+      }
+      result.cpe_ = cpe_;
+      if (lastScanTimeBuilder_ == null) {
+        result.lastScanTime_ = lastScanTime_;
+      } else {
+        result.lastScanTime_ = lastScanTimeBuilder_.build();
       }
       onBuilt();
       return result;
@@ -963,6 +1115,13 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       if (other.hasAnalysisStatusError()) {
         mergeAnalysisStatusError(other.getAnalysisStatusError());
+      }
+      if (!other.getCpe().isEmpty()) {
+        cpe_ = other.cpe_;
+        onChanged();
+      }
+      if (other.hasLastScanTime()) {
+        mergeLastScanTime(other.getLastScanTime());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1371,6 +1530,297 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         analysisStatusError_ = null;
       }
       return analysisStatusErrorBuilder_;
+    }
+
+    private java.lang.Object cpe_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The CPE of the resource being scanned.
+     * </pre>
+     *
+     * <code>string cpe = 4;</code>
+     *
+     * @return The cpe.
+     */
+    public java.lang.String getCpe() {
+      java.lang.Object ref = cpe_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cpe_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The CPE of the resource being scanned.
+     * </pre>
+     *
+     * <code>string cpe = 4;</code>
+     *
+     * @return The bytes for cpe.
+     */
+    public com.google.protobuf.ByteString getCpeBytes() {
+      java.lang.Object ref = cpe_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cpe_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The CPE of the resource being scanned.
+     * </pre>
+     *
+     * <code>string cpe = 4;</code>
+     *
+     * @param value The cpe to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCpe(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      cpe_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The CPE of the resource being scanned.
+     * </pre>
+     *
+     * <code>string cpe = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCpe() {
+
+      cpe_ = getDefaultInstance().getCpe();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The CPE of the resource being scanned.
+     * </pre>
+     *
+     * <code>string cpe = 4;</code>
+     *
+     * @param value The bytes for cpe to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCpeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      cpe_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp lastScanTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        lastScanTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The last time this resource was scanned.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
+     *
+     * @return Whether the lastScanTime field is set.
+     */
+    public boolean hasLastScanTime() {
+      return lastScanTimeBuilder_ != null || lastScanTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last time this resource was scanned.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
+     *
+     * @return The lastScanTime.
+     */
+    public com.google.protobuf.Timestamp getLastScanTime() {
+      if (lastScanTimeBuilder_ == null) {
+        return lastScanTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastScanTime_;
+      } else {
+        return lastScanTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last time this resource was scanned.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
+     */
+    public Builder setLastScanTime(com.google.protobuf.Timestamp value) {
+      if (lastScanTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lastScanTime_ = value;
+        onChanged();
+      } else {
+        lastScanTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last time this resource was scanned.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
+     */
+    public Builder setLastScanTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (lastScanTimeBuilder_ == null) {
+        lastScanTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        lastScanTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last time this resource was scanned.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
+     */
+    public Builder mergeLastScanTime(com.google.protobuf.Timestamp value) {
+      if (lastScanTimeBuilder_ == null) {
+        if (lastScanTime_ != null) {
+          lastScanTime_ =
+              com.google.protobuf.Timestamp.newBuilder(lastScanTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          lastScanTime_ = value;
+        }
+        onChanged();
+      } else {
+        lastScanTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last time this resource was scanned.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
+     */
+    public Builder clearLastScanTime() {
+      if (lastScanTimeBuilder_ == null) {
+        lastScanTime_ = null;
+        onChanged();
+      } else {
+        lastScanTime_ = null;
+        lastScanTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last time this resource was scanned.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getLastScanTimeBuilder() {
+
+      onChanged();
+      return getLastScanTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last time this resource was scanned.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getLastScanTimeOrBuilder() {
+      if (lastScanTimeBuilder_ != null) {
+        return lastScanTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return lastScanTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastScanTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last time this resource was scanned.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getLastScanTimeFieldBuilder() {
+      if (lastScanTimeBuilder_ == null) {
+        lastScanTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getLastScanTime(), getParentForChildren(), isClean());
+        lastScanTime_ = null;
+      }
+      return lastScanTimeBuilder_;
     }
 
     @java.lang.Override

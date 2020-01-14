@@ -586,5 +586,40 @@ public interface NoteOrBuilder
    */
   io.grafeas.v1.AttestationNoteOrBuilder getAttestationOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * A note describing available package upgrades.
+   * </pre>
+   *
+   * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
+   *
+   * @return Whether the upgrade field is set.
+   */
+  boolean hasUpgrade();
+  /**
+   *
+   *
+   * <pre>
+   * A note describing available package upgrades.
+   * </pre>
+   *
+   * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
+   *
+   * @return The upgrade.
+   */
+  io.grafeas.v1.UpgradeNote getUpgrade();
+  /**
+   *
+   *
+   * <pre>
+   * A note describing available package upgrades.
+   * </pre>
+   *
+   * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
+   */
+  io.grafeas.v1.UpgradeNoteOrBuilder getUpgradeOrBuilder();
+
   public io.grafeas.v1.Note.TypeCase getTypeCase();
 }

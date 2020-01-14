@@ -109,6 +109,16 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ATTESTATION = 7;</code>
    */
   ATTESTATION(7),
+  /**
+   *
+   *
+   * <pre>
+   * This represents an available package upgrade.
+   * </pre>
+   *
+   * <code>UPGRADE = 8;</code>
+   */
+  UPGRADE(8),
   UNRECOGNIZED(-1),
   ;
 
@@ -192,6 +202,16 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ATTESTATION = 7;</code>
    */
   public static final int ATTESTATION_VALUE = 7;
+  /**
+   *
+   *
+   * <pre>
+   * This represents an available package upgrade.
+   * </pre>
+   *
+   * <code>UPGRADE = 8;</code>
+   */
+  public static final int UPGRADE_VALUE = 8;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -233,6 +253,8 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
         return DISCOVERY;
       case 7:
         return ATTESTATION;
+      case 8:
+        return UPGRADE;
       default:
         return null;
     }

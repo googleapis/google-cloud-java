@@ -269,6 +269,20 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
               typeCase_ = 16;
               break;
             }
+          case 138:
+            {
+              io.grafeas.v1.UpgradeNote.Builder subBuilder = null;
+              if (typeCase_ == 17) {
+                subBuilder = ((io.grafeas.v1.UpgradeNote) type_).toBuilder();
+              }
+              type_ = input.readMessage(io.grafeas.v1.UpgradeNote.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1.UpgradeNote) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 17;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -320,6 +334,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     DEPLOYMENT(14),
     DISCOVERY(15),
     ATTESTATION(16),
+    UPGRADE(17),
     TYPE_NOT_SET(0);
     private final int value;
 
@@ -352,6 +367,8 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
           return DISCOVERY;
         case 16:
           return ATTESTATION;
+        case 17:
+          return UPGRADE;
         case 0:
           return TYPE_NOT_SET;
         default:
@@ -1143,6 +1160,54 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return io.grafeas.v1.AttestationNote.getDefaultInstance();
   }
 
+  public static final int UPGRADE_FIELD_NUMBER = 17;
+  /**
+   *
+   *
+   * <pre>
+   * A note describing available package upgrades.
+   * </pre>
+   *
+   * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
+   *
+   * @return Whether the upgrade field is set.
+   */
+  public boolean hasUpgrade() {
+    return typeCase_ == 17;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A note describing available package upgrades.
+   * </pre>
+   *
+   * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
+   *
+   * @return The upgrade.
+   */
+  public io.grafeas.v1.UpgradeNote getUpgrade() {
+    if (typeCase_ == 17) {
+      return (io.grafeas.v1.UpgradeNote) type_;
+    }
+    return io.grafeas.v1.UpgradeNote.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A note describing available package upgrades.
+   * </pre>
+   *
+   * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
+   */
+  public io.grafeas.v1.UpgradeNoteOrBuilder getUpgradeOrBuilder() {
+    if (typeCase_ == 17) {
+      return (io.grafeas.v1.UpgradeNote) type_;
+    }
+    return io.grafeas.v1.UpgradeNote.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1204,6 +1269,9 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
     if (typeCase_ == 16) {
       output.writeMessage(16, (io.grafeas.v1.AttestationNote) type_);
+    }
+    if (typeCase_ == 17) {
+      output.writeMessage(17, (io.grafeas.v1.UpgradeNote) type_);
     }
     unknownFields.writeTo(output);
   }
@@ -1281,6 +1349,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               16, (io.grafeas.v1.AttestationNote) type_);
     }
+    if (typeCase_ == 17) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17, (io.grafeas.v1.UpgradeNote) type_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1336,6 +1409,9 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         break;
       case 16:
         if (!getAttestation().equals(other.getAttestation())) return false;
+        break;
+      case 17:
+        if (!getUpgrade().equals(other.getUpgrade())) return false;
         break;
       case 0:
       default:
@@ -1407,6 +1483,10 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       case 16:
         hash = (37 * hash) + ATTESTATION_FIELD_NUMBER;
         hash = (53 * hash) + getAttestation().hashCode();
+        break;
+      case 17:
+        hash = (37 * hash) + UPGRADE_FIELD_NUMBER;
+        hash = (53 * hash) + getUpgrade().hashCode();
         break;
       case 0:
       default:
@@ -1697,6 +1777,13 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
           result.type_ = attestationBuilder_.build();
         }
       }
+      if (typeCase_ == 17) {
+        if (upgradeBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = upgradeBuilder_.build();
+        }
+      }
       result.typeCase_ = typeCase_;
       onBuilt();
       return result;
@@ -1842,6 +1929,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         case ATTESTATION:
           {
             mergeAttestation(other.getAttestation());
+            break;
+          }
+        case UPGRADE:
+          {
+            mergeUpgrade(other.getUpgrade());
             break;
           }
         case TYPE_NOT_SET:
@@ -4795,6 +4887,207 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return attestationBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.UpgradeNote,
+            io.grafeas.v1.UpgradeNote.Builder,
+            io.grafeas.v1.UpgradeNoteOrBuilder>
+        upgradeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A note describing available package upgrades.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
+     *
+     * @return Whether the upgrade field is set.
+     */
+    public boolean hasUpgrade() {
+      return typeCase_ == 17;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing available package upgrades.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
+     *
+     * @return The upgrade.
+     */
+    public io.grafeas.v1.UpgradeNote getUpgrade() {
+      if (upgradeBuilder_ == null) {
+        if (typeCase_ == 17) {
+          return (io.grafeas.v1.UpgradeNote) type_;
+        }
+        return io.grafeas.v1.UpgradeNote.getDefaultInstance();
+      } else {
+        if (typeCase_ == 17) {
+          return upgradeBuilder_.getMessage();
+        }
+        return io.grafeas.v1.UpgradeNote.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing available package upgrades.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
+     */
+    public Builder setUpgrade(io.grafeas.v1.UpgradeNote value) {
+      if (upgradeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        upgradeBuilder_.setMessage(value);
+      }
+      typeCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing available package upgrades.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
+     */
+    public Builder setUpgrade(io.grafeas.v1.UpgradeNote.Builder builderForValue) {
+      if (upgradeBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        upgradeBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing available package upgrades.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
+     */
+    public Builder mergeUpgrade(io.grafeas.v1.UpgradeNote value) {
+      if (upgradeBuilder_ == null) {
+        if (typeCase_ == 17 && type_ != io.grafeas.v1.UpgradeNote.getDefaultInstance()) {
+          type_ =
+              io.grafeas.v1.UpgradeNote.newBuilder((io.grafeas.v1.UpgradeNote) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 17) {
+          upgradeBuilder_.mergeFrom(value);
+        }
+        upgradeBuilder_.setMessage(value);
+      }
+      typeCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing available package upgrades.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
+     */
+    public Builder clearUpgrade() {
+      if (upgradeBuilder_ == null) {
+        if (typeCase_ == 17) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 17) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        upgradeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing available package upgrades.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
+     */
+    public io.grafeas.v1.UpgradeNote.Builder getUpgradeBuilder() {
+      return getUpgradeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing available package upgrades.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
+     */
+    public io.grafeas.v1.UpgradeNoteOrBuilder getUpgradeOrBuilder() {
+      if ((typeCase_ == 17) && (upgradeBuilder_ != null)) {
+        return upgradeBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 17) {
+          return (io.grafeas.v1.UpgradeNote) type_;
+        }
+        return io.grafeas.v1.UpgradeNote.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing available package upgrades.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.UpgradeNote,
+            io.grafeas.v1.UpgradeNote.Builder,
+            io.grafeas.v1.UpgradeNoteOrBuilder>
+        getUpgradeFieldBuilder() {
+      if (upgradeBuilder_ == null) {
+        if (!(typeCase_ == 17)) {
+          type_ = io.grafeas.v1.UpgradeNote.getDefaultInstance();
+        }
+        upgradeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.UpgradeNote,
+                io.grafeas.v1.UpgradeNote.Builder,
+                io.grafeas.v1.UpgradeNoteOrBuilder>(
+                (io.grafeas.v1.UpgradeNote) type_, getParentForChildren(), isClean());
+        type_ = null;
+      }
+      typeCase_ = 17;
+      onChanged();
+      ;
+      return upgradeBuilder_;
     }
 
     @java.lang.Override

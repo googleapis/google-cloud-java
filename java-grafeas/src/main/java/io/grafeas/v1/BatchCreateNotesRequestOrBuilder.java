@@ -32,7 +32,9 @@ public interface BatchCreateNotesRequestOrBuilder
    * the notes are to be created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -45,7 +47,9 @@ public interface BatchCreateNotesRequestOrBuilder
    * the notes are to be created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -58,7 +62,8 @@ public interface BatchCreateNotesRequestOrBuilder
    * The notes to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2;</code>
+   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getNotesCount();
   /**
@@ -68,7 +73,8 @@ public interface BatchCreateNotesRequestOrBuilder
    * The notes to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2;</code>
+   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean containsNotes(java.lang.String key);
   /** Use {@link #getNotesMap()} instead. */
@@ -81,7 +87,8 @@ public interface BatchCreateNotesRequestOrBuilder
    * The notes to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2;</code>
+   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.Map<java.lang.String, io.grafeas.v1.Note> getNotesMap();
   /**
@@ -91,7 +98,8 @@ public interface BatchCreateNotesRequestOrBuilder
    * The notes to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2;</code>
+   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   io.grafeas.v1.Note getNotesOrDefault(java.lang.String key, io.grafeas.v1.Note defaultValue);
   /**
@@ -101,7 +109,8 @@ public interface BatchCreateNotesRequestOrBuilder
    * The notes to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2;</code>
+   * <code>map&lt;string, .grafeas.v1.Note&gt; notes = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   io.grafeas.v1.Note getNotesOrThrow(java.lang.String key);
 }

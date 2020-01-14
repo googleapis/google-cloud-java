@@ -247,6 +247,21 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
               detailsCase_ = 14;
               break;
             }
+          case 122:
+            {
+              io.grafeas.v1.UpgradeOccurrence.Builder subBuilder = null;
+              if (detailsCase_ == 15) {
+                subBuilder = ((io.grafeas.v1.UpgradeOccurrence) details_).toBuilder();
+              }
+              details_ =
+                  input.readMessage(io.grafeas.v1.UpgradeOccurrence.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1.UpgradeOccurrence) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 15;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -292,6 +307,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     DEPLOYMENT(12),
     DISCOVERY(13),
     ATTESTATION(14),
+    UPGRADE(15),
     DETAILS_NOT_SET(0);
     private final int value;
 
@@ -324,6 +340,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
           return DISCOVERY;
         case 14:
           return ATTESTATION;
+        case 15:
+          return UPGRADE;
         case 0:
           return DETAILS_NOT_SET;
         default:
@@ -998,6 +1016,54 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     return io.grafeas.v1.AttestationOccurrence.getDefaultInstance();
   }
 
+  public static final int UPGRADE_FIELD_NUMBER = 15;
+  /**
+   *
+   *
+   * <pre>
+   * Describes an available package upgrade on the linked resource.
+   * </pre>
+   *
+   * <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
+   *
+   * @return Whether the upgrade field is set.
+   */
+  public boolean hasUpgrade() {
+    return detailsCase_ == 15;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Describes an available package upgrade on the linked resource.
+   * </pre>
+   *
+   * <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
+   *
+   * @return The upgrade.
+   */
+  public io.grafeas.v1.UpgradeOccurrence getUpgrade() {
+    if (detailsCase_ == 15) {
+      return (io.grafeas.v1.UpgradeOccurrence) details_;
+    }
+    return io.grafeas.v1.UpgradeOccurrence.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Describes an available package upgrade on the linked resource.
+   * </pre>
+   *
+   * <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
+   */
+  public io.grafeas.v1.UpgradeOccurrenceOrBuilder getUpgradeOrBuilder() {
+    if (detailsCase_ == 15) {
+      return (io.grafeas.v1.UpgradeOccurrence) details_;
+    }
+    return io.grafeas.v1.UpgradeOccurrence.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1053,6 +1119,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
     if (detailsCase_ == 14) {
       output.writeMessage(14, (io.grafeas.v1.AttestationOccurrence) details_);
+    }
+    if (detailsCase_ == 15) {
+      output.writeMessage(15, (io.grafeas.v1.UpgradeOccurrence) details_);
     }
     unknownFields.writeTo(output);
   }
@@ -1119,6 +1188,11 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               14, (io.grafeas.v1.AttestationOccurrence) details_);
     }
+    if (detailsCase_ == 15) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, (io.grafeas.v1.UpgradeOccurrence) details_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1169,6 +1243,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         break;
       case 14:
         if (!getAttestation().equals(other.getAttestation())) return false;
+        break;
+      case 15:
+        if (!getUpgrade().equals(other.getUpgrade())) return false;
         break;
       case 0:
       default:
@@ -1230,6 +1307,10 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       case 14:
         hash = (37 * hash) + ATTESTATION_FIELD_NUMBER;
         hash = (53 * hash) + getAttestation().hashCode();
+        break;
+      case 15:
+        hash = (37 * hash) + UPGRADE_FIELD_NUMBER;
+        hash = (53 * hash) + getUpgrade().hashCode();
         break;
       case 0:
       default:
@@ -1489,6 +1570,13 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
           result.details_ = attestationBuilder_.build();
         }
       }
+      if (detailsCase_ == 15) {
+        if (upgradeBuilder_ == null) {
+          result.details_ = details_;
+        } else {
+          result.details_ = upgradeBuilder_.build();
+        }
+      }
       result.detailsCase_ = detailsCase_;
       onBuilt();
       return result;
@@ -1598,6 +1686,11 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         case ATTESTATION:
           {
             mergeAttestation(other.getAttestation());
+            break;
+          }
+        case UPGRADE:
+          {
+            mergeUpgrade(other.getUpgrade());
             break;
           }
         case DETAILS_NOT_SET:
@@ -3980,6 +4073,208 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return attestationBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.UpgradeOccurrence,
+            io.grafeas.v1.UpgradeOccurrence.Builder,
+            io.grafeas.v1.UpgradeOccurrenceOrBuilder>
+        upgradeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Describes an available package upgrade on the linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
+     *
+     * @return Whether the upgrade field is set.
+     */
+    public boolean hasUpgrade() {
+      return detailsCase_ == 15;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes an available package upgrade on the linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
+     *
+     * @return The upgrade.
+     */
+    public io.grafeas.v1.UpgradeOccurrence getUpgrade() {
+      if (upgradeBuilder_ == null) {
+        if (detailsCase_ == 15) {
+          return (io.grafeas.v1.UpgradeOccurrence) details_;
+        }
+        return io.grafeas.v1.UpgradeOccurrence.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 15) {
+          return upgradeBuilder_.getMessage();
+        }
+        return io.grafeas.v1.UpgradeOccurrence.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes an available package upgrade on the linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
+     */
+    public Builder setUpgrade(io.grafeas.v1.UpgradeOccurrence value) {
+      if (upgradeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        upgradeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes an available package upgrade on the linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
+     */
+    public Builder setUpgrade(io.grafeas.v1.UpgradeOccurrence.Builder builderForValue) {
+      if (upgradeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        upgradeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes an available package upgrade on the linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
+     */
+    public Builder mergeUpgrade(io.grafeas.v1.UpgradeOccurrence value) {
+      if (upgradeBuilder_ == null) {
+        if (detailsCase_ == 15
+            && details_ != io.grafeas.v1.UpgradeOccurrence.getDefaultInstance()) {
+          details_ =
+              io.grafeas.v1.UpgradeOccurrence.newBuilder((io.grafeas.v1.UpgradeOccurrence) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 15) {
+          upgradeBuilder_.mergeFrom(value);
+        }
+        upgradeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes an available package upgrade on the linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
+     */
+    public Builder clearUpgrade() {
+      if (upgradeBuilder_ == null) {
+        if (detailsCase_ == 15) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 15) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        upgradeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes an available package upgrade on the linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
+     */
+    public io.grafeas.v1.UpgradeOccurrence.Builder getUpgradeBuilder() {
+      return getUpgradeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes an available package upgrade on the linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
+     */
+    public io.grafeas.v1.UpgradeOccurrenceOrBuilder getUpgradeOrBuilder() {
+      if ((detailsCase_ == 15) && (upgradeBuilder_ != null)) {
+        return upgradeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 15) {
+          return (io.grafeas.v1.UpgradeOccurrence) details_;
+        }
+        return io.grafeas.v1.UpgradeOccurrence.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes an available package upgrade on the linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.UpgradeOccurrence,
+            io.grafeas.v1.UpgradeOccurrence.Builder,
+            io.grafeas.v1.UpgradeOccurrenceOrBuilder>
+        getUpgradeFieldBuilder() {
+      if (upgradeBuilder_ == null) {
+        if (!(detailsCase_ == 15)) {
+          details_ = io.grafeas.v1.UpgradeOccurrence.getDefaultInstance();
+        }
+        upgradeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.UpgradeOccurrence,
+                io.grafeas.v1.UpgradeOccurrence.Builder,
+                io.grafeas.v1.UpgradeOccurrenceOrBuilder>(
+                (io.grafeas.v1.UpgradeOccurrence) details_, getParentForChildren(), isClean());
+        details_ = null;
+      }
+      detailsCase_ = 15;
+      onChanged();
+      ;
+      return upgradeBuilder_;
     }
 
     @java.lang.Override

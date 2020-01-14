@@ -151,7 +151,9 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -174,7 +176,9 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -199,7 +203,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
    * The updated occurrence.
    * </pre>
    *
-   * <code>.grafeas.v1.Occurrence occurrence = 2;</code>
+   * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the occurrence field is set.
    */
@@ -213,7 +217,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
    * The updated occurrence.
    * </pre>
    *
-   * <code>.grafeas.v1.Occurrence occurrence = 2;</code>
+   * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The occurrence.
    */
@@ -227,7 +231,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
    * The updated occurrence.
    * </pre>
    *
-   * <code>.grafeas.v1.Occurrence occurrence = 2;</code>
+   * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public io.grafeas.v1.OccurrenceOrBuilder getOccurrenceOrBuilder() {
     return getOccurrence();
@@ -655,7 +659,9 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
      * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -678,7 +684,9 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
      * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -701,7 +709,9 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
      * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -723,7 +733,9 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
      * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -741,7 +753,9 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
      * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -770,7 +784,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
      * The updated occurrence.
      * </pre>
      *
-     * <code>.grafeas.v1.Occurrence occurrence = 2;</code>
+     * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return Whether the occurrence field is set.
      */
@@ -784,7 +798,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
      * The updated occurrence.
      * </pre>
      *
-     * <code>.grafeas.v1.Occurrence occurrence = 2;</code>
+     * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The occurrence.
      */
@@ -802,7 +816,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
      * The updated occurrence.
      * </pre>
      *
-     * <code>.grafeas.v1.Occurrence occurrence = 2;</code>
+     * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setOccurrence(io.grafeas.v1.Occurrence value) {
       if (occurrenceBuilder_ == null) {
@@ -824,7 +838,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
      * The updated occurrence.
      * </pre>
      *
-     * <code>.grafeas.v1.Occurrence occurrence = 2;</code>
+     * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setOccurrence(io.grafeas.v1.Occurrence.Builder builderForValue) {
       if (occurrenceBuilder_ == null) {
@@ -843,7 +857,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
      * The updated occurrence.
      * </pre>
      *
-     * <code>.grafeas.v1.Occurrence occurrence = 2;</code>
+     * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeOccurrence(io.grafeas.v1.Occurrence value) {
       if (occurrenceBuilder_ == null) {
@@ -867,7 +881,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
      * The updated occurrence.
      * </pre>
      *
-     * <code>.grafeas.v1.Occurrence occurrence = 2;</code>
+     * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearOccurrence() {
       if (occurrenceBuilder_ == null) {
@@ -887,7 +901,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
      * The updated occurrence.
      * </pre>
      *
-     * <code>.grafeas.v1.Occurrence occurrence = 2;</code>
+     * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public io.grafeas.v1.Occurrence.Builder getOccurrenceBuilder() {
 
@@ -901,7 +915,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
      * The updated occurrence.
      * </pre>
      *
-     * <code>.grafeas.v1.Occurrence occurrence = 2;</code>
+     * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public io.grafeas.v1.OccurrenceOrBuilder getOccurrenceOrBuilder() {
       if (occurrenceBuilder_ != null) {
@@ -917,7 +931,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
      * The updated occurrence.
      * </pre>
      *
-     * <code>.grafeas.v1.Occurrence occurrence = 2;</code>
+     * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.Occurrence,

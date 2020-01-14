@@ -48,13 +48,13 @@ public final class Common {
       "\n\027grafeas/v1/common.proto\022\ngrafeas.v1\"(\n"
           + "\nRelatedUrl\022\013\n\003url\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\""
           + "5\n\tSignature\022\021\n\tsignature\030\001 \001(\014\022\025\n\rpubli"
-          + "c_key_id\030\002 \001(\t*\213\001\n\010NoteKind\022\031\n\025NOTE_KIND"
+          + "c_key_id\030\002 \001(\t*\230\001\n\010NoteKind\022\031\n\025NOTE_KIND"
           + "_UNSPECIFIED\020\000\022\021\n\rVULNERABILITY\020\001\022\t\n\005BUI"
           + "LD\020\002\022\t\n\005IMAGE\020\003\022\013\n\007PACKAGE\020\004\022\016\n\nDEPLOYME"
-          + "NT\020\005\022\r\n\tDISCOVERY\020\006\022\017\n\013ATTESTATION\020\007BQ\n\r"
-          + "io.grafeas.v1P\001Z8google.golang.org/genpr"
-          + "oto/googleapis/grafeas/v1;grafeas\242\002\003GRAb"
-          + "\006proto3"
+          + "NT\020\005\022\r\n\tDISCOVERY\020\006\022\017\n\013ATTESTATION\020\007\022\013\n\007"
+          + "UPGRADE\020\010BQ\n\rio.grafeas.v1P\001Z8google.gol"
+          + "ang.org/genproto/googleapis/grafeas/v1;g"
+          + "rafeas\242\002\003GRAb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

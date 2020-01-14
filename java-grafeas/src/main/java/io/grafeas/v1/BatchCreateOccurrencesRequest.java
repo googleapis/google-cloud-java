@@ -137,7 +137,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
    * the occurrences are to be created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -160,7 +162,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
    * the occurrences are to be created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -185,7 +189,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
    * The occurrences to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+   * <code>
+   * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<io.grafeas.v1.Occurrence> getOccurrencesList() {
     return occurrences_;
@@ -197,7 +203,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
    * The occurrences to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+   * <code>
+   * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<? extends io.grafeas.v1.OccurrenceOrBuilder> getOccurrencesOrBuilderList() {
     return occurrences_;
@@ -209,7 +217,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
    * The occurrences to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+   * <code>
+   * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getOccurrencesCount() {
     return occurrences_.size();
@@ -221,7 +231,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
    * The occurrences to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+   * <code>
+   * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public io.grafeas.v1.Occurrence getOccurrences(int index) {
     return occurrences_.get(index);
@@ -233,7 +245,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
    * The occurrences to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+   * <code>
+   * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public io.grafeas.v1.OccurrenceOrBuilder getOccurrencesOrBuilder(int index) {
     return occurrences_.get(index);
@@ -622,7 +636,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * the occurrences are to be created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -645,7 +661,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * the occurrences are to be created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -668,7 +686,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * the occurrences are to be created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -690,7 +710,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * the occurrences are to be created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -708,7 +730,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * the occurrences are to be created.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -747,7 +771,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<io.grafeas.v1.Occurrence> getOccurrencesList() {
       if (occurrencesBuilder_ == null) {
@@ -763,7 +789,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getOccurrencesCount() {
       if (occurrencesBuilder_ == null) {
@@ -779,7 +807,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public io.grafeas.v1.Occurrence getOccurrences(int index) {
       if (occurrencesBuilder_ == null) {
@@ -795,7 +825,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOccurrences(int index, io.grafeas.v1.Occurrence value) {
       if (occurrencesBuilder_ == null) {
@@ -817,7 +849,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOccurrences(int index, io.grafeas.v1.Occurrence.Builder builderForValue) {
       if (occurrencesBuilder_ == null) {
@@ -836,7 +870,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addOccurrences(io.grafeas.v1.Occurrence value) {
       if (occurrencesBuilder_ == null) {
@@ -858,7 +894,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addOccurrences(int index, io.grafeas.v1.Occurrence value) {
       if (occurrencesBuilder_ == null) {
@@ -880,7 +918,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addOccurrences(io.grafeas.v1.Occurrence.Builder builderForValue) {
       if (occurrencesBuilder_ == null) {
@@ -899,7 +939,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addOccurrences(int index, io.grafeas.v1.Occurrence.Builder builderForValue) {
       if (occurrencesBuilder_ == null) {
@@ -918,7 +960,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllOccurrences(
         java.lang.Iterable<? extends io.grafeas.v1.Occurrence> values) {
@@ -938,7 +982,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearOccurrences() {
       if (occurrencesBuilder_ == null) {
@@ -957,7 +1003,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeOccurrences(int index) {
       if (occurrencesBuilder_ == null) {
@@ -976,7 +1024,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public io.grafeas.v1.Occurrence.Builder getOccurrencesBuilder(int index) {
       return getOccurrencesFieldBuilder().getBuilder(index);
@@ -988,7 +1038,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public io.grafeas.v1.OccurrenceOrBuilder getOccurrencesOrBuilder(int index) {
       if (occurrencesBuilder_ == null) {
@@ -1004,7 +1056,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends io.grafeas.v1.OccurrenceOrBuilder>
         getOccurrencesOrBuilderList() {
@@ -1021,7 +1075,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public io.grafeas.v1.Occurrence.Builder addOccurrencesBuilder() {
       return getOccurrencesFieldBuilder().addBuilder(io.grafeas.v1.Occurrence.getDefaultInstance());
@@ -1033,7 +1089,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public io.grafeas.v1.Occurrence.Builder addOccurrencesBuilder(int index) {
       return getOccurrencesFieldBuilder()
@@ -1046,7 +1104,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<io.grafeas.v1.Occurrence.Builder> getOccurrencesBuilderList() {
       return getOccurrencesFieldBuilder().getBuilderList();

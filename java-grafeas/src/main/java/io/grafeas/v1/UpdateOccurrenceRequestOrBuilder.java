@@ -32,7 +32,9 @@ public interface UpdateOccurrenceRequestOrBuilder
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -45,7 +47,9 @@ public interface UpdateOccurrenceRequestOrBuilder
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -58,7 +62,7 @@ public interface UpdateOccurrenceRequestOrBuilder
    * The updated occurrence.
    * </pre>
    *
-   * <code>.grafeas.v1.Occurrence occurrence = 2;</code>
+   * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the occurrence field is set.
    */
@@ -70,7 +74,7 @@ public interface UpdateOccurrenceRequestOrBuilder
    * The updated occurrence.
    * </pre>
    *
-   * <code>.grafeas.v1.Occurrence occurrence = 2;</code>
+   * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The occurrence.
    */
@@ -82,7 +86,7 @@ public interface UpdateOccurrenceRequestOrBuilder
    * The updated occurrence.
    * </pre>
    *
-   * <code>.grafeas.v1.Occurrence occurrence = 2;</code>
+   * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   io.grafeas.v1.OccurrenceOrBuilder getOccurrenceOrBuilder();
 

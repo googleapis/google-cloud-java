@@ -32,7 +32,9 @@ public interface BatchCreateOccurrencesRequestOrBuilder
    * the occurrences are to be created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -45,7 +47,9 @@ public interface BatchCreateOccurrencesRequestOrBuilder
    * the occurrences are to be created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -58,7 +62,9 @@ public interface BatchCreateOccurrencesRequestOrBuilder
    * The occurrences to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+   * <code>
+   * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<io.grafeas.v1.Occurrence> getOccurrencesList();
   /**
@@ -68,7 +74,9 @@ public interface BatchCreateOccurrencesRequestOrBuilder
    * The occurrences to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+   * <code>
+   * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   io.grafeas.v1.Occurrence getOccurrences(int index);
   /**
@@ -78,7 +86,9 @@ public interface BatchCreateOccurrencesRequestOrBuilder
    * The occurrences to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+   * <code>
+   * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getOccurrencesCount();
   /**
@@ -88,7 +98,9 @@ public interface BatchCreateOccurrencesRequestOrBuilder
    * The occurrences to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+   * <code>
+   * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends io.grafeas.v1.OccurrenceOrBuilder> getOccurrencesOrBuilderList();
   /**
@@ -98,7 +110,9 @@ public interface BatchCreateOccurrencesRequestOrBuilder
    * The occurrences to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>repeated .grafeas.v1.Occurrence occurrences = 2;</code>
+   * <code>
+   * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   io.grafeas.v1.OccurrenceOrBuilder getOccurrencesOrBuilder(int index);
 }

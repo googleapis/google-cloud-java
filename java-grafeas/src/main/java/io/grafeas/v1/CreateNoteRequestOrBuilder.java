@@ -32,7 +32,9 @@ public interface CreateNoteRequestOrBuilder
    * the note is to be created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -45,7 +47,9 @@ public interface CreateNoteRequestOrBuilder
    * the note is to be created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -58,7 +62,7 @@ public interface CreateNoteRequestOrBuilder
    * The ID to use for this note.
    * </pre>
    *
-   * <code>string note_id = 2;</code>
+   * <code>string note_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The noteId.
    */
@@ -70,7 +74,7 @@ public interface CreateNoteRequestOrBuilder
    * The ID to use for this note.
    * </pre>
    *
-   * <code>string note_id = 2;</code>
+   * <code>string note_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for noteId.
    */
@@ -83,7 +87,7 @@ public interface CreateNoteRequestOrBuilder
    * The note to create.
    * </pre>
    *
-   * <code>.grafeas.v1.Note note = 3;</code>
+   * <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the note field is set.
    */
@@ -95,7 +99,7 @@ public interface CreateNoteRequestOrBuilder
    * The note to create.
    * </pre>
    *
-   * <code>.grafeas.v1.Note note = 3;</code>
+   * <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The note.
    */
@@ -107,7 +111,7 @@ public interface CreateNoteRequestOrBuilder
    * The note to create.
    * </pre>
    *
-   * <code>.grafeas.v1.Note note = 3;</code>
+   * <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   io.grafeas.v1.NoteOrBuilder getNoteOrBuilder();
 }
