@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -199,7 +199,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Source createSource(OrganizationName parent, Source source) {
-
     CreateSourceRequest request =
         CreateSourceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -229,7 +228,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Source createSource(String parent, Source source) {
-
     CreateSourceRequest request =
         CreateSourceRequest.newBuilder().setParent(parent).setSource(source).build();
     return createSource(request);
@@ -309,7 +307,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Finding createFinding(SourceName parent, String findingId, Finding finding) {
-
     CreateFindingRequest request =
         CreateFindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -344,7 +341,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Finding createFinding(String parent, String findingId, Finding finding) {
-
     CreateFindingRequest request =
         CreateFindingRequest.newBuilder()
             .setParent(parent)
@@ -425,7 +421,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(SourceName resource) {
-
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -451,7 +446,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(String resource) {
-
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
     return getIamPolicy(request);
   }
@@ -519,7 +513,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OrganizationSettings getOrganizationSettings(OrganizationSettingsName name) {
-
     GetOrganizationSettingsRequest request =
         GetOrganizationSettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -545,7 +538,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OrganizationSettings getOrganizationSettings(String name) {
-
     GetOrganizationSettingsRequest request =
         GetOrganizationSettingsRequest.newBuilder().setName(name).build();
     return getOrganizationSettings(request);
@@ -616,7 +608,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Source getSource(SourceName name) {
-
     GetSourceRequest request =
         GetSourceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSource(request);
@@ -640,7 +631,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Source getSource(String name) {
-
     GetSourceRequest request = GetSourceRequest.newBuilder().setName(name).build();
     return getSource(request);
   }
@@ -1271,7 +1261,6 @@ public class SecurityCenterClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Empty> runAssetDiscoveryAsync(OrganizationName parent) {
-
     RunAssetDiscoveryRequest request =
         RunAssetDiscoveryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1302,7 +1291,6 @@ public class SecurityCenterClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Empty> runAssetDiscoveryAsync(String parent) {
-
     RunAssetDiscoveryRequest request =
         RunAssetDiscoveryRequest.newBuilder().setParent(parent).build();
     return runAssetDiscoveryAsync(request);
@@ -1412,7 +1400,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Finding setFindingState(FindingName name, Finding.State state, Timestamp startTime) {
-
     SetFindingStateRequest request =
         SetFindingStateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1445,7 +1432,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Finding setFindingState(String name, Finding.State state, Timestamp startTime) {
-
     SetFindingStateRequest request =
         SetFindingStateRequest.newBuilder()
             .setName(name)
@@ -1530,7 +1516,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(SourceName resource, Policy policy) {
-
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1561,7 +1546,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(String resource, Policy policy) {
-
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
     return setIamPolicy(request);
@@ -1639,7 +1623,6 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       SourceName resource, List<String> permissions) {
-
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1671,7 +1654,6 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       String resource, List<String> permissions) {
-
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource)
@@ -1751,7 +1733,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Finding updateFinding(Finding finding) {
-
     UpdateFindingRequest request = UpdateFindingRequest.newBuilder().setFinding(finding).build();
     return updateFinding(request);
   }
@@ -1821,7 +1802,6 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   public final OrganizationSettings updateOrganizationSettings(
       OrganizationSettings organizationSettings) {
-
     UpdateOrganizationSettingsRequest request =
         UpdateOrganizationSettingsRequest.newBuilder()
             .setOrganizationSettings(organizationSettings)
@@ -1893,7 +1873,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Source updateSource(Source source) {
-
     UpdateSourceRequest request = UpdateSourceRequest.newBuilder().setSource(source).build();
     return updateSource(request);
   }
@@ -1960,7 +1939,6 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecurityMarks updateSecurityMarks(SecurityMarks securityMarks) {
-
     UpdateSecurityMarksRequest request =
         UpdateSecurityMarksRequest.newBuilder().setSecurityMarks(securityMarks).build();
     return updateSecurityMarks(request);
