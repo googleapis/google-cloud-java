@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -170,7 +170,6 @@ public class EventServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ClientEvent createClientEvent(TenantOrProjectName parent, ClientEvent clientEvent) {
-
     CreateClientEventRequest request =
         CreateClientEventRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -205,7 +204,6 @@ public class EventServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ClientEvent createClientEvent(String parent, ClientEvent clientEvent) {
-
     CreateClientEventRequest request =
         CreateClientEventRequest.newBuilder().setParent(parent).setClientEvent(clientEvent).build();
     return createClientEvent(request);

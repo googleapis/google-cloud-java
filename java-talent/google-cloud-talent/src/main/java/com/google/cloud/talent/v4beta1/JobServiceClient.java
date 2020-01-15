@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -195,7 +195,6 @@ public class JobServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job createJob(TenantOrProjectName parent, Job job) {
-
     CreateJobRequest request =
         CreateJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -228,7 +227,6 @@ public class JobServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job createJob(String parent, Job job) {
-
     CreateJobRequest request = CreateJobRequest.newBuilder().setParent(parent).setJob(job).build();
     return createJob(request);
   }
@@ -307,7 +305,6 @@ public class JobServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job getJob(JobName name) {
-
     GetJobRequest request =
         GetJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getJob(request);
@@ -334,7 +331,6 @@ public class JobServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job getJob(String name) {
-
     GetJobRequest request = GetJobRequest.newBuilder().setName(name).build();
     return getJob(request);
   }
@@ -404,7 +400,6 @@ public class JobServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job updateJob(Job job) {
-
     UpdateJobRequest request = UpdateJobRequest.newBuilder().setJob(job).build();
     return updateJob(request);
   }
@@ -483,7 +478,6 @@ public class JobServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteJob(JobName name) {
-
     DeleteJobRequest request =
         DeleteJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteJob(request);
@@ -512,7 +506,6 @@ public class JobServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteJob(String name) {
-
     DeleteJobRequest request = DeleteJobRequest.newBuilder().setName(name).build();
     deleteJob(request);
   }
@@ -755,7 +748,6 @@ public class JobServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void batchDeleteJobs(TenantOrProjectName parent, String filter) {
-
     BatchDeleteJobsRequest request =
         BatchDeleteJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -790,7 +782,6 @@ public class JobServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void batchDeleteJobs(String parent, String filter) {
-
     BatchDeleteJobsRequest request =
         BatchDeleteJobsRequest.newBuilder().setParent(parent).setFilter(filter).build();
     batchDeleteJobs(request);
@@ -1082,7 +1073,6 @@ public class JobServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchCreateJobsAsync(
       String parent, List<Job> jobs) {
-
     BatchCreateJobsRequest request =
         BatchCreateJobsRequest.newBuilder().setParent(parent).addAllJobs(jobs).build();
     return batchCreateJobsAsync(request);
@@ -1191,7 +1181,6 @@ public class JobServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchUpdateJobsAsync(
       String parent, List<Job> jobs) {
-
     BatchUpdateJobsRequest request =
         BatchUpdateJobsRequest.newBuilder().setParent(parent).addAllJobs(jobs).build();
     return batchUpdateJobsAsync(request);

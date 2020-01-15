@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -178,7 +178,6 @@ public class ApplicationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Application createApplication(ProfileName parent, Application application) {
-
     CreateApplicationRequest request =
         CreateApplicationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -208,7 +207,6 @@ public class ApplicationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Application createApplication(String parent, Application application) {
-
     CreateApplicationRequest request =
         CreateApplicationRequest.newBuilder().setParent(parent).setApplication(application).build();
     return createApplication(request);
@@ -283,7 +281,6 @@ public class ApplicationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Application getApplication(ApplicationName name) {
-
     GetApplicationRequest request =
         GetApplicationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getApplication(request);
@@ -309,7 +306,6 @@ public class ApplicationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Application getApplication(String name) {
-
     GetApplicationRequest request = GetApplicationRequest.newBuilder().setName(name).build();
     return getApplication(request);
   }
@@ -377,7 +373,6 @@ public class ApplicationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Application updateApplication(Application application) {
-
     UpdateApplicationRequest request =
         UpdateApplicationRequest.newBuilder().setApplication(application).build();
     return updateApplication(request);
@@ -448,7 +443,6 @@ public class ApplicationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteApplication(ApplicationName name) {
-
     DeleteApplicationRequest request =
         DeleteApplicationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -476,7 +470,6 @@ public class ApplicationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteApplication(String name) {
-
     DeleteApplicationRequest request = DeleteApplicationRequest.newBuilder().setName(name).build();
     deleteApplication(request);
   }

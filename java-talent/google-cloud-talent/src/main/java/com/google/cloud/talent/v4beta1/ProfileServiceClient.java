@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -311,7 +311,6 @@ public class ProfileServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Profile createProfile(TenantName parent, Profile profile) {
-
     CreateProfileRequest request =
         CreateProfileRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -341,7 +340,6 @@ public class ProfileServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Profile createProfile(String parent, Profile profile) {
-
     CreateProfileRequest request =
         CreateProfileRequest.newBuilder().setParent(parent).setProfile(profile).build();
     return createProfile(request);
@@ -415,7 +413,6 @@ public class ProfileServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Profile getProfile(ProfileName name) {
-
     GetProfileRequest request =
         GetProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProfile(request);
@@ -440,7 +437,6 @@ public class ProfileServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Profile getProfile(String name) {
-
     GetProfileRequest request = GetProfileRequest.newBuilder().setName(name).build();
     return getProfile(request);
   }
@@ -507,7 +503,6 @@ public class ProfileServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Profile updateProfile(Profile profile) {
-
     UpdateProfileRequest request = UpdateProfileRequest.newBuilder().setProfile(profile).build();
     return updateProfile(request);
   }
@@ -577,7 +572,6 @@ public class ProfileServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteProfile(ProfileName name) {
-
     DeleteProfileRequest request =
         DeleteProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteProfile(request);
@@ -603,7 +597,6 @@ public class ProfileServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteProfile(String name) {
-
     DeleteProfileRequest request = DeleteProfileRequest.newBuilder().setName(name).build();
     deleteProfile(request);
   }

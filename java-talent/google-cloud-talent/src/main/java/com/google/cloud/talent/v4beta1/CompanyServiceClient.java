@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -177,7 +177,6 @@ public class CompanyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Company createCompany(TenantOrProjectName parent, Company company) {
-
     CreateCompanyRequest request =
         CreateCompanyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -208,7 +207,6 @@ public class CompanyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Company createCompany(String parent, Company company) {
-
     CreateCompanyRequest request =
         CreateCompanyRequest.newBuilder().setParent(parent).setCompany(company).build();
     return createCompany(request);
@@ -284,7 +282,6 @@ public class CompanyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Company getCompany(CompanyName name) {
-
     GetCompanyRequest request =
         GetCompanyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCompany(request);
@@ -311,7 +308,6 @@ public class CompanyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Company getCompany(String name) {
-
     GetCompanyRequest request = GetCompanyRequest.newBuilder().setName(name).build();
     return getCompany(request);
   }
@@ -378,7 +374,6 @@ public class CompanyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Company updateCompany(Company company) {
-
     UpdateCompanyRequest request = UpdateCompanyRequest.newBuilder().setCompany(company).build();
     return updateCompany(request);
   }
@@ -449,7 +444,6 @@ public class CompanyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCompany(CompanyName name) {
-
     DeleteCompanyRequest request =
         DeleteCompanyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteCompany(request);
@@ -476,7 +470,6 @@ public class CompanyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCompany(String name) {
-
     DeleteCompanyRequest request = DeleteCompanyRequest.newBuilder().setName(name).build();
     deleteCompany(request);
   }

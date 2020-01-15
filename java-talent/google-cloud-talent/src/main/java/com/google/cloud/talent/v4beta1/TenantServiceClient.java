@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,7 +175,6 @@ public class TenantServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Tenant createTenant(ProjectName parent, Tenant tenant) {
-
     CreateTenantRequest request =
         CreateTenantRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -204,7 +203,6 @@ public class TenantServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Tenant createTenant(String parent, Tenant tenant) {
-
     CreateTenantRequest request =
         CreateTenantRequest.newBuilder().setParent(parent).setTenant(tenant).build();
     return createTenant(request);
@@ -278,7 +276,6 @@ public class TenantServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Tenant getTenant(TenantName name) {
-
     GetTenantRequest request =
         GetTenantRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTenant(request);
@@ -303,7 +300,6 @@ public class TenantServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Tenant getTenant(String name) {
-
     GetTenantRequest request = GetTenantRequest.newBuilder().setName(name).build();
     return getTenant(request);
   }
@@ -370,7 +366,6 @@ public class TenantServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Tenant updateTenant(Tenant tenant) {
-
     UpdateTenantRequest request = UpdateTenantRequest.newBuilder().setTenant(tenant).build();
     return updateTenant(request);
   }
@@ -439,7 +434,6 @@ public class TenantServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTenant(TenantName name) {
-
     DeleteTenantRequest request =
         DeleteTenantRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTenant(request);
@@ -464,7 +458,6 @@ public class TenantServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTenant(String name) {
-
     DeleteTenantRequest request = DeleteTenantRequest.newBuilder().setName(name).build();
     deleteTenant(request);
   }
