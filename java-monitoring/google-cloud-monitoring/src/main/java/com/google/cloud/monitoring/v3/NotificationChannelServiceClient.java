@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -351,7 +351,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    */
   public final NotificationChannelDescriptor getNotificationChannelDescriptor(
       NotificationChannelDescriptorName name) {
-
     GetNotificationChannelDescriptorRequest request =
         GetNotificationChannelDescriptorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -378,7 +377,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationChannelDescriptor getNotificationChannelDescriptor(String name) {
-
     GetNotificationChannelDescriptorRequest request =
         GetNotificationChannelDescriptorRequest.newBuilder().setName(name).build();
     return getNotificationChannelDescriptor(request);
@@ -595,7 +593,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationChannel getNotificationChannel(NotificationChannelName name) {
-
     GetNotificationChannelRequest request =
         GetNotificationChannelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -624,7 +621,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationChannel getNotificationChannel(String name) {
-
     GetNotificationChannelRequest request =
         GetNotificationChannelRequest.newBuilder().setName(name).build();
     return getNotificationChannel(request);
@@ -708,7 +704,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    */
   public final NotificationChannel createNotificationChannel(
       ProjectName name, NotificationChannel notificationChannel) {
-
     CreateNotificationChannelRequest request =
         CreateNotificationChannelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -743,7 +738,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    */
   public final NotificationChannel createNotificationChannel(
       String name, NotificationChannel notificationChannel) {
-
     CreateNotificationChannelRequest request =
         CreateNotificationChannelRequest.newBuilder()
             .setName(name)
@@ -827,7 +821,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    */
   public final NotificationChannel updateNotificationChannel(
       FieldMask updateMask, NotificationChannel notificationChannel) {
-
     UpdateNotificationChannelRequest request =
         UpdateNotificationChannelRequest.newBuilder()
             .setUpdateMask(updateMask)
@@ -906,7 +899,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteNotificationChannel(NotificationChannelName name, boolean force) {
-
     DeleteNotificationChannelRequest request =
         DeleteNotificationChannelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -938,7 +930,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteNotificationChannel(String name, boolean force) {
-
     DeleteNotificationChannelRequest request =
         DeleteNotificationChannelRequest.newBuilder().setName(name).setForce(force).build();
     deleteNotificationChannel(request);
@@ -1008,7 +999,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void sendNotificationChannelVerificationCode(NotificationChannelName name) {
-
     SendNotificationChannelVerificationCodeRequest request =
         SendNotificationChannelVerificationCodeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1034,7 +1024,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void sendNotificationChannelVerificationCode(String name) {
-
     SendNotificationChannelVerificationCodeRequest request =
         SendNotificationChannelVerificationCodeRequest.newBuilder().setName(name).build();
     sendNotificationChannelVerificationCode(request);
@@ -1124,7 +1113,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    */
   public final GetNotificationChannelVerificationCodeResponse
       getNotificationChannelVerificationCode(NotificationChannelName name) {
-
     GetNotificationChannelVerificationCodeRequest request =
         GetNotificationChannelVerificationCodeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1167,7 +1155,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    */
   public final GetNotificationChannelVerificationCodeResponse
       getNotificationChannelVerificationCode(String name) {
-
     GetNotificationChannelVerificationCodeRequest request =
         GetNotificationChannelVerificationCodeRequest.newBuilder().setName(name).build();
     return getNotificationChannelVerificationCode(request);
@@ -1279,7 +1266,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    */
   public final NotificationChannel verifyNotificationChannel(
       NotificationChannelName name, String code) {
-
     VerifyNotificationChannelRequest request =
         VerifyNotificationChannelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1313,7 +1299,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationChannel verifyNotificationChannel(String name, String code) {
-
     VerifyNotificationChannelRequest request =
         VerifyNotificationChannelRequest.newBuilder().setName(name).setCode(code).build();
     return verifyNotificationChannel(request);

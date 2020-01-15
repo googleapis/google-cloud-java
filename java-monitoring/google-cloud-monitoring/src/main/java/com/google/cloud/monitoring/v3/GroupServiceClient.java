@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -319,7 +319,6 @@ public class GroupServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Group getGroup(GroupName name) {
-
     GetGroupRequest request =
         GetGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGroup(request);
@@ -343,7 +342,6 @@ public class GroupServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Group getGroup(String name) {
-
     GetGroupRequest request = GetGroupRequest.newBuilder().setName(name).build();
     return getGroup(request);
   }
@@ -414,7 +412,6 @@ public class GroupServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Group createGroup(ProjectName name, Group group) {
-
     CreateGroupRequest request =
         CreateGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -444,7 +441,6 @@ public class GroupServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Group createGroup(String name, Group group) {
-
     CreateGroupRequest request =
         CreateGroupRequest.newBuilder().setName(name).setGroup(group).build();
     return createGroup(request);
@@ -517,7 +513,6 @@ public class GroupServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Group updateGroup(Group group) {
-
     UpdateGroupRequest request = UpdateGroupRequest.newBuilder().setGroup(group).build();
     return updateGroup(request);
   }
@@ -585,7 +580,6 @@ public class GroupServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteGroup(GroupName name) {
-
     DeleteGroupRequest request =
         DeleteGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteGroup(request);
@@ -609,7 +603,6 @@ public class GroupServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteGroup(String name) {
-
     DeleteGroupRequest request = DeleteGroupRequest.newBuilder().setName(name).build();
     deleteGroup(request);
   }

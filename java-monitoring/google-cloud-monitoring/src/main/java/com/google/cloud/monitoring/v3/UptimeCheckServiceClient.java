@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -300,7 +300,6 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UptimeCheckConfig getUptimeCheckConfig(UptimeCheckConfigName name) {
-
     GetUptimeCheckConfigRequest request =
         GetUptimeCheckConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -326,7 +325,6 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UptimeCheckConfig getUptimeCheckConfig(String name) {
-
     GetUptimeCheckConfigRequest request =
         GetUptimeCheckConfigRequest.newBuilder().setName(name).build();
     return getUptimeCheckConfig(request);
@@ -399,7 +397,6 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    */
   public final UptimeCheckConfig createUptimeCheckConfig(
       String parent, UptimeCheckConfig uptimeCheckConfig) {
-
     CreateUptimeCheckConfigRequest request =
         CreateUptimeCheckConfigRequest.newBuilder()
             .setParent(parent)
@@ -484,7 +481,6 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UptimeCheckConfig updateUptimeCheckConfig(UptimeCheckConfig uptimeCheckConfig) {
-
     UpdateUptimeCheckConfigRequest request =
         UpdateUptimeCheckConfigRequest.newBuilder().setUptimeCheckConfig(uptimeCheckConfig).build();
     return updateUptimeCheckConfig(request);
@@ -560,7 +556,6 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteUptimeCheckConfig(UptimeCheckConfigName name) {
-
     DeleteUptimeCheckConfigRequest request =
         DeleteUptimeCheckConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -588,7 +583,6 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteUptimeCheckConfig(String name) {
-
     DeleteUptimeCheckConfigRequest request =
         DeleteUptimeCheckConfigRequest.newBuilder().setName(name).build();
     deleteUptimeCheckConfig(request);

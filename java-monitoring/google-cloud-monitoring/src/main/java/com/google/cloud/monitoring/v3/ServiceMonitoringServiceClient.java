@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -195,7 +195,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Service createService(ProjectName parent, Service service) {
-
     CreateServiceRequest request =
         CreateServiceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -223,7 +222,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Service createService(String parent, Service service) {
-
     CreateServiceRequest request =
         CreateServiceRequest.newBuilder().setParent(parent).setService(service).build();
     return createService(request);
@@ -296,7 +294,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Service getService(ServiceName name) {
-
     GetServiceRequest request =
         GetServiceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getService(request);
@@ -320,7 +317,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Service getService(String name) {
-
     GetServiceRequest request = GetServiceRequest.newBuilder().setName(name).build();
     return getService(request);
   }
@@ -518,7 +514,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Service updateService(Service service) {
-
     UpdateServiceRequest request = UpdateServiceRequest.newBuilder().setService(service).build();
     return updateService(request);
   }
@@ -586,7 +581,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteService(ServiceName name) {
-
     DeleteServiceRequest request =
         DeleteServiceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteService(request);
@@ -610,7 +604,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteService(String name) {
-
     DeleteServiceRequest request = DeleteServiceRequest.newBuilder().setName(name).build();
     deleteService(request);
   }
@@ -682,7 +675,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    */
   public final ServiceLevelObjective createServiceLevelObjective(
       ServiceName parent, ServiceLevelObjective serviceLevelObjective) {
-
     CreateServiceLevelObjectiveRequest request =
         CreateServiceLevelObjectiveRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -713,7 +705,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    */
   public final ServiceLevelObjective createServiceLevelObjective(
       String parent, ServiceLevelObjective serviceLevelObjective) {
-
     CreateServiceLevelObjectiveRequest request =
         CreateServiceLevelObjectiveRequest.newBuilder()
             .setParent(parent)
@@ -791,7 +782,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServiceLevelObjective getServiceLevelObjective(ServiceLevelObjectiveName name) {
-
     GetServiceLevelObjectiveRequest request =
         GetServiceLevelObjectiveRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -817,7 +807,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServiceLevelObjective getServiceLevelObjective(String name) {
-
     GetServiceLevelObjectiveRequest request =
         GetServiceLevelObjectiveRequest.newBuilder().setName(name).build();
     return getServiceLevelObjective(request);
@@ -1026,7 +1015,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    */
   public final ServiceLevelObjective updateServiceLevelObjective(
       ServiceLevelObjective serviceLevelObjective) {
-
     UpdateServiceLevelObjectiveRequest request =
         UpdateServiceLevelObjectiveRequest.newBuilder()
             .setServiceLevelObjective(serviceLevelObjective)
@@ -1099,7 +1087,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteServiceLevelObjective(ServiceLevelObjectiveName name) {
-
     DeleteServiceLevelObjectiveRequest request =
         DeleteServiceLevelObjectiveRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1125,7 +1112,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteServiceLevelObjective(String name) {
-
     DeleteServiceLevelObjectiveRequest request =
         DeleteServiceLevelObjectiveRequest.newBuilder().setName(name).build();
     deleteServiceLevelObjective(request);

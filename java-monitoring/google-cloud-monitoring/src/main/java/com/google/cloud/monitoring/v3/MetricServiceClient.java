@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -337,7 +337,6 @@ public class MetricServiceClient implements BackgroundResource {
    */
   public final MonitoredResourceDescriptor getMonitoredResourceDescriptor(
       MonitoredResourceDescriptorName name) {
-
     GetMonitoredResourceDescriptorRequest request =
         GetMonitoredResourceDescriptorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -365,7 +364,6 @@ public class MetricServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MonitoredResourceDescriptor getMonitoredResourceDescriptor(String name) {
-
     GetMonitoredResourceDescriptorRequest request =
         GetMonitoredResourceDescriptorRequest.newBuilder().setName(name).build();
     return getMonitoredResourceDescriptor(request);
@@ -579,7 +577,6 @@ public class MetricServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MetricDescriptor getMetricDescriptor(MetricDescriptorName name) {
-
     GetMetricDescriptorRequest request =
         GetMetricDescriptorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -606,7 +603,6 @@ public class MetricServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MetricDescriptor getMetricDescriptor(String name) {
-
     GetMetricDescriptorRequest request =
         GetMetricDescriptorRequest.newBuilder().setName(name).build();
     return getMetricDescriptor(request);
@@ -680,7 +676,6 @@ public class MetricServiceClient implements BackgroundResource {
    */
   public final MetricDescriptor createMetricDescriptor(
       ProjectName name, MetricDescriptor metricDescriptor) {
-
     CreateMetricDescriptorRequest request =
         CreateMetricDescriptorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -711,7 +706,6 @@ public class MetricServiceClient implements BackgroundResource {
    */
   public final MetricDescriptor createMetricDescriptor(
       String name, MetricDescriptor metricDescriptor) {
-
     CreateMetricDescriptorRequest request =
         CreateMetricDescriptorRequest.newBuilder()
             .setName(name)
@@ -792,7 +786,6 @@ public class MetricServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteMetricDescriptor(MetricDescriptorName name) {
-
     DeleteMetricDescriptorRequest request =
         DeleteMetricDescriptorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -820,7 +813,6 @@ public class MetricServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteMetricDescriptor(String name) {
-
     DeleteMetricDescriptorRequest request =
         DeleteMetricDescriptorRequest.newBuilder().setName(name).build();
     deleteMetricDescriptor(request);
@@ -1090,7 +1082,6 @@ public class MetricServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void createTimeSeries(ProjectName name, List<TimeSeries> timeSeries) {
-
     CreateTimeSeriesRequest request =
         CreateTimeSeriesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1125,7 +1116,6 @@ public class MetricServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void createTimeSeries(String name, List<TimeSeries> timeSeries) {
-
     CreateTimeSeriesRequest request =
         CreateTimeSeriesRequest.newBuilder().setName(name).addAllTimeSeries(timeSeries).build();
     createTimeSeries(request);

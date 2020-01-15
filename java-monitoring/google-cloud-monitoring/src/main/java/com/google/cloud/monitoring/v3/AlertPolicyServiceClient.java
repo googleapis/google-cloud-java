@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -328,7 +328,6 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AlertPolicy getAlertPolicy(AlertPolicyName name) {
-
     GetAlertPolicyRequest request =
         GetAlertPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAlertPolicy(request);
@@ -352,7 +351,6 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AlertPolicy getAlertPolicy(String name) {
-
     GetAlertPolicyRequest request = GetAlertPolicyRequest.newBuilder().setName(name).build();
     return getAlertPolicy(request);
   }
@@ -428,7 +426,6 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AlertPolicy createAlertPolicy(ProjectName name, AlertPolicy alertPolicy) {
-
     CreateAlertPolicyRequest request =
         CreateAlertPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -463,7 +460,6 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AlertPolicy createAlertPolicy(String name, AlertPolicy alertPolicy) {
-
     CreateAlertPolicyRequest request =
         CreateAlertPolicyRequest.newBuilder().setName(name).setAlertPolicy(alertPolicy).build();
     return createAlertPolicy(request);
@@ -537,7 +533,6 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAlertPolicy(AlertPolicyName name) {
-
     DeleteAlertPolicyRequest request =
         DeleteAlertPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -564,7 +559,6 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAlertPolicy(String name) {
-
     DeleteAlertPolicyRequest request = DeleteAlertPolicyRequest.newBuilder().setName(name).build();
     deleteAlertPolicy(request);
   }
@@ -651,7 +645,6 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AlertPolicy updateAlertPolicy(FieldMask updateMask, AlertPolicy alertPolicy) {
-
     UpdateAlertPolicyRequest request =
         UpdateAlertPolicyRequest.newBuilder()
             .setUpdateMask(updateMask)
