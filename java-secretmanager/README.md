@@ -101,9 +101,9 @@ Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
-[api-reference]: https://cloud.google.com/solutions/secrets-management/
-[product-docs]: https://cloud.google.com/solutions/secrets-management/
-[javadocs]: https://googleapis.dev/java/java-secretmanager/latest
+[api-reference]: https://cloud.google.com/secret-manager/docs/reference/rest/
+[product-docs]: https://cloud.google.com/secret-manager/
+[javadocs]: https://googleapis.dev/java/google-cloud-secretmanager/latest/index.html
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-secretmanager/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-secretmanager/java7.html
 [kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-secretmanager/java8.svg
