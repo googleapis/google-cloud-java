@@ -17,12 +17,12 @@
 package com.example.asset;
 
 // [START asset_quickstart_create_feed]
+import com.google.cloud.asset.v1.AssetServiceClient;
+import com.google.cloud.asset.v1.CreateFeedRequest;
+import com.google.cloud.asset.v1.Feed;
+import com.google.cloud.asset.v1.FeedOutputConfig;
 import com.google.cloud.asset.v1.ProjectName;
-import com.google.cloud.asset.v1p2beta1.AssetServiceClient;
-import com.google.cloud.asset.v1p2beta1.CreateFeedRequest;
-import com.google.cloud.asset.v1p2beta1.Feed;
-import com.google.cloud.asset.v1p2beta1.FeedOutputConfig;
-import com.google.cloud.asset.v1p2beta1.PubsubDestination;
+import com.google.cloud.asset.v1.PubsubDestination;
 import java.util.Arrays;
 
 public class CreateFeedExample {

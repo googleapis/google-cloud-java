@@ -17,11 +17,11 @@
 package com.example.asset;
 
 // [START asset_quickstart_update_feed]
-import com.google.cloud.asset.v1p2beta1.AssetServiceClient;
-import com.google.cloud.asset.v1p2beta1.Feed;
-import com.google.cloud.asset.v1p2beta1.FeedOutputConfig;
-import com.google.cloud.asset.v1p2beta1.PubsubDestination;
-import com.google.cloud.asset.v1p2beta1.UpdateFeedRequest;
+import com.google.cloud.asset.v1.AssetServiceClient;
+import com.google.cloud.asset.v1.Feed;
+import com.google.cloud.asset.v1.FeedOutputConfig;
+import com.google.cloud.asset.v1.PubsubDestination;
+import com.google.cloud.asset.v1.UpdateFeedRequest;
 import com.google.protobuf.FieldMask;
 import java.util.Arrays;
 

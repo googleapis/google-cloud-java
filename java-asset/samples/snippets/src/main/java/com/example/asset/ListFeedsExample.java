@@ -17,9 +17,9 @@
 package com.example.asset;
 
 // [START asset_quickstart_list_feeds]
+import com.google.cloud.asset.v1.AssetServiceClient;
+import com.google.cloud.asset.v1.ListFeedsResponse;
 import com.google.cloud.asset.v1.ProjectName;
-import com.google.cloud.asset.v1p2beta1.AssetServiceClient;
-import com.google.cloud.asset.v1p2beta1.ListFeedsResponse;
 import java.util.Arrays;
 
 public class ListFeedsExample {
