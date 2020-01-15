@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -222,7 +222,6 @@ public class ClusterManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListClustersResponse listClusters(String projectId, String zone) {
-
     ListClustersRequest request =
         ListClustersRequest.newBuilder().setProjectId(projectId).setZone(zone).build();
     return listClusters(request);
@@ -303,7 +302,6 @@ public class ClusterManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Cluster getCluster(String projectId, String zone, String clusterId) {
-
     GetClusterRequest request =
         GetClusterRequest.newBuilder()
             .setProjectId(projectId)
@@ -403,7 +401,6 @@ public class ClusterManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation createCluster(String projectId, String zone, Cluster cluster) {
-
     CreateClusterRequest request =
         CreateClusterRequest.newBuilder()
             .setProjectId(projectId)
@@ -517,7 +514,6 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final Operation updateCluster(
       String projectId, String zone, String clusterId, ClusterUpdate update) {
-
     UpdateClusterRequest request =
         UpdateClusterRequest.newBuilder()
             .setProjectId(projectId)
@@ -744,7 +740,6 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final Operation setLoggingService(
       String projectId, String zone, String clusterId, String loggingService) {
-
     SetLoggingServiceRequest request =
         SetLoggingServiceRequest.newBuilder()
             .setProjectId(projectId)
@@ -845,7 +840,6 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final Operation setMonitoringService(
       String projectId, String zone, String clusterId, String monitoringService) {
-
     SetMonitoringServiceRequest request =
         SetMonitoringServiceRequest.newBuilder()
             .setProjectId(projectId)
@@ -944,7 +938,6 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final Operation setAddonsConfig(
       String projectId, String zone, String clusterId, AddonsConfig addonsConfig) {
-
     SetAddonsConfigRequest request =
         SetAddonsConfigRequest.newBuilder()
             .setProjectId(projectId)
@@ -1045,7 +1038,6 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final Operation setLocations(
       String projectId, String zone, String clusterId, List<String> locations) {
-
     SetLocationsRequest request =
         SetLocationsRequest.newBuilder()
             .setProjectId(projectId)
@@ -1148,7 +1140,6 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final Operation updateMaster(
       String projectId, String zone, String clusterId, String masterVersion) {
-
     UpdateMasterRequest request =
         UpdateMasterRequest.newBuilder()
             .setProjectId(projectId)
@@ -1311,7 +1302,6 @@ public class ClusterManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation deleteCluster(String projectId, String zone, String clusterId) {
-
     DeleteClusterRequest request =
         DeleteClusterRequest.newBuilder()
             .setProjectId(projectId)
@@ -1409,7 +1399,6 @@ public class ClusterManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListOperationsResponse listOperations(String projectId, String zone) {
-
     ListOperationsRequest request =
         ListOperationsRequest.newBuilder().setProjectId(projectId).setZone(zone).build();
     return listOperations(request);
@@ -1491,7 +1480,6 @@ public class ClusterManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation getOperation(String projectId, String zone, String operationId) {
-
     GetOperationRequest request =
         GetOperationRequest.newBuilder()
             .setProjectId(projectId)
@@ -1580,7 +1568,6 @@ public class ClusterManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void cancelOperation(String projectId, String zone, String operationId) {
-
     CancelOperationRequest request =
         CancelOperationRequest.newBuilder()
             .setProjectId(projectId)
@@ -1666,7 +1653,6 @@ public class ClusterManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServerConfig getServerConfig(String projectId, String zone) {
-
     GetServerConfigRequest request =
         GetServerConfigRequest.newBuilder().setProjectId(projectId).setZone(zone).build();
     return getServerConfig(request);
@@ -1748,7 +1734,6 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final ListNodePoolsResponse listNodePools(
       String projectId, String zone, String clusterId) {
-
     ListNodePoolsRequest request =
         ListNodePoolsRequest.newBuilder()
             .setProjectId(projectId)
@@ -1841,7 +1826,6 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final NodePool getNodePool(
       String projectId, String zone, String clusterId, String nodePoolId) {
-
     GetNodePoolRequest request =
         GetNodePoolRequest.newBuilder()
             .setProjectId(projectId)
@@ -1938,7 +1922,6 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final Operation createNodePool(
       String projectId, String zone, String clusterId, NodePool nodePool) {
-
     CreateNodePoolRequest request =
         CreateNodePoolRequest.newBuilder()
             .setProjectId(projectId)
@@ -2036,7 +2019,6 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final Operation deleteNodePool(
       String projectId, String zone, String clusterId, String nodePoolId) {
-
     DeleteNodePoolRequest request =
         DeleteNodePoolRequest.newBuilder()
             .setProjectId(projectId)
@@ -2135,7 +2117,6 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final Operation rollbackNodePoolUpgrade(
       String projectId, String zone, String clusterId, String nodePoolId) {
-
     RollbackNodePoolUpgradeRequest request =
         RollbackNodePoolUpgradeRequest.newBuilder()
             .setProjectId(projectId)
@@ -2358,7 +2339,6 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final Operation setLegacyAbac(
       String projectId, String zone, String clusterId, boolean enabled) {
-
     SetLegacyAbacRequest request =
         SetLegacyAbacRequest.newBuilder()
             .setProjectId(projectId)
@@ -2452,7 +2432,6 @@ public class ClusterManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation startIPRotation(String projectId, String zone, String clusterId) {
-
     StartIPRotationRequest request =
         StartIPRotationRequest.newBuilder()
             .setProjectId(projectId)
@@ -2541,7 +2520,6 @@ public class ClusterManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation completeIPRotation(String projectId, String zone, String clusterId) {
-
     CompleteIPRotationRequest request =
         CompleteIPRotationRequest.newBuilder()
             .setProjectId(projectId)
@@ -2694,7 +2672,6 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final Operation setNetworkPolicy(
       String projectId, String zone, String clusterId, NetworkPolicy networkPolicy) {
-
     SetNetworkPolicyRequest request =
         SetNetworkPolicyRequest.newBuilder()
             .setProjectId(projectId)
@@ -2789,7 +2766,6 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final Operation setMaintenancePolicy(
       String projectId, String zone, String clusterId, MaintenancePolicy maintenancePolicy) {
-
     SetMaintenancePolicyRequest request =
         SetMaintenancePolicyRequest.newBuilder()
             .setProjectId(projectId)
