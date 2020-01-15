@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -205,7 +205,6 @@ public class AutoMlClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Dataset, OperationMetadata> createDatasetAsync(
       LocationName parent, Dataset dataset) {
-
     CreateDatasetRequest request =
         CreateDatasetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -236,7 +235,6 @@ public class AutoMlClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Dataset, OperationMetadata> createDatasetAsync(
       String parent, Dataset dataset) {
-
     CreateDatasetRequest request =
         CreateDatasetRequest.newBuilder().setParent(parent).setDataset(dataset).build();
     return createDatasetAsync(request);
@@ -339,7 +337,6 @@ public class AutoMlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Dataset updateDataset(Dataset dataset, FieldMask updateMask) {
-
     UpdateDatasetRequest request =
         UpdateDatasetRequest.newBuilder().setDataset(dataset).setUpdateMask(updateMask).build();
     return updateDataset(request);
@@ -411,7 +408,6 @@ public class AutoMlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Dataset getDataset(DatasetName name) {
-
     GetDatasetRequest request =
         GetDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataset(request);
@@ -434,7 +430,6 @@ public class AutoMlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Dataset getDataset(String name) {
-
     GetDatasetRequest request = GetDatasetRequest.newBuilder().setName(name).build();
     return getDataset(request);
   }
@@ -635,7 +630,6 @@ public class AutoMlClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> deleteDatasetAsync(DatasetName name) {
-
     DeleteDatasetRequest request =
         DeleteDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDatasetAsync(request);
@@ -662,7 +656,6 @@ public class AutoMlClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> deleteDatasetAsync(String name) {
-
     DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder().setName(name).build();
     return deleteDatasetAsync(request);
   }
@@ -769,7 +762,6 @@ public class AutoMlClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> importDataAsync(
       DatasetName name, InputConfig inputConfig) {
-
     ImportDataRequest request =
         ImportDataRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -802,7 +794,6 @@ public class AutoMlClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> importDataAsync(
       String name, InputConfig inputConfig) {
-
     ImportDataRequest request =
         ImportDataRequest.newBuilder().setName(name).setInputConfig(inputConfig).build();
     return importDataAsync(request);
@@ -909,7 +900,6 @@ public class AutoMlClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> exportDataAsync(
       DatasetName name, OutputConfig outputConfig) {
-
     ExportDataRequest request =
         ExportDataRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -941,7 +931,6 @@ public class AutoMlClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> exportDataAsync(
       String name, OutputConfig outputConfig) {
-
     ExportDataRequest request =
         ExportDataRequest.newBuilder().setName(name).setOutputConfig(outputConfig).build();
     return exportDataAsync(request);
@@ -1045,7 +1034,6 @@ public class AutoMlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotationSpec getAnnotationSpec(AnnotationSpecName name) {
-
     GetAnnotationSpecRequest request =
         GetAnnotationSpecRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1070,7 +1058,6 @@ public class AutoMlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotationSpec getAnnotationSpec(String name) {
-
     GetAnnotationSpecRequest request = GetAnnotationSpecRequest.newBuilder().setName(name).build();
     return getAnnotationSpec(request);
   }
@@ -1144,7 +1131,6 @@ public class AutoMlClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Model, OperationMetadata> createModelAsync(
       LocationName parent, Model model) {
-
     CreateModelRequest request =
         CreateModelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1177,7 +1163,6 @@ public class AutoMlClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Model, OperationMetadata> createModelAsync(
       String parent, Model model) {
-
     CreateModelRequest request =
         CreateModelRequest.newBuilder().setParent(parent).setModel(model).build();
     return createModelAsync(request);
@@ -1284,7 +1269,6 @@ public class AutoMlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Model getModel(ModelName name) {
-
     GetModelRequest request =
         GetModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getModel(request);
@@ -1307,7 +1291,6 @@ public class AutoMlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Model getModel(String name) {
-
     GetModelRequest request = GetModelRequest.newBuilder().setName(name).build();
     return getModel(request);
   }
@@ -1376,7 +1359,6 @@ public class AutoMlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Model updateModel(Model model, FieldMask updateMask) {
-
     UpdateModelRequest request =
         UpdateModelRequest.newBuilder().setModel(model).setUpdateMask(updateMask).build();
     return updateModel(request);
@@ -1579,7 +1561,6 @@ public class AutoMlClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> deleteModelAsync(ModelName name) {
-
     DeleteModelRequest request =
         DeleteModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteModelAsync(request);
@@ -1606,7 +1587,6 @@ public class AutoMlClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> deleteModelAsync(String name) {
-
     DeleteModelRequest request = DeleteModelRequest.newBuilder().setName(name).build();
     return deleteModelAsync(request);
   }
@@ -1718,7 +1698,6 @@ public class AutoMlClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> deployModelAsync(ModelName name) {
-
     DeployModelRequest request =
         DeployModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deployModelAsync(request);
@@ -1753,7 +1732,6 @@ public class AutoMlClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> deployModelAsync(String name) {
-
     DeployModelRequest request = DeployModelRequest.newBuilder().setName(name).build();
     return deployModelAsync(request);
   }
@@ -1885,7 +1863,6 @@ public class AutoMlClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> undeployModelAsync(ModelName name) {
-
     UndeployModelRequest request =
         UndeployModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return undeployModelAsync(request);
@@ -1916,7 +1893,6 @@ public class AutoMlClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> undeployModelAsync(String name) {
-
     UndeployModelRequest request = UndeployModelRequest.newBuilder().setName(name).build();
     return undeployModelAsync(request);
   }
@@ -2121,7 +2097,6 @@ public class AutoMlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ModelEvaluation getModelEvaluation(ModelEvaluationName name) {
-
     GetModelEvaluationRequest request =
         GetModelEvaluationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2146,7 +2121,6 @@ public class AutoMlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ModelEvaluation getModelEvaluation(String name) {
-
     GetModelEvaluationRequest request =
         GetModelEvaluationRequest.newBuilder().setName(name).build();
     return getModelEvaluation(request);

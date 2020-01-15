@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -216,7 +216,6 @@ public class PredictionServiceClient implements BackgroundResource {
    */
   public final PredictResponse predict(
       ModelName name, ExamplePayload payload, Map<String, String> params) {
-
     PredictRequest request =
         PredictRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -274,7 +273,6 @@ public class PredictionServiceClient implements BackgroundResource {
    */
   public final PredictResponse predict(
       String name, ExamplePayload payload, Map<String, String> params) {
-
     PredictRequest request =
         PredictRequest.newBuilder().setName(name).setPayload(payload).putAllParams(params).build();
     return predict(request);
@@ -427,7 +425,6 @@ public class PredictionServiceClient implements BackgroundResource {
       BatchPredictInputConfig inputConfig,
       BatchPredictOutputConfig outputConfig,
       Map<String, String> params) {
-
     BatchPredictRequest request =
         BatchPredictRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -516,7 +513,6 @@ public class PredictionServiceClient implements BackgroundResource {
       BatchPredictInputConfig inputConfig,
       BatchPredictOutputConfig outputConfig,
       Map<String, String> params) {
-
     BatchPredictRequest request =
         BatchPredictRequest.newBuilder()
             .setName(name)
