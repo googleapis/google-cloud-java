@@ -59,17 +59,17 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
-      <version>1.51.0</version>
+      <version>1.53.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>1.91.3</version>
+      <version>1.92.2</version>
     </dependency>
     <dependency>
       <groupId>com.google.auth</groupId>
       <artifactId>google-auth-library-oauth2-http</artifactId>
-      <version>0.18.0</version>
+      <version>0.19.0</version>
     </dependency>
 
     <!-- Test dependencies -->
