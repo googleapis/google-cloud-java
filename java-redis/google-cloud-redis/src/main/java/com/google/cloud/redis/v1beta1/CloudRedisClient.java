@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -369,7 +369,6 @@ public class CloudRedisClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Instance getInstance(InstanceName name) {
-
     GetInstanceRequest request =
         GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInstance(request);
@@ -394,7 +393,6 @@ public class CloudRedisClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Instance getInstance(String name) {
-
     GetInstanceRequest request = GetInstanceRequest.newBuilder().setName(name).build();
     return getInstance(request);
   }
@@ -489,7 +487,6 @@ public class CloudRedisClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, Any> createInstanceAsync(
       LocationName parent, String instanceId, Instance instance) {
-
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -544,7 +541,6 @@ public class CloudRedisClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, Any> createInstanceAsync(
       String parent, String instanceId, Instance instance) {
-
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
             .setParent(parent)
@@ -724,7 +720,6 @@ public class CloudRedisClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, Any> updateInstanceAsync(
       FieldMask updateMask, Instance instance) {
-
     UpdateInstanceRequest request =
         UpdateInstanceRequest.newBuilder().setUpdateMask(updateMask).setInstance(instance).build();
     return updateInstanceAsync(request);
@@ -879,7 +874,6 @@ public class CloudRedisClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, Any> importInstanceAsync(
       String name, InputConfig inputConfig) {
-
     ImportInstanceRequest request =
         ImportInstanceRequest.newBuilder().setName(name).setInputConfig(inputConfig).build();
     return importInstanceAsync(request);
@@ -1009,7 +1003,6 @@ public class CloudRedisClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, Any> exportInstanceAsync(
       String name, OutputConfig outputConfig) {
-
     ExportInstanceRequest request =
         ExportInstanceRequest.newBuilder().setName(name).setOutputConfig(outputConfig).build();
     return exportInstanceAsync(request);
@@ -1133,7 +1126,6 @@ public class CloudRedisClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, Any> failoverInstanceAsync(
       InstanceName name, FailoverInstanceRequest.DataProtectionMode dataProtectionMode) {
-
     FailoverInstanceRequest request =
         FailoverInstanceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1168,7 +1160,6 @@ public class CloudRedisClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, Any> failoverInstanceAsync(
       String name, FailoverInstanceRequest.DataProtectionMode dataProtectionMode) {
-
     FailoverInstanceRequest request =
         FailoverInstanceRequest.newBuilder()
             .setName(name)
@@ -1273,7 +1264,6 @@ public class CloudRedisClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Any> deleteInstanceAsync(InstanceName name) {
-
     DeleteInstanceRequest request =
         DeleteInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteInstanceAsync(request);
@@ -1300,7 +1290,6 @@ public class CloudRedisClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Any> deleteInstanceAsync(String name) {
-
     DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder().setName(name).build();
     return deleteInstanceAsync(request);
   }
