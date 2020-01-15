@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -163,7 +163,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Table createTable(InstanceName parent, String tableId, Table table) {
-
     CreateTableRequest request =
         CreateTableRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -197,7 +196,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Table createTable(String parent, String tableId, Table table) {
-
     CreateTableRequest request =
         CreateTableRequest.newBuilder()
             .setParent(parent)
@@ -296,7 +294,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Table, CreateTableFromSnapshotMetadata> createTableFromSnapshotAsync(
       InstanceName parent, String tableId, SnapshotName sourceSnapshot) {
-
     CreateTableFromSnapshotRequest request =
         CreateTableFromSnapshotRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -340,7 +337,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Table, CreateTableFromSnapshotMetadata> createTableFromSnapshotAsync(
       String parent, String tableId, String sourceSnapshot) {
-
     CreateTableFromSnapshotRequest request =
         CreateTableFromSnapshotRequest.newBuilder()
             .setParent(parent)
@@ -601,7 +597,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Table getTable(TableName name) {
-
     GetTableRequest request =
         GetTableRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTable(request);
@@ -625,7 +620,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Table getTable(String name) {
-
     GetTableRequest request = GetTableRequest.newBuilder().setName(name).build();
     return getTable(request);
   }
@@ -693,7 +687,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTable(TableName name) {
-
     DeleteTableRequest request =
         DeleteTableRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTable(request);
@@ -717,7 +710,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTable(String name) {
-
     DeleteTableRequest request = DeleteTableRequest.newBuilder().setName(name).build();
     deleteTable(request);
   }
@@ -792,7 +784,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    */
   public final Table modifyColumnFamilies(
       TableName name, List<ModifyColumnFamiliesRequest.Modification> modifications) {
-
     ModifyColumnFamiliesRequest request =
         ModifyColumnFamiliesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -826,7 +817,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    */
   public final Table modifyColumnFamilies(
       String name, List<ModifyColumnFamiliesRequest.Modification> modifications) {
-
     ModifyColumnFamiliesRequest request =
         ModifyColumnFamiliesRequest.newBuilder()
             .setName(name)
@@ -955,7 +945,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GenerateConsistencyTokenResponse generateConsistencyToken(TableName name) {
-
     GenerateConsistencyTokenRequest request =
         GenerateConsistencyTokenRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -983,7 +972,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GenerateConsistencyTokenResponse generateConsistencyToken(String name) {
-
     GenerateConsistencyTokenRequest request =
         GenerateConsistencyTokenRequest.newBuilder().setName(name).build();
     return generateConsistencyToken(request);
@@ -1061,7 +1049,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CheckConsistencyResponse checkConsistency(TableName name, String consistencyToken) {
-
     CheckConsistencyRequest request =
         CheckConsistencyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1091,7 +1078,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CheckConsistencyResponse checkConsistency(String name, String consistencyToken) {
-
     CheckConsistencyRequest request =
         CheckConsistencyRequest.newBuilder()
             .setName(name)
@@ -1171,7 +1157,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(String resource) {
-
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
     return getIamPolicy(request);
   }
@@ -1245,7 +1230,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(String resource, Policy policy) {
-
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
     return setIamPolicy(request);
@@ -1323,7 +1307,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       String resource, List<String> permissions) {
-
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource)
@@ -1418,7 +1401,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Snapshot, SnapshotTableMetadata> snapshotTableAsync(
       TableName name, ClusterName cluster, SnapshotName snapshotId, String description) {
-
     SnapshotTableRequest request =
         SnapshotTableRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1465,7 +1447,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Snapshot, SnapshotTableMetadata> snapshotTableAsync(
       String name, String cluster, String snapshotId, String description) {
-
     SnapshotTableRequest request =
         SnapshotTableRequest.newBuilder()
             .setName(name)
@@ -1607,7 +1588,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Snapshot getSnapshot(SnapshotName name) {
-
     GetSnapshotRequest request =
         GetSnapshotRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSnapshot(request);
@@ -1636,7 +1616,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Snapshot getSnapshot(String name) {
-
     GetSnapshotRequest request = GetSnapshotRequest.newBuilder().setName(name).build();
     return getSnapshot(request);
   }
@@ -1880,7 +1859,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSnapshot(SnapshotName name) {
-
     DeleteSnapshotRequest request =
         DeleteSnapshotRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSnapshot(request);
@@ -1909,7 +1887,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSnapshot(String name) {
-
     DeleteSnapshotRequest request = DeleteSnapshotRequest.newBuilder().setName(name).build();
     deleteSnapshot(request);
   }

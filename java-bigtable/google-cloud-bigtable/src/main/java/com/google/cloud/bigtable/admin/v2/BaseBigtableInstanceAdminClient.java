@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -177,7 +177,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, CreateInstanceMetadata> createInstanceAsync(
       ProjectName parent, String instanceId, Instance instance, Map<String, Cluster> clusters) {
-
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -219,7 +218,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, CreateInstanceMetadata> createInstanceAsync(
       String parent, String instanceId, Instance instance, Map<String, Cluster> clusters) {
-
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
             .setParent(parent)
@@ -338,7 +336,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Instance getInstance(InstanceName name) {
-
     GetInstanceRequest request =
         GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInstance(request);
@@ -362,7 +359,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Instance getInstance(String name) {
-
     GetInstanceRequest request = GetInstanceRequest.newBuilder().setName(name).build();
     return getInstance(request);
   }
@@ -430,7 +426,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstancesResponse listInstances(ProjectName parent) {
-
     ListInstancesRequest request =
         ListInstancesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -456,7 +451,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstancesResponse listInstances(String parent) {
-
     ListInstancesRequest request = ListInstancesRequest.newBuilder().setParent(parent).build();
     return listInstances(request);
   }
@@ -529,7 +523,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, UpdateInstanceMetadata> partialUpdateInstanceAsync(
       Instance instance, FieldMask updateMask) {
-
     PartialUpdateInstanceRequest request =
         PartialUpdateInstanceRequest.newBuilder()
             .setInstance(instance)
@@ -635,7 +628,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteInstance(InstanceName name) {
-
     DeleteInstanceRequest request =
         DeleteInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteInstance(request);
@@ -659,7 +651,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteInstance(String name) {
-
     DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder().setName(name).build();
     deleteInstance(request);
   }
@@ -735,7 +726,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Cluster, CreateClusterMetadata> createClusterAsync(
       InstanceName parent, String clusterId, Cluster cluster) {
-
     CreateClusterRequest request =
         CreateClusterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -771,7 +761,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Cluster, CreateClusterMetadata> createClusterAsync(
       String parent, String clusterId, Cluster cluster) {
-
     CreateClusterRequest request =
         CreateClusterRequest.newBuilder()
             .setParent(parent)
@@ -883,7 +872,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Cluster getCluster(ClusterName name) {
-
     GetClusterRequest request =
         GetClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCluster(request);
@@ -907,7 +895,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Cluster getCluster(String name) {
-
     GetClusterRequest request = GetClusterRequest.newBuilder().setName(name).build();
     return getCluster(request);
   }
@@ -977,7 +964,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListClustersResponse listClusters(InstanceName parent) {
-
     ListClustersRequest request =
         ListClustersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1005,7 +991,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListClustersResponse listClusters(String parent) {
-
     ListClustersRequest request = ListClustersRequest.newBuilder().setParent(parent).build();
     return listClusters(request);
   }
@@ -1150,7 +1135,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCluster(ClusterName name) {
-
     DeleteClusterRequest request =
         DeleteClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteCluster(request);
@@ -1174,7 +1158,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCluster(String name) {
-
     DeleteClusterRequest request = DeleteClusterRequest.newBuilder().setName(name).build();
     deleteCluster(request);
   }
@@ -1249,7 +1232,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    */
   public final AppProfile createAppProfile(
       InstanceName parent, String appProfileId, AppProfile appProfile) {
-
     CreateAppProfileRequest request =
         CreateAppProfileRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1284,7 +1266,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    */
   public final AppProfile createAppProfile(
       String parent, String appProfileId, AppProfile appProfile) {
-
     CreateAppProfileRequest request =
         CreateAppProfileRequest.newBuilder()
             .setParent(parent)
@@ -1365,7 +1346,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AppProfile getAppProfile(AppProfileName name) {
-
     GetAppProfileRequest request =
         GetAppProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAppProfile(request);
@@ -1389,7 +1369,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AppProfile getAppProfile(String name) {
-
     GetAppProfileRequest request = GetAppProfileRequest.newBuilder().setName(name).build();
     return getAppProfile(request);
   }
@@ -1599,7 +1578,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<AppProfile, UpdateAppProfileMetadata> updateAppProfileAsync(
       AppProfile appProfile, FieldMask updateMask) {
-
     UpdateAppProfileRequest request =
         UpdateAppProfileRequest.newBuilder()
             .setAppProfile(appProfile)
@@ -1704,7 +1682,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAppProfile(AppProfileName name) {
-
     DeleteAppProfileRequest request =
         DeleteAppProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAppProfile(request);
@@ -1728,7 +1705,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAppProfile(String name) {
-
     DeleteAppProfileRequest request = DeleteAppProfileRequest.newBuilder().setName(name).build();
     deleteAppProfile(request);
   }
@@ -1801,7 +1777,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(String resource) {
-
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
     return getIamPolicy(request);
   }
@@ -1875,7 +1850,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(String resource, Policy policy) {
-
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
     return setIamPolicy(request);
@@ -1953,7 +1927,6 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       String resource, List<String> permissions) {
-
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource)
