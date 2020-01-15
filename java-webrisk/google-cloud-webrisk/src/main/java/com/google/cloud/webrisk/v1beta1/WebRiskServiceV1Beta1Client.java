@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -182,7 +182,6 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
       ThreatType threatType,
       ByteString versionToken,
       ComputeThreatListDiffRequest.Constraints constraints) {
-
     ComputeThreatListDiffRequest request =
         ComputeThreatListDiffRequest.newBuilder()
             .setThreatType(threatType)
@@ -262,7 +261,6 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchUrisResponse searchUris(String uri, List<ThreatType> threatTypes) {
-
     SearchUrisRequest request =
         SearchUrisRequest.newBuilder().setUri(uri).addAllThreatTypes(threatTypes).build();
     return searchUris(request);
@@ -341,7 +339,6 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    */
   public final SearchHashesResponse searchHashes(
       ByteString hashPrefix, List<ThreatType> threatTypes) {
-
     SearchHashesRequest request =
         SearchHashesRequest.newBuilder()
             .setHashPrefix(hashPrefix)
