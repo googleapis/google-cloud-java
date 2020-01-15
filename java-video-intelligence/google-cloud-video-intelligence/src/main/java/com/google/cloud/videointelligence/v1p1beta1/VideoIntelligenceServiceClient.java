@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -200,7 +200,6 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> annotateVideoAsync(
       String inputUri, List<Feature> features) {
-
     AnnotateVideoRequest request =
         AnnotateVideoRequest.newBuilder().setInputUri(inputUri).addAllFeatures(features).build();
     return annotateVideoAsync(request);
