@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -207,7 +207,6 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(IamResourceName resource, Policy policy) {
-
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -243,7 +242,6 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(String resource, Policy policy) {
-
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
     return setIamPolicy(request);
@@ -331,7 +329,6 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(IamResourceName resource) {
-
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -362,7 +359,6 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(String resource) {
-
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
     return getIamPolicy(request);
   }
@@ -449,7 +445,6 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       IamResourceName resource, List<String> permissions) {
-
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -485,7 +480,6 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       String resource, List<String> permissions) {
-
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource)
@@ -570,7 +564,6 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanConfig getScanConfig(ScanConfigName name) {
-
     GetScanConfigRequest request =
         GetScanConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getScanConfig(request);
@@ -594,7 +587,6 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanConfig getScanConfig(String name) {
-
     GetScanConfigRequest request = GetScanConfigRequest.newBuilder().setName(name).build();
     return getScanConfig(request);
   }
@@ -803,7 +795,6 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanConfig updateScanConfig(ScanConfigName name, ScanConfig scanConfig) {
-
     UpdateScanConfigRequest request =
         UpdateScanConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -832,7 +823,6 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanConfig updateScanConfig(String name, ScanConfig scanConfig) {
-
     UpdateScanConfigRequest request =
         UpdateScanConfigRequest.newBuilder().setName(name).setScanConfig(scanConfig).build();
     return updateScanConfig(request);
