@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -202,7 +202,6 @@ public class SpeechClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RecognizeResponse recognize(RecognitionConfig config, RecognitionAudio audio) {
-
     RecognizeRequest request =
         RecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
     return recognize(request);
@@ -315,7 +314,6 @@ public class SpeechClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeAsync(RecognitionConfig config, RecognitionAudio audio) {
-
     LongRunningRecognizeRequest request =
         LongRunningRecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
     return longRunningRecognizeAsync(request);
