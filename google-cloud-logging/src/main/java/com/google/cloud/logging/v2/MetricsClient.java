@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -312,7 +312,6 @@ public class MetricsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogMetric getLogMetric(MetricName metricName) {
-
     GetLogMetricRequest request =
         GetLogMetricRequest.newBuilder()
             .setMetricName(metricName == null ? null : metricName.toString())
@@ -338,7 +337,6 @@ public class MetricsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogMetric getLogMetric(String metricName) {
-
     GetLogMetricRequest request =
         GetLogMetricRequest.newBuilder().setMetricName(metricName).build();
     return getLogMetric(request);
@@ -410,7 +408,6 @@ public class MetricsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogMetric createLogMetric(ParentName parent, LogMetric metric) {
-
     CreateLogMetricRequest request =
         CreateLogMetricRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -440,7 +437,6 @@ public class MetricsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogMetric createLogMetric(String parent, LogMetric metric) {
-
     CreateLogMetricRequest request =
         CreateLogMetricRequest.newBuilder().setParent(parent).setMetric(metric).build();
     return createLogMetric(request);
@@ -518,7 +514,6 @@ public class MetricsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogMetric updateLogMetric(MetricName metricName, LogMetric metric) {
-
     UpdateLogMetricRequest request =
         UpdateLogMetricRequest.newBuilder()
             .setMetricName(metricName == null ? null : metricName.toString())
@@ -550,7 +545,6 @@ public class MetricsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogMetric updateLogMetric(String metricName, LogMetric metric) {
-
     UpdateLogMetricRequest request =
         UpdateLogMetricRequest.newBuilder().setMetricName(metricName).setMetric(metric).build();
     return updateLogMetric(request);
@@ -623,7 +617,6 @@ public class MetricsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteLogMetric(MetricName metricName) {
-
     DeleteLogMetricRequest request =
         DeleteLogMetricRequest.newBuilder()
             .setMetricName(metricName == null ? null : metricName.toString())
@@ -649,7 +642,6 @@ public class MetricsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteLogMetric(String metricName) {
-
     DeleteLogMetricRequest request =
         DeleteLogMetricRequest.newBuilder().setMetricName(metricName).build();
     deleteLogMetric(request);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -323,7 +323,6 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogSink getSink(SinkName sinkName) {
-
     GetSinkRequest request =
         GetSinkRequest.newBuilder()
             .setSinkName(sinkName == null ? null : sinkName.toString())
@@ -353,7 +352,6 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogSink getSink(String sinkName) {
-
     GetSinkRequest request = GetSinkRequest.newBuilder().setSinkName(sinkName).build();
     return getSink(request);
   }
@@ -429,7 +427,6 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogSink createSink(ParentName parent, LogSink sink) {
-
     CreateSinkRequest request =
         CreateSinkRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -464,7 +461,6 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogSink createSink(String parent, LogSink sink) {
-
     CreateSinkRequest request =
         CreateSinkRequest.newBuilder().setParent(parent).setSink(sink).build();
     return createSink(request);
@@ -565,7 +561,6 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogSink updateSink(SinkName sinkName, LogSink sink, FieldMask updateMask) {
-
     UpdateSinkRequest request =
         UpdateSinkRequest.newBuilder()
             .setSinkName(sinkName == null ? null : sinkName.toString())
@@ -615,7 +610,6 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogSink updateSink(String sinkName, LogSink sink, FieldMask updateMask) {
-
     UpdateSinkRequest request =
         UpdateSinkRequest.newBuilder()
             .setSinkName(sinkName)
@@ -655,7 +649,6 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogSink updateSink(SinkName sinkName, LogSink sink) {
-
     UpdateSinkRequest request =
         UpdateSinkRequest.newBuilder()
             .setSinkName(sinkName == null ? null : sinkName.toString())
@@ -694,7 +687,6 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogSink updateSink(String sinkName, LogSink sink) {
-
     UpdateSinkRequest request =
         UpdateSinkRequest.newBuilder().setSinkName(sinkName).setSink(sink).build();
     return updateSink(request);
@@ -781,7 +773,6 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSink(SinkName sinkName) {
-
     DeleteSinkRequest request =
         DeleteSinkRequest.newBuilder()
             .setSinkName(sinkName == null ? null : sinkName.toString())
@@ -813,7 +804,6 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSink(String sinkName) {
-
     DeleteSinkRequest request = DeleteSinkRequest.newBuilder().setSinkName(sinkName).build();
     deleteSink(request);
   }
@@ -1022,7 +1012,6 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogExclusion getExclusion(ExclusionName name) {
-
     GetExclusionRequest request =
         GetExclusionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getExclusion(request);
@@ -1050,7 +1039,6 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogExclusion getExclusion(String name) {
-
     GetExclusionRequest request = GetExclusionRequest.newBuilder().setName(name).build();
     return getExclusion(request);
   }
@@ -1124,7 +1112,6 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogExclusion createExclusion(ParentName parent, LogExclusion exclusion) {
-
     CreateExclusionRequest request =
         CreateExclusionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1157,7 +1144,6 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogExclusion createExclusion(String parent, LogExclusion exclusion) {
-
     CreateExclusionRequest request =
         CreateExclusionRequest.newBuilder().setParent(parent).setExclusion(exclusion).build();
     return createExclusion(request);
@@ -1247,7 +1233,6 @@ public class ConfigClient implements BackgroundResource {
    */
   public final LogExclusion updateExclusion(
       ExclusionName name, LogExclusion exclusion, FieldMask updateMask) {
-
     UpdateExclusionRequest request =
         UpdateExclusionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1290,7 +1275,6 @@ public class ConfigClient implements BackgroundResource {
    */
   public final LogExclusion updateExclusion(
       String name, LogExclusion exclusion, FieldMask updateMask) {
-
     UpdateExclusionRequest request =
         UpdateExclusionRequest.newBuilder()
             .setName(name)
@@ -1375,7 +1359,6 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteExclusion(ExclusionName name) {
-
     DeleteExclusionRequest request =
         DeleteExclusionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteExclusion(request);
@@ -1403,7 +1386,6 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteExclusion(String name) {
-
     DeleteExclusionRequest request = DeleteExclusionRequest.newBuilder().setName(name).build();
     deleteExclusion(request);
   }

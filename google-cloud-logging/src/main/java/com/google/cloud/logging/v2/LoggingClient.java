@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -190,7 +190,6 @@ public class LoggingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteLog(LogName logName) {
-
     DeleteLogRequest request =
         DeleteLogRequest.newBuilder()
             .setLogName(logName == null ? null : logName.toString())
@@ -221,7 +220,6 @@ public class LoggingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteLog(String logName) {
-
     DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(logName).build();
     deleteLog(request);
   }
@@ -336,7 +334,6 @@ public class LoggingClient implements BackgroundResource {
       MonitoredResource resource,
       Map<String, String> labels,
       List<LogEntry> entries) {
-
     WriteLogEntriesRequest request =
         WriteLogEntriesRequest.newBuilder()
             .setLogName(logName == null ? null : logName.toString())
@@ -410,7 +407,6 @@ public class LoggingClient implements BackgroundResource {
       MonitoredResource resource,
       Map<String, String> labels,
       List<LogEntry> entries) {
-
     WriteLogEntriesRequest request =
         WriteLogEntriesRequest.newBuilder()
             .setLogName(logName)
