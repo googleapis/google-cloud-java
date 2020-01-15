@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -185,7 +185,6 @@ public class DeviceManagerClient implements BackgroundResource {
    */
   public final DeviceRegistry createDeviceRegistry(
       LocationName parent, DeviceRegistry deviceRegistry) {
-
     CreateDeviceRegistryRequest request =
         CreateDeviceRegistryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -215,7 +214,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeviceRegistry createDeviceRegistry(String parent, DeviceRegistry deviceRegistry) {
-
     CreateDeviceRegistryRequest request =
         CreateDeviceRegistryRequest.newBuilder()
             .setParent(parent)
@@ -292,7 +290,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeviceRegistry getDeviceRegistry(RegistryName name) {
-
     GetDeviceRegistryRequest request =
         GetDeviceRegistryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -318,7 +315,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeviceRegistry getDeviceRegistry(String name) {
-
     GetDeviceRegistryRequest request = GetDeviceRegistryRequest.newBuilder().setName(name).build();
     return getDeviceRegistry(request);
   }
@@ -393,7 +389,6 @@ public class DeviceManagerClient implements BackgroundResource {
    */
   public final DeviceRegistry updateDeviceRegistry(
       DeviceRegistry deviceRegistry, FieldMask updateMask) {
-
     UpdateDeviceRegistryRequest request =
         UpdateDeviceRegistryRequest.newBuilder()
             .setDeviceRegistry(deviceRegistry)
@@ -470,7 +465,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteDeviceRegistry(RegistryName name) {
-
     DeleteDeviceRegistryRequest request =
         DeleteDeviceRegistryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -496,7 +490,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteDeviceRegistry(String name) {
-
     DeleteDeviceRegistryRequest request =
         DeleteDeviceRegistryRequest.newBuilder().setName(name).build();
     deleteDeviceRegistry(request);
@@ -703,7 +696,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Device createDevice(RegistryName parent, Device device) {
-
     CreateDeviceRequest request =
         CreateDeviceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -733,7 +725,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Device createDevice(String parent, Device device) {
-
     CreateDeviceRequest request =
         CreateDeviceRequest.newBuilder().setParent(parent).setDevice(device).build();
     return createDevice(request);
@@ -807,7 +798,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Device getDevice(DeviceName name) {
-
     GetDeviceRequest request =
         GetDeviceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDevice(request);
@@ -832,7 +822,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Device getDevice(String name) {
-
     GetDeviceRequest request = GetDeviceRequest.newBuilder().setName(name).build();
     return getDevice(request);
   }
@@ -906,7 +895,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Device updateDevice(Device device, FieldMask updateMask) {
-
     UpdateDeviceRequest request =
         UpdateDeviceRequest.newBuilder().setDevice(device).setUpdateMask(updateMask).build();
     return updateDevice(request);
@@ -980,7 +968,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteDevice(DeviceName name) {
-
     DeleteDeviceRequest request =
         DeleteDeviceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDevice(request);
@@ -1005,7 +992,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteDevice(String name) {
-
     DeleteDeviceRequest request = DeleteDeviceRequest.newBuilder().setName(name).build();
     deleteDevice(request);
   }
@@ -1209,7 +1195,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeviceConfig modifyCloudToDeviceConfig(DeviceName name, ByteString binaryData) {
-
     ModifyCloudToDeviceConfigRequest request =
         ModifyCloudToDeviceConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1240,7 +1225,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeviceConfig modifyCloudToDeviceConfig(String name, ByteString binaryData) {
-
     ModifyCloudToDeviceConfigRequest request =
         ModifyCloudToDeviceConfigRequest.newBuilder()
             .setName(name)
@@ -1321,7 +1305,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeviceConfigVersionsResponse listDeviceConfigVersions(DeviceName name) {
-
     ListDeviceConfigVersionsRequest request =
         ListDeviceConfigVersionsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1349,7 +1332,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeviceConfigVersionsResponse listDeviceConfigVersions(String name) {
-
     ListDeviceConfigVersionsRequest request =
         ListDeviceConfigVersionsRequest.newBuilder().setName(name).build();
     return listDeviceConfigVersions(request);
@@ -1423,7 +1405,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeviceStatesResponse listDeviceStates(DeviceName name) {
-
     ListDeviceStatesRequest request =
         ListDeviceStatesRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return listDeviceStates(request);
@@ -1448,7 +1429,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeviceStatesResponse listDeviceStates(String name) {
-
     ListDeviceStatesRequest request = ListDeviceStatesRequest.newBuilder().setName(name).build();
     return listDeviceStates(request);
   }
@@ -1521,7 +1501,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(ResourceName resource, Policy policy) {
-
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1552,7 +1531,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(String resource, Policy policy) {
-
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
     return setIamPolicy(request);
@@ -1626,7 +1604,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(ResourceName resource) {
-
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1653,7 +1630,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(String resource) {
-
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
     return getIamPolicy(request);
   }
@@ -1729,7 +1705,6 @@ public class DeviceManagerClient implements BackgroundResource {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       ResourceName resource, List<String> permissions) {
-
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1762,7 +1737,6 @@ public class DeviceManagerClient implements BackgroundResource {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       String resource, List<String> permissions) {
-
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource)
@@ -1854,7 +1828,6 @@ public class DeviceManagerClient implements BackgroundResource {
    */
   public final SendCommandToDeviceResponse sendCommandToDevice(
       DeviceName name, ByteString binaryData) {
-
     SendCommandToDeviceRequest request =
         SendCommandToDeviceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1893,7 +1866,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SendCommandToDeviceResponse sendCommandToDevice(String name, ByteString binaryData) {
-
     SendCommandToDeviceRequest request =
         SendCommandToDeviceRequest.newBuilder().setName(name).setBinaryData(binaryData).build();
     return sendCommandToDevice(request);
@@ -1936,7 +1908,6 @@ public class DeviceManagerClient implements BackgroundResource {
    */
   public final SendCommandToDeviceResponse sendCommandToDevice(
       DeviceName name, ByteString binaryData, String subfolder) {
-
     SendCommandToDeviceRequest request =
         SendCommandToDeviceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1983,7 +1954,6 @@ public class DeviceManagerClient implements BackgroundResource {
    */
   public final SendCommandToDeviceResponse sendCommandToDevice(
       String name, ByteString binaryData, String subfolder) {
-
     SendCommandToDeviceRequest request =
         SendCommandToDeviceRequest.newBuilder()
             .setName(name)
@@ -2086,7 +2056,6 @@ public class DeviceManagerClient implements BackgroundResource {
    */
   public final BindDeviceToGatewayResponse bindDeviceToGateway(
       RegistryName parent, String gatewayId, String deviceId) {
-
     BindDeviceToGatewayRequest request =
         BindDeviceToGatewayRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2121,7 +2090,6 @@ public class DeviceManagerClient implements BackgroundResource {
    */
   public final BindDeviceToGatewayResponse bindDeviceToGateway(
       String parent, String gatewayId, String deviceId) {
-
     BindDeviceToGatewayRequest request =
         BindDeviceToGatewayRequest.newBuilder()
             .setParent(parent)
@@ -2210,7 +2178,6 @@ public class DeviceManagerClient implements BackgroundResource {
    */
   public final UnbindDeviceFromGatewayResponse unbindDeviceFromGateway(
       RegistryName parent, String gatewayId, String deviceId) {
-
     UnbindDeviceFromGatewayRequest request =
         UnbindDeviceFromGatewayRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2245,7 +2212,6 @@ public class DeviceManagerClient implements BackgroundResource {
    */
   public final UnbindDeviceFromGatewayResponse unbindDeviceFromGateway(
       String parent, String gatewayId, String deviceId) {
-
     UnbindDeviceFromGatewayRequest request =
         UnbindDeviceFromGatewayRequest.newBuilder()
             .setParent(parent)
