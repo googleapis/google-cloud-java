@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -179,7 +179,6 @@ public class PhishingProtectionServiceV1Beta1Client implements BackgroundResourc
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReportPhishingResponse reportPhishing(ProjectName parent, String uri) {
-
     ReportPhishingRequest request =
         ReportPhishingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -213,7 +212,6 @@ public class PhishingProtectionServiceV1Beta1Client implements BackgroundResourc
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReportPhishingResponse reportPhishing(String parent, String uri) {
-
     ReportPhishingRequest request =
         ReportPhishingRequest.newBuilder().setParent(parent).setUri(uri).build();
     return reportPhishing(request);
