@@ -28,6 +28,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
 
 import org.junit.After;
 import org.junit.Before;
@@ -101,7 +102,7 @@ public class BatchTranslateTextWithModelTests {
 
   @Test
   public void testBatchTranslateTextWithModel()
-      throws InterruptedException, ExecutionException, IOException {
+      throws InterruptedException, ExecutionException, IOException, TimeoutException {
     BatchTranslateTextWithModel.batchTranslateTextWithModel(
         PROJECT_ID,
         "en",

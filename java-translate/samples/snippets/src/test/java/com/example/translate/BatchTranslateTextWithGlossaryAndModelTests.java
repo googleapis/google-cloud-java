@@ -43,6 +43,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
 
 import org.junit.After;
 import org.junit.Before;
@@ -130,7 +131,7 @@ public class BatchTranslateTextWithGlossaryAndModelTests {
 
   @Test
   public void testBatchTranslateTextWithGlossaryAndModel()
-      throws InterruptedException, ExecutionException, IOException {
+      throws InterruptedException, ExecutionException, IOException, TimeoutException {
     BatchTranslateTextWithGlossaryAndModel.batchTranslateTextWithGlossaryAndModel(
         PROJECT_ID,
         "en",

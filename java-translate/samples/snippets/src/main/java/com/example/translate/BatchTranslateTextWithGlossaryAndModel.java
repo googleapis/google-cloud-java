@@ -32,11 +32,13 @@ import com.google.cloud.translate.v3.TranslationServiceClient;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 public class BatchTranslateTextWithGlossaryAndModel {
 
   public static void batchTranslateTextWithGlossaryAndModel()
-      throws InterruptedException, ExecutionException, IOException {
+      throws InterruptedException, ExecutionException, IOException, TimeoutException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "YOUR-PROJECT-ID";
     // Supported Languages: https://cloud.google.com/translate/docs/languages
@@ -59,7 +61,7 @@ public class BatchTranslateTextWithGlossaryAndModel {
       String outputUri,
       String glossaryId,
       String modelId)
-      throws IOException, ExecutionException, InterruptedException {
+      throws IOException, ExecutionException, InterruptedException, TimeoutException {
 
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
@@ -109,7 +111,7 @@ public class BatchTranslateTextWithGlossaryAndModel {
           client.batchTranslateTextAsync(request);
 
       System.out.println("Waiting for operation to complete...");
-      BatchTranslateResponse response = future.get();
+      BatchTranslateResponse response = future.get(120, TimeUnit.SECONDS);
       // Display the translation for each input text provided
       System.out.printf("Total Characters: %s\n", response.getTotalCharacters());
       System.out.printf("Translated Characters: %s\n", response.getTranslatedCharacters());
