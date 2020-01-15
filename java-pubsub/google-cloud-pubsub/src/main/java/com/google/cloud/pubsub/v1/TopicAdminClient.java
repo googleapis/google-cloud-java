@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -198,7 +198,6 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Topic createTopic(ProjectTopicName name) {
-
     Topic request = Topic.newBuilder().setName(name == null ? null : name.toString()).build();
     return createTopic(request);
   }
@@ -226,7 +225,6 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Topic createTopic(String name) {
-
     Topic request = Topic.newBuilder().setName(name).build();
     return createTopic(request);
   }
@@ -354,7 +352,6 @@ public class TopicAdminClient implements BackgroundResource {
    */
   /* package-private */ final PublishResponse publish(
       ProjectTopicName topic, List<PubsubMessage> messages) {
-
     PublishRequest request =
         PublishRequest.newBuilder()
             .setTopic(topic == null ? null : topic.toString())
@@ -387,7 +384,6 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   /* package-private */ final PublishResponse publish(String topic, List<PubsubMessage> messages) {
-
     PublishRequest request =
         PublishRequest.newBuilder().setTopic(topic).addAllMessages(messages).build();
     return publish(request);
@@ -467,7 +463,6 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Topic getTopic(ProjectTopicName topic) {
-
     GetTopicRequest request =
         GetTopicRequest.newBuilder().setTopic(topic == null ? null : topic.toString()).build();
     return getTopic(request);
@@ -490,7 +485,6 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Topic getTopic(String topic) {
-
     GetTopicRequest request = GetTopicRequest.newBuilder().setTopic(topic).build();
     return getTopic(request);
   }
@@ -826,7 +820,6 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTopic(ProjectTopicName topic) {
-
     DeleteTopicRequest request =
         DeleteTopicRequest.newBuilder().setTopic(topic == null ? null : topic.toString()).build();
     deleteTopic(request);
@@ -852,7 +845,6 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTopic(String topic) {
-
     DeleteTopicRequest request = DeleteTopicRequest.newBuilder().setTopic(topic).build();
     deleteTopic(request);
   }
@@ -930,7 +922,6 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(String resource, Policy policy) {
-
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
     return setIamPolicy(request);
@@ -1004,7 +995,6 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(String resource) {
-
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
     return getIamPolicy(request);
   }
@@ -1084,7 +1074,6 @@ public class TopicAdminClient implements BackgroundResource {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       String resource, List<String> permissions) {
-
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -251,7 +251,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
       ProjectTopicName topic,
       PushConfig pushConfig,
       int ackDeadlineSeconds) {
-
     Subscription request =
         Subscription.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -317,7 +316,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    */
   public final Subscription createSubscription(
       String name, String topic, PushConfig pushConfig, int ackDeadlineSeconds) {
-
     Subscription request =
         Subscription.newBuilder()
             .setName(name)
@@ -413,7 +411,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Subscription getSubscription(ProjectSubscriptionName subscription) {
-
     GetSubscriptionRequest request =
         GetSubscriptionRequest.newBuilder()
             .setSubscription(subscription == null ? null : subscription.toString())
@@ -439,7 +436,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Subscription getSubscription(String subscription) {
-
     GetSubscriptionRequest request =
         GetSubscriptionRequest.newBuilder().setSubscription(subscription).build();
     return getSubscription(request);
@@ -710,7 +706,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSubscription(ProjectSubscriptionName subscription) {
-
     DeleteSubscriptionRequest request =
         DeleteSubscriptionRequest.newBuilder()
             .setSubscription(subscription == null ? null : subscription.toString())
@@ -739,7 +734,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSubscription(String subscription) {
-
     DeleteSubscriptionRequest request =
         DeleteSubscriptionRequest.newBuilder().setSubscription(subscription).build();
     deleteSubscription(request);
@@ -828,7 +822,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    */
   /* package-private */ final void modifyAckDeadline(
       ProjectSubscriptionName subscription, List<String> ackIds, int ackDeadlineSeconds) {
-
     ModifyAckDeadlineRequest request =
         ModifyAckDeadlineRequest.newBuilder()
             .setSubscription(subscription == null ? null : subscription.toString())
@@ -870,7 +863,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    */
   /* package-private */ final void modifyAckDeadline(
       String subscription, List<String> ackIds, int ackDeadlineSeconds) {
-
     ModifyAckDeadlineRequest request =
         ModifyAckDeadlineRequest.newBuilder()
             .setSubscription(subscription)
@@ -966,7 +958,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    */
   /* package-private */ final void acknowledge(
       ProjectSubscriptionName subscription, List<String> ackIds) {
-
     AcknowledgeRequest request =
         AcknowledgeRequest.newBuilder()
             .setSubscription(subscription == null ? null : subscription.toString())
@@ -1000,7 +991,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   /* package-private */ final void acknowledge(String subscription, List<String> ackIds) {
-
     AcknowledgeRequest request =
         AcknowledgeRequest.newBuilder().setSubscription(subscription).addAllAckIds(ackIds).build();
     acknowledge(request);
@@ -1091,7 +1081,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    */
   /* package-private */ final PullResponse pull(
       ProjectSubscriptionName subscription, boolean returnImmediately, int maxMessages) {
-
     PullRequest request =
         PullRequest.newBuilder()
             .setSubscription(subscription == null ? null : subscription.toString())
@@ -1129,7 +1118,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    */
   /* package-private */ final PullResponse pull(
       String subscription, boolean returnImmediately, int maxMessages) {
-
     PullRequest request =
         PullRequest.newBuilder()
             .setSubscription(subscription)
@@ -1252,7 +1240,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void modifyPushConfig(ProjectSubscriptionName subscription, PushConfig pushConfig) {
-
     ModifyPushConfigRequest request =
         ModifyPushConfigRequest.newBuilder()
             .setSubscription(subscription == null ? null : subscription.toString())
@@ -1289,7 +1276,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void modifyPushConfig(String subscription, PushConfig pushConfig) {
-
     ModifyPushConfigRequest request =
         ModifyPushConfigRequest.newBuilder()
             .setSubscription(subscription)
@@ -1545,7 +1531,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    */
   public final Snapshot createSnapshot(
       ProjectSnapshotName name, ProjectSubscriptionName subscription) {
-
     CreateSnapshotRequest request =
         CreateSnapshotRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1594,7 +1579,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Snapshot createSnapshot(String name, String subscription) {
-
     CreateSnapshotRequest request =
         CreateSnapshotRequest.newBuilder().setName(name).setSubscription(subscription).build();
     return createSnapshot(request);
@@ -1773,7 +1757,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSnapshot(ProjectSnapshotName snapshot) {
-
     DeleteSnapshotRequest request =
         DeleteSnapshotRequest.newBuilder()
             .setSnapshot(snapshot == null ? null : snapshot.toString())
@@ -1806,7 +1789,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSnapshot(String snapshot) {
-
     DeleteSnapshotRequest request =
         DeleteSnapshotRequest.newBuilder().setSnapshot(snapshot).build();
     deleteSnapshot(request);
@@ -1948,7 +1930,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(String resource, Policy policy) {
-
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
     return setIamPolicy(request);
@@ -2022,7 +2003,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(String resource) {
-
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
     return getIamPolicy(request);
   }
@@ -2102,7 +2082,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       String resource, List<String> permissions) {
-
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource)
