@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -178,7 +178,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataSource getDataSource(DataSourceName name) {
-
     GetDataSourceRequest request =
         GetDataSourceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataSource(request);
@@ -203,7 +202,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataSource getDataSource(String name) {
-
     GetDataSourceRequest request = GetDataSourceRequest.newBuilder().setName(name).build();
     return getDataSource(request);
   }
@@ -409,7 +407,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    */
   public final TransferConfig createTransferConfig(
       ParentName parent, TransferConfig transferConfig) {
-
     CreateTransferConfigRequest request =
         CreateTransferConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -440,7 +437,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransferConfig createTransferConfig(String parent, TransferConfig transferConfig) {
-
     CreateTransferConfigRequest request =
         CreateTransferConfigRequest.newBuilder()
             .setParent(parent)
@@ -519,7 +515,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    */
   public final TransferConfig updateTransferConfig(
       TransferConfig transferConfig, FieldMask updateMask) {
-
     UpdateTransferConfigRequest request =
         UpdateTransferConfigRequest.newBuilder()
             .setTransferConfig(transferConfig)
@@ -597,7 +592,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTransferConfig(TransferConfigName name) {
-
     DeleteTransferConfigRequest request =
         DeleteTransferConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -624,7 +618,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTransferConfig(String name) {
-
     DeleteTransferConfigRequest request =
         DeleteTransferConfigRequest.newBuilder().setName(name).build();
     deleteTransferConfig(request);
@@ -694,7 +687,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransferConfig getTransferConfig(TransferConfigName name) {
-
     GetTransferConfigRequest request =
         GetTransferConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -721,7 +713,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransferConfig getTransferConfig(String name) {
-
     GetTransferConfigRequest request = GetTransferConfigRequest.newBuilder().setName(name).build();
     return getTransferConfig(request);
   }
@@ -935,7 +926,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    */
   public final ScheduleTransferRunsResponse scheduleTransferRuns(
       TransferConfigName parent, Timestamp startTime, Timestamp endTime) {
-
     ScheduleTransferRunsRequest request =
         ScheduleTransferRunsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -974,7 +964,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    */
   public final ScheduleTransferRunsResponse scheduleTransferRuns(
       String parent, Timestamp startTime, Timestamp endTime) {
-
     ScheduleTransferRunsRequest request =
         ScheduleTransferRunsRequest.newBuilder()
             .setParent(parent)
@@ -1064,7 +1053,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransferRun getTransferRun(RunName name) {
-
     GetTransferRunRequest request =
         GetTransferRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTransferRun(request);
@@ -1089,7 +1077,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransferRun getTransferRun(String name) {
-
     GetTransferRunRequest request = GetTransferRunRequest.newBuilder().setName(name).build();
     return getTransferRun(request);
   }
@@ -1158,7 +1145,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTransferRun(RunName name) {
-
     DeleteTransferRunRequest request =
         DeleteTransferRunRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1185,7 +1171,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTransferRun(String name) {
-
     DeleteTransferRunRequest request = DeleteTransferRunRequest.newBuilder().setName(name).build();
     deleteTransferRun(request);
   }
@@ -1531,7 +1516,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CheckValidCredsResponse checkValidCreds(DataSourceName name) {
-
     CheckValidCredsRequest request =
         CheckValidCredsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return checkValidCreds(request);
@@ -1559,7 +1543,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CheckValidCredsResponse checkValidCreds(String name) {
-
     CheckValidCredsRequest request = CheckValidCredsRequest.newBuilder().setName(name).build();
     return checkValidCreds(request);
   }
