@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -204,7 +204,6 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ErrorGroup getGroup(ErrorGroupName groupName) {
-
     GetGroupRequest request =
         GetGroupRequest.newBuilder()
             .setGroupName(groupName == null ? null : groupName.toString())
@@ -234,7 +233,6 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ErrorGroup getGroup(String groupName) {
-
     GetGroupRequest request = GetGroupRequest.newBuilder().setGroupName(groupName).build();
     return getGroup(request);
   }
@@ -301,7 +299,6 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ErrorGroup updateGroup(ErrorGroup group) {
-
     UpdateGroupRequest request = UpdateGroupRequest.newBuilder().setGroup(group).build();
     return updateGroup(request);
   }

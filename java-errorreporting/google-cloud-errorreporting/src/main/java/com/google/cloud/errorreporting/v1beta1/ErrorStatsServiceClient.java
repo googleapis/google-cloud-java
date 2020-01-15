@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -491,7 +491,6 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeleteEventsResponse deleteEvents(ProjectName projectName) {
-
     DeleteEventsRequest request =
         DeleteEventsRequest.newBuilder()
             .setProjectName(projectName == null ? null : projectName.toString())
@@ -518,7 +517,6 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeleteEventsResponse deleteEvents(String projectName) {
-
     DeleteEventsRequest request =
         DeleteEventsRequest.newBuilder().setProjectName(projectName).build();
     return deleteEvents(request);

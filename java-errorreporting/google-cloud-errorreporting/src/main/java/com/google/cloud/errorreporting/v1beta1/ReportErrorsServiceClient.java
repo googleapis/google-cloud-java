@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -179,7 +179,6 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    */
   public final ReportErrorEventResponse reportErrorEvent(
       ProjectName projectName, ReportedErrorEvent event) {
-
     ReportErrorEventRequest request =
         ReportErrorEventRequest.newBuilder()
             .setProjectName(projectName == null ? null : projectName.toString())
@@ -217,7 +216,6 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    */
   public final ReportErrorEventResponse reportErrorEvent(
       String projectName, ReportedErrorEvent event) {
-
     ReportErrorEventRequest request =
         ReportErrorEventRequest.newBuilder().setProjectName(projectName).setEvent(event).build();
     return reportErrorEvent(request);
