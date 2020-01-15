@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -285,7 +285,6 @@ public class TraceServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Trace getTrace(String projectId, String traceId) {
-
     GetTraceRequest request =
         GetTraceRequest.newBuilder().setProjectId(projectId).setTraceId(traceId).build();
     return getTrace(request);
@@ -362,7 +361,6 @@ public class TraceServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void patchTraces(String projectId, Traces traces) {
-
     PatchTracesRequest request =
         PatchTracesRequest.newBuilder().setProjectId(projectId).setTraces(traces).build();
     patchTraces(request);

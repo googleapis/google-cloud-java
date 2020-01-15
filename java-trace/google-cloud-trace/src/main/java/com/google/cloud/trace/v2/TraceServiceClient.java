@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -173,7 +173,6 @@ public class TraceServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void batchWriteSpans(ProjectName name, List<Span> spans) {
-
     BatchWriteSpansRequest request =
         BatchWriteSpansRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -203,7 +202,6 @@ public class TraceServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void batchWriteSpans(String name, List<Span> spans) {
-
     BatchWriteSpansRequest request =
         BatchWriteSpansRequest.newBuilder().setName(name).addAllSpans(spans).build();
     batchWriteSpans(request);
@@ -266,13 +264,13 @@ public class TraceServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
-   *   String name = "";
+   *   SpanName name = SpanName.of("[PROJECT]", "[TRACE]", "[SPAN]");
    *   String spanId = "";
    *   TruncatableString displayName = TruncatableString.newBuilder().build();
    *   Timestamp startTime = Timestamp.newBuilder().build();
    *   Timestamp endTime = Timestamp.newBuilder().build();
    *   Span request = Span.newBuilder()
-   *     .setName(name)
+   *     .setName(name.toString())
    *     .setSpanId(spanId)
    *     .setDisplayName(displayName)
    *     .setStartTime(startTime)
@@ -297,13 +295,13 @@ public class TraceServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
-   *   String name = "";
+   *   SpanName name = SpanName.of("[PROJECT]", "[TRACE]", "[SPAN]");
    *   String spanId = "";
    *   TruncatableString displayName = TruncatableString.newBuilder().build();
    *   Timestamp startTime = Timestamp.newBuilder().build();
    *   Timestamp endTime = Timestamp.newBuilder().build();
    *   Span request = Span.newBuilder()
-   *     .setName(name)
+   *     .setName(name.toString())
    *     .setSpanId(spanId)
    *     .setDisplayName(displayName)
    *     .setStartTime(startTime)
