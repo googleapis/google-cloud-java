@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -203,7 +203,6 @@ public class ClusterControllerClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Cluster, ClusterOperationMetadata> createClusterAsync(
       String projectId, String region, Cluster cluster) {
-
     CreateClusterRequest request =
         CreateClusterRequest.newBuilder()
             .setProjectId(projectId)
@@ -353,7 +352,6 @@ public class ClusterControllerClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Cluster, ClusterOperationMetadata> updateClusterAsync(
       String projectId, String region, String clusterName, Cluster cluster, FieldMask updateMask) {
-
     UpdateClusterRequest request =
         UpdateClusterRequest.newBuilder()
             .setProjectId(projectId)
@@ -494,7 +492,6 @@ public class ClusterControllerClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, ClusterOperationMetadata> deleteClusterAsync(
       String projectId, String region, String clusterName) {
-
     DeleteClusterRequest request =
         DeleteClusterRequest.newBuilder()
             .setProjectId(projectId)
@@ -616,7 +613,6 @@ public class ClusterControllerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Cluster getCluster(String projectId, String region, String clusterName) {
-
     GetClusterRequest request =
         GetClusterRequest.newBuilder()
             .setProjectId(projectId)
@@ -870,7 +866,6 @@ public class ClusterControllerClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DiagnoseClusterResults> diagnoseClusterAsync(
       String projectId, String region, String clusterName) {
-
     DiagnoseClusterRequest request =
         DiagnoseClusterRequest.newBuilder()
             .setProjectId(projectId)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -184,7 +184,6 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    */
   public final AutoscalingPolicy createAutoscalingPolicy(
       RegionName parent, AutoscalingPolicy policy) {
-
     CreateAutoscalingPolicyRequest request =
         CreateAutoscalingPolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -217,7 +216,6 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AutoscalingPolicy createAutoscalingPolicy(String parent, AutoscalingPolicy policy) {
-
     CreateAutoscalingPolicyRequest request =
         CreateAutoscalingPolicyRequest.newBuilder().setParent(parent).setPolicy(policy).build();
     return createAutoscalingPolicy(request);
@@ -292,7 +290,6 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AutoscalingPolicy updateAutoscalingPolicy(AutoscalingPolicy policy) {
-
     UpdateAutoscalingPolicyRequest request =
         UpdateAutoscalingPolicyRequest.newBuilder().setPolicy(policy).build();
     return updateAutoscalingPolicy(request);
@@ -372,7 +369,6 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AutoscalingPolicy getAutoscalingPolicy(AutoscalingPolicyName name) {
-
     GetAutoscalingPolicyRequest request =
         GetAutoscalingPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -404,7 +400,6 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AutoscalingPolicy getAutoscalingPolicy(String name) {
-
     GetAutoscalingPolicyRequest request =
         GetAutoscalingPolicyRequest.newBuilder().setName(name).build();
     return getAutoscalingPolicy(request);
@@ -624,7 +619,6 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAutoscalingPolicy(AutoscalingPolicyName name) {
-
     DeleteAutoscalingPolicyRequest request =
         DeleteAutoscalingPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -657,7 +651,6 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAutoscalingPolicy(String name) {
-
     DeleteAutoscalingPolicyRequest request =
         DeleteAutoscalingPolicyRequest.newBuilder().setName(name).build();
     deleteAutoscalingPolicy(request);

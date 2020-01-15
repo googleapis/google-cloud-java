@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -177,7 +177,6 @@ public class JobControllerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job submitJob(String projectId, String region, Job job) {
-
     SubmitJobRequest request =
         SubmitJobRequest.newBuilder().setProjectId(projectId).setRegion(region).setJob(job).build();
     return submitJob(request);
@@ -257,7 +256,6 @@ public class JobControllerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job getJob(String projectId, String region, String jobId) {
-
     GetJobRequest request =
         GetJobRequest.newBuilder()
             .setProjectId(projectId)
@@ -557,7 +555,6 @@ public class JobControllerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job cancelJob(String projectId, String region, String jobId) {
-
     CancelJobRequest request =
         CancelJobRequest.newBuilder()
             .setProjectId(projectId)
@@ -648,7 +645,6 @@ public class JobControllerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteJob(String projectId, String region, String jobId) {
-
     DeleteJobRequest request =
         DeleteJobRequest.newBuilder()
             .setProjectId(projectId)

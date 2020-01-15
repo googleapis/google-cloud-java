@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -200,7 +200,6 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    */
   public final WorkflowTemplate createWorkflowTemplate(
       RegionName parent, WorkflowTemplate template) {
-
     CreateWorkflowTemplateRequest request =
         CreateWorkflowTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -233,7 +232,6 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WorkflowTemplate createWorkflowTemplate(String parent, WorkflowTemplate template) {
-
     CreateWorkflowTemplateRequest request =
         CreateWorkflowTemplateRequest.newBuilder().setParent(parent).setTemplate(template).build();
     return createWorkflowTemplate(request);
@@ -315,7 +313,6 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WorkflowTemplate getWorkflowTemplate(WorkflowTemplateName name) {
-
     GetWorkflowTemplateRequest request =
         GetWorkflowTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -349,7 +346,6 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WorkflowTemplate getWorkflowTemplate(String name) {
-
     GetWorkflowTemplateRequest request =
         GetWorkflowTemplateRequest.newBuilder().setName(name).build();
     return getWorkflowTemplate(request);
@@ -448,7 +444,6 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
       WorkflowTemplateName name) {
-
     InstantiateWorkflowTemplateRequest request =
         InstantiateWorkflowTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -499,7 +494,6 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
       String name) {
-
     InstantiateWorkflowTemplateRequest request =
         InstantiateWorkflowTemplateRequest.newBuilder().setName(name).build();
     return instantiateWorkflowTemplateAsync(request);
@@ -551,7 +545,6 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
       WorkflowTemplateName name, Map<String, String> parameters) {
-
     InstantiateWorkflowTemplateRequest request =
         InstantiateWorkflowTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -606,7 +599,6 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
       String name, Map<String, String> parameters) {
-
     InstantiateWorkflowTemplateRequest request =
         InstantiateWorkflowTemplateRequest.newBuilder()
             .setName(name)
@@ -784,7 +776,6 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, WorkflowMetadata> instantiateInlineWorkflowTemplateAsync(
       RegionName parent, WorkflowTemplate template) {
-
     InstantiateInlineWorkflowTemplateRequest request =
         InstantiateInlineWorkflowTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -841,7 +832,6 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, WorkflowMetadata> instantiateInlineWorkflowTemplateAsync(
       String parent, WorkflowTemplate template) {
-
     InstantiateInlineWorkflowTemplateRequest request =
         InstantiateInlineWorkflowTemplateRequest.newBuilder()
             .setParent(parent)
@@ -1011,7 +1001,6 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WorkflowTemplate updateWorkflowTemplate(WorkflowTemplate template) {
-
     UpdateWorkflowTemplateRequest request =
         UpdateWorkflowTemplateRequest.newBuilder().setTemplate(template).build();
     return updateWorkflowTemplate(request);
@@ -1232,7 +1221,6 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteWorkflowTemplate(WorkflowTemplateName name) {
-
     DeleteWorkflowTemplateRequest request =
         DeleteWorkflowTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1264,7 +1252,6 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteWorkflowTemplate(String name) {
-
     DeleteWorkflowTemplateRequest request =
         DeleteWorkflowTemplateRequest.newBuilder().setName(name).build();
     deleteWorkflowTemplate(request);
