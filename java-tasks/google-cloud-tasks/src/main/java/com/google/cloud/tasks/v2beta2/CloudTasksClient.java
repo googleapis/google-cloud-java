@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -319,7 +319,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Queue getQueue(QueueName name) {
-
     GetQueueRequest request =
         GetQueueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getQueue(request);
@@ -343,7 +342,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Queue getQueue(String name) {
-
     GetQueueRequest request = GetQueueRequest.newBuilder().setName(name).build();
     return getQueue(request);
   }
@@ -424,7 +422,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Queue createQueue(LocationName parent, Queue queue) {
-
     CreateQueueRequest request =
         CreateQueueRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -464,7 +461,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Queue createQueue(String parent, Queue queue) {
-
     CreateQueueRequest request =
         CreateQueueRequest.newBuilder().setParent(parent).setQueue(queue).build();
     return createQueue(request);
@@ -566,7 +562,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Queue updateQueue(Queue queue, FieldMask updateMask) {
-
     UpdateQueueRequest request =
         UpdateQueueRequest.newBuilder().setQueue(queue).setUpdateMask(updateMask).build();
     return updateQueue(request);
@@ -661,7 +656,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteQueue(QueueName name) {
-
     DeleteQueueRequest request =
         DeleteQueueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteQueue(request);
@@ -693,7 +687,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteQueue(String name) {
-
     DeleteQueueRequest request = DeleteQueueRequest.newBuilder().setName(name).build();
     deleteQueue(request);
   }
@@ -782,7 +775,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Queue purgeQueue(QueueName name) {
-
     PurgeQueueRequest request =
         PurgeQueueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return purgeQueue(request);
@@ -811,7 +803,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Queue purgeQueue(String name) {
-
     PurgeQueueRequest request = PurgeQueueRequest.newBuilder().setName(name).build();
     return purgeQueue(request);
   }
@@ -895,7 +886,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Queue pauseQueue(QueueName name) {
-
     PauseQueueRequest request =
         PauseQueueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return pauseQueue(request);
@@ -925,7 +915,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Queue pauseQueue(String name) {
-
     PauseQueueRequest request = PauseQueueRequest.newBuilder().setName(name).build();
     return pauseQueue(request);
   }
@@ -1015,7 +1004,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Queue resumeQueue(QueueName name) {
-
     ResumeQueueRequest request =
         ResumeQueueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return resumeQueue(request);
@@ -1049,7 +1037,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Queue resumeQueue(String name) {
-
     ResumeQueueRequest request = ResumeQueueRequest.newBuilder().setName(name).build();
     return resumeQueue(request);
   }
@@ -1143,7 +1130,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(ResourceName resource) {
-
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1175,7 +1161,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(String resource) {
-
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
     return getIamPolicy(request);
   }
@@ -1272,7 +1257,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(ResourceName resource, Policy policy) {
-
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1312,7 +1296,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(String resource, Policy policy) {
-
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
     return setIamPolicy(request);
@@ -1418,7 +1401,6 @@ public class CloudTasksClient implements BackgroundResource {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       ResourceName resource, List<String> permissions) {
-
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1456,7 +1438,6 @@ public class CloudTasksClient implements BackgroundResource {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       String resource, List<String> permissions) {
-
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource)
@@ -1714,7 +1695,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Task getTask(TaskName name) {
-
     GetTaskRequest request =
         GetTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTask(request);
@@ -1738,7 +1718,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Task getTask(String name) {
-
     GetTaskRequest request = GetTaskRequest.newBuilder().setName(name).build();
     return getTask(request);
   }
@@ -1837,7 +1816,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Task createTask(QueueName parent, Task task) {
-
     CreateTaskRequest request =
         CreateTaskRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1895,7 +1873,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Task createTask(String parent, Task task) {
-
     CreateTaskRequest request =
         CreateTaskRequest.newBuilder().setParent(parent).setTask(task).build();
     return createTask(request);
@@ -1983,7 +1960,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTask(TaskName name) {
-
     DeleteTaskRequest request =
         DeleteTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTask(request);
@@ -2010,7 +1986,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTask(String name) {
-
     DeleteTaskRequest request = DeleteTaskRequest.newBuilder().setName(name).build();
     deleteTask(request);
   }
@@ -2118,7 +2093,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LeaseTasksResponse leaseTasks(QueueName parent, Duration leaseDuration) {
-
     LeaseTasksRequest request =
         LeaseTasksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2179,7 +2153,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LeaseTasksResponse leaseTasks(String parent, Duration leaseDuration) {
-
     LeaseTasksRequest request =
         LeaseTasksRequest.newBuilder().setParent(parent).setLeaseDuration(leaseDuration).build();
     return leaseTasks(request);
@@ -2306,7 +2279,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void acknowledgeTask(TaskName name, Timestamp scheduleTime) {
-
     AcknowledgeTaskRequest request =
         AcknowledgeTaskRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2351,7 +2323,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void acknowledgeTask(String name, Timestamp scheduleTime) {
-
     AcknowledgeTaskRequest request =
         AcknowledgeTaskRequest.newBuilder().setName(name).setScheduleTime(scheduleTime).build();
     acknowledgeTask(request);
@@ -2462,7 +2433,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Task renewLease(TaskName name, Timestamp scheduleTime, Duration leaseDuration) {
-
     RenewLeaseRequest request =
         RenewLeaseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2504,7 +2474,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Task renewLease(String name, Timestamp scheduleTime, Duration leaseDuration) {
-
     RenewLeaseRequest request =
         RenewLeaseRequest.newBuilder()
             .setName(name)
@@ -2604,7 +2573,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Task cancelLease(TaskName name, Timestamp scheduleTime) {
-
     CancelLeaseRequest request =
         CancelLeaseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2642,7 +2610,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Task cancelLease(String name, Timestamp scheduleTime) {
-
     CancelLeaseRequest request =
         CancelLeaseRequest.newBuilder().setName(name).setScheduleTime(scheduleTime).build();
     return cancelLease(request);
@@ -2750,7 +2717,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Task runTask(TaskName name) {
-
     RunTaskRequest request =
         RunTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return runTask(request);
@@ -2799,7 +2765,6 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Task runTask(String name) {
-
     RunTaskRequest request = RunTaskRequest.newBuilder().setName(name).build();
     return runTask(request);
   }
