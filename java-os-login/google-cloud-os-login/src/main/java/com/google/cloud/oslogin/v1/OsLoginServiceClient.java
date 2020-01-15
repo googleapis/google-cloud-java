@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,7 +169,6 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deletePosixAccount(ProjectName name) {
-
     DeletePosixAccountRequest request =
         DeletePosixAccountRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -196,7 +195,6 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deletePosixAccount(String name) {
-
     DeletePosixAccountRequest request =
         DeletePosixAccountRequest.newBuilder().setName(name).build();
     deletePosixAccount(request);
@@ -266,7 +264,6 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSshPublicKey(FingerprintName name) {
-
     DeleteSshPublicKeyRequest request =
         DeleteSshPublicKeyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -293,7 +290,6 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSshPublicKey(String name) {
-
     DeleteSshPublicKeyRequest request =
         DeleteSshPublicKeyRequest.newBuilder().setName(name).build();
     deleteSshPublicKey(request);
@@ -362,7 +358,6 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LoginProfile getLoginProfile(UserName name) {
-
     GetLoginProfileRequest request =
         GetLoginProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getLoginProfile(request);
@@ -386,7 +381,6 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LoginProfile getLoginProfile(String name) {
-
     GetLoginProfileRequest request = GetLoginProfileRequest.newBuilder().setName(name).build();
     return getLoginProfile(request);
   }
@@ -457,7 +451,6 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SshPublicKey getSshPublicKey(FingerprintName name) {
-
     GetSshPublicKeyRequest request =
         GetSshPublicKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSshPublicKey(request);
@@ -482,7 +475,6 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SshPublicKey getSshPublicKey(String name) {
-
     GetSshPublicKeyRequest request = GetSshPublicKeyRequest.newBuilder().setName(name).build();
     return getSshPublicKey(request);
   }
@@ -553,7 +545,6 @@ public class OsLoginServiceClient implements BackgroundResource {
    */
   public final ImportSshPublicKeyResponse importSshPublicKey(
       UserName parent, SshPublicKey sshPublicKey) {
-
     ImportSshPublicKeyRequest request =
         ImportSshPublicKeyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -583,7 +574,6 @@ public class OsLoginServiceClient implements BackgroundResource {
    */
   public final ImportSshPublicKeyResponse importSshPublicKey(
       String parent, SshPublicKey sshPublicKey) {
-
     ImportSshPublicKeyRequest request =
         ImportSshPublicKeyRequest.newBuilder()
             .setParent(parent)
@@ -615,7 +605,6 @@ public class OsLoginServiceClient implements BackgroundResource {
    */
   public final ImportSshPublicKeyResponse importSshPublicKey(
       UserName parent, SshPublicKey sshPublicKey, String projectId) {
-
     ImportSshPublicKeyRequest request =
         ImportSshPublicKeyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -648,7 +637,6 @@ public class OsLoginServiceClient implements BackgroundResource {
    */
   public final ImportSshPublicKeyResponse importSshPublicKey(
       String parent, SshPublicKey sshPublicKey, String projectId) {
-
     ImportSshPublicKeyRequest request =
         ImportSshPublicKeyRequest.newBuilder()
             .setParent(parent)
@@ -728,7 +716,6 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SshPublicKey updateSshPublicKey(FingerprintName name, SshPublicKey sshPublicKey) {
-
     UpdateSshPublicKeyRequest request =
         UpdateSshPublicKeyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -759,7 +746,6 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SshPublicKey updateSshPublicKey(String name, SshPublicKey sshPublicKey) {
-
     UpdateSshPublicKeyRequest request =
         UpdateSshPublicKeyRequest.newBuilder().setName(name).setSshPublicKey(sshPublicKey).build();
     return updateSshPublicKey(request);
@@ -790,7 +776,6 @@ public class OsLoginServiceClient implements BackgroundResource {
    */
   public final SshPublicKey updateSshPublicKey(
       FingerprintName name, SshPublicKey sshPublicKey, FieldMask updateMask) {
-
     UpdateSshPublicKeyRequest request =
         UpdateSshPublicKeyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -825,7 +810,6 @@ public class OsLoginServiceClient implements BackgroundResource {
    */
   public final SshPublicKey updateSshPublicKey(
       String name, SshPublicKey sshPublicKey, FieldMask updateMask) {
-
     UpdateSshPublicKeyRequest request =
         UpdateSshPublicKeyRequest.newBuilder()
             .setName(name)
