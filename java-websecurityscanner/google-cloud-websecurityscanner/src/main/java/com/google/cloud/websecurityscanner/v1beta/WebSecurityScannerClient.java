@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -179,7 +179,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanConfig createScanConfig(ProjectName parent, ScanConfig scanConfig) {
-
     CreateScanConfigRequest request =
         CreateScanConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -208,7 +207,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanConfig createScanConfig(String parent, ScanConfig scanConfig) {
-
     CreateScanConfigRequest request =
         CreateScanConfigRequest.newBuilder().setParent(parent).setScanConfig(scanConfig).build();
     return createScanConfig(request);
@@ -281,7 +279,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteScanConfig(ScanConfigName name) {
-
     DeleteScanConfigRequest request =
         DeleteScanConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteScanConfig(request);
@@ -305,7 +302,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteScanConfig(String name) {
-
     DeleteScanConfigRequest request = DeleteScanConfigRequest.newBuilder().setName(name).build();
     deleteScanConfig(request);
   }
@@ -373,7 +369,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanConfig getScanConfig(ScanConfigName name) {
-
     GetScanConfigRequest request =
         GetScanConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getScanConfig(request);
@@ -397,7 +392,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanConfig getScanConfig(String name) {
-
     GetScanConfigRequest request = GetScanConfigRequest.newBuilder().setName(name).build();
     return getScanConfig(request);
   }
@@ -603,7 +597,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanConfig updateScanConfig(ScanConfig scanConfig, FieldMask updateMask) {
-
     UpdateScanConfigRequest request =
         UpdateScanConfigRequest.newBuilder()
             .setScanConfig(scanConfig)
@@ -679,7 +672,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanRun startScanRun(ScanConfigName name) {
-
     StartScanRunRequest request =
         StartScanRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return startScanRun(request);
@@ -703,7 +695,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanRun startScanRun(String name) {
-
     StartScanRunRequest request = StartScanRunRequest.newBuilder().setName(name).build();
     return startScanRun(request);
   }
@@ -771,7 +762,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanRun getScanRun(ScanRunName name) {
-
     GetScanRunRequest request =
         GetScanRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getScanRun(request);
@@ -795,7 +785,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanRun getScanRun(String name) {
-
     GetScanRunRequest request = GetScanRunRequest.newBuilder().setName(name).build();
     return getScanRun(request);
   }
@@ -995,7 +984,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanRun stopScanRun(ScanRunName name) {
-
     StopScanRunRequest request =
         StopScanRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return stopScanRun(request);
@@ -1019,7 +1007,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanRun stopScanRun(String name) {
-
     StopScanRunRequest request = StopScanRunRequest.newBuilder().setName(name).build();
     return stopScanRun(request);
   }
@@ -1221,7 +1208,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Finding getFinding(FindingName name) {
-
     GetFindingRequest request =
         GetFindingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFinding(request);
@@ -1246,7 +1232,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Finding getFinding(String name) {
-
     GetFindingRequest request = GetFindingRequest.newBuilder().setName(name).build();
     return getFinding(request);
   }
@@ -1462,7 +1447,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFindingTypeStatsResponse listFindingTypeStats(ScanRunName parent) {
-
     ListFindingTypeStatsRequest request =
         ListFindingTypeStatsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1488,7 +1472,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFindingTypeStatsResponse listFindingTypeStats(String parent) {
-
     ListFindingTypeStatsRequest request =
         ListFindingTypeStatsRequest.newBuilder().setParent(parent).build();
     return listFindingTypeStats(request);
