@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -183,7 +183,6 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Occurrence getOccurrence(OccurrenceName name) {
-
     GetOccurrenceRequest request =
         GetOccurrenceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getOccurrence(request);
@@ -207,7 +206,6 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Occurrence getOccurrence(String name) {
-
     GetOccurrenceRequest request = GetOccurrenceRequest.newBuilder().setName(name).build();
     return getOccurrence(request);
   }
@@ -415,7 +413,6 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteOccurrence(OccurrenceName name) {
-
     DeleteOccurrenceRequest request =
         DeleteOccurrenceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteOccurrence(request);
@@ -440,7 +437,6 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteOccurrence(String name) {
-
     DeleteOccurrenceRequest request = DeleteOccurrenceRequest.newBuilder().setName(name).build();
     deleteOccurrence(request);
   }
@@ -512,7 +508,6 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Occurrence createOccurrence(ProjectName parent, Occurrence occurrence) {
-
     CreateOccurrenceRequest request =
         CreateOccurrenceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -541,7 +536,6 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Occurrence createOccurrence(String parent, Occurrence occurrence) {
-
     CreateOccurrenceRequest request =
         CreateOccurrenceRequest.newBuilder().setParent(parent).setOccurrence(occurrence).build();
     return createOccurrence(request);
@@ -617,7 +611,6 @@ public class GrafeasClient implements BackgroundResource {
    */
   public final BatchCreateOccurrencesResponse batchCreateOccurrences(
       ProjectName parent, List<Occurrence> occurrences) {
-
     BatchCreateOccurrencesRequest request =
         BatchCreateOccurrencesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -647,7 +640,6 @@ public class GrafeasClient implements BackgroundResource {
    */
   public final BatchCreateOccurrencesResponse batchCreateOccurrences(
       String parent, List<Occurrence> occurrences) {
-
     BatchCreateOccurrencesRequest request =
         BatchCreateOccurrencesRequest.newBuilder()
             .setParent(parent)
@@ -730,7 +722,6 @@ public class GrafeasClient implements BackgroundResource {
    */
   public final Occurrence updateOccurrence(
       OccurrenceName name, Occurrence occurrence, FieldMask updateMask) {
-
     UpdateOccurrenceRequest request =
         UpdateOccurrenceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -763,7 +754,6 @@ public class GrafeasClient implements BackgroundResource {
    */
   public final Occurrence updateOccurrence(
       String name, Occurrence occurrence, FieldMask updateMask) {
-
     UpdateOccurrenceRequest request =
         UpdateOccurrenceRequest.newBuilder()
             .setName(name)
@@ -841,7 +831,6 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Note getOccurrenceNote(OccurrenceName name) {
-
     GetOccurrenceNoteRequest request =
         GetOccurrenceNoteRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -868,7 +857,6 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Note getOccurrenceNote(String name) {
-
     GetOccurrenceNoteRequest request = GetOccurrenceNoteRequest.newBuilder().setName(name).build();
     return getOccurrenceNote(request);
   }
@@ -937,7 +925,6 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Note getNote(NoteName name) {
-
     GetNoteRequest request =
         GetNoteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getNote(request);
@@ -960,7 +947,6 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Note getNote(String name) {
-
     GetNoteRequest request = GetNoteRequest.newBuilder().setName(name).build();
     return getNote(request);
   }
@@ -1162,7 +1148,6 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteNote(NoteName name) {
-
     DeleteNoteRequest request =
         DeleteNoteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteNote(request);
@@ -1185,7 +1170,6 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteNote(String name) {
-
     DeleteNoteRequest request = DeleteNoteRequest.newBuilder().setName(name).build();
     deleteNote(request);
   }
@@ -1257,7 +1241,6 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Note createNote(ProjectName parent, String noteId, Note note) {
-
     CreateNoteRequest request =
         CreateNoteRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1289,7 +1272,6 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Note createNote(String parent, String noteId, Note note) {
-
     CreateNoteRequest request =
         CreateNoteRequest.newBuilder().setParent(parent).setNoteId(noteId).setNote(note).build();
     return createNote(request);
@@ -1369,7 +1351,6 @@ public class GrafeasClient implements BackgroundResource {
    */
   public final BatchCreateNotesResponse batchCreateNotes(
       ProjectName parent, Map<String, Note> notes) {
-
     BatchCreateNotesRequest request =
         BatchCreateNotesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1398,7 +1379,6 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateNotesResponse batchCreateNotes(String parent, Map<String, Note> notes) {
-
     BatchCreateNotesRequest request =
         BatchCreateNotesRequest.newBuilder().setParent(parent).putAllNotes(notes).build();
     return batchCreateNotes(request);
@@ -1475,7 +1455,6 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Note updateNote(NoteName name, Note note, FieldMask updateMask) {
-
     UpdateNoteRequest request =
         UpdateNoteRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1506,7 +1485,6 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Note updateNote(String name, Note note, FieldMask updateMask) {
-
     UpdateNoteRequest request =
         UpdateNoteRequest.newBuilder()
             .setName(name)
