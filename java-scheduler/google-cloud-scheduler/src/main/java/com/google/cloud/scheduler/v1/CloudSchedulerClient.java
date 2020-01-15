@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -303,7 +303,6 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job getJob(JobName name) {
-
     GetJobRequest request =
         GetJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getJob(request);
@@ -327,7 +326,6 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job getJob(String name) {
-
     GetJobRequest request = GetJobRequest.newBuilder().setName(name).build();
     return getJob(request);
   }
@@ -401,7 +399,6 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job createJob(LocationName parent, Job job) {
-
     CreateJobRequest request =
         CreateJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -434,7 +431,6 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job createJob(String parent, Job job) {
-
     CreateJobRequest request = CreateJobRequest.newBuilder().setParent(parent).setJob(job).build();
     return createJob(request);
   }
@@ -518,7 +514,6 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job updateJob(Job job, FieldMask updateMask) {
-
     UpdateJobRequest request =
         UpdateJobRequest.newBuilder().setJob(job).setUpdateMask(updateMask).build();
     return updateJob(request);
@@ -607,7 +602,6 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteJob(JobName name) {
-
     DeleteJobRequest request =
         DeleteJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteJob(request);
@@ -631,7 +625,6 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteJob(String name) {
-
     DeleteJobRequest request = DeleteJobRequest.newBuilder().setName(name).build();
     deleteJob(request);
   }
@@ -705,7 +698,6 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job pauseJob(JobName name) {
-
     PauseJobRequest request =
         PauseJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return pauseJob(request);
@@ -735,7 +727,6 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job pauseJob(String name) {
-
     PauseJobRequest request = PauseJobRequest.newBuilder().setName(name).build();
     return pauseJob(request);
   }
@@ -821,7 +812,6 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job resumeJob(JobName name) {
-
     ResumeJobRequest request =
         ResumeJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return resumeJob(request);
@@ -851,7 +841,6 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job resumeJob(String name) {
-
     ResumeJobRequest request = ResumeJobRequest.newBuilder().setName(name).build();
     return resumeJob(request);
   }
@@ -934,7 +923,6 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job runJob(JobName name) {
-
     RunJobRequest request =
         RunJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return runJob(request);
@@ -961,7 +949,6 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job runJob(String name) {
-
     RunJobRequest request = RunJobRequest.newBuilder().setName(name).build();
     return runJob(request);
   }
