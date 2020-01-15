@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -410,7 +410,6 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType getEntityType(EntityTypeName name) {
-
     GetEntityTypeRequest request =
         GetEntityTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEntityType(request);
@@ -434,7 +433,6 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType getEntityType(String name) {
-
     GetEntityTypeRequest request = GetEntityTypeRequest.newBuilder().setName(name).build();
     return getEntityType(request);
   }
@@ -462,7 +460,6 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType getEntityType(EntityTypeName name, String languageCode) {
-
     GetEntityTypeRequest request =
         GetEntityTypeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -494,7 +491,6 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType getEntityType(String name, String languageCode) {
-
     GetEntityTypeRequest request =
         GetEntityTypeRequest.newBuilder().setName(name).setLanguageCode(languageCode).build();
     return getEntityType(request);
@@ -565,7 +561,6 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType createEntityType(ProjectAgentName parent, EntityType entityType) {
-
     CreateEntityTypeRequest request =
         CreateEntityTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -594,7 +589,6 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType createEntityType(String parent, EntityType entityType) {
-
     CreateEntityTypeRequest request =
         CreateEntityTypeRequest.newBuilder().setParent(parent).setEntityType(entityType).build();
     return createEntityType(request);
@@ -626,7 +620,6 @@ public class EntityTypesClient implements BackgroundResource {
    */
   public final EntityType createEntityType(
       ProjectAgentName parent, EntityType entityType, String languageCode) {
-
     CreateEntityTypeRequest request =
         CreateEntityTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -662,7 +655,6 @@ public class EntityTypesClient implements BackgroundResource {
    */
   public final EntityType createEntityType(
       String parent, EntityType entityType, String languageCode) {
-
     CreateEntityTypeRequest request =
         CreateEntityTypeRequest.newBuilder()
             .setParent(parent)
@@ -738,7 +730,6 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType updateEntityType(EntityType entityType) {
-
     UpdateEntityTypeRequest request =
         UpdateEntityTypeRequest.newBuilder().setEntityType(entityType).build();
     return updateEntityType(request);
@@ -766,7 +757,6 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType updateEntityType(EntityType entityType, String languageCode) {
-
     UpdateEntityTypeRequest request =
         UpdateEntityTypeRequest.newBuilder()
             .setEntityType(entityType)
@@ -838,7 +828,6 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteEntityType(EntityTypeName name) {
-
     DeleteEntityTypeRequest request =
         DeleteEntityTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteEntityType(request);
@@ -862,7 +851,6 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteEntityType(String name) {
-
     DeleteEntityTypeRequest request = DeleteEntityTypeRequest.newBuilder().setName(name).build();
     deleteEntityType(request);
   }
@@ -1021,7 +1009,6 @@ public class EntityTypesClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteEntityTypesAsync(
       ProjectAgentName parent, List<String> entityTypeNames) {
-
     BatchDeleteEntityTypesRequest request =
         BatchDeleteEntityTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1056,7 +1043,6 @@ public class EntityTypesClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteEntityTypesAsync(
       String parent, List<String> entityTypeNames) {
-
     BatchDeleteEntityTypesRequest request =
         BatchDeleteEntityTypesRequest.newBuilder()
             .setParent(parent)
@@ -1175,7 +1161,6 @@ public class EntityTypesClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchCreateEntitiesAsync(
       EntityTypeName parent, List<EntityType.Entity> entities) {
-
     BatchCreateEntitiesRequest request =
         BatchCreateEntitiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1209,7 +1194,6 @@ public class EntityTypesClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchCreateEntitiesAsync(
       String parent, List<EntityType.Entity> entities) {
-
     BatchCreateEntitiesRequest request =
         BatchCreateEntitiesRequest.newBuilder().setParent(parent).addAllEntities(entities).build();
     return batchCreateEntitiesAsync(request);
@@ -1245,7 +1229,6 @@ public class EntityTypesClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchCreateEntitiesAsync(
       EntityTypeName parent, List<EntityType.Entity> entities, String languageCode) {
-
     BatchCreateEntitiesRequest request =
         BatchCreateEntitiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1285,7 +1268,6 @@ public class EntityTypesClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchCreateEntitiesAsync(
       String parent, List<EntityType.Entity> entities, String languageCode) {
-
     BatchCreateEntitiesRequest request =
         BatchCreateEntitiesRequest.newBuilder()
             .setParent(parent)
@@ -1405,7 +1387,6 @@ public class EntityTypesClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchUpdateEntitiesAsync(
       EntityTypeName parent, List<EntityType.Entity> entities) {
-
     BatchUpdateEntitiesRequest request =
         BatchUpdateEntitiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1440,7 +1421,6 @@ public class EntityTypesClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchUpdateEntitiesAsync(
       String parent, List<EntityType.Entity> entities) {
-
     BatchUpdateEntitiesRequest request =
         BatchUpdateEntitiesRequest.newBuilder().setParent(parent).addAllEntities(entities).build();
     return batchUpdateEntitiesAsync(request);
@@ -1477,7 +1457,6 @@ public class EntityTypesClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchUpdateEntitiesAsync(
       EntityTypeName parent, List<EntityType.Entity> entities, String languageCode) {
-
     BatchUpdateEntitiesRequest request =
         BatchUpdateEntitiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1518,7 +1497,6 @@ public class EntityTypesClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchUpdateEntitiesAsync(
       String parent, List<EntityType.Entity> entities, String languageCode) {
-
     BatchUpdateEntitiesRequest request =
         BatchUpdateEntitiesRequest.newBuilder()
             .setParent(parent)
@@ -1641,7 +1619,6 @@ public class EntityTypesClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
       EntityTypeName parent, List<String> entityValues) {
-
     BatchDeleteEntitiesRequest request =
         BatchDeleteEntitiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1676,7 +1653,6 @@ public class EntityTypesClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
       String parent, List<String> entityValues) {
-
     BatchDeleteEntitiesRequest request =
         BatchDeleteEntitiesRequest.newBuilder()
             .setParent(parent)
@@ -1716,7 +1692,6 @@ public class EntityTypesClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
       EntityTypeName parent, List<String> entityValues, String languageCode) {
-
     BatchDeleteEntitiesRequest request =
         BatchDeleteEntitiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1757,7 +1732,6 @@ public class EntityTypesClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
       String parent, List<String> entityValues, String languageCode) {
-
     BatchDeleteEntitiesRequest request =
         BatchDeleteEntitiesRequest.newBuilder()
             .setParent(parent)

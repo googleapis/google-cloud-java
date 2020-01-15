@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -327,7 +327,6 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final KnowledgeBase getKnowledgeBase(KnowledgeBaseName name) {
-
     GetKnowledgeBaseRequest request =
         GetKnowledgeBaseRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getKnowledgeBase(request);
@@ -354,7 +353,6 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final KnowledgeBase getKnowledgeBase(String name) {
-
     GetKnowledgeBaseRequest request = GetKnowledgeBaseRequest.newBuilder().setName(name).build();
     return getKnowledgeBase(request);
   }
@@ -433,7 +431,6 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final KnowledgeBase createKnowledgeBase(ProjectName parent, KnowledgeBase knowledgeBase) {
-
     CreateKnowledgeBaseRequest request =
         CreateKnowledgeBaseRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -465,7 +462,6 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final KnowledgeBase createKnowledgeBase(String parent, KnowledgeBase knowledgeBase) {
-
     CreateKnowledgeBaseRequest request =
         CreateKnowledgeBaseRequest.newBuilder()
             .setParent(parent)
@@ -551,7 +547,6 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteKnowledgeBase(KnowledgeBaseName name) {
-
     DeleteKnowledgeBaseRequest request =
         DeleteKnowledgeBaseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -580,7 +575,6 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteKnowledgeBase(String name) {
-
     DeleteKnowledgeBaseRequest request =
         DeleteKnowledgeBaseRequest.newBuilder().setName(name).build();
     deleteKnowledgeBase(request);
@@ -657,7 +651,6 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final KnowledgeBase updateKnowledgeBase(KnowledgeBase knowledgeBase) {
-
     UpdateKnowledgeBaseRequest request =
         UpdateKnowledgeBaseRequest.newBuilder().setKnowledgeBase(knowledgeBase).build();
     return updateKnowledgeBase(request);

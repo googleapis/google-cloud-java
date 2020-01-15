@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -410,7 +410,6 @@ public class IntentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent getIntent(IntentName name) {
-
     GetIntentRequest request =
         GetIntentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getIntent(request);
@@ -434,7 +433,6 @@ public class IntentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent getIntent(String name) {
-
     GetIntentRequest request = GetIntentRequest.newBuilder().setName(name).build();
     return getIntent(request);
   }
@@ -462,7 +460,6 @@ public class IntentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent getIntent(IntentName name, String languageCode) {
-
     GetIntentRequest request =
         GetIntentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -494,7 +491,6 @@ public class IntentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent getIntent(String name, String languageCode) {
-
     GetIntentRequest request =
         GetIntentRequest.newBuilder().setName(name).setLanguageCode(languageCode).build();
     return getIntent(request);
@@ -565,7 +561,6 @@ public class IntentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent createIntent(ProjectAgentName parent, Intent intent) {
-
     CreateIntentRequest request =
         CreateIntentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -594,7 +589,6 @@ public class IntentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent createIntent(String parent, Intent intent) {
-
     CreateIntentRequest request =
         CreateIntentRequest.newBuilder().setParent(parent).setIntent(intent).build();
     return createIntent(request);
@@ -625,7 +619,6 @@ public class IntentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent createIntent(ProjectAgentName parent, Intent intent, String languageCode) {
-
     CreateIntentRequest request =
         CreateIntentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -660,7 +653,6 @@ public class IntentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent createIntent(String parent, Intent intent, String languageCode) {
-
     CreateIntentRequest request =
         CreateIntentRequest.newBuilder()
             .setParent(parent)
@@ -741,7 +733,6 @@ public class IntentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent updateIntent(Intent intent, String languageCode) {
-
     UpdateIntentRequest request =
         UpdateIntentRequest.newBuilder().setIntent(intent).setLanguageCode(languageCode).build();
     return updateIntent(request);
@@ -771,7 +762,6 @@ public class IntentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent updateIntent(Intent intent, String languageCode, FieldMask updateMask) {
-
     UpdateIntentRequest request =
         UpdateIntentRequest.newBuilder()
             .setIntent(intent)
@@ -849,7 +839,6 @@ public class IntentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteIntent(IntentName name) {
-
     DeleteIntentRequest request =
         DeleteIntentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteIntent(request);
@@ -874,7 +863,6 @@ public class IntentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteIntent(String name) {
-
     DeleteIntentRequest request = DeleteIntentRequest.newBuilder().setName(name).build();
     deleteIntent(request);
   }
@@ -1037,7 +1025,6 @@ public class IntentsClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteIntentsAsync(
       ProjectAgentName parent, List<Intent> intents) {
-
     BatchDeleteIntentsRequest request =
         BatchDeleteIntentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1072,7 +1059,6 @@ public class IntentsClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> batchDeleteIntentsAsync(
       String parent, List<Intent> intents) {
-
     BatchDeleteIntentsRequest request =
         BatchDeleteIntentsRequest.newBuilder().setParent(parent).addAllIntents(intents).build();
     return batchDeleteIntentsAsync(request);

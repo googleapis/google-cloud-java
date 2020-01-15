@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -337,7 +337,6 @@ public class DocumentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Document getDocument(DocumentName name) {
-
     GetDocumentRequest request =
         GetDocumentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDocument(request);
@@ -364,7 +363,6 @@ public class DocumentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Document getDocument(String name) {
-
     GetDocumentRequest request = GetDocumentRequest.newBuilder().setName(name).build();
     return getDocument(request);
   }
@@ -449,7 +447,6 @@ public class DocumentsClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Document, KnowledgeOperationMetadata> createDocumentAsync(
       KnowledgeBaseName parent, Document document) {
-
     CreateDocumentRequest request =
         CreateDocumentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -487,7 +484,6 @@ public class DocumentsClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Document, KnowledgeOperationMetadata> createDocumentAsync(
       String parent, Document document) {
-
     CreateDocumentRequest request =
         CreateDocumentRequest.newBuilder().setParent(parent).setDocument(document).build();
     return createDocumentAsync(request);
@@ -616,7 +612,6 @@ public class DocumentsClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, KnowledgeOperationMetadata> deleteDocumentAsync(
       DocumentName name) {
-
     DeleteDocumentRequest request =
         DeleteDocumentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDocumentAsync(request);
@@ -648,7 +643,6 @@ public class DocumentsClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, KnowledgeOperationMetadata> deleteDocumentAsync(String name) {
-
     DeleteDocumentRequest request = DeleteDocumentRequest.newBuilder().setName(name).build();
     return deleteDocumentAsync(request);
   }
@@ -769,7 +763,6 @@ public class DocumentsClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Document, KnowledgeOperationMetadata> updateDocumentAsync(
       Document document) {
-
     UpdateDocumentRequest request =
         UpdateDocumentRequest.newBuilder().setDocument(document).build();
     return updateDocumentAsync(request);

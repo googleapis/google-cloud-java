@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -210,7 +210,6 @@ public class AgentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Agent setAgent(Agent agent) {
-
     SetAgentRequest request = SetAgentRequest.newBuilder().setAgent(agent).build();
     return setAgent(request);
   }
@@ -278,7 +277,6 @@ public class AgentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAgent(ProjectName parent) {
-
     DeleteAgentRequest request =
         DeleteAgentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -304,7 +302,6 @@ public class AgentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAgent(String parent) {
-
     DeleteAgentRequest request = DeleteAgentRequest.newBuilder().setParent(parent).build();
     deleteAgent(request);
   }
@@ -372,7 +369,6 @@ public class AgentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Agent getAgent(ProjectName parent) {
-
     GetAgentRequest request =
         GetAgentRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return getAgent(request);
@@ -396,7 +392,6 @@ public class AgentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Agent getAgent(String parent) {
-
     GetAgentRequest request = GetAgentRequest.newBuilder().setParent(parent).build();
     return getAgent(request);
   }
@@ -625,7 +620,6 @@ public class AgentsClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> trainAgentAsync(ProjectName parent) {
-
     TrainAgentRequest request =
         TrainAgentRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return trainAgentAsync(request);
@@ -653,7 +647,6 @@ public class AgentsClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> trainAgentAsync(String parent) {
-
     TrainAgentRequest request = TrainAgentRequest.newBuilder().setParent(parent).build();
     return trainAgentAsync(request);
   }
@@ -757,7 +750,6 @@ public class AgentsClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ExportAgentResponse, Struct> exportAgentAsync(ProjectName parent) {
-
     ExportAgentRequest request =
         ExportAgentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -788,7 +780,6 @@ public class AgentsClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ExportAgentResponse, Struct> exportAgentAsync(String parent) {
-
     ExportAgentRequest request = ExportAgentRequest.newBuilder().setParent(parent).build();
     return exportAgentAsync(request);
   }

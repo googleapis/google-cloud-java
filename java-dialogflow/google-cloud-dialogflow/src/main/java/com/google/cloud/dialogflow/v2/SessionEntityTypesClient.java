@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -338,7 +338,6 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SessionEntityType getSessionEntityType(SessionEntityTypeName name) {
-
     GetSessionEntityTypeRequest request =
         GetSessionEntityTypeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -367,7 +366,6 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SessionEntityType getSessionEntityType(String name) {
-
     GetSessionEntityTypeRequest request =
         GetSessionEntityTypeRequest.newBuilder().setName(name).build();
     return getSessionEntityType(request);
@@ -451,7 +449,6 @@ public class SessionEntityTypesClient implements BackgroundResource {
    */
   public final SessionEntityType createSessionEntityType(
       SessionName parent, SessionEntityType sessionEntityType) {
-
     CreateSessionEntityTypeRequest request =
         CreateSessionEntityTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -486,7 +483,6 @@ public class SessionEntityTypesClient implements BackgroundResource {
    */
   public final SessionEntityType createSessionEntityType(
       String parent, SessionEntityType sessionEntityType) {
-
     CreateSessionEntityTypeRequest request =
         CreateSessionEntityTypeRequest.newBuilder()
             .setParent(parent)
@@ -576,7 +572,6 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SessionEntityType updateSessionEntityType(SessionEntityType sessionEntityType) {
-
     UpdateSessionEntityTypeRequest request =
         UpdateSessionEntityTypeRequest.newBuilder().setSessionEntityType(sessionEntityType).build();
     return updateSessionEntityType(request);
@@ -655,7 +650,6 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSessionEntityType(SessionEntityTypeName name) {
-
     DeleteSessionEntityTypeRequest request =
         DeleteSessionEntityTypeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -684,7 +678,6 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSessionEntityType(String name) {
-
     DeleteSessionEntityTypeRequest request =
         DeleteSessionEntityTypeRequest.newBuilder().setName(name).build();
     deleteSessionEntityType(request);

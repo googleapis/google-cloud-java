@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,7 +175,6 @@ public class SessionsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DetectIntentResponse detectIntent(SessionName session, QueryInput queryInput) {
-
     DetectIntentRequest request =
         DetectIntentRequest.newBuilder()
             .setSession(session == null ? null : session.toString())
@@ -212,7 +211,6 @@ public class SessionsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DetectIntentResponse detectIntent(String session, QueryInput queryInput) {
-
     DetectIntentRequest request =
         DetectIntentRequest.newBuilder().setSession(session).setQueryInput(queryInput).build();
     return detectIntent(request);

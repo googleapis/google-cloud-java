@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -316,7 +316,6 @@ public class ContextsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Context getContext(ContextName name) {
-
     GetContextRequest request =
         GetContextRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getContext(request);
@@ -340,7 +339,6 @@ public class ContextsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Context getContext(String name) {
-
     GetContextRequest request = GetContextRequest.newBuilder().setName(name).build();
     return getContext(request);
   }
@@ -412,7 +410,6 @@ public class ContextsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Context createContext(SessionName parent, Context context) {
-
     CreateContextRequest request =
         CreateContextRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -443,7 +440,6 @@ public class ContextsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Context createContext(String parent, Context context) {
-
     CreateContextRequest request =
         CreateContextRequest.newBuilder().setParent(parent).setContext(context).build();
     return createContext(request);
@@ -519,7 +515,6 @@ public class ContextsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Context updateContext(Context context) {
-
     UpdateContextRequest request = UpdateContextRequest.newBuilder().setContext(context).build();
     return updateContext(request);
   }
@@ -587,7 +582,6 @@ public class ContextsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteContext(ContextName name) {
-
     DeleteContextRequest request =
         DeleteContextRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteContext(request);
@@ -611,7 +605,6 @@ public class ContextsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteContext(String name) {
-
     DeleteContextRequest request = DeleteContextRequest.newBuilder().setName(name).build();
     deleteContext(request);
   }
@@ -679,7 +672,6 @@ public class ContextsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAllContexts(SessionName parent) {
-
     DeleteAllContextsRequest request =
         DeleteAllContextsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -705,7 +697,6 @@ public class ContextsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAllContexts(String parent) {
-
     DeleteAllContextsRequest request =
         DeleteAllContextsRequest.newBuilder().setParent(parent).build();
     deleteAllContexts(request);
