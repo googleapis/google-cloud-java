@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -194,7 +194,6 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Assessment createAssessment(ProjectName parent, Assessment assessment) {
-
     CreateAssessmentRequest request =
         CreateAssessmentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -223,7 +222,6 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Assessment createAssessment(String parent, Assessment assessment) {
-
     CreateAssessmentRequest request =
         CreateAssessmentRequest.newBuilder().setParent(parent).setAssessment(assessment).build();
     return createAssessment(request);
@@ -300,7 +298,6 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    */
   public final AnnotateAssessmentResponse annotateAssessment(
       AssessmentName name, AnnotateAssessmentRequest.Annotation annotation) {
-
     AnnotateAssessmentRequest request =
         AnnotateAssessmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -331,7 +328,6 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    */
   public final AnnotateAssessmentResponse annotateAssessment(
       String name, AnnotateAssessmentRequest.Annotation annotation) {
-
     AnnotateAssessmentRequest request =
         AnnotateAssessmentRequest.newBuilder().setName(name).setAnnotation(annotation).build();
     return annotateAssessment(request);
