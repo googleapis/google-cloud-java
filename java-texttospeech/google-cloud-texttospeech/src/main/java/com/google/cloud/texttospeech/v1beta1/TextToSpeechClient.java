@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -166,7 +166,6 @@ public class TextToSpeechClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVoicesResponse listVoices(String languageCode) {
-
     ListVoicesRequest request =
         ListVoicesRequest.newBuilder().setLanguageCode(languageCode).build();
     return listVoices(request);
@@ -233,7 +232,6 @@ public class TextToSpeechClient implements BackgroundResource {
    */
   public final SynthesizeSpeechResponse synthesizeSpeech(
       SynthesisInput input, VoiceSelectionParams voice, AudioConfig audioConfig) {
-
     SynthesizeSpeechRequest request =
         SynthesizeSpeechRequest.newBuilder()
             .setInput(input)
