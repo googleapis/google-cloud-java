@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -163,7 +163,6 @@ public class LanguageServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnalyzeSentimentResponse analyzeSentiment(Document document) {
-
     AnalyzeSentimentRequest request =
         AnalyzeSentimentRequest.newBuilder().setDocument(document).build();
     return analyzeSentiment(request);
@@ -236,7 +235,6 @@ public class LanguageServiceClient implements BackgroundResource {
    */
   public final AnalyzeEntitiesResponse analyzeEntities(
       Document document, EncodingType encodingType) {
-
     AnalyzeEntitiesRequest request =
         AnalyzeEntitiesRequest.newBuilder()
             .setDocument(document)
@@ -315,7 +313,6 @@ public class LanguageServiceClient implements BackgroundResource {
    */
   public final AnalyzeEntitySentimentResponse analyzeEntitySentiment(
       Document document, EncodingType encodingType) {
-
     AnalyzeEntitySentimentRequest request =
         AnalyzeEntitySentimentRequest.newBuilder()
             .setDocument(document)
@@ -395,7 +392,6 @@ public class LanguageServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnalyzeSyntaxResponse analyzeSyntax(Document document, EncodingType encodingType) {
-
     AnalyzeSyntaxRequest request =
         AnalyzeSyntaxRequest.newBuilder()
             .setDocument(document)
@@ -468,7 +464,6 @@ public class LanguageServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ClassifyTextResponse classifyText(Document document) {
-
     ClassifyTextRequest request = ClassifyTextRequest.newBuilder().setDocument(document).build();
     return classifyText(request);
   }
@@ -541,7 +536,6 @@ public class LanguageServiceClient implements BackgroundResource {
    */
   public final AnnotateTextResponse annotateText(
       Document document, AnnotateTextRequest.Features features, EncodingType encodingType) {
-
     AnnotateTextRequest request =
         AnnotateTextRequest.newBuilder()
             .setDocument(document)
