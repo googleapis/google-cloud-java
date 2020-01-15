@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -204,7 +204,6 @@ public class TranslationServiceClient implements BackgroundResource {
    */
   public final TranslateTextResponse translateText(
       LocationName parent, String targetLanguageCode, List<String> contents) {
-
     TranslateTextRequest request =
         TranslateTextRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -245,7 +244,6 @@ public class TranslationServiceClient implements BackgroundResource {
    */
   public final TranslateTextResponse translateText(
       String parent, String targetLanguageCode, List<String> contents) {
-
     TranslateTextRequest request =
         TranslateTextRequest.newBuilder()
             .setParent(parent)
@@ -310,7 +308,6 @@ public class TranslationServiceClient implements BackgroundResource {
       String sourceLanguageCode,
       String targetLanguageCode,
       List<String> contents) {
-
     TranslateTextRequest request =
         TranslateTextRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -378,7 +375,6 @@ public class TranslationServiceClient implements BackgroundResource {
       String sourceLanguageCode,
       String targetLanguageCode,
       List<String> contents) {
-
     TranslateTextRequest request =
         TranslateTextRequest.newBuilder()
             .setParent(parent)
@@ -480,7 +476,6 @@ public class TranslationServiceClient implements BackgroundResource {
    */
   public final DetectLanguageResponse detectLanguage(
       LocationName parent, String model, String mimeType, String content) {
-
     DetectLanguageRequest request =
         DetectLanguageRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -527,7 +522,6 @@ public class TranslationServiceClient implements BackgroundResource {
    */
   public final DetectLanguageResponse detectLanguage(
       String parent, String model, String mimeType, String content) {
-
     DetectLanguageRequest request =
         DetectLanguageRequest.newBuilder()
             .setParent(parent)
@@ -623,7 +617,6 @@ public class TranslationServiceClient implements BackgroundResource {
    */
   public final SupportedLanguages getSupportedLanguages(
       LocationName parent, String model, String displayLanguageCode) {
-
     GetSupportedLanguagesRequest request =
         GetSupportedLanguagesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -672,7 +665,6 @@ public class TranslationServiceClient implements BackgroundResource {
    */
   public final SupportedLanguages getSupportedLanguages(
       String parent, String model, String displayLanguageCode) {
-
     GetSupportedLanguagesRequest request =
         GetSupportedLanguagesRequest.newBuilder()
             .setParent(parent)
@@ -863,7 +855,6 @@ public class TranslationServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Glossary, CreateGlossaryMetadata> createGlossaryAsync(
       LocationName parent, Glossary glossary) {
-
     CreateGlossaryRequest request =
         CreateGlossaryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -895,7 +886,6 @@ public class TranslationServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Glossary, CreateGlossaryMetadata> createGlossaryAsync(
       String parent, Glossary glossary) {
-
     CreateGlossaryRequest request =
         CreateGlossaryRequest.newBuilder().setParent(parent).setGlossary(glossary).build();
     return createGlossaryAsync(request);
@@ -1130,7 +1120,6 @@ public class TranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Glossary getGlossary(GlossaryName name) {
-
     GetGlossaryRequest request =
         GetGlossaryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGlossary(request);
@@ -1153,7 +1142,6 @@ public class TranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Glossary getGlossary(String name) {
-
     GetGlossaryRequest request = GetGlossaryRequest.newBuilder().setName(name).build();
     return getGlossary(request);
   }
@@ -1224,7 +1212,6 @@ public class TranslationServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<DeleteGlossaryResponse, DeleteGlossaryMetadata> deleteGlossaryAsync(
       GlossaryName name) {
-
     DeleteGlossaryRequest request =
         DeleteGlossaryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteGlossaryAsync(request);
@@ -1251,7 +1238,6 @@ public class TranslationServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<DeleteGlossaryResponse, DeleteGlossaryMetadata> deleteGlossaryAsync(
       String name) {
-
     DeleteGlossaryRequest request = DeleteGlossaryRequest.newBuilder().setName(name).build();
     return deleteGlossaryAsync(request);
   }
