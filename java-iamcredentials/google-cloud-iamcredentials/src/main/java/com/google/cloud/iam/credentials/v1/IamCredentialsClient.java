@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -195,7 +195,6 @@ public class IamCredentialsClient implements BackgroundResource {
    */
   public final GenerateAccessTokenResponse generateAccessToken(
       ServiceAccountName name, List<String> delegates, List<String> scope, Duration lifetime) {
-
     GenerateAccessTokenRequest request =
         GenerateAccessTokenRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -244,7 +243,6 @@ public class IamCredentialsClient implements BackgroundResource {
    */
   public final GenerateAccessTokenResponse generateAccessToken(
       String name, List<String> delegates, List<String> scope, Duration lifetime) {
-
     GenerateAccessTokenRequest request =
         GenerateAccessTokenRequest.newBuilder()
             .setName(name)
@@ -341,7 +339,6 @@ public class IamCredentialsClient implements BackgroundResource {
    */
   public final GenerateIdTokenResponse generateIdToken(
       ServiceAccountName name, List<String> delegates, String audience, boolean includeEmail) {
-
     GenerateIdTokenRequest request =
         GenerateIdTokenRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -388,7 +385,6 @@ public class IamCredentialsClient implements BackgroundResource {
    */
   public final GenerateIdTokenResponse generateIdToken(
       String name, List<String> delegates, String audience, boolean includeEmail) {
-
     GenerateIdTokenRequest request =
         GenerateIdTokenRequest.newBuilder()
             .setName(name)
@@ -481,7 +477,6 @@ public class IamCredentialsClient implements BackgroundResource {
    */
   public final SignBlobResponse signBlob(
       ServiceAccountName name, List<String> delegates, ByteString payload) {
-
     SignBlobRequest request =
         SignBlobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -522,7 +517,6 @@ public class IamCredentialsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SignBlobResponse signBlob(String name, List<String> delegates, ByteString payload) {
-
     SignBlobRequest request =
         SignBlobRequest.newBuilder()
             .setName(name)
@@ -613,7 +607,6 @@ public class IamCredentialsClient implements BackgroundResource {
    */
   public final SignJwtResponse signJwt(
       ServiceAccountName name, List<String> delegates, String payload) {
-
     SignJwtRequest request =
         SignJwtRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -654,7 +647,6 @@ public class IamCredentialsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SignJwtResponse signJwt(String name, List<String> delegates, String payload) {
-
     SignJwtRequest request =
         SignJwtRequest.newBuilder()
             .setName(name)
