@@ -131,7 +131,7 @@ There are different strategies to resolve conflicts, but you must understand the
    of multiple libraries to sync everything up. 
 - If you can't modify and push new versions of your dependencies, import
   `com.google.cloud:libraries-bom:3.4.0` (or a more recent version) and use that to
-  select consistent dependency version. This is the easiest route. 
+  select consistent dependency versions. This is the easiest route. 
   For example, this is how you can depend on consistent versions of Guava and 
   `com.google.cloud:google-cloud-storage` without explicitly setting the version of either one:
   
