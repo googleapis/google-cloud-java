@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.stub;
 
 import com.google.api.core.BetaApi;
+import com.google.api.gax.batching.BatchingCallSettings;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
@@ -38,6 +39,7 @@ import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
+import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsBatchingDescriptor;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -158,6 +160,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private final UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings;
   private final UnaryCallSettings<RowMutation, Void> mutateRowSettings;
   private final BigtableBatchingCallSettings bulkMutateRowsSettings;
+  private final BigtableBulkReadRowsCallSettings bulkReadRowsSettings;
   private final UnaryCallSettings<ConditionalRowMutation, Boolean> checkAndMutateRowSettings;
   private final UnaryCallSettings<ReadModifyWriteRow, Row> readModifyWriteRowSettings;
 
@@ -170,14 +173,20 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
               + " This is currently an experimental feature and should not be used in production.");
     }
 
-    // Since point reads & streaming reads share the same base callable that converts grpc errors
-    // into ApiExceptions, they must have the same retry codes.
+    // Since point reads, streaming reads, bulk reads share the same base callable that converts
+    // grpc errors into ApiExceptions, they must have the same retry codes.
     Preconditions.checkState(
         builder
             .readRowSettings
             .getRetryableCodes()
             .equals(builder.readRowsSettings.getRetryableCodes()),
         "Single ReadRow retry codes must match ReadRows retry codes");
+    Preconditions.checkState(
+        builder
+            .bulkReadRowsSettings
+            .getRetryableCodes()
+            .equals(builder.readRowsSettings.getRetryableCodes()),
+        "Bulk ReadRow retry codes must match ReadRows retry codes");
 
     projectId = builder.projectId;
     instanceId = builder.instanceId;
@@ -190,6 +199,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     sampleRowKeysSettings = builder.sampleRowKeysSettings.build();
     mutateRowSettings = builder.mutateRowSettings.build();
     bulkMutateRowsSettings = builder.bulkMutateRowsSettings.build();
+    bulkReadRowsSettings = builder.bulkReadRowsSettings.build();
     checkAndMutateRowSettings = builder.checkAndMutateRowSettings.build();
     readModifyWriteRowSettings = builder.readModifyWriteRowSettings.build();
   }
@@ -223,9 +233,13 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     return BigtableStubSettings.defaultGrpcTransportProviderBuilder()
-        // TODO: tune channels
-        .setChannelsPerCpu(2)
+        .setPoolSize(getDefaultChannelPoolSize())
         .setMaxInboundMessageSize(MAX_MESSAGE_SIZE);
+  }
+
+  static int getDefaultChannelPoolSize() {
+    // TODO: tune channels
+    return 2 * Runtime.getRuntime().availableProcessors();
   }
 
   @SuppressWarnings("WeakerAccess")
@@ -347,8 +361,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    * <p>Default retry and timeout settings:
    *
    * <ul>
-   *   <li>Retry {@link com.google.api.gax.batching.BatchingCallSettings.Builder#setRetryableCodes
-   *       error codes} are: {@link Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
+   *   <li>Retry {@link BatchingCallSettings.Builder#setRetryableCodes error codes} are: {@link
+   *       Code#DEADLINE_EXCEEDED} and {@link Code#UNAVAILABLE}.
    *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
    *       starts} at 10ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
    *       exponentially} by a factor of 2 until a {@link RetrySettings.Builder#setMaxRetryDelay
@@ -382,6 +396,47 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    */
   public BigtableBatchingCallSettings bulkMutateRowsSettings() {
     return bulkMutateRowsSettings;
+  }
+
+  /**
+   * Returns the call settings used for bulk read rows.
+   *
+   * <p>Default retry and timeout settings:
+   *
+   * <ul>
+   *   <li>Retry {@link BatchingCallSettings.Builder#setRetryableCodes error codes} are: {@link
+   *       Code#DEADLINE_EXCEEDED}, {@link Code#UNAVAILABLE} and {@link Code#ABORTED}.
+   *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
+   *       starts} at 10ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
+   *       exponentially} by a factor of 2 until a {@link RetrySettings.Builder#setMaxRetryDelay
+   *       maximum of} 1 minute.
+   *   <li>The default timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each attempt} is 5
+   *       minute and the timeout for the {@link RetrySettings.Builder#setTotalTimeout entire
+   *       operation} across all of the attempts is 10 mins.
+   * </ul>
+   *
+   * <p>On breach of certain triggers, the operation initiates processing of accumulated request for
+   * which the default settings are:
+   *
+   * <ul>
+   *   <li>When the {@link BatchingSettings.Builder#setElementCountThreshold request count} reaches
+   *       100.
+   *   <li>When accumulated {@link BatchingSettings.Builder#setRequestByteThreshold request size}
+   *       reaches to 400KB.
+   *   <li>When an {@link BatchingSettings.Builder#setDelayThreshold interval of} 1 second passes
+   *       after batching initialization or last processed batch.
+   * </ul>
+   *
+   * <p>When the pending {@link FlowControlSettings.Builder#setMaxOutstandingElementCount request
+   * count} reaches a default of 1000 outstanding row keys per channel then this operation will by
+   * default be {@link FlowControlSettings.Builder#setLimitExceededBehavior blocked} until some of
+   * the pending batch are resolved.
+   *
+   * @see RetrySettings for more explanation.
+   * @see BatchingSettings for batch related configuration explanation.
+   */
+  public BigtableBulkReadRowsCallSettings bulkReadRowsSettings() {
+    return bulkReadRowsSettings;
   }
 
   /**
@@ -430,6 +485,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private final UnaryCallSettings.Builder<String, List<KeyOffset>> sampleRowKeysSettings;
     private final UnaryCallSettings.Builder<RowMutation, Void> mutateRowSettings;
     private final BigtableBatchingCallSettings.Builder bulkMutateRowsSettings;
+    private final BigtableBulkReadRowsCallSettings.Builder bulkReadRowsSettings;
     private final UnaryCallSettings.Builder<ConditionalRowMutation, Boolean>
         checkAndMutateRowSettings;
     private final UnaryCallSettings.Builder<ReadModifyWriteRow, Row> readModifyWriteRowSettings;
@@ -515,6 +571,28 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
                               .build())
                       .build());
 
+      long maxBulkReadElementPerBatch = 100L;
+      long maxBulkReadRequestSizePerBatch = 400L * 1024L;
+      // Enables bulkRead to support 10 outstanding batches per channel
+      long maxBulkReadOutstandingElementCount =
+          10L * maxBulkReadElementPerBatch * getDefaultChannelPoolSize();
+
+      bulkReadRowsSettings =
+          BigtableBulkReadRowsCallSettings.newBuilder(new ReadRowsBatchingDescriptor())
+              .setRetryableCodes(readRowsSettings.getRetryableCodes())
+              .setRetrySettings(IDEMPOTENT_RETRY_SETTINGS)
+              .setBatchingSettings(
+                  BatchingSettings.newBuilder()
+                      .setElementCountThreshold(maxBulkReadElementPerBatch)
+                      .setRequestByteThreshold(maxBulkReadRequestSizePerBatch)
+                      .setDelayThreshold(Duration.ofSeconds(1))
+                      .setFlowControlSettings(
+                          FlowControlSettings.newBuilder()
+                              .setLimitExceededBehavior(LimitExceededBehavior.Block)
+                              .setMaxOutstandingElementCount(maxBulkReadOutstandingElementCount)
+                              .build())
+                      .build());
+
       checkAndMutateRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       copyRetrySettings(baseDefaults.checkAndMutateRowSettings(), checkAndMutateRowSettings);
 
@@ -535,6 +613,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       sampleRowKeysSettings = settings.sampleRowKeysSettings.toBuilder();
       mutateRowSettings = settings.mutateRowSettings.toBuilder();
       bulkMutateRowsSettings = settings.bulkMutateRowsSettings.toBuilder();
+      bulkReadRowsSettings = settings.bulkReadRowsSettings.toBuilder();
       checkAndMutateRowSettings = settings.checkAndMutateRowSettings.toBuilder();
       readModifyWriteRowSettings = settings.readModifyWriteRowSettings.toBuilder();
     }
@@ -671,6 +750,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     /** Returns the builder for the settings used for calls to MutateRows. */
     public BigtableBatchingCallSettings.Builder bulkMutateRowsSettings() {
       return bulkMutateRowsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to MutateRows. */
+    public BigtableBulkReadRowsCallSettings.Builder bulkReadRowsSettings() {
+      return bulkReadRowsSettings;
     }
 
     /** Returns the builder for the settings used for calls to CheckAndMutateRow. */

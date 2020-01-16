@@ -274,6 +274,12 @@ public final class Query implements Serializable {
     return query;
   }
 
+  public Query clone() {
+    Query query = Query.create(tableId);
+    query.builder = this.builder.clone();
+    return query;
+  }
+
   private static ByteString wrapKey(String key) {
     if (key == null) {
       return null;

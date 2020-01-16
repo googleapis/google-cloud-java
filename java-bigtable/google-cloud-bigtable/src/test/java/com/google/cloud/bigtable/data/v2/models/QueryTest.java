@@ -286,4 +286,23 @@ public class QueryTest {
         .isNotEqualTo(Query.create(TABLE_ID).filter(FILTERS.family().exactMatch("test-one")));
     assertThat(Query.create(TABLE_ID).limit(4)).isNotEqualTo(Query.create(TABLE_ID).limit(5));
   }
+
+  @Test
+  public void testClone() {
+    Query query = Query.create(TABLE_ID).filter(FILTERS.key().regex("temp")).limit(10);
+    ReadRowsRequest request =
+        ReadRowsRequest.newBuilder()
+            .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
+            .setAppProfileId(APP_PROFILE_ID)
+            .setRowsLimit(10)
+            .setFilter(
+                RowFilter.newBuilder()
+                    .setRowKeyRegexFilter(ByteString.copyFromUtf8("temp"))
+                    .build())
+            .build();
+
+    Query clonedReq = query.clone();
+    assertThat(clonedReq).isEqualTo(query);
+    assertThat(clonedReq.toProto(requestContext)).isEqualTo(request);
+  }
 }
