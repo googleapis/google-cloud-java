@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-01-14T21:12:07.483450Z",
+  "updateTime": "2020-01-16T08:38:06.520668Z",
   "sources": [
     {
       "generator": {
@@ -12,8 +12,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d99df0d67057a233c711187e0689baa4f8e6333d",
-        "internalRef": "289709813"
+        "sha": "0735b4b096872960568d1f366bfa75b7b0e1f1a3",
+        "internalRef": "289939042"
       }
     },
     {
@@ -44,6 +44,1358 @@
         "generator": "gapic",
         "config": "google/bigtable/admin/artman_bigtableadmin.yaml"
       }
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "versions.txt"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": ".gitignore"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "DEVELOPING.md"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DeleteClusterRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListClustersResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/UpdateAppProfileRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListInstancesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GetAppProfileRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/PartialUpdateInstanceRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListSnapshotsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/UpdateAppProfileRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DeleteSnapshotRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/UpdateAppProfileMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateTableRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CheckConsistencyResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GenerateConsistencyTokenResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/SnapshotTableMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/TableName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/AppProfileName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CheckConsistencyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListSnapshotsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateClusterMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ClusterName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GetClusterRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/BigtableInstanceAdminProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateAppProfileRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateInstanceMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GetInstanceRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GenerateConsistencyTokenRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListTablesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListTablesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/UpdateAppProfileMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListSnapshotsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DeleteInstanceRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DeleteSnapshotRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DeleteTableRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GetClusterRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListClustersResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DeleteInstanceRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListClustersRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/Cluster.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CommonProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CheckConsistencyResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DeleteClusterRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GenerateConsistencyTokenResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateClusterRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/LocationName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateTableFromSnapshotMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/InstanceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/StorageType.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DeleteAppProfileRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/SnapshotOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateClusterMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ColumnFamilyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ModifyColumnFamiliesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/Instance.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListAppProfilesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/UpdateInstanceMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListSnapshotsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateTableFromSnapshotMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/SnapshotName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GetTableRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GetInstanceRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/PartialUpdateInstanceRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GenerateConsistencyTokenRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListAppProfilesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DeleteAppProfileRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateTableRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListInstancesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GcRule.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ColumnFamily.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateTableFromSnapshotRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/TableOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/BigtableTableAdminProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateAppProfileRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/InstanceName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateClusterRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/UpdateInstanceMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListTablesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateTableFromSnapshotRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListAppProfilesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateInstanceRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListTablesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GcRuleOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateInstanceRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/SnapshotTableRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GetTableRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateInstanceMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/UpdateClusterMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/Table.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CheckConsistencyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/AppProfileOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GetAppProfileRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ModifyColumnFamiliesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ClusterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/UpdateClusterMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DeleteTableRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DropRowRangeRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GetSnapshotRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/Snapshot.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/SnapshotTableMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DropRowRangeRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/SnapshotTableRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GetSnapshotRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/InstanceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListAppProfilesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/AppProfile.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListInstancesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListInstancesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/TableProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/ListClustersRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/proto/google/bigtable/admin/v2/table.proto"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/proto/google/bigtable/admin/v2/bigtable_table_admin.proto"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/proto/google/bigtable/admin/v2/instance.proto"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/proto/google/bigtable/admin/v2/common.proto"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-admin-v2/src/main/proto/google/bigtable/admin/v2/bigtable_instance_admin.proto"
+    },
+    {
+      "path": "google-cloud-bigtable-bom/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-bigtable-v2/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/BigtableGrpc.java"
+    },
+    {
+      "path": "scripts/setup-test-table.sh"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/CheckAndMutateRowRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/RowSet.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/CheckAndMutateRowResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/TableName.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/Mutation.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/RowSetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/TimestampRange.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/SampleRowKeysResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/MutateRowsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/ReadRowsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/ColumnRangeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/MutateRowRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/Family.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/CellOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/ValueRange.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/Row.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/CheckAndMutateRowRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/SampleRowKeysRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/Column.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/MutateRowResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/MutateRowRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/BigtableProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/ReadModifyWriteRowResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/RowRange.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/DataProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/ColumnRange.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/MutationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/MutateRowsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/Cell.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/MutateRowResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/RowRangeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/MutateRowsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/TimestampRangeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/FamilyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/ColumnOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/ReadRowsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/ReadModifyWriteRuleOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/RowOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/CheckAndMutateRowResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/ReadModifyWriteRowRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/SampleRowKeysResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/ValueRangeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/ReadRowsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/RowFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/MutateRowsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/ReadModifyWriteRowRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/ReadModifyWriteRowResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/SampleRowKeysRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/RowFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/ReadRowsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/java/com/google/bigtable/v2/ReadModifyWriteRule.java"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/proto/google/bigtable/v2/bigtable.proto"
+    },
+    {
+      "path": "proto-google-cloud-bigtable-v2/src/main/proto/google/bigtable/v2/data.proto"
+    },
+    {
+      "path": "google-cloud-bigtable-deps-bom/pom.xml"
+    },
+    {
+      "path": "google-cloud-bigtable-deps-bom/README.md"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": "google-cloud-bigtable-emulator/pom.xml"
+    },
+    {
+      "path": "google-cloud-bigtable-emulator/README.md"
+    },
+    {
+      "path": "google-cloud-bigtable-emulator/src/test/java/com/google/cloud/bigtable/emulator/v2/BigtableEmulatorRuleTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable-emulator/src/test/java/com/google/cloud/bigtable/emulator/v2/EmulatorTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable-emulator/src/main/java/com/google/cloud/bigtable/emulator/v2/Emulator.java"
+    },
+    {
+      "path": "google-cloud-bigtable-emulator/src/main/java/com/google/cloud/bigtable/emulator/v2/BigtableEmulatorRule.java"
+    },
+    {
+      "path": "grpc-google-cloud-bigtable-admin-v2/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/BigtableTableAdminGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/BigtableInstanceAdminGrpc.java"
+    },
+    {
+      "path": "google-cloud-bigtable/pom.xml"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/BigtableDataClientFactoryTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/BigtableDataClientTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/HiddenGapicApiTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/it/ReadIT.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/it/DirectPathFallbackIT.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/it/SampleRowsIT.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/it/ReadModifyWriteIT.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/it/MutateRowIT.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/it/LargeRowIT.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/it/CheckAndMutateIT.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/it/RowMutationEntryBatcherIT.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/MutateRowCallableTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/ReadModifyWriteRowCallableTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStubSettingsTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/BigtableBatchingCallSettingsTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/CheckAndMutateRowCallableTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/SampleRowKeysCallableTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/ResourceHeaderTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/metrics/UtilTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/metrics/MeasuredUnaryCallableTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/metrics/MeasureMutateRowsCallableTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/metrics/StatsTestUtils.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/metrics/MeasuredReadRowsCallableTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/mutaterows/MutateRowsBatchingDescriptorTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/mutaterows/MutateRowsAttemptCallableTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/readrows/ReadRowsRetryTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/readrows/ReadRowsUserCallableTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/readrows/ReadRowsFirstCallableTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/readrows/RowMergingCallableTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/readrows/FilterMarkerRowsCallableTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/stub/readrows/ReadRowsMergingAcceptanceTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/internal/RegexUtilTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/internal/ByteStringComparatorTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/internal/RowSetUtilTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/internal/RefreshChannelTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/models/RangeTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/models/DefaultRowAdapterTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/models/QueryTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/models/RowCellTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/models/BulkMutationTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/models/MutationTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/models/ConditionalRowMutationTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/models/FiltersTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/models/RowMutationTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/models/RowMutationEntryTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/models/RowTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/models/ReadModifyWriteRowTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/misc_utilities/SimpleGceRawRead.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/misc_utilities/package-info.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/BigtableTableAdminClientTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/MockBigtableInstanceAdmin.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/BigtableTableAdminSettingsTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminClientTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/BigtableInstanceAdminClientTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/MockBigtableInstanceAdminImpl.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/HiddenGapicApiTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/MockBigtableTableAdmin.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminClientTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/MockBigtableTableAdminImpl.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/BigtableInstanceAdminSettingsTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/it/BigtableInstanceAdminClientIT.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/it/BigtableTableAdminClientIT.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/stub/AwaitReplicationCallableTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/models/TableAdminRequestsTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/models/TableTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/models/CreateClusterRequestTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/models/CreateTableRequestTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/models/GCRulesTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/models/CreateAppProfileRequestTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/models/StorageTypeTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/models/InstanceTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/models/UpdateInstanceRequestTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/models/AppProfileTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/models/ClusterTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/models/UpdateAppProfileRequestTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/test_helpers/env/EmulatorEnv.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/test_helpers/env/AbstractTestEnv.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/test_helpers/env/CloudEnv.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/test_helpers/env/TestEnvRule.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/gaxx/reframing/ReframingResponseObserverTest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/gaxx/testing/FakeStatusCode.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/gaxx/testing/MockStreamingApi.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/gaxx/testing/FakeStreamingApi.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/gaxx/testing/package-info.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/BigtableDataSettings.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/BigtableDataClient.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/package-info.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/BigtableDataClientFactory.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStubSettings.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableStub.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/SampleRowKeysCallable.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/MutateRowCallable.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableBatchingCallSettings.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/ReadModifyWriteRowCallable.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/CheckAndMutateRowCallable.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStubSettings.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStub.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStub.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/metrics/RpcViewConstants.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/metrics/RpcViews.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/metrics/MeasuredReadRowsCallable.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/metrics/Util.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/metrics/MeasuredMutateRowsCallable.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/metrics/MeasuredUnaryCallable.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/metrics/RpcMeasureConstants.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/mutaterows/MutateRowsAttemptCallable.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/mutaterows/BulkMutateRowsUserFacingCallable.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/mutaterows/MutateRowsBatchingDescriptor.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/mutaterows/MutateRowsRetryingCallable.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/mutaterows/package-info.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/mutaterows/MutateRowsUserFacingCallable.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/readrows/StateMachine.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/readrows/ReadRowsResumptionStrategy.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/readrows/RowMergingCallable.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/readrows/package-info.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/readrows/ReadRowsRetryCompletedCallable.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/readrows/RowMerger.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/readrows/FilterMarkerRowsCallable.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/readrows/ReadRowsFirstCallable.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/readrows/ReadRowsUserCallable.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/internal/package-info.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/internal/ByteStringComparator.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/internal/RegexUtil.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/internal/RequestContext.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/internal/RefreshChannel.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/internal/RowSetUtil.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/internal/NameUtil.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/models/Query.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/models/Mutation.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/models/Range.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/models/MutateRowsException.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/models/BulkMutation.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/models/ReadModifyWriteRow.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/models/Row.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/models/MutationApi.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/models/ConditionalRowMutation.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/models/RowAdapter.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/models/RowMutation.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/models/Validations.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/models/KeyOffset.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/models/RowCell.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/models/Filters.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/models/RowMutationEntry.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/models/DefaultRowAdapter.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminSettings.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BigtableInstanceAdminSettings.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BigtableTableAdminClient.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminSettings.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/package-info.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminClient.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BigtableInstanceAdminClient.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BigtableTableAdminSettings.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminClient.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableInstanceAdminCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/BigtableInstanceAdminStubSettings.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/BigtableInstanceAdminStub.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/EnhancedBigtableTableAdminStub.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableInstanceAdminStub.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/BigtableTableAdminStubSettings.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableTableAdminCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/BigtableTableAdminStub.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/AwaitReplicationCallable.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableTableAdminStub.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/internal/NameUtil.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/UpdateAppProfileRequest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/CreateTableRequest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/GCRules.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/Cluster.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/CreateClusterRequest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/StorageType.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/ModifyColumnFamiliesRequest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/Instance.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/PartialListClustersException.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/UpdateInstanceRequest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/ColumnFamily.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/CreateAppProfileRequest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/CreateInstanceRequest.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/Table.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/AppProfile.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/models/PartialListInstancesException.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/gaxx/package-info.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/gaxx/tracing/WrappedTracerFactory.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/gaxx/reframing/ReframingResponseObserver.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/gaxx/reframing/IncompleteStreamException.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/gaxx/reframing/Reframer.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/gaxx/reframing/package-info.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/gaxx/retrying/ApiResultRetryAlgorithm.java"
+    },
+    {
+      "path": "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/gaxx/retrying/NonCancellableFuture.java"
     }
   ]
 }
