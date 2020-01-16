@@ -25,6 +25,7 @@ import com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata;
 import com.google.common.collect.Lists;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class DocumentManagement {
   //  [START dialogflow_list_document]
@@ -86,7 +87,7 @@ public class DocumentManagement {
               .build();
       OperationFuture<Document, KnowledgeOperationMetadata> response =
           documentsClient.createDocumentAsync(createDocumentRequest);
-      Document createdDocument = response.get();
+      Document createdDocument = response.get(120, TimeUnit.SECONDS);
       System.out.format("Created Document:\n");
       System.out.format(" - Display Name: %s\n", createdDocument.getDisplayName());
       System.out.format(" - Knowledge ID: %s\n", createdDocument.getName());
