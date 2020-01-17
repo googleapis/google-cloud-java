@@ -121,6 +121,17 @@ public class BigQueryImplTest {
           .setSchema(TABLE_SCHEMA)
           .setTimePartitioning(TIME_PARTITIONING)
           .build();
+  private static final RangePartitioning.Range RANGE =
+      RangePartitioning.Range.newBuilder().setStart(1L).setInterval(2L).setEnd(10L).build();
+  private static final RangePartitioning RANGE_PARTITIONING =
+      RangePartitioning.newBuilder().setField("IntegerField").setRange(RANGE).build();
+  private static final StandardTableDefinition TABLE_DEFINITION_WITH_RANGE_PARTITIONING =
+      StandardTableDefinition.newBuilder()
+          .setSchema(TABLE_SCHEMA)
+          .setRangePartitioning(RANGE_PARTITIONING)
+          .build();
+  private static final TableInfo TABLE_INFO_RANGE_PARTITIONING =
+      TableInfo.of(TABLE_ID, TABLE_DEFINITION_WITH_RANGE_PARTITIONING);
   private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID, TABLE_DEFINITION);
   private static final TableInfo OTHER_TABLE_INFO = TableInfo.of(OTHER_TABLE_ID, TABLE_DEFINITION);
   private static final TableInfo TABLE_INFO_WITH_PROJECT =
@@ -891,6 +902,22 @@ public class BigQueryImplTest {
     ImmutableList<Table> tableList =
         ImmutableList.of(
             new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO_WITH_PARTITIONS)));
+    Tuple<String, Iterable<com.google.api.services.bigquery.model.Table>> result =
+        Tuple.of(CURSOR, Iterables.transform(tableList, TableInfo.TO_PB_FUNCTION));
+    EasyMock.expect(bigqueryRpcMock.listTables(PROJECT, DATASET, TABLE_LIST_OPTIONS))
+        .andReturn(result);
+    EasyMock.replay(bigqueryRpcMock);
+    Page<Table> page = bigquery.listTables(DATASET, TABLE_LIST_PAGE_SIZE, TABLE_LIST_PAGE_TOKEN);
+    assertEquals(CURSOR, page.getNextPageToken());
+    assertArrayEquals(tableList.toArray(), Iterables.toArray(page.getValues(), Table.class));
+  }
+
+  @Test
+  public void testListTablesWithRangePartitioning() {
+    bigquery = options.getService();
+    ImmutableList<Table> tableList =
+        ImmutableList.of(
+            new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO_RANGE_PARTITIONING)));
     Tuple<String, Iterable<com.google.api.services.bigquery.model.Table>> result =
         Tuple.of(CURSOR, Iterables.transform(tableList, TableInfo.TO_PB_FUNCTION));
     EasyMock.expect(bigqueryRpcMock.listTables(PROJECT, DATASET, TABLE_LIST_OPTIONS))

@@ -713,6 +713,36 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testListTablesWithRangePartitioning() {
+    String tableName = "test_list_tables_range_partitioning";
+    StandardTableDefinition tableDefinition =
+        StandardTableDefinition.newBuilder()
+            .setSchema(TABLE_SCHEMA)
+            .setRangePartitioning(RANGE_PARTITIONING)
+            .build();
+    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
+    Table createdRangePartitioningTable = bigquery.create(tableInfo);
+    assertNotNull(createdRangePartitioningTable);
+    try {
+      Page<Table> tables = bigquery.listTables(DATASET);
+      boolean found = false;
+      Iterator<Table> tableIterator = tables.getValues().iterator();
+      while (tableIterator.hasNext() && !found) {
+        StandardTableDefinition standardTableDefinition = tableIterator.next().getDefinition();
+        if (standardTableDefinition.getRangePartitioning() != null) {
+          assertEquals(RANGE_PARTITIONING, standardTableDefinition.getRangePartitioning());
+          assertEquals(RANGE, standardTableDefinition.getRangePartitioning().getRange());
+          assertEquals("IntegerField", standardTableDefinition.getRangePartitioning().getField());
+          found = true;
+        }
+      }
+      assertTrue(found);
+    } finally {
+      createdRangePartitioningTable.delete();
+    }
+  }
+
+  @Test
   public void testListPartitions() throws InterruptedException {
     String tableName = "test_table_partitions";
     Date date = Date.fromJavaUtilDate(new java.util.Date());
