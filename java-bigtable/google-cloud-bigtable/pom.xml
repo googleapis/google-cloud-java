@@ -21,6 +21,7 @@
          while still respecting global skipTests override. -->
     <skipTests>false</skipTests>
     <skipUnitTests>${skipTests}</skipUnitTests>
+    <skipITs>${skipTests}</skipITs>
 
     <!-- Use client defined default endpoints -->
     <!-- Can be overriden on the commandline via `-Dbigtable.cfe-data-endpoint=bigtableadmin.googleapis.com:443` -->
