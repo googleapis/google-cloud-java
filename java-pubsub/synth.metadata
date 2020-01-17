@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-01-14T21:33:24.895860Z",
+  "updateTime": "2020-01-16T08:57:17.103047Z",
   "sources": [
     {
       "generator": {
@@ -12,8 +12,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d99df0d67057a233c711187e0689baa4f8e6333d",
-        "internalRef": "289709813"
+        "sha": "0735b4b096872960568d1f366bfa75b7b0e1f1a3",
+        "internalRef": "289939042"
       }
     },
     {
@@ -34,6 +34,659 @@
         "generator": "gapic",
         "config": "google/pubsub/artman_pubsub.yaml"
       }
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "versions.txt"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": ".gitignore"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "google-cloud-pubsub-bom/pom.xml"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": "google-cloud-pubsub/pom.xml"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/MockSubscriberImpl.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/FakePublisherServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/TopicAdminSmokeTest.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/MockIAMPolicy.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/FakeScheduledExecutorService.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/PublisherImplTest.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/FakeClock.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/TopicAdminClientTest.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/StatusUtilTest.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/SequentialExecutorServiceTest.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/MockIAMPolicyImpl.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/MessageWaiterTest.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/SubscriberTest.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/SubscriptionAdminClientTest.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/MockPublisher.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/MockSubscriber.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/MockPublisherImpl.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/FakeSubscriberServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/MessageDispatcherTest.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/OpenCensusUtilTest.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/it/ITPubSubTest.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriptionAdminSettings.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/Publisher.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SequentialExecutorService.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/Subscriber.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriberStats.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/package-info.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/MessageWaiter.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/MessageReceiver.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/StreamingSubscriberConnection.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/StatusUtil.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriptionAdminClient.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/TopicAdminSettings.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/OpenCensusUtil.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/AckReplyConsumer.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/MessageDispatcher.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/TopicAdminClient.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/stub/SubscriberStubSettings.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/stub/GrpcPublisherCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/stub/SubscriberStub.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/stub/PublisherStubSettings.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/stub/GrpcSubscriberStub.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/stub/PublisherStub.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/stub/GrpcPublisherStub.java"
+    },
+    {
+      "path": "google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/stub/GrpcSubscriberCallableFactory.java"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/SeekRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListSubscriptionsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListTopicSubscriptionsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/TopicName.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/DeleteTopicRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/PublishRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListSnapshotsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/DeleteSnapshotRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/PullRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/GetTopicRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/PublishRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/UpdateSnapshotRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListSnapshotsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/DeletedTopic.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/PublishResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ProjectTopicName.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/PullRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListTopicsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListSubscriptionsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/PullResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ReceivedMessage.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/PubsubMessage.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/GetTopicRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/UntypedTopicName.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/TopicNames.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ModifyAckDeadlineRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListTopicSubscriptionsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/SeekResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListSnapshotsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ProjectSnapshotName.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/DeleteSnapshotRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/UpdateSnapshotRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/SeekRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/SubscriptionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/Subscription.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/DeadLetterPolicy.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/MessageStoragePolicy.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/CreateSnapshotRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/Topic.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/DeadLetterPolicyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/UpdateSubscriptionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/UpdateSubscriptionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListTopicSnapshotsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ExpirationPolicyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/DeleteTopicRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/PushConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/SnapshotOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/AcknowledgeRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/MessageStoragePolicyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListTopicsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListSnapshotsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ExpirationPolicy.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/PubsubProto.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/StreamingPullResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListTopicSnapshotsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ProjectSubscriptionName.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListTopicSnapshotsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/UpdateTopicRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/GetSubscriptionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListSubscriptionsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/SeekResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/StreamingPullRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ModifyPushConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/DeleteSubscriptionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/PullResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/PushConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListTopicSubscriptionsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/DeleteSubscriptionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ModifyPushConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/CreateSnapshotRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/PubsubMessageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/TopicOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/UpdateTopicRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListSubscriptionsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/PublishResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListTopicSnapshotsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/StreamingPullRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/GetSubscriptionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/AcknowledgeRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/GetSnapshotRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/Snapshot.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListTopicsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/GetSnapshotRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListTopicSubscriptionsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/StreamingPullResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ListTopicsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ModifyAckDeadlineRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ReceivedMessageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-pubsub-v1/src/main/proto/google/pubsub/v1/pubsub.proto"
+    },
+    {
+      "path": "grpc-google-cloud-pubsub-v1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/SubscriberGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/PublisherGrpc.java"
     }
   ]
 }
