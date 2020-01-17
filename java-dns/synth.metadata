@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-01-07T08:48:02.774883Z",
+  "updateTime": "2020-01-16T08:44:57.377291Z",
   "sources": [
     {
       "template": {
@@ -11,316 +11,49 @@
   ],
   "newFiles": [
     {
-      "path": ".repo-metadata.json"
-    },
-    {
-      "path": "renovate.json"
-    },
-    {
-      "path": "license-checks.xml"
-    },
-    {
-      "path": "synth.py"
-    },
-    {
-      "path": "CHANGELOG.md"
-    },
-    {
-      "path": "codecov.yaml"
-    },
-    {
-      "path": "LICENSE"
-    },
-    {
-      "path": ".gitignore"
-    },
-    {
       "path": "pom.xml"
     },
     {
-      "path": "CODE_OF_CONDUCT.md"
-    },
-    {
-      "path": "synth.metadata"
-    },
-    {
-      "path": "README.md"
-    },
-    {
-      "path": "versions.txt"
-    },
-    {
-      "path": "CONTRIBUTING.md"
+      "path": ".repo-metadata.json"
     },
     {
       "path": "java.header"
     },
     {
-      "path": "src/test/java/com/google/cloud/dns/DnsBatchResultTest.java"
+      "path": "CONTRIBUTING.md"
     },
     {
-      "path": "src/test/java/com/google/cloud/dns/ChangeRequestInfoTest.java"
+      "path": "synth.metadata"
     },
     {
-      "path": "src/test/java/com/google/cloud/dns/DnsTest.java"
+      "path": "renovate.json"
     },
     {
-      "path": "src/test/java/com/google/cloud/dns/ProjectInfoTest.java"
+      "path": "versions.txt"
     },
     {
-      "path": "src/test/java/com/google/cloud/dns/ZoneInfoTest.java"
+      "path": "synth.py"
     },
     {
-      "path": "src/test/java/com/google/cloud/dns/ZoneTest.java"
+      "path": "license-checks.xml"
     },
     {
-      "path": "src/test/java/com/google/cloud/dns/DnsOptionsTest.java"
+      "path": "CHANGELOG.md"
     },
     {
-      "path": "src/test/java/com/google/cloud/dns/RecordSetTest.java"
+      "path": "CODE_OF_CONDUCT.md"
     },
     {
-      "path": "src/test/java/com/google/cloud/dns/DnsExceptionTest.java"
+      "path": "LICENSE"
     },
     {
-      "path": "src/test/java/com/google/cloud/dns/ChangeRequestTest.java"
+      "path": "codecov.yaml"
     },
     {
-      "path": "src/test/java/com/google/cloud/dns/OptionTest.java"
+      "path": ".gitignore"
     },
     {
-      "path": "src/test/java/com/google/cloud/dns/SerializationTest.java"
-    },
-    {
-      "path": "src/test/java/com/google/cloud/dns/DnsBatchTest.java"
-    },
-    {
-      "path": "src/test/java/com/google/cloud/dns/DnsImplTest.java"
-    },
-    {
-      "path": "src/test/java/com/google/cloud/dns/it/ITDnsTest.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/Option.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/DnsFactory.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/RecordSet.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/Dns.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/ChangeRequest.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/DnsException.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/ProjectInfo.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/ChangeRequestInfo.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/DnsOptions.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/DnsBatchResult.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/DnsImpl.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/DnsBatch.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/package-info.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/Zone.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/ZoneInfo.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/spi/DnsRpcFactory.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/spi/v1/DnsRpc.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/spi/v1/HttpDnsRpc.java"
-    },
-    {
-      "path": "src/main/java/com/google/cloud/dns/spi/v1/RpcBatch.java"
-    },
-    {
-      "path": ".kokoro/build.bat"
-    },
-    {
-      "path": ".kokoro/build.sh"
-    },
-    {
-      "path": ".kokoro/dependencies.sh"
-    },
-    {
-      "path": ".kokoro/common.cfg"
-    },
-    {
-      "path": ".kokoro/trampoline.sh"
-    },
-    {
-      "path": ".kokoro/coerce_logs.sh"
-    },
-    {
-      "path": ".kokoro/linkage-monitor.sh"
-    },
-    {
-      "path": ".kokoro/continuous/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/samples.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java7.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.sh"
-    },
-    {
-      "path": ".kokoro/continuous/lint.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java11.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/common.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/integration.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.cfg"
-    },
-    {
-      "path": ".kokoro/release/promote.cfg"
-    },
-    {
-      "path": ".kokoro/release/publish_javadoc.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/promote.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.sh"
-    },
-    {
-      "path": ".kokoro/release/snapshot.sh"
-    },
-    {
-      "path": ".kokoro/release/snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/common.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.sh"
-    },
-    {
-      "path": ".kokoro/release/common.sh"
-    },
-    {
-      "path": ".kokoro/release/drop.cfg"
-    },
-    {
-      "path": ".kokoro/release/publish_javadoc.sh"
-    },
-    {
-      "path": ".kokoro/presubmit/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/samples.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java7.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/linkage-monitor.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/lint.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java11.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/common.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/clirr.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/integration.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/samples.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java7.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/lint.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java11.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/common.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/integration.cfg"
+      "path": "README.md"
     },
     {
       "path": ".github/release-please.yml"
@@ -329,58 +62,280 @@
       "path": ".github/PULL_REQUEST_TEMPLATE.md"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/support_request.md"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
     },
     {
-      "path": "__pycache__/synth.cpython-36.pyc"
+      "path": ".kokoro/build.sh"
     },
     {
-      "path": ".git/index"
+      "path": ".kokoro/common.cfg"
     },
     {
-      "path": ".git/packed-refs"
+      "path": ".kokoro/build.bat"
     },
     {
-      "path": ".git/HEAD"
+      "path": ".kokoro/linkage-monitor.sh"
     },
     {
-      "path": ".git/config"
+      "path": ".kokoro/coerce_logs.sh"
     },
     {
-      "path": ".git/shallow"
+      "path": ".kokoro/dependencies.sh"
     },
     {
-      "path": ".git/objects/pack/pack-bee6b2142623cd1883a7c90a37e2dd1a942d4730.pack"
+      "path": ".kokoro/trampoline.sh"
     },
     {
-      "path": ".git/objects/pack/pack-bee6b2142623cd1883a7c90a37e2dd1a942d4730.idx"
+      "path": ".kokoro/continuous/samples.cfg"
     },
     {
-      "path": ".git/refs/remotes/origin/HEAD"
+      "path": ".kokoro/continuous/java8.cfg"
     },
     {
-      "path": ".git/refs/heads/autosynth"
+      "path": ".kokoro/continuous/integration.cfg"
     },
     {
-      "path": ".git/refs/heads/master"
+      "path": ".kokoro/continuous/java11.cfg"
     },
     {
-      "path": ".git/logs/HEAD"
+      "path": ".kokoro/continuous/propose_release.cfg"
     },
     {
-      "path": ".git/logs/refs/remotes/origin/HEAD"
+      "path": ".kokoro/continuous/common.cfg"
     },
     {
-      "path": ".git/logs/refs/heads/autosynth"
+      "path": ".kokoro/continuous/propose_release.sh"
     },
     {
-      "path": ".git/logs/refs/heads/master"
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/dns/SerializationTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/dns/ChangeRequestInfoTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/dns/ChangeRequestTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/dns/DnsImplTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/dns/OptionTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/dns/DnsExceptionTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/dns/RecordSetTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/dns/DnsBatchTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/dns/ZoneInfoTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/dns/DnsOptionsTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/dns/ZoneTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/dns/ProjectInfoTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/dns/DnsBatchResultTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/dns/DnsTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/dns/it/ITDnsTest.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/DnsFactory.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/ZoneInfo.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/ProjectInfo.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/ChangeRequestInfo.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/ChangeRequest.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/DnsOptions.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/DnsException.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/DnsBatchResult.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/DnsBatch.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/DnsImpl.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/package-info.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/Zone.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/Dns.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/RecordSet.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/Option.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/spi/DnsRpcFactory.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/spi/v1/HttpDnsRpc.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/spi/v1/RpcBatch.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/dns/spi/v1/DnsRpc.java"
     }
   ]
 }
