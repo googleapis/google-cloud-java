@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-01-14T21:09:57.852365Z",
+  "updateTime": "2020-01-16T08:36:01.516496Z",
   "sources": [
     {
       "generator": {
@@ -12,8 +12,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d99df0d67057a233c711187e0689baa4f8e6333d",
-        "internalRef": "289709813"
+        "sha": "0735b4b096872960568d1f366bfa75b7b0e1f1a3",
+        "internalRef": "289939042"
       }
     },
     {
@@ -44,6 +44,1880 @@
         "generator": "gapic",
         "config": "google/cloud/automl/artman_automl_v1.yaml"
       }
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "versions.txt"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": ".gitignore"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": "google-cloud-automl-bom/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-automl-v1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/AutoMlGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/PredictionServiceGrpc.java"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": "google-cloud-automl/pom.xml"
+    },
+    {
+      "path": "google-cloud-automl/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "google-cloud-automl/src/test/java/com/google/cloud/automl/v1/MockPredictionService.java"
+    },
+    {
+      "path": "google-cloud-automl/src/test/java/com/google/cloud/automl/v1/AutoMlClientTest.java"
+    },
+    {
+      "path": "google-cloud-automl/src/test/java/com/google/cloud/automl/v1/MockPredictionServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-automl/src/test/java/com/google/cloud/automl/v1/MockAutoMlImpl.java"
+    },
+    {
+      "path": "google-cloud-automl/src/test/java/com/google/cloud/automl/v1/MockAutoMl.java"
+    },
+    {
+      "path": "google-cloud-automl/src/test/java/com/google/cloud/automl/v1/PredictionServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-automl/src/test/java/com/google/cloud/automl/v1beta1/MockPredictionService.java"
+    },
+    {
+      "path": "google-cloud-automl/src/test/java/com/google/cloud/automl/v1beta1/AutoMlClientTest.java"
+    },
+    {
+      "path": "google-cloud-automl/src/test/java/com/google/cloud/automl/v1beta1/MockPredictionServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-automl/src/test/java/com/google/cloud/automl/v1beta1/MockAutoMlImpl.java"
+    },
+    {
+      "path": "google-cloud-automl/src/test/java/com/google/cloud/automl/v1beta1/MockAutoMl.java"
+    },
+    {
+      "path": "google-cloud-automl/src/test/java/com/google/cloud/automl/v1beta1/PredictionServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/PredictionServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/package-info.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/PredictionServiceClient.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/AutoMlClient.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/AutoMlSettings.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/stub/GrpcPredictionServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/stub/AutoMlStub.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/stub/PredictionServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/stub/AutoMlStubSettings.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/stub/GrpcAutoMlCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/stub/GrpcAutoMlStub.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/stub/PredictionServiceStub.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/stub/GrpcPredictionServiceStub.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/PredictionServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/package-info.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/PredictionServiceClient.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/AutoMlClient.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/AutoMlSettings.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/stub/GrpcPredictionServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/stub/AutoMlStub.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/stub/PredictionServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/stub/AutoMlStubSettings.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/stub/GrpcAutoMlCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/stub/GrpcAutoMlStub.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/stub/PredictionServiceStub.java"
+    },
+    {
+      "path": "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/stub/GrpcPredictionServiceStub.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/Io.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/AnnotationSpec.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TableSpec.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/Temporal.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListColumnSpecsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TimestampStatsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BatchPredictInputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BatchPredictInputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DataStatsOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ModelEvaluationOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DoubleRangeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/VideoClassificationDatasetMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageClassificationDatasetMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/CategoryStatsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListColumnSpecsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/CreateModelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/CreateModelOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/InputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextClassificationDatasetMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageObjectDetectionDatasetMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/PredictResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextExtractionDatasetMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/AutoMlProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ColumnSpecName.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextExtractionAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ModelEvaluation.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TypeCode.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListModelsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/NormalizedVertex.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BatchPredictOutputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextSnippetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListModelEvaluationsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DocumentInputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/CreateDatasetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ExamplePayloadOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DeployModelOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageObjectDetectionModelMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListModelsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/StringStatsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ColumnSpec.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextClassificationModelMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TableSpecOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ExportModelOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListModelsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TimeSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/VideoObjectTrackingEvaluationMetrics.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListDatasetsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ExamplePayload.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/UndeployModelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/Geometry.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageClassificationModelDeploymentMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TablesAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DataStats.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/VideoObjectTrackingModelMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BoundingBoxMetricsEntry.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GetAnnotationSpecRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DataItems.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TablesModelColumnInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/CreateModelOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextExtractionModelMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListModelsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/VideoClassificationDatasetMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TranslationAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextExtractionDatasetMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageObjectDetectionEvaluationMetricsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/CategoryStats.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/UpdateColumnSpecRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListModelEvaluationsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/PredictResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GetModelEvaluationRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextSnippet.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/UpdateTableSpecRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GetDatasetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/AnnotationSpecName.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/VideoObjectTrackingModelMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ModelOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ExportDataOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TranslationEvaluationMetrics.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ClassificationProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextSentimentDatasetMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DeleteOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/StringStats.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ExportEvaluatedExamplesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListTableSpecsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DocumentInputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImportDataRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/Row.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BigQueryDestination.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DeployModelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/PredictRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/CreateModelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListDatasetsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/VideoObjectTrackingDatasetMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/AnnotationSpecOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TranslationModelMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GcrDestinationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GcsDestination.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TranslationAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ExportEvaluatedExamplesOutputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BoundingBoxMetricsEntryOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/UpdateDatasetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ExportEvaluatedExamplesOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextExtractionEvaluationMetricsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/UndeployModelOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/StructTypeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/UpdateColumnSpecRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListModelEvaluationsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/Document.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DocumentDimensionsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/Operations.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageObjectDetectionEvaluationMetrics.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageObjectDetectionAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DeployModelOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GetModelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GetColumnSpecRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListDatasetsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/VideoClassificationModelMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ExportEvaluatedExamplesOutputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/LocationName.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BatchPredictOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ExportModelOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageObjectDetectionModelDeploymentMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/StructStatsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GetTableSpecRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ModelEvaluationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GetAnnotationSpecRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextClassificationModelMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/Float64StatsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextSentimentProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ModelExportOutputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GcsDestinationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ExportDataRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/AnnotationSpecOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/Tables.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ExportEvaluatedExamplesOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImportDataRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BatchPredictOutputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/AnnotationPayload.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/StructStats.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextSentimentDatasetMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BoundingPoly.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/Dataset.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/UndeployModelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DatasetName.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BatchPredictRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextExtraction.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/AnnotationPayloadOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DatasetOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/NormalizedVertexOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/UpdateDatasetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TablesModelMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DataType.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GetModelEvaluationRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GcsSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DeleteModelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/CorrelationStats.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ArrayStatsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/InputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DocumentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/Detection.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ExportEvaluatedExamplesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/UndeployModelOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ColumnSpecOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DeleteDatasetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DeployModelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageClassificationModelDeploymentMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TablesAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BatchPredictResult.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/Model.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextExtractionModelMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ExportDataRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ExportDataOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/Image.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListTableSpecsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TimeSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ModelExportOutputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BatchPredictRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GetTableSpecRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/VideoProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ModelOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TranslationModelMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ColumnSpecOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DeleteModelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TimestampStats.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImportDataOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/VideoObjectTrackingAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextSegmentProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BoundingPolyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageObjectDetectionModelDeploymentMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BigQuerySource.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListTableSpecsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/PredictionServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TranslationDatasetMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GcrDestination.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BatchPredictResultOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/PredictRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TablesDatasetMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/RegressionProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/OutputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageClassificationModelMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/VideoObjectTrackingDatasetMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextExtractionEvaluationMetrics.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/Float64Stats.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/AnnotationPayloadOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/VideoObjectTrackingAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageObjectDetectionAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TablesModelMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextSentimentModelMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListTableSpecsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextSentimentModelMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ExportModelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/RowOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BigQuerySourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListModelEvaluationsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListColumnSpecsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImportDataOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DoubleRange.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/CreateDatasetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GetDatasetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageObjectDetectionModelMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TranslationDatasetMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/UpdateTableSpecRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GetColumnSpecRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TranslationEvaluationMetricsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DocumentDimensions.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListDatasetsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageClassificationModelMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ExportModelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TablesModelColumnInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/CorrelationStatsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/OperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/OutputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BigQueryDestinationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TranslationProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/VideoObjectTrackingEvaluationMetricsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ArrayStats.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DatasetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ModelName.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextExtractionAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/RangesProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GcsSource.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageObjectDetectionDatasetMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ListColumnSpecsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DataTypes.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/BatchPredictOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/StructType.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DeleteOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DataTypeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TablesDatasetMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ImageClassificationDatasetMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DataStatsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/GetModelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/OperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TableSpecName.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextClassificationDatasetMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TextSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/VideoClassificationModelMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/TableSpecOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/DeleteDatasetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/ModelEvaluationName.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/regression.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/table_spec.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/text_extraction.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/annotation_spec.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/data_stats.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/operations.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/data_types.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/geometry.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/dataset.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/temporal.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/model_evaluation.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/translation.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/video.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/data_items.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/service.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/text_segment.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/column_spec.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/classification.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/text.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/detection.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/prediction_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/annotation_payload.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/image.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/text_sentiment.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/io.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/model.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/ranges.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1beta1/src/main/proto/google/cloud/automl/v1beta1/tables.proto"
+    },
+    {
+      "path": "grpc-google-cloud-automl-v1beta1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/AutoMlGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-automl-v1beta1/src/main/java/com/google/cloud/automl/v1beta1/PredictionServiceGrpc.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/Io.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/AnnotationSpec.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextSentimentAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/BatchPredictInputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/BatchPredictInputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ModelEvaluationOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageClassificationDatasetMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ClassificationEvaluationMetricsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/CreateModelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/CreateModelOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/InputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextClassificationDatasetMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageObjectDetectionDatasetMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/PredictResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextExtractionDatasetMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/AutoMlProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextExtractionAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ModelEvaluation.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ListModelsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/NormalizedVertex.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/BatchPredictOutputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextSnippetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ListModelEvaluationsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DocumentInputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/CreateDatasetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ExamplePayloadOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DeployModelOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageObjectDetectionModelMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ListModelsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/UpdateModelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextClassificationModelMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextSentimentEvaluationMetrics.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ExportModelOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ListModelsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ListDatasetsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ExamplePayload.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/UndeployModelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/Geometry.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/UpdateModelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageClassificationModelDeploymentMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/BoundingBoxMetricsEntry.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/GetAnnotationSpecRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DataItems.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/CreateModelOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextExtractionModelMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ListModelsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TranslationAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextExtractionDatasetMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageObjectDetectionEvaluationMetricsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ListModelEvaluationsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/PredictResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/GetModelEvaluationRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextSnippet.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/GetDatasetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/AnnotationSpecName.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ClassificationAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ModelOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ExportDataOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TranslationEvaluationMetrics.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ClassificationProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextSentimentDatasetMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextSegment.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DeleteOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DocumentInputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImportDataRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DeployModelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/PredictRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/CreateModelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ListDatasetsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ClassificationType.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/AnnotationSpecOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TranslationModelMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/GcsDestination.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TranslationAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/BoundingBoxMetricsEntryOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/UpdateDatasetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextExtractionEvaluationMetricsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/UndeployModelOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ListModelEvaluationsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/Document.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DocumentDimensionsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/Operations.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageObjectDetectionEvaluationMetrics.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageObjectDetectionAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DeployModelOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/GetModelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ListDatasetsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/LocationName.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/BatchPredictOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ExportModelOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageObjectDetectionModelDeploymentMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ModelEvaluationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/GetAnnotationSpecRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextClassificationModelMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextSentimentProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ModelExportOutputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/GcsDestinationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ExportDataRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/AnnotationSpecOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImportDataRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/BatchPredictOutputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/AnnotationPayload.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextSentimentDatasetMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/BoundingPoly.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/Dataset.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/UndeployModelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DatasetName.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/BatchPredictRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextExtraction.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/AnnotationPayloadOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DatasetOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/NormalizedVertexOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/UpdateDatasetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/GetModelEvaluationRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/GcsSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DeleteModelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextSentimentAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/InputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DocumentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/Detection.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/UndeployModelOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DeleteDatasetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DeployModelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageClassificationModelDeploymentMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/BatchPredictResult.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/Model.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextExtractionModelMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ExportDataRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ExportDataOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/Image.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ModelExportOutputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/BatchPredictRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ModelOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TranslationModelMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextSentimentEvaluationMetricsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DeleteModelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImportDataOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextSegmentProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/BoundingPolyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageObjectDetectionModelDeploymentMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/PredictionServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TranslationDatasetMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/BatchPredictResultOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/PredictRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ClassificationEvaluationMetrics.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/OutputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageClassificationModelMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextExtractionEvaluationMetrics.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/AnnotationPayloadOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageObjectDetectionAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextSentimentModelMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextSentimentModelMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ExportModelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ListModelEvaluationsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImportDataOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/CreateDatasetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/GetDatasetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageObjectDetectionModelMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TranslationDatasetMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TranslationEvaluationMetricsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DocumentDimensions.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ListDatasetsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageClassificationModelMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ExportModelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/OperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/OutputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ClassificationAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TranslationProto.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/CreateDatasetOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DatasetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ModelName.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextExtractionAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/CreateDatasetOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/GcsSource.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageObjectDetectionDatasetMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/BatchPredictOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DeleteOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ImageClassificationDatasetMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/GetModelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/OperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextClassificationDatasetMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/TextSegmentOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/DeleteDatasetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/java/com/google/cloud/automl/v1/ModelEvaluationName.java"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/text_extraction.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/annotation_spec.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/operations.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/geometry.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/dataset.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/model_evaluation.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/translation.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/data_items.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/service.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/text_segment.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/classification.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/text.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/detection.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/prediction_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/annotation_payload.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/image.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/text_sentiment.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/io.proto"
+    },
+    {
+      "path": "proto-google-cloud-automl-v1/src/main/proto/google/cloud/automl/v1/model.proto"
     }
   ]
 }
