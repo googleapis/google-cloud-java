@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-01-14T21:21:14.571664Z",
+  "updateTime": "2020-01-16T08:44:50.031470Z",
   "sources": [
     {
       "generator": {
@@ -12,8 +12,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d99df0d67057a233c711187e0689baa4f8e6333d",
-        "internalRef": "289709813"
+        "sha": "0735b4b096872960568d1f366bfa75b7b0e1f1a3",
+        "internalRef": "289939042"
       }
     },
     {
@@ -34,6 +34,1166 @@
         "generator": "gapic",
         "config": "google/privacy/dlp/artman_dlp_v2.yaml"
       }
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "versions.txt"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": ".gitignore"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "google-cloud-dlp-bom/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-dlp-v2/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DlpServiceGrpc.java"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": "google-cloud-dlp/pom.xml"
+    },
+    {
+      "path": "google-cloud-dlp/src/test/java/com/google/cloud/dlp/v2/MockDlpService.java"
+    },
+    {
+      "path": "google-cloud-dlp/src/test/java/com/google/cloud/dlp/v2/DlpServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-dlp/src/test/java/com/google/cloud/dlp/v2/MockDlpServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-dlp/src/main/java/com/google/cloud/dlp/v2/DlpServiceClient.java"
+    },
+    {
+      "path": "google-cloud-dlp/src/main/java/com/google/cloud/dlp/v2/package-info.java"
+    },
+    {
+      "path": "google-cloud-dlp/src/main/java/com/google/cloud/dlp/v2/DlpServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-dlp/src/main/java/com/google/cloud/dlp/v2/stub/GrpcDlpServiceStub.java"
+    },
+    {
+      "path": "google-cloud-dlp/src/main/java/com/google/cloud/dlp/v2/stub/GrpcDlpServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-dlp/src/main/java/com/google/cloud/dlp/v2/stub/DlpServiceStub.java"
+    },
+    {
+      "path": "google-cloud-dlp/src/main/java/com/google/cloud/dlp/v2/stub/DlpServiceStubSettings.java"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DocumentLocationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CloudStoragePath.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/Likelihood.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplateNames.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/GetDlpJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ReplaceValueConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectContentRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DatastoreKey.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectContentResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectionRuleOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RecordSuppressionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/TimePartConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RecordLocation.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListStoredInfoTypesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DlpProto.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ReplaceValueConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/GetStoredInfoTypeRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/FileType.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeleteDlpJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/PrimitiveTransformationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/AnalyzeDataSourceRiskDetailsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CryptoReplaceFfxFpeConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RedactImageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RedactImageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RecordCondition.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListDlpJobsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CryptoHashConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DateShiftConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ErrorOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StorageConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DocumentLocation.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/OutputStorageConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UpdateStoredInfoTypeRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CloudStorageRegexFileSetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/JobTriggerOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/OrganizationName.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListInspectTemplatesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InfoTypeDescriptionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyContentRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RecordTransformations.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/QuoteInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/Range.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListJobTriggersResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DatastoreOptions.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListInspectTemplatesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/QuasiIdOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RedactConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListDeidentifyTemplatesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyContentRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RangeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplate.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/BucketingConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectTemplateOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectJobConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/OrganizationDeidentifyTemplateName.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/FixedSizeBucketingConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/FieldId.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InfoTypeStats.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/LargeCustomDictionaryStats.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplateOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/KmsWrappedCryptoKeyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StatisticalTableOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListDeidentifyTemplatesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/TransientCryptoKey.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CreateJobTriggerRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/GetDeidentifyTemplateRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ByteContentItem.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CharacterMaskConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedDeidentifyTemplateName.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/Key.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeleteDeidentifyTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListInspectTemplatesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectionRuleSetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InfoTypeTransformationsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DlpStorage.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/TableLocation.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListJobTriggersRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ScheduleOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/BigQueryTableOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplateName.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/TimePartConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectTemplateName.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CharacterMaskConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/OrganizationInspectTemplateName.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ActivateJobTriggerRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeState.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/BigQueryOptionsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DateTimeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/KmsWrappedCryptoKey.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeleteDlpJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeStatsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ReplaceWithInfoTypeConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/TransformationOverviewOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/BigQueryKeyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ImageLocation.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/OrganizationStoredInfoTypeName.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CreateInspectTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CryptoDeterministicConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UpdateDeidentifyTemplateRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeleteStoredInfoTypeRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RiskAnalysisJobConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/EntityIdOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/BigQueryTable.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CloudStorageOptions.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListDlpJobsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StorageConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/Location.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListStoredInfoTypesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UpdateStoredInfoTypeRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyContentResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListDeidentifyTemplatesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UpdateJobTriggerRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ExcludeInfoTypes.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CancelDlpJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/EntityId.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/Action.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RedactImageResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CreateStoredInfoTypeRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/TransformationOverview.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DateTime.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CryptoDeterministicConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/BigQueryField.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ProjectDeidentifyTemplateName.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DatastoreOptionsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListInfoTypesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoType.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/Color.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ValueOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeleteStoredInfoTypeRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/BucketingConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/FindingOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CreateStoredInfoTypeRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/Value.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/LargeCustomDictionaryConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RiskAnalysisJobConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ValueFrequency.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RecordKey.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ActionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/BigQueryKey.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UpdateInspectTemplateRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/KindExpressionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StatisticalTable.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InfoTypeSupportedBy.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CloudStorageRegexFileSet.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListJobTriggersRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RedactConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/MatchingType.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListInfoTypesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CryptoKey.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/FieldTransformationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeVersionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectTemplateNames.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UnwrappedCryptoKeyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ActivateJobTriggerRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CreateDlpJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ReidentifyContentRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectJobConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeStats.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ProjectJobTriggerName.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DlpJobType.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/LargeCustomDictionaryStatsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListDlpJobsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UpdateInspectTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeleteInspectTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/OutputStorageConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListJobTriggersResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UnwrappedCryptoKey.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ContentLocationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeName.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CryptoKeyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ProjectInspectTemplateName.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CustomInfoType.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/GetJobTriggerRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InfoTypeDescription.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InfoTypeTransformations.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/FieldTransformation.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/BigQueryOptions.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/PartitionIdOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/FixedSizeBucketingConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InfoTypeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/BigQueryFieldOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RecordLocationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RedactImageResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/TableOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CreateDeidentifyTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListDlpJobsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ColorOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DlpJobOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/GetInspectTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CloudStorageFileSet.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RecordSuppression.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/AnalyzeDataSourceRiskDetails.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectTemplate.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CryptoHashConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ReidentifyContentResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/Error.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeleteJobTriggerRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/PrivacyMetric.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/TransientCryptoKeyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyContentResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectDataSourceDetailsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/QuasiId.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ImageLocationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UpdateDeidentifyTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListInfoTypesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ReidentifyContentRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CreateJobTriggerRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CloudStorageFileSetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ExclusionRule.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListInspectTemplatesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeVersion.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ValueFrequencyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CancelDlpJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/TransformationSummaryOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/LargeCustomDictionaryConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/KeyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ProjectStoredInfoTypeName.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedInspectTemplateName.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DlpJobName.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/Table.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/PrimitiveTransformation.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/JobTrigger.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ContentOption.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/BoundingBoxOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InfoType.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListInfoTypesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeNames.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectResultOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RecordConditionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectionRuleSet.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ContentItemOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/GetInspectTemplateRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CreateInspectTemplateRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/KindExpression.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ContentLocation.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UpdateJobTriggerRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/QuoteInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DatastoreKeyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CryptoReplaceFfxFpeConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CustomInfoTypeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CreateDeidentifyTemplateRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectContentRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DateShiftConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/PartitionId.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CloudStoragePathOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/Finding.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListStoredInfoTypesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ReidentifyContentResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RecordKeyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/LocationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectContentResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/PrivacyMetricOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectionRule.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectResult.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/TransformationSummary.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DlpJob.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/FieldIdOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredTypeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ExcludeInfoTypesOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CreateDlpJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ContentItem.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ExclusionRuleOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeleteJobTriggerRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RecordTransformationsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListStoredInfoTypesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeleteDeidentifyTemplateRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ListDeidentifyTemplatesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CharsToIgnoreOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeleteInspectTemplateRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/GetDlpJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ReplaceWithInfoTypeConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ByteContentItemOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedStoredInfoTypeName.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/Schedule.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/BoundingBox.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectDataSourceDetails.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/GetDeidentifyTemplateRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InfoTypeStatsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredType.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/GetJobTriggerRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CloudStorageOptionsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/TableLocationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/RelationalOperator.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/CharsToIgnore.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/GetStoredInfoTypeRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/proto/google/privacy/dlp/v2/storage.proto"
+    },
+    {
+      "path": "proto-google-cloud-dlp-v2/src/main/proto/google/privacy/dlp/v2/dlp.proto"
     }
   ]
 }
