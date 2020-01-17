@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-01-14T21:42:55.420845Z",
+  "updateTime": "2020-01-16T09:07:06.645973Z",
   "sources": [
     {
       "generator": {
@@ -12,8 +12,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d99df0d67057a233c711187e0689baa4f8e6333d",
-        "internalRef": "289709813"
+        "sha": "0735b4b096872960568d1f366bfa75b7b0e1f1a3",
+        "internalRef": "289939042"
       }
     },
     {
@@ -44,6 +44,746 @@
         "generator": "gapic",
         "config": "google/cloud/translate/artman_translate_v3.yaml"
       }
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "versions.txt"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": ".gitignore"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/TranslateTextResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DetectLanguageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/InputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/TranslationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/TranslateTextRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DeleteGlossaryMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchTranslateMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/GetGlossaryRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/GlossaryInputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchTranslateTextRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchTranslateResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/TranslateTextResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/SupportedLanguagesOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/Translation.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/ListGlossariesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DeleteGlossaryRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DeleteGlossaryRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/CreateGlossaryRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/GcsDestination.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchTranslateMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DetectLanguageResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DetectedLanguageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/ListGlossariesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/GetSupportedLanguagesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/LocationName.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/GetSupportedLanguagesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/CreateGlossaryMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/GcsDestinationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/TranslationServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchTranslateTextRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/SupportedLanguage.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/ListGlossariesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/GlossaryName.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DetectLanguageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/GcsSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/InputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/CreateGlossaryRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/GlossaryInputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/SupportedLanguages.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DeleteGlossaryResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/SupportedLanguageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/TranslateTextRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/CreateGlossaryMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/TranslateTextGlossaryConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DetectedLanguage.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/OutputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchTranslateResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DeleteGlossaryMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/TranslateTextGlossaryConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DetectLanguageResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/OutputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/GcsSource.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/ListGlossariesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/GlossaryOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/GetGlossaryRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DeleteGlossaryResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/Glossary.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3beta1/src/main/proto/google/cloud/translate/v3beta1/translation_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/TranslateTextResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/DetectLanguageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/InputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/TranslationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/TranslateTextRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/DeleteGlossaryMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/BatchTranslateMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/GetGlossaryRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/GlossaryInputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/BatchTranslateTextRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/BatchTranslateResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/TranslateTextResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/SupportedLanguagesOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/Translation.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/ListGlossariesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/DeleteGlossaryRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/DeleteGlossaryRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/CreateGlossaryRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/GcsDestination.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/BatchTranslateMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/DetectLanguageResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/DetectedLanguageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/ListGlossariesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/GetSupportedLanguagesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/LocationName.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/GetSupportedLanguagesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/CreateGlossaryMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/GcsDestinationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/TranslationServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/BatchTranslateTextRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/SupportedLanguage.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/ListGlossariesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/GlossaryName.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/DetectLanguageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/GcsSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/InputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/CreateGlossaryRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/GlossaryInputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/SupportedLanguages.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/DeleteGlossaryResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/SupportedLanguageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/TranslateTextRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/CreateGlossaryMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/TranslateTextGlossaryConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/DetectedLanguage.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/OutputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/BatchTranslateResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/DeleteGlossaryMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/TranslateTextGlossaryConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/DetectLanguageResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/OutputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/GcsSource.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/ListGlossariesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/GlossaryOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/GetGlossaryRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/DeleteGlossaryResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/Glossary.java"
+    },
+    {
+      "path": "proto-google-cloud-translate-v3/src/main/proto/google/cloud/translate/v3/translation_service.proto"
+    },
+    {
+      "path": "google-cloud-translate-bom/pom.xml"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": "grpc-google-cloud-translate-v3/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/TranslationServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-translate-v3beta1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/TranslationServiceGrpc.java"
+    },
+    {
+      "path": "google-cloud-translate/pom.xml"
+    },
+    {
+      "path": "google-cloud-translate/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "google-cloud-translate/src/test/java/com/google/cloud/translate/SerializationTest.java"
+    },
+    {
+      "path": "google-cloud-translate/src/test/java/com/google/cloud/translate/TranslateTest.java"
+    },
+    {
+      "path": "google-cloud-translate/src/test/java/com/google/cloud/translate/LanguageTest.java"
+    },
+    {
+      "path": "google-cloud-translate/src/test/java/com/google/cloud/translate/OptionTest.java"
+    },
+    {
+      "path": "google-cloud-translate/src/test/java/com/google/cloud/translate/TranslateImplTest.java"
+    },
+    {
+      "path": "google-cloud-translate/src/test/java/com/google/cloud/translate/DetectionTest.java"
+    },
+    {
+      "path": "google-cloud-translate/src/test/java/com/google/cloud/translate/TranslateOptionsTest.java"
+    },
+    {
+      "path": "google-cloud-translate/src/test/java/com/google/cloud/translate/TranslationTest.java"
+    },
+    {
+      "path": "google-cloud-translate/src/test/java/com/google/cloud/translate/TranslateExceptionTest.java"
+    },
+    {
+      "path": "google-cloud-translate/src/test/java/com/google/cloud/translate/v3beta1/MockTranslationService.java"
+    },
+    {
+      "path": "google-cloud-translate/src/test/java/com/google/cloud/translate/v3beta1/MockTranslationServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-translate/src/test/java/com/google/cloud/translate/v3beta1/TranslationServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-translate/src/test/java/com/google/cloud/translate/it/ITTranslateTest.java"
+    },
+    {
+      "path": "google-cloud-translate/src/test/java/com/google/cloud/translate/v3/MockTranslationService.java"
+    },
+    {
+      "path": "google-cloud-translate/src/test/java/com/google/cloud/translate/v3/MockTranslationServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-translate/src/test/java/com/google/cloud/translate/v3/TranslationServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateFactory.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/Translation.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateException.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/package-info.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateOptions.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/Detection.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/Translate.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/Option.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/v3beta1/package-info.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/v3beta1/TranslationServiceClient.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/v3beta1/TranslationServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/v3beta1/stub/GrpcTranslationServiceStub.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/v3beta1/stub/GrpcTranslationServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/v3beta1/stub/TranslationServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/v3beta1/stub/TranslationServiceStub.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/v3/package-info.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/v3/TranslationServiceClient.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/v3/TranslationServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/v3/stub/GrpcTranslationServiceStub.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/v3/stub/GrpcTranslationServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/v3/stub/TranslationServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/v3/stub/TranslationServiceStub.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/testing/package-info.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/testing/RemoteTranslateHelper.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/spi/TranslateRpcFactory.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/TranslateRpc.java"
+    },
+    {
+      "path": "google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java"
     }
   ]
 }
