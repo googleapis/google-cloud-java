@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-01-14T21:35:26.140314Z",
+  "updateTime": "2020-01-16T08:59:24.319468Z",
   "sources": [
     {
       "generator": {
@@ -12,8 +12,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d99df0d67057a233c711187e0689baa4f8e6333d",
-        "internalRef": "289709813"
+        "sha": "0735b4b096872960568d1f366bfa75b7b0e1f1a3",
+        "internalRef": "289939042"
       }
     },
     {
@@ -44,6 +44,590 @@
         "generator": "gapic",
         "config": "google/cloud/scheduler/artman_cloudscheduler_v1.yaml"
       }
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "versions.txt"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": ".gitignore"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/PubsubTargetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/TopicName.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/AppEngineRoutingOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/OAuthToken.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/GetJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/CreateJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/OidcToken.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/ListJobsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/RetryConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/HttpTargetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/ListJobsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/RunJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/PauseJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/OAuthTokenOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/UpdateJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/TargetProto.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/RunJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/OidcTokenOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/HttpTarget.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/LocationName.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/ListJobsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/UpdateJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/AppEngineRouting.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/GetJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/JobName.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/Job.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/JobProto.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/ResumeJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/ListJobsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/SchedulerProto.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/AppEngineHttpTarget.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/DeleteJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/PauseJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/RetryConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/PubsubTarget.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/HttpMethod.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/CreateJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/AppEngineHttpTargetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/JobOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/DeleteJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/ResumeJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/proto/google/cloud/scheduler/v1/target.proto"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/proto/google/cloud/scheduler/v1/cloudscheduler.proto"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1/src/main/proto/google/cloud/scheduler/v1/job.proto"
+    },
+    {
+      "path": "grpc-google-cloud-scheduler-v1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/CloudSchedulerGrpc.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/PubsubTargetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/TopicName.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/AppEngineRoutingOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/OAuthToken.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/GetJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/CreateJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/OidcToken.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/ListJobsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/RetryConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/HttpTargetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/ListJobsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/RunJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/PauseJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/OAuthTokenOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/UpdateJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/TargetProto.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/RunJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/OidcTokenOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/HttpTarget.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/LocationName.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/ListJobsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/UpdateJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/AppEngineRouting.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/GetJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/JobName.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/Job.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/JobProto.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/ResumeJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/ListJobsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/SchedulerProto.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/AppEngineHttpTarget.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/DeleteJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/PauseJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/RetryConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/PubsubTarget.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/HttpMethod.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/CreateJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/AppEngineHttpTargetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/JobOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/DeleteJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/ResumeJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/proto/google/cloud/scheduler/v1beta1/target.proto"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/proto/google/cloud/scheduler/v1beta1/cloudscheduler.proto"
+    },
+    {
+      "path": "proto-google-cloud-scheduler-v1beta1/src/main/proto/google/cloud/scheduler/v1beta1/job.proto"
+    },
+    {
+      "path": "google-cloud-scheduler-bom/pom.xml"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": "google-cloud-scheduler/pom.xml"
+    },
+    {
+      "path": "google-cloud-scheduler/src/test/java/com/google/cloud/scheduler/v1/CloudSchedulerClientTest.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/test/java/com/google/cloud/scheduler/v1/MockCloudScheduler.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/test/java/com/google/cloud/scheduler/v1/MockCloudSchedulerImpl.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/test/java/com/google/cloud/scheduler/v1beta1/CloudSchedulerClientTest.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/test/java/com/google/cloud/scheduler/v1beta1/MockCloudScheduler.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/test/java/com/google/cloud/scheduler/v1beta1/MockCloudSchedulerImpl.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/test/java/com/google/cloud/scheduler/v1beta1/it/ITSystemTest.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1/CloudSchedulerSettings.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1/package-info.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1/CloudSchedulerClient.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1/stub/GrpcCloudSchedulerCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1/stub/CloudSchedulerStub.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1/stub/CloudSchedulerStubSettings.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1/stub/GrpcCloudSchedulerStub.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1beta1/CloudSchedulerSettings.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1beta1/package-info.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1beta1/CloudSchedulerClient.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1beta1/stub/GrpcCloudSchedulerCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1beta1/stub/CloudSchedulerStub.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1beta1/stub/CloudSchedulerStubSettings.java"
+    },
+    {
+      "path": "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1beta1/stub/GrpcCloudSchedulerStub.java"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": "grpc-google-cloud-scheduler-v1beta1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/CloudSchedulerGrpc.java"
     }
   ]
 }
