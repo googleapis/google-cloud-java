@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-01-14T21:27:55.607288Z",
+  "updateTime": "2020-01-16T08:51:39.801817Z",
   "sources": [
     {
       "generator": {
@@ -12,8 +12,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d99df0d67057a233c711187e0689baa4f8e6333d",
-        "internalRef": "289709813"
+        "sha": "0735b4b096872960568d1f366bfa75b7b0e1f1a3",
+        "internalRef": "289939042"
       }
     },
     {
@@ -34,6 +34,1229 @@
         "generator": "gapic",
         "config": "google/monitoring/artman_monitoring.yaml"
       }
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "versions.txt"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": ".gitignore"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/google/monitoring/v3/DroppedLabelsOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/Aggregation.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/MetricProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetNotificationChannelVerificationCodeRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetNotificationChannelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UptimeCheckConfigName.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ServiceLevelObjectiveOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/TimeInterval.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListMetricDescriptorsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListAlertPoliciesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/MonitoredResourceDescriptorName.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetNotificationChannelDescriptorRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListNotificationChannelsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DeleteUptimeCheckConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateMetricDescriptorRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/NotificationChannelDescriptorOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListNotificationChannelDescriptorsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/NotificationChannelName.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GroupServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetServiceLevelObjectiveRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetNotificationChannelVerificationCodeResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/AlertPolicyName.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UpdateServiceRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DeleteServiceLevelObjectiveRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/InternalCheckerOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/SendNotificationChannelVerificationCodeRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/MetricServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListMetricDescriptorsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetMonitoredResourceDescriptorRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DeleteAlertPolicyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ServiceLevelObjectiveName.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetNotificationChannelVerificationCodeResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/TypedValueOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DeleteMetricDescriptorRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetMonitoredResourceDescriptorRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateTimeSeriesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListUptimeCheckIpsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListGroupsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/TimeSeries.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DeleteGroupRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/Range.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListTimeSeriesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UpdateUptimeCheckConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/MutationRecord.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetMetricDescriptorRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DeleteServiceLevelObjectiveRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListGroupsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/RequestBasedSliOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateGroupRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/WindowsBasedSliOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UpdateNotificationChannelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/RangeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DeleteNotificationChannelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DeleteServiceRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/AlertPolicy.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/SpanContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetGroupRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListNotificationChannelDescriptorsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GroupResourceType.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListGroupMembersRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListMonitoredResourceDescriptorsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/Point.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListGroupsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListNotificationChannelsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/TimeSeriesRatio.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateNotificationChannelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/BasicSliOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/AggregationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ServiceLevelIndicatorOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListUptimeCheckConfigsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListGroupsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListNotificationChannelsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UpdateAlertPolicyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListAlertPoliciesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UptimeCheckIpOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListMonitoredResourceDescriptorsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListServicesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateServiceRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ServiceLevelObjective.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListUptimeCheckConfigsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/Group.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListUptimeCheckIpsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DeleteMetricDescriptorRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateGroupRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListServicesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UptimeProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/TimeSeriesRatioOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetNotificationChannelVerificationCodeRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListGroupMembersRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/VerifyNotificationChannelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListServiceLevelObjectivesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ComparisonType.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListServicesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DroppedLabels.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/MetricDescriptorName.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListAlertPoliciesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetUptimeCheckConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/SendNotificationChannelVerificationCodeRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UpdateNotificationChannelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CommonProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListAlertPoliciesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/VerifyNotificationChannelRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/WindowsBasedSli.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateMetricDescriptorRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DeleteNotificationChannelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateServiceLevelObjectiveRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DistributionCut.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListMetricDescriptorsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/AlertProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateTimeSeriesError.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetServiceRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/AlertPolicyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/NotificationServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DistributionCutOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/AlertPolicyConditionName.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListNotificationChannelDescriptorsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListUptimeCheckConfigsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/BasicSli.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateServiceRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetServiceRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetUptimeCheckConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GroupProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListUptimeCheckConfigsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/RequestBasedSli.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetGroupRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DeleteUptimeCheckConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/NotificationChannelDescriptorName.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/TypedValue.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateUptimeCheckConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListTimeSeriesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ServiceMonitoringProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListServicesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/NotificationProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DeleteServiceRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ServiceMonitoringServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListGroupMembersResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetNotificationChannelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateAlertPolicyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UptimeCheckRegion.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateServiceLevelObjectiveRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DroppedLabelsProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListMetricDescriptorsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListUptimeCheckIpsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/AlertServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UptimeCheckConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DroppedLabelsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/Service.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/NotificationChannelDescriptor.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListMonitoredResourceDescriptorsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetAlertPolicyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListGroupMembersResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/InternalChecker.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetMetricDescriptorRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UpdateGroupRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UptimeCheckConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListServiceLevelObjectivesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateTimeSeriesErrorOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetAlertPolicyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateTimeSeriesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListMonitoredResourceDescriptorsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetNotificationChannelDescriptorRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateTimeSeriesSummaryOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ServiceLevelIndicator.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateNotificationChannelRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UpdateServiceRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListTimeSeriesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateUptimeCheckConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GroupOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListNotificationChannelDescriptorsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/NotificationChannelOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/TimeSeriesOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListServiceLevelObjectivesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/TimeIntervalOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ServiceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListNotificationChannelsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UpdateServiceLevelObjectiveRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UpdateAlertPolicyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UpdateGroupRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/MutationRecordOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ServiceName.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UpdateUptimeCheckConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListTimeSeriesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListServiceLevelObjectivesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/NotificationChannel.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetServiceLevelObjectiveRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UpdateServiceLevelObjectiveRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/SpanContext.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DeleteAlertPolicyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateAlertPolicyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DroppedLabelsOuterClass.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/SpanContextProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ServiceTier.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/CreateTimeSeriesSummary.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/MutationRecordProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UptimeServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ListUptimeCheckIpsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UptimeCheckIp.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/PointOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DeleteGroupRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GroupName.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/proto/google/monitoring/v3/alert.proto"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/proto/google/monitoring/v3/metric.proto"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/proto/google/monitoring/v3/notification.proto"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/proto/google/monitoring/v3/metric_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/proto/google/monitoring/v3/group_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/proto/google/monitoring/v3/service.proto"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/proto/google/monitoring/v3/uptime.proto"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/proto/google/monitoring/v3/common.proto"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/proto/google/monitoring/v3/dropped_labels.proto"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/proto/google/monitoring/v3/span_context.proto"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/proto/google/monitoring/v3/service_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/proto/google/monitoring/v3/notification_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/proto/google/monitoring/v3/uptime_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/proto/google/monitoring/v3/mutation_record.proto"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/proto/google/monitoring/v3/alert_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-v3/src/main/proto/google/monitoring/v3/group.proto"
+    },
+    {
+      "path": "grpc-google-cloud-monitoring-v3/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/AlertPolicyServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GroupServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/NotificationChannelServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ServiceMonitoringServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/MetricServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/UptimeCheckServiceGrpc.java"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": "google-cloud-monitoring/pom.xml"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MockNotificationChannelServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MockUptimeCheckServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MockNotificationChannelService.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/GroupServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MockServiceMonitoringServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MockMetricServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MockGroupService.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/UptimeCheckServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MockGroupServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MockUptimeCheckService.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/ITVPCServiceControlTest.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MockServiceMonitoringService.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MockAlertPolicyServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MockAlertPolicyService.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MetricServiceSmokeTest.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/AlertPolicyServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/NotificationChannelServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MockMetricService.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/ServiceMonitoringServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MetricServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/AlertPolicyServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/ServiceMonitoringServiceClient.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/NotificationChannelServiceClient.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/AlertPolicyServiceClient.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/package-info.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/UptimeCheckServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/ServiceMonitoringServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/MetricServiceClient.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/GroupServiceClient.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/NotificationChannelServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/MetricServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/GroupServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/UptimeCheckServiceClient.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/GrpcServiceMonitoringServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/GrpcServiceMonitoringServiceStub.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/GrpcGroupServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/NotificationChannelServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/AlertPolicyServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/ServiceMonitoringServiceStub.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/GrpcNotificationChannelServiceStub.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/UptimeCheckServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/ServiceMonitoringServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/GrpcNotificationChannelServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/MetricServiceStub.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/GrpcAlertPolicyServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/GrpcMetricServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/MetricServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/GrpcAlertPolicyServiceStub.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/NotificationChannelServiceStub.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/GrpcUptimeCheckServiceStub.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/UptimeCheckServiceStub.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/GrpcMetricServiceStub.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/GroupServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/GrpcUptimeCheckServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/AlertPolicyServiceStub.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/GroupServiceStub.java"
+    },
+    {
+      "path": "google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/stub/GrpcGroupServiceStub.java"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": "google-cloud-monitoring-bom/pom.xml"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/monitoring/v3/MockNotificationChannelServiceImpl.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/monitoring/v3/MockUptimeCheckServiceImpl.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/monitoring/v3/MockNotificationChannelService.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/monitoring/v3/GroupServiceClientTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/monitoring/v3/MockMetricServiceImpl.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/monitoring/v3/MockGroupService.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/monitoring/v3/UptimeCheckServiceClientTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/monitoring/v3/MockGroupServiceImpl.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/monitoring/v3/MockUptimeCheckService.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/monitoring/v3/MockAlertPolicyServiceImpl.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/monitoring/v3/MockAlertPolicyService.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/monitoring/v3/MetricServiceSmokeTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/monitoring/v3/AlertPolicyServiceClientTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/monitoring/v3/NotificationChannelServiceClientTest.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/monitoring/v3/MockMetricService.java"
+    },
+    {
+      "path": "src/test/java/com/google/cloud/monitoring/v3/MetricServiceClientTest.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/AlertPolicyServiceSettings.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/NotificationChannelServiceClient.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/AlertPolicyServiceClient.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/package-info.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/UptimeCheckServiceSettings.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/MetricServiceClient.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/GroupServiceClient.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/NotificationChannelServiceSettings.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/MetricServiceSettings.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/GroupServiceSettings.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/UptimeCheckServiceClient.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/GrpcGroupServiceCallableFactory.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/NotificationChannelServiceStubSettings.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/AlertPolicyServiceStubSettings.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/GrpcNotificationChannelServiceStub.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/UptimeCheckServiceStubSettings.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/GrpcNotificationChannelServiceCallableFactory.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/MetricServiceStub.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/GrpcAlertPolicyServiceCallableFactory.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/GrpcMetricServiceCallableFactory.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/MetricServiceStubSettings.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/GrpcAlertPolicyServiceStub.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/NotificationChannelServiceStub.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/GrpcUptimeCheckServiceStub.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/UptimeCheckServiceStub.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/GrpcMetricServiceStub.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/GroupServiceStubSettings.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/GrpcUptimeCheckServiceCallableFactory.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/AlertPolicyServiceStub.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/GroupServiceStub.java"
+    },
+    {
+      "path": "src/main/java/com/google/cloud/monitoring/v3/stub/GrpcGroupServiceStub.java"
     }
   ]
 }
