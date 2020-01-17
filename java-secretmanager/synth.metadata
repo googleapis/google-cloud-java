@@ -1,12 +1,12 @@
 {
-  "updateTime": "2020-01-09T18:09:32.587376Z",
+  "updateTime": "2020-01-16T08:59:49.394750Z",
   "sources": [
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d52885b642ad2aa1f42b132ee62dbf49a73e1e24",
-        "internalRef": "288909426"
+        "sha": "0735b4b096872960568d1f366bfa75b7b0e1f1a3",
+        "internalRef": "289939042"
       }
     },
     {
@@ -26,6 +26,398 @@
         "language": "java",
         "generator": "bazel"
       }
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "versions.txt"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": ".gitignore"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "google-cloud-secretmanager-bom/pom.xml"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": "grpc-google-cloud-secretmanager-v1beta1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-secretmanager-v1beta1/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "grpc-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/SecretManagerServiceGrpc.java"
+    },
+    {
+      "path": "google-cloud-secretmanager/pom.xml"
+    },
+    {
+      "path": "google-cloud-secretmanager/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "google-cloud-secretmanager/src/test/java/com/google/cloud/secretmanager/v1beta1/it/ITSystemTest.java"
+    },
+    {
+      "path": "google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1beta1/SecretManagerServiceClient.java"
+    },
+    {
+      "path": "google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1beta1/stub/SecretManagerServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1beta1/stub/GrpcSecretManagerServiceCallableFactory.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/AddSecretVersionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/SecretPayload.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/UpdateSecretRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/ServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/EnableSecretVersionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/Replication.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/ListSecretVersionsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/ListSecretsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/SecretVersion.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/GetSecretVersionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/DeleteSecretRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/CreateSecretRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/AccessSecretVersionResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/DisableSecretVersionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/SecretOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/DestroySecretVersionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/AccessSecretVersionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/SecretVersionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/DeleteSecretRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/ListSecretsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/ListSecretVersionsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/ListSecretVersionsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/GetSecretRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/SecretName.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/ListSecretsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/UpdateSecretRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/EnableSecretVersionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/ReplicationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/ListSecretVersionsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/AccessSecretVersionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/GetSecretRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/AccessSecretVersionResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/DisableSecretVersionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/SecretPayloadOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/GetSecretVersionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/Secret.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/AddSecretVersionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/SecretVersionName.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/CreateSecretRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/ListSecretsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/DestroySecretVersionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-secretmanager-v1beta1/src/main/java/com/google/cloud/secretmanager/v1beta1/ResourcesProto.java"
     }
   ]
 }
