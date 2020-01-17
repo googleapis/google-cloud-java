@@ -19,7 +19,9 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import static com.google.common.truth.TruthJUnit.assume;
 
 import com.google.api.core.ApiFunction;
+import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.auth.oauth2.ComputeEngineCredentials;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
@@ -52,6 +54,9 @@ import org.junit.runners.JUnit4;
 /**
  * Test DirectPath fallback behavior by injecting a ChannelHandler into the netty stack that will
  * disrupt IPv6 communications.
+ *
+ * <p>WARNING: this test can only be run on a GCE VM and will explicitly ignore
+ * GOOGLE_APPLICATION_CREDENTIALS and use the service account associated with the VM.
  */
 @RunWith(JUnit4.class)
 public class DirectPathFallbackIT {
@@ -111,7 +116,9 @@ public class DirectPathFallbackIT {
 
     settingsBuilder
         .stubSettings()
-        .setTransportChannelProvider(instrumentedTransportChannelProvider);
+        .setTransportChannelProvider(instrumentedTransportChannelProvider)
+        // Forcefully ignore GOOGLE_APPLICATION_CREDENTIALS
+        .setCredentialsProvider(FixedCredentialsProvider.create(ComputeEngineCredentials.create()));
 
     instrumentedClient = BigtableDataClient.create(settingsBuilder.build());
   }
