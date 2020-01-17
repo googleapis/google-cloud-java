@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-01-14T21:21:45.052447Z",
+  "updateTime": "2020-01-16T08:45:26.087754Z",
   "sources": [
     {
       "generator": {
@@ -12,8 +12,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d99df0d67057a233c711187e0689baa4f8e6333d",
-        "internalRef": "289709813"
+        "sha": "0735b4b096872960568d1f366bfa75b7b0e1f1a3",
+        "internalRef": "289939042"
       }
     },
     {
@@ -34,6 +34,515 @@
         "generator": "gapic",
         "config": "google/devtools/clouderrorreporting/artman_errorreporting.yaml"
       }
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "versions.txt"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": ".gitignore"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ListEventsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ReportedErrorEventOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/TrackingIssueOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ListGroupStatsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorGroupStats.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ServiceContextFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/DeleteEventsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorGroupName.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorGroup.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/GetGroupRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/TimedCountOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorEvent.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorGroupStatsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ListEventsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorGroupOrder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/DeleteEventsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/TrackingIssue.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ListGroupStatsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ServiceContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/CommonProto.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/TimedCount.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorGroupOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorEventOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ReportErrorEventRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/HttpRequestContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/GetGroupRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ListEventsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/SourceLocationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/DeleteEventsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/DeleteEventsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ListGroupStatsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ReportedErrorEvent.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ReportErrorsServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/HttpRequestContext.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/SourceLocation.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ListGroupStatsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/UpdateGroupRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ListEventsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ReportErrorEventResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ReportErrorEventResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ServiceContextFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorContext.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/UpdateGroupRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorStatsServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/QueryTimeRange.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/QueryTimeRangeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ReportErrorEventRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ServiceContext.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorGroupServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/TimedCountAlignment.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/GroupName.java"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/proto/google/devtools/clouderrorreporting/v1beta1/error_stats_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/proto/google/devtools/clouderrorreporting/v1beta1/error_group_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/proto/google/devtools/clouderrorreporting/v1beta1/report_errors_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-error-reporting-v1beta1/src/main/proto/google/devtools/clouderrorreporting/v1beta1/common.proto"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": "google-cloud-errorreporting-bom/pom.xml"
+    },
+    {
+      "path": "google-cloud-errorreporting/pom.xml"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/test/java/com/google/cloud/errorreporting/v1beta1/MockErrorGroupService.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/test/java/com/google/cloud/errorreporting/v1beta1/ErrorStatsServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/test/java/com/google/cloud/errorreporting/v1beta1/MockReportErrorsService.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/test/java/com/google/cloud/errorreporting/v1beta1/MockErrorStatsServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/test/java/com/google/cloud/errorreporting/v1beta1/ReportErrorsServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/test/java/com/google/cloud/errorreporting/v1beta1/MockReportErrorsServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/test/java/com/google/cloud/errorreporting/v1beta1/ReportErrorsServiceSmokeTest.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/test/java/com/google/cloud/errorreporting/v1beta1/MockErrorStatsService.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/test/java/com/google/cloud/errorreporting/v1beta1/ErrorGroupServiceClientTest.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/test/java/com/google/cloud/errorreporting/v1beta1/MockErrorGroupServiceImpl.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/test/java/com/google/cloud/errorreporting/v1beta1/it/ITSystemTest.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/ReportErrorsServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/ErrorGroupServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/ErrorStatsServiceClient.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/package-info.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/ErrorGroupServiceClient.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/ErrorStatsServiceSettings.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/ReportErrorsServiceClient.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/stub/ErrorGroupServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/stub/ErrorStatsServiceStub.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/stub/GrpcReportErrorsServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/stub/ErrorGroupServiceStub.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/stub/ErrorStatsServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/stub/GrpcErrorStatsServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/stub/GrpcErrorGroupServiceStub.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/stub/ReportErrorsServiceStubSettings.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/stub/GrpcErrorGroupServiceCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/stub/GrpcReportErrorsServiceStub.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/stub/ReportErrorsServiceStub.java"
+    },
+    {
+      "path": "google-cloud-errorreporting/src/main/java/com/google/cloud/errorreporting/v1beta1/stub/GrpcErrorStatsServiceStub.java"
+    },
+    {
+      "path": "grpc-google-cloud-error-reporting-v1beta1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ReportErrorsServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorGroupServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorStatsServiceGrpc.java"
     }
   ]
 }
