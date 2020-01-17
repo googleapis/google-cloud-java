@@ -193,7 +193,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The canonical `values` of the entities to delete. Note that
+   * Required. The reference `values` of the entities to delete. Note that
    * these are not fully-qualified names, i.e. they don't start with
    * `projects/&lt;Project ID&gt;`.
    * </pre>
@@ -209,7 +209,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The canonical `values` of the entities to delete. Note that
+   * Required. The reference `values` of the entities to delete. Note that
    * these are not fully-qualified names, i.e. they don't start with
    * `projects/&lt;Project ID&gt;`.
    * </pre>
@@ -225,7 +225,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The canonical `values` of the entities to delete. Note that
+   * Required. The reference `values` of the entities to delete. Note that
    * these are not fully-qualified names, i.e. they don't start with
    * `projects/&lt;Project ID&gt;`.
    * </pre>
@@ -242,7 +242,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The canonical `values` of the entities to delete. Note that
+   * Required. The reference `values` of the entities to delete. Note that
    * these are not fully-qualified names, i.e. they don't start with
    * `projects/&lt;Project ID&gt;`.
    * </pre>
@@ -818,7 +818,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The canonical `values` of the entities to delete. Note that
+     * Required. The reference `values` of the entities to delete. Note that
      * these are not fully-qualified names, i.e. they don't start with
      * `projects/&lt;Project ID&gt;`.
      * </pre>
@@ -834,7 +834,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The canonical `values` of the entities to delete. Note that
+     * Required. The reference `values` of the entities to delete. Note that
      * these are not fully-qualified names, i.e. they don't start with
      * `projects/&lt;Project ID&gt;`.
      * </pre>
@@ -850,7 +850,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The canonical `values` of the entities to delete. Note that
+     * Required. The reference `values` of the entities to delete. Note that
      * these are not fully-qualified names, i.e. they don't start with
      * `projects/&lt;Project ID&gt;`.
      * </pre>
@@ -867,7 +867,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The canonical `values` of the entities to delete. Note that
+     * Required. The reference `values` of the entities to delete. Note that
      * these are not fully-qualified names, i.e. they don't start with
      * `projects/&lt;Project ID&gt;`.
      * </pre>
@@ -884,7 +884,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The canonical `values` of the entities to delete. Note that
+     * Required. The reference `values` of the entities to delete. Note that
      * these are not fully-qualified names, i.e. they don't start with
      * `projects/&lt;Project ID&gt;`.
      * </pre>
@@ -908,7 +908,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The canonical `values` of the entities to delete. Note that
+     * Required. The reference `values` of the entities to delete. Note that
      * these are not fully-qualified names, i.e. they don't start with
      * `projects/&lt;Project ID&gt;`.
      * </pre>
@@ -931,7 +931,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The canonical `values` of the entities to delete. Note that
+     * Required. The reference `values` of the entities to delete. Note that
      * these are not fully-qualified names, i.e. they don't start with
      * `projects/&lt;Project ID&gt;`.
      * </pre>
@@ -951,7 +951,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The canonical `values` of the entities to delete. Note that
+     * Required. The reference `values` of the entities to delete. Note that
      * these are not fully-qualified names, i.e. they don't start with
      * `projects/&lt;Project ID&gt;`.
      * </pre>
@@ -970,7 +970,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The canonical `values` of the entities to delete. Note that
+     * Required. The reference `values` of the entities to delete. Note that
      * these are not fully-qualified names, i.e. they don't start with
      * `projects/&lt;Project ID&gt;`.
      * </pre>

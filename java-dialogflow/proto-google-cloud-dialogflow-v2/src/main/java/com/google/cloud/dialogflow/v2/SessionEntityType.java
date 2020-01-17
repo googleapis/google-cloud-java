@@ -23,8 +23,8 @@ package com.google.cloud.dialogflow.v2;
  *
  * <pre>
  * Represents a session entity type.
- * Extends or replaces a developer entity type at the user session level (we
- * refer to the entity types defined at the agent level as "developer entity
+ * Extends or replaces a custom entity type at the user session level (we
+ * refer to the entity types defined at the agent level as "custom entity
  * types").
  * Note: session entity types apply to all queries, regardless of the language.
  * </pre>
@@ -166,7 +166,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The collection of session entities overrides the collection of entities
-     * in the corresponding developer entity type.
+     * in the corresponding custom entity type.
      * </pre>
      *
      * <code>ENTITY_OVERRIDE_MODE_OVERRIDE = 1;</code>
@@ -177,12 +177,12 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The collection of session entities extends the collection of entities in
-     * the corresponding developer entity type.
+     * the corresponding custom entity type.
      * Note: Even in this override mode calls to `ListSessionEntityTypes`,
      * `GetSessionEntityType`, `CreateSessionEntityType` and
      * `UpdateSessionEntityType` only return the additional entities added in
      * this session entity type. If you want to get the supplemented list,
-     * please call [EntityTypes.GetEntityType][google.cloud.dialogflow.v2.EntityTypes.GetEntityType] on the developer entity type
+     * please call [EntityTypes.GetEntityType][google.cloud.dialogflow.v2.EntityTypes.GetEntityType] on the custom entity type
      * and merge.
      * </pre>
      *
@@ -207,7 +207,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The collection of session entities overrides the collection of entities
-     * in the corresponding developer entity type.
+     * in the corresponding custom entity type.
      * </pre>
      *
      * <code>ENTITY_OVERRIDE_MODE_OVERRIDE = 1;</code>
@@ -218,12 +218,12 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The collection of session entities extends the collection of entities in
-     * the corresponding developer entity type.
+     * the corresponding custom entity type.
      * Note: Even in this override mode calls to `ListSessionEntityTypes`,
      * `GetSessionEntityType`, `CreateSessionEntityType` and
      * `UpdateSessionEntityType` only return the additional entities added in
      * this session entity type. If you want to get the supplemented list,
-     * please call [EntityTypes.GetEntityType][google.cloud.dialogflow.v2.EntityTypes.GetEntityType] on the developer entity type
+     * please call [EntityTypes.GetEntityType][google.cloud.dialogflow.v2.EntityTypes.GetEntityType] on the custom entity type
      * and merge.
      * </pre>
      *
@@ -375,7 +375,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. Indicates whether the additional data should override or
-   * supplement the developer entity type definition.
+   * supplement the custom entity type definition.
    * </pre>
    *
    * <code>
@@ -392,7 +392,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. Indicates whether the additional data should override or
-   * supplement the developer entity type definition.
+   * supplement the custom entity type definition.
    * </pre>
    *
    * <code>
@@ -681,8 +681,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Represents a session entity type.
-   * Extends or replaces a developer entity type at the user session level (we
-   * refer to the entity types defined at the agent level as "developer entity
+   * Extends or replaces a custom entity type at the user session level (we
+   * refer to the entity types defined at the agent level as "custom entity
    * types").
    * Note: session entity types apply to all queries, regardless of the language.
    * </pre>
@@ -1023,7 +1023,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Indicates whether the additional data should override or
-     * supplement the developer entity type definition.
+     * supplement the custom entity type definition.
      * </pre>
      *
      * <code>
@@ -1040,7 +1040,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Indicates whether the additional data should override or
-     * supplement the developer entity type definition.
+     * supplement the custom entity type definition.
      * </pre>
      *
      * <code>
@@ -1060,7 +1060,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Indicates whether the additional data should override or
-     * supplement the developer entity type definition.
+     * supplement the custom entity type definition.
      * </pre>
      *
      * <code>
@@ -1084,7 +1084,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Indicates whether the additional data should override or
-     * supplement the developer entity type definition.
+     * supplement the custom entity type definition.
      * </pre>
      *
      * <code>
@@ -1109,7 +1109,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Indicates whether the additional data should override or
-     * supplement the developer entity type definition.
+     * supplement the custom entity type definition.
      * </pre>
      *
      * <code>

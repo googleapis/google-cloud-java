@@ -236,7 +236,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Can be used for agents with a large number of examples in intents,
-     * especially the ones using &#64;sys.any or very large developer entities.
+     * especially the ones using &#64;sys.any or very large custom entities.
      * </pre>
      *
      * <code>MATCH_MODE_ML_ONLY = 2;</code>
@@ -271,7 +271,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Can be used for agents with a large number of examples in intents,
-     * especially the ones using &#64;sys.any or very large developer entities.
+     * especially the ones using &#64;sys.any or very large custom entities.
      * </pre>
      *
      * <code>MATCH_MODE_ML_ONLY = 2;</code>

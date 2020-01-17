@@ -185,7 +185,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Map entity types allow mapping of a group of synonyms to a canonical
+     * Map entity types allow mapping of a group of synonyms to a reference
      * value.
      * </pre>
      *
@@ -196,7 +196,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List entity types contain a set of entries that do not map to canonical
+     * List entity types contain a set of entries that do not map to reference
      * values. However, list entity types can contain references to other entity
      * types (with or without aliases).
      * </pre>
@@ -232,7 +232,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Map entity types allow mapping of a group of synonyms to a canonical
+     * Map entity types allow mapping of a group of synonyms to a reference
      * value.
      * </pre>
      *
@@ -243,7 +243,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List entity types contain a set of entries that do not map to canonical
+     * List entity types contain a set of entries that do not map to reference
      * values. However, list entity types can contain references to other entity
      * types (with or without aliases).
      * </pre>
@@ -495,7 +495,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * For example, if the entity type is *vegetable*, the value could be
      * *scallions*.
      * For `KIND_MAP` entity types:
-     * *   A canonical value to be used in place of synonyms.
+     * *   A reference value to be used in place of synonyms.
      * For `KIND_LIST` entity types:
      * *   A string that can contain references to other entity types (with or
      *     without aliases).
@@ -514,7 +514,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * For example, if the entity type is *vegetable*, the value could be
      * *scallions*.
      * For `KIND_MAP` entity types:
-     * *   A canonical value to be used in place of synonyms.
+     * *   A reference value to be used in place of synonyms.
      * For `KIND_LIST` entity types:
      * *   A string that can contain references to other entity types (with or
      *     without aliases).
@@ -711,7 +711,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * For example, if the entity type is *vegetable*, the value could be
      * *scallions*.
      * For `KIND_MAP` entity types:
-     * *   A canonical value to be used in place of synonyms.
+     * *   A reference value to be used in place of synonyms.
      * For `KIND_LIST` entity types:
      * *   A string that can contain references to other entity types (with or
      *     without aliases).
@@ -740,7 +740,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * For example, if the entity type is *vegetable*, the value could be
      * *scallions*.
      * For `KIND_MAP` entity types:
-     * *   A canonical value to be used in place of synonyms.
+     * *   A reference value to be used in place of synonyms.
      * For `KIND_LIST` entity types:
      * *   A string that can contain references to other entity types (with or
      *     without aliases).
@@ -1207,7 +1207,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * For example, if the entity type is *vegetable*, the value could be
        * *scallions*.
        * For `KIND_MAP` entity types:
-       * *   A canonical value to be used in place of synonyms.
+       * *   A reference value to be used in place of synonyms.
        * For `KIND_LIST` entity types:
        * *   A string that can contain references to other entity types (with or
        *     without aliases).
@@ -1236,7 +1236,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * For example, if the entity type is *vegetable*, the value could be
        * *scallions*.
        * For `KIND_MAP` entity types:
-       * *   A canonical value to be used in place of synonyms.
+       * *   A reference value to be used in place of synonyms.
        * For `KIND_LIST` entity types:
        * *   A string that can contain references to other entity types (with or
        *     without aliases).
@@ -1265,7 +1265,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * For example, if the entity type is *vegetable*, the value could be
        * *scallions*.
        * For `KIND_MAP` entity types:
-       * *   A canonical value to be used in place of synonyms.
+       * *   A reference value to be used in place of synonyms.
        * For `KIND_LIST` entity types:
        * *   A string that can contain references to other entity types (with or
        *     without aliases).
@@ -1293,7 +1293,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * For example, if the entity type is *vegetable*, the value could be
        * *scallions*.
        * For `KIND_MAP` entity types:
-       * *   A canonical value to be used in place of synonyms.
+       * *   A reference value to be used in place of synonyms.
        * For `KIND_LIST` entity types:
        * *   A string that can contain references to other entity types (with or
        *     without aliases).
@@ -1317,7 +1317,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * For example, if the entity type is *vegetable*, the value could be
        * *scallions*.
        * For `KIND_MAP` entity types:
-       * *   A canonical value to be used in place of synonyms.
+       * *   A reference value to be used in place of synonyms.
        * For `KIND_LIST` entity types:
        * *   A string that can contain references to other entity types (with or
        *     without aliases).

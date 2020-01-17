@@ -61,7 +61,7 @@ public interface SessionEntityTypeOrBuilder
    *
    * <pre>
    * Required. Indicates whether the additional data should override or
-   * supplement the developer entity type definition.
+   * supplement the custom entity type definition.
    * </pre>
    *
    * <code>
@@ -76,7 +76,7 @@ public interface SessionEntityTypeOrBuilder
    *
    * <pre>
    * Required. Indicates whether the additional data should override or
-   * supplement the developer entity type definition.
+   * supplement the custom entity type definition.
    * </pre>
    *
    * <code>

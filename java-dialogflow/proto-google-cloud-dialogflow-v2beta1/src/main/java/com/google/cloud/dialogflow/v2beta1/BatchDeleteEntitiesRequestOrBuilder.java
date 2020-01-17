@@ -54,7 +54,7 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The canonical `values` of the entities to delete. Note that
+   * Required. The reference `values` of the entities to delete. Note that
    * these are not fully-qualified names, i.e. they don't start with
    * `projects/&lt;Project ID&gt;`.
    * </pre>
@@ -68,7 +68,7 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The canonical `values` of the entities to delete. Note that
+   * Required. The reference `values` of the entities to delete. Note that
    * these are not fully-qualified names, i.e. they don't start with
    * `projects/&lt;Project ID&gt;`.
    * </pre>
@@ -82,7 +82,7 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The canonical `values` of the entities to delete. Note that
+   * Required. The reference `values` of the entities to delete. Note that
    * these are not fully-qualified names, i.e. they don't start with
    * `projects/&lt;Project ID&gt;`.
    * </pre>
@@ -97,7 +97,7 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The canonical `values` of the entities to delete. Note that
+   * Required. The reference `values` of the entities to delete. Note that
    * these are not fully-qualified names, i.e. they don't start with
    * `projects/&lt;Project ID&gt;`.
    * </pre>
