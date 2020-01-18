@@ -43,7 +43,7 @@ public class LoadParquet {
 
       String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.parquet";
       TableId tableId = TableId.of(datasetName, "us_states");
-      
+
       LoadJobConfiguration configuration =
           LoadJobConfiguration.builder(tableId, sourceUri)
               .setFormatOptions(FormatOptions.parquet())
