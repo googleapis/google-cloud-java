@@ -499,7 +499,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
    * </code>
    *
-   * @param value The supportedTiers to add.
+   * @return The count of supportedTiers.
    */
   @java.lang.Deprecated
   public int getSupportedTiersCount() {

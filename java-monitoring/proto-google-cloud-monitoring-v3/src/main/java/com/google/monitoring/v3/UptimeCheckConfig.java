@@ -6319,7 +6319,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
    *
-   * @param value The selectedRegions to add.
+   * @return The count of selectedRegions.
    */
   public int getSelectedRegionsCount() {
     return selectedRegions_.size();
