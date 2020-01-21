@@ -623,7 +623,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @param value The reasons to add.
+   * @return The count of reasons.
    */
   public int getReasonsCount() {
     return reasons_.size();
