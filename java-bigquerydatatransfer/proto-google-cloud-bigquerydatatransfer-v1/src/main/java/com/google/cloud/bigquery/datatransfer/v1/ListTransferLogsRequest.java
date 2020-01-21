@@ -335,7 +335,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
    * </code>
    *
-   * @param value The messageTypes to add.
+   * @return The count of messageTypes.
    */
   public int getMessageTypesCount() {
     return messageTypes_.size();

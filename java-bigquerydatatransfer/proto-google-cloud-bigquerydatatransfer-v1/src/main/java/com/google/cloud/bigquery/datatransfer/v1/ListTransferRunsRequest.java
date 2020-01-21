@@ -396,7 +396,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
    *
-   * @param value The states to add.
+   * @return The count of states.
    */
   public int getStatesCount() {
     return states_.size();
