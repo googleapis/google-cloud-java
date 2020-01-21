@@ -421,7 +421,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
    *
-   * @param value The optionalComponents to add.
+   * @return The count of optionalComponents.
    */
   public int getOptionalComponentsCount() {
     return optionalComponents_.size();
