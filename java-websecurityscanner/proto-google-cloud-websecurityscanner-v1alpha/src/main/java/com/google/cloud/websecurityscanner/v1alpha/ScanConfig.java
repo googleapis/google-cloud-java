@@ -5387,7 +5387,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
    * </code>
    *
-   * @param value The targetPlatforms to add.
+   * @return The count of targetPlatforms.
    */
   public int getTargetPlatformsCount() {
     return targetPlatforms_.size();
