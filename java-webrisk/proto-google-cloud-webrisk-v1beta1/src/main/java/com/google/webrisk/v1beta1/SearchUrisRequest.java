@@ -231,7 +231,7 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
    * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @param value The threatTypes to add.
+   * @return The count of threatTypes.
    */
   public int getThreatTypesCount() {
     return threatTypes_.size();

@@ -1,19 +1,19 @@
 {
-  "updateTime": "2020-01-16T09:09:31.815344Z",
+  "updateTime": "2020-01-18T09:12:05.682780Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.44.0",
-        "dockerImage": "googleapis/artman@sha256:10a6d0342b8d62544810ac5ad86c3b21049ec0696608ac60175da8e513234344"
+        "version": "0.44.1",
+        "dockerImage": "googleapis/artman@sha256:5599b61e56a372d21b671969ee915fbca0f6c3a0daaeb898d01f8f685f1bbc8b"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "0735b4b096872960568d1f366bfa75b7b0e1f1a3",
-        "internalRef": "289939042"
+        "sha": "7f0dab8177cf371ae019a082e2512de7ac102888",
+        "internalRef": "290326986"
       }
     },
     {
@@ -38,88 +38,7 @@
   ],
   "newFiles": [
     {
-      "path": "pom.xml"
-    },
-    {
-      "path": ".repo-metadata.json"
-    },
-    {
-      "path": "java.header"
-    },
-    {
-      "path": "CONTRIBUTING.md"
-    },
-    {
-      "path": "synth.metadata"
-    },
-    {
-      "path": "renovate.json"
-    },
-    {
-      "path": "versions.txt"
-    },
-    {
-      "path": "synth.py"
-    },
-    {
-      "path": "license-checks.xml"
-    },
-    {
-      "path": "CHANGELOG.md"
-    },
-    {
-      "path": "CODE_OF_CONDUCT.md"
-    },
-    {
-      "path": "LICENSE"
-    },
-    {
-      "path": "codecov.yaml"
-    },
-    {
-      "path": ".gitignore"
-    },
-    {
-      "path": "README.md"
-    },
-    {
-      "path": "google-cloud-webrisk/pom.xml"
-    },
-    {
-      "path": "google-cloud-webrisk/src/test/java/com/google/cloud/webrisk/v1beta1/WebRiskServiceV1Beta1ClientTest.java"
-    },
-    {
-      "path": "google-cloud-webrisk/src/test/java/com/google/cloud/webrisk/v1beta1/MockWebRiskServiceV1Beta1.java"
-    },
-    {
-      "path": "google-cloud-webrisk/src/test/java/com/google/cloud/webrisk/v1beta1/MockWebRiskServiceV1Beta1Impl.java"
-    },
-    {
-      "path": "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/WebRiskServiceV1Beta1Settings.java"
-    },
-    {
-      "path": "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/package-info.java"
-    },
-    {
-      "path": "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/WebRiskServiceV1Beta1Client.java"
-    },
-    {
-      "path": "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/stub/WebRiskServiceV1Beta1StubSettings.java"
-    },
-    {
-      "path": "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/stub/GrpcWebRiskServiceV1Beta1Stub.java"
-    },
-    {
-      "path": "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/stub/GrpcWebRiskServiceV1Beta1CallableFactory.java"
-    },
-    {
-      "path": "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/stub/WebRiskServiceV1Beta1Stub.java"
-    },
-    {
-      "path": ".github/release-please.yml"
-    },
-    {
-      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/feature_request.md"
@@ -128,34 +47,31 @@
       "path": ".github/ISSUE_TEMPLATE/support_request.md"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
     },
     {
-      "path": ".kokoro/build.sh"
+      "path": ".github/release-please.yml"
     },
     {
-      "path": ".kokoro/common.cfg"
+      "path": ".gitignore"
     },
     {
       "path": ".kokoro/build.bat"
     },
     {
-      "path": ".kokoro/linkage-monitor.sh"
+      "path": ".kokoro/build.sh"
     },
     {
       "path": ".kokoro/coerce_logs.sh"
     },
     {
-      "path": ".kokoro/dependencies.sh"
+      "path": ".kokoro/common.cfg"
     },
     {
-      "path": ".kokoro/trampoline.sh"
+      "path": ".kokoro/continuous/common.cfg"
     },
     {
-      "path": ".kokoro/continuous/samples.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8.cfg"
+      "path": ".kokoro/continuous/dependencies.cfg"
     },
     {
       "path": ".kokoro/continuous/integration.cfg"
@@ -164,34 +80,40 @@
       "path": ".kokoro/continuous/java11.cfg"
     },
     {
-      "path": ".kokoro/continuous/propose_release.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/common.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.sh"
-    },
-    {
       "path": ".kokoro/continuous/java7.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/lint.cfg"
     },
     {
       "path": ".kokoro/continuous/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/continuous/dependencies.cfg"
-    },
-    {
       "path": ".kokoro/continuous/java8-win.cfg"
     },
     {
-      "path": ".kokoro/nightly/samples.cfg"
+      "path": ".kokoro/continuous/java8.cfg"
     },
     {
-      "path": ".kokoro/nightly/java8.cfg"
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
     },
     {
       "path": ".kokoro/nightly/integration.cfg"
@@ -200,70 +122,31 @@
       "path": ".kokoro/nightly/java11.cfg"
     },
     {
-      "path": ".kokoro/nightly/common.cfg"
-    },
-    {
       "path": ".kokoro/nightly/java7.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/lint.cfg"
     },
     {
       "path": ".kokoro/nightly/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/nightly/dependencies.cfg"
-    },
-    {
       "path": ".kokoro/nightly/java8-win.cfg"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.cfg"
+      "path": ".kokoro/nightly/java8.cfg"
     },
     {
-      "path": ".kokoro/release/common.sh"
+      "path": ".kokoro/nightly/lint.cfg"
     },
     {
-      "path": ".kokoro/release/promote.sh"
+      "path": ".kokoro/nightly/samples.cfg"
     },
     {
-      "path": ".kokoro/release/common.cfg"
+      "path": ".kokoro/presubmit/clirr.cfg"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.sh"
+      "path": ".kokoro/presubmit/common.cfg"
     },
     {
-      "path": ".kokoro/release/drop.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.sh"
-    },
-    {
-      "path": ".kokoro/release/promote.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.sh"
-    },
-    {
-      "path": ".kokoro/presubmit/samples.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8.cfg"
+      "path": ".kokoro/presubmit/dependencies.cfg"
     },
     {
       "path": ".kokoro/presubmit/integration.cfg"
@@ -272,28 +155,127 @@
       "path": ".kokoro/presubmit/java11.cfg"
     },
     {
-      "path": ".kokoro/presubmit/linkage-monitor.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/common.cfg"
-    },
-    {
       "path": ".kokoro/presubmit/java7.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/lint.cfg"
     },
     {
       "path": ".kokoro/presubmit/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/presubmit/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/clirr.cfg"
-    },
-    {
       "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": "google-cloud-webrisk-bom/pom.xml"
+    },
+    {
+      "path": "google-cloud-webrisk/pom.xml"
+    },
+    {
+      "path": "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/WebRiskServiceV1Beta1Client.java"
+    },
+    {
+      "path": "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/WebRiskServiceV1Beta1Settings.java"
+    },
+    {
+      "path": "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/package-info.java"
+    },
+    {
+      "path": "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/stub/GrpcWebRiskServiceV1Beta1CallableFactory.java"
+    },
+    {
+      "path": "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/stub/GrpcWebRiskServiceV1Beta1Stub.java"
+    },
+    {
+      "path": "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/stub/WebRiskServiceV1Beta1Stub.java"
+    },
+    {
+      "path": "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/stub/WebRiskServiceV1Beta1StubSettings.java"
+    },
+    {
+      "path": "google-cloud-webrisk/src/test/java/com/google/cloud/webrisk/v1beta1/MockWebRiskServiceV1Beta1.java"
+    },
+    {
+      "path": "google-cloud-webrisk/src/test/java/com/google/cloud/webrisk/v1beta1/MockWebRiskServiceV1Beta1Impl.java"
+    },
+    {
+      "path": "google-cloud-webrisk/src/test/java/com/google/cloud/webrisk/v1beta1/WebRiskServiceV1Beta1ClientTest.java"
     },
     {
       "path": "grpc-google-cloud-webrisk-v1beta1/pom.xml"
@@ -302,76 +284,40 @@
       "path": "grpc-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/WebRiskServiceV1Beta1Grpc.java"
     },
     {
+      "path": "java.header"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "pom.xml"
+    },
+    {
       "path": "proto-google-cloud-webrisk-v1beta1/pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/ComputeThreatListDiffRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/ThreatEntryRemovalsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/RiceDeltaEncodingOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/SearchHashesRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/ThreatType.java"
-    },
-    {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/SearchUrisResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/SearchUrisRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/ThreatEntryRemovals.java"
-    },
-    {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/ComputeThreatListDiffResponse.java"
     },
     {
       "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/CompressionType.java"
     },
     {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/SearchHashesResponse.java"
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/ComputeThreatListDiffRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/ComputeThreatListDiffRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/ComputeThreatListDiffResponse.java"
     },
     {
       "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/ComputeThreatListDiffResponseOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/RawHashesOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/SearchUrisResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/ThreatEntryAdditionsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/SearchHashesRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/ThreatEntryAdditions.java"
-    },
-    {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/WebRiskProto.java"
-    },
-    {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/SearchUrisRequest.java"
-    },
-    {
       "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/RawHashes.java"
     },
     {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/RawHashesOrBuilder.java"
+    },
+    {
       "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/RawIndices.java"
-    },
-    {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/ComputeThreatListDiffRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/SearchHashesResponseOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/RawIndicesOrBuilder.java"
@@ -380,10 +326,64 @@
       "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/RiceDeltaEncoding.java"
     },
     {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/RiceDeltaEncodingOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/SearchHashesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/SearchHashesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/SearchHashesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/SearchHashesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/SearchUrisRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/SearchUrisRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/SearchUrisResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/SearchUrisResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/ThreatEntryAdditions.java"
+    },
+    {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/ThreatEntryAdditionsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/ThreatEntryRemovals.java"
+    },
+    {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/ThreatEntryRemovalsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/ThreatType.java"
+    },
+    {
+      "path": "proto-google-cloud-webrisk-v1beta1/src/main/java/com/google/webrisk/v1beta1/WebRiskProto.java"
+    },
+    {
       "path": "proto-google-cloud-webrisk-v1beta1/src/main/proto/google/cloud/webrisk/v1beta1/webrisk.proto"
     },
     {
-      "path": "google-cloud-webrisk-bom/pom.xml"
+      "path": "renovate.json"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "versions.txt"
     }
   ]
 }

@@ -445,7 +445,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * <code>repeated .google.cloud.webrisk.v1beta1.CompressionType supported_compressions = 3;
      * </code>
      *
-     * @param value The supportedCompressions to add.
+     * @return The count of supportedCompressions.
      */
     public int getSupportedCompressionsCount() {
       return supportedCompressions_.size();

@@ -431,7 +431,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      *
      * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 1;</code>
      *
-     * @param value The threatTypes to add.
+     * @return The count of threatTypes.
      */
     public int getThreatTypesCount() {
       return threatTypes_.size();
