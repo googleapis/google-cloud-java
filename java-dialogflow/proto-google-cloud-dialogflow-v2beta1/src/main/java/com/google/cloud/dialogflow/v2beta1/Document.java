@@ -589,7 +589,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
    * </code>
    *
-   * @param value The knowledgeTypes to add.
+   * @return The count of knowledgeTypes.
    */
   public int getKnowledgeTypesCount() {
     return knowledgeTypes_.size();

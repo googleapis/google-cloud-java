@@ -48007,7 +48007,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @param value The defaultResponsePlatforms to add.
+   * @return The count of defaultResponsePlatforms.
    */
   public int getDefaultResponsePlatformsCount() {
     return defaultResponsePlatforms_.size();
