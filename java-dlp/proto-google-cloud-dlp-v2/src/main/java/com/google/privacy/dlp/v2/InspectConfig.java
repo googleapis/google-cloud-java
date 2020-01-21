@@ -2789,7 +2789,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
    *
-   * @param value The contentOptions to add.
+   * @return The count of contentOptions.
    */
   public int getContentOptionsCount() {
     return contentOptions_.size();

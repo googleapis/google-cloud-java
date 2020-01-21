@@ -1484,7 +1484,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
    *
-   * @param value The fileTypes to add.
+   * @return The count of fileTypes.
    */
   public int getFileTypesCount() {
     return fileTypes_.size();

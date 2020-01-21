@@ -292,7 +292,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
    *
-   * @param value The supportedBy to add.
+   * @return The count of supportedBy.
    */
   public int getSupportedByCount() {
     return supportedBy_.size();
