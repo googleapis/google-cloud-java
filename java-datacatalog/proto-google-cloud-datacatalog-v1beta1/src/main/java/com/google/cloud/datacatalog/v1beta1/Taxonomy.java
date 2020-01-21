@@ -494,7 +494,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @param value The activatedPolicyTypes to add.
+   * @return The count of activatedPolicyTypes.
    */
   public int getActivatedPolicyTypesCount() {
     return activatedPolicyTypes_.size();
