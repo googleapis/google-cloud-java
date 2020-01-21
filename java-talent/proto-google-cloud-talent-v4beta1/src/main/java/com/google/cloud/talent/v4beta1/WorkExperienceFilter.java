@@ -24,10 +24,7 @@ package com.google.cloud.talent.v4beta1;
  * <pre>
  * Work experience filter.
  * This filter is used to search for profiles with working experience length
- * between
- * [min_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.min_experience]
- * and
- * [max_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.max_experience].
+ * between [min_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.min_experience] and [max_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.max_experience].
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.WorkExperienceFilter}
@@ -411,10 +408,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
    * <pre>
    * Work experience filter.
    * This filter is used to search for profiles with working experience length
-   * between
-   * [min_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.min_experience]
-   * and
-   * [max_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.max_experience].
+   * between [min_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.min_experience] and [max_experience][google.cloud.talent.v4beta1.WorkExperienceFilter.max_experience].
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.WorkExperienceFilter}

@@ -110,8 +110,7 @@ public interface TimeFilterOrBuilder
    *
    * <pre>
    * Specifies which time field to filter profiles.
-   * Defaults to
-   * [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
+   * Defaults to [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>
@@ -124,8 +123,7 @@ public interface TimeFilterOrBuilder
    *
    * <pre>
    * Specifies which time field to filter profiles.
-   * Defaults to
-   * [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
+   * Defaults to [TimeField.CREATE_TIME][google.cloud.talent.v4beta1.TimeFilter.TimeField.CREATE_TIME].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.TimeFilter.TimeField time_field = 3;</code>

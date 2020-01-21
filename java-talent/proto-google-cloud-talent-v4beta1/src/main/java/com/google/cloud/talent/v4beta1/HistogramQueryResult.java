@@ -22,9 +22,7 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Histogram result that matches
- * [HistogramQuery][google.cloud.talent.v4beta1.HistogramQuery] specified in
- * searches.
+ * Histogram result that matches [HistogramQuery][google.cloud.talent.v4beta1.HistogramQuery] specified in searches.
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.HistogramQueryResult}
@@ -488,9 +486,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Histogram result that matches
-   * [HistogramQuery][google.cloud.talent.v4beta1.HistogramQuery] specified in
-   * searches.
+   * Histogram result that matches [HistogramQuery][google.cloud.talent.v4beta1.HistogramQuery] specified in searches.
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.HistogramQueryResult}

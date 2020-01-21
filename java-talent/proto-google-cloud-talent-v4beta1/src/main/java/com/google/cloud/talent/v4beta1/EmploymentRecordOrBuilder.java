@@ -351,11 +351,9 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Output only. The job title snippet shows how the
-   * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is
-   * related to a search query. It's empty if the
-   * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't
-   * related to the search query.
+   * Output only. The job title snippet shows how the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is related
+   * to a search query. It's empty if the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't related to the
+   * search query.
    * </pre>
    *
    * <code>string job_title_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -367,11 +365,9 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Output only. The job title snippet shows how the
-   * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is
-   * related to a search query. It's empty if the
-   * [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't
-   * related to the search query.
+   * Output only. The job title snippet shows how the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] is related
+   * to a search query. It's empty if the [job_title][google.cloud.talent.v4beta1.EmploymentRecord.job_title] isn't related to the
+   * search query.
    * </pre>
    *
    * <code>string job_title_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -384,11 +380,9 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Output only. The job description snippet shows how the
-   * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
-   * is related to a search query. It's empty if the
-   * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
-   * isn't related to the search query.
+   * Output only. The job description snippet shows how the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+   * is related to a search query. It's empty if the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description] isn't
+   * related to the search query.
    * </pre>
    *
    * <code>string job_description_snippet = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -400,11 +394,9 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Output only. The job description snippet shows how the
-   * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
-   * is related to a search query. It's empty if the
-   * [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
-   * isn't related to the search query.
+   * Output only. The job description snippet shows how the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description]
+   * is related to a search query. It's empty if the [job_description][google.cloud.talent.v4beta1.EmploymentRecord.job_description] isn't
+   * related to the search query.
    * </pre>
    *
    * <code>string job_description_snippet = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -417,11 +409,9 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Output only. The employer name snippet shows how the
-   * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
-   * is related to a search query. It's empty if the
-   * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
-   * isn't related to the search query.
+   * Output only. The employer name snippet shows how the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] is
+   * related to a search query. It's empty if the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] isn't
+   * related to the search query.
    * </pre>
    *
    * <code>string employer_name_snippet = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -433,11 +423,9 @@ public interface EmploymentRecordOrBuilder
    *
    *
    * <pre>
-   * Output only. The employer name snippet shows how the
-   * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
-   * is related to a search query. It's empty if the
-   * [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name]
-   * isn't related to the search query.
+   * Output only. The employer name snippet shows how the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] is
+   * related to a search query. It's empty if the [employer_name][google.cloud.talent.v4beta1.EmploymentRecord.employer_name] isn't
+   * related to the search query.
    * </pre>
    *
    * <code>string employer_name_snippet = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

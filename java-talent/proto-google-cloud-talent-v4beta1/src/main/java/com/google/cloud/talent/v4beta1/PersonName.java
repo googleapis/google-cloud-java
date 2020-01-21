@@ -149,9 +149,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Given/first name.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -165,9 +163,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Given/first name.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -209,9 +205,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Middle initial.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 20.
      * </pre>
      *
@@ -225,9 +219,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Middle initial.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 20.
      * </pre>
      *
@@ -242,9 +234,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Family/last name.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -258,9 +248,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Family/last name.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -533,9 +521,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Given/first name.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -559,9 +545,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Given/first name.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -637,9 +621,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Middle initial.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 20.
      * </pre>
      *
@@ -663,9 +645,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Middle initial.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 20.
      * </pre>
      *
@@ -692,9 +672,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Family/last name.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -718,9 +696,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Family/last name.
-     * It's derived from
-     * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-     * if not provided.
+     * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1322,9 +1298,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Given/first name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1348,9 +1322,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Given/first name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1374,9 +1346,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Given/first name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1399,9 +1369,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Given/first name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1420,9 +1388,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Given/first name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1559,9 +1525,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Middle initial.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 20.
        * </pre>
        *
@@ -1585,9 +1549,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Middle initial.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 20.
        * </pre>
        *
@@ -1611,9 +1573,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Middle initial.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 20.
        * </pre>
        *
@@ -1636,9 +1596,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Middle initial.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 20.
        * </pre>
        *
@@ -1657,9 +1615,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Middle initial.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 20.
        * </pre>
        *
@@ -1685,9 +1641,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Family/last name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1711,9 +1665,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Family/last name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1737,9 +1689,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Family/last name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1762,9 +1712,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Family/last name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -1783,9 +1731,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Family/last name.
-       * It's derived from
-       * [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name]
-       * if not provided.
+       * It's derived from [formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name] if not provided.
        * Number of characters allowed is 100.
        * </pre>
        *
@@ -2377,8 +2323,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Preferred name for the person. This field is ignored if
-   * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+   * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
    * is provided.
    * Number of characters allowed is 100.
    * </pre>
@@ -2402,8 +2347,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Preferred name for the person. This field is ignored if
-   * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+   * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
    * is provided.
    * Number of characters allowed is 100.
    * </pre>
@@ -3181,8 +3125,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred name for the person. This field is ignored if
-     * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+     * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
      * is provided.
      * Number of characters allowed is 100.
      * </pre>
@@ -3206,8 +3149,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred name for the person. This field is ignored if
-     * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+     * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
      * is provided.
      * Number of characters allowed is 100.
      * </pre>
@@ -3231,8 +3173,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred name for the person. This field is ignored if
-     * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+     * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
      * is provided.
      * Number of characters allowed is 100.
      * </pre>
@@ -3255,8 +3196,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred name for the person. This field is ignored if
-     * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+     * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
      * is provided.
      * Number of characters allowed is 100.
      * </pre>
@@ -3275,8 +3215,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred name for the person. This field is ignored if
-     * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+     * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
      * is provided.
      * Number of characters allowed is 100.
      * </pre>

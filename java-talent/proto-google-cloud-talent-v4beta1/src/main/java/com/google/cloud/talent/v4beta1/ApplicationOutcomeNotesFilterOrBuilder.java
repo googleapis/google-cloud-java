@@ -27,10 +27,8 @@ public interface ApplicationOutcomeNotesFilterOrBuilder
    *
    *
    * <pre>
-   * Required. User entered or selected outcome reason. The API does an exact
-   * match on the
-   * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes]
-   * in profiles.
+   * Required. User entered or selected outcome reason. The API does an exact match on the
+   * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes] in profiles.
    * </pre>
    *
    * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -42,10 +40,8 @@ public interface ApplicationOutcomeNotesFilterOrBuilder
    *
    *
    * <pre>
-   * Required. User entered or selected outcome reason. The API does an exact
-   * match on the
-   * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes]
-   * in profiles.
+   * Required. User entered or selected outcome reason. The API does an exact match on the
+   * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes] in profiles.
    * </pre>
    *
    * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -59,8 +55,8 @@ public interface ApplicationOutcomeNotesFilterOrBuilder
    *
    * <pre>
    * If true, The API excludes all candidates with any
-   * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes]
-   * matching the outcome reason specified in the filter.
+   * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes] matching the outcome reason specified in
+   * the filter.
    * </pre>
    *
    * <code>bool negated = 2;</code>

@@ -176,8 +176,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The overall decision resulting from this interview (positive,
-   * negative, nuetral).
+   * Required. The overall decision resulting from this interview (positive, negative,
+   * nuetral).
    * </pre>
    *
    * <code>
@@ -193,8 +193,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The overall decision resulting from this interview (positive,
-   * negative, nuetral).
+   * Required. The overall decision resulting from this interview (positive, negative,
+   * nuetral).
    * </pre>
    *
    * <code>
@@ -743,8 +743,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The overall decision resulting from this interview (positive,
-     * negative, nuetral).
+     * Required. The overall decision resulting from this interview (positive, negative,
+     * nuetral).
      * </pre>
      *
      * <code>
@@ -760,8 +760,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The overall decision resulting from this interview (positive,
-     * negative, nuetral).
+     * Required. The overall decision resulting from this interview (positive, negative,
+     * nuetral).
      * </pre>
      *
      * <code>
@@ -780,8 +780,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The overall decision resulting from this interview (positive,
-     * negative, nuetral).
+     * Required. The overall decision resulting from this interview (positive, negative,
+     * nuetral).
      * </pre>
      *
      * <code>
@@ -800,8 +800,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The overall decision resulting from this interview (positive,
-     * negative, nuetral).
+     * Required. The overall decision resulting from this interview (positive, negative,
+     * nuetral).
      * </pre>
      *
      * <code>
@@ -824,8 +824,8 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The overall decision resulting from this interview (positive,
-     * negative, nuetral).
+     * Required. The overall decision resulting from this interview (positive, negative,
+     * nuetral).
      * </pre>
      *
      * <code>

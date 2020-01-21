@@ -27,8 +27,7 @@ public interface SummarizedProfileOrBuilder
    *
    *
    * <pre>
-   * A list of profiles that are linked by
-   * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+   * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -38,8 +37,7 @@ public interface SummarizedProfileOrBuilder
    *
    *
    * <pre>
-   * A list of profiles that are linked by
-   * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+   * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -49,8 +47,7 @@ public interface SummarizedProfileOrBuilder
    *
    *
    * <pre>
-   * A list of profiles that are linked by
-   * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+   * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -60,8 +57,7 @@ public interface SummarizedProfileOrBuilder
    *
    *
    * <pre>
-   * A list of profiles that are linked by
-   * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+   * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -72,8 +68,7 @@ public interface SummarizedProfileOrBuilder
    *
    *
    * <pre>
-   * A list of profiles that are linked by
-   * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
+   * A list of profiles that are linked by [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
@@ -86,10 +81,9 @@ public interface SummarizedProfileOrBuilder
    * <pre>
    * A profile summary shows the profile summary and how the profile matches the
    * search query.
-   * In profile summary, the profiles with the same
-   * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are merged
-   * together. Among profiles, same education/employment records may be slightly
-   * different but they are merged into one with best efforts.
+   * In profile summary, the profiles with the same [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are
+   * merged together. Among profiles, same education/employment records may be
+   * slightly different but they are merged into one with best efforts.
    * For example, in one profile the school name is "UC Berkeley" and the field
    * study is "Computer Science" and in another one the school name is
    * "University of California at Berkeley" and the field study is "CS". The API
@@ -109,10 +103,9 @@ public interface SummarizedProfileOrBuilder
    * <pre>
    * A profile summary shows the profile summary and how the profile matches the
    * search query.
-   * In profile summary, the profiles with the same
-   * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are merged
-   * together. Among profiles, same education/employment records may be slightly
-   * different but they are merged into one with best efforts.
+   * In profile summary, the profiles with the same [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are
+   * merged together. Among profiles, same education/employment records may be
+   * slightly different but they are merged into one with best efforts.
    * For example, in one profile the school name is "UC Berkeley" and the field
    * study is "Computer Science" and in another one the school name is
    * "University of California at Berkeley" and the field study is "CS". The API
@@ -132,10 +125,9 @@ public interface SummarizedProfileOrBuilder
    * <pre>
    * A profile summary shows the profile summary and how the profile matches the
    * search query.
-   * In profile summary, the profiles with the same
-   * [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are merged
-   * together. Among profiles, same education/employment records may be slightly
-   * different but they are merged into one with best efforts.
+   * In profile summary, the profiles with the same [Profile.group_id][google.cloud.talent.v4beta1.Profile.group_id] are
+   * merged together. Among profiles, same education/employment records may be
+   * slightly different but they are merged into one with best efforts.
    * For example, in one profile the school name is "UC Berkeley" and the field
    * study is "Computer Science" and in another one the school name is
    * "University of California at Berkeley" and the field study is "CS". The API

@@ -33,7 +33,9 @@ public interface GetApplicationRequestOrBuilder
    * For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -48,7 +50,9 @@ public interface GetApplicationRequestOrBuilder
    * For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

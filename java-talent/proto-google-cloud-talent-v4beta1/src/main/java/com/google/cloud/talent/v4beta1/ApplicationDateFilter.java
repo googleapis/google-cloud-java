@@ -23,13 +23,9 @@ package com.google.cloud.talent.v4beta1;
  *
  * <pre>
  * Application Date Range Filter.
- * The API matches profiles with
- * [Application.application_date][google.cloud.talent.v4beta1.Application.application_date]
- * between start date and end date (both boundaries are inclusive). The filter
- * is ignored if both
- * [start_date][google.cloud.talent.v4beta1.ApplicationDateFilter.start_date]
- * and [end_date][google.cloud.talent.v4beta1.ApplicationDateFilter.end_date]
- * are missing.
+ * The API matches profiles with [Application.application_date][google.cloud.talent.v4beta1.Application.application_date] between
+ * start date and end date (both boundaries are inclusive). The filter is
+ * ignored if both [start_date][google.cloud.talent.v4beta1.ApplicationDateFilter.start_date] and [end_date][google.cloud.talent.v4beta1.ApplicationDateFilter.end_date] are missing.
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.ApplicationDateFilter}
@@ -413,13 +409,9 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Application Date Range Filter.
-   * The API matches profiles with
-   * [Application.application_date][google.cloud.talent.v4beta1.Application.application_date]
-   * between start date and end date (both boundaries are inclusive). The filter
-   * is ignored if both
-   * [start_date][google.cloud.talent.v4beta1.ApplicationDateFilter.start_date]
-   * and [end_date][google.cloud.talent.v4beta1.ApplicationDateFilter.end_date]
-   * are missing.
+   * The API matches profiles with [Application.application_date][google.cloud.talent.v4beta1.Application.application_date] between
+   * start date and end date (both boundaries are inclusive). The filter is
+   * ignored if both [start_date][google.cloud.talent.v4beta1.ApplicationDateFilter.start_date] and [end_date][google.cloud.talent.v4beta1.ApplicationDateFilter.end_date] are missing.
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.ApplicationDateFilter}

@@ -486,9 +486,7 @@ public final class ProfileServiceGrpc {
      * Searches for profiles within a tenant.
      * For example, search by raw queries "software engineer in Mountain View" or
      * search by structured filters (location filter, education filter, etc.).
-     * See
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
-     * for more information.
+     * See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more information.
      * </pre>
      */
     public void searchProfiles(
@@ -656,9 +654,7 @@ public final class ProfileServiceGrpc {
      * Searches for profiles within a tenant.
      * For example, search by raw queries "software engineer in Mountain View" or
      * search by structured filters (location filter, education filter, etc.).
-     * See
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
-     * for more information.
+     * See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more information.
      * </pre>
      */
     public void searchProfiles(
@@ -770,9 +766,7 @@ public final class ProfileServiceGrpc {
      * Searches for profiles within a tenant.
      * For example, search by raw queries "software engineer in Mountain View" or
      * search by structured filters (location filter, education filter, etc.).
-     * See
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
-     * for more information.
+     * See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more information.
      * </pre>
      */
     public com.google.cloud.talent.v4beta1.SearchProfilesResponse searchProfiles(
@@ -884,9 +878,7 @@ public final class ProfileServiceGrpc {
      * Searches for profiles within a tenant.
      * For example, search by raw queries "software engineer in Mountain View" or
      * search by structured filters (location filter, education filter, etc.).
-     * See
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest]
-     * for more information.
+     * See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more information.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

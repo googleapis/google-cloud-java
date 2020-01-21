@@ -56,8 +56,7 @@ public interface ProfileEventOrBuilder
    *
    *
    * <pre>
-   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-   * associated with this client event.
+   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/foo/tenants/bar/profiles/baz".
@@ -72,8 +71,7 @@ public interface ProfileEventOrBuilder
    *
    *
    * <pre>
-   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-   * associated with this client event.
+   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/foo/tenants/bar/profiles/baz".
@@ -88,8 +86,7 @@ public interface ProfileEventOrBuilder
    *
    *
    * <pre>
-   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-   * associated with this client event.
+   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/foo/tenants/bar/profiles/baz".
@@ -105,8 +102,7 @@ public interface ProfileEventOrBuilder
    *
    *
    * <pre>
-   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name]
-   * associated with this client event.
+   * Required. The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/foo/tenants/bar/profiles/baz".
@@ -123,8 +119,8 @@ public interface ProfileEventOrBuilder
    *
    *
    * <pre>
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-   * this client event. Leave it empty if the event isn't associated with a job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+   * empty if the event isn't associated with a job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
@@ -139,8 +135,8 @@ public interface ProfileEventOrBuilder
    *
    *
    * <pre>
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-   * this client event. Leave it empty if the event isn't associated with a job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+   * empty if the event isn't associated with a job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
@@ -155,8 +151,8 @@ public interface ProfileEventOrBuilder
    *
    *
    * <pre>
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-   * this client event. Leave it empty if the event isn't associated with a job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+   * empty if the event isn't associated with a job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
@@ -172,8 +168,8 @@ public interface ProfileEventOrBuilder
    *
    *
    * <pre>
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
-   * this client event. Leave it empty if the event isn't associated with a job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this client event. Leave it
+   * empty if the event isn't associated with a job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".

@@ -229,12 +229,9 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * If multiple
-   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are
-   * provided, the default behavior is to OR all filters, but if this field is
-   * set to true, this particular
-   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will
-   * be AND'ed against other
+   * If multiple [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are provided, the default
+   * behavior is to OR all filters, but if this field is set to true, this
+   * particular [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will be AND'ed against other
    * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter].
    * </pre>
    *
@@ -921,12 +918,9 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If multiple
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are
-     * provided, the default behavior is to OR all filters, but if this field is
-     * set to true, this particular
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will
-     * be AND'ed against other
+     * If multiple [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are provided, the default
+     * behavior is to OR all filters, but if this field is set to true, this
+     * particular [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will be AND'ed against other
      * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter].
      * </pre>
      *
@@ -941,12 +935,9 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If multiple
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are
-     * provided, the default behavior is to OR all filters, but if this field is
-     * set to true, this particular
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will
-     * be AND'ed against other
+     * If multiple [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are provided, the default
+     * behavior is to OR all filters, but if this field is set to true, this
+     * particular [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will be AND'ed against other
      * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter].
      * </pre>
      *
@@ -965,12 +956,9 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If multiple
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are
-     * provided, the default behavior is to OR all filters, but if this field is
-     * set to true, this particular
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will
-     * be AND'ed against other
+     * If multiple [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] are provided, the default
+     * behavior is to OR all filters, but if this field is set to true, this
+     * particular [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] will be AND'ed against other
      * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter].
      * </pre>
      *

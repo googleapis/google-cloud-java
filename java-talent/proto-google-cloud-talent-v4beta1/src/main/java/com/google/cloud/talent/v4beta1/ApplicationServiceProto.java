@@ -64,57 +64,63 @@ public final class ApplicationServiceProto {
           + "n_service.proto\022\033google.cloud.talent.v4b"
           + "eta1\032\034google/api/annotations.proto\032\027goog"
           + "le/api/client.proto\032\037google/api/field_be"
-          + "havior.proto\032-google/cloud/talent/v4beta"
-          + "1/application.proto\032(google/cloud/talent"
-          + "/v4beta1/common.proto\032\033google/protobuf/e"
-          + "mpty.proto\032 google/protobuf/field_mask.p"
-          + "roto\"s\n\030CreateApplicationRequest\022\023\n\006pare"
-          + "nt\030\001 \001(\tB\003\340A\002\022B\n\013application\030\002 \001(\0132(.goo"
-          + "gle.cloud.talent.v4beta1.ApplicationB\003\340A"
-          + "\002\"*\n\025GetApplicationRequest\022\021\n\004name\030\001 \001(\t"
-          + "B\003\340A\002\"\217\001\n\030UpdateApplicationRequest\022B\n\013ap"
-          + "plication\030\001 \001(\0132(.google.cloud.talent.v4"
-          + "beta1.ApplicationB\003\340A\002\022/\n\013update_mask\030\002 "
-          + "\001(\0132\032.google.protobuf.FieldMask\"-\n\030Delet"
-          + "eApplicationRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"U"
-          + "\n\027ListApplicationsRequest\022\023\n\006parent\030\001 \001("
-          + "\tB\003\340A\002\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpage_size\030"
-          + "\003 \001(\005\"\264\001\n\030ListApplicationsResponse\022>\n\014ap"
-          + "plications\030\001 \003(\0132(.google.cloud.talent.v"
-          + "4beta1.Application\022\027\n\017next_page_token\030\002 "
-          + "\001(\t\022?\n\010metadata\030\003 \001(\0132-.google.cloud.tal"
-          + "ent.v4beta1.ResponseMetadata2\302\010\n\022Applica"
-          + "tionService\022\277\001\n\021CreateApplication\0225.goog"
-          + "le.cloud.talent.v4beta1.CreateApplicatio"
-          + "nRequest\032(.google.cloud.talent.v4beta1.A"
-          + "pplication\"I\202\323\344\223\002C\">/v4beta1/{parent=pro"
-          + "jects/*/tenants/*/profiles/*}/applicatio"
-          + "ns:\001*\022\266\001\n\016GetApplication\0222.google.cloud."
-          + "talent.v4beta1.GetApplicationRequest\032(.g"
-          + "oogle.cloud.talent.v4beta1.Application\"F"
-          + "\202\323\344\223\002@\022>/v4beta1/{name=projects/*/tenant"
-          + "s/*/profiles/*/applications/*}\022\313\001\n\021Updat"
-          + "eApplication\0225.google.cloud.talent.v4bet"
-          + "a1.UpdateApplicationRequest\032(.google.clo"
-          + "ud.talent.v4beta1.Application\"U\202\323\344\223\002O2J/"
-          + "v4beta1/{application.name=projects/*/ten"
-          + "ants/*/profiles/*/applications/*}:\001*\022\252\001\n"
-          + "\021DeleteApplication\0225.google.cloud.talent"
-          + ".v4beta1.DeleteApplicationRequest\032\026.goog"
-          + "le.protobuf.Empty\"F\202\323\344\223\002@*>/v4beta1/{nam"
-          + "e=projects/*/tenants/*/profiles/*/applic"
-          + "ations/*}\022\307\001\n\020ListApplications\0224.google."
-          + "cloud.talent.v4beta1.ListApplicationsReq"
-          + "uest\0325.google.cloud.talent.v4beta1.ListA"
-          + "pplicationsResponse\"F\202\323\344\223\002@\022>/v4beta1/{p"
-          + "arent=projects/*/tenants/*/profiles/*}/a"
-          + "pplications\032l\312A\023jobs.googleapis.com\322ASht"
-          + "tps://www.googleapis.com/auth/cloud-plat"
-          + "form,https://www.googleapis.com/auth/job"
-          + "sB\205\001\n\037com.google.cloud.talent.v4beta1B\027A"
-          + "pplicationServiceProtoP\001ZAgoogle.golang."
-          + "org/genproto/googleapis/cloud/talent/v4b"
-          + "eta1;talent\242\002\003CTSb\006proto3"
+          + "havior.proto\032\031google/api/resource.proto\032"
+          + "-google/cloud/talent/v4beta1/application"
+          + ".proto\032(google/cloud/talent/v4beta1/comm"
+          + "on.proto\032\033google/protobuf/empty.proto\032 g"
+          + "oogle/protobuf/field_mask.proto\"\223\001\n\030Crea"
+          + "teApplicationRequest\0223\n\006parent\030\001 \001(\tB#\340A"
+          + "\002\372A\035\n\033jobs.googleapis.com/Profile\022B\n\013app"
+          + "lication\030\002 \001(\0132(.google.cloud.talent.v4b"
+          + "eta1.ApplicationB\003\340A\002\"N\n\025GetApplicationR"
+          + "equest\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037jobs.googl"
+          + "eapis.com/Application\"\217\001\n\030UpdateApplicat"
+          + "ionRequest\022B\n\013application\030\001 \001(\0132(.google"
+          + ".cloud.talent.v4beta1.ApplicationB\003\340A\002\022/"
+          + "\n\013update_mask\030\002 \001(\0132\032.google.protobuf.Fi"
+          + "eldMask\"Q\n\030DeleteApplicationRequest\0225\n\004n"
+          + "ame\030\001 \001(\tB\'\340A\002\372A!\n\037jobs.googleapis.com/A"
+          + "pplication\"u\n\027ListApplicationsRequest\0223\n"
+          + "\006parent\030\001 \001(\tB#\340A\002\372A\035\n\033jobs.googleapis.c"
+          + "om/Profile\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpage_s"
+          + "ize\030\003 \001(\005\"\264\001\n\030ListApplicationsResponse\022>"
+          + "\n\014applications\030\001 \003(\0132(.google.cloud.tale"
+          + "nt.v4beta1.Application\022\027\n\017next_page_toke"
+          + "n\030\002 \001(\t\022?\n\010metadata\030\003 \001(\0132-.google.cloud"
+          + ".talent.v4beta1.ResponseMetadata2\374\010\n\022App"
+          + "licationService\022\324\001\n\021CreateApplication\0225."
+          + "google.cloud.talent.v4beta1.CreateApplic"
+          + "ationRequest\032(.google.cloud.talent.v4bet"
+          + "a1.Application\"^\202\323\344\223\002C\">/v4beta1/{parent"
+          + "=projects/*/tenants/*/profiles/*}/applic"
+          + "ations:\001*\332A\022parent,application\022\275\001\n\016GetAp"
+          + "plication\0222.google.cloud.talent.v4beta1."
+          + "GetApplicationRequest\032(.google.cloud.tal"
+          + "ent.v4beta1.Application\"M\202\323\344\223\002@\022>/v4beta"
+          + "1/{name=projects/*/tenants/*/profiles/*/"
+          + "applications/*}\332A\004name\022\331\001\n\021UpdateApplica"
+          + "tion\0225.google.cloud.talent.v4beta1.Updat"
+          + "eApplicationRequest\032(.google.cloud.talen"
+          + "t.v4beta1.Application\"c\202\323\344\223\002O2J/v4beta1/"
+          + "{application.name=projects/*/tenants/*/p"
+          + "rofiles/*/applications/*}:\001*\332A\013applicati"
+          + "on\022\261\001\n\021DeleteApplication\0225.google.cloud."
+          + "talent.v4beta1.DeleteApplicationRequest\032"
+          + "\026.google.protobuf.Empty\"M\202\323\344\223\002@*>/v4beta"
+          + "1/{name=projects/*/tenants/*/profiles/*/"
+          + "applications/*}\332A\004name\022\320\001\n\020ListApplicati"
+          + "ons\0224.google.cloud.talent.v4beta1.ListAp"
+          + "plicationsRequest\0325.google.cloud.talent."
+          + "v4beta1.ListApplicationsResponse\"O\202\323\344\223\002@"
+          + "\022>/v4beta1/{parent=projects/*/tenants/*/"
+          + "profiles/*}/applications\332A\006parent\032l\312A\023jo"
+          + "bs.googleapis.com\322AShttps://www.googleap"
+          + "is.com/auth/cloud-platform,https://www.g"
+          + "oogleapis.com/auth/jobsB\205\001\n\037com.google.c"
+          + "loud.talent.v4beta1B\027ApplicationServiceP"
+          + "rotoP\001ZAgoogle.golang.org/genproto/googl"
+          + "eapis/cloud/talent/v4beta1;talent\242\002\003CTSb"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -123,6 +129,7 @@ public final class ApplicationServiceProto {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.talent.v4beta1.ApplicationResourceProto.getDescriptor(),
               com.google.cloud.talent.v4beta1.CommonProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
@@ -181,12 +188,15 @@ public final class ApplicationServiceProto {
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.talent.v4beta1.ApplicationResourceProto.getDescriptor();
     com.google.cloud.talent.v4beta1.CommonProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();

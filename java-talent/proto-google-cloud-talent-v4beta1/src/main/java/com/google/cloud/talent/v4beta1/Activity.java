@@ -594,11 +594,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Activity name snippet shows how the
-   * [display_name][google.cloud.talent.v4beta1.Activity.display_name] is
-   * related to a search query. It's empty if the
-   * [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't
-   * related to the search query.
+   * Output only. Activity name snippet shows how the [display_name][google.cloud.talent.v4beta1.Activity.display_name] is related to a search
+   * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't related to the search
+   * query.
    * </pre>
    *
    * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -620,11 +618,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Activity name snippet shows how the
-   * [display_name][google.cloud.talent.v4beta1.Activity.display_name] is
-   * related to a search query. It's empty if the
-   * [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't
-   * related to the search query.
+   * Output only. Activity name snippet shows how the [display_name][google.cloud.talent.v4beta1.Activity.display_name] is related to a search
+   * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't related to the search
+   * query.
    * </pre>
    *
    * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -650,10 +646,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Activity description snippet shows how the
-   * [description][google.cloud.talent.v4beta1.Activity.description] is related
-   * to a search query. It's empty if the
-   * [description][google.cloud.talent.v4beta1.Activity.description] isn't
-   * related to the search query.
+   * [description][google.cloud.talent.v4beta1.Activity.description] is related to a search query. It's empty if the
+   * [description][google.cloud.talent.v4beta1.Activity.description] isn't related to the search query.
    * </pre>
    *
    * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -677,10 +671,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Activity description snippet shows how the
-   * [description][google.cloud.talent.v4beta1.Activity.description] is related
-   * to a search query. It's empty if the
-   * [description][google.cloud.talent.v4beta1.Activity.description] isn't
-   * related to the search query.
+   * [description][google.cloud.talent.v4beta1.Activity.description] is related to a search query. It's empty if the
+   * [description][google.cloud.talent.v4beta1.Activity.description] isn't related to the search query.
    * </pre>
    *
    * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -707,10 +699,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Skill used snippet shows how the corresponding
-   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-   * to a search query. It's empty if the corresponding
-   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-   * related to the search query.
+   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+   * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
    * </pre>
    *
    * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -726,10 +716,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Skill used snippet shows how the corresponding
-   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-   * to a search query. It's empty if the corresponding
-   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-   * related to the search query.
+   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+   * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
    * </pre>
    *
    * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -745,10 +733,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Skill used snippet shows how the corresponding
-   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-   * to a search query. It's empty if the corresponding
-   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-   * related to the search query.
+   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+   * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
    * </pre>
    *
    * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -765,10 +751,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Skill used snippet shows how the corresponding
-   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-   * to a search query. It's empty if the corresponding
-   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-   * related to the search query.
+   * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+   * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
    * </pre>
    *
    * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2581,11 +2565,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Activity name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] is
-     * related to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't
-     * related to the search query.
+     * Output only. Activity name snippet shows how the [display_name][google.cloud.talent.v4beta1.Activity.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2607,11 +2589,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Activity name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] is
-     * related to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't
-     * related to the search query.
+     * Output only. Activity name snippet shows how the [display_name][google.cloud.talent.v4beta1.Activity.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2633,11 +2613,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Activity name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] is
-     * related to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't
-     * related to the search query.
+     * Output only. Activity name snippet shows how the [display_name][google.cloud.talent.v4beta1.Activity.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2658,11 +2636,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Activity name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] is
-     * related to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't
-     * related to the search query.
+     * Output only. Activity name snippet shows how the [display_name][google.cloud.talent.v4beta1.Activity.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2679,11 +2655,9 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Activity name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] is
-     * related to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't
-     * related to the search query.
+     * Output only. Activity name snippet shows how the [display_name][google.cloud.talent.v4beta1.Activity.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Activity.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2708,10 +2682,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Activity description snippet shows how the
-     * [description][google.cloud.talent.v4beta1.Activity.description] is related
-     * to a search query. It's empty if the
-     * [description][google.cloud.talent.v4beta1.Activity.description] isn't
-     * related to the search query.
+     * [description][google.cloud.talent.v4beta1.Activity.description] is related to a search query. It's empty if the
+     * [description][google.cloud.talent.v4beta1.Activity.description] isn't related to the search query.
      * </pre>
      *
      * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2735,10 +2707,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Activity description snippet shows how the
-     * [description][google.cloud.talent.v4beta1.Activity.description] is related
-     * to a search query. It's empty if the
-     * [description][google.cloud.talent.v4beta1.Activity.description] isn't
-     * related to the search query.
+     * [description][google.cloud.talent.v4beta1.Activity.description] is related to a search query. It's empty if the
+     * [description][google.cloud.talent.v4beta1.Activity.description] isn't related to the search query.
      * </pre>
      *
      * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2762,10 +2732,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Activity description snippet shows how the
-     * [description][google.cloud.talent.v4beta1.Activity.description] is related
-     * to a search query. It's empty if the
-     * [description][google.cloud.talent.v4beta1.Activity.description] isn't
-     * related to the search query.
+     * [description][google.cloud.talent.v4beta1.Activity.description] is related to a search query. It's empty if the
+     * [description][google.cloud.talent.v4beta1.Activity.description] isn't related to the search query.
      * </pre>
      *
      * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2788,10 +2756,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Activity description snippet shows how the
-     * [description][google.cloud.talent.v4beta1.Activity.description] is related
-     * to a search query. It's empty if the
-     * [description][google.cloud.talent.v4beta1.Activity.description] isn't
-     * related to the search query.
+     * [description][google.cloud.talent.v4beta1.Activity.description] is related to a search query. It's empty if the
+     * [description][google.cloud.talent.v4beta1.Activity.description] isn't related to the search query.
      * </pre>
      *
      * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2810,10 +2776,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Activity description snippet shows how the
-     * [description][google.cloud.talent.v4beta1.Activity.description] is related
-     * to a search query. It's empty if the
-     * [description][google.cloud.talent.v4beta1.Activity.description] isn't
-     * related to the search query.
+     * [description][google.cloud.talent.v4beta1.Activity.description] is related to a search query. It's empty if the
+     * [description][google.cloud.talent.v4beta1.Activity.description] isn't related to the search query.
      * </pre>
      *
      * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2847,10 +2811,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2866,10 +2828,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2885,10 +2845,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2905,10 +2863,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2925,10 +2881,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2952,10 +2906,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2978,10 +2930,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3001,10 +2951,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3023,10 +2971,8 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Skill used snippet shows how the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related
-     * to a search query. It's empty if the corresponding
-     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not
-     * related to the search query.
+     * [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are related to a search query. It's empty if the
+     * corresponding [skills_used][google.cloud.talent.v4beta1.Activity.skills_used] are not related to the search query.
      * </pre>
      *
      * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];

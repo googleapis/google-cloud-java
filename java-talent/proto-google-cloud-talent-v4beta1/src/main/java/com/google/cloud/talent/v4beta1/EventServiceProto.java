@@ -44,23 +44,25 @@ public final class EventServiceProto {
           + "ice.proto\022\033google.cloud.talent.v4beta1\032\034"
           + "google/api/annotations.proto\032\027google/api"
           + "/client.proto\032\037google/api/field_behavior"
-          + ".proto\032\'google/cloud/talent/v4beta1/even"
-          + "t.proto\"t\n\030CreateClientEventRequest\022\023\n\006p"
-          + "arent\030\001 \001(\tB\003\340A\002\022C\n\014client_event\030\002 \001(\0132("
-          + ".google.cloud.talent.v4beta1.ClientEvent"
-          + "B\003\340A\0022\343\002\n\014EventService\022\344\001\n\021CreateClientE"
-          + "vent\0225.google.cloud.talent.v4beta1.Creat"
-          + "eClientEventRequest\032(.google.cloud.talen"
-          + "t.v4beta1.ClientEvent\"n\202\323\344\223\002h\"3/v4beta1/"
-          + "{parent=projects/*/tenants/*}/clientEven"
-          + "ts:\001*Z.\")/v4beta1/{parent=projects/*}/cl"
-          + "ientEvents:\001*\032l\312A\023jobs.googleapis.com\322AS"
-          + "https://www.googleapis.com/auth/cloud-pl"
-          + "atform,https://www.googleapis.com/auth/j"
-          + "obsB\177\n\037com.google.cloud.talent.v4beta1B\021"
-          + "EventServiceProtoP\001ZAgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/talent/v4beta1;"
-          + "talent\242\002\003CTSb\006proto3"
+          + ".proto\032\031google/api/resource.proto\032\'googl"
+          + "e/cloud/talent/v4beta1/event.proto\"\234\001\n\030C"
+          + "reateClientEventRequest\022;\n\006parent\030\001 \001(\tB"
+          + "+\340A\002\372A%\n#jobs.googleapis.com/TenantOrPro"
+          + "ject\022C\n\014client_event\030\002 \001(\0132(.google.clou"
+          + "d.talent.v4beta1.ClientEventB\003\340A\0022\372\002\n\014Ev"
+          + "entService\022\373\001\n\021CreateClientEvent\0225.googl"
+          + "e.cloud.talent.v4beta1.CreateClientEvent"
+          + "Request\032(.google.cloud.talent.v4beta1.Cl"
+          + "ientEvent\"\204\001\202\323\344\223\002h\"3/v4beta1/{parent=pro"
+          + "jects/*/tenants/*}/clientEvents:\001*Z.\")/v"
+          + "4beta1/{parent=projects/*}/clientEvents:"
+          + "\001*\332A\023parent,client_event\032l\312A\023jobs.google"
+          + "apis.com\322AShttps://www.googleapis.com/au"
+          + "th/cloud-platform,https://www.googleapis"
+          + ".com/auth/jobsB\177\n\037com.google.cloud.talen"
+          + "t.v4beta1B\021EventServiceProtoP\001ZAgoogle.g"
+          + "olang.org/genproto/googleapis/cloud/tale"
+          + "nt/v4beta1;talent\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -69,6 +71,7 @@ public final class EventServiceProto {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.talent.v4beta1.EventProto.getDescriptor(),
             });
     internal_static_google_cloud_talent_v4beta1_CreateClientEventRequest_descriptor =
@@ -84,12 +87,15 @@ public final class EventServiceProto {
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.talent.v4beta1.EventProto.getDescriptor();
   }
 

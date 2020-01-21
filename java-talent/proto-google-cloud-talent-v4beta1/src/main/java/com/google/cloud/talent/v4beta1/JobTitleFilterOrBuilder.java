@@ -27,8 +27,7 @@ public interface JobTitleFilterOrBuilder
    *
    *
    * <pre>
-   * Required. The job title. For example, "Software engineer", or "Product
-   * manager".
+   * Required. The job title. For example, "Software engineer", or "Product manager".
    * </pre>
    *
    * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,8 +39,7 @@ public interface JobTitleFilterOrBuilder
    *
    *
    * <pre>
-   * Required. The job title. For example, "Software engineer", or "Product
-   * manager".
+   * Required. The job title. For example, "Software engineer", or "Product manager".
    * </pre>
    *
    * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>

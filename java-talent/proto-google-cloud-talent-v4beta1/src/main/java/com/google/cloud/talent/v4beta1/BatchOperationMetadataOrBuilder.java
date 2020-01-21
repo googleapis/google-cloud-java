@@ -152,8 +152,8 @@ public interface BatchOperationMetadataOrBuilder
    *
    * <pre>
    * The time when the batch operation status is updated. The metadata and the
-   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
-   * is refreshed every minute otherwise cached data is returned.
+   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+   * returned.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -166,8 +166,8 @@ public interface BatchOperationMetadataOrBuilder
    *
    * <pre>
    * The time when the batch operation status is updated. The metadata and the
-   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
-   * is refreshed every minute otherwise cached data is returned.
+   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+   * returned.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -180,8 +180,8 @@ public interface BatchOperationMetadataOrBuilder
    *
    * <pre>
    * The time when the batch operation status is updated. The metadata and the
-   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time]
-   * is refreshed every minute otherwise cached data is returned.
+   * [update_time][google.cloud.talent.v4beta1.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+   * returned.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -193,8 +193,7 @@ public interface BatchOperationMetadataOrBuilder
    *
    * <pre>
    * The time when the batch operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-   * set to `true`.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -207,8 +206,7 @@ public interface BatchOperationMetadataOrBuilder
    *
    * <pre>
    * The time when the batch operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-   * set to `true`.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -221,8 +219,7 @@ public interface BatchOperationMetadataOrBuilder
    *
    * <pre>
    * The time when the batch operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-   * set to `true`.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>

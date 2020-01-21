@@ -105,15 +105,15 @@ public final class FiltersProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/talent/v4beta1/filters.pr"
-          + "oto\022\033google.cloud.talent.v4beta1\032\034google"
-          + "/api/annotations.proto\032\037google/api/field"
-          + "_behavior.proto\032(google/cloud/talent/v4b"
-          + "eta1/common.proto\032\036google/protobuf/durat"
-          + "ion.proto\032 google/protobuf/field_mask.pr"
-          + "oto\032\037google/protobuf/timestamp.proto\032\036go"
-          + "ogle/protobuf/wrappers.proto\032\026google/typ"
-          + "e/date.proto\032\030google/type/latlng.proto\032\033"
-          + "google/type/timeofday.proto\"\200\005\n\010JobQuery"
+          + "oto\022\033google.cloud.talent.v4beta1\032\037google"
+          + "/api/field_behavior.proto\032(google/cloud/"
+          + "talent/v4beta1/common.proto\032\036google/prot"
+          + "obuf/duration.proto\032 google/protobuf/fie"
+          + "ld_mask.proto\032\037google/protobuf/timestamp"
+          + ".proto\032\036google/protobuf/wrappers.proto\032\026"
+          + "google/type/date.proto\032\030google/type/latl"
+          + "ng.proto\032\033google/type/timeofday.proto\032\034g"
+          + "oogle/api/annotations.proto\"\200\005\n\010JobQuery"
           + "\022\r\n\005query\030\001 \001(\t\022\033\n\023query_language_code\030\016"
           + " \001(\t\022\021\n\tcompanies\030\002 \003(\t\022E\n\020location_filt"
           + "ers\030\003 \003(\0132+.google.cloud.talent.v4beta1."
@@ -236,7 +236,6 @@ public final class FiltersProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.cloud.talent.v4beta1.CommonProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
@@ -246,6 +245,7 @@ public final class FiltersProto {
               com.google.type.DateProto.getDescriptor(),
               com.google.type.LatLngProto.getDescriptor(),
               com.google.type.TimeOfDayProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_talent_v4beta1_JobQuery_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -427,7 +427,6 @@ public final class FiltersProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.talent.v4beta1.CommonProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
@@ -437,6 +436,7 @@ public final class FiltersProto {
     com.google.type.DateProto.getDescriptor();
     com.google.type.LatLngProto.getDescriptor();
     com.google.type.TimeOfDayProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

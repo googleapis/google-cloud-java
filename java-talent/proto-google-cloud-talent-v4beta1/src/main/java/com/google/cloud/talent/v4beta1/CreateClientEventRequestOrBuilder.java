@@ -33,7 +33,9 @@ public interface CreateClientEventRequestOrBuilder
    * is created, for example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -48,7 +50,9 @@ public interface CreateClientEventRequestOrBuilder
    * is created, for example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -58,8 +62,8 @@ public interface CreateClientEventRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Events issued when end user interacts with customer's application
-   * that uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application that
+   * uses Cloud Talent Solution.
    * </pre>
    *
    * <code>
@@ -73,8 +77,8 @@ public interface CreateClientEventRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Events issued when end user interacts with customer's application
-   * that uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application that
+   * uses Cloud Talent Solution.
    * </pre>
    *
    * <code>
@@ -88,8 +92,8 @@ public interface CreateClientEventRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Events issued when end user interacts with customer's application
-   * that uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application that
+   * uses Cloud Talent Solution.
    * </pre>
    *
    * <code>

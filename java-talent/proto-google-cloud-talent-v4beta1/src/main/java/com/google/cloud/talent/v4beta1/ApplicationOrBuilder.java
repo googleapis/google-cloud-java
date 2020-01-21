@@ -127,7 +127,7 @@ public interface ApplicationOrBuilder
    * "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>string job = 4;</code>
+   * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The job.
    */
@@ -143,7 +143,7 @@ public interface ApplicationOrBuilder
    * "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>string job = 4;</code>
+   * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for job.
    */
@@ -160,7 +160,7 @@ public interface ApplicationOrBuilder
    * For example, "projects/foo/tenants/bar/companies/baz".
    * </pre>
    *
-   * <code>string company = 5;</code>
+   * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The company.
    */
@@ -176,7 +176,7 @@ public interface ApplicationOrBuilder
    * For example, "projects/foo/tenants/bar/companies/baz".
    * </pre>
    *
-   * <code>string company = 5;</code>
+   * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for company.
    */
@@ -221,8 +221,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Required. What is the most recent stage of the application (that is, new,
-   * screen, send cv, hired, finished work)?  This field is intentionally not
+   * Required. What is the most recent stage of the application (that is, new, screen,
+   * send cv, hired, finished work)?  This field is intentionally not
    * comprehensive of every possible status, but instead, represents statuses
    * that would be used to indicate to the ML models good / bad matches.
    * </pre>
@@ -238,8 +238,8 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Required. What is the most recent stage of the application (that is, new,
-   * screen, send cv, hired, finished work)?  This field is intentionally not
+   * Required. What is the most recent stage of the application (that is, new, screen,
+   * send cv, hired, finished work)?  This field is intentionally not
    * comprehensive of every possible status, but instead, represents statuses
    * that would be used to indicate to the ML models good / bad matches.
    * </pre>

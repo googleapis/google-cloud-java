@@ -97,8 +97,8 @@ public interface CommuteFilterOrBuilder
    *
    *
    * <pre>
-   * Required. The maximum travel time in seconds. The maximum allowed value is
-   * `3600s` (one hour). Format is `123s`.
+   * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
+   * (one hour). Format is `123s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -111,8 +111,8 @@ public interface CommuteFilterOrBuilder
    *
    *
    * <pre>
-   * Required. The maximum travel time in seconds. The maximum allowed value is
-   * `3600s` (one hour). Format is `123s`.
+   * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
+   * (one hour). Format is `123s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -125,8 +125,8 @@ public interface CommuteFilterOrBuilder
    *
    *
    * <pre>
-   * Required. The maximum travel time in seconds. The maximum allowed value is
-   * `3600s` (one hour). Format is `123s`.
+   * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
+   * (one hour). Format is `123s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];

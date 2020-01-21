@@ -62,8 +62,8 @@ public interface InterviewOrBuilder
    *
    *
    * <pre>
-   * Required. The overall decision resulting from this interview (positive,
-   * negative, nuetral).
+   * Required. The overall decision resulting from this interview (positive, negative,
+   * nuetral).
    * </pre>
    *
    * <code>
@@ -77,8 +77,8 @@ public interface InterviewOrBuilder
    *
    *
    * <pre>
-   * Required. The overall decision resulting from this interview (positive,
-   * negative, nuetral).
+   * Required. The overall decision resulting from this interview (positive, negative,
+   * nuetral).
    * </pre>
    *
    * <code>

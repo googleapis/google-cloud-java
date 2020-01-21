@@ -336,11 +336,9 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Skill name snippet shows how the
-   * [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related
-   * to a search query. It's empty if the
-   * [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't
-   * related to the search query.
+   * Output only. Skill name snippet shows how the [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related to a search
+   * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't related to the search
+   * query.
    * </pre>
    *
    * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -362,11 +360,9 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Skill name snippet shows how the
-   * [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related
-   * to a search query. It's empty if the
-   * [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't
-   * related to the search query.
+   * Output only. Skill name snippet shows how the [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related to a search
+   * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't related to the search
+   * query.
    * </pre>
    *
    * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1278,11 +1274,9 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Skill name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related
-     * to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't
-     * related to the search query.
+     * Output only. Skill name snippet shows how the [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1304,11 +1298,9 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Skill name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related
-     * to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't
-     * related to the search query.
+     * Output only. Skill name snippet shows how the [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1330,11 +1322,9 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Skill name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related
-     * to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't
-     * related to the search query.
+     * Output only. Skill name snippet shows how the [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1355,11 +1345,9 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Skill name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related
-     * to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't
-     * related to the search query.
+     * Output only. Skill name snippet shows how the [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1376,11 +1364,9 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Skill name snippet shows how the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related
-     * to a search query. It's empty if the
-     * [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't
-     * related to the search query.
+     * Output only. Skill name snippet shows how the [display_name][google.cloud.talent.v4beta1.Skill.display_name] is related to a search
+     * query. It's empty if the [display_name][google.cloud.talent.v4beta1.Skill.display_name] isn't related to the search
+     * query.
      * </pre>
      *
      * <code>string skill_name_snippet = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

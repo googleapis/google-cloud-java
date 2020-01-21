@@ -712,11 +712,9 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. The school name snippet shows how the
-   * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is
-   * related to a search query in search result. It's empty if the
-   * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name]
-   * isn't related to the search query.
+   * Output only. The school name snippet shows how the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is related to a
+   * search query in search result. It's empty if the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] isn't
+   * related to the search query.
    * </pre>
    *
    * <code>string school_name_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -738,11 +736,9 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. The school name snippet shows how the
-   * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is
-   * related to a search query in search result. It's empty if the
-   * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name]
-   * isn't related to the search query.
+   * Output only. The school name snippet shows how the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is related to a
+   * search query in search result. It's empty if the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] isn't
+   * related to the search query.
    * </pre>
    *
    * <code>string school_name_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -767,11 +763,9 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. The job description snippet shows how the
-   * [Degree][google.cloud.talent.v4beta1.Degree] is related to a search query
-   * in search result. It's empty if the
-   * [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the search
-   * query.
+   * Output only. The job description snippet shows how the [Degree][google.cloud.talent.v4beta1.Degree] is related to a search
+   * query in search result. It's empty if the [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the
+   * search query.
    * </pre>
    *
    * <code>string degree_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -793,11 +787,9 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. The job description snippet shows how the
-   * [Degree][google.cloud.talent.v4beta1.Degree] is related to a search query
-   * in search result. It's empty if the
-   * [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the search
-   * query.
+   * Output only. The job description snippet shows how the [Degree][google.cloud.talent.v4beta1.Degree] is related to a search
+   * query in search result. It's empty if the [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the
+   * search query.
    * </pre>
    *
    * <code>string degree_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2856,11 +2848,9 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The school name snippet shows how the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is
-     * related to a search query in search result. It's empty if the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name]
-     * isn't related to the search query.
+     * Output only. The school name snippet shows how the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is related to a
+     * search query in search result. It's empty if the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] isn't
+     * related to the search query.
      * </pre>
      *
      * <code>string school_name_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2882,11 +2872,9 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The school name snippet shows how the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is
-     * related to a search query in search result. It's empty if the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name]
-     * isn't related to the search query.
+     * Output only. The school name snippet shows how the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is related to a
+     * search query in search result. It's empty if the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] isn't
+     * related to the search query.
      * </pre>
      *
      * <code>string school_name_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2908,11 +2896,9 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The school name snippet shows how the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is
-     * related to a search query in search result. It's empty if the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name]
-     * isn't related to the search query.
+     * Output only. The school name snippet shows how the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is related to a
+     * search query in search result. It's empty if the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] isn't
+     * related to the search query.
      * </pre>
      *
      * <code>string school_name_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2933,11 +2919,9 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The school name snippet shows how the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is
-     * related to a search query in search result. It's empty if the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name]
-     * isn't related to the search query.
+     * Output only. The school name snippet shows how the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is related to a
+     * search query in search result. It's empty if the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] isn't
+     * related to the search query.
      * </pre>
      *
      * <code>string school_name_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2954,11 +2938,9 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The school name snippet shows how the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is
-     * related to a search query in search result. It's empty if the
-     * [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name]
-     * isn't related to the search query.
+     * Output only. The school name snippet shows how the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] is related to a
+     * search query in search result. It's empty if the [school_name][google.cloud.talent.v4beta1.EducationRecord.school_name] isn't
+     * related to the search query.
      * </pre>
      *
      * <code>string school_name_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2982,11 +2964,9 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The job description snippet shows how the
-     * [Degree][google.cloud.talent.v4beta1.Degree] is related to a search query
-     * in search result. It's empty if the
-     * [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the search
-     * query.
+     * Output only. The job description snippet shows how the [Degree][google.cloud.talent.v4beta1.Degree] is related to a search
+     * query in search result. It's empty if the [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the
+     * search query.
      * </pre>
      *
      * <code>string degree_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3008,11 +2988,9 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The job description snippet shows how the
-     * [Degree][google.cloud.talent.v4beta1.Degree] is related to a search query
-     * in search result. It's empty if the
-     * [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the search
-     * query.
+     * Output only. The job description snippet shows how the [Degree][google.cloud.talent.v4beta1.Degree] is related to a search
+     * query in search result. It's empty if the [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the
+     * search query.
      * </pre>
      *
      * <code>string degree_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3034,11 +3012,9 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The job description snippet shows how the
-     * [Degree][google.cloud.talent.v4beta1.Degree] is related to a search query
-     * in search result. It's empty if the
-     * [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the search
-     * query.
+     * Output only. The job description snippet shows how the [Degree][google.cloud.talent.v4beta1.Degree] is related to a search
+     * query in search result. It's empty if the [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the
+     * search query.
      * </pre>
      *
      * <code>string degree_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3059,11 +3035,9 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The job description snippet shows how the
-     * [Degree][google.cloud.talent.v4beta1.Degree] is related to a search query
-     * in search result. It's empty if the
-     * [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the search
-     * query.
+     * Output only. The job description snippet shows how the [Degree][google.cloud.talent.v4beta1.Degree] is related to a search
+     * query in search result. It's empty if the [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the
+     * search query.
      * </pre>
      *
      * <code>string degree_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3080,11 +3054,9 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The job description snippet shows how the
-     * [Degree][google.cloud.talent.v4beta1.Degree] is related to a search query
-     * in search result. It's empty if the
-     * [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the search
-     * query.
+     * Output only. The job description snippet shows how the [Degree][google.cloud.talent.v4beta1.Degree] is related to a search
+     * query in search result. It's empty if the [Degree][google.cloud.talent.v4beta1.Degree] isn't related to the
+     * search query.
      * </pre>
      *
      * <code>string degree_snippet = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -27,8 +27,7 @@ public interface ListProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the tenant under which the profile is
-   * created.
+   * Required. The resource name of the tenant under which the profile is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    * "projects/foo/tenants/bar".
    * </pre>
@@ -42,8 +41,7 @@ public interface ListProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the tenant under which the profile is
-   * created.
+   * Required. The resource name of the tenant under which the profile is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    * "projects/foo/tenants/bar".
    * </pre>
@@ -104,9 +102,8 @@ public interface ListProfilesRequestOrBuilder
    *
    * <pre>
    * The token that specifies the current offset (that is, starting result).
-   * Please set the value to
-   * [ListProfilesResponse.next_page_token][google.cloud.talent.v4beta1.ListProfilesResponse.next_page_token]
-   * to continue the list.
+   * Please set the value to [ListProfilesResponse.next_page_token][google.cloud.talent.v4beta1.ListProfilesResponse.next_page_token] to
+   * continue the list.
    * </pre>
    *
    * <code>string page_token = 2;</code>
@@ -119,9 +116,8 @@ public interface ListProfilesRequestOrBuilder
    *
    * <pre>
    * The token that specifies the current offset (that is, starting result).
-   * Please set the value to
-   * [ListProfilesResponse.next_page_token][google.cloud.talent.v4beta1.ListProfilesResponse.next_page_token]
-   * to continue the list.
+   * Please set the value to [ListProfilesResponse.next_page_token][google.cloud.talent.v4beta1.ListProfilesResponse.next_page_token] to
+   * continue the list.
    * </pre>
    *
    * <code>string page_token = 2;</code>

@@ -133,14 +133,15 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Resource name of the profile under which the application is
-   * created.
+   * Required. Resource name of the profile under which the application is created.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
    * For example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -159,14 +160,15 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Resource name of the profile under which the application is
-   * created.
+   * Required. Resource name of the profile under which the application is created.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
    * For example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -585,14 +587,15 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Resource name of the profile under which the application is
-     * created.
+     * Required. Resource name of the profile under which the application is created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
      * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -611,14 +614,15 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Resource name of the profile under which the application is
-     * created.
+     * Required. Resource name of the profile under which the application is created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
      * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -637,14 +641,15 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Resource name of the profile under which the application is
-     * created.
+     * Required. Resource name of the profile under which the application is created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
      * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -662,14 +667,15 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Resource name of the profile under which the application is
-     * created.
+     * Required. Resource name of the profile under which the application is created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
      * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -683,14 +689,15 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Resource name of the profile under which the application is
-     * created.
+     * Required. Resource name of the profile under which the application is created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
      * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.

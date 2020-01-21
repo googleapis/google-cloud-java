@@ -122,8 +122,7 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The job title. For example, "Software engineer", or "Product
-   * manager".
+   * Required. The job title. For example, "Software engineer", or "Product manager".
    * </pre>
    *
    * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -145,8 +144,7 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The job title. For example, "Software engineer", or "Product
-   * manager".
+   * Required. The job title. For example, "Software engineer", or "Product manager".
    * </pre>
    *
    * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -519,8 +517,7 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The job title. For example, "Software engineer", or "Product
-     * manager".
+     * Required. The job title. For example, "Software engineer", or "Product manager".
      * </pre>
      *
      * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -542,8 +539,7 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The job title. For example, "Software engineer", or "Product
-     * manager".
+     * Required. The job title. For example, "Software engineer", or "Product manager".
      * </pre>
      *
      * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -565,8 +561,7 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The job title. For example, "Software engineer", or "Product
-     * manager".
+     * Required. The job title. For example, "Software engineer", or "Product manager".
      * </pre>
      *
      * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -587,8 +582,7 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The job title. For example, "Software engineer", or "Product
-     * manager".
+     * Required. The job title. For example, "Software engineer", or "Product manager".
      * </pre>
      *
      * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -605,8 +599,7 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The job title. For example, "Software engineer", or "Product
-     * manager".
+     * Required. The job title. For example, "Software engineer", or "Product manager".
      * </pre>
      *
      * <code>string job_title = 1 [(.google.api.field_behavior) = REQUIRED];</code>

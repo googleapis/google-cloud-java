@@ -27,8 +27,7 @@ public interface UpdateApplicationRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The application resource to replace the current resource in the
-   * system.
+   * Required. The application resource to replace the current resource in the system.
    * </pre>
    *
    * <code>
@@ -42,8 +41,7 @@ public interface UpdateApplicationRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The application resource to replace the current resource in the
-   * system.
+   * Required. The application resource to replace the current resource in the system.
    * </pre>
    *
    * <code>
@@ -57,8 +55,7 @@ public interface UpdateApplicationRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The application resource to replace the current resource in the
-   * system.
+   * Required. The application resource to replace the current resource in the system.
    * </pre>
    *
    * <code>
@@ -72,14 +69,10 @@ public interface UpdateApplicationRequestOrBuilder
    *
    * <pre>
    * Strongly recommended for the best service experience.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
-   * is provided, only the specified fields in
-   * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application]
-   * are updated. Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask] is provided, only the specified fields in
+   * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application] are updated. Otherwise all the fields are updated.
    * A field mask to specify the application fields to be updated. Only
-   * top level fields of [Application][google.cloud.talent.v4beta1.Application]
-   * are supported.
+   * top level fields of [Application][google.cloud.talent.v4beta1.Application] are supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -92,14 +85,10 @@ public interface UpdateApplicationRequestOrBuilder
    *
    * <pre>
    * Strongly recommended for the best service experience.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
-   * is provided, only the specified fields in
-   * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application]
-   * are updated. Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask] is provided, only the specified fields in
+   * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application] are updated. Otherwise all the fields are updated.
    * A field mask to specify the application fields to be updated. Only
-   * top level fields of [Application][google.cloud.talent.v4beta1.Application]
-   * are supported.
+   * top level fields of [Application][google.cloud.talent.v4beta1.Application] are supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -112,14 +101,10 @@ public interface UpdateApplicationRequestOrBuilder
    *
    * <pre>
    * Strongly recommended for the best service experience.
-   * If
-   * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
-   * is provided, only the specified fields in
-   * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application]
-   * are updated. Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask] is provided, only the specified fields in
+   * [application][google.cloud.talent.v4beta1.UpdateApplicationRequest.application] are updated. Otherwise all the fields are updated.
    * A field mask to specify the application fields to be updated. Only
-   * top level fields of [Application][google.cloud.talent.v4beta1.Application]
-   * are supported.
+   * top level fields of [Application][google.cloud.talent.v4beta1.Application] are supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

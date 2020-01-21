@@ -435,8 +435,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The profile entities that match the specified
-   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+   * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -449,8 +448,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The profile entities that match the specified
-   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+   * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -463,8 +461,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The profile entities that match the specified
-   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+   * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -476,8 +473,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The profile entities that match the specified
-   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+   * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -489,8 +485,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The profile entities that match the specified
-   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+   * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -507,8 +502,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * An id that uniquely identifies the result set of a
-   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
-   * call for consistent results.
+   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles] call for consistent
+   * results.
    * </pre>
    *
    * <code>string result_set_id = 7;</code>
@@ -531,8 +526,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * An id that uniquely identifies the result set of a
-   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
-   * call for consistent results.
+   * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles] call for consistent
+   * results.
    * </pre>
    *
    * <code>string result_set_id = 7;</code>
@@ -2042,8 +2037,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2060,8 +2054,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2077,8 +2070,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2094,8 +2086,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2118,8 +2109,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2139,8 +2129,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2162,8 +2151,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2186,8 +2174,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2207,8 +2194,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2228,8 +2214,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2249,8 +2234,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2269,8 +2253,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2289,8 +2272,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2303,8 +2285,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2321,8 +2302,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2339,8 +2319,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2354,8 +2333,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2370,8 +2348,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The profile entities that match the specified
-     * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+     * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -2407,8 +2384,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * An id that uniquely identifies the result set of a
-     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
-     * call for consistent results.
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles] call for consistent
+     * results.
      * </pre>
      *
      * <code>string result_set_id = 7;</code>
@@ -2431,8 +2408,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * An id that uniquely identifies the result set of a
-     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
-     * call for consistent results.
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles] call for consistent
+     * results.
      * </pre>
      *
      * <code>string result_set_id = 7;</code>
@@ -2455,8 +2432,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * An id that uniquely identifies the result set of a
-     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
-     * call for consistent results.
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles] call for consistent
+     * results.
      * </pre>
      *
      * <code>string result_set_id = 7;</code>
@@ -2478,8 +2455,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * An id that uniquely identifies the result set of a
-     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
-     * call for consistent results.
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles] call for consistent
+     * results.
      * </pre>
      *
      * <code>string result_set_id = 7;</code>
@@ -2497,8 +2474,8 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * An id that uniquely identifies the result set of a
-     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles]
-     * call for consistent results.
+     * [SearchProfiles][google.cloud.talent.v4beta1.ProfileService.SearchProfiles] call for consistent
+     * results.
      * </pre>
      *
      * <code>string result_set_id = 7;</code>

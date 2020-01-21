@@ -948,7 +948,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>string job = 4;</code>
+   * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The job.
    */
@@ -974,7 +974,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>string job = 4;</code>
+   * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for job.
    */
@@ -1003,7 +1003,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * For example, "projects/foo/tenants/bar/companies/baz".
    * </pre>
    *
-   * <code>string company = 5;</code>
+   * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The company.
    */
@@ -1029,7 +1029,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * For example, "projects/foo/tenants/bar/companies/baz".
    * </pre>
    *
-   * <code>string company = 5;</code>
+   * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for company.
    */
@@ -1094,8 +1094,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. What is the most recent stage of the application (that is, new,
-   * screen, send cv, hired, finished work)?  This field is intentionally not
+   * Required. What is the most recent stage of the application (that is, new, screen,
+   * send cv, hired, finished work)?  This field is intentionally not
    * comprehensive of every possible status, but instead, represents statuses
    * that would be used to indicate to the ML models good / bad matches.
    * </pre>
@@ -1113,8 +1113,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. What is the most recent stage of the application (that is, new,
-   * screen, send cv, hired, finished work)?  This field is intentionally not
+   * Required. What is the most recent stage of the application (that is, new, screen,
+   * send cv, hired, finished work)?  This field is intentionally not
    * comprehensive of every possible status, but instead, represents statuses
    * that would be used to indicate to the ML models good / bad matches.
    * </pre>
@@ -2606,7 +2606,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>string job = 4;</code>
+     * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The job.
      */
@@ -2632,7 +2632,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>string job = 4;</code>
+     * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for job.
      */
@@ -2658,7 +2658,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>string job = 4;</code>
+     * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The job to set.
      * @return This builder for chaining.
@@ -2683,7 +2683,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>string job = 4;</code>
+     * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -2704,7 +2704,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>string job = 4;</code>
+     * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for job to set.
      * @return This builder for chaining.
@@ -2732,7 +2732,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * For example, "projects/foo/tenants/bar/companies/baz".
      * </pre>
      *
-     * <code>string company = 5;</code>
+     * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The company.
      */
@@ -2758,7 +2758,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * For example, "projects/foo/tenants/bar/companies/baz".
      * </pre>
      *
-     * <code>string company = 5;</code>
+     * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for company.
      */
@@ -2784,7 +2784,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * For example, "projects/foo/tenants/bar/companies/baz".
      * </pre>
      *
-     * <code>string company = 5;</code>
+     * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The company to set.
      * @return This builder for chaining.
@@ -2809,7 +2809,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * For example, "projects/foo/tenants/bar/companies/baz".
      * </pre>
      *
-     * <code>string company = 5;</code>
+     * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -2830,7 +2830,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * For example, "projects/foo/tenants/bar/companies/baz".
      * </pre>
      *
-     * <code>string company = 5;</code>
+     * <code>string company = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for company to set.
      * @return This builder for chaining.
@@ -3028,8 +3028,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. What is the most recent stage of the application (that is, new,
-     * screen, send cv, hired, finished work)?  This field is intentionally not
+     * Required. What is the most recent stage of the application (that is, new, screen,
+     * send cv, hired, finished work)?  This field is intentionally not
      * comprehensive of every possible status, but instead, represents statuses
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
@@ -3047,8 +3047,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. What is the most recent stage of the application (that is, new,
-     * screen, send cv, hired, finished work)?  This field is intentionally not
+     * Required. What is the most recent stage of the application (that is, new, screen,
+     * send cv, hired, finished work)?  This field is intentionally not
      * comprehensive of every possible status, but instead, represents statuses
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
@@ -3069,8 +3069,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. What is the most recent stage of the application (that is, new,
-     * screen, send cv, hired, finished work)?  This field is intentionally not
+     * Required. What is the most recent stage of the application (that is, new, screen,
+     * send cv, hired, finished work)?  This field is intentionally not
      * comprehensive of every possible status, but instead, represents statuses
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
@@ -3093,8 +3093,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. What is the most recent stage of the application (that is, new,
-     * screen, send cv, hired, finished work)?  This field is intentionally not
+     * Required. What is the most recent stage of the application (that is, new, screen,
+     * send cv, hired, finished work)?  This field is intentionally not
      * comprehensive of every possible status, but instead, represents statuses
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
@@ -3119,8 +3119,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. What is the most recent stage of the application (that is, new,
-     * screen, send cv, hired, finished work)?  This field is intentionally not
+     * Required. What is the most recent stage of the application (that is, new, screen,
+     * send cv, hired, finished work)?  This field is intentionally not
      * comprehensive of every possible status, but instead, represents statuses
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>

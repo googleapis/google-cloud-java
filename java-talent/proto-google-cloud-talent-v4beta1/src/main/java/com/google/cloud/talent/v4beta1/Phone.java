@@ -222,10 +222,9 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * A virtual telephone number is a number that can be routed to another
      * number and managed by the user via Web, SMS, IVR, and so on.  It is
      * associated with a particular person, and may be routed to either a MOBILE
-     * or LANDLINE number. The [phone
-     * usage][google.cloud.talent.v4beta1.ContactInfoUsage] should be set to
-     * PERSONAL for these phone types. Some more information can be found here:
-     * https://en.wikipedia.org/wiki/Personal_Numbers
+     * or LANDLINE number. The [phone usage][google.cloud.talent.v4beta1.ContactInfoUsage] should
+     * be set to PERSONAL for these phone types. Some more information can be
+     * found here: https://en.wikipedia.org/wiki/Personal_Numbers
      * </pre>
      *
      * <code>VIRTUAL = 7;</code>
@@ -332,10 +331,9 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * A virtual telephone number is a number that can be routed to another
      * number and managed by the user via Web, SMS, IVR, and so on.  It is
      * associated with a particular person, and may be routed to either a MOBILE
-     * or LANDLINE number. The [phone
-     * usage][google.cloud.talent.v4beta1.ContactInfoUsage] should be set to
-     * PERSONAL for these phone types. Some more information can be found here:
-     * https://en.wikipedia.org/wiki/Personal_Numbers
+     * or LANDLINE number. The [phone usage][google.cloud.talent.v4beta1.ContactInfoUsage] should
+     * be set to PERSONAL for these phone types. Some more information can be
+     * found here: https://en.wikipedia.org/wiki/Personal_Numbers
      * </pre>
      *
      * <code>VIRTUAL = 7;</code>

@@ -228,16 +228,11 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Indicates if the
-   * [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time]
-   * is within
+   * Indicates if the [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time] is within
    * [AvailabilityFilter.range][google.cloud.talent.v4beta1.AvailabilityFilter.range].
-   * Returned only in a search response when there is an
-   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] in
-   * [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters]
-   * where
-   * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type]
-   * matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
+   * Returned only in a search response when there is an [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter]
+   * in [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters] where
+   * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type] matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
    * </pre>
    *
    * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
@@ -251,16 +246,11 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Indicates if the
-   * [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time]
-   * is within
+   * Indicates if the [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time] is within
    * [AvailabilityFilter.range][google.cloud.talent.v4beta1.AvailabilityFilter.range].
-   * Returned only in a search response when there is an
-   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] in
-   * [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters]
-   * where
-   * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type]
-   * matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
+   * Returned only in a search response when there is an [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter]
+   * in [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters] where
+   * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type] matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
    * </pre>
    *
    * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
@@ -276,16 +266,11 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Indicates if the
-   * [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time]
-   * is within
+   * Indicates if the [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time] is within
    * [AvailabilityFilter.range][google.cloud.talent.v4beta1.AvailabilityFilter.range].
-   * Returned only in a search response when there is an
-   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] in
-   * [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters]
-   * where
-   * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type]
-   * matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
+   * Returned only in a search response when there is an [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter]
+   * in [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters] where
+   * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type] matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
    * </pre>
    *
    * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
@@ -958,16 +943,11 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates if the
-     * [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time]
-     * is within
+     * Indicates if the [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time] is within
      * [AvailabilityFilter.range][google.cloud.talent.v4beta1.AvailabilityFilter.range].
-     * Returned only in a search response when there is an
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] in
-     * [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters]
-     * where
-     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type]
-     * matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
+     * Returned only in a search response when there is an [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter]
+     * in [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters] where
+     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type] matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
      * </pre>
      *
      * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
@@ -981,16 +961,11 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates if the
-     * [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time]
-     * is within
+     * Indicates if the [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time] is within
      * [AvailabilityFilter.range][google.cloud.talent.v4beta1.AvailabilityFilter.range].
-     * Returned only in a search response when there is an
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] in
-     * [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters]
-     * where
-     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type]
-     * matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
+     * Returned only in a search response when there is an [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter]
+     * in [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters] where
+     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type] matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
      * </pre>
      *
      * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
@@ -1010,16 +985,11 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates if the
-     * [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time]
-     * is within
+     * Indicates if the [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time] is within
      * [AvailabilityFilter.range][google.cloud.talent.v4beta1.AvailabilityFilter.range].
-     * Returned only in a search response when there is an
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] in
-     * [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters]
-     * where
-     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type]
-     * matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
+     * Returned only in a search response when there is an [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter]
+     * in [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters] where
+     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type] matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
      * </pre>
      *
      * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
@@ -1041,16 +1011,11 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates if the
-     * [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time]
-     * is within
+     * Indicates if the [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time] is within
      * [AvailabilityFilter.range][google.cloud.talent.v4beta1.AvailabilityFilter.range].
-     * Returned only in a search response when there is an
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] in
-     * [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters]
-     * where
-     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type]
-     * matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
+     * Returned only in a search response when there is an [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter]
+     * in [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters] where
+     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type] matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
      * </pre>
      *
      * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
@@ -1069,16 +1034,11 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates if the
-     * [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time]
-     * is within
+     * Indicates if the [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time] is within
      * [AvailabilityFilter.range][google.cloud.talent.v4beta1.AvailabilityFilter.range].
-     * Returned only in a search response when there is an
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] in
-     * [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters]
-     * where
-     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type]
-     * matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
+     * Returned only in a search response when there is an [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter]
+     * in [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters] where
+     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type] matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
      * </pre>
      *
      * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
@@ -1104,16 +1064,11 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates if the
-     * [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time]
-     * is within
+     * Indicates if the [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time] is within
      * [AvailabilityFilter.range][google.cloud.talent.v4beta1.AvailabilityFilter.range].
-     * Returned only in a search response when there is an
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] in
-     * [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters]
-     * where
-     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type]
-     * matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
+     * Returned only in a search response when there is an [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter]
+     * in [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters] where
+     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type] matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
      * </pre>
      *
      * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
@@ -1133,16 +1088,11 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates if the
-     * [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time]
-     * is within
+     * Indicates if the [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time] is within
      * [AvailabilityFilter.range][google.cloud.talent.v4beta1.AvailabilityFilter.range].
-     * Returned only in a search response when there is an
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] in
-     * [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters]
-     * where
-     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type]
-     * matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
+     * Returned only in a search response when there is an [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter]
+     * in [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters] where
+     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type] matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
      * </pre>
      *
      * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
@@ -1156,16 +1106,11 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates if the
-     * [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time]
-     * is within
+     * Indicates if the [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time] is within
      * [AvailabilityFilter.range][google.cloud.talent.v4beta1.AvailabilityFilter.range].
-     * Returned only in a search response when there is an
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] in
-     * [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters]
-     * where
-     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type]
-     * matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
+     * Returned only in a search response when there is an [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter]
+     * in [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters] where
+     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type] matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
      * </pre>
      *
      * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
@@ -1183,16 +1128,11 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicates if the
-     * [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time]
-     * is within
+     * Indicates if the [last_update_time][google.cloud.talent.v4beta1.AvailabilitySignal.last_update_time] is within
      * [AvailabilityFilter.range][google.cloud.talent.v4beta1.AvailabilityFilter.range].
-     * Returned only in a search response when there is an
-     * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] in
-     * [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters]
-     * where
-     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type]
-     * matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
+     * Returned only in a search response when there is an [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter]
+     * in [ProfileQuery.availability_filters][google.cloud.talent.v4beta1.ProfileQuery.availability_filters] where
+     * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type] matches [type][google.cloud.talent.v4beta1.AvailabilitySignal.type].
      * </pre>
      *
      * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>

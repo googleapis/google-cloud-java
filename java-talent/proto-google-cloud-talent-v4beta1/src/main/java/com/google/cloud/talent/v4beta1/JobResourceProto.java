@@ -57,72 +57,77 @@ public final class JobResourceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n%google/cloud/talent/v4beta1/job.proto\022"
-          + "\033google.cloud.talent.v4beta1\032\034google/api"
-          + "/annotations.proto\032\037google/api/field_beh"
-          + "avior.proto\032(google/cloud/talent/v4beta1"
-          + "/common.proto\032\037google/protobuf/timestamp"
-          + ".proto\032 google/type/postal_address.proto"
-          + "\"\323\016\n\003Job\022\014\n\004name\030\001 \001(\t\022\024\n\007company\030\002 \001(\tB"
-          + "\003\340A\002\022\033\n\016requisition_id\030\003 \001(\tB\003\340A\002\022\022\n\005tit"
-          + "le\030\004 \001(\tB\003\340A\002\022\030\n\013description\030\005 \001(\tB\003\340A\002\022"
-          + "\021\n\taddresses\030\006 \003(\t\022J\n\020application_info\030\007"
-          + " \001(\01320.google.cloud.talent.v4beta1.Job.A"
-          + "pplicationInfo\022=\n\014job_benefits\030\010 \003(\0162\'.g"
-          + "oogle.cloud.talent.v4beta1.JobBenefit\022H\n"
-          + "\021compensation_info\030\t \001(\0132-.google.cloud."
-          + "talent.v4beta1.CompensationInfo\022Q\n\021custo"
-          + "m_attributes\030\n \003(\01326.google.cloud.talent"
-          + ".v4beta1.Job.CustomAttributesEntry\022=\n\014de"
-          + "gree_types\030\013 \003(\0162\'.google.cloud.talent.v"
-          + "4beta1.DegreeType\022\022\n\ndepartment\030\014 \001(\t\022E\n"
-          + "\020employment_types\030\r \003(\0162+.google.cloud.t"
-          + "alent.v4beta1.EmploymentType\022\022\n\nincentiv"
-          + "es\030\016 \001(\t\022\025\n\rlanguage_code\030\017 \001(\t\0228\n\tjob_l"
-          + "evel\030\020 \001(\0162%.google.cloud.talent.v4beta1"
-          + ".JobLevel\022\027\n\017promotion_value\030\021 \001(\005\022\026\n\016qu"
-          + "alifications\030\022 \001(\t\022\030\n\020responsibilities\030\023"
-          + " \001(\t\022B\n\016posting_region\030\024 \001(\0162*.google.cl"
-          + "oud.talent.v4beta1.PostingRegion\022?\n\nvisi"
-          + "bility\030\025 \001(\0162\'.google.cloud.talent.v4bet"
-          + "a1.VisibilityB\002\030\001\0222\n\016job_start_time\030\026 \001("
-          + "\0132\032.google.protobuf.Timestamp\0220\n\014job_end"
-          + "_time\030\027 \001(\0132\032.google.protobuf.Timestamp\022"
-          + "8\n\024posting_publish_time\030\030 \001(\0132\032.google.p"
-          + "rotobuf.Timestamp\0227\n\023posting_expire_time"
-          + "\030\031 \001(\0132\032.google.protobuf.Timestamp\022<\n\023po"
-          + "sting_create_time\030\032 \001(\0132\032.google.protobu"
-          + "f.TimestampB\003\340A\003\022<\n\023posting_update_time\030"
-          + "\033 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022!"
-          + "\n\024company_display_name\030\034 \001(\tB\003\340A\003\022G\n\014der"
-          + "ived_info\030\035 \001(\0132,.google.cloud.talent.v4"
-          + "beta1.Job.DerivedInfoB\003\340A\003\022N\n\022processing"
-          + "_options\030\036 \001(\01322.google.cloud.talent.v4b"
-          + "eta1.Job.ProcessingOptions\032D\n\017Applicatio"
-          + "nInfo\022\016\n\006emails\030\001 \003(\t\022\023\n\013instruction\030\002 \001"
-          + "(\t\022\014\n\004uris\030\003 \003(\t\032\211\001\n\013DerivedInfo\0228\n\tloca"
-          + "tions\030\001 \003(\0132%.google.cloud.talent.v4beta"
-          + "1.Location\022@\n\016job_categories\030\003 \003(\0162(.goo"
-          + "gle.cloud.talent.v4beta1.JobCategory\032\210\001\n"
-          + "\021ProcessingOptions\022)\n!disable_street_add"
-          + "ress_resolution\030\001 \001(\010\022H\n\021html_sanitizati"
-          + "on\030\002 \001(\0162-.google.cloud.talent.v4beta1.H"
-          + "tmlSanitization\032e\n\025CustomAttributesEntry"
-          + "\022\013\n\003key\030\001 \001(\t\022;\n\005value\030\002 \001(\0132,.google.cl"
-          + "oud.talent.v4beta1.CustomAttribute:\0028\001B~"
-          + "\n\037com.google.cloud.talent.v4beta1B\020JobRe"
-          + "sourceProtoP\001ZAgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/talent/v4beta1;talent"
-          + "\242\002\003CTSb\006proto3"
+          + "\033google.cloud.talent.v4beta1\032\037google/api"
+          + "/field_behavior.proto\032\031google/api/resour"
+          + "ce.proto\032(google/cloud/talent/v4beta1/co"
+          + "mmon.proto\032\037google/protobuf/timestamp.pr"
+          + "oto\032 google/type/postal_address.proto\032\034g"
+          + "oogle/api/annotations.proto\"\340\017\n\003Job\022\014\n\004n"
+          + "ame\030\001 \001(\t\0224\n\007company\030\002 \001(\tB#\340A\002\372A\035\n\033jobs"
+          + ".googleapis.com/Company\022\033\n\016requisition_i"
+          + "d\030\003 \001(\tB\003\340A\002\022\022\n\005title\030\004 \001(\tB\003\340A\002\022\030\n\013desc"
+          + "ription\030\005 \001(\tB\003\340A\002\022\021\n\taddresses\030\006 \003(\t\022J\n"
+          + "\020application_info\030\007 \001(\01320.google.cloud.t"
+          + "alent.v4beta1.Job.ApplicationInfo\022=\n\014job"
+          + "_benefits\030\010 \003(\0162\'.google.cloud.talent.v4"
+          + "beta1.JobBenefit\022H\n\021compensation_info\030\t "
+          + "\001(\0132-.google.cloud.talent.v4beta1.Compen"
+          + "sationInfo\022Q\n\021custom_attributes\030\n \003(\01326."
+          + "google.cloud.talent.v4beta1.Job.CustomAt"
+          + "tributesEntry\022=\n\014degree_types\030\013 \003(\0162\'.go"
+          + "ogle.cloud.talent.v4beta1.DegreeType\022\022\n\n"
+          + "department\030\014 \001(\t\022E\n\020employment_types\030\r \003"
+          + "(\0162+.google.cloud.talent.v4beta1.Employm"
+          + "entType\022\022\n\nincentives\030\016 \001(\t\022\025\n\rlanguage_"
+          + "code\030\017 \001(\t\0228\n\tjob_level\030\020 \001(\0162%.google.c"
+          + "loud.talent.v4beta1.JobLevel\022\027\n\017promotio"
+          + "n_value\030\021 \001(\005\022\026\n\016qualifications\030\022 \001(\t\022\030\n"
+          + "\020responsibilities\030\023 \001(\t\022B\n\016posting_regio"
+          + "n\030\024 \001(\0162*.google.cloud.talent.v4beta1.Po"
+          + "stingRegion\022?\n\nvisibility\030\025 \001(\0162\'.google"
+          + ".cloud.talent.v4beta1.VisibilityB\002\030\001\0222\n\016"
+          + "job_start_time\030\026 \001(\0132\032.google.protobuf.T"
+          + "imestamp\0220\n\014job_end_time\030\027 \001(\0132\032.google."
+          + "protobuf.Timestamp\0228\n\024posting_publish_ti"
+          + "me\030\030 \001(\0132\032.google.protobuf.Timestamp\0227\n\023"
+          + "posting_expire_time\030\031 \001(\0132\032.google.proto"
+          + "buf.Timestamp\022<\n\023posting_create_time\030\032 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\022<\n\023p"
+          + "osting_update_time\030\033 \001(\0132\032.google.protob"
+          + "uf.TimestampB\003\340A\003\022!\n\024company_display_nam"
+          + "e\030\034 \001(\tB\003\340A\003\022G\n\014derived_info\030\035 \001(\0132,.goo"
+          + "gle.cloud.talent.v4beta1.Job.DerivedInfo"
+          + "B\003\340A\003\022N\n\022processing_options\030\036 \001(\01322.goog"
+          + "le.cloud.talent.v4beta1.Job.ProcessingOp"
+          + "tions\032D\n\017ApplicationInfo\022\016\n\006emails\030\001 \003(\t"
+          + "\022\023\n\013instruction\030\002 \001(\t\022\014\n\004uris\030\003 \003(\t\032\211\001\n\013"
+          + "DerivedInfo\0228\n\tlocations\030\001 \003(\0132%.google."
+          + "cloud.talent.v4beta1.Location\022@\n\016job_cat"
+          + "egories\030\003 \003(\0162(.google.cloud.talent.v4be"
+          + "ta1.JobCategory\032\210\001\n\021ProcessingOptions\022)\n"
+          + "!disable_street_address_resolution\030\001 \001(\010"
+          + "\022H\n\021html_sanitization\030\002 \001(\0162-.google.clo"
+          + "ud.talent.v4beta1.HtmlSanitization\032e\n\025Cu"
+          + "stomAttributesEntry\022\013\n\003key\030\001 \001(\t\022;\n\005valu"
+          + "e\030\002 \001(\0132,.google.cloud.talent.v4beta1.Cu"
+          + "stomAttribute:\0028\001:k\352Ah\n\027jobs.googleapis."
+          + "com/Job\022\035projects/{project}/jobs/{job}\022."
+          + "projects/{project}/tenants/{tenant}/jobs"
+          + "/{job}B~\n\037com.google.cloud.talent.v4beta"
+          + "1B\020JobResourceProtoP\001ZAgoogle.golang.org"
+          + "/genproto/googleapis/cloud/talent/v4beta"
+          + "1;talent\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.talent.v4beta1.CommonProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.PostalAddressProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_talent_v4beta1_Job_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -196,13 +201,16 @@ public final class JobResourceProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.talent.v4beta1.CommonProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.PostalAddressProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

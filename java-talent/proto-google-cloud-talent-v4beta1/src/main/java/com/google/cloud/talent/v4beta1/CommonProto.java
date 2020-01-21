@@ -97,14 +97,14 @@ public final class CommonProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/talent/v4beta1/common.pro"
-          + "to\022\033google.cloud.talent.v4beta1\032\034google/"
-          + "api/annotations.proto\032\037google/api/field_"
-          + "behavior.proto\032\037google/protobuf/timestam"
-          + "p.proto\032\036google/protobuf/wrappers.proto\032"
-          + "\026google/type/date.proto\032\030google/type/lat"
-          + "lng.proto\032\027google/type/money.proto\032 goog"
-          + "le/type/postal_address.proto\032\033google/typ"
-          + "e/timeofday.proto\"n\n\016TimestampRange\022.\n\ns"
+          + "to\022\033google.cloud.talent.v4beta1\032\037google/"
+          + "api/field_behavior.proto\032\037google/protobu"
+          + "f/timestamp.proto\032\036google/protobuf/wrapp"
+          + "ers.proto\032\026google/type/date.proto\032\030googl"
+          + "e/type/latlng.proto\032\027google/type/money.p"
+          + "roto\032 google/type/postal_address.proto\032\033"
+          + "google/type/timeofday.proto\032\034google/api/"
+          + "annotations.proto\"n\n\016TimestampRange\022.\n\ns"
           + "tart_time\030\001 \001(\0132\032.google.protobuf.Timest"
           + "amp\022,\n\010end_time\030\002 \001(\0132\032.google.protobuf."
           + "Timestamp\"\267\003\n\010Location\022I\n\rlocation_type\030"
@@ -265,7 +265,6 @@ public final class CommonProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.protobuf.WrappersProto.getDescriptor(),
@@ -274,6 +273,7 @@ public final class CommonProto {
               com.google.type.MoneyProto.getDescriptor(),
               com.google.type.PostalAddressProto.getDescriptor(),
               com.google.type.TimeOfDayProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_talent_v4beta1_TimestampRange_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -417,7 +417,6 @@ public final class CommonProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
@@ -426,6 +425,7 @@ public final class CommonProto {
     com.google.type.MoneyProto.getDescriptor();
     com.google.type.PostalAddressProto.getDescriptor();
     com.google.type.TimeOfDayProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
