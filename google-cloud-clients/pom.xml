@@ -168,7 +168,7 @@
     <opencensus.version>0.24.0</opencensus.version>
     <!-- test dependency versions -->
     <easymock.version>3.6</easymock.version>
-    <objenesis.version>2.6</objenesis.version>
+    <objenesis.version>3.1</objenesis.version>
     <threeten.version>1.4.1</threeten.version>
   </properties>
   <!-- All non-test dependency versions should be added to google-cloud-bom/pom.xml -->
