@@ -18,15 +18,14 @@ package com.google.cloud.logging;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.fail;
 
 import com.google.cloud.logging.SinkInfo.Destination;
 import com.google.cloud.logging.SinkInfo.Destination.BucketDestination;
 import com.google.cloud.logging.SinkInfo.Destination.DatasetDestination;
 import com.google.cloud.logging.SinkInfo.Destination.TopicDestination;
 import com.google.cloud.logging.SinkInfo.VersionFormat;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class SinkInfoTest {
 
@@ -53,8 +52,6 @@ public class SinkInfoTest {
           .setFilter(FILTER)
           .setVersionFormat(VERSION)
           .build();
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testOfBucketDestination() {
@@ -98,9 +95,12 @@ public class SinkInfoTest {
     assertEquals("project", topicDestination.getProject());
     assertEquals("topic", topicDestination.getTopic());
     compareTopicDestination(TOPIC_DESTINATION, topicDestination);
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("wrongDestination is not a valid sink destination");
-    Destination.fromPb("wrongDestination");
+    try {
+      Destination.fromPb("wrongDestination");
+      fail();
+    } catch (IllegalArgumentException expected) {
+      assertEquals("wrongDestination is not a valid sink destination", expected.getMessage());
+    }
   }
 
   @Test

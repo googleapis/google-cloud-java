@@ -63,7 +63,7 @@ public class LocalLoggingImpl extends LoggingServiceV2Grpc.LoggingServiceV2ImplB
       ListLogEntriesRequest request, StreamObserver<ListLogEntriesResponse> responseObserver) {
     List<LogEntry> entries = new ArrayList<>();
 
-    for (ByteString proj : request.getProjectIdsList().asByteStringList()) {
+    for (ByteString proj : request.getResourceNamesList().asByteStringList()) {
       String prefix = "projects/" + proj.toStringUtf8() + "/";
       for (Map.Entry<String, List<LogEntry>> entry : logs.entrySet()) {
         if (entry.getKey().startsWith(prefix)) {

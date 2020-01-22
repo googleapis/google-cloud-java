@@ -22,6 +22,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.MonitoredResource;
@@ -44,7 +45,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.junit.rules.Timeout;
 
 /**
@@ -52,8 +52,6 @@ import org.junit.rules.Timeout;
  * environments (e.g. local emulator or remote Logging service).
  */
 public abstract class BaseSystemTest {
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
@@ -114,9 +112,12 @@ public abstract class BaseSystemTest {
             .setVersionFormat(SinkInfo.VersionFormat.V2)
             .build();
     assertNull(logging().getSink(name));
-    thrown.expect(LoggingException.class);
-    thrown.expectMessage("NOT_FOUND");
-    logging().update(sinkInfo);
+    try {
+      logging().update(sinkInfo);
+      fail();
+    } catch (LoggingException expected) {
+      assertNotNull(expected.getMessage());
+    }
   }
 
   @Test

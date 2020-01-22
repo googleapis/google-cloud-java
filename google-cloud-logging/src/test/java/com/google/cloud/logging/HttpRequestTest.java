@@ -22,9 +22,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.logging.HttpRequest.RequestMethod;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.threeten.bp.Duration;
 
 public class HttpRequestTest {
@@ -60,8 +58,6 @@ public class HttpRequestTest {
           .setCacheFillBytes(CACHE_FILL_BYTES)
           .setLatency(Duration.ofSeconds(123, 456))
           .build();
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testBuilder() {

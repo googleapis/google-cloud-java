@@ -18,6 +18,7 @@ package com.google.cloud.logging;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -30,9 +31,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.junit.BeforeClass;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class StructsTest {
 
@@ -75,8 +74,6 @@ public class StructsTest {
   private static final Struct STRUCT = Struct.newBuilder().putAllFields(VALUE_MAP).build();
   private static final Map<String, Object> EMPTY_MAP = Collections.emptyMap();
 
-  @Rule public ExpectedException thrown = ExpectedException.none();
-
   @BeforeClass
   public static void beforeClass() {
     INNER_MAP.put("null", null);
@@ -117,15 +114,23 @@ public class StructsTest {
   @Test
   public void testAsMapPut() {
     Map<String, Object> map = Structs.asMap(STRUCT);
-    thrown.expect(UnsupportedOperationException.class);
-    map.put("key", "value");
+    try {
+      map.put("key", "value");
+      fail();
+    } catch (UnsupportedOperationException expected) {
+
+    }
   }
 
   @Test
   public void testAsMapRemove() {
     Map<String, Object> map = Structs.asMap(STRUCT);
-    thrown.expect(UnsupportedOperationException.class);
-    map.remove("null");
+    try {
+      map.remove("null");
+      fail();
+    } catch (UnsupportedOperationException expected) {
+
+    }
   }
 
   @Test
@@ -137,8 +142,11 @@ public class StructsTest {
 
   @Test
   public void testAsMapNull() {
-    thrown.expect(NullPointerException.class);
-    Structs.asMap(null);
+    try {
+      Structs.asMap(null);
+      fail();
+    } catch (NullPointerException expected) {
+    }
   }
 
   @Test
@@ -161,8 +169,11 @@ public class StructsTest {
 
   @Test
   public void testNewStructNull() {
-    thrown.expect(NullPointerException.class);
-    Structs.newStruct(null);
+    try {
+      Structs.newStruct(null);
+      fail();
+    } catch (NullPointerException expected) {
+    }
   }
 
   @Test

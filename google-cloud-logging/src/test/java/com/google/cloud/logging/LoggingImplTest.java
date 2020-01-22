@@ -75,9 +75,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class LoggingImplTest {
 
@@ -142,8 +140,6 @@ public class LoggingImplTest {
   private LoggingRpcFactory rpcFactoryMock;
   private LoggingRpc loggingRpcMock;
   private Logging logging;
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Before
   public void setUp() {

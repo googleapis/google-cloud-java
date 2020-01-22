@@ -22,9 +22,8 @@ import static org.junit.Assert.assertNull;
 
 import com.google.cloud.logging.Logging.ListOption;
 import com.google.cloud.logging.Option.OptionType;
-import org.junit.Rule;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class OptionTest {
 
@@ -36,8 +35,6 @@ public class OptionTest {
   private static final Option OPTION_EQUALS = new Option(OPTION_TYPE, VALUE) {};
   private static final Option OPTION_NOT_EQUALS1 = new Option(ANOTHER_OPTION_TYPE, OTHER_VALUE) {};
   private static final Option OPTION_NOT_EQUALS2 = new Option(ANOTHER_OPTION_TYPE, VALUE) {};
-
-  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testEquals() {
@@ -58,8 +55,12 @@ public class OptionTest {
     Option option = new Option(OPTION_TYPE, null) {};
     assertEquals(OPTION_TYPE, option.getOptionType());
     assertNull(option.getValue());
-    thrown.expect(NullPointerException.class);
-    new Option(null, VALUE) {};
+    try {
+      new Option(null, VALUE) {};
+      Assert.fail();
+    } catch (NullPointerException expected) {
+
+    }
   }
 
   @Test
