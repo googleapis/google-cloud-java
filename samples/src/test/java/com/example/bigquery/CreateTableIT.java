@@ -60,5 +60,8 @@ public class CreateTableIT {
     CreateTable.createTable(generatedDatasetName, tableName, schema);
 
     assertThat(bout.toString()).contains("Table created successfully");
+
+    // Clean up
+    DeleteTable.deleteTable(generatedDatasetName, tableName);
   }
 }

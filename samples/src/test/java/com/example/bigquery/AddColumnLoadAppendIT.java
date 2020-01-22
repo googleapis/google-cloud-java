@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,11 @@
 
 package com.example.bigquery;
 
-import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.LegacySQLTypeName;
+import com.google.cloud.bigquery.Schema;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;
@@ -27,11 +28,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class CreateDatasetIT {
+public class AddColumnLoadAppendIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
-  private static final String GOOGLE_CLOUD_PROJECT = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static final String BIGQUERY_DATASET_NAME = System.getenv("BIGQUERY_DATASET_NAME");
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -41,7 +42,7 @@ public class CreateDatasetIT {
 
   @BeforeClass
   public static void checkRequirements() {
-    requireEnvVar("GOOGLE_CLOUD_PROJECT");
+    requireEnvVar("BIGQUERY_DATASET_NAME");
   }
 
   @Before
@@ -57,12 +58,21 @@ public class CreateDatasetIT {
   }
 
   @Test
-  public void testCreateDataset() {
-    String generatedDatasetName = RemoteBigQueryHelper.generateDatasetName();
-    CreateDataset.createDataset(generatedDatasetName);
-    assertThat(bout.toString()).contains(generatedDatasetName + " created successfully");
+  public void testAddColumnLoadAppend() throws Exception {
+    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.csv";
+
+    String tableName = "ADD_COLUMN_LOAD_APPEND_TEST";
+    Schema originalSchema =
+        Schema.of(
+            Field.newBuilder("name", LegacySQLTypeName.STRING)
+                .setMode(Field.Mode.REQUIRED)
+                .build());
+
+    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, originalSchema);
+
+    AddColumnLoadAppend.addColumnLoadAppend(BIGQUERY_DATASET_NAME, tableName, sourceUri);
 
     // Clean up
-    DeleteDataset.deleteDataset(GOOGLE_CLOUD_PROJECT, generatedDatasetName);
+    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
   }
 }
