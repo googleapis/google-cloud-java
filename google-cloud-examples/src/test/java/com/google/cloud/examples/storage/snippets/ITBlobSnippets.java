@@ -43,6 +43,9 @@ import com.google.cloud.examples.storage.objects.RotateObjectEncryptionKey;
 import com.google.cloud.examples.storage.objects.SetObjectMetadata;
 import com.google.cloud.examples.storage.objects.UploadEncryptedObject;
 import com.google.cloud.examples.storage.objects.UploadObject;
+import com.google.cloud.examples.storage.objects.GenerateV4GetObjectSignedUrl;
+import com.google.cloud.examples.storage.objects.GenerateV4PutObjectSignedUrl;
+import com.google.cloud.examples.storage.objects.MakeObjectPublic;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
@@ -62,12 +65,16 @@ import java.nio.file.Files;
 import java.util.Date;
 import java.util.Map;
 import java.util.Random;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URL;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.google.common.io.BaseEncoding;
+import javax.net.ssl.HttpsURLConnection;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -339,5 +346,46 @@ public class ITBlobSnippets {
         PROJECT_ID, BUCKET, versionedBlob, originalBlob.getGeneration());
     assertNull(storage.get(BlobId.of(BUCKET, versionedBlob, originalBlob.getGeneration())));
     assertNotNull(storage.get(BUCKET, versionedBlob));
+  }
+
+  @Test
+  public void testV4SignedURLs() throws IOException {
+    String tempObject = "test-upload-signed-url-object";
+    PrintStream standardOut = System.out;
+    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(snippetOutputCapture));
+    GenerateV4PutObjectSignedUrl.generateV4GPutObjectSignedUrl(PROJECT_ID, BUCKET, tempObject);
+    String snippetOutput = snippetOutputCapture.toString();
+    String url = snippetOutput.split("\n")[1];
+    URL uploadUrl = new URL(url);
+    HttpsURLConnection connection = (HttpsURLConnection) uploadUrl.openConnection();
+    connection.setRequestMethod("PUT");
+    connection.setDoOutput(true);
+    connection.setRequestProperty("Content-Type", "application/octet-stream");
+    try (OutputStream out = connection.getOutputStream()) {
+      out.write(CONTENT);
+      assertEquals(connection.getResponseCode(), 200);
+    }
+    GenerateV4GetObjectSignedUrl.generateV4GetObjectSignedUrl(PROJECT_ID, BUCKET, tempObject);
+    snippetOutput = snippetOutputCapture.toString();
+    url = snippetOutput.split("\n")[5];
+    URL downloadUrl = new URL(url);
+    System.setOut(standardOut);
+    System.out.println(snippetOutput);
+    connection = (HttpsURLConnection) downloadUrl.openConnection();
+    byte[] readBytes = new byte[CONTENT.length];
+    try (InputStream responseStream = connection.getInputStream()) {
+      assertEquals(CONTENT.length, responseStream.read(readBytes));
+      assertArrayEquals(CONTENT, readBytes);
+    }
+  }
+
+  @Test
+  public void testMakeObjectPublic() {
+    String aclBlob = "acl-test-blob";
+    assertNull(
+        storage.create(BlobInfo.newBuilder(BUCKET, aclBlob).build()).getAcl(Acl.User.ofAllUsers()));
+    MakeObjectPublic.makeObjectPublic(PROJECT_ID, BUCKET, aclBlob);
+    assertNotNull(storage.get(BUCKET, aclBlob).getAcl(Acl.User.ofAllUsers()));
   }
 }

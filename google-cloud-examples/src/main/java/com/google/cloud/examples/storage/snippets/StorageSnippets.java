@@ -42,7 +42,6 @@ import com.google.cloud.storage.CopyWriter;
 import com.google.cloud.storage.HmacKey;
 import com.google.cloud.storage.HmacKey.HmacKeyMetadata;
 import com.google.cloud.storage.HmacKey.HmacKeyState;
-import com.google.cloud.storage.HttpMethod;
 import com.google.cloud.storage.ServiceAccount;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobGetOption;
@@ -809,20 +808,17 @@ public class StorageSnippets {
     return acls;
   }
 
-  /** Example of default auth */
-  public Page<Bucket> authListBuckets() {
-    // [START auth_cloud_implicit]
-    // If you don't specify credentials when constructing the client, the
-    // client library will look for credentials in the environment.
-
+  /** Example of a simple listBuckets() */
+  public void listBuckets() {
+    // [START storage_list_buckets]
     Storage storage = StorageOptions.getDefaultInstance().getService();
 
     Page<Bucket> buckets = storage.list();
+    System.out.println("Buckets:");
     for (Bucket bucket : buckets.iterateAll()) {
-      // do something with the info
+      System.out.println(bucket.getName());
     }
-    // [END auth_cloud_implicit]
-    return buckets;
+    // [END storage_list_buckets]
   }
 
 
@@ -1137,74 +1133,6 @@ public class StorageSnippets {
     }
     // [END storage_get_uniform_bucket_level_access]
     return bucket;
-  }
-
-  /** Example of how to generate a GET V4 Signed URL */
-  public URL generateV4GetObjectSignedUrl(String bucketName, String objectName)
-      throws StorageException {
-    // [START storage_generate_signed_url_v4]
-    // Instantiate a Google Cloud Storage client
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-
-    // The name of a bucket, e.g. "my-bucket"
-    // String bucketName = "my-bucket";
-
-    // The name of an object, e.g. "my-object"
-    // String objectName = "my-object";
-
-    // Define resource
-    BlobInfo blobinfo = BlobInfo.newBuilder(BlobId.of(bucketName, objectName)).build();
-
-    // Generate Signed URL
-    URL url =
-        storage.signUrl(blobinfo, 15, TimeUnit.MINUTES, Storage.SignUrlOption.withV4Signature());
-
-    System.out.println("Generated GET signed URL:");
-    System.out.println(url);
-    System.out.println("You can use this URL with any user agent, for example:");
-    System.out.println("curl '" + url + "'");
-    // [END storage_generate_signed_url_v4]
-    return url;
-  }
-
-  /** Example of how to generate a PUT V4 Signed URL */
-  public URL generateV4GPutbjectSignedUrl(String bucketName, String objectName)
-      throws StorageException {
-    // [START storage_generate_upload_signed_url_v4]
-    // Instantiate a Google Cloud Storage client
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-
-    // The name of a bucket, e.g. "my-bucket"
-    // String bucketName = "my-bucket";
-
-    // The name of a new object to upload, e.g. "my-object"
-    // String objectName = "my-object";
-
-    // Define Resource
-    BlobInfo blobinfo = BlobInfo.newBuilder(BlobId.of(bucketName, objectName)).build();
-
-    // Generate Signed URL
-    Map<String, String> extensionHeaders = new HashMap<>();
-    extensionHeaders.put("Content-Type", "application/octet-stream");
-
-    URL url =
-        storage.signUrl(
-            blobinfo,
-            15,
-            TimeUnit.MINUTES,
-            Storage.SignUrlOption.httpMethod(HttpMethod.PUT),
-            Storage.SignUrlOption.withExtHeaders(extensionHeaders),
-            Storage.SignUrlOption.withV4Signature());
-
-    System.out.println("Generated PUT signed URL:");
-    System.out.println(url);
-    System.out.println("You can use this URL with any user agent, for example:");
-    System.out.println(
-        "curl -X PUT -H 'Content-Type: application/octet-stream' --upload-file my-file '"
-            + url
-            + "'");
-    // [END storage_generate_upload_signed_url_v4]
-    return url;
   }
 
   /** Example of creating an HMAC key for a service account * */

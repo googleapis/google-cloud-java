@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-compat-checker</artifactId>
-  <version>0.119.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-compat-checker:current} -->
+  <version>0.120.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-compat-checker:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Java Compatibility Checker</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-util/google-cloud-compat-checker</url>
@@ -12,11 +12,11 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-util</artifactId>
-    <version>0.119.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-util:current} -->
+    <version>0.120.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-util:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-compat-checker</site.installationModule>
-    <grpc.version>1.24.1</grpc.version>
+    <grpc.version>1.26.0</grpc.version>
     <!-- We are currently using the *-android version to support JDK7. -->
     <guava.version>28.1-android</guava.version>
   </properties>
@@ -49,7 +49,7 @@
       <dependency>
         <groupId>org.codehaus.plexus</groupId>
         <artifactId>plexus-utils</artifactId>
-        <version>3.2.1</version>
+        <version>3.3.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -57,7 +57,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.7.0</version>
+        <version>3.8.1</version>
         <configuration>
           <source>1.7</source>
           <target>1.7</target>

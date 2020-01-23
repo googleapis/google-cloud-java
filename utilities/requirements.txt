@@ -1,6 +1,0 @@
-attr
-gcp-releasetool
-gcp-synthtool
-jinja2
-lxml==4.4.1
-typing==3.7.4.1
