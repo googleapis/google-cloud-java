@@ -40,10 +40,13 @@ public class MonitoredResourceUtil {
     ContainerName("container_name"),
     InstanceId("instance_id"),
     InstanceName("instance_name"),
+    Location("location"),
     ModuleId("module_id"),
     NamespaceId("namespace_id"),
     PodId("pod_id"),
     ProjectId("project_id"),
+    RevisionName("revision_name"),
+    ServiceName("service_name"),
     VersionId("version_id"),
     Zone("zone");
 
@@ -59,6 +62,7 @@ public class MonitoredResourceUtil {
   }
 
   private enum Resource {
+    CloudRun("cloud_run_revision"),
     Container("container"),
     GaeAppFlex("gae_app_flex"),
     GaeAppStandard("gae_app_standard"),
@@ -80,8 +84,6 @@ public class MonitoredResourceUtil {
 
   private static ImmutableMultimap<String, Label> resourceTypeWithLabels =
       ImmutableMultimap.<String, Label>builder()
-          .putAll(Resource.GaeAppFlex.getKey(), Label.ModuleId, Label.VersionId, Label.Zone)
-          .putAll(Resource.GaeAppStandard.getKey(), Label.ModuleId, Label.VersionId)
           .putAll(
               Resource.Container.getKey(),
               Label.ClusterName,
@@ -90,6 +92,9 @@ public class MonitoredResourceUtil {
               Label.NamespaceId,
               Label.PodId,
               Label.Zone)
+          .putAll(Resource.CloudRun.getKey(), Label.RevisionName, Label.ServiceName, Label.Location)
+          .putAll(Resource.GaeAppFlex.getKey(), Label.ModuleId, Label.VersionId, Label.Zone)
+          .putAll(Resource.GaeAppStandard.getKey(), Label.ModuleId, Label.VersionId)
           .putAll(Resource.GceInstance.getKey(), Label.InstanceId, Label.Zone)
           .build();
 
@@ -147,6 +152,9 @@ public class MonitoredResourceUtil {
       case InstanceName:
         value = getAppEngineInstanceName();
         break;
+      case Location:
+        value = getCloudRunLocation();
+        break;
       case ModuleId:
         value = getAppEngineModuleId();
         break;
@@ -155,6 +163,12 @@ public class MonitoredResourceUtil {
         break;
       case PodId:
         value = System.getenv("HOSTNAME");
+        break;
+      case RevisionName:
+        value = System.getenv("K_REVISION");
+        break;
+      case ServiceName:
+        value = System.getenv("K_SERVICE");
         break;
       case VersionId:
         value = getAppEngineVersionId();
@@ -171,6 +185,12 @@ public class MonitoredResourceUtil {
 
   /* Detect monitored Resource type using environment variables, else return global as default. */
   private static Resource getAutoDetectedResourceType() {
+    if (System.getenv("K_SERVICE") != null
+        && System.getenv("K_REVISION") != null
+        && System.getenv("K_CONFIGURATION") != null
+        && System.getenv("KUBERNETES_SERVICE_HOST") == null) {
+      return Resource.CloudRun;
+    }
     if (System.getenv("GAE_INSTANCE") != null) {
       return Resource.GaeAppFlex;
     }
@@ -197,6 +217,14 @@ public class MonitoredResourceUtil {
 
   private static String getAppEngineInstanceName() {
     return System.getenv("GAE_INSTANCE");
+  }
+
+  private static String getCloudRunLocation() {
+    String zone = MetadataConfig.getZone();
+    // for Cloud Run managed, the zone is "REGION-1"
+    // So, we need to strip the "-1" to set location to just the region
+    if (zone.endsWith("-1")) return zone.substring(0, zone.length() - 2);
+    else return zone;
   }
 
   private static List<LoggingEnhancer> createEnhancers(Resource resourceType) {
