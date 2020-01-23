@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-01-18T09:11:38.672890Z",
+  "updateTime": "2020-01-23T09:08:23.951417Z",
   "sources": [
     {
       "generator": {
@@ -12,8 +12,9 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "7f0dab8177cf371ae019a082e2512de7ac102888",
-        "internalRef": "290326986"
+        "sha": "8d16f76de065f530d395a4c7eabbf766d6a120fd",
+        "internalRef": "291008516",
+        "log": "8d16f76de065f530d395a4c7eabbf766d6a120fd\nGenerate Memcache v1beta2 API protos and gRPC ServiceConfig files\n\nPiperOrigin-RevId: 291008516\n\n3af1dabd93df9a9f17bf3624d3b875c11235360b\ngrafeas: Add containeranalysis default_host to Grafeas service\n\nPiperOrigin-RevId: 290965849\n\nbe2663fa95e31cba67d0cd62611a6674db9f74b7\nfix(google/maps/roads): add missing opening bracket\n\nPiperOrigin-RevId: 290964086\n\nfacc26550a0af0696e0534bc9cae9df14275aa7c\nUpdating v2 protos with the latest inline documentation (in comments) and adding a per-service .yaml file.\n\nPiperOrigin-RevId: 290952261\n\ncda99c1f7dc5e4ca9b1caeae1dc330838cbc1461\nChange api_name to 'asset' for v1p1beta1\n\nPiperOrigin-RevId: 290800639\n\n94e9e90c303a820ce40643d9129e7f0d2054e8a1\nAdds Google Maps Road service\n\nPiperOrigin-RevId: 290795667\n\na3b23dcb2eaecce98c600c7d009451bdec52dbda\nrpc: new message ErrorInfo, other comment updates\n\nPiperOrigin-RevId: 290781668\n\n26420ef4e46c37f193c0fbe53d6ebac481de460e\nAdd proto definition for Org Policy v1.\n\nPiperOrigin-RevId: 290771923\n\n"
       }
     },
     {
