@@ -1,26 +1,27 @@
 {
-  "updateTime": "2020-01-16T08:50:54.418241Z",
+  "updateTime": "2020-01-23T08:50:08.814029Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.44.0",
-        "dockerImage": "googleapis/artman@sha256:10a6d0342b8d62544810ac5ad86c3b21049ec0696608ac60175da8e513234344"
+        "version": "0.44.1",
+        "dockerImage": "googleapis/artman@sha256:5599b61e56a372d21b671969ee915fbca0f6c3a0daaeb898d01f8f685f1bbc8b"
       }
     },
     {
       "generator": {
         "name": "artman",
-        "version": "0.44.0",
-        "dockerImage": "googleapis/artman@sha256:10a6d0342b8d62544810ac5ad86c3b21049ec0696608ac60175da8e513234344"
+        "version": "0.44.1",
+        "dockerImage": "googleapis/artman@sha256:5599b61e56a372d21b671969ee915fbca0f6c3a0daaeb898d01f8f685f1bbc8b"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "0735b4b096872960568d1f366bfa75b7b0e1f1a3",
-        "internalRef": "289939042"
+        "sha": "8d16f76de065f530d395a4c7eabbf766d6a120fd",
+        "internalRef": "291008516",
+        "log": "8d16f76de065f530d395a4c7eabbf766d6a120fd\nGenerate Memcache v1beta2 API protos and gRPC ServiceConfig files\n\nPiperOrigin-RevId: 291008516\n\n3af1dabd93df9a9f17bf3624d3b875c11235360b\ngrafeas: Add containeranalysis default_host to Grafeas service\n\nPiperOrigin-RevId: 290965849\n\nbe2663fa95e31cba67d0cd62611a6674db9f74b7\nfix(google/maps/roads): add missing opening bracket\n\nPiperOrigin-RevId: 290964086\n\nfacc26550a0af0696e0534bc9cae9df14275aa7c\nUpdating v2 protos with the latest inline documentation (in comments) and adding a per-service .yaml file.\n\nPiperOrigin-RevId: 290952261\n\ncda99c1f7dc5e4ca9b1caeae1dc330838cbc1461\nChange api_name to 'asset' for v1p1beta1\n\nPiperOrigin-RevId: 290800639\n\n94e9e90c303a820ce40643d9129e7f0d2054e8a1\nAdds Google Maps Road service\n\nPiperOrigin-RevId: 290795667\n\na3b23dcb2eaecce98c600c7d009451bdec52dbda\nrpc: new message ErrorInfo, other comment updates\n\nPiperOrigin-RevId: 290781668\n\n26420ef4e46c37f193c0fbe53d6ebac481de460e\nAdd proto definition for Org Policy v1.\n\nPiperOrigin-RevId: 290771923\n\n7f0dab8177cf371ae019a082e2512de7ac102888\nPublish Routes Preferred API v1 service definitions.\n\nPiperOrigin-RevId: 290326986\n\nad6e508d0728e1d1bca6e3f328cd562718cb772d\nFix: Qualify resource type references with \"jobs.googleapis.com/\"\n\nPiperOrigin-RevId: 290285762\n\n58e770d568a2b78168ddc19a874178fee8265a9d\ncts client library\n\nPiperOrigin-RevId: 290146169\n\naf9daa4c3b4c4a8b7133b81588dd9ffd37270af2\nAdd more programming language options to public proto\n\nPiperOrigin-RevId: 290144091\n\nd9f2bbf2df301ef84641d4cec7c828736a0bd907\ntalent: add missing resource.proto dep to Bazel build target\n\nPiperOrigin-RevId: 290143164\n\n3b3968237451d027b42471cd28884a5a1faed6c7\nAnnotate Talent API.\nAdd gRPC service config for retry.\nUpdate bazel file with google.api.resource dependency.\n\nPiperOrigin-RevId: 290125172\n\n"
       }
     },
     {
@@ -45,70 +46,7 @@
   ],
   "newFiles": [
     {
-      "path": "pom.xml"
-    },
-    {
-      "path": ".repo-metadata.json"
-    },
-    {
-      "path": "java.header"
-    },
-    {
-      "path": "CONTRIBUTING.md"
-    },
-    {
-      "path": "synth.metadata"
-    },
-    {
-      "path": "renovate.json"
-    },
-    {
-      "path": "versions.txt"
-    },
-    {
-      "path": "synth.py"
-    },
-    {
-      "path": "license-checks.xml"
-    },
-    {
-      "path": "CHANGELOG.md"
-    },
-    {
-      "path": "CODE_OF_CONDUCT.md"
-    },
-    {
-      "path": "LICENSE"
-    },
-    {
-      "path": "codecov.yaml"
-    },
-    {
-      "path": ".gitignore"
-    },
-    {
-      "path": "README.md"
-    },
-    {
-      "path": "grpc-google-cloud-logging-v2/pom.xml"
-    },
-    {
-      "path": "grpc-google-cloud-logging-v2/src/main/java/com/google/logging/v2/MetricsServiceV2Grpc.java"
-    },
-    {
-      "path": "grpc-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ConfigServiceV2Grpc.java"
-    },
-    {
-      "path": "grpc-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LoggingServiceV2Grpc.java"
-    },
-    {
-      "path": "google-cloud-logging-bom/pom.xml"
-    },
-    {
-      "path": ".github/release-please.yml"
-    },
-    {
-      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/feature_request.md"
@@ -117,34 +55,31 @@
       "path": ".github/ISSUE_TEMPLATE/support_request.md"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
     },
     {
-      "path": ".kokoro/build.sh"
+      "path": ".github/release-please.yml"
     },
     {
-      "path": ".kokoro/common.cfg"
+      "path": ".gitignore"
     },
     {
       "path": ".kokoro/build.bat"
     },
     {
-      "path": ".kokoro/linkage-monitor.sh"
+      "path": ".kokoro/build.sh"
     },
     {
       "path": ".kokoro/coerce_logs.sh"
     },
     {
-      "path": ".kokoro/dependencies.sh"
+      "path": ".kokoro/common.cfg"
     },
     {
-      "path": ".kokoro/trampoline.sh"
+      "path": ".kokoro/continuous/common.cfg"
     },
     {
-      "path": ".kokoro/continuous/samples.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8.cfg"
+      "path": ".kokoro/continuous/dependencies.cfg"
     },
     {
       "path": ".kokoro/continuous/integration.cfg"
@@ -153,34 +88,40 @@
       "path": ".kokoro/continuous/java11.cfg"
     },
     {
-      "path": ".kokoro/continuous/propose_release.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/common.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.sh"
-    },
-    {
       "path": ".kokoro/continuous/java7.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/lint.cfg"
     },
     {
       "path": ".kokoro/continuous/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/continuous/dependencies.cfg"
-    },
-    {
       "path": ".kokoro/continuous/java8-win.cfg"
     },
     {
-      "path": ".kokoro/nightly/samples.cfg"
+      "path": ".kokoro/continuous/java8.cfg"
     },
     {
-      "path": ".kokoro/nightly/java8.cfg"
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
     },
     {
       "path": ".kokoro/nightly/integration.cfg"
@@ -189,70 +130,31 @@
       "path": ".kokoro/nightly/java11.cfg"
     },
     {
-      "path": ".kokoro/nightly/common.cfg"
-    },
-    {
       "path": ".kokoro/nightly/java7.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/lint.cfg"
     },
     {
       "path": ".kokoro/nightly/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/nightly/dependencies.cfg"
-    },
-    {
       "path": ".kokoro/nightly/java8-win.cfg"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.cfg"
+      "path": ".kokoro/nightly/java8.cfg"
     },
     {
-      "path": ".kokoro/release/common.sh"
+      "path": ".kokoro/nightly/lint.cfg"
     },
     {
-      "path": ".kokoro/release/promote.sh"
+      "path": ".kokoro/nightly/samples.cfg"
     },
     {
-      "path": ".kokoro/release/common.cfg"
+      "path": ".kokoro/presubmit/clirr.cfg"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.sh"
+      "path": ".kokoro/presubmit/common.cfg"
     },
     {
-      "path": ".kokoro/release/drop.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.sh"
-    },
-    {
-      "path": ".kokoro/release/promote.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.sh"
-    },
-    {
-      "path": ".kokoro/presubmit/samples.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8.cfg"
+      "path": ".kokoro/presubmit/dependencies.cfg"
     },
     {
       "path": ".kokoro/presubmit/integration.cfg"
@@ -261,139 +163,133 @@
       "path": ".kokoro/presubmit/java11.cfg"
     },
     {
-      "path": ".kokoro/presubmit/linkage-monitor.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/common.cfg"
-    },
-    {
       "path": ".kokoro/presubmit/java7.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/lint.cfg"
     },
     {
       "path": ".kokoro/presubmit/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/presubmit/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/clirr.cfg"
-    },
-    {
       "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": "google-cloud-logging-bom/pom.xml"
     },
     {
       "path": "google-cloud-logging/pom.xml"
     },
     {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/SerializationTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/MetricInfoTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/OptionTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/OperationTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/LoggingTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/LoggingLevelTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/SinkTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/LogEntryTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/LoggingImplTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/SourceLocationTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/StructsTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/BaseSystemTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/PayloadTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/MetricTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/HttpRequestTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/LoggingOptionsTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/LoggingHandlerTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/SinkInfoTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/it/ITLoggingTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/ConfigClientTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/MetricsClientTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/LoggingClientTest.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/MockMetricsServiceV2Impl.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/MockConfigServiceV2.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/MockMetricsServiceV2.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/MockLoggingServiceV2.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/MockLoggingServiceV2Impl.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/MockConfigServiceV2Impl.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/testing/LocalLoggingHelper.java"
-    },
-    {
-      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/testing/LocalLoggingImpl.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/SinkInfo.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/LoggingImpl.java"
-    },
-    {
       "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/HttpRequest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/LogEntry.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/Logging.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/LoggingConfig.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/LoggingEnhancer.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/LoggingException.java"
     },
     {
       "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/LoggingFactory.java"
     },
     {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/TraceLoggingEnhancer.java"
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/LoggingHandler.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/LoggingImpl.java"
     },
     {
       "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/LoggingLevel.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/LoggingOptions.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/Metric.java"
     },
     {
       "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/MetricInfo.java"
@@ -402,175 +298,271 @@
       "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/MonitoredResourceUtil.java"
     },
     {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/LoggingConfig.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/package-info.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/LoggingException.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/Payload.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/LoggingOptions.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/LoggingHandler.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/LoggingEnhancer.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/SourceLocation.java"
-    },
-    {
       "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/Operation.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/LogEntry.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/Structs.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/Sink.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/Logging.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/Severity.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/Metric.java"
     },
     {
       "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/Option.java"
     },
     {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/Payload.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/Severity.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/Sink.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/SinkInfo.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/SourceLocation.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/Structs.java"
+    },
+    {
       "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/Synchronicity.java"
     },
     {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/MetricsSettings.java"
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/TraceLoggingEnhancer.java"
     },
     {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/MetricsClient.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/ConfigSettings.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/ConfigClient.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/package-info.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/LoggingSettings.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/LoggingClient.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/MetricsServiceV2StubSettings.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/GrpcMetricsServiceV2Stub.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/LoggingServiceV2StubSettings.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/LoggingServiceV2Stub.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/ConfigServiceV2StubSettings.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/MetricsServiceV2Stub.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/GrpcConfigServiceV2Stub.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/GrpcConfigServiceV2CallableFactory.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/GrpcLoggingServiceV2Stub.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/ConfigServiceV2Stub.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/GrpcMetricsServiceV2CallableFactory.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/GrpcLoggingServiceV2CallableFactory.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/testing/package-info.java"
-    },
-    {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/testing/RemoteLoggingHelper.java"
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/package-info.java"
     },
     {
       "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/spi/LoggingRpcFactory.java"
     },
     {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/spi/v2/GrpcLoggingRpc.java"
+    },
+    {
       "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/spi/v2/LoggingRpc.java"
     },
     {
-      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/spi/v2/GrpcLoggingRpc.java"
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/testing/RemoteLoggingHelper.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/testing/package-info.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/ConfigClient.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/ConfigSettings.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/LoggingClient.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/LoggingSettings.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/MetricsClient.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/MetricsSettings.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/package-info.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/ConfigServiceV2Stub.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/ConfigServiceV2StubSettings.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/GrpcConfigServiceV2CallableFactory.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/GrpcConfigServiceV2Stub.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/GrpcLoggingServiceV2CallableFactory.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/GrpcLoggingServiceV2Stub.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/GrpcMetricsServiceV2CallableFactory.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/GrpcMetricsServiceV2Stub.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/LoggingServiceV2Stub.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/LoggingServiceV2StubSettings.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/MetricsServiceV2Stub.java"
+    },
+    {
+      "path": "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/MetricsServiceV2StubSettings.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/BaseSystemTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/HttpRequestTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/LogEntryTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/LoggingHandlerTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/LoggingImplTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/LoggingLevelTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/LoggingOptionsTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/LoggingTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/MetricInfoTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/MetricTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/OperationTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/OptionTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/PayloadTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/SerializationTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/SinkInfoTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/SinkTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/SourceLocationTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/StructsTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/it/ITLoggingTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/ConfigClientTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/LoggingClientTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/MetricsClientTest.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/MockConfigServiceV2.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/MockConfigServiceV2Impl.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/MockLoggingServiceV2.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/MockLoggingServiceV2Impl.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/MockMetricsServiceV2.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/MockMetricsServiceV2Impl.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/testing/LocalLoggingHelper.java"
+    },
+    {
+      "path": "google-cloud-logging/src/test/java/com/google/cloud/logging/v2/testing/LocalLoggingImpl.java"
+    },
+    {
+      "path": "grpc-google-cloud-logging-v2/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ConfigServiceV2Grpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LoggingServiceV2Grpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-logging-v2/src/main/java/com/google/logging/v2/MetricsServiceV2Grpc.java"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "pom.xml"
     },
     {
       "path": "proto-google-cloud-logging-v2/pom.xml"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/LogName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/SinkNames.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/HttpRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/UntypedParentName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/ExclusionName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/OrganizationName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/LogSeverity.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/ProjectSinkName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/ParentNames.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/BillingName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/HttpRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/ParentName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/HttpRequestProto.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/BillingExclusionName.java"
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/BillingLogName.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/BillingExclusionName.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/BillingName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/BillingSinkName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/ExclusionName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/ExclusionNames.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/FolderExclusionName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/FolderLogName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/FolderName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/FolderSinkName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/HttpRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/HttpRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/HttpRequestProto.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/LogName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/LogNames.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/LogSeverity.java"
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/LogSeverityProto.java"
@@ -579,19 +571,31 @@
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/MetricName.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/UntypedSinkName.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/MetricNames.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/FolderName.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/OrganizationExclusionName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/OrganizationLogName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/OrganizationName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/OrganizationSinkName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/ParentName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/ParentNames.java"
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/ProjectExclusionName.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/SinkName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/OrganizationSinkName.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/ProjectLogName.java"
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/ProjectMetricName.java"
@@ -600,154 +604,31 @@
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/ProjectName.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/ProjectLogName.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/ProjectSinkName.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/FolderLogName.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/SinkName.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/FolderSinkName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/UntypedLogName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/LogNames.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/ExclusionNames.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/SinkNames.java"
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/UntypedExclusionName.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/OrganizationLogName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/BillingSinkName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/OrganizationExclusionName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/MetricNames.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/FolderExclusionName.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/UntypedLogName.java"
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/UntypedMetricName.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LoggingProto.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/UntypedParentName.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogName.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/type/UntypedSinkName.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/SinkNames.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CreateExclusionRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListSinksResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CreateExclusionRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UntypedParentName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/GetSinkRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CreateLogMetricRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ExclusionName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CreateLogMetricRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/DeleteLogRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/WriteLogEntriesPartialErrors.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/OrganizationName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogMetric.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ProjectSinkName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ParentNames.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/BillingName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListExclusionsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListExclusionsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/WriteLogEntriesPartialErrorsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogEntriesResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogExclusionOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListMonitoredResourceDescriptorsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogEntryProto.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/GetSinkRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ParentName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/BillingLogName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/DeleteLogMetricRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/WriteLogEntriesRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/DeleteLogRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UpdateLogMetricRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/WriteLogEntriesRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/GetExclusionRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListMonitoredResourceDescriptorsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LoggingMetricsProto.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/BigQueryOptions.java"
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/BigQueryOptionsOrBuilder.java"
@@ -756,79 +637,112 @@
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/BillingExclusionName.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogEntryOrBuilder.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/BillingLogName.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogMetricsResponseOrBuilder.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/BillingName.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogEntriesRequestOrBuilder.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/BillingSinkName.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/GetLogMetricRequest.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CreateExclusionRequest.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogSink.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CreateExclusionRequestOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogsRequestOrBuilder.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CreateLogMetricRequest.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/WriteLogEntriesResponse.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CreateLogMetricRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CreateSinkRequest.java"
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CreateSinkRequestOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListSinksRequestOrBuilder.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/DeleteExclusionRequest.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/MetricName.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/DeleteExclusionRequestOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UntypedSinkName.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/DeleteLogMetricRequest.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogEntriesRequest.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/DeleteLogMetricRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/DeleteLogRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/DeleteLogRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/DeleteSinkRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/DeleteSinkRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ExclusionName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ExclusionNames.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/FolderExclusionName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/FolderLogName.java"
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/FolderName.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ProjectExclusionName.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/FolderSinkName.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListExclusionsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/SinkName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/OrganizationSinkName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ProjectMetricName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogEntrySourceLocationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ProjectName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogSinkOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UpdateLogMetricRequestOrBuilder.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/GetExclusionRequest.java"
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/GetExclusionRequestOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ProjectLogName.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/GetLogMetricRequest.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/DeleteLogMetricRequestOrBuilder.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/GetLogMetricRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/GetSinkRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/GetSinkRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListExclusionsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListExclusionsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListExclusionsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListExclusionsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogEntriesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogEntriesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogEntriesResponse.java"
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogEntriesResponseOrBuilder.java"
@@ -837,133 +751,205 @@
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogMetricsRequest.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListSinksRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/BigQueryOptions.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/FolderLogName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/FolderSinkName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UpdateExclusionRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListMonitoredResourceDescriptorsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UpdateExclusionRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UntypedLogName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/DeleteExclusionRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogEntryOperationOrBuilder.java"
-    },
-    {
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogMetricsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UpdateSinkRequest.java"
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogMetricsResponse.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogNames.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogMetricsResponseOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogEntry.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogsRequest.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/DeleteSinkRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CreateSinkRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UpdateSinkRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/WriteLogEntriesResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListMonitoredResourceDescriptorsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/DeleteExclusionRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ExclusionNames.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogsRequestOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogsResponse.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/GetLogMetricRequestOrBuilder.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListLogsResponseOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UntypedExclusionName.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListMonitoredResourceDescriptorsRequest.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/OrganizationLogName.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListMonitoredResourceDescriptorsRequestOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LoggingConfigProto.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListMonitoredResourceDescriptorsResponse.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/BillingSinkName.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListMonitoredResourceDescriptorsResponseOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/DeleteSinkRequestOrBuilder.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListSinksRequest.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogExclusion.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListSinksRequestOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogMetricOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/OrganizationExclusionName.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogEntrySourceLocation.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListExclusionsRequest.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListSinksResponse.java"
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ListSinksResponseOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/MetricNames.java"
-    },
-    {
-      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/FolderExclusionName.java"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogEntry.java"
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogEntryOperation.java"
     },
     {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogEntryOperationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogEntryOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogEntryProto.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogEntrySourceLocation.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogEntrySourceLocationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogExclusion.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogExclusionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogMetric.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogMetricOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogNames.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogSink.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LogSinkOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LoggingConfigProto.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LoggingMetricsProto.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/LoggingProto.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/MetricName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/MetricNames.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/OrganizationExclusionName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/OrganizationLogName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/OrganizationName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/OrganizationSinkName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ParentName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ParentNames.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ProjectExclusionName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ProjectLogName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ProjectMetricName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ProjectSinkName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/SinkName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/SinkNames.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UntypedExclusionName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UntypedLogName.java"
+    },
+    {
       "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UntypedMetricName.java"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/proto/google/logging/type/log_severity.proto"
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UntypedParentName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UntypedSinkName.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UpdateExclusionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UpdateExclusionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UpdateLogMetricRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UpdateLogMetricRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UpdateSinkRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UpdateSinkRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/WriteLogEntriesPartialErrors.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/WriteLogEntriesPartialErrorsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/WriteLogEntriesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/WriteLogEntriesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/WriteLogEntriesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/WriteLogEntriesResponseOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/proto/google/logging/type/http_request.proto"
     },
     {
-      "path": "proto-google-cloud-logging-v2/src/main/proto/google/logging/v2/logging_metrics.proto"
+      "path": "proto-google-cloud-logging-v2/src/main/proto/google/logging/type/log_severity.proto"
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/proto/google/logging/v2/log_entry.proto"
@@ -973,6 +959,21 @@
     },
     {
       "path": "proto-google-cloud-logging-v2/src/main/proto/google/logging/v2/logging_config.proto"
+    },
+    {
+      "path": "proto-google-cloud-logging-v2/src/main/proto/google/logging/v2/logging_metrics.proto"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "versions.txt"
     }
   ]
 }
