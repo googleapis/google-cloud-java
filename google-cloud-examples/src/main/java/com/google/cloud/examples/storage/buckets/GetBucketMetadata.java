@@ -25,14 +25,16 @@ import java.util.Map;
 
 public class GetBucketMetadata {
   public static void getBucketMetadata(String projectId, String bucketName) {
+    // The ID of your GCP project
     // String projectId = "your-project-id";
+
+    // The ID of your GCS bucket
     // String bucketName = "your-unique-bucket-name";
+
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
 
-    // Select all fields
-    // Fields can be selected individually e.g. Storage.BucketField.NAME
-    Bucket bucket =
-        storage.get(bucketName, Storage.BucketGetOption.fields(Storage.BucketField.values()));
+    // Select all fields. Fields can be selected individually e.g. Storage.BucketField.NAME
+    Bucket bucket = storage.get(bucketName, Storage.BucketGetOption.fields(Storage.BucketField.values()));
 
     // Print bucket metadata
     System.out.println("BucketName: " + bucket.getName());

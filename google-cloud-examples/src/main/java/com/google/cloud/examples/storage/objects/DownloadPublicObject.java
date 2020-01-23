@@ -37,10 +37,7 @@ public class DownloadPublicObject {
         // Instantiate an anonymous Google Cloud Storage client, which can only access public files
         Storage storage = StorageOptions.getUnauthenticatedInstance().getService();
 
-        // Get specific file from specified bucket
         Blob blob = storage.get(BlobId.of(bucketName, publicObjectName));
-
-        // Download file to specified path
         blob.downloadTo(destFilePath);
 
         System.out.println(

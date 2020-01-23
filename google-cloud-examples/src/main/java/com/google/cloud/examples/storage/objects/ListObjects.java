@@ -24,11 +24,16 @@ import com.google.cloud.storage.StorageOptions;
 
 public class ListObjects {
     public static void listObjects(String projectId, String bucketName) {
+        // The ID of your GCP project
         // String projectId = "your-project-id";
+
+        // The ID of your GCS bucket
         // String bucketName = "your-unique-bucket-name";
+
         Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
         Bucket bucket = storage.get(bucketName);
         Page<Blob> blobs = bucket.list();
+
         for (Blob blob : blobs.iterateAll()) {
             System.out.println(blob.getName());
         }

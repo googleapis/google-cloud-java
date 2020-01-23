@@ -15,16 +15,19 @@
  */
 package com.google.cloud.examples.storage.objects;
 
-// [START storage_change_file_storage_class]
-import com.google.cloud.storage.Blob;
+// [START storage_upload_encrypted_file]
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageOptions;
 
-public class ChangeObjectStorageClass {
-  public static void changeObjectStorageClass(String projectId, String bucketName, String objectName) {
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public class UploadEncryptedObject {
+  public static void uploadEncryptedObject(String projectId, String bucketName, String objectName, String filePath,
+      String encryptionKey) throws IOException {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
@@ -34,29 +37,28 @@ public class ChangeObjectStorageClass {
     // The ID of your GCS object
     // String objectName = "your-object-name";
 
+    // The path to your file to upload
+    // String filePath = "path/to/your/file"
+
+    // The key to encrypt the object with
+    // String encryptionKey = "TIbv/fjexq+VmtXzAlc63J4z5kFmWJ6NdAPQulQBT7g=";
+
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     BlobId blobId = BlobId.of(bucketName, objectName);
-
-    // See the StorageClass documentation for other valid storage classes:
-    // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/storage/StorageClass.html
-    StorageClass storageClass = StorageClass.COLDLINE;
-
-    // You can't change an object's storage class directly, the only way is to overwrite the object with the
-    // desired storage class
-    Storage.CopyRequest request = Storage.CopyRequest
-            .newBuilder()
-            .setSource(blobId)
-            .setTarget(BlobInfo.newBuilder(blobId).setStorageClass(storageClass).build())
-            .build();
-    Blob updatedBlob = storage.copy(request).getResult();
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
+    storage.create(
+        blobInfo,
+        Files.readAllBytes(Paths.get(filePath)),
+        Storage.BlobTargetOption.encryptionKey(encryptionKey));
 
     System.out.println(
-        "Object "
-            + objectName
-            + " in bucket "
+        "File "
+            + filePath
+            + " uploaded to bucket "
             + bucketName
-            + " had its storage class set to "
-            + updatedBlob.getStorageClass().name());
+            + " as "
+            + objectName
+            + " with supplied encryption key");
   }
 }
-// [END storage_change_file_storage_class]
+// [END storage_upload_encrypted_file]

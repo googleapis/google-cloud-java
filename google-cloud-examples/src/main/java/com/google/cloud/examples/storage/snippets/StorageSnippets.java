@@ -149,41 +149,6 @@ public class StorageSnippets {
     return blob;
   }
 
-  /** Example of uploading an encrypted blob. */
-  // [TARGET create(BlobInfo, InputStream, BlobWriteOption...)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_blob_name"]
-  // [VARIABLE "my_encryption_key"]
-  public Blob createEncryptedBlob(String bucketName, String blobName, String encryptionKey) {
-    // [START storageUploadEncryptedFile]
-    byte[] data = "Hello, World!".getBytes(UTF_8);
-
-    BlobId blobId = BlobId.of(bucketName, blobName);
-    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
-    Blob blob = storage.create(blobInfo, data, BlobTargetOption.encryptionKey(encryptionKey));
-    // [END storageUploadEncryptedFile]
-    return blob;
-  }
-
-  /** Example of uploading a blob encrypted service side with a Cloud KMS key. */
-  public Blob createKmsEncrpytedBlob(String bucketName, String blobName, String kmsKeyName) {
-    // [START storage_upload_with_kms_key]
-    byte[] data = "Hello, World!".getBytes(UTF_8);
-
-    // The name of the existing bucket to set a default KMS key for, e.g. "my-bucket"
-    // String bucketName = "my-bucket"
-
-    // The name of the KMS-key to use as a default
-    // Key names are provided in the following format:
-    // 'projects/<PROJECT>/locations/<LOCATION>/keyRings/<RING_NAME>/cryptoKeys/<KEY_NAME>'
-    // String kmsKeyName = ""
-
-    BlobId blobId = BlobId.of(bucketName, blobName);
-    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
-    Blob blob = storage.create(blobInfo, data, BlobTargetOption.kmsKeyName(kmsKeyName));
-    // [END storage_upload_with_kms_key]
-    return blob;
-  }
 
   /**
    * Example of getting information on a bucket, only if its metageneration matches a value,
@@ -337,23 +302,6 @@ public class StorageSnippets {
     return deleted;
   }
 
-  /** Example of deleting a blob. */
-  // [TARGET delete(BlobId)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_blob_name"]
-  public boolean deleteBlob(String bucketName, String blobName) {
-    // [START deleteBlob]
-    BlobId blobId = BlobId.of(bucketName, blobName);
-    boolean deleted = storage.delete(blobId);
-    if (deleted) {
-      // the blob was deleted
-    } else {
-      // the blob was not found
-    }
-    // [END deleteBlob]
-    return deleted;
-  }
-
   /** Example of composing two blobs. */
   // [TARGET compose(ComposeRequest)]
   // [VARIABLE "my_unique_bucket"]
@@ -376,22 +324,6 @@ public class StorageSnippets {
     return blob;
   }
 
-  /** Example of copying a blob. */
-  // [TARGET copy(CopyRequest)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_blob_name"]
-  // [VARIABLE "copy_blob_name"]
-  public Blob copyBlob(String bucketName, String blobName, String copyBlobName) {
-    // [START copyBlob]
-    CopyRequest request =
-        CopyRequest.newBuilder()
-            .setSource(BlobId.of(bucketName, blobName))
-            .setTarget(BlobId.of(bucketName, copyBlobName))
-            .build();
-    Blob blob = storage.copy(request).getResult();
-    // [END copyBlob]
-    return blob;
-  }
 
   /** Example of copying a blob in chunks. */
   // [TARGET copy(CopyRequest)]
@@ -446,19 +378,6 @@ public class StorageSnippets {
     BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
     byte[] content = storage.readAllBytes(blobId);
     // [END readBlobFromId]
-    return content;
-  }
-
-  /** Example of reading all bytes of an encrypted blob. */
-  // [TARGET readAllBytes(BlobId, BlobSourceOption...)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_blob_name"]
-  // [VARIABLE "my_encryption_key"]
-  public byte[] readEncryptedBlob(String bucketName, String blobName, String decryptionKey) {
-    // [START readEncryptedBlob]
-    byte[] content =
-        storage.readAllBytes(bucketName, blobName, BlobSourceOption.decryptionKey(decryptionKey));
-    // [END readEncryptedBlob]
     return content;
   }
 
@@ -874,19 +793,6 @@ public class StorageSnippets {
     return acl;
   }
 
-  /** Example of updating a blob to be public-read. */
-  // [TARGET createAcl(BlobId, Acl)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_blob_name"]
-  // [VARIABLE 42]
-  public Acl blobToPublicRead(String bucketName, String blobName, long blobGeneration) {
-    // [START storageMakePublic]
-    BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
-    Acl acl = storage.createAcl(blobId, Acl.of(User.ofAllUsers(), Role.READER));
-    // [END storageMakePublic]
-    return acl;
-  }
-
   /** Example of listing the ACL entries for a blob. */
   // [TARGET listAcls(BlobId)]
   // [VARIABLE "my_unique_bucket"]
@@ -919,41 +825,7 @@ public class StorageSnippets {
     return buckets;
   }
 
-  /** Example of enabling Requester pays on a bucket. */
-  public Bucket enableRequesterPays(String bucketName) throws StorageException {
-    // [START enable_requester_pays]
-    // Instantiate a Google Cloud Storage client
-    Storage storage = StorageOptions.getDefaultInstance().getService();
 
-    // The name of the existing bucket to enable requester-paying for, e.g. "my-bucket"
-    // String bucketName = "my-bucket"
-    BucketInfo bucketInfo = BucketInfo.newBuilder(bucketName).setRequesterPays(true).build();
-
-    // Update the bucket, throws StorageException on failure
-    Bucket bucket = storage.update(bucketInfo);
-
-    System.out.println("Requester pay status for " + bucketName + ": " + bucket.requesterPays());
-    // [END enable_requester_pays]
-    return bucket;
-  }
-
-  /** Example of disabling Requester pays on a bucket. */
-  public Bucket disableRequesterPays(String bucketName) {
-    // [START disable_requester_pays]
-    // Instantiate a Google Cloud Storage client
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-
-    // The name of the bucket to disable requester-paying for, e.g. "my-bucket"
-    // String bucketName = "my-bucket"
-    BucketInfo bucketInfo = BucketInfo.newBuilder(bucketName).setRequesterPays(false).build();
-
-    // Update the bucket, throws StorageException on failure
-    Bucket bucket = storage.update(bucketInfo);
-
-    System.out.println("Requester pays status for " + bucketName + ": " + bucket.requesterPays());
-    // [END disable_requester_pays]
-    return bucket;
-  }
 
   /** Example of retrieving Requester pays status on a bucket. */
   public Bucket getRequesterPaysStatus(String bucketName) throws StorageException {
@@ -970,61 +842,6 @@ public class StorageSnippets {
     // [END get_requester_pays_status]
     return bucket;
   }
-
-
-  /** Example of downloading a file using Requester pay. */
-  public void downloadFileUsingRequesterPays(
-      String projectId, String bucketName, String srcFilename, Path destFilePath)
-      throws IOException {
-    // [START storage_download_file_requester_pays]
-    // The project ID to bill
-    // String projectId = "my-billable-project-id";
-
-    // The name of the bucket to access
-    // String bucketName = "my-bucket";
-
-    // The name of the remote file to download
-    // String srcFilename = "file.txt";
-
-    // The path to which the file should be downloaded
-    // Path destFilePath = Paths.get("/local/path/to/file.txt");
-
-    // Instantiate a Google Cloud Storage client
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-
-    // Get specific file from specified bucket
-    Blob blob = storage.get(BlobId.of(bucketName, srcFilename));
-
-    // Download file to specified path
-    blob.downloadTo(destFilePath, Blob.BlobSourceOption.userProject(projectId));
-    // [END storage_download_file_requester_pays]
-  }
-
-  /** Example of setting a default KMS key on a bucket. */
-  public Bucket setDefaultKmsKey(String bucketName, String kmsKeyName) throws StorageException {
-    // [START storage_set_bucket_default_kms_key]
-    // Instantiate a Google Cloud Storage client
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-
-    // The name of the existing bucket to set a default KMS key for, e.g. "my-bucket"
-    // String bucketName = "my-bucket"
-
-    // The name of the KMS-key to use as a default
-    // Key names are provided in the following format:
-    // 'projects/<PROJECT>/locations/<LOCATION>/keyRings/<RING_NAME>/cryptoKeys/<KEY_NAME>'
-    // String kmsKeyName = ""
-
-    BucketInfo bucketInfo =
-        BucketInfo.newBuilder(bucketName).setDefaultKmsKeyName(kmsKeyName).build();
-
-    Bucket bucket = storage.update(bucketInfo);
-
-    System.out.println("Default KMS Key Name: " + bucket.getDefaultKmsKeyName());
-    // [END storage_set_bucket_default_kms_key]
-    return bucket;
-  }
-
-
 
   /** Example of setting a retention policy on a bucket */
   public Bucket setRetentionPolicy(String bucketName, Long retentionPeriod)

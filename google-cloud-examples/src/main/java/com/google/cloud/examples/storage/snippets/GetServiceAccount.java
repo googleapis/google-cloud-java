@@ -13,31 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.examples.storage.buckets;
+package com.google.cloud.examples.storage.snippets;
 
-// [START storage_disable_bucket_lifecycle_management]
-import com.google.cloud.storage.Bucket;
-import com.google.cloud.storage.BucketInfo;
+// [START storage_get_service_account]
+import com.google.cloud.storage.ServiceAccount;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-import com.google.common.collect.ImmutableList;
 
-import java.util.LinkedList;
-
-public class DisableLifecycleManagement {
-    public static void disableLifecycleManagement(String projectId, String bucketName) {
+public class GetServiceAccount {
+    public static void getServiceAccount(String projectId) {
         // The ID of your GCP project
         // String projectId = "your-project-id";
 
-        // The ID of your GCS bucket
-        // String bucketName = "your-unique-bucket-name";
-
         Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-        Bucket bucket = storage.get(bucketName);
-
-        //TODO add once api is implemented
-
-        System.out.println("Lifecycle management was disabled on bucket " + bucketName);
+        ServiceAccount serviceAccount = storage.getServiceAccount(projectId);
+        System.out.println("The GCS service account for project " + projectId + " is: " + serviceAccount.getEmail());
     }
 }
-// [END storage_disable_bucket_lifecycle_management]
+// [END storage_get_service_account]

@@ -24,17 +24,26 @@ import com.google.cloud.storage.StorageOptions;
 public class MoveObject {
   public static void moveObject(
       String projectId, String sourceBucketName, String objectName, String targetBucketName) {
+    // The ID of your GCP project
     // String projectId = "your-project-id";
-    // String sourceBucketName = "original-object-bucket";
-    // String objectName = "name-for-your-gcs-object"
+
+    // The ID of your GCS bucket
+    // String bucketName = "your-unique-bucket-name";
+
+    // The ID of your GCS object
+    // String objectName = "your-object-name";
+
+    // The ID of the bucket to move the object objectName to
     // String targetBucketName = "target-object-bucket"
+
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     Blob blob = storage.get(sourceBucketName, objectName);
-    // You could also use a different object name, and could the target bucket the same to rename the object
+    // Write a copy of the object to the target bucket
     CopyWriter copyWriter = blob.copyTo(targetBucketName, objectName);
     Blob copiedBlob = copyWriter.getResult();
     // Delete the original blob now that we've copied to where we want it, finishing the "move" operation
     blob.delete();
+
     System.out.println(
         "Moved object "
             + objectName

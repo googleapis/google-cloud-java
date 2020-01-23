@@ -15,7 +15,7 @@
  */
 package com.google.cloud.examples.storage.objects;
 
-// [START storate_rotate_encryption_key]
+// [START storage_rotate_encryption_key]
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
@@ -27,11 +27,21 @@ public class RotateObjectEncryptionKey {
       String objectName,
       String oldEncryptionKey,
       String newEncryptionKey) {
+    // The ID of your GCP project
     // String projectId = "your-project-id";
+
+    // The ID of your GCS bucket
     // String bucketName = "your-unique-bucket-name";
-    // String objectName = "your-object-name"
-    // String oldEncyrptionKey = "old-encryption-key-to-rotate"
-    // String newEncryptionKey = "new-encryption-key-to-set"
+
+    // The ID of your GCS object
+    // String objectName = "your-object-name";
+
+    // The encryption key originally used to encrypt the object
+    // String oldEncryptionKey = "TIbv/fjexq+VmtXzAlc63J4z5kFmWJ6NdAPQulQBT7g="
+
+    // The new encryption key to use
+    // String newEncryptionKey = "0mMWhFvQOdS4AmxRpo8SJxXn5MjFhbz7DkKBUdUIef8="
+
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     BlobId blobId = BlobId.of(bucketName, objectName);
     // You can't change an object's encryption key directly, the only way is to overwrite the object
@@ -42,7 +52,8 @@ public class RotateObjectEncryptionKey {
             .setTarget(blobId, Storage.BlobTargetOption.encryptionKey(newEncryptionKey))
             .build();
     storage.copy(request);
+
     System.out.println("Rotated encryption key for object " + objectName + "in bucket " + bucketName);
   }
 }
-// [END storate_rotate_encryption_key]
+// [END storage_rotate_encryption_key]

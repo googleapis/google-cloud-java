@@ -24,12 +24,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AddBucketLabel {
-  public static void addBucketLabel(
-      String projectId, String bucketName, String labelKey, String labelValue) {
+  public static void addBucketLabel(String projectId, String bucketName, String labelKey, String labelValue) {
+    // The ID of your GCP project
     // String projectId = "your-project-id";
+
+    // The ID of your GCS bucket
     // String bucketName = "your-unique-bucket-name";
+
+    // The key of the label to add
     // String labelKey = "label-key-to-add";
-    // String labelValue = "label-value to add";
+
+    // The value of the label to add
+    // String labelValue = "label-value-to-add";
+
     Map<String, String> labelsToAdd = new HashMap<>();
     labelsToAdd.put(labelKey, labelValue);
 

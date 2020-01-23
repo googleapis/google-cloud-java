@@ -15,16 +15,14 @@
  */
 package com.google.cloud.examples.storage.objects;
 
-// [START storage_download_file]
-import com.google.cloud.storage.Blob;
+// [START storage_delete_file]
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
-import java.nio.file.Path;
-
-public class DownloadObject {
-  public static void downloadObject(String projectId, String bucketName, String objectName, Path destFilePath) {
+public class DeleteOldVersionOfObject {
+  public static void deleteOldVersionOfObject(
+      String projectId, String bucketName, String objectName, long generationToDelete) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
@@ -34,21 +32,19 @@ public class DownloadObject {
     // The ID of your GCS object
     // String objectName = "your-object-name";
 
-    // The path to which the file should be downloaded
-    // Path destFilePath = Paths.get("/local/path/to/file.txt");
+    // The generation of objectName to delete
+    // long generationToDelete = 1579287380533984;
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-
-    Blob blob = storage.get(BlobId.of(bucketName, objectName));
-    blob.downloadTo(destFilePath);
+    storage.delete(BlobId.of(bucketName, objectName, generationToDelete));
 
     System.out.println(
-        "Downloaded object "
+        "Generation "
+            + generationToDelete
+            + " of object "
             + objectName
-            + " from bucket name "
-            + bucketName
-            + " to "
-            + destFilePath);
+            + " was deleted from "
+            + bucketName);
   }
 }
-// [END storage_download_file]
+// [END storage_delete_file]

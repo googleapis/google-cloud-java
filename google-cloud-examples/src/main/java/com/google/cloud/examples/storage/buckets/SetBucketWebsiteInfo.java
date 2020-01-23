@@ -15,24 +15,38 @@
  */
 package com.google.cloud.examples.storage.buckets;
 
-// [START storage_delete_bucket]
+// [START storage_define_bucket_website_configuration]
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
-public class DeleteBucket {
-  public static void deleteBucket(String projectId, String bucketName) {
+public class SetBucketWebsiteInfo {
+  public static void setBucketWesbiteInfo(
+      String projectId, String bucketName, String indexPage, String notFoundPage) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
-    // The ID of the bucket to delete
-    // String bucketName = "your-unique-bucket-name";
+    // The ID of your static website bucket
+    // String bucketName = "www.example.com";
+
+    // The index page for a static website bucket
+    // String indexPage = "index.html";
+
+    // The 404 page for a static website bucket
+    // String notFoundPage = "404.html";
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     Bucket bucket = storage.get(bucketName);
-    bucket.delete();
+    bucket.toBuilder().setIndexPage(indexPage).setNotFoundPage(notFoundPage).build().update();
 
-    System.out.println("Bucket " + bucket.getName() + " was deleted");
+    System.out.println(
+        "Static website bucket "
+            + bucketName
+            + " is set up to use "
+            + indexPage
+            + " as the index page and "
+            + notFoundPage
+            + " as the 404 page");
   }
 }
-// [END storage_delete_bucket]
+// [END storage_define_bucket_website_configuration]

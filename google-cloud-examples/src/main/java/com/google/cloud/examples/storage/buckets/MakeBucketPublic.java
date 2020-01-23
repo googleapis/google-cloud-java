@@ -15,36 +15,31 @@
  */
 package com.google.cloud.examples.storage.buckets;
 
-// [START storage_remove_bucket_label
-import com.google.cloud.storage.Bucket;
+// [START storage_set_bucket_public_iam]
+import com.google.cloud.Identity;
+import com.google.cloud.Policy;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
+import com.google.cloud.storage.StorageRoles;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class RemoveBucketLabel {
-  public static void removeBucketLabel(String projectId, String bucketName, String labelKey) {
+public class MakeBucketPublic {
+  public static void makeBucketPublic(String projectId, String bucketName) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
     // The ID of your GCS bucket
     // String bucketName = "your-unique-bucket-name";
 
-    // The key of the label to remove from the bucket
-    // String labelKey = "label-key-to-remove";
-
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
+    Policy originalPolicy = storage.getIamPolicy(bucketName);
+    storage.setIamPolicy(
+        bucketName,
+        originalPolicy
+            .toBuilder()
+            .addIdentity(StorageRoles.objectViewer(), Identity.allUsers()) // All users can view
+            .build());
 
-    Map<String, String> labelsToRemove = new HashMap<>();
-    labelsToRemove.put(labelKey, null);
-
-    Bucket bucket = storage.get(bucketName);
-    Map<String, String> labels = new HashMap<>(bucket.getLabels());
-    labels.putAll(labelsToRemove);
-    bucket.toBuilder().setLabels(labels).build().update();
-
-    System.out.println("Removed label " + labelKey + " from bucket " + bucketName);
+    System.out.println("Bucket " + bucketName + " is now publicly readable");
   }
 }
-// [END storage_remove_bucket_label]
+// [END storage_set_bucket_public_iam]

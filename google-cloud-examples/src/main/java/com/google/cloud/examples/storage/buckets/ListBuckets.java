@@ -23,7 +23,9 @@ import com.google.cloud.storage.StorageOptions;
 
 public class ListBuckets {
   public static void listBuckets(String projectId) {
+    // The ID of your GCP project
     // String projectId = "your-project-id";
+
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     Page<Bucket> buckets = storage.list();
 

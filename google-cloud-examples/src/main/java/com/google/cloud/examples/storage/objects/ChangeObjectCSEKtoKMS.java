@@ -15,19 +15,14 @@
  */
 package com.google.cloud.examples.storage.objects;
 
-// [START storage_upload_file]
+// [START storage_object_csek_to_cmek]
 import com.google.cloud.storage.BlobId;
-import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
-public class UploadObject {
-  public static void uploadObject(
-      String projectId, String bucketName, String objectName, String filePath) throws IOException {
+public class ChangeObjectCSEKtoKMS {
+  public static void changeObjectFromCSEKtoKMS(String projectId, String bucketName, String objectName,
+      String decryptionKey, String kmsKeyName) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
@@ -37,16 +32,30 @@ public class UploadObject {
     // The ID of your GCS object
     // String objectName = "your-object-name";
 
-    // The path to your file to upload
-    // String filePath = "path/to/your/file"
+    // The decryption key, which should be the same key originally used to encrypt the object
+    // String decryptionKey = "TIbv/fjexq+VmtXzAlc63J4z5kFmWJ6NdAPQulQBT7g=";
+
+    // The name of the KMS key to manage this object with
+    // String kmsKeyName = "projects/your-project-id/locations/global/keyRings/your-key-ring/cryptoKeys/your-key";
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     BlobId blobId = BlobId.of(bucketName, objectName);
-    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
-    storage.create(blobInfo, Files.readAllBytes(Paths.get(filePath)));
+    Storage.CopyRequest request =
+        Storage.CopyRequest.newBuilder()
+            .setSource(blobId)
+            .setSourceOptions(Storage.BlobSourceOption.decryptionKey(decryptionKey))
+            .setTarget(blobId, Storage.BlobTargetOption.kmsKeyName(kmsKeyName))
+            .build();
+    storage.copy(request);
 
     System.out.println(
-        "File " + filePath + " uploaded to bucket " + bucketName + " as " + objectName);
+        "Object "
+            + objectName
+            + " in bucket "
+            + bucketName
+            + " is now managed by the KMS key "
+            + kmsKeyName
+            + " instead of a customer-supplied encryption key");
   }
 }
-// [END storage_upload_file]
+// [END storage_object_csek_to_cmek]

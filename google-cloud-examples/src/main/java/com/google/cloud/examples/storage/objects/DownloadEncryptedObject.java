@@ -15,16 +15,18 @@
  */
 package com.google.cloud.examples.storage.objects;
 
-// [START storage_download_file]
+// [START storage_download_encrypted_file]
 import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
+import java.io.IOException;
 import java.nio.file.Path;
 
-public class DownloadObject {
-  public static void downloadObject(String projectId, String bucketName, String objectName, Path destFilePath) {
+public class DownloadEncryptedObject {
+  public static void downloadEncryptedObject(String projectId, String bucketName, String objectName, Path destFilePath,
+      String decryptionKey) throws IOException {
+
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
@@ -37,10 +39,13 @@ public class DownloadObject {
     // The path to which the file should be downloaded
     // Path destFilePath = Paths.get("/local/path/to/file.txt");
 
+    // The decryption key, which should be the same key originally used to encrypt the object
+    // String decryptionKey = "TIbv/fjexq+VmtXzAlc63J4z5kFmWJ6NdAPQulQBT7g=";
+
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
 
-    Blob blob = storage.get(BlobId.of(bucketName, objectName));
-    blob.downloadTo(destFilePath);
+    Blob blob = storage.get(bucketName, objectName);
+    blob.downloadTo(destFilePath, Blob.BlobSourceOption.decryptionKey(decryptionKey));
 
     System.out.println(
         "Downloaded object "
@@ -48,7 +53,8 @@ public class DownloadObject {
             + " from bucket name "
             + bucketName
             + " to "
-            + destFilePath);
+            + destFilePath
+            + " using customer-supplied encryption key");
   }
 }
-// [END storage_download_file]
+// [END storage_download_encrypted_file]

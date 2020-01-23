@@ -23,16 +23,25 @@ import com.google.cloud.storage.StorageOptions;
 public class CopyObject {
   public static void copyObject(
       String projectId, String sourceBucketName, String objectName, String targetBucketName) {
+    // The ID of your GCP project
     // String projectId = "your-project-id";
-    // String sourceBucketName = "original-object-bucket";
-    // String objectName = "name-for-your-gcs-object"
+
+    // The ID of the bucket the original object is in
+    // String sourceBucketName = "your-source-bucket";
+
+    // The ID of the GCS object to copy
+    // String objectName = "your-object-name";
+
+    // The ID of the bucket to copy the object to
     // String targetBucketName = "target-object-bucket"
+
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     Blob blob = storage.get(sourceBucketName, objectName);
+
     // This keeps the original name, you could also do copyTo(targetBucketName, "target-object-name") to change the name
     blob.copyTo(targetBucketName);
-    System.out.println(
-        "Copied object " + objectName + " from bucket " + sourceBucketName + " to " + targetBucketName);
+
+    System.out.println("Copied object " + objectName + " from bucket " + sourceBucketName + " to " + targetBucketName);
   }
 }
 // [END storage_copy_file]

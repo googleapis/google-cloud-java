@@ -15,7 +15,7 @@
  */
 package com.google.cloud.examples.storage.objects;
 
-// [START storage_download_file]
+// [START storage_download_file_requester_pays]
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.Storage;
@@ -23,10 +23,11 @@ import com.google.cloud.storage.StorageOptions;
 
 import java.nio.file.Path;
 
-public class DownloadObject {
-  public static void downloadObject(String projectId, String bucketName, String objectName, Path destFilePath) {
-    // The ID of your GCP project
-    // String projectId = "your-project-id";
+public class DownloadRequesterPaysObject {
+  public static void downloadRequesterPaysObject(
+      String projectId, String bucketName, String objectName, Path destFilePath) {
+    // The project ID to bill
+    // String projectId = "my-billable-project-id";
 
     // The ID of your GCS bucket
     // String bucketName = "your-unique-bucket-name";
@@ -37,18 +38,11 @@ public class DownloadObject {
     // The path to which the file should be downloaded
     // Path destFilePath = Paths.get("/local/path/to/file.txt");
 
-    Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-
+    Storage storage = StorageOptions.getDefaultInstance().getService();
     Blob blob = storage.get(BlobId.of(bucketName, objectName));
-    blob.downloadTo(destFilePath);
+    blob.downloadTo(destFilePath, Blob.BlobSourceOption.userProject(projectId));
 
-    System.out.println(
-        "Downloaded object "
-            + objectName
-            + " from bucket name "
-            + bucketName
-            + " to "
-            + destFilePath);
+    System.out.println("Object " + objectName + " downloaded to " + destFilePath + " and billed to " + projectId);
   }
 }
-// [END storage_download_file]
+// [START storage_download_file_requester_pays]

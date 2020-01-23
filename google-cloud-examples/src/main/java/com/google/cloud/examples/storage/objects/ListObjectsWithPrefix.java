@@ -24,9 +24,15 @@ import com.google.cloud.storage.StorageOptions;
 
 public class ListObjectsWithPrefix {
     public static void listObjectsWithPrefix(String projectId, String bucketName, String directoryPrefix) {
+        // The ID of your GCP project
         // String projectId = "your-project-id";
+
+        // The ID of your GCS bucket
         // String bucketName = "your-unique-bucket-name";
-        // String directoryPrefix = "directoryName/"
+
+        // The directory prefix to search for
+        // String directoryPrefix = "myDirectory/"
+
         Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
         Bucket bucket = storage.get(bucketName);
         /**
@@ -53,6 +59,7 @@ public class ListObjectsWithPrefix {
          */
         Page<Blob> blobs = bucket
                 .list(Storage.BlobListOption.prefix(directoryPrefix), Storage.BlobListOption.currentDirectory());
+
         for (Blob blob : blobs.iterateAll()) {
             System.out.println(blob.getName());
         }

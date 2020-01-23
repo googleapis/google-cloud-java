@@ -13,35 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.examples.storage.objects;
+package com.google.cloud.examples.storage.buckets;
 
-// [START storage_set_metadata]
-import com.google.cloud.storage.Blob;
+// [START storage_view_bucket_iam_members]
+import com.google.cloud.Identity;
+import com.google.cloud.Policy;
+import com.google.cloud.Role;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
-public class SetObjectMetadata {
-    public static void setObjectMetadata(String projectId, String bucketName, String objectName) {
+public class ListBucketIamMembers {
+    public static void listBucketIamMembers(String projectId, String bucketName) {
         // The ID of your GCP project
         // String projectId = "your-project-id";
 
         // The ID of your GCS bucket
         // String bucketName = "your-unique-bucket-name";
 
-        // The ID of your GCS object
-        // String objectName = "your-object-name";
-
         Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-        Map<String, String> newMetadata = new HashMap<>();
-        newMetadata.put("keyToAddOrUpdate", "value");
-        Blob blob = storage.get(bucketName, objectName);
-        // Does an upsert operation, if the key already exists it's replaced by the new value, otherwise it's added.
-        blob.toBuilder().setMetadata(newMetadata).build().update();
+        Policy policy = storage.getIamPolicy(bucketName);
+        Map<Role, Set<Identity>> policyBindings = policy.getBindings();
 
-        System.out.println("Updated custom metadata for object " + objectName + " in bucket " + bucketName);
+        for (Map.Entry<Role, Set<Identity>> entry : policyBindings.entrySet()) {
+            System.out.printf("Role: %s Identities: %s\n", entry.getKey(), entry.getValue());
+        }
     }
 }
-// [END storage_set_metadata]
+// [END storage_view_bucket_iam_members]

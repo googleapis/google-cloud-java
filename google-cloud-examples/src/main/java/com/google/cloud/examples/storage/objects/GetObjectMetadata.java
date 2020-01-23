@@ -27,19 +27,20 @@ import java.util.Map;
 public class GetObjectMetadata {
   public static void getObjectMetadata(String projectId, String bucketName, String blobName)
       throws StorageException {
-    // Instantiate a Google Cloud Storage client
+    // The ID of your GCP project
+    // String projectId = "your-project-id";
+
+    // The ID of your GCS bucket
+    // String bucketName = "your-unique-bucket-name";
+
+    // The ID of your GCS object
+    // String objectName = "your-object-name";
+
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-
-    // The name of a bucket, e.g. "my-bucket"
-    // String bucketName = "my-bucket";
-
-    // The name of a blob, e.g. "my-blob"
-    // String blobName = "my-blob";
 
     // Select all fields
     // Fields can be selected individually e.g. Storage.BlobField.CACHE_CONTROL
-    Blob blob =
-        storage.get(bucketName, blobName, Storage.BlobGetOption.fields(Storage.BlobField.values()));
+    Blob blob = storage.get(bucketName, blobName, Storage.BlobGetOption.fields(Storage.BlobField.values()));
 
     // Print blob metadata
     System.out.println("Bucket: " + blob.getBucket());
