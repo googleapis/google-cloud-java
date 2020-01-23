@@ -1,19 +1,20 @@
 {
-  "updateTime": "2020-01-16T08:39:40.515117Z",
+  "updateTime": "2020-01-23T08:38:44.959292Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.44.0",
-        "dockerImage": "googleapis/artman@sha256:10a6d0342b8d62544810ac5ad86c3b21049ec0696608ac60175da8e513234344"
+        "version": "0.44.1",
+        "dockerImage": "googleapis/artman@sha256:5599b61e56a372d21b671969ee915fbca0f6c3a0daaeb898d01f8f685f1bbc8b"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "0735b4b096872960568d1f366bfa75b7b0e1f1a3",
-        "internalRef": "289939042"
+        "sha": "8d16f76de065f530d395a4c7eabbf766d6a120fd",
+        "internalRef": "291008516",
+        "log": "8d16f76de065f530d395a4c7eabbf766d6a120fd\nGenerate Memcache v1beta2 API protos and gRPC ServiceConfig files\n\nPiperOrigin-RevId: 291008516\n\n3af1dabd93df9a9f17bf3624d3b875c11235360b\ngrafeas: Add containeranalysis default_host to Grafeas service\n\nPiperOrigin-RevId: 290965849\n\nbe2663fa95e31cba67d0cd62611a6674db9f74b7\nfix(google/maps/roads): add missing opening bracket\n\nPiperOrigin-RevId: 290964086\n\nfacc26550a0af0696e0534bc9cae9df14275aa7c\nUpdating v2 protos with the latest inline documentation (in comments) and adding a per-service .yaml file.\n\nPiperOrigin-RevId: 290952261\n\ncda99c1f7dc5e4ca9b1caeae1dc330838cbc1461\nChange api_name to 'asset' for v1p1beta1\n\nPiperOrigin-RevId: 290800639\n\n94e9e90c303a820ce40643d9129e7f0d2054e8a1\nAdds Google Maps Road service\n\nPiperOrigin-RevId: 290795667\n\na3b23dcb2eaecce98c600c7d009451bdec52dbda\nrpc: new message ErrorInfo, other comment updates\n\nPiperOrigin-RevId: 290781668\n\n26420ef4e46c37f193c0fbe53d6ebac481de460e\nAdd proto definition for Org Policy v1.\n\nPiperOrigin-RevId: 290771923\n\n7f0dab8177cf371ae019a082e2512de7ac102888\nPublish Routes Preferred API v1 service definitions.\n\nPiperOrigin-RevId: 290326986\n\nad6e508d0728e1d1bca6e3f328cd562718cb772d\nFix: Qualify resource type references with \"jobs.googleapis.com/\"\n\nPiperOrigin-RevId: 290285762\n\n58e770d568a2b78168ddc19a874178fee8265a9d\ncts client library\n\nPiperOrigin-RevId: 290146169\n\naf9daa4c3b4c4a8b7133b81588dd9ffd37270af2\nAdd more programming language options to public proto\n\nPiperOrigin-RevId: 290144091\n\nd9f2bbf2df301ef84641d4cec7c828736a0bd907\ntalent: add missing resource.proto dep to Bazel build target\n\nPiperOrigin-RevId: 290143164\n\n3b3968237451d027b42471cd28884a5a1faed6c7\nAnnotate Talent API.\nAdd gRPC service config for retry.\nUpdate bazel file with google.api.resource dependency.\n\nPiperOrigin-RevId: 290125172\n\n"
       }
     },
     {
@@ -38,544 +39,7 @@
   ],
   "newFiles": [
     {
-      "path": "pom.xml"
-    },
-    {
-      "path": ".repo-metadata.json"
-    },
-    {
-      "path": "java.header"
-    },
-    {
-      "path": "CONTRIBUTING.md"
-    },
-    {
-      "path": "synth.metadata"
-    },
-    {
-      "path": "renovate.json"
-    },
-    {
-      "path": "versions.txt"
-    },
-    {
-      "path": "synth.py"
-    },
-    {
-      "path": "license-checks.xml"
-    },
-    {
-      "path": "CHANGELOG.md"
-    },
-    {
-      "path": "CODE_OF_CONDUCT.md"
-    },
-    {
-      "path": "LICENSE"
-    },
-    {
-      "path": "codecov.yaml"
-    },
-    {
-      "path": ".gitignore"
-    },
-    {
-      "path": "README.md"
-    },
-    {
-      "path": "google-cloud-container-bom/pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/clirr-ignored-differences.xml"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodeTaint.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/DeleteClusterRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CreateNodePoolRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListClustersResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UsableSubnetworkSecondaryRangeOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/GetServerConfigRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ClientCertificateConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetNodePoolAutoscalingRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UpdateClusterRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodeTaintOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/HttpLoadBalancing.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/StatusCondition.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/HorizontalPodAutoscaling.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodePool.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/GetServerConfigRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/OperationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ServerConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListOperationsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListUsableSubnetworksResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ClientCertificateConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodePoolOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/DailyMaintenanceWindowOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/DatabaseEncryptionOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetMonitoringServiceRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListNodePoolsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/GetClusterRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CancelOperationRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UpdateMasterRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListNodePoolsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/StartIPRotationRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NetworkPolicyConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MaintenanceWindowOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/IntraNodeVisibilityConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MaintenanceWindow.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/RollbackNodePoolUpgradeRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AutoUpgradeOptionsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/GetNodePoolRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/IPAllocationPolicy.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MaintenancePolicy.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/DeleteNodePoolRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetNodePoolAutoscalingRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/BinaryAuthorization.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodePoolAutoscalingOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetAddonsConfigRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/KubernetesDashboardOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodeManagementOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodeManagement.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AutoprovisioningNodePoolDefaultsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/GetOperationRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetNetworkPolicyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CloudRunConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NetworkPolicy.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetLabelsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MaintenancePolicyOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListNodePoolsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetLabelsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/LegacyAbac.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListNodePoolsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/RecurringTimeWindow.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetLegacyAbacRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetNodePoolManagementRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetLoggingServiceRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/GetClusterRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListClustersResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/PrivateClusterConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/DatabaseEncryption.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AcceleratorConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListUsableSubnetworksResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListClustersRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ClusterAutoscaling.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ClusterUpdate.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/Cluster.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/TimeWindow.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListOperationsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListUsableSubnetworksRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/DeleteClusterRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CreateClusterRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/LegacyAbacOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MasterAuthorizedNetworksConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetNodePoolSizeRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ShieldedInstanceConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/TimeWindowOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/IPAllocationPolicyOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetLocationsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/RollbackNodePoolUpgradeRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/VerticalPodAutoscaling.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/RecurringTimeWindowOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListOperationsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ClusterServiceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/DeleteNodePoolRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UsableSubnetworkOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/BinaryAuthorizationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetNodePoolSizeRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetLegacyAbacRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AddonsConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UpdateNodePoolRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetLocationsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UpdateClusterRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CreateNodePoolRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/VerticalPodAutoscalingOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetMaintenancePolicyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ResourceLimitOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MasterAuthOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CancelOperationRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NetworkConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/StatusConditionOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CompleteIPRotationRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MasterAuth.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MaxPodsConstraint.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/HorizontalPodAutoscalingOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AutoUpgradeOptions.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CompleteIPRotationRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetNodePoolManagementRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AuthenticatorGroupsConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/GetNodePoolRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetNetworkPolicyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ShieldedInstanceConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetMonitoringServiceRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ServerConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CreateClusterRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AuthenticatorGroupsConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetLoggingServiceRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ResourceUsageExportConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MaxPodsConstraintOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetAddonsConfigRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/StartIPRotationRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodePoolAutoscaling.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/Operation.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ResourceUsageExportConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/IntraNodeVisibilityConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UsableSubnetworkSecondaryRange.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UpdateNodePoolRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetMaintenancePolicyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListOperationsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ResourceLimit.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AcceleratorConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MasterAuthorizedNetworksConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NetworkPolicyOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NetworkPolicyConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ClusterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/DailyMaintenanceWindow.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListUsableSubnetworksRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NetworkConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AutoprovisioningNodePoolDefaults.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetMasterAuthRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetMasterAuthRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/KubernetesDashboard.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UpdateMasterRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AddonsConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ClusterAutoscalingOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodeConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UsableSubnetwork.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CloudRunConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/PrivateClusterConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodeConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/HttpLoadBalancingOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListClustersRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ClusterUpdateOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/GetOperationRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-container-v1/src/main/proto/google/container/v1/cluster_service.proto"
-    },
-    {
-      "path": ".github/release-please.yml"
-    },
-    {
-      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/feature_request.md"
@@ -584,34 +48,31 @@
       "path": ".github/ISSUE_TEMPLATE/support_request.md"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
     },
     {
-      "path": ".kokoro/build.sh"
+      "path": ".github/release-please.yml"
     },
     {
-      "path": ".kokoro/common.cfg"
+      "path": ".gitignore"
     },
     {
       "path": ".kokoro/build.bat"
     },
     {
-      "path": ".kokoro/linkage-monitor.sh"
+      "path": ".kokoro/build.sh"
     },
     {
       "path": ".kokoro/coerce_logs.sh"
     },
     {
-      "path": ".kokoro/dependencies.sh"
+      "path": ".kokoro/common.cfg"
     },
     {
-      "path": ".kokoro/trampoline.sh"
+      "path": ".kokoro/continuous/common.cfg"
     },
     {
-      "path": ".kokoro/continuous/samples.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8.cfg"
+      "path": ".kokoro/continuous/dependencies.cfg"
     },
     {
       "path": ".kokoro/continuous/integration.cfg"
@@ -620,34 +81,40 @@
       "path": ".kokoro/continuous/java11.cfg"
     },
     {
-      "path": ".kokoro/continuous/propose_release.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/common.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.sh"
-    },
-    {
       "path": ".kokoro/continuous/java7.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/lint.cfg"
     },
     {
       "path": ".kokoro/continuous/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/continuous/dependencies.cfg"
-    },
-    {
       "path": ".kokoro/continuous/java8-win.cfg"
     },
     {
-      "path": ".kokoro/nightly/samples.cfg"
+      "path": ".kokoro/continuous/java8.cfg"
     },
     {
-      "path": ".kokoro/nightly/java8.cfg"
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
     },
     {
       "path": ".kokoro/nightly/integration.cfg"
@@ -656,70 +123,31 @@
       "path": ".kokoro/nightly/java11.cfg"
     },
     {
-      "path": ".kokoro/nightly/common.cfg"
-    },
-    {
       "path": ".kokoro/nightly/java7.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/lint.cfg"
     },
     {
       "path": ".kokoro/nightly/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/nightly/dependencies.cfg"
-    },
-    {
       "path": ".kokoro/nightly/java8-win.cfg"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.cfg"
+      "path": ".kokoro/nightly/java8.cfg"
     },
     {
-      "path": ".kokoro/release/common.sh"
+      "path": ".kokoro/nightly/lint.cfg"
     },
     {
-      "path": ".kokoro/release/promote.sh"
+      "path": ".kokoro/nightly/samples.cfg"
     },
     {
-      "path": ".kokoro/release/common.cfg"
+      "path": ".kokoro/presubmit/clirr.cfg"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.sh"
+      "path": ".kokoro/presubmit/common.cfg"
     },
     {
-      "path": ".kokoro/release/drop.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.sh"
-    },
-    {
-      "path": ".kokoro/release/promote.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.sh"
-    },
-    {
-      "path": ".kokoro/presubmit/samples.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8.cfg"
+      "path": ".kokoro/presubmit/dependencies.cfg"
     },
     {
       "path": ".kokoro/presubmit/integration.cfg"
@@ -728,52 +156,103 @@
       "path": ".kokoro/presubmit/java11.cfg"
     },
     {
-      "path": ".kokoro/presubmit/linkage-monitor.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/common.cfg"
-    },
-    {
       "path": ".kokoro/presubmit/java7.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/lint.cfg"
     },
     {
       "path": ".kokoro/presubmit/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/presubmit/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/clirr.cfg"
-    },
-    {
       "path": ".kokoro/presubmit/java8-win.cfg"
     },
     {
-      "path": "grpc-google-cloud-container-v1/pom.xml"
+      "path": ".kokoro/presubmit/java8.cfg"
     },
     {
-      "path": "grpc-google-cloud-container-v1/src/main/java/com/google/container/v1/ClusterManagerGrpc.java"
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": "google-cloud-container-bom/pom.xml"
     },
     {
       "path": "google-cloud-container/pom.xml"
     },
     {
-      "path": "google-cloud-container/src/test/java/com/google/cloud/container/v1/MockClusterManagerImpl.java"
+      "path": "google-cloud-container/src/main/java/com/google/cloud/container/v1/ClusterManagerClient.java"
     },
     {
-      "path": "google-cloud-container/src/test/java/com/google/cloud/container/v1/ClusterManagerClientTest.java"
-    },
-    {
-      "path": "google-cloud-container/src/test/java/com/google/cloud/container/v1/MockClusterManager.java"
-    },
-    {
-      "path": "google-cloud-container/src/test/java/com/google/cloud/container/v1/ClusterManagerSmokeTest.java"
-    },
-    {
-      "path": "google-cloud-container/src/test/java/com/google/cloud/container/v1/it/ITSystemTest.java"
+      "path": "google-cloud-container/src/main/java/com/google/cloud/container/v1/ClusterManagerSettings.java"
     },
     {
       "path": "google-cloud-container/src/main/java/com/google/cloud/container/v1/SampleApp.java"
@@ -782,22 +261,544 @@
       "path": "google-cloud-container/src/main/java/com/google/cloud/container/v1/package-info.java"
     },
     {
-      "path": "google-cloud-container/src/main/java/com/google/cloud/container/v1/ClusterManagerSettings.java"
-    },
-    {
-      "path": "google-cloud-container/src/main/java/com/google/cloud/container/v1/ClusterManagerClient.java"
+      "path": "google-cloud-container/src/main/java/com/google/cloud/container/v1/stub/ClusterManagerStub.java"
     },
     {
       "path": "google-cloud-container/src/main/java/com/google/cloud/container/v1/stub/ClusterManagerStubSettings.java"
     },
     {
-      "path": "google-cloud-container/src/main/java/com/google/cloud/container/v1/stub/ClusterManagerStub.java"
+      "path": "google-cloud-container/src/main/java/com/google/cloud/container/v1/stub/GrpcClusterManagerCallableFactory.java"
     },
     {
       "path": "google-cloud-container/src/main/java/com/google/cloud/container/v1/stub/GrpcClusterManagerStub.java"
     },
     {
-      "path": "google-cloud-container/src/main/java/com/google/cloud/container/v1/stub/GrpcClusterManagerCallableFactory.java"
+      "path": "google-cloud-container/src/test/java/com/google/cloud/container/v1/ClusterManagerClientTest.java"
+    },
+    {
+      "path": "google-cloud-container/src/test/java/com/google/cloud/container/v1/ClusterManagerSmokeTest.java"
+    },
+    {
+      "path": "google-cloud-container/src/test/java/com/google/cloud/container/v1/MockClusterManager.java"
+    },
+    {
+      "path": "google-cloud-container/src/test/java/com/google/cloud/container/v1/MockClusterManagerImpl.java"
+    },
+    {
+      "path": "google-cloud-container/src/test/java/com/google/cloud/container/v1/it/ITSystemTest.java"
+    },
+    {
+      "path": "grpc-google-cloud-container-v1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-container-v1/src/main/java/com/google/container/v1/ClusterManagerGrpc.java"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AcceleratorConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AcceleratorConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AddonsConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AddonsConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AuthenticatorGroupsConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AuthenticatorGroupsConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AutoUpgradeOptions.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AutoUpgradeOptionsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AutoprovisioningNodePoolDefaults.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/AutoprovisioningNodePoolDefaultsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/BinaryAuthorization.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/BinaryAuthorizationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CancelOperationRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CancelOperationRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ClientCertificateConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ClientCertificateConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CloudRunConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CloudRunConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/Cluster.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ClusterAutoscaling.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ClusterAutoscalingOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ClusterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ClusterServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ClusterUpdate.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ClusterUpdateOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CompleteIPRotationRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CompleteIPRotationRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CreateClusterRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CreateClusterRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CreateNodePoolRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/CreateNodePoolRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/DailyMaintenanceWindow.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/DailyMaintenanceWindowOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/DatabaseEncryption.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/DatabaseEncryptionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/DeleteClusterRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/DeleteClusterRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/DeleteNodePoolRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/DeleteNodePoolRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/GetClusterRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/GetClusterRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/GetNodePoolRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/GetNodePoolRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/GetOperationRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/GetOperationRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/GetServerConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/GetServerConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/HorizontalPodAutoscaling.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/HorizontalPodAutoscalingOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/HttpLoadBalancing.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/HttpLoadBalancingOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/IPAllocationPolicy.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/IPAllocationPolicyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/IntraNodeVisibilityConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/IntraNodeVisibilityConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/KubernetesDashboard.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/KubernetesDashboardOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/LegacyAbac.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/LegacyAbacOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListClustersRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListClustersRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListClustersResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListClustersResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListNodePoolsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListNodePoolsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListNodePoolsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListNodePoolsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListOperationsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListOperationsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListOperationsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListOperationsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListUsableSubnetworksRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListUsableSubnetworksRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListUsableSubnetworksResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ListUsableSubnetworksResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MaintenancePolicy.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MaintenancePolicyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MaintenanceWindow.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MaintenanceWindowOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MasterAuth.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MasterAuthOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MasterAuthorizedNetworksConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MasterAuthorizedNetworksConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MaxPodsConstraint.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/MaxPodsConstraintOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NetworkConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NetworkConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NetworkPolicy.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NetworkPolicyConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NetworkPolicyConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NetworkPolicyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodeConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodeConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodeManagement.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodeManagementOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodePool.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodePoolAutoscaling.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodePoolAutoscalingOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodePoolOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodeTaint.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/NodeTaintOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/Operation.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/OperationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/PrivateClusterConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/PrivateClusterConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/RecurringTimeWindow.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/RecurringTimeWindowOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ResourceLimit.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ResourceLimitOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ResourceUsageExportConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ResourceUsageExportConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/RollbackNodePoolUpgradeRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/RollbackNodePoolUpgradeRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ServerConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ServerConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetAddonsConfigRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetAddonsConfigRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetLabelsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetLabelsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetLegacyAbacRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetLegacyAbacRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetLocationsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetLocationsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetLoggingServiceRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetLoggingServiceRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetMaintenancePolicyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetMaintenancePolicyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetMasterAuthRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetMasterAuthRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetMonitoringServiceRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetMonitoringServiceRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetNetworkPolicyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetNetworkPolicyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetNodePoolAutoscalingRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetNodePoolAutoscalingRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetNodePoolManagementRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetNodePoolManagementRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetNodePoolSizeRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/SetNodePoolSizeRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ShieldedInstanceConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/ShieldedInstanceConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/StartIPRotationRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/StartIPRotationRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/StatusCondition.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/StatusConditionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/TimeWindow.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/TimeWindowOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UpdateClusterRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UpdateClusterRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UpdateMasterRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UpdateMasterRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UpdateNodePoolRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UpdateNodePoolRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UsableSubnetwork.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UsableSubnetworkOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UsableSubnetworkSecondaryRange.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/UsableSubnetworkSecondaryRangeOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/VerticalPodAutoscaling.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/java/com/google/container/v1/VerticalPodAutoscalingOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-container-v1/src/main/proto/google/container/v1/cluster_service.proto"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "versions.txt"
     }
   ]
 }
