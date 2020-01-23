@@ -40,17 +40,17 @@ If you are using Maven without Bom, Add this to your dependencies.
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging</artifactId>
-  <version>1.99.0</version>
+  <version>1.100.0</version>
 </dependency>
 <!-- [END logging_install_without_bom] -->
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-logging:1.99.0'
+compile 'com.google.cloud:google-cloud-logging:1.100.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "1.99.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "1.100.0"
 ```
 [//]: # ({x-version-update-end})
 
