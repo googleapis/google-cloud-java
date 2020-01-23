@@ -37,16 +37,16 @@ If you are using Maven without a BOM, add this to your dependencies.
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>1.103.0</version>
+  <version>1.104.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquery:1.103.0'
+compile 'com.google.cloud:google-cloud-bigquery:1.104.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "1.103.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "1.104.0"
 ```
 [//]: # ({x-version-update-end})
 
