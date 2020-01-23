@@ -1,19 +1,20 @@
 {
-  "updateTime": "2020-01-16T09:04:58.025613Z",
+  "updateTime": "2020-01-23T09:04:10.954489Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.44.0",
-        "dockerImage": "googleapis/artman@sha256:10a6d0342b8d62544810ac5ad86c3b21049ec0696608ac60175da8e513234344"
+        "version": "0.44.1",
+        "dockerImage": "googleapis/artman@sha256:5599b61e56a372d21b671969ee915fbca0f6c3a0daaeb898d01f8f685f1bbc8b"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "0735b4b096872960568d1f366bfa75b7b0e1f1a3",
-        "internalRef": "289939042"
+        "sha": "8d16f76de065f530d395a4c7eabbf766d6a120fd",
+        "internalRef": "291008516",
+        "log": "8d16f76de065f530d395a4c7eabbf766d6a120fd\nGenerate Memcache v1beta2 API protos and gRPC ServiceConfig files\n\nPiperOrigin-RevId: 291008516\n\n3af1dabd93df9a9f17bf3624d3b875c11235360b\ngrafeas: Add containeranalysis default_host to Grafeas service\n\nPiperOrigin-RevId: 290965849\n\nbe2663fa95e31cba67d0cd62611a6674db9f74b7\nfix(google/maps/roads): add missing opening bracket\n\nPiperOrigin-RevId: 290964086\n\nfacc26550a0af0696e0534bc9cae9df14275aa7c\nUpdating v2 protos with the latest inline documentation (in comments) and adding a per-service .yaml file.\n\nPiperOrigin-RevId: 290952261\n\ncda99c1f7dc5e4ca9b1caeae1dc330838cbc1461\nChange api_name to 'asset' for v1p1beta1\n\nPiperOrigin-RevId: 290800639\n\n94e9e90c303a820ce40643d9129e7f0d2054e8a1\nAdds Google Maps Road service\n\nPiperOrigin-RevId: 290795667\n\na3b23dcb2eaecce98c600c7d009451bdec52dbda\nrpc: new message ErrorInfo, other comment updates\n\nPiperOrigin-RevId: 290781668\n\n26420ef4e46c37f193c0fbe53d6ebac481de460e\nAdd proto definition for Org Policy v1.\n\nPiperOrigin-RevId: 290771923\n\n7f0dab8177cf371ae019a082e2512de7ac102888\nPublish Routes Preferred API v1 service definitions.\n\nPiperOrigin-RevId: 290326986\n\nad6e508d0728e1d1bca6e3f328cd562718cb772d\nFix: Qualify resource type references with \"jobs.googleapis.com/\"\n\nPiperOrigin-RevId: 290285762\n\n58e770d568a2b78168ddc19a874178fee8265a9d\ncts client library\n\nPiperOrigin-RevId: 290146169\n\naf9daa4c3b4c4a8b7133b81588dd9ffd37270af2\nAdd more programming language options to public proto\n\nPiperOrigin-RevId: 290144091\n\nd9f2bbf2df301ef84641d4cec7c828736a0bd907\ntalent: add missing resource.proto dep to Bazel build target\n\nPiperOrigin-RevId: 290143164\n\n3b3968237451d027b42471cd28884a5a1faed6c7\nAnnotate Talent API.\nAdd gRPC service config for retry.\nUpdate bazel file with google.api.resource dependency.\n\nPiperOrigin-RevId: 290125172\n\n"
       }
     },
     {
@@ -58,490 +59,7 @@
   ],
   "newFiles": [
     {
-      "path": "pom.xml"
-    },
-    {
-      "path": ".repo-metadata.json"
-    },
-    {
-      "path": "java.header"
-    },
-    {
-      "path": "CONTRIBUTING.md"
-    },
-    {
-      "path": "synth.metadata"
-    },
-    {
-      "path": "renovate.json"
-    },
-    {
-      "path": "versions.txt"
-    },
-    {
-      "path": "synth.py"
-    },
-    {
-      "path": "license-checks.xml"
-    },
-    {
-      "path": "CHANGELOG.md"
-    },
-    {
-      "path": "CODE_OF_CONDUCT.md"
-    },
-    {
-      "path": "LICENSE"
-    },
-    {
-      "path": "codecov.yaml"
-    },
-    {
-      "path": ".gitignore"
-    },
-    {
-      "path": "README.md"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/GetQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RateLimits.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RenewLeaseRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AppEngineRoutingOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/TaskProto.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AppEngineHttpRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/PauseQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ListTasksRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ListQueuesResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/UpdateQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/PullTargetOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/Queue.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/QueueProto.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RetryConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RunTaskRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/PullMessageOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/GetTaskRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ListTasksRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ResumeQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/GetQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/LeaseTasksRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/DeleteTaskRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/TargetProto.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/CloudTasksProto.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/QueueName.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/TaskOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/LocationName.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AcknowledgeTaskRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/DeleteTaskRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/CreateQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/PauseQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ResumeQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AcknowledgeTaskRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/CancelLeaseRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ListTasksResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RunTaskRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AppEngineRouting.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/GetTaskRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/LeaseTasksResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ProjectName.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/TaskName.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/UpdateQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/PullMessage.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/PurgeQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/Task.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AppEngineHttpRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ListQueuesRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/LeaseTasksResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RenewLeaseRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AttemptStatus.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AttemptStatusOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/PullTarget.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AppEngineHttpTarget.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ListQueuesRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/DeleteQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/PurgeQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/CancelLeaseRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/CreateQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RetryConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/CreateTaskRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/QueueOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/HttpMethod.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RateLimitsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AppEngineHttpTargetOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/LeaseTasksRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/CreateTaskRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/TaskStatusOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ListQueuesResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/TaskStatus.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/DeleteQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ListTasksResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/proto/google/cloud/tasks/v2beta2/target.proto"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/proto/google/cloud/tasks/v2beta2/cloudtasks.proto"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/proto/google/cloud/tasks/v2beta2/task.proto"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta2/src/main/proto/google/cloud/tasks/v2beta2/queue.proto"
-    },
-    {
-      "path": "grpc-google-cloud-tasks-v2beta3/pom.xml"
-    },
-    {
-      "path": "grpc-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/CloudTasksGrpc.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/clirr-ignored-differences.xml"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/GetQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/RateLimits.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/HttpRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/AppEngineRoutingOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/TaskProto.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/Attempt.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/OAuthToken.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/AttemptOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/AppEngineHttpRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/PauseQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ListTasksRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ListQueuesResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/UpdateQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/Queue.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/QueueProto.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/OidcToken.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/RetryConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/RunTaskRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/HttpRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/GetTaskRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ListTasksRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ResumeQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/GetQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/OAuthTokenOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/DeleteTaskRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/TargetProto.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/CloudTasksProto.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/OidcTokenOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/QueueName.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/TaskOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/LocationName.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/DeleteTaskRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/CreateQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/PauseQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ResumeQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ListTasksResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/RunTaskRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/AppEngineRouting.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/GetTaskRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ProjectName.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/TaskName.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/UpdateQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/PurgeQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/Task.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/AppEngineHttpRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ListQueuesRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ListQueuesRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/DeleteQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/PurgeQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/CreateQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/RetryConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/CreateTaskRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/QueueOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/HttpMethod.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/RateLimitsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/CreateTaskRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ListQueuesResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/DeleteQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ListTasksResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/proto/google/cloud/tasks/v2/target.proto"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/proto/google/cloud/tasks/v2/cloudtasks.proto"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/proto/google/cloud/tasks/v2/task.proto"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2/src/main/proto/google/cloud/tasks/v2/queue.proto"
-    },
-    {
-      "path": "grpc-google-cloud-tasks-v2/pom.xml"
-    },
-    {
-      "path": "grpc-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/CloudTasksGrpc.java"
-    },
-    {
-      "path": ".github/release-please.yml"
-    },
-    {
-      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/feature_request.md"
@@ -550,34 +68,31 @@
       "path": ".github/ISSUE_TEMPLATE/support_request.md"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
     },
     {
-      "path": ".kokoro/build.sh"
+      "path": ".github/release-please.yml"
     },
     {
-      "path": ".kokoro/common.cfg"
+      "path": ".gitignore"
     },
     {
       "path": ".kokoro/build.bat"
     },
     {
-      "path": ".kokoro/linkage-monitor.sh"
+      "path": ".kokoro/build.sh"
     },
     {
       "path": ".kokoro/coerce_logs.sh"
     },
     {
-      "path": ".kokoro/dependencies.sh"
+      "path": ".kokoro/common.cfg"
     },
     {
-      "path": ".kokoro/trampoline.sh"
+      "path": ".kokoro/continuous/common.cfg"
     },
     {
-      "path": ".kokoro/continuous/samples.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8.cfg"
+      "path": ".kokoro/continuous/dependencies.cfg"
     },
     {
       "path": ".kokoro/continuous/integration.cfg"
@@ -586,34 +101,40 @@
       "path": ".kokoro/continuous/java11.cfg"
     },
     {
-      "path": ".kokoro/continuous/propose_release.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/common.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.sh"
-    },
-    {
       "path": ".kokoro/continuous/java7.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/lint.cfg"
     },
     {
       "path": ".kokoro/continuous/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/continuous/dependencies.cfg"
-    },
-    {
       "path": ".kokoro/continuous/java8-win.cfg"
     },
     {
-      "path": ".kokoro/nightly/samples.cfg"
+      "path": ".kokoro/continuous/java8.cfg"
     },
     {
-      "path": ".kokoro/nightly/java8.cfg"
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
     },
     {
       "path": ".kokoro/nightly/integration.cfg"
@@ -622,70 +143,31 @@
       "path": ".kokoro/nightly/java11.cfg"
     },
     {
-      "path": ".kokoro/nightly/common.cfg"
-    },
-    {
       "path": ".kokoro/nightly/java7.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/lint.cfg"
     },
     {
       "path": ".kokoro/nightly/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/nightly/dependencies.cfg"
-    },
-    {
       "path": ".kokoro/nightly/java8-win.cfg"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.cfg"
+      "path": ".kokoro/nightly/java8.cfg"
     },
     {
-      "path": ".kokoro/release/common.sh"
+      "path": ".kokoro/nightly/lint.cfg"
     },
     {
-      "path": ".kokoro/release/promote.sh"
+      "path": ".kokoro/nightly/samples.cfg"
     },
     {
-      "path": ".kokoro/release/common.cfg"
+      "path": ".kokoro/presubmit/clirr.cfg"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.sh"
+      "path": ".kokoro/presubmit/common.cfg"
     },
     {
-      "path": ".kokoro/release/drop.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.sh"
-    },
-    {
-      "path": ".kokoro/release/promote.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.sh"
-    },
-    {
-      "path": ".kokoro/presubmit/samples.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8.cfg"
+      "path": ".kokoro/presubmit/dependencies.cfg"
     },
     {
       "path": ".kokoro/presubmit/integration.cfg"
@@ -694,52 +176,163 @@
       "path": ".kokoro/presubmit/java11.cfg"
     },
     {
-      "path": ".kokoro/presubmit/linkage-monitor.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/common.cfg"
-    },
-    {
       "path": ".kokoro/presubmit/java7.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/lint.cfg"
     },
     {
       "path": ".kokoro/presubmit/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/presubmit/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/clirr.cfg"
-    },
-    {
       "path": ".kokoro/presubmit/java8-win.cfg"
     },
     {
-      "path": "grpc-google-cloud-tasks-v2beta2/pom.xml"
+      "path": ".kokoro/presubmit/java8.cfg"
     },
     {
-      "path": "grpc-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/CloudTasksGrpc.java"
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
     },
     {
-      "path": "google-cloud-tasks/pom.xml"
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": "google-cloud-tasks-bom/pom.xml"
     },
     {
       "path": "google-cloud-tasks/clirr-ignored-differences.xml"
     },
     {
-      "path": "google-cloud-tasks/src/test/java/com/google/cloud/tasks/v2beta3/CloudTasksClientTest.java"
+      "path": "google-cloud-tasks/pom.xml"
     },
     {
-      "path": "google-cloud-tasks/src/test/java/com/google/cloud/tasks/v2beta3/MockCloudTasks.java"
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/CloudTasksClient.java"
     },
     {
-      "path": "google-cloud-tasks/src/test/java/com/google/cloud/tasks/v2beta3/CloudTasksSmokeTest.java"
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/CloudTasksSettings.java"
     },
     {
-      "path": "google-cloud-tasks/src/test/java/com/google/cloud/tasks/v2beta3/MockCloudTasksImpl.java"
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/package-info.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/stub/CloudTasksStub.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/stub/CloudTasksStubSettings.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/stub/GrpcCloudTasksCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/stub/GrpcCloudTasksStub.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/CloudTasksClient.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/CloudTasksSettings.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/package-info.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/stub/CloudTasksStub.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/stub/CloudTasksStubSettings.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/stub/GrpcCloudTasksCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/stub/GrpcCloudTasksStub.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/CloudTasksClient.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/CloudTasksSettings.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/package-info.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/stub/CloudTasksStub.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/stub/CloudTasksStubSettings.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/stub/GrpcCloudTasksCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/stub/GrpcCloudTasksStub.java"
     },
     {
       "path": "google-cloud-tasks/src/test/java/com/google/cloud/tasks/v2/CloudTasksClientTest.java"
@@ -763,217 +356,541 @@
       "path": "google-cloud-tasks/src/test/java/com/google/cloud/tasks/v2beta2/MockCloudTasksImpl.java"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/CloudTasksClient.java"
+      "path": "google-cloud-tasks/src/test/java/com/google/cloud/tasks/v2beta3/CloudTasksClientTest.java"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/package-info.java"
+      "path": "google-cloud-tasks/src/test/java/com/google/cloud/tasks/v2beta3/CloudTasksSmokeTest.java"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/CloudTasksSettings.java"
+      "path": "google-cloud-tasks/src/test/java/com/google/cloud/tasks/v2beta3/MockCloudTasks.java"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/stub/CloudTasksStubSettings.java"
+      "path": "google-cloud-tasks/src/test/java/com/google/cloud/tasks/v2beta3/MockCloudTasksImpl.java"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/stub/CloudTasksStub.java"
+      "path": "grpc-google-cloud-tasks-v2/pom.xml"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/stub/GrpcCloudTasksCallableFactory.java"
+      "path": "grpc-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/CloudTasksGrpc.java"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/stub/GrpcCloudTasksStub.java"
+      "path": "grpc-google-cloud-tasks-v2beta2/pom.xml"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/CloudTasksClient.java"
+      "path": "grpc-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/CloudTasksGrpc.java"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/package-info.java"
+      "path": "grpc-google-cloud-tasks-v2beta3/pom.xml"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/CloudTasksSettings.java"
+      "path": "grpc-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/CloudTasksGrpc.java"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/stub/CloudTasksStubSettings.java"
+      "path": "java.header"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/stub/CloudTasksStub.java"
+      "path": "license-checks.xml"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/stub/GrpcCloudTasksCallableFactory.java"
+      "path": "pom.xml"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/stub/GrpcCloudTasksStub.java"
+      "path": "proto-google-cloud-tasks-v2/clirr-ignored-differences.xml"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/CloudTasksClient.java"
+      "path": "proto-google-cloud-tasks-v2/pom.xml"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/package-info.java"
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/AppEngineHttpRequest.java"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/CloudTasksSettings.java"
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/AppEngineHttpRequestOrBuilder.java"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/stub/CloudTasksStubSettings.java"
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/AppEngineRouting.java"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/stub/CloudTasksStub.java"
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/AppEngineRoutingOrBuilder.java"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/stub/GrpcCloudTasksCallableFactory.java"
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/Attempt.java"
     },
     {
-      "path": "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/stub/GrpcCloudTasksStub.java"
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/AttemptOrBuilder.java"
     },
     {
-      "path": "google-cloud-tasks-bom/pom.xml"
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/CloudTasksProto.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/CreateQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/CreateQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/CreateTaskRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/CreateTaskRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/DeleteQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/DeleteQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/DeleteTaskRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/DeleteTaskRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/GetQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/GetQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/GetTaskRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/GetTaskRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/HttpMethod.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/HttpRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/HttpRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ListQueuesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ListQueuesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ListQueuesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ListQueuesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ListTasksRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ListTasksRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ListTasksResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ListTasksResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/LocationName.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/OAuthToken.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/OAuthTokenOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/OidcToken.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/OidcTokenOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/PauseQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/PauseQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/PurgeQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/PurgeQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/Queue.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/QueueName.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/QueueOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/QueueProto.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/RateLimits.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/RateLimitsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ResumeQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ResumeQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/RetryConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/RetryConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/RunTaskRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/RunTaskRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/TargetProto.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/Task.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/TaskName.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/TaskOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/TaskProto.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/UpdateQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/UpdateQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/proto/google/cloud/tasks/v2/cloudtasks.proto"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/proto/google/cloud/tasks/v2/queue.proto"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/proto/google/cloud/tasks/v2/target.proto"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2/src/main/proto/google/cloud/tasks/v2/task.proto"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AcknowledgeTaskRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AcknowledgeTaskRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AppEngineHttpRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AppEngineHttpRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AppEngineHttpTarget.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AppEngineHttpTargetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AppEngineRouting.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AppEngineRoutingOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AttemptStatus.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/AttemptStatusOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/CancelLeaseRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/CancelLeaseRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/CloudTasksProto.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/CreateQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/CreateQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/CreateTaskRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/CreateTaskRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/DeleteQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/DeleteQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/DeleteTaskRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/DeleteTaskRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/GetQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/GetQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/GetTaskRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/GetTaskRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/HttpMethod.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/LeaseTasksRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/LeaseTasksRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/LeaseTasksResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/LeaseTasksResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ListQueuesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ListQueuesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ListQueuesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ListQueuesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ListTasksRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ListTasksRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ListTasksResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ListTasksResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/LocationName.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/PauseQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/PauseQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/PullMessage.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/PullMessageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/PullTarget.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/PullTargetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/PurgeQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/PurgeQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/Queue.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/QueueName.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/QueueOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/QueueProto.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RateLimits.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RateLimitsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RenewLeaseRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RenewLeaseRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ResumeQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ResumeQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RetryConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RetryConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RunTaskRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RunTaskRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/TargetProto.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/Task.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/TaskName.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/TaskOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/TaskProto.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/TaskStatus.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/TaskStatusOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/UpdateQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/UpdateQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/proto/google/cloud/tasks/v2beta2/cloudtasks.proto"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/proto/google/cloud/tasks/v2beta2/queue.proto"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/proto/google/cloud/tasks/v2beta2/target.proto"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta2/src/main/proto/google/cloud/tasks/v2beta2/task.proto"
     },
     {
       "path": "proto-google-cloud-tasks-v2beta3/pom.xml"
     },
     {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/GetQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/RateLimits.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/HttpRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/AppEngineRoutingOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/TaskProto.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/Attempt.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/OAuthToken.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/AttemptOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/AppEngineHttpRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PauseQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ListTasksRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ListQueuesResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/UpdateQueueRequest.java"
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/AppEngineHttpQueue.java"
     },
     {
       "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/AppEngineHttpQueueOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/Queue.java"
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/AppEngineHttpRequest.java"
     },
     {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/QueueProto.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/OidcToken.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/RetryConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/RunTaskRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/HttpRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/StackdriverLoggingConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/GetTaskRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ListTasksRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ResumeQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/GetQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/OAuthTokenOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/DeleteTaskRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/AppEngineHttpQueue.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/TargetProto.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/CloudTasksProto.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/OidcTokenOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/QueueName.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/TaskOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/LocationName.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/DeleteTaskRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/CreateQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PauseQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ResumeQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ListTasksResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/RunTaskRequestOrBuilder.java"
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/AppEngineHttpRequestOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/AppEngineRouting.java"
     },
     {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/AppEngineRoutingOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/Attempt.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/AttemptOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/CloudTasksProto.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/CreateQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/CreateQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/CreateTaskRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/CreateTaskRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/DeleteQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/DeleteQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/DeleteTaskRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/DeleteTaskRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/GetQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/GetQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/GetTaskRequest.java"
+    },
+    {
       "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/GetTaskRequestOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ProjectName.java"
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/HttpMethod.java"
     },
     {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/TaskName.java"
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/HttpRequest.java"
     },
     {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/UpdateQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PurgeQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/Task.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/AppEngineHttpRequestOrBuilder.java"
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/HttpRequestOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ListQueuesRequest.java"
@@ -982,55 +899,139 @@
       "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ListQueuesRequestOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/DeleteQueueRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PurgeQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/CreateQueueRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/RetryConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/CreateTaskRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/QueueOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/HttpMethod.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/RateLimitsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/CreateTaskRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/StackdriverLoggingConfigOrBuilder.java"
-    },
-    {
       "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ListQueuesResponse.java"
     },
     {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/DeleteQueueRequest.java"
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ListQueuesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ListTasksRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ListTasksRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ListTasksResponse.java"
     },
     {
       "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ListTasksResponseOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/proto/google/cloud/tasks/v2beta3/target.proto"
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/LocationName.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/OAuthToken.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/OAuthTokenOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/OidcToken.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/OidcTokenOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PauseQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PauseQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ProjectName.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PurgeQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PurgeQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/Queue.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/QueueName.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/QueueOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/QueueProto.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/RateLimits.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/RateLimitsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ResumeQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ResumeQueueRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/RetryConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/RetryConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/RunTaskRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/RunTaskRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/StackdriverLoggingConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/StackdriverLoggingConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/TargetProto.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/Task.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/TaskName.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/TaskOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/TaskProto.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/UpdateQueueRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/UpdateQueueRequestOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-tasks-v2beta3/src/main/proto/google/cloud/tasks/v2beta3/cloudtasks.proto"
     },
     {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/proto/google/cloud/tasks/v2beta3/queue.proto"
+    },
+    {
+      "path": "proto-google-cloud-tasks-v2beta3/src/main/proto/google/cloud/tasks/v2beta3/target.proto"
+    },
+    {
       "path": "proto-google-cloud-tasks-v2beta3/src/main/proto/google/cloud/tasks/v2beta3/task.proto"
     },
     {
-      "path": "proto-google-cloud-tasks-v2beta3/src/main/proto/google/cloud/tasks/v2beta3/queue.proto"
+      "path": "renovate.json"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "versions.txt"
     }
   ]
 }
