@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/data-catalog",
   "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/datacatalog/v1beta1/package-summary.html",
   "issue_tracker": "",
-  "release_level": "alpha",
+  "release_level": "beta",
   "language": "java",
   "repo": "googleapis/java-datacatalog",
   "repo_short": "java-datacatalog",
