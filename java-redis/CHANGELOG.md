@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.118.0](https://www.github.com/googleapis/java-redis/compare/v0.117.1...v0.118.0) (2020-01-23)
+
+
+### Features
+
+* release as beta ([#37](https://www.github.com/googleapis/java-redis/issues/37)) ([820fd53](https://www.github.com/googleapis/java-redis/commit/820fd53b2f0ae6b7f22ad18e782d3cd9602cf37c))
+
+
+### Dependencies
+
+* update dependency org.threeten:threetenbp to v1.4.1 ([15b129e](https://www.github.com/googleapis/java-redis/commit/15b129ec794b2d73fe727f45ac08cba4fd0eff25))
+
 ### [0.117.1](https://www.github.com/googleapis/java-redis/compare/v0.117.0...v0.117.1) (2020-01-07)
 
 
