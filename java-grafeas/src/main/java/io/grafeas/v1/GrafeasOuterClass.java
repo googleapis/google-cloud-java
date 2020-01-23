@@ -229,7 +229,7 @@ public final class GrafeasOuterClass {
           + "rrences\030\002 \003(\0132\026.grafeas.v1.OccurrenceB\003\340"
           + "A\002\"M\n\036BatchCreateOccurrencesResponse\022+\n\013"
           + "occurrences\030\001 \003(\0132\026.grafeas.v1.Occurrenc"
-          + "e2\355\017\n\007Grafeas\022}\n\rGetOccurrence\022 .grafeas"
+          + "e2\222\020\n\007Grafeas\022}\n\rGetOccurrence\022 .grafeas"
           + ".v1.GetOccurrenceRequest\032\026.grafeas.v1.Oc"
           + "currence\"2\202\323\344\223\002%\022#/v1/{name=projects/*/o"
           + "ccurrences/*}\332A\004name\022\227\001\n\017ListOccurrences"
@@ -279,10 +279,11 @@ public final class GrafeasOuterClass {
           + "rrences\022&.grafeas.v1.ListNoteOccurrences"
           + "Request\032\'.grafeas.v1.ListNoteOccurrences"
           + "Response\"?\202\323\344\223\002+\022)/v1/{name=projects/*/n"
-          + "otes/*}/occurrences\332A\013name,filterBQ\n\rio."
-          + "grafeas.v1P\001Z8google.golang.org/genproto"
-          + "/googleapis/grafeas/v1;grafeas\242\002\003GRAb\006pr"
-          + "oto3"
+          + "otes/*}/occurrences\332A\013name,filter\032#\312A co"
+          + "ntaineranalysis.googleapis.comBQ\n\rio.gra"
+          + "feas.v1P\001Z8google.golang.org/genproto/go"
+          + "ogleapis/grafeas/v1;grafeas\242\002\003GRAb\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -512,6 +513,7 @@ public final class GrafeasOuterClass {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
