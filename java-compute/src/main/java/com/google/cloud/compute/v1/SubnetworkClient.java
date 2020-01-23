@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -309,7 +309,6 @@ public class SubnetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteSubnetwork(ProjectRegionSubnetworkName subnetwork) {
-
     DeleteSubnetworkHttpRequest request =
         DeleteSubnetworkHttpRequest.newBuilder()
             .setSubnetwork(subnetwork == null ? null : subnetwork.toString())
@@ -335,7 +334,6 @@ public class SubnetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteSubnetwork(String subnetwork) {
-
     DeleteSubnetworkHttpRequest request =
         DeleteSubnetworkHttpRequest.newBuilder().setSubnetwork(subnetwork).build();
     return deleteSubnetwork(request);
@@ -410,7 +408,6 @@ public class SubnetworkClient implements BackgroundResource {
   public final Operation expandIpCidrRangeSubnetwork(
       ProjectRegionSubnetworkName subnetwork,
       SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource) {
-
     ExpandIpCidrRangeSubnetworkHttpRequest request =
         ExpandIpCidrRangeSubnetworkHttpRequest.newBuilder()
             .setSubnetwork(subnetwork == null ? null : subnetwork.toString())
@@ -442,7 +439,6 @@ public class SubnetworkClient implements BackgroundResource {
   public final Operation expandIpCidrRangeSubnetwork(
       String subnetwork,
       SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource) {
-
     ExpandIpCidrRangeSubnetworkHttpRequest request =
         ExpandIpCidrRangeSubnetworkHttpRequest.newBuilder()
             .setSubnetwork(subnetwork)
@@ -523,7 +519,6 @@ public class SubnetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Subnetwork getSubnetwork(ProjectRegionSubnetworkName subnetwork) {
-
     GetSubnetworkHttpRequest request =
         GetSubnetworkHttpRequest.newBuilder()
             .setSubnetwork(subnetwork == null ? null : subnetwork.toString())
@@ -549,7 +544,6 @@ public class SubnetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Subnetwork getSubnetwork(String subnetwork) {
-
     GetSubnetworkHttpRequest request =
         GetSubnetworkHttpRequest.newBuilder().setSubnetwork(subnetwork).build();
     return getSubnetwork(request);
@@ -621,7 +615,6 @@ public class SubnetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicySubnetwork(ProjectRegionSubnetworkResourceName resource) {
-
     GetIamPolicySubnetworkHttpRequest request =
         GetIamPolicySubnetworkHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -648,7 +641,6 @@ public class SubnetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicySubnetwork(String resource) {
-
     GetIamPolicySubnetworkHttpRequest request =
         GetIamPolicySubnetworkHttpRequest.newBuilder().setResource(resource).build();
     return getIamPolicySubnetwork(request);
@@ -728,7 +720,6 @@ public class SubnetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertSubnetwork(ProjectRegionName region, Subnetwork subnetworkResource) {
-
     InsertSubnetworkHttpRequest request =
         InsertSubnetworkHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -761,7 +752,6 @@ public class SubnetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertSubnetwork(String region, Subnetwork subnetworkResource) {
-
     InsertSubnetworkHttpRequest request =
         InsertSubnetworkHttpRequest.newBuilder()
             .setRegion(region)
@@ -1139,7 +1129,6 @@ public class SubnetworkClient implements BackgroundResource {
       ProjectRegionSubnetworkName subnetwork,
       Subnetwork subnetworkResource,
       List<String> fieldMask) {
-
     PatchSubnetworkHttpRequest request =
         PatchSubnetworkHttpRequest.newBuilder()
             .setSubnetwork(subnetwork == null ? null : subnetwork.toString())
@@ -1181,7 +1170,6 @@ public class SubnetworkClient implements BackgroundResource {
   @BetaApi
   public final Operation patchSubnetwork(
       String subnetwork, Subnetwork subnetworkResource, List<String> fieldMask) {
-
     PatchSubnetworkHttpRequest request =
         PatchSubnetworkHttpRequest.newBuilder()
             .setSubnetwork(subnetwork)
@@ -1272,7 +1260,6 @@ public class SubnetworkClient implements BackgroundResource {
   public final Policy setIamPolicySubnetwork(
       ProjectRegionSubnetworkResourceName resource,
       RegionSetPolicyRequest regionSetPolicyRequestResource) {
-
     SetIamPolicySubnetworkHttpRequest request =
         SetIamPolicySubnetworkHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1302,7 +1289,6 @@ public class SubnetworkClient implements BackgroundResource {
   @BetaApi
   public final Policy setIamPolicySubnetwork(
       String resource, RegionSetPolicyRequest regionSetPolicyRequestResource) {
-
     SetIamPolicySubnetworkHttpRequest request =
         SetIamPolicySubnetworkHttpRequest.newBuilder()
             .setResource(resource)
@@ -1387,7 +1373,6 @@ public class SubnetworkClient implements BackgroundResource {
       ProjectRegionSubnetworkName subnetwork,
       SubnetworksSetPrivateIpGoogleAccessRequest
           subnetworksSetPrivateIpGoogleAccessRequestResource) {
-
     SetPrivateIpGoogleAccessSubnetworkHttpRequest request =
         SetPrivateIpGoogleAccessSubnetworkHttpRequest.newBuilder()
             .setSubnetwork(subnetwork == null ? null : subnetwork.toString())
@@ -1421,7 +1406,6 @@ public class SubnetworkClient implements BackgroundResource {
       String subnetwork,
       SubnetworksSetPrivateIpGoogleAccessRequest
           subnetworksSetPrivateIpGoogleAccessRequestResource) {
-
     SetPrivateIpGoogleAccessSubnetworkHttpRequest request =
         SetPrivateIpGoogleAccessSubnetworkHttpRequest.newBuilder()
             .setSubnetwork(subnetwork)
@@ -1508,7 +1492,6 @@ public class SubnetworkClient implements BackgroundResource {
   public final TestPermissionsResponse testIamPermissionsSubnetwork(
       ProjectRegionSubnetworkResourceName resource,
       TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsSubnetworkHttpRequest request =
         TestIamPermissionsSubnetworkHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1538,7 +1521,6 @@ public class SubnetworkClient implements BackgroundResource {
   @BetaApi
   public final TestPermissionsResponse testIamPermissionsSubnetwork(
       String resource, TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsSubnetworkHttpRequest request =
         TestIamPermissionsSubnetworkHttpRequest.newBuilder()
             .setResource(resource)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -319,7 +319,6 @@ public class TargetHttpProxyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteTargetHttpProxy(ProjectGlobalTargetHttpProxyName targetHttpProxy) {
-
     DeleteTargetHttpProxyHttpRequest request =
         DeleteTargetHttpProxyHttpRequest.newBuilder()
             .setTargetHttpProxy(targetHttpProxy == null ? null : targetHttpProxy.toString())
@@ -345,7 +344,6 @@ public class TargetHttpProxyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteTargetHttpProxy(String targetHttpProxy) {
-
     DeleteTargetHttpProxyHttpRequest request =
         DeleteTargetHttpProxyHttpRequest.newBuilder().setTargetHttpProxy(targetHttpProxy).build();
     return deleteTargetHttpProxy(request);
@@ -419,7 +417,6 @@ public class TargetHttpProxyClient implements BackgroundResource {
   @BetaApi
   public final TargetHttpProxy getTargetHttpProxy(
       ProjectGlobalTargetHttpProxyName targetHttpProxy) {
-
     GetTargetHttpProxyHttpRequest request =
         GetTargetHttpProxyHttpRequest.newBuilder()
             .setTargetHttpProxy(targetHttpProxy == null ? null : targetHttpProxy.toString())
@@ -446,7 +443,6 @@ public class TargetHttpProxyClient implements BackgroundResource {
    */
   @BetaApi
   public final TargetHttpProxy getTargetHttpProxy(String targetHttpProxy) {
-
     GetTargetHttpProxyHttpRequest request =
         GetTargetHttpProxyHttpRequest.newBuilder().setTargetHttpProxy(targetHttpProxy).build();
     return getTargetHttpProxy(request);
@@ -529,7 +525,6 @@ public class TargetHttpProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation insertTargetHttpProxy(
       ProjectName project, TargetHttpProxy targetHttpProxyResource) {
-
     InsertTargetHttpProxyHttpRequest request =
         InsertTargetHttpProxyHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -565,7 +560,6 @@ public class TargetHttpProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation insertTargetHttpProxy(
       String project, TargetHttpProxy targetHttpProxyResource) {
-
     InsertTargetHttpProxyHttpRequest request =
         InsertTargetHttpProxyHttpRequest.newBuilder()
             .setProject(project)
@@ -787,7 +781,6 @@ public class TargetHttpProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation setUrlMapTargetHttpProxy(
       ProjectTargetHttpProxyName targetHttpProxy, UrlMapReference urlMapReferenceResource) {
-
     SetUrlMapTargetHttpProxyHttpRequest request =
         SetUrlMapTargetHttpProxyHttpRequest.newBuilder()
             .setTargetHttpProxy(targetHttpProxy == null ? null : targetHttpProxy.toString())
@@ -817,7 +810,6 @@ public class TargetHttpProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation setUrlMapTargetHttpProxy(
       String targetHttpProxy, UrlMapReference urlMapReferenceResource) {
-
     SetUrlMapTargetHttpProxyHttpRequest request =
         SetUrlMapTargetHttpProxyHttpRequest.newBuilder()
             .setTargetHttpProxy(targetHttpProxy)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,7 +169,6 @@ public class LicenseClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteLicense(ProjectGlobalLicenseName license) {
-
     DeleteLicenseHttpRequest request =
         DeleteLicenseHttpRequest.newBuilder()
             .setLicense(license == null ? null : license.toString())
@@ -195,7 +194,6 @@ public class LicenseClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteLicense(String license) {
-
     DeleteLicenseHttpRequest request =
         DeleteLicenseHttpRequest.newBuilder().setLicense(license).build();
     return deleteLicense(request);
@@ -266,7 +264,6 @@ public class LicenseClient implements BackgroundResource {
    */
   @BetaApi
   public final License getLicense(ProjectGlobalLicenseName license) {
-
     GetLicenseHttpRequest request =
         GetLicenseHttpRequest.newBuilder()
             .setLicense(license == null ? null : license.toString())
@@ -292,7 +289,6 @@ public class LicenseClient implements BackgroundResource {
    */
   @BetaApi
   public final License getLicense(String license) {
-
     GetLicenseHttpRequest request = GetLicenseHttpRequest.newBuilder().setLicense(license).build();
     return getLicense(request);
   }
@@ -363,7 +359,6 @@ public class LicenseClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicyLicense(ProjectGlobalLicenseResourceName resource) {
-
     GetIamPolicyLicenseHttpRequest request =
         GetIamPolicyLicenseHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -390,7 +385,6 @@ public class LicenseClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicyLicense(String resource) {
-
     GetIamPolicyLicenseHttpRequest request =
         GetIamPolicyLicenseHttpRequest.newBuilder().setResource(resource).build();
     return getIamPolicyLicense(request);
@@ -465,7 +459,6 @@ public class LicenseClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertLicense(ProjectName project, License licenseResource) {
-
     InsertLicenseHttpRequest request =
         InsertLicenseHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -494,7 +487,6 @@ public class LicenseClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertLicense(String project, License licenseResource) {
-
     InsertLicenseHttpRequest request =
         InsertLicenseHttpRequest.newBuilder()
             .setProject(project)
@@ -732,7 +724,6 @@ public class LicenseClient implements BackgroundResource {
   public final Policy setIamPolicyLicense(
       ProjectGlobalLicenseResourceName resource,
       GlobalSetPolicyRequest globalSetPolicyRequestResource) {
-
     SetIamPolicyLicenseHttpRequest request =
         SetIamPolicyLicenseHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -762,7 +753,6 @@ public class LicenseClient implements BackgroundResource {
   @BetaApi
   public final Policy setIamPolicyLicense(
       String resource, GlobalSetPolicyRequest globalSetPolicyRequestResource) {
-
     SetIamPolicyLicenseHttpRequest request =
         SetIamPolicyLicenseHttpRequest.newBuilder()
             .setResource(resource)
@@ -844,7 +834,6 @@ public class LicenseClient implements BackgroundResource {
   public final TestPermissionsResponse testIamPermissionsLicense(
       ProjectGlobalLicenseResourceName resource,
       TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsLicenseHttpRequest request =
         TestIamPermissionsLicenseHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -874,7 +863,6 @@ public class LicenseClient implements BackgroundResource {
   @BetaApi
   public final TestPermissionsResponse testIamPermissionsLicense(
       String resource, TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsLicenseHttpRequest request =
         TestIamPermissionsLicenseHttpRequest.newBuilder()
             .setResource(resource)

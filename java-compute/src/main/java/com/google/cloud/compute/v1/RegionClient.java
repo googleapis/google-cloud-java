@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -170,7 +170,6 @@ public class RegionClient implements BackgroundResource {
    */
   @BetaApi
   public final Region getRegion(ProjectRegionName region) {
-
     GetRegionHttpRequest request =
         GetRegionHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -197,7 +196,6 @@ public class RegionClient implements BackgroundResource {
    */
   @BetaApi
   public final Region getRegion(String region) {
-
     GetRegionHttpRequest request = GetRegionHttpRequest.newBuilder().setRegion(region).build();
     return getRegion(request);
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -312,7 +312,6 @@ public class UrlMapClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteUrlMap(ProjectGlobalUrlMapName urlMap) {
-
     DeleteUrlMapHttpRequest request =
         DeleteUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap == null ? null : urlMap.toString())
@@ -338,7 +337,6 @@ public class UrlMapClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteUrlMap(String urlMap) {
-
     DeleteUrlMapHttpRequest request =
         DeleteUrlMapHttpRequest.newBuilder().setUrlMap(urlMap).build();
     return deleteUrlMap(request);
@@ -410,7 +408,6 @@ public class UrlMapClient implements BackgroundResource {
    */
   @BetaApi
   public final UrlMap getUrlMap(ProjectGlobalUrlMapName urlMap) {
-
     GetUrlMapHttpRequest request =
         GetUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap == null ? null : urlMap.toString())
@@ -437,7 +434,6 @@ public class UrlMapClient implements BackgroundResource {
    */
   @BetaApi
   public final UrlMap getUrlMap(String urlMap) {
-
     GetUrlMapHttpRequest request = GetUrlMapHttpRequest.newBuilder().setUrlMap(urlMap).build();
     return getUrlMap(request);
   }
@@ -517,7 +513,6 @@ public class UrlMapClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertUrlMap(ProjectName project, UrlMap urlMapResource) {
-
     InsertUrlMapHttpRequest request =
         InsertUrlMapHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -552,7 +547,6 @@ public class UrlMapClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertUrlMap(String project, UrlMap urlMapResource) {
-
     InsertUrlMapHttpRequest request =
         InsertUrlMapHttpRequest.newBuilder()
             .setProject(project)
@@ -634,7 +628,6 @@ public class UrlMapClient implements BackgroundResource {
   @BetaApi
   public final Operation invalidateCacheUrlMap(
       ProjectGlobalUrlMapName urlMap, CacheInvalidationRule cacheInvalidationRuleResource) {
-
     InvalidateCacheUrlMapHttpRequest request =
         InvalidateCacheUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap == null ? null : urlMap.toString())
@@ -665,7 +658,6 @@ public class UrlMapClient implements BackgroundResource {
   @BetaApi
   public final Operation invalidateCacheUrlMap(
       String urlMap, CacheInvalidationRule cacheInvalidationRuleResource) {
-
     InvalidateCacheUrlMapHttpRequest request =
         InvalidateCacheUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap)
@@ -897,7 +889,6 @@ public class UrlMapClient implements BackgroundResource {
   @BetaApi
   public final Operation patchUrlMap(
       ProjectGlobalUrlMapName urlMap, UrlMap urlMapResource, List<String> fieldMask) {
-
     PatchUrlMapHttpRequest request =
         PatchUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap == null ? null : urlMap.toString())
@@ -939,7 +930,6 @@ public class UrlMapClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation patchUrlMap(String urlMap, UrlMap urlMapResource, List<String> fieldMask) {
-
     PatchUrlMapHttpRequest request =
         PatchUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap)
@@ -1038,7 +1028,6 @@ public class UrlMapClient implements BackgroundResource {
   @BetaApi
   public final Operation updateUrlMap(
       ProjectGlobalUrlMapName urlMap, UrlMap urlMapResource, List<String> fieldMask) {
-
     UpdateUrlMapHttpRequest request =
         UpdateUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap == null ? null : urlMap.toString())
@@ -1080,7 +1069,6 @@ public class UrlMapClient implements BackgroundResource {
   @BetaApi
   public final Operation updateUrlMap(
       String urlMap, UrlMap urlMapResource, List<String> fieldMask) {
-
     UpdateUrlMapHttpRequest request =
         UpdateUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap)
@@ -1167,7 +1155,6 @@ public class UrlMapClient implements BackgroundResource {
   @BetaApi
   public final UrlMapsValidateResponse validateUrlMap(
       ProjectGlobalUrlMapName urlMap, UrlMapsValidateRequest urlMapsValidateRequestResource) {
-
     ValidateUrlMapHttpRequest request =
         ValidateUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap == null ? null : urlMap.toString())
@@ -1198,7 +1185,6 @@ public class UrlMapClient implements BackgroundResource {
   @BetaApi
   public final UrlMapsValidateResponse validateUrlMap(
       String urlMap, UrlMapsValidateRequest urlMapsValidateRequestResource) {
-
     ValidateUrlMapHttpRequest request =
         ValidateUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap)

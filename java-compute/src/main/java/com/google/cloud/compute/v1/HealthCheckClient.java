@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -315,7 +315,6 @@ public class HealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteHealthCheck(ProjectGlobalHealthCheckName healthCheck) {
-
     DeleteHealthCheckHttpRequest request =
         DeleteHealthCheckHttpRequest.newBuilder()
             .setHealthCheck(healthCheck == null ? null : healthCheck.toString())
@@ -341,7 +340,6 @@ public class HealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteHealthCheck(String healthCheck) {
-
     DeleteHealthCheckHttpRequest request =
         DeleteHealthCheckHttpRequest.newBuilder().setHealthCheck(healthCheck).build();
     return deleteHealthCheck(request);
@@ -413,7 +411,6 @@ public class HealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final HealthCheck getHealthCheck(ProjectGlobalHealthCheckName healthCheck) {
-
     GetHealthCheckHttpRequest request =
         GetHealthCheckHttpRequest.newBuilder()
             .setHealthCheck(healthCheck == null ? null : healthCheck.toString())
@@ -440,7 +437,6 @@ public class HealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final HealthCheck getHealthCheck(String healthCheck) {
-
     GetHealthCheckHttpRequest request =
         GetHealthCheckHttpRequest.newBuilder().setHealthCheck(healthCheck).build();
     return getHealthCheck(request);
@@ -519,7 +515,6 @@ public class HealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertHealthCheck(ProjectName project, HealthCheck healthCheckResource) {
-
     InsertHealthCheckHttpRequest request =
         InsertHealthCheckHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -552,7 +547,6 @@ public class HealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertHealthCheck(String project, HealthCheck healthCheckResource) {
-
     InsertHealthCheckHttpRequest request =
         InsertHealthCheckHttpRequest.newBuilder()
             .setProject(project)
@@ -782,7 +776,6 @@ public class HealthCheckClient implements BackgroundResource {
       ProjectGlobalHealthCheckName healthCheck,
       HealthCheck healthCheckResource,
       List<String> fieldMask) {
-
     PatchHealthCheckHttpRequest request =
         PatchHealthCheckHttpRequest.newBuilder()
             .setHealthCheck(healthCheck == null ? null : healthCheck.toString())
@@ -823,7 +816,6 @@ public class HealthCheckClient implements BackgroundResource {
   @BetaApi
   public final Operation patchHealthCheck(
       String healthCheck, HealthCheck healthCheckResource, List<String> fieldMask) {
-
     PatchHealthCheckHttpRequest request =
         PatchHealthCheckHttpRequest.newBuilder()
             .setHealthCheck(healthCheck)
@@ -922,7 +914,6 @@ public class HealthCheckClient implements BackgroundResource {
       ProjectGlobalHealthCheckName healthCheck,
       HealthCheck healthCheckResource,
       List<String> fieldMask) {
-
     UpdateHealthCheckHttpRequest request =
         UpdateHealthCheckHttpRequest.newBuilder()
             .setHealthCheck(healthCheck == null ? null : healthCheck.toString())
@@ -962,7 +953,6 @@ public class HealthCheckClient implements BackgroundResource {
   @BetaApi
   public final Operation updateHealthCheck(
       String healthCheck, HealthCheck healthCheckResource, List<String> fieldMask) {
-
     UpdateHealthCheckHttpRequest request =
         UpdateHealthCheckHttpRequest.newBuilder()
             .setHealthCheck(healthCheck)

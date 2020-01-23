@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -173,7 +173,6 @@ public class ExternalVpnGatewayClient implements BackgroundResource {
   @BetaApi
   public final Operation deleteExternalVpnGateway(
       ProjectGlobalExternalVpnGatewayName externalVpnGateway) {
-
     DeleteExternalVpnGatewayHttpRequest request =
         DeleteExternalVpnGatewayHttpRequest.newBuilder()
             .setExternalVpnGateway(
@@ -200,7 +199,6 @@ public class ExternalVpnGatewayClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteExternalVpnGateway(String externalVpnGateway) {
-
     DeleteExternalVpnGatewayHttpRequest request =
         DeleteExternalVpnGatewayHttpRequest.newBuilder()
             .setExternalVpnGateway(externalVpnGateway)
@@ -276,7 +274,6 @@ public class ExternalVpnGatewayClient implements BackgroundResource {
   @BetaApi
   public final ExternalVpnGateway getExternalVpnGateway(
       ProjectGlobalExternalVpnGatewayName externalVpnGateway) {
-
     GetExternalVpnGatewayHttpRequest request =
         GetExternalVpnGatewayHttpRequest.newBuilder()
             .setExternalVpnGateway(
@@ -304,7 +301,6 @@ public class ExternalVpnGatewayClient implements BackgroundResource {
    */
   @BetaApi
   public final ExternalVpnGateway getExternalVpnGateway(String externalVpnGateway) {
-
     GetExternalVpnGatewayHttpRequest request =
         GetExternalVpnGatewayHttpRequest.newBuilder()
             .setExternalVpnGateway(externalVpnGateway)
@@ -387,7 +383,6 @@ public class ExternalVpnGatewayClient implements BackgroundResource {
   @BetaApi
   public final Operation insertExternalVpnGateway(
       ProjectName project, ExternalVpnGateway externalVpnGatewayResource) {
-
     InsertExternalVpnGatewayHttpRequest request =
         InsertExternalVpnGatewayHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -421,7 +416,6 @@ public class ExternalVpnGatewayClient implements BackgroundResource {
   @BetaApi
   public final Operation insertExternalVpnGateway(
       String project, ExternalVpnGateway externalVpnGatewayResource) {
-
     InsertExternalVpnGatewayHttpRequest request =
         InsertExternalVpnGatewayHttpRequest.newBuilder()
             .setProject(project)
@@ -644,7 +638,6 @@ public class ExternalVpnGatewayClient implements BackgroundResource {
   public final Operation setLabelsExternalVpnGateway(
       ProjectGlobalExternalVpnGatewayResourceName resource,
       GlobalSetLabelsRequest globalSetLabelsRequestResource) {
-
     SetLabelsExternalVpnGatewayHttpRequest request =
         SetLabelsExternalVpnGatewayHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -675,7 +668,6 @@ public class ExternalVpnGatewayClient implements BackgroundResource {
   @BetaApi
   public final Operation setLabelsExternalVpnGateway(
       String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource) {
-
     SetLabelsExternalVpnGatewayHttpRequest request =
         SetLabelsExternalVpnGatewayHttpRequest.newBuilder()
             .setResource(resource)
@@ -761,7 +753,6 @@ public class ExternalVpnGatewayClient implements BackgroundResource {
   public final TestPermissionsResponse testIamPermissionsExternalVpnGateway(
       ProjectGlobalExternalVpnGatewayResourceName resource,
       TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsExternalVpnGatewayHttpRequest request =
         TestIamPermissionsExternalVpnGatewayHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -791,7 +782,6 @@ public class ExternalVpnGatewayClient implements BackgroundResource {
   @BetaApi
   public final TestPermissionsResponse testIamPermissionsExternalVpnGateway(
       String resource, TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsExternalVpnGatewayHttpRequest request =
         TestIamPermissionsExternalVpnGatewayHttpRequest.newBuilder()
             .setResource(resource)

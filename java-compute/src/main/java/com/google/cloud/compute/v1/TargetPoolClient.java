@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -174,7 +174,6 @@ public class TargetPoolClient implements BackgroundResource {
   public final Operation addHealthCheckTargetPool(
       ProjectRegionTargetPoolName targetPool,
       TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource) {
-
     AddHealthCheckTargetPoolHttpRequest request =
         AddHealthCheckTargetPoolHttpRequest.newBuilder()
             .setTargetPool(targetPool == null ? null : targetPool.toString())
@@ -205,7 +204,6 @@ public class TargetPoolClient implements BackgroundResource {
   public final Operation addHealthCheckTargetPool(
       String targetPool,
       TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource) {
-
     AddHealthCheckTargetPoolHttpRequest request =
         AddHealthCheckTargetPoolHttpRequest.newBuilder()
             .setTargetPool(targetPool)
@@ -288,7 +286,6 @@ public class TargetPoolClient implements BackgroundResource {
   public final Operation addInstanceTargetPool(
       ProjectRegionTargetPoolName targetPool,
       TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource) {
-
     AddInstanceTargetPoolHttpRequest request =
         AddInstanceTargetPoolHttpRequest.newBuilder()
             .setTargetPool(targetPool == null ? null : targetPool.toString())
@@ -318,7 +315,6 @@ public class TargetPoolClient implements BackgroundResource {
   @BetaApi
   public final Operation addInstanceTargetPool(
       String targetPool, TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource) {
-
     AddInstanceTargetPoolHttpRequest request =
         AddInstanceTargetPoolHttpRequest.newBuilder()
             .setTargetPool(targetPool)
@@ -537,7 +533,6 @@ public class TargetPoolClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteTargetPool(ProjectRegionTargetPoolName targetPool) {
-
     DeleteTargetPoolHttpRequest request =
         DeleteTargetPoolHttpRequest.newBuilder()
             .setTargetPool(targetPool == null ? null : targetPool.toString())
@@ -563,7 +558,6 @@ public class TargetPoolClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteTargetPool(String targetPool) {
-
     DeleteTargetPoolHttpRequest request =
         DeleteTargetPoolHttpRequest.newBuilder().setTargetPool(targetPool).build();
     return deleteTargetPool(request);
@@ -635,7 +629,6 @@ public class TargetPoolClient implements BackgroundResource {
    */
   @BetaApi
   public final TargetPool getTargetPool(ProjectRegionTargetPoolName targetPool) {
-
     GetTargetPoolHttpRequest request =
         GetTargetPoolHttpRequest.newBuilder()
             .setTargetPool(targetPool == null ? null : targetPool.toString())
@@ -662,7 +655,6 @@ public class TargetPoolClient implements BackgroundResource {
    */
   @BetaApi
   public final TargetPool getTargetPool(String targetPool) {
-
     GetTargetPoolHttpRequest request =
         GetTargetPoolHttpRequest.newBuilder().setTargetPool(targetPool).build();
     return getTargetPool(request);
@@ -739,7 +731,6 @@ public class TargetPoolClient implements BackgroundResource {
   @BetaApi
   public final TargetPoolInstanceHealth getHealthTargetPool(
       ProjectRegionTargetPoolName targetPool, InstanceReference instanceReferenceResource) {
-
     GetHealthTargetPoolHttpRequest request =
         GetHealthTargetPoolHttpRequest.newBuilder()
             .setTargetPool(targetPool == null ? null : targetPool.toString())
@@ -770,7 +761,6 @@ public class TargetPoolClient implements BackgroundResource {
   @BetaApi
   public final TargetPoolInstanceHealth getHealthTargetPool(
       String targetPool, InstanceReference instanceReferenceResource) {
-
     GetHealthTargetPoolHttpRequest request =
         GetHealthTargetPoolHttpRequest.newBuilder()
             .setTargetPool(targetPool)
@@ -853,7 +843,6 @@ public class TargetPoolClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertTargetPool(ProjectRegionName region) {
-
     InsertTargetPoolHttpRequest request =
         InsertTargetPoolHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -880,7 +869,6 @@ public class TargetPoolClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertTargetPool(String region) {
-
     InsertTargetPoolHttpRequest request =
         InsertTargetPoolHttpRequest.newBuilder().setRegion(region).build();
     return insertTargetPool(request);
@@ -1093,7 +1081,6 @@ public class TargetPoolClient implements BackgroundResource {
   public final Operation removeHealthCheckTargetPool(
       ProjectRegionTargetPoolName targetPool,
       TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource) {
-
     RemoveHealthCheckTargetPoolHttpRequest request =
         RemoveHealthCheckTargetPoolHttpRequest.newBuilder()
             .setTargetPool(targetPool == null ? null : targetPool.toString())
@@ -1125,7 +1112,6 @@ public class TargetPoolClient implements BackgroundResource {
   public final Operation removeHealthCheckTargetPool(
       String targetPool,
       TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource) {
-
     RemoveHealthCheckTargetPoolHttpRequest request =
         RemoveHealthCheckTargetPoolHttpRequest.newBuilder()
             .setTargetPool(targetPool)
@@ -1210,7 +1196,6 @@ public class TargetPoolClient implements BackgroundResource {
   public final Operation removeInstanceTargetPool(
       ProjectRegionTargetPoolName targetPool,
       TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource) {
-
     RemoveInstanceTargetPoolHttpRequest request =
         RemoveInstanceTargetPoolHttpRequest.newBuilder()
             .setTargetPool(targetPool == null ? null : targetPool.toString())
@@ -1241,7 +1226,6 @@ public class TargetPoolClient implements BackgroundResource {
   public final Operation removeInstanceTargetPool(
       String targetPool,
       TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource) {
-
     RemoveInstanceTargetPoolHttpRequest request =
         RemoveInstanceTargetPoolHttpRequest.newBuilder()
             .setTargetPool(targetPool)
@@ -1327,7 +1311,6 @@ public class TargetPoolClient implements BackgroundResource {
       ProjectRegionTargetPoolName targetPool,
       Float failoverRatio,
       TargetReference targetReferenceResource) {
-
     SetBackupTargetPoolHttpRequest request =
         SetBackupTargetPoolHttpRequest.newBuilder()
             .setTargetPool(targetPool == null ? null : targetPool.toString())
@@ -1360,7 +1343,6 @@ public class TargetPoolClient implements BackgroundResource {
   @BetaApi
   public final Operation setBackupTargetPool(
       String targetPool, Float failoverRatio, TargetReference targetReferenceResource) {
-
     SetBackupTargetPoolHttpRequest request =
         SetBackupTargetPoolHttpRequest.newBuilder()
             .setTargetPool(targetPool)

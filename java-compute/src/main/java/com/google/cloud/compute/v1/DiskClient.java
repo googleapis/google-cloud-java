@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,7 +175,6 @@ public class DiskClient implements BackgroundResource {
   public final Operation addResourcePoliciesDisk(
       ProjectZoneDiskName disk,
       DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource) {
-
     AddResourcePoliciesDiskHttpRequest request =
         AddResourcePoliciesDiskHttpRequest.newBuilder()
             .setDisk(disk == null ? null : disk.toString())
@@ -206,7 +205,6 @@ public class DiskClient implements BackgroundResource {
   @BetaApi
   public final Operation addResourcePoliciesDisk(
       String disk, DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource) {
-
     AddResourcePoliciesDiskHttpRequest request =
         AddResourcePoliciesDiskHttpRequest.newBuilder()
             .setDisk(disk)
@@ -435,7 +433,6 @@ public class DiskClient implements BackgroundResource {
   @BetaApi
   public final Operation createSnapshotDisk(
       ProjectZoneDiskName disk, Boolean guestFlush, Snapshot snapshotResource) {
-
     CreateSnapshotDiskHttpRequest request =
         CreateSnapshotDiskHttpRequest.newBuilder()
             .setDisk(disk == null ? null : disk.toString())
@@ -473,7 +470,6 @@ public class DiskClient implements BackgroundResource {
   @BetaApi
   public final Operation createSnapshotDisk(
       String disk, Boolean guestFlush, Snapshot snapshotResource) {
-
     CreateSnapshotDiskHttpRequest request =
         CreateSnapshotDiskHttpRequest.newBuilder()
             .setDisk(disk)
@@ -559,7 +555,6 @@ public class DiskClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteDisk(ProjectZoneDiskName disk) {
-
     DeleteDiskHttpRequest request =
         DeleteDiskHttpRequest.newBuilder().setDisk(disk == null ? null : disk.toString()).build();
     return deleteDisk(request);
@@ -585,7 +580,6 @@ public class DiskClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteDisk(String disk) {
-
     DeleteDiskHttpRequest request = DeleteDiskHttpRequest.newBuilder().setDisk(disk).build();
     return deleteDisk(request);
   }
@@ -660,7 +654,6 @@ public class DiskClient implements BackgroundResource {
    */
   @BetaApi
   public final Disk getDisk(ProjectZoneDiskName disk) {
-
     GetDiskHttpRequest request =
         GetDiskHttpRequest.newBuilder().setDisk(disk == null ? null : disk.toString()).build();
     return getDisk(request);
@@ -685,7 +678,6 @@ public class DiskClient implements BackgroundResource {
    */
   @BetaApi
   public final Disk getDisk(String disk) {
-
     GetDiskHttpRequest request = GetDiskHttpRequest.newBuilder().setDisk(disk).build();
     return getDisk(request);
   }
@@ -758,7 +750,6 @@ public class DiskClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicyDisk(ProjectZoneDiskResourceName resource) {
-
     GetIamPolicyDiskHttpRequest request =
         GetIamPolicyDiskHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -785,7 +776,6 @@ public class DiskClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicyDisk(String resource) {
-
     GetIamPolicyDiskHttpRequest request =
         GetIamPolicyDiskHttpRequest.newBuilder().setResource(resource).build();
     return getIamPolicyDisk(request);
@@ -871,7 +861,6 @@ public class DiskClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertDisk(ProjectZoneName zone, Disk diskResource) {
-
     InsertDiskHttpRequest request =
         InsertDiskHttpRequest.newBuilder()
             .setZone(zone == null ? null : zone.toString())
@@ -911,7 +900,6 @@ public class DiskClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertDisk(String zone, Disk diskResource) {
-
     InsertDiskHttpRequest request =
         InsertDiskHttpRequest.newBuilder().setZone(zone).setDiskResource(diskResource).build();
     return insertDisk(request);
@@ -1129,7 +1117,6 @@ public class DiskClient implements BackgroundResource {
   public final Operation removeResourcePoliciesDisk(
       ProjectZoneDiskName disk,
       DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource) {
-
     RemoveResourcePoliciesDiskHttpRequest request =
         RemoveResourcePoliciesDiskHttpRequest.newBuilder()
             .setDisk(disk == null ? null : disk.toString())
@@ -1160,7 +1147,6 @@ public class DiskClient implements BackgroundResource {
   @BetaApi
   public final Operation removeResourcePoliciesDisk(
       String disk, DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource) {
-
     RemoveResourcePoliciesDiskHttpRequest request =
         RemoveResourcePoliciesDiskHttpRequest.newBuilder()
             .setDisk(disk)
@@ -1243,7 +1229,6 @@ public class DiskClient implements BackgroundResource {
   @BetaApi
   public final Operation resizeDisk(
       ProjectZoneDiskName disk, DisksResizeRequest disksResizeRequestResource) {
-
     ResizeDiskHttpRequest request =
         ResizeDiskHttpRequest.newBuilder()
             .setDisk(disk == null ? null : disk.toString())
@@ -1272,7 +1257,6 @@ public class DiskClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation resizeDisk(String disk, DisksResizeRequest disksResizeRequestResource) {
-
     ResizeDiskHttpRequest request =
         ResizeDiskHttpRequest.newBuilder()
             .setDisk(disk)
@@ -1353,7 +1337,6 @@ public class DiskClient implements BackgroundResource {
   @BetaApi
   public final Policy setIamPolicyDisk(
       ProjectZoneDiskResourceName resource, ZoneSetPolicyRequest zoneSetPolicyRequestResource) {
-
     SetIamPolicyDiskHttpRequest request =
         SetIamPolicyDiskHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1383,7 +1366,6 @@ public class DiskClient implements BackgroundResource {
   @BetaApi
   public final Policy setIamPolicyDisk(
       String resource, ZoneSetPolicyRequest zoneSetPolicyRequestResource) {
-
     SetIamPolicyDiskHttpRequest request =
         SetIamPolicyDiskHttpRequest.newBuilder()
             .setResource(resource)
@@ -1465,7 +1447,6 @@ public class DiskClient implements BackgroundResource {
   @BetaApi
   public final Operation setLabelsDisk(
       ProjectZoneDiskResourceName resource, ZoneSetLabelsRequest zoneSetLabelsRequestResource) {
-
     SetLabelsDiskHttpRequest request =
         SetLabelsDiskHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1496,7 +1477,6 @@ public class DiskClient implements BackgroundResource {
   @BetaApi
   public final Operation setLabelsDisk(
       String resource, ZoneSetLabelsRequest zoneSetLabelsRequestResource) {
-
     SetLabelsDiskHttpRequest request =
         SetLabelsDiskHttpRequest.newBuilder()
             .setResource(resource)
@@ -1579,7 +1559,6 @@ public class DiskClient implements BackgroundResource {
   @BetaApi
   public final TestPermissionsResponse testIamPermissionsDisk(
       ProjectZoneDiskResourceName resource, TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsDiskHttpRequest request =
         TestIamPermissionsDiskHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1609,7 +1588,6 @@ public class DiskClient implements BackgroundResource {
   @BetaApi
   public final TestPermissionsResponse testIamPermissionsDisk(
       String resource, TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsDiskHttpRequest request =
         TestIamPermissionsDiskHttpRequest.newBuilder()
             .setResource(resource)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -171,7 +171,6 @@ public class TargetTcpProxyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteTargetTcpProxy(ProjectGlobalTargetTcpProxyName targetTcpProxy) {
-
     DeleteTargetTcpProxyHttpRequest request =
         DeleteTargetTcpProxyHttpRequest.newBuilder()
             .setTargetTcpProxy(targetTcpProxy == null ? null : targetTcpProxy.toString())
@@ -197,7 +196,6 @@ public class TargetTcpProxyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteTargetTcpProxy(String targetTcpProxy) {
-
     DeleteTargetTcpProxyHttpRequest request =
         DeleteTargetTcpProxyHttpRequest.newBuilder().setTargetTcpProxy(targetTcpProxy).build();
     return deleteTargetTcpProxy(request);
@@ -270,7 +268,6 @@ public class TargetTcpProxyClient implements BackgroundResource {
    */
   @BetaApi
   public final TargetTcpProxy getTargetTcpProxy(ProjectGlobalTargetTcpProxyName targetTcpProxy) {
-
     GetTargetTcpProxyHttpRequest request =
         GetTargetTcpProxyHttpRequest.newBuilder()
             .setTargetTcpProxy(targetTcpProxy == null ? null : targetTcpProxy.toString())
@@ -297,7 +294,6 @@ public class TargetTcpProxyClient implements BackgroundResource {
    */
   @BetaApi
   public final TargetTcpProxy getTargetTcpProxy(String targetTcpProxy) {
-
     GetTargetTcpProxyHttpRequest request =
         GetTargetTcpProxyHttpRequest.newBuilder().setTargetTcpProxy(targetTcpProxy).build();
     return getTargetTcpProxy(request);
@@ -379,7 +375,6 @@ public class TargetTcpProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation insertTargetTcpProxy(
       ProjectName project, TargetTcpProxy targetTcpProxyResource) {
-
     InsertTargetTcpProxyHttpRequest request =
         InsertTargetTcpProxyHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -414,7 +409,6 @@ public class TargetTcpProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation insertTargetTcpProxy(
       String project, TargetTcpProxy targetTcpProxyResource) {
-
     InsertTargetTcpProxyHttpRequest request =
         InsertTargetTcpProxyHttpRequest.newBuilder()
             .setProject(project)
@@ -638,7 +632,6 @@ public class TargetTcpProxyClient implements BackgroundResource {
   public final Operation setBackendServiceTargetTcpProxy(
       ProjectGlobalTargetTcpProxyName targetTcpProxy,
       TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource) {
-
     SetBackendServiceTargetTcpProxyHttpRequest request =
         SetBackendServiceTargetTcpProxyHttpRequest.newBuilder()
             .setTargetTcpProxy(targetTcpProxy == null ? null : targetTcpProxy.toString())
@@ -671,7 +664,6 @@ public class TargetTcpProxyClient implements BackgroundResource {
   public final Operation setBackendServiceTargetTcpProxy(
       String targetTcpProxy,
       TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource) {
-
     SetBackendServiceTargetTcpProxyHttpRequest request =
         SetBackendServiceTargetTcpProxyHttpRequest.newBuilder()
             .setTargetTcpProxy(targetTcpProxy)
@@ -756,7 +748,6 @@ public class TargetTcpProxyClient implements BackgroundResource {
   public final Operation setProxyHeaderTargetTcpProxy(
       ProjectGlobalTargetTcpProxyName targetTcpProxy,
       TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource) {
-
     SetProxyHeaderTargetTcpProxyHttpRequest request =
         SetProxyHeaderTargetTcpProxyHttpRequest.newBuilder()
             .setTargetTcpProxy(targetTcpProxy == null ? null : targetTcpProxy.toString())
@@ -788,7 +779,6 @@ public class TargetTcpProxyClient implements BackgroundResource {
   public final Operation setProxyHeaderTargetTcpProxy(
       String targetTcpProxy,
       TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource) {
-
     SetProxyHeaderTargetTcpProxyHttpRequest request =
         SetProxyHeaderTargetTcpProxyHttpRequest.newBuilder()
             .setTargetTcpProxy(targetTcpProxy)

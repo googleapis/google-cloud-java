@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -173,7 +173,6 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation deleteRegionTargetHttpProxy(
       ProjectRegionTargetHttpProxyName targetHttpProxy) {
-
     DeleteRegionTargetHttpProxyHttpRequest request =
         DeleteRegionTargetHttpProxyHttpRequest.newBuilder()
             .setTargetHttpProxy(targetHttpProxy == null ? null : targetHttpProxy.toString())
@@ -199,7 +198,6 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteRegionTargetHttpProxy(String targetHttpProxy) {
-
     DeleteRegionTargetHttpProxyHttpRequest request =
         DeleteRegionTargetHttpProxyHttpRequest.newBuilder()
             .setTargetHttpProxy(targetHttpProxy)
@@ -276,7 +274,6 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   @BetaApi
   public final TargetHttpProxy getRegionTargetHttpProxy(
       ProjectRegionTargetHttpProxyName targetHttpProxy) {
-
     GetRegionTargetHttpProxyHttpRequest request =
         GetRegionTargetHttpProxyHttpRequest.newBuilder()
             .setTargetHttpProxy(targetHttpProxy == null ? null : targetHttpProxy.toString())
@@ -303,7 +300,6 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
    */
   @BetaApi
   public final TargetHttpProxy getRegionTargetHttpProxy(String targetHttpProxy) {
-
     GetRegionTargetHttpProxyHttpRequest request =
         GetRegionTargetHttpProxyHttpRequest.newBuilder()
             .setTargetHttpProxy(targetHttpProxy)
@@ -389,7 +385,6 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation insertRegionTargetHttpProxy(
       ProjectRegionName region, TargetHttpProxy targetHttpProxyResource) {
-
     InsertRegionTargetHttpProxyHttpRequest request =
         InsertRegionTargetHttpProxyHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -425,7 +420,6 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation insertRegionTargetHttpProxy(
       String region, TargetHttpProxy targetHttpProxyResource) {
-
     InsertRegionTargetHttpProxyHttpRequest request =
         InsertRegionTargetHttpProxyHttpRequest.newBuilder()
             .setRegion(region)
@@ -655,7 +649,6 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation setUrlMapRegionTargetHttpProxy(
       ProjectRegionTargetHttpProxyName targetHttpProxy, UrlMapReference urlMapReferenceResource) {
-
     SetUrlMapRegionTargetHttpProxyHttpRequest request =
         SetUrlMapRegionTargetHttpProxyHttpRequest.newBuilder()
             .setTargetHttpProxy(targetHttpProxy == null ? null : targetHttpProxy.toString())
@@ -685,7 +678,6 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation setUrlMapRegionTargetHttpProxy(
       String targetHttpProxy, UrlMapReference urlMapReferenceResource) {
-
     SetUrlMapRegionTargetHttpProxyHttpRequest request =
         SetUrlMapRegionTargetHttpProxyHttpRequest.newBuilder()
             .setTargetHttpProxy(targetHttpProxy)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -171,7 +171,6 @@ public class SslPolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteSslPolicy(ProjectGlobalSslPolicyName sslPolicy) {
-
     DeleteSslPolicyHttpRequest request =
         DeleteSslPolicyHttpRequest.newBuilder()
             .setSslPolicy(sslPolicy == null ? null : sslPolicy.toString())
@@ -199,7 +198,6 @@ public class SslPolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteSslPolicy(String sslPolicy) {
-
     DeleteSslPolicyHttpRequest request =
         DeleteSslPolicyHttpRequest.newBuilder().setSslPolicy(sslPolicy).build();
     return deleteSslPolicy(request);
@@ -273,7 +271,6 @@ public class SslPolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final SslPolicy getSslPolicy(ProjectGlobalSslPolicyName sslPolicy) {
-
     GetSslPolicyHttpRequest request =
         GetSslPolicyHttpRequest.newBuilder()
             .setSslPolicy(sslPolicy == null ? null : sslPolicy.toString())
@@ -300,7 +297,6 @@ public class SslPolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final SslPolicy getSslPolicy(String sslPolicy) {
-
     GetSslPolicyHttpRequest request =
         GetSslPolicyHttpRequest.newBuilder().setSslPolicy(sslPolicy).build();
     return getSslPolicy(request);
@@ -377,7 +373,6 @@ public class SslPolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertSslPolicy(ProjectName project, SslPolicy sslPolicyResource) {
-
     InsertSslPolicyHttpRequest request =
         InsertSslPolicyHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -410,7 +405,6 @@ public class SslPolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertSslPolicy(String project, SslPolicy sslPolicyResource) {
-
     InsertSslPolicyHttpRequest request =
         InsertSslPolicyHttpRequest.newBuilder()
             .setProject(project)
@@ -628,7 +622,6 @@ public class SslPolicyClient implements BackgroundResource {
   @BetaApi
   public final SslPoliciesListAvailableFeaturesResponse listAvailableFeaturesSslPolicies(
       ProjectName project) {
-
     ListAvailableFeaturesSslPoliciesHttpRequest request =
         ListAvailableFeaturesSslPoliciesHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -655,7 +648,6 @@ public class SslPolicyClient implements BackgroundResource {
   @BetaApi
   public final SslPoliciesListAvailableFeaturesResponse listAvailableFeaturesSslPolicies(
       String project) {
-
     ListAvailableFeaturesSslPoliciesHttpRequest request =
         ListAvailableFeaturesSslPoliciesHttpRequest.newBuilder().setProject(project).build();
     return listAvailableFeaturesSslPolicies(request);
@@ -741,7 +733,6 @@ public class SslPolicyClient implements BackgroundResource {
   @BetaApi
   public final Operation patchSslPolicy(
       ProjectGlobalSslPolicyName sslPolicy, SslPolicy sslPolicyResource, List<String> fieldMask) {
-
     PatchSslPolicyHttpRequest request =
         PatchSslPolicyHttpRequest.newBuilder()
             .setSslPolicy(sslPolicy == null ? null : sslPolicy.toString())
@@ -781,7 +772,6 @@ public class SslPolicyClient implements BackgroundResource {
   @BetaApi
   public final Operation patchSslPolicy(
       String sslPolicy, SslPolicy sslPolicyResource, List<String> fieldMask) {
-
     PatchSslPolicyHttpRequest request =
         PatchSslPolicyHttpRequest.newBuilder()
             .setSslPolicy(sslPolicy)

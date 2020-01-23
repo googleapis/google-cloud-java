@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -177,7 +177,6 @@ public class InstanceGroupClient implements BackgroundResource {
   public final Operation addInstancesInstanceGroup(
       ProjectZoneInstanceGroupName instanceGroup,
       InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource) {
-
     AddInstancesInstanceGroupHttpRequest request =
         AddInstancesInstanceGroupHttpRequest.newBuilder()
             .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
@@ -209,7 +208,6 @@ public class InstanceGroupClient implements BackgroundResource {
   public final Operation addInstancesInstanceGroup(
       String instanceGroup,
       InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource) {
-
     AddInstancesInstanceGroupHttpRequest request =
         AddInstancesInstanceGroupHttpRequest.newBuilder()
             .setInstanceGroup(instanceGroup)
@@ -433,7 +431,6 @@ public class InstanceGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteInstanceGroup(ProjectZoneInstanceGroupName instanceGroup) {
-
     DeleteInstanceGroupHttpRequest request =
         DeleteInstanceGroupHttpRequest.newBuilder()
             .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
@@ -461,7 +458,6 @@ public class InstanceGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteInstanceGroup(String instanceGroup) {
-
     DeleteInstanceGroupHttpRequest request =
         DeleteInstanceGroupHttpRequest.newBuilder().setInstanceGroup(instanceGroup).build();
     return deleteInstanceGroup(request);
@@ -538,7 +534,6 @@ public class InstanceGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final InstanceGroup getInstanceGroup(ProjectZoneInstanceGroupName instanceGroup) {
-
     GetInstanceGroupHttpRequest request =
         GetInstanceGroupHttpRequest.newBuilder()
             .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
@@ -565,7 +560,6 @@ public class InstanceGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final InstanceGroup getInstanceGroup(String instanceGroup) {
-
     GetInstanceGroupHttpRequest request =
         GetInstanceGroupHttpRequest.newBuilder().setInstanceGroup(instanceGroup).build();
     return getInstanceGroup(request);
@@ -653,7 +647,6 @@ public class InstanceGroupClient implements BackgroundResource {
   @BetaApi
   public final Operation insertInstanceGroup(
       ProjectZoneName zone, InstanceGroup instanceGroupResource) {
-
     InsertInstanceGroupHttpRequest request =
         InsertInstanceGroupHttpRequest.newBuilder()
             .setZone(zone == null ? null : zone.toString())
@@ -693,7 +686,6 @@ public class InstanceGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertInstanceGroup(String zone, InstanceGroup instanceGroupResource) {
-
     InsertInstanceGroupHttpRequest request =
         InsertInstanceGroupHttpRequest.newBuilder()
             .setZone(zone)
@@ -1083,7 +1075,6 @@ public class InstanceGroupClient implements BackgroundResource {
   public final Operation removeInstancesInstanceGroup(
       ProjectZoneInstanceGroupName instanceGroup,
       InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource) {
-
     RemoveInstancesInstanceGroupHttpRequest request =
         RemoveInstancesInstanceGroupHttpRequest.newBuilder()
             .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
@@ -1121,7 +1112,6 @@ public class InstanceGroupClient implements BackgroundResource {
   public final Operation removeInstancesInstanceGroup(
       String instanceGroup,
       InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource) {
-
     RemoveInstancesInstanceGroupHttpRequest request =
         RemoveInstancesInstanceGroupHttpRequest.newBuilder()
             .setInstanceGroup(instanceGroup)
@@ -1216,7 +1206,6 @@ public class InstanceGroupClient implements BackgroundResource {
   public final Operation setNamedPortsInstanceGroup(
       ProjectZoneInstanceGroupName instanceGroup,
       InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource) {
-
     SetNamedPortsInstanceGroupHttpRequest request =
         SetNamedPortsInstanceGroupHttpRequest.newBuilder()
             .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
@@ -1248,7 +1237,6 @@ public class InstanceGroupClient implements BackgroundResource {
   public final Operation setNamedPortsInstanceGroup(
       String instanceGroup,
       InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource) {
-
     SetNamedPortsInstanceGroupHttpRequest request =
         SetNamedPortsInstanceGroupHttpRequest.newBuilder()
             .setInstanceGroup(instanceGroup)

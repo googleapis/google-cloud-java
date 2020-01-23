@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -173,7 +173,6 @@ public class RegionBackendServiceClient implements BackgroundResource {
   @BetaApi
   public final Operation deleteRegionBackendService(
       ProjectRegionBackendServiceName backendService) {
-
     DeleteRegionBackendServiceHttpRequest request =
         DeleteRegionBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService == null ? null : backendService.toString())
@@ -199,7 +198,6 @@ public class RegionBackendServiceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteRegionBackendService(String backendService) {
-
     DeleteRegionBackendServiceHttpRequest request =
         DeleteRegionBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService)
@@ -274,7 +272,6 @@ public class RegionBackendServiceClient implements BackgroundResource {
   @BetaApi
   public final BackendService getRegionBackendService(
       ProjectRegionBackendServiceName backendService) {
-
     GetRegionBackendServiceHttpRequest request =
         GetRegionBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService == null ? null : backendService.toString())
@@ -300,7 +297,6 @@ public class RegionBackendServiceClient implements BackgroundResource {
    */
   @BetaApi
   public final BackendService getRegionBackendService(String backendService) {
-
     GetRegionBackendServiceHttpRequest request =
         GetRegionBackendServiceHttpRequest.newBuilder().setBackendService(backendService).build();
     return getRegionBackendService(request);
@@ -376,7 +372,6 @@ public class RegionBackendServiceClient implements BackgroundResource {
   public final BackendServiceGroupHealth getHealthRegionBackendService(
       ProjectRegionBackendServiceName backendService,
       ResourceGroupReference resourceGroupReferenceResource) {
-
     GetHealthRegionBackendServiceHttpRequest request =
         GetHealthRegionBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService == null ? null : backendService.toString())
@@ -406,7 +401,6 @@ public class RegionBackendServiceClient implements BackgroundResource {
   @BetaApi
   public final BackendServiceGroupHealth getHealthRegionBackendService(
       String backendService, ResourceGroupReference resourceGroupReferenceResource) {
-
     GetHealthRegionBackendServiceHttpRequest request =
         GetHealthRegionBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService)
@@ -495,7 +489,6 @@ public class RegionBackendServiceClient implements BackgroundResource {
   @BetaApi
   public final Operation insertRegionBackendService(
       ProjectRegionName region, BackendService backendServiceResource) {
-
     InsertRegionBackendServiceHttpRequest request =
         InsertRegionBackendServiceHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -531,7 +524,6 @@ public class RegionBackendServiceClient implements BackgroundResource {
   @BetaApi
   public final Operation insertRegionBackendService(
       String region, BackendService backendServiceResource) {
-
     InsertRegionBackendServiceHttpRequest request =
         InsertRegionBackendServiceHttpRequest.newBuilder()
             .setRegion(region)
@@ -776,7 +768,6 @@ public class RegionBackendServiceClient implements BackgroundResource {
       ProjectRegionBackendServiceName backendService,
       BackendService backendServiceResource,
       List<String> fieldMask) {
-
     PatchRegionBackendServiceHttpRequest request =
         PatchRegionBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService == null ? null : backendService.toString())
@@ -819,7 +810,6 @@ public class RegionBackendServiceClient implements BackgroundResource {
   @BetaApi
   public final Operation patchRegionBackendService(
       String backendService, BackendService backendServiceResource, List<String> fieldMask) {
-
     PatchRegionBackendServiceHttpRequest request =
         PatchRegionBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService)
@@ -925,7 +915,6 @@ public class RegionBackendServiceClient implements BackgroundResource {
       ProjectRegionBackendServiceName backendService,
       BackendService backendServiceResource,
       List<String> fieldMask) {
-
     UpdateRegionBackendServiceHttpRequest request =
         UpdateRegionBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService == null ? null : backendService.toString())
@@ -967,7 +956,6 @@ public class RegionBackendServiceClient implements BackgroundResource {
   @BetaApi
   public final Operation updateRegionBackendService(
       String backendService, BackendService backendServiceResource, List<String> fieldMask) {
-
     UpdateRegionBackendServiceHttpRequest request =
         UpdateRegionBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService)

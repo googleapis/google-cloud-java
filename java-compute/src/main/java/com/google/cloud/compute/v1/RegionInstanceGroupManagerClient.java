@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -192,7 +192,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
       ProjectRegionInstanceGroupManagerName instanceGroupManager,
       RegionInstanceGroupManagersAbandonInstancesRequest
           regionInstanceGroupManagersAbandonInstancesRequestResource) {
-
     AbandonInstancesRegionInstanceGroupManagerHttpRequest request =
         AbandonInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -238,7 +237,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
       String instanceGroupManager,
       RegionInstanceGroupManagersAbandonInstancesRequest
           regionInstanceGroupManagersAbandonInstancesRequestResource) {
-
     AbandonInstancesRegionInstanceGroupManagerHttpRequest request =
         AbandonInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)
@@ -344,7 +342,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   @BetaApi
   public final Operation deleteRegionInstanceGroupManager(
       ProjectRegionInstanceGroupManagerName instanceGroupManager) {
-
     DeleteRegionInstanceGroupManagerHttpRequest request =
         DeleteRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -371,7 +368,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteRegionInstanceGroupManager(String instanceGroupManager) {
-
     DeleteRegionInstanceGroupManagerHttpRequest request =
         DeleteRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)
@@ -462,7 +458,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
       ProjectRegionInstanceGroupManagerName instanceGroupManager,
       RegionInstanceGroupManagersDeleteInstancesRequest
           regionInstanceGroupManagersDeleteInstancesRequestResource) {
-
     DeleteInstancesRegionInstanceGroupManagerHttpRequest request =
         DeleteInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -507,7 +502,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
       String instanceGroupManager,
       RegionInstanceGroupManagersDeleteInstancesRequest
           regionInstanceGroupManagersDeleteInstancesRequestResource) {
-
     DeleteInstancesRegionInstanceGroupManagerHttpRequest request =
         DeleteInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)
@@ -611,7 +605,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   @BetaApi
   public final InstanceGroupManager getRegionInstanceGroupManager(
       ProjectRegionInstanceGroupManagerName instanceGroupManager) {
-
     GetRegionInstanceGroupManagerHttpRequest request =
         GetRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -638,7 +631,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    */
   @BetaApi
   public final InstanceGroupManager getRegionInstanceGroupManager(String instanceGroupManager) {
-
     GetRegionInstanceGroupManagerHttpRequest request =
         GetRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)
@@ -729,7 +721,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   @BetaApi
   public final Operation insertRegionInstanceGroupManager(
       ProjectRegionName region, InstanceGroupManager instanceGroupManagerResource) {
-
     InsertRegionInstanceGroupManagerHttpRequest request =
         InsertRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -772,7 +763,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   @BetaApi
   public final Operation insertRegionInstanceGroupManager(
       String region, InstanceGroupManager instanceGroupManagerResource) {
-
     InsertRegionInstanceGroupManagerHttpRequest request =
         InsertRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setRegion(region)
@@ -1009,7 +999,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   public final RegionInstanceGroupManagersListInstancesResponse
       listManagedInstancesRegionInstanceGroupManagers(
           ProjectRegionInstanceGroupManagerName instanceGroupManager) {
-
     ListManagedInstancesRegionInstanceGroupManagersHttpRequest request =
         ListManagedInstancesRegionInstanceGroupManagersHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -1038,7 +1027,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   @BetaApi
   public final RegionInstanceGroupManagersListInstancesResponse
       listManagedInstancesRegionInstanceGroupManagers(String instanceGroupManager) {
-
     ListManagedInstancesRegionInstanceGroupManagersHttpRequest request =
         ListManagedInstancesRegionInstanceGroupManagersHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)
@@ -1139,7 +1127,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
       ProjectRegionInstanceGroupManagerName instanceGroupManager,
       InstanceGroupManager instanceGroupManagerResource,
       List<String> fieldMask) {
-
     PatchRegionInstanceGroupManagerHttpRequest request =
         PatchRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -1189,7 +1176,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
       String instanceGroupManager,
       InstanceGroupManager instanceGroupManagerResource,
       List<String> fieldMask) {
-
     PatchRegionInstanceGroupManagerHttpRequest request =
         PatchRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)
@@ -1297,7 +1283,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
       ProjectRegionInstanceGroupManagerName instanceGroupManager,
       RegionInstanceGroupManagersRecreateRequest
           regionInstanceGroupManagersRecreateRequestResource) {
-
     RecreateInstancesRegionInstanceGroupManagerHttpRequest request =
         RecreateInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -1341,7 +1326,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
       String instanceGroupManager,
       RegionInstanceGroupManagersRecreateRequest
           regionInstanceGroupManagersRecreateRequestResource) {
-
     RecreateInstancesRegionInstanceGroupManagerHttpRequest request =
         RecreateInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)
@@ -1455,7 +1439,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   @BetaApi
   public final Operation resizeRegionInstanceGroupManager(
       Integer size, ProjectRegionInstanceGroupManagerName instanceGroupManager) {
-
     ResizeRegionInstanceGroupManagerHttpRequest request =
         ResizeRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setSize(size)
@@ -1496,7 +1479,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   @BetaApi
   public final Operation resizeRegionInstanceGroupManager(
       Integer size, String instanceGroupManager) {
-
     ResizeRegionInstanceGroupManagerHttpRequest request =
         ResizeRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setSize(size)
@@ -1602,7 +1584,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
       ProjectRegionInstanceGroupManagerName instanceGroupManager,
       RegionInstanceGroupManagersSetTemplateRequest
           regionInstanceGroupManagersSetTemplateRequestResource) {
-
     SetInstanceTemplateRegionInstanceGroupManagerHttpRequest request =
         SetInstanceTemplateRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -1637,7 +1618,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
       String instanceGroupManager,
       RegionInstanceGroupManagersSetTemplateRequest
           regionInstanceGroupManagersSetTemplateRequestResource) {
-
     SetInstanceTemplateRegionInstanceGroupManagerHttpRequest request =
         SetInstanceTemplateRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)
@@ -1726,7 +1706,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
       ProjectRegionInstanceGroupManagerName instanceGroupManager,
       RegionInstanceGroupManagersSetTargetPoolsRequest
           regionInstanceGroupManagersSetTargetPoolsRequestResource) {
-
     SetTargetPoolsRegionInstanceGroupManagerHttpRequest request =
         SetTargetPoolsRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -1761,7 +1740,6 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
       String instanceGroupManager,
       RegionInstanceGroupManagersSetTargetPoolsRequest
           regionInstanceGroupManagersSetTargetPoolsRequestResource) {
-
     SetTargetPoolsRegionInstanceGroupManagerHttpRequest request =
         SetTargetPoolsRegionInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)

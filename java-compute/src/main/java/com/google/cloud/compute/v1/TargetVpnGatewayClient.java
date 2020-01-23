@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -315,7 +315,6 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   @BetaApi
   public final Operation deleteTargetVpnGateway(
       ProjectRegionTargetVpnGatewayName targetVpnGateway) {
-
     DeleteTargetVpnGatewayHttpRequest request =
         DeleteTargetVpnGatewayHttpRequest.newBuilder()
             .setTargetVpnGateway(targetVpnGateway == null ? null : targetVpnGateway.toString())
@@ -341,7 +340,6 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteTargetVpnGateway(String targetVpnGateway) {
-
     DeleteTargetVpnGatewayHttpRequest request =
         DeleteTargetVpnGatewayHttpRequest.newBuilder()
             .setTargetVpnGateway(targetVpnGateway)
@@ -417,7 +415,6 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   @BetaApi
   public final TargetVpnGateway getTargetVpnGateway(
       ProjectRegionTargetVpnGatewayName targetVpnGateway) {
-
     GetTargetVpnGatewayHttpRequest request =
         GetTargetVpnGatewayHttpRequest.newBuilder()
             .setTargetVpnGateway(targetVpnGateway == null ? null : targetVpnGateway.toString())
@@ -444,7 +441,6 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    */
   @BetaApi
   public final TargetVpnGateway getTargetVpnGateway(String targetVpnGateway) {
-
     GetTargetVpnGatewayHttpRequest request =
         GetTargetVpnGatewayHttpRequest.newBuilder().setTargetVpnGateway(targetVpnGateway).build();
     return getTargetVpnGateway(request);
@@ -525,7 +521,6 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   @BetaApi
   public final Operation insertTargetVpnGateway(
       ProjectRegionName region, TargetVpnGateway targetVpnGatewayResource) {
-
     InsertTargetVpnGatewayHttpRequest request =
         InsertTargetVpnGatewayHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -559,7 +554,6 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   @BetaApi
   public final Operation insertTargetVpnGateway(
       String region, TargetVpnGateway targetVpnGatewayResource) {
-
     InsertTargetVpnGatewayHttpRequest request =
         InsertTargetVpnGatewayHttpRequest.newBuilder()
             .setRegion(region)

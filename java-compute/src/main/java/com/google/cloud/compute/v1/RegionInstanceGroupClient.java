@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,7 +172,6 @@ public class RegionInstanceGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final InstanceGroup getRegionInstanceGroup(ProjectRegionInstanceGroupName instanceGroup) {
-
     GetRegionInstanceGroupHttpRequest request =
         GetRegionInstanceGroupHttpRequest.newBuilder()
             .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
@@ -198,7 +197,6 @@ public class RegionInstanceGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final InstanceGroup getRegionInstanceGroup(String instanceGroup) {
-
     GetRegionInstanceGroupHttpRequest request =
         GetRegionInstanceGroupHttpRequest.newBuilder().setInstanceGroup(instanceGroup).build();
     return getRegionInstanceGroup(request);
@@ -587,7 +585,6 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   public final Operation setNamedPortsRegionInstanceGroup(
       ProjectRegionInstanceGroupName instanceGroup,
       RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource) {
-
     SetNamedPortsRegionInstanceGroupHttpRequest request =
         SetNamedPortsRegionInstanceGroupHttpRequest.newBuilder()
             .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
@@ -619,7 +616,6 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   public final Operation setNamedPortsRegionInstanceGroup(
       String instanceGroup,
       RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource) {
-
     SetNamedPortsRegionInstanceGroupHttpRequest request =
         SetNamedPortsRegionInstanceGroupHttpRequest.newBuilder()
             .setInstanceGroup(instanceGroup)

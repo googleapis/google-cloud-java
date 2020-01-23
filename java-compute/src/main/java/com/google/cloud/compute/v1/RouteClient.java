@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,7 +169,6 @@ public class RouteClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteRoute(ProjectGlobalRouteName route) {
-
     DeleteRouteHttpRequest request =
         DeleteRouteHttpRequest.newBuilder()
             .setRoute(route == null ? null : route.toString())
@@ -195,7 +194,6 @@ public class RouteClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteRoute(String route) {
-
     DeleteRouteHttpRequest request = DeleteRouteHttpRequest.newBuilder().setRoute(route).build();
     return deleteRoute(request);
   }
@@ -266,7 +264,6 @@ public class RouteClient implements BackgroundResource {
    */
   @BetaApi
   public final Route getRoute(ProjectGlobalRouteName route) {
-
     GetRouteHttpRequest request =
         GetRouteHttpRequest.newBuilder().setRoute(route == null ? null : route.toString()).build();
     return getRoute(request);
@@ -291,7 +288,6 @@ public class RouteClient implements BackgroundResource {
    */
   @BetaApi
   public final Route getRoute(String route) {
-
     GetRouteHttpRequest request = GetRouteHttpRequest.newBuilder().setRoute(route).build();
     return getRoute(request);
   }
@@ -368,7 +364,6 @@ public class RouteClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertRoute(ProjectName project, Route routeResource) {
-
     InsertRouteHttpRequest request =
         InsertRouteHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -400,7 +395,6 @@ public class RouteClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertRoute(String project, Route routeResource) {
-
     InsertRouteHttpRequest request =
         InsertRouteHttpRequest.newBuilder()
             .setProject(project)

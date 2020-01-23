@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -322,7 +322,6 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
       ProjectZoneNetworkEndpointGroupName networkEndpointGroup,
       NetworkEndpointGroupsAttachEndpointsRequest
           networkEndpointGroupsAttachEndpointsRequestResource) {
-
     AttachNetworkEndpointsNetworkEndpointGroupHttpRequest request =
         AttachNetworkEndpointsNetworkEndpointGroupHttpRequest.newBuilder()
             .setNetworkEndpointGroup(
@@ -357,7 +356,6 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
       String networkEndpointGroup,
       NetworkEndpointGroupsAttachEndpointsRequest
           networkEndpointGroupsAttachEndpointsRequestResource) {
-
     AttachNetworkEndpointsNetworkEndpointGroupHttpRequest request =
         AttachNetworkEndpointsNetworkEndpointGroupHttpRequest.newBuilder()
             .setNetworkEndpointGroup(networkEndpointGroup)
@@ -442,7 +440,6 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   @BetaApi
   public final Operation deleteNetworkEndpointGroup(
       ProjectZoneNetworkEndpointGroupName networkEndpointGroup) {
-
     DeleteNetworkEndpointGroupHttpRequest request =
         DeleteNetworkEndpointGroupHttpRequest.newBuilder()
             .setNetworkEndpointGroup(
@@ -472,7 +469,6 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteNetworkEndpointGroup(String networkEndpointGroup) {
-
     DeleteNetworkEndpointGroupHttpRequest request =
         DeleteNetworkEndpointGroupHttpRequest.newBuilder()
             .setNetworkEndpointGroup(networkEndpointGroup)
@@ -556,7 +552,6 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
       ProjectZoneNetworkEndpointGroupName networkEndpointGroup,
       NetworkEndpointGroupsDetachEndpointsRequest
           networkEndpointGroupsDetachEndpointsRequestResource) {
-
     DetachNetworkEndpointsNetworkEndpointGroupHttpRequest request =
         DetachNetworkEndpointsNetworkEndpointGroupHttpRequest.newBuilder()
             .setNetworkEndpointGroup(
@@ -591,7 +586,6 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
       String networkEndpointGroup,
       NetworkEndpointGroupsDetachEndpointsRequest
           networkEndpointGroupsDetachEndpointsRequestResource) {
-
     DetachNetworkEndpointsNetworkEndpointGroupHttpRequest request =
         DetachNetworkEndpointsNetworkEndpointGroupHttpRequest.newBuilder()
             .setNetworkEndpointGroup(networkEndpointGroup)
@@ -675,7 +669,6 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   @BetaApi
   public final NetworkEndpointGroup getNetworkEndpointGroup(
       ProjectZoneNetworkEndpointGroupName networkEndpointGroup) {
-
     GetNetworkEndpointGroupHttpRequest request =
         GetNetworkEndpointGroupHttpRequest.newBuilder()
             .setNetworkEndpointGroup(
@@ -704,7 +697,6 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final NetworkEndpointGroup getNetworkEndpointGroup(String networkEndpointGroup) {
-
     GetNetworkEndpointGroupHttpRequest request =
         GetNetworkEndpointGroupHttpRequest.newBuilder()
             .setNetworkEndpointGroup(networkEndpointGroup)
@@ -789,7 +781,6 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   @BetaApi
   public final Operation insertNetworkEndpointGroup(
       ProjectZoneName zone, NetworkEndpointGroup networkEndpointGroupResource) {
-
     InsertNetworkEndpointGroupHttpRequest request =
         InsertNetworkEndpointGroupHttpRequest.newBuilder()
             .setZone(zone == null ? null : zone.toString())
@@ -824,7 +815,6 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   @BetaApi
   public final Operation insertNetworkEndpointGroup(
       String zone, NetworkEndpointGroup networkEndpointGroupResource) {
-
     InsertNetworkEndpointGroupHttpRequest request =
         InsertNetworkEndpointGroupHttpRequest.newBuilder()
             .setZone(zone)
@@ -1226,7 +1216,6 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   public final TestPermissionsResponse testIamPermissionsNetworkEndpointGroup(
       ProjectZoneNetworkEndpointGroupResourceName resource,
       TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsNetworkEndpointGroupHttpRequest request =
         TestIamPermissionsNetworkEndpointGroupHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1256,7 +1245,6 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
   @BetaApi
   public final TestPermissionsResponse testIamPermissionsNetworkEndpointGroup(
       String resource, TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsNetworkEndpointGroupHttpRequest request =
         TestIamPermissionsNetworkEndpointGroupHttpRequest.newBuilder()
             .setResource(resource)

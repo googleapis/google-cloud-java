@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,7 +169,6 @@ public class FirewallClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteFirewall(ProjectGlobalFirewallName firewall) {
-
     DeleteFirewallHttpRequest request =
         DeleteFirewallHttpRequest.newBuilder()
             .setFirewall(firewall == null ? null : firewall.toString())
@@ -195,7 +194,6 @@ public class FirewallClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteFirewall(String firewall) {
-
     DeleteFirewallHttpRequest request =
         DeleteFirewallHttpRequest.newBuilder().setFirewall(firewall).build();
     return deleteFirewall(request);
@@ -266,7 +264,6 @@ public class FirewallClient implements BackgroundResource {
    */
   @BetaApi
   public final Firewall getFirewall(ProjectGlobalFirewallName firewall) {
-
     GetFirewallHttpRequest request =
         GetFirewallHttpRequest.newBuilder()
             .setFirewall(firewall == null ? null : firewall.toString())
@@ -292,7 +289,6 @@ public class FirewallClient implements BackgroundResource {
    */
   @BetaApi
   public final Firewall getFirewall(String firewall) {
-
     GetFirewallHttpRequest request =
         GetFirewallHttpRequest.newBuilder().setFirewall(firewall).build();
     return getFirewall(request);
@@ -367,7 +363,6 @@ public class FirewallClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertFirewall(ProjectName project, Firewall firewallResource) {
-
     InsertFirewallHttpRequest request =
         InsertFirewallHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -398,7 +393,6 @@ public class FirewallClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertFirewall(String project, Firewall firewallResource) {
-
     InsertFirewallHttpRequest request =
         InsertFirewallHttpRequest.newBuilder()
             .setProject(project)
@@ -623,7 +617,6 @@ public class FirewallClient implements BackgroundResource {
   @BetaApi
   public final Operation patchFirewall(
       ProjectGlobalFirewallName firewall, Firewall firewallResource, List<String> fieldMask) {
-
     PatchFirewallHttpRequest request =
         PatchFirewallHttpRequest.newBuilder()
             .setFirewall(firewall == null ? null : firewall.toString())
@@ -662,7 +655,6 @@ public class FirewallClient implements BackgroundResource {
   @BetaApi
   public final Operation patchFirewall(
       String firewall, Firewall firewallResource, List<String> fieldMask) {
-
     PatchFirewallHttpRequest request =
         PatchFirewallHttpRequest.newBuilder()
             .setFirewall(firewall)
@@ -759,7 +751,6 @@ public class FirewallClient implements BackgroundResource {
   @BetaApi
   public final Operation updateFirewall(
       ProjectGlobalFirewallName firewall, Firewall firewallResource, List<String> fieldMask) {
-
     UpdateFirewallHttpRequest request =
         UpdateFirewallHttpRequest.newBuilder()
             .setFirewall(firewall == null ? null : firewall.toString())
@@ -799,7 +790,6 @@ public class FirewallClient implements BackgroundResource {
   @BetaApi
   public final Operation updateFirewall(
       String firewall, Firewall firewallResource, List<String> fieldMask) {
-
     UpdateFirewallHttpRequest request =
         UpdateFirewallHttpRequest.newBuilder()
             .setFirewall(firewall)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -309,7 +309,6 @@ public class VpnGatewayClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteVpnGateway(ProjectRegionVpnGatewayName vpnGateway) {
-
     DeleteVpnGatewayHttpRequest request =
         DeleteVpnGatewayHttpRequest.newBuilder()
             .setVpnGateway(vpnGateway == null ? null : vpnGateway.toString())
@@ -335,7 +334,6 @@ public class VpnGatewayClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteVpnGateway(String vpnGateway) {
-
     DeleteVpnGatewayHttpRequest request =
         DeleteVpnGatewayHttpRequest.newBuilder().setVpnGateway(vpnGateway).build();
     return deleteVpnGateway(request);
@@ -407,7 +405,6 @@ public class VpnGatewayClient implements BackgroundResource {
    */
   @BetaApi
   public final VpnGateway getVpnGateway(ProjectRegionVpnGatewayName vpnGateway) {
-
     GetVpnGatewayHttpRequest request =
         GetVpnGatewayHttpRequest.newBuilder()
             .setVpnGateway(vpnGateway == null ? null : vpnGateway.toString())
@@ -434,7 +431,6 @@ public class VpnGatewayClient implements BackgroundResource {
    */
   @BetaApi
   public final VpnGateway getVpnGateway(String vpnGateway) {
-
     GetVpnGatewayHttpRequest request =
         GetVpnGatewayHttpRequest.newBuilder().setVpnGateway(vpnGateway).build();
     return getVpnGateway(request);
@@ -508,7 +504,6 @@ public class VpnGatewayClient implements BackgroundResource {
   @BetaApi
   public final VpnGatewaysGetStatusResponse getStatusVpnGateway(
       ProjectRegionVpnGatewayName vpnGateway) {
-
     GetStatusVpnGatewayHttpRequest request =
         GetStatusVpnGatewayHttpRequest.newBuilder()
             .setVpnGateway(vpnGateway == null ? null : vpnGateway.toString())
@@ -534,7 +529,6 @@ public class VpnGatewayClient implements BackgroundResource {
    */
   @BetaApi
   public final VpnGatewaysGetStatusResponse getStatusVpnGateway(String vpnGateway) {
-
     GetStatusVpnGatewayHttpRequest request =
         GetStatusVpnGatewayHttpRequest.newBuilder().setVpnGateway(vpnGateway).build();
     return getStatusVpnGateway(request);
@@ -610,7 +604,6 @@ public class VpnGatewayClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertVpnGateway(ProjectRegionName region, VpnGateway vpnGatewayResource) {
-
     InsertVpnGatewayHttpRequest request =
         InsertVpnGatewayHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -640,7 +633,6 @@ public class VpnGatewayClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertVpnGateway(String region, VpnGateway vpnGatewayResource) {
-
     InsertVpnGatewayHttpRequest request =
         InsertVpnGatewayHttpRequest.newBuilder()
             .setRegion(region)
@@ -861,7 +853,6 @@ public class VpnGatewayClient implements BackgroundResource {
   public final Operation setLabelsVpnGateway(
       ProjectRegionVpnGatewayResourceName resource,
       RegionSetLabelsRequest regionSetLabelsRequestResource) {
-
     SetLabelsVpnGatewayHttpRequest request =
         SetLabelsVpnGatewayHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -892,7 +883,6 @@ public class VpnGatewayClient implements BackgroundResource {
   @BetaApi
   public final Operation setLabelsVpnGateway(
       String resource, RegionSetLabelsRequest regionSetLabelsRequestResource) {
-
     SetLabelsVpnGatewayHttpRequest request =
         SetLabelsVpnGatewayHttpRequest.newBuilder()
             .setResource(resource)
@@ -977,7 +967,6 @@ public class VpnGatewayClient implements BackgroundResource {
   public final TestPermissionsResponse testIamPermissionsVpnGateway(
       ProjectRegionVpnGatewayResourceName resource,
       TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsVpnGatewayHttpRequest request =
         TestIamPermissionsVpnGatewayHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1007,7 +996,6 @@ public class VpnGatewayClient implements BackgroundResource {
   @BetaApi
   public final TestPermissionsResponse testIamPermissionsVpnGateway(
       String resource, TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsVpnGatewayHttpRequest request =
         TestIamPermissionsVpnGatewayHttpRequest.newBuilder()
             .setResource(resource)

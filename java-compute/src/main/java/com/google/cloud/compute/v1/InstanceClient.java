@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -179,7 +179,6 @@ public class InstanceClient implements BackgroundResource {
       ProjectZoneInstanceName instance,
       String networkInterface,
       AccessConfig accessConfigResource) {
-
     AddAccessConfigInstanceHttpRequest request =
         AddAccessConfigInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -213,7 +212,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final Operation addAccessConfigInstance(
       String instance, String networkInterface, AccessConfig accessConfigResource) {
-
     AddAccessConfigInstanceHttpRequest request =
         AddAccessConfigInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -444,7 +442,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final Operation attachDiskInstance(
       ProjectZoneInstanceName instance, Boolean forceAttach, AttachedDisk attachedDiskResource) {
-
     AttachDiskInstanceHttpRequest request =
         AttachDiskInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -480,7 +477,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final Operation attachDiskInstance(
       String instance, Boolean forceAttach, AttachedDisk attachedDiskResource) {
-
     AttachDiskInstanceHttpRequest request =
         AttachDiskInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -569,7 +565,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteInstance(ProjectZoneInstanceName instance) {
-
     DeleteInstanceHttpRequest request =
         DeleteInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -596,7 +591,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteInstance(String instance) {
-
     DeleteInstanceHttpRequest request =
         DeleteInstanceHttpRequest.newBuilder().setInstance(instance).build();
     return deleteInstance(request);
@@ -674,7 +668,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final Operation deleteAccessConfigInstance(
       ProjectZoneInstanceName instance, String networkInterface, String accessConfig) {
-
     DeleteAccessConfigInstanceHttpRequest request =
         DeleteAccessConfigInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -707,7 +700,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final Operation deleteAccessConfigInstance(
       String instance, String networkInterface, String accessConfig) {
-
     DeleteAccessConfigInstanceHttpRequest request =
         DeleteAccessConfigInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -794,7 +786,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation detachDiskInstance(ProjectZoneInstanceName instance, String deviceName) {
-
     DetachDiskInstanceHttpRequest request =
         DetachDiskInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -824,7 +815,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation detachDiskInstance(String instance, String deviceName) {
-
     DetachDiskInstanceHttpRequest request =
         DetachDiskInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -904,7 +894,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Instance getInstance(ProjectZoneInstanceName instance) {
-
     GetInstanceHttpRequest request =
         GetInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -931,7 +920,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Instance getInstance(String instance) {
-
     GetInstanceHttpRequest request =
         GetInstanceHttpRequest.newBuilder().setInstance(instance).build();
     return getInstance(request);
@@ -1009,7 +997,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final GuestAttributes getGuestAttributesInstance(
       ProjectZoneInstanceName instance, String queryPath, String variableKey) {
-
     GetGuestAttributesInstanceHttpRequest request =
         GetGuestAttributesInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -1042,7 +1029,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final GuestAttributes getGuestAttributesInstance(
       String instance, String queryPath, String variableKey) {
-
     GetGuestAttributesInstanceHttpRequest request =
         GetGuestAttributesInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -1128,7 +1114,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicyInstance(ProjectZoneInstanceResourceName resource) {
-
     GetIamPolicyInstanceHttpRequest request =
         GetIamPolicyInstanceHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1155,7 +1140,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicyInstance(String resource) {
-
     GetIamPolicyInstanceHttpRequest request =
         GetIamPolicyInstanceHttpRequest.newBuilder().setResource(resource).build();
     return getIamPolicyInstance(request);
@@ -1237,7 +1221,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final SerialPortOutput getSerialPortOutputInstance(
       ProjectZoneInstanceName instance, Integer port, String start) {
-
     GetSerialPortOutputInstanceHttpRequest request =
         GetSerialPortOutputInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -1273,7 +1256,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final SerialPortOutput getSerialPortOutputInstance(
       String instance, Integer port, String start) {
-
     GetSerialPortOutputInstanceHttpRequest request =
         GetSerialPortOutputInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -1359,7 +1341,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final ShieldedInstanceIdentity getShieldedInstanceIdentityInstance(
       ProjectZoneInstanceName instance) {
-
     GetShieldedInstanceIdentityInstanceHttpRequest request =
         GetShieldedInstanceIdentityInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -1385,7 +1366,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final ShieldedInstanceIdentity getShieldedInstanceIdentityInstance(String instance) {
-
     GetShieldedInstanceIdentityInstanceHttpRequest request =
         GetShieldedInstanceIdentityInstanceHttpRequest.newBuilder().setInstance(instance).build();
     return getShieldedInstanceIdentityInstance(request);
@@ -1464,7 +1444,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertInstance(ProjectZoneName zone, Instance instanceResource) {
-
     InsertInstanceHttpRequest request =
         InsertInstanceHttpRequest.newBuilder()
             .setZone(zone == null ? null : zone.toString())
@@ -1496,7 +1475,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertInstance(String zone, Instance instanceResource) {
-
     InsertInstanceHttpRequest request =
         InsertInstanceHttpRequest.newBuilder()
             .setZone(zone)
@@ -1856,7 +1834,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation resetInstance(ProjectZoneInstanceName instance) {
-
     ResetInstanceHttpRequest request =
         ResetInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -1883,7 +1860,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation resetInstance(String instance) {
-
     ResetInstanceHttpRequest request =
         ResetInstanceHttpRequest.newBuilder().setInstance(instance).build();
     return resetInstance(request);
@@ -1959,7 +1935,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final Operation setDeletionProtectionInstance(
       ProjectZoneInstanceResourceName resource, Boolean deletionProtection) {
-
     SetDeletionProtectionInstanceHttpRequest request =
         SetDeletionProtectionInstanceHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1989,7 +1964,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final Operation setDeletionProtectionInstance(
       String resource, Boolean deletionProtection) {
-
     SetDeletionProtectionInstanceHttpRequest request =
         SetDeletionProtectionInstanceHttpRequest.newBuilder()
             .setResource(resource)
@@ -2075,7 +2049,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final Operation setDiskAutoDeleteInstance(
       ProjectZoneInstanceName instance, Boolean autoDelete, String deviceName) {
-
     SetDiskAutoDeleteInstanceHttpRequest request =
         SetDiskAutoDeleteInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -2109,7 +2082,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final Operation setDiskAutoDeleteInstance(
       String instance, Boolean autoDelete, String deviceName) {
-
     SetDiskAutoDeleteInstanceHttpRequest request =
         SetDiskAutoDeleteInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -2196,7 +2168,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final Policy setIamPolicyInstance(
       ProjectZoneInstanceResourceName resource, ZoneSetPolicyRequest zoneSetPolicyRequestResource) {
-
     SetIamPolicyInstanceHttpRequest request =
         SetIamPolicyInstanceHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2226,7 +2197,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final Policy setIamPolicyInstance(
       String resource, ZoneSetPolicyRequest zoneSetPolicyRequestResource) {
-
     SetIamPolicyInstanceHttpRequest request =
         SetIamPolicyInstanceHttpRequest.newBuilder()
             .setResource(resource)
@@ -2310,7 +2280,6 @@ public class InstanceClient implements BackgroundResource {
   public final Operation setLabelsInstance(
       ProjectZoneInstanceName instance,
       InstancesSetLabelsRequest instancesSetLabelsRequestResource) {
-
     SetLabelsInstanceHttpRequest request =
         SetLabelsInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -2341,7 +2310,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final Operation setLabelsInstance(
       String instance, InstancesSetLabelsRequest instancesSetLabelsRequestResource) {
-
     SetLabelsInstanceHttpRequest request =
         SetLabelsInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -2426,7 +2394,6 @@ public class InstanceClient implements BackgroundResource {
   public final Operation setMachineResourcesInstance(
       ProjectZoneInstanceName instance,
       InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource) {
-
     SetMachineResourcesInstanceHttpRequest request =
         SetMachineResourcesInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -2459,7 +2426,6 @@ public class InstanceClient implements BackgroundResource {
   public final Operation setMachineResourcesInstance(
       String instance,
       InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource) {
-
     SetMachineResourcesInstanceHttpRequest request =
         SetMachineResourcesInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -2546,7 +2512,6 @@ public class InstanceClient implements BackgroundResource {
   public final Operation setMachineTypeInstance(
       ProjectZoneInstanceName instance,
       InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource) {
-
     SetMachineTypeInstanceHttpRequest request =
         SetMachineTypeInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -2576,7 +2541,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final Operation setMachineTypeInstance(
       String instance, InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource) {
-
     SetMachineTypeInstanceHttpRequest request =
         SetMachineTypeInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -2658,7 +2622,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final Operation setMetadataInstance(
       ProjectZoneInstanceName instance, Metadata metadataResource) {
-
     SetMetadataInstanceHttpRequest request =
         SetMetadataInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -2687,7 +2650,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation setMetadataInstance(String instance, Metadata metadataResource) {
-
     SetMetadataInstanceHttpRequest request =
         SetMetadataInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -2771,7 +2733,6 @@ public class InstanceClient implements BackgroundResource {
   public final Operation setMinCpuPlatformInstance(
       ProjectZoneInstanceName instance,
       InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource) {
-
     SetMinCpuPlatformInstanceHttpRequest request =
         SetMinCpuPlatformInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -2803,7 +2764,6 @@ public class InstanceClient implements BackgroundResource {
   public final Operation setMinCpuPlatformInstance(
       String instance,
       InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource) {
-
     SetMinCpuPlatformInstanceHttpRequest request =
         SetMinCpuPlatformInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -2887,7 +2847,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final Operation setSchedulingInstance(
       ProjectZoneInstanceName instance, Scheduling schedulingResource) {
-
     SetSchedulingInstanceHttpRequest request =
         SetSchedulingInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -2916,7 +2875,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation setSchedulingInstance(String instance, Scheduling schedulingResource) {
-
     SetSchedulingInstanceHttpRequest request =
         SetSchedulingInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -3000,7 +2958,6 @@ public class InstanceClient implements BackgroundResource {
   public final Operation setServiceAccountInstance(
       ProjectZoneInstanceName instance,
       InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource) {
-
     SetServiceAccountInstanceHttpRequest request =
         SetServiceAccountInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -3032,7 +2989,6 @@ public class InstanceClient implements BackgroundResource {
   public final Operation setServiceAccountInstance(
       String instance,
       InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource) {
-
     SetServiceAccountInstanceHttpRequest request =
         SetServiceAccountInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -3126,7 +3082,6 @@ public class InstanceClient implements BackgroundResource {
       ProjectZoneInstanceName instance,
       ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource,
       List<String> fieldMask) {
-
     SetShieldedInstanceIntegrityPolicyInstanceHttpRequest request =
         SetShieldedInstanceIntegrityPolicyInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -3167,7 +3122,6 @@ public class InstanceClient implements BackgroundResource {
       String instance,
       ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource,
       List<String> fieldMask) {
-
     SetShieldedInstanceIntegrityPolicyInstanceHttpRequest request =
         SetShieldedInstanceIntegrityPolicyInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -3258,7 +3212,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation setTagsInstance(ProjectZoneInstanceName instance, Tags tagsResource) {
-
     SetTagsInstanceHttpRequest request =
         SetTagsInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -3287,7 +3240,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation setTagsInstance(String instance, Tags tagsResource) {
-
     SetTagsInstanceHttpRequest request =
         SetTagsInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -3365,7 +3317,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation simulateMaintenanceEventInstance(ProjectZoneInstanceName instance) {
-
     SimulateMaintenanceEventInstanceHttpRequest request =
         SimulateMaintenanceEventInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -3391,7 +3342,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation simulateMaintenanceEventInstance(String instance) {
-
     SimulateMaintenanceEventInstanceHttpRequest request =
         SimulateMaintenanceEventInstanceHttpRequest.newBuilder().setInstance(instance).build();
     return simulateMaintenanceEventInstance(request);
@@ -3465,7 +3415,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation startInstance(ProjectZoneInstanceName instance) {
-
     StartInstanceHttpRequest request =
         StartInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -3492,7 +3441,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation startInstance(String instance) {
-
     StartInstanceHttpRequest request =
         StartInstanceHttpRequest.newBuilder().setInstance(instance).build();
     return startInstance(request);
@@ -3570,7 +3518,6 @@ public class InstanceClient implements BackgroundResource {
   public final Operation startWithEncryptionKeyInstance(
       ProjectZoneInstanceName instance,
       InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource) {
-
     StartWithEncryptionKeyInstanceHttpRequest request =
         StartWithEncryptionKeyInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -3603,7 +3550,6 @@ public class InstanceClient implements BackgroundResource {
   public final Operation startWithEncryptionKeyInstance(
       String instance,
       InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource) {
-
     StartWithEncryptionKeyInstanceHttpRequest request =
         StartWithEncryptionKeyInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -3689,7 +3635,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation stopInstance(ProjectZoneInstanceName instance) {
-
     StopInstanceHttpRequest request =
         StopInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -3718,7 +3663,6 @@ public class InstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation stopInstance(String instance) {
-
     StopInstanceHttpRequest request =
         StopInstanceHttpRequest.newBuilder().setInstance(instance).build();
     return stopInstance(request);
@@ -3799,7 +3743,6 @@ public class InstanceClient implements BackgroundResource {
   public final TestPermissionsResponse testIamPermissionsInstance(
       ProjectZoneInstanceResourceName resource,
       TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsInstanceHttpRequest request =
         TestIamPermissionsInstanceHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -3829,7 +3772,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final TestPermissionsResponse testIamPermissionsInstance(
       String resource, TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsInstanceHttpRequest request =
         TestIamPermissionsInstanceHttpRequest.newBuilder()
             .setResource(resource)
@@ -3919,7 +3861,6 @@ public class InstanceClient implements BackgroundResource {
       ProjectZoneInstanceName instance,
       String networkInterface,
       AccessConfig accessConfigResource) {
-
     UpdateAccessConfigInstanceHttpRequest request =
         UpdateAccessConfigInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -3955,7 +3896,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final Operation updateAccessConfigInstance(
       String instance, String networkInterface, AccessConfig accessConfigResource) {
-
     UpdateAccessConfigInstanceHttpRequest request =
         UpdateAccessConfigInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -4055,7 +3995,6 @@ public class InstanceClient implements BackgroundResource {
       ProjectZoneInstanceName instance,
       DisplayDevice displayDeviceResource,
       List<String> fieldMask) {
-
     UpdateDisplayDeviceInstanceHttpRequest request =
         UpdateDisplayDeviceInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -4093,7 +4032,6 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final Operation updateDisplayDeviceInstance(
       String instance, DisplayDevice displayDeviceResource, List<String> fieldMask) {
-
     UpdateDisplayDeviceInstanceHttpRequest request =
         UpdateDisplayDeviceInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -4195,7 +4133,6 @@ public class InstanceClient implements BackgroundResource {
       String networkInterface,
       NetworkInterface networkInterfaceResource,
       List<String> fieldMask) {
-
     UpdateNetworkInterfaceInstanceHttpRequest request =
         UpdateNetworkInterfaceInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -4237,7 +4174,6 @@ public class InstanceClient implements BackgroundResource {
       String networkInterface,
       NetworkInterface networkInterfaceResource,
       List<String> fieldMask) {
-
     UpdateNetworkInterfaceInstanceHttpRequest request =
         UpdateNetworkInterfaceInstanceHttpRequest.newBuilder()
             .setInstance(instance)
@@ -4339,7 +4275,6 @@ public class InstanceClient implements BackgroundResource {
       ProjectZoneInstanceName instance,
       ShieldedInstanceConfig shieldedInstanceConfigResource,
       List<String> fieldMask) {
-
     UpdateShieldedInstanceConfigInstanceHttpRequest request =
         UpdateShieldedInstanceConfigInstanceHttpRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -4379,7 +4314,6 @@ public class InstanceClient implements BackgroundResource {
       String instance,
       ShieldedInstanceConfig shieldedInstanceConfigResource,
       List<String> fieldMask) {
-
     UpdateShieldedInstanceConfigInstanceHttpRequest request =
         UpdateShieldedInstanceConfigInstanceHttpRequest.newBuilder()
             .setInstance(instance)

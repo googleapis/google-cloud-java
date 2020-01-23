@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,7 +172,6 @@ public class RegionOperationClient implements BackgroundResource {
    */
   @BetaApi
   public final void deleteRegionOperation(ProjectRegionOperationName operation) {
-
     DeleteRegionOperationHttpRequest request =
         DeleteRegionOperationHttpRequest.newBuilder()
             .setOperation(operation == null ? null : operation.toString())
@@ -198,7 +197,6 @@ public class RegionOperationClient implements BackgroundResource {
    */
   @BetaApi
   public final void deleteRegionOperation(String operation) {
-
     DeleteRegionOperationHttpRequest request =
         DeleteRegionOperationHttpRequest.newBuilder().setOperation(operation).build();
     deleteRegionOperation(request);
@@ -270,7 +268,6 @@ public class RegionOperationClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation getRegionOperation(ProjectRegionOperationName operation) {
-
     GetRegionOperationHttpRequest request =
         GetRegionOperationHttpRequest.newBuilder()
             .setOperation(operation == null ? null : operation.toString())
@@ -296,7 +293,6 @@ public class RegionOperationClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation getRegionOperation(String operation) {
-
     GetRegionOperationHttpRequest request =
         GetRegionOperationHttpRequest.newBuilder().setOperation(operation).build();
     return getRegionOperation(request);

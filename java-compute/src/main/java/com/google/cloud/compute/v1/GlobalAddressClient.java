@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -171,7 +171,6 @@ public class GlobalAddressClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteGlobalAddress(ProjectGlobalAddressName address) {
-
     DeleteGlobalAddressHttpRequest request =
         DeleteGlobalAddressHttpRequest.newBuilder()
             .setAddress(address == null ? null : address.toString())
@@ -197,7 +196,6 @@ public class GlobalAddressClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteGlobalAddress(String address) {
-
     DeleteGlobalAddressHttpRequest request =
         DeleteGlobalAddressHttpRequest.newBuilder().setAddress(address).build();
     return deleteGlobalAddress(request);
@@ -270,7 +268,6 @@ public class GlobalAddressClient implements BackgroundResource {
    */
   @BetaApi
   public final Address getGlobalAddress(ProjectGlobalAddressName address) {
-
     GetGlobalAddressHttpRequest request =
         GetGlobalAddressHttpRequest.newBuilder()
             .setAddress(address == null ? null : address.toString())
@@ -297,7 +294,6 @@ public class GlobalAddressClient implements BackgroundResource {
    */
   @BetaApi
   public final Address getGlobalAddress(String address) {
-
     GetGlobalAddressHttpRequest request =
         GetGlobalAddressHttpRequest.newBuilder().setAddress(address).build();
     return getGlobalAddress(request);
@@ -384,7 +380,6 @@ public class GlobalAddressClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertGlobalAddress(ProjectName project, Address addressResource) {
-
     InsertGlobalAddressHttpRequest request =
         InsertGlobalAddressHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -425,7 +420,6 @@ public class GlobalAddressClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertGlobalAddress(String project, Address addressResource) {
-
     InsertGlobalAddressHttpRequest request =
         InsertGlobalAddressHttpRequest.newBuilder()
             .setProject(project)

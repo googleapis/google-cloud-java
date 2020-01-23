@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,7 +172,6 @@ public class RegionHealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteRegionHealthCheck(ProjectRegionHealthCheckName healthCheck) {
-
     DeleteRegionHealthCheckHttpRequest request =
         DeleteRegionHealthCheckHttpRequest.newBuilder()
             .setHealthCheck(healthCheck == null ? null : healthCheck.toString())
@@ -198,7 +197,6 @@ public class RegionHealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteRegionHealthCheck(String healthCheck) {
-
     DeleteRegionHealthCheckHttpRequest request =
         DeleteRegionHealthCheckHttpRequest.newBuilder().setHealthCheck(healthCheck).build();
     return deleteRegionHealthCheck(request);
@@ -271,7 +269,6 @@ public class RegionHealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final HealthCheck getRegionHealthCheck(ProjectRegionHealthCheckName healthCheck) {
-
     GetRegionHealthCheckHttpRequest request =
         GetRegionHealthCheckHttpRequest.newBuilder()
             .setHealthCheck(healthCheck == null ? null : healthCheck.toString())
@@ -298,7 +295,6 @@ public class RegionHealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final HealthCheck getRegionHealthCheck(String healthCheck) {
-
     GetRegionHealthCheckHttpRequest request =
         GetRegionHealthCheckHttpRequest.newBuilder().setHealthCheck(healthCheck).build();
     return getRegionHealthCheck(request);
@@ -379,7 +375,6 @@ public class RegionHealthCheckClient implements BackgroundResource {
   @BetaApi
   public final Operation insertRegionHealthCheck(
       ProjectRegionName region, HealthCheck healthCheckResource) {
-
     InsertRegionHealthCheckHttpRequest request =
         InsertRegionHealthCheckHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -412,7 +407,6 @@ public class RegionHealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertRegionHealthCheck(String region, HealthCheck healthCheckResource) {
-
     InsertRegionHealthCheckHttpRequest request =
         InsertRegionHealthCheckHttpRequest.newBuilder()
             .setRegion(region)
@@ -645,7 +639,6 @@ public class RegionHealthCheckClient implements BackgroundResource {
       ProjectRegionHealthCheckName healthCheck,
       HealthCheck healthCheckResource,
       List<String> fieldMask) {
-
     PatchRegionHealthCheckHttpRequest request =
         PatchRegionHealthCheckHttpRequest.newBuilder()
             .setHealthCheck(healthCheck == null ? null : healthCheck.toString())
@@ -686,7 +679,6 @@ public class RegionHealthCheckClient implements BackgroundResource {
   @BetaApi
   public final Operation patchRegionHealthCheck(
       String healthCheck, HealthCheck healthCheckResource, List<String> fieldMask) {
-
     PatchRegionHealthCheckHttpRequest request =
         PatchRegionHealthCheckHttpRequest.newBuilder()
             .setHealthCheck(healthCheck)
@@ -786,7 +778,6 @@ public class RegionHealthCheckClient implements BackgroundResource {
       ProjectRegionHealthCheckName healthCheck,
       HealthCheck healthCheckResource,
       List<String> fieldMask) {
-
     UpdateRegionHealthCheckHttpRequest request =
         UpdateRegionHealthCheckHttpRequest.newBuilder()
             .setHealthCheck(healthCheck == null ? null : healthCheck.toString())
@@ -826,7 +817,6 @@ public class RegionHealthCheckClient implements BackgroundResource {
   @BetaApi
   public final Operation updateRegionHealthCheck(
       String healthCheck, HealthCheck healthCheckResource, List<String> fieldMask) {
-
     UpdateRegionHealthCheckHttpRequest request =
         UpdateRegionHealthCheckHttpRequest.newBuilder()
             .setHealthCheck(healthCheck)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -177,7 +177,6 @@ public class BackendServiceClient implements BackgroundResource {
   @BetaApi
   public final Operation addSignedUrlKeyBackendService(
       ProjectGlobalBackendServiceName backendService, SignedUrlKey signedUrlKeyResource) {
-
     AddSignedUrlKeyBackendServiceHttpRequest request =
         AddSignedUrlKeyBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService == null ? null : backendService.toString())
@@ -209,7 +208,6 @@ public class BackendServiceClient implements BackgroundResource {
   @BetaApi
   public final Operation addSignedUrlKeyBackendService(
       String backendService, SignedUrlKey signedUrlKeyResource) {
-
     AddSignedUrlKeyBackendServiceHttpRequest request =
         AddSignedUrlKeyBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService)
@@ -435,7 +433,6 @@ public class BackendServiceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteBackendService(ProjectGlobalBackendServiceName backendService) {
-
     DeleteBackendServiceHttpRequest request =
         DeleteBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService == null ? null : backendService.toString())
@@ -461,7 +458,6 @@ public class BackendServiceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteBackendService(String backendService) {
-
     DeleteBackendServiceHttpRequest request =
         DeleteBackendServiceHttpRequest.newBuilder().setBackendService(backendService).build();
     return deleteBackendService(request);
@@ -537,7 +533,6 @@ public class BackendServiceClient implements BackgroundResource {
   @BetaApi
   public final Operation deleteSignedUrlKeyBackendService(
       ProjectGlobalBackendServiceName backendService, String keyName) {
-
     DeleteSignedUrlKeyBackendServiceHttpRequest request =
         DeleteSignedUrlKeyBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService == null ? null : backendService.toString())
@@ -567,7 +562,6 @@ public class BackendServiceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteSignedUrlKeyBackendService(String backendService, String keyName) {
-
     DeleteSignedUrlKeyBackendServiceHttpRequest request =
         DeleteSignedUrlKeyBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService)
@@ -647,7 +641,6 @@ public class BackendServiceClient implements BackgroundResource {
    */
   @BetaApi
   public final BackendService getBackendService(ProjectGlobalBackendServiceName backendService) {
-
     GetBackendServiceHttpRequest request =
         GetBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService == null ? null : backendService.toString())
@@ -673,7 +666,6 @@ public class BackendServiceClient implements BackgroundResource {
    */
   @BetaApi
   public final BackendService getBackendService(String backendService) {
-
     GetBackendServiceHttpRequest request =
         GetBackendServiceHttpRequest.newBuilder().setBackendService(backendService).build();
     return getBackendService(request);
@@ -750,7 +742,6 @@ public class BackendServiceClient implements BackgroundResource {
   public final BackendServiceGroupHealth getHealthBackendService(
       ProjectGlobalBackendServiceName backendService,
       ResourceGroupReference resourceGroupReferenceResource) {
-
     GetHealthBackendServiceHttpRequest request =
         GetHealthBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService == null ? null : backendService.toString())
@@ -781,7 +772,6 @@ public class BackendServiceClient implements BackgroundResource {
   @BetaApi
   public final BackendServiceGroupHealth getHealthBackendService(
       String backendService, ResourceGroupReference resourceGroupReferenceResource) {
-
     GetHealthBackendServiceHttpRequest request =
         GetHealthBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService)
@@ -870,7 +860,6 @@ public class BackendServiceClient implements BackgroundResource {
   @BetaApi
   public final Operation insertBackendService(
       ProjectName project, BackendService backendServiceResource) {
-
     InsertBackendServiceHttpRequest request =
         InsertBackendServiceHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -906,7 +895,6 @@ public class BackendServiceClient implements BackgroundResource {
   @BetaApi
   public final Operation insertBackendService(
       String project, BackendService backendServiceResource) {
-
     InsertBackendServiceHttpRequest request =
         InsertBackendServiceHttpRequest.newBuilder()
             .setProject(project)
@@ -1144,7 +1132,6 @@ public class BackendServiceClient implements BackgroundResource {
       ProjectGlobalBackendServiceName backendService,
       BackendService backendServiceResource,
       List<String> fieldMask) {
-
     PatchBackendServiceHttpRequest request =
         PatchBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService == null ? null : backendService.toString())
@@ -1187,7 +1174,6 @@ public class BackendServiceClient implements BackgroundResource {
   @BetaApi
   public final Operation patchBackendService(
       String backendService, BackendService backendServiceResource, List<String> fieldMask) {
-
     PatchBackendServiceHttpRequest request =
         PatchBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService)
@@ -1282,7 +1268,6 @@ public class BackendServiceClient implements BackgroundResource {
   public final Operation setSecurityPolicyBackendService(
       ProjectGlobalBackendServiceName backendService,
       SecurityPolicyReference securityPolicyReferenceResource) {
-
     SetSecurityPolicyBackendServiceHttpRequest request =
         SetSecurityPolicyBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService == null ? null : backendService.toString())
@@ -1313,7 +1298,6 @@ public class BackendServiceClient implements BackgroundResource {
   @BetaApi
   public final Operation setSecurityPolicyBackendService(
       String backendService, SecurityPolicyReference securityPolicyReferenceResource) {
-
     SetSecurityPolicyBackendServiceHttpRequest request =
         SetSecurityPolicyBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService)
@@ -1409,7 +1393,6 @@ public class BackendServiceClient implements BackgroundResource {
       ProjectGlobalBackendServiceName backendService,
       BackendService backendServiceResource,
       List<String> fieldMask) {
-
     UpdateBackendServiceHttpRequest request =
         UpdateBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService == null ? null : backendService.toString())
@@ -1451,7 +1434,6 @@ public class BackendServiceClient implements BackgroundResource {
   @BetaApi
   public final Operation updateBackendService(
       String backendService, BackendService backendServiceResource, List<String> fieldMask) {
-
     UpdateBackendServiceHttpRequest request =
         UpdateBackendServiceHttpRequest.newBuilder()
             .setBackendService(backendService)

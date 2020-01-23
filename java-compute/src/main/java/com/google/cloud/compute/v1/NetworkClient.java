@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -174,7 +174,6 @@ public class NetworkClient implements BackgroundResource {
   public final Operation addPeeringNetwork(
       ProjectGlobalNetworkName network,
       NetworksAddPeeringRequest networksAddPeeringRequestResource) {
-
     AddPeeringNetworkHttpRequest request =
         AddPeeringNetworkHttpRequest.newBuilder()
             .setNetwork(network == null ? null : network.toString())
@@ -204,7 +203,6 @@ public class NetworkClient implements BackgroundResource {
   @BetaApi
   public final Operation addPeeringNetwork(
       String network, NetworksAddPeeringRequest networksAddPeeringRequestResource) {
-
     AddPeeringNetworkHttpRequest request =
         AddPeeringNetworkHttpRequest.newBuilder()
             .setNetwork(network)
@@ -282,7 +280,6 @@ public class NetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteNetwork(ProjectGlobalNetworkName network) {
-
     DeleteNetworkHttpRequest request =
         DeleteNetworkHttpRequest.newBuilder()
             .setNetwork(network == null ? null : network.toString())
@@ -308,7 +305,6 @@ public class NetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteNetwork(String network) {
-
     DeleteNetworkHttpRequest request =
         DeleteNetworkHttpRequest.newBuilder().setNetwork(network).build();
     return deleteNetwork(request);
@@ -379,7 +375,6 @@ public class NetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Network getNetwork(ProjectGlobalNetworkName network) {
-
     GetNetworkHttpRequest request =
         GetNetworkHttpRequest.newBuilder()
             .setNetwork(network == null ? null : network.toString())
@@ -405,7 +400,6 @@ public class NetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Network getNetwork(String network) {
-
     GetNetworkHttpRequest request = GetNetworkHttpRequest.newBuilder().setNetwork(network).build();
     return getNetwork(request);
   }
@@ -480,7 +474,6 @@ public class NetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertNetwork(ProjectName project, Network networkResource) {
-
     InsertNetworkHttpRequest request =
         InsertNetworkHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -512,7 +505,6 @@ public class NetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertNetwork(String project, Network networkResource) {
-
     InsertNetworkHttpRequest request =
         InsertNetworkHttpRequest.newBuilder()
             .setProject(project)
@@ -738,7 +730,6 @@ public class NetworkClient implements BackgroundResource {
   @BetaApi
   public final Operation patchNetwork(
       ProjectGlobalNetworkName network, Network networkResource, List<String> fieldMask) {
-
     PatchNetworkHttpRequest request =
         PatchNetworkHttpRequest.newBuilder()
             .setNetwork(network == null ? null : network.toString())
@@ -778,7 +769,6 @@ public class NetworkClient implements BackgroundResource {
   @BetaApi
   public final Operation patchNetwork(
       String network, Network networkResource, List<String> fieldMask) {
-
     PatchNetworkHttpRequest request =
         PatchNetworkHttpRequest.newBuilder()
             .setNetwork(network)
@@ -867,7 +857,6 @@ public class NetworkClient implements BackgroundResource {
   public final Operation removePeeringNetwork(
       ProjectGlobalNetworkName network,
       NetworksRemovePeeringRequest networksRemovePeeringRequestResource) {
-
     RemovePeeringNetworkHttpRequest request =
         RemovePeeringNetworkHttpRequest.newBuilder()
             .setNetwork(network == null ? null : network.toString())
@@ -897,7 +886,6 @@ public class NetworkClient implements BackgroundResource {
   @BetaApi
   public final Operation removePeeringNetwork(
       String network, NetworksRemovePeeringRequest networksRemovePeeringRequestResource) {
-
     RemovePeeringNetworkHttpRequest request =
         RemovePeeringNetworkHttpRequest.newBuilder()
             .setNetwork(network)
@@ -976,7 +964,6 @@ public class NetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation switchToCustomModeNetwork(ProjectGlobalNetworkName network) {
-
     SwitchToCustomModeNetworkHttpRequest request =
         SwitchToCustomModeNetworkHttpRequest.newBuilder()
             .setNetwork(network == null ? null : network.toString())
@@ -1002,7 +989,6 @@ public class NetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation switchToCustomModeNetwork(String network) {
-
     SwitchToCustomModeNetworkHttpRequest request =
         SwitchToCustomModeNetworkHttpRequest.newBuilder().setNetwork(network).build();
     return switchToCustomModeNetwork(request);
@@ -1086,7 +1072,6 @@ public class NetworkClient implements BackgroundResource {
       ProjectGlobalNetworkName network,
       NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource,
       List<String> fieldMask) {
-
     UpdatePeeringNetworkHttpRequest request =
         UpdatePeeringNetworkHttpRequest.newBuilder()
             .setNetwork(network == null ? null : network.toString())
@@ -1126,7 +1111,6 @@ public class NetworkClient implements BackgroundResource {
       String network,
       NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource,
       List<String> fieldMask) {
-
     UpdatePeeringNetworkHttpRequest request =
         UpdatePeeringNetworkHttpRequest.newBuilder()
             .setNetwork(network)

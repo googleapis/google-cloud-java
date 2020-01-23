@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -313,7 +313,6 @@ public class GlobalOperationClient implements BackgroundResource {
    */
   @BetaApi
   public final void deleteGlobalOperation(ProjectGlobalOperationName operation) {
-
     DeleteGlobalOperationHttpRequest request =
         DeleteGlobalOperationHttpRequest.newBuilder()
             .setOperation(operation == null ? null : operation.toString())
@@ -339,7 +338,6 @@ public class GlobalOperationClient implements BackgroundResource {
    */
   @BetaApi
   public final void deleteGlobalOperation(String operation) {
-
     DeleteGlobalOperationHttpRequest request =
         DeleteGlobalOperationHttpRequest.newBuilder().setOperation(operation).build();
     deleteGlobalOperation(request);
@@ -412,7 +410,6 @@ public class GlobalOperationClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation getGlobalOperation(ProjectGlobalOperationName operation) {
-
     GetGlobalOperationHttpRequest request =
         GetGlobalOperationHttpRequest.newBuilder()
             .setOperation(operation == null ? null : operation.toString())
@@ -439,7 +436,6 @@ public class GlobalOperationClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation getGlobalOperation(String operation) {
-
     GetGlobalOperationHttpRequest request =
         GetGlobalOperationHttpRequest.newBuilder().setOperation(operation).build();
     return getGlobalOperation(request);

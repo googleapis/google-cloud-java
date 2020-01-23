@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -174,7 +174,6 @@ public class RegionUrlMapClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteRegionUrlMap(ProjectRegionUrlMapName urlMap, String requestId) {
-
     DeleteRegionUrlMapHttpRequest request =
         DeleteRegionUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap == null ? null : urlMap.toString())
@@ -204,7 +203,6 @@ public class RegionUrlMapClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteRegionUrlMap(String urlMap, String requestId) {
-
     DeleteRegionUrlMapHttpRequest request =
         DeleteRegionUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap)
@@ -284,7 +282,6 @@ public class RegionUrlMapClient implements BackgroundResource {
    */
   @BetaApi
   public final UrlMap getRegionUrlMap(ProjectRegionUrlMapName urlMap) {
-
     GetRegionUrlMapHttpRequest request =
         GetRegionUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap == null ? null : urlMap.toString())
@@ -311,7 +308,6 @@ public class RegionUrlMapClient implements BackgroundResource {
    */
   @BetaApi
   public final UrlMap getRegionUrlMap(String urlMap) {
-
     GetRegionUrlMapHttpRequest request =
         GetRegionUrlMapHttpRequest.newBuilder().setUrlMap(urlMap).build();
     return getRegionUrlMap(request);
@@ -396,7 +392,6 @@ public class RegionUrlMapClient implements BackgroundResource {
   @BetaApi
   public final Operation insertRegionUrlMap(
       String requestId, ProjectRegionName region, UrlMap urlMapResource) {
-
     InsertRegionUrlMapHttpRequest request =
         InsertRegionUrlMapHttpRequest.newBuilder()
             .setRequestId(requestId)
@@ -436,7 +431,6 @@ public class RegionUrlMapClient implements BackgroundResource {
   @BetaApi
   public final Operation insertRegionUrlMap(
       String requestId, String region, UrlMap urlMapResource) {
-
     InsertRegionUrlMapHttpRequest request =
         InsertRegionUrlMapHttpRequest.newBuilder()
             .setRequestId(requestId)
@@ -683,7 +677,6 @@ public class RegionUrlMapClient implements BackgroundResource {
       String requestId,
       UrlMap urlMapResource,
       List<String> fieldMask) {
-
     PatchRegionUrlMapHttpRequest request =
         PatchRegionUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap == null ? null : urlMap.toString())
@@ -730,7 +723,6 @@ public class RegionUrlMapClient implements BackgroundResource {
   @BetaApi
   public final Operation patchRegionUrlMap(
       String urlMap, String requestId, UrlMap urlMapResource, List<String> fieldMask) {
-
     PatchRegionUrlMapHttpRequest request =
         PatchRegionUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap)
@@ -840,7 +832,6 @@ public class RegionUrlMapClient implements BackgroundResource {
       String requestId,
       UrlMap urlMapResource,
       List<String> fieldMask) {
-
     UpdateRegionUrlMapHttpRequest request =
         UpdateRegionUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap == null ? null : urlMap.toString())
@@ -886,7 +877,6 @@ public class RegionUrlMapClient implements BackgroundResource {
   @BetaApi
   public final Operation updateRegionUrlMap(
       String urlMap, String requestId, UrlMap urlMapResource, List<String> fieldMask) {
-
     UpdateRegionUrlMapHttpRequest request =
         UpdateRegionUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap)
@@ -980,7 +970,6 @@ public class RegionUrlMapClient implements BackgroundResource {
   public final UrlMapsValidateResponse validateRegionUrlMap(
       ProjectRegionUrlMapName urlMap,
       RegionUrlMapsValidateRequest regionUrlMapsValidateRequestResource) {
-
     ValidateRegionUrlMapHttpRequest request =
         ValidateRegionUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap == null ? null : urlMap.toString())
@@ -1011,7 +1000,6 @@ public class RegionUrlMapClient implements BackgroundResource {
   @BetaApi
   public final UrlMapsValidateResponse validateRegionUrlMap(
       String urlMap, RegionUrlMapsValidateRequest regionUrlMapsValidateRequestResource) {
-
     ValidateRegionUrlMapHttpRequest request =
         ValidateRegionUrlMapHttpRequest.newBuilder()
             .setUrlMap(urlMap)

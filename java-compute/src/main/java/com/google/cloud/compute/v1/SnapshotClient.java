@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -174,7 +174,6 @@ public class SnapshotClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteSnapshot(ProjectGlobalSnapshotName snapshot) {
-
     DeleteSnapshotHttpRequest request =
         DeleteSnapshotHttpRequest.newBuilder()
             .setSnapshot(snapshot == null ? null : snapshot.toString())
@@ -205,7 +204,6 @@ public class SnapshotClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteSnapshot(String snapshot) {
-
     DeleteSnapshotHttpRequest request =
         DeleteSnapshotHttpRequest.newBuilder().setSnapshot(snapshot).build();
     return deleteSnapshot(request);
@@ -287,7 +285,6 @@ public class SnapshotClient implements BackgroundResource {
    */
   @BetaApi
   public final Snapshot getSnapshot(ProjectGlobalSnapshotName snapshot) {
-
     GetSnapshotHttpRequest request =
         GetSnapshotHttpRequest.newBuilder()
             .setSnapshot(snapshot == null ? null : snapshot.toString())
@@ -314,7 +311,6 @@ public class SnapshotClient implements BackgroundResource {
    */
   @BetaApi
   public final Snapshot getSnapshot(String snapshot) {
-
     GetSnapshotHttpRequest request =
         GetSnapshotHttpRequest.newBuilder().setSnapshot(snapshot).build();
     return getSnapshot(request);
@@ -388,7 +384,6 @@ public class SnapshotClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicySnapshot(ProjectGlobalSnapshotResourceName resource) {
-
     GetIamPolicySnapshotHttpRequest request =
         GetIamPolicySnapshotHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -415,7 +410,6 @@ public class SnapshotClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicySnapshot(String resource) {
-
     GetIamPolicySnapshotHttpRequest request =
         GetIamPolicySnapshotHttpRequest.newBuilder().setResource(resource).build();
     return getIamPolicySnapshot(request);
@@ -629,7 +623,6 @@ public class SnapshotClient implements BackgroundResource {
   public final Policy setIamPolicySnapshot(
       ProjectGlobalSnapshotResourceName resource,
       GlobalSetPolicyRequest globalSetPolicyRequestResource) {
-
     SetIamPolicySnapshotHttpRequest request =
         SetIamPolicySnapshotHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -659,7 +652,6 @@ public class SnapshotClient implements BackgroundResource {
   @BetaApi
   public final Policy setIamPolicySnapshot(
       String resource, GlobalSetPolicyRequest globalSetPolicyRequestResource) {
-
     SetIamPolicySnapshotHttpRequest request =
         SetIamPolicySnapshotHttpRequest.newBuilder()
             .setResource(resource)
@@ -743,7 +735,6 @@ public class SnapshotClient implements BackgroundResource {
   public final Operation setLabelsSnapshot(
       ProjectGlobalSnapshotResourceName resource,
       GlobalSetLabelsRequest globalSetLabelsRequestResource) {
-
     SetLabelsSnapshotHttpRequest request =
         SetLabelsSnapshotHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -774,7 +765,6 @@ public class SnapshotClient implements BackgroundResource {
   @BetaApi
   public final Operation setLabelsSnapshot(
       String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource) {
-
     SetLabelsSnapshotHttpRequest request =
         SetLabelsSnapshotHttpRequest.newBuilder()
             .setResource(resource)
@@ -858,7 +848,6 @@ public class SnapshotClient implements BackgroundResource {
   public final TestPermissionsResponse testIamPermissionsSnapshot(
       ProjectGlobalSnapshotResourceName resource,
       TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsSnapshotHttpRequest request =
         TestIamPermissionsSnapshotHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -888,7 +877,6 @@ public class SnapshotClient implements BackgroundResource {
   @BetaApi
   public final TestPermissionsResponse testIamPermissionsSnapshot(
       String resource, TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsSnapshotHttpRequest request =
         TestIamPermissionsSnapshotHttpRequest.newBuilder()
             .setResource(resource)

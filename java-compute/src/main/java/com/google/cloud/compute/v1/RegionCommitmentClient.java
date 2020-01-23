@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -314,7 +314,6 @@ public class RegionCommitmentClient implements BackgroundResource {
    */
   @BetaApi
   public final Commitment getRegionCommitment(ProjectRegionCommitmentName commitment) {
-
     GetRegionCommitmentHttpRequest request =
         GetRegionCommitmentHttpRequest.newBuilder()
             .setCommitment(commitment == null ? null : commitment.toString())
@@ -341,7 +340,6 @@ public class RegionCommitmentClient implements BackgroundResource {
    */
   @BetaApi
   public final Commitment getRegionCommitment(String commitment) {
-
     GetRegionCommitmentHttpRequest request =
         GetRegionCommitmentHttpRequest.newBuilder().setCommitment(commitment).build();
     return getRegionCommitment(request);
@@ -423,7 +421,6 @@ public class RegionCommitmentClient implements BackgroundResource {
   @BetaApi
   public final Operation insertRegionCommitment(
       ProjectRegionName region, Commitment commitmentResource) {
-
     InsertRegionCommitmentHttpRequest request =
         InsertRegionCommitmentHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -457,7 +454,6 @@ public class RegionCommitmentClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertRegionCommitment(String region, Commitment commitmentResource) {
-
     InsertRegionCommitmentHttpRequest request =
         InsertRegionCommitmentHttpRequest.newBuilder()
             .setRegion(region)

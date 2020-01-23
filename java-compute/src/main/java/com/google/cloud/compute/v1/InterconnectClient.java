@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -170,7 +170,6 @@ public class InterconnectClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteInterconnect(ProjectGlobalInterconnectName interconnect) {
-
     DeleteInterconnectHttpRequest request =
         DeleteInterconnectHttpRequest.newBuilder()
             .setInterconnect(interconnect == null ? null : interconnect.toString())
@@ -196,7 +195,6 @@ public class InterconnectClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteInterconnect(String interconnect) {
-
     DeleteInterconnectHttpRequest request =
         DeleteInterconnectHttpRequest.newBuilder().setInterconnect(interconnect).build();
     return deleteInterconnect(request);
@@ -269,7 +267,6 @@ public class InterconnectClient implements BackgroundResource {
    */
   @BetaApi
   public final Interconnect getInterconnect(ProjectGlobalInterconnectName interconnect) {
-
     GetInterconnectHttpRequest request =
         GetInterconnectHttpRequest.newBuilder()
             .setInterconnect(interconnect == null ? null : interconnect.toString())
@@ -296,7 +293,6 @@ public class InterconnectClient implements BackgroundResource {
    */
   @BetaApi
   public final Interconnect getInterconnect(String interconnect) {
-
     GetInterconnectHttpRequest request =
         GetInterconnectHttpRequest.newBuilder().setInterconnect(interconnect).build();
     return getInterconnect(request);
@@ -370,7 +366,6 @@ public class InterconnectClient implements BackgroundResource {
   @BetaApi
   public final InterconnectsGetDiagnosticsResponse getDiagnosticsInterconnect(
       ProjectGlobalInterconnectName interconnect) {
-
     GetDiagnosticsInterconnectHttpRequest request =
         GetDiagnosticsInterconnectHttpRequest.newBuilder()
             .setInterconnect(interconnect == null ? null : interconnect.toString())
@@ -396,7 +391,6 @@ public class InterconnectClient implements BackgroundResource {
    */
   @BetaApi
   public final InterconnectsGetDiagnosticsResponse getDiagnosticsInterconnect(String interconnect) {
-
     GetDiagnosticsInterconnectHttpRequest request =
         GetDiagnosticsInterconnectHttpRequest.newBuilder().setInterconnect(interconnect).build();
     return getDiagnosticsInterconnect(request);
@@ -476,7 +470,6 @@ public class InterconnectClient implements BackgroundResource {
   @BetaApi
   public final Operation insertInterconnect(
       ProjectName project, Interconnect interconnectResource) {
-
     InsertInterconnectHttpRequest request =
         InsertInterconnectHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -508,7 +501,6 @@ public class InterconnectClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertInterconnect(String project, Interconnect interconnectResource) {
-
     InsertInterconnectHttpRequest request =
         InsertInterconnectHttpRequest.newBuilder()
             .setProject(project)
@@ -739,7 +731,6 @@ public class InterconnectClient implements BackgroundResource {
       ProjectGlobalInterconnectName interconnect,
       Interconnect interconnectResource,
       List<String> fieldMask) {
-
     PatchInterconnectHttpRequest request =
         PatchInterconnectHttpRequest.newBuilder()
             .setInterconnect(interconnect == null ? null : interconnect.toString())
@@ -779,7 +770,6 @@ public class InterconnectClient implements BackgroundResource {
   @BetaApi
   public final Operation patchInterconnect(
       String interconnect, Interconnect interconnectResource, List<String> fieldMask) {
-
     PatchInterconnectHttpRequest request =
         PatchInterconnectHttpRequest.newBuilder()
             .setInterconnect(interconnect)

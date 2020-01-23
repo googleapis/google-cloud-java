@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -317,7 +317,6 @@ public class SslCertificateClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteSslCertificate(ProjectGlobalSslCertificateName sslCertificate) {
-
     DeleteSslCertificateHttpRequest request =
         DeleteSslCertificateHttpRequest.newBuilder()
             .setSslCertificate(sslCertificate == null ? null : sslCertificate.toString())
@@ -343,7 +342,6 @@ public class SslCertificateClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteSslCertificate(String sslCertificate) {
-
     DeleteSslCertificateHttpRequest request =
         DeleteSslCertificateHttpRequest.newBuilder().setSslCertificate(sslCertificate).build();
     return deleteSslCertificate(request);
@@ -416,7 +414,6 @@ public class SslCertificateClient implements BackgroundResource {
    */
   @BetaApi
   public final SslCertificate getSslCertificate(ProjectGlobalSslCertificateName sslCertificate) {
-
     GetSslCertificateHttpRequest request =
         GetSslCertificateHttpRequest.newBuilder()
             .setSslCertificate(sslCertificate == null ? null : sslCertificate.toString())
@@ -443,7 +440,6 @@ public class SslCertificateClient implements BackgroundResource {
    */
   @BetaApi
   public final SslCertificate getSslCertificate(String sslCertificate) {
-
     GetSslCertificateHttpRequest request =
         GetSslCertificateHttpRequest.newBuilder().setSslCertificate(sslCertificate).build();
     return getSslCertificate(request);
@@ -526,7 +522,6 @@ public class SslCertificateClient implements BackgroundResource {
   @BetaApi
   public final Operation insertSslCertificate(
       ProjectName project, SslCertificate sslCertificateResource) {
-
     InsertSslCertificateHttpRequest request =
         InsertSslCertificateHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -562,7 +557,6 @@ public class SslCertificateClient implements BackgroundResource {
   @BetaApi
   public final Operation insertSslCertificate(
       String project, SslCertificate sslCertificateResource) {
-
     InsertSslCertificateHttpRequest request =
         InsertSslCertificateHttpRequest.newBuilder()
             .setProject(project)

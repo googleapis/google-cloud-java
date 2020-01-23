@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -174,7 +174,6 @@ public class NodeGroupClient implements BackgroundResource {
   public final Operation addNodesNodeGroup(
       ProjectZoneNodeGroupName nodeGroup,
       NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource) {
-
     AddNodesNodeGroupHttpRequest request =
         AddNodesNodeGroupHttpRequest.newBuilder()
             .setNodeGroup(nodeGroup == null ? null : nodeGroup.toString())
@@ -204,7 +203,6 @@ public class NodeGroupClient implements BackgroundResource {
   @BetaApi
   public final Operation addNodesNodeGroup(
       String nodeGroup, NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource) {
-
     AddNodesNodeGroupHttpRequest request =
         AddNodesNodeGroupHttpRequest.newBuilder()
             .setNodeGroup(nodeGroup)
@@ -426,7 +424,6 @@ public class NodeGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteNodeGroup(ProjectZoneNodeGroupName nodeGroup) {
-
     DeleteNodeGroupHttpRequest request =
         DeleteNodeGroupHttpRequest.newBuilder()
             .setNodeGroup(nodeGroup == null ? null : nodeGroup.toString())
@@ -452,7 +449,6 @@ public class NodeGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteNodeGroup(String nodeGroup) {
-
     DeleteNodeGroupHttpRequest request =
         DeleteNodeGroupHttpRequest.newBuilder().setNodeGroup(nodeGroup).build();
     return deleteNodeGroup(request);
@@ -527,7 +523,6 @@ public class NodeGroupClient implements BackgroundResource {
   public final Operation deleteNodesNodeGroup(
       ProjectZoneNodeGroupName nodeGroup,
       NodeGroupsDeleteNodesRequest nodeGroupsDeleteNodesRequestResource) {
-
     DeleteNodesNodeGroupHttpRequest request =
         DeleteNodesNodeGroupHttpRequest.newBuilder()
             .setNodeGroup(nodeGroup == null ? null : nodeGroup.toString())
@@ -557,7 +552,6 @@ public class NodeGroupClient implements BackgroundResource {
   @BetaApi
   public final Operation deleteNodesNodeGroup(
       String nodeGroup, NodeGroupsDeleteNodesRequest nodeGroupsDeleteNodesRequestResource) {
-
     DeleteNodesNodeGroupHttpRequest request =
         DeleteNodesNodeGroupHttpRequest.newBuilder()
             .setNodeGroup(nodeGroup)
@@ -637,7 +631,6 @@ public class NodeGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final NodeGroup getNodeGroup(ProjectZoneNodeGroupName nodeGroup) {
-
     GetNodeGroupHttpRequest request =
         GetNodeGroupHttpRequest.newBuilder()
             .setNodeGroup(nodeGroup == null ? null : nodeGroup.toString())
@@ -664,7 +657,6 @@ public class NodeGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final NodeGroup getNodeGroup(String nodeGroup) {
-
     GetNodeGroupHttpRequest request =
         GetNodeGroupHttpRequest.newBuilder().setNodeGroup(nodeGroup).build();
     return getNodeGroup(request);
@@ -738,7 +730,6 @@ public class NodeGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicyNodeGroup(ProjectZoneNodeGroupResourceName resource) {
-
     GetIamPolicyNodeGroupHttpRequest request =
         GetIamPolicyNodeGroupHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -765,7 +756,6 @@ public class NodeGroupClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicyNodeGroup(String resource) {
-
     GetIamPolicyNodeGroupHttpRequest request =
         GetIamPolicyNodeGroupHttpRequest.newBuilder().setResource(resource).build();
     return getIamPolicyNodeGroup(request);
@@ -849,7 +839,6 @@ public class NodeGroupClient implements BackgroundResource {
   @BetaApi
   public final Operation insertNodeGroup(
       Integer initialNodeCount, ProjectZoneName zone, NodeGroup nodeGroupResource) {
-
     InsertNodeGroupHttpRequest request =
         InsertNodeGroupHttpRequest.newBuilder()
             .setInitialNodeCount(initialNodeCount)
@@ -887,7 +876,6 @@ public class NodeGroupClient implements BackgroundResource {
   @BetaApi
   public final Operation insertNodeGroup(
       Integer initialNodeCount, String zone, NodeGroup nodeGroupResource) {
-
     InsertNodeGroupHttpRequest request =
         InsertNodeGroupHttpRequest.newBuilder()
             .setInitialNodeCount(initialNodeCount)
@@ -1254,7 +1242,6 @@ public class NodeGroupClient implements BackgroundResource {
   public final Policy setIamPolicyNodeGroup(
       ProjectZoneNodeGroupResourceName resource,
       ZoneSetPolicyRequest zoneSetPolicyRequestResource) {
-
     SetIamPolicyNodeGroupHttpRequest request =
         SetIamPolicyNodeGroupHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1284,7 +1271,6 @@ public class NodeGroupClient implements BackgroundResource {
   @BetaApi
   public final Policy setIamPolicyNodeGroup(
       String resource, ZoneSetPolicyRequest zoneSetPolicyRequestResource) {
-
     SetIamPolicyNodeGroupHttpRequest request =
         SetIamPolicyNodeGroupHttpRequest.newBuilder()
             .setResource(resource)
@@ -1367,7 +1353,6 @@ public class NodeGroupClient implements BackgroundResource {
   public final Operation setNodeTemplateNodeGroup(
       ProjectZoneNodeGroupName nodeGroup,
       NodeGroupsSetNodeTemplateRequest nodeGroupsSetNodeTemplateRequestResource) {
-
     SetNodeTemplateNodeGroupHttpRequest request =
         SetNodeTemplateNodeGroupHttpRequest.newBuilder()
             .setNodeGroup(nodeGroup == null ? null : nodeGroup.toString())
@@ -1397,7 +1382,6 @@ public class NodeGroupClient implements BackgroundResource {
   @BetaApi
   public final Operation setNodeTemplateNodeGroup(
       String nodeGroup, NodeGroupsSetNodeTemplateRequest nodeGroupsSetNodeTemplateRequestResource) {
-
     SetNodeTemplateNodeGroupHttpRequest request =
         SetNodeTemplateNodeGroupHttpRequest.newBuilder()
             .setNodeGroup(nodeGroup)
@@ -1480,7 +1464,6 @@ public class NodeGroupClient implements BackgroundResource {
   public final TestPermissionsResponse testIamPermissionsNodeGroup(
       ProjectZoneNodeGroupResourceName resource,
       TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsNodeGroupHttpRequest request =
         TestIamPermissionsNodeGroupHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1510,7 +1493,6 @@ public class NodeGroupClient implements BackgroundResource {
   @BetaApi
   public final TestPermissionsResponse testIamPermissionsNodeGroup(
       String resource, TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsNodeGroupHttpRequest request =
         TestIamPermissionsNodeGroupHttpRequest.newBuilder()
             .setResource(resource)

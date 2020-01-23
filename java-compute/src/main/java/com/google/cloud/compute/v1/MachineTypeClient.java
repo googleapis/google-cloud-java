@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -311,7 +311,6 @@ public class MachineTypeClient implements BackgroundResource {
    */
   @BetaApi
   public final MachineType getMachineType(ProjectZoneMachineTypeName machineType) {
-
     GetMachineTypeHttpRequest request =
         GetMachineTypeHttpRequest.newBuilder()
             .setMachineType(machineType == null ? null : machineType.toString())
@@ -338,7 +337,6 @@ public class MachineTypeClient implements BackgroundResource {
    */
   @BetaApi
   public final MachineType getMachineType(String machineType) {
-
     GetMachineTypeHttpRequest request =
         GetMachineTypeHttpRequest.newBuilder().setMachineType(machineType).build();
     return getMachineType(request);

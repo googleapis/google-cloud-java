@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -311,7 +311,6 @@ public class NodeTemplateClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteNodeTemplate(ProjectRegionNodeTemplateName nodeTemplate) {
-
     DeleteNodeTemplateHttpRequest request =
         DeleteNodeTemplateHttpRequest.newBuilder()
             .setNodeTemplate(nodeTemplate == null ? null : nodeTemplate.toString())
@@ -337,7 +336,6 @@ public class NodeTemplateClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteNodeTemplate(String nodeTemplate) {
-
     DeleteNodeTemplateHttpRequest request =
         DeleteNodeTemplateHttpRequest.newBuilder().setNodeTemplate(nodeTemplate).build();
     return deleteNodeTemplate(request);
@@ -410,7 +408,6 @@ public class NodeTemplateClient implements BackgroundResource {
    */
   @BetaApi
   public final NodeTemplate getNodeTemplate(ProjectRegionNodeTemplateName nodeTemplate) {
-
     GetNodeTemplateHttpRequest request =
         GetNodeTemplateHttpRequest.newBuilder()
             .setNodeTemplate(nodeTemplate == null ? null : nodeTemplate.toString())
@@ -437,7 +434,6 @@ public class NodeTemplateClient implements BackgroundResource {
    */
   @BetaApi
   public final NodeTemplate getNodeTemplate(String nodeTemplate) {
-
     GetNodeTemplateHttpRequest request =
         GetNodeTemplateHttpRequest.newBuilder().setNodeTemplate(nodeTemplate).build();
     return getNodeTemplate(request);
@@ -511,7 +507,6 @@ public class NodeTemplateClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicyNodeTemplate(ProjectRegionNodeTemplateResourceName resource) {
-
     GetIamPolicyNodeTemplateHttpRequest request =
         GetIamPolicyNodeTemplateHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -538,7 +533,6 @@ public class NodeTemplateClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicyNodeTemplate(String resource) {
-
     GetIamPolicyNodeTemplateHttpRequest request =
         GetIamPolicyNodeTemplateHttpRequest.newBuilder().setResource(resource).build();
     return getIamPolicyNodeTemplate(request);
@@ -619,7 +613,6 @@ public class NodeTemplateClient implements BackgroundResource {
   @BetaApi
   public final Operation insertNodeTemplate(
       ProjectRegionName region, NodeTemplate nodeTemplateResource) {
-
     InsertNodeTemplateHttpRequest request =
         InsertNodeTemplateHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -652,7 +645,6 @@ public class NodeTemplateClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertNodeTemplate(String region, NodeTemplate nodeTemplateResource) {
-
     InsertNodeTemplateHttpRequest request =
         InsertNodeTemplateHttpRequest.newBuilder()
             .setRegion(region)
@@ -875,7 +867,6 @@ public class NodeTemplateClient implements BackgroundResource {
   public final Policy setIamPolicyNodeTemplate(
       ProjectRegionNodeTemplateResourceName resource,
       RegionSetPolicyRequest regionSetPolicyRequestResource) {
-
     SetIamPolicyNodeTemplateHttpRequest request =
         SetIamPolicyNodeTemplateHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -905,7 +896,6 @@ public class NodeTemplateClient implements BackgroundResource {
   @BetaApi
   public final Policy setIamPolicyNodeTemplate(
       String resource, RegionSetPolicyRequest regionSetPolicyRequestResource) {
-
     SetIamPolicyNodeTemplateHttpRequest request =
         SetIamPolicyNodeTemplateHttpRequest.newBuilder()
             .setResource(resource)
@@ -988,7 +978,6 @@ public class NodeTemplateClient implements BackgroundResource {
   public final TestPermissionsResponse testIamPermissionsNodeTemplate(
       ProjectRegionNodeTemplateResourceName resource,
       TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsNodeTemplateHttpRequest request =
         TestIamPermissionsNodeTemplateHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1018,7 +1007,6 @@ public class NodeTemplateClient implements BackgroundResource {
   @BetaApi
   public final TestPermissionsResponse testIamPermissionsNodeTemplate(
       String resource, TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsNodeTemplateHttpRequest request =
         TestIamPermissionsNodeTemplateHttpRequest.newBuilder()
             .setResource(resource)

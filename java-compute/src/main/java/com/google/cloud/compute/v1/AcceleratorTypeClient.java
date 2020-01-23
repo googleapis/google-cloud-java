@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -314,7 +314,6 @@ public class AcceleratorTypeClient implements BackgroundResource {
    */
   @BetaApi
   public final AcceleratorType getAcceleratorType(ProjectZoneAcceleratorTypeName acceleratorType) {
-
     GetAcceleratorTypeHttpRequest request =
         GetAcceleratorTypeHttpRequest.newBuilder()
             .setAcceleratorType(acceleratorType == null ? null : acceleratorType.toString())
@@ -340,7 +339,6 @@ public class AcceleratorTypeClient implements BackgroundResource {
    */
   @BetaApi
   public final AcceleratorType getAcceleratorType(String acceleratorType) {
-
     GetAcceleratorTypeHttpRequest request =
         GetAcceleratorTypeHttpRequest.newBuilder().setAcceleratorType(acceleratorType).build();
     return getAcceleratorType(request);

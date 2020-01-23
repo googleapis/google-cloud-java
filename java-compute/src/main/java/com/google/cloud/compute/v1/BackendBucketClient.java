@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -177,7 +177,6 @@ public class BackendBucketClient implements BackgroundResource {
   @BetaApi
   public final Operation addSignedUrlKeyBackendBucket(
       ProjectGlobalBackendBucketName backendBucket, SignedUrlKey signedUrlKeyResource) {
-
     AddSignedUrlKeyBackendBucketHttpRequest request =
         AddSignedUrlKeyBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket == null ? null : backendBucket.toString())
@@ -209,7 +208,6 @@ public class BackendBucketClient implements BackgroundResource {
   @BetaApi
   public final Operation addSignedUrlKeyBackendBucket(
       String backendBucket, SignedUrlKey signedUrlKeyResource) {
-
     AddSignedUrlKeyBackendBucketHttpRequest request =
         AddSignedUrlKeyBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket)
@@ -289,7 +287,6 @@ public class BackendBucketClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteBackendBucket(ProjectGlobalBackendBucketName backendBucket) {
-
     DeleteBackendBucketHttpRequest request =
         DeleteBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket == null ? null : backendBucket.toString())
@@ -315,7 +312,6 @@ public class BackendBucketClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteBackendBucket(String backendBucket) {
-
     DeleteBackendBucketHttpRequest request =
         DeleteBackendBucketHttpRequest.newBuilder().setBackendBucket(backendBucket).build();
     return deleteBackendBucket(request);
@@ -391,7 +387,6 @@ public class BackendBucketClient implements BackgroundResource {
   @BetaApi
   public final Operation deleteSignedUrlKeyBackendBucket(
       ProjectGlobalBackendBucketName backendBucket, String keyName) {
-
     DeleteSignedUrlKeyBackendBucketHttpRequest request =
         DeleteSignedUrlKeyBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket == null ? null : backendBucket.toString())
@@ -421,7 +416,6 @@ public class BackendBucketClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteSignedUrlKeyBackendBucket(String backendBucket, String keyName) {
-
     DeleteSignedUrlKeyBackendBucketHttpRequest request =
         DeleteSignedUrlKeyBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket)
@@ -502,7 +496,6 @@ public class BackendBucketClient implements BackgroundResource {
    */
   @BetaApi
   public final BackendBucket getBackendBucket(ProjectGlobalBackendBucketName backendBucket) {
-
     GetBackendBucketHttpRequest request =
         GetBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket == null ? null : backendBucket.toString())
@@ -529,7 +522,6 @@ public class BackendBucketClient implements BackgroundResource {
    */
   @BetaApi
   public final BackendBucket getBackendBucket(String backendBucket) {
-
     GetBackendBucketHttpRequest request =
         GetBackendBucketHttpRequest.newBuilder().setBackendBucket(backendBucket).build();
     return getBackendBucket(request);
@@ -609,7 +601,6 @@ public class BackendBucketClient implements BackgroundResource {
   @BetaApi
   public final Operation insertBackendBucket(
       ProjectName project, BackendBucket backendBucketResource) {
-
     InsertBackendBucketHttpRequest request =
         InsertBackendBucketHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -641,7 +632,6 @@ public class BackendBucketClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertBackendBucket(String project, BackendBucket backendBucketResource) {
-
     InsertBackendBucketHttpRequest request =
         InsertBackendBucketHttpRequest.newBuilder()
             .setProject(project)
@@ -873,7 +863,6 @@ public class BackendBucketClient implements BackgroundResource {
       ProjectGlobalBackendBucketName backendBucket,
       BackendBucket backendBucketResource,
       List<String> fieldMask) {
-
     PatchBackendBucketHttpRequest request =
         PatchBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket == null ? null : backendBucket.toString())
@@ -912,7 +901,6 @@ public class BackendBucketClient implements BackgroundResource {
   @BetaApi
   public final Operation patchBackendBucket(
       String backendBucket, BackendBucket backendBucketResource, List<String> fieldMask) {
-
     PatchBackendBucketHttpRequest request =
         PatchBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket)
@@ -1010,7 +998,6 @@ public class BackendBucketClient implements BackgroundResource {
       ProjectGlobalBackendBucketName backendBucket,
       BackendBucket backendBucketResource,
       List<String> fieldMask) {
-
     UpdateBackendBucketHttpRequest request =
         UpdateBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket == null ? null : backendBucket.toString())
@@ -1048,7 +1035,6 @@ public class BackendBucketClient implements BackgroundResource {
   @BetaApi
   public final Operation updateBackendBucket(
       String backendBucket, BackendBucket backendBucketResource, List<String> fieldMask) {
-
     UpdateBackendBucketHttpRequest request =
         UpdateBackendBucketHttpRequest.newBuilder()
             .setBackendBucket(backendBucket)

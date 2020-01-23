@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,7 +169,6 @@ public class ProjectClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation disableXpnHostProject(ProjectName project) {
-
     DisableXpnHostProjectHttpRequest request =
         DisableXpnHostProjectHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -195,7 +194,6 @@ public class ProjectClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation disableXpnHostProject(String project) {
-
     DisableXpnHostProjectHttpRequest request =
         DisableXpnHostProjectHttpRequest.newBuilder().setProject(project).build();
     return disableXpnHostProject(request);
@@ -271,7 +269,6 @@ public class ProjectClient implements BackgroundResource {
   public final Operation disableXpnResourceProject(
       ProjectName project,
       ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource) {
-
     DisableXpnResourceProjectHttpRequest request =
         DisableXpnResourceProjectHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -301,7 +298,6 @@ public class ProjectClient implements BackgroundResource {
   @BetaApi
   public final Operation disableXpnResourceProject(
       String project, ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource) {
-
     DisableXpnResourceProjectHttpRequest request =
         DisableXpnResourceProjectHttpRequest.newBuilder()
             .setProject(project)
@@ -380,7 +376,6 @@ public class ProjectClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation enableXpnHostProject(ProjectName project) {
-
     EnableXpnHostProjectHttpRequest request =
         EnableXpnHostProjectHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -406,7 +401,6 @@ public class ProjectClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation enableXpnHostProject(String project) {
-
     EnableXpnHostProjectHttpRequest request =
         EnableXpnHostProjectHttpRequest.newBuilder().setProject(project).build();
     return enableXpnHostProject(request);
@@ -483,7 +477,6 @@ public class ProjectClient implements BackgroundResource {
   public final Operation enableXpnResourceProject(
       ProjectName project,
       ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource) {
-
     EnableXpnResourceProjectHttpRequest request =
         EnableXpnResourceProjectHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -514,7 +507,6 @@ public class ProjectClient implements BackgroundResource {
   @BetaApi
   public final Operation enableXpnResourceProject(
       String project, ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource) {
-
     EnableXpnResourceProjectHttpRequest request =
         EnableXpnResourceProjectHttpRequest.newBuilder()
             .setProject(project)
@@ -595,7 +587,6 @@ public class ProjectClient implements BackgroundResource {
    */
   @BetaApi
   public final Project getProject(ProjectName project) {
-
     GetProjectHttpRequest request =
         GetProjectHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -621,7 +612,6 @@ public class ProjectClient implements BackgroundResource {
    */
   @BetaApi
   public final Project getProject(String project) {
-
     GetProjectHttpRequest request = GetProjectHttpRequest.newBuilder().setProject(project).build();
     return getProject(request);
   }
@@ -691,7 +681,6 @@ public class ProjectClient implements BackgroundResource {
    */
   @BetaApi
   public final Project getXpnHostProject(ProjectName project) {
-
     GetXpnHostProjectHttpRequest request =
         GetXpnHostProjectHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -717,7 +706,6 @@ public class ProjectClient implements BackgroundResource {
    */
   @BetaApi
   public final Project getXpnHostProject(String project) {
-
     GetXpnHostProjectHttpRequest request =
         GetXpnHostProjectHttpRequest.newBuilder().setProject(project).build();
     return getXpnHostProject(request);
@@ -1084,7 +1072,6 @@ public class ProjectClient implements BackgroundResource {
   @BetaApi
   public final Operation moveDiskProject(
       ProjectName project, DiskMoveRequest diskMoveRequestResource) {
-
     MoveDiskProjectHttpRequest request =
         MoveDiskProjectHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -1113,7 +1100,6 @@ public class ProjectClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation moveDiskProject(String project, DiskMoveRequest diskMoveRequestResource) {
-
     MoveDiskProjectHttpRequest request =
         MoveDiskProjectHttpRequest.newBuilder()
             .setProject(project)
@@ -1194,7 +1180,6 @@ public class ProjectClient implements BackgroundResource {
   @BetaApi
   public final Operation moveInstanceProject(
       ProjectName project, InstanceMoveRequest instanceMoveRequestResource) {
-
     MoveInstanceProjectHttpRequest request =
         MoveInstanceProjectHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -1224,7 +1209,6 @@ public class ProjectClient implements BackgroundResource {
   @BetaApi
   public final Operation moveInstanceProject(
       String project, InstanceMoveRequest instanceMoveRequestResource) {
-
     MoveInstanceProjectHttpRequest request =
         MoveInstanceProjectHttpRequest.newBuilder()
             .setProject(project)
@@ -1307,7 +1291,6 @@ public class ProjectClient implements BackgroundResource {
   @BetaApi
   public final Operation setCommonInstanceMetadataProject(
       ProjectName project, Metadata metadataResource) {
-
     SetCommonInstanceMetadataProjectHttpRequest request =
         SetCommonInstanceMetadataProjectHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -1338,7 +1321,6 @@ public class ProjectClient implements BackgroundResource {
   @BetaApi
   public final Operation setCommonInstanceMetadataProject(
       String project, Metadata metadataResource) {
-
     SetCommonInstanceMetadataProjectHttpRequest request =
         SetCommonInstanceMetadataProjectHttpRequest.newBuilder()
             .setProject(project)
@@ -1425,7 +1407,6 @@ public class ProjectClient implements BackgroundResource {
   public final Operation setDefaultNetworkTierProject(
       ProjectName project,
       ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource) {
-
     SetDefaultNetworkTierProjectHttpRequest request =
         SetDefaultNetworkTierProjectHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -1458,7 +1439,6 @@ public class ProjectClient implements BackgroundResource {
   public final Operation setDefaultNetworkTierProject(
       String project,
       ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource) {
-
     SetDefaultNetworkTierProjectHttpRequest request =
         SetDefaultNetworkTierProjectHttpRequest.newBuilder()
             .setProject(project)
@@ -1546,7 +1526,6 @@ public class ProjectClient implements BackgroundResource {
   @BetaApi
   public final Operation setUsageExportBucketProject(
       ProjectName project, UsageExportLocation usageExportLocationResource) {
-
     SetUsageExportBucketProjectHttpRequest request =
         SetUsageExportBucketProjectHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -1578,7 +1557,6 @@ public class ProjectClient implements BackgroundResource {
   @BetaApi
   public final Operation setUsageExportBucketProject(
       String project, UsageExportLocation usageExportLocationResource) {
-
     SetUsageExportBucketProjectHttpRequest request =
         SetUsageExportBucketProjectHttpRequest.newBuilder()
             .setProject(project)

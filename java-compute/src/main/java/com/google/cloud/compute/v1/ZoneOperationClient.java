@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -171,7 +171,6 @@ public class ZoneOperationClient implements BackgroundResource {
    */
   @BetaApi
   public final void deleteZoneOperation(ProjectZoneOperationName operation) {
-
     DeleteZoneOperationHttpRequest request =
         DeleteZoneOperationHttpRequest.newBuilder()
             .setOperation(operation == null ? null : operation.toString())
@@ -197,7 +196,6 @@ public class ZoneOperationClient implements BackgroundResource {
    */
   @BetaApi
   public final void deleteZoneOperation(String operation) {
-
     DeleteZoneOperationHttpRequest request =
         DeleteZoneOperationHttpRequest.newBuilder().setOperation(operation).build();
     deleteZoneOperation(request);
@@ -268,7 +266,6 @@ public class ZoneOperationClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation getZoneOperation(ProjectZoneOperationName operation) {
-
     GetZoneOperationHttpRequest request =
         GetZoneOperationHttpRequest.newBuilder()
             .setOperation(operation == null ? null : operation.toString())
@@ -294,7 +291,6 @@ public class ZoneOperationClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation getZoneOperation(String operation) {
-
     GetZoneOperationHttpRequest request =
         GetZoneOperationHttpRequest.newBuilder().setOperation(operation).build();
     return getZoneOperation(request);

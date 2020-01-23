@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -321,7 +321,6 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation deleteTargetHttpsProxy(
       ProjectGlobalTargetHttpsProxyName targetHttpsProxy) {
-
     DeleteTargetHttpsProxyHttpRequest request =
         DeleteTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy == null ? null : targetHttpsProxy.toString())
@@ -347,7 +346,6 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteTargetHttpsProxy(String targetHttpsProxy) {
-
     DeleteTargetHttpsProxyHttpRequest request =
         DeleteTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy)
@@ -423,7 +421,6 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   @BetaApi
   public final TargetHttpsProxy getTargetHttpsProxy(
       ProjectGlobalTargetHttpsProxyName targetHttpsProxy) {
-
     GetTargetHttpsProxyHttpRequest request =
         GetTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy == null ? null : targetHttpsProxy.toString())
@@ -450,7 +447,6 @@ public class TargetHttpsProxyClient implements BackgroundResource {
    */
   @BetaApi
   public final TargetHttpsProxy getTargetHttpsProxy(String targetHttpsProxy) {
-
     GetTargetHttpsProxyHttpRequest request =
         GetTargetHttpsProxyHttpRequest.newBuilder().setTargetHttpsProxy(targetHttpsProxy).build();
     return getTargetHttpsProxy(request);
@@ -533,7 +529,6 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation insertTargetHttpsProxy(
       ProjectName project, TargetHttpsProxy targetHttpsProxyResource) {
-
     InsertTargetHttpsProxyHttpRequest request =
         InsertTargetHttpsProxyHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -569,7 +564,6 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation insertTargetHttpsProxy(
       String project, TargetHttpsProxy targetHttpsProxyResource) {
-
     InsertTargetHttpsProxyHttpRequest request =
         InsertTargetHttpsProxyHttpRequest.newBuilder()
             .setProject(project)
@@ -793,7 +787,6 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   public final Operation setQuicOverrideTargetHttpsProxy(
       ProjectGlobalTargetHttpsProxyName targetHttpsProxy,
       TargetHttpsProxiesSetQuicOverrideRequest targetHttpsProxiesSetQuicOverrideRequestResource) {
-
     SetQuicOverrideTargetHttpsProxyHttpRequest request =
         SetQuicOverrideTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy == null ? null : targetHttpsProxy.toString())
@@ -826,7 +819,6 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   public final Operation setQuicOverrideTargetHttpsProxy(
       String targetHttpsProxy,
       TargetHttpsProxiesSetQuicOverrideRequest targetHttpsProxiesSetQuicOverrideRequestResource) {
-
     SetQuicOverrideTargetHttpsProxyHttpRequest request =
         SetQuicOverrideTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy)
@@ -913,7 +905,6 @@ public class TargetHttpsProxyClient implements BackgroundResource {
       ProjectTargetHttpsProxyName targetHttpsProxy,
       TargetHttpsProxiesSetSslCertificatesRequest
           targetHttpsProxiesSetSslCertificatesRequestResource) {
-
     SetSslCertificatesTargetHttpsProxyHttpRequest request =
         SetSslCertificatesTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy == null ? null : targetHttpsProxy.toString())
@@ -947,7 +938,6 @@ public class TargetHttpsProxyClient implements BackgroundResource {
       String targetHttpsProxy,
       TargetHttpsProxiesSetSslCertificatesRequest
           targetHttpsProxiesSetSslCertificatesRequestResource) {
-
     SetSslCertificatesTargetHttpsProxyHttpRequest request =
         SetSslCertificatesTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy)
@@ -1035,7 +1025,6 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   public final Operation setSslPolicyTargetHttpsProxy(
       ProjectGlobalTargetHttpsProxyName targetHttpsProxy,
       SslPolicyReference sslPolicyReferenceResource) {
-
     SetSslPolicyTargetHttpsProxyHttpRequest request =
         SetSslPolicyTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy == null ? null : targetHttpsProxy.toString())
@@ -1068,7 +1057,6 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation setSslPolicyTargetHttpsProxy(
       String targetHttpsProxy, SslPolicyReference sslPolicyReferenceResource) {
-
     SetSslPolicyTargetHttpsProxyHttpRequest request =
         SetSslPolicyTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy)
@@ -1155,7 +1143,6 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation setUrlMapTargetHttpsProxy(
       ProjectTargetHttpsProxyName targetHttpsProxy, UrlMapReference urlMapReferenceResource) {
-
     SetUrlMapTargetHttpsProxyHttpRequest request =
         SetUrlMapTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy == null ? null : targetHttpsProxy.toString())
@@ -1185,7 +1172,6 @@ public class TargetHttpsProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation setUrlMapTargetHttpsProxy(
       String targetHttpsProxy, UrlMapReference urlMapReferenceResource) {
-
     SetUrlMapTargetHttpsProxyHttpRequest request =
         SetUrlMapTargetHttpsProxyHttpRequest.newBuilder()
             .setTargetHttpsProxy(targetHttpsProxy)

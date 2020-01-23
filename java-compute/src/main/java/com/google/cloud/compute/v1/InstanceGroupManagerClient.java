@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -190,7 +190,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
       ProjectZoneInstanceGroupManagerName instanceGroupManager,
       InstanceGroupManagersAbandonInstancesRequest
           instanceGroupManagersAbandonInstancesRequestResource) {
-
     AbandonInstancesInstanceGroupManagerHttpRequest request =
         AbandonInstancesInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -236,7 +235,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
       String instanceGroupManager,
       InstanceGroupManagersAbandonInstancesRequest
           instanceGroupManagersAbandonInstancesRequestResource) {
-
     AbandonInstancesInstanceGroupManagerHttpRequest request =
         AbandonInstancesInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)
@@ -487,7 +485,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
   @BetaApi
   public final Operation deleteInstanceGroupManager(
       ProjectZoneInstanceGroupManagerName instanceGroupManager) {
-
     DeleteInstanceGroupManagerHttpRequest request =
         DeleteInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -516,7 +513,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteInstanceGroupManager(String instanceGroupManager) {
-
     DeleteInstanceGroupManagerHttpRequest request =
         DeleteInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)
@@ -610,7 +606,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
       ProjectZoneInstanceGroupManagerName instanceGroupManager,
       InstanceGroupManagersDeleteInstancesRequest
           instanceGroupManagersDeleteInstancesRequestResource) {
-
     DeleteInstancesInstanceGroupManagerHttpRequest request =
         DeleteInstancesInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -655,7 +650,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
       String instanceGroupManager,
       InstanceGroupManagersDeleteInstancesRequest
           instanceGroupManagersDeleteInstancesRequestResource) {
-
     DeleteInstancesInstanceGroupManagerHttpRequest request =
         DeleteInstancesInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)
@@ -760,7 +754,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
   @BetaApi
   public final InstanceGroupManager getInstanceGroupManager(
       ProjectZoneInstanceGroupManagerName instanceGroupManager) {
-
     GetInstanceGroupManagerHttpRequest request =
         GetInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -788,7 +781,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    */
   @BetaApi
   public final InstanceGroupManager getInstanceGroupManager(String instanceGroupManager) {
-
     GetInstanceGroupManagerHttpRequest request =
         GetInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)
@@ -882,7 +874,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
   @BetaApi
   public final Operation insertInstanceGroupManager(
       ProjectZoneName zone, InstanceGroupManager instanceGroupManagerResource) {
-
     InsertInstanceGroupManagerHttpRequest request =
         InsertInstanceGroupManagerHttpRequest.newBuilder()
             .setZone(zone == null ? null : zone.toString())
@@ -926,7 +917,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
   @BetaApi
   public final Operation insertInstanceGroupManager(
       String zone, InstanceGroupManager instanceGroupManagerResource) {
-
     InsertInstanceGroupManagerHttpRequest request =
         InsertInstanceGroupManagerHttpRequest.newBuilder()
             .setZone(zone)
@@ -1169,7 +1159,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
   public final InstanceGroupManagersListManagedInstancesResponse
       listManagedInstancesInstanceGroupManagers(
           ProjectZoneInstanceGroupManagerName instanceGroupManager) {
-
     ListManagedInstancesInstanceGroupManagersHttpRequest request =
         ListManagedInstancesInstanceGroupManagersHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -1200,7 +1189,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
   @BetaApi
   public final InstanceGroupManagersListManagedInstancesResponse
       listManagedInstancesInstanceGroupManagers(String instanceGroupManager) {
-
     ListManagedInstancesInstanceGroupManagersHttpRequest request =
         ListManagedInstancesInstanceGroupManagersHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)
@@ -1305,7 +1293,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
       ProjectZoneInstanceGroupManagerName instanceGroupManager,
       InstanceGroupManager instanceGroupManagerResource,
       List<String> fieldMask) {
-
     PatchInstanceGroupManagerHttpRequest request =
         PatchInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -1355,7 +1342,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
       String instanceGroupManager,
       InstanceGroupManager instanceGroupManagerResource,
       List<String> fieldMask) {
-
     PatchInstanceGroupManagerHttpRequest request =
         PatchInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)
@@ -1462,7 +1448,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
       ProjectZoneInstanceGroupManagerName instanceGroupManager,
       InstanceGroupManagersRecreateInstancesRequest
           instanceGroupManagersRecreateInstancesRequestResource) {
-
     RecreateInstancesInstanceGroupManagerHttpRequest request =
         RecreateInstancesInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -1506,7 +1491,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
       String instanceGroupManager,
       InstanceGroupManagersRecreateInstancesRequest
           instanceGroupManagersRecreateInstancesRequestResource) {
-
     RecreateInstancesInstanceGroupManagerHttpRequest request =
         RecreateInstancesInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)
@@ -1629,7 +1613,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
   @BetaApi
   public final Operation resizeInstanceGroupManager(
       Integer size, ProjectZoneInstanceGroupManagerName instanceGroupManager) {
-
     ResizeInstanceGroupManagerHttpRequest request =
         ResizeInstanceGroupManagerHttpRequest.newBuilder()
             .setSize(size)
@@ -1678,7 +1661,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation resizeInstanceGroupManager(Integer size, String instanceGroupManager) {
-
     ResizeInstanceGroupManagerHttpRequest request =
         ResizeInstanceGroupManagerHttpRequest.newBuilder()
             .setSize(size)
@@ -1797,7 +1779,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
       ProjectZoneInstanceGroupManagerName instanceGroupManager,
       InstanceGroupManagersSetInstanceTemplateRequest
           instanceGroupManagersSetInstanceTemplateRequestResource) {
-
     SetInstanceTemplateInstanceGroupManagerHttpRequest request =
         SetInstanceTemplateInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -1832,7 +1813,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
       String instanceGroupManager,
       InstanceGroupManagersSetInstanceTemplateRequest
           instanceGroupManagersSetInstanceTemplateRequestResource) {
-
     SetInstanceTemplateInstanceGroupManagerHttpRequest request =
         SetInstanceTemplateInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)
@@ -1924,7 +1904,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
       ProjectZoneInstanceGroupManagerName instanceGroupManager,
       InstanceGroupManagersSetTargetPoolsRequest
           instanceGroupManagersSetTargetPoolsRequestResource) {
-
     SetTargetPoolsInstanceGroupManagerHttpRequest request =
         SetTargetPoolsInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(
@@ -1962,7 +1941,6 @@ public class InstanceGroupManagerClient implements BackgroundResource {
       String instanceGroupManager,
       InstanceGroupManagersSetTargetPoolsRequest
           instanceGroupManagersSetTargetPoolsRequestResource) {
-
     SetTargetPoolsInstanceGroupManagerHttpRequest request =
         SetTargetPoolsInstanceGroupManagerHttpRequest.newBuilder()
             .setInstanceGroupManager(instanceGroupManager)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,7 +172,6 @@ public class RegionAutoscalerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteRegionAutoscaler(ProjectRegionAutoscalerName autoscaler) {
-
     DeleteRegionAutoscalerHttpRequest request =
         DeleteRegionAutoscalerHttpRequest.newBuilder()
             .setAutoscaler(autoscaler == null ? null : autoscaler.toString())
@@ -198,7 +197,6 @@ public class RegionAutoscalerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteRegionAutoscaler(String autoscaler) {
-
     DeleteRegionAutoscalerHttpRequest request =
         DeleteRegionAutoscalerHttpRequest.newBuilder().setAutoscaler(autoscaler).build();
     return deleteRegionAutoscaler(request);
@@ -270,7 +268,6 @@ public class RegionAutoscalerClient implements BackgroundResource {
    */
   @BetaApi
   public final Autoscaler getRegionAutoscaler(ProjectRegionAutoscalerName autoscaler) {
-
     GetRegionAutoscalerHttpRequest request =
         GetRegionAutoscalerHttpRequest.newBuilder()
             .setAutoscaler(autoscaler == null ? null : autoscaler.toString())
@@ -296,7 +293,6 @@ public class RegionAutoscalerClient implements BackgroundResource {
    */
   @BetaApi
   public final Autoscaler getRegionAutoscaler(String autoscaler) {
-
     GetRegionAutoscalerHttpRequest request =
         GetRegionAutoscalerHttpRequest.newBuilder().setAutoscaler(autoscaler).build();
     return getRegionAutoscaler(request);
@@ -378,7 +374,6 @@ public class RegionAutoscalerClient implements BackgroundResource {
   @BetaApi
   public final Operation insertRegionAutoscaler(
       ProjectRegionName region, Autoscaler autoscalerResource) {
-
     InsertRegionAutoscalerHttpRequest request =
         InsertRegionAutoscalerHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -414,7 +409,6 @@ public class RegionAutoscalerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertRegionAutoscaler(String region, Autoscaler autoscalerResource) {
-
     InsertRegionAutoscalerHttpRequest request =
         InsertRegionAutoscalerHttpRequest.newBuilder()
             .setRegion(region)
@@ -652,7 +646,6 @@ public class RegionAutoscalerClient implements BackgroundResource {
       ProjectRegionName region,
       Autoscaler autoscalerResource,
       List<String> fieldMask) {
-
     PatchRegionAutoscalerHttpRequest request =
         PatchRegionAutoscalerHttpRequest.newBuilder()
             .setAutoscaler(autoscaler)
@@ -699,7 +692,6 @@ public class RegionAutoscalerClient implements BackgroundResource {
   @BetaApi
   public final Operation patchRegionAutoscaler(
       String autoscaler, String region, Autoscaler autoscalerResource, List<String> fieldMask) {
-
     PatchRegionAutoscalerHttpRequest request =
         PatchRegionAutoscalerHttpRequest.newBuilder()
             .setAutoscaler(autoscaler)
@@ -810,7 +802,6 @@ public class RegionAutoscalerClient implements BackgroundResource {
       ProjectRegionName region,
       Autoscaler autoscalerResource,
       List<String> fieldMask) {
-
     UpdateRegionAutoscalerHttpRequest request =
         UpdateRegionAutoscalerHttpRequest.newBuilder()
             .setAutoscaler(autoscaler)
@@ -856,7 +847,6 @@ public class RegionAutoscalerClient implements BackgroundResource {
   @BetaApi
   public final Operation updateRegionAutoscaler(
       String autoscaler, String region, Autoscaler autoscalerResource, List<String> fieldMask) {
-
     UpdateRegionAutoscalerHttpRequest request =
         UpdateRegionAutoscalerHttpRequest.newBuilder()
             .setAutoscaler(autoscaler)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -308,7 +308,6 @@ public class AddressClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteAddress(ProjectRegionAddressName address) {
-
     DeleteAddressHttpRequest request =
         DeleteAddressHttpRequest.newBuilder()
             .setAddress(address == null ? null : address.toString())
@@ -334,7 +333,6 @@ public class AddressClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteAddress(String address) {
-
     DeleteAddressHttpRequest request =
         DeleteAddressHttpRequest.newBuilder().setAddress(address).build();
     return deleteAddress(request);
@@ -405,7 +403,6 @@ public class AddressClient implements BackgroundResource {
    */
   @BetaApi
   public final Address getAddress(ProjectRegionAddressName address) {
-
     GetAddressHttpRequest request =
         GetAddressHttpRequest.newBuilder()
             .setAddress(address == null ? null : address.toString())
@@ -431,7 +428,6 @@ public class AddressClient implements BackgroundResource {
    */
   @BetaApi
   public final Address getAddress(String address) {
-
     GetAddressHttpRequest request = GetAddressHttpRequest.newBuilder().setAddress(address).build();
     return getAddress(request);
   }
@@ -515,7 +511,6 @@ public class AddressClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertAddress(ProjectRegionName region, Address addressResource) {
-
     InsertAddressHttpRequest request =
         InsertAddressHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -556,7 +551,6 @@ public class AddressClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertAddress(String region, Address addressResource) {
-
     InsertAddressHttpRequest request =
         InsertAddressHttpRequest.newBuilder()
             .setRegion(region)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,7 +172,6 @@ public class HttpHealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteHttpHealthCheck(ProjectGlobalHttpHealthCheckName httpHealthCheck) {
-
     DeleteHttpHealthCheckHttpRequest request =
         DeleteHttpHealthCheckHttpRequest.newBuilder()
             .setHttpHealthCheck(httpHealthCheck == null ? null : httpHealthCheck.toString())
@@ -198,7 +197,6 @@ public class HttpHealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteHttpHealthCheck(String httpHealthCheck) {
-
     DeleteHttpHealthCheckHttpRequest request =
         DeleteHttpHealthCheckHttpRequest.newBuilder().setHttpHealthCheck(httpHealthCheck).build();
     return deleteHttpHealthCheck(request);
@@ -272,7 +270,6 @@ public class HttpHealthCheckClient implements BackgroundResource {
   @BetaApi
   public final HttpHealthCheck2 getHttpHealthCheck(
       ProjectGlobalHttpHealthCheckName httpHealthCheck) {
-
     GetHttpHealthCheckHttpRequest request =
         GetHttpHealthCheckHttpRequest.newBuilder()
             .setHttpHealthCheck(httpHealthCheck == null ? null : httpHealthCheck.toString())
@@ -299,7 +296,6 @@ public class HttpHealthCheckClient implements BackgroundResource {
    */
   @BetaApi
   public final HttpHealthCheck2 getHttpHealthCheck(String httpHealthCheck) {
-
     GetHttpHealthCheckHttpRequest request =
         GetHttpHealthCheckHttpRequest.newBuilder().setHttpHealthCheck(httpHealthCheck).build();
     return getHttpHealthCheck(request);
@@ -379,7 +375,6 @@ public class HttpHealthCheckClient implements BackgroundResource {
   @BetaApi
   public final Operation insertHttpHealthCheck(
       ProjectName project, HttpHealthCheck2 httpHealthCheckResource) {
-
     InsertHttpHealthCheckHttpRequest request =
         InsertHttpHealthCheckHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -412,7 +407,6 @@ public class HttpHealthCheckClient implements BackgroundResource {
   @BetaApi
   public final Operation insertHttpHealthCheck(
       String project, HttpHealthCheck2 httpHealthCheckResource) {
-
     InsertHttpHealthCheckHttpRequest request =
         InsertHttpHealthCheckHttpRequest.newBuilder()
             .setProject(project)
@@ -645,7 +639,6 @@ public class HttpHealthCheckClient implements BackgroundResource {
       ProjectGlobalHttpHealthCheckName httpHealthCheck,
       HttpHealthCheck2 httpHealthCheckResource,
       List<String> fieldMask) {
-
     PatchHttpHealthCheckHttpRequest request =
         PatchHttpHealthCheckHttpRequest.newBuilder()
             .setHttpHealthCheck(httpHealthCheck == null ? null : httpHealthCheck.toString())
@@ -685,7 +678,6 @@ public class HttpHealthCheckClient implements BackgroundResource {
   @BetaApi
   public final Operation patchHttpHealthCheck(
       String httpHealthCheck, HttpHealthCheck2 httpHealthCheckResource, List<String> fieldMask) {
-
     PatchHttpHealthCheckHttpRequest request =
         PatchHttpHealthCheckHttpRequest.newBuilder()
             .setHttpHealthCheck(httpHealthCheck)
@@ -786,7 +778,6 @@ public class HttpHealthCheckClient implements BackgroundResource {
       ProjectGlobalHttpHealthCheckName httpHealthCheck,
       HttpHealthCheck2 httpHealthCheckResource,
       List<String> fieldMask) {
-
     UpdateHttpHealthCheckHttpRequest request =
         UpdateHttpHealthCheckHttpRequest.newBuilder()
             .setHttpHealthCheck(httpHealthCheck == null ? null : httpHealthCheck.toString())
@@ -825,7 +816,6 @@ public class HttpHealthCheckClient implements BackgroundResource {
   @BetaApi
   public final Operation updateHttpHealthCheck(
       String httpHealthCheck, HttpHealthCheck2 httpHealthCheckResource, List<String> fieldMask) {
-
     UpdateHttpHealthCheckHttpRequest request =
         UpdateHttpHealthCheckHttpRequest.newBuilder()
             .setHttpHealthCheck(httpHealthCheck)

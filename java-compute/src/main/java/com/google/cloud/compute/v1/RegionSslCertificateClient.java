@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -173,7 +173,6 @@ public class RegionSslCertificateClient implements BackgroundResource {
   @BetaApi
   public final Operation deleteRegionSslCertificate(
       ProjectRegionSslCertificateName sslCertificate) {
-
     DeleteRegionSslCertificateHttpRequest request =
         DeleteRegionSslCertificateHttpRequest.newBuilder()
             .setSslCertificate(sslCertificate == null ? null : sslCertificate.toString())
@@ -199,7 +198,6 @@ public class RegionSslCertificateClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteRegionSslCertificate(String sslCertificate) {
-
     DeleteRegionSslCertificateHttpRequest request =
         DeleteRegionSslCertificateHttpRequest.newBuilder()
             .setSslCertificate(sslCertificate)
@@ -275,7 +273,6 @@ public class RegionSslCertificateClient implements BackgroundResource {
   @BetaApi
   public final SslCertificate getRegionSslCertificate(
       ProjectRegionSslCertificateName sslCertificate) {
-
     GetRegionSslCertificateHttpRequest request =
         GetRegionSslCertificateHttpRequest.newBuilder()
             .setSslCertificate(sslCertificate == null ? null : sslCertificate.toString())
@@ -302,7 +299,6 @@ public class RegionSslCertificateClient implements BackgroundResource {
    */
   @BetaApi
   public final SslCertificate getRegionSslCertificate(String sslCertificate) {
-
     GetRegionSslCertificateHttpRequest request =
         GetRegionSslCertificateHttpRequest.newBuilder().setSslCertificate(sslCertificate).build();
     return getRegionSslCertificate(request);
@@ -385,7 +381,6 @@ public class RegionSslCertificateClient implements BackgroundResource {
   @BetaApi
   public final Operation insertRegionSslCertificate(
       ProjectRegionName region, SslCertificate sslCertificateResource) {
-
     InsertRegionSslCertificateHttpRequest request =
         InsertRegionSslCertificateHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -421,7 +416,6 @@ public class RegionSslCertificateClient implements BackgroundResource {
   @BetaApi
   public final Operation insertRegionSslCertificate(
       String region, SslCertificate sslCertificateResource) {
-
     InsertRegionSslCertificateHttpRequest request =
         InsertRegionSslCertificateHttpRequest.newBuilder()
             .setRegion(region)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -177,7 +177,6 @@ public class SecurityPolicyClient implements BackgroundResource {
   public final Operation addRuleSecurityPolicy(
       ProjectGlobalSecurityPolicyName securityPolicy,
       SecurityPolicyRule securityPolicyRuleResource) {
-
     AddRuleSecurityPolicyHttpRequest request =
         AddRuleSecurityPolicyHttpRequest.newBuilder()
             .setSecurityPolicy(securityPolicy == null ? null : securityPolicy.toString())
@@ -208,7 +207,6 @@ public class SecurityPolicyClient implements BackgroundResource {
   @BetaApi
   public final Operation addRuleSecurityPolicy(
       String securityPolicy, SecurityPolicyRule securityPolicyRuleResource) {
-
     AddRuleSecurityPolicyHttpRequest request =
         AddRuleSecurityPolicyHttpRequest.newBuilder()
             .setSecurityPolicy(securityPolicy)
@@ -287,7 +285,6 @@ public class SecurityPolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteSecurityPolicy(ProjectGlobalSecurityPolicyName securityPolicy) {
-
     DeleteSecurityPolicyHttpRequest request =
         DeleteSecurityPolicyHttpRequest.newBuilder()
             .setSecurityPolicy(securityPolicy == null ? null : securityPolicy.toString())
@@ -313,7 +310,6 @@ public class SecurityPolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteSecurityPolicy(String securityPolicy) {
-
     DeleteSecurityPolicyHttpRequest request =
         DeleteSecurityPolicyHttpRequest.newBuilder().setSecurityPolicy(securityPolicy).build();
     return deleteSecurityPolicy(request);
@@ -385,7 +381,6 @@ public class SecurityPolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final SecurityPolicy getSecurityPolicy(ProjectGlobalSecurityPolicyName securityPolicy) {
-
     GetSecurityPolicyHttpRequest request =
         GetSecurityPolicyHttpRequest.newBuilder()
             .setSecurityPolicy(securityPolicy == null ? null : securityPolicy.toString())
@@ -411,7 +406,6 @@ public class SecurityPolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final SecurityPolicy getSecurityPolicy(String securityPolicy) {
-
     GetSecurityPolicyHttpRequest request =
         GetSecurityPolicyHttpRequest.newBuilder().setSecurityPolicy(securityPolicy).build();
     return getSecurityPolicy(request);
@@ -486,7 +480,6 @@ public class SecurityPolicyClient implements BackgroundResource {
   @BetaApi
   public final SecurityPolicyRule getRuleSecurityPolicy(
       Integer priority, ProjectGlobalSecurityPolicyName securityPolicy) {
-
     GetRuleSecurityPolicyHttpRequest request =
         GetRuleSecurityPolicyHttpRequest.newBuilder()
             .setPriority(priority)
@@ -515,7 +508,6 @@ public class SecurityPolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final SecurityPolicyRule getRuleSecurityPolicy(Integer priority, String securityPolicy) {
-
     GetRuleSecurityPolicyHttpRequest request =
         GetRuleSecurityPolicyHttpRequest.newBuilder()
             .setPriority(priority)
@@ -600,7 +592,6 @@ public class SecurityPolicyClient implements BackgroundResource {
   @BetaApi
   public final Operation insertSecurityPolicy(
       ProjectName project, SecurityPolicy securityPolicyResource) {
-
     InsertSecurityPolicyHttpRequest request =
         InsertSecurityPolicyHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -633,7 +624,6 @@ public class SecurityPolicyClient implements BackgroundResource {
   @BetaApi
   public final Operation insertSecurityPolicy(
       String project, SecurityPolicy securityPolicyResource) {
-
     InsertSecurityPolicyHttpRequest request =
         InsertSecurityPolicyHttpRequest.newBuilder()
             .setProject(project)
@@ -863,7 +853,6 @@ public class SecurityPolicyClient implements BackgroundResource {
       ProjectGlobalSecurityPolicyName securityPolicy,
       SecurityPolicy securityPolicyResource,
       List<String> fieldMask) {
-
     PatchSecurityPolicyHttpRequest request =
         PatchSecurityPolicyHttpRequest.newBuilder()
             .setSecurityPolicy(securityPolicy == null ? null : securityPolicy.toString())
@@ -902,7 +891,6 @@ public class SecurityPolicyClient implements BackgroundResource {
   @BetaApi
   public final Operation patchSecurityPolicy(
       String securityPolicy, SecurityPolicy securityPolicyResource, List<String> fieldMask) {
-
     PatchSecurityPolicyHttpRequest request =
         PatchSecurityPolicyHttpRequest.newBuilder()
             .setSecurityPolicy(securityPolicy)
@@ -994,7 +982,6 @@ public class SecurityPolicyClient implements BackgroundResource {
       Integer priority,
       ProjectGlobalSecurityPolicyName securityPolicy,
       SecurityPolicyRule securityPolicyRuleResource) {
-
     PatchRuleSecurityPolicyHttpRequest request =
         PatchRuleSecurityPolicyHttpRequest.newBuilder()
             .setPriority(priority)
@@ -1028,7 +1015,6 @@ public class SecurityPolicyClient implements BackgroundResource {
   @BetaApi
   public final Operation patchRuleSecurityPolicy(
       Integer priority, String securityPolicy, SecurityPolicyRule securityPolicyRuleResource) {
-
     PatchRuleSecurityPolicyHttpRequest request =
         PatchRuleSecurityPolicyHttpRequest.newBuilder()
             .setPriority(priority)
@@ -1115,7 +1101,6 @@ public class SecurityPolicyClient implements BackgroundResource {
   @BetaApi
   public final Operation removeRuleSecurityPolicy(
       Integer priority, ProjectGlobalSecurityPolicyName securityPolicy) {
-
     RemoveRuleSecurityPolicyHttpRequest request =
         RemoveRuleSecurityPolicyHttpRequest.newBuilder()
             .setPriority(priority)
@@ -1144,7 +1129,6 @@ public class SecurityPolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation removeRuleSecurityPolicy(Integer priority, String securityPolicy) {
-
     RemoveRuleSecurityPolicyHttpRequest request =
         RemoveRuleSecurityPolicyHttpRequest.newBuilder()
             .setPriority(priority)

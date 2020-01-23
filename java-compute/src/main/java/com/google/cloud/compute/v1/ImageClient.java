@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,7 +169,6 @@ public class ImageClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteImage(ProjectGlobalImageName image) {
-
     DeleteImageHttpRequest request =
         DeleteImageHttpRequest.newBuilder()
             .setImage(image == null ? null : image.toString())
@@ -195,7 +194,6 @@ public class ImageClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteImage(String image) {
-
     DeleteImageHttpRequest request = DeleteImageHttpRequest.newBuilder().setImage(image).build();
     return deleteImage(request);
   }
@@ -270,7 +268,6 @@ public class ImageClient implements BackgroundResource {
   @BetaApi
   public final Operation deprecateImage(
       ProjectGlobalImageName image, DeprecationStatus deprecationStatusResource) {
-
     DeprecateImageHttpRequest request =
         DeprecateImageHttpRequest.newBuilder()
             .setImage(image == null ? null : image.toString())
@@ -301,7 +298,6 @@ public class ImageClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deprecateImage(String image, DeprecationStatus deprecationStatusResource) {
-
     DeprecateImageHttpRequest request =
         DeprecateImageHttpRequest.newBuilder()
             .setImage(image)
@@ -383,7 +379,6 @@ public class ImageClient implements BackgroundResource {
    */
   @BetaApi
   public final Image getImage(ProjectGlobalImageName image) {
-
     GetImageHttpRequest request =
         GetImageHttpRequest.newBuilder().setImage(image == null ? null : image.toString()).build();
     return getImage(request);
@@ -407,7 +402,6 @@ public class ImageClient implements BackgroundResource {
    */
   @BetaApi
   public final Image getImage(String image) {
-
     GetImageHttpRequest request = GetImageHttpRequest.newBuilder().setImage(image).build();
     return getImage(request);
   }
@@ -477,7 +471,6 @@ public class ImageClient implements BackgroundResource {
    */
   @BetaApi
   public final Image getFromFamilyImage(ProjectGlobalImageFamilyName family) {
-
     GetFromFamilyImageHttpRequest request =
         GetFromFamilyImageHttpRequest.newBuilder()
             .setFamily(family == null ? null : family.toString())
@@ -503,7 +496,6 @@ public class ImageClient implements BackgroundResource {
    */
   @BetaApi
   public final Image getFromFamilyImage(String family) {
-
     GetFromFamilyImageHttpRequest request =
         GetFromFamilyImageHttpRequest.newBuilder().setFamily(family).build();
     return getFromFamilyImage(request);
@@ -575,7 +567,6 @@ public class ImageClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicyImage(ProjectGlobalImageResourceName resource) {
-
     GetIamPolicyImageHttpRequest request =
         GetIamPolicyImageHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -602,7 +593,6 @@ public class ImageClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicyImage(String resource) {
-
     GetIamPolicyImageHttpRequest request =
         GetIamPolicyImageHttpRequest.newBuilder().setResource(resource).build();
     return getIamPolicyImage(request);
@@ -682,7 +672,6 @@ public class ImageClient implements BackgroundResource {
   @BetaApi
   public final Operation insertImage(
       Boolean forceCreate, ProjectName project, Image imageResource) {
-
     InsertImageHttpRequest request =
         InsertImageHttpRequest.newBuilder()
             .setForceCreate(forceCreate)
@@ -716,7 +705,6 @@ public class ImageClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertImage(Boolean forceCreate, String project, Image imageResource) {
-
     InsertImageHttpRequest request =
         InsertImageHttpRequest.newBuilder()
             .setForceCreate(forceCreate)
@@ -958,7 +946,6 @@ public class ImageClient implements BackgroundResource {
   public final Policy setIamPolicyImage(
       ProjectGlobalImageResourceName resource,
       GlobalSetPolicyRequest globalSetPolicyRequestResource) {
-
     SetIamPolicyImageHttpRequest request =
         SetIamPolicyImageHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -988,7 +975,6 @@ public class ImageClient implements BackgroundResource {
   @BetaApi
   public final Policy setIamPolicyImage(
       String resource, GlobalSetPolicyRequest globalSetPolicyRequestResource) {
-
     SetIamPolicyImageHttpRequest request =
         SetIamPolicyImageHttpRequest.newBuilder()
             .setResource(resource)
@@ -1071,7 +1057,6 @@ public class ImageClient implements BackgroundResource {
   public final Operation setLabelsImage(
       ProjectGlobalImageResourceName resource,
       GlobalSetLabelsRequest globalSetLabelsRequestResource) {
-
     SetLabelsImageHttpRequest request =
         SetLabelsImageHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1102,7 +1087,6 @@ public class ImageClient implements BackgroundResource {
   @BetaApi
   public final Operation setLabelsImage(
       String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource) {
-
     SetLabelsImageHttpRequest request =
         SetLabelsImageHttpRequest.newBuilder()
             .setResource(resource)
@@ -1186,7 +1170,6 @@ public class ImageClient implements BackgroundResource {
   public final TestPermissionsResponse testIamPermissionsImage(
       ProjectGlobalImageResourceName resource,
       TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsImageHttpRequest request =
         TestIamPermissionsImageHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1216,7 +1199,6 @@ public class ImageClient implements BackgroundResource {
   @BetaApi
   public final TestPermissionsResponse testIamPermissionsImage(
       String resource, TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsImageHttpRequest request =
         TestIamPermissionsImageHttpRequest.newBuilder()
             .setResource(resource)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -313,7 +313,6 @@ public class ResourcePolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteResourcePolicy(ProjectRegionResourcePolicyName resourcePolicy) {
-
     DeleteResourcePolicyHttpRequest request =
         DeleteResourcePolicyHttpRequest.newBuilder()
             .setResourcePolicy(resourcePolicy == null ? null : resourcePolicy.toString())
@@ -339,7 +338,6 @@ public class ResourcePolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteResourcePolicy(String resourcePolicy) {
-
     DeleteResourcePolicyHttpRequest request =
         DeleteResourcePolicyHttpRequest.newBuilder().setResourcePolicy(resourcePolicy).build();
     return deleteResourcePolicy(request);
@@ -411,7 +409,6 @@ public class ResourcePolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final ResourcePolicy getResourcePolicy(ProjectRegionResourcePolicyName resourcePolicy) {
-
     GetResourcePolicyHttpRequest request =
         GetResourcePolicyHttpRequest.newBuilder()
             .setResourcePolicy(resourcePolicy == null ? null : resourcePolicy.toString())
@@ -437,7 +434,6 @@ public class ResourcePolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final ResourcePolicy getResourcePolicy(String resourcePolicy) {
-
     GetResourcePolicyHttpRequest request =
         GetResourcePolicyHttpRequest.newBuilder().setResourcePolicy(resourcePolicy).build();
     return getResourcePolicy(request);
@@ -510,7 +506,6 @@ public class ResourcePolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicyResourcePolicy(ProjectRegionResourcePolicyResourceName resource) {
-
     GetIamPolicyResourcePolicyHttpRequest request =
         GetIamPolicyResourcePolicyHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -537,7 +532,6 @@ public class ResourcePolicyClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicyResourcePolicy(String resource) {
-
     GetIamPolicyResourcePolicyHttpRequest request =
         GetIamPolicyResourcePolicyHttpRequest.newBuilder().setResource(resource).build();
     return getIamPolicyResourcePolicy(request);
@@ -614,7 +608,6 @@ public class ResourcePolicyClient implements BackgroundResource {
   @BetaApi
   public final Operation insertResourcePolicy(
       ProjectRegionName region, ResourcePolicy resourcePolicyResource) {
-
     InsertResourcePolicyHttpRequest request =
         InsertResourcePolicyHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -644,7 +637,6 @@ public class ResourcePolicyClient implements BackgroundResource {
   @BetaApi
   public final Operation insertResourcePolicy(
       String region, ResourcePolicy resourcePolicyResource) {
-
     InsertResourcePolicyHttpRequest request =
         InsertResourcePolicyHttpRequest.newBuilder()
             .setRegion(region)
@@ -870,7 +862,6 @@ public class ResourcePolicyClient implements BackgroundResource {
   public final Policy setIamPolicyResourcePolicy(
       ProjectRegionResourcePolicyResourceName resource,
       RegionSetPolicyRequest regionSetPolicyRequestResource) {
-
     SetIamPolicyResourcePolicyHttpRequest request =
         SetIamPolicyResourcePolicyHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -900,7 +891,6 @@ public class ResourcePolicyClient implements BackgroundResource {
   @BetaApi
   public final Policy setIamPolicyResourcePolicy(
       String resource, RegionSetPolicyRequest regionSetPolicyRequestResource) {
-
     SetIamPolicyResourcePolicyHttpRequest request =
         SetIamPolicyResourcePolicyHttpRequest.newBuilder()
             .setResource(resource)
@@ -983,7 +973,6 @@ public class ResourcePolicyClient implements BackgroundResource {
   public final TestPermissionsResponse testIamPermissionsResourcePolicy(
       ProjectRegionResourcePolicyResourceName resource,
       TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsResourcePolicyHttpRequest request =
         TestIamPermissionsResourcePolicyHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1013,7 +1002,6 @@ public class ResourcePolicyClient implements BackgroundResource {
   @BetaApi
   public final TestPermissionsResponse testIamPermissionsResourcePolicy(
       String resource, TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsResourcePolicyHttpRequest request =
         TestIamPermissionsResourcePolicyHttpRequest.newBuilder()
             .setResource(resource)

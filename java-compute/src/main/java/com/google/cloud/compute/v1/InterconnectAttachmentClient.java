@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -318,7 +318,6 @@ public class InterconnectAttachmentClient implements BackgroundResource {
   @BetaApi
   public final Operation deleteInterconnectAttachment(
       ProjectRegionInterconnectAttachmentName interconnectAttachment) {
-
     DeleteInterconnectAttachmentHttpRequest request =
         DeleteInterconnectAttachmentHttpRequest.newBuilder()
             .setInterconnectAttachment(
@@ -345,7 +344,6 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteInterconnectAttachment(String interconnectAttachment) {
-
     DeleteInterconnectAttachmentHttpRequest request =
         DeleteInterconnectAttachmentHttpRequest.newBuilder()
             .setInterconnectAttachment(interconnectAttachment)
@@ -421,7 +419,6 @@ public class InterconnectAttachmentClient implements BackgroundResource {
   @BetaApi
   public final InterconnectAttachment getInterconnectAttachment(
       ProjectRegionInterconnectAttachmentName interconnectAttachment) {
-
     GetInterconnectAttachmentHttpRequest request =
         GetInterconnectAttachmentHttpRequest.newBuilder()
             .setInterconnectAttachment(
@@ -448,7 +445,6 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    */
   @BetaApi
   public final InterconnectAttachment getInterconnectAttachment(String interconnectAttachment) {
-
     GetInterconnectAttachmentHttpRequest request =
         GetInterconnectAttachmentHttpRequest.newBuilder()
             .setInterconnectAttachment(interconnectAttachment)
@@ -531,7 +527,6 @@ public class InterconnectAttachmentClient implements BackgroundResource {
   @BetaApi
   public final Operation insertInterconnectAttachment(
       ProjectRegionName region, InterconnectAttachment interconnectAttachmentResource) {
-
     InsertInterconnectAttachmentHttpRequest request =
         InsertInterconnectAttachmentHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -566,7 +561,6 @@ public class InterconnectAttachmentClient implements BackgroundResource {
   @BetaApi
   public final Operation insertInterconnectAttachment(
       String region, InterconnectAttachment interconnectAttachmentResource) {
-
     InsertInterconnectAttachmentHttpRequest request =
         InsertInterconnectAttachmentHttpRequest.newBuilder()
             .setRegion(region)
@@ -803,7 +797,6 @@ public class InterconnectAttachmentClient implements BackgroundResource {
       ProjectRegionInterconnectAttachmentName interconnectAttachment,
       InterconnectAttachment interconnectAttachmentResource,
       List<String> fieldMask) {
-
     PatchInterconnectAttachmentHttpRequest request =
         PatchInterconnectAttachmentHttpRequest.newBuilder()
             .setInterconnectAttachment(
@@ -847,7 +840,6 @@ public class InterconnectAttachmentClient implements BackgroundResource {
       String interconnectAttachment,
       InterconnectAttachment interconnectAttachmentResource,
       List<String> fieldMask) {
-
     PatchInterconnectAttachmentHttpRequest request =
         PatchInterconnectAttachmentHttpRequest.newBuilder()
             .setInterconnectAttachment(interconnectAttachment)

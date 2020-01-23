@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -171,7 +171,6 @@ public class TargetSslProxyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteTargetSslProxy(ProjectGlobalTargetSslProxyName targetSslProxy) {
-
     DeleteTargetSslProxyHttpRequest request =
         DeleteTargetSslProxyHttpRequest.newBuilder()
             .setTargetSslProxy(targetSslProxy == null ? null : targetSslProxy.toString())
@@ -197,7 +196,6 @@ public class TargetSslProxyClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteTargetSslProxy(String targetSslProxy) {
-
     DeleteTargetSslProxyHttpRequest request =
         DeleteTargetSslProxyHttpRequest.newBuilder().setTargetSslProxy(targetSslProxy).build();
     return deleteTargetSslProxy(request);
@@ -270,7 +268,6 @@ public class TargetSslProxyClient implements BackgroundResource {
    */
   @BetaApi
   public final TargetSslProxy getTargetSslProxy(ProjectGlobalTargetSslProxyName targetSslProxy) {
-
     GetTargetSslProxyHttpRequest request =
         GetTargetSslProxyHttpRequest.newBuilder()
             .setTargetSslProxy(targetSslProxy == null ? null : targetSslProxy.toString())
@@ -297,7 +294,6 @@ public class TargetSslProxyClient implements BackgroundResource {
    */
   @BetaApi
   public final TargetSslProxy getTargetSslProxy(String targetSslProxy) {
-
     GetTargetSslProxyHttpRequest request =
         GetTargetSslProxyHttpRequest.newBuilder().setTargetSslProxy(targetSslProxy).build();
     return getTargetSslProxy(request);
@@ -379,7 +375,6 @@ public class TargetSslProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation insertTargetSslProxy(
       ProjectName project, TargetSslProxy targetSslProxyResource) {
-
     InsertTargetSslProxyHttpRequest request =
         InsertTargetSslProxyHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -414,7 +409,6 @@ public class TargetSslProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation insertTargetSslProxy(
       String project, TargetSslProxy targetSslProxyResource) {
-
     InsertTargetSslProxyHttpRequest request =
         InsertTargetSslProxyHttpRequest.newBuilder()
             .setProject(project)
@@ -638,7 +632,6 @@ public class TargetSslProxyClient implements BackgroundResource {
   public final Operation setBackendServiceTargetSslProxy(
       ProjectGlobalTargetSslProxyName targetSslProxy,
       TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource) {
-
     SetBackendServiceTargetSslProxyHttpRequest request =
         SetBackendServiceTargetSslProxyHttpRequest.newBuilder()
             .setTargetSslProxy(targetSslProxy == null ? null : targetSslProxy.toString())
@@ -671,7 +664,6 @@ public class TargetSslProxyClient implements BackgroundResource {
   public final Operation setBackendServiceTargetSslProxy(
       String targetSslProxy,
       TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource) {
-
     SetBackendServiceTargetSslProxyHttpRequest request =
         SetBackendServiceTargetSslProxyHttpRequest.newBuilder()
             .setTargetSslProxy(targetSslProxy)
@@ -756,7 +748,6 @@ public class TargetSslProxyClient implements BackgroundResource {
   public final Operation setProxyHeaderTargetSslProxy(
       ProjectGlobalTargetSslProxyName targetSslProxy,
       TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource) {
-
     SetProxyHeaderTargetSslProxyHttpRequest request =
         SetProxyHeaderTargetSslProxyHttpRequest.newBuilder()
             .setTargetSslProxy(targetSslProxy == null ? null : targetSslProxy.toString())
@@ -788,7 +779,6 @@ public class TargetSslProxyClient implements BackgroundResource {
   public final Operation setProxyHeaderTargetSslProxy(
       String targetSslProxy,
       TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource) {
-
     SetProxyHeaderTargetSslProxyHttpRequest request =
         SetProxyHeaderTargetSslProxyHttpRequest.newBuilder()
             .setTargetSslProxy(targetSslProxy)
@@ -874,7 +864,6 @@ public class TargetSslProxyClient implements BackgroundResource {
   public final Operation setSslCertificatesTargetSslProxy(
       ProjectGlobalTargetSslProxyName targetSslProxy,
       TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource) {
-
     SetSslCertificatesTargetSslProxyHttpRequest request =
         SetSslCertificatesTargetSslProxyHttpRequest.newBuilder()
             .setTargetSslProxy(targetSslProxy == null ? null : targetSslProxy.toString())
@@ -907,7 +896,6 @@ public class TargetSslProxyClient implements BackgroundResource {
   public final Operation setSslCertificatesTargetSslProxy(
       String targetSslProxy,
       TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource) {
-
     SetSslCertificatesTargetSslProxyHttpRequest request =
         SetSslCertificatesTargetSslProxyHttpRequest.newBuilder()
             .setTargetSslProxy(targetSslProxy)
@@ -995,7 +983,6 @@ public class TargetSslProxyClient implements BackgroundResource {
   public final Operation setSslPolicyTargetSslProxy(
       ProjectGlobalTargetSslProxyName targetSslProxy,
       SslPolicyReference sslPolicyReferenceResource) {
-
     SetSslPolicyTargetSslProxyHttpRequest request =
         SetSslPolicyTargetSslProxyHttpRequest.newBuilder()
             .setTargetSslProxy(targetSslProxy == null ? null : targetSslProxy.toString())
@@ -1028,7 +1015,6 @@ public class TargetSslProxyClient implements BackgroundResource {
   @BetaApi
   public final Operation setSslPolicyTargetSslProxy(
       String targetSslProxy, SslPolicyReference sslPolicyReferenceResource) {
-
     SetSslPolicyTargetSslProxyHttpRequest request =
         SetSslPolicyTargetSslProxyHttpRequest.newBuilder()
             .setTargetSslProxy(targetSslProxy)

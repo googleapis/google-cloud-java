@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,7 +175,6 @@ public class InstanceTemplateClient implements BackgroundResource {
   @BetaApi
   public final Operation deleteInstanceTemplate(
       ProjectGlobalInstanceTemplateName instanceTemplate) {
-
     DeleteInstanceTemplateHttpRequest request =
         DeleteInstanceTemplateHttpRequest.newBuilder()
             .setInstanceTemplate(instanceTemplate == null ? null : instanceTemplate.toString())
@@ -203,7 +202,6 @@ public class InstanceTemplateClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteInstanceTemplate(String instanceTemplate) {
-
     DeleteInstanceTemplateHttpRequest request =
         DeleteInstanceTemplateHttpRequest.newBuilder()
             .setInstanceTemplate(instanceTemplate)
@@ -283,7 +281,6 @@ public class InstanceTemplateClient implements BackgroundResource {
   @BetaApi
   public final InstanceTemplate getInstanceTemplate(
       ProjectGlobalInstanceTemplateName instanceTemplate) {
-
     GetInstanceTemplateHttpRequest request =
         GetInstanceTemplateHttpRequest.newBuilder()
             .setInstanceTemplate(instanceTemplate == null ? null : instanceTemplate.toString())
@@ -310,7 +307,6 @@ public class InstanceTemplateClient implements BackgroundResource {
    */
   @BetaApi
   public final InstanceTemplate getInstanceTemplate(String instanceTemplate) {
-
     GetInstanceTemplateHttpRequest request =
         GetInstanceTemplateHttpRequest.newBuilder().setInstanceTemplate(instanceTemplate).build();
     return getInstanceTemplate(request);
@@ -386,7 +382,6 @@ public class InstanceTemplateClient implements BackgroundResource {
   @BetaApi
   public final Policy getIamPolicyInstanceTemplate(
       ProjectGlobalInstanceTemplateResourceName resource) {
-
     GetIamPolicyInstanceTemplateHttpRequest request =
         GetIamPolicyInstanceTemplateHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -413,7 +408,6 @@ public class InstanceTemplateClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicyInstanceTemplate(String resource) {
-
     GetIamPolicyInstanceTemplateHttpRequest request =
         GetIamPolicyInstanceTemplateHttpRequest.newBuilder().setResource(resource).build();
     return getIamPolicyInstanceTemplate(request);
@@ -497,7 +491,6 @@ public class InstanceTemplateClient implements BackgroundResource {
   @BetaApi
   public final Operation insertInstanceTemplate(
       ProjectName project, InstanceTemplate instanceTemplateResource) {
-
     InsertInstanceTemplateHttpRequest request =
         InsertInstanceTemplateHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -533,7 +526,6 @@ public class InstanceTemplateClient implements BackgroundResource {
   @BetaApi
   public final Operation insertInstanceTemplate(
       String project, InstanceTemplate instanceTemplateResource) {
-
     InsertInstanceTemplateHttpRequest request =
         InsertInstanceTemplateHttpRequest.newBuilder()
             .setProject(project)
@@ -760,7 +752,6 @@ public class InstanceTemplateClient implements BackgroundResource {
   public final Policy setIamPolicyInstanceTemplate(
       ProjectGlobalInstanceTemplateResourceName resource,
       GlobalSetPolicyRequest globalSetPolicyRequestResource) {
-
     SetIamPolicyInstanceTemplateHttpRequest request =
         SetIamPolicyInstanceTemplateHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -790,7 +781,6 @@ public class InstanceTemplateClient implements BackgroundResource {
   @BetaApi
   public final Policy setIamPolicyInstanceTemplate(
       String resource, GlobalSetPolicyRequest globalSetPolicyRequestResource) {
-
     SetIamPolicyInstanceTemplateHttpRequest request =
         SetIamPolicyInstanceTemplateHttpRequest.newBuilder()
             .setResource(resource)
@@ -874,7 +864,6 @@ public class InstanceTemplateClient implements BackgroundResource {
   public final TestPermissionsResponse testIamPermissionsInstanceTemplate(
       ProjectGlobalInstanceTemplateResourceName resource,
       TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsInstanceTemplateHttpRequest request =
         TestIamPermissionsInstanceTemplateHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -904,7 +893,6 @@ public class InstanceTemplateClient implements BackgroundResource {
   @BetaApi
   public final TestPermissionsResponse testIamPermissionsInstanceTemplate(
       String resource, TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsInstanceTemplateHttpRequest request =
         TestIamPermissionsInstanceTemplateHttpRequest.newBuilder()
             .setResource(resource)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -309,7 +309,6 @@ public class AutoscalerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteAutoscaler(ProjectZoneAutoscalerName autoscaler) {
-
     DeleteAutoscalerHttpRequest request =
         DeleteAutoscalerHttpRequest.newBuilder()
             .setAutoscaler(autoscaler == null ? null : autoscaler.toString())
@@ -335,7 +334,6 @@ public class AutoscalerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteAutoscaler(String autoscaler) {
-
     DeleteAutoscalerHttpRequest request =
         DeleteAutoscalerHttpRequest.newBuilder().setAutoscaler(autoscaler).build();
     return deleteAutoscaler(request);
@@ -407,7 +405,6 @@ public class AutoscalerClient implements BackgroundResource {
    */
   @BetaApi
   public final Autoscaler getAutoscaler(ProjectZoneAutoscalerName autoscaler) {
-
     GetAutoscalerHttpRequest request =
         GetAutoscalerHttpRequest.newBuilder()
             .setAutoscaler(autoscaler == null ? null : autoscaler.toString())
@@ -434,7 +431,6 @@ public class AutoscalerClient implements BackgroundResource {
    */
   @BetaApi
   public final Autoscaler getAutoscaler(String autoscaler) {
-
     GetAutoscalerHttpRequest request =
         GetAutoscalerHttpRequest.newBuilder().setAutoscaler(autoscaler).build();
     return getAutoscaler(request);
@@ -516,7 +512,6 @@ public class AutoscalerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertAutoscaler(ProjectZoneName zone, Autoscaler autoscalerResource) {
-
     InsertAutoscalerHttpRequest request =
         InsertAutoscalerHttpRequest.newBuilder()
             .setZone(zone == null ? null : zone.toString())
@@ -552,7 +547,6 @@ public class AutoscalerClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertAutoscaler(String zone, Autoscaler autoscalerResource) {
-
     InsertAutoscalerHttpRequest request =
         InsertAutoscalerHttpRequest.newBuilder()
             .setZone(zone)
@@ -787,7 +781,6 @@ public class AutoscalerClient implements BackgroundResource {
       ProjectZoneName zone,
       Autoscaler autoscalerResource,
       List<String> fieldMask) {
-
     PatchAutoscalerHttpRequest request =
         PatchAutoscalerHttpRequest.newBuilder()
             .setAutoscaler(autoscaler)
@@ -834,7 +827,6 @@ public class AutoscalerClient implements BackgroundResource {
   @BetaApi
   public final Operation patchAutoscaler(
       String autoscaler, String zone, Autoscaler autoscalerResource, List<String> fieldMask) {
-
     PatchAutoscalerHttpRequest request =
         PatchAutoscalerHttpRequest.newBuilder()
             .setAutoscaler(autoscaler)
@@ -944,7 +936,6 @@ public class AutoscalerClient implements BackgroundResource {
       ProjectZoneName zone,
       Autoscaler autoscalerResource,
       List<String> fieldMask) {
-
     UpdateAutoscalerHttpRequest request =
         UpdateAutoscalerHttpRequest.newBuilder()
             .setAutoscaler(autoscaler)
@@ -990,7 +981,6 @@ public class AutoscalerClient implements BackgroundResource {
   @BetaApi
   public final Operation updateAutoscaler(
       String autoscaler, String zone, Autoscaler autoscalerResource, List<String> fieldMask) {
-
     UpdateAutoscalerHttpRequest request =
         UpdateAutoscalerHttpRequest.newBuilder()
             .setAutoscaler(autoscaler)

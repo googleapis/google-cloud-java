@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,7 +175,6 @@ public class RegionDiskClient implements BackgroundResource {
   public final Operation addResourcePoliciesRegionDisk(
       ProjectRegionDiskName disk,
       RegionDisksAddResourcePoliciesRequest regionDisksAddResourcePoliciesRequestResource) {
-
     AddResourcePoliciesRegionDiskHttpRequest request =
         AddResourcePoliciesRegionDiskHttpRequest.newBuilder()
             .setDisk(disk == null ? null : disk.toString())
@@ -208,7 +207,6 @@ public class RegionDiskClient implements BackgroundResource {
   public final Operation addResourcePoliciesRegionDisk(
       String disk,
       RegionDisksAddResourcePoliciesRequest regionDisksAddResourcePoliciesRequestResource) {
-
     AddResourcePoliciesRegionDiskHttpRequest request =
         AddResourcePoliciesRegionDiskHttpRequest.newBuilder()
             .setDisk(disk)
@@ -297,7 +295,6 @@ public class RegionDiskClient implements BackgroundResource {
   @BetaApi
   public final Operation createSnapshotRegionDisk(
       ProjectRegionDiskName disk, Snapshot snapshotResource) {
-
     CreateSnapshotRegionDiskHttpRequest request =
         CreateSnapshotRegionDiskHttpRequest.newBuilder()
             .setDisk(disk == null ? null : disk.toString())
@@ -329,7 +326,6 @@ public class RegionDiskClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation createSnapshotRegionDisk(String disk, Snapshot snapshotResource) {
-
     CreateSnapshotRegionDiskHttpRequest request =
         CreateSnapshotRegionDiskHttpRequest.newBuilder()
             .setDisk(disk)
@@ -410,7 +406,6 @@ public class RegionDiskClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteRegionDisk(ProjectRegionDiskName disk) {
-
     DeleteRegionDiskHttpRequest request =
         DeleteRegionDiskHttpRequest.newBuilder()
             .setDisk(disk == null ? null : disk.toString())
@@ -438,7 +433,6 @@ public class RegionDiskClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteRegionDisk(String disk) {
-
     DeleteRegionDiskHttpRequest request =
         DeleteRegionDiskHttpRequest.newBuilder().setDisk(disk).build();
     return deleteRegionDisk(request);
@@ -513,7 +507,6 @@ public class RegionDiskClient implements BackgroundResource {
    */
   @BetaApi
   public final Disk getRegionDisk(ProjectRegionDiskName disk) {
-
     GetRegionDiskHttpRequest request =
         GetRegionDiskHttpRequest.newBuilder()
             .setDisk(disk == null ? null : disk.toString())
@@ -539,7 +532,6 @@ public class RegionDiskClient implements BackgroundResource {
    */
   @BetaApi
   public final Disk getRegionDisk(String disk) {
-
     GetRegionDiskHttpRequest request = GetRegionDiskHttpRequest.newBuilder().setDisk(disk).build();
     return getRegionDisk(request);
   }
@@ -620,7 +612,6 @@ public class RegionDiskClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertRegionDisk(ProjectRegionName region, Disk diskResource) {
-
     InsertRegionDiskHttpRequest request =
         InsertRegionDiskHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -658,7 +649,6 @@ public class RegionDiskClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertRegionDisk(String region, Disk diskResource) {
-
     InsertRegionDiskHttpRequest request =
         InsertRegionDiskHttpRequest.newBuilder()
             .setRegion(region)
@@ -878,7 +868,6 @@ public class RegionDiskClient implements BackgroundResource {
   public final Operation removeResourcePoliciesRegionDisk(
       ProjectRegionDiskName disk,
       RegionDisksRemoveResourcePoliciesRequest regionDisksRemoveResourcePoliciesRequestResource) {
-
     RemoveResourcePoliciesRegionDiskHttpRequest request =
         RemoveResourcePoliciesRegionDiskHttpRequest.newBuilder()
             .setDisk(disk == null ? null : disk.toString())
@@ -910,7 +899,6 @@ public class RegionDiskClient implements BackgroundResource {
   public final Operation removeResourcePoliciesRegionDisk(
       String disk,
       RegionDisksRemoveResourcePoliciesRequest regionDisksRemoveResourcePoliciesRequestResource) {
-
     RemoveResourcePoliciesRegionDiskHttpRequest request =
         RemoveResourcePoliciesRegionDiskHttpRequest.newBuilder()
             .setDisk(disk)
@@ -994,7 +982,6 @@ public class RegionDiskClient implements BackgroundResource {
   @BetaApi
   public final Operation resizeRegionDisk(
       ProjectRegionDiskName disk, RegionDisksResizeRequest regionDisksResizeRequestResource) {
-
     ResizeRegionDiskHttpRequest request =
         ResizeRegionDiskHttpRequest.newBuilder()
             .setDisk(disk == null ? null : disk.toString())
@@ -1024,7 +1011,6 @@ public class RegionDiskClient implements BackgroundResource {
   @BetaApi
   public final Operation resizeRegionDisk(
       String disk, RegionDisksResizeRequest regionDisksResizeRequestResource) {
-
     ResizeRegionDiskHttpRequest request =
         ResizeRegionDiskHttpRequest.newBuilder()
             .setDisk(disk)
@@ -1106,7 +1092,6 @@ public class RegionDiskClient implements BackgroundResource {
   public final Operation setLabelsRegionDisk(
       ProjectRegionDiskResourceName resource,
       RegionSetLabelsRequest regionSetLabelsRequestResource) {
-
     SetLabelsRegionDiskHttpRequest request =
         SetLabelsRegionDiskHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1136,7 +1121,6 @@ public class RegionDiskClient implements BackgroundResource {
   @BetaApi
   public final Operation setLabelsRegionDisk(
       String resource, RegionSetLabelsRequest regionSetLabelsRequestResource) {
-
     SetLabelsRegionDiskHttpRequest request =
         SetLabelsRegionDiskHttpRequest.newBuilder()
             .setResource(resource)
@@ -1219,7 +1203,6 @@ public class RegionDiskClient implements BackgroundResource {
   public final TestPermissionsResponse testIamPermissionsRegionDisk(
       ProjectRegionDiskResourceName resource,
       TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsRegionDiskHttpRequest request =
         TestIamPermissionsRegionDiskHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1249,7 +1232,6 @@ public class RegionDiskClient implements BackgroundResource {
   @BetaApi
   public final TestPermissionsResponse testIamPermissionsRegionDisk(
       String resource, TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsRegionDiskHttpRequest request =
         TestIamPermissionsRegionDiskHttpRequest.newBuilder()
             .setResource(resource)

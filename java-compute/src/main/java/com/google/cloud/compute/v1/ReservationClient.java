@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -310,7 +310,6 @@ public class ReservationClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteReservation(ProjectZoneReservationName reservation) {
-
     DeleteReservationHttpRequest request =
         DeleteReservationHttpRequest.newBuilder()
             .setReservation(reservation == null ? null : reservation.toString())
@@ -336,7 +335,6 @@ public class ReservationClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteReservation(String reservation) {
-
     DeleteReservationHttpRequest request =
         DeleteReservationHttpRequest.newBuilder().setReservation(reservation).build();
     return deleteReservation(request);
@@ -407,7 +405,6 @@ public class ReservationClient implements BackgroundResource {
    */
   @BetaApi
   public final Reservation getReservation(ProjectZoneReservationName reservation) {
-
     GetReservationHttpRequest request =
         GetReservationHttpRequest.newBuilder()
             .setReservation(reservation == null ? null : reservation.toString())
@@ -433,7 +430,6 @@ public class ReservationClient implements BackgroundResource {
    */
   @BetaApi
   public final Reservation getReservation(String reservation) {
-
     GetReservationHttpRequest request =
         GetReservationHttpRequest.newBuilder().setReservation(reservation).build();
     return getReservation(request);
@@ -505,7 +501,6 @@ public class ReservationClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicyReservation(ProjectZoneReservationResourceName resource) {
-
     GetIamPolicyReservationHttpRequest request =
         GetIamPolicyReservationHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -532,7 +527,6 @@ public class ReservationClient implements BackgroundResource {
    */
   @BetaApi
   public final Policy getIamPolicyReservation(String resource) {
-
     GetIamPolicyReservationHttpRequest request =
         GetIamPolicyReservationHttpRequest.newBuilder().setResource(resource).build();
     return getIamPolicyReservation(request);
@@ -611,7 +605,6 @@ public class ReservationClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertReservation(ProjectZoneName zone, Reservation reservationResource) {
-
     InsertReservationHttpRequest request =
         InsertReservationHttpRequest.newBuilder()
             .setZone(zone == null ? null : zone.toString())
@@ -643,7 +636,6 @@ public class ReservationClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertReservation(String zone, Reservation reservationResource) {
-
     InsertReservationHttpRequest request =
         InsertReservationHttpRequest.newBuilder()
             .setZone(zone)
@@ -868,7 +860,6 @@ public class ReservationClient implements BackgroundResource {
   public final Operation resizeReservation(
       ProjectZoneReservationName reservation,
       ReservationsResizeRequest reservationsResizeRequestResource) {
-
     ResizeReservationHttpRequest request =
         ResizeReservationHttpRequest.newBuilder()
             .setReservation(reservation == null ? null : reservation.toString())
@@ -899,7 +890,6 @@ public class ReservationClient implements BackgroundResource {
   @BetaApi
   public final Operation resizeReservation(
       String reservation, ReservationsResizeRequest reservationsResizeRequestResource) {
-
     ResizeReservationHttpRequest request =
         ResizeReservationHttpRequest.newBuilder()
             .setReservation(reservation)
@@ -983,7 +973,6 @@ public class ReservationClient implements BackgroundResource {
   public final Policy setIamPolicyReservation(
       ProjectZoneReservationResourceName resource,
       ZoneSetPolicyRequest zoneSetPolicyRequestResource) {
-
     SetIamPolicyReservationHttpRequest request =
         SetIamPolicyReservationHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1013,7 +1002,6 @@ public class ReservationClient implements BackgroundResource {
   @BetaApi
   public final Policy setIamPolicyReservation(
       String resource, ZoneSetPolicyRequest zoneSetPolicyRequestResource) {
-
     SetIamPolicyReservationHttpRequest request =
         SetIamPolicyReservationHttpRequest.newBuilder()
             .setResource(resource)
@@ -1096,7 +1084,6 @@ public class ReservationClient implements BackgroundResource {
   public final TestPermissionsResponse testIamPermissionsReservation(
       ProjectZoneReservationResourceName resource,
       TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsReservationHttpRequest request =
         TestIamPermissionsReservationHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1126,7 +1113,6 @@ public class ReservationClient implements BackgroundResource {
   @BetaApi
   public final TestPermissionsResponse testIamPermissionsReservation(
       String resource, TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsReservationHttpRequest request =
         TestIamPermissionsReservationHttpRequest.newBuilder()
             .setResource(resource)

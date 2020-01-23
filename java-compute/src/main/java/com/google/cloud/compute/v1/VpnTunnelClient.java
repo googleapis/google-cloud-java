@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -308,7 +308,6 @@ public class VpnTunnelClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteVpnTunnel(ProjectRegionVpnTunnelName vpnTunnel) {
-
     DeleteVpnTunnelHttpRequest request =
         DeleteVpnTunnelHttpRequest.newBuilder()
             .setVpnTunnel(vpnTunnel == null ? null : vpnTunnel.toString())
@@ -334,7 +333,6 @@ public class VpnTunnelClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteVpnTunnel(String vpnTunnel) {
-
     DeleteVpnTunnelHttpRequest request =
         DeleteVpnTunnelHttpRequest.newBuilder().setVpnTunnel(vpnTunnel).build();
     return deleteVpnTunnel(request);
@@ -406,7 +404,6 @@ public class VpnTunnelClient implements BackgroundResource {
    */
   @BetaApi
   public final VpnTunnel getVpnTunnel(ProjectRegionVpnTunnelName vpnTunnel) {
-
     GetVpnTunnelHttpRequest request =
         GetVpnTunnelHttpRequest.newBuilder()
             .setVpnTunnel(vpnTunnel == null ? null : vpnTunnel.toString())
@@ -433,7 +430,6 @@ public class VpnTunnelClient implements BackgroundResource {
    */
   @BetaApi
   public final VpnTunnel getVpnTunnel(String vpnTunnel) {
-
     GetVpnTunnelHttpRequest request =
         GetVpnTunnelHttpRequest.newBuilder().setVpnTunnel(vpnTunnel).build();
     return getVpnTunnel(request);
@@ -511,7 +507,6 @@ public class VpnTunnelClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertVpnTunnel(ProjectRegionName region, VpnTunnel vpnTunnelResource) {
-
     InsertVpnTunnelHttpRequest request =
         InsertVpnTunnelHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -543,7 +538,6 @@ public class VpnTunnelClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertVpnTunnel(String region, VpnTunnel vpnTunnelResource) {
-
     InsertVpnTunnelHttpRequest request =
         InsertVpnTunnelHttpRequest.newBuilder()
             .setRegion(region)

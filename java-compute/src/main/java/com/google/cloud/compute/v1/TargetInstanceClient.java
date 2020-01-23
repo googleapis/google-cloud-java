@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -312,7 +312,6 @@ public class TargetInstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteTargetInstance(ProjectZoneTargetInstanceName targetInstance) {
-
     DeleteTargetInstanceHttpRequest request =
         DeleteTargetInstanceHttpRequest.newBuilder()
             .setTargetInstance(targetInstance == null ? null : targetInstance.toString())
@@ -338,7 +337,6 @@ public class TargetInstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteTargetInstance(String targetInstance) {
-
     DeleteTargetInstanceHttpRequest request =
         DeleteTargetInstanceHttpRequest.newBuilder().setTargetInstance(targetInstance).build();
     return deleteTargetInstance(request);
@@ -411,7 +409,6 @@ public class TargetInstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final TargetInstance getTargetInstance(ProjectZoneTargetInstanceName targetInstance) {
-
     GetTargetInstanceHttpRequest request =
         GetTargetInstanceHttpRequest.newBuilder()
             .setTargetInstance(targetInstance == null ? null : targetInstance.toString())
@@ -438,7 +435,6 @@ public class TargetInstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final TargetInstance getTargetInstance(String targetInstance) {
-
     GetTargetInstanceHttpRequest request =
         GetTargetInstanceHttpRequest.newBuilder().setTargetInstance(targetInstance).build();
     return getTargetInstance(request);
@@ -520,7 +516,6 @@ public class TargetInstanceClient implements BackgroundResource {
   @BetaApi
   public final Operation insertTargetInstance(
       ProjectZoneName zone, TargetInstance targetInstanceResource) {
-
     InsertTargetInstanceHttpRequest request =
         InsertTargetInstanceHttpRequest.newBuilder()
             .setZone(zone == null ? null : zone.toString())
@@ -554,7 +549,6 @@ public class TargetInstanceClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertTargetInstance(String zone, TargetInstance targetInstanceResource) {
-
     InsertTargetInstanceHttpRequest request =
         InsertTargetInstanceHttpRequest.newBuilder()
             .setZone(zone)

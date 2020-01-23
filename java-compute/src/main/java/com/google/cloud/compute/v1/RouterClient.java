@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -307,7 +307,6 @@ public class RouterClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteRouter(ProjectRegionRouterName router) {
-
     DeleteRouterHttpRequest request =
         DeleteRouterHttpRequest.newBuilder()
             .setRouter(router == null ? null : router.toString())
@@ -333,7 +332,6 @@ public class RouterClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteRouter(String router) {
-
     DeleteRouterHttpRequest request =
         DeleteRouterHttpRequest.newBuilder().setRouter(router).build();
     return deleteRouter(request);
@@ -405,7 +403,6 @@ public class RouterClient implements BackgroundResource {
    */
   @BetaApi
   public final Router getRouter(ProjectRegionRouterName router) {
-
     GetRouterHttpRequest request =
         GetRouterHttpRequest.newBuilder()
             .setRouter(router == null ? null : router.toString())
@@ -432,7 +429,6 @@ public class RouterClient implements BackgroundResource {
    */
   @BetaApi
   public final Router getRouter(String router) {
-
     GetRouterHttpRequest request = GetRouterHttpRequest.newBuilder().setRouter(router).build();
     return getRouter(request);
   }
@@ -644,7 +640,6 @@ public class RouterClient implements BackgroundResource {
    */
   @BetaApi
   public final RouterStatusResponse getRouterStatusRouter(ProjectRegionRouterName router) {
-
     GetRouterStatusRouterHttpRequest request =
         GetRouterStatusRouterHttpRequest.newBuilder()
             .setRouter(router == null ? null : router.toString())
@@ -670,7 +665,6 @@ public class RouterClient implements BackgroundResource {
    */
   @BetaApi
   public final RouterStatusResponse getRouterStatusRouter(String router) {
-
     GetRouterStatusRouterHttpRequest request =
         GetRouterStatusRouterHttpRequest.newBuilder().setRouter(router).build();
     return getRouterStatusRouter(request);
@@ -747,7 +741,6 @@ public class RouterClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertRouter(ProjectRegionName region, Router routerResource) {
-
     InsertRouterHttpRequest request =
         InsertRouterHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -778,7 +771,6 @@ public class RouterClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation insertRouter(String region, Router routerResource) {
-
     InsertRouterHttpRequest request =
         InsertRouterHttpRequest.newBuilder()
             .setRegion(region)
@@ -1003,7 +995,6 @@ public class RouterClient implements BackgroundResource {
   @BetaApi
   public final Operation patchRouter(
       ProjectRegionRouterName router, Router routerResource, List<String> fieldMask) {
-
     PatchRouterHttpRequest request =
         PatchRouterHttpRequest.newBuilder()
             .setRouter(router == null ? null : router.toString())
@@ -1040,7 +1031,6 @@ public class RouterClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation patchRouter(String router, Router routerResource, List<String> fieldMask) {
-
     PatchRouterHttpRequest request =
         PatchRouterHttpRequest.newBuilder()
             .setRouter(router)
@@ -1130,7 +1120,6 @@ public class RouterClient implements BackgroundResource {
   @BetaApi
   public final RoutersPreviewResponse previewRouter(
       ProjectRegionRouterName router, Router routerResource) {
-
     PreviewRouterHttpRequest request =
         PreviewRouterHttpRequest.newBuilder()
             .setRouter(router == null ? null : router.toString())
@@ -1161,7 +1150,6 @@ public class RouterClient implements BackgroundResource {
    */
   @BetaApi
   public final RoutersPreviewResponse previewRouter(String router, Router routerResource) {
-
     PreviewRouterHttpRequest request =
         PreviewRouterHttpRequest.newBuilder()
             .setRouter(router)
@@ -1253,7 +1241,6 @@ public class RouterClient implements BackgroundResource {
   @BetaApi
   public final Operation updateRouter(
       ProjectRegionRouterName router, Router routerResource, List<String> fieldMask) {
-
     UpdateRouterHttpRequest request =
         UpdateRouterHttpRequest.newBuilder()
             .setRouter(router == null ? null : router.toString())
@@ -1292,7 +1279,6 @@ public class RouterClient implements BackgroundResource {
   @BetaApi
   public final Operation updateRouter(
       String router, Router routerResource, List<String> fieldMask) {
-
     UpdateRouterHttpRequest request =
         UpdateRouterHttpRequest.newBuilder()
             .setRouter(router)

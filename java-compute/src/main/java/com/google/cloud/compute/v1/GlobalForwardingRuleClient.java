@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -173,7 +173,6 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   @BetaApi
   public final Operation deleteGlobalForwardingRule(
       ProjectGlobalForwardingRuleName forwardingRule) {
-
     DeleteGlobalForwardingRuleHttpRequest request =
         DeleteGlobalForwardingRuleHttpRequest.newBuilder()
             .setForwardingRule(forwardingRule == null ? null : forwardingRule.toString())
@@ -199,7 +198,6 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteGlobalForwardingRule(String forwardingRule) {
-
     DeleteGlobalForwardingRuleHttpRequest request =
         DeleteGlobalForwardingRuleHttpRequest.newBuilder()
             .setForwardingRule(forwardingRule)
@@ -275,7 +273,6 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   @BetaApi
   public final ForwardingRule getGlobalForwardingRule(
       ProjectGlobalForwardingRuleName forwardingRule) {
-
     GetGlobalForwardingRuleHttpRequest request =
         GetGlobalForwardingRuleHttpRequest.newBuilder()
             .setForwardingRule(forwardingRule == null ? null : forwardingRule.toString())
@@ -302,7 +299,6 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
    */
   @BetaApi
   public final ForwardingRule getGlobalForwardingRule(String forwardingRule) {
-
     GetGlobalForwardingRuleHttpRequest request =
         GetGlobalForwardingRuleHttpRequest.newBuilder().setForwardingRule(forwardingRule).build();
     return getGlobalForwardingRule(request);
@@ -388,7 +384,6 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   @BetaApi
   public final Operation insertGlobalForwardingRule(
       ProjectName project, ForwardingRule forwardingRuleResource) {
-
     InsertGlobalForwardingRuleHttpRequest request =
         InsertGlobalForwardingRuleHttpRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -427,7 +422,6 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   @BetaApi
   public final Operation insertGlobalForwardingRule(
       String project, ForwardingRule forwardingRuleResource) {
-
     InsertGlobalForwardingRuleHttpRequest request =
         InsertGlobalForwardingRuleHttpRequest.newBuilder()
             .setProject(project)
@@ -652,7 +646,6 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   @BetaApi
   public final Operation setTargetGlobalForwardingRule(
       ProjectGlobalForwardingRuleName forwardingRule, TargetReference targetReferenceResource) {
-
     SetTargetGlobalForwardingRuleHttpRequest request =
         SetTargetGlobalForwardingRuleHttpRequest.newBuilder()
             .setForwardingRule(forwardingRule == null ? null : forwardingRule.toString())
@@ -683,7 +676,6 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
   @BetaApi
   public final Operation setTargetGlobalForwardingRule(
       String forwardingRule, TargetReference targetReferenceResource) {
-
     SetTargetGlobalForwardingRuleHttpRequest request =
         SetTargetGlobalForwardingRuleHttpRequest.newBuilder()
             .setForwardingRule(forwardingRule)

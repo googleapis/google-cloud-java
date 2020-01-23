@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -312,7 +312,6 @@ public class ForwardingRuleClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteForwardingRule(ProjectRegionForwardingRuleName forwardingRule) {
-
     DeleteForwardingRuleHttpRequest request =
         DeleteForwardingRuleHttpRequest.newBuilder()
             .setForwardingRule(forwardingRule == null ? null : forwardingRule.toString())
@@ -338,7 +337,6 @@ public class ForwardingRuleClient implements BackgroundResource {
    */
   @BetaApi
   public final Operation deleteForwardingRule(String forwardingRule) {
-
     DeleteForwardingRuleHttpRequest request =
         DeleteForwardingRuleHttpRequest.newBuilder().setForwardingRule(forwardingRule).build();
     return deleteForwardingRule(request);
@@ -410,7 +408,6 @@ public class ForwardingRuleClient implements BackgroundResource {
    */
   @BetaApi
   public final ForwardingRule getForwardingRule(ProjectRegionForwardingRuleName forwardingRule) {
-
     GetForwardingRuleHttpRequest request =
         GetForwardingRuleHttpRequest.newBuilder()
             .setForwardingRule(forwardingRule == null ? null : forwardingRule.toString())
@@ -436,7 +433,6 @@ public class ForwardingRuleClient implements BackgroundResource {
    */
   @BetaApi
   public final ForwardingRule getForwardingRule(String forwardingRule) {
-
     GetForwardingRuleHttpRequest request =
         GetForwardingRuleHttpRequest.newBuilder().setForwardingRule(forwardingRule).build();
     return getForwardingRule(request);
@@ -520,7 +516,6 @@ public class ForwardingRuleClient implements BackgroundResource {
   @BetaApi
   public final Operation insertForwardingRule(
       ProjectRegionName region, ForwardingRule forwardingRuleResource) {
-
     InsertForwardingRuleHttpRequest request =
         InsertForwardingRuleHttpRequest.newBuilder()
             .setRegion(region == null ? null : region.toString())
@@ -559,7 +554,6 @@ public class ForwardingRuleClient implements BackgroundResource {
   @BetaApi
   public final Operation insertForwardingRule(
       String region, ForwardingRule forwardingRuleResource) {
-
     InsertForwardingRuleHttpRequest request =
         InsertForwardingRuleHttpRequest.newBuilder()
             .setRegion(region)
@@ -782,7 +776,6 @@ public class ForwardingRuleClient implements BackgroundResource {
   @BetaApi
   public final Operation setTargetForwardingRule(
       ProjectRegionForwardingRuleName forwardingRule, TargetReference targetReferenceResource) {
-
     SetTargetForwardingRuleHttpRequest request =
         SetTargetForwardingRuleHttpRequest.newBuilder()
             .setForwardingRule(forwardingRule == null ? null : forwardingRule.toString())
@@ -813,7 +806,6 @@ public class ForwardingRuleClient implements BackgroundResource {
   @BetaApi
   public final Operation setTargetForwardingRule(
       String forwardingRule, TargetReference targetReferenceResource) {
-
     SetTargetForwardingRuleHttpRequest request =
         SetTargetForwardingRuleHttpRequest.newBuilder()
             .setForwardingRule(forwardingRule)

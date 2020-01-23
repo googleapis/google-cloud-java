@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -162,7 +162,6 @@ public class LicenseCodeClient implements BackgroundResource {
    */
   @BetaApi
   public final LicenseCode getLicenseCode(ProjectGlobalLicenseCodeName licenseCode) {
-
     GetLicenseCodeHttpRequest request =
         GetLicenseCodeHttpRequest.newBuilder()
             .setLicenseCode(licenseCode == null ? null : licenseCode.toString())
@@ -189,7 +188,6 @@ public class LicenseCodeClient implements BackgroundResource {
    */
   @BetaApi
   public final LicenseCode getLicenseCode(String licenseCode) {
-
     GetLicenseCodeHttpRequest request =
         GetLicenseCodeHttpRequest.newBuilder().setLicenseCode(licenseCode).build();
     return getLicenseCode(request);
@@ -266,7 +264,6 @@ public class LicenseCodeClient implements BackgroundResource {
   public final TestPermissionsResponse testIamPermissionsLicenseCode(
       ProjectGlobalLicenseCodeResourceName resource,
       TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsLicenseCodeHttpRequest request =
         TestIamPermissionsLicenseCodeHttpRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -296,7 +293,6 @@ public class LicenseCodeClient implements BackgroundResource {
   @BetaApi
   public final TestPermissionsResponse testIamPermissionsLicenseCode(
       String resource, TestPermissionsRequest testPermissionsRequestResource) {
-
     TestIamPermissionsLicenseCodeHttpRequest request =
         TestIamPermissionsLicenseCodeHttpRequest.newBuilder()
             .setResource(resource)
