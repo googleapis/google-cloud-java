@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-redis-bom</artifactId>
-  <version>0.117.2-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
+  <version>0.117.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -84,7 +84,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-redis</artifactId>
-        <version>0.117.2-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
+        <version>0.117.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

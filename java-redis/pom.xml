@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-redis-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.117.2-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
+  <version>0.117.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
   <name>Google Cloud Redis Parent</name>
   <url>https://github.com/googleapis/java-redis</url>
   <description>
@@ -101,7 +101,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-redis</artifactId>
-        <version>0.117.2-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
+        <version>0.117.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
       </dependency>
 
       <!-- TODO(chingor): Remove this when protobuf-java-util and gax-httpjson converge -->
