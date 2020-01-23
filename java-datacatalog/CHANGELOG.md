@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.32.0](https://www.github.com/googleapis/java-datacatalog/compare/v0.31.0...v0.32.0) (2020-01-23)
+
+
+### Features
+
+* release as beta ([#64](https://www.github.com/googleapis/java-datacatalog/issues/64)) ([1a18751](https://www.github.com/googleapis/java-datacatalog/commit/1a187515dd75a7d7514451070f431f300d864564))
+
+
+### Documentation
+
+* **regen:** fix javadoc return annotation ([#70](https://www.github.com/googleapis/java-datacatalog/issues/70)) ([c6e1958](https://www.github.com/googleapis/java-datacatalog/commit/c6e1958ab6f4aa3607a90320558505d32c75de68))
+
+
+### Dependencies
+
+* update dependency org.threeten:threetenbp to v1.4.1 ([53227cf](https://www.github.com/googleapis/java-datacatalog/commit/53227cfb5d9718b8cbcde9b963b6c17859d4f24c))
+
 ## [0.31.0](https://www.github.com/googleapis/java-datacatalog/compare/v0.30.0...v0.31.0) (2020-01-07)
 
 

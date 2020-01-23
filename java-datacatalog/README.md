@@ -41,16 +41,16 @@ If you are using Maven without Bom, Add this to your dependencies.
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datacatalog</artifactId>
-  <version>0.31.0-alpha</version>
+  <version>0.32.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-datacatalog:0.31.0-alpha'
+compile 'com.google.cloud:google-cloud-datacatalog:0.32.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-datacatalog" % "0.31.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-datacatalog" % "0.32.0"
 ```
 [//]: # ({x-version-update-end})
 
