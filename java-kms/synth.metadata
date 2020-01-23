@@ -1,19 +1,20 @@
 {
-  "updateTime": "2020-01-16T08:49:30.912242Z",
+  "updateTime": "2020-01-23T08:48:40.235913Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.44.0",
-        "dockerImage": "googleapis/artman@sha256:10a6d0342b8d62544810ac5ad86c3b21049ec0696608ac60175da8e513234344"
+        "version": "0.44.1",
+        "dockerImage": "googleapis/artman@sha256:5599b61e56a372d21b671969ee915fbca0f6c3a0daaeb898d01f8f685f1bbc8b"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "0735b4b096872960568d1f366bfa75b7b0e1f1a3",
-        "internalRef": "289939042"
+        "sha": "8d16f76de065f530d395a4c7eabbf766d6a120fd",
+        "internalRef": "291008516",
+        "log": "8d16f76de065f530d395a4c7eabbf766d6a120fd\nGenerate Memcache v1beta2 API protos and gRPC ServiceConfig files\n\nPiperOrigin-RevId: 291008516\n\n3af1dabd93df9a9f17bf3624d3b875c11235360b\ngrafeas: Add containeranalysis default_host to Grafeas service\n\nPiperOrigin-RevId: 290965849\n\nbe2663fa95e31cba67d0cd62611a6674db9f74b7\nfix(google/maps/roads): add missing opening bracket\n\nPiperOrigin-RevId: 290964086\n\nfacc26550a0af0696e0534bc9cae9df14275aa7c\nUpdating v2 protos with the latest inline documentation (in comments) and adding a per-service .yaml file.\n\nPiperOrigin-RevId: 290952261\n\ncda99c1f7dc5e4ca9b1caeae1dc330838cbc1461\nChange api_name to 'asset' for v1p1beta1\n\nPiperOrigin-RevId: 290800639\n\n94e9e90c303a820ce40643d9129e7f0d2054e8a1\nAdds Google Maps Road service\n\nPiperOrigin-RevId: 290795667\n\na3b23dcb2eaecce98c600c7d009451bdec52dbda\nrpc: new message ErrorInfo, other comment updates\n\nPiperOrigin-RevId: 290781668\n\n26420ef4e46c37f193c0fbe53d6ebac481de460e\nAdd proto definition for Org Policy v1.\n\nPiperOrigin-RevId: 290771923\n\n7f0dab8177cf371ae019a082e2512de7ac102888\nPublish Routes Preferred API v1 service definitions.\n\nPiperOrigin-RevId: 290326986\n\nad6e508d0728e1d1bca6e3f328cd562718cb772d\nFix: Qualify resource type references with \"jobs.googleapis.com/\"\n\nPiperOrigin-RevId: 290285762\n\n58e770d568a2b78168ddc19a874178fee8265a9d\ncts client library\n\nPiperOrigin-RevId: 290146169\n\naf9daa4c3b4c4a8b7133b81588dd9ffd37270af2\nAdd more programming language options to public proto\n\nPiperOrigin-RevId: 290144091\n\nd9f2bbf2df301ef84641d4cec7c828736a0bd907\ntalent: add missing resource.proto dep to Bazel build target\n\nPiperOrigin-RevId: 290143164\n\n3b3968237451d027b42471cd28884a5a1faed6c7\nAnnotate Talent API.\nAdd gRPC service config for retry.\nUpdate bazel file with google.api.resource dependency.\n\nPiperOrigin-RevId: 290125172\n\n"
       }
     },
     {
@@ -38,31 +39,190 @@
   ],
   "newFiles": [
     {
-      "path": "pom.xml"
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".gitignore"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
     },
     {
       "path": ".repo-metadata.json"
-    },
-    {
-      "path": "java.header"
-    },
-    {
-      "path": "CONTRIBUTING.md"
-    },
-    {
-      "path": "synth.metadata"
-    },
-    {
-      "path": "renovate.json"
-    },
-    {
-      "path": "versions.txt"
-    },
-    {
-      "path": "synth.py"
-    },
-    {
-      "path": "license-checks.xml"
     },
     {
       "path": "CHANGELOG.md"
@@ -71,16 +231,16 @@
       "path": "CODE_OF_CONDUCT.md"
     },
     {
+      "path": "CONTRIBUTING.md"
+    },
+    {
       "path": "LICENSE"
     },
     {
-      "path": "codecov.yaml"
-    },
-    {
-      "path": ".gitignore"
-    },
-    {
       "path": "README.md"
+    },
+    {
+      "path": "codecov.yaml"
     },
     {
       "path": "google-cloud-kms-bom/pom.xml"
@@ -89,22 +249,7 @@
       "path": "google-cloud-kms/pom.xml"
     },
     {
-      "path": "google-cloud-kms/src/test/java/com/google/cloud/kms/v1/MockIAMPolicy.java"
-    },
-    {
-      "path": "google-cloud-kms/src/test/java/com/google/cloud/kms/v1/KeyManagementServiceClientTest.java"
-    },
-    {
-      "path": "google-cloud-kms/src/test/java/com/google/cloud/kms/v1/MockKeyManagementServiceImpl.java"
-    },
-    {
-      "path": "google-cloud-kms/src/test/java/com/google/cloud/kms/v1/MockKeyManagementService.java"
-    },
-    {
-      "path": "google-cloud-kms/src/test/java/com/google/cloud/kms/v1/MockIAMPolicyImpl.java"
-    },
-    {
-      "path": "google-cloud-kms/src/test/java/com/google/cloud/kms/it/ITKmsTest.java"
+      "path": "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/KeyManagementServiceClient.java"
     },
     {
       "path": "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/KeyManagementServiceSettings.java"
@@ -113,7 +258,7 @@
       "path": "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/package-info.java"
     },
     {
-      "path": "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/KeyManagementServiceClient.java"
+      "path": "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/stub/GrpcKeyManagementServiceCallableFactory.java"
     },
     {
       "path": "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/stub/GrpcKeyManagementServiceStub.java"
@@ -125,478 +270,334 @@
       "path": "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/stub/KeyManagementServiceStubSettings.java"
     },
     {
-      "path": "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/stub/GrpcKeyManagementServiceCallableFactory.java"
+      "path": "google-cloud-kms/src/test/java/com/google/cloud/kms/it/ITKmsTest.java"
     },
     {
-      "path": ".github/release-please.yml"
+      "path": "google-cloud-kms/src/test/java/com/google/cloud/kms/v1/KeyManagementServiceClientTest.java"
     },
     {
-      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+      "path": "google-cloud-kms/src/test/java/com/google/cloud/kms/v1/MockIAMPolicy.java"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+      "path": "google-cloud-kms/src/test/java/com/google/cloud/kms/v1/MockIAMPolicyImpl.java"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+      "path": "google-cloud-kms/src/test/java/com/google/cloud/kms/v1/MockKeyManagementService.java"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
-    },
-    {
-      "path": ".kokoro/build.sh"
-    },
-    {
-      "path": ".kokoro/common.cfg"
-    },
-    {
-      "path": ".kokoro/build.bat"
-    },
-    {
-      "path": ".kokoro/linkage-monitor.sh"
-    },
-    {
-      "path": ".kokoro/coerce_logs.sh"
-    },
-    {
-      "path": ".kokoro/dependencies.sh"
-    },
-    {
-      "path": ".kokoro/trampoline.sh"
-    },
-    {
-      "path": ".kokoro/continuous/samples.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/integration.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java11.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/common.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.sh"
-    },
-    {
-      "path": ".kokoro/continuous/java7.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/lint.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/samples.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/integration.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java11.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/common.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java7.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/lint.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/release/publish_javadoc.cfg"
-    },
-    {
-      "path": ".kokoro/release/common.sh"
-    },
-    {
-      "path": ".kokoro/release/promote.sh"
-    },
-    {
-      "path": ".kokoro/release/common.cfg"
-    },
-    {
-      "path": ".kokoro/release/publish_javadoc.sh"
-    },
-    {
-      "path": ".kokoro/release/drop.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.sh"
-    },
-    {
-      "path": ".kokoro/release/promote.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.sh"
-    },
-    {
-      "path": ".kokoro/presubmit/samples.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/integration.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java11.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/linkage-monitor.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/common.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java7.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/lint.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/clirr.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-win.cfg"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyRing.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CreateKeyRingRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyRingOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/AsymmetricSignResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyOperationAttestationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyOperationAttestation.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UpdateCryptoKeyVersionRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/AsymmetricDecryptResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetKeyRingRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/DigestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ImportJobName.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetPublicKeyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyName.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListCryptoKeyVersionsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/PublicKeyOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyVersion.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KmsProto.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/DestroyCryptoKeyVersionRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListCryptoKeysResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListImportJobsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ImportJob.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UpdateCryptoKeyPrimaryVersionRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListCryptoKeysRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListCryptoKeyVersionsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListKeyRingsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListKeyRingsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListImportJobsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/PublicKey.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListImportJobsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetCryptoKeyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyVersionTemplate.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/LocationMetadataOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ProtectionLevel.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/EncryptRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetImportJobRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListCryptoKeysResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyPathName.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/DecryptRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyRingName.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KmsResourcesProto.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetKeyRingRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UpdateCryptoKeyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/DecryptResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/LocationName.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListKeyRingsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CreateCryptoKeyVersionRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ImportJobOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListCryptoKeyVersionsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListCryptoKeyVersionsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetPublicKeyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKey.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/AsymmetricSignRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyNames.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CreateImportJobRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CreateCryptoKeyVersionRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/LocationMetadata.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/RestoreCryptoKeyVersionRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UpdateCryptoKeyPrimaryVersionRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListCryptoKeysRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ImportCryptoKeyVersionRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetImportJobRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyVersionOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/DecryptRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CreateCryptoKeyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CreateCryptoKeyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetCryptoKeyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UntypedKeyName.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ImportCryptoKeyVersionRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyName.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/AsymmetricDecryptRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UpdateCryptoKeyVersionRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/EncryptResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyVersionTemplateOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/Digest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/EncryptResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/AsymmetricDecryptResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/AsymmetricDecryptRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/EncryptRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetCryptoKeyVersionRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/DestroyCryptoKeyVersionRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/RestoreCryptoKeyVersionRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyVersionName.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListImportJobsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CreateImportJobRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CreateKeyRingRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/AsymmetricSignResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetCryptoKeyVersionRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/AsymmetricSignRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/DecryptResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UpdateCryptoKeyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListKeyRingsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/proto/google/cloud/kms/v1/service.proto"
-    },
-    {
-      "path": "proto-google-cloud-kms-v1/src/main/proto/google/cloud/kms/v1/resources.proto"
+      "path": "google-cloud-kms/src/test/java/com/google/cloud/kms/v1/MockKeyManagementServiceImpl.java"
     },
     {
       "path": "grpc-google-cloud-kms-v1/pom.xml"
     },
     {
       "path": "grpc-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyManagementServiceGrpc.java"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/AsymmetricDecryptRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/AsymmetricDecryptRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/AsymmetricDecryptResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/AsymmetricDecryptResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/AsymmetricSignRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/AsymmetricSignRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/AsymmetricSignResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/AsymmetricSignResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CreateCryptoKeyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CreateCryptoKeyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CreateCryptoKeyVersionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CreateCryptoKeyVersionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CreateImportJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CreateImportJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CreateKeyRingRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CreateKeyRingRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKey.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyName.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyPathName.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyVersion.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyVersionName.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyVersionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyVersionTemplate.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyVersionTemplateOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/DecryptRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/DecryptRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/DecryptResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/DecryptResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/DestroyCryptoKeyVersionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/DestroyCryptoKeyVersionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/Digest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/DigestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/EncryptRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/EncryptRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/EncryptResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/EncryptResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetCryptoKeyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetCryptoKeyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetCryptoKeyVersionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetCryptoKeyVersionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetImportJobRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetImportJobRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetKeyRingRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetKeyRingRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetPublicKeyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetPublicKeyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ImportCryptoKeyVersionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ImportCryptoKeyVersionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ImportJob.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ImportJobName.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ImportJobOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyName.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyNames.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyOperationAttestation.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyOperationAttestationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyRing.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyRingName.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyRingOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KmsProto.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KmsResourcesProto.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListCryptoKeyVersionsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListCryptoKeyVersionsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListCryptoKeyVersionsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListCryptoKeyVersionsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListCryptoKeysRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListCryptoKeysRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListCryptoKeysResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListCryptoKeysResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListImportJobsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListImportJobsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListImportJobsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListImportJobsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListKeyRingsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListKeyRingsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListKeyRingsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ListKeyRingsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/LocationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/LocationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/LocationName.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ProtectionLevel.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/PublicKey.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/PublicKeyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/RestoreCryptoKeyVersionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/RestoreCryptoKeyVersionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UntypedKeyName.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UpdateCryptoKeyPrimaryVersionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UpdateCryptoKeyPrimaryVersionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UpdateCryptoKeyRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UpdateCryptoKeyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UpdateCryptoKeyVersionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UpdateCryptoKeyVersionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/proto/google/cloud/kms/v1/resources.proto"
+    },
+    {
+      "path": "proto-google-cloud-kms-v1/src/main/proto/google/cloud/kms/v1/service.proto"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "versions.txt"
     }
   ]
 }
