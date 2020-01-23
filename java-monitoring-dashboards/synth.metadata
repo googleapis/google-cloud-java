@@ -1,12 +1,13 @@
 {
-  "updateTime": "2020-01-16T08:55:39.737690Z",
+  "updateTime": "2020-01-23T08:54:58.122621Z",
   "sources": [
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "0735b4b096872960568d1f366bfa75b7b0e1f1a3",
-        "internalRef": "289939042"
+        "sha": "8d16f76de065f530d395a4c7eabbf766d6a120fd",
+        "internalRef": "291008516",
+        "log": "8d16f76de065f530d395a4c7eabbf766d6a120fd\nGenerate Memcache v1beta2 API protos and gRPC ServiceConfig files\n\nPiperOrigin-RevId: 291008516\n\n3af1dabd93df9a9f17bf3624d3b875c11235360b\ngrafeas: Add containeranalysis default_host to Grafeas service\n\nPiperOrigin-RevId: 290965849\n\nbe2663fa95e31cba67d0cd62611a6674db9f74b7\nfix(google/maps/roads): add missing opening bracket\n\nPiperOrigin-RevId: 290964086\n\nfacc26550a0af0696e0534bc9cae9df14275aa7c\nUpdating v2 protos with the latest inline documentation (in comments) and adding a per-service .yaml file.\n\nPiperOrigin-RevId: 290952261\n\ncda99c1f7dc5e4ca9b1caeae1dc330838cbc1461\nChange api_name to 'asset' for v1p1beta1\n\nPiperOrigin-RevId: 290800639\n\n94e9e90c303a820ce40643d9129e7f0d2054e8a1\nAdds Google Maps Road service\n\nPiperOrigin-RevId: 290795667\n\na3b23dcb2eaecce98c600c7d009451bdec52dbda\nrpc: new message ErrorInfo, other comment updates\n\nPiperOrigin-RevId: 290781668\n\n26420ef4e46c37f193c0fbe53d6ebac481de460e\nAdd proto definition for Org Policy v1.\n\nPiperOrigin-RevId: 290771923\n\n7f0dab8177cf371ae019a082e2512de7ac102888\nPublish Routes Preferred API v1 service definitions.\n\nPiperOrigin-RevId: 290326986\n\nad6e508d0728e1d1bca6e3f328cd562718cb772d\nFix: Qualify resource type references with \"jobs.googleapis.com/\"\n\nPiperOrigin-RevId: 290285762\n\n58e770d568a2b78168ddc19a874178fee8265a9d\ncts client library\n\nPiperOrigin-RevId: 290146169\n\naf9daa4c3b4c4a8b7133b81588dd9ffd37270af2\nAdd more programming language options to public proto\n\nPiperOrigin-RevId: 290144091\n\nd9f2bbf2df301ef84641d4cec7c828736a0bd907\ntalent: add missing resource.proto dep to Bazel build target\n\nPiperOrigin-RevId: 290143164\n\n3b3968237451d027b42471cd28884a5a1faed6c7\nAnnotate Talent API.\nAdd gRPC service config for retry.\nUpdate bazel file with google.api.resource dependency.\n\nPiperOrigin-RevId: 290125172\n\n"
       }
     },
     {
@@ -30,31 +31,190 @@
   ],
   "newFiles": [
     {
-      "path": "pom.xml"
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".gitignore"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
     },
     {
       "path": ".repo-metadata.json"
-    },
-    {
-      "path": "java.header"
-    },
-    {
-      "path": "CONTRIBUTING.md"
-    },
-    {
-      "path": "synth.metadata"
-    },
-    {
-      "path": "renovate.json"
-    },
-    {
-      "path": "versions.txt"
-    },
-    {
-      "path": "synth.py"
-    },
-    {
-      "path": "license-checks.xml"
     },
     {
       "path": "CHANGELOG.md"
@@ -63,16 +223,16 @@
       "path": "CODE_OF_CONDUCT.md"
     },
     {
+      "path": "CONTRIBUTING.md"
+    },
+    {
       "path": "LICENSE"
     },
     {
-      "path": "codecov.yaml"
-    },
-    {
-      "path": ".gitignore"
-    },
-    {
       "path": "README.md"
+    },
+    {
+      "path": "codecov.yaml"
     },
     {
       "path": "google-cloud-monitoring-dashboard-bom/pom.xml"
@@ -87,190 +247,19 @@
       "path": "google-cloud-monitoring-dashboard/src/main/java/com/google/cloud/monitoring/dashboard/v1/stub/GrpcDashboardsServiceCallableFactory.java"
     },
     {
-      "path": ".github/release-please.yml"
-    },
-    {
-      "path": ".github/PULL_REQUEST_TEMPLATE.md"
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/support_request.md"
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
-    },
-    {
-      "path": ".kokoro/build.sh"
-    },
-    {
-      "path": ".kokoro/common.cfg"
-    },
-    {
-      "path": ".kokoro/build.bat"
-    },
-    {
-      "path": ".kokoro/linkage-monitor.sh"
-    },
-    {
-      "path": ".kokoro/coerce_logs.sh"
-    },
-    {
-      "path": ".kokoro/dependencies.sh"
-    },
-    {
-      "path": ".kokoro/trampoline.sh"
-    },
-    {
-      "path": ".kokoro/continuous/samples.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/integration.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java11.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/common.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.sh"
-    },
-    {
-      "path": ".kokoro/continuous/java7.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/lint.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/samples.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/integration.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java11.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/common.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java7.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/lint.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/java8-win.cfg"
-    },
-    {
-      "path": ".kokoro/release/publish_javadoc.cfg"
-    },
-    {
-      "path": ".kokoro/release/common.sh"
-    },
-    {
-      "path": ".kokoro/release/promote.sh"
-    },
-    {
-      "path": ".kokoro/release/common.cfg"
-    },
-    {
-      "path": ".kokoro/release/publish_javadoc.sh"
-    },
-    {
-      "path": ".kokoro/release/drop.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.sh"
-    },
-    {
-      "path": ".kokoro/release/promote.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.sh"
-    },
-    {
-      "path": ".kokoro/presubmit/samples.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/integration.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java11.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/linkage-monitor.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/common.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java7.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/lint.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-osx.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/clirr.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8-win.cfg"
-    },
-    {
       "path": "grpc-google-cloud-monitoring-dashboard-v1/pom.xml"
     },
     {
       "path": "grpc-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/DashboardsServiceGrpc.java"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "pom.xml"
     },
     {
       "path": "proto-google-cloud-monitoring-dashboard-v1/pom.xml"
@@ -279,112 +268,106 @@
       "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/Aggregation.java"
     },
     {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/CreateDashboardRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/DashboardsProto.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ListDashboardsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/DashboardsServiceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/DrilldownsProto.java"
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/AggregationOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ChartOptions.java"
     },
     {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/WidgetOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/UpdateDashboardRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/TextOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ListDashboardsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/AggregationOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/Dashboard.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/GetDashboardRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/RowLayout.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/Scorecard.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/DeleteDashboardRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/XyChartProto.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/UpdateDashboardRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/PickTimeSeriesFilterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/CommonProto.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/TimeSeriesQuery.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/MetricsProto.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/DeleteDashboardRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/XyChartOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/LayoutsProto.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/Widget.java"
-    },
-    {
       "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ChartOptionsOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/DashboardOrBuilder.java"
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ColumnLayout.java"
     },
     {
       "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ColumnLayoutOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/Threshold.java"
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/CommonProto.java"
     },
     {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ServiceMonitoringProto.java"
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/CreateDashboardRequest.java"
     },
     {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/GridLayout.java"
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/CreateDashboardRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/Dashboard.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/DashboardOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/DashboardsProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/DashboardsServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/DeleteDashboardRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/DeleteDashboardRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/DrilldownsProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/GetDashboardRequest.java"
     },
     {
       "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/GetDashboardRequestOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/TimeSeriesFilter.java"
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/GridLayout.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/GridLayoutOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/LayoutsProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ListDashboardsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ListDashboardsRequestOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ListDashboardsResponse.java"
     },
     {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/TimeSeriesFilterRatio.java"
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ListDashboardsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/MetricsProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/PickTimeSeriesFilter.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/PickTimeSeriesFilterOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/RowLayout.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/RowLayoutOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/Scorecard.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ScorecardOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ScorecardProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ServiceMonitoringProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/SparkChartType.java"
     },
     {
       "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/StatisticalTimeSeriesFilter.java"
@@ -393,55 +376,73 @@
       "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/StatisticalTimeSeriesFilterOrBuilder.java"
     },
     {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/Text.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/TextOrBuilder.java"
+    },
+    {
       "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/TextProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/Threshold.java"
     },
     {
       "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ThresholdOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/TimeSeriesQueryOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ScorecardProto.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/PickTimeSeriesFilter.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/RowLayoutOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/TimeSeriesFilterRatioOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/Text.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ScorecardOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/XyChart.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ColumnLayout.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/GridLayoutOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ListDashboardsRequestOrBuilder.java"
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/TimeSeriesFilter.java"
     },
     {
       "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/TimeSeriesFilterOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/SparkChartType.java"
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/TimeSeriesFilterRatio.java"
     },
     {
-      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/CreateDashboardRequest.java"
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/TimeSeriesFilterRatioOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/TimeSeriesQuery.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/TimeSeriesQueryOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/UpdateDashboardRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/UpdateDashboardRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/Widget.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/WidgetOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/WidgetProto.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/XyChart.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/XyChartOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/XyChartProto.java"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "versions.txt"
     }
   ]
 }
