@@ -50,8 +50,8 @@ public class CreatePartitionedTable {
       Schema schema =
           Schema.of(
               Field.of("stringField", StandardSQLTypeName.STRING),
-              Field.of("booleanField", StandardSQLTypeName.BOOL));
-      Field.of("dateField", StandardSQLTypeName.DATE);
+              Field.of("booleanField", StandardSQLTypeName.BOOL),
+              Field.of("dateField", StandardSQLTypeName.DATE));
 
       StandardTableDefinition tableDefinition =
           StandardTableDefinition.newBuilder()
