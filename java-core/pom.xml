@@ -165,7 +165,7 @@
     <annotations-api.version>1.3.2</annotations-api.version>
     <guava.version>28.2-android</guava.version><!-- We are currently using the *-android version to support JDK7. -->
     <junit.version>4.13</junit.version>
-    <truth.version>1.0</truth.version>
+    <truth.version>1.0.1</truth.version>
     <easymock.version>3.6</easymock.version>
     <findbugs.version>3.0.2</findbugs.version>
     <threetenbp.version>1.4.1</threetenbp.version>
