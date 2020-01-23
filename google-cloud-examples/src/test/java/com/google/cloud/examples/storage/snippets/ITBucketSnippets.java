@@ -25,7 +25,6 @@ import com.google.cloud.examples.storage.buckets.ConfigureBucketCors;
 import com.google.cloud.examples.storage.buckets.CreateBucketWithStorageClassAndLocation;
 import com.google.cloud.examples.storage.buckets.DeleteBucket;
 import com.google.cloud.examples.storage.buckets.DisableBucketVersioning;
-import com.google.cloud.examples.storage.buckets.DisableLifecycleManagement;
 import com.google.cloud.examples.storage.buckets.DisableRequesterPays;
 import com.google.cloud.examples.storage.buckets.EnableBucketVersioning;
 import com.google.cloud.examples.storage.buckets.EnableLifecycleManagement;
@@ -125,13 +124,6 @@ public class ITBucketSnippets {
     assertNotNull(blob3);
     Blob blob4 = bucketSnippets.createBlobFromInputStreamWithContentType(BLOB4);
     assertNotNull(blob4);
-    /**
-     * Set<Blob> blobSet = Sets.newHashSet(bucketSnippets.listBlobs().iterateAll()); while
-     * (blobSet.size() < 4) { Thread.sleep(500); blobSet =
-     * Sets.newHashSet(bucketSnippets.listBlobs().iterateAll()); }
-     * assertTrue(blobSet.contains(blob1)); assertTrue(blobSet.contains(blob2));
-     * assertTrue(blobSet.contains(blob3)); assertTrue(blobSet.contains(blob4));*
-     */
     blob1 = bucketSnippets.getBlob(BLOB1, blob1.getGeneration());
     assertEquals(BLOB1, blob1.getName());
     List<Blob> blobs = bucketSnippets.getBlobFromStrings(BLOB2, BLOB3);
@@ -159,7 +151,6 @@ public class ITBucketSnippets {
     assertTrue(bucketSnippets.deleteDefaultAcl());
     assertNull(bucketSnippets.getDefaultAcl());
     thrown.expect(StorageException.class);
-    // assertTrue(bucketSnippets.delete());
   }
 
   @Test
@@ -275,11 +266,9 @@ public class ITBucketSnippets {
   }
 
   @Test
-  public void testEnableDisableLifecycleManagement() {
+  public void testEnableLifecycleManagement() {
     EnableLifecycleManagement.enableLifecycleManagement(PROJECT_ID, BUCKET);
     assertEquals(1, storage.get(BUCKET).getLifecycleRules().size());
-    DisableLifecycleManagement.disableLifecycleManagement(PROJECT_ID, BUCKET);
-    assertNull(storage.get(BUCKET).getLifecycleRules());
   }
 
   @Test

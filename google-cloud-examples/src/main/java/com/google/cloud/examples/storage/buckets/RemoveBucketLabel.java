@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,12 @@ public class RemoveBucketLabel {
     labelsToRemove.put(labelKey, null);
 
     Bucket bucket = storage.get(bucketName);
-    Map<String, String> labels = new HashMap<>(bucket.getLabels());
+    Map<String, String> labels;
+    if (bucket.getLabels() == null) {
+      labels = new HashMap<> ();
+    } else {
+      labels = new HashMap(bucket.getLabels());
+    }
     labels.putAll(labelsToRemove);
     bucket.toBuilder().setLabels(labels).build().update();
 

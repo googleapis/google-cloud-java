@@ -83,8 +83,6 @@
     <module>google-cloud-examples</module>
     <module>google-cloud-testing</module>
     <module>google-cloud-util</module>
-    <!-- For deployment reasons, a deployable artifact must be the last one. -->
-    <module>google-cloud-bom</module>
   </modules>
   <build>
     <pluginManagement>

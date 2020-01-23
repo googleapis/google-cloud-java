@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,22 +40,22 @@ public class ListObjectsWithPrefix {
          * "directory-like" mode, showing what objects are in the directory you've specified, as well as what other
          * directories exist in that directory. For example, given these blobs:
          *
-         *     /a/1.txt
-         *     /a/b/2.txt
-         *     /a/b/3.txt
+         *     a/1.txt
+         *     a/b/2.txt
+         *     a/b/3.txt
          *
-         * If you specify prefix = "/a/" and don't use Storage.BlobListOption.currentDirectory(), you'll get back:
+         * If you specify prefix = "a/" and don't use Storage.BlobListOption.currentDirectory(), you'll get back:
          *
-         *     /a/1.txt
-         *     /a/b/2.txt
-         *     /a/b/3.txt
+         *     a/1.txt
+         *     a/b/2.txt
+         *     a/b/3.txt
          *
          * However, if you specify prefix = "/a/" and do use Storage.BlobListOption.currentDirectory(), you'll get back:
          *
-         *     /a/1.txt
-         *     /a/b/
+         *     a/1.txt
+         *     a/b/
          *
-         * Because /a/1.txt is the only file in the /a/ directory and /a/b/ is a directory inside the /a/ directory.
+         * Because a/1.txt is the only file in the a/ directory and a/b/ is a directory inside the /a/ directory.
          */
         Page<Blob> blobs = bucket
                 .list(Storage.BlobListOption.prefix(directoryPrefix), Storage.BlobListOption.currentDirectory());

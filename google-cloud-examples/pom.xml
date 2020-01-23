@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-examples</artifactId>
-  <version>0.119.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-examples:current} -->
+  <version>0.120.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-examples:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Examples</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples</url>
@@ -17,8 +17,8 @@
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-bom</artifactId>
-        <version>0.119.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
+        <artifactId>libraries-bom</artifactId>
+        <version>3.4.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -90,7 +90,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>4.13</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -98,7 +98,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.7.0</version>
+        <version>3.8.1</version>
         <configuration>
           <source>1.7</source>
           <target>1.7</target>
@@ -186,7 +186,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
-        <version>3.0.0-M3</version>
+        <version>3.0.0-M4</version>
         <configuration>
           <excludes>
             <exclude>**/IT*.java</exclude>
@@ -220,7 +220,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
-            <version>3.0.0-M3</version>
+            <version>3.0.0-M4</version>
             <configuration>
               <excludes combine.self="override"></excludes>
           </configuration>

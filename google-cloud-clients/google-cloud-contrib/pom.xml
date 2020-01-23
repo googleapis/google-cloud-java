@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-contrib</artifactId>
-  <version>0.119.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-contrib:current} -->
+  <version>0.120.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-contrib:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud Contributions</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-contrib</url>
@@ -12,17 +12,12 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-clients</artifactId>
-    <version>0.119.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+    <version>0.120.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-contrib</site.installationModule>
   </properties>
   <modules>
-    <module>google-cloud-nio</module>
-    <module>google-cloud-nio-examples</module>
-    <module>google-cloud-logging-logback</module>
-    <module>google-cloud-notification</module>
-    <module>google-cloud-spanner-jdbc</module>
   </modules>
   <dependencies>
   </dependencies>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,8 @@ public class CopyObject {
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     Blob blob = storage.get(sourceBucketName, objectName);
 
-    // This keeps the original name, you could also do copyTo(targetBucketName, "target-object-name") to change the name
+    // This keeps the original name, you could also do
+    // copyTo(targetBucketName, "target-object-name") to change the name
     blob.copyTo(targetBucketName);
 
     System.out.println("Copied object " + objectName + " from bucket " + sourceBucketName + " to " + targetBucketName);

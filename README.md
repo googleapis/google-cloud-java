@@ -11,55 +11,55 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 - [Client Library Documentation][client-lib-docs]
 
 This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
--  [BigQuery](google-cloud-clients/google-cloud-bigquery) (GA)
--  [Cloud Bigtable](google-cloud-clients/google-cloud-bigtable) (GA)
--  [Cloud Datastore](google-cloud-clients/google-cloud-datastore) (GA)
--  [Cloud Firestore](google-cloud-clients/google-cloud-firestore) (GA)
--  [Cloud KMS](google-cloud-clients/google-cloud-kms) (GA)
--  [Cloud Natural Language](google-cloud-clients/google-cloud-language) (GA)
--  [Cloud Pub/Sub](google-cloud-clients/google-cloud-pubsub) (GA)
--  [Cloud Scheduler](google-cloud-clients/google-cloud-scheduler) (GA)
--  [Cloud Spanner](google-cloud-clients/google-cloud-spanner) (GA)
--  [Cloud Speech](google-cloud-clients/google-cloud-speech) (GA)
--  [Cloud Storage](google-cloud-clients/google-cloud-storage) (GA)
--  [Cloud Translation](google-cloud-clients/google-cloud-translate) (GA)
--  [Cloud Tasks](google-cloud-clients/google-cloud-tasks) (GA)
--  [Cloud Vision](google-cloud-clients/google-cloud-vision) (GA)
--  [Stackdriver Logging](google-cloud-clients/google-cloud-logging) (GA)
--  [Stackdriver Monitoring](google-cloud-clients/google-cloud-monitoring) (GA)
+-  [BigQuery](https://github.com/googleapis/java-bigquery) (GA)
+-  [Cloud Bigtable](https://github.com/googleapis/java-bigtable) (GA)
+-  [Cloud Datastore](https://github.com/googleapis/java-datastore/google-cloud-datastore) (GA)
+-  [Cloud Firestore](https://github.com/googleapis/java-firestore/google-cloud-firestore) (GA)
+-  [Cloud KMS](https://github.com/googleapis/java-kms) (GA)
+-  [Cloud Natural Language](https://github.com/googleapis/java-language) (GA)
+-  [Cloud Pub/Sub](https://github.com/googleapis/java-pubsub) (GA)
+-  [Cloud Scheduler](https://github.com/googleapis/java-scheduler) (GA)
+-  [Cloud Spanner](https://github.com/googleapis/java-spanner) (GA)
+-  [Cloud Speech](https://github.com/googleapis/java-speech) (GA)
+-  [Cloud Storage](https://github.com/googleapis/java-storage) (GA)
+-  [Cloud Translation](https://github.com/googleapis/java-translate) (GA)
+-  [Cloud Tasks](https://github.com/googleapis/java-tasks) (GA)
+-  [Cloud Vision](https://github.com/googleapis/java-vision) (GA)
+-  [Stackdriver Logging](https://github.com/googleapis/java-logging) (GA)
+-  [Stackdriver Monitoring](https://github.com/googleapis/java-monitoring) (GA)
 
 This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
--  [BigQuery Data Transfer](google-cloud-clients/google-cloud-bigquerydatatransfer) (Beta)
--  [Cloud Asset](google-cloud-clients/google-cloud-asset) (Beta)
--  [Cloud AutoML](google-cloud-clients/google-cloud-automl) (Beta)
--  [Cloud Container Analysis](google-cloud-clients/google-cloud-containeranalysis) (Beta)
--  [Cloud Dataproc](google-cloud-clients/google-cloud-dataproc) (Beta)
--  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)
--  [Cloud IoT Core](google-cloud-clients/google-cloud-iot) (Beta)
--  [Cloud Phishing Protection](google-cloud-clients/google-cloud-phishingprotection) (Beta)
--  [Cloud Security Scanner](google-cloud-clients/google-cloud-websecurityscanner) (Beta)
--  [Cloud Talent Solution](google-cloud-clients/google-cloud-talent) (Beta)
--  [Cloud Text-to-Speech](google-cloud-clients/google-cloud-texttospeech) (Beta)
--  [Cloud Video Intelligence](google-cloud-clients/google-cloud-video-intelligence) (Beta)
--  [Kubernetes Engine](google-cloud-clients/google-cloud-container) (Beta)
--  [reCAPTCHA Enterprise](google-cloud-clients/google-cloud-recaptchaenterprise) (Beta)
--  [Stackdriver Error Reporting](google-cloud-clients/google-cloud-errorreporting) (Beta)
--  [Stackdriver Trace](google-cloud-clients/google-cloud-trace) (Beta)
+-  [BigQuery Data Transfer](https://github.com/googleapis/java-bigquerydatatransfer) (Beta)
+-  [Cloud Asset](https://github.com/googleapis/java-asset) (Beta)
+-  [Cloud AutoML](https://github.com/googleapis/java-automl) (Beta)
+-  [Cloud Container Analysis](https://github.com/googleapis/java-containeranalysis) (Beta)
+-  [Cloud Dataproc](https://github.com/googleapis/java-dataproc) (Beta)
+-  [Cloud Data Loss Prevention](https://github.com/googleapis/java-dlp) (Beta)
+-  [Cloud IoT Core](https://github.com/googleapis/java-iot) (Beta)
+-  [Cloud Phishing Protection](https://github.com/googleapis/java-phishingprotection) (Beta)
+-  [Cloud Security Scanner](https://github.com/googleapis/java-websecurityscanner) (Beta)
+-  [Cloud Talent Solution](https://github.com/googleapis/java-talent) (Beta)
+-  [Cloud Text-to-Speech](https://github.com/googleapis/java-texttospeech) (Beta)
+-  [Cloud Video Intelligence](https://github.com/googleapis/java-video-intelligence) (Beta)
+-  [Kubernetes Engine](https://github.com/googleapis/java-container) (Beta)
+-  [reCAPTCHA Enterprise](https://github.com/googleapis/java-recaptchaenterprise) (Beta)
+-  [Stackdriver Error Reporting](https://github.com/googleapis/java-errorreporting) (Beta)
+-  [Stackdriver Trace](https://github.com/googleapis/java-trace) (Beta)
 
 This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
--  [BigQuery Storage](google-cloud-clients/google-cloud-bigquerystorage) (Alpha)
--  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Alpha)
--  [Cloud Data Catalog](google-cloud-clients/google-cloud-datacatalog) (Alpha)
--  [Cloud Data Labeling](google-cloud-clients/google-cloud-datalabeling) (Alpha)
--  [Cloud DNS](google-cloud-clients/google-cloud-dns) (Alpha)
--  [Cloud IAM Service Account Credentials API](google-cloud-clients/google-cloud-iamcredentials) (Alpha)
--  [Cloud OS Login](google-cloud-clients/google-cloud-os-login) (Alpha)
--  [Cloud Memorystore for Redis](google-cloud-clients/google-cloud-redis) (Alpha)
--  [Cloud Resource Manager](google-cloud-clients/google-cloud-resourcemanager) (Alpha)
--  [Cloud Web Risk](google-cloud-clients/google-cloud-webrisk) (Alpha)
--  [Dialogflow](google-cloud-clients/google-cloud-dialogflow) (Alpha)
+-  [BigQuery Storage](https://github.com/googleapis/java-bigquerystorage) (Alpha)
+-  [Cloud Compute](https://github.com/googleapis/java-compute) (Alpha)
+-  [Cloud Data Catalog](https://github.com/googleapis/java-datacatalog) (Alpha)
+-  [Cloud Data Labeling](https://github.com/googleapis/java-datalabeling) (Alpha)
+-  [Cloud DNS](https://github.com/googleapis/java-dns) (Alpha)
+-  [Cloud IAM Service Account Credentials API](https://github.com/googleapis/java-iamcredentials) (Alpha)
+-  [Cloud OS Login](https://github.com/googleapis/java-os-login) (Alpha)
+-  [Cloud Memorystore for Redis](https://github.com/googleapis/java-redis) (Alpha)
+-  [Cloud Resource Manager](https://github.com/googleapis/java-resourcemanager) (Alpha)
+-  [Cloud Web Risk](https://github.com/googleapis/java-webrisk) (Alpha)
+-  [Dialogflow](https://github.com/googleapis/java-dialogflow) (Alpha)
 
 Quickstart
 ----------
@@ -75,7 +75,7 @@ If you are using Maven, add this to your pom.xml file
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>2.9.0</version>
+        <version>3.0.0</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
@@ -93,11 +93,11 @@ If you are using Maven, add this to your pom.xml file
 [//]: # ({x-version-update-start:google-cloud-storage:released})
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.101.0'
+compile 'com.google.cloud:google-cloud-storage:1.102.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.101.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.102.0"
 ```
 [//]: # ({x-version-update-end})
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public class ChangeObjectStorageClass {
     // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/storage/StorageClass.html
     StorageClass storageClass = StorageClass.COLDLINE;
 
-    // You can't change an object's storage class directly, the only way is to overwrite the object with the
+    // You can't change an object's storage class directly, the only way is to rewrite the object with the
     // desired storage class
     Storage.CopyRequest request = Storage.CopyRequest
             .newBuilder()

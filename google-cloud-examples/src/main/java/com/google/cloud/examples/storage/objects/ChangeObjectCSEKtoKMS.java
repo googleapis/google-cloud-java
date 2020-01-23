@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ public class ChangeObjectCSEKtoKMS {
     // The ID of your GCS object
     // String objectName = "your-object-name";
 
-    // The decryption key, which should be the same key originally used to encrypt the object
+    // The Base64 encoded decryption key, which should be the same key originally used to encrypt the object
     // String decryptionKey = "TIbv/fjexq+VmtXzAlc63J4z5kFmWJ6NdAPQulQBT7g=";
 
     // The name of the KMS key to manage this object with
