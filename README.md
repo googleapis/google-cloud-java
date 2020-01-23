@@ -58,6 +58,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud OS Login](https://github.com/googleapis/java-os-login) (Alpha)
 -  [Cloud Memorystore for Redis](https://github.com/googleapis/java-redis) (Alpha)
 -  [Cloud Resource Manager](https://github.com/googleapis/java-resourcemanager) (Alpha)
+-  [Cloud Storage via NIO](https://github.com/googleapis/java-storage-nio) (Alpha)
 -  [Cloud Web Risk](https://github.com/googleapis/java-webrisk) (Alpha)
 -  [Dialogflow](https://github.com/googleapis/java-dialogflow) (Alpha)
 
