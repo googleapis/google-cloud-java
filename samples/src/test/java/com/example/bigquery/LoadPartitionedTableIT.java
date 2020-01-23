@@ -19,9 +19,6 @@ package com.example.bigquery;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.LegacySQLTypeName;
-import com.google.cloud.bigquery.Schema;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;
@@ -29,7 +26,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class AddColumnLoadAppendIT {
+public class LoadPartitionedTableIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -59,21 +56,15 @@ public class AddColumnLoadAppendIT {
   }
 
   @Test
-  public void testAddColumnLoadAppend() throws Exception {
-    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.csv";
+  public void loadPartitionedTable() throws Exception {
+    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states-by-date.csv";
 
-    String tableName = "ADD_COLUMN_LOAD_APPEND_TEST";
-    Schema originalSchema =
-        Schema.of(
-            Field.newBuilder("name", LegacySQLTypeName.STRING)
-                .setMode(Field.Mode.REQUIRED)
-                .build());
+    String tableName = "PARTITIONED_TABLE_TEST";
 
-    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, originalSchema);
+    LoadPartitionedTable.loadPartitionedTable(BIGQUERY_DATASET_NAME, tableName, sourceUri);
 
-    AddColumnLoadAppend.addColumnLoadAppend(BIGQUERY_DATASET_NAME, tableName, sourceUri);
-
-    assertThat(bout.toString()).contains("Column successfully added during load append job");
+    assertThat(bout.toString())
+        .contains("Data successfully loaded into time partitioned table during load job");
 
     // Clean up
     DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
