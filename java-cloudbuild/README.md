@@ -1,6 +1,6 @@
-# Google Cloud Java Client for Cloud Build
+# Google Cloud Build Client for Java
 
-Java idiomatic client for [Cloud Build][api-reference].
+Java idiomatic client for [Cloud Build][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -8,13 +8,34 @@ Java idiomatic client for [Cloud Build][api-reference].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 ## Quickstart
 
+If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>libraries-bom</artifactId>
+      <version>3.4.0</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+
+<dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-build</artifactId>
+  </dependency>
+</dependencies>
+```
+
 [//]: # ({x-version-update-start:google-cloud-build:released})
-If you are using Maven, add this to your pom.xml file
+
+If you are using Maven without BOM, add this to your dependencies:
+
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
@@ -22,6 +43,7 @@ If you are using Maven, add this to your pom.xml file
   <version>0.1.1</version>
 </dependency>
 ```
+
 If you are using Gradle, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud-build:0.1.1'
@@ -36,20 +58,13 @@ libraryDependencies += "com.google.cloud" % "google-cloud-build" % "0.1.1"
 
 See the [Authentication][authentication] section in the base directory's README.
 
-## About Cloud Build
-
-[Cloud Build][api-reference] is a suite of Machine Learning products.
-
-See the [Cloud Build client library docs][javadocs] to learn how to
-use this Cloud Build Client Library.
-
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Developers Console][developer-console] project with the
-Cloud Build API enabled. [Follow these instructions][create-project] to get your
-project set up. You will also need to set up the local development environment by
+You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Build [API enabled][enable-api].
+
+[Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
@@ -57,6 +72,17 @@ project set up. You will also need to set up the local development environment b
 
 You'll need to obtain the `google-cloud-build` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-build` as a dependency in your code.
+
+## About Cloud Build
+
+
+[Cloud Build][product-docs] lets you build software quickly across all languages. Get complete control over defining custom workflows for building, testing, and deploying across multiple environments such as VMs, serverless, Kubernetes, or Firebase.
+
+See the [Cloud Build client library docs][javadocs] to learn how to
+use this Cloud Build Client Library.
+
+
+
 
 ## Troubleshooting
 
@@ -74,14 +100,14 @@ Java 7 or above is required for using this client.
 
 This library follows [Semantic Versioning](http://semver.org/).
 
-It is currently in major version zero (``0.y.z``), which means that anything may change at any time
-and the public API should not be considered stable.
+
 
 ## Contributing
 
+
 Contributions to this library are always welcome and highly encouraged.
 
-See [CONTRIBUTING.md][contributing] documentation for more information on how to get started.
+See [CONTRIBUTING][contributing] for more information how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in
 this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more
@@ -101,7 +127,6 @@ Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
-[api-reference]: https://cloud.google.com/cloud-build/docs/api
 [product-docs]: https://cloud.google.com/cloud-build/
 [javadocs]: https://googleapis.dev/java/google-cloud-build/latest
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-cloudbuild/java7.svg
@@ -114,9 +139,9 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-cloudbuild/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-cloudbuild/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-cloudbuild/java11.html
-[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/cloudbuild.svg
-[stability-image]: https://img.shields.io/badge/stability-alpha-orange
-[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:cloudbuild&core=gav
+[stability-image]: https://img.shields.io/badge/stability-ga-green
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-build.svg
+[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-build&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
@@ -125,3 +150,6 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [contributing]: https://github.com/googleapis/java-cloudbuild/blob/master/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/java-cloudbuild/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/java-cloudbuild/blob/master/LICENSE
+
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=cloudbuild.googleapis.com
+[libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM

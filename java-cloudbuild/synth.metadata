@@ -1,19 +1,18 @@
 {
-  "updateTime": "2020-01-16T08:39:01.475347Z",
+  "updateTime": "2020-01-23T21:35:45.665574Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.44.0",
-        "dockerImage": "googleapis/artman@sha256:10a6d0342b8d62544810ac5ad86c3b21049ec0696608ac60175da8e513234344"
+        "version": "0.44.1",
+        "dockerImage": "googleapis/artman@sha256:5599b61e56a372d21b671969ee915fbca0f6c3a0daaeb898d01f8f685f1bbc8b"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "0735b4b096872960568d1f366bfa75b7b0e1f1a3",
-        "internalRef": "289939042"
+        "sha": "c2cdcd2b08ca35c5054268f6277ea04713c88e39"
       }
     },
     {
@@ -38,91 +37,7 @@
   ],
   "newFiles": [
     {
-      "path": "pom.xml"
-    },
-    {
-      "path": ".repo-metadata.json"
-    },
-    {
-      "path": "java.header"
-    },
-    {
-      "path": "CONTRIBUTING.md"
-    },
-    {
-      "path": "synth.metadata"
-    },
-    {
-      "path": "renovate.json"
-    },
-    {
-      "path": "versions.txt"
-    },
-    {
-      "path": "synth.py"
-    },
-    {
-      "path": "license-checks.xml"
-    },
-    {
-      "path": "CHANGELOG.md"
-    },
-    {
-      "path": "CODE_OF_CONDUCT.md"
-    },
-    {
-      "path": "LICENSE"
-    },
-    {
-      "path": "codecov.yaml"
-    },
-    {
-      "path": ".gitignore"
-    },
-    {
-      "path": "README.md"
-    },
-    {
-      "path": "google-cloud-build/pom.xml"
-    },
-    {
-      "path": "google-cloud-build/src/test/java/com/google/cloud/devtools/cloudbuild/v1/MockCloudBuildImpl.java"
-    },
-    {
-      "path": "google-cloud-build/src/test/java/com/google/cloud/devtools/cloudbuild/v1/MockCloudBuild.java"
-    },
-    {
-      "path": "google-cloud-build/src/test/java/com/google/cloud/devtools/cloudbuild/v1/CloudBuildClientTest.java"
-    },
-    {
-      "path": "google-cloud-build/src/main/java/com/google/cloud/devtools/cloudbuild/v1/CloudBuildClient.java"
-    },
-    {
-      "path": "google-cloud-build/src/main/java/com/google/cloud/devtools/cloudbuild/v1/CloudBuildSettings.java"
-    },
-    {
-      "path": "google-cloud-build/src/main/java/com/google/cloud/devtools/cloudbuild/v1/package-info.java"
-    },
-    {
-      "path": "google-cloud-build/src/main/java/com/google/cloud/devtools/cloudbuild/v1/stub/CloudBuildStubSettings.java"
-    },
-    {
-      "path": "google-cloud-build/src/main/java/com/google/cloud/devtools/cloudbuild/v1/stub/GrpcCloudBuildStub.java"
-    },
-    {
-      "path": "google-cloud-build/src/main/java/com/google/cloud/devtools/cloudbuild/v1/stub/GrpcCloudBuildCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-build/src/main/java/com/google/cloud/devtools/cloudbuild/v1/stub/CloudBuildStub.java"
-    },
-    {
-      "path": "google-cloud-build-bom/pom.xml"
-    },
-    {
-      "path": ".github/release-please.yml"
-    },
-    {
-      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/feature_request.md"
@@ -131,34 +46,28 @@
       "path": ".github/ISSUE_TEMPLATE/support_request.md"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
     },
     {
-      "path": ".kokoro/build.sh"
-    },
-    {
-      "path": ".kokoro/common.cfg"
+      "path": ".github/release-please.yml"
     },
     {
       "path": ".kokoro/build.bat"
     },
     {
-      "path": ".kokoro/linkage-monitor.sh"
+      "path": ".kokoro/build.sh"
     },
     {
       "path": ".kokoro/coerce_logs.sh"
     },
     {
-      "path": ".kokoro/dependencies.sh"
+      "path": ".kokoro/common.cfg"
     },
     {
-      "path": ".kokoro/trampoline.sh"
+      "path": ".kokoro/continuous/common.cfg"
     },
     {
-      "path": ".kokoro/continuous/samples.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8.cfg"
+      "path": ".kokoro/continuous/dependencies.cfg"
     },
     {
       "path": ".kokoro/continuous/integration.cfg"
@@ -167,34 +76,40 @@
       "path": ".kokoro/continuous/java11.cfg"
     },
     {
-      "path": ".kokoro/continuous/propose_release.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/common.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.sh"
-    },
-    {
       "path": ".kokoro/continuous/java7.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/lint.cfg"
     },
     {
       "path": ".kokoro/continuous/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/continuous/dependencies.cfg"
-    },
-    {
       "path": ".kokoro/continuous/java8-win.cfg"
     },
     {
-      "path": ".kokoro/nightly/samples.cfg"
+      "path": ".kokoro/continuous/java8.cfg"
     },
     {
-      "path": ".kokoro/nightly/java8.cfg"
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
     },
     {
       "path": ".kokoro/nightly/integration.cfg"
@@ -203,70 +118,31 @@
       "path": ".kokoro/nightly/java11.cfg"
     },
     {
-      "path": ".kokoro/nightly/common.cfg"
-    },
-    {
       "path": ".kokoro/nightly/java7.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/lint.cfg"
     },
     {
       "path": ".kokoro/nightly/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/nightly/dependencies.cfg"
-    },
-    {
       "path": ".kokoro/nightly/java8-win.cfg"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.cfg"
+      "path": ".kokoro/nightly/java8.cfg"
     },
     {
-      "path": ".kokoro/release/common.sh"
+      "path": ".kokoro/nightly/lint.cfg"
     },
     {
-      "path": ".kokoro/release/promote.sh"
+      "path": ".kokoro/nightly/samples.cfg"
     },
     {
-      "path": ".kokoro/release/common.cfg"
+      "path": ".kokoro/presubmit/clirr.cfg"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.sh"
+      "path": ".kokoro/presubmit/common.cfg"
     },
     {
-      "path": ".kokoro/release/drop.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.sh"
-    },
-    {
-      "path": ".kokoro/release/promote.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.sh"
-    },
-    {
-      "path": ".kokoro/presubmit/samples.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8.cfg"
+      "path": ".kokoro/presubmit/dependencies.cfg"
     },
     {
       "path": ".kokoro/presubmit/integration.cfg"
@@ -275,301 +151,91 @@
       "path": ".kokoro/presubmit/java11.cfg"
     },
     {
-      "path": ".kokoro/presubmit/linkage-monitor.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/common.cfg"
-    },
-    {
       "path": ".kokoro/presubmit/java7.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/lint.cfg"
     },
     {
       "path": ".kokoro/presubmit/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/presubmit/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/clirr.cfg"
-    },
-    {
       "path": ".kokoro/presubmit/java8-win.cfg"
     },
     {
-      "path": "proto-google-cloud-build-v1/pom.xml"
+      "path": ".kokoro/presubmit/java8.cfg"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/Source.java"
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/PushFilterOrBuilder.java"
+      "path": ".kokoro/presubmit/lint.cfg"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/RunBuildTriggerRequestOrBuilder.java"
+      "path": ".kokoro/presubmit/samples.cfg"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/Cloudbuild.java"
+      "path": ".kokoro/release/bump_snapshot.cfg"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/GitHubEventsConfig.java"
+      "path": ".kokoro/release/bump_snapshot.sh"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/FileHashes.java"
+      "path": ".kokoro/release/common.cfg"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/BuildOptions.java"
+      "path": ".kokoro/release/common.sh"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/BuildOrBuilder.java"
+      "path": ".kokoro/release/drop.cfg"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/BuildOperationMetadataOrBuilder.java"
+      "path": ".kokoro/release/drop.sh"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/RepoSourceOrBuilder.java"
+      "path": ".kokoro/release/promote.cfg"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/VolumeOrBuilder.java"
+      "path": ".kokoro/release/promote.sh"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/PushFilter.java"
+      "path": ".kokoro/release/publish_javadoc.cfg"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/CancelBuildRequestOrBuilder.java"
+      "path": ".kokoro/release/publish_javadoc.sh"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/WorkerPool.java"
+      "path": ".kokoro/release/snapshot.cfg"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/BuiltImageOrBuilder.java"
+      "path": ".kokoro/release/snapshot.sh"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/TimeSpan.java"
+      "path": ".kokoro/release/stage.cfg"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/ArtifactResultOrBuilder.java"
+      "path": ".kokoro/release/stage.sh"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/RepoSource.java"
+      "path": ".kokoro/trampoline.sh"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/BuiltImage.java"
+      "path": "CODE_OF_CONDUCT.md"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/DeleteWorkerPoolRequestOrBuilder.java"
+      "path": "CONTRIBUTING.md"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/FileHashesOrBuilder.java"
+      "path": "LICENSE"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/Hash.java"
+      "path": "codecov.yaml"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/WorkerConfigOrBuilder.java"
+      "path": "java.header"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/ListWorkerPoolsResponseOrBuilder.java"
+      "path": "license-checks.xml"
     },
     {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/ArtifactsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/Build.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/BuildOptionsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/BuildTriggerOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/BuildStep.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/BuildStepOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/CreateBuildRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/ListWorkerPoolsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/SecretOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/ListBuildTriggersResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/ListBuildTriggersRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/WorkerPoolOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/ListWorkerPoolsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/ListBuildsRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/RunBuildTriggerRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/StorageSourceOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/UpdateBuildTriggerRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/NetworkOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/GetWorkerPoolRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/GetBuildTriggerRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/ListBuildTriggersResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/GetBuildRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/UpdateBuildTriggerRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/RetryBuildRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/BuildTrigger.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/SourceOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/ListBuildsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/CreateBuildTriggerRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/BuildOperationMetadata.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/ResultsOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/CreateWorkerPoolRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/DeleteBuildTriggerRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/UpdateWorkerPoolRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/DeleteWorkerPoolRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/CreateWorkerPoolRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/WorkerConfig.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/ListBuildTriggersRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/CancelBuildRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/ListBuildsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/PullRequestFilterOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/SourceProvenanceOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/RetryBuildRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/Volume.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/SourceProvenance.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/GetBuildTriggerRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/ArtifactResult.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/DeleteBuildTriggerRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/Network.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/UpdateWorkerPoolRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/PullRequestFilter.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/ListWorkerPoolsResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/Artifacts.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/Results.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/GetWorkerPoolRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/HashOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/GetBuildRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/Secret.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/StorageSource.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/CreateBuildTriggerRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/TimeSpanOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/ListBuildsRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/CreateBuildRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/GitHubEventsConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-build-v1/src/main/proto/google/devtools/cloudbuild/v1/cloudbuild.proto"
-    },
-    {
-      "path": "grpc-google-cloud-build-v1/pom.xml"
-    },
-    {
-      "path": "grpc-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/CloudBuildGrpc.java"
+      "path": "renovate.json"
     }
   ]
 }
