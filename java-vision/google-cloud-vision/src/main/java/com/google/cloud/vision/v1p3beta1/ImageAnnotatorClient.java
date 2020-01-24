@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -182,7 +182,6 @@ public class ImageAnnotatorClient implements BackgroundResource {
    */
   public final BatchAnnotateImagesResponse batchAnnotateImages(
       List<AnnotateImageRequest> requests) {
-
     BatchAnnotateImagesRequest request =
         BatchAnnotateImagesRequest.newBuilder().addAllRequests(requests).build();
     return batchAnnotateImages(request);
@@ -258,7 +257,6 @@ public class ImageAnnotatorClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<AsyncBatchAnnotateFilesResponse, OperationMetadata>
       asyncBatchAnnotateFilesAsync(List<AsyncAnnotateFileRequest> requests) {
-
     AsyncBatchAnnotateFilesRequest request =
         AsyncBatchAnnotateFilesRequest.newBuilder().addAllRequests(requests).build();
     return asyncBatchAnnotateFilesAsync(request);

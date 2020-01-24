@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -219,7 +219,6 @@ public class ProductSearchClient implements BackgroundResource {
    */
   public final ProductSet createProductSet(
       LocationName parent, ProductSet productSet, String productSetId) {
-
     CreateProductSetRequest request =
         CreateProductSetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -260,7 +259,6 @@ public class ProductSearchClient implements BackgroundResource {
    */
   public final ProductSet createProductSet(
       String parent, ProductSet productSet, String productSetId) {
-
     CreateProductSetRequest request =
         CreateProductSetRequest.newBuilder()
             .setParent(parent)
@@ -508,7 +506,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ProductSet getProductSet(ProductSetName name) {
-
     GetProductSetRequest request =
         GetProductSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProductSet(request);
@@ -536,7 +533,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ProductSet getProductSet(String name) {
-
     GetProductSetRequest request = GetProductSetRequest.newBuilder().setName(name).build();
     return getProductSet(request);
   }
@@ -621,7 +617,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ProductSet updateProductSet(ProductSet productSet, FieldMask updateMask) {
-
     UpdateProductSetRequest request =
         UpdateProductSetRequest.newBuilder()
             .setProductSet(productSet)
@@ -712,7 +707,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteProductSet(ProductSetName name) {
-
     DeleteProductSetRequest request =
         DeleteProductSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteProductSet(request);
@@ -739,7 +733,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteProductSet(String name) {
-
     DeleteProductSetRequest request = DeleteProductSetRequest.newBuilder().setName(name).build();
     deleteProductSet(request);
   }
@@ -826,7 +819,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Product createProduct(LocationName parent, Product product, String productId) {
-
     CreateProductRequest request =
         CreateProductRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -867,7 +859,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Product createProduct(String parent, Product product, String productId) {
-
     CreateProductRequest request =
         CreateProductRequest.newBuilder()
             .setParent(parent)
@@ -1116,7 +1107,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Product getProduct(ProductName name) {
-
     GetProductRequest request =
         GetProductRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProduct(request);
@@ -1144,7 +1134,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Product getProduct(String name) {
-
     GetProductRequest request = GetProductRequest.newBuilder().setName(name).build();
     return getProduct(request);
   }
@@ -1236,7 +1225,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Product updateProduct(Product product, FieldMask updateMask) {
-
     UpdateProductRequest request =
         UpdateProductRequest.newBuilder().setProduct(product).setUpdateMask(updateMask).build();
     return updateProduct(request);
@@ -1337,7 +1325,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteProduct(ProductName name) {
-
     DeleteProductRequest request =
         DeleteProductRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteProduct(request);
@@ -1365,7 +1352,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteProduct(String name) {
-
     DeleteProductRequest request = DeleteProductRequest.newBuilder().setName(name).build();
     deleteProduct(request);
   }
@@ -1466,7 +1452,6 @@ public class ProductSearchClient implements BackgroundResource {
    */
   public final ReferenceImage createReferenceImage(
       ProductName parent, ReferenceImage referenceImage, String referenceImageId) {
-
     CreateReferenceImageRequest request =
         CreateReferenceImageRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1519,7 +1504,6 @@ public class ProductSearchClient implements BackgroundResource {
    */
   public final ReferenceImage createReferenceImage(
       String parent, ReferenceImage referenceImage, String referenceImageId) {
-
     CreateReferenceImageRequest request =
         CreateReferenceImageRequest.newBuilder()
             .setParent(parent)
@@ -1639,7 +1623,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteReferenceImage(ReferenceImageName name) {
-
     DeleteReferenceImageRequest request =
         DeleteReferenceImageRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1671,7 +1654,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteReferenceImage(String name) {
-
     DeleteReferenceImageRequest request =
         DeleteReferenceImageRequest.newBuilder().setName(name).build();
     deleteReferenceImage(request);
@@ -1915,7 +1897,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReferenceImage getReferenceImage(ReferenceImageName name) {
-
     GetReferenceImageRequest request =
         GetReferenceImageRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1946,7 +1927,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReferenceImage getReferenceImage(String name) {
-
     GetReferenceImageRequest request = GetReferenceImageRequest.newBuilder().setName(name).build();
     return getReferenceImage(request);
   }
@@ -2032,7 +2012,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void addProductToProductSet(ProductSetName name, String product) {
-
     AddProductToProductSetRequest request =
         AddProductToProductSetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2069,7 +2048,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void addProductToProductSet(String name, String product) {
-
     AddProductToProductSetRequest request =
         AddProductToProductSetRequest.newBuilder().setName(name).setProduct(product).build();
     addProductToProductSet(request);
@@ -2160,7 +2138,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void removeProductFromProductSet(ProductSetName name, String product) {
-
     RemoveProductFromProductSetRequest request =
         RemoveProductFromProductSetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2190,7 +2167,6 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void removeProductFromProductSet(String name, String product) {
-
     RemoveProductFromProductSetRequest request =
         RemoveProductFromProductSetRequest.newBuilder().setName(name).setProduct(product).build();
     removeProductFromProductSet(request);
@@ -2439,7 +2415,6 @@ public class ProductSearchClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ImportProductSetsResponse, BatchOperationMetadata>
       importProductSetsAsync(LocationName parent, ImportProductSetsInputConfig inputConfig) {
-
     ImportProductSetsRequest request =
         ImportProductSetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2481,7 +2456,6 @@ public class ProductSearchClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ImportProductSetsResponse, BatchOperationMetadata>
       importProductSetsAsync(String parent, ImportProductSetsInputConfig inputConfig) {
-
     ImportProductSetsRequest request =
         ImportProductSetsRequest.newBuilder().setParent(parent).setInputConfig(inputConfig).build();
     return importProductSetsAsync(request);
