@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-video-intelligence/compare/v0.116.2...v1.0.0) (2020-01-23)
+
+
+### Features
+
+* promote to GA ([#59](https://www.github.com/googleapis/java-video-intelligence/issues/59)) ([000f8ca](https://www.github.com/googleapis/java-video-intelligence/commit/000f8cac04691ded5a92be15017188f601de79e9))
+
+
+### Dependencies
+
+* update core dependencies to v1.53.0 ([#52](https://www.github.com/googleapis/java-video-intelligence/issues/52)) ([54c16a1](https://www.github.com/googleapis/java-video-intelligence/commit/54c16a1695668a76742558d1cbe0267ff3ed2fd7))
+* update dependency org.threeten:threetenbp to v1.4.1 ([39f8308](https://www.github.com/googleapis/java-video-intelligence/commit/39f830839a1a4f756c7c3b844d4df3d46c2f68f4))
+
+
+### Documentation
+
+* **regen:** fix javadoc return annotation ([#58](https://www.github.com/googleapis/java-video-intelligence/issues/58)) ([7f120bd](https://www.github.com/googleapis/java-video-intelligence/commit/7f120bd2ac25325b054ba69a243f0c38f882f426))
+
 ### [0.116.2](https://www.github.com/googleapis/java-video-intelligence/compare/v0.116.1...v0.116.2) (2020-01-07)
 
 
