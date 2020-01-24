@@ -43,17 +43,17 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datalabeling</artifactId>
-  <version>0.116.3-alpha</version>
+  <version>0.117.0</version>
 </dependency>
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-datalabeling:0.116.3-alpha'
+compile 'com.google.cloud:google-cloud-datalabeling:0.117.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-datalabeling" % "0.116.3-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-datalabeling" % "0.117.0"
 ```
 [//]: # ({x-version-update-end})
 
