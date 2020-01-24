@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.118.0](https://www.github.com/googleapis/java-os-login/compare/v0.117.1...v0.118.0) (2020-01-24)
+
+
+### Features
+
+* add resource names - PosixAccountName, SshPublicKeyName ([#48](https://www.github.com/googleapis/java-os-login/issues/48)) ([112b697](https://www.github.com/googleapis/java-os-login/commit/112b69771016a562416208f5b2f825cdf3322367))
+* promote to beta ([#51](https://www.github.com/googleapis/java-os-login/issues/51)) ([f265a98](https://www.github.com/googleapis/java-os-login/commit/f265a98de68f83213308df920c3064387202198f))
+
+
+### Dependencies
+
+* update dependency org.threeten:threetenbp to v1.4.1 ([2e2c909](https://www.github.com/googleapis/java-os-login/commit/2e2c909fd72bfa5319068b0ee90bd3f312fdb031))
+
 ### [0.117.1](https://www.github.com/googleapis/java-os-login/compare/v0.117.0...v0.117.1) (2020-01-07)
 
 
