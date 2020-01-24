@@ -43,17 +43,17 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-iamcredentials</artifactId>
-  <version>0.43.1-alpha</version>
+  <version>0.44.0</version>
 </dependency>
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-iamcredentials:0.43.1-alpha'
+compile 'com.google.cloud:google-cloud-iamcredentials:0.44.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-iamcredentials" % "0.43.1-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-iamcredentials" % "0.44.0"
 ```
 [//]: # ({x-version-update-end})
 
