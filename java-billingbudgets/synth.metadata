@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-01-23T08:37:40.023764Z",
+  "updateTime": "2020-01-23T22:59:12.248066Z",
   "sources": [
     {
       "generator": {
@@ -12,9 +12,7 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "8d16f76de065f530d395a4c7eabbf766d6a120fd",
-        "internalRef": "291008516",
-        "log": "8d16f76de065f530d395a4c7eabbf766d6a120fd\nGenerate Memcache v1beta2 API protos and gRPC ServiceConfig files\n\nPiperOrigin-RevId: 291008516\n\n3af1dabd93df9a9f17bf3624d3b875c11235360b\ngrafeas: Add containeranalysis default_host to Grafeas service\n\nPiperOrigin-RevId: 290965849\n\nbe2663fa95e31cba67d0cd62611a6674db9f74b7\nfix(google/maps/roads): add missing opening bracket\n\nPiperOrigin-RevId: 290964086\n\nfacc26550a0af0696e0534bc9cae9df14275aa7c\nUpdating v2 protos with the latest inline documentation (in comments) and adding a per-service .yaml file.\n\nPiperOrigin-RevId: 290952261\n\ncda99c1f7dc5e4ca9b1caeae1dc330838cbc1461\nChange api_name to 'asset' for v1p1beta1\n\nPiperOrigin-RevId: 290800639\n\n94e9e90c303a820ce40643d9129e7f0d2054e8a1\nAdds Google Maps Road service\n\nPiperOrigin-RevId: 290795667\n\na3b23dcb2eaecce98c600c7d009451bdec52dbda\nrpc: new message ErrorInfo, other comment updates\n\nPiperOrigin-RevId: 290781668\n\n26420ef4e46c37f193c0fbe53d6ebac481de460e\nAdd proto definition for Org Policy v1.\n\nPiperOrigin-RevId: 290771923\n\n7f0dab8177cf371ae019a082e2512de7ac102888\nPublish Routes Preferred API v1 service definitions.\n\nPiperOrigin-RevId: 290326986\n\nad6e508d0728e1d1bca6e3f328cd562718cb772d\nFix: Qualify resource type references with \"jobs.googleapis.com/\"\n\nPiperOrigin-RevId: 290285762\n\n58e770d568a2b78168ddc19a874178fee8265a9d\ncts client library\n\nPiperOrigin-RevId: 290146169\n\naf9daa4c3b4c4a8b7133b81588dd9ffd37270af2\nAdd more programming language options to public proto\n\nPiperOrigin-RevId: 290144091\n\nd9f2bbf2df301ef84641d4cec7c828736a0bd907\ntalent: add missing resource.proto dep to Bazel build target\n\nPiperOrigin-RevId: 290143164\n\n3b3968237451d027b42471cd28884a5a1faed6c7\nAnnotate Talent API.\nAdd gRPC service config for retry.\nUpdate bazel file with google.api.resource dependency.\n\nPiperOrigin-RevId: 290125172\n\n"
+        "sha": "46a2d50dd05fe37104e5f66abaa59f6235a3d7c4"
       }
     },
     {
@@ -52,9 +50,6 @@
     },
     {
       "path": ".github/release-please.yml"
-    },
-    {
-      "path": ".gitignore"
     },
     {
       "path": ".kokoro/build.bat"
@@ -222,12 +217,6 @@
       "path": ".kokoro/trampoline.sh"
     },
     {
-      "path": ".repo-metadata.json"
-    },
-    {
-      "path": "CHANGELOG.md"
-    },
-    {
       "path": "CODE_OF_CONDUCT.md"
     },
     {
@@ -237,16 +226,7 @@
       "path": "LICENSE"
     },
     {
-      "path": "README.md"
-    },
-    {
       "path": "codecov.yaml"
-    },
-    {
-      "path": "google-cloud-billingbudgets-bom/pom.xml"
-    },
-    {
-      "path": "google-cloud-billingbudgets/pom.xml"
     },
     {
       "path": "google-cloud-billingbudgets/src/main/java/com/google/cloud/billing/budgets/v1beta1/BudgetServiceClient.java"
@@ -279,9 +259,6 @@
       "path": "google-cloud-billingbudgets/src/test/java/com/google/cloud/billing/budgets/v1beta1/MockBudgetServiceImpl.java"
     },
     {
-      "path": "grpc-google-cloud-billingbudgets-v1beta1/pom.xml"
-    },
-    {
       "path": "grpc-google-cloud-billingbudgets-v1beta1/src/main/java/com/google/cloud/billing/budgets/v1beta1/BudgetServiceGrpc.java"
     },
     {
@@ -289,12 +266,6 @@
     },
     {
       "path": "license-checks.xml"
-    },
-    {
-      "path": "pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-billingbudgets-v1beta1/pom.xml"
     },
     {
       "path": "proto-google-cloud-billingbudgets-v1beta1/src/main/java/com/google/cloud/billing/budgets/v1beta1/AllUpdatesRule.java"
@@ -388,15 +359,6 @@
     },
     {
       "path": "renovate.json"
-    },
-    {
-      "path": "synth.metadata"
-    },
-    {
-      "path": "synth.py"
-    },
-    {
-      "path": "versions.txt"
     }
   ]
 }

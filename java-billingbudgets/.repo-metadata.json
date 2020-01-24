@@ -1,9 +1,14 @@
 {
     "name": "billingbudgets",
-    "name_pretty": "Google Cloud Billing Budgets",
-    "release_level": "alpha",
+    "name_pretty": "Cloud Billing Budgets",
+    "product_documentation": "https://cloud.google.com/billing/docs/how-to/budgets",
+    "client_documentation": "https://googleapis.dev/java/google-cloud-billingbudgets/latest/",
+    "api_description": "allows you to avoid surprises on your bill by creating budgets to monitor all your Google Cloud charges in one place.",
+    "release_level": "beta",
     "language": "java",
+    "transport": "grpc",
     "repo": "googleapis/java-billingbudgets",
     "repo_short": "java-billingbudgets",
-    "distribution_name": "google-cloud-billingbudgets"
+    "distribution_name": "com.google.cloud:google-cloud-billingbudgets",
+    "api_id": "billingbudgets.googleapis.com"
 }
