@@ -3,4 +3,4 @@
 
 proto-google-cloud-os-login-v1:0.82.1:0.82.2-SNAPSHOT
 grpc-google-cloud-os-login-v1:0.82.1:0.82.2-SNAPSHOT
-google-cloud-os-login:0.117.1-alpha:0.117.2-alpha-SNAPSHOT
+google-cloud-os-login:0.117.1:0.117.2-SNAPSHOT
