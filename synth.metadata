@@ -1,19 +1,32 @@
 {
-  "updateTime": "2020-01-16T08:37:10.013112Z",
+  "updateTime": "2020-01-24T23:47:31.049509Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.44.0",
-        "dockerImage": "googleapis/artman@sha256:10a6d0342b8d62544810ac5ad86c3b21049ec0696608ac60175da8e513234344"
+        "version": "0.44.1",
+        "dockerImage": "googleapis/artman@sha256:5599b61e56a372d21b671969ee915fbca0f6c3a0daaeb898d01f8f685f1bbc8b"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "0735b4b096872960568d1f366bfa75b7b0e1f1a3",
-        "internalRef": "289939042"
+        "sha": "3febac09e0bf5f813de64a8d3cb69641af92584f"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "3febac09e0bf5f813de64a8d3cb69641af92584f"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "3febac09e0bf5f813de64a8d3cb69641af92584f"
       }
     },
     {
@@ -28,140 +41,34 @@
     {
       "client": {
         "source": "googleapis",
-        "apiName": "bigquerystorage",
+        "apiName": "bigquery-storage",
         "apiVersion": "v1beta1",
         "language": "java",
-        "generator": "gapic",
-        "config": "google/cloud/bigquery/storage/artman_bigquerystorage_v1beta1.yaml"
+        "generator": "bazel"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "bigquery-storage",
+        "apiVersion": "v1beta2",
+        "language": "java",
+        "generator": "bazel"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "bigquery-storage",
+        "apiVersion": "v1alpha2",
+        "language": "java",
+        "generator": "bazel"
       }
     }
   ],
   "newFiles": [
     {
-      "path": "pom.xml"
-    },
-    {
-      "path": ".repo-metadata.json"
-    },
-    {
-      "path": "java.header"
-    },
-    {
-      "path": "CONTRIBUTING.md"
-    },
-    {
-      "path": "synth.metadata"
-    },
-    {
-      "path": "renovate.json"
-    },
-    {
-      "path": "versions.txt"
-    },
-    {
-      "path": "synth.py"
-    },
-    {
-      "path": "license-checks.xml"
-    },
-    {
-      "path": "CHANGELOG.md"
-    },
-    {
-      "path": "CODE_OF_CONDUCT.md"
-    },
-    {
-      "path": "LICENSE"
-    },
-    {
-      "path": "codecov.yaml"
-    },
-    {
-      "path": ".gitignore"
-    },
-    {
-      "path": "README.md"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/pom.xml"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1beta1/MockBigQueryStorageImpl.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1beta1/BaseBigQueryStorageClientTest.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1beta1/BigQueryStorageClientTest.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1beta1/MockBigQueryStorage.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1beta1/it/ITBigQueryStorageLongRunningTest.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1beta1/it/SimpleRowReader.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1beta1/it/ITBigQueryStorageTest.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1beta1/stub/EnhancedBigQueryStorageStubSettingsTest.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1beta1/stub/ResourceHeaderTest.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1beta1/stub/readrows/ReadRowsRetryTest.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/BigQueryStorageClient.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/package-info.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/BaseBigQueryStorageSettings.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/BigQueryStorageSettings.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/BaseBigQueryStorageClient.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/stub/GrpcBigQueryStorageCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/stub/BigQueryStorageStub.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/stub/BigQueryStorageStubSettings.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/stub/EnhancedBigQueryStorageStubSettings.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/stub/EnhancedBigQueryStorageStub.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/stub/GrpcBigQueryStorageStub.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/stub/readrows/ReadRowsResumptionStrategy.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/stub/readrows/package-info.java"
-    },
-    {
-      "path": "google-cloud-bigquerystorage-bom/pom.xml"
-    },
-    {
-      "path": ".github/release-please.yml"
-    },
-    {
-      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/feature_request.md"
@@ -170,67 +77,28 @@
       "path": ".github/ISSUE_TEMPLATE/support_request.md"
     },
     {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
     },
     {
-      "path": "proto-google-cloud-bigquerystorage-v1beta1/pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-bigquerystorage-v1beta1/src/main/java/com/google/cloud/bigquery/storage/v1beta1/ArrowProto.java"
-    },
-    {
-      "path": "proto-google-cloud-bigquerystorage-v1beta1/src/main/java/com/google/cloud/bigquery/storage/v1beta1/Storage.java"
-    },
-    {
-      "path": "proto-google-cloud-bigquerystorage-v1beta1/src/main/java/com/google/cloud/bigquery/storage/v1beta1/ReadOptions.java"
-    },
-    {
-      "path": "proto-google-cloud-bigquerystorage-v1beta1/src/main/java/com/google/cloud/bigquery/storage/v1beta1/AvroProto.java"
-    },
-    {
-      "path": "proto-google-cloud-bigquerystorage-v1beta1/src/main/java/com/google/cloud/bigquery/storage/v1beta1/TableReferenceProto.java"
-    },
-    {
-      "path": "proto-google-cloud-bigquerystorage-v1beta1/src/main/proto/google/cloud/bigquery/storage/v1beta1/storage.proto"
-    },
-    {
-      "path": "proto-google-cloud-bigquerystorage-v1beta1/src/main/proto/google/cloud/bigquery/storage/v1beta1/avro.proto"
-    },
-    {
-      "path": "proto-google-cloud-bigquerystorage-v1beta1/src/main/proto/google/cloud/bigquery/storage/v1beta1/read_options.proto"
-    },
-    {
-      "path": "proto-google-cloud-bigquerystorage-v1beta1/src/main/proto/google/cloud/bigquery/storage/v1beta1/arrow.proto"
-    },
-    {
-      "path": "proto-google-cloud-bigquerystorage-v1beta1/src/main/proto/google/cloud/bigquery/storage/v1beta1/table_reference.proto"
-    },
-    {
-      "path": ".kokoro/build.sh"
-    },
-    {
-      "path": ".kokoro/common.cfg"
+      "path": ".github/release-please.yml"
     },
     {
       "path": ".kokoro/build.bat"
     },
     {
-      "path": ".kokoro/linkage-monitor.sh"
+      "path": ".kokoro/build.sh"
     },
     {
       "path": ".kokoro/coerce_logs.sh"
     },
     {
-      "path": ".kokoro/dependencies.sh"
+      "path": ".kokoro/common.cfg"
     },
     {
-      "path": ".kokoro/trampoline.sh"
+      "path": ".kokoro/continuous/common.cfg"
     },
     {
-      "path": ".kokoro/continuous/samples.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/java8.cfg"
+      "path": ".kokoro/continuous/dependencies.cfg"
     },
     {
       "path": ".kokoro/continuous/integration.cfg"
@@ -239,34 +107,40 @@
       "path": ".kokoro/continuous/java11.cfg"
     },
     {
-      "path": ".kokoro/continuous/propose_release.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/common.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/propose_release.sh"
-    },
-    {
       "path": ".kokoro/continuous/java7.cfg"
-    },
-    {
-      "path": ".kokoro/continuous/lint.cfg"
     },
     {
       "path": ".kokoro/continuous/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/continuous/dependencies.cfg"
-    },
-    {
       "path": ".kokoro/continuous/java8-win.cfg"
     },
     {
-      "path": ".kokoro/nightly/samples.cfg"
+      "path": ".kokoro/continuous/java8.cfg"
     },
     {
-      "path": ".kokoro/nightly/java8.cfg"
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
     },
     {
       "path": ".kokoro/nightly/integration.cfg"
@@ -275,70 +149,31 @@
       "path": ".kokoro/nightly/java11.cfg"
     },
     {
-      "path": ".kokoro/nightly/common.cfg"
-    },
-    {
       "path": ".kokoro/nightly/java7.cfg"
-    },
-    {
-      "path": ".kokoro/nightly/lint.cfg"
     },
     {
       "path": ".kokoro/nightly/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/nightly/dependencies.cfg"
-    },
-    {
       "path": ".kokoro/nightly/java8-win.cfg"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.cfg"
+      "path": ".kokoro/nightly/java8.cfg"
     },
     {
-      "path": ".kokoro/release/common.sh"
+      "path": ".kokoro/nightly/lint.cfg"
     },
     {
-      "path": ".kokoro/release/promote.sh"
+      "path": ".kokoro/nightly/samples.cfg"
     },
     {
-      "path": ".kokoro/release/common.cfg"
+      "path": ".kokoro/presubmit/clirr.cfg"
     },
     {
-      "path": ".kokoro/release/publish_javadoc.sh"
+      "path": ".kokoro/presubmit/common.cfg"
     },
     {
-      "path": ".kokoro/release/drop.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.sh"
-    },
-    {
-      "path": ".kokoro/release/promote.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.cfg"
-    },
-    {
-      "path": ".kokoro/release/drop.cfg"
-    },
-    {
-      "path": ".kokoro/release/bump_snapshot.sh"
-    },
-    {
-      "path": ".kokoro/release/stage.cfg"
-    },
-    {
-      "path": ".kokoro/release/snapshot.sh"
-    },
-    {
-      "path": ".kokoro/presubmit/samples.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/java8.cfg"
+      "path": ".kokoro/presubmit/dependencies.cfg"
     },
     {
       "path": ".kokoro/presubmit/integration.cfg"
@@ -347,34 +182,238 @@
       "path": ".kokoro/presubmit/java11.cfg"
     },
     {
-      "path": ".kokoro/presubmit/linkage-monitor.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/common.cfg"
-    },
-    {
       "path": ".kokoro/presubmit/java7.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/lint.cfg"
     },
     {
       "path": ".kokoro/presubmit/java8-osx.cfg"
     },
     {
-      "path": ".kokoro/presubmit/dependencies.cfg"
-    },
-    {
-      "path": ".kokoro/presubmit/clirr.cfg"
-    },
-    {
       "path": ".kokoro/presubmit/java8-win.cfg"
     },
     {
-      "path": "grpc-google-cloud-bigquerystorage-v1beta1/pom.xml"
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1alpha2/BigQueryWriteClient.java"
+    },
+    {
+      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1alpha2/stub/GrpcBigQueryWriteCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/BaseBigQueryStorageClient.java"
+    },
+    {
+      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/stub/GrpcBigQueryStorageCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta2/BaseBigQueryReadClient.java"
+    },
+    {
+      "path": "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta2/stub/GrpcBigQueryReadCallableFactory.java"
+    },
+    {
+      "path": "grpc-google-cloud-bigquerystorage-v1alpha2/src/main/java/com/google/cloud/bigquery/storage/v1alpha2/BigQueryWriteGrpc.java"
     },
     {
       "path": "grpc-google-cloud-bigquerystorage-v1beta1/src/main/java/com/google/cloud/bigquery/storage/v1beta1/BigQueryStorageGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/BigQueryReadGrpc.java"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1alpha2/src/main/java/com/google/cloud/bigquery/storage/v1alpha2/ProtoBufProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1alpha2/src/main/java/com/google/cloud/bigquery/storage/v1alpha2/Storage.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1alpha2/src/main/java/com/google/cloud/bigquery/storage/v1alpha2/Stream.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1alpha2/src/main/java/com/google/cloud/bigquery/storage/v1alpha2/Table.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta1/src/main/java/com/google/cloud/bigquery/storage/v1beta1/ArrowProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta1/src/main/java/com/google/cloud/bigquery/storage/v1beta1/AvroProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta1/src/main/java/com/google/cloud/bigquery/storage/v1beta1/ReadOptions.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta1/src/main/java/com/google/cloud/bigquery/storage/v1beta1/Storage.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta1/src/main/java/com/google/cloud/bigquery/storage/v1beta1/TableReferenceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/ArrowProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/ArrowRecordBatch.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/ArrowRecordBatchOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/ArrowSchema.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/ArrowSchemaOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/AvroProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/AvroRows.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/AvroRowsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/AvroSchema.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/AvroSchemaOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/CreateReadSessionRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/CreateReadSessionRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/DataFormat.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/ReadRowsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/ReadRowsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/ReadRowsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/ReadRowsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/ReadSession.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/ReadSessionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/ReadStream.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/ReadStreamOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/SplitReadStreamRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/SplitReadStreamRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/SplitReadStreamResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/SplitReadStreamResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/StorageProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/StreamProto.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/StreamStats.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/StreamStatsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/ThrottleState.java"
+    },
+    {
+      "path": "proto-google-cloud-bigquerystorage-v1beta2/src/main/java/com/google/cloud/bigquery/storage/v1beta2/ThrottleStateOrBuilder.java"
+    },
+    {
+      "path": "renovate.json"
     }
   ]
 }

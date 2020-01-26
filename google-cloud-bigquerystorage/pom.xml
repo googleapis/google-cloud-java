@@ -44,7 +44,15 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-bigquerystorage-v1alpha2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-bigquerystorage-v1beta1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-bigquerystorage-v1beta2</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -116,7 +124,17 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-bigquerystorage-v1alpha2</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-bigquerystorage-v1beta1</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-bigquerystorage-v1beta2</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
