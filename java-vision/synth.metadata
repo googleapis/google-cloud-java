@@ -1,19 +1,20 @@
 {
-  "updateTime": "2020-01-14T21:47:42.447646Z",
+  "updateTime": "2020-01-25T09:10:06.755087Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.44.0",
-        "dockerImage": "googleapis/artman@sha256:10a6d0342b8d62544810ac5ad86c3b21049ec0696608ac60175da8e513234344"
+        "version": "0.44.1",
+        "dockerImage": "googleapis/artman@sha256:5599b61e56a372d21b671969ee915fbca0f6c3a0daaeb898d01f8f685f1bbc8b"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d99df0d67057a233c711187e0689baa4f8e6333d",
-        "internalRef": "289709813"
+        "sha": "3c39a1d6e23c1ef63c7fba4019c25e76c40dfe19",
+        "internalRef": "291420695",
+        "log": "3c39a1d6e23c1ef63c7fba4019c25e76c40dfe19\nKMS: add file-level message for CryptoKeyPath, it is defined in gapic yaml but not\nin proto files.\n\nPiperOrigin-RevId: 291420695\n\nc6f3f350b8387f8d1b85ed4506f30187ebaaddc3\ncontaineranalysis: update v1beta1 and bazel build with annotations\n\nPiperOrigin-RevId: 291401900\n\n92887d74b44e4e636252b7b8477d0d2570cd82db\nfix: fix the location of grpc config file.\n\nPiperOrigin-RevId: 291396015\n\ne26cab8afd19d396b929039dac5d874cf0b5336c\nexpr: add default_host and method_signature annotations to CelService\n\nPiperOrigin-RevId: 291240093\n\n06093ae3952441c34ec176d1f7431b8765cec0be\nirm: fix v1alpha2 bazel build by adding missing proto imports\n\nPiperOrigin-RevId: 291227940\n\na8a2514af326e4673063f9a3c9d0ef1091c87e6c\nAdd proto annotation for cloud/irm API\n\nPiperOrigin-RevId: 291217859\n\n8d16f76de065f530d395a4c7eabbf766d6a120fd\nGenerate Memcache v1beta2 API protos and gRPC ServiceConfig files\n\nPiperOrigin-RevId: 291008516\n\n3af1dabd93df9a9f17bf3624d3b875c11235360b\ngrafeas: Add containeranalysis default_host to Grafeas service\n\nPiperOrigin-RevId: 290965849\n\nbe2663fa95e31cba67d0cd62611a6674db9f74b7\nfix(google/maps/roads): add missing opening bracket\n\nPiperOrigin-RevId: 290964086\n\nfacc26550a0af0696e0534bc9cae9df14275aa7c\nUpdating v2 protos with the latest inline documentation (in comments) and adding a per-service .yaml file.\n\nPiperOrigin-RevId: 290952261\n\ncda99c1f7dc5e4ca9b1caeae1dc330838cbc1461\nChange api_name to 'asset' for v1p1beta1\n\nPiperOrigin-RevId: 290800639\n\n94e9e90c303a820ce40643d9129e7f0d2054e8a1\nAdds Google Maps Road service\n\nPiperOrigin-RevId: 290795667\n\na3b23dcb2eaecce98c600c7d009451bdec52dbda\nrpc: new message ErrorInfo, other comment updates\n\nPiperOrigin-RevId: 290781668\n\n26420ef4e46c37f193c0fbe53d6ebac481de460e\nAdd proto definition for Org Policy v1.\n\nPiperOrigin-RevId: 290771923\n\n7f0dab8177cf371ae019a082e2512de7ac102888\nPublish Routes Preferred API v1 service definitions.\n\nPiperOrigin-RevId: 290326986\n\nad6e508d0728e1d1bca6e3f328cd562718cb772d\nFix: Qualify resource type references with \"jobs.googleapis.com/\"\n\nPiperOrigin-RevId: 290285762\n\n58e770d568a2b78168ddc19a874178fee8265a9d\ncts client library\n\nPiperOrigin-RevId: 290146169\n\naf9daa4c3b4c4a8b7133b81588dd9ffd37270af2\nAdd more programming language options to public proto\n\nPiperOrigin-RevId: 290144091\n\nd9f2bbf2df301ef84641d4cec7c828736a0bd907\ntalent: add missing resource.proto dep to Bazel build target\n\nPiperOrigin-RevId: 290143164\n\n3b3968237451d027b42471cd28884a5a1faed6c7\nAnnotate Talent API.\nAdd gRPC service config for retry.\nUpdate bazel file with google.api.resource dependency.\n\nPiperOrigin-RevId: 290125172\n\n0735b4b096872960568d1f366bfa75b7b0e1f1a3\nWeekly library update.\n\nPiperOrigin-RevId: 289939042\n\n8760d3d9a4543d7f9c0d1c7870aca08b116e4095\nWeekly library update.\n\nPiperOrigin-RevId: 289939020\n\n8607df842f782a901805187e02fff598145b0b0e\nChange Talent API timeout to 30s.\n\nPiperOrigin-RevId: 289912621\n\n908155991fe32570653bcb72ecfdcfc896642f41\nAdd Recommendations AI V1Beta1\n\nPiperOrigin-RevId: 289901914\n\n5c9a8c2bebd8b71aa66d1cc473edfaac837a2c78\nAdding no-arg method signatures for ListBillingAccounts and ListServices\n\nPiperOrigin-RevId: 289891136\n\n50b0e8286ac988b0593bd890eb31fef6ea2f5767\nlongrunning: add grpc service config and default_host annotation to operations.proto\n\nPiperOrigin-RevId: 289876944\n\n6cac27dabe51c54807b0401698c32d34998948a9\n  Updating default deadline for Cloud Security Command Center's v1 APIs.\n\nPiperOrigin-RevId: 289875412\n\n"
       }
     },
     {
@@ -74,6 +75,2696 @@
         "generator": "gapic",
         "config": "google/cloud/vision/artman_vision_v1p4beta1.yaml"
       }
+    }
+  ],
+  "newFiles": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/support_request.md"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md"
+    },
+    {
+      "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".gitignore"
+    },
+    {
+      "path": ".kokoro/build.bat"
+    },
+    {
+      "path": ".kokoro/build.sh"
+    },
+    {
+      "path": ".kokoro/coerce_logs.sh"
+    },
+    {
+      "path": ".kokoro/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/common.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/integration.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java11.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java7.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/java8.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/lint.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.cfg"
+    },
+    {
+      "path": ".kokoro/continuous/propose_release.sh"
+    },
+    {
+      "path": ".kokoro/continuous/samples.cfg"
+    },
+    {
+      "path": ".kokoro/dependencies.sh"
+    },
+    {
+      "path": ".kokoro/linkage-monitor.sh"
+    },
+    {
+      "path": ".kokoro/nightly/common.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/integration.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java11.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java7.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/java8.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/lint.cfg"
+    },
+    {
+      "path": ".kokoro/nightly/samples.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/clirr.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/common.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/dependencies.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/integration.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java11.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java7.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-osx.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8-win.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/java8.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/linkage-monitor.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/lint.cfg"
+    },
+    {
+      "path": ".kokoro/presubmit/samples.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/bump_snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/common.cfg"
+    },
+    {
+      "path": ".kokoro/release/common.sh"
+    },
+    {
+      "path": ".kokoro/release/drop.cfg"
+    },
+    {
+      "path": ".kokoro/release/drop.sh"
+    },
+    {
+      "path": ".kokoro/release/promote.cfg"
+    },
+    {
+      "path": ".kokoro/release/promote.sh"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.cfg"
+    },
+    {
+      "path": ".kokoro/release/publish_javadoc.sh"
+    },
+    {
+      "path": ".kokoro/release/snapshot.cfg"
+    },
+    {
+      "path": ".kokoro/release/snapshot.sh"
+    },
+    {
+      "path": ".kokoro/release/stage.cfg"
+    },
+    {
+      "path": ".kokoro/release/stage.sh"
+    },
+    {
+      "path": ".kokoro/trampoline.sh"
+    },
+    {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "path": "LICENSE"
+    },
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "codecov.yaml"
+    },
+    {
+      "path": "google-cloud-vision-bom/pom.xml"
+    },
+    {
+      "path": "google-cloud-vision/pom.xml"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ImageAnnotatorClient.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ImageAnnotatorSettings.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ProductSearchClient.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ProductSearchSettings.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/package-info.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/stub/GrpcImageAnnotatorCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/stub/GrpcImageAnnotatorStub.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/stub/GrpcProductSearchCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/stub/GrpcProductSearchStub.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/stub/ImageAnnotatorStub.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/stub/ImageAnnotatorStubSettings.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/stub/ProductSearchStub.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/stub/ProductSearchStubSettings.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p1beta1/ImageAnnotatorClient.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p1beta1/ImageAnnotatorSettings.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p1beta1/package-info.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p1beta1/stub/GrpcImageAnnotatorCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p1beta1/stub/GrpcImageAnnotatorStub.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p1beta1/stub/ImageAnnotatorStub.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p1beta1/stub/ImageAnnotatorStubSettings.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p2beta1/ImageAnnotatorClient.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p2beta1/ImageAnnotatorSettings.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p2beta1/package-info.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p2beta1/stub/GrpcImageAnnotatorCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p2beta1/stub/GrpcImageAnnotatorStub.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p2beta1/stub/ImageAnnotatorStub.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p2beta1/stub/ImageAnnotatorStubSettings.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/ImageAnnotatorClient.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/ImageAnnotatorSettings.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/ProductSearchClient.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/ProductSearchSettings.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/package-info.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/stub/GrpcImageAnnotatorCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/stub/GrpcImageAnnotatorStub.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/stub/GrpcProductSearchCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/stub/GrpcProductSearchStub.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/stub/ImageAnnotatorStub.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/stub/ImageAnnotatorStubSettings.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/stub/ProductSearchStub.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/stub/ProductSearchStubSettings.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/ImageAnnotatorClient.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/ImageAnnotatorSettings.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/ProductSearchClient.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/ProductSearchSettings.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/package-info.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/stub/GrpcImageAnnotatorCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/stub/GrpcImageAnnotatorStub.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/stub/GrpcProductSearchCallableFactory.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/stub/GrpcProductSearchStub.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/stub/ImageAnnotatorStub.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/stub/ImageAnnotatorStubSettings.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/stub/ProductSearchStub.java"
+    },
+    {
+      "path": "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/stub/ProductSearchStubSettings.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/it/ITSystemTest.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1/ImageAnnotatorClientTest.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1/ImageAnnotatorSmokeTest.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1/MockImageAnnotator.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1/MockImageAnnotatorImpl.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1/MockProductSearch.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1/MockProductSearchImpl.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1/ProductSearchClientTest.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p1beta1/ImageAnnotatorClientTest.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p1beta1/ImageAnnotatorSmokeTest.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p1beta1/MockImageAnnotator.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p1beta1/MockImageAnnotatorImpl.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p2beta1/ImageAnnotatorClientTest.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p2beta1/ImageAnnotatorSmokeTest.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p2beta1/MockImageAnnotator.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p2beta1/MockImageAnnotatorImpl.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p3beta1/ImageAnnotatorClientTest.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p3beta1/ImageAnnotatorSmokeTest.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p3beta1/MockImageAnnotator.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p3beta1/MockImageAnnotatorImpl.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p3beta1/MockProductSearch.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p3beta1/MockProductSearchImpl.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p3beta1/ProductSearchClientTest.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p4beta1/ImageAnnotatorClientTest.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p4beta1/MockImageAnnotator.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p4beta1/MockImageAnnotatorImpl.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p4beta1/MockProductSearch.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p4beta1/MockProductSearchImpl.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p4beta1/ProductSearchClientTest.java"
+    },
+    {
+      "path": "google-cloud-vision/src/test/resources/city.jpg"
+    },
+    {
+      "path": "google-cloud-vision/src/test/resources/face_no_surprise.jpg"
+    },
+    {
+      "path": "google-cloud-vision/src/test/resources/landmark.jpg"
+    },
+    {
+      "path": "google-cloud-vision/src/test/resources/logos.png"
+    },
+    {
+      "path": "google-cloud-vision/src/test/resources/puppies.jpg"
+    },
+    {
+      "path": "google-cloud-vision/src/test/resources/text.jpg"
+    },
+    {
+      "path": "google-cloud-vision/src/test/resources/wakeupcat.jpg"
+    },
+    {
+      "path": "grpc-google-cloud-vision-v1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImageAnnotatorGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ProductSearchGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-vision-v1p1beta1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/ImageAnnotatorGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-vision-v1p2beta1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/ImageAnnotatorGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-vision-v1p3beta1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImageAnnotatorGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ProductSearchGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-vision-v1p4beta1/pom.xml"
+    },
+    {
+      "path": "grpc-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImageAnnotatorGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ProductSearchGrpc.java"
+    },
+    {
+      "path": "java.header"
+    },
+    {
+      "path": "license-checks.xml"
+    },
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AddProductToProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AddProductToProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AnnotateFileRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AnnotateFileRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AnnotateFileResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AnnotateFileResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AnnotateImageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AnnotateImageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AnnotateImageResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AnnotateImageResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AsyncAnnotateFileRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AsyncAnnotateFileRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AsyncAnnotateFileResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AsyncAnnotateFileResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AsyncBatchAnnotateFilesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AsyncBatchAnnotateFilesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AsyncBatchAnnotateFilesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AsyncBatchAnnotateFilesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AsyncBatchAnnotateImagesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AsyncBatchAnnotateImagesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AsyncBatchAnnotateImagesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/AsyncBatchAnnotateImagesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/BatchAnnotateFilesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/BatchAnnotateFilesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/BatchAnnotateFilesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/BatchAnnotateFilesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/BatchAnnotateImagesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/BatchAnnotateImagesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/BatchAnnotateImagesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/BatchAnnotateImagesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/BatchOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/BatchOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/Block.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/BlockOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/BoundingPoly.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/BoundingPolyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ColorInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ColorInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/CreateProductRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/CreateProductRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/CreateProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/CreateProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/CreateReferenceImageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/CreateReferenceImageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/CropHint.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/CropHintOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/CropHintsAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/CropHintsAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/CropHintsParams.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/CropHintsParamsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/DeleteProductRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/DeleteProductRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/DeleteProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/DeleteProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/DeleteReferenceImageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/DeleteReferenceImageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/DominantColorsAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/DominantColorsAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/EntityAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/EntityAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/FaceAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/FaceAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/Feature.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/FeatureOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/GcsDestination.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/GcsDestinationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/GcsSource.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/GcsSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/GeometryProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/GetProductRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/GetProductRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/GetProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/GetProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/GetReferenceImageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/GetReferenceImageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/Image.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImageAnnotationContext.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImageAnnotationContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImageAnnotatorProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImageContext.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImageContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImageName.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImageProperties.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImagePropertiesOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImageSource.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImageSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImportProductSetsGcsSource.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImportProductSetsGcsSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImportProductSetsInputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImportProductSetsInputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImportProductSetsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImportProductSetsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImportProductSetsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImportProductSetsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/InputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/InputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/LatLongRect.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/LatLongRectOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/Likelihood.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ListProductSetsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ListProductSetsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ListProductSetsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ListProductSetsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ListProductsInProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ListProductsInProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ListProductsInProductSetResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ListProductsInProductSetResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ListProductsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ListProductsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ListProductsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ListProductsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ListReferenceImagesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ListReferenceImagesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ListReferenceImagesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ListReferenceImagesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/LocalizedObjectAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/LocalizedObjectAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/LocationInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/LocationInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/LocationName.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/NormalizedVertex.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/NormalizedVertexOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/OperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/OperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/OutputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/OutputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/Page.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/PageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/Paragraph.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ParagraphOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/Position.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/PositionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/Product.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ProductName.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ProductOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ProductSearchParams.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ProductSearchParamsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ProductSearchProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ProductSearchResults.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ProductSearchResultsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ProductSearchServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ProductSet.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ProductSetName.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ProductSetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ProductSetPurgeConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ProductSetPurgeConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/Property.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/PropertyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/PurgeProductsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/PurgeProductsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ReferenceImage.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ReferenceImageName.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ReferenceImageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/RemoveProductFromProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/RemoveProductFromProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/SafeSearchAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/SafeSearchAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/Symbol.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/SymbolOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/TextAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/TextAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/TextAnnotationProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/UpdateProductRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/UpdateProductRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/UpdateProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/UpdateProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/Vertex.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/VertexOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/WebDetection.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/WebDetectionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/WebDetectionParams.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/WebDetectionParamsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/WebDetectionProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/Word.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/WordOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/proto/google/cloud/vision/v1/geometry.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/proto/google/cloud/vision/v1/image_annotator.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/proto/google/cloud/vision/v1/product_search.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/proto/google/cloud/vision/v1/product_search_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/proto/google/cloud/vision/v1/text_annotation.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1/src/main/proto/google/cloud/vision/v1/web_detection.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/AnnotateImageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/AnnotateImageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/AnnotateImageResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/AnnotateImageResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/BatchAnnotateImagesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/BatchAnnotateImagesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/BatchAnnotateImagesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/BatchAnnotateImagesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/Block.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/BlockOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/BoundingPoly.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/BoundingPolyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/ColorInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/ColorInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/CropHint.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/CropHintOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/CropHintsAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/CropHintsAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/CropHintsParams.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/CropHintsParamsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/DominantColorsAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/DominantColorsAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/EntityAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/EntityAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/FaceAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/FaceAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/Feature.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/FeatureOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/GeometryProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/Image.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/ImageAnnotatorProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/ImageContext.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/ImageContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/ImageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/ImageProperties.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/ImagePropertiesOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/ImageSource.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/ImageSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/LatLongRect.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/LatLongRectOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/Likelihood.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/LocationInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/LocationInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/Page.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/PageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/Paragraph.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/ParagraphOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/Position.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/PositionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/Property.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/PropertyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/SafeSearchAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/SafeSearchAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/Symbol.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/SymbolOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/TextAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/TextAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/TextAnnotationProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/Vertex.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/VertexOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/WebDetection.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/WebDetectionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/WebDetectionParams.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/WebDetectionParamsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/WebDetectionProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/Word.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/WordOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/proto/google/cloud/vision/v1p1beta1/geometry.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/proto/google/cloud/vision/v1p1beta1/image_annotator.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/proto/google/cloud/vision/v1p1beta1/text_annotation.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p1beta1/src/main/proto/google/cloud/vision/v1p1beta1/web_detection.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/AnnotateFileResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/AnnotateFileResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/AnnotateImageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/AnnotateImageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/AnnotateImageResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/AnnotateImageResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/AsyncAnnotateFileRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/AsyncAnnotateFileRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/AsyncAnnotateFileResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/AsyncAnnotateFileResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/AsyncBatchAnnotateFilesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/AsyncBatchAnnotateFilesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/AsyncBatchAnnotateFilesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/AsyncBatchAnnotateFilesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/BatchAnnotateImagesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/BatchAnnotateImagesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/BatchAnnotateImagesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/BatchAnnotateImagesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/Block.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/BlockOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/BoundingPoly.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/BoundingPolyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/ColorInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/ColorInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/CropHint.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/CropHintOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/CropHintsAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/CropHintsAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/CropHintsParams.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/CropHintsParamsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/DominantColorsAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/DominantColorsAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/EntityAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/EntityAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/FaceAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/FaceAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/Feature.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/FeatureOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/GcsDestination.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/GcsDestinationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/GcsSource.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/GcsSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/GeometryProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/Image.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/ImageAnnotationContext.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/ImageAnnotationContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/ImageAnnotatorProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/ImageContext.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/ImageContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/ImageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/ImageProperties.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/ImagePropertiesOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/ImageSource.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/ImageSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/InputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/InputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/LatLongRect.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/LatLongRectOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/Likelihood.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/LocationInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/LocationInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/NormalizedVertex.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/NormalizedVertexOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/OperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/OperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/OutputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/OutputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/Page.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/PageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/Paragraph.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/ParagraphOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/Position.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/PositionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/Property.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/PropertyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/SafeSearchAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/SafeSearchAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/Symbol.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/SymbolOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/TextAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/TextAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/TextAnnotationProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/Vertex.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/VertexOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/WebDetection.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/WebDetectionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/WebDetectionParams.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/WebDetectionParamsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/WebDetectionProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/Word.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/WordOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/proto/google/cloud/vision/v1p2beta1/geometry.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/proto/google/cloud/vision/v1p2beta1/image_annotator.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/proto/google/cloud/vision/v1p2beta1/text_annotation.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p2beta1/src/main/proto/google/cloud/vision/v1p2beta1/web_detection.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/AddProductToProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/AddProductToProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/AnnotateFileResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/AnnotateFileResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/AnnotateImageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/AnnotateImageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/AnnotateImageResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/AnnotateImageResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/AsyncAnnotateFileRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/AsyncAnnotateFileRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/AsyncAnnotateFileResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/AsyncAnnotateFileResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/AsyncBatchAnnotateFilesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/AsyncBatchAnnotateFilesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/AsyncBatchAnnotateFilesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/AsyncBatchAnnotateFilesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/BatchAnnotateImagesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/BatchAnnotateImagesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/BatchAnnotateImagesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/BatchAnnotateImagesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/BatchOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/BatchOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/Block.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/BlockOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/BoundingPoly.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/BoundingPolyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ColorInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ColorInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/CreateProductRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/CreateProductRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/CreateProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/CreateProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/CreateReferenceImageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/CreateReferenceImageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/CropHint.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/CropHintOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/CropHintsAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/CropHintsAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/CropHintsParams.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/CropHintsParamsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/DeleteProductRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/DeleteProductRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/DeleteProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/DeleteProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/DeleteReferenceImageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/DeleteReferenceImageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/DominantColorsAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/DominantColorsAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/EntityAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/EntityAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/FaceAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/FaceAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/Feature.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/FeatureOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/GcsDestination.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/GcsDestinationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/GcsSource.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/GcsSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/GeometryProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/GetProductRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/GetProductRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/GetProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/GetProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/GetReferenceImageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/GetReferenceImageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/Image.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImageAnnotationContext.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImageAnnotationContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImageAnnotatorProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImageContext.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImageContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImageProperties.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImagePropertiesOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImageSource.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImageSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImportProductSetsGcsSource.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImportProductSetsGcsSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImportProductSetsInputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImportProductSetsInputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImportProductSetsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImportProductSetsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImportProductSetsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ImportProductSetsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/InputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/InputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/LatLongRect.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/LatLongRectOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/Likelihood.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ListProductSetsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ListProductSetsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ListProductSetsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ListProductSetsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ListProductsInProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ListProductsInProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ListProductsInProductSetResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ListProductsInProductSetResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ListProductsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ListProductsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ListProductsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ListProductsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ListReferenceImagesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ListReferenceImagesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ListReferenceImagesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ListReferenceImagesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/LocalizedObjectAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/LocalizedObjectAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/LocationInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/LocationInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/LocationName.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/NormalizedBoundingPoly.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/NormalizedBoundingPolyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/NormalizedVertex.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/NormalizedVertexOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/OperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/OperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/OutputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/OutputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/Page.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/PageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/Paragraph.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ParagraphOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/Position.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/PositionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/Product.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ProductName.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ProductOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ProductSearchCategory.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ProductSearchParams.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ProductSearchParamsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ProductSearchProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ProductSearchResults.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ProductSearchResultsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ProductSearchResultsView.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ProductSearchServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ProductSet.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ProductSetName.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ProductSetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/Property.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/PropertyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ReferenceImage.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ReferenceImageName.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/ReferenceImageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/RemoveProductFromProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/RemoveProductFromProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/SafeSearchAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/SafeSearchAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/Symbol.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/SymbolOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/TextAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/TextAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/TextAnnotationProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/UpdateProductRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/UpdateProductRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/UpdateProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/UpdateProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/Vertex.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/VertexOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/WebDetection.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/WebDetectionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/WebDetectionParams.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/WebDetectionParamsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/WebDetectionProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/Word.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/WordOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/proto/google/cloud/vision/v1p3beta1/geometry.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/proto/google/cloud/vision/v1p3beta1/image_annotator.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/proto/google/cloud/vision/v1p3beta1/product_search.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/proto/google/cloud/vision/v1p3beta1/product_search_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/proto/google/cloud/vision/v1p3beta1/text_annotation.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p3beta1/src/main/proto/google/cloud/vision/v1p3beta1/web_detection.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AddProductToProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AddProductToProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AnnotateFileRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AnnotateFileRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AnnotateFileResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AnnotateFileResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AnnotateImageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AnnotateImageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AnnotateImageResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AnnotateImageResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AsyncAnnotateFileRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AsyncAnnotateFileRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AsyncAnnotateFileResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AsyncAnnotateFileResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AsyncBatchAnnotateFilesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AsyncBatchAnnotateFilesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AsyncBatchAnnotateFilesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AsyncBatchAnnotateFilesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AsyncBatchAnnotateImagesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AsyncBatchAnnotateImagesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AsyncBatchAnnotateImagesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/AsyncBatchAnnotateImagesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/BatchAnnotateFilesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/BatchAnnotateFilesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/BatchAnnotateFilesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/BatchAnnotateFilesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/BatchAnnotateImagesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/BatchAnnotateImagesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/BatchAnnotateImagesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/BatchAnnotateImagesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/BatchOperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/BatchOperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/Block.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/BlockOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/BoundingPoly.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/BoundingPolyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/Celebrity.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/CelebrityOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/CelebrityProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ColorInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ColorInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/CreateProductRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/CreateProductRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/CreateProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/CreateProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/CreateReferenceImageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/CreateReferenceImageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/CropHint.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/CropHintOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/CropHintsAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/CropHintsAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/CropHintsParams.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/CropHintsParamsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/DeleteProductRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/DeleteProductRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/DeleteProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/DeleteProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/DeleteReferenceImageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/DeleteReferenceImageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/DominantColorsAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/DominantColorsAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/EntityAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/EntityAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/FaceAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/FaceAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/FaceRecognitionParams.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/FaceRecognitionParamsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/FaceRecognitionResult.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/FaceRecognitionResultOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/Feature.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/FeatureOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/GcsDestination.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/GcsDestinationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/GcsSource.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/GcsSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/GeometryProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/GetProductRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/GetProductRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/GetProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/GetProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/GetReferenceImageRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/GetReferenceImageRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/Image.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImageAnnotationContext.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImageAnnotationContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImageAnnotatorProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImageContext.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImageContextOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImageProperties.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImagePropertiesOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImageSource.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImageSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImportProductSetsGcsSource.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImportProductSetsGcsSourceOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImportProductSetsInputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImportProductSetsInputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImportProductSetsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImportProductSetsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImportProductSetsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ImportProductSetsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/InputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/InputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/LatLongRect.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/LatLongRectOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/Likelihood.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ListProductSetsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ListProductSetsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ListProductSetsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ListProductSetsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ListProductsInProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ListProductsInProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ListProductsInProductSetResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ListProductsInProductSetResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ListProductsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ListProductsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ListProductsResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ListProductsResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ListReferenceImagesRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ListReferenceImagesRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ListReferenceImagesResponse.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ListReferenceImagesResponseOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/LocalizedObjectAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/LocalizedObjectAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/LocationInfo.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/LocationInfoOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/LocationName.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/NormalizedVertex.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/NormalizedVertexOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/OperationMetadata.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/OperationMetadataOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/OutputConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/OutputConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/Page.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/PageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/Paragraph.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ParagraphOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/Position.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/PositionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/Product.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ProductName.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ProductOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ProductSearchParams.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ProductSearchParamsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ProductSearchProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ProductSearchResults.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ProductSearchResultsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ProductSearchServiceProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ProductSet.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ProductSetName.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ProductSetOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ProductSetPurgeConfig.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ProductSetPurgeConfigOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/Property.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/PropertyOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/PurgeProductsRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/PurgeProductsRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ReferenceImage.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ReferenceImageName.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/ReferenceImageOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/RemoveProductFromProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/RemoveProductFromProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/SafeSearchAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/SafeSearchAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/Symbol.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/SymbolOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/TextAnnotation.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/TextAnnotationOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/TextAnnotationProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/UpdateProductRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/UpdateProductRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/UpdateProductSetRequest.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/UpdateProductSetRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/Vertex.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/VertexOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/WebDetection.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/WebDetectionOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/WebDetectionParams.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/WebDetectionParamsOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/WebDetectionProto.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/Word.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/WordOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/proto/google/cloud/vision/v1p4beta1/face.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/proto/google/cloud/vision/v1p4beta1/geometry.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/proto/google/cloud/vision/v1p4beta1/image_annotator.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/proto/google/cloud/vision/v1p4beta1/product_search.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/proto/google/cloud/vision/v1p4beta1/product_search_service.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/proto/google/cloud/vision/v1p4beta1/text_annotation.proto"
+    },
+    {
+      "path": "proto-google-cloud-vision-v1p4beta1/src/main/proto/google/cloud/vision/v1p4beta1/web_detection.proto"
+    },
+    {
+      "path": "renovate.json"
+    },
+    {
+      "path": "samples/src/main/java/com/google/cloud/examples/vision/v1/VisionAsyncBatchAnnotateImages.java"
+    },
+    {
+      "path": "samples/src/main/java/com/google/cloud/examples/vision/v1/VisionBatchAnnotateFiles.java"
+    },
+    {
+      "path": "samples/src/main/java/com/google/cloud/examples/vision/v1/VisionBatchAnnotateFilesGcs.java"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "versions.txt"
     }
   ]
 }
