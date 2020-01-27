@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-recommender/compare/v0.2.1...v0.3.0) (2020-01-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* use RecommendationName, remove deprecated recommendation name helper methods (#79)
+
+### Features
+
+* generate v1 client ([#78](https://www.github.com/googleapis/java-recommender/issues/78)) ([ac6b998](https://www.github.com/googleapis/java-recommender/commit/ac6b998b5d02ffa801f8aa16eca2f865e22799ad))
+* use RecommendationName, remove deprecated recommendation name helper methods ([#79](https://www.github.com/googleapis/java-recommender/issues/79)) ([21a5a90](https://www.github.com/googleapis/java-recommender/commit/21a5a90a69485cd886542033ba267ad07db995b1))
+
+
+### Dependencies
+
+* update core dependencies ([#73](https://www.github.com/googleapis/java-recommender/issues/73)) ([17a8bba](https://www.github.com/googleapis/java-recommender/commit/17a8bba32a55ecc20489ff46e7e3eea35a827489))
+* update dependency org.threeten:threetenbp to v1.4.1 ([#75](https://www.github.com/googleapis/java-recommender/issues/75)) ([d5af459](https://www.github.com/googleapis/java-recommender/commit/d5af459e6a01ed3ff3ea01daf2965c87a413c2ea))
+
 ### [0.2.1](https://www.github.com/googleapis/java-recommender/compare/v0.2.0...v0.2.1) (2020-01-07)
 
 
