@@ -57,9 +57,9 @@ public class LoadPartitionedTableIT {
 
   @Test
   public void loadPartitionedTable() throws Exception {
-    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states-by-date.csv";
+    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states-by-date-no-header.csv";
 
-    String tableName = "PARTITIONED_TABLE_TEST";
+    String tableName = "LOAD_PARTITIONED_TABLE_TEST";
 
     LoadPartitionedTable.loadPartitionedTable(BIGQUERY_DATASET_NAME, tableName, sourceUri);
 
