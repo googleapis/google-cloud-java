@@ -6,7 +6,7 @@
 
 ## Supported APIs
 
-Libraries are available on GitHub and Maven Central for developing Java applications that interact with individual google Cloud services:
+Libraries are available on GitHub and Maven Central for developing Java applications that interact with individual Google Cloud services:
 
 | Client | Release Level | Version |
 | ------ | ------------- | ------- |
