@@ -559,7 +559,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the scan configuration in the form of
+   * @param name Required. The name of the scan configuration in the form of
    *     `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -582,7 +582,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the scan configuration in the form of
+   * @param name Required. The name of the scan configuration in the form of
    *     `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -652,9 +652,9 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The name of the project to list scan configurations for in the form of
+   * @param parent Required. The name of the project to list scan configurations for in the form of
    *     `projects/[PROJECT_ID]`.
-   * @param filter The filter expression.
+   * @param filter Required. The filter expression.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListScanConfigsPagedResponse listScanConfigs(ProjectName parent, String filter) {
@@ -682,9 +682,9 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The name of the project to list scan configurations for in the form of
+   * @param parent Required. The name of the project to list scan configurations for in the form of
    *     `projects/[PROJECT_ID]`.
-   * @param filter The filter expression.
+   * @param filter Required. The filter expression.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListScanConfigsPagedResponse listScanConfigs(String parent, String filter) {
@@ -789,9 +789,9 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the scan configuration in the form of
+   * @param name Required. The name of the scan configuration in the form of
    *     `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
-   * @param scanConfig The updated scan configuration.
+   * @param scanConfig Required. The updated scan configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanConfig updateScanConfig(ScanConfigName name, ScanConfig scanConfig) {
@@ -817,9 +817,9 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the scan configuration in the form of
+   * @param name Required. The name of the scan configuration in the form of
    *     `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
-   * @param scanConfig The updated scan configuration.
+   * @param scanConfig Required. The updated scan configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanConfig updateScanConfig(String name, ScanConfig scanConfig) {

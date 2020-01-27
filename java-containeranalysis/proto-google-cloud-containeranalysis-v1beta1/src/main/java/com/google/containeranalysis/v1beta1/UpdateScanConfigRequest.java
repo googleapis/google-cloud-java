@@ -133,11 +133,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The name of the scan configuration in the form of
+   * Required. The name of the scan configuration in the form of
    * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -156,11 +158,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The name of the scan configuration in the form of
+   * Required. The name of the scan configuration in the form of
    * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -182,10 +186,12 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The updated scan configuration.
+   * Required. The updated scan configuration.
    * </pre>
    *
-   * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+   * <code>
+   * .google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the scanConfig field is set.
    */
@@ -196,10 +202,12 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The updated scan configuration.
+   * Required. The updated scan configuration.
    * </pre>
    *
-   * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+   * <code>
+   * .google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The scanConfig.
    */
@@ -212,10 +220,12 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The updated scan configuration.
+   * Required. The updated scan configuration.
    * </pre>
    *
-   * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+   * <code>
+   * .google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.containeranalysis.v1beta1.ScanConfigOrBuilder getScanConfigOrBuilder() {
     return getScanConfig();
@@ -575,11 +585,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the scan configuration in the form of
+     * Required. The name of the scan configuration in the form of
      * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -598,11 +610,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the scan configuration in the form of
+     * Required. The name of the scan configuration in the form of
      * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -621,11 +635,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the scan configuration in the form of
+     * Required. The name of the scan configuration in the form of
      * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -643,11 +659,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the scan configuration in the form of
+     * Required. The name of the scan configuration in the form of
      * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -661,11 +679,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the scan configuration in the form of
+     * Required. The name of the scan configuration in the form of
      * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -691,10 +711,12 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the scanConfig field is set.
      */
@@ -705,10 +727,12 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The scanConfig.
      */
@@ -725,10 +749,12 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setScanConfig(com.google.containeranalysis.v1beta1.ScanConfig value) {
       if (scanConfigBuilder_ == null) {
@@ -747,10 +773,12 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setScanConfig(
         com.google.containeranalysis.v1beta1.ScanConfig.Builder builderForValue) {
@@ -767,10 +795,12 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeScanConfig(com.google.containeranalysis.v1beta1.ScanConfig value) {
       if (scanConfigBuilder_ == null) {
@@ -793,10 +823,12 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearScanConfig() {
       if (scanConfigBuilder_ == null) {
@@ -813,10 +845,12 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.containeranalysis.v1beta1.ScanConfig.Builder getScanConfigBuilder() {
 
@@ -827,10 +861,12 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.containeranalysis.v1beta1.ScanConfigOrBuilder getScanConfigOrBuilder() {
       if (scanConfigBuilder_ != null) {
@@ -845,10 +881,12 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The updated scan configuration.
+     * Required. The updated scan configuration.
      * </pre>
      *
-     * <code>.google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.containeranalysis.v1beta1.ScanConfig,

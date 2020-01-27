@@ -59,65 +59,81 @@ public final class Containeranalysis {
       "\nAgoogle/devtools/containeranalysis/v1be"
           + "ta1/containeranalysis.proto\022)google.devt"
           + "ools.containeranalysis.v1beta1\032\034google/a"
-          + "pi/annotations.proto\032\036google/iam/v1/iam_"
-          + "policy.proto\032\032google/iam/v1/policy.proto"
-          + "\032\037google/protobuf/timestamp.proto\"\242\001\n\nSc"
-          + "anConfig\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 "
-          + "\001(\t\022\017\n\007enabled\030\003 \001(\010\022/\n\013create_time\030\004 \001("
-          + "\0132\032.google.protobuf.Timestamp\022/\n\013update_"
-          + "time\030\005 \001(\0132\032.google.protobuf.Timestamp\"$"
-          + "\n\024GetScanConfigRequest\022\014\n\004name\030\001 \001(\t\"_\n\026"
-          + "ListScanConfigsRequest\022\016\n\006parent\030\001 \001(\t\022\016"
-          + "\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npag"
-          + "e_token\030\004 \001(\t\"\177\n\027ListScanConfigsResponse"
-          + "\022K\n\014scan_configs\030\001 \003(\01325.google.devtools"
-          + ".containeranalysis.v1beta1.ScanConfig\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"s\n\027UpdateScanConf"
-          + "igRequest\022\014\n\004name\030\001 \001(\t\022J\n\013scan_config\030\002"
-          + " \001(\01325.google.devtools.containeranalysis"
-          + ".v1beta1.ScanConfig2\204\n\n\030ContainerAnalysi"
-          + "sV1Beta1\022\311\001\n\014SetIamPolicy\022\".google.iam.v"
-          + "1.SetIamPolicyRequest\032\025.google.iam.v1.Po"
-          + "licy\"~\202\323\344\223\002x\"3/v1beta1/{resource=project"
-          + "s/*/notes/*}:setIamPolicy:\001*Z>\"9/v1beta1"
-          + "/{resource=projects/*/occurrences/*}:set"
-          + "IamPolicy:\001*\022\311\001\n\014GetIamPolicy\022\".google.i"
-          + "am.v1.GetIamPolicyRequest\032\025.google.iam.v"
-          + "1.Policy\"~\202\323\344\223\002x\"3/v1beta1/{resource=pro"
-          + "jects/*/notes/*}:getIamPolicy:\001*Z>\"9/v1b"
-          + "eta1/{resource=projects/*/occurrences/*}"
-          + ":getIamPolicy:\001*\022\367\001\n\022TestIamPermissions\022"
-          + "(.google.iam.v1.TestIamPermissionsReques"
-          + "t\032).google.iam.v1.TestIamPermissionsResp"
-          + "onse\"\213\001\202\323\344\223\002\204\001\"9/v1beta1/{resource=proje"
-          + "cts/*/notes/*}:testIamPermissions:\001*ZD\"?"
-          + "/v1beta1/{resource=projects/*/occurrence"
-          + "s/*}:testIamPermissions:\001*\022\271\001\n\rGetScanCo"
-          + "nfig\022?.google.devtools.containeranalysis"
-          + ".v1beta1.GetScanConfigRequest\0325.google.d"
-          + "evtools.containeranalysis.v1beta1.ScanCo"
-          + "nfig\"0\202\323\344\223\002*\022(/v1beta1/{name=projects/*/"
-          + "scanConfigs/*}\022\312\001\n\017ListScanConfigs\022A.goo"
+          + "pi/annotations.proto\032\027google/api/client."
+          + "proto\032\037google/api/field_behavior.proto\032\031"
+          + "google/api/resource.proto\032\036google/iam/v1"
+          + "/iam_policy.proto\032\032google/iam/v1/policy."
+          + "proto\032\037google/protobuf/timestamp.proto\"\202"
+          + "\002\n\nScanConfig\022\014\n\004name\030\001 \001(\t\022\023\n\013descripti"
+          + "on\030\002 \001(\t\022\017\n\007enabled\030\003 \001(\010\022/\n\013create_time"
+          + "\030\004 \001(\0132\032.google.protobuf.Timestamp\022/\n\013up"
+          + "date_time\030\005 \001(\0132\032.google.protobuf.Timest"
+          + "amp:^\352A[\n+containeranalysis.googleapis.c"
+          + "om/ScanConfig\022,projects/{project}/scanCo"
+          + "nfigs/{scan_config}\"Y\n\024GetScanConfigRequ"
+          + "est\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+containeranal"
+          + "ysis.googleapis.com/ScanConfig\"\231\001\n\026ListS"
+          + "canConfigsRequest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A"
+          + "-\n+cloudresourcemanager.googleapis.com/P"
+          + "roject\022\023\n\006filter\030\002 \001(\tB\003\340A\002\022\021\n\tpage_size"
+          + "\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"\177\n\027ListScanCo"
+          + "nfigsResponse\022K\n\014scan_configs\030\001 \003(\01325.go"
+          + "ogle.devtools.containeranalysis.v1beta1."
+          + "ScanConfig\022\027\n\017next_page_token\030\002 \001(\t\"\255\001\n\027"
+          + "UpdateScanConfigRequest\022A\n\004name\030\001 \001(\tB3\340"
+          + "A\002\372A-\n+containeranalysis.googleapis.com/"
+          + "ScanConfig\022O\n\013scan_config\030\002 \001(\01325.google"
+          + ".devtools.containeranalysis.v1beta1.Scan"
+          + "ConfigB\003\340A\0022\272\013\n\030ContainerAnalysisV1Beta1"
+          + "\022\334\001\n\014SetIamPolicy\022\".google.iam.v1.SetIam"
+          + "PolicyRequest\032\025.google.iam.v1.Policy\"\220\001\202"
+          + "\323\344\223\002x\"3/v1beta1/{resource=projects/*/not"
+          + "es/*}:setIamPolicy:\001*Z>\"9/v1beta1/{resou"
+          + "rce=projects/*/occurrences/*}:setIamPoli"
+          + "cy:\001*\332A\017resource,policy\022\325\001\n\014GetIamPolicy"
+          + "\022\".google.iam.v1.GetIamPolicyRequest\032\025.g"
+          + "oogle.iam.v1.Policy\"\211\001\202\323\344\223\002x\"3/v1beta1/{"
+          + "resource=projects/*/notes/*}:getIamPolic"
+          + "y:\001*Z>\"9/v1beta1/{resource=projects/*/oc"
+          + "currences/*}:getIamPolicy:\001*\332A\010resource\022"
+          + "\216\002\n\022TestIamPermissions\022(.google.iam.v1.T"
+          + "estIamPermissionsRequest\032).google.iam.v1"
+          + ".TestIamPermissionsResponse\"\242\001\202\323\344\223\002\204\001\"9/"
+          + "v1beta1/{resource=projects/*/notes/*}:te"
+          + "stIamPermissions:\001*ZD\"?/v1beta1/{resourc"
+          + "e=projects/*/occurrences/*}:testIamPermi"
+          + "ssions:\001*\332A\024resource,permissions\022\300\001\n\rGet"
+          + "ScanConfig\022?.google.devtools.containeran"
+          + "alysis.v1beta1.GetScanConfigRequest\0325.go"
+          + "ogle.devtools.containeranalysis.v1beta1."
+          + "ScanConfig\"7\202\323\344\223\002*\022(/v1beta1/{name=proje"
+          + "cts/*/scanConfigs/*}\332A\004name\022\332\001\n\017ListScan"
+          + "Configs\022A.google.devtools.containeranaly"
+          + "sis.v1beta1.ListScanConfigsRequest\032B.goo"
           + "gle.devtools.containeranalysis.v1beta1.L"
-          + "istScanConfigsRequest\032B.google.devtools."
-          + "containeranalysis.v1beta1.ListScanConfig"
-          + "sResponse\"0\202\323\344\223\002*\022(/v1beta1/{parent=proj"
-          + "ects/*}/scanConfigs\022\314\001\n\020UpdateScanConfig"
-          + "\022B.google.devtools.containeranalysis.v1b"
-          + "eta1.UpdateScanConfigRequest\0325.google.de"
-          + "vtools.containeranalysis.v1beta1.ScanCon"
-          + "fig\"=\202\323\344\223\0027\032(/v1beta1/{name=projects/*/s"
-          + "canConfigs/*}:\013scan_configB\212\001\n$com.googl"
-          + "e.containeranalysis.v1beta1P\001ZZgoogle.go"
-          + "lang.org/genproto/googleapis/devtools/co"
-          + "ntaineranalysis/v1beta1;containeranalysi"
-          + "s\242\002\003GCAb\006proto3"
+          + "istScanConfigsResponse\"@\202\323\344\223\002*\022(/v1beta1"
+          + "/{parent=projects/*}/scanConfigs\332A\rparen"
+          + "t,filter\022\337\001\n\020UpdateScanConfig\022B.google.d"
+          + "evtools.containeranalysis.v1beta1.Update"
+          + "ScanConfigRequest\0325.google.devtools.cont"
+          + "aineranalysis.v1beta1.ScanConfig\"P\202\323\344\223\0027"
+          + "\032(/v1beta1/{name=projects/*/scanConfigs/"
+          + "*}:\013scan_config\332A\020name,scan_config\032T\312A c"
+          + "ontaineranalysis.googleapis.com\322A.https:"
+          + "//www.googleapis.com/auth/cloud-platform"
+          + "B\212\001\n$com.google.containeranalysis.v1beta"
+          + "1P\001ZZgoogle.golang.org/genproto/googleap"
+          + "is/devtools/containeranalysis/v1beta1;co"
+          + "ntaineranalysis\242\002\003GCAb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.iam.v1.IamPolicyProto.getDescriptor(),
               com.google.iam.v1.PolicyProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -164,10 +180,19 @@ public final class Containeranalysis {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.iam.v1.IamPolicyProto.getDescriptor();
     com.google.iam.v1.PolicyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

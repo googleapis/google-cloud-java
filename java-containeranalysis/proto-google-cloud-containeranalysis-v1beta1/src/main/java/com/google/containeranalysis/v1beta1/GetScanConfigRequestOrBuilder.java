@@ -27,11 +27,13 @@ public interface GetScanConfigRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the scan configuration in the form of
+   * Required. The name of the scan configuration in the form of
    * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -40,11 +42,13 @@ public interface GetScanConfigRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the scan configuration in the form of
+   * Required. The name of the scan configuration in the form of
    * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

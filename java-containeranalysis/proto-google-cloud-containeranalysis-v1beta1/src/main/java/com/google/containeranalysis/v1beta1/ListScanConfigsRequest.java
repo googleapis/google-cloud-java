@@ -138,11 +138,13 @@ public final class ListScanConfigsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The name of the project to list scan configurations for in the form of
+   * Required. The name of the project to list scan configurations for in the form of
    * `projects/[PROJECT_ID]`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -161,11 +163,13 @@ public final class ListScanConfigsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The name of the project to list scan configurations for in the form of
+   * Required. The name of the project to list scan configurations for in the form of
    * `projects/[PROJECT_ID]`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -187,10 +191,10 @@ public final class ListScanConfigsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The filter expression.
+   * Required. The filter expression.
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The filter.
    */
@@ -209,10 +213,10 @@ public final class ListScanConfigsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The filter expression.
+   * Required. The filter expression.
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for filter.
    */
@@ -663,11 +667,13 @@ public final class ListScanConfigsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the project to list scan configurations for in the form of
+     * Required. The name of the project to list scan configurations for in the form of
      * `projects/[PROJECT_ID]`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -686,11 +692,13 @@ public final class ListScanConfigsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the project to list scan configurations for in the form of
+     * Required. The name of the project to list scan configurations for in the form of
      * `projects/[PROJECT_ID]`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -709,11 +717,13 @@ public final class ListScanConfigsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the project to list scan configurations for in the form of
+     * Required. The name of the project to list scan configurations for in the form of
      * `projects/[PROJECT_ID]`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -731,11 +741,13 @@ public final class ListScanConfigsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the project to list scan configurations for in the form of
+     * Required. The name of the project to list scan configurations for in the form of
      * `projects/[PROJECT_ID]`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -749,11 +761,13 @@ public final class ListScanConfigsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the project to list scan configurations for in the form of
+     * Required. The name of the project to list scan configurations for in the form of
      * `projects/[PROJECT_ID]`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -774,10 +788,10 @@ public final class ListScanConfigsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The filter expression.
+     * Required. The filter expression.
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The filter.
      */
@@ -796,10 +810,10 @@ public final class ListScanConfigsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The filter expression.
+     * Required. The filter expression.
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for filter.
      */
@@ -818,10 +832,10 @@ public final class ListScanConfigsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The filter expression.
+     * Required. The filter expression.
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -839,10 +853,10 @@ public final class ListScanConfigsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The filter expression.
+     * Required. The filter expression.
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -856,10 +870,10 @@ public final class ListScanConfigsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The filter expression.
+     * Required. The filter expression.
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
