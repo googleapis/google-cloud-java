@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-cloudbuild/compare/v0.1.1...v1.0.0) (2020-01-24)
+
+
+### Features
+
+* promote to GA ([#57](https://www.github.com/googleapis/java-cloudbuild/issues/57)) ([944b404](https://www.github.com/googleapis/java-cloudbuild/commit/944b4046032067d1135e837f33a5ebf37774503c))
+
+
+### Dependencies
+
+* update dependency org.threeten:threetenbp to v1.4.1 ([1a55c7b](https://www.github.com/googleapis/java-cloudbuild/commit/1a55c7b0e42e91fddcdc829c1ff567e7ede5c5b9))
+
 ### [0.1.1](https://www.github.com/googleapis/java-cloudbuild/compare/v0.1.0...v0.1.1) (2020-01-07)
 
 
