@@ -21,7 +21,7 @@ import synthtool.languages.java as java
 gapic = gcp.GAPICGenerator()
 
 service = 'recommender'
-versions = ['v1beta1']
+versions = ['v1beta1', 'v1']
 config_pattern = '/google/cloud/{service}/{version}/artman_{service}_{version}.yaml'
 
 for version in versions:
