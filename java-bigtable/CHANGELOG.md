@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.10.0](https://www.github.com/googleapis/java-bigtable/compare/v1.9.1...v1.10.0) (2020-01-27)
+
+
+### Features
+
+* introducing bulk read API through Batcher ([#99](https://www.github.com/googleapis/java-bigtable/issues/99)) ([e87179e](https://www.github.com/googleapis/java-bigtable/commit/e87179ebe1e53b7962a940a9aba761da8047e7e4))
+
+
+### Dependencies
+
+* update dependency com.google.auth:google-auth-library-bom to v0.20.0 ([#168](https://www.github.com/googleapis/java-bigtable/issues/168)) ([8d69936](https://www.github.com/googleapis/java-bigtable/commit/8d69936e0d3cdba0085b363852e85fcb9eeb9dab))
+* update dependency com.google.cloud:google-cloud-conformance-tests to v0.0.4 ([#157](https://www.github.com/googleapis/java-bigtable/issues/157)) ([abbc6c8](https://www.github.com/googleapis/java-bigtable/commit/abbc6c8c0ffbe1dcf88c14b1e70fe3150c61c582))
+* update dependency com.google.cloud:google-cloud-core-bom to v1.92.2 ([#147](https://www.github.com/googleapis/java-bigtable/issues/147)) ([f3462b1](https://www.github.com/googleapis/java-bigtable/commit/f3462b119aa154f116e55f95e25171c482e08f8a))
+* update dependency com.google.truth:truth to v1.0.1 ([#156](https://www.github.com/googleapis/java-bigtable/issues/156)) ([f767feb](https://www.github.com/googleapis/java-bigtable/commit/f767febcd3bf913bbb2e5421fa716a13a7b4a33b))
+* update dependency org.threeten:threetenbp to v1.4.1 ([#153](https://www.github.com/googleapis/java-bigtable/issues/153)) ([f92da32](https://www.github.com/googleapis/java-bigtable/commit/f92da32e4834fe44148000f127b2962ecb94a67a))
+
+
+### Documentation
+
+* synth updates to javadoc and kokoro build configs ([d6275a7](https://www.github.com/googleapis/java-bigtable/commit/d6275a7877d98f5794ec7d400c10b2dce89167f0))
+
 ### [1.9.1](https://www.github.com/googleapis/java-bigtable/compare/v1.9.0...v1.9.1) (2020-01-09)
 
 
