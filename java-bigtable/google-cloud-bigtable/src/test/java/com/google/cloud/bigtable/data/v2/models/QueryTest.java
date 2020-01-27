@@ -113,6 +113,28 @@ public class QueryTest {
   }
 
   @Test
+  public void filterTestWithExceptions() {
+    Exception actualException = null;
+    try {
+      Query.create(TABLE_ID).filter(null);
+    } catch (Exception ex) {
+      actualException = ex;
+    }
+    assertThat(actualException).isInstanceOf(NullPointerException.class);
+
+    actualException = null;
+    int maxFilterSize = 20 * 1024 * 1024;
+    ByteString largeValue = ByteString.copyFrom(new byte[maxFilterSize + 1]);
+
+    try {
+      Query.create(TABLE_ID).filter(FILTERS.value().exactMatch(largeValue));
+    } catch (Exception ex) {
+      actualException = ex;
+    }
+    assertThat(actualException).hasMessageThat().contains("filter size can't be more than 20MB");
+  }
+
+  @Test
   public void filterTest() {
     Query query = Query.create(TABLE_ID).filter(FILTERS.key().regex(".*"));
 

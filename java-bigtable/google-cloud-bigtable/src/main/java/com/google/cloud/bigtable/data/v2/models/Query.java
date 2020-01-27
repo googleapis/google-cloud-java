@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.models;
 
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.ReadRowsRequest;
+import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.RowSet;
 import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
@@ -41,6 +42,9 @@ import javax.annotation.Nonnull;
 /** A simple wrapper to construct a query for the ReadRows RPC. */
 public final class Query implements Serializable {
   private static final long serialVersionUID = -316972783499434755L;
+
+  // bigtable can server the largest filter size of 20MB.
+  private static final int MAX_FILTER_SIZE = 20 * 1024 * 1024;
 
   private final String tableId;
   private transient ReadRowsRequest.Builder builder = ReadRowsRequest.newBuilder();
@@ -162,7 +166,13 @@ public final class Query implements Serializable {
    * filters, please use {@link Filters#interleave()} or {@link Filters#chain()}.
    */
   public Query filter(Filters.Filter filter) {
-    builder.setFilter(filter.toProto());
+    Preconditions.checkNotNull(filter, "filter can't be null");
+
+    RowFilter rowFilter = filter.toProto();
+    Preconditions.checkArgument(
+        rowFilter.getSerializedSize() < MAX_FILTER_SIZE, "filter size can't be more than 20MB");
+
+    builder.setFilter(rowFilter);
     return this;
   }
 
