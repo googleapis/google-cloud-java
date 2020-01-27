@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-01-22T21:55:59.024423Z",
+  "updateTime": "2020-01-24T09:06:58.690971Z",
   "sources": [
     {
       "generator": {
@@ -12,7 +12,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "fead959b0dcc7b36c6ed74ebf905f5bcb3c0d521"
+        "sha": "e26cab8afd19d396b929039dac5d874cf0b5336c",
+        "internalRef": "291240093"
       }
     },
     {
@@ -47,6 +48,9 @@
   ],
   "newFiles": [
     {
+      "path": ".github/.release-please.yml"
+    },
+    {
       "path": ".github/ISSUE_TEMPLATE/bug_report.md"
     },
     {
@@ -60,6 +64,9 @@
     },
     {
       "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".gitignore"
     },
     {
       "path": ".kokoro/build.bat"
@@ -227,6 +234,12 @@
       "path": ".kokoro/trampoline.sh"
     },
     {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
       "path": "CODE_OF_CONDUCT.md"
     },
     {
@@ -240,6 +253,12 @@
     },
     {
       "path": "codecov.yaml"
+    },
+    {
+      "path": "google-cloud-trace-bom/pom.xml"
+    },
+    {
+      "path": "google-cloud-trace/pom.xml"
     },
     {
       "path": "google-cloud-trace/src/main/java/com/google/cloud/trace/v1/TraceServiceClient.java"
@@ -296,6 +315,12 @@
       "path": "google-cloud-trace/src/test/java/com/google/cloud/trace/v1/TraceServiceSmokeTest.java"
     },
     {
+      "path": "google-cloud-trace/src/test/java/com/google/cloud/trace/v1/VPCServiceControlTest.java"
+    },
+    {
+      "path": "google-cloud-trace/src/test/java/com/google/cloud/trace/v1/it/ITSystemTest.java"
+    },
+    {
       "path": "google-cloud-trace/src/test/java/com/google/cloud/trace/v2/MockTraceService.java"
     },
     {
@@ -308,7 +333,19 @@
       "path": "google-cloud-trace/src/test/java/com/google/cloud/trace/v2/TraceServiceSmokeTest.java"
     },
     {
+      "path": "google-cloud-trace/src/test/java/com/google/cloud/trace/v2/VPCServiceControlTest.java"
+    },
+    {
+      "path": "google-cloud-trace/src/test/java/com/google/cloud/trace/v2/it/ITSystemTest.java"
+    },
+    {
+      "path": "grpc-google-cloud-trace-v1/pom.xml"
+    },
+    {
       "path": "grpc-google-cloud-trace-v1/src/main/java/com/google/devtools/cloudtrace/v1/TraceServiceGrpc.java"
+    },
+    {
+      "path": "grpc-google-cloud-trace-v2/pom.xml"
     },
     {
       "path": "grpc-google-cloud-trace-v2/src/main/java/com/google/devtools/cloudtrace/v2/TraceServiceGrpc.java"
@@ -318,6 +355,12 @@
     },
     {
       "path": "license-checks.xml"
+    },
+    {
+      "path": "pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-trace-v1/pom.xml"
     },
     {
       "path": "proto-google-cloud-trace-v1/src/main/java/com/google/devtools/cloudtrace/v1/GetTraceRequest.java"
@@ -368,6 +411,9 @@
       "path": "proto-google-cloud-trace-v1/src/main/proto/google/devtools/cloudtrace/v1/trace.proto"
     },
     {
+      "path": "proto-google-cloud-trace-v2/pom.xml"
+    },
+    {
       "path": "proto-google-cloud-trace-v2/src/main/java/com/google/devtools/cloudtrace/v2/AttributeValue.java"
     },
     {
@@ -390,6 +436,9 @@
     },
     {
       "path": "proto-google-cloud-trace-v2/src/main/java/com/google/devtools/cloudtrace/v2/Span.java"
+    },
+    {
+      "path": "proto-google-cloud-trace-v2/src/main/java/com/google/devtools/cloudtrace/v2/SpanName.java"
     },
     {
       "path": "proto-google-cloud-trace-v2/src/main/java/com/google/devtools/cloudtrace/v2/SpanOrBuilder.java"
@@ -420,6 +469,15 @@
     },
     {
       "path": "renovate.json"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "versions.txt"
     }
   ]
 }
