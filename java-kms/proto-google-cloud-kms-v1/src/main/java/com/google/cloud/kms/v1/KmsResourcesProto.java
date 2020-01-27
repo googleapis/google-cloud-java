@@ -183,11 +183,14 @@ public final class KmsResourcesProto {
           + "{location}/keyRings/{key_ring}/importJob"
           + "s/{import_job}*X\n\017ProtectionLevel\022 \n\034PRO"
           + "TECTION_LEVEL_UNSPECIFIED\020\000\022\014\n\010SOFTWARE\020"
-          + "\001\022\007\n\003HSM\020\002\022\014\n\010EXTERNAL\020\003B\225\001\n\027com.google."
+          + "\001\022\007\n\003HSM\020\002\022\014\n\010EXTERNAL\020\003B\231\002\n\027com.google."
           + "cloud.kms.v1B\021KmsResourcesProtoP\001Z6googl"
           + "e.golang.org/genproto/googleapis/cloud/k"
           + "ms/v1;kms\370\001\001\252\002\023Google.Cloud.Kms.V1\312\002\023Goo"
-          + "gle\\Cloud\\Kms\\V1b\006proto3"
+          + "gle\\Cloud\\Kms\\V1\352A\200\001\n!cloudkms.googleapi"
+          + "s.com/CryptoKey\022[projects/{project}/loca"
+          + "tions/{location}/keyRings/{key_ring}/cry"
+          + "ptoKeys/{crypto_key_path=**}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -303,6 +306,7 @@ public final class KmsResourcesProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
