@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-cloud-texttospeech-v1:0.82.2:0.82.3-SNAPSHOT
-proto-google-cloud-texttospeech-v1beta1:0.82.2:0.82.3-SNAPSHOT
-grpc-google-cloud-texttospeech-v1beta1:0.82.2:0.82.3-SNAPSHOT
-grpc-google-cloud-texttospeech-v1:0.82.2:0.82.3-SNAPSHOT
-google-cloud-texttospeech:0.117.2-beta:0.117.3-beta-SNAPSHOT
+proto-google-cloud-texttospeech-v1:1.0.0:1.0.0
+proto-google-cloud-texttospeech-v1beta1:0.83.0:0.83.0
+grpc-google-cloud-texttospeech-v1beta1:0.83.0:0.83.0
+grpc-google-cloud-texttospeech-v1:1.0.0:1.0.0
+google-cloud-texttospeech:1.0.0:1.0.0

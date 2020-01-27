@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-texttospeech/compare/v0.117.2...v1.0.0) (2020-01-24)
+
+
+### Features
+
+* promote to GA ([#53](https://www.github.com/googleapis/java-texttospeech/issues/53)) ([9d28dca](https://www.github.com/googleapis/java-texttospeech/commit/9d28dca0d342fcf3489d71f42f155fbec24942f0))
+
+
+### Dependencies
+
+* update dependency org.threeten:threetenbp to v1.4.1 ([bb1dbd4](https://www.github.com/googleapis/java-texttospeech/commit/bb1dbd4ce08e04c43013ecbf847fbf7008d58095))
+
 ### [0.117.2](https://www.github.com/googleapis/java-texttospeech/compare/v0.117.1...v0.117.2) (2020-01-07)
 
 
