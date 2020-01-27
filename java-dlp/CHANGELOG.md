@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-dlp/compare/v0.118.1...v1.0.0) (2020-01-24)
+
+
+### Features
+
+* promote to GA ([#62](https://www.github.com/googleapis/java-dlp/issues/62)) ([b36db26](https://www.github.com/googleapis/java-dlp/commit/b36db2641c56598ed504c03565a52bc4539c16c2))
+
+
+### Dependencies
+
+* update core dependencies to v1.53.0 ([#53](https://www.github.com/googleapis/java-dlp/issues/53)) ([67089da](https://www.github.com/googleapis/java-dlp/commit/67089da1668f7ad749e5535bec65917f1781661e))
+* update dependency org.threeten:threetenbp to v1.4.1 ([#55](https://www.github.com/googleapis/java-dlp/issues/55)) ([2c52f4d](https://www.github.com/googleapis/java-dlp/commit/2c52f4d6f25790b9863433b47e5770a7d8d4ae96))
+
+
+### Documentation
+
+* **regen:** fix javadoc return annotation ([#60](https://www.github.com/googleapis/java-dlp/issues/60)) ([f557c55](https://www.github.com/googleapis/java-dlp/commit/f557c55ed3d7435d48847c1ff58e6575c0d16435))
+* **regen:** regenerate protos with updated docs ([#54](https://www.github.com/googleapis/java-dlp/issues/54)) ([76ee474](https://www.github.com/googleapis/java-dlp/commit/76ee4741d2385b7a65ff70d163989907e318c079))
+
 ### [0.118.1](https://www.github.com/googleapis/java-dlp/compare/v0.118.0...v0.118.1) (2020-01-07)
 
 
