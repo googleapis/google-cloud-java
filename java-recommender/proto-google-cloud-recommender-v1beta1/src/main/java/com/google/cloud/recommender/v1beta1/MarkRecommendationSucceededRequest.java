@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,10 +155,12 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Name of the recommendation.
+   * Required. Name of the recommendation.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -177,10 +179,12 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Name of the recommendation.
+   * Required. Name of the recommendation.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -229,6 +233,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
    * <pre>
    * State properties to include with this state. Overwrites any existing
    * `state_metadata`.
+   * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
+   * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
    * </pre>
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -250,6 +256,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
    * <pre>
    * State properties to include with this state. Overwrites any existing
    * `state_metadata`.
+   * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
+   * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
    * </pre>
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -263,6 +271,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
    * <pre>
    * State properties to include with this state. Overwrites any existing
    * `state_metadata`.
+   * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
+   * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
    * </pre>
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -281,6 +291,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
    * <pre>
    * State properties to include with this state. Overwrites any existing
    * `state_metadata`.
+   * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
+   * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
    * </pre>
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -302,10 +314,10 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Fingerprint of the Recommendation. Provides optimistic locking.
+   * Required. Fingerprint of the Recommendation. Provides optimistic locking.
    * </pre>
    *
-   * <code>string etag = 3;</code>
+   * <code>string etag = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The etag.
    */
@@ -324,10 +336,10 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Fingerprint of the Recommendation. Provides optimistic locking.
+   * Required. Fingerprint of the Recommendation. Provides optimistic locking.
    * </pre>
    *
-   * <code>string etag = 3;</code>
+   * <code>string etag = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for etag.
    */
@@ -738,10 +750,12 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Name of the recommendation.
+     * Required. Name of the recommendation.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -760,10 +774,12 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Name of the recommendation.
+     * Required. Name of the recommendation.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -782,10 +798,12 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Name of the recommendation.
+     * Required. Name of the recommendation.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -803,10 +821,12 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Name of the recommendation.
+     * Required. Name of the recommendation.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -820,10 +840,12 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Name of the recommendation.
+     * Required. Name of the recommendation.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -873,6 +895,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      * <pre>
      * State properties to include with this state. Overwrites any existing
      * `state_metadata`.
+     * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
+     * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
      * </pre>
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -894,6 +918,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      * <pre>
      * State properties to include with this state. Overwrites any existing
      * `state_metadata`.
+     * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
+     * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
      * </pre>
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -907,6 +933,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      * <pre>
      * State properties to include with this state. Overwrites any existing
      * `state_metadata`.
+     * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
+     * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
      * </pre>
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -925,6 +953,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      * <pre>
      * State properties to include with this state. Overwrites any existing
      * `state_metadata`.
+     * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
+     * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
      * </pre>
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -950,6 +980,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      * <pre>
      * State properties to include with this state. Overwrites any existing
      * `state_metadata`.
+     * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
+     * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
      * </pre>
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -972,6 +1004,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      * <pre>
      * State properties to include with this state. Overwrites any existing
      * `state_metadata`.
+     * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
+     * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
      * </pre>
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -992,6 +1026,8 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      * <pre>
      * State properties to include with this state. Overwrites any existing
      * `state_metadata`.
+     * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
+     * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
      * </pre>
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -1006,10 +1042,10 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Fingerprint of the Recommendation. Provides optimistic locking.
+     * Required. Fingerprint of the Recommendation. Provides optimistic locking.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The etag.
      */
@@ -1028,10 +1064,10 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Fingerprint of the Recommendation. Provides optimistic locking.
+     * Required. Fingerprint of the Recommendation. Provides optimistic locking.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for etag.
      */
@@ -1050,10 +1086,10 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Fingerprint of the Recommendation. Provides optimistic locking.
+     * Required. Fingerprint of the Recommendation. Provides optimistic locking.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -1071,10 +1107,10 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Fingerprint of the Recommendation. Provides optimistic locking.
+     * Required. Fingerprint of the Recommendation. Provides optimistic locking.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1088,10 +1124,10 @@ public final class MarkRecommendationSucceededRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Fingerprint of the Recommendation. Provides optimistic locking.
+     * Required. Fingerprint of the Recommendation. Provides optimistic locking.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,8 +31,8 @@
  * <pre>
  * <code>
  * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
- *   String formattedName = RecommenderClient.formatRecommendationName("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
- *   Recommendation response = recommenderClient.getRecommendation(formattedName);
+ *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+ *   Recommendation response = recommenderClient.getRecommendation(name);
  * }
  * </code>
  * </pre>

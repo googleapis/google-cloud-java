@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,6 @@ public interface RecommendationOrBuilder
    *
    * <pre>
    * Name of recommendation.
-   * A project recommendation is represented as
-   *   projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -42,8 +40,6 @@ public interface RecommendationOrBuilder
    *
    * <pre>
    * Name of recommendation.
-   * A project recommendation is represented as
-   *   projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
    * </pre>
    *
    * <code>string name = 1;</code>

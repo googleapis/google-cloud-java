@@ -1,25 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
 <differences>
-  <!-- TODO(chingor): Remove after 0.2.0 is released -->
+  <!-- TODO(chingor): Remove after 0.3.0 is released -->
   <difference>
-    <differenceType>7004</differenceType>
+    <differenceType>7002</differenceType>
     <className>com/google/cloud/recommender/v1beta1/RecommenderClient</className>
-    <method>com.google.cloud.recommender.v1beta1.RecommenderClient$ListRecommendationsPagedResponse listRecommendations(java.lang.String)</method>
+    <method>java.lang.String formatRecommendationName(java.lang.String, java.lang.String, java.lang.String, java.lang.String)</method>
   </difference>
   <difference>
-    <differenceType>7004</differenceType>
+    <differenceType>7002</differenceType>
     <className>com/google/cloud/recommender/v1beta1/RecommenderClient</className>
-    <method>com.google.cloud.recommender.v1beta1.Recommendation markRecommendationClaimed(java.lang.String, java.lang.String)</method>
+    <method>java.lang.String formatRecommenderName(java.lang.String, java.lang.String, java.lang.String)</method>
   </difference>
   <difference>
-    <differenceType>7004</differenceType>
+    <differenceType>7002</differenceType>
     <className>com/google/cloud/recommender/v1beta1/RecommenderClient</className>
-    <method>com.google.cloud.recommender.v1beta1.Recommendation markRecommendationFailed(java.lang.String, java.lang.String)</method>
+    <method>java.lang.String parseLocationFromRecommendationName(java.lang.String)</method>
   </difference>
   <difference>
-    <differenceType>7004</differenceType>
+    <differenceType>7002</differenceType>
     <className>com/google/cloud/recommender/v1beta1/RecommenderClient</className>
-    <method>com.google.cloud.recommender.v1beta1.Recommendation markRecommendationSucceeded(java.lang.String, java.lang.String)</method>
+    <method>java.lang.String parseLocationFromRecommenderName(java.lang.String)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/recommender/v1beta1/RecommenderClient</className>
+    <method>java.lang.String parseProjectFromRecommendationName(java.lang.String)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/recommender/v1beta1/RecommenderClient</className>
+    <method>java.lang.String parseProjectFromRecommenderName(java.lang.String)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/recommender/v1beta1/RecommenderClient</className>
+    <method>java.lang.String parseRecommendationFromRecommendationName(java.lang.String)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/recommender/v1beta1/RecommenderClient</className>
+    <method>java.lang.String parseRecommenderFromRecommendationName(java.lang.String)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/recommender/v1beta1/RecommenderClient</className>
+    <method>java.lang.String parseRecommenderFromRecommenderName(java.lang.String)</method>
   </difference>
 </differences>
