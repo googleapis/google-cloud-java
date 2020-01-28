@@ -47,6 +47,8 @@ import org.junit.runners.JUnit4;
 /** Integration (system) tests for {@link Snippets}. */
 @RunWith(JUnit4.class)
 public class SnippetsIT {
+  private static final String IAM_USER =
+      "serviceAccount:iam-samples@java-docs-samples-testing.iam.gserviceaccount.com";
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
 
   private static Secret TEST_SECRET;
@@ -240,6 +242,22 @@ public class SnippetsIT {
 
     assertThat(stdOut.toString()).contains("Secret");
     assertThat(stdOut.toString()).contains("replication AUTOMATIC");
+  }
+
+  @Test
+  public void testIamGrantAccess() throws IOException {
+    SecretName name = SecretName.parse(TEST_SECRET.getName());
+    new IamGrantAccess().iamGrantAccess(name.getProject(), name.getSecret(), IAM_USER);
+
+    assertThat(stdOut.toString()).contains("Updated IAM policy");
+  }
+
+  @Test
+  public void testIamRevokeAccess() throws IOException {
+    SecretName name = SecretName.parse(TEST_SECRET.getName());
+    new IamRevokeAccess().iamRevokeAccess(name.getProject(), name.getSecret(), IAM_USER);
+
+    assertThat(stdOut.toString()).contains("Updated IAM policy");
   }
 
   @Test
