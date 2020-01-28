@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.105.0](https://www.github.com/googleapis/java-bigquery/compare/v1.104.0...v1.105.0) (2020-01-28)
+
+
+### Features
+
+* add new sample - Load: Column Based Time Partitioning ([#119](https://www.github.com/googleapis/java-bigquery/issues/119)) ([6e1eef6](https://www.github.com/googleapis/java-bigquery/commit/6e1eef6124108371b89137529f1c42a1a1d16578))
+* add new sample - Tables: Relax column query append ([#115](https://www.github.com/googleapis/java-bigquery/issues/115)) ([1a1480f](https://www.github.com/googleapis/java-bigquery/commit/1a1480f5079c964dd492126557742340e0b6ef6e))
+* new sample - Get Model ([#124](https://www.github.com/googleapis/java-bigquery/issues/124)) ([a03670b](https://www.github.com/googleapis/java-bigquery/commit/a03670b3ba19c7805712f09754435e422228abd6))
+* new sample - Models: List model resources contained in a dataset ([#125](https://www.github.com/googleapis/java-bigquery/issues/125)) ([3a62206](https://www.github.com/googleapis/java-bigquery/commit/3a62206639f50e9d4ae18cc407303cad0c4a6ddb))
+
+
+### Bug Fixes
+
+* **debug:** add debug statement to StandardTableDefinition ([#128](https://www.github.com/googleapis/java-bigquery/issues/128)) ([0d4092d](https://www.github.com/googleapis/java-bigquery/commit/0d4092d6ee864d84705819305d045ce89aba8149))
+
+
+### Dependencies
+
+* update core transport dependencies to v1.34.1 ([#129](https://www.github.com/googleapis/java-bigquery/issues/129)) ([fbbba31](https://www.github.com/googleapis/java-bigquery/commit/fbbba31d67b7670115333a123aabcba77dbd9ad3))
+
 ## [1.104.0](https://www.github.com/googleapis/java-bigquery/compare/v1.103.0...v1.104.0) (2020-01-23)
 
 
