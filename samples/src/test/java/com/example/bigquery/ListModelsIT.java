@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,20 +16,35 @@
 
 package com.example.bigquery;
 
-import static com.google.common.truth.Truth.assertThat;
+import static junit.framework.TestCase.assertNotNull;
 
+import com.google.common.truth.Truth;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class ListDatasetsIT {
+public class ListModelsIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
+  private static final String BIGQUERY_DATASET_NAME = System.getenv("BIGQUERY_DATASET_NAME");
+
+  private static void requireEnvVar(String varName) {
+    assertNotNull(
+        "Environment variable " + varName + " is required to perform these tests.",
+        System.getenv(varName));
+  }
+
+  @BeforeClass
+  public static void checkRequirements() {
+    requireEnvVar("BIGQUERY_DATASET_NAME");
+  }
+
   @Before
-  public void setUp() throws Exception {
+  public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -41,9 +56,8 @@ public class ListDatasetsIT {
   }
 
   @Test
-  public void listDatasets() {
-    // List datasets in bigquery-public-data project
-    ListDatasets.listDatasets("bigquery-public-data");
-    assertThat(bout.toString()).contains("Success! Dataset ID");
+  public void testListModels() {
+    ListModels.listModels(BIGQUERY_DATASET_NAME);
+    Truth.assertThat(bout.toString()).contains("Success! Model ID");
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,40 +16,39 @@
 
 package com.example.bigquery;
 
-// [START bigquery_list_datasets]
 import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQuery.DatasetListOption;
+import com.google.cloud.bigquery.BigQuery.ModelListOption;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
-import com.google.cloud.bigquery.Dataset;
+import com.google.cloud.bigquery.Model;
 
-public class ListDatasets {
+// [START bigquery_list_models]
+public class ListModels {
 
-  public static void runListDatasets() {
+  public static void runListModels() {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = "MY_PROJECT_ID";
-    listDatasets(projectId);
+    String datasetName = "MY_DATASET_NAME";
+    listModels(datasetName);
   }
 
-  public static void listDatasets(String projectId) {
+  public static void listModels(String datasetName) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
-      Page<Dataset> datasets = bigquery.listDatasets(projectId, DatasetListOption.pageSize(100));
-      if (datasets == null) {
-        System.out.println("Dataset does not contain any models");
+      Page<Model> models = bigquery.listModels(datasetName, ModelListOption.pageSize(100));
+      if (models == null) {
+        System.out.println("Dataset does not contain any models.");
         return;
       }
-      datasets
+      models
           .iterateAll()
-          .forEach(
-              dataset -> System.out.printf("Success! Dataset ID: %s ", dataset.getDatasetId()));
+          .forEach(model -> System.out.printf("Success! Model ID: %s", model.getModelId()));
     } catch (BigQueryException e) {
-      System.out.println("Project does not contain any datasets \n" + e.toString());
+      System.out.println("Models not listed in dataset due to error: \n" + e.toString());
     }
   }
 }
-// [END bigquery_list_datasets]
+// [END bigquery_list_models]
