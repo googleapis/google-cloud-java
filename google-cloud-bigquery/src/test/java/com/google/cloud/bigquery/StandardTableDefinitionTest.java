@@ -16,11 +16,17 @@
 
 package com.google.cloud.bigquery;
 
+import static org.hamcrest.CoreMatchers.allOf;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import com.google.api.services.bigquery.model.Streamingbuffer;
+import com.google.api.services.bigquery.model.Table;
+import com.google.api.services.bigquery.model.TableReference;
 import com.google.cloud.bigquery.StandardTableDefinition.StreamingBuffer;
 import com.google.common.collect.ImmutableList;
 import org.junit.Test;
@@ -116,6 +122,62 @@ public class StandardTableDefinitionTest {
     assertTrue(TableDefinition.fromPb(definition.toPb()) instanceof StandardTableDefinition);
     compareStandardTableDefinition(
         definition, TableDefinition.<StandardTableDefinition>fromPb(definition.toPb()));
+  }
+
+  @Test
+  public void testFromPbWithUnexpectedTimePartitioningTypeRaisesInvalidArgumentException() {
+    Table invalidTable =
+        new Table()
+            .setType("TABLE")
+            .setTableReference(
+                new TableReference()
+                    .setProjectId("ILLEGAL_ARG_TEST_PROJECT")
+                    .setDatasetId("ILLEGAL_ARG_TEST_DATASET")
+                    .setTableId("ILLEGAL_ARG_TEST_TABLE"))
+            .setTimePartitioning(
+                new com.google.api.services.bigquery.model.TimePartitioning().setType("GHURRY"));
+    try {
+      StandardTableDefinition.fromPb(invalidTable);
+    } catch (IllegalArgumentException ie) {
+      assertThat(
+          ie.getMessage(),
+          allOf(
+              containsString("Illegal Argument - Got unexpected time partitioning"),
+              containsString("GHURRY"),
+              containsString("ILLEGAL_ARG_TEST_PROJECT"),
+              containsString("ILLEGAL_ARG_TEST_DATASET"),
+              containsString("ILLEGAL_ARG_TEST_TABLE")));
+      return;
+    }
+    fail("testFromPb illegal argument exception did not throw!");
+  }
+
+  @Test
+  public void testFromPbWithNullTimePartitioningTypeRaisesNullPointerException() {
+    Table invalidTable =
+        new Table()
+            .setType("TABLE")
+            .setTableReference(
+                new TableReference()
+                    .setProjectId("NULL_PTR_TEST_PROJECT")
+                    .setDatasetId("NULL_PTR_TEST_DATASET")
+                    .setTableId("NULL_PTR_TEST_TABLE"))
+            .setTimePartitioning(
+                new com.google.api.services.bigquery.model.TimePartitioning().setType(null));
+    try {
+      StandardTableDefinition.fromPb(invalidTable);
+    } catch (NullPointerException ne) {
+      assertThat(
+          ne.getMessage(),
+          allOf(
+              containsString("Null pointer - Got unexpected time partitioning"),
+              containsString("null"),
+              containsString("NULL_PTR_TEST_PROJECT"),
+              containsString("NULL_PTR_TEST_DATASET"),
+              containsString("NULL_PTR_TEST_TABLE")));
+      return;
+    }
+    fail("testFromPb null pointer exception did not throw!");
   }
 
   @Test
