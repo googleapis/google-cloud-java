@@ -1,94 +1,97 @@
-Google Cloud Client Library for Java
-====================================
+# Google Cloud Java Client Libraries
 
-Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
+> Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
-[![Kokoro CI](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.svg)](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.html)
-[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bom.svg)](https://search.maven.org/search?q=g:com.google.cloud%20a:google-cloud-bom)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
+* [Java on Google Cloud][cloud-java]
 
-- [Google Cloud Platform Documentation][cloud-platform-docs]
-- [Client Library Documentation][client-lib-docs]
+## Supported APIs
 
-This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
--  [BigQuery](https://github.com/googleapis/java-bigquery) (GA)
--  [Cloud Bigtable](https://github.com/googleapis/java-bigtable) (GA)
--  [Cloud Datastore](https://github.com/googleapis/java-datastore/google-cloud-datastore) (GA)
--  [Cloud Firestore](https://github.com/googleapis/java-firestore/google-cloud-firestore) (GA)
--  [Cloud KMS](https://github.com/googleapis/java-kms) (GA)
--  [Cloud Natural Language](https://github.com/googleapis/java-language) (GA)
--  [Cloud Pub/Sub](https://github.com/googleapis/java-pubsub) (GA)
--  [Cloud Scheduler](https://github.com/googleapis/java-scheduler) (GA)
--  [Cloud Spanner](https://github.com/googleapis/java-spanner) (GA)
--  [Cloud Speech](https://github.com/googleapis/java-speech) (GA)
--  [Cloud Storage](https://github.com/googleapis/java-storage) (GA)
--  [Cloud Translation](https://github.com/googleapis/java-translate) (GA)
--  [Cloud Tasks](https://github.com/googleapis/java-tasks) (GA)
--  [Cloud Vision](https://github.com/googleapis/java-vision) (GA)
--  [Stackdriver Logging](https://github.com/googleapis/java-logging) (GA)
--  [Stackdriver Monitoring](https://github.com/googleapis/java-monitoring) (GA)
+Libraries are available on GitHub and Maven Central for developing Java applications that interact with individual Google Cloud services:
 
-This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
+| Client | Release Level | Version |
+| ------ | ------------- | ------- |
+| [BigQuery](https://github.com/googleapis/java-bigquery) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquery.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-bigquery&core=gav) |
+| [Cloud AutoML](https://github.com/googleapis/java-automl) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-automl.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-automl&core=gav) |
+| [Cloud Bigtable](https://github.com/googleapis/java-bigtable) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigtable.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-bigtable&core=gav) |
+| [Cloud Datastore](https://github.com/googleapis/java-datastore) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-datastore.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-datastore&core=gav) |
+| [Cloud Firestore](https://github.com/googleapis/java-firestore) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-firestore.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-firestore&core=gav) |
+| [Cloud KMS](https://github.com/googleapis/java-kms) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-kms.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-kms&core=gav) |
+| [Cloud Natural Language](https://github.com/googleapis/java-language) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-language.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-language&core=gav) |
+| [Cloud Pub/Sub](https://github.com/googleapis/java-pubsub) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-pubsub.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-pubsub&core=gav) |
+| [Cloud Scheduler](https://github.com/googleapis/java-scheduler) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-scheduler.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-scheduler&core=gav) |
+| [Cloud Spanner](https://github.com/googleapis/java-spanner) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-spanner.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-spanner&core=gav) |
+| [Cloud Speech](https://github.com/googleapis/java-speech) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-speech.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-speech&core=gav) |
+| [Cloud Storage](https://github.com/googleapis/java-storage) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-storage.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-storage&core=gav) |
+| [Cloud Translation](https://github.com/googleapis/java-translate) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-translate.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-translate&core=gav) |
+| [Cloud Tasks](https://github.com/googleapis/java-tasks) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-tasks.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-tasks&core=gav) |
+| [Cloud Text-to-Speech](https://github.com/googleapis/java-texttospeech) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-texttospeech.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-texttospeech&core=gav) |
+| [Cloud Video Intelligence](https://github.com/googleapis/java-video-intelligence) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-video-intelligence.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-video-intelligence&core=gav) |
+| [Cloud Vision](https://github.com/googleapis/java-vision) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-vision.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-vision&core=gav) |
+| [Stackdriver Logging](https://github.com/googleapis/java-logging) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-logging.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-logging&core=gav) |
+| [Stackdriver Monitoring](https://github.com/googleapis/java-monitoring) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-monitoring.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-monitoring&core=gav) |
+| [Stackdriver Trace](https://github.com/googleapis/java-trace) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-trace.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-trace&core=gav) |
+| [BigQuery Data Transfer](https://github.com/googleapis/java-bigquerydatatransfer) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquerydatatransfer.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-bigquerydatatransfer&core=gav) |
+| [BigQuery Storage](https://github.com/googleapis/java-bigquerystorage) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquerystorage.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-bigquerystorage&core=gav) |
+| [Cloud Asset](https://github.com/googleapis/java-asset) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-asset.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-asset&core=gav) |
+| [Cloud Billing Budgets](https://github.com/googleapis/java-billingbudgets) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-billingbudgets.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-billingbudgets&core=gav) |
+| [Cloud Build](https://github.com/googleapis/java-cloudbuild) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-build.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-build&core=gav) |
+| [Cloud Container Analysis](https://github.com/googleapis/java-containeranalysis) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-containeranalysis.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-containeranalysis&core=gav) |
+| [Cloud Dataproc](https://github.com/googleapis/java-dataproc) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-dataproc.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-dataproc&core=gav) |
+| [Cloud Data Catalog](https://github.com/googleapis/java-datacatalog) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-datacatalog.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-datacatalog&core=gav) |
+| [Cloud Data Labeling](https://github.com/googleapis/java-datalabeling) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-datalabeling.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-datalabeling&core=gav) |
+| [Cloud Data Loss Prevention](https://github.com/googleapis/java-dlp) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-dlp.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-dlp&core=gav) |
+| [Cloud IAM Service Account Credentials API](https://github.com/googleapis/java-iamcredentials) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-iamcredentials.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-iamcredentials&core=gav) |
+| [Cloud IoT Core](https://github.com/googleapis/java-iot) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-iot.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-iot&core=gav) |
+| [Cloud Memorystore for Redis](https://github.com/googleapis/java-redis) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-redis.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-redis&core=gav) |
+| [Cloud OS Login](https://github.com/googleapis/java-os-login) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-os-login.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-os-login&core=gav) |
+| [Cloud Phishing Protection](https://github.com/googleapis/java-phishingprotection) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-phishingprotection.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-phishingprotection&core=gav) |
+| [Cloud Recommender](https://github.com/googleapis/java-recommender) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-recommender.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-recommender&core=gav) |
+| [Cloud Secret Manager](https://github.com/googleapis/java-secretmanager) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-secretmanager.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-secretmanager&core=gav) |
+| [Cloud Security Center](https://github.com/googleapis/java-securitycenter) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-securitycenter.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-securitycenter&core=gav) |
+| [Cloud Security Scanner](https://github.com/googleapis/java-websecurityscanner) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-websecurityscanner.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-websecurityscanner&core=gav) |
+| [Cloud Talent Solution](https://github.com/googleapis/java-talent) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-talent.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-talent&core=gav) |
+| [Cloud Web Risk](https://github.com/googleapis/java-webrisk) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-webrisk.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-webrisk&core=gav) |
+| [Dialogflow](https://github.com/googleapis/java-dialogflow) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-dialogflow.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-dialogflow&core=gav) |
+| [Kubernetes Engine](https://github.com/googleapis/java-container) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-container.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-container&core=gav) |
+| [reCAPTCHA Enterprise](https://github.com/googleapis/java-recaptchaenterprise) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-recaptchaenterprise.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-recaptchaenterprise&core=gav) |
+| [Stackdriver Error Reporting](https://github.com/googleapis/java-errorreporting) | [![Beta][beta-stability]][beta-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-errorreporting.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-errorreporting&core=gav) |
+| [Cloud Compute](https://github.com/googleapis/java-compute) | [![Alpha][alpha-stability]][alpha-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-compute.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-compute&core=gav) |
+| [Cloud DNS](https://github.com/googleapis/java-dns) | [![Alpha][alpha-stability]][alpha-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-dns.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-dns&core=gav) |
+| [Cloud Logging via Logback](https://github.com/googleapis/java-logging-logback) | [![Alpha][alpha-stability]][alpha-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-logging-logback.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-logging-logback&core=gav) |
+| [Cloud Resource Manager](https://github.com/googleapis/java-resourcemanager) | [![Alpha][alpha-stability]][alpha-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-resourcemanager.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-resourcemanager&core=gav) |
+| [Cloud Storage via NIO](https://github.com/googleapis/java-storage-nio) | [![Alpha][alpha-stability]][alpha-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-nio.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-nio&core=gav) |
 
--  [BigQuery Data Transfer](https://github.com/googleapis/java-bigquerydatatransfer) (Beta)
--  [Cloud Asset](https://github.com/googleapis/java-asset) (Beta)
--  [Cloud AutoML](https://github.com/googleapis/java-automl) (Beta)
--  [Cloud Container Analysis](https://github.com/googleapis/java-containeranalysis) (Beta)
--  [Cloud Dataproc](https://github.com/googleapis/java-dataproc) (Beta)
--  [Cloud Data Loss Prevention](https://github.com/googleapis/java-dlp) (Beta)
--  [Cloud IoT Core](https://github.com/googleapis/java-iot) (Beta)
--  [Cloud Phishing Protection](https://github.com/googleapis/java-phishingprotection) (Beta)
--  [Cloud Security Scanner](https://github.com/googleapis/java-websecurityscanner) (Beta)
--  [Cloud Talent Solution](https://github.com/googleapis/java-talent) (Beta)
--  [Cloud Text-to-Speech](https://github.com/googleapis/java-texttospeech) (Beta)
--  [Cloud Video Intelligence](https://github.com/googleapis/java-video-intelligence) (Beta)
--  [Kubernetes Engine](https://github.com/googleapis/java-container) (Beta)
--  [reCAPTCHA Enterprise](https://github.com/googleapis/java-recaptchaenterprise) (Beta)
--  [Stackdriver Error Reporting](https://github.com/googleapis/java-errorreporting) (Beta)
--  [Stackdriver Trace](https://github.com/googleapis/java-trace) (Beta)
+If the service is not listed, [google-api-java-client][google-api-java-client-services] interfaces with additional Google Cloud APIs using a legacy REST interface.
 
-This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
+*When building Java applications, preference should be given to the libraries listed in the table.*
 
--  [BigQuery Storage](https://github.com/googleapis/java-bigquerystorage) (Alpha)
--  [Cloud Compute](https://github.com/googleapis/java-compute) (Alpha)
--  [Cloud Data Catalog](https://github.com/googleapis/java-datacatalog) (Alpha)
--  [Cloud Data Labeling](https://github.com/googleapis/java-datalabeling) (Alpha)
--  [Cloud DNS](https://github.com/googleapis/java-dns) (Alpha)
--  [Cloud IAM Service Account Credentials API](https://github.com/googleapis/java-iamcredentials) (Alpha)
--  [Cloud OS Login](https://github.com/googleapis/java-os-login) (Alpha)
--  [Cloud Memorystore for Redis](https://github.com/googleapis/java-redis) (Alpha)
--  [Cloud Resource Manager](https://github.com/googleapis/java-resourcemanager) (Alpha)
--  [Cloud Storage via NIO](https://github.com/googleapis/java-storage-nio) (Alpha)
--  [Cloud Web Risk](https://github.com/googleapis/java-webrisk) (Alpha)
--  [Dialogflow](https://github.com/googleapis/java-dialogflow) (Alpha)
-
-Quickstart
-----------
+## Quickstart
 
 To call any of the supported Google Cloud Services simply add a corresponding client library 
 artifact as a dependency to your project. The following instructions use `google-cloud-storage` 
 as an example (specific instructions can be found in the README of each client).
 
-If you are using Maven, add this to your pom.xml file
-```xml
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>libraries-bom</artifactId>
-        <version>3.0.0</version>
-        <type>pom</type>
-        <scope>import</scope>
-       </dependency>
-     </dependencies>
-  </dependencyManagement>
+If you are using Maven, add this to your pom.xml file:
 
+```xml
+<dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-storage</artifactId>
-    </dependency>
-    ...
+      <artifactId>libraries-bom</artifactId>
+      <version>3.4.0</version>
+      <type>pom</type>
+      <scope>import</scope>
+     </dependency>
+   </dependencies>
+</dependencyManagement>
+
+<dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-storage</artifactId>
+  </dependency>
+  ...
 ```
 
 [//]: # ({x-version-update-start:google-cloud-storage:released})
@@ -110,8 +113,7 @@ Besides adding client libraries, the plugins provide additional functionality, s
 
 These client libraries can be used on App Engine standard for Java 8 runtime and App Engine flexible (including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7 runtime. However, Datastore, Storage, and Bigquery should work.
 
-Specifying a Project ID
------------------------
+## Specifying a Project ID
 
 Most `google-cloud` libraries require a project ID.  There are multiple ways to specify this project ID.
 
@@ -144,8 +146,7 @@ In cases where the library may expect a project ID explicitly, we provide a help
      String projectId = ServiceOptions.getDefaultProjectId();
    ```
 
-Authentication
---------------
+## Authentication
 
 `google-cloud-java` uses
 [https://github.com/googleapis/google-auth-library-java](https://github.com/googleapis/google-auth-library-java)
@@ -205,13 +206,12 @@ Credentials in the following locations (in order):
 4. Google Cloud Shell built-in credentials
 5. Google Compute Engine built-in credentials
 
-Troubleshooting
----------------
+## Troubleshooting
 
 To get help, follow the instructions in the [Troubleshooting document](https://github.com/googleapis/google-cloud-java/blob/master/TROUBLESHOOTING.md).
 
-Using a proxy
--------------
+## Using a proxy
+
 Clients in this repository use either HTTP or gRPC for the transport layer.
 The README of each client documents the transport layer the client uses.
 
@@ -224,13 +224,11 @@ For gRPC clients, a proxy can be configured by using the
 the gRPC [release notes](https://github.com/grpc/grpc-java/releases/tag/v1.0.3).
 Please note that gRPC proxy support is currently experimental.
 
-Java Versions
--------------
+## Java Versions
 
 Java 7 or above is required for using the clients in this repository.
 
-Supported Platforms
--------------------
+## Supported Platforms
 
 Clients in this repository use either HTTP or gRPC for the transport layer. All
 HTTP-based clients should work in all environments.
@@ -262,15 +260,13 @@ The following environments should work (among others):
 - Google App Engine Standard Java 8 (GAE Std J8)
 - Google App Engine Flex (GAE Flex)
 
-Testing
--------
+## Testing
 
 This library provides tools to help write tests for code that uses google-cloud services.
 
 See [TESTING] to read more about using our testing helpers.
 
-Versioning
-----------
+## Versioning
 
 This library follows [Semantic Versioning](http://semver.org/), with some
 additional qualifications:
@@ -296,20 +292,25 @@ additional qualifications:
 Please note it is currently under active development. Any release versioned 0.x.y is
 subject to backwards incompatible changes at any time.
 
-**GA**: Libraries defined at a GA quality level are expected to be stable and all updates in the
+### GA
+
+Libraries defined at a GA quality level are expected to be stable and all updates in the
 libraries are guaranteed to be backwards-compatible. Any backwards-incompatible changes will lead
 to the major version increment (1.x.y -> 2.0.0).
 
-**Beta**: Libraries defined at a Beta quality level are expected to be mostly stable and
+### Beta
+
+Libraries defined at a Beta quality level are expected to be mostly stable and
 we're working towards their release candidate. We will address issues and requests with
 a higher priority.
 
-**Alpha**: Libraries defined at an Alpha quality level are still a work-in-progress and
+### Alpha
+
+Libraries defined at an Alpha quality level are still a work-in-progress and
 are more likely to get backwards-incompatible updates. Additionally, it's possible for Alpha
 libraries to get deprecated and deleted before ever being promoted to Beta or GA.
 
-Contributing
-------------
+## Contributing
 
 Contributions to this library are always welcome and highly encouraged.
 
@@ -317,18 +318,22 @@ See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation]
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
-License
--------
+## License
 
 Apache 2.0 - See [LICENSE] for more information.
 
-
+[cloud-java]: https://cloud.google.com/java
+[ga-stability]: https://img.shields.io/badge/stability-ga-green
+[ga-description]: #ga
+[beta-stability]: https://img.shields.io/badge/stability-beta-yellow
+[beta-description]: #beta
+[alpha-stability]: https://img.shields.io/badge/stability-alpha-orange
+[alpha-description]: #alpha
+[google-api-java-client-services]: https://github.com/googleapis/google-api-java-client-services#supported-google-apis
 [CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
 [code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md
-
 [cloud-platform]: https://cloud.google.com/
 [cloud-platform-docs]: https://cloud.google.com/docs/
 [client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html
-
