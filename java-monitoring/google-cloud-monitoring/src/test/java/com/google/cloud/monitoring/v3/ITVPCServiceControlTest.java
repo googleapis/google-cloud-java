@@ -15,12 +15,21 @@
  */
 
 // DO NOT MODIFY! THIS FILE IS AUTO-GENERATED.
-// This file is auto-generated on 03 Dec 19 00:46 UTC.
+// This file is auto-generated on 28 Jan 20 00:11 UTC.
 
 package com.google.cloud.monitoring.v3;
 
+import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.PermissionDeniedException;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.common.collect.ImmutableList;
 import com.google.monitoring.v3.*;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
 import java.util.logging.Level;
@@ -36,6 +45,7 @@ public class ITVPCServiceControlTest {
   static final String PROJECT_OUTSIDE =
       System.getenv("GOOGLE_CLOUD_TESTS_VPCSC_OUTSIDE_PERIMETER_PROJECT");
   static final String IS_INSIDE_VPCSC = System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC");
+  static final String COLLECTD_TIME_SERIES_REQUEST_TEMPLATE = "{ \"name\": \"%s\" }";
   private static final Logger logger = Logger.getLogger(ITVPCServiceControlTest.class.getName());
 
   private static Exception getError(Callable callable) {
@@ -80,6 +90,84 @@ public class ITVPCServiceControlTest {
     Assume.assumeTrue(
         "Missing environment variable: GOOGLE_CLOUD_TESTS_VPCSC_OUTSIDE_PERIMETER_PROJECT",
         PROJECT_OUTSIDE != null && !PROJECT_OUTSIDE.isEmpty());
+  }
+
+  private static void postJSON(URL url, String payload) throws Exception {
+    GoogleCredentials adc =
+        GoogleCredentials.getApplicationDefault()
+            .createScoped(
+                ImmutableList.of(
+                    "https://www.googleapis.com/auth/monitoring",
+                    "https://www.googleapis.com/auth/monitoring.write",
+                    "https://www.googleapis.com/auth/cloud-platform"));
+    adc.refresh();
+
+    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+    conn.setRequestMethod("POST");
+    conn.setRequestProperty("Authorization", "Bearer " + adc.getAccessToken().getTokenValue());
+    conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+    conn.setRequestProperty("Accept", "application/json, */*");
+    conn.setDoOutput(true);
+
+    OutputStream body = conn.getOutputStream();
+    body.write(payload.getBytes("UTF-8"));
+    body.close();
+
+    conn.getResponseMessage();
+
+    BufferedReader reader =
+        new BufferedReader(new InputStreamReader((InputStream) conn.getErrorStream()));
+    StringBuilder response = new StringBuilder();
+
+    for (String line; (line = reader.readLine()) != null; ) {
+      response.append(line).append("\n");
+    }
+
+    if (conn.getResponseCode() == 403) {
+      throw new PermissionDeniedException(
+          response.toString(),
+          null,
+          GrpcStatusCode.of(io.grpc.Status.Code.PERMISSION_DENIED),
+          false);
+    } else if (conn.getResponseCode() != 200) {
+      throw new RuntimeException(response.toString());
+    }
+    return;
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void collectdTimeSeriesTest() throws Exception {
+    final String prefix = "https://monitoring.googleapis.com/v3/";
+    final String endpoint = "/collectdTimeSeries";
+
+    Callable<Object> delayedInside =
+        new Callable() {
+          public Object call() throws Exception {
+            ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            URL url = new URL(prefix + nameInside.toString() + endpoint);
+            logger.log(Level.INFO, "collectdTimeSeriesTest: requesting {0}", url.toString());
+            postJSON(
+                url, String.format(COLLECTD_TIME_SERIES_REQUEST_TEMPLATE, nameInside.toString()));
+            return null;
+          }
+        };
+    Callable<Object> delayedOutside =
+        new Callable() {
+          public Object call() throws Exception {
+            ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            URL url = new URL(prefix + nameOutside.toString() + endpoint);
+            logger.log(Level.INFO, "collectdTimeSeriesTest: requesting {0}", url.toString());
+            postJSON(
+                url, String.format(COLLECTD_TIME_SERIES_REQUEST_TEMPLATE, nameOutside.toString()));
+            return null;
+          }
+        };
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      // no clean up
+    }
   }
 
   @Test
