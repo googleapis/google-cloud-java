@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.92.3](https://www.github.com/googleapis/java-core/compare/v1.92.2...v1.92.3) (2020-01-28)
+
+
+### Dependencies
+
+* update dependency com.google.api:gax-bom to v1.53.0 ([#126](https://www.github.com/googleapis/java-core/issues/126)) ([bdb1bce](https://www.github.com/googleapis/java-core/commit/bdb1bceb63502c828a37dd50fdb3e0e2204fc0aa))
+* update dependency com.google.auth:google-auth-library-bom to v0.20.0 ([#135](https://www.github.com/googleapis/java-core/issues/135)) ([f40c636](https://www.github.com/googleapis/java-core/commit/f40c6365b1b19bc3360b0094599311bc3271f0e5))
+* update dependency com.google.http-client:google-http-client-bom to v1.34.1 ([#137](https://www.github.com/googleapis/java-core/issues/137)) ([9216702](https://www.github.com/googleapis/java-core/commit/92167026d8e4178ebb952490a3322bd685441a60))
+* update dependency org.threeten:threetenbp to v1.4.1 ([82cac64](https://www.github.com/googleapis/java-core/commit/82cac64486352e46ddc6044a72fff6141d9b10ce))
+
 ### [1.92.2](https://www.github.com/googleapis/java-core/compare/v1.92.1...v1.92.2) (2020-01-09)
 
 
