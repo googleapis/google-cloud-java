@@ -152,7 +152,7 @@ class MessageDispatcher {
     public void onFailure(Throwable t) {
       logger.log(
           Level.WARNING,
-          "MessageReceiver failed to processes ack ID: " + ackId + ", the message will be nacked.",
+          "MessageReceiver failed to process ack ID: " + ackId + ", the message will be nacked.",
           t);
       pendingNacks.add(ackId);
       forget();
