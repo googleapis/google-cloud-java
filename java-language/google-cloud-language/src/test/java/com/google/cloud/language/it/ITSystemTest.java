@@ -47,6 +47,17 @@ import org.junit.Test;
 public class ITSystemTest {
 
   private static LanguageServiceClient client;
+  private static final String GCS_BUCKET;
+  private static final String GCS_BUCKET_ENV_VAR = "GOOGLE_CLOUD_TESTS_LANGUAGE_BUCKET";
+
+  static {
+    if (System.getenv(GCS_BUCKET_ENV_VAR) != null) {
+      GCS_BUCKET = System.getenv(GCS_BUCKET_ENV_VAR);
+    } else {
+      GCS_BUCKET = "cloud-samples-data";
+    }
+  }
+
   private static final String ANALYZE_TEXT =
       "Android is a mobile operating system developed by Google, based on the Linux kernel and designed primarily for touchscreen mobile devices such as smartphones and tablets.";
 
@@ -64,7 +75,7 @@ public class ITSystemTest {
   public void analyzeEntitiesFileTest() {
     Document doc =
         Document.newBuilder()
-            .setGcsContentUri("gs://cloud-samples-data/language/android.txt")
+            .setGcsContentUri(String.format("gs://%s/language/android.txt", GCS_BUCKET))
             .setType(Type.PLAIN_TEXT)
             .build();
     AnalyzeEntitiesRequest request = AnalyzeEntitiesRequest.newBuilder().setDocument(doc).build();
@@ -104,7 +115,7 @@ public class ITSystemTest {
   public void analyzeEntitySentimentFileTest() {
     Document doc =
         Document.newBuilder()
-            .setGcsContentUri("gs://cloud-samples-data/language/president.txt")
+            .setGcsContentUri(String.format("gs://%s/language/president.txt", GCS_BUCKET))
             .setType(Type.PLAIN_TEXT)
             .build();
     AnalyzeEntitySentimentRequest request =
@@ -163,7 +174,7 @@ public class ITSystemTest {
   public void analyzeSentimentFileWithReturnPositiveTest() {
     Document doc =
         Document.newBuilder()
-            .setGcsContentUri("gs://cloud-samples-data/language/sentiment-positive.txt")
+            .setGcsContentUri(String.format("gs://%s/language/sentiment-positive.txt", GCS_BUCKET))
             .setType(Type.PLAIN_TEXT)
             .build();
     AnalyzeSentimentResponse response = client.analyzeSentiment(doc);
@@ -188,7 +199,7 @@ public class ITSystemTest {
   public void analyzeSentimentFileWithReturnNegativeTest() {
     Document doc =
         Document.newBuilder()
-            .setGcsContentUri("gs://cloud-samples-data/language/sentiment-negative.txt")
+            .setGcsContentUri(String.format("gs://%s/language/sentiment-negative.txt", GCS_BUCKET))
             .setType(Type.PLAIN_TEXT)
             .build();
     Sentiment sentiment = client.analyzeSentiment(doc).getDocumentSentiment();
@@ -212,7 +223,7 @@ public class ITSystemTest {
   public void analyzeSyntaxFileTest() {
     Document doc =
         Document.newBuilder()
-            .setGcsContentUri("gs://cloud-samples-data/language/syntax-sentence.txt")
+            .setGcsContentUri(String.format("gs://%s/language/syntax-sentence.txt", GCS_BUCKET))
             .setType(Type.PLAIN_TEXT)
             .build();
     AnalyzeSyntaxRequest request =
@@ -255,7 +266,7 @@ public class ITSystemTest {
   public void classifyFileTest() {
     Document doc =
         Document.newBuilder()
-            .setGcsContentUri("gs://cloud-samples-data/language/android.txt")
+            .setGcsContentUri(String.format("gs://%s/language/android.txt", GCS_BUCKET))
             .setType(Type.PLAIN_TEXT)
             .build();
     ClassifyTextRequest request = ClassifyTextRequest.newBuilder().setDocument(doc).build();
