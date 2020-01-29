@@ -228,20 +228,6 @@
         </plugin>
       </plugins>
     </pluginManagement>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <annotationProcessorPaths>
-            <path>
-              <groupId>com.google.auto.value</groupId>
-              <artifactId>auto-value</artifactId>
-              <version>${auto-value.version}</version>
-            </path>
-          </annotationProcessorPaths>
-        </configuration>
-      </plugin>
-    </plugins>
   </build>
 
   <modules>
@@ -328,6 +314,29 @@
         <auto-value-annotations.version>1.7</auto-value-annotations.version>
         <auto-value.version>1.4</auto-value.version>
       </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <annotationProcessorPaths>
+                <path>
+                  <groupId>com.google.auto.value</groupId>
+                  <artifactId>auto-value</artifactId>
+                  <version>${auto-value.version}</version>
+                </path>
+                <!--
+                There is currently no available version of auto-service-annotations
+                in maven central compiled for java 1.7 so we can't include it here.
+
+                If you're using IntelliJ please use a newer jdk and set the language
+                level to 1.7 for your dev work.
+                -->
+              </annotationProcessorPaths>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
 
     <profile>
@@ -338,7 +347,45 @@
       <properties>
         <auto-value.version>1.7</auto-value.version>
         <auto-value-annotations.version>${auto-value.version}</auto-value-annotations.version>
+        <auto-service-annotations.version>1.0-rc6</auto-service-annotations.version>
       </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <annotationProcessorPaths>
+                <path>
+                  <groupId>com.google.auto.value</groupId>
+                  <artifactId>auto-value</artifactId>
+                  <version>${auto-value.version}</version>
+                </path>
+                <!--
+                Manually pull in auto-service-annotations so that it is part of the
+                processor path because auto-value has it set to provided scope.
+
+                This dependency is needed due to the retention change in
+                https://github.com/google/auto/commit/628df548685b4fc0f2a9af856f97cc2a68da246b
+                where the RetentionPolicy changed from SOURCE to CLASS.
+
+                Due to the RetentionPolicy change to CLASS we must have the
+                annotations available on the processor path otherwise the following
+                will error will be thrown. (This is a particular problem with the
+                annotation processor configuration in IntelliJ)
+
+                Error:java: java.lang.NoClassDefFoundError: com/google/auto/service/AutoService
+                  com.google.auto.service.AutoService
+                -->
+                <path>
+                  <groupId>com.google.auto.service</groupId>
+                  <artifactId>auto-service-annotations</artifactId>
+                  <version>${auto-service-annotations.version}</version>
+                </path>
+              </annotationProcessorPaths>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
 
     <profile>
