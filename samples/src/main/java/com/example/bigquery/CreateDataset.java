@@ -47,4 +47,4 @@ public class CreateDataset {
     }
   }
 }
-// [END bigquery create_dataset]
+// [END bigquery_create_dataset]
