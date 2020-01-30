@@ -346,10 +346,16 @@ class MessageDispatcher {
   }
 
   private PubsubMessage addDeliveryInfoCount(ReceivedMessage receivedMessage) {
-    return PubsubMessage.newBuilder(receivedMessage.getMessage())
-        .putAttributes(
-            "googclient_deliveryattempt", Integer.toString(receivedMessage.getDeliveryAttempt()))
-        .build();
+    PubsubMessage originalMessage = receivedMessage.getMessage();
+    int deliveryAttempt = receivedMessage.getDeliveryAttempt();
+    // Delivery Attempt will be set to 0 if DeadLetterPolicy is not set on the subscription. In
+    // this case, do not populate the PubsubMessage with the delivery attempt attribute.
+    if (deliveryAttempt > 0) {
+      return PubsubMessage.newBuilder(originalMessage)
+          .putAttributes("googclient_deliveryattempt", Integer.toString(deliveryAttempt))
+          .build();
+    }
+    return originalMessage;
   }
 
   private void processOutstandingMessage(final PubsubMessage message, final AckHandler ackHandler) {

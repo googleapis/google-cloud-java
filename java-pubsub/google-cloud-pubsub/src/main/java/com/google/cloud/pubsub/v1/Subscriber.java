@@ -207,8 +207,11 @@ public class Subscriber extends AbstractApiService {
   }
 
   /** Returns the delivery attempt count for a received {@link PubsubMessage} */
-  public static int getDeliveryAttempt(PubsubMessage message) {
-    return Integer.parseInt(message.getAttributesOrDefault("googclient_deliveryattempt", "0"));
+  public static Integer getDeliveryAttempt(PubsubMessage message) {
+    if (!message.containsAttributes("googclient_deliveryattempt")) {
+      return null;
+    }
+    return Integer.parseInt(message.getAttributesOrThrow("googclient_deliveryattempt"));
   }
 
   /** Subscription which the subscriber is subscribed to. */
