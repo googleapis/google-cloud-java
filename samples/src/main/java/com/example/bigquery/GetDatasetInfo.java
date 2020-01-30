@@ -16,6 +16,7 @@
 
 package com.example.bigquery;
 
+// [START bigquery_get_dataset]
 import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.TableListOption;
@@ -25,7 +26,6 @@ import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.Table;
 
-// [START bigquery_get_dataset]
 public class GetDatasetInfo {
 
   public static void runGetDatasetInfo() {
