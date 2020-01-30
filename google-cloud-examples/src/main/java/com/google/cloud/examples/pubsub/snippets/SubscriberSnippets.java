@@ -147,12 +147,22 @@ public class SubscriberSnippets {
 
   private Subscriber createSingleThreadedSubscriber() throws Exception {
     // [START pubsub_subscriber_concurrency_control]
-    // provide a separate executor service for polling
+    // Provides an executor service for processing messages. The default
+    // `executorProvider` used by the subscriber has a default thread count of 5.
     ExecutorProvider executorProvider =
-        InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();
+        InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(4).build();
 
+    // `setParallelPullCount` determines how many StreamingPull streams the
+    // subscriber will open to receive message. It defaults to 1.
+    // `setExecutorProvider` configures an executor for the subscriber to
+    // process messages.
+    // Here, the subscriber is configured to open 2 streams for receiving
+    // messages, each stream creates a new executor with 4 threads to help
+    // process the message callbacks. In total 2x4=8 threads are used for
+    // message processing.
     Subscriber subscriber =
         Subscriber.newBuilder(subscriptionName, receiver)
+            .setParallelPullCount(2)
             .setExecutorProvider(executorProvider)
             .build();
     // [END pubsub_subscriber_concurrency_control]
