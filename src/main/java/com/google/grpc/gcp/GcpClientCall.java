@@ -27,6 +27,7 @@ import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
 import java.util.ArrayDeque;
+import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Logger;
@@ -52,7 +53,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
 
   private GcpManagedChannel.ChannelRef delegateChannelRef = null;
   private ClientCall<ReqT, RespT> delegateCall = null;
-  private String key = null;
+  private List<String> keys = null;
   private boolean received = false;
   private final AtomicBoolean decremented = new AtomicBoolean(false);
 
@@ -108,12 +109,14 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
       if (!started) {
         // Check if the current channelRef is bound with the key and change it if necessary.
         // If no channel is bound with the key, use the least busy one.
-        key = delegateChannel.checkKey(message, true, methodDescriptor);
-        if (key != null && key != "" && delegateChannel.getChannelRef(key) != null) {
-          delegateChannelRef = delegateChannel.getChannelRef(key);
-        } else {
-          delegateChannelRef = delegateChannel.getChannelRef(null);
+        keys = delegateChannel.checkKeys(message, true, methodDescriptor);
+        String key = null;
+        if (keys != null
+            && keys.size() == 1
+            && delegateChannel.getChannelRef(keys.get(0)) != null) {
+          key = keys.get(0);
         }
+        delegateChannelRef = delegateChannel.getChannelRef(key);
         delegateChannelRef.activeStreamsCountIncr();
 
         // Create the client call and do the previous operations.
@@ -181,11 +184,11 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
           delegateChannelRef.activeStreamsCountDecr();
         }
         // If the operation completed successfully, bind/unbind the affinity key.
-        if (key != null && status.getCode() == Status.Code.OK) {
+        if (keys != null && status.getCode() == Status.Code.OK) {
           if (affinity.getCommand() == AffinityConfig.Command.UNBIND) {
-            delegateChannel.unbind(key);
+            delegateChannel.unbind(keys);
           } else if (affinity.getCommand() == AffinityConfig.Command.BIND) {
-            delegateChannel.bind(delegateChannelRef, key);
+            delegateChannel.bind(delegateChannelRef, keys);
           }
         }
         responseListener.onClose(status, trailers);
@@ -197,8 +200,8 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
       public void onMessage(RespT message) {
         if (!received) {
           received = true;
-          if (key == null) {
-            key = delegateChannel.checkKey(message, false, methodDescriptor);
+          if (keys == null) {
+            keys = delegateChannel.checkKeys(message, false, methodDescriptor);
           }
         }
         responseListener.onMessage(message);

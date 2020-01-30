@@ -12,6 +12,13 @@
       }
     },
     {
+      "name": ["google.spanner.v1.Spanner/BatchCreateSessions"],
+      "affinity" : {
+        "command": "BIND",
+        "affinityKey": "session.name"
+      }
+    },
+    {
       "name": ["google.spanner.v1.Spanner/GetSession"],
       "affinity": {
         "command": "BOUND",

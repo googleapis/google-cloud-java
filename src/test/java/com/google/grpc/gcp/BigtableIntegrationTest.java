@@ -224,16 +224,7 @@ public class BigtableIntegrationTest {
           new AsyncResponseObserver<MutateRowResponse>();
       stub.mutateRow(request, responseObserver);
       // Test the number of channels.
-      assertEquals((i / NEW_MAX_CHANNEL) + 1, gcpChannel.channelRefs.size());
-      // Test the number of streams.
-      if ((i % NEW_MAX_STREAM) == 0) {
-        assertEquals(
-            (i % NEW_MAX_STREAM) + 1,
-            gcpChannel.channelRefs.get(i / NEW_MAX_CHANNEL).getActiveStreamsCount());
-      } else {
-        assertEquals(
-            (i % NEW_MAX_STREAM) + 1, gcpChannel.channelRefs.get(0).getActiveStreamsCount());
-      }
+      assertEquals(Math.min(i + 1, NEW_MAX_CHANNEL), gcpChannel.channelRefs.size());
       clearObservers.add(responseObserver);
     }
 
