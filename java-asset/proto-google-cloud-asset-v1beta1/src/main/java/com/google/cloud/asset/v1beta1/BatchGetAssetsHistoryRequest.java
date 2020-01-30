@@ -161,7 +161,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * "projects/my-project-id")", or a project number (such as "projects/12345").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -185,7 +187,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * "projects/my-project-id")", or a project number (such as "projects/12345").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -292,10 +296,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The content type.
+   * Optional. The content type.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+   * <code>
+   * .google.cloud.asset.v1beta1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for contentType.
    */
@@ -306,10 +312,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The content type.
+   * Optional. The content type.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+   * <code>
+   * .google.cloud.asset.v1beta1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The contentType.
    */
@@ -334,7 +342,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * read_time_window.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+   * <code>
+   * .google.cloud.asset.v1beta1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the readTimeWindow field is set.
    */
@@ -353,7 +363,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * read_time_window.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+   * <code>
+   * .google.cloud.asset.v1beta1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The readTimeWindow.
    */
@@ -374,7 +386,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * read_time_window.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+   * <code>
+   * .google.cloud.asset.v1beta1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.asset.v1beta1.TimeWindowOrBuilder getReadTimeWindowOrBuilder() {
     return getReadTimeWindow();
@@ -790,7 +804,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * "projects/my-project-id")", or a project number (such as "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -814,7 +830,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * "projects/my-project-id")", or a project number (such as "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -838,7 +856,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * "projects/my-project-id")", or a project number (such as "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -861,7 +881,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * "projects/my-project-id")", or a project number (such as "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -880,7 +902,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * "projects/my-project-id")", or a project number (such as "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -1123,10 +1147,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The content type.
+     * Optional. The content type.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for contentType.
      */
@@ -1137,10 +1163,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The content type.
+     * Optional. The content type.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for contentType to set.
      * @return This builder for chaining.
@@ -1154,10 +1182,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The content type.
+     * Optional. The content type.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The contentType.
      */
@@ -1171,10 +1201,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The content type.
+     * Optional. The content type.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The contentType to set.
      * @return This builder for chaining.
@@ -1192,10 +1224,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The content type.
+     * Optional. The content type.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1224,7 +1258,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the readTimeWindow field is set.
      */
@@ -1243,7 +1279,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The readTimeWindow.
      */
@@ -1268,7 +1306,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setReadTimeWindow(com.google.cloud.asset.v1beta1.TimeWindow value) {
       if (readTimeWindowBuilder_ == null) {
@@ -1295,7 +1335,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setReadTimeWindow(
         com.google.cloud.asset.v1beta1.TimeWindow.Builder builderForValue) {
@@ -1320,7 +1362,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeReadTimeWindow(com.google.cloud.asset.v1beta1.TimeWindow value) {
       if (readTimeWindowBuilder_ == null) {
@@ -1351,7 +1395,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearReadTimeWindow() {
       if (readTimeWindowBuilder_ == null) {
@@ -1376,7 +1422,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.asset.v1beta1.TimeWindow.Builder getReadTimeWindowBuilder() {
 
@@ -1395,7 +1443,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.asset.v1beta1.TimeWindowOrBuilder getReadTimeWindowOrBuilder() {
       if (readTimeWindowBuilder_ != null) {
@@ -1418,7 +1468,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.asset.v1beta1.TimeWindow,

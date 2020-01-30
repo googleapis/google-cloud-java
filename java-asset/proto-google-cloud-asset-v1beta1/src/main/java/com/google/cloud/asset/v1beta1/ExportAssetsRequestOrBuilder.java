@@ -33,7 +33,9 @@ public interface ExportAssetsRequestOrBuilder
    * a folder number (such as "folders/123").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -48,7 +50,9 @@ public interface ExportAssetsRequestOrBuilder
    * a folder number (such as "folders/123").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -203,7 +207,9 @@ public interface ExportAssetsRequestOrBuilder
    * to. All results will be in newline delimited JSON format.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1beta1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the outputConfig field is set.
    */
@@ -216,7 +222,9 @@ public interface ExportAssetsRequestOrBuilder
    * to. All results will be in newline delimited JSON format.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1beta1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The outputConfig.
    */
@@ -229,7 +237,9 @@ public interface ExportAssetsRequestOrBuilder
    * to. All results will be in newline delimited JSON format.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1beta1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.asset.v1beta1.OutputConfigOrBuilder getOutputConfigOrBuilder();
 }

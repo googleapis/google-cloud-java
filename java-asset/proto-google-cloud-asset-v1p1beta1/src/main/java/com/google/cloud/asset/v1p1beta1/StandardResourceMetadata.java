@@ -43,6 +43,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     project_ = "";
     displayName_ = "";
     description_ = "";
+    additionalAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -64,6 +65,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -109,6 +111,16 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
               description_ = s;
               break;
             }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                additionalAttributes_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              additionalAttributes_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -123,6 +135,9 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        additionalAttributes_ = additionalAttributes_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -392,6 +407,75 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     }
   }
 
+  public static final int ADDITIONAL_ATTRIBUTES_FIELD_NUMBER = 10;
+  private com.google.protobuf.LazyStringList additionalAttributes_;
+  /**
+   *
+   *
+   * <pre>
+   * Additional searchable attributes of this resource.
+   * Informational only. The exact set of attributes is subject to change.
+   * For example: project id, DNS name etc.
+   * </pre>
+   *
+   * <code>repeated string additional_attributes = 10;</code>
+   *
+   * @return A list containing the additionalAttributes.
+   */
+  public com.google.protobuf.ProtocolStringList getAdditionalAttributesList() {
+    return additionalAttributes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional searchable attributes of this resource.
+   * Informational only. The exact set of attributes is subject to change.
+   * For example: project id, DNS name etc.
+   * </pre>
+   *
+   * <code>repeated string additional_attributes = 10;</code>
+   *
+   * @return The count of additionalAttributes.
+   */
+  public int getAdditionalAttributesCount() {
+    return additionalAttributes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional searchable attributes of this resource.
+   * Informational only. The exact set of attributes is subject to change.
+   * For example: project id, DNS name etc.
+   * </pre>
+   *
+   * <code>repeated string additional_attributes = 10;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The additionalAttributes at the given index.
+   */
+  public java.lang.String getAdditionalAttributes(int index) {
+    return additionalAttributes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional searchable attributes of this resource.
+   * Informational only. The exact set of attributes is subject to change.
+   * For example: project id, DNS name etc.
+   * </pre>
+   *
+   * <code>repeated string additional_attributes = 10;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalAttributes at the given index.
+   */
+  public com.google.protobuf.ByteString getAdditionalAttributesBytes(int index) {
+    return additionalAttributes_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -421,6 +505,10 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
     }
+    for (int i = 0; i < additionalAttributes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 10, additionalAttributes_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -445,6 +533,14 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < additionalAttributes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(additionalAttributes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAdditionalAttributesList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -466,6 +562,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     if (!getProject().equals(other.getProject())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (!getAdditionalAttributesList().equals(other.getAdditionalAttributesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -487,6 +584,10 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    if (getAdditionalAttributesCount() > 0) {
+      hash = (37 * hash) + ADDITIONAL_ATTRIBUTES_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalAttributesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -643,6 +744,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
 
       description_ = "";
 
+      additionalAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -670,11 +773,17 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     public com.google.cloud.asset.v1p1beta1.StandardResourceMetadata buildPartial() {
       com.google.cloud.asset.v1p1beta1.StandardResourceMetadata result =
           new com.google.cloud.asset.v1p1beta1.StandardResourceMetadata(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.assetType_ = assetType_;
       result.project_ = project_;
       result.displayName_ = displayName_;
       result.description_ = description_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        additionalAttributes_ = additionalAttributes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.additionalAttributes_ = additionalAttributes_;
       onBuilt();
       return result;
     }
@@ -745,6 +854,16 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         description_ = other.description_;
         onChanged();
       }
+      if (!other.additionalAttributes_.isEmpty()) {
+        if (additionalAttributes_.isEmpty()) {
+          additionalAttributes_ = other.additionalAttributes_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureAdditionalAttributesIsMutable();
+          additionalAttributes_.addAll(other.additionalAttributes_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -774,6 +893,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1336,6 +1457,192 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
 
       description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList additionalAttributes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureAdditionalAttributesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        additionalAttributes_ = new com.google.protobuf.LazyStringArrayList(additionalAttributes_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional searchable attributes of this resource.
+     * Informational only. The exact set of attributes is subject to change.
+     * For example: project id, DNS name etc.
+     * </pre>
+     *
+     * <code>repeated string additional_attributes = 10;</code>
+     *
+     * @return A list containing the additionalAttributes.
+     */
+    public com.google.protobuf.ProtocolStringList getAdditionalAttributesList() {
+      return additionalAttributes_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional searchable attributes of this resource.
+     * Informational only. The exact set of attributes is subject to change.
+     * For example: project id, DNS name etc.
+     * </pre>
+     *
+     * <code>repeated string additional_attributes = 10;</code>
+     *
+     * @return The count of additionalAttributes.
+     */
+    public int getAdditionalAttributesCount() {
+      return additionalAttributes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional searchable attributes of this resource.
+     * Informational only. The exact set of attributes is subject to change.
+     * For example: project id, DNS name etc.
+     * </pre>
+     *
+     * <code>repeated string additional_attributes = 10;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The additionalAttributes at the given index.
+     */
+    public java.lang.String getAdditionalAttributes(int index) {
+      return additionalAttributes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional searchable attributes of this resource.
+     * Informational only. The exact set of attributes is subject to change.
+     * For example: project id, DNS name etc.
+     * </pre>
+     *
+     * <code>repeated string additional_attributes = 10;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the additionalAttributes at the given index.
+     */
+    public com.google.protobuf.ByteString getAdditionalAttributesBytes(int index) {
+      return additionalAttributes_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional searchable attributes of this resource.
+     * Informational only. The exact set of attributes is subject to change.
+     * For example: project id, DNS name etc.
+     * </pre>
+     *
+     * <code>repeated string additional_attributes = 10;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The additionalAttributes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdditionalAttributes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdditionalAttributesIsMutable();
+      additionalAttributes_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional searchable attributes of this resource.
+     * Informational only. The exact set of attributes is subject to change.
+     * For example: project id, DNS name etc.
+     * </pre>
+     *
+     * <code>repeated string additional_attributes = 10;</code>
+     *
+     * @param value The additionalAttributes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalAttributes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdditionalAttributesIsMutable();
+      additionalAttributes_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional searchable attributes of this resource.
+     * Informational only. The exact set of attributes is subject to change.
+     * For example: project id, DNS name etc.
+     * </pre>
+     *
+     * <code>repeated string additional_attributes = 10;</code>
+     *
+     * @param values The additionalAttributes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdditionalAttributes(java.lang.Iterable<java.lang.String> values) {
+      ensureAdditionalAttributesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, additionalAttributes_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional searchable attributes of this resource.
+     * Informational only. The exact set of attributes is subject to change.
+     * For example: project id, DNS name etc.
+     * </pre>
+     *
+     * <code>repeated string additional_attributes = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdditionalAttributes() {
+      additionalAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional searchable attributes of this resource.
+     * Informational only. The exact set of attributes is subject to change.
+     * For example: project id, DNS name etc.
+     * </pre>
+     *
+     * <code>repeated string additional_attributes = 10;</code>
+     *
+     * @param value The bytes of the additionalAttributes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalAttributesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAdditionalAttributesIsMutable();
+      additionalAttributes_.add(value);
       onChanged();
       return this;
     }

@@ -161,4 +161,63 @@ public interface StandardResourceMetadataOrBuilder
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Additional searchable attributes of this resource.
+   * Informational only. The exact set of attributes is subject to change.
+   * For example: project id, DNS name etc.
+   * </pre>
+   *
+   * <code>repeated string additional_attributes = 10;</code>
+   *
+   * @return A list containing the additionalAttributes.
+   */
+  java.util.List<java.lang.String> getAdditionalAttributesList();
+  /**
+   *
+   *
+   * <pre>
+   * Additional searchable attributes of this resource.
+   * Informational only. The exact set of attributes is subject to change.
+   * For example: project id, DNS name etc.
+   * </pre>
+   *
+   * <code>repeated string additional_attributes = 10;</code>
+   *
+   * @return The count of additionalAttributes.
+   */
+  int getAdditionalAttributesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Additional searchable attributes of this resource.
+   * Informational only. The exact set of attributes is subject to change.
+   * For example: project id, DNS name etc.
+   * </pre>
+   *
+   * <code>repeated string additional_attributes = 10;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The additionalAttributes at the given index.
+   */
+  java.lang.String getAdditionalAttributes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Additional searchable attributes of this resource.
+   * Informational only. The exact set of attributes is subject to change.
+   * For example: project id, DNS name etc.
+   * </pre>
+   *
+   * <code>repeated string additional_attributes = 10;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalAttributes at the given index.
+   */
+  com.google.protobuf.ByteString getAdditionalAttributesBytes(int index);
 }

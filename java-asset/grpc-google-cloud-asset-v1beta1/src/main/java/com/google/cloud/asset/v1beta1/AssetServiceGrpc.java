@@ -204,6 +204,8 @@ public final class AssetServiceGrpc {
      * non-delete or deleted status.
      * For IAM_POLICY content, this API outputs history when the asset and its
      * attached IAM POLICY both exist. This can create gaps in the output history.
+     * If a specified asset does not exist, this API returns an INVALID_ARGUMENT
+     * error.
      * </pre>
      */
     public void batchGetAssetsHistory(
@@ -283,6 +285,8 @@ public final class AssetServiceGrpc {
      * non-delete or deleted status.
      * For IAM_POLICY content, this API outputs history when the asset and its
      * attached IAM POLICY both exist. This can create gaps in the output history.
+     * If a specified asset does not exist, this API returns an INVALID_ARGUMENT
+     * error.
      * </pre>
      */
     public void batchGetAssetsHistory(
@@ -345,6 +349,8 @@ public final class AssetServiceGrpc {
      * non-delete or deleted status.
      * For IAM_POLICY content, this API outputs history when the asset and its
      * attached IAM POLICY both exist. This can create gaps in the output history.
+     * If a specified asset does not exist, this API returns an INVALID_ARGUMENT
+     * error.
      * </pre>
      */
     public com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse batchGetAssetsHistory(
@@ -403,6 +409,8 @@ public final class AssetServiceGrpc {
      * non-delete or deleted status.
      * For IAM_POLICY content, this API outputs history when the asset and its
      * attached IAM POLICY both exist. This can create gaps in the output history.
+     * If a specified asset does not exist, this API returns an INVALID_ARGUMENT
+     * error.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

@@ -47,17 +47,18 @@ public final class AssetProto {
       "\n)google/cloud/asset/v1p1beta1/assets.pr"
           + "oto\022\034google.cloud.asset.v1p1beta1\032\032googl"
           + "e/iam/v1/policy.proto\032\034google/api/annota"
-          + "tions.proto\"x\n\030StandardResourceMetadata\022"
-          + "\014\n\004name\030\001 \001(\t\022\022\n\nasset_type\030\002 \001(\t\022\017\n\007pro"
-          + "ject\030\003 \001(\t\022\024\n\014display_name\030\004 \001(\t\022\023\n\013desc"
-          + "ription\030\005 \001(\t\"a\n\025IamPolicySearchResult\022\020"
-          + "\n\010resource\030\001 \001(\t\022\017\n\007project\030\003 \001(\t\022%\n\006pol"
-          + "icy\030\004 \001(\0132\025.google.iam.v1.PolicyB\264\001\n com"
-          + ".google.cloud.asset.v1p1beta1B\nAssetProt"
-          + "oP\001ZAgoogle.golang.org/genproto/googleap"
-          + "is/cloud/asset/v1p1beta1;asset\370\001\001\252\002\034Goog"
-          + "le.Cloud.Asset.V1P1Beta1\312\002\034Google\\Cloud\\"
-          + "Asset\\V1p1beta1b\006proto3"
+          + "tions.proto\"\227\001\n\030StandardResourceMetadata"
+          + "\022\014\n\004name\030\001 \001(\t\022\022\n\nasset_type\030\002 \001(\t\022\017\n\007pr"
+          + "oject\030\003 \001(\t\022\024\n\014display_name\030\004 \001(\t\022\023\n\013des"
+          + "cription\030\005 \001(\t\022\035\n\025additional_attributes\030"
+          + "\n \003(\t\"a\n\025IamPolicySearchResult\022\020\n\010resour"
+          + "ce\030\001 \001(\t\022\017\n\007project\030\003 \001(\t\022%\n\006policy\030\004 \001("
+          + "\0132\025.google.iam.v1.PolicyB\264\001\n com.google."
+          + "cloud.asset.v1p1beta1B\nAssetProtoP\001ZAgoo"
+          + "gle.golang.org/genproto/googleapis/cloud"
+          + "/asset/v1p1beta1;asset\370\001\001\252\002\034Google.Cloud"
+          + ".Asset.V1P1Beta1\312\002\034Google\\Cloud\\Asset\\V1"
+          + "p1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -72,7 +73,7 @@ public final class AssetProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_asset_v1p1beta1_StandardResourceMetadata_descriptor,
             new java.lang.String[] {
-              "Name", "AssetType", "Project", "DisplayName", "Description",
+              "Name", "AssetType", "Project", "DisplayName", "Description", "AdditionalAttributes",
             });
     internal_static_google_cloud_asset_v1p1beta1_IamPolicySearchResult_descriptor =
         getDescriptor().getMessageTypes().get(1);

@@ -177,7 +177,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * a folder number (such as "folders/123").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -202,7 +204,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * a folder number (such as "folders/123").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -396,7 +400,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * to. All results will be in newline delimited JSON format.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1beta1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the outputConfig field is set.
    */
@@ -411,7 +417,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * to. All results will be in newline delimited JSON format.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1beta1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The outputConfig.
    */
@@ -428,7 +436,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * to. All results will be in newline delimited JSON format.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1beta1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.asset.v1beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
@@ -872,7 +882,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * a folder number (such as "folders/123").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -897,7 +909,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * a folder number (such as "folders/123").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -922,7 +936,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * a folder number (such as "folders/123").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -946,7 +962,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * a folder number (such as "folders/123").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -966,7 +984,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * a folder number (such as "folders/123").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -1508,7 +1528,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the outputConfig field is set.
      */
@@ -1523,7 +1545,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The outputConfig.
      */
@@ -1544,7 +1568,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(com.google.cloud.asset.v1beta1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -1567,7 +1593,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(
         com.google.cloud.asset.v1beta1.OutputConfig.Builder builderForValue) {
@@ -1588,7 +1616,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeOutputConfig(com.google.cloud.asset.v1beta1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -1615,7 +1645,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearOutputConfig() {
       if (outputConfigBuilder_ == null) {
@@ -1636,7 +1668,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.asset.v1beta1.OutputConfig.Builder getOutputConfigBuilder() {
 
@@ -1651,7 +1685,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.asset.v1beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
       if (outputConfigBuilder_ != null) {
@@ -1670,7 +1706,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1beta1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1beta1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.asset.v1beta1.OutputConfig,

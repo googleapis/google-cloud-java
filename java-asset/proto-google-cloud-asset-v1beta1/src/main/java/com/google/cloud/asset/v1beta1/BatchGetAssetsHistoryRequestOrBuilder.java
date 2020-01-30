@@ -32,7 +32,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * "projects/my-project-id")", or a project number (such as "projects/12345").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -46,7 +48,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * "projects/my-project-id")", or a project number (such as "projects/12345").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -131,10 +135,12 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The content type.
+   * Optional. The content type.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+   * <code>
+   * .google.cloud.asset.v1beta1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for contentType.
    */
@@ -143,10 +149,12 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The content type.
+   * Optional. The content type.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
+   * <code>
+   * .google.cloud.asset.v1beta1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The contentType.
    */
@@ -164,7 +172,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * read_time_window.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+   * <code>
+   * .google.cloud.asset.v1beta1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the readTimeWindow field is set.
    */
@@ -181,7 +191,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * read_time_window.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+   * <code>
+   * .google.cloud.asset.v1beta1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The readTimeWindow.
    */
@@ -198,7 +210,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * read_time_window.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
+   * <code>
+   * .google.cloud.asset.v1beta1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.asset.v1beta1.TimeWindowOrBuilder getReadTimeWindowOrBuilder();
 }

@@ -70,10 +70,10 @@ public final class AssetServiceProto {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/asset/v1p1beta1/asset_ser"
           + "vice.proto\022\034google.cloud.asset.v1p1beta1"
-          + "\032\034google/api/annotations.proto\032\037google/a"
-          + "pi/field_behavior.proto\032)google/cloud/as"
-          + "set/v1p1beta1/assets.proto\032\027google/api/c"
-          + "lient.proto\"\213\001\n\026SearchResourcesRequest\022\022"
+          + "\032\034google/api/annotations.proto\032\027google/a"
+          + "pi/client.proto\032\037google/api/field_behavi"
+          + "or.proto\032)google/cloud/asset/v1p1beta1/a"
+          + "ssets.proto\"\213\001\n\026SearchResourcesRequest\022\022"
           + "\n\005scope\030\001 \001(\tB\003\340A\002\022\022\n\005query\030\002 \001(\tB\003\340A\001\022\030"
           + "\n\013asset_types\030\003 \003(\tB\003\340A\001\022\026\n\tpage_size\030\004 "
           + "\001(\005B\003\340A\001\022\027\n\npage_token\030\005 \001(\tB\003\340A\001\"{\n\027Sea"
@@ -99,25 +99,27 @@ public final class AssetServiceProto {
           + "chAllIamPoliciesResponse\022D\n\007results\030\001 \003("
           + "\01323.google.cloud.asset.v1p1beta1.IamPoli"
           + "cySearchResult\022\027\n\017next_page_token\030\002 \001(\t2"
-          + "\265\006\n\014AssetService\022\243\001\n\017SearchResources\0224.g"
+          + "\205\007\n\014AssetService\022\275\001\n\017SearchResources\0224.g"
           + "oogle.cloud.asset.v1p1beta1.SearchResour"
           + "cesRequest\0325.google.cloud.asset.v1p1beta"
-          + "1.SearchResourcesResponse\"#\202\323\344\223\002\035\022\033/v1p1"
-          + "beta1/resources:search\022\253\001\n\021SearchIamPoli"
-          + "cies\0226.google.cloud.asset.v1p1beta1.Sear"
-          + "chIamPoliciesRequest\0327.google.cloud.asse"
-          + "t.v1p1beta1.SearchIamPoliciesResponse\"%\202"
-          + "\323\344\223\002\037\022\035/v1p1beta1/iamPolicies:search\022\273\001\n"
+          + "1.SearchResourcesResponse\"=\202\323\344\223\002\035\022\033/v1p1"
+          + "beta1/resources:search\332A\027scope,query,ass"
+          + "et_types\022\271\001\n\021SearchIamPolicies\0226.google."
+          + "cloud.asset.v1p1beta1.SearchIamPoliciesR"
+          + "equest\0327.google.cloud.asset.v1p1beta1.Se"
+          + "archIamPoliciesResponse\"3\202\323\344\223\002\037\022\035/v1p1be"
+          + "ta1/iamPolicies:search\332A\013scope,query\022\325\001\n"
           + "\022SearchAllResources\0227.google.cloud.asset"
           + ".v1p1beta1.SearchAllResourcesRequest\0328.g"
           + "oogle.cloud.asset.v1p1beta1.SearchAllRes"
-          + "ourcesResponse\"2\202\323\344\223\002,\022*/v1p1beta1/{scop"
-          + "e=*/*}/resources:searchAll\022\303\001\n\024SearchAll"
-          + "IamPolicies\0229.google.cloud.asset.v1p1bet"
-          + "a1.SearchAllIamPoliciesRequest\032:.google."
-          + "cloud.asset.v1p1beta1.SearchAllIamPolici"
-          + "esResponse\"4\202\323\344\223\002.\022,/v1p1beta1/{scope=*/"
-          + "*}/iamPolicies:searchAll\032M\312A\031cloudasset."
+          + "ourcesResponse\"L\202\323\344\223\002,\022*/v1p1beta1/{scop"
+          + "e=*/*}/resources:searchAll\332A\027scope,query"
+          + ",asset_types\022\321\001\n\024SearchAllIamPolicies\0229."
+          + "google.cloud.asset.v1p1beta1.SearchAllIa"
+          + "mPoliciesRequest\032:.google.cloud.asset.v1"
+          + "p1beta1.SearchAllIamPoliciesResponse\"B\202\323"
+          + "\344\223\002.\022,/v1p1beta1/{scope=*/*}/iamPolicies"
+          + ":searchAll\332A\013scope,query\032M\312A\031cloudasset."
           + "googleapis.com\322A.https://www.googleapis."
           + "com/auth/cloud-platformB\270\001\n com.google.c"
           + "loud.asset.v1p1beta1B\021AssetServiceProtoP"
@@ -131,9 +133,9 @@ public final class AssetServiceProto {
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.cloud.asset.v1p1beta1.AssetProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_cloud_asset_v1p1beta1_SearchResourcesRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -204,13 +206,14 @@ public final class AssetServiceProto {
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.asset.v1p1beta1.AssetProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
