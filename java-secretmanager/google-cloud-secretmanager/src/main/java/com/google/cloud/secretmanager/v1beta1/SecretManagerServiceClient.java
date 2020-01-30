@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -324,7 +324,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Secret createSecret(ProjectName parent, String secretId, Secret secret) {
-
     CreateSecretRequest request =
         CreateSecretRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -357,7 +356,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Secret createSecret(String parent, String secretId, Secret secret) {
-
     CreateSecretRequest request =
         CreateSecretRequest.newBuilder()
             .setParent(parent)
@@ -441,7 +439,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecretVersion addSecretVersion(SecretName parent, SecretPayload payload) {
-
     AddSecretVersionRequest request =
         AddSecretVersionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -473,7 +470,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecretVersion addSecretVersion(String parent, SecretPayload payload) {
-
     AddSecretVersionRequest request =
         AddSecretVersionRequest.newBuilder().setParent(parent).setPayload(payload).build();
     return addSecretVersion(request);
@@ -548,7 +544,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Secret getSecret(SecretName name) {
-
     GetSecretRequest request =
         GetSecretRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSecret(request);
@@ -572,7 +567,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Secret getSecret(String name) {
-
     GetSecretRequest request = GetSecretRequest.newBuilder().setName(name).build();
     return getSecret(request);
   }
@@ -642,7 +636,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Secret updateSecret(Secret secret, FieldMask updateMask) {
-
     UpdateSecretRequest request =
         UpdateSecretRequest.newBuilder().setSecret(secret).setUpdateMask(updateMask).build();
     return updateSecret(request);
@@ -715,7 +708,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSecret(SecretName name) {
-
     DeleteSecretRequest request =
         DeleteSecretRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSecret(request);
@@ -739,7 +731,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSecret(String name) {
-
     DeleteSecretRequest request = DeleteSecretRequest.newBuilder().setName(name).build();
     deleteSecret(request);
   }
@@ -955,7 +946,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecretVersion getSecretVersion(SecretVersionName name) {
-
     GetSecretVersionRequest request =
         GetSecretVersionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSecretVersion(request);
@@ -985,7 +975,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecretVersion getSecretVersion(String name) {
-
     GetSecretVersionRequest request = GetSecretVersionRequest.newBuilder().setName(name).build();
     return getSecretVersion(request);
   }
@@ -1064,7 +1053,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AccessSecretVersionResponse accessSecretVersion(SecretVersionName name) {
-
     AccessSecretVersionRequest request =
         AccessSecretVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1095,7 +1083,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AccessSecretVersionResponse accessSecretVersion(String name) {
-
     AccessSecretVersionRequest request =
         AccessSecretVersionRequest.newBuilder().setName(name).build();
     return accessSecretVersion(request);
@@ -1178,7 +1165,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecretVersion disableSecretVersion(SecretVersionName name) {
-
     DisableSecretVersionRequest request =
         DisableSecretVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1209,7 +1195,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecretVersion disableSecretVersion(String name) {
-
     DisableSecretVersionRequest request =
         DisableSecretVersionRequest.newBuilder().setName(name).build();
     return disableSecretVersion(request);
@@ -1292,7 +1277,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecretVersion enableSecretVersion(SecretVersionName name) {
-
     EnableSecretVersionRequest request =
         EnableSecretVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1323,7 +1307,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecretVersion enableSecretVersion(String name) {
-
     EnableSecretVersionRequest request =
         EnableSecretVersionRequest.newBuilder().setName(name).build();
     return enableSecretVersion(request);
@@ -1407,7 +1390,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecretVersion destroySecretVersion(SecretVersionName name) {
-
     DestroySecretVersionRequest request =
         DestroySecretVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1439,7 +1421,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecretVersion destroySecretVersion(String name) {
-
     DestroySecretVersionRequest request =
         DestroySecretVersionRequest.newBuilder().setName(name).build();
     return destroySecretVersion(request);
