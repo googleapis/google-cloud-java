@@ -16,6 +16,7 @@
 
 package com.example.bigquery;
 
+// [START bigquery_relax_column]
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
@@ -25,7 +26,6 @@ import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 
-// [START bigquery_relax_column]
 public class RelaxColumnMode {
 
   public static void runRelaxColumnMode() {
