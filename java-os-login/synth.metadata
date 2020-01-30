@@ -1,18 +1,19 @@
 {
-  "updateTime": "2020-01-23T21:53:16.950743Z",
+  "updateTime": "2020-01-29T08:58:18.135897Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.44.1",
-        "dockerImage": "googleapis/artman@sha256:5599b61e56a372d21b671969ee915fbca0f6c3a0daaeb898d01f8f685f1bbc8b"
+        "version": "0.44.4",
+        "dockerImage": "googleapis/artman@sha256:19e945954fc960a4bdfee6cb34695898ab21a8cf0bac063ee39b91f00a1faec8"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "c2cdcd2b08ca35c5054268f6277ea04713c88e39"
+        "sha": "cf3b61102ed5f36b827bc82ec39be09525f018c8",
+        "internalRef": "292034635"
       }
     },
     {
@@ -50,6 +51,9 @@
     },
     {
       "path": ".github/release-please.yml"
+    },
+    {
+      "path": ".gitignore"
     },
     {
       "path": ".kokoro/build.bat"
@@ -217,6 +221,12 @@
       "path": ".kokoro/trampoline.sh"
     },
     {
+      "path": ".repo-metadata.json"
+    },
+    {
+      "path": "CHANGELOG.md"
+    },
+    {
       "path": "CODE_OF_CONDUCT.md"
     },
     {
@@ -226,7 +236,16 @@
       "path": "LICENSE"
     },
     {
+      "path": "README.md"
+    },
+    {
       "path": "codecov.yaml"
+    },
+    {
+      "path": "google-cloud-os-login-bom/pom.xml"
+    },
+    {
+      "path": "google-cloud-os-login/pom.xml"
     },
     {
       "path": "google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/OsLoginServiceClient.java"
@@ -259,6 +278,12 @@
       "path": "google-cloud-os-login/src/test/java/com/google/cloud/oslogin/v1/OsLoginServiceClientTest.java"
     },
     {
+      "path": "google-cloud-os-login/src/test/java/com/google/cloud/oslogin/v1/it/ITSystemTest.java"
+    },
+    {
+      "path": "grpc-google-cloud-os-login-v1/pom.xml"
+    },
+    {
       "path": "grpc-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/OsLoginServiceGrpc.java"
     },
     {
@@ -268,10 +293,25 @@
       "path": "license-checks.xml"
     },
     {
+      "path": "pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/clirr-ignored-differences.xml"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/pom.xml"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/FingerprintName.java"
+    },
+    {
       "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/OsLoginProto.java"
     },
     {
       "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/PosixAccountName.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/ProjectName.java"
     },
     {
       "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/SshPublicKeyName.java"
@@ -290,6 +330,9 @@
     },
     {
       "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/DeleteSshPublicKeyRequestOrBuilder.java"
+    },
+    {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/FingerprintName.java"
     },
     {
       "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/GetLoginProfileRequest.java"
@@ -328,6 +371,9 @@
       "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/PosixAccountName.java"
     },
     {
+      "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/ProjectName.java"
+    },
+    {
       "path": "proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/SshPublicKeyName.java"
     },
     {
@@ -347,6 +393,15 @@
     },
     {
       "path": "renovate.json"
+    },
+    {
+      "path": "synth.metadata"
+    },
+    {
+      "path": "synth.py"
+    },
+    {
+      "path": "versions.txt"
     }
   ]
 }
