@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,9 @@ public interface UpdateEvaluationJobRequestOrBuilder
    * Required. Evaluation job that is going to be updated.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the evaluationJob field is set.
    */
@@ -42,7 +44,9 @@ public interface UpdateEvaluationJobRequestOrBuilder
    * Required. Evaluation job that is going to be updated.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The evaluationJob.
    */
@@ -54,7 +58,9 @@ public interface UpdateEvaluationJobRequestOrBuilder
    * Required. Evaluation job that is going to be updated.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datalabeling.v1beta1.EvaluationJobOrBuilder getEvaluationJobOrBuilder();
 
@@ -62,10 +68,17 @@ public interface UpdateEvaluationJobRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Mask for which field in evaluation_job should be updated.
+   * Optional. Mask for which fields to update. You can only provide the
+   * following fields:
+   * * `evaluationJobConfig.humanAnnotationConfig.instruction`
+   * * `evaluationJobConfig.exampleCount`
+   * * `evaluationJobConfig.exampleSamplePercentage`
+   * You can provide more than one of these fields by separating them with
+   * commas.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -74,10 +87,17 @@ public interface UpdateEvaluationJobRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Mask for which field in evaluation_job should be updated.
+   * Optional. Mask for which fields to update. You can only provide the
+   * following fields:
+   * * `evaluationJobConfig.humanAnnotationConfig.instruction`
+   * * `evaluationJobConfig.exampleCount`
+   * * `evaluationJobConfig.exampleSamplePercentage`
+   * You can provide more than one of these fields by separating them with
+   * commas.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -86,10 +106,17 @@ public interface UpdateEvaluationJobRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Mask for which field in evaluation_job should be updated.
+   * Optional. Mask for which fields to update. You can only provide the
+   * following fields:
+   * * `evaluationJobConfig.humanAnnotationConfig.instruction`
+   * * `evaluationJobConfig.exampleCount`
+   * * `evaluationJobConfig.exampleSamplePercentage`
+   * You can provide more than one of these fields by separating them with
+   * commas.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -697,7 +697,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    * projects/{project_id}/datasets/{dataset_id}
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -720,7 +722,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    * projects/{project_id}/datasets/{dataset_id}
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -745,7 +749,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    * Required. Basic human annotation config.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the basicConfig field is set.
    */
@@ -759,7 +765,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    * Required. Basic human annotation config.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The basicConfig.
    */
@@ -775,7 +783,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    * Required. Basic human annotation config.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
       getBasicConfigOrBuilder() {
@@ -791,7 +801,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    * Required. The type of video labeling task.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The enum numeric value on the wire for feature.
    */
@@ -805,7 +817,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
    * Required. The type of video labeling task.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The feature.
    */
@@ -2293,7 +2307,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -2316,7 +2332,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -2339,7 +2357,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -2361,7 +2381,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2379,7 +2401,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -2408,7 +2432,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * Required. Basic human annotation config.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the basicConfig field is set.
      */
@@ -2422,7 +2448,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * Required. Basic human annotation config.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The basicConfig.
      */
@@ -2442,7 +2470,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * Required. Basic human annotation config.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setBasicConfig(
         com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig value) {
@@ -2465,7 +2495,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * Required. Basic human annotation config.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setBasicConfig(
         com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder builderForValue) {
@@ -2485,7 +2517,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * Required. Basic human annotation config.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeBasicConfig(
         com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig value) {
@@ -2512,7 +2546,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * Required. Basic human annotation config.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearBasicConfig() {
       if (basicConfigBuilder_ == null) {
@@ -2532,7 +2568,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * Required. Basic human annotation config.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder
         getBasicConfigBuilder() {
@@ -2547,7 +2585,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * Required. Basic human annotation config.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
         getBasicConfigOrBuilder() {
@@ -2566,7 +2606,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * Required. Basic human annotation config.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig,
@@ -2593,7 +2635,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * Required. The type of video labeling task.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The enum numeric value on the wire for feature.
      */
@@ -2607,7 +2651,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * Required. The type of video labeling task.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The enum numeric value on the wire for feature to set.
      * @return This builder for chaining.
@@ -2624,7 +2670,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * Required. The type of video labeling task.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The feature.
      */
@@ -2643,7 +2691,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * Required. The type of video labeling task.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The feature to set.
      * @return This builder for chaining.
@@ -2665,7 +2715,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * Required. The type of video labeling task.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature feature = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return This builder for chaining.
      */

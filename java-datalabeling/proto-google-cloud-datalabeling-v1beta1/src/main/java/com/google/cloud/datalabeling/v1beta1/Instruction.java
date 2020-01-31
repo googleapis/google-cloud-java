@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,11 +23,7 @@ package com.google.cloud.datalabeling.v1beta1;
  *
  * <pre>
  * Instruction of how to perform the labeling task for human operators.
- * Currently two types of instruction are supported - CSV file and PDF.
- * One of the two types instruction must be provided.
- * CSV file is only supported for image classification task. Instructions for
- * other task should be provided as PDF.
- * For image classification, CSV and PDF can be provided at the same time.
+ * Currently only PDF instruction is supported.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datalabeling.v1beta1.Instruction}
@@ -490,17 +486,20 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One of CSV or PDF instruction is required.
+   * Deprecated: this instruction format is not supported any more.
    * Instruction from a CSV file, such as for classification task.
    * The CSV file should have exact two columns, in the following format:
    * * The first column is labeled data, such as an image reference, text.
    * * The second column is comma separated labels associated with data.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
+   * </code>
    *
    * @return Whether the csvInstruction field is set.
    */
+  @java.lang.Deprecated
   public boolean hasCsvInstruction() {
     return csvInstruction_ != null;
   }
@@ -508,17 +507,20 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One of CSV or PDF instruction is required.
+   * Deprecated: this instruction format is not supported any more.
    * Instruction from a CSV file, such as for classification task.
    * The CSV file should have exact two columns, in the following format:
    * * The first column is labeled data, such as an image reference, text.
    * * The second column is comma separated labels associated with data.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
+   * </code>
    *
    * @return The csvInstruction.
    */
+  @java.lang.Deprecated
   public com.google.cloud.datalabeling.v1beta1.CsvInstruction getCsvInstruction() {
     return csvInstruction_ == null
         ? com.google.cloud.datalabeling.v1beta1.CsvInstruction.getDefaultInstance()
@@ -528,15 +530,18 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One of CSV or PDF instruction is required.
+   * Deprecated: this instruction format is not supported any more.
    * Instruction from a CSV file, such as for classification task.
    * The CSV file should have exact two columns, in the following format:
    * * The first column is labeled data, such as an image reference, text.
    * * The second column is comma separated labels associated with data.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   public com.google.cloud.datalabeling.v1beta1.CsvInstructionOrBuilder
       getCsvInstructionOrBuilder() {
     return getCsvInstruction();
@@ -548,7 +553,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One of CSV or PDF instruction is required.
    * Instruction from a PDF document. The PDF should be in a Cloud Storage
    * bucket.
    * </pre>
@@ -564,7 +568,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One of CSV or PDF instruction is required.
    * Instruction from a PDF document. The PDF should be in a Cloud Storage
    * bucket.
    * </pre>
@@ -582,7 +585,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One of CSV or PDF instruction is required.
    * Instruction from a PDF document. The PDF should be in a Cloud Storage
    * bucket.
    * </pre>
@@ -924,11 +926,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Instruction of how to perform the labeling task for human operators.
-   * Currently two types of instruction are supported - CSV file and PDF.
-   * One of the two types instruction must be provided.
-   * CSV file is only supported for image classification task. Instructions for
-   * other task should be provided as PDF.
-   * For image classification, CSV and PDF can be provided at the same time.
+   * Currently only PDF instruction is supported.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datalabeling.v1beta1.Instruction}
@@ -1971,17 +1969,20 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
+     * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
+     * </code>
      *
      * @return Whether the csvInstruction field is set.
      */
+    @java.lang.Deprecated
     public boolean hasCsvInstruction() {
       return csvInstructionBuilder_ != null || csvInstruction_ != null;
     }
@@ -1989,17 +1990,20 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
+     * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
+     * </code>
      *
      * @return The csvInstruction.
      */
+    @java.lang.Deprecated
     public com.google.cloud.datalabeling.v1beta1.CsvInstruction getCsvInstruction() {
       if (csvInstructionBuilder_ == null) {
         return csvInstruction_ == null
@@ -2013,15 +2017,18 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
+     * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setCsvInstruction(com.google.cloud.datalabeling.v1beta1.CsvInstruction value) {
       if (csvInstructionBuilder_ == null) {
         if (value == null) {
@@ -2039,15 +2046,18 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
+     * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setCsvInstruction(
         com.google.cloud.datalabeling.v1beta1.CsvInstruction.Builder builderForValue) {
       if (csvInstructionBuilder_ == null) {
@@ -2063,15 +2073,18 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
+     * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeCsvInstruction(com.google.cloud.datalabeling.v1beta1.CsvInstruction value) {
       if (csvInstructionBuilder_ == null) {
         if (csvInstruction_ != null) {
@@ -2093,15 +2106,18 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
+     * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearCsvInstruction() {
       if (csvInstructionBuilder_ == null) {
         csvInstruction_ = null;
@@ -2117,15 +2133,18 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
+     * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datalabeling.v1beta1.CsvInstruction.Builder getCsvInstructionBuilder() {
 
       onChanged();
@@ -2135,15 +2154,18 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
+     * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datalabeling.v1beta1.CsvInstructionOrBuilder
         getCsvInstructionOrBuilder() {
       if (csvInstructionBuilder_ != null) {
@@ -2158,14 +2180,16 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
+     * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.CsvInstruction,
@@ -2194,7 +2218,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
      * Instruction from a PDF document. The PDF should be in a Cloud Storage
      * bucket.
      * </pre>
@@ -2210,7 +2233,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
      * Instruction from a PDF document. The PDF should be in a Cloud Storage
      * bucket.
      * </pre>
@@ -2232,7 +2254,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
      * Instruction from a PDF document. The PDF should be in a Cloud Storage
      * bucket.
      * </pre>
@@ -2256,7 +2277,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
      * Instruction from a PDF document. The PDF should be in a Cloud Storage
      * bucket.
      * </pre>
@@ -2278,7 +2298,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
      * Instruction from a PDF document. The PDF should be in a Cloud Storage
      * bucket.
      * </pre>
@@ -2306,7 +2325,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
      * Instruction from a PDF document. The PDF should be in a Cloud Storage
      * bucket.
      * </pre>
@@ -2328,7 +2346,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
      * Instruction from a PDF document. The PDF should be in a Cloud Storage
      * bucket.
      * </pre>
@@ -2344,7 +2361,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
      * Instruction from a PDF document. The PDF should be in a Cloud Storage
      * bucket.
      * </pre>
@@ -2365,7 +2381,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One of CSV or PDF instruction is required.
      * Instruction from a PDF document. The PDF should be in a Cloud Storage
      * bucket.
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -176,6 +176,10 @@ public abstract class DataLabelingServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listAnnotatedDatasetsCallable()");
   }
 
+  public UnaryCallable<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAnnotatedDatasetCallable()");
+  }
+
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<LabelImageRequest, AnnotatedDataset, LabelOperationMetadata>
       labelImageOperationCallable() {
@@ -329,10 +333,6 @@ public abstract class DataLabelingServiceStub implements BackgroundResource {
   public UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
       listEvaluationJobsCallable() {
     throw new UnsupportedOperationException("Not implemented: listEvaluationJobsCallable()");
-  }
-
-  public UnaryCallable<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteAnnotatedDatasetCallable()");
   }
 
   @Override

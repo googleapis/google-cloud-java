@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -128,7 +128,7 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
    * Required. Annotation spec set resource name.
    * </pre>
    *
-   * <code>string annotation_spec_set = 1;</code>
+   * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The annotationSpecSet.
    */
@@ -150,7 +150,7 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
    * Required. Annotation spec set resource name.
    * </pre>
    *
-   * <code>string annotation_spec_set = 1;</code>
+   * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for annotationSpecSet.
    */
@@ -175,7 +175,7 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
    * Optional. Instruction message showed on contributors UI.
    * </pre>
    *
-   * <code>string instruction_message = 2;</code>
+   * <code>string instruction_message = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The instructionMessage.
    */
@@ -197,7 +197,7 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
    * Optional. Instruction message showed on contributors UI.
    * </pre>
    *
-   * <code>string instruction_message = 2;</code>
+   * <code>string instruction_message = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for instructionMessage.
    */
@@ -556,7 +556,7 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 1;</code>
+     * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The annotationSpecSet.
      */
@@ -578,7 +578,7 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 1;</code>
+     * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for annotationSpecSet.
      */
@@ -600,7 +600,7 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 1;</code>
+     * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The annotationSpecSet to set.
      * @return This builder for chaining.
@@ -621,7 +621,7 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 1;</code>
+     * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -638,7 +638,7 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 1;</code>
+     * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for annotationSpecSet to set.
      * @return This builder for chaining.
@@ -662,7 +662,7 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * Optional. Instruction message showed on contributors UI.
      * </pre>
      *
-     * <code>string instruction_message = 2;</code>
+     * <code>string instruction_message = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The instructionMessage.
      */
@@ -684,7 +684,7 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * Optional. Instruction message showed on contributors UI.
      * </pre>
      *
-     * <code>string instruction_message = 2;</code>
+     * <code>string instruction_message = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for instructionMessage.
      */
@@ -706,7 +706,7 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * Optional. Instruction message showed on contributors UI.
      * </pre>
      *
-     * <code>string instruction_message = 2;</code>
+     * <code>string instruction_message = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The instructionMessage to set.
      * @return This builder for chaining.
@@ -727,7 +727,7 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * Optional. Instruction message showed on contributors UI.
      * </pre>
      *
-     * <code>string instruction_message = 2;</code>
+     * <code>string instruction_message = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -744,7 +744,7 @@ public final class BoundingPolyConfig extends com.google.protobuf.GeneratedMessa
      * Optional. Instruction message showed on contributors UI.
      * </pre>
      *
-     * <code>string instruction_message = 2;</code>
+     * <code>string instruction_message = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for instructionMessage to set.
      * @return This builder for chaining.

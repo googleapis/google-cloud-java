@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ public interface EventConfigOrBuilder
    * at the same time.
    * </pre>
    *
-   * <code>repeated string annotation_spec_sets = 1;</code>
+   * <code>repeated string annotation_spec_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return A list containing the annotationSpecSets.
    */
@@ -46,7 +47,8 @@ public interface EventConfigOrBuilder
    * at the same time.
    * </pre>
    *
-   * <code>repeated string annotation_spec_sets = 1;</code>
+   * <code>repeated string annotation_spec_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The count of annotationSpecSets.
    */
@@ -60,7 +62,8 @@ public interface EventConfigOrBuilder
    * at the same time.
    * </pre>
    *
-   * <code>repeated string annotation_spec_sets = 1;</code>
+   * <code>repeated string annotation_spec_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The annotationSpecSets at the given index.
@@ -75,7 +78,8 @@ public interface EventConfigOrBuilder
    * at the same time.
    * </pre>
    *
-   * <code>repeated string annotation_spec_sets = 1;</code>
+   * <code>repeated string annotation_spec_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the annotationSpecSets at the given index.

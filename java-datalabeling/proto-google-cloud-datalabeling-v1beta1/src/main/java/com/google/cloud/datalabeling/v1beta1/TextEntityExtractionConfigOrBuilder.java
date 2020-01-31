@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ public interface TextEntityExtractionConfigOrBuilder
    * Required. Annotation spec set resource name.
    * </pre>
    *
-   * <code>string annotation_spec_set = 1;</code>
+   * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The annotationSpecSet.
    */
@@ -42,7 +42,7 @@ public interface TextEntityExtractionConfigOrBuilder
    * Required. Annotation spec set resource name.
    * </pre>
    *
-   * <code>string annotation_spec_set = 1;</code>
+   * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for annotationSpecSet.
    */

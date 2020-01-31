@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,9 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Format: 'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+   * Output only. After you create a job, Data Labeling Service assigns a name
+   * to the job with the following format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -39,7 +41,9 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Format: 'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+   * Output only. After you create a job, Data Labeling Service assigns a name
+   * to the job with the following format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -52,8 +56,8 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Description of the job. The description can be up to
-   * 25000 characters long.
+   * Required. Description of the job. The description can be up to 25,000
+   * characters long.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -65,8 +69,8 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Description of the job. The description can be up to
-   * 25000 characters long.
+   * Required. Description of the job. The description can be up to 25,000
+   * characters long.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -76,12 +80,24 @@ public interface EvaluationJobOrBuilder
   com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * Output only. Describes the current state of the job.
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
    *
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
   /**
+   *
+   *
+   * <pre>
+   * Output only. Describes the current state of the job.
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
    *
    * @return The state.
@@ -92,13 +108,15 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Describes the schedule on which the job will be executed. Minimum schedule
-   * unit is 1 day.
-   * The schedule can be either of the following types:
-   * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-   * * English-like
-   * [schedule](https:
-   * //cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
+   * Required. Describes the interval at which the job runs. This interval must
+   * be at least 1 day, and it is rounded to the nearest day. For example, if
+   * you specify a 50-hour interval, the job runs every 2 days.
+   * You can provide the schedule in
+   * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
+   * [English-like
+   * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+   * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
+   * interval from this schedule is used, not the specific time of day.
    * </pre>
    *
    * <code>string schedule = 4;</code>
@@ -110,13 +128,15 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Describes the schedule on which the job will be executed. Minimum schedule
-   * unit is 1 day.
-   * The schedule can be either of the following types:
-   * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-   * * English-like
-   * [schedule](https:
-   * //cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
+   * Required. Describes the interval at which the job runs. This interval must
+   * be at least 1 day, and it is rounded to the nearest day. For example, if
+   * you specify a 50-hour interval, the job runs every 2 days.
+   * You can provide the schedule in
+   * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
+   * [English-like
+   * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+   * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
+   * interval from this schedule is used, not the specific time of day.
    * </pre>
    *
    * <code>string schedule = 4;</code>
@@ -129,9 +149,12 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * The versioned model that is being evaluated here.
-   * Only one job is allowed for each model name.
-   * Format: 'projects/&#42;&#47;models/&#42;&#47;versions/&#42;'
+   * Required. The [AI Platform Prediction model
+   * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
+   * input and output is sampled from this model version. When creating an
+   * evaluation job, specify the model version in the following format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+   * There can only be one evaluation job per model version.
    * </pre>
    *
    * <code>string model_version = 5;</code>
@@ -143,9 +166,12 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * The versioned model that is being evaluated here.
-   * Only one job is allowed for each model name.
-   * Format: 'projects/&#42;&#47;models/&#42;&#47;versions/&#42;'
+   * Required. The [AI Platform Prediction model
+   * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
+   * input and output is sampled from this model version. When creating an
+   * evaluation job, specify the model version in the following format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+   * There can only be one evaluation job per model version.
    * </pre>
    *
    * <code>string model_version = 5;</code>
@@ -158,7 +184,7 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Detailed config for running this eval job.
+   * Required. Configuration details for the evaluation job.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;</code>
@@ -170,7 +196,7 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Detailed config for running this eval job.
+   * Required. Configuration details for the evaluation job.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;</code>
@@ -182,7 +208,7 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Detailed config for running this eval job.
+   * Required. Configuration details for the evaluation job.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;</code>
@@ -194,7 +220,11 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Name of the AnnotationSpecSet.
+   * Required. Name of the [AnnotationSpecSet][google.cloud.datalabeling.v1beta1.AnnotationSpecSet] describing all the
+   * labels that your machine learning model outputs. You must create this
+   * resource before you create an evaluation job and provide its name in the
+   * following format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
    * </pre>
    *
    * <code>string annotation_spec_set = 7;</code>
@@ -206,7 +236,11 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Name of the AnnotationSpecSet.
+   * Required. Name of the [AnnotationSpecSet][google.cloud.datalabeling.v1beta1.AnnotationSpecSet] describing all the
+   * labels that your machine learning model outputs. You must create this
+   * resource before you create an evaluation job and provide its name in the
+   * following format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
    * </pre>
    *
    * <code>string annotation_spec_set = 7;</code>
@@ -219,8 +253,11 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * If a human annotation should be requested when some data don't have ground
-   * truth.
+   * Required. Whether you want Data Labeling Service to provide ground truth
+   * labels for prediction input. If you want the service to assign human
+   * labelers to annotate your data, set this to `true`. If you want to provide
+   * your own ground truth labels in the evaluation job's BigQuery table, set
+   * this to `false`.
    * </pre>
    *
    * <code>bool label_missing_ground_truth = 8;</code>
@@ -233,8 +270,8 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Any attempts with errors happening in evaluation job runs each
-   * time will be recorded here incrementally.
+   * Output only. Every time the evaluation job runs and an error occurs, the
+   * failed attempt is appended to this array.
    * </pre>
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -244,8 +281,8 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Any attempts with errors happening in evaluation job runs each
-   * time will be recorded here incrementally.
+   * Output only. Every time the evaluation job runs and an error occurs, the
+   * failed attempt is appended to this array.
    * </pre>
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -255,8 +292,8 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Any attempts with errors happening in evaluation job runs each
-   * time will be recorded here incrementally.
+   * Output only. Every time the evaluation job runs and an error occurs, the
+   * failed attempt is appended to this array.
    * </pre>
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -266,8 +303,8 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Any attempts with errors happening in evaluation job runs each
-   * time will be recorded here incrementally.
+   * Output only. Every time the evaluation job runs and an error occurs, the
+   * failed attempt is appended to this array.
    * </pre>
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -278,8 +315,8 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Any attempts with errors happening in evaluation job runs each
-   * time will be recorded here incrementally.
+   * Output only. Every time the evaluation job runs and an error occurs, the
+   * failed attempt is appended to this array.
    * </pre>
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -290,7 +327,7 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Timestamp when this evaluation job was created.
+   * Output only. Timestamp of when this evaluation job was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -302,7 +339,7 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Timestamp when this evaluation job was created.
+   * Output only. Timestamp of when this evaluation job was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -314,7 +351,7 @@ public interface EvaluationJobOrBuilder
    *
    *
    * <pre>
-   * Timestamp when this evaluation job was created.
+   * Output only. Timestamp of when this evaluation job was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ package com.google.cloud.datalabeling.v1beta1;
  *
  * <pre>
  * Metadata of a labeling operation, such as LabelImage or LabelVideo.
- * Next tag: 18
+ * Next tag: 20
  * </pre>
  *
  * Protobuf type {@code google.cloud.datalabeling.v1beta1.LabelOperationMetadata}
@@ -1812,7 +1812,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Metadata of a labeling operation, such as LabelImage or LabelVideo.
-   * Next tag: 18
+   * Next tag: 20
    * </pre>
    *
    * Protobuf type {@code google.cloud.datalabeling.v1beta1.LabelOperationMetadata}

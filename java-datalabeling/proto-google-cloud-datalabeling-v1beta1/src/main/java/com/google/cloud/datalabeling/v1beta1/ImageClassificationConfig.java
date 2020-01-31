@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -133,7 +133,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
    * Required. Annotation spec set resource name.
    * </pre>
    *
-   * <code>string annotation_spec_set = 1;</code>
+   * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The annotationSpecSet.
    */
@@ -155,7 +155,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
    * Required. Annotation spec set resource name.
    * </pre>
    *
-   * <code>string annotation_spec_set = 1;</code>
+   * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for annotationSpecSet.
    */
@@ -181,7 +181,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
    * multiple labels for one image.
    * </pre>
    *
-   * <code>bool allow_multi_label = 2;</code>
+   * <code>bool allow_multi_label = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowMultiLabel.
    */
@@ -198,7 +198,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
    * Optional. The type of how to aggregate answers.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for answerAggregationType.
@@ -213,7 +214,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
    * Optional. The type of how to aggregate answers.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The answerAggregationType.
@@ -594,7 +596,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 1;</code>
+     * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The annotationSpecSet.
      */
@@ -616,7 +618,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 1;</code>
+     * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for annotationSpecSet.
      */
@@ -638,7 +640,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 1;</code>
+     * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The annotationSpecSet to set.
      * @return This builder for chaining.
@@ -659,7 +661,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 1;</code>
+     * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -676,7 +678,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 1;</code>
+     * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for annotationSpecSet to set.
      * @return This builder for chaining.
@@ -701,7 +703,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * multiple labels for one image.
      * </pre>
      *
-     * <code>bool allow_multi_label = 2;</code>
+     * <code>bool allow_multi_label = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The allowMultiLabel.
      */
@@ -716,7 +718,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * multiple labels for one image.
      * </pre>
      *
-     * <code>bool allow_multi_label = 2;</code>
+     * <code>bool allow_multi_label = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The allowMultiLabel to set.
      * @return This builder for chaining.
@@ -735,7 +737,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * multiple labels for one image.
      * </pre>
      *
-     * <code>bool allow_multi_label = 2;</code>
+     * <code>bool allow_multi_label = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -754,7 +756,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * Optional. The type of how to aggregate answers.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for answerAggregationType.
@@ -769,7 +772,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * Optional. The type of how to aggregate answers.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for answerAggregationType to set.
@@ -787,7 +791,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * Optional. The type of how to aggregate answers.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The answerAggregationType.
@@ -808,7 +813,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * Optional. The type of how to aggregate answers.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The answerAggregationType to set.
@@ -831,7 +837,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * Optional. The type of how to aggregate answers.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.

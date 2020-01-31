@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -147,6 +147,11 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
           ListAnnotatedDatasetsPagedResponse>
       listAnnotatedDatasetsSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings()).listAnnotatedDatasetsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAnnotatedDataset. */
+  public UnaryCallSettings<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetSettings() {
+    return ((DataLabelingServiceStubSettings) getStubSettings()).deleteAnnotatedDatasetSettings();
   }
 
   /** Returns the object with the settings used for calls to labelImage. */
@@ -315,11 +320,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
           ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
       listEvaluationJobsSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings()).listEvaluationJobsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteAnnotatedDataset. */
-  public UnaryCallSettings<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetSettings() {
-    return ((DataLabelingServiceStubSettings) getStubSettings()).deleteAnnotatedDatasetSettings();
   }
 
   public static final DataLabelingServiceSettings create(DataLabelingServiceStubSettings stub)
@@ -496,6 +496,12 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
       return getStubSettingsBuilder().listAnnotatedDatasetsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to deleteAnnotatedDataset. */
+    public UnaryCallSettings.Builder<DeleteAnnotatedDatasetRequest, Empty>
+        deleteAnnotatedDatasetSettings() {
+      return getStubSettingsBuilder().deleteAnnotatedDatasetSettings();
+    }
+
     /** Returns the builder for the settings used for calls to labelImage. */
     public UnaryCallSettings.Builder<LabelImageRequest, Operation> labelImageSettings() {
       return getStubSettingsBuilder().labelImageSettings();
@@ -670,12 +676,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
             ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
         listEvaluationJobsSettings() {
       return getStubSettingsBuilder().listEvaluationJobsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteAnnotatedDataset. */
-    public UnaryCallSettings.Builder<DeleteAnnotatedDatasetRequest, Empty>
-        deleteAnnotatedDatasetSettings() {
-      return getStubSettingsBuilder().deleteAnnotatedDatasetSettings();
     }
 
     @Override

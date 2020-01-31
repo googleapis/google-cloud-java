@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,15 @@
 
 package com.google.cloud.datalabeling.v1beta1;
 
-/** Protobuf type {@code google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics} */
+/**
+ *
+ *
+ * <pre>
+ * Metrics calculated for an image object detection (bounding box) model.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics}
+ */
 public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics)
@@ -320,7 +328,15 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics} */
+  /**
+   *
+   *
+   * <pre>
+   * Metrics calculated for an image object detection (bounding box) model.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,22 +47,27 @@ public final class AnnotationSpecSetOuterClass {
       "\n;google/cloud/datalabeling/v1beta1/anno"
           + "tation_spec_set.proto\022!google.cloud.data"
           + "labeling.v1beta1\032\034google/api/annotations"
-          + ".proto\"\265\001\n\021AnnotationSpecSet\022\014\n\004name\030\001 \001"
-          + "(\t\022\024\n\014display_name\030\002 \001(\t\022\023\n\013description\030"
-          + "\003 \001(\t\022K\n\020annotation_specs\030\004 \003(\01321.google"
-          + ".cloud.datalabeling.v1beta1.AnnotationSp"
-          + "ec\022\032\n\022blocking_resources\030\005 \003(\t\";\n\016Annota"
-          + "tionSpec\022\024\n\014display_name\030\001 \001(\t\022\023\n\013descri"
-          + "ption\030\002 \001(\tBx\n%com.google.cloud.datalabe"
-          + "ling.v1beta1P\001ZMgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/datalabeling/v1beta1"
-          + ";datalabelingb\006proto3"
+          + ".proto\032\031google/api/resource.proto\"\246\002\n\021An"
+          + "notationSpecSet\022\014\n\004name\030\001 \001(\t\022\024\n\014display"
+          + "_name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022K\n\020anno"
+          + "tation_specs\030\004 \003(\01321.google.cloud.datala"
+          + "beling.v1beta1.AnnotationSpec\022\032\n\022blockin"
+          + "g_resources\030\005 \003(\t:o\352Al\n-datalabeling.goo"
+          + "gleapis.com/AnnotationSpecSet\022;projects/"
+          + "{project}/annotationSpecSets/{annotation"
+          + "_spec_set}\";\n\016AnnotationSpec\022\024\n\014display_"
+          + "name\030\001 \001(\t\022\023\n\013description\030\002 \001(\tBx\n%com.g"
+          + "oogle.cloud.datalabeling.v1beta1P\001ZMgoog"
+          + "le.golang.org/genproto/googleapis/cloud/"
+          + "datalabeling/v1beta1;datalabelingb\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_datalabeling_v1beta1_AnnotationSpecSet_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -80,7 +85,13 @@ public final class AnnotationSpecSetOuterClass {
             new java.lang.String[] {
               "DisplayName", "Description",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

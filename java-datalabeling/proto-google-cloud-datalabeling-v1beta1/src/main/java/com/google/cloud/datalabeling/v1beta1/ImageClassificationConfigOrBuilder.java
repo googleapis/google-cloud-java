@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ public interface ImageClassificationConfigOrBuilder
    * Required. Annotation spec set resource name.
    * </pre>
    *
-   * <code>string annotation_spec_set = 1;</code>
+   * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The annotationSpecSet.
    */
@@ -42,7 +42,7 @@ public interface ImageClassificationConfigOrBuilder
    * Required. Annotation spec set resource name.
    * </pre>
    *
-   * <code>string annotation_spec_set = 1;</code>
+   * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for annotationSpecSet.
    */
@@ -56,7 +56,7 @@ public interface ImageClassificationConfigOrBuilder
    * multiple labels for one image.
    * </pre>
    *
-   * <code>bool allow_multi_label = 2;</code>
+   * <code>bool allow_multi_label = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowMultiLabel.
    */
@@ -69,7 +69,8 @@ public interface ImageClassificationConfigOrBuilder
    * Optional. The type of how to aggregate answers.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for answerAggregationType.
@@ -82,7 +83,8 @@ public interface ImageClassificationConfigOrBuilder
    * Optional. The type of how to aggregate answers.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3;
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.StringAggregationType answer_aggregation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The answerAggregationType.

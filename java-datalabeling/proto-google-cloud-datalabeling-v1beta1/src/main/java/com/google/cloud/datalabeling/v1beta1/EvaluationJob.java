@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,10 @@ package com.google.cloud.datalabeling.v1beta1;
  *
  *
  * <pre>
- * Defines an evaluation job that is triggered periodically to generate
- * evaluations.
+ * Defines an evaluation job that runs periodically to generate
+ * [Evaluations][google.cloud.datalabeling.v1beta1.Evaluation]. [Creating an evaluation
+ * job](/ml-engine/docs/continuous-evaluation/create-job) is the starting point
+ * for using continuous evaluation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datalabeling.v1beta1.EvaluationJob}
@@ -218,26 +220,146 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
   public enum State implements com.google.protobuf.ProtocolMessageEnum {
     /** <code>STATE_UNSPECIFIED = 0;</code> */
     STATE_UNSPECIFIED(0),
-    /** <code>SCHEDULED = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The job is scheduled to run at the [configured interval][google.cloud.datalabeling.v1beta1.EvaluationJob.schedule]. You
+     * can [pause][google.cloud.datalabeling.v1beta1.DataLabelingService.PauseEvaluationJob] or
+     * [delete][google.cloud.datalabeling.v1beta1.DataLabelingService.DeleteEvaluationJob] the job.
+     * When the job is in this state, it samples prediction input and output
+     * from your model version into your BigQuery table as predictions occur.
+     * </pre>
+     *
+     * <code>SCHEDULED = 1;</code>
+     */
     SCHEDULED(1),
-    /** <code>RUNNING = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The job is currently running. When the job runs, Data Labeling Service
+     * does several things:
+     * 1. If you have configured your job to use Data Labeling Service for
+     *    ground truth labeling, the service creates a
+     *    [Dataset][google.cloud.datalabeling.v1beta1.Dataset] and a labeling task for all data sampled
+     *    since the last time the job ran. Human labelers provide ground truth
+     *    labels for your data. Human labeling may take hours, or even days,
+     *    depending on how much data has been sampled. The job remains in the
+     *    `RUNNING` state during this time, and it can even be running multiple
+     *    times in parallel if it gets triggered again (for example 24 hours
+     *    later) before the earlier run has completed. When human labelers have
+     *    finished labeling the data, the next step occurs.
+     *    &lt;br&gt;&lt;br&gt;
+     *    If you have configured your job to provide your own ground truth
+     *    labels, Data Labeling Service still creates a [Dataset][google.cloud.datalabeling.v1beta1.Dataset] for newly
+     *    sampled data, but it expects that you have already added ground truth
+     *    labels to the BigQuery table by this time. The next step occurs
+     *    immediately.
+     * 2. Data Labeling Service creates an [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] by comparing your
+     *    model version's predictions with the ground truth labels.
+     * If the job remains in this state for a long time, it continues to sample
+     * prediction data into your BigQuery table and will run again at the next
+     * interval, even if it causes the job to run multiple times in parallel.
+     * </pre>
+     *
+     * <code>RUNNING = 2;</code>
+     */
     RUNNING(2),
-    /** <code>PAUSED = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The job is not sampling prediction input and output into your BigQuery
+     * table and it will not run according to its schedule. You can
+     * [resume][google.cloud.datalabeling.v1beta1.DataLabelingService.ResumeEvaluationJob] the job.
+     * </pre>
+     *
+     * <code>PAUSED = 3;</code>
+     */
     PAUSED(3),
-    /** <code>STOPPED = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The job has this state right before it is deleted.
+     * </pre>
+     *
+     * <code>STOPPED = 4;</code>
+     */
     STOPPED(4),
     UNRECOGNIZED(-1),
     ;
 
     /** <code>STATE_UNSPECIFIED = 0;</code> */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-    /** <code>SCHEDULED = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The job is scheduled to run at the [configured interval][google.cloud.datalabeling.v1beta1.EvaluationJob.schedule]. You
+     * can [pause][google.cloud.datalabeling.v1beta1.DataLabelingService.PauseEvaluationJob] or
+     * [delete][google.cloud.datalabeling.v1beta1.DataLabelingService.DeleteEvaluationJob] the job.
+     * When the job is in this state, it samples prediction input and output
+     * from your model version into your BigQuery table as predictions occur.
+     * </pre>
+     *
+     * <code>SCHEDULED = 1;</code>
+     */
     public static final int SCHEDULED_VALUE = 1;
-    /** <code>RUNNING = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The job is currently running. When the job runs, Data Labeling Service
+     * does several things:
+     * 1. If you have configured your job to use Data Labeling Service for
+     *    ground truth labeling, the service creates a
+     *    [Dataset][google.cloud.datalabeling.v1beta1.Dataset] and a labeling task for all data sampled
+     *    since the last time the job ran. Human labelers provide ground truth
+     *    labels for your data. Human labeling may take hours, or even days,
+     *    depending on how much data has been sampled. The job remains in the
+     *    `RUNNING` state during this time, and it can even be running multiple
+     *    times in parallel if it gets triggered again (for example 24 hours
+     *    later) before the earlier run has completed. When human labelers have
+     *    finished labeling the data, the next step occurs.
+     *    &lt;br&gt;&lt;br&gt;
+     *    If you have configured your job to provide your own ground truth
+     *    labels, Data Labeling Service still creates a [Dataset][google.cloud.datalabeling.v1beta1.Dataset] for newly
+     *    sampled data, but it expects that you have already added ground truth
+     *    labels to the BigQuery table by this time. The next step occurs
+     *    immediately.
+     * 2. Data Labeling Service creates an [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] by comparing your
+     *    model version's predictions with the ground truth labels.
+     * If the job remains in this state for a long time, it continues to sample
+     * prediction data into your BigQuery table and will run again at the next
+     * interval, even if it causes the job to run multiple times in parallel.
+     * </pre>
+     *
+     * <code>RUNNING = 2;</code>
+     */
     public static final int RUNNING_VALUE = 2;
-    /** <code>PAUSED = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The job is not sampling prediction input and output into your BigQuery
+     * table and it will not run according to its schedule. You can
+     * [resume][google.cloud.datalabeling.v1beta1.DataLabelingService.ResumeEvaluationJob] the job.
+     * </pre>
+     *
+     * <code>PAUSED = 3;</code>
+     */
     public static final int PAUSED_VALUE = 3;
-    /** <code>STOPPED = 4;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The job has this state right before it is deleted.
+     * </pre>
+     *
+     * <code>STOPPED = 4;</code>
+     */
     public static final int STOPPED_VALUE = 4;
 
     public final int getNumber() {
@@ -331,7 +453,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Format: 'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+   * Output only. After you create a job, Data Labeling Service assigns a name
+   * to the job with the following format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -353,7 +477,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Format: 'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+   * Output only. After you create a job, Data Labeling Service assigns a name
+   * to the job with the following format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -378,8 +504,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Description of the job. The description can be up to
-   * 25000 characters long.
+   * Required. Description of the job. The description can be up to 25,000
+   * characters long.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -401,8 +527,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Description of the job. The description can be up to
-   * 25000 characters long.
+   * Required. Description of the job. The description can be up to 25,000
+   * characters long.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -424,6 +550,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_;
   /**
+   *
+   *
+   * <pre>
+   * Output only. Describes the current state of the job.
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
    *
    * @return The enum numeric value on the wire for state.
@@ -432,6 +564,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     return state_;
   }
   /**
+   *
+   *
+   * <pre>
+   * Output only. Describes the current state of the job.
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
    *
    * @return The state.
@@ -451,13 +589,15 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Describes the schedule on which the job will be executed. Minimum schedule
-   * unit is 1 day.
-   * The schedule can be either of the following types:
-   * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-   * * English-like
-   * [schedule](https:
-   * //cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
+   * Required. Describes the interval at which the job runs. This interval must
+   * be at least 1 day, and it is rounded to the nearest day. For example, if
+   * you specify a 50-hour interval, the job runs every 2 days.
+   * You can provide the schedule in
+   * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
+   * [English-like
+   * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+   * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
+   * interval from this schedule is used, not the specific time of day.
    * </pre>
    *
    * <code>string schedule = 4;</code>
@@ -479,13 +619,15 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Describes the schedule on which the job will be executed. Minimum schedule
-   * unit is 1 day.
-   * The schedule can be either of the following types:
-   * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-   * * English-like
-   * [schedule](https:
-   * //cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
+   * Required. Describes the interval at which the job runs. This interval must
+   * be at least 1 day, and it is rounded to the nearest day. For example, if
+   * you specify a 50-hour interval, the job runs every 2 days.
+   * You can provide the schedule in
+   * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
+   * [English-like
+   * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+   * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
+   * interval from this schedule is used, not the specific time of day.
    * </pre>
    *
    * <code>string schedule = 4;</code>
@@ -510,9 +652,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The versioned model that is being evaluated here.
-   * Only one job is allowed for each model name.
-   * Format: 'projects/&#42;&#47;models/&#42;&#47;versions/&#42;'
+   * Required. The [AI Platform Prediction model
+   * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
+   * input and output is sampled from this model version. When creating an
+   * evaluation job, specify the model version in the following format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+   * There can only be one evaluation job per model version.
    * </pre>
    *
    * <code>string model_version = 5;</code>
@@ -534,9 +679,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The versioned model that is being evaluated here.
-   * Only one job is allowed for each model name.
-   * Format: 'projects/&#42;&#47;models/&#42;&#47;versions/&#42;'
+   * Required. The [AI Platform Prediction model
+   * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
+   * input and output is sampled from this model version. When creating an
+   * evaluation job, specify the model version in the following format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+   * There can only be one evaluation job per model version.
    * </pre>
    *
    * <code>string model_version = 5;</code>
@@ -561,7 +709,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Detailed config for running this eval job.
+   * Required. Configuration details for the evaluation job.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;</code>
@@ -575,7 +723,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Detailed config for running this eval job.
+   * Required. Configuration details for the evaluation job.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;</code>
@@ -591,7 +739,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Detailed config for running this eval job.
+   * Required. Configuration details for the evaluation job.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;</code>
@@ -607,7 +755,11 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the AnnotationSpecSet.
+   * Required. Name of the [AnnotationSpecSet][google.cloud.datalabeling.v1beta1.AnnotationSpecSet] describing all the
+   * labels that your machine learning model outputs. You must create this
+   * resource before you create an evaluation job and provide its name in the
+   * following format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
    * </pre>
    *
    * <code>string annotation_spec_set = 7;</code>
@@ -629,7 +781,11 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the AnnotationSpecSet.
+   * Required. Name of the [AnnotationSpecSet][google.cloud.datalabeling.v1beta1.AnnotationSpecSet] describing all the
+   * labels that your machine learning model outputs. You must create this
+   * resource before you create an evaluation job and provide its name in the
+   * following format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
    * </pre>
    *
    * <code>string annotation_spec_set = 7;</code>
@@ -654,8 +810,11 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If a human annotation should be requested when some data don't have ground
-   * truth.
+   * Required. Whether you want Data Labeling Service to provide ground truth
+   * labels for prediction input. If you want the service to assign human
+   * labelers to annotate your data, set this to `true`. If you want to provide
+   * your own ground truth labels in the evaluation job's BigQuery table, set
+   * this to `false`.
    * </pre>
    *
    * <code>bool label_missing_ground_truth = 8;</code>
@@ -672,8 +831,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Any attempts with errors happening in evaluation job runs each
-   * time will be recorded here incrementally.
+   * Output only. Every time the evaluation job runs and an error occurs, the
+   * failed attempt is appended to this array.
    * </pre>
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -685,8 +844,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Any attempts with errors happening in evaluation job runs each
-   * time will be recorded here incrementally.
+   * Output only. Every time the evaluation job runs and an error occurs, the
+   * failed attempt is appended to this array.
    * </pre>
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -699,8 +858,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Any attempts with errors happening in evaluation job runs each
-   * time will be recorded here incrementally.
+   * Output only. Every time the evaluation job runs and an error occurs, the
+   * failed attempt is appended to this array.
    * </pre>
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -712,8 +871,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Any attempts with errors happening in evaluation job runs each
-   * time will be recorded here incrementally.
+   * Output only. Every time the evaluation job runs and an error occurs, the
+   * failed attempt is appended to this array.
    * </pre>
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -725,8 +884,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Any attempts with errors happening in evaluation job runs each
-   * time will be recorded here incrementally.
+   * Output only. Every time the evaluation job runs and an error occurs, the
+   * failed attempt is appended to this array.
    * </pre>
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -741,7 +900,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Timestamp when this evaluation job was created.
+   * Output only. Timestamp of when this evaluation job was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -755,7 +914,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Timestamp when this evaluation job was created.
+   * Output only. Timestamp of when this evaluation job was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -769,7 +928,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Timestamp when this evaluation job was created.
+   * Output only. Timestamp of when this evaluation job was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -1038,8 +1197,10 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines an evaluation job that is triggered periodically to generate
-   * evaluations.
+   * Defines an evaluation job that runs periodically to generate
+   * [Evaluations][google.cloud.datalabeling.v1beta1.Evaluation]. [Creating an evaluation
+   * job](/ml-engine/docs/continuous-evaluation/create-job) is the starting point
+   * for using continuous evaluation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datalabeling.v1beta1.EvaluationJob}
@@ -1314,7 +1475,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Format: 'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+     * Output only. After you create a job, Data Labeling Service assigns a name
+     * to the job with the following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1336,7 +1499,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Format: 'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+     * Output only. After you create a job, Data Labeling Service assigns a name
+     * to the job with the following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1358,7 +1523,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Format: 'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+     * Output only. After you create a job, Data Labeling Service assigns a name
+     * to the job with the following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1379,7 +1546,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Format: 'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+     * Output only. After you create a job, Data Labeling Service assigns a name
+     * to the job with the following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1396,7 +1565,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Format: 'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+     * Output only. After you create a job, Data Labeling Service assigns a name
+     * to the job with the following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1420,8 +1591,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the job. The description can be up to
-     * 25000 characters long.
+     * Required. Description of the job. The description can be up to 25,000
+     * characters long.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1443,8 +1614,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the job. The description can be up to
-     * 25000 characters long.
+     * Required. Description of the job. The description can be up to 25,000
+     * characters long.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1466,8 +1637,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the job. The description can be up to
-     * 25000 characters long.
+     * Required. Description of the job. The description can be up to 25,000
+     * characters long.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1488,8 +1659,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the job. The description can be up to
-     * 25000 characters long.
+     * Required. Description of the job. The description can be up to 25,000
+     * characters long.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1506,8 +1677,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the job. The description can be up to
-     * 25000 characters long.
+     * Required. Description of the job. The description can be up to 25,000
+     * characters long.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1528,6 +1699,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
 
     private int state_ = 0;
     /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the current state of the job.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
      *
      * @return The enum numeric value on the wire for state.
@@ -1536,6 +1713,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       return state_;
     }
     /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the current state of the job.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
      *
      * @param value The enum numeric value on the wire for state to set.
@@ -1547,6 +1730,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the current state of the job.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
      *
      * @return The state.
@@ -1560,6 +1749,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
     /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the current state of the job.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
      *
      * @param value The state to set.
@@ -1575,6 +1770,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the current state of the job.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob.State state = 3;</code>
      *
      * @return This builder for chaining.
@@ -1591,13 +1792,15 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describes the schedule on which the job will be executed. Minimum schedule
-     * unit is 1 day.
-     * The schedule can be either of the following types:
-     * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-     * * English-like
-     * [schedule](https:
-     * //cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
+     * Required. Describes the interval at which the job runs. This interval must
+     * be at least 1 day, and it is rounded to the nearest day. For example, if
+     * you specify a 50-hour interval, the job runs every 2 days.
+     * You can provide the schedule in
+     * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
+     * [English-like
+     * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+     * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
+     * interval from this schedule is used, not the specific time of day.
      * </pre>
      *
      * <code>string schedule = 4;</code>
@@ -1619,13 +1822,15 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describes the schedule on which the job will be executed. Minimum schedule
-     * unit is 1 day.
-     * The schedule can be either of the following types:
-     * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-     * * English-like
-     * [schedule](https:
-     * //cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
+     * Required. Describes the interval at which the job runs. This interval must
+     * be at least 1 day, and it is rounded to the nearest day. For example, if
+     * you specify a 50-hour interval, the job runs every 2 days.
+     * You can provide the schedule in
+     * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
+     * [English-like
+     * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+     * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
+     * interval from this schedule is used, not the specific time of day.
      * </pre>
      *
      * <code>string schedule = 4;</code>
@@ -1647,13 +1852,15 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describes the schedule on which the job will be executed. Minimum schedule
-     * unit is 1 day.
-     * The schedule can be either of the following types:
-     * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-     * * English-like
-     * [schedule](https:
-     * //cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
+     * Required. Describes the interval at which the job runs. This interval must
+     * be at least 1 day, and it is rounded to the nearest day. For example, if
+     * you specify a 50-hour interval, the job runs every 2 days.
+     * You can provide the schedule in
+     * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
+     * [English-like
+     * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+     * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
+     * interval from this schedule is used, not the specific time of day.
      * </pre>
      *
      * <code>string schedule = 4;</code>
@@ -1674,13 +1881,15 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describes the schedule on which the job will be executed. Minimum schedule
-     * unit is 1 day.
-     * The schedule can be either of the following types:
-     * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-     * * English-like
-     * [schedule](https:
-     * //cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
+     * Required. Describes the interval at which the job runs. This interval must
+     * be at least 1 day, and it is rounded to the nearest day. For example, if
+     * you specify a 50-hour interval, the job runs every 2 days.
+     * You can provide the schedule in
+     * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
+     * [English-like
+     * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+     * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
+     * interval from this schedule is used, not the specific time of day.
      * </pre>
      *
      * <code>string schedule = 4;</code>
@@ -1697,13 +1906,15 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describes the schedule on which the job will be executed. Minimum schedule
-     * unit is 1 day.
-     * The schedule can be either of the following types:
-     * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-     * * English-like
-     * [schedule](https:
-     * //cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
+     * Required. Describes the interval at which the job runs. This interval must
+     * be at least 1 day, and it is rounded to the nearest day. For example, if
+     * you specify a 50-hour interval, the job runs every 2 days.
+     * You can provide the schedule in
+     * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
+     * [English-like
+     * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+     * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
+     * interval from this schedule is used, not the specific time of day.
      * </pre>
      *
      * <code>string schedule = 4;</code>
@@ -1727,9 +1938,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The versioned model that is being evaluated here.
-     * Only one job is allowed for each model name.
-     * Format: 'projects/&#42;&#47;models/&#42;&#47;versions/&#42;'
+     * Required. The [AI Platform Prediction model
+     * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
+     * input and output is sampled from this model version. When creating an
+     * evaluation job, specify the model version in the following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+     * There can only be one evaluation job per model version.
      * </pre>
      *
      * <code>string model_version = 5;</code>
@@ -1751,9 +1965,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The versioned model that is being evaluated here.
-     * Only one job is allowed for each model name.
-     * Format: 'projects/&#42;&#47;models/&#42;&#47;versions/&#42;'
+     * Required. The [AI Platform Prediction model
+     * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
+     * input and output is sampled from this model version. When creating an
+     * evaluation job, specify the model version in the following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+     * There can only be one evaluation job per model version.
      * </pre>
      *
      * <code>string model_version = 5;</code>
@@ -1775,9 +1992,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The versioned model that is being evaluated here.
-     * Only one job is allowed for each model name.
-     * Format: 'projects/&#42;&#47;models/&#42;&#47;versions/&#42;'
+     * Required. The [AI Platform Prediction model
+     * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
+     * input and output is sampled from this model version. When creating an
+     * evaluation job, specify the model version in the following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+     * There can only be one evaluation job per model version.
      * </pre>
      *
      * <code>string model_version = 5;</code>
@@ -1798,9 +2018,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The versioned model that is being evaluated here.
-     * Only one job is allowed for each model name.
-     * Format: 'projects/&#42;&#47;models/&#42;&#47;versions/&#42;'
+     * Required. The [AI Platform Prediction model
+     * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
+     * input and output is sampled from this model version. When creating an
+     * evaluation job, specify the model version in the following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+     * There can only be one evaluation job per model version.
      * </pre>
      *
      * <code>string model_version = 5;</code>
@@ -1817,9 +2040,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The versioned model that is being evaluated here.
-     * Only one job is allowed for each model name.
-     * Format: 'projects/&#42;&#47;models/&#42;&#47;versions/&#42;'
+     * Required. The [AI Platform Prediction model
+     * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
+     * input and output is sampled from this model version. When creating an
+     * evaluation job, specify the model version in the following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+     * There can only be one evaluation job per model version.
      * </pre>
      *
      * <code>string model_version = 5;</code>
@@ -1848,7 +2074,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed config for running this eval job.
+     * Required. Configuration details for the evaluation job.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;
@@ -1863,7 +2089,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed config for running this eval job.
+     * Required. Configuration details for the evaluation job.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;
@@ -1884,7 +2110,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed config for running this eval job.
+     * Required. Configuration details for the evaluation job.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;
@@ -1908,7 +2134,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed config for running this eval job.
+     * Required. Configuration details for the evaluation job.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;
@@ -1929,7 +2155,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed config for running this eval job.
+     * Required. Configuration details for the evaluation job.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;
@@ -1958,7 +2184,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed config for running this eval job.
+     * Required. Configuration details for the evaluation job.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;
@@ -1979,7 +2205,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed config for running this eval job.
+     * Required. Configuration details for the evaluation job.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;
@@ -1995,7 +2221,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed config for running this eval job.
+     * Required. Configuration details for the evaluation job.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;
@@ -2015,7 +2241,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed config for running this eval job.
+     * Required. Configuration details for the evaluation job.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;
@@ -2043,7 +2269,11 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the AnnotationSpecSet.
+     * Required. Name of the [AnnotationSpecSet][google.cloud.datalabeling.v1beta1.AnnotationSpecSet] describing all the
+     * labels that your machine learning model outputs. You must create this
+     * resource before you create an evaluation job and provide its name in the
+     * following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
      * <code>string annotation_spec_set = 7;</code>
@@ -2065,7 +2295,11 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the AnnotationSpecSet.
+     * Required. Name of the [AnnotationSpecSet][google.cloud.datalabeling.v1beta1.AnnotationSpecSet] describing all the
+     * labels that your machine learning model outputs. You must create this
+     * resource before you create an evaluation job and provide its name in the
+     * following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
      * <code>string annotation_spec_set = 7;</code>
@@ -2087,7 +2321,11 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the AnnotationSpecSet.
+     * Required. Name of the [AnnotationSpecSet][google.cloud.datalabeling.v1beta1.AnnotationSpecSet] describing all the
+     * labels that your machine learning model outputs. You must create this
+     * resource before you create an evaluation job and provide its name in the
+     * following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
      * <code>string annotation_spec_set = 7;</code>
@@ -2108,7 +2346,11 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the AnnotationSpecSet.
+     * Required. Name of the [AnnotationSpecSet][google.cloud.datalabeling.v1beta1.AnnotationSpecSet] describing all the
+     * labels that your machine learning model outputs. You must create this
+     * resource before you create an evaluation job and provide its name in the
+     * following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
      * <code>string annotation_spec_set = 7;</code>
@@ -2125,7 +2367,11 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the AnnotationSpecSet.
+     * Required. Name of the [AnnotationSpecSet][google.cloud.datalabeling.v1beta1.AnnotationSpecSet] describing all the
+     * labels that your machine learning model outputs. You must create this
+     * resource before you create an evaluation job and provide its name in the
+     * following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
      * <code>string annotation_spec_set = 7;</code>
@@ -2149,8 +2395,11 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If a human annotation should be requested when some data don't have ground
-     * truth.
+     * Required. Whether you want Data Labeling Service to provide ground truth
+     * labels for prediction input. If you want the service to assign human
+     * labelers to annotate your data, set this to `true`. If you want to provide
+     * your own ground truth labels in the evaluation job's BigQuery table, set
+     * this to `false`.
      * </pre>
      *
      * <code>bool label_missing_ground_truth = 8;</code>
@@ -2164,8 +2413,11 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If a human annotation should be requested when some data don't have ground
-     * truth.
+     * Required. Whether you want Data Labeling Service to provide ground truth
+     * labels for prediction input. If you want the service to assign human
+     * labelers to annotate your data, set this to `true`. If you want to provide
+     * your own ground truth labels in the evaluation job's BigQuery table, set
+     * this to `false`.
      * </pre>
      *
      * <code>bool label_missing_ground_truth = 8;</code>
@@ -2183,8 +2435,11 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If a human annotation should be requested when some data don't have ground
-     * truth.
+     * Required. Whether you want Data Labeling Service to provide ground truth
+     * labels for prediction input. If you want the service to assign human
+     * labelers to annotate your data, set this to `true`. If you want to provide
+     * your own ground truth labels in the evaluation job's BigQuery table, set
+     * this to `false`.
      * </pre>
      *
      * <code>bool label_missing_ground_truth = 8;</code>
@@ -2219,8 +2474,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2236,8 +2491,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2253,8 +2508,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2270,8 +2525,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2293,8 +2548,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2314,8 +2569,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2337,8 +2592,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2360,8 +2615,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2381,8 +2636,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2402,8 +2657,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2423,8 +2678,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2443,8 +2698,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2463,8 +2718,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2476,8 +2731,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2493,8 +2748,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2511,8 +2766,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2525,8 +2780,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2539,8 +2794,8 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Any attempts with errors happening in evaluation job runs each
-     * time will be recorded here incrementally.
+     * Output only. Every time the evaluation job runs and an error occurs, the
+     * failed attempt is appended to this array.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
@@ -2577,7 +2832,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamp when this evaluation job was created.
+     * Output only. Timestamp of when this evaluation job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -2591,7 +2846,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamp when this evaluation job was created.
+     * Output only. Timestamp of when this evaluation job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -2611,7 +2866,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamp when this evaluation job was created.
+     * Output only. Timestamp of when this evaluation job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -2633,7 +2888,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamp when this evaluation job was created.
+     * Output only. Timestamp of when this evaluation job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -2652,7 +2907,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamp when this evaluation job was created.
+     * Output only. Timestamp of when this evaluation job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -2676,7 +2931,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamp when this evaluation job was created.
+     * Output only. Timestamp of when this evaluation job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -2696,7 +2951,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamp when this evaluation job was created.
+     * Output only. Timestamp of when this evaluation job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -2710,7 +2965,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamp when this evaluation job was created.
+     * Output only. Timestamp of when this evaluation job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -2728,7 +2983,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Timestamp when this evaluation job was created.
+     * Output only. Timestamp of when this evaluation job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>

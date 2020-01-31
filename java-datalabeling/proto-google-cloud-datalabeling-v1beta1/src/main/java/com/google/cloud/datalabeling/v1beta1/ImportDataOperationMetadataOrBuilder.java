@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public interface ImportDataOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Ouptut only. The name of imported dataset.
+   * Output only. The name of imported dataset.
    * "projects/&#42;&#47;datasets/&#42;"
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface ImportDataOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Ouptut only. The name of imported dataset.
+   * Output only. The name of imported dataset.
    * "projects/&#42;&#47;datasets/&#42;"
    * </pre>
    *

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/datalabeling/v1beta1/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/datalabeling/v1beta1/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/datalabeling/v1beta1/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>
+
+  <!-- TODO: remove after 0.118.0 is released -->
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/datalabeling/v1beta1/EvaluationJobConfig$HumanAnnotationRequestConfigCase</className>
+    <field>OBJECT_DETECTION_CONFIG</field>
+  </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/datalabeling/v1beta1/EvaluationJobConfig$HumanAnnotationRequestConfigCase</className>
+    <field>OBJECT_TRACKING_CONFIG</field>
+  </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/datalabeling/v1beta1/EvaluationJobConfig$HumanAnnotationRequestConfigCase</className>
+    <field>VIDEO_CLASSIFICATION_CONFIG</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/datalabeling/v1beta1/EvaluationJobConfig</className>
+    <field>OBJECT_DETECTION_CONFIG_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/datalabeling/v1beta1/EvaluationJobConfig</className>
+    <field>OBJECT_TRACKING_CONFIG_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/datalabeling/v1beta1/EvaluationJobConfig</className>
+    <field>VIDEO_CLASSIFICATION_CONFIG_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/datalabeling/v1beta1/EvaluationJobConfig*</className>
+    <method>* *ObjectDetectionConfig*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/datalabeling/v1beta1/EvaluationJobConfig*</className>
+    <method>* *ObjectTrackingConfig*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/datalabeling/v1beta1/EvaluationJobConfig*</className>
+    <method>* *VideoClassificationConfig*(*)</method>
+  </difference>
+</differences>

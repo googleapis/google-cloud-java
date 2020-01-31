@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Classification annotations in an image.
+   * Classification annotations in an image. Allowed for continuous evaluation.
    * </pre>
    *
    * <code>IMAGE_CLASSIFICATION_ANNOTATION = 1;</code>
@@ -36,7 +36,8 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Bounding box annotations in an image.
+   * Bounding box annotations in an image. A form of image object detection.
+   * Allowed for continuous evaluation.
    * </pre>
    *
    * <code>IMAGE_BOUNDING_BOX_ANNOTATION = 2;</code>
@@ -127,7 +128,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Classification for text.
+   * Classification for text. Allowed for continuous evaluation.
    * </pre>
    *
    * <code>TEXT_CLASSIFICATION_ANNOTATION = 8;</code>
@@ -147,7 +148,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * General classification.
+   * General classification. Allowed for continuous evaluation.
    * </pre>
    *
    * <code>GENERAL_CLASSIFICATION_ANNOTATION = 14;</code>
@@ -162,7 +163,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Classification annotations in an image.
+   * Classification annotations in an image. Allowed for continuous evaluation.
    * </pre>
    *
    * <code>IMAGE_CLASSIFICATION_ANNOTATION = 1;</code>
@@ -172,7 +173,8 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Bounding box annotations in an image.
+   * Bounding box annotations in an image. A form of image object detection.
+   * Allowed for continuous evaluation.
    * </pre>
    *
    * <code>IMAGE_BOUNDING_BOX_ANNOTATION = 2;</code>
@@ -263,7 +265,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Classification for text.
+   * Classification for text. Allowed for continuous evaluation.
    * </pre>
    *
    * <code>TEXT_CLASSIFICATION_ANNOTATION = 8;</code>
@@ -283,7 +285,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * General classification.
+   * General classification. Allowed for continuous evaluation.
    * </pre>
    *
    * <code>GENERAL_CLASSIFICATION_ANNOTATION = 14;</code>

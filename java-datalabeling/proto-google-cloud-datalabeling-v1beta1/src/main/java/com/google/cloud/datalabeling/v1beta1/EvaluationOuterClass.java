@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,69 +82,73 @@ public final class EvaluationOuterClass {
     java.lang.String[] descriptorData = {
       "\n2google/cloud/datalabeling/v1beta1/eval"
           + "uation.proto\022!google.cloud.datalabeling."
-          + "v1beta1\032\034google/api/annotations.proto\0322g"
-          + "oogle/cloud/datalabeling/v1beta1/annotat"
-          + "ion.proto\032;google/cloud/datalabeling/v1b"
-          + "eta1/annotation_spec_set.proto\032\037google/p"
-          + "rotobuf/timestamp.proto\"\211\003\n\nEvaluation\022\014"
-          + "\n\004name\030\001 \001(\t\022C\n\006config\030\002 \001(\01323.google.cl"
-          + "oud.datalabeling.v1beta1.EvaluationConfi"
-          + "g\022;\n\027evaluation_job_run_time\030\003 \001(\0132\032.goo"
-          + "gle.protobuf.Timestamp\022/\n\013create_time\030\004 "
-          + "\001(\0132\032.google.protobuf.Timestamp\022P\n\022evalu"
-          + "ation_metrics\030\005 \001(\01324.google.cloud.datal"
-          + "abeling.v1beta1.EvaluationMetrics\022J\n\017ann"
-          + "otation_type\030\006 \001(\01621.google.cloud.datala"
-          + "beling.v1beta1.AnnotationType\022\034\n\024evaluat"
-          + "ed_item_count\030\007 \001(\003\"\221\001\n\020EvaluationConfig"
-          + "\022j\n\037bounding_box_evaluation_options\030\001 \001("
-          + "\0132?.google.cloud.datalabeling.v1beta1.Bo"
-          + "undingBoxEvaluationOptionsH\000B\021\n\017vertical"
-          + "_option\"5\n\034BoundingBoxEvaluationOptions\022"
-          + "\025\n\riou_threshold\030\001 \001(\002\"\331\001\n\021EvaluationMet"
-          + "rics\022Z\n\026classification_metrics\030\001 \001(\01328.g"
-          + "oogle.cloud.datalabeling.v1beta1.Classif"
-          + "icationMetricsH\000\022]\n\030object_detection_met"
-          + "rics\030\002 \001(\01329.google.cloud.datalabeling.v"
-          + "1beta1.ObjectDetectionMetricsH\000B\t\n\007metri"
-          + "cs\"\243\001\n\025ClassificationMetrics\022<\n\010pr_curve"
-          + "\030\001 \001(\0132*.google.cloud.datalabeling.v1bet"
-          + "a1.PrCurve\022L\n\020confusion_matrix\030\002 \001(\01322.g"
-          + "oogle.cloud.datalabeling.v1beta1.Confusi"
-          + "onMatrix\"V\n\026ObjectDetectionMetrics\022<\n\010pr"
-          + "_curve\030\001 \001(\0132*.google.cloud.datalabeling"
-          + ".v1beta1.PrCurve\"\346\003\n\007PrCurve\022J\n\017annotati"
-          + "on_spec\030\001 \001(\01321.google.cloud.datalabelin"
-          + "g.v1beta1.AnnotationSpec\022\030\n\020area_under_c"
-          + "urve\030\002 \001(\002\022e\n\032confidence_metrics_entries"
-          + "\030\003 \003(\0132A.google.cloud.datalabeling.v1bet"
-          + "a1.PrCurve.ConfidenceMetricsEntry\022\036\n\026mea"
-          + "n_average_precision\030\004 \001(\002\032\355\001\n\026Confidence"
-          + "MetricsEntry\022\034\n\024confidence_threshold\030\001 \001"
-          + "(\002\022\016\n\006recall\030\002 \001(\002\022\021\n\tprecision\030\003 \001(\002\022\020\n"
-          + "\010f1_score\030\004 \001(\002\022\022\n\nrecall_at1\030\005 \001(\002\022\025\n\rp"
-          + "recision_at1\030\006 \001(\002\022\024\n\014f1_score_at1\030\007 \001(\002"
-          + "\022\022\n\nrecall_at5\030\010 \001(\002\022\025\n\rprecision_at5\030\t "
-          + "\001(\002\022\024\n\014f1_score_at5\030\n \001(\002\"\374\002\n\017ConfusionM"
-          + "atrix\022C\n\003row\030\001 \003(\01326.google.cloud.datala"
-          + "beling.v1beta1.ConfusionMatrix.Row\032v\n\024Co"
-          + "nfusionMatrixEntry\022J\n\017annotation_spec\030\001 "
+          + "v1beta1\032\034google/api/annotations.proto\032\031g"
+          + "oogle/api/resource.proto\0322google/cloud/d"
+          + "atalabeling/v1beta1/annotation.proto\032;go"
+          + "ogle/cloud/datalabeling/v1beta1/annotati"
+          + "on_spec_set.proto\032\037google/protobuf/times"
+          + "tamp.proto\"\366\003\n\nEvaluation\022\014\n\004name\030\001 \001(\t\022"
+          + "C\n\006config\030\002 \001(\01323.google.cloud.datalabel"
+          + "ing.v1beta1.EvaluationConfig\022;\n\027evaluati"
+          + "on_job_run_time\030\003 \001(\0132\032.google.protobuf."
+          + "Timestamp\022/\n\013create_time\030\004 \001(\0132\032.google."
+          + "protobuf.Timestamp\022P\n\022evaluation_metrics"
+          + "\030\005 \001(\01324.google.cloud.datalabeling.v1bet"
+          + "a1.EvaluationMetrics\022J\n\017annotation_type\030"
+          + "\006 \001(\01621.google.cloud.datalabeling.v1beta"
+          + "1.AnnotationType\022\034\n\024evaluated_item_count"
+          + "\030\007 \001(\003:k\352Ah\n&datalabeling.googleapis.com"
+          + "/Evaluation\022>projects/{project}/datasets"
+          + "/{dataset}/evaluations/{evaluation}\"\221\001\n\020"
+          + "EvaluationConfig\022j\n\037bounding_box_evaluat"
+          + "ion_options\030\001 \001(\0132?.google.cloud.datalab"
+          + "eling.v1beta1.BoundingBoxEvaluationOptio"
+          + "nsH\000B\021\n\017vertical_option\"5\n\034BoundingBoxEv"
+          + "aluationOptions\022\025\n\riou_threshold\030\001 \001(\002\"\331"
+          + "\001\n\021EvaluationMetrics\022Z\n\026classification_m"
+          + "etrics\030\001 \001(\01328.google.cloud.datalabeling"
+          + ".v1beta1.ClassificationMetricsH\000\022]\n\030obje"
+          + "ct_detection_metrics\030\002 \001(\01329.google.clou"
+          + "d.datalabeling.v1beta1.ObjectDetectionMe"
+          + "tricsH\000B\t\n\007metrics\"\243\001\n\025ClassificationMet"
+          + "rics\022<\n\010pr_curve\030\001 \001(\0132*.google.cloud.da"
+          + "talabeling.v1beta1.PrCurve\022L\n\020confusion_"
+          + "matrix\030\002 \001(\01322.google.cloud.datalabeling"
+          + ".v1beta1.ConfusionMatrix\"V\n\026ObjectDetect"
+          + "ionMetrics\022<\n\010pr_curve\030\001 \001(\0132*.google.cl"
+          + "oud.datalabeling.v1beta1.PrCurve\"\346\003\n\007PrC"
+          + "urve\022J\n\017annotation_spec\030\001 \001(\01321.google.c"
+          + "loud.datalabeling.v1beta1.AnnotationSpec"
+          + "\022\030\n\020area_under_curve\030\002 \001(\002\022e\n\032confidence"
+          + "_metrics_entries\030\003 \003(\0132A.google.cloud.da"
+          + "talabeling.v1beta1.PrCurve.ConfidenceMet"
+          + "ricsEntry\022\036\n\026mean_average_precision\030\004 \001("
+          + "\002\032\355\001\n\026ConfidenceMetricsEntry\022\034\n\024confiden"
+          + "ce_threshold\030\001 \001(\002\022\016\n\006recall\030\002 \001(\002\022\021\n\tpr"
+          + "ecision\030\003 \001(\002\022\020\n\010f1_score\030\004 \001(\002\022\022\n\nrecal"
+          + "l_at1\030\005 \001(\002\022\025\n\rprecision_at1\030\006 \001(\002\022\024\n\014f1"
+          + "_score_at1\030\007 \001(\002\022\022\n\nrecall_at5\030\010 \001(\002\022\025\n\r"
+          + "precision_at5\030\t \001(\002\022\024\n\014f1_score_at5\030\n \001("
+          + "\002\"\374\002\n\017ConfusionMatrix\022C\n\003row\030\001 \003(\01326.goo"
+          + "gle.cloud.datalabeling.v1beta1.Confusion"
+          + "Matrix.Row\032v\n\024ConfusionMatrixEntry\022J\n\017an"
+          + "notation_spec\030\001 \001(\01321.google.cloud.datal"
+          + "abeling.v1beta1.AnnotationSpec\022\022\n\nitem_c"
+          + "ount\030\002 \001(\005\032\253\001\n\003Row\022J\n\017annotation_spec\030\001 "
           + "\001(\01321.google.cloud.datalabeling.v1beta1."
-          + "AnnotationSpec\022\022\n\nitem_count\030\002 \001(\005\032\253\001\n\003R"
-          + "ow\022J\n\017annotation_spec\030\001 \001(\01321.google.clo"
-          + "ud.datalabeling.v1beta1.AnnotationSpec\022X"
-          + "\n\007entries\030\002 \003(\0132G.google.cloud.datalabel"
-          + "ing.v1beta1.ConfusionMatrix.ConfusionMat"
-          + "rixEntryBx\n%com.google.cloud.datalabelin"
-          + "g.v1beta1P\001ZMgoogle.golang.org/genproto/"
-          + "googleapis/cloud/datalabeling/v1beta1;da"
-          + "talabelingb\006proto3"
+          + "AnnotationSpec\022X\n\007entries\030\002 \003(\0132G.google"
+          + ".cloud.datalabeling.v1beta1.ConfusionMat"
+          + "rix.ConfusionMatrixEntryBx\n%com.google.c"
+          + "loud.datalabeling.v1beta1P\001ZMgoogle.gola"
+          + "ng.org/genproto/googleapis/cloud/datalab"
+          + "eling/v1beta1;datalabelingb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.datalabeling.v1beta1.AnnotationOuterClass.getDescriptor(),
               com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOuterClass.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -261,7 +265,13 @@ public final class EvaluationOuterClass {
             new java.lang.String[] {
               "AnnotationSpec", "Entries",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.datalabeling.v1beta1.AnnotationOuterClass.getDescriptor();
     com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOuterClass.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,30 +94,30 @@ public class DataLabelingServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createDatasetTest() {
-    String name = "name3373707";
+    DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     long dataItemCount = 2014260376L;
     Dataset expectedResponse =
         Dataset.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .setDataItemCount(dataItemCount)
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     Dataset dataset = Dataset.newBuilder().build();
 
-    Dataset actualResponse = client.createDataset(formattedParent, dataset);
+    Dataset actualResponse = client.createDataset(parent, dataset);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateDatasetRequest actualRequest = (CreateDatasetRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(dataset, actualRequest.getDataset());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -132,10 +132,10 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       Dataset dataset = Dataset.newBuilder().build();
 
-      client.createDataset(formattedParent, dataset);
+      client.createDataset(parent, dataset);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -145,29 +145,29 @@ public class DataLabelingServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getDatasetTest() {
-    String name2 = "name2-1052831874";
+    DatasetName name2 = DatasetName.of("[PROJECT]", "[DATASET]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     long dataItemCount = 2014260376L;
     Dataset expectedResponse =
         Dataset.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .setDataItemCount(dataItemCount)
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+    DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
 
-    Dataset actualResponse = client.getDataset(formattedName);
+    Dataset actualResponse = client.getDataset(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetDatasetRequest actualRequest = (GetDatasetRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -181,9 +181,9 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+      DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
 
-      client.getDataset(formattedName);
+      client.getDataset(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -203,10 +203,10 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     String filter = "filter-1274492040";
 
-    ListDatasetsPagedResponse pagedListResponse = client.listDatasets(formattedParent, filter);
+    ListDatasetsPagedResponse pagedListResponse = client.listDatasets(parent, filter);
 
     List<Dataset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -216,7 +216,7 @@ public class DataLabelingServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListDatasetsRequest actualRequest = (ListDatasetsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -231,10 +231,10 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       String filter = "filter-1274492040";
 
-      client.listDatasets(formattedParent, filter);
+      client.listDatasets(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -247,15 +247,15 @@ public class DataLabelingServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+    DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
 
-    client.deleteDataset(formattedName);
+    client.deleteDataset(name);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteDatasetRequest actualRequest = (DeleteDatasetRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -269,9 +269,9 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+      DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
 
-      client.deleteDataset(formattedName);
+      client.deleteDataset(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -298,18 +298,17 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(resultOperation);
 
-    String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+    DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
     InputConfig inputConfig = InputConfig.newBuilder().build();
 
-    ImportDataOperationResponse actualResponse =
-        client.importDataAsync(formattedName, inputConfig).get();
+    ImportDataOperationResponse actualResponse = client.importDataAsync(name, inputConfig).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ImportDataRequest actualRequest = (ImportDataRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
     Assert.assertEquals(inputConfig, actualRequest.getInputConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -324,10 +323,10 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+      DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
       InputConfig inputConfig = InputConfig.newBuilder().build();
 
-      client.importDataAsync(formattedName, inputConfig).get();
+      client.importDataAsync(name, inputConfig).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -356,21 +355,23 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(resultOperation);
 
-    String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
-    String annotatedDataset = "annotatedDataset-1407812655";
+    DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+    AnnotatedDatasetName annotatedDataset =
+        AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
     String filter = "filter-1274492040";
     OutputConfig outputConfig = OutputConfig.newBuilder().build();
 
     ExportDataOperationResponse actualResponse =
-        client.exportDataAsync(formattedName, annotatedDataset, filter, outputConfig).get();
+        client.exportDataAsync(name, annotatedDataset, filter, outputConfig).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ExportDataRequest actualRequest = (ExportDataRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
-    Assert.assertEquals(annotatedDataset, actualRequest.getAnnotatedDataset());
+    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
+    Assert.assertEquals(
+        annotatedDataset, AnnotatedDatasetName.parse(actualRequest.getAnnotatedDataset()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertEquals(outputConfig, actualRequest.getOutputConfig());
     Assert.assertTrue(
@@ -386,12 +387,13 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
-      String annotatedDataset = "annotatedDataset-1407812655";
+      DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+      AnnotatedDatasetName annotatedDataset =
+          AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
       String filter = "filter-1274492040";
       OutputConfig outputConfig = OutputConfig.newBuilder().build();
 
-      client.exportDataAsync(formattedName, annotatedDataset, filter, outputConfig).get();
+      client.exportDataAsync(name, annotatedDataset, filter, outputConfig).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -403,21 +405,20 @@ public class DataLabelingServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getDataItemTest() {
-    String name2 = "name2-1052831874";
-    DataItem expectedResponse = DataItem.newBuilder().setName(name2).build();
+    DataItemName name2 = DataItemName.of("[PROJECT]", "[DATASET]", "[DATA_ITEM]");
+    DataItem expectedResponse = DataItem.newBuilder().setName(name2.toString()).build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedName =
-        DataLabelingServiceClient.formatDataItemName("[PROJECT]", "[DATASET]", "[DATA_ITEM]");
+    DataItemName name = DataItemName.of("[PROJECT]", "[DATASET]", "[DATA_ITEM]");
 
-    DataItem actualResponse = client.getDataItem(formattedName);
+    DataItem actualResponse = client.getDataItem(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetDataItemRequest actualRequest = (GetDataItemRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, DataItemName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -431,10 +432,9 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedName =
-          DataLabelingServiceClient.formatDataItemName("[PROJECT]", "[DATASET]", "[DATA_ITEM]");
+      DataItemName name = DataItemName.of("[PROJECT]", "[DATASET]", "[DATA_ITEM]");
 
-      client.getDataItem(formattedName);
+      client.getDataItem(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -454,10 +454,10 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+    DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
     String filter = "filter-1274492040";
 
-    ListDataItemsPagedResponse pagedListResponse = client.listDataItems(formattedParent, filter);
+    ListDataItemsPagedResponse pagedListResponse = client.listDataItems(parent, filter);
 
     List<DataItem> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -467,7 +467,7 @@ public class DataLabelingServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListDataItemsRequest actualRequest = (ListDataItemsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, DatasetName.parse(actualRequest.getParent()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -482,11 +482,10 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedParent =
-          DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+      DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
       String filter = "filter-1274492040";
 
-      client.listDataItems(formattedParent, filter);
+      client.listDataItems(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -496,14 +495,15 @@ public class DataLabelingServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getAnnotatedDatasetTest() {
-    String name2 = "name2-1052831874";
+    AnnotatedDatasetName name2 =
+        AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     long exampleCount = 1517063674L;
     long completedExampleCount = 612567290L;
     AnnotatedDataset expectedResponse =
         AnnotatedDataset.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .setExampleCount(exampleCount)
@@ -511,18 +511,17 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedName =
-        DataLabelingServiceClient.formatAnnotatedDatasetName(
-            "[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+    AnnotatedDatasetName name =
+        AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
 
-    AnnotatedDataset actualResponse = client.getAnnotatedDataset(formattedName);
+    AnnotatedDataset actualResponse = client.getAnnotatedDataset(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetAnnotatedDatasetRequest actualRequest = (GetAnnotatedDatasetRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, AnnotatedDatasetName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -536,11 +535,10 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedName =
-          DataLabelingServiceClient.formatAnnotatedDatasetName(
-              "[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+      AnnotatedDatasetName name =
+          AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
 
-      client.getAnnotatedDataset(formattedName);
+      client.getAnnotatedDataset(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -560,11 +558,11 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+    DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
     String filter = "filter-1274492040";
 
     ListAnnotatedDatasetsPagedResponse pagedListResponse =
-        client.listAnnotatedDatasets(formattedParent, filter);
+        client.listAnnotatedDatasets(parent, filter);
 
     List<AnnotatedDataset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -575,7 +573,7 @@ public class DataLabelingServiceClientTest {
     ListAnnotatedDatasetsRequest actualRequest =
         (ListAnnotatedDatasetsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, DatasetName.parse(actualRequest.getParent()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -590,11 +588,10 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedParent =
-          DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+      DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
       String filter = "filter-1274492040";
 
-      client.listAnnotatedDatasets(formattedParent, filter);
+      client.listAnnotatedDatasets(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -604,14 +601,15 @@ public class DataLabelingServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void labelImageTest() throws Exception {
-    String name = "name3373707";
+    AnnotatedDatasetName name =
+        AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     long exampleCount = 1517063674L;
     long completedExampleCount = 612567290L;
     AnnotatedDataset expectedResponse =
         AnnotatedDataset.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .setExampleCount(exampleCount)
@@ -625,19 +623,18 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(resultOperation);
 
-    String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+    DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
     HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
     LabelImageRequest.Feature feature = LabelImageRequest.Feature.FEATURE_UNSPECIFIED;
 
-    AnnotatedDataset actualResponse =
-        client.labelImageAsync(formattedParent, basicConfig, feature).get();
+    AnnotatedDataset actualResponse = client.labelImageAsync(parent, basicConfig, feature).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     LabelImageRequest actualRequest = (LabelImageRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, DatasetName.parse(actualRequest.getParent()));
     Assert.assertEquals(basicConfig, actualRequest.getBasicConfig());
     Assert.assertEquals(feature, actualRequest.getFeature());
     Assert.assertTrue(
@@ -653,12 +650,11 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedParent =
-          DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+      DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
       HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
       LabelImageRequest.Feature feature = LabelImageRequest.Feature.FEATURE_UNSPECIFIED;
 
-      client.labelImageAsync(formattedParent, basicConfig, feature).get();
+      client.labelImageAsync(parent, basicConfig, feature).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -670,14 +666,15 @@ public class DataLabelingServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void labelVideoTest() throws Exception {
-    String name = "name3373707";
+    AnnotatedDatasetName name =
+        AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     long exampleCount = 1517063674L;
     long completedExampleCount = 612567290L;
     AnnotatedDataset expectedResponse =
         AnnotatedDataset.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .setExampleCount(exampleCount)
@@ -691,19 +688,18 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(resultOperation);
 
-    String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+    DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
     HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
     LabelVideoRequest.Feature feature = LabelVideoRequest.Feature.FEATURE_UNSPECIFIED;
 
-    AnnotatedDataset actualResponse =
-        client.labelVideoAsync(formattedParent, basicConfig, feature).get();
+    AnnotatedDataset actualResponse = client.labelVideoAsync(parent, basicConfig, feature).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     LabelVideoRequest actualRequest = (LabelVideoRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, DatasetName.parse(actualRequest.getParent()));
     Assert.assertEquals(basicConfig, actualRequest.getBasicConfig());
     Assert.assertEquals(feature, actualRequest.getFeature());
     Assert.assertTrue(
@@ -719,12 +715,11 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedParent =
-          DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+      DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
       HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
       LabelVideoRequest.Feature feature = LabelVideoRequest.Feature.FEATURE_UNSPECIFIED;
 
-      client.labelVideoAsync(formattedParent, basicConfig, feature).get();
+      client.labelVideoAsync(parent, basicConfig, feature).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -736,14 +731,15 @@ public class DataLabelingServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void labelTextTest() throws Exception {
-    String name = "name3373707";
+    AnnotatedDatasetName name =
+        AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     long exampleCount = 1517063674L;
     long completedExampleCount = 612567290L;
     AnnotatedDataset expectedResponse =
         AnnotatedDataset.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .setExampleCount(exampleCount)
@@ -757,19 +753,18 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(resultOperation);
 
-    String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+    DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
     HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
     LabelTextRequest.Feature feature = LabelTextRequest.Feature.FEATURE_UNSPECIFIED;
 
-    AnnotatedDataset actualResponse =
-        client.labelTextAsync(formattedParent, basicConfig, feature).get();
+    AnnotatedDataset actualResponse = client.labelTextAsync(parent, basicConfig, feature).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     LabelTextRequest actualRequest = (LabelTextRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, DatasetName.parse(actualRequest.getParent()));
     Assert.assertEquals(basicConfig, actualRequest.getBasicConfig());
     Assert.assertEquals(feature, actualRequest.getFeature());
     Assert.assertTrue(
@@ -785,12 +780,11 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedParent =
-          DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+      DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
       HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
       LabelTextRequest.Feature feature = LabelTextRequest.Feature.FEATURE_UNSPECIFIED;
 
-      client.labelTextAsync(formattedParent, basicConfig, feature).get();
+      client.labelTextAsync(parent, basicConfig, feature).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -802,23 +796,22 @@ public class DataLabelingServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getExampleTest() {
-    String name2 = "name2-1052831874";
-    Example expectedResponse = Example.newBuilder().setName(name2).build();
+    ExampleName name2 =
+        ExampleName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]", "[EXAMPLE]");
+    Example expectedResponse = Example.newBuilder().setName(name2.toString()).build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedName =
-        DataLabelingServiceClient.formatExampleName(
-            "[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]", "[EXAMPLE]");
+    ExampleName name = ExampleName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]", "[EXAMPLE]");
     String filter = "filter-1274492040";
 
-    Example actualResponse = client.getExample(formattedName, filter);
+    Example actualResponse = client.getExample(name, filter);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetExampleRequest actualRequest = (GetExampleRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, ExampleName.parse(actualRequest.getName()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -833,12 +826,11 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedName =
-          DataLabelingServiceClient.formatExampleName(
-              "[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]", "[EXAMPLE]");
+      ExampleName name =
+          ExampleName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]", "[EXAMPLE]");
       String filter = "filter-1274492040";
 
-      client.getExample(formattedName, filter);
+      client.getExample(name, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -858,12 +850,11 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedParent =
-        DataLabelingServiceClient.formatAnnotatedDatasetName(
-            "[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+    AnnotatedDatasetName parent =
+        AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
     String filter = "filter-1274492040";
 
-    ListExamplesPagedResponse pagedListResponse = client.listExamples(formattedParent, filter);
+    ListExamplesPagedResponse pagedListResponse = client.listExamples(parent, filter);
 
     List<Example> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -873,7 +864,7 @@ public class DataLabelingServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListExamplesRequest actualRequest = (ListExamplesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, AnnotatedDatasetName.parse(actualRequest.getParent()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -888,12 +879,11 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedParent =
-          DataLabelingServiceClient.formatAnnotatedDatasetName(
-              "[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+      AnnotatedDatasetName parent =
+          AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
       String filter = "filter-1274492040";
 
-      client.listExamples(formattedParent, filter);
+      client.listExamples(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -903,22 +893,21 @@ public class DataLabelingServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createAnnotationSpecSetTest() {
-    String name = "name3373707";
+    AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     AnnotationSpecSet expectedResponse =
         AnnotationSpecSet.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     AnnotationSpecSet annotationSpecSet = AnnotationSpecSet.newBuilder().build();
 
-    AnnotationSpecSet actualResponse =
-        client.createAnnotationSpecSet(formattedParent, annotationSpecSet);
+    AnnotationSpecSet actualResponse = client.createAnnotationSpecSet(parent, annotationSpecSet);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
@@ -926,7 +915,7 @@ public class DataLabelingServiceClientTest {
     CreateAnnotationSpecSetRequest actualRequest =
         (CreateAnnotationSpecSetRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(annotationSpecSet, actualRequest.getAnnotationSpecSet());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -941,10 +930,10 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       AnnotationSpecSet annotationSpecSet = AnnotationSpecSet.newBuilder().build();
 
-      client.createAnnotationSpecSet(formattedParent, annotationSpecSet);
+      client.createAnnotationSpecSet(parent, annotationSpecSet);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -954,28 +943,27 @@ public class DataLabelingServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getAnnotationSpecSetTest() {
-    String name2 = "name2-1052831874";
+    AnnotationSpecSetName name2 = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     AnnotationSpecSet expectedResponse =
         AnnotationSpecSet.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedName =
-        DataLabelingServiceClient.formatAnnotationSpecSetName("[PROJECT]", "[ANNOTATION_SPEC_SET]");
+    AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
 
-    AnnotationSpecSet actualResponse = client.getAnnotationSpecSet(formattedName);
+    AnnotationSpecSet actualResponse = client.getAnnotationSpecSet(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetAnnotationSpecSetRequest actualRequest = (GetAnnotationSpecSetRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, AnnotationSpecSetName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -989,11 +977,9 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedName =
-          DataLabelingServiceClient.formatAnnotationSpecSetName(
-              "[PROJECT]", "[ANNOTATION_SPEC_SET]");
+      AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
 
-      client.getAnnotationSpecSet(formattedName);
+      client.getAnnotationSpecSet(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1013,11 +999,11 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     String filter = "filter-1274492040";
 
     ListAnnotationSpecSetsPagedResponse pagedListResponse =
-        client.listAnnotationSpecSets(formattedParent, filter);
+        client.listAnnotationSpecSets(parent, filter);
 
     List<AnnotationSpecSet> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -1028,7 +1014,7 @@ public class DataLabelingServiceClientTest {
     ListAnnotationSpecSetsRequest actualRequest =
         (ListAnnotationSpecSetsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -1043,10 +1029,10 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       String filter = "filter-1274492040";
 
-      client.listAnnotationSpecSets(formattedParent, filter);
+      client.listAnnotationSpecSets(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1059,17 +1045,16 @@ public class DataLabelingServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedName =
-        DataLabelingServiceClient.formatAnnotationSpecSetName("[PROJECT]", "[ANNOTATION_SPEC_SET]");
+    AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
 
-    client.deleteAnnotationSpecSet(formattedName);
+    client.deleteAnnotationSpecSet(name);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteAnnotationSpecSetRequest actualRequest =
         (DeleteAnnotationSpecSetRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, AnnotationSpecSetName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1083,11 +1068,9 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedName =
-          DataLabelingServiceClient.formatAnnotationSpecSetName(
-              "[PROJECT]", "[ANNOTATION_SPEC_SET]");
+      AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
 
-      client.deleteAnnotationSpecSet(formattedName);
+      client.deleteAnnotationSpecSet(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1097,12 +1080,12 @@ public class DataLabelingServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createInstructionTest() throws Exception {
-    String name = "name3373707";
+    InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     Instruction expectedResponse =
         Instruction.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
@@ -1114,17 +1097,17 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(resultOperation);
 
-    String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     Instruction instruction = Instruction.newBuilder().build();
 
-    Instruction actualResponse = client.createInstructionAsync(formattedParent, instruction).get();
+    Instruction actualResponse = client.createInstructionAsync(parent, instruction).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateInstructionRequest actualRequest = (CreateInstructionRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(instruction, actualRequest.getInstruction());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -1139,10 +1122,10 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       Instruction instruction = Instruction.newBuilder().build();
 
-      client.createInstructionAsync(formattedParent, instruction).get();
+      client.createInstructionAsync(parent, instruction).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -1154,28 +1137,27 @@ public class DataLabelingServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getInstructionTest() {
-    String name2 = "name2-1052831874";
+    InstructionName name2 = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     Instruction expectedResponse =
         Instruction.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedName =
-        DataLabelingServiceClient.formatInstructionName("[PROJECT]", "[INSTRUCTION]");
+    InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
 
-    Instruction actualResponse = client.getInstruction(formattedName);
+    Instruction actualResponse = client.getInstruction(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetInstructionRequest actualRequest = (GetInstructionRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, InstructionName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1189,10 +1171,9 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedName =
-          DataLabelingServiceClient.formatInstructionName("[PROJECT]", "[INSTRUCTION]");
+      InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
 
-      client.getInstruction(formattedName);
+      client.getInstruction(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1212,11 +1193,10 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     String filter = "filter-1274492040";
 
-    ListInstructionsPagedResponse pagedListResponse =
-        client.listInstructions(formattedParent, filter);
+    ListInstructionsPagedResponse pagedListResponse = client.listInstructions(parent, filter);
 
     List<Instruction> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -1226,7 +1206,7 @@ public class DataLabelingServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListInstructionsRequest actualRequest = (ListInstructionsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -1241,10 +1221,10 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       String filter = "filter-1274492040";
 
-      client.listInstructions(formattedParent, filter);
+      client.listInstructions(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1257,16 +1237,15 @@ public class DataLabelingServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedName =
-        DataLabelingServiceClient.formatInstructionName("[PROJECT]", "[INSTRUCTION]");
+    InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
 
-    client.deleteInstruction(formattedName);
+    client.deleteInstruction(name);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteInstructionRequest actualRequest = (DeleteInstructionRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, InstructionName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1280,10 +1259,9 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedName =
-          DataLabelingServiceClient.formatInstructionName("[PROJECT]", "[INSTRUCTION]");
+      InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
 
-      client.deleteInstruction(formattedName);
+      client.deleteInstruction(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1293,23 +1271,25 @@ public class DataLabelingServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getEvaluationTest() {
-    String name2 = "name2-1052831874";
+    EvaluationName name2 = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
     long evaluatedItemCount = 358077111L;
     Evaluation expectedResponse =
-        Evaluation.newBuilder().setName(name2).setEvaluatedItemCount(evaluatedItemCount).build();
+        Evaluation.newBuilder()
+            .setName(name2.toString())
+            .setEvaluatedItemCount(evaluatedItemCount)
+            .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedName =
-        DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+    EvaluationName name = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
 
-    Evaluation actualResponse = client.getEvaluation(formattedName);
+    Evaluation actualResponse = client.getEvaluation(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetEvaluationRequest actualRequest = (GetEvaluationRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, EvaluationName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1323,10 +1303,9 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedName =
-          DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+      EvaluationName name = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
 
-      client.getEvaluation(formattedName);
+      client.getEvaluation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1346,11 +1325,10 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+    EvaluationName parent = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
     String filter = "filter-1274492040";
 
-    SearchEvaluationsPagedResponse pagedListResponse =
-        client.searchEvaluations(formattedParent, filter);
+    SearchEvaluationsPagedResponse pagedListResponse = client.searchEvaluations(parent, filter);
 
     List<Evaluation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -1360,7 +1338,7 @@ public class DataLabelingServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     SearchEvaluationsRequest actualRequest = (SearchEvaluationsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, EvaluationName.parse(actualRequest.getParent()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -1375,10 +1353,10 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+      EvaluationName parent = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
       String filter = "filter-1274492040";
 
-      client.searchEvaluations(formattedParent, filter);
+      client.searchEvaluations(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1400,11 +1378,10 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedParent =
-        DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+    EvaluationName parent = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
 
     SearchExampleComparisonsPagedResponse pagedListResponse =
-        client.searchExampleComparisons(formattedParent);
+        client.searchExampleComparisons(parent);
 
     List<SearchExampleComparisonsResponse.ExampleComparison> resources =
         Lists.newArrayList(pagedListResponse.iterateAll());
@@ -1416,7 +1393,7 @@ public class DataLabelingServiceClientTest {
     SearchExampleComparisonsRequest actualRequest =
         (SearchExampleComparisonsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, EvaluationName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1430,10 +1407,9 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedParent =
-          DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+      EvaluationName parent = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
 
-      client.searchExampleComparisons(formattedParent);
+      client.searchExampleComparisons(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1443,7 +1419,7 @@ public class DataLabelingServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createEvaluationJobTest() {
-    String name = "name3373707";
+    EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
     String description = "description-1724546052";
     String schedule = "schedule-697920873";
     String modelVersion = "modelVersion-1669102142";
@@ -1451,7 +1427,7 @@ public class DataLabelingServiceClientTest {
     boolean labelMissingGroundTruth = false;
     EvaluationJob expectedResponse =
         EvaluationJob.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDescription(description)
             .setSchedule(schedule)
             .setModelVersion(modelVersion)
@@ -1460,17 +1436,17 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     EvaluationJob job = EvaluationJob.newBuilder().build();
 
-    EvaluationJob actualResponse = client.createEvaluationJob(formattedParent, job);
+    EvaluationJob actualResponse = client.createEvaluationJob(parent, job);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateEvaluationJobRequest actualRequest = (CreateEvaluationJobRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(job, actualRequest.getJob());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -1485,10 +1461,10 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       EvaluationJob job = EvaluationJob.newBuilder().build();
 
-      client.createEvaluationJob(formattedParent, job);
+      client.createEvaluationJob(parent, job);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1498,7 +1474,7 @@ public class DataLabelingServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateEvaluationJobTest() {
-    String name = "name3373707";
+    EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
     String description = "description-1724546052";
     String schedule = "schedule-697920873";
     String modelVersion = "modelVersion-1669102142";
@@ -1506,7 +1482,7 @@ public class DataLabelingServiceClientTest {
     boolean labelMissingGroundTruth = false;
     EvaluationJob expectedResponse =
         EvaluationJob.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDescription(description)
             .setSchedule(schedule)
             .setModelVersion(modelVersion)
@@ -1553,7 +1529,7 @@ public class DataLabelingServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getEvaluationJobTest() {
-    String name2 = "name2-1052831874";
+    EvaluationJobName name2 = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
     String description = "description-1724546052";
     String schedule = "schedule-697920873";
     String modelVersion = "modelVersion-1669102142";
@@ -1561,7 +1537,7 @@ public class DataLabelingServiceClientTest {
     boolean labelMissingGroundTruth = false;
     EvaluationJob expectedResponse =
         EvaluationJob.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDescription(description)
             .setSchedule(schedule)
             .setModelVersion(modelVersion)
@@ -1570,17 +1546,16 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedName =
-        DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+    EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
 
-    EvaluationJob actualResponse = client.getEvaluationJob(formattedName);
+    EvaluationJob actualResponse = client.getEvaluationJob(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetEvaluationJobRequest actualRequest = (GetEvaluationJobRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, EvaluationJobName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1594,10 +1569,9 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedName =
-          DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+      EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
 
-      client.getEvaluationJob(formattedName);
+      client.getEvaluationJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1610,16 +1584,15 @@ public class DataLabelingServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedName =
-        DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+    EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
 
-    client.pauseEvaluationJob(formattedName);
+    client.pauseEvaluationJob(name);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     PauseEvaluationJobRequest actualRequest = (PauseEvaluationJobRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, EvaluationJobName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1633,10 +1606,9 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedName =
-          DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+      EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
 
-      client.pauseEvaluationJob(formattedName);
+      client.pauseEvaluationJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1649,16 +1621,15 @@ public class DataLabelingServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedName =
-        DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+    EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
 
-    client.resumeEvaluationJob(formattedName);
+    client.resumeEvaluationJob(name);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ResumeEvaluationJobRequest actualRequest = (ResumeEvaluationJobRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, EvaluationJobName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1672,10 +1643,9 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedName =
-          DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+      EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
 
-      client.resumeEvaluationJob(formattedName);
+      client.resumeEvaluationJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1688,16 +1658,15 @@ public class DataLabelingServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedName =
-        DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+    EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
 
-    client.deleteEvaluationJob(formattedName);
+    client.deleteEvaluationJob(name);
 
     List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteEvaluationJobRequest actualRequest = (DeleteEvaluationJobRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, EvaluationJobName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1711,10 +1680,9 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedName =
-          DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+      EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
 
-      client.deleteEvaluationJob(formattedName);
+      client.deleteEvaluationJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1734,11 +1702,10 @@ public class DataLabelingServiceClientTest {
             .build();
     mockDataLabelingService.addResponse(expectedResponse);
 
-    String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     String filter = "filter-1274492040";
 
-    ListEvaluationJobsPagedResponse pagedListResponse =
-        client.listEvaluationJobs(formattedParent, filter);
+    ListEvaluationJobsPagedResponse pagedListResponse = client.listEvaluationJobs(parent, filter);
 
     List<EvaluationJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -1748,7 +1715,7 @@ public class DataLabelingServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListEvaluationJobsRequest actualRequest = (ListEvaluationJobsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -1763,10 +1730,10 @@ public class DataLabelingServiceClientTest {
     mockDataLabelingService.addException(exception);
 
     try {
-      String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       String filter = "filter-1274492040";
 
-      client.listEvaluationJobs(formattedParent, filter);
+      client.listEvaluationJobs(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

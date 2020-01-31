@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,7 +129,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
    * at the same time.
    * </pre>
    *
-   * <code>repeated string annotation_spec_sets = 1;</code>
+   * <code>repeated string annotation_spec_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return A list containing the annotationSpecSets.
    */
@@ -145,7 +146,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
    * at the same time.
    * </pre>
    *
-   * <code>repeated string annotation_spec_sets = 1;</code>
+   * <code>repeated string annotation_spec_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The count of annotationSpecSets.
    */
@@ -161,7 +163,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
    * at the same time.
    * </pre>
    *
-   * <code>repeated string annotation_spec_sets = 1;</code>
+   * <code>repeated string annotation_spec_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The annotationSpecSets at the given index.
@@ -178,7 +181,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
    * at the same time.
    * </pre>
    *
-   * <code>repeated string annotation_spec_sets = 1;</code>
+   * <code>repeated string annotation_spec_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the annotationSpecSets at the given index.
@@ -543,7 +547,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * at the same time.
      * </pre>
      *
-     * <code>repeated string annotation_spec_sets = 1;</code>
+     * <code>repeated string annotation_spec_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return A list containing the annotationSpecSets.
      */
@@ -559,7 +564,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * at the same time.
      * </pre>
      *
-     * <code>repeated string annotation_spec_sets = 1;</code>
+     * <code>repeated string annotation_spec_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The count of annotationSpecSets.
      */
@@ -575,7 +581,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * at the same time.
      * </pre>
      *
-     * <code>repeated string annotation_spec_sets = 1;</code>
+     * <code>repeated string annotation_spec_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The annotationSpecSets at the given index.
@@ -592,7 +599,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * at the same time.
      * </pre>
      *
-     * <code>repeated string annotation_spec_sets = 1;</code>
+     * <code>repeated string annotation_spec_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the annotationSpecSets at the given index.
@@ -609,7 +617,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * at the same time.
      * </pre>
      *
-     * <code>repeated string annotation_spec_sets = 1;</code>
+     * <code>repeated string annotation_spec_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The annotationSpecSets to set.
@@ -633,7 +642,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * at the same time.
      * </pre>
      *
-     * <code>repeated string annotation_spec_sets = 1;</code>
+     * <code>repeated string annotation_spec_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The annotationSpecSets to add.
      * @return This builder for chaining.
@@ -656,7 +666,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * at the same time.
      * </pre>
      *
-     * <code>repeated string annotation_spec_sets = 1;</code>
+     * <code>repeated string annotation_spec_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param values The annotationSpecSets to add.
      * @return This builder for chaining.
@@ -676,7 +687,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * at the same time.
      * </pre>
      *
-     * <code>repeated string annotation_spec_sets = 1;</code>
+     * <code>repeated string annotation_spec_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -695,7 +707,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * at the same time.
      * </pre>
      *
-     * <code>repeated string annotation_spec_sets = 1;</code>
+     * <code>repeated string annotation_spec_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The bytes of the annotationSpecSets to add.
      * @return This builder for chaining.

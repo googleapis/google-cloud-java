@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,11 +27,13 @@ public interface CreateEvaluationJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Evaluation job resource parent, format:
-   * projects/{project_id}.
+   * Required. Evaluation job resource parent. Format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -40,11 +42,13 @@ public interface CreateEvaluationJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Evaluation job resource parent, format:
-   * projects/{project_id}.
+   * Required. Evaluation job resource parent. Format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -57,7 +61,9 @@ public interface CreateEvaluationJobRequestOrBuilder
    * Required. The evaluation job to create.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.EvaluationJob job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the job field is set.
    */
@@ -69,7 +75,9 @@ public interface CreateEvaluationJobRequestOrBuilder
    * Required. The evaluation job to create.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.EvaluationJob job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The job.
    */
@@ -81,7 +89,9 @@ public interface CreateEvaluationJobRequestOrBuilder
    * Required. The evaluation job to create.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.EvaluationJob job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datalabeling.v1beta1.EvaluationJobOrBuilder getJobOrBuilder();
 }

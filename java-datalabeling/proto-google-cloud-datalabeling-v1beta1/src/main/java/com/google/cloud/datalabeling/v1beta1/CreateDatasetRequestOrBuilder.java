@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,9 @@ public interface CreateDatasetRequestOrBuilder
    * projects/{project_id}
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -44,7 +46,9 @@ public interface CreateDatasetRequestOrBuilder
    * projects/{project_id}
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -57,7 +61,9 @@ public interface CreateDatasetRequestOrBuilder
    * Required. The dataset to be created.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.Dataset dataset = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the dataset field is set.
    */
@@ -69,7 +75,9 @@ public interface CreateDatasetRequestOrBuilder
    * Required. The dataset to be created.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.Dataset dataset = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The dataset.
    */
@@ -81,7 +89,9 @@ public interface CreateDatasetRequestOrBuilder
    * Required. The dataset to be created.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.Dataset dataset = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datalabeling.v1beta1.DatasetOrBuilder getDatasetOrBuilder();
 }

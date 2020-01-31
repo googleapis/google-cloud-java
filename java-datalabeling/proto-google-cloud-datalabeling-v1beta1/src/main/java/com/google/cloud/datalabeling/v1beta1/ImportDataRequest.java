@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -146,7 +146,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    * projects/{project_id}/datasets/{dataset_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -169,7 +171,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    * projects/{project_id}/datasets/{dataset_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -194,7 +198,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    * Required. Specify the input source of the data.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.InputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the inputConfig field is set.
    */
@@ -208,7 +214,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    * Required. Specify the input source of the data.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.InputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The inputConfig.
    */
@@ -224,7 +232,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    * Required. Specify the input source of the data.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.InputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datalabeling.v1beta1.InputConfigOrBuilder getInputConfigOrBuilder() {
     return getInputConfig();
@@ -651,7 +661,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -674,7 +686,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -697,7 +711,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -719,7 +735,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -737,7 +755,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -766,7 +786,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the input source of the data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.InputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the inputConfig field is set.
      */
@@ -780,7 +802,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the input source of the data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.InputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The inputConfig.
      */
@@ -800,7 +824,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the input source of the data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.InputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInputConfig(com.google.cloud.datalabeling.v1beta1.InputConfig value) {
       if (inputConfigBuilder_ == null) {
@@ -822,7 +848,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the input source of the data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.InputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInputConfig(
         com.google.cloud.datalabeling.v1beta1.InputConfig.Builder builderForValue) {
@@ -842,7 +870,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the input source of the data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.InputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeInputConfig(com.google.cloud.datalabeling.v1beta1.InputConfig value) {
       if (inputConfigBuilder_ == null) {
@@ -868,7 +898,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the input source of the data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.InputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearInputConfig() {
       if (inputConfigBuilder_ == null) {
@@ -888,7 +920,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the input source of the data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.InputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.InputConfig.Builder getInputConfigBuilder() {
 
@@ -902,7 +936,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the input source of the data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.InputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.InputConfigOrBuilder getInputConfigOrBuilder() {
       if (inputConfigBuilder_ != null) {
@@ -920,7 +956,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the input source of the data.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.InputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.InputConfig,

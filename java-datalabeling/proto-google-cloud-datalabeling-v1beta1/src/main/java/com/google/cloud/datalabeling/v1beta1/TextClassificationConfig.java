@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -143,7 +143,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
    * multiple labels for one text segment.
    * </pre>
    *
-   * <code>bool allow_multi_label = 1;</code>
+   * <code>bool allow_multi_label = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowMultiLabel.
    */
@@ -160,7 +160,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
    * Required. Annotation spec set resource name.
    * </pre>
    *
-   * <code>string annotation_spec_set = 2;</code>
+   * <code>string annotation_spec_set = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The annotationSpecSet.
    */
@@ -182,7 +182,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
    * Required. Annotation spec set resource name.
    * </pre>
    *
-   * <code>string annotation_spec_set = 2;</code>
+   * <code>string annotation_spec_set = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for annotationSpecSet.
    */
@@ -207,7 +207,9 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
    * Optional. Configs for sentiment selection.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the sentimentConfig field is set.
    */
@@ -221,7 +223,9 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
    * Optional. Configs for sentiment selection.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The sentimentConfig.
    */
@@ -237,7 +241,9 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
    * Optional. Configs for sentiment selection.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.datalabeling.v1beta1.SentimentConfigOrBuilder
       getSentimentConfigOrBuilder() {
@@ -618,7 +624,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * multiple labels for one text segment.
      * </pre>
      *
-     * <code>bool allow_multi_label = 1;</code>
+     * <code>bool allow_multi_label = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The allowMultiLabel.
      */
@@ -633,7 +639,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * multiple labels for one text segment.
      * </pre>
      *
-     * <code>bool allow_multi_label = 1;</code>
+     * <code>bool allow_multi_label = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The allowMultiLabel to set.
      * @return This builder for chaining.
@@ -652,7 +658,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * multiple labels for one text segment.
      * </pre>
      *
-     * <code>bool allow_multi_label = 1;</code>
+     * <code>bool allow_multi_label = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -671,7 +677,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 2;</code>
+     * <code>string annotation_spec_set = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The annotationSpecSet.
      */
@@ -693,7 +699,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 2;</code>
+     * <code>string annotation_spec_set = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for annotationSpecSet.
      */
@@ -715,7 +721,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 2;</code>
+     * <code>string annotation_spec_set = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The annotationSpecSet to set.
      * @return This builder for chaining.
@@ -736,7 +742,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 2;</code>
+     * <code>string annotation_spec_set = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -753,7 +759,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 2;</code>
+     * <code>string annotation_spec_set = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for annotationSpecSet to set.
      * @return This builder for chaining.
@@ -782,7 +788,9 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * Optional. Configs for sentiment selection.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the sentimentConfig field is set.
      */
@@ -796,7 +804,9 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * Optional. Configs for sentiment selection.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The sentimentConfig.
      */
@@ -816,7 +826,9 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * Optional. Configs for sentiment selection.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSentimentConfig(com.google.cloud.datalabeling.v1beta1.SentimentConfig value) {
       if (sentimentConfigBuilder_ == null) {
@@ -838,7 +850,9 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * Optional. Configs for sentiment selection.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSentimentConfig(
         com.google.cloud.datalabeling.v1beta1.SentimentConfig.Builder builderForValue) {
@@ -858,7 +872,9 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * Optional. Configs for sentiment selection.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeSentimentConfig(
         com.google.cloud.datalabeling.v1beta1.SentimentConfig value) {
@@ -885,7 +901,9 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * Optional. Configs for sentiment selection.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSentimentConfig() {
       if (sentimentConfigBuilder_ == null) {
@@ -905,7 +923,9 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * Optional. Configs for sentiment selection.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.SentimentConfig.Builder
         getSentimentConfigBuilder() {
@@ -920,7 +940,9 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * Optional. Configs for sentiment selection.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.SentimentConfigOrBuilder
         getSentimentConfigOrBuilder() {
@@ -939,7 +961,9 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * Optional. Configs for sentiment selection.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.SentimentConfig,

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,7 +113,11 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Minimize IoU required to consider 2 bounding boxes are matched.
+   * Minimum
+   * [intersection-over-union
+   * (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union)
+   * required for 2 bounding boxes to be considered a match. This must be a
+   * number between 0 and 1.
    * </pre>
    *
    * <code>float iou_threshold = 1;</code>
@@ -456,7 +460,11 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Minimize IoU required to consider 2 bounding boxes are matched.
+     * Minimum
+     * [intersection-over-union
+     * (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union)
+     * required for 2 bounding boxes to be considered a match. This must be a
+     * number between 0 and 1.
      * </pre>
      *
      * <code>float iou_threshold = 1;</code>
@@ -470,7 +478,11 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Minimize IoU required to consider 2 bounding boxes are matched.
+     * Minimum
+     * [intersection-over-union
+     * (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union)
+     * required for 2 bounding boxes to be considered a match. This must be a
+     * number between 0 and 1.
      * </pre>
      *
      * <code>float iou_threshold = 1;</code>
@@ -488,7 +500,11 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Minimize IoU required to consider 2 bounding boxes are matched.
+     * Minimum
+     * [intersection-over-union
+     * (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union)
+     * required for 2 bounding boxes to be considered a match. This must be a
+     * number between 0 and 1.
      * </pre>
      *
      * <code>float iou_threshold = 1;</code>

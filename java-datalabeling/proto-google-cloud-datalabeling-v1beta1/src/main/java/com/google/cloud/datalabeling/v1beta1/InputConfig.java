@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -382,6 +382,13 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BIGQUERY_SOURCE_FIELD_NUMBER = 5;
   /**
+   *
+   *
+   * <pre>
+   * Source located in BigQuery. You must specify this field if you are using
+   * this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
    *
    * @return Whether the bigquerySource field is set.
@@ -390,6 +397,13 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     return sourceCase_ == 5;
   }
   /**
+   *
+   *
+   * <pre>
+   * Source located in BigQuery. You must specify this field if you are using
+   * this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
    *
    * @return The bigquerySource.
@@ -400,7 +414,16 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datalabeling.v1beta1.BigQuerySource.getDefaultInstance();
   }
-  /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Source located in BigQuery. You must specify this field if you are using
+   * this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
+   */
   public com.google.cloud.datalabeling.v1beta1.BigQuerySourceOrBuilder
       getBigquerySourceOrBuilder() {
     if (sourceCase_ == 5) {
@@ -449,9 +472,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If input contains annotation, user needs to specify the
-   * type and metadata of the annotation when creating it as an annotated
-   * dataset.
+   * Optional. The type of annotation to be performed on this data. You must
+   * specify this field if you are using this InputConfig in an
+   * [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
@@ -465,9 +488,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If input contains annotation, user needs to specify the
-   * type and metadata of the annotation when creating it as an annotated
-   * dataset.
+   * Optional. The type of annotation to be performed on this data. You must
+   * specify this field if you are using this InputConfig in an
+   * [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
@@ -489,9 +512,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Metadata about annotations in the input. Each annotation type may
-   * have different metadata.
-   * Metadata for classification problem.
+   * Optional. Metadata about annotations for the input. You must specify this
+   * field if you are using this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] for a
+   * model version that performs classification.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
@@ -506,9 +529,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Metadata about annotations in the input. Each annotation type may
-   * have different metadata.
-   * Metadata for classification problem.
+   * Optional. Metadata about annotations for the input. You must specify this
+   * field if you are using this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] for a
+   * model version that performs classification.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
@@ -525,9 +548,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Metadata about annotations in the input. Each annotation type may
-   * have different metadata.
-   * Metadata for classification problem.
+   * Optional. Metadata about annotations for the input. You must specify this
+   * field if you are using this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] for a
+   * model version that performs classification.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
@@ -1471,6 +1494,13 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.BigQuerySourceOrBuilder>
         bigquerySourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Source located in BigQuery. You must specify this field if you are using
+     * this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
      *
      * @return Whether the bigquerySource field is set.
@@ -1479,6 +1509,13 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       return sourceCase_ == 5;
     }
     /**
+     *
+     *
+     * <pre>
+     * Source located in BigQuery. You must specify this field if you are using
+     * this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
      *
      * @return The bigquerySource.
@@ -1496,7 +1533,16 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datalabeling.v1beta1.BigQuerySource.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source located in BigQuery. You must specify this field if you are using
+     * this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
+     */
     public Builder setBigquerySource(com.google.cloud.datalabeling.v1beta1.BigQuerySource value) {
       if (bigquerySourceBuilder_ == null) {
         if (value == null) {
@@ -1510,7 +1556,16 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 5;
       return this;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source located in BigQuery. You must specify this field if you are using
+     * this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
+     */
     public Builder setBigquerySource(
         com.google.cloud.datalabeling.v1beta1.BigQuerySource.Builder builderForValue) {
       if (bigquerySourceBuilder_ == null) {
@@ -1522,7 +1577,16 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 5;
       return this;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source located in BigQuery. You must specify this field if you are using
+     * this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
+     */
     public Builder mergeBigquerySource(com.google.cloud.datalabeling.v1beta1.BigQuerySource value) {
       if (bigquerySourceBuilder_ == null) {
         if (sourceCase_ == 5
@@ -1546,7 +1610,16 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 5;
       return this;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source located in BigQuery. You must specify this field if you are using
+     * this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
+     */
     public Builder clearBigquerySource() {
       if (bigquerySourceBuilder_ == null) {
         if (sourceCase_ == 5) {
@@ -1563,11 +1636,29 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source located in BigQuery. You must specify this field if you are using
+     * this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
+     */
     public com.google.cloud.datalabeling.v1beta1.BigQuerySource.Builder getBigquerySourceBuilder() {
       return getBigquerySourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source located in BigQuery. You must specify this field if you are using
+     * this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
+     */
     public com.google.cloud.datalabeling.v1beta1.BigQuerySourceOrBuilder
         getBigquerySourceOrBuilder() {
       if ((sourceCase_ == 5) && (bigquerySourceBuilder_ != null)) {
@@ -1579,7 +1670,16 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datalabeling.v1beta1.BigQuerySource.getDefaultInstance();
       }
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source located in BigQuery. You must specify this field if you are using
+     * this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.BigQuerySource,
             com.google.cloud.datalabeling.v1beta1.BigQuerySource.Builder,
@@ -1698,9 +1798,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If input contains annotation, user needs to specify the
-     * type and metadata of the annotation when creating it as an annotated
-     * dataset.
+     * Optional. The type of annotation to be performed on this data. You must
+     * specify this field if you are using this InputConfig in an
+     * [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
@@ -1714,9 +1814,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If input contains annotation, user needs to specify the
-     * type and metadata of the annotation when creating it as an annotated
-     * dataset.
+     * Optional. The type of annotation to be performed on this data. You must
+     * specify this field if you are using this InputConfig in an
+     * [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
@@ -1733,9 +1833,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If input contains annotation, user needs to specify the
-     * type and metadata of the annotation when creating it as an annotated
-     * dataset.
+     * Optional. The type of annotation to be performed on this data. You must
+     * specify this field if you are using this InputConfig in an
+     * [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
@@ -1754,9 +1854,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If input contains annotation, user needs to specify the
-     * type and metadata of the annotation when creating it as an annotated
-     * dataset.
+     * Optional. The type of annotation to be performed on this data. You must
+     * specify this field if you are using this InputConfig in an
+     * [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
@@ -1777,9 +1877,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If input contains annotation, user needs to specify the
-     * type and metadata of the annotation when creating it as an annotated
-     * dataset.
+     * Optional. The type of annotation to be performed on this data. You must
+     * specify this field if you are using this InputConfig in an
+     * [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
@@ -1803,9 +1903,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Metadata about annotations in the input. Each annotation type may
-     * have different metadata.
-     * Metadata for classification problem.
+     * Optional. Metadata about annotations for the input. You must specify this
+     * field if you are using this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] for a
+     * model version that performs classification.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
@@ -1820,9 +1920,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Metadata about annotations in the input. Each annotation type may
-     * have different metadata.
-     * Metadata for classification problem.
+     * Optional. Metadata about annotations for the input. You must specify this
+     * field if you are using this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] for a
+     * model version that performs classification.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
@@ -1844,9 +1944,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Metadata about annotations in the input. Each annotation type may
-     * have different metadata.
-     * Metadata for classification problem.
+     * Optional. Metadata about annotations for the input. You must specify this
+     * field if you are using this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] for a
+     * model version that performs classification.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
@@ -1870,9 +1970,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Metadata about annotations in the input. Each annotation type may
-     * have different metadata.
-     * Metadata for classification problem.
+     * Optional. Metadata about annotations for the input. You must specify this
+     * field if you are using this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] for a
+     * model version that performs classification.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
@@ -1893,9 +1993,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Metadata about annotations in the input. Each annotation type may
-     * have different metadata.
-     * Metadata for classification problem.
+     * Optional. Metadata about annotations for the input. You must specify this
+     * field if you are using this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] for a
+     * model version that performs classification.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
@@ -1924,9 +2024,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Metadata about annotations in the input. Each annotation type may
-     * have different metadata.
-     * Metadata for classification problem.
+     * Optional. Metadata about annotations for the input. You must specify this
+     * field if you are using this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] for a
+     * model version that performs classification.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
@@ -1947,9 +2047,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Metadata about annotations in the input. Each annotation type may
-     * have different metadata.
-     * Metadata for classification problem.
+     * Optional. Metadata about annotations for the input. You must specify this
+     * field if you are using this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] for a
+     * model version that performs classification.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
@@ -1965,9 +2065,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Metadata about annotations in the input. Each annotation type may
-     * have different metadata.
-     * Metadata for classification problem.
+     * Optional. Metadata about annotations for the input. You must specify this
+     * field if you are using this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] for a
+     * model version that performs classification.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
@@ -1987,9 +2087,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Metadata about annotations in the input. Each annotation type may
-     * have different metadata.
-     * Metadata for classification problem.
+     * Optional. Metadata about annotations for the input. You must specify this
+     * field if you are using this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] for a
+     * model version that performs classification.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2432,7 +2432,8 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Gets an evaluation by resource name.
+     * Gets an evaluation by resource name (to search, use
+     * [projects.evaluations.search][google.cloud.datalabeling.v1beta1.DataLabelingService.SearchEvaluations]).
      * </pre>
      */
     public void getEvaluation(
@@ -2446,8 +2447,7 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Searchs evaluations within a project. Supported filter: evaluation_job,
-     * evaluation_time.
+     * Searches [evaluations][google.cloud.datalabeling.v1beta1.Evaluation] within a project.
      * </pre>
      */
     public void searchEvaluations(
@@ -2461,9 +2461,9 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Searchs example comparisons in evaluation, in format of examples
-     * of both ground truth and prediction(s). It is represented as a search with
-     * evaluation id.
+     * Searches example comparisons from an evaluation. The return format is a
+     * list of example comparisons that show ground truth and prediction(s) for
+     * a single input. Search by providing an evaluation ID.
      * </pre>
      */
     public void searchExampleComparisons(
@@ -2492,7 +2492,11 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Updates an evaluation job.
+     * Updates an evaluation job. You can only update certain fields of the job's
+     * [EvaluationJobConfig][google.cloud.datalabeling.v1beta1.EvaluationJobConfig]: `humanAnnotationConfig.instruction`,
+     * `exampleCount`, and `exampleSamplePercentage`.
+     * If you want to change any other aspect of the evaluation job, you must
+     * delete the job and create a new one.
      * </pre>
      */
     public void updateEvaluationJob(
@@ -2520,8 +2524,8 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Pauses an evaluation job. Pausing a evaluation job that is already in
-     * PAUSED state will be a no-op.
+     * Pauses an evaluation job. Pausing an evaluation job that is already in a
+     * `PAUSED` state is a no-op.
      * </pre>
      */
     public void pauseEvaluationJob(
@@ -2534,8 +2538,8 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Resumes a paused evaluation job. Deleted evaluation job can't be resumed.
-     * Resuming a running evaluation job will be a no-op.
+     * Resumes a paused evaluation job. A deleted evaluation job can't be resumed.
+     * Resuming a running or scheduled evaluation job is a no-op.
      * </pre>
      */
     public void resumeEvaluationJob(
@@ -3233,7 +3237,8 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Gets an evaluation by resource name.
+     * Gets an evaluation by resource name (to search, use
+     * [projects.evaluations.search][google.cloud.datalabeling.v1beta1.DataLabelingService.SearchEvaluations]).
      * </pre>
      */
     public void getEvaluation(
@@ -3250,8 +3255,7 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Searchs evaluations within a project. Supported filter: evaluation_job,
-     * evaluation_time.
+     * Searches [evaluations][google.cloud.datalabeling.v1beta1.Evaluation] within a project.
      * </pre>
      */
     public void searchEvaluations(
@@ -3268,9 +3272,9 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Searchs example comparisons in evaluation, in format of examples
-     * of both ground truth and prediction(s). It is represented as a search with
-     * evaluation id.
+     * Searches example comparisons from an evaluation. The return format is a
+     * list of example comparisons that show ground truth and prediction(s) for
+     * a single input. Search by providing an evaluation ID.
      * </pre>
      */
     public void searchExampleComparisons(
@@ -3305,7 +3309,11 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Updates an evaluation job.
+     * Updates an evaluation job. You can only update certain fields of the job's
+     * [EvaluationJobConfig][google.cloud.datalabeling.v1beta1.EvaluationJobConfig]: `humanAnnotationConfig.instruction`,
+     * `exampleCount`, and `exampleSamplePercentage`.
+     * If you want to change any other aspect of the evaluation job, you must
+     * delete the job and create a new one.
      * </pre>
      */
     public void updateEvaluationJob(
@@ -3339,8 +3347,8 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Pauses an evaluation job. Pausing a evaluation job that is already in
-     * PAUSED state will be a no-op.
+     * Pauses an evaluation job. Pausing an evaluation job that is already in a
+     * `PAUSED` state is a no-op.
      * </pre>
      */
     public void pauseEvaluationJob(
@@ -3356,8 +3364,8 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Resumes a paused evaluation job. Deleted evaluation job can't be resumed.
-     * Resuming a running evaluation job will be a no-op.
+     * Resumes a paused evaluation job. A deleted evaluation job can't be resumed.
+     * Resuming a running or scheduled evaluation job is a no-op.
      * </pre>
      */
     public void resumeEvaluationJob(
@@ -3749,7 +3757,8 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Gets an evaluation by resource name.
+     * Gets an evaluation by resource name (to search, use
+     * [projects.evaluations.search][google.cloud.datalabeling.v1beta1.DataLabelingService.SearchEvaluations]).
      * </pre>
      */
     public com.google.cloud.datalabeling.v1beta1.Evaluation getEvaluation(
@@ -3762,8 +3771,7 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Searchs evaluations within a project. Supported filter: evaluation_job,
-     * evaluation_time.
+     * Searches [evaluations][google.cloud.datalabeling.v1beta1.Evaluation] within a project.
      * </pre>
      */
     public com.google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse searchEvaluations(
@@ -3776,9 +3784,9 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Searchs example comparisons in evaluation, in format of examples
-     * of both ground truth and prediction(s). It is represented as a search with
-     * evaluation id.
+     * Searches example comparisons from an evaluation. The return format is a
+     * list of example comparisons that show ground truth and prediction(s) for
+     * a single input. Search by providing an evaluation ID.
      * </pre>
      */
     public com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse
@@ -3805,7 +3813,11 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Updates an evaluation job.
+     * Updates an evaluation job. You can only update certain fields of the job's
+     * [EvaluationJobConfig][google.cloud.datalabeling.v1beta1.EvaluationJobConfig]: `humanAnnotationConfig.instruction`,
+     * `exampleCount`, and `exampleSamplePercentage`.
+     * If you want to change any other aspect of the evaluation job, you must
+     * delete the job and create a new one.
      * </pre>
      */
     public com.google.cloud.datalabeling.v1beta1.EvaluationJob updateEvaluationJob(
@@ -3831,8 +3843,8 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Pauses an evaluation job. Pausing a evaluation job that is already in
-     * PAUSED state will be a no-op.
+     * Pauses an evaluation job. Pausing an evaluation job that is already in a
+     * `PAUSED` state is a no-op.
      * </pre>
      */
     public com.google.protobuf.Empty pauseEvaluationJob(
@@ -3845,8 +3857,8 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Resumes a paused evaluation job. Deleted evaluation job can't be resumed.
-     * Resuming a running evaluation job will be a no-op.
+     * Resumes a paused evaluation job. A deleted evaluation job can't be resumed.
+     * Resuming a running or scheduled evaluation job is a no-op.
      * </pre>
      */
     public com.google.protobuf.Empty resumeEvaluationJob(
@@ -4249,7 +4261,8 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Gets an evaluation by resource name.
+     * Gets an evaluation by resource name (to search, use
+     * [projects.evaluations.search][google.cloud.datalabeling.v1beta1.DataLabelingService.SearchEvaluations]).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -4263,8 +4276,7 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Searchs evaluations within a project. Supported filter: evaluation_job,
-     * evaluation_time.
+     * Searches [evaluations][google.cloud.datalabeling.v1beta1.Evaluation] within a project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -4278,9 +4290,9 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Searchs example comparisons in evaluation, in format of examples
-     * of both ground truth and prediction(s). It is represented as a search with
-     * evaluation id.
+     * Searches example comparisons from an evaluation. The return format is a
+     * list of example comparisons that show ground truth and prediction(s) for
+     * a single input. Search by providing an evaluation ID.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -4311,7 +4323,11 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Updates an evaluation job.
+     * Updates an evaluation job. You can only update certain fields of the job's
+     * [EvaluationJobConfig][google.cloud.datalabeling.v1beta1.EvaluationJobConfig]: `humanAnnotationConfig.instruction`,
+     * `exampleCount`, and `exampleSamplePercentage`.
+     * If you want to change any other aspect of the evaluation job, you must
+     * delete the job and create a new one.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -4340,8 +4356,8 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Pauses an evaluation job. Pausing a evaluation job that is already in
-     * PAUSED state will be a no-op.
+     * Pauses an evaluation job. Pausing an evaluation job that is already in a
+     * `PAUSED` state is a no-op.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -4355,8 +4371,8 @@ public final class DataLabelingServiceGrpc {
      *
      *
      * <pre>
-     * Resumes a paused evaluation job. Deleted evaluation job can't be resumed.
-     * Resuming a running evaluation job will be a no-op.
+     * Resumes a paused evaluation job. A deleted evaluation job can't be resumed.
+     * Resuming a running or scheduled evaluation job is a no-op.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

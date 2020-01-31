@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -143,7 +143,9 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
    * Required. Evaluation job that is going to be updated.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the evaluationJob field is set.
    */
@@ -157,7 +159,9 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
    * Required. Evaluation job that is going to be updated.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The evaluationJob.
    */
@@ -173,7 +177,9 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
    * Required. Evaluation job that is going to be updated.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datalabeling.v1beta1.EvaluationJobOrBuilder getEvaluationJobOrBuilder() {
     return getEvaluationJob();
@@ -185,10 +191,17 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. Mask for which field in evaluation_job should be updated.
+   * Optional. Mask for which fields to update. You can only provide the
+   * following fields:
+   * * `evaluationJobConfig.humanAnnotationConfig.instruction`
+   * * `evaluationJobConfig.exampleCount`
+   * * `evaluationJobConfig.exampleSamplePercentage`
+   * You can provide more than one of these fields by separating them with
+   * commas.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -199,10 +212,17 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. Mask for which field in evaluation_job should be updated.
+   * Optional. Mask for which fields to update. You can only provide the
+   * following fields:
+   * * `evaluationJobConfig.humanAnnotationConfig.instruction`
+   * * `evaluationJobConfig.exampleCount`
+   * * `evaluationJobConfig.exampleSamplePercentage`
+   * You can provide more than one of these fields by separating them with
+   * commas.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -213,10 +233,17 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. Mask for which field in evaluation_job should be updated.
+   * Optional. Mask for which fields to update. You can only provide the
+   * following fields:
+   * * `evaluationJobConfig.humanAnnotationConfig.instruction`
+   * * `evaluationJobConfig.exampleCount`
+   * * `evaluationJobConfig.exampleSamplePercentage`
+   * You can provide more than one of these fields by separating them with
+   * commas.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -598,7 +625,9 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. Evaluation job that is going to be updated.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the evaluationJob field is set.
      */
@@ -612,7 +641,9 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. Evaluation job that is going to be updated.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The evaluationJob.
      */
@@ -632,7 +663,9 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. Evaluation job that is going to be updated.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEvaluationJob(com.google.cloud.datalabeling.v1beta1.EvaluationJob value) {
       if (evaluationJobBuilder_ == null) {
@@ -654,7 +687,9 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. Evaluation job that is going to be updated.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEvaluationJob(
         com.google.cloud.datalabeling.v1beta1.EvaluationJob.Builder builderForValue) {
@@ -674,7 +709,9 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. Evaluation job that is going to be updated.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeEvaluationJob(com.google.cloud.datalabeling.v1beta1.EvaluationJob value) {
       if (evaluationJobBuilder_ == null) {
@@ -700,7 +737,9 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. Evaluation job that is going to be updated.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearEvaluationJob() {
       if (evaluationJobBuilder_ == null) {
@@ -720,7 +759,9 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. Evaluation job that is going to be updated.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.EvaluationJob.Builder getEvaluationJobBuilder() {
 
@@ -734,7 +775,9 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. Evaluation job that is going to be updated.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.EvaluationJobOrBuilder
         getEvaluationJobOrBuilder() {
@@ -753,7 +796,9 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. Evaluation job that is going to be updated.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.EvaluationJob,
@@ -782,10 +827,17 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Mask for which field in evaluation_job should be updated.
+     * Optional. Mask for which fields to update. You can only provide the
+     * following fields:
+     * * `evaluationJobConfig.humanAnnotationConfig.instruction`
+     * * `evaluationJobConfig.exampleCount`
+     * * `evaluationJobConfig.exampleSamplePercentage`
+     * You can provide more than one of these fields by separating them with
+     * commas.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -796,10 +848,17 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Mask for which field in evaluation_job should be updated.
+     * Optional. Mask for which fields to update. You can only provide the
+     * following fields:
+     * * `evaluationJobConfig.humanAnnotationConfig.instruction`
+     * * `evaluationJobConfig.exampleCount`
+     * * `evaluationJobConfig.exampleSamplePercentage`
+     * You can provide more than one of these fields by separating them with
+     * commas.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -816,10 +875,17 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Mask for which field in evaluation_job should be updated.
+     * Optional. Mask for which fields to update. You can only provide the
+     * following fields:
+     * * `evaluationJobConfig.humanAnnotationConfig.instruction`
+     * * `evaluationJobConfig.exampleCount`
+     * * `evaluationJobConfig.exampleSamplePercentage`
+     * You can provide more than one of these fields by separating them with
+     * commas.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -838,10 +904,17 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Mask for which field in evaluation_job should be updated.
+     * Optional. Mask for which fields to update. You can only provide the
+     * following fields:
+     * * `evaluationJobConfig.humanAnnotationConfig.instruction`
+     * * `evaluationJobConfig.exampleCount`
+     * * `evaluationJobConfig.exampleSamplePercentage`
+     * You can provide more than one of these fields by separating them with
+     * commas.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -857,10 +930,17 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Mask for which field in evaluation_job should be updated.
+     * Optional. Mask for which fields to update. You can only provide the
+     * following fields:
+     * * `evaluationJobConfig.humanAnnotationConfig.instruction`
+     * * `evaluationJobConfig.exampleCount`
+     * * `evaluationJobConfig.exampleSamplePercentage`
+     * You can provide more than one of these fields by separating them with
+     * commas.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -881,10 +961,17 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Mask for which field in evaluation_job should be updated.
+     * Optional. Mask for which fields to update. You can only provide the
+     * following fields:
+     * * `evaluationJobConfig.humanAnnotationConfig.instruction`
+     * * `evaluationJobConfig.exampleCount`
+     * * `evaluationJobConfig.exampleSamplePercentage`
+     * You can provide more than one of these fields by separating them with
+     * commas.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -901,10 +988,17 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Mask for which field in evaluation_job should be updated.
+     * Optional. Mask for which fields to update. You can only provide the
+     * following fields:
+     * * `evaluationJobConfig.humanAnnotationConfig.instruction`
+     * * `evaluationJobConfig.exampleCount`
+     * * `evaluationJobConfig.exampleSamplePercentage`
+     * You can provide more than one of these fields by separating them with
+     * commas.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -915,10 +1009,17 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Mask for which field in evaluation_job should be updated.
+     * Optional. Mask for which fields to update. You can only provide the
+     * following fields:
+     * * `evaluationJobConfig.humanAnnotationConfig.instruction`
+     * * `evaluationJobConfig.exampleCount`
+     * * `evaluationJobConfig.exampleSamplePercentage`
+     * You can provide more than one of these fields by separating them with
+     * commas.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -933,10 +1034,17 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Mask for which field in evaluation_job should be updated.
+     * Optional. Mask for which fields to update. You can only provide the
+     * following fields:
+     * * `evaluationJobConfig.humanAnnotationConfig.instruction`
+     * * `evaluationJobConfig.exampleCount`
+     * * `evaluationJobConfig.exampleSamplePercentage`
+     * You can provide more than one of these fields by separating them with
+     * commas.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

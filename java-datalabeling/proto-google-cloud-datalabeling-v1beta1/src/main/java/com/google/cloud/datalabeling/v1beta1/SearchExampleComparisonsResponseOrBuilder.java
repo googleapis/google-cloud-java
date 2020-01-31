@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,12 @@ public interface SearchExampleComparisonsResponseOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * A list of example comparisons matching the search criteria.
+   * </pre>
+   *
    * <code>
    * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
    * </code>
@@ -32,6 +38,12 @@ public interface SearchExampleComparisonsResponseOrBuilder
           com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison>
       getExampleComparisonsList();
   /**
+   *
+   *
+   * <pre>
+   * A list of example comparisons matching the search criteria.
+   * </pre>
+   *
    * <code>
    * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
    * </code>
@@ -39,12 +51,24 @@ public interface SearchExampleComparisonsResponseOrBuilder
   com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison
       getExampleComparisons(int index);
   /**
+   *
+   *
+   * <pre>
+   * A list of example comparisons matching the search criteria.
+   * </pre>
+   *
    * <code>
    * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
    * </code>
    */
   int getExampleComparisonsCount();
   /**
+   *
+   *
+   * <pre>
+   * A list of example comparisons matching the search criteria.
+   * </pre>
+   *
    * <code>
    * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
    * </code>
@@ -55,6 +79,12 @@ public interface SearchExampleComparisonsResponseOrBuilder
                   .ExampleComparisonOrBuilder>
       getExampleComparisonsOrBuilderList();
   /**
+   *
+   *
+   * <pre>
+   * A list of example comparisons matching the search criteria.
+   * </pre>
+   *
    * <code>
    * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
    * </code>

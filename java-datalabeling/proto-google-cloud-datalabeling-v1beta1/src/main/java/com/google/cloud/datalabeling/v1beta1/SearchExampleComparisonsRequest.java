@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,12 +131,14 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Name of the Evaluation resource to search example comparison
-   * from. Format:
-   * projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}
+   * Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] resource to search for example
+   * comparisons from. Format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -155,12 +157,14 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Name of the Evaluation resource to search example comparison
-   * from. Format:
-   * projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}
+   * Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] resource to search for example
+   * comparisons from. Format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -186,7 +190,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
    * requested. Default value is 100.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -201,13 +205,14 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
    *
    * <pre>
    * Optional. A token identifying a page of results for the server to return.
-   * Typically obtained by
-   * [SearchExampleComparisons.next_page_token][] of the previous
-   * [DataLabelingService.SearchExampleComparisons] call.
-   * Return first page if empty.
+   * Typically obtained by the
+   * [nextPageToken][SearchExampleComparisons.next_page_token] of the response
+   * to a previous search rquest.
+   * If you don't specify this field, the API call requests the first page of
+   * the search.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -227,13 +232,14 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
    *
    * <pre>
    * Optional. A token identifying a page of results for the server to return.
-   * Typically obtained by
-   * [SearchExampleComparisons.next_page_token][] of the previous
-   * [DataLabelingService.SearchExampleComparisons] call.
-   * Return first page if empty.
+   * Typically obtained by the
+   * [nextPageToken][SearchExampleComparisons.next_page_token] of the response
+   * to a previous search rquest.
+   * If you don't specify this field, the API call requests the first page of
+   * the search.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -612,12 +618,14 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Name of the Evaluation resource to search example comparison
-     * from. Format:
-     * projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}
+     * Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] resource to search for example
+     * comparisons from. Format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -636,12 +644,14 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Name of the Evaluation resource to search example comparison
-     * from. Format:
-     * projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}
+     * Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] resource to search for example
+     * comparisons from. Format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -660,12 +670,14 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Name of the Evaluation resource to search example comparison
-     * from. Format:
-     * projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}
+     * Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] resource to search for example
+     * comparisons from. Format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -683,12 +695,14 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Name of the Evaluation resource to search example comparison
-     * from. Format:
-     * projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}
+     * Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] resource to search for example
+     * comparisons from. Format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -702,12 +716,14 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Name of the Evaluation resource to search example comparison
-     * from. Format:
-     * projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}
+     * Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] resource to search for example
+     * comparisons from. Format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -732,7 +748,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      * requested. Default value is 100.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -747,7 +763,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      * requested. Default value is 100.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -766,7 +782,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      * requested. Default value is 100.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -783,13 +799,14 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
-     * Typically obtained by
-     * [SearchExampleComparisons.next_page_token][] of the previous
-     * [DataLabelingService.SearchExampleComparisons] call.
-     * Return first page if empty.
+     * Typically obtained by the
+     * [nextPageToken][SearchExampleComparisons.next_page_token] of the response
+     * to a previous search rquest.
+     * If you don't specify this field, the API call requests the first page of
+     * the search.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -809,13 +826,14 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
-     * Typically obtained by
-     * [SearchExampleComparisons.next_page_token][] of the previous
-     * [DataLabelingService.SearchExampleComparisons] call.
-     * Return first page if empty.
+     * Typically obtained by the
+     * [nextPageToken][SearchExampleComparisons.next_page_token] of the response
+     * to a previous search rquest.
+     * If you don't specify this field, the API call requests the first page of
+     * the search.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -835,13 +853,14 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
-     * Typically obtained by
-     * [SearchExampleComparisons.next_page_token][] of the previous
-     * [DataLabelingService.SearchExampleComparisons] call.
-     * Return first page if empty.
+     * Typically obtained by the
+     * [nextPageToken][SearchExampleComparisons.next_page_token] of the response
+     * to a previous search rquest.
+     * If you don't specify this field, the API call requests the first page of
+     * the search.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -860,13 +879,14 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
-     * Typically obtained by
-     * [SearchExampleComparisons.next_page_token][] of the previous
-     * [DataLabelingService.SearchExampleComparisons] call.
-     * Return first page if empty.
+     * Typically obtained by the
+     * [nextPageToken][SearchExampleComparisons.next_page_token] of the response
+     * to a previous search rquest.
+     * If you don't specify this field, the API call requests the first page of
+     * the search.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -881,13 +901,14 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
-     * Typically obtained by
-     * [SearchExampleComparisons.next_page_token][] of the previous
-     * [DataLabelingService.SearchExampleComparisons] call.
-     * Return first page if empty.
+     * Typically obtained by the
+     * [nextPageToken][SearchExampleComparisons.next_page_token] of the response
+     * to a previous search rquest.
+     * If you don't specify this field, the API call requests the first page of
+     * the search.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.

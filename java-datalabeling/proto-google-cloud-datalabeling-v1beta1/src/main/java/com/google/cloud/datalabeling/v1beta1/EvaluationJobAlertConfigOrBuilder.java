@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public interface EvaluationJobAlertConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Email of the user who will be receiving the alert.
+   * Required. An email address to send alerts to.
    * </pre>
    *
    * <code>string email = 1;</code>
@@ -39,7 +39,7 @@ public interface EvaluationJobAlertConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Email of the user who will be receiving the alert.
+   * Required. An email address to send alerts to.
    * </pre>
    *
    * <code>string email = 1;</code>
@@ -52,8 +52,11 @@ public interface EvaluationJobAlertConfigOrBuilder
    *
    *
    * <pre>
-   * If a single evaluation run's aggregate mean average precision is
-   * lower than this threshold, the alert will be triggered.
+   * Required. A number between 0 and 1 that describes a minimum mean average
+   * precision threshold. When the evaluation job runs, if it calculates that
+   * your model version's predictions from the recent interval have
+   * [meanAveragePrecision][google.cloud.datalabeling.v1beta1.PrCurve.mean_average_precision] below this
+   * threshold, then it sends an alert to your specified email.
    * </pre>
    *
    * <code>double min_acceptable_mean_average_precision = 2;</code>

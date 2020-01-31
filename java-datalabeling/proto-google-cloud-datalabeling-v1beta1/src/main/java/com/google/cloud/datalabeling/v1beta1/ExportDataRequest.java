@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -162,7 +162,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * projects/{project_id}/datasets/{dataset_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -185,7 +187,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * projects/{project_id}/datasets/{dataset_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -214,7 +218,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * {annotated_dataset_id}
    * </pre>
    *
-   * <code>string annotated_dataset = 2;</code>
+   * <code>
+   * string annotated_dataset = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The annotatedDataset.
    */
@@ -240,7 +246,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * {annotated_dataset_id}
    * </pre>
    *
-   * <code>string annotated_dataset = 2;</code>
+   * <code>
+   * string annotated_dataset = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for annotatedDataset.
    */
@@ -265,7 +273,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * Optional. Filter is not supported at this moment.
    * </pre>
    *
-   * <code>string filter = 3;</code>
+   * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -287,7 +295,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * Optional. Filter is not supported at this moment.
    * </pre>
    *
-   * <code>string filter = 3;</code>
+   * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -312,7 +320,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * Required. Specify the output destination.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the outputConfig field is set.
    */
@@ -326,7 +336,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * Required. Specify the output destination.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The outputConfig.
    */
@@ -342,7 +354,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * Required. Specify the output destination.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datalabeling.v1beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
@@ -801,7 +815,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -824,7 +840,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -847,7 +865,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -869,7 +889,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -887,7 +909,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -915,7 +939,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * {annotated_dataset_id}
      * </pre>
      *
-     * <code>string annotated_dataset = 2;</code>
+     * <code>
+     * string annotated_dataset = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The annotatedDataset.
      */
@@ -941,7 +967,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * {annotated_dataset_id}
      * </pre>
      *
-     * <code>string annotated_dataset = 2;</code>
+     * <code>
+     * string annotated_dataset = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for annotatedDataset.
      */
@@ -967,7 +995,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * {annotated_dataset_id}
      * </pre>
      *
-     * <code>string annotated_dataset = 2;</code>
+     * <code>
+     * string annotated_dataset = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The annotatedDataset to set.
      * @return This builder for chaining.
@@ -992,7 +1022,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * {annotated_dataset_id}
      * </pre>
      *
-     * <code>string annotated_dataset = 2;</code>
+     * <code>
+     * string annotated_dataset = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1013,7 +1045,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * {annotated_dataset_id}
      * </pre>
      *
-     * <code>string annotated_dataset = 2;</code>
+     * <code>
+     * string annotated_dataset = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for annotatedDataset to set.
      * @return This builder for chaining.
@@ -1037,7 +1071,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Filter is not supported at this moment.
      * </pre>
      *
-     * <code>string filter = 3;</code>
+     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The filter.
      */
@@ -1059,7 +1093,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Filter is not supported at this moment.
      * </pre>
      *
-     * <code>string filter = 3;</code>
+     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for filter.
      */
@@ -1081,7 +1115,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Filter is not supported at this moment.
      * </pre>
      *
-     * <code>string filter = 3;</code>
+     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -1102,7 +1136,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Filter is not supported at this moment.
      * </pre>
      *
-     * <code>string filter = 3;</code>
+     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1119,7 +1153,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Filter is not supported at this moment.
      * </pre>
      *
-     * <code>string filter = 3;</code>
+     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -1148,7 +1182,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the output destination.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the outputConfig field is set.
      */
@@ -1162,7 +1198,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the output destination.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The outputConfig.
      */
@@ -1182,7 +1220,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the output destination.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(com.google.cloud.datalabeling.v1beta1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -1204,7 +1244,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the output destination.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(
         com.google.cloud.datalabeling.v1beta1.OutputConfig.Builder builderForValue) {
@@ -1224,7 +1266,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the output destination.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeOutputConfig(com.google.cloud.datalabeling.v1beta1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -1250,7 +1294,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the output destination.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearOutputConfig() {
       if (outputConfigBuilder_ == null) {
@@ -1270,7 +1316,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the output destination.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.OutputConfig.Builder getOutputConfigBuilder() {
 
@@ -1284,7 +1332,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the output destination.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
       if (outputConfigBuilder_ != null) {
@@ -1302,7 +1352,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * Required. Specify the output destination.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.OutputConfig,

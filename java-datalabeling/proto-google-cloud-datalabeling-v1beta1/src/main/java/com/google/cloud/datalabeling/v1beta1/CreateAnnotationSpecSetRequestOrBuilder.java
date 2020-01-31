@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,9 @@ public interface CreateAnnotationSpecSetRequestOrBuilder
    * projects/{project_id}
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -44,7 +46,9 @@ public interface CreateAnnotationSpecSetRequestOrBuilder
    * projects/{project_id}
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -59,7 +63,9 @@ public interface CreateAnnotationSpecSetRequestOrBuilder
    * display_name.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_set = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_set = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the annotationSpecSet field is set.
    */
@@ -73,7 +79,9 @@ public interface CreateAnnotationSpecSetRequestOrBuilder
    * display_name.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_set = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_set = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The annotationSpecSet.
    */
@@ -87,7 +95,9 @@ public interface CreateAnnotationSpecSetRequestOrBuilder
    * display_name.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_set = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_set = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOrBuilder getAnnotationSpecSetOrBuilder();
 }

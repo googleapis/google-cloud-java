@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -142,7 +142,9 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
    * projects/{project_id}
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -165,7 +167,9 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
    * projects/{project_id}
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -190,7 +194,7 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
    * Optional. Filter is not supported at this moment.
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -212,7 +216,7 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
    * Optional. Filter is not supported at this moment.
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -238,7 +242,7 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
    * requested. Default value is 100.
    * </pre>
    *
-   * <code>int32 page_size = 3;</code>
+   * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -254,12 +258,12 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
    * <pre>
    * Optional. A token identifying a page of results for the server to return.
    * Typically obtained by
-   * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token]
-   * of the previous [DataLabelingService.ListAnnotationSpecSets] call. Return
-   * first page if empty.
+   * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token] of the previous
+   * [DataLabelingService.ListAnnotationSpecSets] call.
+   * Return first page if empty.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -280,12 +284,12 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
    * <pre>
    * Optional. A token identifying a page of results for the server to return.
    * Typically obtained by
-   * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token]
-   * of the previous [DataLabelingService.ListAnnotationSpecSets] call. Return
-   * first page if empty.
+   * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token] of the previous
+   * [DataLabelingService.ListAnnotationSpecSets] call.
+   * Return first page if empty.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -684,7 +688,9 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * projects/{project_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -707,7 +713,9 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * projects/{project_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -730,7 +738,9 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * projects/{project_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -752,7 +762,9 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * projects/{project_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -770,7 +782,9 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * projects/{project_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -794,7 +808,7 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * Optional. Filter is not supported at this moment.
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The filter.
      */
@@ -816,7 +830,7 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * Optional. Filter is not supported at this moment.
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for filter.
      */
@@ -838,7 +852,7 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * Optional. Filter is not supported at this moment.
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -859,7 +873,7 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * Optional. Filter is not supported at this moment.
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -876,7 +890,7 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * Optional. Filter is not supported at this moment.
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -901,7 +915,7 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * requested. Default value is 100.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -916,7 +930,7 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * requested. Default value is 100.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -935,7 +949,7 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * requested. Default value is 100.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -953,12 +967,12 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token]
-     * of the previous [DataLabelingService.ListAnnotationSpecSets] call. Return
-     * first page if empty.
+     * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token] of the previous
+     * [DataLabelingService.ListAnnotationSpecSets] call.
+     * Return first page if empty.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -979,12 +993,12 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token]
-     * of the previous [DataLabelingService.ListAnnotationSpecSets] call. Return
-     * first page if empty.
+     * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token] of the previous
+     * [DataLabelingService.ListAnnotationSpecSets] call.
+     * Return first page if empty.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -1005,12 +1019,12 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token]
-     * of the previous [DataLabelingService.ListAnnotationSpecSets] call. Return
-     * first page if empty.
+     * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token] of the previous
+     * [DataLabelingService.ListAnnotationSpecSets] call.
+     * Return first page if empty.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -1030,12 +1044,12 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token]
-     * of the previous [DataLabelingService.ListAnnotationSpecSets] call. Return
-     * first page if empty.
+     * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token] of the previous
+     * [DataLabelingService.ListAnnotationSpecSets] call.
+     * Return first page if empty.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1051,12 +1065,12 @@ public final class ListAnnotationSpecSetsRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. A token identifying a page of results for the server to return.
      * Typically obtained by
-     * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token]
-     * of the previous [DataLabelingService.ListAnnotationSpecSets] call. Return
-     * first page if empty.
+     * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token] of the previous
+     * [DataLabelingService.ListAnnotationSpecSets] call.
+     * Return first page if empty.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.

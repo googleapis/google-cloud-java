@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,17 @@ public interface EvaluationJobConfigOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * Specify this field if your model version performs image classification or
+   * general classification.
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * `allowMultiLabel` in this configuration must match
+   * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+   * </pre>
+   *
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
    * </code>
@@ -32,6 +43,17 @@ public interface EvaluationJobConfigOrBuilder
    */
   boolean hasImageClassificationConfig();
   /**
+   *
+   *
+   * <pre>
+   * Specify this field if your model version performs image classification or
+   * general classification.
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * `allowMultiLabel` in this configuration must match
+   * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+   * </pre>
+   *
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
    * </code>
@@ -40,6 +62,17 @@ public interface EvaluationJobConfigOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig getImageClassificationConfig();
   /**
+   *
+   *
+   * <pre>
+   * Specify this field if your model version performs image classification or
+   * general classification.
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * `allowMultiLabel` in this configuration must match
+   * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+   * </pre>
+   *
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
    * </code>
@@ -48,69 +81,61 @@ public interface EvaluationJobConfigOrBuilder
       getImageClassificationConfigOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Specify this field if your model version performs image object detection
+   * (bounding box detection).
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
    *
    * @return Whether the boundingPolyConfig field is set.
    */
   boolean hasBoundingPolyConfig();
   /**
+   *
+   *
+   * <pre>
+   * Specify this field if your model version performs image object detection
+   * (bounding box detection).
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
    *
    * @return The boundingPolyConfig.
    */
   com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig getBoundingPolyConfig();
   /**
+   *
+   *
+   * <pre>
+   * Specify this field if your model version performs image object detection
+   * (bounding box detection).
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
    */
   com.google.cloud.datalabeling.v1beta1.BoundingPolyConfigOrBuilder
       getBoundingPolyConfigOrBuilder();
 
   /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
-   * </code>
    *
-   * @return Whether the videoClassificationConfig field is set.
-   */
-  boolean hasVideoClassificationConfig();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
-   * </code>
    *
-   * @return The videoClassificationConfig.
-   */
-  com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig getVideoClassificationConfig();
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.VideoClassificationConfigOrBuilder
-      getVideoClassificationConfigOrBuilder();
-
-  /**
-   * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
-   * </code>
+   * <pre>
+   * Specify this field if your model version performs text classification.
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * `allowMultiLabel` in this configuration must match
+   * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+   * </pre>
    *
-   * @return Whether the objectDetectionConfig field is set.
-   */
-  boolean hasObjectDetectionConfig();
-  /**
-   * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
-   * </code>
-   *
-   * @return The objectDetectionConfig.
-   */
-  com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig getObjectDetectionConfig();
-  /**
-   * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfigOrBuilder
-      getObjectDetectionConfigOrBuilder();
-
-  /**
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
    * </code>
@@ -119,6 +144,16 @@ public interface EvaluationJobConfigOrBuilder
    */
   boolean hasTextClassificationConfig();
   /**
+   *
+   *
+   * <pre>
+   * Specify this field if your model version performs text classification.
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * `allowMultiLabel` in this configuration must match
+   * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+   * </pre>
+   *
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
    * </code>
@@ -127,6 +162,16 @@ public interface EvaluationJobConfigOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.TextClassificationConfig getTextClassificationConfig();
   /**
+   *
+   *
+   * <pre>
+   * Specify this field if your model version performs text classification.
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * `allowMultiLabel` in this configuration must match
+   * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+   * </pre>
+   *
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
    * </code>
@@ -135,32 +180,18 @@ public interface EvaluationJobConfigOrBuilder
       getTextClassificationConfigOrBuilder();
 
   /**
-   * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
-   * </code>
-   *
-   * @return Whether the objectTrackingConfig field is set.
-   */
-  boolean hasObjectTrackingConfig();
-  /**
-   * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
-   * </code>
-   *
-   * @return The objectTrackingConfig.
-   */
-  com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig getObjectTrackingConfig();
-  /**
-   * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
-   * </code>
-   */
-  com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfigOrBuilder
-      getObjectTrackingConfigOrBuilder();
-
-  /**
    *
    *
    * <pre>
-   * Input config for data, gcs_source in the config will be the root path for
-   * data. Data should be organzied chronically under that path.
+   * Rquired. Details for the sampled prediction input. Within this
+   * configuration, there are requirements for several fields:
+   * * `dataType` must be one of `IMAGE`, `TEXT`, or `GENERAL_DATA`.
+   * * `annotationType` must be one of `IMAGE_CLASSIFICATION_ANNOTATION`,
+   *   `TEXT_CLASSIFICATION_ANNOTATION`, `GENERAL_CLASSIFICATION_ANNOTATION`,
+   *   or `IMAGE_BOUNDING_BOX_ANNOTATION` (image object detection).
+   * * If your machine learning model performs classification, you must specify
+   *   `classificationMetadata.isMultiLabel`.
+   * * You must specify `bigquerySource` (not `gcsSource`).
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
@@ -172,8 +203,15 @@ public interface EvaluationJobConfigOrBuilder
    *
    *
    * <pre>
-   * Input config for data, gcs_source in the config will be the root path for
-   * data. Data should be organzied chronically under that path.
+   * Rquired. Details for the sampled prediction input. Within this
+   * configuration, there are requirements for several fields:
+   * * `dataType` must be one of `IMAGE`, `TEXT`, or `GENERAL_DATA`.
+   * * `annotationType` must be one of `IMAGE_CLASSIFICATION_ANNOTATION`,
+   *   `TEXT_CLASSIFICATION_ANNOTATION`, `GENERAL_CLASSIFICATION_ANNOTATION`,
+   *   or `IMAGE_BOUNDING_BOX_ANNOTATION` (image object detection).
+   * * If your machine learning model performs classification, you must specify
+   *   `classificationMetadata.isMultiLabel`.
+   * * You must specify `bigquerySource` (not `gcsSource`).
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
@@ -185,8 +223,15 @@ public interface EvaluationJobConfigOrBuilder
    *
    *
    * <pre>
-   * Input config for data, gcs_source in the config will be the root path for
-   * data. Data should be organzied chronically under that path.
+   * Rquired. Details for the sampled prediction input. Within this
+   * configuration, there are requirements for several fields:
+   * * `dataType` must be one of `IMAGE`, `TEXT`, or `GENERAL_DATA`.
+   * * `annotationType` must be one of `IMAGE_CLASSIFICATION_ANNOTATION`,
+   *   `TEXT_CLASSIFICATION_ANNOTATION`, `GENERAL_CLASSIFICATION_ANNOTATION`,
+   *   or `IMAGE_BOUNDING_BOX_ANNOTATION` (image object detection).
+   * * If your machine learning model performs classification, you must specify
+   *   `classificationMetadata.isMultiLabel`.
+   * * You must specify `bigquerySource` (not `gcsSource`).
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
@@ -197,7 +242,11 @@ public interface EvaluationJobConfigOrBuilder
    *
    *
    * <pre>
-   * Config used to create evaluation.
+   * Required. Details for calculating evaluation metrics and creating
+   * [Evaulations][google.cloud.datalabeling.v1beta1.Evaluation]. If your model version performs image object
+   * detection, you must specify the `boundingBoxEvaluationOptions` field within
+   * this configuration. Otherwise, provide an empty object for this
+   * configuration.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
@@ -209,7 +258,11 @@ public interface EvaluationJobConfigOrBuilder
    *
    *
    * <pre>
-   * Config used to create evaluation.
+   * Required. Details for calculating evaluation metrics and creating
+   * [Evaulations][google.cloud.datalabeling.v1beta1.Evaluation]. If your model version performs image object
+   * detection, you must specify the `boundingBoxEvaluationOptions` field within
+   * this configuration. Otherwise, provide an empty object for this
+   * configuration.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
@@ -221,7 +274,11 @@ public interface EvaluationJobConfigOrBuilder
    *
    *
    * <pre>
-   * Config used to create evaluation.
+   * Required. Details for calculating evaluation metrics and creating
+   * [Evaulations][google.cloud.datalabeling.v1beta1.Evaluation]. If your model version performs image object
+   * detection, you must specify the `boundingBoxEvaluationOptions` field within
+   * this configuration. Otherwise, provide an empty object for this
+   * configuration.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
@@ -229,6 +286,18 @@ public interface EvaluationJobConfigOrBuilder
   com.google.cloud.datalabeling.v1beta1.EvaluationConfigOrBuilder getEvaluationConfigOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. Details for human annotation of your data. If you set
+   * [labelMissingGroundTruth][google.cloud.datalabeling.v1beta1.EvaluationJob.label_missing_ground_truth] to
+   * `true` for this evaluation job, then you must specify this field. If you
+   * plan to provide your own ground truth labels, then omit this field.
+   * Note that you must create an [Instruction][google.cloud.datalabeling.v1beta1.Instruction] resource before you can
+   * specify this field. Provide the name of the instruction resource in the
+   * `instruction` field within this configuration.
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
    * </code>
    *
@@ -236,6 +305,18 @@ public interface EvaluationJobConfigOrBuilder
    */
   boolean hasHumanAnnotationConfig();
   /**
+   *
+   *
+   * <pre>
+   * Optional. Details for human annotation of your data. If you set
+   * [labelMissingGroundTruth][google.cloud.datalabeling.v1beta1.EvaluationJob.label_missing_ground_truth] to
+   * `true` for this evaluation job, then you must specify this field. If you
+   * plan to provide your own ground truth labels, then omit this field.
+   * Note that you must create an [Instruction][google.cloud.datalabeling.v1beta1.Instruction] resource before you can
+   * specify this field. Provide the name of the instruction resource in the
+   * `instruction` field within this configuration.
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
    * </code>
    *
@@ -243,6 +324,18 @@ public interface EvaluationJobConfigOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getHumanAnnotationConfig();
   /**
+   *
+   *
+   * <pre>
+   * Optional. Details for human annotation of your data. If you set
+   * [labelMissingGroundTruth][google.cloud.datalabeling.v1beta1.EvaluationJob.label_missing_ground_truth] to
+   * `true` for this evaluation job, then you must specify this field. If you
+   * plan to provide your own ground truth labels, then omit this field.
+   * Note that you must create an [Instruction][google.cloud.datalabeling.v1beta1.Instruction] resource before you can
+   * specify this field. Provide the name of the instruction resource in the
+   * `instruction` field within this configuration.
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
    * </code>
    */
@@ -253,13 +346,22 @@ public interface EvaluationJobConfigOrBuilder
    *
    *
    * <pre>
-   * Mappings between reserved keys for bigquery import and customized tensor
-   * names. Key is the reserved key, value is tensor name in the bigquery table.
-   * Different annotation type has different required key mapping. See user
-   * manual for more details:
-   * https:
-   * //docs.google.com/document/d/1bg1meMIBGY
-   * // 9I5QEoFoHSX6u9LsZQYBSmPt6E9SxqHZc/edit#heading=h.tfyjhxhvsqem
+   * Required. Prediction keys that tell Data Labeling Service where to find the
+   * data for evaluation in your BigQuery table. When the service samples
+   * prediction input and output from your model version and saves it to
+   * BigQuery, the data gets stored as JSON strings in the BigQuery table. These
+   * keys tell Data Labeling Service how to parse the JSON.
+   * You can provide the following entries in this field:
+   * * `data_json_key`: the data key for prediction input. You must provide
+   *   either this key or `reference_json_key`.
+   * * `reference_json_key`: the data reference key for prediction input. You
+   *   must provide either this key or `data_json_key`.
+   * * `label_json_key`: the label key for prediction output. Required.
+   * * `label_score_json_key`: the score key for prediction output. Required.
+   * * `bounding_box_json_key`: the bounding box key for prediction output.
+   *   Required if your model version perform image object detection.
+   * Learn [how to configure prediction
+   * keys](/ml-engine/docs/continuous-evaluation/create-job#prediction-keys).
    * </pre>
    *
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
@@ -269,13 +371,22 @@ public interface EvaluationJobConfigOrBuilder
    *
    *
    * <pre>
-   * Mappings between reserved keys for bigquery import and customized tensor
-   * names. Key is the reserved key, value is tensor name in the bigquery table.
-   * Different annotation type has different required key mapping. See user
-   * manual for more details:
-   * https:
-   * //docs.google.com/document/d/1bg1meMIBGY
-   * // 9I5QEoFoHSX6u9LsZQYBSmPt6E9SxqHZc/edit#heading=h.tfyjhxhvsqem
+   * Required. Prediction keys that tell Data Labeling Service where to find the
+   * data for evaluation in your BigQuery table. When the service samples
+   * prediction input and output from your model version and saves it to
+   * BigQuery, the data gets stored as JSON strings in the BigQuery table. These
+   * keys tell Data Labeling Service how to parse the JSON.
+   * You can provide the following entries in this field:
+   * * `data_json_key`: the data key for prediction input. You must provide
+   *   either this key or `reference_json_key`.
+   * * `reference_json_key`: the data reference key for prediction input. You
+   *   must provide either this key or `data_json_key`.
+   * * `label_json_key`: the label key for prediction output. Required.
+   * * `label_score_json_key`: the score key for prediction output. Required.
+   * * `bounding_box_json_key`: the bounding box key for prediction output.
+   *   Required if your model version perform image object detection.
+   * Learn [how to configure prediction
+   * keys](/ml-engine/docs/continuous-evaluation/create-job#prediction-keys).
    * </pre>
    *
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
@@ -288,13 +399,22 @@ public interface EvaluationJobConfigOrBuilder
    *
    *
    * <pre>
-   * Mappings between reserved keys for bigquery import and customized tensor
-   * names. Key is the reserved key, value is tensor name in the bigquery table.
-   * Different annotation type has different required key mapping. See user
-   * manual for more details:
-   * https:
-   * //docs.google.com/document/d/1bg1meMIBGY
-   * // 9I5QEoFoHSX6u9LsZQYBSmPt6E9SxqHZc/edit#heading=h.tfyjhxhvsqem
+   * Required. Prediction keys that tell Data Labeling Service where to find the
+   * data for evaluation in your BigQuery table. When the service samples
+   * prediction input and output from your model version and saves it to
+   * BigQuery, the data gets stored as JSON strings in the BigQuery table. These
+   * keys tell Data Labeling Service how to parse the JSON.
+   * You can provide the following entries in this field:
+   * * `data_json_key`: the data key for prediction input. You must provide
+   *   either this key or `reference_json_key`.
+   * * `reference_json_key`: the data reference key for prediction input. You
+   *   must provide either this key or `data_json_key`.
+   * * `label_json_key`: the label key for prediction output. Required.
+   * * `label_score_json_key`: the score key for prediction output. Required.
+   * * `bounding_box_json_key`: the bounding box key for prediction output.
+   *   Required if your model version perform image object detection.
+   * Learn [how to configure prediction
+   * keys](/ml-engine/docs/continuous-evaluation/create-job#prediction-keys).
    * </pre>
    *
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
@@ -304,13 +424,22 @@ public interface EvaluationJobConfigOrBuilder
    *
    *
    * <pre>
-   * Mappings between reserved keys for bigquery import and customized tensor
-   * names. Key is the reserved key, value is tensor name in the bigquery table.
-   * Different annotation type has different required key mapping. See user
-   * manual for more details:
-   * https:
-   * //docs.google.com/document/d/1bg1meMIBGY
-   * // 9I5QEoFoHSX6u9LsZQYBSmPt6E9SxqHZc/edit#heading=h.tfyjhxhvsqem
+   * Required. Prediction keys that tell Data Labeling Service where to find the
+   * data for evaluation in your BigQuery table. When the service samples
+   * prediction input and output from your model version and saves it to
+   * BigQuery, the data gets stored as JSON strings in the BigQuery table. These
+   * keys tell Data Labeling Service how to parse the JSON.
+   * You can provide the following entries in this field:
+   * * `data_json_key`: the data key for prediction input. You must provide
+   *   either this key or `reference_json_key`.
+   * * `reference_json_key`: the data reference key for prediction input. You
+   *   must provide either this key or `data_json_key`.
+   * * `label_json_key`: the label key for prediction output. Required.
+   * * `label_score_json_key`: the score key for prediction output. Required.
+   * * `bounding_box_json_key`: the bounding box key for prediction output.
+   *   Required if your model version perform image object detection.
+   * Learn [how to configure prediction
+   * keys](/ml-engine/docs/continuous-evaluation/create-job#prediction-keys).
    * </pre>
    *
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
@@ -321,13 +450,22 @@ public interface EvaluationJobConfigOrBuilder
    *
    *
    * <pre>
-   * Mappings between reserved keys for bigquery import and customized tensor
-   * names. Key is the reserved key, value is tensor name in the bigquery table.
-   * Different annotation type has different required key mapping. See user
-   * manual for more details:
-   * https:
-   * //docs.google.com/document/d/1bg1meMIBGY
-   * // 9I5QEoFoHSX6u9LsZQYBSmPt6E9SxqHZc/edit#heading=h.tfyjhxhvsqem
+   * Required. Prediction keys that tell Data Labeling Service where to find the
+   * data for evaluation in your BigQuery table. When the service samples
+   * prediction input and output from your model version and saves it to
+   * BigQuery, the data gets stored as JSON strings in the BigQuery table. These
+   * keys tell Data Labeling Service how to parse the JSON.
+   * You can provide the following entries in this field:
+   * * `data_json_key`: the data key for prediction input. You must provide
+   *   either this key or `reference_json_key`.
+   * * `reference_json_key`: the data reference key for prediction input. You
+   *   must provide either this key or `data_json_key`.
+   * * `label_json_key`: the label key for prediction output. Required.
+   * * `label_score_json_key`: the score key for prediction output. Required.
+   * * `bounding_box_json_key`: the bounding box key for prediction output.
+   *   Required if your model version perform image object detection.
+   * Learn [how to configure prediction
+   * keys](/ml-engine/docs/continuous-evaluation/create-job#prediction-keys).
    * </pre>
    *
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
@@ -338,7 +476,11 @@ public interface EvaluationJobConfigOrBuilder
    *
    *
    * <pre>
-   * Max number of examples to collect in each period.
+   * Required. The maximum number of predictions to sample and save to BigQuery
+   * during each [evaluation interval][google.cloud.datalabeling.v1beta1.EvaluationJob.schedule]. This limit
+   * overrides `example_sample_percentage`: even if the service has not sampled
+   * enough predictions to fulfill `example_sample_perecentage` during an
+   * interval, it stops sampling predictions when it meets this limit.
    * </pre>
    *
    * <code>int32 example_count = 10;</code>
@@ -351,8 +493,9 @@ public interface EvaluationJobConfigOrBuilder
    *
    *
    * <pre>
-   * Percentage of examples to collect in each period. 0.1 means 10% of total
-   * examples will be collected, and 0.0 means no collection.
+   * Required. Fraction of predictions to sample and save to BigQuery during
+   * each [evaluation interval][google.cloud.datalabeling.v1beta1.EvaluationJob.schedule]. For example, 0.1 means
+   * 10% of predictions served by your model version get saved to BigQuery.
    * </pre>
    *
    * <code>double example_sample_percentage = 11;</code>
@@ -365,8 +508,9 @@ public interface EvaluationJobConfigOrBuilder
    *
    *
    * <pre>
-   * Alert config for the evaluation job. The alert will be triggered when its
-   * criteria is met.
+   * Optional. Configuration details for evaluation job alerts. Specify this
+   * field if you want to receive email alerts if the evaluation job finds that
+   * your predictions have low mean average precision during a run.
    * </pre>
    *
    * <code>
@@ -380,8 +524,9 @@ public interface EvaluationJobConfigOrBuilder
    *
    *
    * <pre>
-   * Alert config for the evaluation job. The alert will be triggered when its
-   * criteria is met.
+   * Optional. Configuration details for evaluation job alerts. Specify this
+   * field if you want to receive email alerts if the evaluation job finds that
+   * your predictions have low mean average precision during a run.
    * </pre>
    *
    * <code>
@@ -395,8 +540,9 @@ public interface EvaluationJobConfigOrBuilder
    *
    *
    * <pre>
-   * Alert config for the evaluation job. The alert will be triggered when its
-   * criteria is met.
+   * Optional. Configuration details for evaluation job alerts. Specify this
+   * field if you want to receive email alerts if the evaluation job finds that
+   * your predictions have low mean average precision during a run.
    * </pre>
    *
    * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,26 +22,74 @@ package com.google.cloud.datalabeling.v1beta1;
 public enum DataType implements com.google.protobuf.ProtocolMessageEnum {
   /** <code>DATA_TYPE_UNSPECIFIED = 0;</code> */
   DATA_TYPE_UNSPECIFIED(0),
-  /** <code>IMAGE = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Allowed for continuous evaluation.
+   * </pre>
+   *
+   * <code>IMAGE = 1;</code>
+   */
   IMAGE(1),
   /** <code>VIDEO = 2;</code> */
   VIDEO(2),
-  /** <code>TEXT = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Allowed for continuous evaluation.
+   * </pre>
+   *
+   * <code>TEXT = 4;</code>
+   */
   TEXT(4),
-  /** <code>GENERAL_DATA = 6;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Allowed for continuous evaluation.
+   * </pre>
+   *
+   * <code>GENERAL_DATA = 6;</code>
+   */
   GENERAL_DATA(6),
   UNRECOGNIZED(-1),
   ;
 
   /** <code>DATA_TYPE_UNSPECIFIED = 0;</code> */
   public static final int DATA_TYPE_UNSPECIFIED_VALUE = 0;
-  /** <code>IMAGE = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Allowed for continuous evaluation.
+   * </pre>
+   *
+   * <code>IMAGE = 1;</code>
+   */
   public static final int IMAGE_VALUE = 1;
   /** <code>VIDEO = 2;</code> */
   public static final int VIDEO_VALUE = 2;
-  /** <code>TEXT = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Allowed for continuous evaluation.
+   * </pre>
+   *
+   * <code>TEXT = 4;</code>
+   */
   public static final int TEXT_VALUE = 4;
-  /** <code>GENERAL_DATA = 6;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Allowed for continuous evaluation.
+   * </pre>
+   *
+   * <code>GENERAL_DATA = 6;</code>
+   */
   public static final int GENERAL_DATA_VALUE = 6;
 
   public final int getNumber() {

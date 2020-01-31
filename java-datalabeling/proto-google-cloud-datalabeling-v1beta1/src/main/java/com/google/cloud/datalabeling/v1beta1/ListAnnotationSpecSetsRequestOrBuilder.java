@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,9 @@ public interface ListAnnotationSpecSetsRequestOrBuilder
    * projects/{project_id}
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -44,7 +46,9 @@ public interface ListAnnotationSpecSetsRequestOrBuilder
    * projects/{project_id}
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -57,7 +61,7 @@ public interface ListAnnotationSpecSetsRequestOrBuilder
    * Optional. Filter is not supported at this moment.
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -69,7 +73,7 @@ public interface ListAnnotationSpecSetsRequestOrBuilder
    * Optional. Filter is not supported at this moment.
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -83,7 +87,7 @@ public interface ListAnnotationSpecSetsRequestOrBuilder
    * requested. Default value is 100.
    * </pre>
    *
-   * <code>int32 page_size = 3;</code>
+   * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -95,12 +99,12 @@ public interface ListAnnotationSpecSetsRequestOrBuilder
    * <pre>
    * Optional. A token identifying a page of results for the server to return.
    * Typically obtained by
-   * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token]
-   * of the previous [DataLabelingService.ListAnnotationSpecSets] call. Return
-   * first page if empty.
+   * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token] of the previous
+   * [DataLabelingService.ListAnnotationSpecSets] call.
+   * Return first page if empty.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -111,12 +115,12 @@ public interface ListAnnotationSpecSetsRequestOrBuilder
    * <pre>
    * Optional. A token identifying a page of results for the server to return.
    * Typically obtained by
-   * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token]
-   * of the previous [DataLabelingService.ListAnnotationSpecSets] call. Return
-   * first page if empty.
+   * [ListAnnotationSpecSetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.next_page_token] of the previous
+   * [DataLabelingService.ListAnnotationSpecSets] call.
+   * Return first page if empty.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */

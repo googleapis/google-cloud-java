@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,9 @@ package com.google.cloud.datalabeling.v1beta1;
  *
  *
  * <pre>
- * Confusion matrix of the model running the classification. Not applicable
- * when label filtering is specified in evaluation option.
+ * Confusion matrix of the model running the classification. Only applicable
+ * when the metrics entry aggregates multiple labels. Not applicable when the
+ * entry is for a single label.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datalabeling.v1beta1.ConfusionMatrix}
@@ -132,7 +133,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The predicted annotation spec.
+     * The annotation spec of a predicted label.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -144,7 +145,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The predicted annotation spec.
+     * The annotation spec of a predicted label.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -156,7 +157,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The predicted annotation spec.
+     * The annotation spec of a predicted label.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -167,7 +168,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Number of items being predicted as this label.
+     * Number of items predicted to have this label. (The ground truth label for
+     * these items is the `Row.annotationSpec` of this entry's parent.)
      * </pre>
      *
      * <code>int32 item_count = 2;</code>
@@ -283,7 +285,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The predicted annotation spec.
+     * The annotation spec of a predicted label.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -297,7 +299,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The predicted annotation spec.
+     * The annotation spec of a predicted label.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -313,7 +315,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The predicted annotation spec.
+     * The annotation spec of a predicted label.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -329,7 +331,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Number of items being predicted as this label.
+     * Number of items predicted to have this label. (The ground truth label for
+     * these items is the `Row.annotationSpec` of this entry's parent.)
      * </pre>
      *
      * <code>int32 item_count = 2;</code>
@@ -713,7 +716,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The predicted annotation spec.
+       * The annotation spec of a predicted label.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -727,7 +730,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The predicted annotation spec.
+       * The annotation spec of a predicted label.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -747,7 +750,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The predicted annotation spec.
+       * The annotation spec of a predicted label.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -769,7 +772,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The predicted annotation spec.
+       * The annotation spec of a predicted label.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -789,7 +792,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The predicted annotation spec.
+       * The annotation spec of a predicted label.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -816,7 +819,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The predicted annotation spec.
+       * The annotation spec of a predicted label.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -836,7 +839,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The predicted annotation spec.
+       * The annotation spec of a predicted label.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -851,7 +854,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The predicted annotation spec.
+       * The annotation spec of a predicted label.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -870,7 +873,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The predicted annotation spec.
+       * The annotation spec of a predicted label.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -897,7 +900,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Number of items being predicted as this label.
+       * Number of items predicted to have this label. (The ground truth label for
+       * these items is the `Row.annotationSpec` of this entry's parent.)
        * </pre>
        *
        * <code>int32 item_count = 2;</code>
@@ -911,7 +915,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Number of items being predicted as this label.
+       * Number of items predicted to have this label. (The ground truth label for
+       * these items is the `Row.annotationSpec` of this entry's parent.)
        * </pre>
        *
        * <code>int32 item_count = 2;</code>
@@ -929,7 +934,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Number of items being predicted as this label.
+       * Number of items predicted to have this label. (The ground truth label for
+       * these items is the `Row.annotationSpec` of this entry's parent.)
        * </pre>
        *
        * <code>int32 item_count = 2;</code>
@@ -1008,7 +1014,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * the original annotation spec of this row.
+     * The annotation spec of the ground truth label for this row.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1020,7 +1026,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * the original annotation spec of this row.
+     * The annotation spec of the ground truth label for this row.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1032,7 +1038,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * the original annotation spec of this row.
+     * The annotation spec of the ground truth label for this row.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1043,7 +1049,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Info describing predicted label distribution.
+     * A list of the confusion matrix entries. One entry for each possible
+     * predicted label.
      * </pre>
      *
      * <code>
@@ -1056,7 +1063,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Info describing predicted label distribution.
+     * A list of the confusion matrix entries. One entry for each possible
+     * predicted label.
      * </pre>
      *
      * <code>
@@ -1069,7 +1077,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Info describing predicted label distribution.
+     * A list of the confusion matrix entries. One entry for each possible
+     * predicted label.
      * </pre>
      *
      * <code>
@@ -1081,7 +1090,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Info describing predicted label distribution.
+     * A list of the confusion matrix entries. One entry for each possible
+     * predicted label.
      * </pre>
      *
      * <code>
@@ -1096,7 +1106,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Info describing predicted label distribution.
+     * A list of the confusion matrix entries. One entry for each possible
+     * predicted label.
      * </pre>
      *
      * <code>
@@ -1110,7 +1121,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A row in the confusion matrix.
+   * A row in the confusion matrix. Each entry in this row has the same
+   * ground truth label.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row}
@@ -1235,7 +1247,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * the original annotation spec of this row.
+     * The annotation spec of the ground truth label for this row.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1249,7 +1261,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * the original annotation spec of this row.
+     * The annotation spec of the ground truth label for this row.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1265,7 +1277,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * the original annotation spec of this row.
+     * The annotation spec of the ground truth label for this row.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1283,7 +1295,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Info describing predicted label distribution.
+     * A list of the confusion matrix entries. One entry for each possible
+     * predicted label.
      * </pre>
      *
      * <code>
@@ -1299,7 +1312,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Info describing predicted label distribution.
+     * A list of the confusion matrix entries. One entry for each possible
+     * predicted label.
      * </pre>
      *
      * <code>
@@ -1316,7 +1330,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Info describing predicted label distribution.
+     * A list of the confusion matrix entries. One entry for each possible
+     * predicted label.
      * </pre>
      *
      * <code>
@@ -1330,7 +1345,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Info describing predicted label distribution.
+     * A list of the confusion matrix entries. One entry for each possible
+     * predicted label.
      * </pre>
      *
      * <code>
@@ -1345,7 +1361,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Info describing predicted label distribution.
+     * A list of the confusion matrix entries. One entry for each possible
+     * predicted label.
      * </pre>
      *
      * <code>
@@ -1538,7 +1555,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A row in the confusion matrix.
+     * A row in the confusion matrix. Each entry in this row has the same
+     * ground truth label.
      * </pre>
      *
      * Protobuf type {@code google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row}
@@ -1760,7 +1778,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * the original annotation spec of this row.
+       * The annotation spec of the ground truth label for this row.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1774,7 +1792,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * the original annotation spec of this row.
+       * The annotation spec of the ground truth label for this row.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1794,7 +1812,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * the original annotation spec of this row.
+       * The annotation spec of the ground truth label for this row.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1816,7 +1834,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * the original annotation spec of this row.
+       * The annotation spec of the ground truth label for this row.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1836,7 +1854,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * the original annotation spec of this row.
+       * The annotation spec of the ground truth label for this row.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1863,7 +1881,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * the original annotation spec of this row.
+       * The annotation spec of the ground truth label for this row.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1883,7 +1901,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * the original annotation spec of this row.
+       * The annotation spec of the ground truth label for this row.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1898,7 +1916,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * the original annotation spec of this row.
+       * The annotation spec of the ground truth label for this row.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1917,7 +1935,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * the original annotation spec of this row.
+       * The annotation spec of the ground truth label for this row.
        * </pre>
        *
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1963,7 +1981,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -1983,7 +2002,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -2001,7 +2021,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -2020,7 +2041,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -2046,7 +2068,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -2070,7 +2093,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -2095,7 +2119,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -2121,7 +2146,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -2144,7 +2170,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -2168,7 +2195,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -2193,7 +2221,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -2214,7 +2243,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -2235,7 +2265,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -2250,7 +2281,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -2269,7 +2301,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -2291,7 +2324,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -2309,7 +2343,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -2328,7 +2363,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Info describing predicted label distribution.
+       * A list of the confusion matrix entries. One entry for each possible
+       * predicted label.
        * </pre>
        *
        * <code>
@@ -2604,8 +2640,9 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Confusion matrix of the model running the classification. Not applicable
-   * when label filtering is specified in evaluation option.
+   * Confusion matrix of the model running the classification. Only applicable
+   * when the metrics entry aggregates multiple labels. Not applicable when the
+   * entry is for a single label.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datalabeling.v1beta1.ConfusionMatrix}

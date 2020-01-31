@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,9 +22,9 @@ package com.google.cloud.datalabeling.v1beta1;
  *
  *
  * <pre>
- * AnnotationSpecSet is a collection of label definitions. For example, in
- * image classification tasks, we define a set of labels, this set is called
- * AnnotationSpecSet. AnnotationSpecSet is immutable upon creation.
+ * An AnnotationSpecSet is a collection of label definitions. For example, in
+ * image classification tasks, you define a set of possible labels for images as
+ * an AnnotationSpecSet. An AnnotationSpecSet is immutable upon creation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datalabeling.v1beta1.AnnotationSpecSet}
@@ -167,8 +167,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. AnnotationSpecSet resource name, format:
-   * projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
+   * Output only. The AnnotationSpecSet resource name in the following format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -190,8 +190,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. AnnotationSpecSet resource name, format:
-   * projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
+   * Output only. The AnnotationSpecSet resource name in the following format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -216,8 +216,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The display name for AnnotationSpecSet defined by user.
-   * Maximum of 64 characters.
+   * Required. The display name for AnnotationSpecSet that you define when you
+   * create it. Maximum of 64 characters.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -239,8 +239,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The display name for AnnotationSpecSet defined by user.
-   * Maximum of 64 characters.
+   * Required. The display name for AnnotationSpecSet that you define when you
+   * create it. Maximum of 64 characters.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -266,7 +266,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. User-provided description of the annotation specification set.
-   * The description can be up to 10000 characters long.
+   * The description can be up to 10,000 characters long.
    * </pre>
    *
    * <code>string description = 3;</code>
@@ -289,7 +289,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. User-provided description of the annotation specification set.
-   * The description can be up to 10000 characters long.
+   * The description can be up to 10,000 characters long.
    * </pre>
    *
    * <code>string description = 3;</code>
@@ -314,7 +314,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The actual spec set defined by the users.
+   * Required. The array of AnnotationSpecs that you define when you create the
+   * AnnotationSpecSet. These are the possible labels for the labeling task.
    * </pre>
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -327,7 +328,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The actual spec set defined by the users.
+   * Required. The array of AnnotationSpecs that you define when you create the
+   * AnnotationSpecSet. These are the possible labels for the labeling task.
    * </pre>
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -340,7 +342,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The actual spec set defined by the users.
+   * Required. The array of AnnotationSpecs that you define when you create the
+   * AnnotationSpecSet. These are the possible labels for the labeling task.
    * </pre>
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -352,7 +355,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The actual spec set defined by the users.
+   * Required. The array of AnnotationSpecs that you define when you create the
+   * AnnotationSpecSet. These are the possible labels for the labeling task.
    * </pre>
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -364,7 +368,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The actual spec set defined by the users.
+   * Required. The array of AnnotationSpecs that you define when you create the
+   * AnnotationSpecSet. These are the possible labels for the labeling task.
    * </pre>
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -648,9 +653,9 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * AnnotationSpecSet is a collection of label definitions. For example, in
-   * image classification tasks, we define a set of labels, this set is called
-   * AnnotationSpecSet. AnnotationSpecSet is immutable upon creation.
+   * An AnnotationSpecSet is a collection of label definitions. For example, in
+   * image classification tasks, you define a set of possible labels for images as
+   * an AnnotationSpecSet. An AnnotationSpecSet is immutable upon creation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datalabeling.v1beta1.AnnotationSpecSet}
@@ -888,8 +893,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. AnnotationSpecSet resource name, format:
-     * projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
+     * Output only. The AnnotationSpecSet resource name in the following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -911,8 +916,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. AnnotationSpecSet resource name, format:
-     * projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
+     * Output only. The AnnotationSpecSet resource name in the following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -934,8 +939,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. AnnotationSpecSet resource name, format:
-     * projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
+     * Output only. The AnnotationSpecSet resource name in the following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -956,8 +961,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. AnnotationSpecSet resource name, format:
-     * projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
+     * Output only. The AnnotationSpecSet resource name in the following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -974,8 +979,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. AnnotationSpecSet resource name, format:
-     * projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
+     * Output only. The AnnotationSpecSet resource name in the following format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -999,8 +1004,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The display name for AnnotationSpecSet defined by user.
-     * Maximum of 64 characters.
+     * Required. The display name for AnnotationSpecSet that you define when you
+     * create it. Maximum of 64 characters.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -1022,8 +1027,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The display name for AnnotationSpecSet defined by user.
-     * Maximum of 64 characters.
+     * Required. The display name for AnnotationSpecSet that you define when you
+     * create it. Maximum of 64 characters.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -1045,8 +1050,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The display name for AnnotationSpecSet defined by user.
-     * Maximum of 64 characters.
+     * Required. The display name for AnnotationSpecSet that you define when you
+     * create it. Maximum of 64 characters.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -1067,8 +1072,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The display name for AnnotationSpecSet defined by user.
-     * Maximum of 64 characters.
+     * Required. The display name for AnnotationSpecSet that you define when you
+     * create it. Maximum of 64 characters.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -1085,8 +1090,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The display name for AnnotationSpecSet defined by user.
-     * Maximum of 64 characters.
+     * Required. The display name for AnnotationSpecSet that you define when you
+     * create it. Maximum of 64 characters.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -1111,7 +1116,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. User-provided description of the annotation specification set.
-     * The description can be up to 10000 characters long.
+     * The description can be up to 10,000 characters long.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1134,7 +1139,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. User-provided description of the annotation specification set.
-     * The description can be up to 10000 characters long.
+     * The description can be up to 10,000 characters long.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1157,7 +1162,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. User-provided description of the annotation specification set.
-     * The description can be up to 10000 characters long.
+     * The description can be up to 10,000 characters long.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1179,7 +1184,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. User-provided description of the annotation specification set.
-     * The description can be up to 10000 characters long.
+     * The description can be up to 10,000 characters long.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1197,7 +1202,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. User-provided description of the annotation specification set.
-     * The description can be up to 10000 characters long.
+     * The description can be up to 10,000 characters long.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1238,7 +1243,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -1255,7 +1261,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -1271,7 +1278,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -1287,7 +1295,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -1310,7 +1319,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -1330,7 +1340,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -1352,7 +1363,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -1375,7 +1387,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -1395,7 +1408,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -1415,7 +1429,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -1435,7 +1450,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -1454,7 +1470,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -1473,7 +1490,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -1486,7 +1504,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -1503,7 +1522,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -1520,7 +1540,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -1534,7 +1555,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
@@ -1549,7 +1571,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The actual spec set defined by the users.
+     * Required. The array of AnnotationSpecs that you define when you create the
+     * AnnotationSpecSet. These are the possible labels for the labeling task.
      * </pre>
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -201,54 +201,62 @@ public interface InstructionOrBuilder
    *
    *
    * <pre>
-   * One of CSV or PDF instruction is required.
+   * Deprecated: this instruction format is not supported any more.
    * Instruction from a CSV file, such as for classification task.
    * The CSV file should have exact two columns, in the following format:
    * * The first column is labeled data, such as an image reference, text.
    * * The second column is comma separated labels associated with data.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
+   * </code>
    *
    * @return Whether the csvInstruction field is set.
    */
+  @java.lang.Deprecated
   boolean hasCsvInstruction();
   /**
    *
    *
    * <pre>
-   * One of CSV or PDF instruction is required.
+   * Deprecated: this instruction format is not supported any more.
    * Instruction from a CSV file, such as for classification task.
    * The CSV file should have exact two columns, in the following format:
    * * The first column is labeled data, such as an image reference, text.
    * * The second column is comma separated labels associated with data.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
+   * </code>
    *
    * @return The csvInstruction.
    */
+  @java.lang.Deprecated
   com.google.cloud.datalabeling.v1beta1.CsvInstruction getCsvInstruction();
   /**
    *
    *
    * <pre>
-   * One of CSV or PDF instruction is required.
+   * Deprecated: this instruction format is not supported any more.
    * Instruction from a CSV file, such as for classification task.
    * The CSV file should have exact two columns, in the following format:
    * * The first column is labeled data, such as an image reference, text.
    * * The second column is comma separated labels associated with data.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.datalabeling.v1beta1.CsvInstructionOrBuilder getCsvInstructionOrBuilder();
 
   /**
    *
    *
    * <pre>
-   * One of CSV or PDF instruction is required.
    * Instruction from a PDF document. The PDF should be in a Cloud Storage
    * bucket.
    * </pre>
@@ -262,7 +270,6 @@ public interface InstructionOrBuilder
    *
    *
    * <pre>
-   * One of CSV or PDF instruction is required.
    * Instruction from a PDF document. The PDF should be in a Cloud Storage
    * bucket.
    * </pre>
@@ -276,7 +283,6 @@ public interface InstructionOrBuilder
    *
    *
    * <pre>
-   * One of CSV or PDF instruction is required.
    * Instruction from a PDF document. The PDF should be in a Cloud Storage
    * bucket.
    * </pre>

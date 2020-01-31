@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -195,7 +195,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * Required. Instruction resource name.
    * </pre>
    *
-   * <code>string instruction = 1;</code>
+   * <code>string instruction = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The instruction.
    */
@@ -217,7 +217,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * Required. Instruction resource name.
    * </pre>
    *
-   * <code>string instruction = 1;</code>
+   * <code>string instruction = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for instruction.
    */
@@ -244,7 +244,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * .
    * </pre>
    *
-   * <code>string annotated_dataset_display_name = 2;</code>
+   * <code>string annotated_dataset_display_name = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The annotatedDatasetDisplayName.
    */
@@ -268,7 +269,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * .
    * </pre>
    *
-   * <code>string annotated_dataset_display_name = 2;</code>
+   * <code>string annotated_dataset_display_name = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The bytes for annotatedDatasetDisplayName.
    */
@@ -294,7 +296,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * The description can be up to 10000 characters long.
    * </pre>
    *
-   * <code>string annotated_dataset_description = 3;</code>
+   * <code>string annotated_dataset_description = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The annotatedDatasetDescription.
    */
@@ -317,7 +320,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * The description can be up to 10000 characters long.
    * </pre>
    *
-   * <code>string annotated_dataset_description = 3;</code>
+   * <code>string annotated_dataset_description = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The bytes for annotatedDatasetDescription.
    */
@@ -343,7 +347,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * This string must match the regular expression `[a-zA-Z&#92;&#92;d_-]{0,128}`.
    * </pre>
    *
-   * <code>string label_group = 4;</code>
+   * <code>string label_group = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The labelGroup.
    */
@@ -366,7 +370,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * This string must match the regular expression `[a-zA-Z&#92;&#92;d_-]{0,128}`.
    * </pre>
    *
-   * <code>string label_group = 4;</code>
+   * <code>string label_group = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for labelGroup.
    */
@@ -395,7 +399,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * text classification.
    * </pre>
    *
-   * <code>string language_code = 5;</code>
+   * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The languageCode.
    */
@@ -421,7 +425,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * text classification.
    * </pre>
    *
-   * <code>string language_code = 5;</code>
+   * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for languageCode.
    */
@@ -449,7 +453,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * For image related labeling, valid values are 1, 3, 5.
    * </pre>
    *
-   * <code>int32 replica_count = 6;</code>
+   * <code>int32 replica_count = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The replicaCount.
    */
@@ -463,11 +467,13 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Maximum duration for contributors to answer a question. Default
-   * is 1800 seconds.
+   * Optional. Maximum duration for contributors to answer a question. Maximum
+   * is 3600 seconds. Default is 3600 seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration question_duration = 7;</code>
+   * <code>
+   * .google.protobuf.Duration question_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the questionDuration field is set.
    */
@@ -478,11 +484,13 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Maximum duration for contributors to answer a question. Default
-   * is 1800 seconds.
+   * Optional. Maximum duration for contributors to answer a question. Maximum
+   * is 3600 seconds. Default is 3600 seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration question_duration = 7;</code>
+   * <code>
+   * .google.protobuf.Duration question_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The questionDuration.
    */
@@ -495,11 +503,13 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Maximum duration for contributors to answer a question. Default
-   * is 1800 seconds.
+   * Optional. Maximum duration for contributors to answer a question. Maximum
+   * is 3600 seconds. Default is 3600 seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration question_duration = 7;</code>
+   * <code>
+   * .google.protobuf.Duration question_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.DurationOrBuilder getQuestionDurationOrBuilder() {
     return getQuestionDuration();
@@ -518,7 +528,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * https://crowd-compute.appspot.com/
    * </pre>
    *
-   * <code>repeated string contributor_emails = 9;</code>
+   * <code>repeated string contributor_emails = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the contributorEmails.
    */
@@ -536,7 +546,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * https://crowd-compute.appspot.com/
    * </pre>
    *
-   * <code>repeated string contributor_emails = 9;</code>
+   * <code>repeated string contributor_emails = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of contributorEmails.
    */
@@ -554,7 +564,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * https://crowd-compute.appspot.com/
    * </pre>
    *
-   * <code>repeated string contributor_emails = 9;</code>
+   * <code>repeated string contributor_emails = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The contributorEmails at the given index.
@@ -573,7 +583,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * https://crowd-compute.appspot.com/
    * </pre>
    *
-   * <code>repeated string contributor_emails = 9;</code>
+   * <code>repeated string contributor_emails = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the contributorEmails at the given index.
@@ -1121,7 +1131,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * Required. Instruction resource name.
      * </pre>
      *
-     * <code>string instruction = 1;</code>
+     * <code>string instruction = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The instruction.
      */
@@ -1143,7 +1153,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * Required. Instruction resource name.
      * </pre>
      *
-     * <code>string instruction = 1;</code>
+     * <code>string instruction = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for instruction.
      */
@@ -1165,7 +1175,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * Required. Instruction resource name.
      * </pre>
      *
-     * <code>string instruction = 1;</code>
+     * <code>string instruction = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The instruction to set.
      * @return This builder for chaining.
@@ -1186,7 +1196,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * Required. Instruction resource name.
      * </pre>
      *
-     * <code>string instruction = 1;</code>
+     * <code>string instruction = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1203,7 +1213,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * Required. Instruction resource name.
      * </pre>
      *
-     * <code>string instruction = 1;</code>
+     * <code>string instruction = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for instruction to set.
      * @return This builder for chaining.
@@ -1229,7 +1239,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * .
      * </pre>
      *
-     * <code>string annotated_dataset_display_name = 2;</code>
+     * <code>string annotated_dataset_display_name = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The annotatedDatasetDisplayName.
      */
@@ -1253,7 +1264,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * .
      * </pre>
      *
-     * <code>string annotated_dataset_display_name = 2;</code>
+     * <code>string annotated_dataset_display_name = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The bytes for annotatedDatasetDisplayName.
      */
@@ -1277,7 +1289,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * .
      * </pre>
      *
-     * <code>string annotated_dataset_display_name = 2;</code>
+     * <code>string annotated_dataset_display_name = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The annotatedDatasetDisplayName to set.
      * @return This builder for chaining.
@@ -1300,7 +1313,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * .
      * </pre>
      *
-     * <code>string annotated_dataset_display_name = 2;</code>
+     * <code>string annotated_dataset_display_name = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1319,7 +1333,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * .
      * </pre>
      *
-     * <code>string annotated_dataset_display_name = 2;</code>
+     * <code>string annotated_dataset_display_name = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The bytes for annotatedDatasetDisplayName to set.
      * @return This builder for chaining.
@@ -1344,7 +1359,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * The description can be up to 10000 characters long.
      * </pre>
      *
-     * <code>string annotated_dataset_description = 3;</code>
+     * <code>string annotated_dataset_description = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The annotatedDatasetDescription.
      */
@@ -1367,7 +1383,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * The description can be up to 10000 characters long.
      * </pre>
      *
-     * <code>string annotated_dataset_description = 3;</code>
+     * <code>string annotated_dataset_description = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The bytes for annotatedDatasetDescription.
      */
@@ -1390,7 +1407,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * The description can be up to 10000 characters long.
      * </pre>
      *
-     * <code>string annotated_dataset_description = 3;</code>
+     * <code>string annotated_dataset_description = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The annotatedDatasetDescription to set.
      * @return This builder for chaining.
@@ -1412,7 +1430,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * The description can be up to 10000 characters long.
      * </pre>
      *
-     * <code>string annotated_dataset_description = 3;</code>
+     * <code>string annotated_dataset_description = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1430,7 +1449,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * The description can be up to 10000 characters long.
      * </pre>
      *
-     * <code>string annotated_dataset_description = 3;</code>
+     * <code>string annotated_dataset_description = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes for annotatedDatasetDescription to set.
      * @return This builder for chaining.
@@ -1455,7 +1475,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * This string must match the regular expression `[a-zA-Z&#92;&#92;d_-]{0,128}`.
      * </pre>
      *
-     * <code>string label_group = 4;</code>
+     * <code>string label_group = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The labelGroup.
      */
@@ -1478,7 +1498,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * This string must match the regular expression `[a-zA-Z&#92;&#92;d_-]{0,128}`.
      * </pre>
      *
-     * <code>string label_group = 4;</code>
+     * <code>string label_group = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for labelGroup.
      */
@@ -1501,7 +1521,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * This string must match the regular expression `[a-zA-Z&#92;&#92;d_-]{0,128}`.
      * </pre>
      *
-     * <code>string label_group = 4;</code>
+     * <code>string label_group = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The labelGroup to set.
      * @return This builder for chaining.
@@ -1523,7 +1543,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * This string must match the regular expression `[a-zA-Z&#92;&#92;d_-]{0,128}`.
      * </pre>
      *
-     * <code>string label_group = 4;</code>
+     * <code>string label_group = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1541,7 +1561,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * This string must match the regular expression `[a-zA-Z&#92;&#92;d_-]{0,128}`.
      * </pre>
      *
-     * <code>string label_group = 4;</code>
+     * <code>string label_group = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for labelGroup to set.
      * @return This builder for chaining.
@@ -1569,7 +1589,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * text classification.
      * </pre>
      *
-     * <code>string language_code = 5;</code>
+     * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The languageCode.
      */
@@ -1595,7 +1615,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * text classification.
      * </pre>
      *
-     * <code>string language_code = 5;</code>
+     * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for languageCode.
      */
@@ -1621,7 +1641,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * text classification.
      * </pre>
      *
-     * <code>string language_code = 5;</code>
+     * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The languageCode to set.
      * @return This builder for chaining.
@@ -1646,7 +1666,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * text classification.
      * </pre>
      *
-     * <code>string language_code = 5;</code>
+     * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1667,7 +1687,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * text classification.
      * </pre>
      *
-     * <code>string language_code = 5;</code>
+     * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for languageCode to set.
      * @return This builder for chaining.
@@ -1694,7 +1714,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * For image related labeling, valid values are 1, 3, 5.
      * </pre>
      *
-     * <code>int32 replica_count = 6;</code>
+     * <code>int32 replica_count = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The replicaCount.
      */
@@ -1711,7 +1731,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * For image related labeling, valid values are 1, 3, 5.
      * </pre>
      *
-     * <code>int32 replica_count = 6;</code>
+     * <code>int32 replica_count = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The replicaCount to set.
      * @return This builder for chaining.
@@ -1732,7 +1752,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * For image related labeling, valid values are 1, 3, 5.
      * </pre>
      *
-     * <code>int32 replica_count = 6;</code>
+     * <code>int32 replica_count = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1753,11 +1773,13 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Maximum duration for contributors to answer a question. Default
-     * is 1800 seconds.
+     * Optional. Maximum duration for contributors to answer a question. Maximum
+     * is 3600 seconds. Default is 3600 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration question_duration = 7;</code>
+     * <code>
+     * .google.protobuf.Duration question_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the questionDuration field is set.
      */
@@ -1768,11 +1790,13 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Maximum duration for contributors to answer a question. Default
-     * is 1800 seconds.
+     * Optional. Maximum duration for contributors to answer a question. Maximum
+     * is 3600 seconds. Default is 3600 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration question_duration = 7;</code>
+     * <code>
+     * .google.protobuf.Duration question_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The questionDuration.
      */
@@ -1789,11 +1813,13 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Maximum duration for contributors to answer a question. Default
-     * is 1800 seconds.
+     * Optional. Maximum duration for contributors to answer a question. Maximum
+     * is 3600 seconds. Default is 3600 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration question_duration = 7;</code>
+     * <code>
+     * .google.protobuf.Duration question_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setQuestionDuration(com.google.protobuf.Duration value) {
       if (questionDurationBuilder_ == null) {
@@ -1812,11 +1838,13 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Maximum duration for contributors to answer a question. Default
-     * is 1800 seconds.
+     * Optional. Maximum duration for contributors to answer a question. Maximum
+     * is 3600 seconds. Default is 3600 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration question_duration = 7;</code>
+     * <code>
+     * .google.protobuf.Duration question_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setQuestionDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (questionDurationBuilder_ == null) {
@@ -1832,11 +1860,13 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Maximum duration for contributors to answer a question. Default
-     * is 1800 seconds.
+     * Optional. Maximum duration for contributors to answer a question. Maximum
+     * is 3600 seconds. Default is 3600 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration question_duration = 7;</code>
+     * <code>
+     * .google.protobuf.Duration question_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeQuestionDuration(com.google.protobuf.Duration value) {
       if (questionDurationBuilder_ == null) {
@@ -1859,11 +1889,13 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Maximum duration for contributors to answer a question. Default
-     * is 1800 seconds.
+     * Optional. Maximum duration for contributors to answer a question. Maximum
+     * is 3600 seconds. Default is 3600 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration question_duration = 7;</code>
+     * <code>
+     * .google.protobuf.Duration question_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearQuestionDuration() {
       if (questionDurationBuilder_ == null) {
@@ -1880,11 +1912,13 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Maximum duration for contributors to answer a question. Default
-     * is 1800 seconds.
+     * Optional. Maximum duration for contributors to answer a question. Maximum
+     * is 3600 seconds. Default is 3600 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration question_duration = 7;</code>
+     * <code>
+     * .google.protobuf.Duration question_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Duration.Builder getQuestionDurationBuilder() {
 
@@ -1895,11 +1929,13 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Maximum duration for contributors to answer a question. Default
-     * is 1800 seconds.
+     * Optional. Maximum duration for contributors to answer a question. Maximum
+     * is 3600 seconds. Default is 3600 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration question_duration = 7;</code>
+     * <code>
+     * .google.protobuf.Duration question_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.DurationOrBuilder getQuestionDurationOrBuilder() {
       if (questionDurationBuilder_ != null) {
@@ -1914,11 +1950,13 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Maximum duration for contributors to answer a question. Default
-     * is 1800 seconds.
+     * Optional. Maximum duration for contributors to answer a question. Maximum
+     * is 3600 seconds. Default is 3600 seconds.
      * </pre>
      *
-     * <code>.google.protobuf.Duration question_duration = 7;</code>
+     * <code>
+     * .google.protobuf.Duration question_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -1957,7 +1995,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * https://crowd-compute.appspot.com/
      * </pre>
      *
-     * <code>repeated string contributor_emails = 9;</code>
+     * <code>repeated string contributor_emails = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return A list containing the contributorEmails.
      */
@@ -1975,7 +2014,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * https://crowd-compute.appspot.com/
      * </pre>
      *
-     * <code>repeated string contributor_emails = 9;</code>
+     * <code>repeated string contributor_emails = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The count of contributorEmails.
      */
@@ -1993,7 +2033,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * https://crowd-compute.appspot.com/
      * </pre>
      *
-     * <code>repeated string contributor_emails = 9;</code>
+     * <code>repeated string contributor_emails = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The contributorEmails at the given index.
@@ -2012,7 +2053,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * https://crowd-compute.appspot.com/
      * </pre>
      *
-     * <code>repeated string contributor_emails = 9;</code>
+     * <code>repeated string contributor_emails = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the contributorEmails at the given index.
@@ -2031,7 +2073,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * https://crowd-compute.appspot.com/
      * </pre>
      *
-     * <code>repeated string contributor_emails = 9;</code>
+     * <code>repeated string contributor_emails = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The contributorEmails to set.
@@ -2057,7 +2100,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * https://crowd-compute.appspot.com/
      * </pre>
      *
-     * <code>repeated string contributor_emails = 9;</code>
+     * <code>repeated string contributor_emails = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The contributorEmails to add.
      * @return This builder for chaining.
@@ -2082,7 +2126,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * https://crowd-compute.appspot.com/
      * </pre>
      *
-     * <code>repeated string contributor_emails = 9;</code>
+     * <code>repeated string contributor_emails = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param values The contributorEmails to add.
      * @return This builder for chaining.
@@ -2104,7 +2149,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * https://crowd-compute.appspot.com/
      * </pre>
      *
-     * <code>repeated string contributor_emails = 9;</code>
+     * <code>repeated string contributor_emails = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2125,7 +2171,8 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * https://crowd-compute.appspot.com/
      * </pre>
      *
-     * <code>repeated string contributor_emails = 9;</code>
+     * <code>repeated string contributor_emails = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes of the contributorEmails to add.
      * @return This builder for chaining.

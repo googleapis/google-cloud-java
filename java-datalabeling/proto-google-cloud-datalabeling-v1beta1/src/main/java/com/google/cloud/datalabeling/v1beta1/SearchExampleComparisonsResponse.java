@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -139,38 +139,88 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
+     * <pre>
+     * The ground truth output for the input.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
      *
      * @return Whether the groundTruthExample field is set.
      */
     boolean hasGroundTruthExample();
     /**
+     *
+     *
+     * <pre>
+     * The ground truth output for the input.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
      *
      * @return The groundTruthExample.
      */
     com.google.cloud.datalabeling.v1beta1.Example getGroundTruthExample();
-    /** <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The ground truth output for the input.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
+     */
     com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder getGroundTruthExampleOrBuilder();
 
     /**
+     *
+     *
+     * <pre>
+     * Predictions by the model for the input.
+     * </pre>
+     *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
     java.util.List<com.google.cloud.datalabeling.v1beta1.Example> getModelCreatedExamplesList();
     /**
+     *
+     *
+     * <pre>
+     * Predictions by the model for the input.
+     * </pre>
+     *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
     com.google.cloud.datalabeling.v1beta1.Example getModelCreatedExamples(int index);
     /**
+     *
+     *
+     * <pre>
+     * Predictions by the model for the input.
+     * </pre>
+     *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
     int getModelCreatedExamplesCount();
     /**
+     *
+     *
+     * <pre>
+     * Predictions by the model for the input.
+     * </pre>
+     *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
     java.util.List<? extends com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder>
         getModelCreatedExamplesOrBuilderList();
     /**
+     *
+     *
+     * <pre>
+     * Predictions by the model for the input.
+     * </pre>
+     *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
     com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder getModelCreatedExamplesOrBuilder(
@@ -180,8 +230,8 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * Example comparisons containing annotation comparison between groundtruth
-   * and predictions.
+   * Example comparisons comparing ground truth output and predictions for a
+   * specific input.
    * </pre>
    *
    * Protobuf type {@code
@@ -301,6 +351,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
     public static final int GROUND_TRUTH_EXAMPLE_FIELD_NUMBER = 1;
     private com.google.cloud.datalabeling.v1beta1.Example groundTruthExample_;
     /**
+     *
+     *
+     * <pre>
+     * The ground truth output for the input.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
      *
      * @return Whether the groundTruthExample field is set.
@@ -309,6 +365,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       return groundTruthExample_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The ground truth output for the input.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
      *
      * @return The groundTruthExample.
@@ -318,7 +380,15 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
           ? com.google.cloud.datalabeling.v1beta1.Example.getDefaultInstance()
           : groundTruthExample_;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The ground truth output for the input.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
+     */
     public com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder getGroundTruthExampleOrBuilder() {
       return getGroundTruthExample();
     }
@@ -326,6 +396,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
     public static final int MODEL_CREATED_EXAMPLES_FIELD_NUMBER = 2;
     private java.util.List<com.google.cloud.datalabeling.v1beta1.Example> modelCreatedExamples_;
     /**
+     *
+     *
+     * <pre>
+     * Predictions by the model for the input.
+     * </pre>
+     *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
     public java.util.List<com.google.cloud.datalabeling.v1beta1.Example>
@@ -333,6 +409,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       return modelCreatedExamples_;
     }
     /**
+     *
+     *
+     * <pre>
+     * Predictions by the model for the input.
+     * </pre>
+     *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
     public java.util.List<? extends com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder>
@@ -340,18 +422,36 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       return modelCreatedExamples_;
     }
     /**
+     *
+     *
+     * <pre>
+     * Predictions by the model for the input.
+     * </pre>
+     *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
     public int getModelCreatedExamplesCount() {
       return modelCreatedExamples_.size();
     }
     /**
+     *
+     *
+     * <pre>
+     * Predictions by the model for the input.
+     * </pre>
+     *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
     public com.google.cloud.datalabeling.v1beta1.Example getModelCreatedExamples(int index) {
       return modelCreatedExamples_.get(index);
     }
     /**
+     *
+     *
+     * <pre>
+     * Predictions by the model for the input.
+     * </pre>
+     *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
     public com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder getModelCreatedExamplesOrBuilder(
@@ -568,8 +668,8 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * Example comparisons containing annotation comparison between groundtruth
-     * and predictions.
+     * Example comparisons comparing ground truth output and predictions for a
+     * specific input.
      * </pre>
      *
      * Protobuf type {@code
@@ -815,6 +915,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
               com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder>
           groundTruthExampleBuilder_;
       /**
+       *
+       *
+       * <pre>
+       * The ground truth output for the input.
+       * </pre>
+       *
        * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
        *
        * @return Whether the groundTruthExample field is set.
@@ -823,6 +929,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return groundTruthExampleBuilder_ != null || groundTruthExample_ != null;
       }
       /**
+       *
+       *
+       * <pre>
+       * The ground truth output for the input.
+       * </pre>
+       *
        * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
        *
        * @return The groundTruthExample.
@@ -836,7 +948,15 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
           return groundTruthExampleBuilder_.getMessage();
         }
       }
-      /** <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * The ground truth output for the input.
+       * </pre>
+       *
+       * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
+       */
       public Builder setGroundTruthExample(com.google.cloud.datalabeling.v1beta1.Example value) {
         if (groundTruthExampleBuilder_ == null) {
           if (value == null) {
@@ -850,7 +970,15 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
 
         return this;
       }
-      /** <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * The ground truth output for the input.
+       * </pre>
+       *
+       * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
+       */
       public Builder setGroundTruthExample(
           com.google.cloud.datalabeling.v1beta1.Example.Builder builderForValue) {
         if (groundTruthExampleBuilder_ == null) {
@@ -862,7 +990,15 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
 
         return this;
       }
-      /** <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * The ground truth output for the input.
+       * </pre>
+       *
+       * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
+       */
       public Builder mergeGroundTruthExample(com.google.cloud.datalabeling.v1beta1.Example value) {
         if (groundTruthExampleBuilder_ == null) {
           if (groundTruthExample_ != null) {
@@ -880,7 +1016,15 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
 
         return this;
       }
-      /** <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * The ground truth output for the input.
+       * </pre>
+       *
+       * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
+       */
       public Builder clearGroundTruthExample() {
         if (groundTruthExampleBuilder_ == null) {
           groundTruthExample_ = null;
@@ -892,13 +1036,29 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
 
         return this;
       }
-      /** <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * The ground truth output for the input.
+       * </pre>
+       *
+       * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
+       */
       public com.google.cloud.datalabeling.v1beta1.Example.Builder getGroundTruthExampleBuilder() {
 
         onChanged();
         return getGroundTruthExampleFieldBuilder().getBuilder();
       }
-      /** <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * The ground truth output for the input.
+       * </pre>
+       *
+       * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
+       */
       public com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder
           getGroundTruthExampleOrBuilder() {
         if (groundTruthExampleBuilder_ != null) {
@@ -909,7 +1069,15 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
               : groundTruthExample_;
         }
       }
-      /** <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * The ground truth output for the input.
+       * </pre>
+       *
+       * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
+       */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.datalabeling.v1beta1.Example,
               com.google.cloud.datalabeling.v1beta1.Example.Builder,
@@ -946,6 +1114,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
           modelCreatedExamplesBuilder_;
 
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -958,6 +1132,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         }
       }
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -969,6 +1149,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         }
       }
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -980,6 +1166,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         }
       }
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -998,6 +1190,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -1013,6 +1211,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -1030,6 +1234,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -1048,6 +1258,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -1063,6 +1279,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -1078,6 +1300,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -1093,6 +1321,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -1107,6 +1341,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -1121,6 +1361,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -1129,6 +1375,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         return getModelCreatedExamplesFieldBuilder().getBuilder(index);
       }
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -1141,6 +1393,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         }
       }
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -1153,6 +1411,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         }
       }
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -1162,6 +1426,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
             .addBuilder(com.google.cloud.datalabeling.v1beta1.Example.getDefaultInstance());
       }
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -1171,6 +1441,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
             .addBuilder(index, com.google.cloud.datalabeling.v1beta1.Example.getDefaultInstance());
       }
       /**
+       *
+       *
+       * <pre>
+       * Predictions by the model for the input.
+       * </pre>
+       *
        * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;
        * </code>
        */
@@ -1263,6 +1539,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
           com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison>
       exampleComparisons_;
   /**
+   *
+   *
+   * <pre>
+   * A list of example comparisons matching the search criteria.
+   * </pre>
+   *
    * <code>
    * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
    * </code>
@@ -1273,6 +1555,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
     return exampleComparisons_;
   }
   /**
+   *
+   *
+   * <pre>
+   * A list of example comparisons matching the search criteria.
+   * </pre>
+   *
    * <code>
    * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
    * </code>
@@ -1285,6 +1573,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
     return exampleComparisons_;
   }
   /**
+   *
+   *
+   * <pre>
+   * A list of example comparisons matching the search criteria.
+   * </pre>
+   *
    * <code>
    * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
    * </code>
@@ -1293,6 +1587,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
     return exampleComparisons_.size();
   }
   /**
+   *
+   *
+   * <pre>
+   * A list of example comparisons matching the search criteria.
+   * </pre>
+   *
    * <code>
    * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
    * </code>
@@ -1302,6 +1602,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
     return exampleComparisons_.get(index);
   }
   /**
+   *
+   *
+   * <pre>
+   * A list of example comparisons matching the search criteria.
+   * </pre>
+   *
    * <code>
    * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
    * </code>
@@ -1771,6 +2077,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
         exampleComparisonsBuilder_;
 
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>
@@ -1786,6 +2098,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>
@@ -1798,6 +2116,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>
@@ -1811,6 +2135,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>
@@ -1832,6 +2162,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>
@@ -1851,6 +2187,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>
@@ -1871,6 +2213,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>
@@ -1892,6 +2240,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>
@@ -1910,6 +2264,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>
@@ -1929,6 +2289,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>
@@ -1949,6 +2315,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>
@@ -1964,6 +2336,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>
@@ -1979,6 +2357,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>
@@ -1989,6 +2373,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       return getExampleComparisonsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>
@@ -2003,6 +2393,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>
@@ -2019,6 +2415,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>
@@ -2032,6 +2434,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
                   .ExampleComparison.getDefaultInstance());
     }
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>
@@ -2046,6 +2454,12 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
                   .ExampleComparison.getDefaultInstance());
     }
     /**
+     *
+     *
+     * <pre>
+     * A list of example comparisons matching the search criteria.
+     * </pre>
+     *
      * <code>
      * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
      * </code>

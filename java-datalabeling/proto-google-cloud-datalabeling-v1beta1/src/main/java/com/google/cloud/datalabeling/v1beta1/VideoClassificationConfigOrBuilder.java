@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ public interface VideoClassificationConfigOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig annotation_spec_set_configs = 1;
+   * repeated .google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig annotation_spec_set_configs = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   java.util.List<
@@ -55,7 +55,7 @@ public interface VideoClassificationConfigOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig annotation_spec_set_configs = 1;
+   * repeated .google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig annotation_spec_set_configs = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig
@@ -73,7 +73,7 @@ public interface VideoClassificationConfigOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig annotation_spec_set_configs = 1;
+   * repeated .google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig annotation_spec_set_configs = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   int getAnnotationSpecSetConfigsCount();
@@ -90,7 +90,7 @@ public interface VideoClassificationConfigOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig annotation_spec_set_configs = 1;
+   * repeated .google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig annotation_spec_set_configs = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   java.util.List<
@@ -111,7 +111,7 @@ public interface VideoClassificationConfigOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig annotation_spec_set_configs = 1;
+   * repeated .google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig annotation_spec_set_configs = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfigOrBuilder
@@ -124,7 +124,7 @@ public interface VideoClassificationConfigOrBuilder
    * Optional. Option to apply shot detection on the video.
    * </pre>
    *
-   * <code>bool apply_shot_detection = 2;</code>
+   * <code>bool apply_shot_detection = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The applyShotDetection.
    */

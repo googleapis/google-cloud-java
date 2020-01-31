@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,16 @@
 
 package com.google.cloud.datalabeling.v1beta1;
 
-/** Protobuf type {@code google.cloud.datalabeling.v1beta1.EvaluationJobConfig} */
+/**
+ *
+ *
+ * <pre>
+ * Configures specific details of how a continuous evaluation job works. Provide
+ * this configuration when you create an EvaluationJob.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.datalabeling.v1beta1.EvaluationJobConfig}
+ */
 public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.EvaluationJobConfig)
@@ -157,51 +166,6 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
               humanAnnotationRequestConfigCase_ = 5;
               break;
             }
-          case 50:
-            {
-              com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.Builder subBuilder =
-                  null;
-              if (humanAnnotationRequestConfigCase_ == 6) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig)
-                            humanAnnotationRequestConfig_)
-                        .toBuilder();
-              }
-              humanAnnotationRequestConfig_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig)
-                        humanAnnotationRequestConfig_);
-                humanAnnotationRequestConfig_ = subBuilder.buildPartial();
-              }
-              humanAnnotationRequestConfigCase_ = 6;
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.Builder subBuilder = null;
-              if (humanAnnotationRequestConfigCase_ == 7) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig)
-                            humanAnnotationRequestConfig_)
-                        .toBuilder();
-              }
-              humanAnnotationRequestConfig_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig)
-                        humanAnnotationRequestConfig_);
-                humanAnnotationRequestConfig_ = subBuilder.buildPartial();
-              }
-              humanAnnotationRequestConfigCase_ = 7;
-              break;
-            }
           case 66:
             {
               com.google.cloud.datalabeling.v1beta1.TextClassificationConfig.Builder subBuilder =
@@ -251,28 +215,6 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
           case 89:
             {
               exampleSamplePercentage_ = input.readDouble();
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.Builder subBuilder = null;
-              if (humanAnnotationRequestConfigCase_ == 12) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig)
-                            humanAnnotationRequestConfig_)
-                        .toBuilder();
-              }
-              humanAnnotationRequestConfig_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig)
-                        humanAnnotationRequestConfig_);
-                humanAnnotationRequestConfig_ = subBuilder.buildPartial();
-              }
-              humanAnnotationRequestConfigCase_ = 12;
               break;
             }
           case 106:
@@ -347,10 +289,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     IMAGE_CLASSIFICATION_CONFIG(4),
     BOUNDING_POLY_CONFIG(5),
-    VIDEO_CLASSIFICATION_CONFIG(6),
-    OBJECT_DETECTION_CONFIG(7),
     TEXT_CLASSIFICATION_CONFIG(8),
-    OBJECT_TRACKING_CONFIG(12),
     HUMANANNOTATIONREQUESTCONFIG_NOT_SET(0);
     private final int value;
 
@@ -373,14 +312,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
           return IMAGE_CLASSIFICATION_CONFIG;
         case 5:
           return BOUNDING_POLY_CONFIG;
-        case 6:
-          return VIDEO_CLASSIFICATION_CONFIG;
-        case 7:
-          return OBJECT_DETECTION_CONFIG;
         case 8:
           return TEXT_CLASSIFICATION_CONFIG;
-        case 12:
-          return OBJECT_TRACKING_CONFIG;
         case 0:
           return HUMANANNOTATIONREQUESTCONFIG_NOT_SET;
         default:
@@ -399,6 +332,17 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
 
   public static final int IMAGE_CLASSIFICATION_CONFIG_FIELD_NUMBER = 4;
   /**
+   *
+   *
+   * <pre>
+   * Specify this field if your model version performs image classification or
+   * general classification.
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * `allowMultiLabel` in this configuration must match
+   * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+   * </pre>
+   *
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
    * </code>
@@ -409,6 +353,17 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     return humanAnnotationRequestConfigCase_ == 4;
   }
   /**
+   *
+   *
+   * <pre>
+   * Specify this field if your model version performs image classification or
+   * general classification.
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * `allowMultiLabel` in this configuration must match
+   * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+   * </pre>
+   *
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
    * </code>
@@ -424,6 +379,17 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     return com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig.getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * Specify this field if your model version performs image classification or
+   * general classification.
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * `allowMultiLabel` in this configuration must match
+   * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+   * </pre>
+   *
    * <code>
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
    * </code>
@@ -439,6 +405,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
 
   public static final int BOUNDING_POLY_CONFIG_FIELD_NUMBER = 5;
   /**
+   *
+   *
+   * <pre>
+   * Specify this field if your model version performs image object detection
+   * (bounding box detection).
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
    *
    * @return Whether the boundingPolyConfig field is set.
@@ -447,6 +422,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     return humanAnnotationRequestConfigCase_ == 5;
   }
   /**
+   *
+   *
+   * <pre>
+   * Specify this field if your model version performs image object detection
+   * (bounding box detection).
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
    *
    * @return The boundingPolyConfig.
@@ -459,6 +443,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     return com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig.getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * Specify this field if your model version performs image object detection
+   * (bounding box detection).
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
    */
   public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfigOrBuilder
@@ -470,84 +463,18 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     return com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig.getDefaultInstance();
   }
 
-  public static final int VIDEO_CLASSIFICATION_CONFIG_FIELD_NUMBER = 6;
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
-   * </code>
-   *
-   * @return Whether the videoClassificationConfig field is set.
-   */
-  public boolean hasVideoClassificationConfig() {
-    return humanAnnotationRequestConfigCase_ == 6;
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
-   * </code>
-   *
-   * @return The videoClassificationConfig.
-   */
-  public com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
-      getVideoClassificationConfig() {
-    if (humanAnnotationRequestConfigCase_ == 6) {
-      return (com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig)
-          humanAnnotationRequestConfig_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.getDefaultInstance();
-  }
-  /**
-   * <code>
-   * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.VideoClassificationConfigOrBuilder
-      getVideoClassificationConfigOrBuilder() {
-    if (humanAnnotationRequestConfigCase_ == 6) {
-      return (com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig)
-          humanAnnotationRequestConfig_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.getDefaultInstance();
-  }
-
-  public static final int OBJECT_DETECTION_CONFIG_FIELD_NUMBER = 7;
-  /**
-   * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
-   * </code>
-   *
-   * @return Whether the objectDetectionConfig field is set.
-   */
-  public boolean hasObjectDetectionConfig() {
-    return humanAnnotationRequestConfigCase_ == 7;
-  }
-  /**
-   * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
-   * </code>
-   *
-   * @return The objectDetectionConfig.
-   */
-  public com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig getObjectDetectionConfig() {
-    if (humanAnnotationRequestConfigCase_ == 7) {
-      return (com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig)
-          humanAnnotationRequestConfig_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.getDefaultInstance();
-  }
-  /**
-   * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfigOrBuilder
-      getObjectDetectionConfigOrBuilder() {
-    if (humanAnnotationRequestConfigCase_ == 7) {
-      return (com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig)
-          humanAnnotationRequestConfig_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.getDefaultInstance();
-  }
-
   public static final int TEXT_CLASSIFICATION_CONFIG_FIELD_NUMBER = 8;
   /**
+   *
+   *
+   * <pre>
+   * Specify this field if your model version performs text classification.
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * `allowMultiLabel` in this configuration must match
+   * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+   * </pre>
+   *
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
    * </code>
@@ -558,6 +485,16 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     return humanAnnotationRequestConfigCase_ == 8;
   }
   /**
+   *
+   *
+   * <pre>
+   * Specify this field if your model version performs text classification.
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * `allowMultiLabel` in this configuration must match
+   * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+   * </pre>
+   *
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
    * </code>
@@ -573,6 +510,16 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     return com.google.cloud.datalabeling.v1beta1.TextClassificationConfig.getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * Specify this field if your model version performs text classification.
+   * `annotationSpecSet` in this configuration must match
+   * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+   * `allowMultiLabel` in this configuration must match
+   * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+   * </pre>
+   *
    * <code>
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
    * </code>
@@ -586,50 +533,21 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     return com.google.cloud.datalabeling.v1beta1.TextClassificationConfig.getDefaultInstance();
   }
 
-  public static final int OBJECT_TRACKING_CONFIG_FIELD_NUMBER = 12;
-  /**
-   * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
-   * </code>
-   *
-   * @return Whether the objectTrackingConfig field is set.
-   */
-  public boolean hasObjectTrackingConfig() {
-    return humanAnnotationRequestConfigCase_ == 12;
-  }
-  /**
-   * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
-   * </code>
-   *
-   * @return The objectTrackingConfig.
-   */
-  public com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig getObjectTrackingConfig() {
-    if (humanAnnotationRequestConfigCase_ == 12) {
-      return (com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig)
-          humanAnnotationRequestConfig_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.getDefaultInstance();
-  }
-  /**
-   * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
-   * </code>
-   */
-  public com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfigOrBuilder
-      getObjectTrackingConfigOrBuilder() {
-    if (humanAnnotationRequestConfigCase_ == 12) {
-      return (com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig)
-          humanAnnotationRequestConfig_;
-    }
-    return com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.getDefaultInstance();
-  }
-
   public static final int INPUT_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.InputConfig inputConfig_;
   /**
    *
    *
    * <pre>
-   * Input config for data, gcs_source in the config will be the root path for
-   * data. Data should be organzied chronically under that path.
+   * Rquired. Details for the sampled prediction input. Within this
+   * configuration, there are requirements for several fields:
+   * * `dataType` must be one of `IMAGE`, `TEXT`, or `GENERAL_DATA`.
+   * * `annotationType` must be one of `IMAGE_CLASSIFICATION_ANNOTATION`,
+   *   `TEXT_CLASSIFICATION_ANNOTATION`, `GENERAL_CLASSIFICATION_ANNOTATION`,
+   *   or `IMAGE_BOUNDING_BOX_ANNOTATION` (image object detection).
+   * * If your machine learning model performs classification, you must specify
+   *   `classificationMetadata.isMultiLabel`.
+   * * You must specify `bigquerySource` (not `gcsSource`).
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
@@ -643,8 +561,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Input config for data, gcs_source in the config will be the root path for
-   * data. Data should be organzied chronically under that path.
+   * Rquired. Details for the sampled prediction input. Within this
+   * configuration, there are requirements for several fields:
+   * * `dataType` must be one of `IMAGE`, `TEXT`, or `GENERAL_DATA`.
+   * * `annotationType` must be one of `IMAGE_CLASSIFICATION_ANNOTATION`,
+   *   `TEXT_CLASSIFICATION_ANNOTATION`, `GENERAL_CLASSIFICATION_ANNOTATION`,
+   *   or `IMAGE_BOUNDING_BOX_ANNOTATION` (image object detection).
+   * * If your machine learning model performs classification, you must specify
+   *   `classificationMetadata.isMultiLabel`.
+   * * You must specify `bigquerySource` (not `gcsSource`).
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
@@ -660,8 +585,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Input config for data, gcs_source in the config will be the root path for
-   * data. Data should be organzied chronically under that path.
+   * Rquired. Details for the sampled prediction input. Within this
+   * configuration, there are requirements for several fields:
+   * * `dataType` must be one of `IMAGE`, `TEXT`, or `GENERAL_DATA`.
+   * * `annotationType` must be one of `IMAGE_CLASSIFICATION_ANNOTATION`,
+   *   `TEXT_CLASSIFICATION_ANNOTATION`, `GENERAL_CLASSIFICATION_ANNOTATION`,
+   *   or `IMAGE_BOUNDING_BOX_ANNOTATION` (image object detection).
+   * * If your machine learning model performs classification, you must specify
+   *   `classificationMetadata.isMultiLabel`.
+   * * You must specify `bigquerySource` (not `gcsSource`).
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
@@ -676,7 +608,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Config used to create evaluation.
+   * Required. Details for calculating evaluation metrics and creating
+   * [Evaulations][google.cloud.datalabeling.v1beta1.Evaluation]. If your model version performs image object
+   * detection, you must specify the `boundingBoxEvaluationOptions` field within
+   * this configuration. Otherwise, provide an empty object for this
+   * configuration.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
@@ -690,7 +626,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Config used to create evaluation.
+   * Required. Details for calculating evaluation metrics and creating
+   * [Evaulations][google.cloud.datalabeling.v1beta1.Evaluation]. If your model version performs image object
+   * detection, you must specify the `boundingBoxEvaluationOptions` field within
+   * this configuration. Otherwise, provide an empty object for this
+   * configuration.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
@@ -706,7 +646,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Config used to create evaluation.
+   * Required. Details for calculating evaluation metrics and creating
+   * [Evaulations][google.cloud.datalabeling.v1beta1.Evaluation]. If your model version performs image object
+   * detection, you must specify the `boundingBoxEvaluationOptions` field within
+   * this configuration. Otherwise, provide an empty object for this
+   * configuration.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
@@ -719,6 +663,18 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
   public static final int HUMAN_ANNOTATION_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig humanAnnotationConfig_;
   /**
+   *
+   *
+   * <pre>
+   * Optional. Details for human annotation of your data. If you set
+   * [labelMissingGroundTruth][google.cloud.datalabeling.v1beta1.EvaluationJob.label_missing_ground_truth] to
+   * `true` for this evaluation job, then you must specify this field. If you
+   * plan to provide your own ground truth labels, then omit this field.
+   * Note that you must create an [Instruction][google.cloud.datalabeling.v1beta1.Instruction] resource before you can
+   * specify this field. Provide the name of the instruction resource in the
+   * `instruction` field within this configuration.
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
    * </code>
    *
@@ -728,6 +684,18 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     return humanAnnotationConfig_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * Optional. Details for human annotation of your data. If you set
+   * [labelMissingGroundTruth][google.cloud.datalabeling.v1beta1.EvaluationJob.label_missing_ground_truth] to
+   * `true` for this evaluation job, then you must specify this field. If you
+   * plan to provide your own ground truth labels, then omit this field.
+   * Note that you must create an [Instruction][google.cloud.datalabeling.v1beta1.Instruction] resource before you can
+   * specify this field. Provide the name of the instruction resource in the
+   * `instruction` field within this configuration.
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
    * </code>
    *
@@ -739,6 +707,18 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
         : humanAnnotationConfig_;
   }
   /**
+   *
+   *
+   * <pre>
+   * Optional. Details for human annotation of your data. If you set
+   * [labelMissingGroundTruth][google.cloud.datalabeling.v1beta1.EvaluationJob.label_missing_ground_truth] to
+   * `true` for this evaluation job, then you must specify this field. If you
+   * plan to provide your own ground truth labels, then omit this field.
+   * Note that you must create an [Instruction][google.cloud.datalabeling.v1beta1.Instruction] resource before you can
+   * specify this field. Provide the name of the instruction resource in the
+   * `instruction` field within this configuration.
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
    * </code>
    */
@@ -778,13 +758,22 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Mappings between reserved keys for bigquery import and customized tensor
-   * names. Key is the reserved key, value is tensor name in the bigquery table.
-   * Different annotation type has different required key mapping. See user
-   * manual for more details:
-   * https:
-   * //docs.google.com/document/d/1bg1meMIBGY
-   * // 9I5QEoFoHSX6u9LsZQYBSmPt6E9SxqHZc/edit#heading=h.tfyjhxhvsqem
+   * Required. Prediction keys that tell Data Labeling Service where to find the
+   * data for evaluation in your BigQuery table. When the service samples
+   * prediction input and output from your model version and saves it to
+   * BigQuery, the data gets stored as JSON strings in the BigQuery table. These
+   * keys tell Data Labeling Service how to parse the JSON.
+   * You can provide the following entries in this field:
+   * * `data_json_key`: the data key for prediction input. You must provide
+   *   either this key or `reference_json_key`.
+   * * `reference_json_key`: the data reference key for prediction input. You
+   *   must provide either this key or `data_json_key`.
+   * * `label_json_key`: the label key for prediction output. Required.
+   * * `label_score_json_key`: the score key for prediction output. Required.
+   * * `bounding_box_json_key`: the bounding box key for prediction output.
+   *   Required if your model version perform image object detection.
+   * Learn [how to configure prediction
+   * keys](/ml-engine/docs/continuous-evaluation/create-job#prediction-keys).
    * </pre>
    *
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
@@ -804,13 +793,22 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Mappings between reserved keys for bigquery import and customized tensor
-   * names. Key is the reserved key, value is tensor name in the bigquery table.
-   * Different annotation type has different required key mapping. See user
-   * manual for more details:
-   * https:
-   * //docs.google.com/document/d/1bg1meMIBGY
-   * // 9I5QEoFoHSX6u9LsZQYBSmPt6E9SxqHZc/edit#heading=h.tfyjhxhvsqem
+   * Required. Prediction keys that tell Data Labeling Service where to find the
+   * data for evaluation in your BigQuery table. When the service samples
+   * prediction input and output from your model version and saves it to
+   * BigQuery, the data gets stored as JSON strings in the BigQuery table. These
+   * keys tell Data Labeling Service how to parse the JSON.
+   * You can provide the following entries in this field:
+   * * `data_json_key`: the data key for prediction input. You must provide
+   *   either this key or `reference_json_key`.
+   * * `reference_json_key`: the data reference key for prediction input. You
+   *   must provide either this key or `data_json_key`.
+   * * `label_json_key`: the label key for prediction output. Required.
+   * * `label_score_json_key`: the score key for prediction output. Required.
+   * * `bounding_box_json_key`: the bounding box key for prediction output.
+   *   Required if your model version perform image object detection.
+   * Learn [how to configure prediction
+   * keys](/ml-engine/docs/continuous-evaluation/create-job#prediction-keys).
    * </pre>
    *
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
@@ -822,13 +820,22 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Mappings between reserved keys for bigquery import and customized tensor
-   * names. Key is the reserved key, value is tensor name in the bigquery table.
-   * Different annotation type has different required key mapping. See user
-   * manual for more details:
-   * https:
-   * //docs.google.com/document/d/1bg1meMIBGY
-   * // 9I5QEoFoHSX6u9LsZQYBSmPt6E9SxqHZc/edit#heading=h.tfyjhxhvsqem
+   * Required. Prediction keys that tell Data Labeling Service where to find the
+   * data for evaluation in your BigQuery table. When the service samples
+   * prediction input and output from your model version and saves it to
+   * BigQuery, the data gets stored as JSON strings in the BigQuery table. These
+   * keys tell Data Labeling Service how to parse the JSON.
+   * You can provide the following entries in this field:
+   * * `data_json_key`: the data key for prediction input. You must provide
+   *   either this key or `reference_json_key`.
+   * * `reference_json_key`: the data reference key for prediction input. You
+   *   must provide either this key or `data_json_key`.
+   * * `label_json_key`: the label key for prediction output. Required.
+   * * `label_score_json_key`: the score key for prediction output. Required.
+   * * `bounding_box_json_key`: the bounding box key for prediction output.
+   *   Required if your model version perform image object detection.
+   * Learn [how to configure prediction
+   * keys](/ml-engine/docs/continuous-evaluation/create-job#prediction-keys).
    * </pre>
    *
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
@@ -846,13 +853,22 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Mappings between reserved keys for bigquery import and customized tensor
-   * names. Key is the reserved key, value is tensor name in the bigquery table.
-   * Different annotation type has different required key mapping. See user
-   * manual for more details:
-   * https:
-   * //docs.google.com/document/d/1bg1meMIBGY
-   * // 9I5QEoFoHSX6u9LsZQYBSmPt6E9SxqHZc/edit#heading=h.tfyjhxhvsqem
+   * Required. Prediction keys that tell Data Labeling Service where to find the
+   * data for evaluation in your BigQuery table. When the service samples
+   * prediction input and output from your model version and saves it to
+   * BigQuery, the data gets stored as JSON strings in the BigQuery table. These
+   * keys tell Data Labeling Service how to parse the JSON.
+   * You can provide the following entries in this field:
+   * * `data_json_key`: the data key for prediction input. You must provide
+   *   either this key or `reference_json_key`.
+   * * `reference_json_key`: the data reference key for prediction input. You
+   *   must provide either this key or `data_json_key`.
+   * * `label_json_key`: the label key for prediction output. Required.
+   * * `label_score_json_key`: the score key for prediction output. Required.
+   * * `bounding_box_json_key`: the bounding box key for prediction output.
+   *   Required if your model version perform image object detection.
+   * Learn [how to configure prediction
+   * keys](/ml-engine/docs/continuous-evaluation/create-job#prediction-keys).
    * </pre>
    *
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
@@ -875,7 +891,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Max number of examples to collect in each period.
+   * Required. The maximum number of predictions to sample and save to BigQuery
+   * during each [evaluation interval][google.cloud.datalabeling.v1beta1.EvaluationJob.schedule]. This limit
+   * overrides `example_sample_percentage`: even if the service has not sampled
+   * enough predictions to fulfill `example_sample_perecentage` during an
+   * interval, it stops sampling predictions when it meets this limit.
    * </pre>
    *
    * <code>int32 example_count = 10;</code>
@@ -892,8 +912,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Percentage of examples to collect in each period. 0.1 means 10% of total
-   * examples will be collected, and 0.0 means no collection.
+   * Required. Fraction of predictions to sample and save to BigQuery during
+   * each [evaluation interval][google.cloud.datalabeling.v1beta1.EvaluationJob.schedule]. For example, 0.1 means
+   * 10% of predictions served by your model version get saved to BigQuery.
    * </pre>
    *
    * <code>double example_sample_percentage = 11;</code>
@@ -910,8 +931,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Alert config for the evaluation job. The alert will be triggered when its
-   * criteria is met.
+   * Optional. Configuration details for evaluation job alerts. Specify this
+   * field if you want to receive email alerts if the evaluation job finds that
+   * your predictions have low mean average precision during a run.
    * </pre>
    *
    * <code>
@@ -927,8 +949,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Alert config for the evaluation job. The alert will be triggered when its
-   * criteria is met.
+   * Optional. Configuration details for evaluation job alerts. Specify this
+   * field if you want to receive email alerts if the evaluation job finds that
+   * your predictions have low mean average precision during a run.
    * </pre>
    *
    * <code>
@@ -947,8 +970,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Alert config for the evaluation job. The alert will be triggered when its
-   * criteria is met.
+   * Optional. Configuration details for evaluation job alerts. Specify this
+   * field if you want to receive email alerts if the evaluation job finds that
+   * your predictions have low mean average precision during a run.
    * </pre>
    *
    * <code>
@@ -994,18 +1018,6 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
           5,
           (com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig) humanAnnotationRequestConfig_);
     }
-    if (humanAnnotationRequestConfigCase_ == 6) {
-      output.writeMessage(
-          6,
-          (com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig)
-              humanAnnotationRequestConfig_);
-    }
-    if (humanAnnotationRequestConfigCase_ == 7) {
-      output.writeMessage(
-          7,
-          (com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig)
-              humanAnnotationRequestConfig_);
-    }
     if (humanAnnotationRequestConfigCase_ == 8) {
       output.writeMessage(
           8,
@@ -1022,12 +1034,6 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     }
     if (exampleSamplePercentage_ != 0D) {
       output.writeDouble(11, exampleSamplePercentage_);
-    }
-    if (humanAnnotationRequestConfigCase_ == 12) {
-      output.writeMessage(
-          12,
-          (com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig)
-              humanAnnotationRequestConfig_);
     }
     if (evaluationJobAlertConfig_ != null) {
       output.writeMessage(13, getEvaluationJobAlertConfig());
@@ -1065,20 +1071,6 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
               (com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig)
                   humanAnnotationRequestConfig_);
     }
-    if (humanAnnotationRequestConfigCase_ == 6) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              6,
-              (com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig)
-                  humanAnnotationRequestConfig_);
-    }
-    if (humanAnnotationRequestConfigCase_ == 7) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              7,
-              (com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig)
-                  humanAnnotationRequestConfig_);
-    }
     if (humanAnnotationRequestConfigCase_ == 8) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1101,13 +1093,6 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     }
     if (exampleSamplePercentage_ != 0D) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(11, exampleSamplePercentage_);
-    }
-    if (humanAnnotationRequestConfigCase_ == 12) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              12,
-              (com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig)
-                  humanAnnotationRequestConfig_);
     }
     if (evaluationJobAlertConfig_ != null) {
       size +=
@@ -1161,19 +1146,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       case 5:
         if (!getBoundingPolyConfig().equals(other.getBoundingPolyConfig())) return false;
         break;
-      case 6:
-        if (!getVideoClassificationConfig().equals(other.getVideoClassificationConfig()))
-          return false;
-        break;
-      case 7:
-        if (!getObjectDetectionConfig().equals(other.getObjectDetectionConfig())) return false;
-        break;
       case 8:
         if (!getTextClassificationConfig().equals(other.getTextClassificationConfig()))
           return false;
-        break;
-      case 12:
-        if (!getObjectTrackingConfig().equals(other.getObjectTrackingConfig())) return false;
         break;
       case 0:
       default:
@@ -1225,21 +1200,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
         hash = (37 * hash) + BOUNDING_POLY_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getBoundingPolyConfig().hashCode();
         break;
-      case 6:
-        hash = (37 * hash) + VIDEO_CLASSIFICATION_CONFIG_FIELD_NUMBER;
-        hash = (53 * hash) + getVideoClassificationConfig().hashCode();
-        break;
-      case 7:
-        hash = (37 * hash) + OBJECT_DETECTION_CONFIG_FIELD_NUMBER;
-        hash = (53 * hash) + getObjectDetectionConfig().hashCode();
-        break;
       case 8:
         hash = (37 * hash) + TEXT_CLASSIFICATION_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getTextClassificationConfig().hashCode();
-        break;
-      case 12:
-        hash = (37 * hash) + OBJECT_TRACKING_CONFIG_FIELD_NUMBER;
-        hash = (53 * hash) + getObjectTrackingConfig().hashCode();
         break;
       case 0:
       default:
@@ -1345,7 +1308,16 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.datalabeling.v1beta1.EvaluationJobConfig} */
+  /**
+   *
+   *
+   * <pre>
+   * Configures specific details of how a continuous evaluation job works. Provide
+   * this configuration when you create an EvaluationJob.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datalabeling.v1beta1.EvaluationJobConfig}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.datalabeling.v1beta1.EvaluationJobConfig)
@@ -1475,32 +1447,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
           result.humanAnnotationRequestConfig_ = boundingPolyConfigBuilder_.build();
         }
       }
-      if (humanAnnotationRequestConfigCase_ == 6) {
-        if (videoClassificationConfigBuilder_ == null) {
-          result.humanAnnotationRequestConfig_ = humanAnnotationRequestConfig_;
-        } else {
-          result.humanAnnotationRequestConfig_ = videoClassificationConfigBuilder_.build();
-        }
-      }
-      if (humanAnnotationRequestConfigCase_ == 7) {
-        if (objectDetectionConfigBuilder_ == null) {
-          result.humanAnnotationRequestConfig_ = humanAnnotationRequestConfig_;
-        } else {
-          result.humanAnnotationRequestConfig_ = objectDetectionConfigBuilder_.build();
-        }
-      }
       if (humanAnnotationRequestConfigCase_ == 8) {
         if (textClassificationConfigBuilder_ == null) {
           result.humanAnnotationRequestConfig_ = humanAnnotationRequestConfig_;
         } else {
           result.humanAnnotationRequestConfig_ = textClassificationConfigBuilder_.build();
-        }
-      }
-      if (humanAnnotationRequestConfigCase_ == 12) {
-        if (objectTrackingConfigBuilder_ == null) {
-          result.humanAnnotationRequestConfig_ = humanAnnotationRequestConfig_;
-        } else {
-          result.humanAnnotationRequestConfig_ = objectTrackingConfigBuilder_.build();
         }
       }
       if (inputConfigBuilder_ == null) {
@@ -1608,24 +1559,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
             mergeBoundingPolyConfig(other.getBoundingPolyConfig());
             break;
           }
-        case VIDEO_CLASSIFICATION_CONFIG:
-          {
-            mergeVideoClassificationConfig(other.getVideoClassificationConfig());
-            break;
-          }
-        case OBJECT_DETECTION_CONFIG:
-          {
-            mergeObjectDetectionConfig(other.getObjectDetectionConfig());
-            break;
-          }
         case TEXT_CLASSIFICATION_CONFIG:
           {
             mergeTextClassificationConfig(other.getTextClassificationConfig());
-            break;
-          }
-        case OBJECT_TRACKING_CONFIG:
-          {
-            mergeObjectTrackingConfig(other.getObjectTrackingConfig());
             break;
           }
         case HUMANANNOTATIONREQUESTCONFIG_NOT_SET:
@@ -1685,6 +1621,17 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.datalabeling.v1beta1.ImageClassificationConfigOrBuilder>
         imageClassificationConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image classification or
+     * general classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
      * </code>
@@ -1695,6 +1642,17 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return humanAnnotationRequestConfigCase_ == 4;
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image classification or
+     * general classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
      * </code>
@@ -1717,6 +1675,17 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image classification or
+     * general classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
      * </code>
@@ -1736,6 +1705,17 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image classification or
+     * general classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
      * </code>
@@ -1752,6 +1732,17 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image classification or
+     * general classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
      * </code>
@@ -1783,6 +1774,17 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image classification or
+     * general classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
      * </code>
@@ -1804,6 +1806,17 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image classification or
+     * general classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
      * </code>
@@ -1813,6 +1826,17 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return getImageClassificationConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image classification or
+     * general classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
      * </code>
@@ -1830,6 +1854,17 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image classification or
+     * general classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
      * </code>
@@ -1867,6 +1902,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.datalabeling.v1beta1.BoundingPolyConfigOrBuilder>
         boundingPolyConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image object detection
+     * (bounding box detection).
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
      *
      * @return Whether the boundingPolyConfig field is set.
@@ -1875,6 +1919,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return humanAnnotationRequestConfigCase_ == 5;
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image object detection
+     * (bounding box detection).
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
      *
      * @return The boundingPolyConfig.
@@ -1894,6 +1947,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image object detection
+     * (bounding box detection).
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
      */
     public Builder setBoundingPolyConfig(
@@ -1911,6 +1973,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image object detection
+     * (bounding box detection).
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
      */
     public Builder setBoundingPolyConfig(
@@ -1925,6 +1996,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image object detection
+     * (bounding box detection).
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
      */
     public Builder mergeBoundingPolyConfig(
@@ -1953,6 +2033,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image object detection
+     * (bounding box detection).
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
      */
     public Builder clearBoundingPolyConfig() {
@@ -1972,6 +2061,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image object detection
+     * (bounding box detection).
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
      */
     public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig.Builder
@@ -1979,6 +2077,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return getBoundingPolyConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image object detection
+     * (bounding box detection).
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
      */
     public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfigOrBuilder
@@ -1994,6 +2101,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs image object detection
+     * (bounding box detection).
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2024,365 +2140,21 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig,
-            com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.Builder,
-            com.google.cloud.datalabeling.v1beta1.VideoClassificationConfigOrBuilder>
-        videoClassificationConfigBuilder_;
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
-     * </code>
-     *
-     * @return Whether the videoClassificationConfig field is set.
-     */
-    public boolean hasVideoClassificationConfig() {
-      return humanAnnotationRequestConfigCase_ == 6;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
-     * </code>
-     *
-     * @return The videoClassificationConfig.
-     */
-    public com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
-        getVideoClassificationConfig() {
-      if (videoClassificationConfigBuilder_ == null) {
-        if (humanAnnotationRequestConfigCase_ == 6) {
-          return (com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig)
-              humanAnnotationRequestConfig_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.getDefaultInstance();
-      } else {
-        if (humanAnnotationRequestConfigCase_ == 6) {
-          return videoClassificationConfigBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
-     * </code>
-     */
-    public Builder setVideoClassificationConfig(
-        com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig value) {
-      if (videoClassificationConfigBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        humanAnnotationRequestConfig_ = value;
-        onChanged();
-      } else {
-        videoClassificationConfigBuilder_.setMessage(value);
-      }
-      humanAnnotationRequestConfigCase_ = 6;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
-     * </code>
-     */
-    public Builder setVideoClassificationConfig(
-        com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.Builder builderForValue) {
-      if (videoClassificationConfigBuilder_ == null) {
-        humanAnnotationRequestConfig_ = builderForValue.build();
-        onChanged();
-      } else {
-        videoClassificationConfigBuilder_.setMessage(builderForValue.build());
-      }
-      humanAnnotationRequestConfigCase_ = 6;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
-     * </code>
-     */
-    public Builder mergeVideoClassificationConfig(
-        com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig value) {
-      if (videoClassificationConfigBuilder_ == null) {
-        if (humanAnnotationRequestConfigCase_ == 6
-            && humanAnnotationRequestConfig_
-                != com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
-                    .getDefaultInstance()) {
-          humanAnnotationRequestConfig_ =
-              com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig)
-                          humanAnnotationRequestConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          humanAnnotationRequestConfig_ = value;
-        }
-        onChanged();
-      } else {
-        if (humanAnnotationRequestConfigCase_ == 6) {
-          videoClassificationConfigBuilder_.mergeFrom(value);
-        }
-        videoClassificationConfigBuilder_.setMessage(value);
-      }
-      humanAnnotationRequestConfigCase_ = 6;
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
-     * </code>
-     */
-    public Builder clearVideoClassificationConfig() {
-      if (videoClassificationConfigBuilder_ == null) {
-        if (humanAnnotationRequestConfigCase_ == 6) {
-          humanAnnotationRequestConfigCase_ = 0;
-          humanAnnotationRequestConfig_ = null;
-          onChanged();
-        }
-      } else {
-        if (humanAnnotationRequestConfigCase_ == 6) {
-          humanAnnotationRequestConfigCase_ = 0;
-          humanAnnotationRequestConfig_ = null;
-        }
-        videoClassificationConfigBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.Builder
-        getVideoClassificationConfigBuilder() {
-      return getVideoClassificationConfigFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.VideoClassificationConfigOrBuilder
-        getVideoClassificationConfigOrBuilder() {
-      if ((humanAnnotationRequestConfigCase_ == 6) && (videoClassificationConfigBuilder_ != null)) {
-        return videoClassificationConfigBuilder_.getMessageOrBuilder();
-      } else {
-        if (humanAnnotationRequestConfigCase_ == 6) {
-          return (com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig)
-              humanAnnotationRequestConfig_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>
-     * .google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig,
-            com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.Builder,
-            com.google.cloud.datalabeling.v1beta1.VideoClassificationConfigOrBuilder>
-        getVideoClassificationConfigFieldBuilder() {
-      if (videoClassificationConfigBuilder_ == null) {
-        if (!(humanAnnotationRequestConfigCase_ == 6)) {
-          humanAnnotationRequestConfig_ =
-              com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.getDefaultInstance();
-        }
-        videoClassificationConfigBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig,
-                com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.Builder,
-                com.google.cloud.datalabeling.v1beta1.VideoClassificationConfigOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig)
-                    humanAnnotationRequestConfig_,
-                getParentForChildren(),
-                isClean());
-        humanAnnotationRequestConfig_ = null;
-      }
-      humanAnnotationRequestConfigCase_ = 6;
-      onChanged();
-      ;
-      return videoClassificationConfigBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig,
-            com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.Builder,
-            com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfigOrBuilder>
-        objectDetectionConfigBuilder_;
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
-     * </code>
-     *
-     * @return Whether the objectDetectionConfig field is set.
-     */
-    public boolean hasObjectDetectionConfig() {
-      return humanAnnotationRequestConfigCase_ == 7;
-    }
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
-     * </code>
-     *
-     * @return The objectDetectionConfig.
-     */
-    public com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig getObjectDetectionConfig() {
-      if (objectDetectionConfigBuilder_ == null) {
-        if (humanAnnotationRequestConfigCase_ == 7) {
-          return (com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig)
-              humanAnnotationRequestConfig_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.getDefaultInstance();
-      } else {
-        if (humanAnnotationRequestConfigCase_ == 7) {
-          return objectDetectionConfigBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
-     * </code>
-     */
-    public Builder setObjectDetectionConfig(
-        com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig value) {
-      if (objectDetectionConfigBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        humanAnnotationRequestConfig_ = value;
-        onChanged();
-      } else {
-        objectDetectionConfigBuilder_.setMessage(value);
-      }
-      humanAnnotationRequestConfigCase_ = 7;
-      return this;
-    }
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
-     * </code>
-     */
-    public Builder setObjectDetectionConfig(
-        com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.Builder builderForValue) {
-      if (objectDetectionConfigBuilder_ == null) {
-        humanAnnotationRequestConfig_ = builderForValue.build();
-        onChanged();
-      } else {
-        objectDetectionConfigBuilder_.setMessage(builderForValue.build());
-      }
-      humanAnnotationRequestConfigCase_ = 7;
-      return this;
-    }
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
-     * </code>
-     */
-    public Builder mergeObjectDetectionConfig(
-        com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig value) {
-      if (objectDetectionConfigBuilder_ == null) {
-        if (humanAnnotationRequestConfigCase_ == 7
-            && humanAnnotationRequestConfig_
-                != com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig
-                    .getDefaultInstance()) {
-          humanAnnotationRequestConfig_ =
-              com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig)
-                          humanAnnotationRequestConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          humanAnnotationRequestConfig_ = value;
-        }
-        onChanged();
-      } else {
-        if (humanAnnotationRequestConfigCase_ == 7) {
-          objectDetectionConfigBuilder_.mergeFrom(value);
-        }
-        objectDetectionConfigBuilder_.setMessage(value);
-      }
-      humanAnnotationRequestConfigCase_ = 7;
-      return this;
-    }
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
-     * </code>
-     */
-    public Builder clearObjectDetectionConfig() {
-      if (objectDetectionConfigBuilder_ == null) {
-        if (humanAnnotationRequestConfigCase_ == 7) {
-          humanAnnotationRequestConfigCase_ = 0;
-          humanAnnotationRequestConfig_ = null;
-          onChanged();
-        }
-      } else {
-        if (humanAnnotationRequestConfigCase_ == 7) {
-          humanAnnotationRequestConfigCase_ = 0;
-          humanAnnotationRequestConfig_ = null;
-        }
-        objectDetectionConfigBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.Builder
-        getObjectDetectionConfigBuilder() {
-      return getObjectDetectionConfigFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfigOrBuilder
-        getObjectDetectionConfigOrBuilder() {
-      if ((humanAnnotationRequestConfigCase_ == 7) && (objectDetectionConfigBuilder_ != null)) {
-        return objectDetectionConfigBuilder_.getMessageOrBuilder();
-      } else {
-        if (humanAnnotationRequestConfigCase_ == 7) {
-          return (com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig)
-              humanAnnotationRequestConfig_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig,
-            com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.Builder,
-            com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfigOrBuilder>
-        getObjectDetectionConfigFieldBuilder() {
-      if (objectDetectionConfigBuilder_ == null) {
-        if (!(humanAnnotationRequestConfigCase_ == 7)) {
-          humanAnnotationRequestConfig_ =
-              com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.getDefaultInstance();
-        }
-        objectDetectionConfigBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig,
-                com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.Builder,
-                com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfigOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig)
-                    humanAnnotationRequestConfig_,
-                getParentForChildren(),
-                isClean());
-        humanAnnotationRequestConfig_ = null;
-      }
-      humanAnnotationRequestConfigCase_ = 7;
-      onChanged();
-      ;
-      return objectDetectionConfigBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.TextClassificationConfig,
             com.google.cloud.datalabeling.v1beta1.TextClassificationConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.TextClassificationConfigOrBuilder>
         textClassificationConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs text classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
      * </code>
@@ -2393,6 +2165,16 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return humanAnnotationRequestConfigCase_ == 8;
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs text classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
      * </code>
@@ -2415,6 +2197,16 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs text classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
      * </code>
@@ -2434,6 +2226,16 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs text classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
      * </code>
@@ -2450,6 +2252,16 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs text classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
      * </code>
@@ -2481,6 +2293,16 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs text classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
      * </code>
@@ -2502,6 +2324,16 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs text classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
      * </code>
@@ -2511,6 +2343,16 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return getTextClassificationConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs text classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
      * </code>
@@ -2528,6 +2370,16 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Specify this field if your model version performs text classification.
+     * `annotationSpecSet` in this configuration must match
+     * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+     * `allowMultiLabel` in this configuration must match
+     * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
      * </code>
@@ -2559,178 +2411,6 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return textClassificationConfigBuilder_;
     }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig,
-            com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.Builder,
-            com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfigOrBuilder>
-        objectTrackingConfigBuilder_;
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
-     * </code>
-     *
-     * @return Whether the objectTrackingConfig field is set.
-     */
-    public boolean hasObjectTrackingConfig() {
-      return humanAnnotationRequestConfigCase_ == 12;
-    }
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
-     * </code>
-     *
-     * @return The objectTrackingConfig.
-     */
-    public com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig getObjectTrackingConfig() {
-      if (objectTrackingConfigBuilder_ == null) {
-        if (humanAnnotationRequestConfigCase_ == 12) {
-          return (com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig)
-              humanAnnotationRequestConfig_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.getDefaultInstance();
-      } else {
-        if (humanAnnotationRequestConfigCase_ == 12) {
-          return objectTrackingConfigBuilder_.getMessage();
-        }
-        return com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
-     * </code>
-     */
-    public Builder setObjectTrackingConfig(
-        com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig value) {
-      if (objectTrackingConfigBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        humanAnnotationRequestConfig_ = value;
-        onChanged();
-      } else {
-        objectTrackingConfigBuilder_.setMessage(value);
-      }
-      humanAnnotationRequestConfigCase_ = 12;
-      return this;
-    }
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
-     * </code>
-     */
-    public Builder setObjectTrackingConfig(
-        com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.Builder builderForValue) {
-      if (objectTrackingConfigBuilder_ == null) {
-        humanAnnotationRequestConfig_ = builderForValue.build();
-        onChanged();
-      } else {
-        objectTrackingConfigBuilder_.setMessage(builderForValue.build());
-      }
-      humanAnnotationRequestConfigCase_ = 12;
-      return this;
-    }
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
-     * </code>
-     */
-    public Builder mergeObjectTrackingConfig(
-        com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig value) {
-      if (objectTrackingConfigBuilder_ == null) {
-        if (humanAnnotationRequestConfigCase_ == 12
-            && humanAnnotationRequestConfig_
-                != com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig
-                    .getDefaultInstance()) {
-          humanAnnotationRequestConfig_ =
-              com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.newBuilder(
-                      (com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig)
-                          humanAnnotationRequestConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          humanAnnotationRequestConfig_ = value;
-        }
-        onChanged();
-      } else {
-        if (humanAnnotationRequestConfigCase_ == 12) {
-          objectTrackingConfigBuilder_.mergeFrom(value);
-        }
-        objectTrackingConfigBuilder_.setMessage(value);
-      }
-      humanAnnotationRequestConfigCase_ = 12;
-      return this;
-    }
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
-     * </code>
-     */
-    public Builder clearObjectTrackingConfig() {
-      if (objectTrackingConfigBuilder_ == null) {
-        if (humanAnnotationRequestConfigCase_ == 12) {
-          humanAnnotationRequestConfigCase_ = 0;
-          humanAnnotationRequestConfig_ = null;
-          onChanged();
-        }
-      } else {
-        if (humanAnnotationRequestConfigCase_ == 12) {
-          humanAnnotationRequestConfigCase_ = 0;
-          humanAnnotationRequestConfig_ = null;
-        }
-        objectTrackingConfigBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.Builder
-        getObjectTrackingConfigBuilder() {
-      return getObjectTrackingConfigFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
-     * </code>
-     */
-    public com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfigOrBuilder
-        getObjectTrackingConfigOrBuilder() {
-      if ((humanAnnotationRequestConfigCase_ == 12) && (objectTrackingConfigBuilder_ != null)) {
-        return objectTrackingConfigBuilder_.getMessageOrBuilder();
-      } else {
-        if (humanAnnotationRequestConfigCase_ == 12) {
-          return (com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig)
-              humanAnnotationRequestConfig_;
-        }
-        return com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 12;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig,
-            com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.Builder,
-            com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfigOrBuilder>
-        getObjectTrackingConfigFieldBuilder() {
-      if (objectTrackingConfigBuilder_ == null) {
-        if (!(humanAnnotationRequestConfigCase_ == 12)) {
-          humanAnnotationRequestConfig_ =
-              com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.getDefaultInstance();
-        }
-        objectTrackingConfigBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig,
-                com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.Builder,
-                com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfigOrBuilder>(
-                (com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig)
-                    humanAnnotationRequestConfig_,
-                getParentForChildren(),
-                isClean());
-        humanAnnotationRequestConfig_ = null;
-      }
-      humanAnnotationRequestConfigCase_ = 12;
-      onChanged();
-      ;
-      return objectTrackingConfigBuilder_;
-    }
-
     private com.google.cloud.datalabeling.v1beta1.InputConfig inputConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.InputConfig,
@@ -2741,8 +2421,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input config for data, gcs_source in the config will be the root path for
-     * data. Data should be organzied chronically under that path.
+     * Rquired. Details for the sampled prediction input. Within this
+     * configuration, there are requirements for several fields:
+     * * `dataType` must be one of `IMAGE`, `TEXT`, or `GENERAL_DATA`.
+     * * `annotationType` must be one of `IMAGE_CLASSIFICATION_ANNOTATION`,
+     *   `TEXT_CLASSIFICATION_ANNOTATION`, `GENERAL_CLASSIFICATION_ANNOTATION`,
+     *   or `IMAGE_BOUNDING_BOX_ANNOTATION` (image object detection).
+     * * If your machine learning model performs classification, you must specify
+     *   `classificationMetadata.isMultiLabel`.
+     * * You must specify `bigquerySource` (not `gcsSource`).
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
@@ -2756,8 +2443,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input config for data, gcs_source in the config will be the root path for
-     * data. Data should be organzied chronically under that path.
+     * Rquired. Details for the sampled prediction input. Within this
+     * configuration, there are requirements for several fields:
+     * * `dataType` must be one of `IMAGE`, `TEXT`, or `GENERAL_DATA`.
+     * * `annotationType` must be one of `IMAGE_CLASSIFICATION_ANNOTATION`,
+     *   `TEXT_CLASSIFICATION_ANNOTATION`, `GENERAL_CLASSIFICATION_ANNOTATION`,
+     *   or `IMAGE_BOUNDING_BOX_ANNOTATION` (image object detection).
+     * * If your machine learning model performs classification, you must specify
+     *   `classificationMetadata.isMultiLabel`.
+     * * You must specify `bigquerySource` (not `gcsSource`).
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
@@ -2777,8 +2471,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input config for data, gcs_source in the config will be the root path for
-     * data. Data should be organzied chronically under that path.
+     * Rquired. Details for the sampled prediction input. Within this
+     * configuration, there are requirements for several fields:
+     * * `dataType` must be one of `IMAGE`, `TEXT`, or `GENERAL_DATA`.
+     * * `annotationType` must be one of `IMAGE_CLASSIFICATION_ANNOTATION`,
+     *   `TEXT_CLASSIFICATION_ANNOTATION`, `GENERAL_CLASSIFICATION_ANNOTATION`,
+     *   or `IMAGE_BOUNDING_BOX_ANNOTATION` (image object detection).
+     * * If your machine learning model performs classification, you must specify
+     *   `classificationMetadata.isMultiLabel`.
+     * * You must specify `bigquerySource` (not `gcsSource`).
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
@@ -2800,8 +2501,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input config for data, gcs_source in the config will be the root path for
-     * data. Data should be organzied chronically under that path.
+     * Rquired. Details for the sampled prediction input. Within this
+     * configuration, there are requirements for several fields:
+     * * `dataType` must be one of `IMAGE`, `TEXT`, or `GENERAL_DATA`.
+     * * `annotationType` must be one of `IMAGE_CLASSIFICATION_ANNOTATION`,
+     *   `TEXT_CLASSIFICATION_ANNOTATION`, `GENERAL_CLASSIFICATION_ANNOTATION`,
+     *   or `IMAGE_BOUNDING_BOX_ANNOTATION` (image object detection).
+     * * If your machine learning model performs classification, you must specify
+     *   `classificationMetadata.isMultiLabel`.
+     * * You must specify `bigquerySource` (not `gcsSource`).
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
@@ -2821,8 +2529,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input config for data, gcs_source in the config will be the root path for
-     * data. Data should be organzied chronically under that path.
+     * Rquired. Details for the sampled prediction input. Within this
+     * configuration, there are requirements for several fields:
+     * * `dataType` must be one of `IMAGE`, `TEXT`, or `GENERAL_DATA`.
+     * * `annotationType` must be one of `IMAGE_CLASSIFICATION_ANNOTATION`,
+     *   `TEXT_CLASSIFICATION_ANNOTATION`, `GENERAL_CLASSIFICATION_ANNOTATION`,
+     *   or `IMAGE_BOUNDING_BOX_ANNOTATION` (image object detection).
+     * * If your machine learning model performs classification, you must specify
+     *   `classificationMetadata.isMultiLabel`.
+     * * You must specify `bigquerySource` (not `gcsSource`).
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
@@ -2848,8 +2563,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input config for data, gcs_source in the config will be the root path for
-     * data. Data should be organzied chronically under that path.
+     * Rquired. Details for the sampled prediction input. Within this
+     * configuration, there are requirements for several fields:
+     * * `dataType` must be one of `IMAGE`, `TEXT`, or `GENERAL_DATA`.
+     * * `annotationType` must be one of `IMAGE_CLASSIFICATION_ANNOTATION`,
+     *   `TEXT_CLASSIFICATION_ANNOTATION`, `GENERAL_CLASSIFICATION_ANNOTATION`,
+     *   or `IMAGE_BOUNDING_BOX_ANNOTATION` (image object detection).
+     * * If your machine learning model performs classification, you must specify
+     *   `classificationMetadata.isMultiLabel`.
+     * * You must specify `bigquerySource` (not `gcsSource`).
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
@@ -2869,8 +2591,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input config for data, gcs_source in the config will be the root path for
-     * data. Data should be organzied chronically under that path.
+     * Rquired. Details for the sampled prediction input. Within this
+     * configuration, there are requirements for several fields:
+     * * `dataType` must be one of `IMAGE`, `TEXT`, or `GENERAL_DATA`.
+     * * `annotationType` must be one of `IMAGE_CLASSIFICATION_ANNOTATION`,
+     *   `TEXT_CLASSIFICATION_ANNOTATION`, `GENERAL_CLASSIFICATION_ANNOTATION`,
+     *   or `IMAGE_BOUNDING_BOX_ANNOTATION` (image object detection).
+     * * If your machine learning model performs classification, you must specify
+     *   `classificationMetadata.isMultiLabel`.
+     * * You must specify `bigquerySource` (not `gcsSource`).
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
@@ -2884,8 +2613,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input config for data, gcs_source in the config will be the root path for
-     * data. Data should be organzied chronically under that path.
+     * Rquired. Details for the sampled prediction input. Within this
+     * configuration, there are requirements for several fields:
+     * * `dataType` must be one of `IMAGE`, `TEXT`, or `GENERAL_DATA`.
+     * * `annotationType` must be one of `IMAGE_CLASSIFICATION_ANNOTATION`,
+     *   `TEXT_CLASSIFICATION_ANNOTATION`, `GENERAL_CLASSIFICATION_ANNOTATION`,
+     *   or `IMAGE_BOUNDING_BOX_ANNOTATION` (image object detection).
+     * * If your machine learning model performs classification, you must specify
+     *   `classificationMetadata.isMultiLabel`.
+     * * You must specify `bigquerySource` (not `gcsSource`).
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
@@ -2903,8 +2639,15 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input config for data, gcs_source in the config will be the root path for
-     * data. Data should be organzied chronically under that path.
+     * Rquired. Details for the sampled prediction input. Within this
+     * configuration, there are requirements for several fields:
+     * * `dataType` must be one of `IMAGE`, `TEXT`, or `GENERAL_DATA`.
+     * * `annotationType` must be one of `IMAGE_CLASSIFICATION_ANNOTATION`,
+     *   `TEXT_CLASSIFICATION_ANNOTATION`, `GENERAL_CLASSIFICATION_ANNOTATION`,
+     *   or `IMAGE_BOUNDING_BOX_ANNOTATION` (image object detection).
+     * * If your machine learning model performs classification, you must specify
+     *   `classificationMetadata.isMultiLabel`.
+     * * You must specify `bigquerySource` (not `gcsSource`).
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
@@ -2936,7 +2679,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Config used to create evaluation.
+     * Required. Details for calculating evaluation metrics and creating
+     * [Evaulations][google.cloud.datalabeling.v1beta1.Evaluation]. If your model version performs image object
+     * detection, you must specify the `boundingBoxEvaluationOptions` field within
+     * this configuration. Otherwise, provide an empty object for this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
@@ -2950,7 +2697,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Config used to create evaluation.
+     * Required. Details for calculating evaluation metrics and creating
+     * [Evaulations][google.cloud.datalabeling.v1beta1.Evaluation]. If your model version performs image object
+     * detection, you must specify the `boundingBoxEvaluationOptions` field within
+     * this configuration. Otherwise, provide an empty object for this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
@@ -2970,7 +2721,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Config used to create evaluation.
+     * Required. Details for calculating evaluation metrics and creating
+     * [Evaulations][google.cloud.datalabeling.v1beta1.Evaluation]. If your model version performs image object
+     * detection, you must specify the `boundingBoxEvaluationOptions` field within
+     * this configuration. Otherwise, provide an empty object for this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
@@ -2993,7 +2748,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Config used to create evaluation.
+     * Required. Details for calculating evaluation metrics and creating
+     * [Evaulations][google.cloud.datalabeling.v1beta1.Evaluation]. If your model version performs image object
+     * detection, you must specify the `boundingBoxEvaluationOptions` field within
+     * this configuration. Otherwise, provide an empty object for this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
@@ -3013,7 +2772,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Config used to create evaluation.
+     * Required. Details for calculating evaluation metrics and creating
+     * [Evaulations][google.cloud.datalabeling.v1beta1.Evaluation]. If your model version performs image object
+     * detection, you must specify the `boundingBoxEvaluationOptions` field within
+     * this configuration. Otherwise, provide an empty object for this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
@@ -3040,7 +2803,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Config used to create evaluation.
+     * Required. Details for calculating evaluation metrics and creating
+     * [Evaulations][google.cloud.datalabeling.v1beta1.Evaluation]. If your model version performs image object
+     * detection, you must specify the `boundingBoxEvaluationOptions` field within
+     * this configuration. Otherwise, provide an empty object for this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
@@ -3060,7 +2827,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Config used to create evaluation.
+     * Required. Details for calculating evaluation metrics and creating
+     * [Evaulations][google.cloud.datalabeling.v1beta1.Evaluation]. If your model version performs image object
+     * detection, you must specify the `boundingBoxEvaluationOptions` field within
+     * this configuration. Otherwise, provide an empty object for this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
@@ -3075,7 +2846,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Config used to create evaluation.
+     * Required. Details for calculating evaluation metrics and creating
+     * [Evaulations][google.cloud.datalabeling.v1beta1.Evaluation]. If your model version performs image object
+     * detection, you must specify the `boundingBoxEvaluationOptions` field within
+     * this configuration. Otherwise, provide an empty object for this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
@@ -3094,7 +2869,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Config used to create evaluation.
+     * Required. Details for calculating evaluation metrics and creating
+     * [Evaulations][google.cloud.datalabeling.v1beta1.Evaluation]. If your model version performs image object
+     * detection, you must specify the `boundingBoxEvaluationOptions` field within
+     * this configuration. Otherwise, provide an empty object for this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
@@ -3123,6 +2902,18 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder>
         humanAnnotationConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Optional. Details for human annotation of your data. If you set
+     * [labelMissingGroundTruth][google.cloud.datalabeling.v1beta1.EvaluationJob.label_missing_ground_truth] to
+     * `true` for this evaluation job, then you must specify this field. If you
+     * plan to provide your own ground truth labels, then omit this field.
+     * Note that you must create an [Instruction][google.cloud.datalabeling.v1beta1.Instruction] resource before you can
+     * specify this field. Provide the name of the instruction resource in the
+     * `instruction` field within this configuration.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
      * </code>
      *
@@ -3132,6 +2923,18 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return humanAnnotationConfigBuilder_ != null || humanAnnotationConfig_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Details for human annotation of your data. If you set
+     * [labelMissingGroundTruth][google.cloud.datalabeling.v1beta1.EvaluationJob.label_missing_ground_truth] to
+     * `true` for this evaluation job, then you must specify this field. If you
+     * plan to provide your own ground truth labels, then omit this field.
+     * Note that you must create an [Instruction][google.cloud.datalabeling.v1beta1.Instruction] resource before you can
+     * specify this field. Provide the name of the instruction resource in the
+     * `instruction` field within this configuration.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
      * </code>
      *
@@ -3147,6 +2950,18 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Details for human annotation of your data. If you set
+     * [labelMissingGroundTruth][google.cloud.datalabeling.v1beta1.EvaluationJob.label_missing_ground_truth] to
+     * `true` for this evaluation job, then you must specify this field. If you
+     * plan to provide your own ground truth labels, then omit this field.
+     * Note that you must create an [Instruction][google.cloud.datalabeling.v1beta1.Instruction] resource before you can
+     * specify this field. Provide the name of the instruction resource in the
+     * `instruction` field within this configuration.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
      * </code>
      */
@@ -3165,6 +2980,18 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Details for human annotation of your data. If you set
+     * [labelMissingGroundTruth][google.cloud.datalabeling.v1beta1.EvaluationJob.label_missing_ground_truth] to
+     * `true` for this evaluation job, then you must specify this field. If you
+     * plan to provide your own ground truth labels, then omit this field.
+     * Note that you must create an [Instruction][google.cloud.datalabeling.v1beta1.Instruction] resource before you can
+     * specify this field. Provide the name of the instruction resource in the
+     * `instruction` field within this configuration.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
      * </code>
      */
@@ -3180,6 +3007,18 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Details for human annotation of your data. If you set
+     * [labelMissingGroundTruth][google.cloud.datalabeling.v1beta1.EvaluationJob.label_missing_ground_truth] to
+     * `true` for this evaluation job, then you must specify this field. If you
+     * plan to provide your own ground truth labels, then omit this field.
+     * Note that you must create an [Instruction][google.cloud.datalabeling.v1beta1.Instruction] resource before you can
+     * specify this field. Provide the name of the instruction resource in the
+     * `instruction` field within this configuration.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
      * </code>
      */
@@ -3203,6 +3042,18 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Details for human annotation of your data. If you set
+     * [labelMissingGroundTruth][google.cloud.datalabeling.v1beta1.EvaluationJob.label_missing_ground_truth] to
+     * `true` for this evaluation job, then you must specify this field. If you
+     * plan to provide your own ground truth labels, then omit this field.
+     * Note that you must create an [Instruction][google.cloud.datalabeling.v1beta1.Instruction] resource before you can
+     * specify this field. Provide the name of the instruction resource in the
+     * `instruction` field within this configuration.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
      * </code>
      */
@@ -3218,6 +3069,18 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Details for human annotation of your data. If you set
+     * [labelMissingGroundTruth][google.cloud.datalabeling.v1beta1.EvaluationJob.label_missing_ground_truth] to
+     * `true` for this evaluation job, then you must specify this field. If you
+     * plan to provide your own ground truth labels, then omit this field.
+     * Note that you must create an [Instruction][google.cloud.datalabeling.v1beta1.Instruction] resource before you can
+     * specify this field. Provide the name of the instruction resource in the
+     * `instruction` field within this configuration.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
      * </code>
      */
@@ -3228,6 +3091,18 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return getHumanAnnotationConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Details for human annotation of your data. If you set
+     * [labelMissingGroundTruth][google.cloud.datalabeling.v1beta1.EvaluationJob.label_missing_ground_truth] to
+     * `true` for this evaluation job, then you must specify this field. If you
+     * plan to provide your own ground truth labels, then omit this field.
+     * Note that you must create an [Instruction][google.cloud.datalabeling.v1beta1.Instruction] resource before you can
+     * specify this field. Provide the name of the instruction resource in the
+     * `instruction` field within this configuration.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
      * </code>
      */
@@ -3242,6 +3117,18 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Details for human annotation of your data. If you set
+     * [labelMissingGroundTruth][google.cloud.datalabeling.v1beta1.EvaluationJob.label_missing_ground_truth] to
+     * `true` for this evaluation job, then you must specify this field. If you
+     * plan to provide your own ground truth labels, then omit this field.
+     * Note that you must create an [Instruction][google.cloud.datalabeling.v1beta1.Instruction] resource before you can
+     * specify this field. Provide the name of the instruction resource in the
+     * `instruction` field within this configuration.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
      * </code>
      */
@@ -3295,13 +3182,22 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Mappings between reserved keys for bigquery import and customized tensor
-     * names. Key is the reserved key, value is tensor name in the bigquery table.
-     * Different annotation type has different required key mapping. See user
-     * manual for more details:
-     * https:
-     * //docs.google.com/document/d/1bg1meMIBGY
-     * // 9I5QEoFoHSX6u9LsZQYBSmPt6E9SxqHZc/edit#heading=h.tfyjhxhvsqem
+     * Required. Prediction keys that tell Data Labeling Service where to find the
+     * data for evaluation in your BigQuery table. When the service samples
+     * prediction input and output from your model version and saves it to
+     * BigQuery, the data gets stored as JSON strings in the BigQuery table. These
+     * keys tell Data Labeling Service how to parse the JSON.
+     * You can provide the following entries in this field:
+     * * `data_json_key`: the data key for prediction input. You must provide
+     *   either this key or `reference_json_key`.
+     * * `reference_json_key`: the data reference key for prediction input. You
+     *   must provide either this key or `data_json_key`.
+     * * `label_json_key`: the label key for prediction output. Required.
+     * * `label_score_json_key`: the score key for prediction output. Required.
+     * * `bounding_box_json_key`: the bounding box key for prediction output.
+     *   Required if your model version perform image object detection.
+     * Learn [how to configure prediction
+     * keys](/ml-engine/docs/continuous-evaluation/create-job#prediction-keys).
      * </pre>
      *
      * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
@@ -3321,13 +3217,22 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Mappings between reserved keys for bigquery import and customized tensor
-     * names. Key is the reserved key, value is tensor name in the bigquery table.
-     * Different annotation type has different required key mapping. See user
-     * manual for more details:
-     * https:
-     * //docs.google.com/document/d/1bg1meMIBGY
-     * // 9I5QEoFoHSX6u9LsZQYBSmPt6E9SxqHZc/edit#heading=h.tfyjhxhvsqem
+     * Required. Prediction keys that tell Data Labeling Service where to find the
+     * data for evaluation in your BigQuery table. When the service samples
+     * prediction input and output from your model version and saves it to
+     * BigQuery, the data gets stored as JSON strings in the BigQuery table. These
+     * keys tell Data Labeling Service how to parse the JSON.
+     * You can provide the following entries in this field:
+     * * `data_json_key`: the data key for prediction input. You must provide
+     *   either this key or `reference_json_key`.
+     * * `reference_json_key`: the data reference key for prediction input. You
+     *   must provide either this key or `data_json_key`.
+     * * `label_json_key`: the label key for prediction output. Required.
+     * * `label_score_json_key`: the score key for prediction output. Required.
+     * * `bounding_box_json_key`: the bounding box key for prediction output.
+     *   Required if your model version perform image object detection.
+     * Learn [how to configure prediction
+     * keys](/ml-engine/docs/continuous-evaluation/create-job#prediction-keys).
      * </pre>
      *
      * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
@@ -3339,13 +3244,22 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Mappings between reserved keys for bigquery import and customized tensor
-     * names. Key is the reserved key, value is tensor name in the bigquery table.
-     * Different annotation type has different required key mapping. See user
-     * manual for more details:
-     * https:
-     * //docs.google.com/document/d/1bg1meMIBGY
-     * // 9I5QEoFoHSX6u9LsZQYBSmPt6E9SxqHZc/edit#heading=h.tfyjhxhvsqem
+     * Required. Prediction keys that tell Data Labeling Service where to find the
+     * data for evaluation in your BigQuery table. When the service samples
+     * prediction input and output from your model version and saves it to
+     * BigQuery, the data gets stored as JSON strings in the BigQuery table. These
+     * keys tell Data Labeling Service how to parse the JSON.
+     * You can provide the following entries in this field:
+     * * `data_json_key`: the data key for prediction input. You must provide
+     *   either this key or `reference_json_key`.
+     * * `reference_json_key`: the data reference key for prediction input. You
+     *   must provide either this key or `data_json_key`.
+     * * `label_json_key`: the label key for prediction output. Required.
+     * * `label_score_json_key`: the score key for prediction output. Required.
+     * * `bounding_box_json_key`: the bounding box key for prediction output.
+     *   Required if your model version perform image object detection.
+     * Learn [how to configure prediction
+     * keys](/ml-engine/docs/continuous-evaluation/create-job#prediction-keys).
      * </pre>
      *
      * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
@@ -3363,13 +3277,22 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Mappings between reserved keys for bigquery import and customized tensor
-     * names. Key is the reserved key, value is tensor name in the bigquery table.
-     * Different annotation type has different required key mapping. See user
-     * manual for more details:
-     * https:
-     * //docs.google.com/document/d/1bg1meMIBGY
-     * // 9I5QEoFoHSX6u9LsZQYBSmPt6E9SxqHZc/edit#heading=h.tfyjhxhvsqem
+     * Required. Prediction keys that tell Data Labeling Service where to find the
+     * data for evaluation in your BigQuery table. When the service samples
+     * prediction input and output from your model version and saves it to
+     * BigQuery, the data gets stored as JSON strings in the BigQuery table. These
+     * keys tell Data Labeling Service how to parse the JSON.
+     * You can provide the following entries in this field:
+     * * `data_json_key`: the data key for prediction input. You must provide
+     *   either this key or `reference_json_key`.
+     * * `reference_json_key`: the data reference key for prediction input. You
+     *   must provide either this key or `data_json_key`.
+     * * `label_json_key`: the label key for prediction output. Required.
+     * * `label_score_json_key`: the score key for prediction output. Required.
+     * * `bounding_box_json_key`: the bounding box key for prediction output.
+     *   Required if your model version perform image object detection.
+     * Learn [how to configure prediction
+     * keys](/ml-engine/docs/continuous-evaluation/create-job#prediction-keys).
      * </pre>
      *
      * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
@@ -3394,13 +3317,22 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Mappings between reserved keys for bigquery import and customized tensor
-     * names. Key is the reserved key, value is tensor name in the bigquery table.
-     * Different annotation type has different required key mapping. See user
-     * manual for more details:
-     * https:
-     * //docs.google.com/document/d/1bg1meMIBGY
-     * // 9I5QEoFoHSX6u9LsZQYBSmPt6E9SxqHZc/edit#heading=h.tfyjhxhvsqem
+     * Required. Prediction keys that tell Data Labeling Service where to find the
+     * data for evaluation in your BigQuery table. When the service samples
+     * prediction input and output from your model version and saves it to
+     * BigQuery, the data gets stored as JSON strings in the BigQuery table. These
+     * keys tell Data Labeling Service how to parse the JSON.
+     * You can provide the following entries in this field:
+     * * `data_json_key`: the data key for prediction input. You must provide
+     *   either this key or `reference_json_key`.
+     * * `reference_json_key`: the data reference key for prediction input. You
+     *   must provide either this key or `data_json_key`.
+     * * `label_json_key`: the label key for prediction output. Required.
+     * * `label_score_json_key`: the score key for prediction output. Required.
+     * * `bounding_box_json_key`: the bounding box key for prediction output.
+     *   Required if your model version perform image object detection.
+     * Learn [how to configure prediction
+     * keys](/ml-engine/docs/continuous-evaluation/create-job#prediction-keys).
      * </pre>
      *
      * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
@@ -3421,13 +3353,22 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Mappings between reserved keys for bigquery import and customized tensor
-     * names. Key is the reserved key, value is tensor name in the bigquery table.
-     * Different annotation type has different required key mapping. See user
-     * manual for more details:
-     * https:
-     * //docs.google.com/document/d/1bg1meMIBGY
-     * // 9I5QEoFoHSX6u9LsZQYBSmPt6E9SxqHZc/edit#heading=h.tfyjhxhvsqem
+     * Required. Prediction keys that tell Data Labeling Service where to find the
+     * data for evaluation in your BigQuery table. When the service samples
+     * prediction input and output from your model version and saves it to
+     * BigQuery, the data gets stored as JSON strings in the BigQuery table. These
+     * keys tell Data Labeling Service how to parse the JSON.
+     * You can provide the following entries in this field:
+     * * `data_json_key`: the data key for prediction input. You must provide
+     *   either this key or `reference_json_key`.
+     * * `reference_json_key`: the data reference key for prediction input. You
+     *   must provide either this key or `data_json_key`.
+     * * `label_json_key`: the label key for prediction output. Required.
+     * * `label_score_json_key`: the score key for prediction output. Required.
+     * * `bounding_box_json_key`: the bounding box key for prediction output.
+     *   Required if your model version perform image object detection.
+     * Learn [how to configure prediction
+     * keys](/ml-engine/docs/continuous-evaluation/create-job#prediction-keys).
      * </pre>
      *
      * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
@@ -3446,13 +3387,22 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Mappings between reserved keys for bigquery import and customized tensor
-     * names. Key is the reserved key, value is tensor name in the bigquery table.
-     * Different annotation type has different required key mapping. See user
-     * manual for more details:
-     * https:
-     * //docs.google.com/document/d/1bg1meMIBGY
-     * // 9I5QEoFoHSX6u9LsZQYBSmPt6E9SxqHZc/edit#heading=h.tfyjhxhvsqem
+     * Required. Prediction keys that tell Data Labeling Service where to find the
+     * data for evaluation in your BigQuery table. When the service samples
+     * prediction input and output from your model version and saves it to
+     * BigQuery, the data gets stored as JSON strings in the BigQuery table. These
+     * keys tell Data Labeling Service how to parse the JSON.
+     * You can provide the following entries in this field:
+     * * `data_json_key`: the data key for prediction input. You must provide
+     *   either this key or `reference_json_key`.
+     * * `reference_json_key`: the data reference key for prediction input. You
+     *   must provide either this key or `data_json_key`.
+     * * `label_json_key`: the label key for prediction output. Required.
+     * * `label_score_json_key`: the score key for prediction output. Required.
+     * * `bounding_box_json_key`: the bounding box key for prediction output.
+     *   Required if your model version perform image object detection.
+     * Learn [how to configure prediction
+     * keys](/ml-engine/docs/continuous-evaluation/create-job#prediction-keys).
      * </pre>
      *
      * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
@@ -3468,7 +3418,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Max number of examples to collect in each period.
+     * Required. The maximum number of predictions to sample and save to BigQuery
+     * during each [evaluation interval][google.cloud.datalabeling.v1beta1.EvaluationJob.schedule]. This limit
+     * overrides `example_sample_percentage`: even if the service has not sampled
+     * enough predictions to fulfill `example_sample_perecentage` during an
+     * interval, it stops sampling predictions when it meets this limit.
      * </pre>
      *
      * <code>int32 example_count = 10;</code>
@@ -3482,7 +3436,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Max number of examples to collect in each period.
+     * Required. The maximum number of predictions to sample and save to BigQuery
+     * during each [evaluation interval][google.cloud.datalabeling.v1beta1.EvaluationJob.schedule]. This limit
+     * overrides `example_sample_percentage`: even if the service has not sampled
+     * enough predictions to fulfill `example_sample_perecentage` during an
+     * interval, it stops sampling predictions when it meets this limit.
      * </pre>
      *
      * <code>int32 example_count = 10;</code>
@@ -3500,7 +3458,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Max number of examples to collect in each period.
+     * Required. The maximum number of predictions to sample and save to BigQuery
+     * during each [evaluation interval][google.cloud.datalabeling.v1beta1.EvaluationJob.schedule]. This limit
+     * overrides `example_sample_percentage`: even if the service has not sampled
+     * enough predictions to fulfill `example_sample_perecentage` during an
+     * interval, it stops sampling predictions when it meets this limit.
      * </pre>
      *
      * <code>int32 example_count = 10;</code>
@@ -3519,8 +3481,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Percentage of examples to collect in each period. 0.1 means 10% of total
-     * examples will be collected, and 0.0 means no collection.
+     * Required. Fraction of predictions to sample and save to BigQuery during
+     * each [evaluation interval][google.cloud.datalabeling.v1beta1.EvaluationJob.schedule]. For example, 0.1 means
+     * 10% of predictions served by your model version get saved to BigQuery.
      * </pre>
      *
      * <code>double example_sample_percentage = 11;</code>
@@ -3534,8 +3497,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Percentage of examples to collect in each period. 0.1 means 10% of total
-     * examples will be collected, and 0.0 means no collection.
+     * Required. Fraction of predictions to sample and save to BigQuery during
+     * each [evaluation interval][google.cloud.datalabeling.v1beta1.EvaluationJob.schedule]. For example, 0.1 means
+     * 10% of predictions served by your model version get saved to BigQuery.
      * </pre>
      *
      * <code>double example_sample_percentage = 11;</code>
@@ -3553,8 +3517,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Percentage of examples to collect in each period. 0.1 means 10% of total
-     * examples will be collected, and 0.0 means no collection.
+     * Required. Fraction of predictions to sample and save to BigQuery during
+     * each [evaluation interval][google.cloud.datalabeling.v1beta1.EvaluationJob.schedule]. For example, 0.1 means
+     * 10% of predictions served by your model version get saved to BigQuery.
      * </pre>
      *
      * <code>double example_sample_percentage = 11;</code>
@@ -3579,8 +3544,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Alert config for the evaluation job. The alert will be triggered when its
-     * criteria is met.
+     * Optional. Configuration details for evaluation job alerts. Specify this
+     * field if you want to receive email alerts if the evaluation job finds that
+     * your predictions have low mean average precision during a run.
      * </pre>
      *
      * <code>
@@ -3596,8 +3562,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Alert config for the evaluation job. The alert will be triggered when its
-     * criteria is met.
+     * Optional. Configuration details for evaluation job alerts. Specify this
+     * field if you want to receive email alerts if the evaluation job finds that
+     * your predictions have low mean average precision during a run.
      * </pre>
      *
      * <code>
@@ -3620,8 +3587,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Alert config for the evaluation job. The alert will be triggered when its
-     * criteria is met.
+     * Optional. Configuration details for evaluation job alerts. Specify this
+     * field if you want to receive email alerts if the evaluation job finds that
+     * your predictions have low mean average precision during a run.
      * </pre>
      *
      * <code>
@@ -3646,8 +3614,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Alert config for the evaluation job. The alert will be triggered when its
-     * criteria is met.
+     * Optional. Configuration details for evaluation job alerts. Specify this
+     * field if you want to receive email alerts if the evaluation job finds that
+     * your predictions have low mean average precision during a run.
      * </pre>
      *
      * <code>
@@ -3669,8 +3638,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Alert config for the evaluation job. The alert will be triggered when its
-     * criteria is met.
+     * Optional. Configuration details for evaluation job alerts. Specify this
+     * field if you want to receive email alerts if the evaluation job finds that
+     * your predictions have low mean average precision during a run.
      * </pre>
      *
      * <code>
@@ -3700,8 +3670,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Alert config for the evaluation job. The alert will be triggered when its
-     * criteria is met.
+     * Optional. Configuration details for evaluation job alerts. Specify this
+     * field if you want to receive email alerts if the evaluation job finds that
+     * your predictions have low mean average precision during a run.
      * </pre>
      *
      * <code>
@@ -3723,8 +3694,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Alert config for the evaluation job. The alert will be triggered when its
-     * criteria is met.
+     * Optional. Configuration details for evaluation job alerts. Specify this
+     * field if you want to receive email alerts if the evaluation job finds that
+     * your predictions have low mean average precision during a run.
      * </pre>
      *
      * <code>
@@ -3741,8 +3713,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Alert config for the evaluation job. The alert will be triggered when its
-     * criteria is met.
+     * Optional. Configuration details for evaluation job alerts. Specify this
+     * field if you want to receive email alerts if the evaluation job finds that
+     * your predictions have low mean average precision during a run.
      * </pre>
      *
      * <code>
@@ -3763,8 +3736,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Alert config for the evaluation job. The alert will be triggered when its
-     * criteria is met.
+     * Optional. Configuration details for evaluation job alerts. Specify this
+     * field if you want to receive email alerts if the evaluation job finds that
+     * your predictions have low mean average precision during a run.
      * </pre>
      *
      * <code>

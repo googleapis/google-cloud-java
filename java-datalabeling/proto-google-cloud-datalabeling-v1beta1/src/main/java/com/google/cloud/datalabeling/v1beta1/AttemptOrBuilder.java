@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,14 +38,54 @@ public interface AttemptOrBuilder
   /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
   com.google.protobuf.TimestampOrBuilder getAttemptTimeOrBuilder();
 
-  /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Details of errors that occurred.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+   */
   java.util.List<com.google.rpc.Status> getPartialFailuresList();
-  /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Details of errors that occurred.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+   */
   com.google.rpc.Status getPartialFailures(int index);
-  /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Details of errors that occurred.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+   */
   int getPartialFailuresCount();
-  /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Details of errors that occurred.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+   */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialFailuresOrBuilderList();
-  /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Details of errors that occurred.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+   */
   com.google.rpc.StatusOrBuilder getPartialFailuresOrBuilder(int index);
 }

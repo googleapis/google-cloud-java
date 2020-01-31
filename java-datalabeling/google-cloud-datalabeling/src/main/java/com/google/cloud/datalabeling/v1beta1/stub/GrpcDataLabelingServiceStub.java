@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -198,6 +198,16 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(ListAnnotatedDatasetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAnnotatedDatasetsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteAnnotatedDatasetRequest, Empty>
+      deleteAnnotatedDatasetMethodDescriptor =
+          MethodDescriptor.<DeleteAnnotatedDatasetRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datalabeling.v1beta1.DataLabelingService/DeleteAnnotatedDataset")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAnnotatedDatasetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<LabelImageRequest, Operation> labelImageMethodDescriptor =
       MethodDescriptor.<LabelImageRequest, Operation>newBuilder()
@@ -426,16 +436,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEvaluationJobsResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeleteAnnotatedDatasetRequest, Empty>
-      deleteAnnotatedDatasetMethodDescriptor =
-          MethodDescriptor.<DeleteAnnotatedDatasetRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.datalabeling.v1beta1.DataLabelingService/DeleteAnnotatedDataset")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteAnnotatedDatasetRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -464,6 +464,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
       listAnnotatedDatasetsCallable;
   private final UnaryCallable<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsPagedResponse>
       listAnnotatedDatasetsPagedCallable;
+  private final UnaryCallable<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetCallable;
   private final UnaryCallable<LabelImageRequest, Operation> labelImageCallable;
   private final OperationCallable<LabelImageRequest, AnnotatedDataset, LabelOperationMetadata>
       labelImageOperationCallable;
@@ -518,7 +519,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
       listEvaluationJobsCallable;
   private final UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsPagedResponse>
       listEvaluationJobsPagedCallable;
-  private final UnaryCallable<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -695,6 +695,19 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetTransportSettings =
+        GrpcCallSettings.<DeleteAnnotatedDatasetRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAnnotatedDatasetMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteAnnotatedDatasetRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteAnnotatedDatasetRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<LabelImageRequest, Operation> labelImageTransportSettings =
         GrpcCallSettings.<LabelImageRequest, Operation>newBuilder()
             .setMethodDescriptor(labelImageMethodDescriptor)
@@ -1008,19 +1021,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       }
                     })
                 .build();
-    GrpcCallSettings<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetTransportSettings =
-        GrpcCallSettings.<DeleteAnnotatedDatasetRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteAnnotatedDatasetMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteAnnotatedDatasetRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteAnnotatedDatasetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
 
     this.createDatasetCallable =
         callableFactory.createUnaryCallable(
@@ -1078,6 +1078,11 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
         callableFactory.createPagedCallable(
             listAnnotatedDatasetsTransportSettings,
             settings.listAnnotatedDatasetsSettings(),
+            clientContext);
+    this.deleteAnnotatedDatasetCallable =
+        callableFactory.createUnaryCallable(
+            deleteAnnotatedDatasetTransportSettings,
+            settings.deleteAnnotatedDatasetSettings(),
             clientContext);
     this.labelImageCallable =
         callableFactory.createUnaryCallable(
@@ -1226,11 +1231,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             listEvaluationJobsTransportSettings,
             settings.listEvaluationJobsSettings(),
             clientContext);
-    this.deleteAnnotatedDatasetCallable =
-        callableFactory.createUnaryCallable(
-            deleteAnnotatedDatasetTransportSettings,
-            settings.deleteAnnotatedDatasetSettings(),
-            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -1307,6 +1307,10 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
   public UnaryCallable<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse>
       listAnnotatedDatasetsCallable() {
     return listAnnotatedDatasetsCallable;
+  }
+
+  public UnaryCallable<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetCallable() {
+    return deleteAnnotatedDatasetCallable;
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
@@ -1459,10 +1463,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
   public UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
       listEvaluationJobsCallable() {
     return listEvaluationJobsCallable;
-  }
-
-  public UnaryCallable<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetCallable() {
-    return deleteAnnotatedDatasetCallable;
   }
 
   @Override

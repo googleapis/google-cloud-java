@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.google.cloud.datalabeling.v1beta1;
  *
  *
  * <pre>
- * Records a failed attempt.
+ * Records a failed evaluation job run.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datalabeling.v1beta1.Attempt}
@@ -158,24 +158,64 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PARTIAL_FAILURES_FIELD_NUMBER = 2;
   private java.util.List<com.google.rpc.Status> partialFailures_;
-  /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Details of errors that occurred.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+   */
   public java.util.List<com.google.rpc.Status> getPartialFailuresList() {
     return partialFailures_;
   }
-  /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Details of errors that occurred.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+   */
   public java.util.List<? extends com.google.rpc.StatusOrBuilder>
       getPartialFailuresOrBuilderList() {
     return partialFailures_;
   }
-  /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Details of errors that occurred.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+   */
   public int getPartialFailuresCount() {
     return partialFailures_.size();
   }
-  /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Details of errors that occurred.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+   */
   public com.google.rpc.Status getPartialFailures(int index) {
     return partialFailures_.get(index);
   }
-  /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Details of errors that occurred.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+   */
   public com.google.rpc.StatusOrBuilder getPartialFailuresOrBuilder(int index) {
     return partialFailures_.get(index);
   }
@@ -359,7 +399,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Records a failed attempt.
+   * Records a failed evaluation job run.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datalabeling.v1beta1.Attempt}
@@ -697,7 +737,15 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         partialFailuresBuilder_;
 
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public java.util.List<com.google.rpc.Status> getPartialFailuresList() {
       if (partialFailuresBuilder_ == null) {
         return java.util.Collections.unmodifiableList(partialFailures_);
@@ -705,7 +753,15 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         return partialFailuresBuilder_.getMessageList();
       }
     }
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public int getPartialFailuresCount() {
       if (partialFailuresBuilder_ == null) {
         return partialFailures_.size();
@@ -713,7 +769,15 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         return partialFailuresBuilder_.getCount();
       }
     }
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public com.google.rpc.Status getPartialFailures(int index) {
       if (partialFailuresBuilder_ == null) {
         return partialFailures_.get(index);
@@ -721,7 +785,15 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         return partialFailuresBuilder_.getMessage(index);
       }
     }
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public Builder setPartialFailures(int index, com.google.rpc.Status value) {
       if (partialFailuresBuilder_ == null) {
         if (value == null) {
@@ -735,7 +807,15 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public Builder setPartialFailures(int index, com.google.rpc.Status.Builder builderForValue) {
       if (partialFailuresBuilder_ == null) {
         ensurePartialFailuresIsMutable();
@@ -746,7 +826,15 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public Builder addPartialFailures(com.google.rpc.Status value) {
       if (partialFailuresBuilder_ == null) {
         if (value == null) {
@@ -760,7 +848,15 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public Builder addPartialFailures(int index, com.google.rpc.Status value) {
       if (partialFailuresBuilder_ == null) {
         if (value == null) {
@@ -774,7 +870,15 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public Builder addPartialFailures(com.google.rpc.Status.Builder builderForValue) {
       if (partialFailuresBuilder_ == null) {
         ensurePartialFailuresIsMutable();
@@ -785,7 +889,15 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public Builder addPartialFailures(int index, com.google.rpc.Status.Builder builderForValue) {
       if (partialFailuresBuilder_ == null) {
         ensurePartialFailuresIsMutable();
@@ -796,7 +908,15 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public Builder addAllPartialFailures(
         java.lang.Iterable<? extends com.google.rpc.Status> values) {
       if (partialFailuresBuilder_ == null) {
@@ -808,7 +928,15 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public Builder clearPartialFailures() {
       if (partialFailuresBuilder_ == null) {
         partialFailures_ = java.util.Collections.emptyList();
@@ -819,7 +947,15 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public Builder removePartialFailures(int index) {
       if (partialFailuresBuilder_ == null) {
         ensurePartialFailuresIsMutable();
@@ -830,11 +966,27 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public com.google.rpc.Status.Builder getPartialFailuresBuilder(int index) {
       return getPartialFailuresFieldBuilder().getBuilder(index);
     }
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public com.google.rpc.StatusOrBuilder getPartialFailuresOrBuilder(int index) {
       if (partialFailuresBuilder_ == null) {
         return partialFailures_.get(index);
@@ -842,7 +994,15 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         return partialFailuresBuilder_.getMessageOrBuilder(index);
       }
     }
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public java.util.List<? extends com.google.rpc.StatusOrBuilder>
         getPartialFailuresOrBuilderList() {
       if (partialFailuresBuilder_ != null) {
@@ -851,17 +1011,41 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(partialFailures_);
       }
     }
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public com.google.rpc.Status.Builder addPartialFailuresBuilder() {
       return getPartialFailuresFieldBuilder()
           .addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public com.google.rpc.Status.Builder addPartialFailuresBuilder(int index) {
       return getPartialFailuresFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
-    /** <code>repeated .google.rpc.Status partial_failures = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Details of errors that occurred.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status partial_failures = 2;</code>
+     */
     public java.util.List<com.google.rpc.Status.Builder> getPartialFailuresBuilderList() {
       return getPartialFailuresFieldBuilder().getBuilderList();
     }

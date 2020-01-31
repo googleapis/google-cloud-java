@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -134,11 +134,13 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. Evaluation job resource parent, format:
-   * projects/{project_id}.
+   * Required. Evaluation job resource parent. Format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -157,11 +159,13 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. Evaluation job resource parent, format:
-   * projects/{project_id}.
+   * Required. Evaluation job resource parent. Format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -186,7 +190,9 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
    * Required. The evaluation job to create.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.EvaluationJob job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the job field is set.
    */
@@ -200,7 +206,9 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
    * Required. The evaluation job to create.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.EvaluationJob job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The job.
    */
@@ -216,7 +224,9 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
    * Required. The evaluation job to create.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.EvaluationJob job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datalabeling.v1beta1.EvaluationJobOrBuilder getJobOrBuilder() {
     return getJob();
@@ -578,11 +588,13 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Evaluation job resource parent, format:
-     * projects/{project_id}.
+     * Required. Evaluation job resource parent. Format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -601,11 +613,13 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Evaluation job resource parent, format:
-     * projects/{project_id}.
+     * Required. Evaluation job resource parent. Format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -624,11 +638,13 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Evaluation job resource parent, format:
-     * projects/{project_id}.
+     * Required. Evaluation job resource parent. Format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -646,11 +662,13 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Evaluation job resource parent, format:
-     * projects/{project_id}.
+     * Required. Evaluation job resource parent. Format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -664,11 +682,13 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Evaluation job resource parent, format:
-     * projects/{project_id}.
+     * Required. Evaluation job resource parent. Format:
+     * "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -697,7 +717,9 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. The evaluation job to create.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the job field is set.
      */
@@ -711,7 +733,9 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. The evaluation job to create.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The job.
      */
@@ -731,7 +755,9 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. The evaluation job to create.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJob(com.google.cloud.datalabeling.v1beta1.EvaluationJob value) {
       if (jobBuilder_ == null) {
@@ -753,7 +779,9 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. The evaluation job to create.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJob(
         com.google.cloud.datalabeling.v1beta1.EvaluationJob.Builder builderForValue) {
@@ -773,7 +801,9 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. The evaluation job to create.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeJob(com.google.cloud.datalabeling.v1beta1.EvaluationJob value) {
       if (jobBuilder_ == null) {
@@ -799,7 +829,9 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. The evaluation job to create.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearJob() {
       if (jobBuilder_ == null) {
@@ -819,7 +851,9 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. The evaluation job to create.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.EvaluationJob.Builder getJobBuilder() {
 
@@ -833,7 +867,9 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. The evaluation job to create.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.EvaluationJobOrBuilder getJobOrBuilder() {
       if (jobBuilder_ != null) {
@@ -851,7 +887,9 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
      * Required. The evaluation job to create.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.EvaluationJob job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.EvaluationJob,

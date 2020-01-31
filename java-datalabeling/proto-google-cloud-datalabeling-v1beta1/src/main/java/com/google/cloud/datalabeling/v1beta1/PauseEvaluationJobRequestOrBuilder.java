@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,12 @@ public interface PauseEvaluationJobRequestOrBuilder
    *
    * <pre>
    * Required. Name of the evaluation job that is going to be paused. Format:
-   * 'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -41,10 +43,12 @@ public interface PauseEvaluationJobRequestOrBuilder
    *
    * <pre>
    * Required. Name of the evaluation job that is going to be paused. Format:
-   * 'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

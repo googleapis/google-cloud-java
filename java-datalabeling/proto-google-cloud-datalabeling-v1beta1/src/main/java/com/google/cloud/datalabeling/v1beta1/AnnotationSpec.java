@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,10 @@ package com.google.cloud.datalabeling.v1beta1;
  *
  *
  * <pre>
- * Container of information related to one annotation spec.
+ * Container of information related to one possible annotation that can be used
+ * in a labeling task. For example, an image classification task where images
+ * are labeled as `dog` or `cat` must reference an AnnotationSpec for `dog` and
+ * an AnnotationSpec for `cat`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datalabeling.v1beta1.AnnotationSpec}
@@ -173,7 +176,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. User-provided description of the annotation specification.
-   * The description can be up to 10000 characters long.
+   * The description can be up to 10,000 characters long.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -196,7 +199,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. User-provided description of the annotation specification.
-   * The description can be up to 10000 characters long.
+   * The description can be up to 10,000 characters long.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -387,7 +390,10 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Container of information related to one annotation spec.
+   * Container of information related to one possible annotation that can be used
+   * in a labeling task. For example, an image classification task where images
+   * are labeled as `dog` or `cat` must reference an AnnotationSpec for `dog` and
+   * an AnnotationSpec for `cat`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datalabeling.v1beta1.AnnotationSpec}
@@ -661,7 +667,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User-provided description of the annotation specification.
-     * The description can be up to 10000 characters long.
+     * The description can be up to 10,000 characters long.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -684,7 +690,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User-provided description of the annotation specification.
-     * The description can be up to 10000 characters long.
+     * The description can be up to 10,000 characters long.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -707,7 +713,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User-provided description of the annotation specification.
-     * The description can be up to 10000 characters long.
+     * The description can be up to 10,000 characters long.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -729,7 +735,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User-provided description of the annotation specification.
-     * The description can be up to 10000 characters long.
+     * The description can be up to 10,000 characters long.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -747,7 +753,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User-provided description of the annotation specification.
-     * The description can be up to 10000 characters long.
+     * The description can be up to 10,000 characters long.
      * </pre>
      *
      * <code>string description = 2;</code>

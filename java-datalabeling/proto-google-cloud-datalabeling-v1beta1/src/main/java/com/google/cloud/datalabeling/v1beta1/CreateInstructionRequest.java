@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -138,7 +138,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
    * projects/{project_id}
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -161,7 +163,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
    * projects/{project_id}
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -186,7 +190,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
    * Required. Instruction of how to perform the labeling task.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.Instruction instruction = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.Instruction instruction = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the instruction field is set.
    */
@@ -200,7 +206,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
    * Required. Instruction of how to perform the labeling task.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.Instruction instruction = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.Instruction instruction = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The instruction.
    */
@@ -216,7 +224,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
    * Required. Instruction of how to perform the labeling task.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.Instruction instruction = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.Instruction instruction = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datalabeling.v1beta1.InstructionOrBuilder getInstructionOrBuilder() {
     return getInstruction();
@@ -581,7 +591,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * projects/{project_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -604,7 +616,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * projects/{project_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -627,7 +641,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * projects/{project_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -649,7 +665,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * projects/{project_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -667,7 +685,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * projects/{project_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -696,7 +716,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * Required. Instruction of how to perform the labeling task.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Instruction instruction = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Instruction instruction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the instruction field is set.
      */
@@ -710,7 +732,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * Required. Instruction of how to perform the labeling task.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Instruction instruction = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Instruction instruction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The instruction.
      */
@@ -730,7 +754,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * Required. Instruction of how to perform the labeling task.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Instruction instruction = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Instruction instruction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInstruction(com.google.cloud.datalabeling.v1beta1.Instruction value) {
       if (instructionBuilder_ == null) {
@@ -752,7 +778,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * Required. Instruction of how to perform the labeling task.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Instruction instruction = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Instruction instruction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInstruction(
         com.google.cloud.datalabeling.v1beta1.Instruction.Builder builderForValue) {
@@ -772,7 +800,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * Required. Instruction of how to perform the labeling task.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Instruction instruction = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Instruction instruction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeInstruction(com.google.cloud.datalabeling.v1beta1.Instruction value) {
       if (instructionBuilder_ == null) {
@@ -798,7 +828,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * Required. Instruction of how to perform the labeling task.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Instruction instruction = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Instruction instruction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearInstruction() {
       if (instructionBuilder_ == null) {
@@ -818,7 +850,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * Required. Instruction of how to perform the labeling task.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Instruction instruction = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Instruction instruction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.Instruction.Builder getInstructionBuilder() {
 
@@ -832,7 +866,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * Required. Instruction of how to perform the labeling task.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Instruction instruction = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Instruction instruction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.InstructionOrBuilder getInstructionOrBuilder() {
       if (instructionBuilder_ != null) {
@@ -850,7 +886,9 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
      * Required. Instruction of how to perform the labeling task.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Instruction instruction = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Instruction instruction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.Instruction,

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,18 +94,41 @@ public interface InputConfigOrBuilder
   com.google.cloud.datalabeling.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Source located in BigQuery. You must specify this field if you are using
+   * this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
    *
    * @return Whether the bigquerySource field is set.
    */
   boolean hasBigquerySource();
   /**
+   *
+   *
+   * <pre>
+   * Source located in BigQuery. You must specify this field if you are using
+   * this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
    *
    * @return The bigquerySource.
    */
   com.google.cloud.datalabeling.v1beta1.BigQuerySource getBigquerySource();
-  /** <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Source located in BigQuery. You must specify this field if you are using
+   * this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
+   */
   com.google.cloud.datalabeling.v1beta1.BigQuerySourceOrBuilder getBigquerySourceOrBuilder();
 
   /**
@@ -137,9 +160,9 @@ public interface InputConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. If input contains annotation, user needs to specify the
-   * type and metadata of the annotation when creating it as an annotated
-   * dataset.
+   * Optional. The type of annotation to be performed on this data. You must
+   * specify this field if you are using this InputConfig in an
+   * [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
@@ -151,9 +174,9 @@ public interface InputConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. If input contains annotation, user needs to specify the
-   * type and metadata of the annotation when creating it as an annotated
-   * dataset.
+   * Optional. The type of annotation to be performed on this data. You must
+   * specify this field if you are using this InputConfig in an
+   * [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 3;</code>
@@ -166,9 +189,9 @@ public interface InputConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Metadata about annotations in the input. Each annotation type may
-   * have different metadata.
-   * Metadata for classification problem.
+   * Optional. Metadata about annotations for the input. You must specify this
+   * field if you are using this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] for a
+   * model version that performs classification.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
@@ -181,9 +204,9 @@ public interface InputConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Metadata about annotations in the input. Each annotation type may
-   * have different metadata.
-   * Metadata for classification problem.
+   * Optional. Metadata about annotations for the input. You must specify this
+   * field if you are using this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] for a
+   * model version that performs classification.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
@@ -196,9 +219,9 @@ public interface InputConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Metadata about annotations in the input. Each annotation type may
-   * have different metadata.
-   * Metadata for classification problem.
+   * Optional. Metadata about annotations for the input. You must specify this
+   * field if you are using this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] for a
+   * model version that performs classification.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;

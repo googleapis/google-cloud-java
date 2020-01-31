@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -178,6 +178,8 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           ListAnnotatedDatasetsResponse,
           ListAnnotatedDatasetsPagedResponse>
       listAnnotatedDatasetsSettings;
+  private final UnaryCallSettings<DeleteAnnotatedDatasetRequest, Empty>
+      deleteAnnotatedDatasetSettings;
   private final UnaryCallSettings<LabelImageRequest, Operation> labelImageSettings;
   private final OperationCallSettings<LabelImageRequest, AnnotatedDataset, LabelOperationMetadata>
       labelImageOperationSettings;
@@ -231,8 +233,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
   private final PagedCallSettings<
           ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
       listEvaluationJobsSettings;
-  private final UnaryCallSettings<DeleteAnnotatedDatasetRequest, Empty>
-      deleteAnnotatedDatasetSettings;
 
   /** Returns the object with the settings used for calls to createDataset. */
   public UnaryCallSettings<CreateDatasetRequest, Dataset> createDatasetSettings() {
@@ -305,6 +305,11 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           ListAnnotatedDatasetsPagedResponse>
       listAnnotatedDatasetsSettings() {
     return listAnnotatedDatasetsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAnnotatedDataset. */
+  public UnaryCallSettings<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetSettings() {
+    return deleteAnnotatedDatasetSettings;
   }
 
   /** Returns the object with the settings used for calls to labelImage. */
@@ -470,11 +475,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     return listEvaluationJobsSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteAnnotatedDataset. */
-  public UnaryCallSettings<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetSettings() {
-    return deleteAnnotatedDatasetSettings;
-  }
-
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DataLabelingServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -556,6 +556,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     listDataItemsSettings = settingsBuilder.listDataItemsSettings().build();
     getAnnotatedDatasetSettings = settingsBuilder.getAnnotatedDatasetSettings().build();
     listAnnotatedDatasetsSettings = settingsBuilder.listAnnotatedDatasetsSettings().build();
+    deleteAnnotatedDatasetSettings = settingsBuilder.deleteAnnotatedDatasetSettings().build();
     labelImageSettings = settingsBuilder.labelImageSettings().build();
     labelImageOperationSettings = settingsBuilder.labelImageOperationSettings().build();
     labelVideoSettings = settingsBuilder.labelVideoSettings().build();
@@ -584,7 +585,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     resumeEvaluationJobSettings = settingsBuilder.resumeEvaluationJobSettings().build();
     deleteEvaluationJobSettings = settingsBuilder.deleteEvaluationJobSettings().build();
     listEvaluationJobsSettings = settingsBuilder.listEvaluationJobsSettings().build();
-    deleteAnnotatedDatasetSettings = settingsBuilder.deleteAnnotatedDatasetSettings().build();
   }
 
   private static final PagedListDescriptor<ListDatasetsRequest, ListDatasetsResponse, Dataset>
@@ -1168,6 +1168,8 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
             ListAnnotatedDatasetsResponse,
             ListAnnotatedDatasetsPagedResponse>
         listAnnotatedDatasetsSettings;
+    private final UnaryCallSettings.Builder<DeleteAnnotatedDatasetRequest, Empty>
+        deleteAnnotatedDatasetSettings;
     private final UnaryCallSettings.Builder<LabelImageRequest, Operation> labelImageSettings;
     private final OperationCallSettings.Builder<
             LabelImageRequest, AnnotatedDataset, LabelOperationMetadata>
@@ -1231,8 +1233,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     private final PagedCallSettings.Builder<
             ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
         listEvaluationJobsSettings;
-    private final UnaryCallSettings.Builder<DeleteAnnotatedDatasetRequest, Empty>
-        deleteAnnotatedDatasetSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -1258,11 +1258,11 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
               .setInitialRpcTimeout(Duration.ofMillis(20000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(300000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -1299,6 +1299,8 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
       listAnnotatedDatasetsSettings =
           PagedCallSettings.newBuilder(LIST_ANNOTATED_DATASETS_PAGE_STR_FACT);
+
+      deleteAnnotatedDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       labelImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1356,8 +1358,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
       listEvaluationJobsSettings = PagedCallSettings.newBuilder(LIST_EVALUATION_JOBS_PAGE_STR_FACT);
 
-      deleteAnnotatedDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createDatasetSettings,
@@ -1370,6 +1370,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
               listDataItemsSettings,
               getAnnotatedDatasetSettings,
               listAnnotatedDatasetsSettings,
+              deleteAnnotatedDatasetSettings,
               labelImageSettings,
               labelVideoSettings,
               labelTextSettings,
@@ -1392,8 +1393,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
               pauseEvaluationJobSettings,
               resumeEvaluationJobSettings,
               deleteEvaluationJobSettings,
-              listEvaluationJobsSettings,
-              deleteAnnotatedDatasetSettings);
+              listEvaluationJobsSettings);
 
       initDefaults(this);
     }
@@ -1426,7 +1426,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
       builder
           .deleteDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -1436,7 +1436,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
       builder
           .exportDataSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -1457,6 +1457,11 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
       builder
           .listAnnotatedDatasetsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteAnnotatedDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -1501,7 +1506,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
       builder
           .deleteAnnotationSpecSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -1521,7 +1526,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
       builder
           .deleteInstructionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -1566,17 +1571,12 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
       builder
           .deleteEvaluationJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .listEvaluationJobsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteAnnotatedDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
           .importDataOperationSettings()
@@ -1606,7 +1606,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           .exportDataOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<ExportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
                   .build())
           .setResponseTransformer(
@@ -1735,6 +1735,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
       listDataItemsSettings = settings.listDataItemsSettings.toBuilder();
       getAnnotatedDatasetSettings = settings.getAnnotatedDatasetSettings.toBuilder();
       listAnnotatedDatasetsSettings = settings.listAnnotatedDatasetsSettings.toBuilder();
+      deleteAnnotatedDatasetSettings = settings.deleteAnnotatedDatasetSettings.toBuilder();
       labelImageSettings = settings.labelImageSettings.toBuilder();
       labelImageOperationSettings = settings.labelImageOperationSettings.toBuilder();
       labelVideoSettings = settings.labelVideoSettings.toBuilder();
@@ -1762,7 +1763,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
       resumeEvaluationJobSettings = settings.resumeEvaluationJobSettings.toBuilder();
       deleteEvaluationJobSettings = settings.deleteEvaluationJobSettings.toBuilder();
       listEvaluationJobsSettings = settings.listEvaluationJobsSettings.toBuilder();
-      deleteAnnotatedDatasetSettings = settings.deleteAnnotatedDatasetSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1776,6 +1776,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
               listDataItemsSettings,
               getAnnotatedDatasetSettings,
               listAnnotatedDatasetsSettings,
+              deleteAnnotatedDatasetSettings,
               labelImageSettings,
               labelVideoSettings,
               labelTextSettings,
@@ -1798,8 +1799,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
               pauseEvaluationJobSettings,
               resumeEvaluationJobSettings,
               deleteEvaluationJobSettings,
-              listEvaluationJobsSettings,
-              deleteAnnotatedDatasetSettings);
+              listEvaluationJobsSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -1893,6 +1893,12 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
             ListAnnotatedDatasetsPagedResponse>
         listAnnotatedDatasetsSettings() {
       return listAnnotatedDatasetsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAnnotatedDataset. */
+    public UnaryCallSettings.Builder<DeleteAnnotatedDatasetRequest, Empty>
+        deleteAnnotatedDatasetSettings() {
+      return deleteAnnotatedDatasetSettings;
     }
 
     /** Returns the builder for the settings used for calls to labelImage. */
@@ -2069,12 +2075,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
             ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
         listEvaluationJobsSettings() {
       return listEvaluationJobsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteAnnotatedDataset. */
-    public UnaryCallSettings.Builder<DeleteAnnotatedDatasetRequest, Empty>
-        deleteAnnotatedDatasetSettings() {
-      return deleteAnnotatedDatasetSettings;
     }
 
     @Override

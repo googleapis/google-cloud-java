@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -121,7 +121,9 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
    * projects/{project_id}/datasets/{dataset_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -144,7 +146,9 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
    * projects/{project_id}/datasets/{dataset_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -488,7 +492,9 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -511,7 +517,9 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -534,7 +542,9 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -556,7 +566,9 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -574,7 +586,9 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
      * projects/{project_id}/datasets/{dataset_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,6 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.datalabeling.v1beta1.stub.DataLabelingServiceStub;
 import com.google.cloud.datalabeling.v1beta1.stub.DataLabelingServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -50,9 +49,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
- *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   Dataset dataset = Dataset.newBuilder().build();
- *   Dataset response = dataLabelingServiceClient.createDataset(formattedParent, dataset);
+ *   Dataset response = dataLabelingServiceClient.createDataset(parent, dataset);
  * }
  * </code>
  * </pre>
@@ -114,387 +113,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
   private final DataLabelingServiceSettings settings;
   private final DataLabelingServiceStub stub;
   private final OperationsClient operationsClient;
-
-  private static final PathTemplate ANNOTATED_DATASET_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/datasets/{dataset}/annotatedDatasets/{annotated_dataset}");
-
-  private static final PathTemplate ANNOTATION_SPEC_SET_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/annotationSpecSets/{annotation_spec_set}");
-
-  private static final PathTemplate DATA_ITEM_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/datasets/{dataset}/dataItems/{data_item}");
-
-  private static final PathTemplate DATASET_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/datasets/{dataset}");
-
-  private static final PathTemplate EVALUATION_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/datasets/{dataset}/evaluations/{evaluation}");
-
-  private static final PathTemplate EVALUATION_JOB_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/evaluationJobs/{evaluation_job}");
-
-  private static final PathTemplate EXAMPLE_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/datasets/{dataset}/annotatedDatasets/{annotated_dataset}/examples/{example}");
-
-  private static final PathTemplate INSTRUCTION_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/instructions/{instruction}");
-
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}");
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a annotated_dataset resource.
-   *
-   * @deprecated Use the {@link AnnotatedDatasetName} class instead.
-   */
-  @Deprecated
-  public static final String formatAnnotatedDatasetName(
-      String project, String dataset, String annotatedDataset) {
-    return ANNOTATED_DATASET_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "dataset", dataset,
-        "annotated_dataset", annotatedDataset);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a annotation_spec_set
-   * resource.
-   *
-   * @deprecated Use the {@link AnnotationSpecSetName} class instead.
-   */
-  @Deprecated
-  public static final String formatAnnotationSpecSetName(String project, String annotationSpecSet) {
-    return ANNOTATION_SPEC_SET_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "annotation_spec_set", annotationSpecSet);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a data_item resource.
-   *
-   * @deprecated Use the {@link DataItemName} class instead.
-   */
-  @Deprecated
-  public static final String formatDataItemName(String project, String dataset, String dataItem) {
-    return DATA_ITEM_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "dataset", dataset,
-        "data_item", dataItem);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a dataset resource.
-   *
-   * @deprecated Use the {@link DatasetName} class instead.
-   */
-  @Deprecated
-  public static final String formatDatasetName(String project, String dataset) {
-    return DATASET_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "dataset", dataset);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a evaluation resource.
-   *
-   * @deprecated Use the {@link EvaluationName} class instead.
-   */
-  @Deprecated
-  public static final String formatEvaluationName(
-      String project, String dataset, String evaluation) {
-    return EVALUATION_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "dataset", dataset,
-        "evaluation", evaluation);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a evaluation_job resource.
-   *
-   * @deprecated Use the {@link EvaluationJobName} class instead.
-   */
-  @Deprecated
-  public static final String formatEvaluationJobName(String project, String evaluationJob) {
-    return EVALUATION_JOB_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "evaluation_job", evaluationJob);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a example resource.
-   *
-   * @deprecated Use the {@link ExampleName} class instead.
-   */
-  @Deprecated
-  public static final String formatExampleName(
-      String project, String dataset, String annotatedDataset, String example) {
-    return EXAMPLE_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "dataset", dataset,
-        "annotated_dataset", annotatedDataset,
-        "example", example);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a instruction resource.
-   *
-   * @deprecated Use the {@link InstructionName} class instead.
-   */
-  @Deprecated
-  public static final String formatInstructionName(String project, String instruction) {
-    return INSTRUCTION_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "instruction", instruction);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a project resource.
-   *
-   * @deprecated Use the {@link ProjectName} class instead.
-   */
-  @Deprecated
-  public static final String formatProjectName(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a annotated_dataset
-   * resource.
-   *
-   * @deprecated Use the {@link AnnotatedDatasetName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromAnnotatedDatasetName(String annotatedDatasetName) {
-    return ANNOTATED_DATASET_PATH_TEMPLATE.parse(annotatedDatasetName).get("project");
-  }
-
-  /**
-   * Parses the dataset from the given fully-qualified path which represents a annotated_dataset
-   * resource.
-   *
-   * @deprecated Use the {@link AnnotatedDatasetName} class instead.
-   */
-  @Deprecated
-  public static final String parseDatasetFromAnnotatedDatasetName(String annotatedDatasetName) {
-    return ANNOTATED_DATASET_PATH_TEMPLATE.parse(annotatedDatasetName).get("dataset");
-  }
-
-  /**
-   * Parses the annotated_dataset from the given fully-qualified path which represents a
-   * annotated_dataset resource.
-   *
-   * @deprecated Use the {@link AnnotatedDatasetName} class instead.
-   */
-  @Deprecated
-  public static final String parseAnnotatedDatasetFromAnnotatedDatasetName(
-      String annotatedDatasetName) {
-    return ANNOTATED_DATASET_PATH_TEMPLATE.parse(annotatedDatasetName).get("annotated_dataset");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a annotation_spec_set
-   * resource.
-   *
-   * @deprecated Use the {@link AnnotationSpecSetName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromAnnotationSpecSetName(String annotationSpecSetName) {
-    return ANNOTATION_SPEC_SET_PATH_TEMPLATE.parse(annotationSpecSetName).get("project");
-  }
-
-  /**
-   * Parses the annotation_spec_set from the given fully-qualified path which represents a
-   * annotation_spec_set resource.
-   *
-   * @deprecated Use the {@link AnnotationSpecSetName} class instead.
-   */
-  @Deprecated
-  public static final String parseAnnotationSpecSetFromAnnotationSpecSetName(
-      String annotationSpecSetName) {
-    return ANNOTATION_SPEC_SET_PATH_TEMPLATE
-        .parse(annotationSpecSetName)
-        .get("annotation_spec_set");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a data_item resource.
-   *
-   * @deprecated Use the {@link DataItemName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromDataItemName(String dataItemName) {
-    return DATA_ITEM_PATH_TEMPLATE.parse(dataItemName).get("project");
-  }
-
-  /**
-   * Parses the dataset from the given fully-qualified path which represents a data_item resource.
-   *
-   * @deprecated Use the {@link DataItemName} class instead.
-   */
-  @Deprecated
-  public static final String parseDatasetFromDataItemName(String dataItemName) {
-    return DATA_ITEM_PATH_TEMPLATE.parse(dataItemName).get("dataset");
-  }
-
-  /**
-   * Parses the data_item from the given fully-qualified path which represents a data_item resource.
-   *
-   * @deprecated Use the {@link DataItemName} class instead.
-   */
-  @Deprecated
-  public static final String parseDataItemFromDataItemName(String dataItemName) {
-    return DATA_ITEM_PATH_TEMPLATE.parse(dataItemName).get("data_item");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a dataset resource.
-   *
-   * @deprecated Use the {@link DatasetName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromDatasetName(String datasetName) {
-    return DATASET_PATH_TEMPLATE.parse(datasetName).get("project");
-  }
-
-  /**
-   * Parses the dataset from the given fully-qualified path which represents a dataset resource.
-   *
-   * @deprecated Use the {@link DatasetName} class instead.
-   */
-  @Deprecated
-  public static final String parseDatasetFromDatasetName(String datasetName) {
-    return DATASET_PATH_TEMPLATE.parse(datasetName).get("dataset");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a evaluation resource.
-   *
-   * @deprecated Use the {@link EvaluationName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromEvaluationName(String evaluationName) {
-    return EVALUATION_PATH_TEMPLATE.parse(evaluationName).get("project");
-  }
-
-  /**
-   * Parses the dataset from the given fully-qualified path which represents a evaluation resource.
-   *
-   * @deprecated Use the {@link EvaluationName} class instead.
-   */
-  @Deprecated
-  public static final String parseDatasetFromEvaluationName(String evaluationName) {
-    return EVALUATION_PATH_TEMPLATE.parse(evaluationName).get("dataset");
-  }
-
-  /**
-   * Parses the evaluation from the given fully-qualified path which represents a evaluation
-   * resource.
-   *
-   * @deprecated Use the {@link EvaluationName} class instead.
-   */
-  @Deprecated
-  public static final String parseEvaluationFromEvaluationName(String evaluationName) {
-    return EVALUATION_PATH_TEMPLATE.parse(evaluationName).get("evaluation");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a evaluation_job
-   * resource.
-   *
-   * @deprecated Use the {@link EvaluationJobName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromEvaluationJobName(String evaluationJobName) {
-    return EVALUATION_JOB_PATH_TEMPLATE.parse(evaluationJobName).get("project");
-  }
-
-  /**
-   * Parses the evaluation_job from the given fully-qualified path which represents a evaluation_job
-   * resource.
-   *
-   * @deprecated Use the {@link EvaluationJobName} class instead.
-   */
-  @Deprecated
-  public static final String parseEvaluationJobFromEvaluationJobName(String evaluationJobName) {
-    return EVALUATION_JOB_PATH_TEMPLATE.parse(evaluationJobName).get("evaluation_job");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a example resource.
-   *
-   * @deprecated Use the {@link ExampleName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromExampleName(String exampleName) {
-    return EXAMPLE_PATH_TEMPLATE.parse(exampleName).get("project");
-  }
-
-  /**
-   * Parses the dataset from the given fully-qualified path which represents a example resource.
-   *
-   * @deprecated Use the {@link ExampleName} class instead.
-   */
-  @Deprecated
-  public static final String parseDatasetFromExampleName(String exampleName) {
-    return EXAMPLE_PATH_TEMPLATE.parse(exampleName).get("dataset");
-  }
-
-  /**
-   * Parses the annotated_dataset from the given fully-qualified path which represents a example
-   * resource.
-   *
-   * @deprecated Use the {@link ExampleName} class instead.
-   */
-  @Deprecated
-  public static final String parseAnnotatedDatasetFromExampleName(String exampleName) {
-    return EXAMPLE_PATH_TEMPLATE.parse(exampleName).get("annotated_dataset");
-  }
-
-  /**
-   * Parses the example from the given fully-qualified path which represents a example resource.
-   *
-   * @deprecated Use the {@link ExampleName} class instead.
-   */
-  @Deprecated
-  public static final String parseExampleFromExampleName(String exampleName) {
-    return EXAMPLE_PATH_TEMPLATE.parse(exampleName).get("example");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a instruction resource.
-   *
-   * @deprecated Use the {@link InstructionName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromInstructionName(String instructionName) {
-    return INSTRUCTION_PATH_TEMPLATE.parse(instructionName).get("project");
-  }
-
-  /**
-   * Parses the instruction from the given fully-qualified path which represents a instruction
-   * resource.
-   *
-   * @deprecated Use the {@link InstructionName} class instead.
-   */
-  @Deprecated
-  public static final String parseInstructionFromInstructionName(String instructionName) {
-    return INSTRUCTION_PATH_TEMPLATE.parse(instructionName).get("instruction");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a project resource.
-   *
-   * @deprecated Use the {@link ProjectName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromProjectName(String projectName) {
-    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
-  }
 
   /** Constructs an instance of DataLabelingServiceClient with default settings. */
   public static final DataLabelingServiceClient create() throws IOException {
@@ -564,9 +182,36 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Dataset dataset = Dataset.newBuilder().build();
-   *   Dataset response = dataLabelingServiceClient.createDataset(formattedParent, dataset);
+   *   Dataset response = dataLabelingServiceClient.createDataset(parent, dataset);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Dataset resource parent, format: projects/{project_id}
+   * @param dataset Required. The dataset to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Dataset createDataset(ProjectName parent, Dataset dataset) {
+    CreateDatasetRequest request =
+        CreateDatasetRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDataset(dataset)
+            .build();
+    return createDataset(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates dataset. If success return a Dataset resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   Dataset dataset = Dataset.newBuilder().build();
+   *   Dataset response = dataLabelingServiceClient.createDataset(parent.toString(), dataset);
    * }
    * </code></pre>
    *
@@ -575,7 +220,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Dataset createDataset(String parent, Dataset dataset) {
-    PROJECT_PATH_TEMPLATE.validate(parent, "createDataset");
     CreateDatasetRequest request =
         CreateDatasetRequest.newBuilder().setParent(parent).setDataset(dataset).build();
     return createDataset(request);
@@ -589,10 +233,10 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Dataset dataset = Dataset.newBuilder().build();
    *   CreateDatasetRequest request = CreateDatasetRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setDataset(dataset)
    *     .build();
    *   Dataset response = dataLabelingServiceClient.createDataset(request);
@@ -614,10 +258,10 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Dataset dataset = Dataset.newBuilder().build();
    *   CreateDatasetRequest request = CreateDatasetRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setDataset(dataset)
    *     .build();
    *   ApiFuture&lt;Dataset&gt; future = dataLabelingServiceClient.createDatasetCallable().futureCall(request);
@@ -638,8 +282,31 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
-   *   Dataset response = dataLabelingServiceClient.getDataset(formattedName);
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   Dataset response = dataLabelingServiceClient.getDataset(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Dataset resource name, format:
+   *     projects/{project_id}/datasets/{dataset_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Dataset getDataset(DatasetName name) {
+    GetDatasetRequest request =
+        GetDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getDataset(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets dataset by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   Dataset response = dataLabelingServiceClient.getDataset(name.toString());
    * }
    * </code></pre>
    *
@@ -648,7 +315,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Dataset getDataset(String name) {
-    DATASET_PATH_TEMPLATE.validate(name, "getDataset");
     GetDatasetRequest request = GetDatasetRequest.newBuilder().setName(name).build();
     return getDataset(request);
   }
@@ -661,9 +327,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
    *   GetDatasetRequest request = GetDatasetRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   Dataset response = dataLabelingServiceClient.getDataset(request);
    * }
@@ -684,9 +350,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
    *   GetDatasetRequest request = GetDatasetRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Dataset&gt; future = dataLabelingServiceClient.getDatasetCallable().futureCall(request);
    *   // Do something
@@ -706,9 +372,38 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String filter = "";
-   *   for (Dataset element : dataLabelingServiceClient.listDatasets(formattedParent, filter).iterateAll()) {
+   *   for (Dataset element : dataLabelingServiceClient.listDatasets(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Dataset resource parent, format: projects/{project_id}
+   * @param filter Optional. Filter on dataset is not supported at this moment.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatasetsPagedResponse listDatasets(ProjectName parent, String filter) {
+    ListDatasetsRequest request =
+        ListDatasetsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    return listDatasets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists datasets under a project. Pagination is supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String filter = "";
+   *   for (Dataset element : dataLabelingServiceClient.listDatasets(parent.toString(), filter).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -719,7 +414,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDatasetsPagedResponse listDatasets(String parent, String filter) {
-    PROJECT_PATH_TEMPLATE.validate(parent, "listDatasets");
     ListDatasetsRequest request =
         ListDatasetsRequest.newBuilder().setParent(parent).setFilter(filter).build();
     return listDatasets(request);
@@ -733,9 +427,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListDatasetsRequest request = ListDatasetsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (Dataset element : dataLabelingServiceClient.listDatasets(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -758,9 +452,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListDatasetsRequest request = ListDatasetsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListDatasetsPagedResponse&gt; future = dataLabelingServiceClient.listDatasetsPagedCallable().futureCall(request);
    *   // Do something
@@ -783,9 +477,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListDatasetsRequest request = ListDatasetsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListDatasetsResponse response = dataLabelingServiceClient.listDatasetsCallable().call(request);
@@ -814,8 +508,31 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
-   *   dataLabelingServiceClient.deleteDataset(formattedName);
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   dataLabelingServiceClient.deleteDataset(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Dataset resource name, format:
+   *     projects/{project_id}/datasets/{dataset_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDataset(DatasetName name) {
+    DeleteDatasetRequest request =
+        DeleteDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteDataset(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a dataset by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   dataLabelingServiceClient.deleteDataset(name.toString());
    * }
    * </code></pre>
    *
@@ -824,7 +541,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteDataset(String name) {
-    DATASET_PATH_TEMPLATE.validate(name, "deleteDataset");
     DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder().setName(name).build();
     deleteDataset(request);
   }
@@ -837,9 +553,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
    *   DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   dataLabelingServiceClient.deleteDataset(request);
    * }
@@ -860,9 +576,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
    *   DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.deleteDatasetCallable().futureCall(request);
    *   // Do something
@@ -885,9 +601,43 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
    *   InputConfig inputConfig = InputConfig.newBuilder().build();
-   *   ImportDataOperationResponse response = dataLabelingServiceClient.importDataAsync(formattedName, inputConfig).get();
+   *   ImportDataOperationResponse response = dataLabelingServiceClient.importDataAsync(name, inputConfig).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Dataset resource name, format:
+   *     projects/{project_id}/datasets/{dataset_id}
+   * @param inputConfig Required. Specify the input source of the data.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<ImportDataOperationResponse, ImportDataOperationMetadata>
+      importDataAsync(DatasetName name, InputConfig inputConfig) {
+    ImportDataRequest request =
+        ImportDataRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setInputConfig(inputConfig)
+            .build();
+    return importDataAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Imports data into dataset based on source locations defined in request. It can be called
+   * multiple times for the same dataset. Each dataset can only have one long running operation
+   * running on it. For example, no labeling task (also long running operation) can be started while
+   * importing is still ongoing. Vice versa.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   InputConfig inputConfig = InputConfig.newBuilder().build();
+   *   ImportDataOperationResponse response = dataLabelingServiceClient.importDataAsync(name.toString(), inputConfig).get();
    * }
    * </code></pre>
    *
@@ -900,7 +650,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ImportDataOperationResponse, ImportDataOperationMetadata>
       importDataAsync(String name, InputConfig inputConfig) {
-    DATASET_PATH_TEMPLATE.validate(name, "importData");
     ImportDataRequest request =
         ImportDataRequest.newBuilder().setName(name).setInputConfig(inputConfig).build();
     return importDataAsync(request);
@@ -917,10 +666,10 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
    *   InputConfig inputConfig = InputConfig.newBuilder().build();
    *   ImportDataRequest request = ImportDataRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .setInputConfig(inputConfig)
    *     .build();
    *   ImportDataOperationResponse response = dataLabelingServiceClient.importDataAsync(request).get();
@@ -948,10 +697,10 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
    *   InputConfig inputConfig = InputConfig.newBuilder().build();
    *   ImportDataRequest request = ImportDataRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .setInputConfig(inputConfig)
    *     .build();
    *   OperationFuture&lt;ImportDataOperationResponse, ImportDataOperationMetadata&gt; future = dataLabelingServiceClient.importDataOperationCallable().futureCall(request);
@@ -978,10 +727,10 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
    *   InputConfig inputConfig = InputConfig.newBuilder().build();
    *   ImportDataRequest request = ImportDataRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .setInputConfig(inputConfig)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = dataLabelingServiceClient.importDataCallable().futureCall(request);
@@ -1002,11 +751,54 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
-   *   String annotatedDataset = "";
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   AnnotatedDatasetName annotatedDataset = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
    *   String filter = "";
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
-   *   ExportDataOperationResponse response = dataLabelingServiceClient.exportDataAsync(formattedName, annotatedDataset, filter, outputConfig).get();
+   *   ExportDataOperationResponse response = dataLabelingServiceClient.exportDataAsync(name, annotatedDataset, filter, outputConfig).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Dataset resource name, format:
+   *     projects/{project_id}/datasets/{dataset_id}
+   * @param annotatedDataset Required. Annotated dataset resource name. DataItem in Dataset and
+   *     their annotations in specified annotated dataset will be exported. It's in format of
+   *     projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/ {annotated_dataset_id}
+   * @param filter Optional. Filter is not supported at this moment.
+   * @param outputConfig Required. Specify the output destination.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<ExportDataOperationResponse, ExportDataOperationMetadata>
+      exportDataAsync(
+          DatasetName name,
+          AnnotatedDatasetName annotatedDataset,
+          String filter,
+          OutputConfig outputConfig) {
+    ExportDataRequest request =
+        ExportDataRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setAnnotatedDataset(annotatedDataset == null ? null : annotatedDataset.toString())
+            .setFilter(filter)
+            .setOutputConfig(outputConfig)
+            .build();
+    return exportDataAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports data and annotations from dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   AnnotatedDatasetName annotatedDataset = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+   *   String filter = "";
+   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
+   *   ExportDataOperationResponse response = dataLabelingServiceClient.exportDataAsync(name.toString(), annotatedDataset.toString(), filter, outputConfig).get();
    * }
    * </code></pre>
    *
@@ -1024,7 +816,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
   public final OperationFuture<ExportDataOperationResponse, ExportDataOperationMetadata>
       exportDataAsync(
           String name, String annotatedDataset, String filter, OutputConfig outputConfig) {
-    DATASET_PATH_TEMPLATE.validate(name, "exportData");
     ExportDataRequest request =
         ExportDataRequest.newBuilder()
             .setName(name)
@@ -1043,12 +834,12 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
-   *   String annotatedDataset = "";
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   AnnotatedDatasetName annotatedDataset = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportDataRequest request = ExportDataRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .setAnnotatedDataset(annotatedDataset)
+   *     .setName(name.toString())
+   *     .setAnnotatedDataset(annotatedDataset.toString())
    *     .setOutputConfig(outputConfig)
    *     .build();
    *   ExportDataOperationResponse response = dataLabelingServiceClient.exportDataAsync(request).get();
@@ -1073,12 +864,12 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
-   *   String annotatedDataset = "";
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   AnnotatedDatasetName annotatedDataset = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportDataRequest request = ExportDataRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .setAnnotatedDataset(annotatedDataset)
+   *     .setName(name.toString())
+   *     .setAnnotatedDataset(annotatedDataset.toString())
    *     .setOutputConfig(outputConfig)
    *     .build();
    *   OperationFuture&lt;ExportDataOperationResponse, ExportDataOperationMetadata&gt; future = dataLabelingServiceClient.exportDataOperationCallable().futureCall(request);
@@ -1102,12 +893,12 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
-   *   String annotatedDataset = "";
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   AnnotatedDatasetName annotatedDataset = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportDataRequest request = ExportDataRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .setAnnotatedDataset(annotatedDataset)
+   *     .setName(name.toString())
+   *     .setAnnotatedDataset(annotatedDataset.toString())
    *     .setOutputConfig(outputConfig)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = dataLabelingServiceClient.exportDataCallable().futureCall(request);
@@ -1129,8 +920,32 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatDataItemName("[PROJECT]", "[DATASET]", "[DATA_ITEM]");
-   *   DataItem response = dataLabelingServiceClient.getDataItem(formattedName);
+   *   DataItemName name = DataItemName.of("[PROJECT]", "[DATASET]", "[DATA_ITEM]");
+   *   DataItem response = dataLabelingServiceClient.getDataItem(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the data item to get, format:
+   *     projects/{project_id}/datasets/{dataset_id}/dataItems/{data_item_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataItem getDataItem(DataItemName name) {
+    GetDataItemRequest request =
+        GetDataItemRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getDataItem(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a data item in a dataset by resource name. This API can be called after data are imported
+   * into dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DataItemName name = DataItemName.of("[PROJECT]", "[DATASET]", "[DATA_ITEM]");
+   *   DataItem response = dataLabelingServiceClient.getDataItem(name.toString());
    * }
    * </code></pre>
    *
@@ -1139,7 +954,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataItem getDataItem(String name) {
-    DATA_ITEM_PATH_TEMPLATE.validate(name, "getDataItem");
     GetDataItemRequest request = GetDataItemRequest.newBuilder().setName(name).build();
     return getDataItem(request);
   }
@@ -1153,9 +967,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatDataItemName("[PROJECT]", "[DATASET]", "[DATA_ITEM]");
+   *   DataItemName name = DataItemName.of("[PROJECT]", "[DATASET]", "[DATA_ITEM]");
    *   GetDataItemRequest request = GetDataItemRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   DataItem response = dataLabelingServiceClient.getDataItem(request);
    * }
@@ -1177,9 +991,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatDataItemName("[PROJECT]", "[DATASET]", "[DATA_ITEM]");
+   *   DataItemName name = DataItemName.of("[PROJECT]", "[DATASET]", "[DATA_ITEM]");
    *   GetDataItemRequest request = GetDataItemRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;DataItem&gt; future = dataLabelingServiceClient.getDataItemCallable().futureCall(request);
    *   // Do something
@@ -1200,9 +1014,40 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   String filter = "";
-   *   for (DataItem element : dataLabelingServiceClient.listDataItems(formattedParent, filter).iterateAll()) {
+   *   for (DataItem element : dataLabelingServiceClient.listDataItems(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Name of the dataset to list data items, format:
+   *     projects/{project_id}/datasets/{dataset_id}
+   * @param filter Optional. Filter is not supported at this moment.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDataItemsPagedResponse listDataItems(DatasetName parent, String filter) {
+    ListDataItemsRequest request =
+        ListDataItemsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    return listDataItems(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists data items in a dataset. This API can be called after data are imported into dataset.
+   * Pagination is supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   String filter = "";
+   *   for (DataItem element : dataLabelingServiceClient.listDataItems(parent.toString(), filter).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -1214,7 +1059,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataItemsPagedResponse listDataItems(String parent, String filter) {
-    DATASET_PATH_TEMPLATE.validate(parent, "listDataItems");
     ListDataItemsRequest request =
         ListDataItemsRequest.newBuilder().setParent(parent).setFilter(filter).build();
     return listDataItems(request);
@@ -1229,9 +1073,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   ListDataItemsRequest request = ListDataItemsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (DataItem element : dataLabelingServiceClient.listDataItems(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1255,9 +1099,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   ListDataItemsRequest request = ListDataItemsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListDataItemsPagedResponse&gt; future = dataLabelingServiceClient.listDataItemsPagedCallable().futureCall(request);
    *   // Do something
@@ -1281,9 +1125,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   ListDataItemsRequest request = ListDataItemsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListDataItemsResponse response = dataLabelingServiceClient.listDataItemsCallable().call(request);
@@ -1312,8 +1156,33 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatAnnotatedDatasetName("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
-   *   AnnotatedDataset response = dataLabelingServiceClient.getAnnotatedDataset(formattedName);
+   *   AnnotatedDatasetName name = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+   *   AnnotatedDataset response = dataLabelingServiceClient.getAnnotatedDataset(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the annotated dataset to get, format:
+   *     projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/ {annotated_dataset_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnnotatedDataset getAnnotatedDataset(AnnotatedDatasetName name) {
+    GetAnnotatedDatasetRequest request =
+        GetAnnotatedDatasetRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAnnotatedDataset(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets an annotated dataset by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   AnnotatedDatasetName name = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+   *   AnnotatedDataset response = dataLabelingServiceClient.getAnnotatedDataset(name.toString());
    * }
    * </code></pre>
    *
@@ -1322,7 +1191,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotatedDataset getAnnotatedDataset(String name) {
-    ANNOTATED_DATASET_PATH_TEMPLATE.validate(name, "getAnnotatedDataset");
     GetAnnotatedDatasetRequest request =
         GetAnnotatedDatasetRequest.newBuilder().setName(name).build();
     return getAnnotatedDataset(request);
@@ -1336,9 +1204,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatAnnotatedDatasetName("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+   *   AnnotatedDatasetName name = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
    *   GetAnnotatedDatasetRequest request = GetAnnotatedDatasetRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   AnnotatedDataset response = dataLabelingServiceClient.getAnnotatedDataset(request);
    * }
@@ -1359,9 +1227,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatAnnotatedDatasetName("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+   *   AnnotatedDatasetName name = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
    *   GetAnnotatedDatasetRequest request = GetAnnotatedDatasetRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;AnnotatedDataset&gt; future = dataLabelingServiceClient.getAnnotatedDatasetCallable().futureCall(request);
    *   // Do something
@@ -1382,9 +1250,40 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   String filter = "";
-   *   for (AnnotatedDataset element : dataLabelingServiceClient.listAnnotatedDatasets(formattedParent, filter).iterateAll()) {
+   *   for (AnnotatedDataset element : dataLabelingServiceClient.listAnnotatedDatasets(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Name of the dataset to list annotated datasets, format:
+   *     projects/{project_id}/datasets/{dataset_id}
+   * @param filter Optional. Filter is not supported at this moment.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAnnotatedDatasetsPagedResponse listAnnotatedDatasets(
+      DatasetName parent, String filter) {
+    ListAnnotatedDatasetsRequest request =
+        ListAnnotatedDatasetsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    return listAnnotatedDatasets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists annotated datasets for a dataset. Pagination is supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   String filter = "";
+   *   for (AnnotatedDataset element : dataLabelingServiceClient.listAnnotatedDatasets(parent.toString(), filter).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -1397,7 +1296,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    */
   public final ListAnnotatedDatasetsPagedResponse listAnnotatedDatasets(
       String parent, String filter) {
-    DATASET_PATH_TEMPLATE.validate(parent, "listAnnotatedDatasets");
     ListAnnotatedDatasetsRequest request =
         ListAnnotatedDatasetsRequest.newBuilder().setParent(parent).setFilter(filter).build();
     return listAnnotatedDatasets(request);
@@ -1411,9 +1309,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   ListAnnotatedDatasetsRequest request = ListAnnotatedDatasetsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (AnnotatedDataset element : dataLabelingServiceClient.listAnnotatedDatasets(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1437,9 +1335,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   ListAnnotatedDatasetsRequest request = ListAnnotatedDatasetsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListAnnotatedDatasetsPagedResponse&gt; future = dataLabelingServiceClient.listAnnotatedDatasetsPagedCallable().futureCall(request);
    *   // Do something
@@ -1462,9 +1360,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   ListAnnotatedDatasetsRequest request = ListAnnotatedDatasetsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListAnnotatedDatasetsResponse response = dataLabelingServiceClient.listAnnotatedDatasetsCallable().call(request);
@@ -1488,6 +1386,52 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Deletes an annotated dataset by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   AnnotatedDatasetName name = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+   *   DeleteAnnotatedDatasetRequest request = DeleteAnnotatedDatasetRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   dataLabelingServiceClient.deleteAnnotatedDataset(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAnnotatedDataset(DeleteAnnotatedDatasetRequest request) {
+    deleteAnnotatedDatasetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an annotated dataset by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   AnnotatedDatasetName name = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+   *   DeleteAnnotatedDatasetRequest request = DeleteAnnotatedDatasetRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.deleteAnnotatedDatasetCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteAnnotatedDatasetRequest, Empty>
+      deleteAnnotatedDatasetCallable() {
+    return stub.deleteAnnotatedDatasetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Starts a labeling task for image. The type of image labeling task is configured by feature in
    * the request.
    *
@@ -1495,10 +1439,45 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
    *   LabelImageRequest.Feature feature = LabelImageRequest.Feature.FEATURE_UNSPECIFIED;
-   *   AnnotatedDataset response = dataLabelingServiceClient.labelImageAsync(formattedParent, basicConfig, feature).get();
+   *   AnnotatedDataset response = dataLabelingServiceClient.labelImageAsync(parent, basicConfig, feature).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Name of the dataset to request labeling task, format:
+   *     projects/{project_id}/datasets/{dataset_id}
+   * @param basicConfig Required. Basic human annotation config.
+   * @param feature Required. The type of image labeling task.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<AnnotatedDataset, LabelOperationMetadata> labelImageAsync(
+      DatasetName parent, HumanAnnotationConfig basicConfig, LabelImageRequest.Feature feature) {
+    LabelImageRequest request =
+        LabelImageRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setBasicConfig(basicConfig)
+            .setFeature(feature)
+            .build();
+    return labelImageAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Starts a labeling task for image. The type of image labeling task is configured by feature in
+   * the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
+   *   LabelImageRequest.Feature feature = LabelImageRequest.Feature.FEATURE_UNSPECIFIED;
+   *   AnnotatedDataset response = dataLabelingServiceClient.labelImageAsync(parent.toString(), basicConfig, feature).get();
    * }
    * </code></pre>
    *
@@ -1512,7 +1491,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<AnnotatedDataset, LabelOperationMetadata> labelImageAsync(
       String parent, HumanAnnotationConfig basicConfig, LabelImageRequest.Feature feature) {
-    DATASET_PATH_TEMPLATE.validate(parent, "labelImage");
     LabelImageRequest request =
         LabelImageRequest.newBuilder()
             .setParent(parent)
@@ -1531,11 +1509,11 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
    *   LabelImageRequest.Feature feature = LabelImageRequest.Feature.FEATURE_UNSPECIFIED;
    *   LabelImageRequest request = LabelImageRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setBasicConfig(basicConfig)
    *     .setFeature(feature)
    *     .build();
@@ -1562,11 +1540,11 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
    *   LabelImageRequest.Feature feature = LabelImageRequest.Feature.FEATURE_UNSPECIFIED;
    *   LabelImageRequest request = LabelImageRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setBasicConfig(basicConfig)
    *     .setFeature(feature)
    *     .build();
@@ -1591,11 +1569,11 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
    *   LabelImageRequest.Feature feature = LabelImageRequest.Feature.FEATURE_UNSPECIFIED;
    *   LabelImageRequest request = LabelImageRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setBasicConfig(basicConfig)
    *     .setFeature(feature)
    *     .build();
@@ -1618,10 +1596,45 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
    *   LabelVideoRequest.Feature feature = LabelVideoRequest.Feature.FEATURE_UNSPECIFIED;
-   *   AnnotatedDataset response = dataLabelingServiceClient.labelVideoAsync(formattedParent, basicConfig, feature).get();
+   *   AnnotatedDataset response = dataLabelingServiceClient.labelVideoAsync(parent, basicConfig, feature).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Name of the dataset to request labeling task, format:
+   *     projects/{project_id}/datasets/{dataset_id}
+   * @param basicConfig Required. Basic human annotation config.
+   * @param feature Required. The type of video labeling task.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<AnnotatedDataset, LabelOperationMetadata> labelVideoAsync(
+      DatasetName parent, HumanAnnotationConfig basicConfig, LabelVideoRequest.Feature feature) {
+    LabelVideoRequest request =
+        LabelVideoRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setBasicConfig(basicConfig)
+            .setFeature(feature)
+            .build();
+    return labelVideoAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Starts a labeling task for video. The type of video labeling task is configured by feature in
+   * the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
+   *   LabelVideoRequest.Feature feature = LabelVideoRequest.Feature.FEATURE_UNSPECIFIED;
+   *   AnnotatedDataset response = dataLabelingServiceClient.labelVideoAsync(parent.toString(), basicConfig, feature).get();
    * }
    * </code></pre>
    *
@@ -1635,7 +1648,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<AnnotatedDataset, LabelOperationMetadata> labelVideoAsync(
       String parent, HumanAnnotationConfig basicConfig, LabelVideoRequest.Feature feature) {
-    DATASET_PATH_TEMPLATE.validate(parent, "labelVideo");
     LabelVideoRequest request =
         LabelVideoRequest.newBuilder()
             .setParent(parent)
@@ -1654,11 +1666,11 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
    *   LabelVideoRequest.Feature feature = LabelVideoRequest.Feature.FEATURE_UNSPECIFIED;
    *   LabelVideoRequest request = LabelVideoRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setBasicConfig(basicConfig)
    *     .setFeature(feature)
    *     .build();
@@ -1685,11 +1697,11 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
    *   LabelVideoRequest.Feature feature = LabelVideoRequest.Feature.FEATURE_UNSPECIFIED;
    *   LabelVideoRequest request = LabelVideoRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setBasicConfig(basicConfig)
    *     .setFeature(feature)
    *     .build();
@@ -1714,11 +1726,11 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
    *   LabelVideoRequest.Feature feature = LabelVideoRequest.Feature.FEATURE_UNSPECIFIED;
    *   LabelVideoRequest request = LabelVideoRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setBasicConfig(basicConfig)
    *     .setFeature(feature)
    *     .build();
@@ -1741,10 +1753,45 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
    *   LabelTextRequest.Feature feature = LabelTextRequest.Feature.FEATURE_UNSPECIFIED;
-   *   AnnotatedDataset response = dataLabelingServiceClient.labelTextAsync(formattedParent, basicConfig, feature).get();
+   *   AnnotatedDataset response = dataLabelingServiceClient.labelTextAsync(parent, basicConfig, feature).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Name of the data set to request labeling task, format:
+   *     projects/{project_id}/datasets/{dataset_id}
+   * @param basicConfig Required. Basic human annotation config.
+   * @param feature Required. The type of text labeling task.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<AnnotatedDataset, LabelOperationMetadata> labelTextAsync(
+      DatasetName parent, HumanAnnotationConfig basicConfig, LabelTextRequest.Feature feature) {
+    LabelTextRequest request =
+        LabelTextRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setBasicConfig(basicConfig)
+            .setFeature(feature)
+            .build();
+    return labelTextAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Starts a labeling task for text. The type of text labeling task is configured by feature in the
+   * request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
+   *   LabelTextRequest.Feature feature = LabelTextRequest.Feature.FEATURE_UNSPECIFIED;
+   *   AnnotatedDataset response = dataLabelingServiceClient.labelTextAsync(parent.toString(), basicConfig, feature).get();
    * }
    * </code></pre>
    *
@@ -1758,7 +1805,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<AnnotatedDataset, LabelOperationMetadata> labelTextAsync(
       String parent, HumanAnnotationConfig basicConfig, LabelTextRequest.Feature feature) {
-    DATASET_PATH_TEMPLATE.validate(parent, "labelText");
     LabelTextRequest request =
         LabelTextRequest.newBuilder()
             .setParent(parent)
@@ -1777,11 +1823,11 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
    *   LabelTextRequest.Feature feature = LabelTextRequest.Feature.FEATURE_UNSPECIFIED;
    *   LabelTextRequest request = LabelTextRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setBasicConfig(basicConfig)
    *     .setFeature(feature)
    *     .build();
@@ -1808,11 +1854,11 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
    *   LabelTextRequest.Feature feature = LabelTextRequest.Feature.FEATURE_UNSPECIFIED;
    *   LabelTextRequest request = LabelTextRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setBasicConfig(basicConfig)
    *     .setFeature(feature)
    *     .build();
@@ -1837,11 +1883,11 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatDatasetName("[PROJECT]", "[DATASET]");
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[DATASET]");
    *   HumanAnnotationConfig basicConfig = HumanAnnotationConfig.newBuilder().build();
    *   LabelTextRequest.Feature feature = LabelTextRequest.Feature.FEATURE_UNSPECIFIED;
    *   LabelTextRequest request = LabelTextRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setBasicConfig(basicConfig)
    *     .setFeature(feature)
    *     .build();
@@ -1863,9 +1909,40 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatExampleName("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]", "[EXAMPLE]");
+   *   ExampleName name = ExampleName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]", "[EXAMPLE]");
    *   String filter = "";
-   *   Example response = dataLabelingServiceClient.getExample(formattedName, filter);
+   *   Example response = dataLabelingServiceClient.getExample(name, filter);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of example, format:
+   *     projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/
+   *     {annotated_dataset_id}/examples/{example_id}
+   * @param filter Optional. An expression for filtering Examples. Filter by
+   *     annotation_spec.display_name is supported. Format "annotation_spec.display_name =
+   *     {display_name}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Example getExample(ExampleName name, String filter) {
+    GetExampleRequest request =
+        GetExampleRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setFilter(filter)
+            .build();
+    return getExample(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets an example by resource name, including both data and annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   ExampleName name = ExampleName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]", "[EXAMPLE]");
+   *   String filter = "";
+   *   Example response = dataLabelingServiceClient.getExample(name.toString(), filter);
    * }
    * </code></pre>
    *
@@ -1878,7 +1955,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Example getExample(String name, String filter) {
-    EXAMPLE_PATH_TEMPLATE.validate(name, "getExample");
     GetExampleRequest request =
         GetExampleRequest.newBuilder().setName(name).setFilter(filter).build();
     return getExample(request);
@@ -1892,9 +1968,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatExampleName("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]", "[EXAMPLE]");
+   *   ExampleName name = ExampleName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]", "[EXAMPLE]");
    *   GetExampleRequest request = GetExampleRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   Example response = dataLabelingServiceClient.getExample(request);
    * }
@@ -1915,9 +1991,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatExampleName("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]", "[EXAMPLE]");
+   *   ExampleName name = ExampleName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]", "[EXAMPLE]");
    *   GetExampleRequest request = GetExampleRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Example&gt; future = dataLabelingServiceClient.getExampleCallable().futureCall(request);
    *   // Do something
@@ -1937,9 +2013,40 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatAnnotatedDatasetName("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+   *   AnnotatedDatasetName parent = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
    *   String filter = "";
-   *   for (Example element : dataLabelingServiceClient.listExamples(formattedParent, filter).iterateAll()) {
+   *   for (Example element : dataLabelingServiceClient.listExamples(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Example resource parent.
+   * @param filter Optional. An expression for filtering Examples. For annotated datasets that have
+   *     annotation spec set, filter by annotation_spec.display_name is supported. Format
+   *     "annotation_spec.display_name = {display_name}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExamplesPagedResponse listExamples(AnnotatedDatasetName parent, String filter) {
+    ListExamplesRequest request =
+        ListExamplesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    return listExamples(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists examples in an annotated dataset. Pagination is supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   AnnotatedDatasetName parent = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+   *   String filter = "";
+   *   for (Example element : dataLabelingServiceClient.listExamples(parent.toString(), filter).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -1952,7 +2059,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListExamplesPagedResponse listExamples(String parent, String filter) {
-    ANNOTATED_DATASET_PATH_TEMPLATE.validate(parent, "listExamples");
     ListExamplesRequest request =
         ListExamplesRequest.newBuilder().setParent(parent).setFilter(filter).build();
     return listExamples(request);
@@ -1966,9 +2072,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatAnnotatedDatasetName("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+   *   AnnotatedDatasetName parent = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
    *   ListExamplesRequest request = ListExamplesRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (Example element : dataLabelingServiceClient.listExamples(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1991,9 +2097,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatAnnotatedDatasetName("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+   *   AnnotatedDatasetName parent = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
    *   ListExamplesRequest request = ListExamplesRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListExamplesPagedResponse&gt; future = dataLabelingServiceClient.listExamplesPagedCallable().futureCall(request);
    *   // Do something
@@ -2016,9 +2122,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatAnnotatedDatasetName("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+   *   AnnotatedDatasetName parent = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
    *   ListExamplesRequest request = ListExamplesRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListExamplesResponse response = dataLabelingServiceClient.listExamplesCallable().call(request);
@@ -2047,9 +2153,39 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   AnnotationSpecSet annotationSpecSet = AnnotationSpecSet.newBuilder().build();
-   *   AnnotationSpecSet response = dataLabelingServiceClient.createAnnotationSpecSet(formattedParent, annotationSpecSet);
+   *   AnnotationSpecSet response = dataLabelingServiceClient.createAnnotationSpecSet(parent, annotationSpecSet);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. AnnotationSpecSet resource parent, format: projects/{project_id}
+   * @param annotationSpecSet Required. Annotation spec set to create. Annotation specs must be
+   *     included. Only one annotation spec will be accepted for annotation specs with same
+   *     display_name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnnotationSpecSet createAnnotationSpecSet(
+      ProjectName parent, AnnotationSpecSet annotationSpecSet) {
+    CreateAnnotationSpecSetRequest request =
+        CreateAnnotationSpecSetRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAnnotationSpecSet(annotationSpecSet)
+            .build();
+    return createAnnotationSpecSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an annotation spec set by providing a set of labels.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   AnnotationSpecSet annotationSpecSet = AnnotationSpecSet.newBuilder().build();
+   *   AnnotationSpecSet response = dataLabelingServiceClient.createAnnotationSpecSet(parent.toString(), annotationSpecSet);
    * }
    * </code></pre>
    *
@@ -2061,7 +2197,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    */
   public final AnnotationSpecSet createAnnotationSpecSet(
       String parent, AnnotationSpecSet annotationSpecSet) {
-    PROJECT_PATH_TEMPLATE.validate(parent, "createAnnotationSpecSet");
     CreateAnnotationSpecSetRequest request =
         CreateAnnotationSpecSetRequest.newBuilder()
             .setParent(parent)
@@ -2078,10 +2213,10 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   AnnotationSpecSet annotationSpecSet = AnnotationSpecSet.newBuilder().build();
    *   CreateAnnotationSpecSetRequest request = CreateAnnotationSpecSetRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setAnnotationSpecSet(annotationSpecSet)
    *     .build();
    *   AnnotationSpecSet response = dataLabelingServiceClient.createAnnotationSpecSet(request);
@@ -2103,10 +2238,10 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   AnnotationSpecSet annotationSpecSet = AnnotationSpecSet.newBuilder().build();
    *   CreateAnnotationSpecSetRequest request = CreateAnnotationSpecSetRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setAnnotationSpecSet(annotationSpecSet)
    *     .build();
    *   ApiFuture&lt;AnnotationSpecSet&gt; future = dataLabelingServiceClient.createAnnotationSpecSetCallable().futureCall(request);
@@ -2128,8 +2263,33 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatAnnotationSpecSetName("[PROJECT]", "[ANNOTATION_SPEC_SET]");
-   *   AnnotationSpecSet response = dataLabelingServiceClient.getAnnotationSpecSet(formattedName);
+   *   AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
+   *   AnnotationSpecSet response = dataLabelingServiceClient.getAnnotationSpecSet(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. AnnotationSpecSet resource name, format:
+   *     projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnnotationSpecSet getAnnotationSpecSet(AnnotationSpecSetName name) {
+    GetAnnotationSpecSetRequest request =
+        GetAnnotationSpecSetRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAnnotationSpecSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets an annotation spec set by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
+   *   AnnotationSpecSet response = dataLabelingServiceClient.getAnnotationSpecSet(name.toString());
    * }
    * </code></pre>
    *
@@ -2138,7 +2298,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotationSpecSet getAnnotationSpecSet(String name) {
-    ANNOTATION_SPEC_SET_PATH_TEMPLATE.validate(name, "getAnnotationSpecSet");
     GetAnnotationSpecSetRequest request =
         GetAnnotationSpecSetRequest.newBuilder().setName(name).build();
     return getAnnotationSpecSet(request);
@@ -2152,9 +2311,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatAnnotationSpecSetName("[PROJECT]", "[ANNOTATION_SPEC_SET]");
+   *   AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
    *   GetAnnotationSpecSetRequest request = GetAnnotationSpecSetRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   AnnotationSpecSet response = dataLabelingServiceClient.getAnnotationSpecSet(request);
    * }
@@ -2175,9 +2334,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatAnnotationSpecSetName("[PROJECT]", "[ANNOTATION_SPEC_SET]");
+   *   AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
    *   GetAnnotationSpecSetRequest request = GetAnnotationSpecSetRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;AnnotationSpecSet&gt; future = dataLabelingServiceClient.getAnnotationSpecSetCallable().futureCall(request);
    *   // Do something
@@ -2198,9 +2357,39 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String filter = "";
-   *   for (AnnotationSpecSet element : dataLabelingServiceClient.listAnnotationSpecSets(formattedParent, filter).iterateAll()) {
+   *   for (AnnotationSpecSet element : dataLabelingServiceClient.listAnnotationSpecSets(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Parent of AnnotationSpecSet resource, format: projects/{project_id}
+   * @param filter Optional. Filter is not supported at this moment.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAnnotationSpecSetsPagedResponse listAnnotationSpecSets(
+      ProjectName parent, String filter) {
+    ListAnnotationSpecSetsRequest request =
+        ListAnnotationSpecSetsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    return listAnnotationSpecSets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists annotation spec sets for a project. Pagination is supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String filter = "";
+   *   for (AnnotationSpecSet element : dataLabelingServiceClient.listAnnotationSpecSets(parent.toString(), filter).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -2212,7 +2401,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    */
   public final ListAnnotationSpecSetsPagedResponse listAnnotationSpecSets(
       String parent, String filter) {
-    PROJECT_PATH_TEMPLATE.validate(parent, "listAnnotationSpecSets");
     ListAnnotationSpecSetsRequest request =
         ListAnnotationSpecSetsRequest.newBuilder().setParent(parent).setFilter(filter).build();
     return listAnnotationSpecSets(request);
@@ -2226,9 +2414,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListAnnotationSpecSetsRequest request = ListAnnotationSpecSetsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (AnnotationSpecSet element : dataLabelingServiceClient.listAnnotationSpecSets(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -2252,9 +2440,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListAnnotationSpecSetsRequest request = ListAnnotationSpecSetsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListAnnotationSpecSetsPagedResponse&gt; future = dataLabelingServiceClient.listAnnotationSpecSetsPagedCallable().futureCall(request);
    *   // Do something
@@ -2277,9 +2465,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListAnnotationSpecSetsRequest request = ListAnnotationSpecSetsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListAnnotationSpecSetsResponse response = dataLabelingServiceClient.listAnnotationSpecSetsCallable().call(request);
@@ -2309,8 +2497,33 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatAnnotationSpecSetName("[PROJECT]", "[ANNOTATION_SPEC_SET]");
-   *   dataLabelingServiceClient.deleteAnnotationSpecSet(formattedName);
+   *   AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
+   *   dataLabelingServiceClient.deleteAnnotationSpecSet(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. AnnotationSpec resource name, format:
+   *     `projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAnnotationSpecSet(AnnotationSpecSetName name) {
+    DeleteAnnotationSpecSetRequest request =
+        DeleteAnnotationSpecSetRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteAnnotationSpecSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an annotation spec set by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
+   *   dataLabelingServiceClient.deleteAnnotationSpecSet(name.toString());
    * }
    * </code></pre>
    *
@@ -2319,7 +2532,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAnnotationSpecSet(String name) {
-    ANNOTATION_SPEC_SET_PATH_TEMPLATE.validate(name, "deleteAnnotationSpecSet");
     DeleteAnnotationSpecSetRequest request =
         DeleteAnnotationSpecSetRequest.newBuilder().setName(name).build();
     deleteAnnotationSpecSet(request);
@@ -2333,9 +2545,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatAnnotationSpecSetName("[PROJECT]", "[ANNOTATION_SPEC_SET]");
+   *   AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
    *   DeleteAnnotationSpecSetRequest request = DeleteAnnotationSpecSetRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   dataLabelingServiceClient.deleteAnnotationSpecSet(request);
    * }
@@ -2356,9 +2568,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatAnnotationSpecSetName("[PROJECT]", "[ANNOTATION_SPEC_SET]");
+   *   AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
    *   DeleteAnnotationSpecSetRequest request = DeleteAnnotationSpecSetRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.deleteAnnotationSpecSetCallable().futureCall(request);
    *   // Do something
@@ -2379,9 +2591,39 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Instruction instruction = Instruction.newBuilder().build();
-   *   Instruction response = dataLabelingServiceClient.createInstructionAsync(formattedParent, instruction).get();
+   *   Instruction response = dataLabelingServiceClient.createInstructionAsync(parent, instruction).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Instruction resource parent, format: projects/{project_id}
+   * @param instruction Required. Instruction of how to perform the labeling task.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Instruction, CreateInstructionMetadata> createInstructionAsync(
+      ProjectName parent, Instruction instruction) {
+    CreateInstructionRequest request =
+        CreateInstructionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setInstruction(instruction)
+            .build();
+    return createInstructionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an instruction for how data should be labeled.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   Instruction instruction = Instruction.newBuilder().build();
+   *   Instruction response = dataLabelingServiceClient.createInstructionAsync(parent.toString(), instruction).get();
    * }
    * </code></pre>
    *
@@ -2393,7 +2635,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instruction, CreateInstructionMetadata> createInstructionAsync(
       String parent, Instruction instruction) {
-    PROJECT_PATH_TEMPLATE.validate(parent, "createInstruction");
     CreateInstructionRequest request =
         CreateInstructionRequest.newBuilder().setParent(parent).setInstruction(instruction).build();
     return createInstructionAsync(request);
@@ -2407,10 +2648,10 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Instruction instruction = Instruction.newBuilder().build();
    *   CreateInstructionRequest request = CreateInstructionRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setInstruction(instruction)
    *     .build();
    *   Instruction response = dataLabelingServiceClient.createInstructionAsync(request).get();
@@ -2435,10 +2676,10 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Instruction instruction = Instruction.newBuilder().build();
    *   CreateInstructionRequest request = CreateInstructionRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setInstruction(instruction)
    *     .build();
    *   OperationFuture&lt;Instruction, CreateInstructionMetadata&gt; future = dataLabelingServiceClient.createInstructionOperationCallable().futureCall(request);
@@ -2461,10 +2702,10 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Instruction instruction = Instruction.newBuilder().build();
    *   CreateInstructionRequest request = CreateInstructionRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setInstruction(instruction)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = dataLabelingServiceClient.createInstructionCallable().futureCall(request);
@@ -2485,8 +2726,31 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatInstructionName("[PROJECT]", "[INSTRUCTION]");
-   *   Instruction response = dataLabelingServiceClient.getInstruction(formattedName);
+   *   InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
+   *   Instruction response = dataLabelingServiceClient.getInstruction(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Instruction resource name, format:
+   *     projects/{project_id}/instructions/{instruction_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Instruction getInstruction(InstructionName name) {
+    GetInstructionRequest request =
+        GetInstructionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getInstruction(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets an instruction by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
+   *   Instruction response = dataLabelingServiceClient.getInstruction(name.toString());
    * }
    * </code></pre>
    *
@@ -2495,7 +2759,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Instruction getInstruction(String name) {
-    INSTRUCTION_PATH_TEMPLATE.validate(name, "getInstruction");
     GetInstructionRequest request = GetInstructionRequest.newBuilder().setName(name).build();
     return getInstruction(request);
   }
@@ -2508,9 +2771,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatInstructionName("[PROJECT]", "[INSTRUCTION]");
+   *   InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
    *   GetInstructionRequest request = GetInstructionRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   Instruction response = dataLabelingServiceClient.getInstruction(request);
    * }
@@ -2531,9 +2794,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatInstructionName("[PROJECT]", "[INSTRUCTION]");
+   *   InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
    *   GetInstructionRequest request = GetInstructionRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Instruction&gt; future = dataLabelingServiceClient.getInstructionCallable().futureCall(request);
    *   // Do something
@@ -2553,9 +2816,38 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String filter = "";
-   *   for (Instruction element : dataLabelingServiceClient.listInstructions(formattedParent, filter).iterateAll()) {
+   *   for (Instruction element : dataLabelingServiceClient.listInstructions(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Instruction resource parent, format: projects/{project_id}
+   * @param filter Optional. Filter is not supported at this moment.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListInstructionsPagedResponse listInstructions(ProjectName parent, String filter) {
+    ListInstructionsRequest request =
+        ListInstructionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    return listInstructions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists instructions for a project. Pagination is supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String filter = "";
+   *   for (Instruction element : dataLabelingServiceClient.listInstructions(parent.toString(), filter).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -2566,7 +2858,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstructionsPagedResponse listInstructions(String parent, String filter) {
-    PROJECT_PATH_TEMPLATE.validate(parent, "listInstructions");
     ListInstructionsRequest request =
         ListInstructionsRequest.newBuilder().setParent(parent).setFilter(filter).build();
     return listInstructions(request);
@@ -2580,9 +2871,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListInstructionsRequest request = ListInstructionsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (Instruction element : dataLabelingServiceClient.listInstructions(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -2605,9 +2896,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListInstructionsRequest request = ListInstructionsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListInstructionsPagedResponse&gt; future = dataLabelingServiceClient.listInstructionsPagedCallable().futureCall(request);
    *   // Do something
@@ -2630,9 +2921,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListInstructionsRequest request = ListInstructionsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListInstructionsResponse response = dataLabelingServiceClient.listInstructionsCallable().call(request);
@@ -2662,8 +2953,33 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatInstructionName("[PROJECT]", "[INSTRUCTION]");
-   *   dataLabelingServiceClient.deleteInstruction(formattedName);
+   *   InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
+   *   dataLabelingServiceClient.deleteInstruction(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Instruction resource name, format:
+   *     projects/{project_id}/instructions/{instruction_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteInstruction(InstructionName name) {
+    DeleteInstructionRequest request =
+        DeleteInstructionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteInstruction(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an instruction object by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
+   *   dataLabelingServiceClient.deleteInstruction(name.toString());
    * }
    * </code></pre>
    *
@@ -2672,7 +2988,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteInstruction(String name) {
-    INSTRUCTION_PATH_TEMPLATE.validate(name, "deleteInstruction");
     DeleteInstructionRequest request = DeleteInstructionRequest.newBuilder().setName(name).build();
     deleteInstruction(request);
   }
@@ -2685,9 +3000,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatInstructionName("[PROJECT]", "[INSTRUCTION]");
+   *   InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
    *   DeleteInstructionRequest request = DeleteInstructionRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   dataLabelingServiceClient.deleteInstruction(request);
    * }
@@ -2708,9 +3023,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatInstructionName("[PROJECT]", "[INSTRUCTION]");
+   *   InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
    *   DeleteInstructionRequest request = DeleteInstructionRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.deleteInstructionCallable().futureCall(request);
    *   // Do something
@@ -2724,38 +3039,63 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets an evaluation by resource name.
+   * Gets an evaluation by resource name (to search, use
+   * [projects.evaluations.search][google.cloud.datalabeling.v1beta1.DataLabelingService.SearchEvaluations]).
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
-   *   Evaluation response = dataLabelingServiceClient.getEvaluation(formattedName);
+   *   EvaluationName name = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
+   *   Evaluation response = dataLabelingServiceClient.getEvaluation(name);
    * }
    * </code></pre>
    *
    * @param name Required. Name of the evaluation. Format:
-   *     'projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}'
+   *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Evaluation getEvaluation(EvaluationName name) {
+    GetEvaluationRequest request =
+        GetEvaluationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getEvaluation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets an evaluation by resource name (to search, use
+   * [projects.evaluations.search][google.cloud.datalabeling.v1beta1.DataLabelingService.SearchEvaluations]).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   EvaluationName name = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
+   *   Evaluation response = dataLabelingServiceClient.getEvaluation(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the evaluation. Format:
+   *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;'
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Evaluation getEvaluation(String name) {
-    EVALUATION_PATH_TEMPLATE.validate(name, "getEvaluation");
     GetEvaluationRequest request = GetEvaluationRequest.newBuilder().setName(name).build();
     return getEvaluation(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets an evaluation by resource name.
+   * Gets an evaluation by resource name (to search, use
+   * [projects.evaluations.search][google.cloud.datalabeling.v1beta1.DataLabelingService.SearchEvaluations]).
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+   *   EvaluationName name = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
    *   GetEvaluationRequest request = GetEvaluationRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   Evaluation response = dataLabelingServiceClient.getEvaluation(request);
    * }
@@ -2770,15 +3110,16 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets an evaluation by resource name.
+   * Gets an evaluation by resource name (to search, use
+   * [projects.evaluations.search][google.cloud.datalabeling.v1beta1.DataLabelingService.SearchEvaluations]).
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+   *   EvaluationName name = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
    *   GetEvaluationRequest request = GetEvaluationRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Evaluation&gt; future = dataLabelingServiceClient.getEvaluationCallable().futureCall(request);
    *   // Do something
@@ -2792,30 +3133,113 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Searchs evaluations within a project. Supported filter: evaluation_job, evaluation_time.
+   * Searches [evaluations][google.cloud.datalabeling.v1beta1.Evaluation] within a project.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   EvaluationName parent = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
    *   String filter = "";
-   *   for (Evaluation element : dataLabelingServiceClient.searchEvaluations(formattedParent, filter).iterateAll()) {
+   *   for (Evaluation element : dataLabelingServiceClient.searchEvaluations(parent, filter).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
-   * @param parent Required. Evaluation search parent. Format: projects/{project_id}
-   * @param filter Optional. Support filtering by model id, job state, start and end time. Format:
-   *     "evaluation_job.evaluation_job_id = {evaluation_job_id} AND
-   *     evaluation_job.evaluation_job_run_time_start = {timestamp} AND
-   *     evaluation_job.evaluation_job_run_time_end = {timestamp} AND annotation_spec.display_name =
-   *     {display_name}"
+   * @param parent Required. Evaluation search parent (project ID). Format:
+   *     "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
+   * @param filter Optional. To search evaluations, you can filter by the following:
+   *     <p>&#42; evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_id (the last part of
+   *     [EvaluationJob.name][google.cloud.datalabeling.v1beta1.EvaluationJob.name]) &#42;
+   *     evaluation&lt;span&gt;_&lt;/span&gt;job.model_id (the &lt;var&gt;{model_name}&lt;/var&gt;
+   *     portion of
+   *     [EvaluationJob.modelVersion][google.cloud.datalabeling.v1beta1.EvaluationJob.model_version])
+   *     &#42; evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_start (Minimum
+   *     threshold for the
+   *     [evaluationJobRunTime][google.cloud.datalabeling.v1beta1.Evaluation.evaluation_job_run_time]
+   *     that created the evaluation) &#42;
+   *     evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_end (Maximum threshold for
+   *     the
+   *     [evaluationJobRunTime][google.cloud.datalabeling.v1beta1.Evaluation.evaluation_job_run_time]
+   *     that created the evaluation) &#42; evaluation&lt;span&gt;_&lt;/span&gt;job.job_state
+   *     ([EvaluationJob.state][google.cloud.datalabeling.v1beta1.EvaluationJob.state]) &#42;
+   *     annotation&lt;span&gt;_&lt;/span&gt;spec.display_name (the Evaluation contains a metric for
+   *     the annotation spec with this
+   *     [displayName][google.cloud.datalabeling.v1beta1.AnnotationSpec.display_name])
+   *     <p>To filter by multiple critiera, use the `AND` operator or the `OR` operator. The
+   *     following examples shows a string that filters by several critiera:
+   *     <p>"evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_id =
+   *     &lt;var&gt;{evaluation_job_id}&lt;/var&gt; AND
+   *     evaluation&lt;span&gt;_&lt;/span&gt;job.model_id = &lt;var&gt;{model_name}&lt;/var&gt; AND
+   *     evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_start =
+   *     &lt;var&gt;{timestamp_1}&lt;/var&gt; AND
+   *     evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_end =
+   *     &lt;var&gt;{timestamp_2}&lt;/var&gt; AND
+   *     annotation&lt;span&gt;_&lt;/span&gt;spec.display_name =
+   *     &lt;var&gt;{display_name}&lt;/var&gt;"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchEvaluationsPagedResponse searchEvaluations(
+      EvaluationName parent, String filter) {
+    SearchEvaluationsRequest request =
+        SearchEvaluationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    return searchEvaluations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searches [evaluations][google.cloud.datalabeling.v1beta1.Evaluation] within a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   EvaluationName parent = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
+   *   String filter = "";
+   *   for (Evaluation element : dataLabelingServiceClient.searchEvaluations(parent.toString(), filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Evaluation search parent (project ID). Format:
+   *     "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
+   * @param filter Optional. To search evaluations, you can filter by the following:
+   *     <p>&#42; evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_id (the last part of
+   *     [EvaluationJob.name][google.cloud.datalabeling.v1beta1.EvaluationJob.name]) &#42;
+   *     evaluation&lt;span&gt;_&lt;/span&gt;job.model_id (the &lt;var&gt;{model_name}&lt;/var&gt;
+   *     portion of
+   *     [EvaluationJob.modelVersion][google.cloud.datalabeling.v1beta1.EvaluationJob.model_version])
+   *     &#42; evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_start (Minimum
+   *     threshold for the
+   *     [evaluationJobRunTime][google.cloud.datalabeling.v1beta1.Evaluation.evaluation_job_run_time]
+   *     that created the evaluation) &#42;
+   *     evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_end (Maximum threshold for
+   *     the
+   *     [evaluationJobRunTime][google.cloud.datalabeling.v1beta1.Evaluation.evaluation_job_run_time]
+   *     that created the evaluation) &#42; evaluation&lt;span&gt;_&lt;/span&gt;job.job_state
+   *     ([EvaluationJob.state][google.cloud.datalabeling.v1beta1.EvaluationJob.state]) &#42;
+   *     annotation&lt;span&gt;_&lt;/span&gt;spec.display_name (the Evaluation contains a metric for
+   *     the annotation spec with this
+   *     [displayName][google.cloud.datalabeling.v1beta1.AnnotationSpec.display_name])
+   *     <p>To filter by multiple critiera, use the `AND` operator or the `OR` operator. The
+   *     following examples shows a string that filters by several critiera:
+   *     <p>"evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_id =
+   *     &lt;var&gt;{evaluation_job_id}&lt;/var&gt; AND
+   *     evaluation&lt;span&gt;_&lt;/span&gt;job.model_id = &lt;var&gt;{model_name}&lt;/var&gt; AND
+   *     evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_start =
+   *     &lt;var&gt;{timestamp_1}&lt;/var&gt; AND
+   *     evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_end =
+   *     &lt;var&gt;{timestamp_2}&lt;/var&gt; AND
+   *     annotation&lt;span&gt;_&lt;/span&gt;spec.display_name =
+   *     &lt;var&gt;{display_name}&lt;/var&gt;"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchEvaluationsPagedResponse searchEvaluations(String parent, String filter) {
-    PROJECT_PATH_TEMPLATE.validate(parent, "searchEvaluations");
     SearchEvaluationsRequest request =
         SearchEvaluationsRequest.newBuilder().setParent(parent).setFilter(filter).build();
     return searchEvaluations(request);
@@ -2823,17 +3247,15 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Searchs evaluations within a project. Supported filter: evaluation_job, evaluation_time.
+   * Searches [evaluations][google.cloud.datalabeling.v1beta1.Evaluation] within a project.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
-   *   String filter = "";
+   *   EvaluationName parent = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
    *   SearchEvaluationsRequest request = SearchEvaluationsRequest.newBuilder()
-   *     .setParent(formattedParent)
-   *     .setFilter(filter)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (Evaluation element : dataLabelingServiceClient.searchEvaluations(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -2850,17 +3272,15 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Searchs evaluations within a project. Supported filter: evaluation_job, evaluation_time.
+   * Searches [evaluations][google.cloud.datalabeling.v1beta1.Evaluation] within a project.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
-   *   String filter = "";
+   *   EvaluationName parent = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
    *   SearchEvaluationsRequest request = SearchEvaluationsRequest.newBuilder()
-   *     .setParent(formattedParent)
-   *     .setFilter(filter)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;SearchEvaluationsPagedResponse&gt; future = dataLabelingServiceClient.searchEvaluationsPagedCallable().futureCall(request);
    *   // Do something
@@ -2877,17 +3297,15 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Searchs evaluations within a project. Supported filter: evaluation_job, evaluation_time.
+   * Searches [evaluations][google.cloud.datalabeling.v1beta1.Evaluation] within a project.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
-   *   String filter = "";
+   *   EvaluationName parent = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
    *   SearchEvaluationsRequest request = SearchEvaluationsRequest.newBuilder()
-   *     .setParent(formattedParent)
-   *     .setFilter(filter)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     SearchEvaluationsResponse response = dataLabelingServiceClient.searchEvaluationsCallable().call(request);
@@ -2911,26 +3329,58 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Searchs example comparisons in evaluation, in format of examples of both ground truth and
-   * prediction(s). It is represented as a search with evaluation id.
+   * Searches example comparisons from an evaluation. The return format is a list of example
+   * comparisons that show ground truth and prediction(s) for a single input. Search by providing an
+   * evaluation ID.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
-   *   for (SearchExampleComparisonsResponse.ExampleComparison element : dataLabelingServiceClient.searchExampleComparisons(formattedParent).iterateAll()) {
+   *   EvaluationName parent = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
+   *   for (SearchExampleComparisonsResponse.ExampleComparison element : dataLabelingServiceClient.searchExampleComparisons(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
-   * @param parent Required. Name of the Evaluation resource to search example comparison from.
-   *     Format: projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}
+   * @param parent Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation]
+   *     resource to search for example comparisons from. Format:
+   *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchExampleComparisonsPagedResponse searchExampleComparisons(
+      EvaluationName parent) {
+    SearchExampleComparisonsRequest request =
+        SearchExampleComparisonsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return searchExampleComparisons(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searches example comparisons from an evaluation. The return format is a list of example
+   * comparisons that show ground truth and prediction(s) for a single input. Search by providing an
+   * evaluation ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   EvaluationName parent = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
+   *   for (SearchExampleComparisonsResponse.ExampleComparison element : dataLabelingServiceClient.searchExampleComparisons(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation]
+   *     resource to search for example comparisons from. Format:
+   *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchExampleComparisonsPagedResponse searchExampleComparisons(String parent) {
-    EVALUATION_PATH_TEMPLATE.validate(parent, "searchExampleComparisons");
     SearchExampleComparisonsRequest request =
         SearchExampleComparisonsRequest.newBuilder().setParent(parent).build();
     return searchExampleComparisons(request);
@@ -2938,16 +3388,17 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Searchs example comparisons in evaluation, in format of examples of both ground truth and
-   * prediction(s). It is represented as a search with evaluation id.
+   * Searches example comparisons from an evaluation. The return format is a list of example
+   * comparisons that show ground truth and prediction(s) for a single input. Search by providing an
+   * evaluation ID.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+   *   EvaluationName parent = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
    *   SearchExampleComparisonsRequest request = SearchExampleComparisonsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (SearchExampleComparisonsResponse.ExampleComparison element : dataLabelingServiceClient.searchExampleComparisons(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -2965,16 +3416,17 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Searchs example comparisons in evaluation, in format of examples of both ground truth and
-   * prediction(s). It is represented as a search with evaluation id.
+   * Searches example comparisons from an evaluation. The return format is a list of example
+   * comparisons that show ground truth and prediction(s) for a single input. Search by providing an
+   * evaluation ID.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+   *   EvaluationName parent = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
    *   SearchExampleComparisonsRequest request = SearchExampleComparisonsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;SearchExampleComparisonsPagedResponse&gt; future = dataLabelingServiceClient.searchExampleComparisonsPagedCallable().futureCall(request);
    *   // Do something
@@ -2991,16 +3443,17 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Searchs example comparisons in evaluation, in format of examples of both ground truth and
-   * prediction(s). It is represented as a search with evaluation id.
+   * Searches example comparisons from an evaluation. The return format is a list of example
+   * comparisons that show ground truth and prediction(s) for a single input. Search by providing an
+   * evaluation ID.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatEvaluationName("[PROJECT]", "[DATASET]", "[EVALUATION]");
+   *   EvaluationName parent = EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]");
    *   SearchExampleComparisonsRequest request = SearchExampleComparisonsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     SearchExampleComparisonsResponse response = dataLabelingServiceClient.searchExampleComparisonsCallable().call(request);
@@ -3030,18 +3483,46 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   EvaluationJob job = EvaluationJob.newBuilder().build();
-   *   EvaluationJob response = dataLabelingServiceClient.createEvaluationJob(formattedParent, job);
+   *   EvaluationJob response = dataLabelingServiceClient.createEvaluationJob(parent, job);
    * }
    * </code></pre>
    *
-   * @param parent Required. Evaluation job resource parent, format: projects/{project_id}.
+   * @param parent Required. Evaluation job resource parent. Format:
+   *     "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
+   * @param job Required. The evaluation job to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EvaluationJob createEvaluationJob(ProjectName parent, EvaluationJob job) {
+    CreateEvaluationJobRequest request =
+        CreateEvaluationJobRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setJob(job)
+            .build();
+    return createEvaluationJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an evaluation job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   EvaluationJob job = EvaluationJob.newBuilder().build();
+   *   EvaluationJob response = dataLabelingServiceClient.createEvaluationJob(parent.toString(), job);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Evaluation job resource parent. Format:
+   *     "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
    * @param job Required. The evaluation job to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EvaluationJob createEvaluationJob(String parent, EvaluationJob job) {
-    PROJECT_PATH_TEMPLATE.validate(parent, "createEvaluationJob");
     CreateEvaluationJobRequest request =
         CreateEvaluationJobRequest.newBuilder().setParent(parent).setJob(job).build();
     return createEvaluationJob(request);
@@ -3055,10 +3536,10 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   EvaluationJob job = EvaluationJob.newBuilder().build();
    *   CreateEvaluationJobRequest request = CreateEvaluationJobRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setJob(job)
    *     .build();
    *   EvaluationJob response = dataLabelingServiceClient.createEvaluationJob(request);
@@ -3080,10 +3561,10 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   EvaluationJob job = EvaluationJob.newBuilder().build();
    *   CreateEvaluationJobRequest request = CreateEvaluationJobRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setJob(job)
    *     .build();
    *   ApiFuture&lt;EvaluationJob&gt; future = dataLabelingServiceClient.createEvaluationJobCallable().futureCall(request);
@@ -3099,7 +3580,12 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an evaluation job.
+   * Updates an evaluation job. You can only update certain fields of the job's
+   * [EvaluationJobConfig][google.cloud.datalabeling.v1beta1.EvaluationJobConfig]:
+   * `humanAnnotationConfig.instruction`, `exampleCount`, and `exampleSamplePercentage`.
+   *
+   * <p>If you want to change any other aspect of the evaluation job, you must delete the job and
+   * create a new one.
    *
    * <p>Sample code:
    *
@@ -3112,12 +3598,15 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param evaluationJob Required. Evaluation job that is going to be updated.
-   * @param updateMask Optional. Mask for which field in evaluation_job should be updated.
+   * @param updateMask Optional. Mask for which fields to update. You can only provide the following
+   *     fields:
+   *     <p>&#42; `evaluationJobConfig.humanAnnotationConfig.instruction` &#42;
+   *     `evaluationJobConfig.exampleCount` &#42; `evaluationJobConfig.exampleSamplePercentage`
+   *     <p>You can provide more than one of these fields by separating them with commas.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EvaluationJob updateEvaluationJob(
       EvaluationJob evaluationJob, FieldMask updateMask) {
-
     UpdateEvaluationJobRequest request =
         UpdateEvaluationJobRequest.newBuilder()
             .setEvaluationJob(evaluationJob)
@@ -3128,17 +3617,20 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an evaluation job.
+   * Updates an evaluation job. You can only update certain fields of the job's
+   * [EvaluationJobConfig][google.cloud.datalabeling.v1beta1.EvaluationJobConfig]:
+   * `humanAnnotationConfig.instruction`, `exampleCount`, and `exampleSamplePercentage`.
+   *
+   * <p>If you want to change any other aspect of the evaluation job, you must delete the job and
+   * create a new one.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
    *   EvaluationJob evaluationJob = EvaluationJob.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   UpdateEvaluationJobRequest request = UpdateEvaluationJobRequest.newBuilder()
    *     .setEvaluationJob(evaluationJob)
-   *     .setUpdateMask(updateMask)
    *     .build();
    *   EvaluationJob response = dataLabelingServiceClient.updateEvaluationJob(request);
    * }
@@ -3153,17 +3645,20 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an evaluation job.
+   * Updates an evaluation job. You can only update certain fields of the job's
+   * [EvaluationJobConfig][google.cloud.datalabeling.v1beta1.EvaluationJobConfig]:
+   * `humanAnnotationConfig.instruction`, `exampleCount`, and `exampleSamplePercentage`.
+   *
+   * <p>If you want to change any other aspect of the evaluation job, you must delete the job and
+   * create a new one.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
    *   EvaluationJob evaluationJob = EvaluationJob.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   UpdateEvaluationJobRequest request = UpdateEvaluationJobRequest.newBuilder()
    *     .setEvaluationJob(evaluationJob)
-   *     .setUpdateMask(updateMask)
    *     .build();
    *   ApiFuture&lt;EvaluationJob&gt; future = dataLabelingServiceClient.updateEvaluationJobCallable().futureCall(request);
    *   // Do something
@@ -3184,17 +3679,39 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
-   *   EvaluationJob response = dataLabelingServiceClient.getEvaluationJob(formattedName);
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
+   *   EvaluationJob response = dataLabelingServiceClient.getEvaluationJob(name);
    * }
    * </code></pre>
    *
    * @param name Required. Name of the evaluation job. Format:
-   *     'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+   *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EvaluationJob getEvaluationJob(EvaluationJobName name) {
+    GetEvaluationJobRequest request =
+        GetEvaluationJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getEvaluationJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets an evaluation job by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
+   *   EvaluationJob response = dataLabelingServiceClient.getEvaluationJob(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the evaluation job. Format:
+   *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EvaluationJob getEvaluationJob(String name) {
-    EVALUATION_JOB_PATH_TEMPLATE.validate(name, "getEvaluationJob");
     GetEvaluationJobRequest request = GetEvaluationJobRequest.newBuilder().setName(name).build();
     return getEvaluationJob(request);
   }
@@ -3207,9 +3724,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
    *   GetEvaluationJobRequest request = GetEvaluationJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   EvaluationJob response = dataLabelingServiceClient.getEvaluationJob(request);
    * }
@@ -3230,9 +3747,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
    *   GetEvaluationJobRequest request = GetEvaluationJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;EvaluationJob&gt; future = dataLabelingServiceClient.getEvaluationJobCallable().futureCall(request);
    *   // Do something
@@ -3246,24 +3763,49 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Pauses an evaluation job. Pausing a evaluation job that is already in PAUSED state will be a
+   * Pauses an evaluation job. Pausing an evaluation job that is already in a `PAUSED` state is a
    * no-op.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
-   *   dataLabelingServiceClient.pauseEvaluationJob(formattedName);
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
+   *   dataLabelingServiceClient.pauseEvaluationJob(name);
    * }
    * </code></pre>
    *
    * @param name Required. Name of the evaluation job that is going to be paused. Format:
-   *     'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+   *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void pauseEvaluationJob(EvaluationJobName name) {
+    PauseEvaluationJobRequest request =
+        PauseEvaluationJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    pauseEvaluationJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Pauses an evaluation job. Pausing an evaluation job that is already in a `PAUSED` state is a
+   * no-op.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
+   *   dataLabelingServiceClient.pauseEvaluationJob(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the evaluation job that is going to be paused. Format:
+   *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void pauseEvaluationJob(String name) {
-    EVALUATION_JOB_PATH_TEMPLATE.validate(name, "pauseEvaluationJob");
     PauseEvaluationJobRequest request =
         PauseEvaluationJobRequest.newBuilder().setName(name).build();
     pauseEvaluationJob(request);
@@ -3271,16 +3813,16 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Pauses an evaluation job. Pausing a evaluation job that is already in PAUSED state will be a
+   * Pauses an evaluation job. Pausing an evaluation job that is already in a `PAUSED` state is a
    * no-op.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
    *   PauseEvaluationJobRequest request = PauseEvaluationJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   dataLabelingServiceClient.pauseEvaluationJob(request);
    * }
@@ -3295,16 +3837,16 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Pauses an evaluation job. Pausing a evaluation job that is already in PAUSED state will be a
+   * Pauses an evaluation job. Pausing an evaluation job that is already in a `PAUSED` state is a
    * no-op.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
    *   PauseEvaluationJobRequest request = PauseEvaluationJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.pauseEvaluationJobCallable().futureCall(request);
    *   // Do something
@@ -3318,24 +3860,49 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resumes a paused evaluation job. Deleted evaluation job can't be resumed. Resuming a running
-   * evaluation job will be a no-op.
+   * Resumes a paused evaluation job. A deleted evaluation job can't be resumed. Resuming a running
+   * or scheduled evaluation job is a no-op.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
-   *   dataLabelingServiceClient.resumeEvaluationJob(formattedName);
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
+   *   dataLabelingServiceClient.resumeEvaluationJob(name);
    * }
    * </code></pre>
    *
    * @param name Required. Name of the evaluation job that is going to be resumed. Format:
-   *     'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+   *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void resumeEvaluationJob(EvaluationJobName name) {
+    ResumeEvaluationJobRequest request =
+        ResumeEvaluationJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    resumeEvaluationJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Resumes a paused evaluation job. A deleted evaluation job can't be resumed. Resuming a running
+   * or scheduled evaluation job is a no-op.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
+   *   dataLabelingServiceClient.resumeEvaluationJob(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the evaluation job that is going to be resumed. Format:
+   *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void resumeEvaluationJob(String name) {
-    EVALUATION_JOB_PATH_TEMPLATE.validate(name, "resumeEvaluationJob");
     ResumeEvaluationJobRequest request =
         ResumeEvaluationJobRequest.newBuilder().setName(name).build();
     resumeEvaluationJob(request);
@@ -3343,16 +3910,16 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resumes a paused evaluation job. Deleted evaluation job can't be resumed. Resuming a running
-   * evaluation job will be a no-op.
+   * Resumes a paused evaluation job. A deleted evaluation job can't be resumed. Resuming a running
+   * or scheduled evaluation job is a no-op.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
    *   ResumeEvaluationJobRequest request = ResumeEvaluationJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   dataLabelingServiceClient.resumeEvaluationJob(request);
    * }
@@ -3367,16 +3934,16 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resumes a paused evaluation job. Deleted evaluation job can't be resumed. Resuming a running
-   * evaluation job will be a no-op.
+   * Resumes a paused evaluation job. A deleted evaluation job can't be resumed. Resuming a running
+   * or scheduled evaluation job is a no-op.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
    *   ResumeEvaluationJobRequest request = ResumeEvaluationJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.resumeEvaluationJobCallable().futureCall(request);
    *   // Do something
@@ -3396,17 +3963,41 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
-   *   dataLabelingServiceClient.deleteEvaluationJob(formattedName);
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
+   *   dataLabelingServiceClient.deleteEvaluationJob(name);
    * }
    * </code></pre>
    *
    * @param name Required. Name of the evaluation job that is going to be deleted. Format:
-   *     'projects/{project_id}/evaluationJobs/{evaluation_job_id}'
+   *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEvaluationJob(EvaluationJobName name) {
+    DeleteEvaluationJobRequest request =
+        DeleteEvaluationJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteEvaluationJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Stops and deletes an evaluation job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
+   *   dataLabelingServiceClient.deleteEvaluationJob(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the evaluation job that is going to be deleted. Format:
+   *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteEvaluationJob(String name) {
-    EVALUATION_JOB_PATH_TEMPLATE.validate(name, "deleteEvaluationJob");
     DeleteEvaluationJobRequest request =
         DeleteEvaluationJobRequest.newBuilder().setName(name).build();
     deleteEvaluationJob(request);
@@ -3420,9 +4011,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
    *   DeleteEvaluationJobRequest request = DeleteEvaluationJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   dataLabelingServiceClient.deleteEvaluationJob(request);
    * }
@@ -3443,9 +4034,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedName = DataLabelingServiceClient.formatEvaluationJobName("[PROJECT]", "[EVALUATION_JOB]");
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
    *   DeleteEvaluationJobRequest request = DeleteEvaluationJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.deleteEvaluationJobCallable().futureCall(request);
    *   // Do something
@@ -3465,21 +4056,67 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String filter = "";
-   *   for (EvaluationJob element : dataLabelingServiceClient.listEvaluationJobs(formattedParent, filter).iterateAll()) {
+   *   for (EvaluationJob element : dataLabelingServiceClient.listEvaluationJobs(parent, filter).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
-   * @param parent Required. Evaluation resource parent. Format: "projects/{project_id}"
-   * @param filter Optional. Only support filter by model id and job state. Format:
-   *     "evaluation_job.model_id = {model_id} AND evaluation_job.state = {EvaluationJob::State}"
+   * @param parent Required. Evaluation job resource parent. Format:
+   *     "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
+   * @param filter Optional. You can filter the jobs to list by model_id (also known as model_name,
+   *     as described in
+   *     [EvaluationJob.modelVersion][google.cloud.datalabeling.v1beta1.EvaluationJob.model_version])
+   *     or by evaluation job state (as described in
+   *     [EvaluationJob.state][google.cloud.datalabeling.v1beta1.EvaluationJob.state]). To filter by
+   *     both criteria, use the `AND` operator or the `OR` operator. For example, you can use the
+   *     following string for your filter: "evaluation&lt;span&gt;_&lt;/span&gt;job.model_id =
+   *     &lt;var&gt;{model_name}&lt;/var&gt; AND evaluation&lt;span&gt;_&lt;/span&gt;job.state =
+   *     &lt;var&gt;{evaluation_job_state}&lt;/var&gt;"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEvaluationJobsPagedResponse listEvaluationJobs(
+      ProjectName parent, String filter) {
+    ListEvaluationJobsRequest request =
+        ListEvaluationJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    return listEvaluationJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all evaluation jobs within a project with possible filters. Pagination is supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String filter = "";
+   *   for (EvaluationJob element : dataLabelingServiceClient.listEvaluationJobs(parent.toString(), filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Evaluation job resource parent. Format:
+   *     "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
+   * @param filter Optional. You can filter the jobs to list by model_id (also known as model_name,
+   *     as described in
+   *     [EvaluationJob.modelVersion][google.cloud.datalabeling.v1beta1.EvaluationJob.model_version])
+   *     or by evaluation job state (as described in
+   *     [EvaluationJob.state][google.cloud.datalabeling.v1beta1.EvaluationJob.state]). To filter by
+   *     both criteria, use the `AND` operator or the `OR` operator. For example, you can use the
+   *     following string for your filter: "evaluation&lt;span&gt;_&lt;/span&gt;job.model_id =
+   *     &lt;var&gt;{model_name}&lt;/var&gt; AND evaluation&lt;span&gt;_&lt;/span&gt;job.state =
+   *     &lt;var&gt;{evaluation_job_state}&lt;/var&gt;"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEvaluationJobsPagedResponse listEvaluationJobs(String parent, String filter) {
-    PROJECT_PATH_TEMPLATE.validate(parent, "listEvaluationJobs");
     ListEvaluationJobsRequest request =
         ListEvaluationJobsRequest.newBuilder().setParent(parent).setFilter(filter).build();
     return listEvaluationJobs(request);
@@ -3493,11 +4130,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
-   *   String filter = "";
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListEvaluationJobsRequest request = ListEvaluationJobsRequest.newBuilder()
-   *     .setParent(formattedParent)
-   *     .setFilter(filter)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (EvaluationJob element : dataLabelingServiceClient.listEvaluationJobs(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -3521,11 +4156,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
-   *   String filter = "";
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListEvaluationJobsRequest request = ListEvaluationJobsRequest.newBuilder()
-   *     .setParent(formattedParent)
-   *     .setFilter(filter)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListEvaluationJobsPagedResponse&gt; future = dataLabelingServiceClient.listEvaluationJobsPagedCallable().futureCall(request);
    *   // Do something
@@ -3548,11 +4181,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   String formattedParent = DataLabelingServiceClient.formatProjectName("[PROJECT]");
-   *   String filter = "";
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListEvaluationJobsRequest request = ListEvaluationJobsRequest.newBuilder()
-   *     .setParent(formattedParent)
-   *     .setFilter(filter)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListEvaluationJobsResponse response = dataLabelingServiceClient.listEvaluationJobsCallable().call(request);
@@ -3572,46 +4203,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
   public final UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
       listEvaluationJobsCallable() {
     return stub.listEvaluationJobsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an annotated dataset by resource name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   DeleteAnnotatedDatasetRequest request = DeleteAnnotatedDatasetRequest.newBuilder().build();
-   *   dataLabelingServiceClient.deleteAnnotatedDataset(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteAnnotatedDataset(DeleteAnnotatedDatasetRequest request) {
-    deleteAnnotatedDatasetCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an annotated dataset by resource name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   DeleteAnnotatedDatasetRequest request = DeleteAnnotatedDatasetRequest.newBuilder().build();
-   *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.deleteAnnotatedDatasetCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteAnnotatedDatasetRequest, Empty>
-      deleteAnnotatedDatasetCallable() {
-    return stub.deleteAnnotatedDatasetCallable();
   }
 
   @Override

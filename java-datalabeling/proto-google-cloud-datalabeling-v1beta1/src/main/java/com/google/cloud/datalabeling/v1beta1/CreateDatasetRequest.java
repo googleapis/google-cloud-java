@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -137,7 +137,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    * projects/{project_id}
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -160,7 +162,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    * projects/{project_id}
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -185,7 +189,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    * Required. The dataset to be created.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.Dataset dataset = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the dataset field is set.
    */
@@ -199,7 +205,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    * Required. The dataset to be created.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.Dataset dataset = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The dataset.
    */
@@ -215,7 +223,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    * Required. The dataset to be created.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.Dataset dataset = 2;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datalabeling.v1beta1.DatasetOrBuilder getDatasetOrBuilder() {
     return getDataset();
@@ -577,7 +587,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * projects/{project_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -600,7 +612,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * projects/{project_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -623,7 +637,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * projects/{project_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -645,7 +661,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * projects/{project_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -663,7 +681,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * projects/{project_id}
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -692,7 +712,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The dataset to be created.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Dataset dataset = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the dataset field is set.
      */
@@ -706,7 +728,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The dataset to be created.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Dataset dataset = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The dataset.
      */
@@ -726,7 +750,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The dataset to be created.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Dataset dataset = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDataset(com.google.cloud.datalabeling.v1beta1.Dataset value) {
       if (datasetBuilder_ == null) {
@@ -748,7 +774,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The dataset to be created.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Dataset dataset = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDataset(
         com.google.cloud.datalabeling.v1beta1.Dataset.Builder builderForValue) {
@@ -768,7 +796,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The dataset to be created.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Dataset dataset = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeDataset(com.google.cloud.datalabeling.v1beta1.Dataset value) {
       if (datasetBuilder_ == null) {
@@ -794,7 +824,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The dataset to be created.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Dataset dataset = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearDataset() {
       if (datasetBuilder_ == null) {
@@ -814,7 +846,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The dataset to be created.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Dataset dataset = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.Dataset.Builder getDatasetBuilder() {
 
@@ -828,7 +862,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The dataset to be created.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Dataset dataset = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datalabeling.v1beta1.DatasetOrBuilder getDatasetOrBuilder() {
       if (datasetBuilder_ != null) {
@@ -846,7 +882,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The dataset to be created.
      * </pre>
      *
-     * <code>.google.cloud.datalabeling.v1beta1.Dataset dataset = 2;</code>
+     * <code>
+     * .google.cloud.datalabeling.v1beta1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.Dataset,

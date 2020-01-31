@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ public interface TextClassificationConfigOrBuilder
    * multiple labels for one text segment.
    * </pre>
    *
-   * <code>bool allow_multi_label = 1;</code>
+   * <code>bool allow_multi_label = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowMultiLabel.
    */
@@ -44,7 +44,7 @@ public interface TextClassificationConfigOrBuilder
    * Required. Annotation spec set resource name.
    * </pre>
    *
-   * <code>string annotation_spec_set = 2;</code>
+   * <code>string annotation_spec_set = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The annotationSpecSet.
    */
@@ -56,7 +56,7 @@ public interface TextClassificationConfigOrBuilder
    * Required. Annotation spec set resource name.
    * </pre>
    *
-   * <code>string annotation_spec_set = 2;</code>
+   * <code>string annotation_spec_set = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for annotationSpecSet.
    */
@@ -69,7 +69,9 @@ public interface TextClassificationConfigOrBuilder
    * Optional. Configs for sentiment selection.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the sentimentConfig field is set.
    */
@@ -81,7 +83,9 @@ public interface TextClassificationConfigOrBuilder
    * Optional. Configs for sentiment selection.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The sentimentConfig.
    */
@@ -93,7 +97,9 @@ public interface TextClassificationConfigOrBuilder
    * Optional. Configs for sentiment selection.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.datalabeling.v1beta1.SentimentConfigOrBuilder getSentimentConfigOrBuilder();
 }

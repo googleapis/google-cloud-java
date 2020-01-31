@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,16 @@
 
 package com.google.cloud.datalabeling.v1beta1;
 
-/** Protobuf type {@code google.cloud.datalabeling.v1beta1.EvaluationConfig} */
+/**
+ *
+ *
+ * <pre>
+ * Configuration details used for calculating evaluation metrics and creating an
+ * [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation].
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.datalabeling.v1beta1.EvaluationConfig}
+ */
 public final class EvaluationConfig extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.EvaluationConfig)
@@ -163,6 +172,14 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int BOUNDING_BOX_EVALUATION_OPTIONS_FIELD_NUMBER = 1;
   /**
+   *
+   *
+   * <pre>
+   * Only specify this field if the related model performs image object
+   * detection (`IMAGE_BOUNDING_BOX_ANNOTATION`). Describes how to evaluate
+   * bounding boxes.
+   * </pre>
+   *
    * <code>
    * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
    * </code>
@@ -173,6 +190,14 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     return verticalOptionCase_ == 1;
   }
   /**
+   *
+   *
+   * <pre>
+   * Only specify this field if the related model performs image object
+   * detection (`IMAGE_BOUNDING_BOX_ANNOTATION`). Describes how to evaluate
+   * bounding boxes.
+   * </pre>
+   *
    * <code>
    * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
    * </code>
@@ -187,6 +212,14 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions.getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * Only specify this field if the related model performs image object
+   * detection (`IMAGE_BOUNDING_BOX_ANNOTATION`). Describes how to evaluate
+   * bounding boxes.
+   * </pre>
+   *
    * <code>
    * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
    * </code>
@@ -377,7 +410,16 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.datalabeling.v1beta1.EvaluationConfig} */
+  /**
+   *
+   *
+   * <pre>
+   * Configuration details used for calculating evaluation metrics and creating an
+   * [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation].
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datalabeling.v1beta1.EvaluationConfig}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.datalabeling.v1beta1.EvaluationConfig)
@@ -562,6 +604,14 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptionsOrBuilder>
         boundingBoxEvaluationOptionsBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Only specify this field if the related model performs image object
+     * detection (`IMAGE_BOUNDING_BOX_ANNOTATION`). Describes how to evaluate
+     * bounding boxes.
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
      * </code>
@@ -572,6 +622,14 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       return verticalOptionCase_ == 1;
     }
     /**
+     *
+     *
+     * <pre>
+     * Only specify this field if the related model performs image object
+     * detection (`IMAGE_BOUNDING_BOX_ANNOTATION`). Describes how to evaluate
+     * bounding boxes.
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
      * </code>
@@ -596,6 +654,14 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Only specify this field if the related model performs image object
+     * detection (`IMAGE_BOUNDING_BOX_ANNOTATION`). Describes how to evaluate
+     * bounding boxes.
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
      * </code>
@@ -615,6 +681,14 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Only specify this field if the related model performs image object
+     * detection (`IMAGE_BOUNDING_BOX_ANNOTATION`). Describes how to evaluate
+     * bounding boxes.
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
      * </code>
@@ -632,6 +706,14 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Only specify this field if the related model performs image object
+     * detection (`IMAGE_BOUNDING_BOX_ANNOTATION`). Describes how to evaluate
+     * bounding boxes.
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
      * </code>
@@ -663,6 +745,14 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Only specify this field if the related model performs image object
+     * detection (`IMAGE_BOUNDING_BOX_ANNOTATION`). Describes how to evaluate
+     * bounding boxes.
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
      * </code>
@@ -684,6 +774,14 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Only specify this field if the related model performs image object
+     * detection (`IMAGE_BOUNDING_BOX_ANNOTATION`). Describes how to evaluate
+     * bounding boxes.
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
      * </code>
@@ -693,6 +791,14 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       return getBoundingBoxEvaluationOptionsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Only specify this field if the related model performs image object
+     * detection (`IMAGE_BOUNDING_BOX_ANNOTATION`). Describes how to evaluate
+     * bounding boxes.
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
      * </code>
@@ -711,6 +817,14 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Only specify this field if the related model performs image object
+     * detection (`IMAGE_BOUNDING_BOX_ANNOTATION`). Describes how to evaluate
+     * bounding boxes.
+     * </pre>
+     *
      * <code>
      * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
      * </code>

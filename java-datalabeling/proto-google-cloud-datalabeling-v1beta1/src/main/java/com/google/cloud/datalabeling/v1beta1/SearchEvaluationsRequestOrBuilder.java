@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,11 +27,13 @@ public interface SearchEvaluationsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Evaluation search parent. Format:
-   * projects/{project_id}
+   * Required. Evaluation search parent (project ID). Format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -40,11 +42,13 @@ public interface SearchEvaluationsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Evaluation search parent. Format:
-   * projects/{project_id}
+   * Required. Evaluation search parent (project ID). Format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -54,15 +58,37 @@ public interface SearchEvaluationsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Support filtering by model id, job state, start and end time.
-   * Format:
-   * "evaluation_job.evaluation_job_id = {evaluation_job_id} AND
-   * evaluation_job.evaluation_job_run_time_start = {timestamp} AND
-   * evaluation_job.evaluation_job_run_time_end = {timestamp} AND
-   * annotation_spec.display_name = {display_name}"
+   * Optional. To search evaluations, you can filter by the following:
+   * * evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_id (the last part of
+   *   [EvaluationJob.name][google.cloud.datalabeling.v1beta1.EvaluationJob.name])
+   * * evaluation&lt;span&gt;_&lt;/span&gt;job.model_id (the &lt;var&gt;{model_name}&lt;/var&gt; portion
+   *   of [EvaluationJob.modelVersion][google.cloud.datalabeling.v1beta1.EvaluationJob.model_version])
+   * * evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_start (Minimum
+   *   threshold for the
+   *   [evaluationJobRunTime][google.cloud.datalabeling.v1beta1.Evaluation.evaluation_job_run_time] that created
+   *   the evaluation)
+   * * evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_end (Maximum
+   *   threshold for the
+   *   [evaluationJobRunTime][google.cloud.datalabeling.v1beta1.Evaluation.evaluation_job_run_time] that created
+   *   the evaluation)
+   * * evaluation&lt;span&gt;_&lt;/span&gt;job.job_state ([EvaluationJob.state][google.cloud.datalabeling.v1beta1.EvaluationJob.state])
+   * * annotation&lt;span&gt;_&lt;/span&gt;spec.display_name (the Evaluation contains a
+   *   metric for the annotation spec with this
+   *   [displayName][google.cloud.datalabeling.v1beta1.AnnotationSpec.display_name])
+   * To filter by multiple critiera, use the `AND` operator or the `OR`
+   * operator. The following examples shows a string that filters by several
+   * critiera:
+   * "evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_id =
+   * &lt;var&gt;{evaluation_job_id}&lt;/var&gt; AND evaluation&lt;span&gt;_&lt;/span&gt;job.model_id =
+   * &lt;var&gt;{model_name}&lt;/var&gt; AND
+   * evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_start =
+   * &lt;var&gt;{timestamp_1}&lt;/var&gt; AND
+   * evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_end =
+   * &lt;var&gt;{timestamp_2}&lt;/var&gt; AND annotation&lt;span&gt;_&lt;/span&gt;spec.display_name =
+   * &lt;var&gt;{display_name}&lt;/var&gt;"
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -71,15 +97,37 @@ public interface SearchEvaluationsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Support filtering by model id, job state, start and end time.
-   * Format:
-   * "evaluation_job.evaluation_job_id = {evaluation_job_id} AND
-   * evaluation_job.evaluation_job_run_time_start = {timestamp} AND
-   * evaluation_job.evaluation_job_run_time_end = {timestamp} AND
-   * annotation_spec.display_name = {display_name}"
+   * Optional. To search evaluations, you can filter by the following:
+   * * evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_id (the last part of
+   *   [EvaluationJob.name][google.cloud.datalabeling.v1beta1.EvaluationJob.name])
+   * * evaluation&lt;span&gt;_&lt;/span&gt;job.model_id (the &lt;var&gt;{model_name}&lt;/var&gt; portion
+   *   of [EvaluationJob.modelVersion][google.cloud.datalabeling.v1beta1.EvaluationJob.model_version])
+   * * evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_start (Minimum
+   *   threshold for the
+   *   [evaluationJobRunTime][google.cloud.datalabeling.v1beta1.Evaluation.evaluation_job_run_time] that created
+   *   the evaluation)
+   * * evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_end (Maximum
+   *   threshold for the
+   *   [evaluationJobRunTime][google.cloud.datalabeling.v1beta1.Evaluation.evaluation_job_run_time] that created
+   *   the evaluation)
+   * * evaluation&lt;span&gt;_&lt;/span&gt;job.job_state ([EvaluationJob.state][google.cloud.datalabeling.v1beta1.EvaluationJob.state])
+   * * annotation&lt;span&gt;_&lt;/span&gt;spec.display_name (the Evaluation contains a
+   *   metric for the annotation spec with this
+   *   [displayName][google.cloud.datalabeling.v1beta1.AnnotationSpec.display_name])
+   * To filter by multiple critiera, use the `AND` operator or the `OR`
+   * operator. The following examples shows a string that filters by several
+   * critiera:
+   * "evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_id =
+   * &lt;var&gt;{evaluation_job_id}&lt;/var&gt; AND evaluation&lt;span&gt;_&lt;/span&gt;job.model_id =
+   * &lt;var&gt;{model_name}&lt;/var&gt; AND
+   * evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_start =
+   * &lt;var&gt;{timestamp_1}&lt;/var&gt; AND
+   * evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_end =
+   * &lt;var&gt;{timestamp_2}&lt;/var&gt; AND annotation&lt;span&gt;_&lt;/span&gt;spec.display_name =
+   * &lt;var&gt;{display_name}&lt;/var&gt;"
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -93,7 +141,7 @@ public interface SearchEvaluationsRequestOrBuilder
    * requested. Default value is 100.
    * </pre>
    *
-   * <code>int32 page_size = 3;</code>
+   * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -104,13 +152,14 @@ public interface SearchEvaluationsRequestOrBuilder
    *
    * <pre>
    * Optional. A token identifying a page of results for the server to return.
-   * Typically obtained by
-   * [SearchEvaluationsResponse.next_page_token][google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse.next_page_token]
-   * of the previous [DataLabelingService.SearchEvaluations] call. Return first
-   * page if empty.
+   * Typically obtained by the
+   * [nextPageToken][google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse.next_page_token] of the response
+   * to a previous search request.
+   * If you don't specify this field, the API call requests the first page of
+   * the search.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -120,13 +169,14 @@ public interface SearchEvaluationsRequestOrBuilder
    *
    * <pre>
    * Optional. A token identifying a page of results for the server to return.
-   * Typically obtained by
-   * [SearchEvaluationsResponse.next_page_token][google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse.next_page_token]
-   * of the previous [DataLabelingService.SearchEvaluations] call. Return first
-   * page if empty.
+   * Typically obtained by the
+   * [nextPageToken][google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse.next_page_token] of the response
+   * to a previous search request.
+   * If you don't specify this field, the API call requests the first page of
+   * the search.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */

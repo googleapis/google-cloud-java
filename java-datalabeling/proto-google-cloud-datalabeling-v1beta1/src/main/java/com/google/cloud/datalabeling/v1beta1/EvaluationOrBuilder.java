@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,9 @@ public interface EvaluationOrBuilder
    *
    *
    * <pre>
-   * Resource name of an evaluation.
-   * Format:
-   * 'projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}'
+   * Output only. Resource name of an evaluation. The name has the following
+   * format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id&lt;/var&gt;}'
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -41,9 +41,9 @@ public interface EvaluationOrBuilder
    *
    *
    * <pre>
-   * Resource name of an evaluation.
-   * Format:
-   * 'projects/{project_id}/datasets/{dataset_id}/evaluations/{evaluation_id}'
+   * Output only. Resource name of an evaluation. The name has the following
+   * format:
+   * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id&lt;/var&gt;}'
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -56,7 +56,8 @@ public interface EvaluationOrBuilder
    *
    *
    * <pre>
-   * Options used in evaluation plan for creating the evaluation.
+   * Output only. Options used in the evaluation job that created this
+   * evaluation.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig config = 2;</code>
@@ -68,7 +69,8 @@ public interface EvaluationOrBuilder
    *
    *
    * <pre>
-   * Options used in evaluation plan for creating the evaluation.
+   * Output only. Options used in the evaluation job that created this
+   * evaluation.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig config = 2;</code>
@@ -80,7 +82,8 @@ public interface EvaluationOrBuilder
    *
    *
    * <pre>
-   * Options used in evaluation plan for creating the evaluation.
+   * Output only. Options used in the evaluation job that created this
+   * evaluation.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig config = 2;</code>
@@ -91,8 +94,8 @@ public interface EvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when the evaluation plan triggered this evaluation
-   * flow.
+   * Output only. Timestamp for when the evaluation job that created this
+   * evaluation ran.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp evaluation_job_run_time = 3;</code>
@@ -104,8 +107,8 @@ public interface EvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when the evaluation plan triggered this evaluation
-   * flow.
+   * Output only. Timestamp for when the evaluation job that created this
+   * evaluation ran.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp evaluation_job_run_time = 3;</code>
@@ -117,8 +120,8 @@ public interface EvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when the evaluation plan triggered this evaluation
-   * flow.
+   * Output only. Timestamp for when the evaluation job that created this
+   * evaluation ran.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp evaluation_job_run_time = 3;</code>
@@ -129,7 +132,7 @@ public interface EvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when this model evaluation was created.
+   * Output only. Timestamp for when this evaluation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -141,7 +144,7 @@ public interface EvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when this model evaluation was created.
+   * Output only. Timestamp for when this evaluation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -153,7 +156,7 @@ public interface EvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when this model evaluation was created.
+   * Output only. Timestamp for when this evaluation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -164,7 +167,7 @@ public interface EvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Metrics of the evaluation.
+   * Output only. Metrics comparing predictions to ground truth labels.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationMetrics evaluation_metrics = 5;</code>
@@ -176,7 +179,7 @@ public interface EvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Metrics of the evaluation.
+   * Output only. Metrics comparing predictions to ground truth labels.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationMetrics evaluation_metrics = 5;</code>
@@ -188,7 +191,7 @@ public interface EvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Metrics of the evaluation.
+   * Output only. Metrics comparing predictions to ground truth labels.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationMetrics evaluation_metrics = 5;</code>
@@ -199,8 +202,10 @@ public interface EvaluationOrBuilder
    *
    *
    * <pre>
-   * Type of the annotation to compute metrics for in the groundtruth and
-   * annotation labeled dataset. Required for creation.
+   * Output only. Type of task that the model version being evaluated performs,
+   * as defined in the
+   * [evaluationJobConfig.inputConfig.annotationType][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config]
+   * field of the evaluation job that created this evaluation.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 6;</code>
@@ -212,8 +217,10 @@ public interface EvaluationOrBuilder
    *
    *
    * <pre>
-   * Type of the annotation to compute metrics for in the groundtruth and
-   * annotation labeled dataset. Required for creation.
+   * Output only. Type of task that the model version being evaluated performs,
+   * as defined in the
+   * [evaluationJobConfig.inputConfig.annotationType][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config]
+   * field of the evaluation job that created this evaluation.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationType annotation_type = 6;</code>
@@ -226,8 +233,9 @@ public interface EvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Count of items in groundtruth dataset included in this
-   * evaluation. Will be unset if annotation type is not applicable.
+   * Output only. The number of items in the ground truth dataset that were used
+   * for this evaluation. Only populated when the evaulation is for certain
+   * AnnotationTypes.
    * </pre>
    *
    * <code>int64 evaluated_item_count = 7;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,16 @@
 
 package com.google.cloud.datalabeling.v1beta1;
 
-/** Protobuf type {@code google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig} */
+/**
+ *
+ *
+ * <pre>
+ * Provides details for how an evaluation job sends email alerts based on the
+ * results of a run.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig}
+ */
 public final class EvaluationJobAlertConfig extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig)
@@ -114,7 +123,7 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Email of the user who will be receiving the alert.
+   * Required. An email address to send alerts to.
    * </pre>
    *
    * <code>string email = 1;</code>
@@ -136,7 +145,7 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Email of the user who will be receiving the alert.
+   * Required. An email address to send alerts to.
    * </pre>
    *
    * <code>string email = 1;</code>
@@ -161,8 +170,11 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * If a single evaluation run's aggregate mean average precision is
-   * lower than this threshold, the alert will be triggered.
+   * Required. A number between 0 and 1 that describes a minimum mean average
+   * precision threshold. When the evaluation job runs, if it calculates that
+   * your model version's predictions from the recent interval have
+   * [meanAveragePrecision][google.cloud.datalabeling.v1beta1.PrCurve.mean_average_precision] below this
+   * threshold, then it sends an alert to your specified email.
    * </pre>
    *
    * <code>double min_acceptable_mean_average_precision = 2;</code>
@@ -349,7 +361,16 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig} */
+  /**
+   *
+   *
+   * <pre>
+   * Provides details for how an evaluation job sends email alerts based on the
+   * results of a run.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig)
@@ -514,7 +535,7 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Email of the user who will be receiving the alert.
+     * Required. An email address to send alerts to.
      * </pre>
      *
      * <code>string email = 1;</code>
@@ -536,7 +557,7 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Email of the user who will be receiving the alert.
+     * Required. An email address to send alerts to.
      * </pre>
      *
      * <code>string email = 1;</code>
@@ -558,7 +579,7 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Email of the user who will be receiving the alert.
+     * Required. An email address to send alerts to.
      * </pre>
      *
      * <code>string email = 1;</code>
@@ -579,7 +600,7 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Email of the user who will be receiving the alert.
+     * Required. An email address to send alerts to.
      * </pre>
      *
      * <code>string email = 1;</code>
@@ -596,7 +617,7 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Email of the user who will be receiving the alert.
+     * Required. An email address to send alerts to.
      * </pre>
      *
      * <code>string email = 1;</code>
@@ -620,8 +641,11 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If a single evaluation run's aggregate mean average precision is
-     * lower than this threshold, the alert will be triggered.
+     * Required. A number between 0 and 1 that describes a minimum mean average
+     * precision threshold. When the evaluation job runs, if it calculates that
+     * your model version's predictions from the recent interval have
+     * [meanAveragePrecision][google.cloud.datalabeling.v1beta1.PrCurve.mean_average_precision] below this
+     * threshold, then it sends an alert to your specified email.
      * </pre>
      *
      * <code>double min_acceptable_mean_average_precision = 2;</code>
@@ -635,8 +659,11 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If a single evaluation run's aggregate mean average precision is
-     * lower than this threshold, the alert will be triggered.
+     * Required. A number between 0 and 1 that describes a minimum mean average
+     * precision threshold. When the evaluation job runs, if it calculates that
+     * your model version's predictions from the recent interval have
+     * [meanAveragePrecision][google.cloud.datalabeling.v1beta1.PrCurve.mean_average_precision] below this
+     * threshold, then it sends an alert to your specified email.
      * </pre>
      *
      * <code>double min_acceptable_mean_average_precision = 2;</code>
@@ -654,8 +681,11 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If a single evaluation run's aggregate mean average precision is
-     * lower than this threshold, the alert will be triggered.
+     * Required. A number between 0 and 1 that describes a minimum mean average
+     * precision threshold. When the evaluation job runs, if it calculates that
+     * your model version's predictions from the recent interval have
+     * [meanAveragePrecision][google.cloud.datalabeling.v1beta1.PrCurve.mean_average_precision] below this
+     * threshold, then it sends an alert to your specified email.
      * </pre>
      *
      * <code>double min_acceptable_mean_average_precision = 2;</code>

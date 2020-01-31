@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,7 +129,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
    * Required. Annotation spec set resource name.
    * </pre>
    *
-   * <code>string annotation_spec_set = 1;</code>
+   * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The annotationSpecSet.
    */
@@ -151,7 +151,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
    * Required. Annotation spec set resource name.
    * </pre>
    *
-   * <code>string annotation_spec_set = 1;</code>
+   * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for annotationSpecSet.
    */
@@ -176,7 +176,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
    * Required. Number of frames per second to be extracted from the video.
    * </pre>
    *
-   * <code>double extraction_frame_rate = 3;</code>
+   * <code>double extraction_frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The extractionFrameRate.
    */
@@ -534,7 +534,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 1;</code>
+     * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The annotationSpecSet.
      */
@@ -556,7 +556,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 1;</code>
+     * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for annotationSpecSet.
      */
@@ -578,7 +578,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 1;</code>
+     * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The annotationSpecSet to set.
      * @return This builder for chaining.
@@ -599,7 +599,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 1;</code>
+     * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -616,7 +616,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * Required. Annotation spec set resource name.
      * </pre>
      *
-     * <code>string annotation_spec_set = 1;</code>
+     * <code>string annotation_spec_set = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for annotationSpecSet to set.
      * @return This builder for chaining.
@@ -640,7 +640,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * Required. Number of frames per second to be extracted from the video.
      * </pre>
      *
-     * <code>double extraction_frame_rate = 3;</code>
+     * <code>double extraction_frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The extractionFrameRate.
      */
@@ -654,7 +654,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * Required. Number of frames per second to be extracted from the video.
      * </pre>
      *
-     * <code>double extraction_frame_rate = 3;</code>
+     * <code>double extraction_frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The extractionFrameRate to set.
      * @return This builder for chaining.
@@ -672,7 +672,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      * Required. Number of frames per second to be extracted from the video.
      * </pre>
      *
-     * <code>double extraction_frame_rate = 3;</code>
+     * <code>double extraction_frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */

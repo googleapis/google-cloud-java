@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,8 +151,15 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Threshold used for this entry, for example, IoU threshold for bounding
-     * box problem, or detection threshold for classification.
+     * Threshold used for this entry.
+     * For classification tasks, this is a classification threshold: a
+     * predicted label is categorized as positive or negative (in the context of
+     * this point on the PR curve) based on whether the label's score meets this
+     * threshold.
+     * For image object detection (bounding box) tasks, this is the
+     * [intersection-over-union
+     * (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union)
+     * threshold for the context of this point on the PR curve.
      * </pre>
      *
      * <code>float confidence_threshold = 1;</code>
@@ -230,10 +237,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The harmonic mean of
-     * [recall_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at1]
-     * and
-     * [precision_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at1].
+     * The harmonic mean of [recall_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at1].
      * </pre>
      *
      * <code>float f1_score_at1 = 7;</code>
@@ -272,10 +276,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The harmonic mean of
-     * [recall_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at5]
-     * and
-     * [precision_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at5].
+     * The harmonic mean of [recall_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at5] and [precision_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at5].
      * </pre>
      *
      * <code>float f1_score_at5 = 10;</code>
@@ -416,8 +417,15 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Threshold used for this entry, for example, IoU threshold for bounding
-     * box problem, or detection threshold for classification.
+     * Threshold used for this entry.
+     * For classification tasks, this is a classification threshold: a
+     * predicted label is categorized as positive or negative (in the context of
+     * this point on the PR curve) based on whether the label's score meets this
+     * threshold.
+     * For image object detection (bounding box) tasks, this is the
+     * [intersection-over-union
+     * (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union)
+     * threshold for the context of this point on the PR curve.
      * </pre>
      *
      * <code>float confidence_threshold = 1;</code>
@@ -519,10 +527,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The harmonic mean of
-     * [recall_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at1]
-     * and
-     * [precision_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at1].
+     * The harmonic mean of [recall_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at1].
      * </pre>
      *
      * <code>float f1_score_at1 = 7;</code>
@@ -573,10 +578,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The harmonic mean of
-     * [recall_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at5]
-     * and
-     * [precision_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at5].
+     * The harmonic mean of [recall_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at5] and [precision_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at5].
      * </pre>
      *
      * <code>float f1_score_at5 = 10;</code>
@@ -1060,8 +1062,15 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Threshold used for this entry, for example, IoU threshold for bounding
-       * box problem, or detection threshold for classification.
+       * Threshold used for this entry.
+       * For classification tasks, this is a classification threshold: a
+       * predicted label is categorized as positive or negative (in the context of
+       * this point on the PR curve) based on whether the label's score meets this
+       * threshold.
+       * For image object detection (bounding box) tasks, this is the
+       * [intersection-over-union
+       * (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union)
+       * threshold for the context of this point on the PR curve.
        * </pre>
        *
        * <code>float confidence_threshold = 1;</code>
@@ -1075,8 +1084,15 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Threshold used for this entry, for example, IoU threshold for bounding
-       * box problem, or detection threshold for classification.
+       * Threshold used for this entry.
+       * For classification tasks, this is a classification threshold: a
+       * predicted label is categorized as positive or negative (in the context of
+       * this point on the PR curve) based on whether the label's score meets this
+       * threshold.
+       * For image object detection (bounding box) tasks, this is the
+       * [intersection-over-union
+       * (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union)
+       * threshold for the context of this point on the PR curve.
        * </pre>
        *
        * <code>float confidence_threshold = 1;</code>
@@ -1094,8 +1110,15 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Threshold used for this entry, for example, IoU threshold for bounding
-       * box problem, or detection threshold for classification.
+       * Threshold used for this entry.
+       * For classification tasks, this is a classification threshold: a
+       * predicted label is categorized as positive or negative (in the context of
+       * this point on the PR curve) based on whether the label's score meets this
+       * threshold.
+       * For image object detection (bounding box) tasks, this is the
+       * [intersection-over-union
+       * (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union)
+       * threshold for the context of this point on the PR curve.
        * </pre>
        *
        * <code>float confidence_threshold = 1;</code>
@@ -1369,10 +1392,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The harmonic mean of
-       * [recall_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at1]
-       * and
-       * [precision_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at1].
+       * The harmonic mean of [recall_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at1].
        * </pre>
        *
        * <code>float f1_score_at1 = 7;</code>
@@ -1386,10 +1406,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The harmonic mean of
-       * [recall_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at1]
-       * and
-       * [precision_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at1].
+       * The harmonic mean of [recall_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at1].
        * </pre>
        *
        * <code>float f1_score_at1 = 7;</code>
@@ -1407,10 +1424,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The harmonic mean of
-       * [recall_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at1]
-       * and
-       * [precision_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at1].
+       * The harmonic mean of [recall_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at1].
        * </pre>
        *
        * <code>float f1_score_at1 = 7;</code>
@@ -1531,10 +1545,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The harmonic mean of
-       * [recall_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at5]
-       * and
-       * [precision_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at5].
+       * The harmonic mean of [recall_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at5] and [precision_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at5].
        * </pre>
        *
        * <code>float f1_score_at5 = 10;</code>
@@ -1548,10 +1559,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The harmonic mean of
-       * [recall_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at5]
-       * and
-       * [precision_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at5].
+       * The harmonic mean of [recall_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at5] and [precision_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at5].
        * </pre>
        *
        * <code>float f1_score_at5 = 10;</code>
@@ -1569,10 +1577,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The harmonic mean of
-       * [recall_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at5]
-       * and
-       * [precision_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at5].
+       * The harmonic mean of [recall_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.recall_at5] and [precision_at5][google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.precision_at5].
        * </pre>
        *
        * <code>float f1_score_at5 = 10;</code>
@@ -1647,7 +1652,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * PR curve against which annotation spec. Could be empty.
+   * The annotation spec of the label for which the precision-recall curve
+   * calculated. If this field is empty, that means the precision-recall curve
+   * is an aggregate curve for all labels.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1661,7 +1668,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * PR curve against which annotation spec. Could be empty.
+   * The annotation spec of the label for which the precision-recall curve
+   * calculated. If this field is empty, that means the precision-recall curve
+   * is an aggregate curve for all labels.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1677,7 +1686,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * PR curve against which annotation spec. Could be empty.
+   * The annotation spec of the label for which the precision-recall curve
+   * calculated. If this field is empty, that means the precision-recall curve
+   * is an aggregate curve for all labels.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -1693,7 +1704,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Area under precision recall curve.
+   * Area under the precision-recall curve. Not to be confused with area under
+   * a receiver operating characteristic (ROC) curve.
    * </pre>
    *
    * <code>float area_under_curve = 2;</code>
@@ -1711,7 +1723,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * entries to draw PR graph.
+   * Entries that make up the precision-recall graph. Each entry is a "point" on
+   * the graph drawn for a different `confidence_threshold`.
    * </pre>
    *
    * <code>
@@ -1726,7 +1739,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * entries to draw PR graph.
+   * Entries that make up the precision-recall graph. Each entry is a "point" on
+   * the graph drawn for a different `confidence_threshold`.
    * </pre>
    *
    * <code>
@@ -1742,7 +1756,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * entries to draw PR graph.
+   * Entries that make up the precision-recall graph. Each entry is a "point" on
+   * the graph drawn for a different `confidence_threshold`.
    * </pre>
    *
    * <code>
@@ -1756,7 +1771,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * entries to draw PR graph.
+   * Entries that make up the precision-recall graph. Each entry is a "point" on
+   * the graph drawn for a different `confidence_threshold`.
    * </pre>
    *
    * <code>
@@ -1771,7 +1787,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * entries to draw PR graph.
+   * Entries that make up the precision-recall graph. Each entry is a "point" on
+   * the graph drawn for a different `confidence_threshold`.
    * </pre>
    *
    * <code>
@@ -1789,7 +1806,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * mean average prcision of this curve.
+   * Mean average prcision of this curve.
    * </pre>
    *
    * <code>float mean_average_precision = 4;</code>
@@ -2224,7 +2241,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * PR curve against which annotation spec. Could be empty.
+     * The annotation spec of the label for which the precision-recall curve
+     * calculated. If this field is empty, that means the precision-recall curve
+     * is an aggregate curve for all labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -2238,7 +2257,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * PR curve against which annotation spec. Could be empty.
+     * The annotation spec of the label for which the precision-recall curve
+     * calculated. If this field is empty, that means the precision-recall curve
+     * is an aggregate curve for all labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -2258,7 +2279,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * PR curve against which annotation spec. Could be empty.
+     * The annotation spec of the label for which the precision-recall curve
+     * calculated. If this field is empty, that means the precision-recall curve
+     * is an aggregate curve for all labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -2280,7 +2303,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * PR curve against which annotation spec. Could be empty.
+     * The annotation spec of the label for which the precision-recall curve
+     * calculated. If this field is empty, that means the precision-recall curve
+     * is an aggregate curve for all labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -2300,7 +2325,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * PR curve against which annotation spec. Could be empty.
+     * The annotation spec of the label for which the precision-recall curve
+     * calculated. If this field is empty, that means the precision-recall curve
+     * is an aggregate curve for all labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -2326,7 +2353,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * PR curve against which annotation spec. Could be empty.
+     * The annotation spec of the label for which the precision-recall curve
+     * calculated. If this field is empty, that means the precision-recall curve
+     * is an aggregate curve for all labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -2346,7 +2375,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * PR curve against which annotation spec. Could be empty.
+     * The annotation spec of the label for which the precision-recall curve
+     * calculated. If this field is empty, that means the precision-recall curve
+     * is an aggregate curve for all labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -2360,7 +2391,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * PR curve against which annotation spec. Could be empty.
+     * The annotation spec of the label for which the precision-recall curve
+     * calculated. If this field is empty, that means the precision-recall curve
+     * is an aggregate curve for all labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -2379,7 +2412,9 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * PR curve against which annotation spec. Could be empty.
+     * The annotation spec of the label for which the precision-recall curve
+     * calculated. If this field is empty, that means the precision-recall curve
+     * is an aggregate curve for all labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -2406,7 +2441,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Area under precision recall curve.
+     * Area under the precision-recall curve. Not to be confused with area under
+     * a receiver operating characteristic (ROC) curve.
      * </pre>
      *
      * <code>float area_under_curve = 2;</code>
@@ -2420,7 +2456,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Area under precision recall curve.
+     * Area under the precision-recall curve. Not to be confused with area under
+     * a receiver operating characteristic (ROC) curve.
      * </pre>
      *
      * <code>float area_under_curve = 2;</code>
@@ -2438,7 +2475,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Area under precision recall curve.
+     * Area under the precision-recall curve. Not to be confused with area under
+     * a receiver operating characteristic (ROC) curve.
      * </pre>
      *
      * <code>float area_under_curve = 2;</code>
@@ -2475,7 +2513,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2494,7 +2533,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2512,7 +2552,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2531,7 +2572,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2556,7 +2598,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2580,7 +2623,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2605,7 +2649,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2630,7 +2675,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2653,7 +2699,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2677,7 +2724,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2701,7 +2749,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2722,7 +2771,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2743,7 +2793,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2758,7 +2809,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2777,7 +2829,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2797,7 +2850,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2815,7 +2869,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2834,7 +2889,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * entries to draw PR graph.
+     * Entries that make up the precision-recall graph. Each entry is a "point" on
+     * the graph drawn for a different `confidence_threshold`.
      * </pre>
      *
      * <code>
@@ -2872,7 +2928,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * mean average prcision of this curve.
+     * Mean average prcision of this curve.
      * </pre>
      *
      * <code>float mean_average_precision = 4;</code>
@@ -2886,7 +2942,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * mean average prcision of this curve.
+     * Mean average prcision of this curve.
      * </pre>
      *
      * <code>float mean_average_precision = 4;</code>
@@ -2904,7 +2960,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * mean average prcision of this curve.
+     * Mean average prcision of this curve.
      * </pre>
      *
      * <code>float mean_average_precision = 4;</code>

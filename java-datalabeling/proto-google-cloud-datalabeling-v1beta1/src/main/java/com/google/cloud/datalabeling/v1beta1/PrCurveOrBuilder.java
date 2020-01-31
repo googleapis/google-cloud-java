@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,9 @@ public interface PrCurveOrBuilder
    *
    *
    * <pre>
-   * PR curve against which annotation spec. Could be empty.
+   * The annotation spec of the label for which the precision-recall curve
+   * calculated. If this field is empty, that means the precision-recall curve
+   * is an aggregate curve for all labels.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -39,7 +41,9 @@ public interface PrCurveOrBuilder
    *
    *
    * <pre>
-   * PR curve against which annotation spec. Could be empty.
+   * The annotation spec of the label for which the precision-recall curve
+   * calculated. If this field is empty, that means the precision-recall curve
+   * is an aggregate curve for all labels.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -51,7 +55,9 @@ public interface PrCurveOrBuilder
    *
    *
    * <pre>
-   * PR curve against which annotation spec. Could be empty.
+   * The annotation spec of the label for which the precision-recall curve
+   * calculated. If this field is empty, that means the precision-recall curve
+   * is an aggregate curve for all labels.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
@@ -62,7 +68,8 @@ public interface PrCurveOrBuilder
    *
    *
    * <pre>
-   * Area under precision recall curve.
+   * Area under the precision-recall curve. Not to be confused with area under
+   * a receiver operating characteristic (ROC) curve.
    * </pre>
    *
    * <code>float area_under_curve = 2;</code>
@@ -75,7 +82,8 @@ public interface PrCurveOrBuilder
    *
    *
    * <pre>
-   * entries to draw PR graph.
+   * Entries that make up the precision-recall graph. Each entry is a "point" on
+   * the graph drawn for a different `confidence_threshold`.
    * </pre>
    *
    * <code>
@@ -88,7 +96,8 @@ public interface PrCurveOrBuilder
    *
    *
    * <pre>
-   * entries to draw PR graph.
+   * Entries that make up the precision-recall graph. Each entry is a "point" on
+   * the graph drawn for a different `confidence_threshold`.
    * </pre>
    *
    * <code>
@@ -101,7 +110,8 @@ public interface PrCurveOrBuilder
    *
    *
    * <pre>
-   * entries to draw PR graph.
+   * Entries that make up the precision-recall graph. Each entry is a "point" on
+   * the graph drawn for a different `confidence_threshold`.
    * </pre>
    *
    * <code>
@@ -113,7 +123,8 @@ public interface PrCurveOrBuilder
    *
    *
    * <pre>
-   * entries to draw PR graph.
+   * Entries that make up the precision-recall graph. Each entry is a "point" on
+   * the graph drawn for a different `confidence_threshold`.
    * </pre>
    *
    * <code>
@@ -127,7 +138,8 @@ public interface PrCurveOrBuilder
    *
    *
    * <pre>
-   * entries to draw PR graph.
+   * Entries that make up the precision-recall graph. Each entry is a "point" on
+   * the graph drawn for a different `confidence_threshold`.
    * </pre>
    *
    * <code>
@@ -141,7 +153,7 @@ public interface PrCurveOrBuilder
    *
    *
    * <pre>
-   * mean average prcision of this curve.
+   * Mean average prcision of this curve.
    * </pre>
    *
    * <code>float mean_average_precision = 4;</code>

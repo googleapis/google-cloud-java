@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,9 @@ public interface ExportDataRequestOrBuilder
    * projects/{project_id}/datasets/{dataset_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -44,7 +46,9 @@ public interface ExportDataRequestOrBuilder
    * projects/{project_id}/datasets/{dataset_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -61,7 +65,9 @@ public interface ExportDataRequestOrBuilder
    * {annotated_dataset_id}
    * </pre>
    *
-   * <code>string annotated_dataset = 2;</code>
+   * <code>
+   * string annotated_dataset = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The annotatedDataset.
    */
@@ -77,7 +83,9 @@ public interface ExportDataRequestOrBuilder
    * {annotated_dataset_id}
    * </pre>
    *
-   * <code>string annotated_dataset = 2;</code>
+   * <code>
+   * string annotated_dataset = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for annotatedDataset.
    */
@@ -90,7 +98,7 @@ public interface ExportDataRequestOrBuilder
    * Optional. Filter is not supported at this moment.
    * </pre>
    *
-   * <code>string filter = 3;</code>
+   * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -102,7 +110,7 @@ public interface ExportDataRequestOrBuilder
    * Optional. Filter is not supported at this moment.
    * </pre>
    *
-   * <code>string filter = 3;</code>
+   * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -115,7 +123,9 @@ public interface ExportDataRequestOrBuilder
    * Required. Specify the output destination.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the outputConfig field is set.
    */
@@ -127,7 +137,9 @@ public interface ExportDataRequestOrBuilder
    * Required. Specify the output destination.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The outputConfig.
    */
@@ -139,7 +151,9 @@ public interface ExportDataRequestOrBuilder
    * Required. Specify the output destination.
    * </pre>
    *
-   * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4;</code>
+   * <code>
+   * .google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datalabeling.v1beta1.OutputConfigOrBuilder getOutputConfigOrBuilder();
 

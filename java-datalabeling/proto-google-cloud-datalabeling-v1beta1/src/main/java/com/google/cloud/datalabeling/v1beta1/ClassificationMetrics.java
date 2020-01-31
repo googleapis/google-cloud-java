@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,15 @@
 
 package com.google.cloud.datalabeling.v1beta1;
 
-/** Protobuf type {@code google.cloud.datalabeling.v1beta1.ClassificationMetrics} */
+/**
+ *
+ *
+ * <pre>
+ * Metrics calculated for a classification model.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.datalabeling.v1beta1.ClassificationMetrics}
+ */
 public final class ClassificationMetrics extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.ClassificationMetrics)
@@ -133,7 +141,8 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Precision-recall curve.
+   * Precision-recall curve based on ground truth labels, predicted labels, and
+   * scores for the predicted labels.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
@@ -147,7 +156,8 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Precision-recall curve.
+   * Precision-recall curve based on ground truth labels, predicted labels, and
+   * scores for the predicted labels.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
@@ -163,7 +173,8 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Precision-recall curve.
+   * Precision-recall curve based on ground truth labels, predicted labels, and
+   * scores for the predicted labels.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
@@ -175,6 +186,12 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
   public static final int CONFUSION_MATRIX_FIELD_NUMBER = 2;
   private com.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusionMatrix_;
   /**
+   *
+   *
+   * <pre>
+   * Confusion matrix of predicted labels vs. ground truth labels.
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
    *
    * @return Whether the confusionMatrix field is set.
@@ -183,6 +200,12 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
     return confusionMatrix_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * Confusion matrix of predicted labels vs. ground truth labels.
+   * </pre>
+   *
    * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
    *
    * @return The confusionMatrix.
@@ -192,7 +215,15 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.getDefaultInstance()
         : confusionMatrix_;
   }
-  /** <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Confusion matrix of predicted labels vs. ground truth labels.
+   * </pre>
+   *
+   * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
+   */
   public com.google.cloud.datalabeling.v1beta1.ConfusionMatrixOrBuilder
       getConfusionMatrixOrBuilder() {
     return getConfusionMatrix();
@@ -377,7 +408,15 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.datalabeling.v1beta1.ClassificationMetrics} */
+  /**
+   *
+   *
+   * <pre>
+   * Metrics calculated for a classification model.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datalabeling.v1beta1.ClassificationMetrics}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.datalabeling.v1beta1.ClassificationMetrics)
@@ -559,7 +598,8 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Precision-recall curve.
+     * Precision-recall curve based on ground truth labels, predicted labels, and
+     * scores for the predicted labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
@@ -573,7 +613,8 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Precision-recall curve.
+     * Precision-recall curve based on ground truth labels, predicted labels, and
+     * scores for the predicted labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
@@ -593,7 +634,8 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Precision-recall curve.
+     * Precision-recall curve based on ground truth labels, predicted labels, and
+     * scores for the predicted labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
@@ -615,7 +657,8 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Precision-recall curve.
+     * Precision-recall curve based on ground truth labels, predicted labels, and
+     * scores for the predicted labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
@@ -635,7 +678,8 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Precision-recall curve.
+     * Precision-recall curve based on ground truth labels, predicted labels, and
+     * scores for the predicted labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
@@ -661,7 +705,8 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Precision-recall curve.
+     * Precision-recall curve based on ground truth labels, predicted labels, and
+     * scores for the predicted labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
@@ -681,7 +726,8 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Precision-recall curve.
+     * Precision-recall curve based on ground truth labels, predicted labels, and
+     * scores for the predicted labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
@@ -695,7 +741,8 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Precision-recall curve.
+     * Precision-recall curve based on ground truth labels, predicted labels, and
+     * scores for the predicted labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
@@ -713,7 +760,8 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Precision-recall curve.
+     * Precision-recall curve based on ground truth labels, predicted labels, and
+     * scores for the predicted labels.
      * </pre>
      *
      * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
@@ -742,6 +790,12 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
             com.google.cloud.datalabeling.v1beta1.ConfusionMatrixOrBuilder>
         confusionMatrixBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Confusion matrix of predicted labels vs. ground truth labels.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
      *
      * @return Whether the confusionMatrix field is set.
@@ -750,6 +804,12 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
       return confusionMatrixBuilder_ != null || confusionMatrix_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * Confusion matrix of predicted labels vs. ground truth labels.
+     * </pre>
+     *
      * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
      *
      * @return The confusionMatrix.
@@ -763,7 +823,15 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
         return confusionMatrixBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Confusion matrix of predicted labels vs. ground truth labels.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
+     */
     public Builder setConfusionMatrix(com.google.cloud.datalabeling.v1beta1.ConfusionMatrix value) {
       if (confusionMatrixBuilder_ == null) {
         if (value == null) {
@@ -777,7 +845,15 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Confusion matrix of predicted labels vs. ground truth labels.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
+     */
     public Builder setConfusionMatrix(
         com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Builder builderForValue) {
       if (confusionMatrixBuilder_ == null) {
@@ -789,7 +865,15 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Confusion matrix of predicted labels vs. ground truth labels.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
+     */
     public Builder mergeConfusionMatrix(
         com.google.cloud.datalabeling.v1beta1.ConfusionMatrix value) {
       if (confusionMatrixBuilder_ == null) {
@@ -808,7 +892,15 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Confusion matrix of predicted labels vs. ground truth labels.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
+     */
     public Builder clearConfusionMatrix() {
       if (confusionMatrixBuilder_ == null) {
         confusionMatrix_ = null;
@@ -820,14 +912,30 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Confusion matrix of predicted labels vs. ground truth labels.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
+     */
     public com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Builder
         getConfusionMatrixBuilder() {
 
       onChanged();
       return getConfusionMatrixFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Confusion matrix of predicted labels vs. ground truth labels.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
+     */
     public com.google.cloud.datalabeling.v1beta1.ConfusionMatrixOrBuilder
         getConfusionMatrixOrBuilder() {
       if (confusionMatrixBuilder_ != null) {
@@ -838,7 +946,15 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
             : confusionMatrix_;
       }
     }
-    /** <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Confusion matrix of predicted labels vs. ground truth labels.
+     * </pre>
+     *
+     * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.ConfusionMatrix,
             com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Builder,
