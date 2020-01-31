@@ -75,7 +75,7 @@
     <threeten.version>1.4.1</threeten.version>
     <javax.annotations.version>1.3.2</javax.annotations.version>
     <errorprone.version>2.3.4</errorprone.version>
-    <http-client-bom.version>1.34.0</http-client-bom.version>
+    <http-client-bom.version>1.34.1</http-client-bom.version>
     <animal-sniffer.version>1.18</animal-sniffer.version>
     <autovalue.version>1.7</autovalue.version>
     <opencensus.version>0.24.0</opencensus.version>
