@@ -22,7 +22,8 @@
         "^com.google.api:gax",
         "^com.google.auth:",
         "^com.google.cloud:google-cloud-core",
-        "^io.grpc:"
+        "^io.grpc:",
+        "^com.google.guava:"
       ],
       "groupName": "core dependencies"
     },
