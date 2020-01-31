@@ -63,11 +63,11 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-bigquery-parent</site.installationModule>
-    <google.core.version>1.92.2</google.core.version>
+    <google.core.version>1.92.3</google.core.version>
     <google.api-common.version>1.8.1</google.api-common.version>
     <google.common-protos.version>1.17.0</google.common-protos.version>
     <gax.version>1.53.0</gax.version>
-    <grpc.version>1.26.0</grpc.version>
+    <grpc.version>1.27.0</grpc.version>
     <protobuf.version>3.11.1</protobuf.version>
     <junit.version>4.13</junit.version>
     <guava.version>28.2-android</guava.version>
@@ -98,7 +98,7 @@
       <dependency>
         <groupId>com.google.auth</groupId>
         <artifactId>google-auth-library-oauth2-http</artifactId>
-        <version>0.19.0</version>
+        <version>0.20.0</version>
       </dependency>
       <dependency>
         <groupId>org.checkerframework</groupId>
