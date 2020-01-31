@@ -92,12 +92,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
     LAST_MODIFIED_TIME("lastModifiedTime"),
     LOCATION("location"),
     NUM_BYTES("numBytes"),
+    NUM_LONG_TERM_BYTES("numLongTermBytes"),
     NUM_ROWS("numRows"),
     SCHEMA("schema"),
     SELF_LINK("selfLink"),
     STREAMING_BUFFER("streamingBuffer"),
     TABLE_REFERENCE("tableReference"),
     TIME_PARTITIONING("timePartitioning"),
+    RANGE_PARTITIONING("rangePartitioning"),
     TYPE("type"),
     VIEW("view");
 
