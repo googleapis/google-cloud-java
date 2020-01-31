@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.92.4](https://www.github.com/googleapis/java-core/compare/v1.92.3...v1.92.4) (2020-01-31)
+
+
+### Dependencies
+
+* update core dependencies ([#143](https://www.github.com/googleapis/java-core/issues/143)) ([454ce1d](https://www.github.com/googleapis/java-core/commit/454ce1dc5a6a41f3333a2a5303315cd9eb66f442))
+
 ### [1.92.3](https://www.github.com/googleapis/java-core/compare/v1.92.2...v1.92.3) (2020-01-28)
 
 
