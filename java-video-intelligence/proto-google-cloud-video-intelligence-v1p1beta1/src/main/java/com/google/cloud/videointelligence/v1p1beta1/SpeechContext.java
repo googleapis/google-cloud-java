@@ -125,7 +125,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * *Optional* A list of strings containing words and phrases "hints" so that
+   * Optional. A list of strings containing words and phrases "hints" so that
    * the speech recognition is more likely to recognize them. This can be used
    * to improve the accuracy for specific words and phrases, for example, if
    * specific commands are typically spoken by the user. This can also be used
@@ -133,7 +133,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * [usage limits](https://cloud.google.com/speech/limits#content).
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the phrases.
    */
@@ -144,7 +144,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * *Optional* A list of strings containing words and phrases "hints" so that
+   * Optional. A list of strings containing words and phrases "hints" so that
    * the speech recognition is more likely to recognize them. This can be used
    * to improve the accuracy for specific words and phrases, for example, if
    * specific commands are typically spoken by the user. This can also be used
@@ -152,7 +152,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * [usage limits](https://cloud.google.com/speech/limits#content).
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of phrases.
    */
@@ -163,7 +163,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * *Optional* A list of strings containing words and phrases "hints" so that
+   * Optional. A list of strings containing words and phrases "hints" so that
    * the speech recognition is more likely to recognize them. This can be used
    * to improve the accuracy for specific words and phrases, for example, if
    * specific commands are typically spoken by the user. This can also be used
@@ -171,7 +171,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * [usage limits](https://cloud.google.com/speech/limits#content).
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The phrases at the given index.
@@ -183,7 +183,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * *Optional* A list of strings containing words and phrases "hints" so that
+   * Optional. A list of strings containing words and phrases "hints" so that
    * the speech recognition is more likely to recognize them. This can be used
    * to improve the accuracy for specific words and phrases, for example, if
    * specific commands are typically spoken by the user. This can also be used
@@ -191,7 +191,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * [usage limits](https://cloud.google.com/speech/limits#content).
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the phrases at the given index.
@@ -553,7 +553,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -561,7 +561,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the phrases.
      */
@@ -572,7 +572,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -580,7 +580,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of phrases.
      */
@@ -591,7 +591,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -599,7 +599,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The phrases at the given index.
@@ -611,7 +611,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -619,7 +619,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the phrases at the given index.
@@ -631,7 +631,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -639,7 +639,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index to set the value at.
      * @param value The phrases to set.
@@ -658,7 +658,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -666,7 +666,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The phrases to add.
      * @return This builder for chaining.
@@ -684,7 +684,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -692,7 +692,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param values The phrases to add.
      * @return This builder for chaining.
@@ -707,7 +707,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -715,7 +715,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -729,7 +729,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -737,7 +737,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes of the phrases to add.
      * @return This builder for chaining.

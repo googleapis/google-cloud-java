@@ -54,13 +54,13 @@ public interface SpeechRecognitionAlternativeOrBuilder
    * <pre>
    * Output only. The confidence estimate between 0.0 and 1.0. A higher number
    * indicates an estimated greater likelihood that the recognized words are
-   * correct. This field is typically provided only for the top hypothesis, and
-   * only for `is_final=true` results. Clients should not rely on the
-   * `confidence` field as it is not guaranteed to be accurate or consistent.
+   * correct. This field is set only for the top alternative.
+   * This field is not guaranteed to be accurate and users should not rely on it
+   * to be always provided.
    * The default of 0.0 is a sentinel value indicating `confidence` was not set.
    * </pre>
    *
-   * <code>float confidence = 2;</code>
+   * <code>float confidence = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The confidence.
    */
