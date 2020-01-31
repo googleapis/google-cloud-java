@@ -22,14 +22,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Tests for {@link MessageWaiter}. */
+/** Tests for {@link Waiter}. */
 @RunWith(JUnit4.class)
-public class MessageWaiterTest {
+public class WaiterTest {
 
   @Test
   public void test() throws Exception {
-    final MessageWaiter waiter = new MessageWaiter();
-    waiter.incrementPendingMessages(1);
+    final Waiter waiter = new Waiter();
+    waiter.incrementPendingCount(1);
 
     final Thread mainThread = Thread.currentThread();
     Thread t =
@@ -40,14 +40,14 @@ public class MessageWaiterTest {
                 while (mainThread.getState() != Thread.State.WAITING) {
                   Thread.yield();
                 }
-                waiter.incrementPendingMessages(-1);
+                waiter.incrementPendingCount(-1);
               }
             });
     t.start();
 
-    waiter.waitNoMessages();
+    waiter.waitComplete();
     t.join();
 
-    assertEquals(0, waiter.pendingMessages());
+    assertEquals(0, waiter.pendingCount());
   }
 }

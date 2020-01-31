@@ -72,7 +72,7 @@ class MessageDispatcher {
   private final AckProcessor ackProcessor;
 
   private final FlowController flowController;
-  private final MessageWaiter messagesWaiter;
+  private final Waiter messagesWaiter;
 
   // Maps ID to "total expiration time". If it takes longer than this, stop extending.
   private final ConcurrentMap<String, AckHandler> pendingMessages = new ConcurrentHashMap<>();
@@ -145,7 +145,7 @@ class MessageDispatcher {
         return;
       }
       flowController.release(1, outstandingBytes);
-      messagesWaiter.incrementPendingMessages(-1);
+      messagesWaiter.incrementPendingCount(-1);
     }
 
     @Override
@@ -205,7 +205,7 @@ class MessageDispatcher {
     // 601 buckets of 1s resolution from 0s to MAX_ACK_DEADLINE_SECONDS
     this.ackLatencyDistribution = ackLatencyDistribution;
     jobLock = new ReentrantLock();
-    messagesWaiter = new MessageWaiter();
+    messagesWaiter = new Waiter();
     this.clock = clock;
     this.sequentialExecutor = new SequentialExecutorService.AutoExecutor(executor);
   }
@@ -268,7 +268,7 @@ class MessageDispatcher {
   }
 
   void stop() {
-    messagesWaiter.waitNoMessages();
+    messagesWaiter.waitComplete();
     jobLock.lock();
     try {
       if (backgroundJob != null) {
@@ -331,9 +331,9 @@ class MessageDispatcher {
   }
 
   private void processBatch(List<OutstandingMessage> batch) {
-    messagesWaiter.incrementPendingMessages(batch.size());
+    messagesWaiter.incrementPendingCount(batch.size());
     for (OutstandingMessage message : batch) {
-      // This is a blocking flow controller.  We have already incremented MessageWaiter, so
+      // This is a blocking flow controller.  We have already incremented messagesWaiter, so
       // shutdown will block on processing of all these messages anyway.
       try {
         flowController.reserve(1, message.receivedMessage.getMessage().getSerializedSize());

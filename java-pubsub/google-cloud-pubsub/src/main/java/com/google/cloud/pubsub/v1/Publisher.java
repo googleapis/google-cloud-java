@@ -104,7 +104,7 @@ public class Publisher {
 
   private final AtomicBoolean shutdown;
   private final BackgroundResource backgroundResources;
-  private final MessageWaiter messagesWaiter;
+  private final Waiter messagesWaiter;
   private ScheduledFuture<?> currentAlarmFuture;
   private final ApiFunction<PubsubMessage, PubsubMessage> messageTransform;
 
@@ -173,7 +173,7 @@ public class Publisher {
     backgroundResourceList.add(publisherStub);
     backgroundResources = new BackgroundResourceAggregation(backgroundResourceList);
     shutdown = new AtomicBoolean(false);
-    messagesWaiter = new MessageWaiter();
+    messagesWaiter = new Waiter();
   }
 
   /** Topic which the publisher publishes to. */
@@ -249,7 +249,7 @@ public class Publisher {
       messagesBatchLock.unlock();
     }
 
-    messagesWaiter.incrementPendingMessages(1);
+    messagesWaiter.incrementPendingCount(1);
 
     // For messages without ordering keys, it is okay to send batches without holding
     // messagesBatchLock.
@@ -423,7 +423,7 @@ public class Publisher {
                 }
               }
             } finally {
-              messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
+              messagesWaiter.incrementPendingCount(-outstandingBatch.size());
             }
           }
 
@@ -432,7 +432,7 @@ public class Publisher {
             try {
               outstandingBatch.onFailure(t);
             } finally {
-              messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
+              messagesWaiter.incrementPendingCount(-outstandingBatch.size());
             }
           }
         };

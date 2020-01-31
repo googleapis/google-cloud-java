@@ -72,6 +72,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
   private final AtomicLong channelReconnectBackoffMillis =
       new AtomicLong(INITIAL_CHANNEL_RECONNECT_BACKOFF.toMillis());
+  private final Waiter ackOperationsWaiter = new Waiter();
 
   private final Lock lock = new ReentrantLock();
   private ClientStream<StreamingPullRequest> clientStream;
@@ -116,6 +117,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   @Override
   protected void doStop() {
     messageDispatcher.stop();
+    ackOperationsWaiter.waitComplete();
 
     lock.lock();
     try {
@@ -273,16 +275,18 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
         new ApiFutureCallback<Empty>() {
           @Override
           public void onSuccess(Empty empty) {
-            // noop
+            ackOperationsWaiter.incrementPendingCount(-1);
           }
 
           @Override
           public void onFailure(Throwable t) {
+            ackOperationsWaiter.incrementPendingCount(-1);
             Level level = isAlive() ? Level.WARNING : Level.FINER;
             logger.log(level, "failed to send operations", t);
           }
         };
 
+    int pendingOperations = 0;
     for (PendingModifyAckDeadline modack : ackDeadlineExtensions) {
       for (List<String> idChunk : Lists.partition(modack.ackIds, MAX_PER_REQUEST_CHANGES)) {
         ApiFuture<Empty> future =
@@ -294,6 +298,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                         .setAckDeadlineSeconds(modack.deadlineExtensionSeconds)
                         .build());
         ApiFutures.addCallback(future, loggingCallback, directExecutor());
+        pendingOperations++;
       }
     }
 
@@ -306,6 +311,9 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                       .addAllAckIds(idChunk)
                       .build());
       ApiFutures.addCallback(future, loggingCallback, directExecutor());
+      pendingOperations++;
     }
+
+    ackOperationsWaiter.incrementPendingCount(pendingOperations);
   }
 }

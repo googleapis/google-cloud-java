@@ -18,25 +18,28 @@ package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.InternalApi;
 
-/** A barrier kind of object that helps to keep track and synchronously wait on pending messages. */
-class MessageWaiter {
-  private int pendingMessages;
+/**
+ * A barrier kind of object that helps keep track of pending actions and synchronously wait until
+ * all have completed.
+ */
+class Waiter {
+  private int pendingCount;
 
-  MessageWaiter() {
-    pendingMessages = 0;
+  Waiter() {
+    pendingCount = 0;
   }
 
-  public synchronized void incrementPendingMessages(int messages) {
-    this.pendingMessages += messages;
-    if (pendingMessages == 0) {
+  public synchronized void incrementPendingCount(int delta) {
+    this.pendingCount += delta;
+    if (pendingCount == 0) {
       notifyAll();
     }
   }
 
-  public synchronized void waitNoMessages() {
+  public synchronized void waitComplete() {
     boolean interrupted = false;
     try {
-      while (pendingMessages > 0) {
+      while (pendingCount > 0) {
         try {
           wait();
         } catch (InterruptedException e) {
@@ -52,7 +55,7 @@ class MessageWaiter {
   }
 
   @InternalApi
-  public int pendingMessages() {
-    return pendingMessages;
+  public int pendingCount() {
+    return pendingCount;
   }
 }
