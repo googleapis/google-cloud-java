@@ -16,6 +16,7 @@
 
 package com.example.bigquery;
 
+// [START bigquery_list_models]
 import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.ModelListOption;
@@ -23,7 +24,6 @@ import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Model;
 
-// [START bigquery_list_models]
 public class ListModels {
 
   public static void runListModels() {

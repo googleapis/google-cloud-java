@@ -16,13 +16,13 @@
 
 package com.example.bigquery;
 
+// [START bigquery_get_model]
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Model;
 import com.google.cloud.bigquery.ModelId;
 
-// [START bigquery_get_model]
 public class GetModel {
 
   public static void runGetModel() {
