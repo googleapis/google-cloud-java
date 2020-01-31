@@ -44,6 +44,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     ackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     modifyDeadlineSeconds_ = emptyIntList();
     modifyDeadlineAckIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    clientId_ = "";
   }
 
   @java.lang.Override
@@ -129,6 +130,13 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
           case 40:
             {
               streamAckDeadlineSeconds_ = input.readInt32();
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientId_ = s;
               break;
             }
           default:
@@ -479,6 +487,63 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     return streamAckDeadlineSeconds_;
   }
 
+  public static final int CLIENT_ID_FIELD_NUMBER = 6;
+  private volatile java.lang.Object clientId_;
+  /**
+   *
+   *
+   * <pre>
+   * A unique identifier that is used to distinguish client instances from each
+   * other. Only needs to be provided on the initial request. When a stream
+   * disconnects and reconnects for the same stream, the client_id should be set
+   * to the same value so that state associated with the old stream can be
+   * transferred to the new stream. The same client_id should not be used for
+   * different client instances.
+   * </pre>
+   *
+   * <code>string client_id = 6;</code>
+   *
+   * @return The clientId.
+   */
+  public java.lang.String getClientId() {
+    java.lang.Object ref = clientId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      clientId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A unique identifier that is used to distinguish client instances from each
+   * other. Only needs to be provided on the initial request. When a stream
+   * disconnects and reconnects for the same stream, the client_id should be set
+   * to the same value so that state associated with the old stream can be
+   * transferred to the new stream. The same client_id should not be used for
+   * different client instances.
+   * </pre>
+   *
+   * <code>string client_id = 6;</code>
+   *
+   * @return The bytes for clientId.
+   */
+  public com.google.protobuf.ByteString getClientIdBytes() {
+    java.lang.Object ref = clientId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      clientId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -513,6 +578,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     }
     if (streamAckDeadlineSeconds_ != 0) {
       output.writeInt32(5, streamAckDeadlineSeconds_);
+    }
+    if (!getClientIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, clientId_);
     }
     unknownFields.writeTo(output);
   }
@@ -559,6 +627,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     if (streamAckDeadlineSeconds_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, streamAckDeadlineSeconds_);
     }
+    if (!getClientIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, clientId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -580,6 +651,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     if (!getModifyDeadlineSecondsList().equals(other.getModifyDeadlineSecondsList())) return false;
     if (!getModifyDeadlineAckIdsList().equals(other.getModifyDeadlineAckIdsList())) return false;
     if (getStreamAckDeadlineSeconds() != other.getStreamAckDeadlineSeconds()) return false;
+    if (!getClientId().equals(other.getClientId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -607,6 +679,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + STREAM_ACK_DEADLINE_SECONDS_FIELD_NUMBER;
     hash = (53 * hash) + getStreamAckDeadlineSeconds();
+    hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getClientId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -764,6 +838,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       bitField0_ = (bitField0_ & ~0x00000004);
       streamAckDeadlineSeconds_ = 0;
 
+      clientId_ = "";
+
       return this;
     }
 
@@ -809,6 +885,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       }
       result.modifyDeadlineAckIds_ = modifyDeadlineAckIds_;
       result.streamAckDeadlineSeconds_ = streamAckDeadlineSeconds_;
+      result.clientId_ = clientId_;
       onBuilt();
       return result;
     }
@@ -894,6 +971,10 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       }
       if (other.getStreamAckDeadlineSeconds() != 0) {
         setStreamAckDeadlineSeconds(other.getStreamAckDeadlineSeconds());
+      }
+      if (!other.getClientId().isEmpty()) {
+        clientId_ = other.clientId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1708,6 +1789,137 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     public Builder clearStreamAckDeadlineSeconds() {
 
       streamAckDeadlineSeconds_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object clientId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A unique identifier that is used to distinguish client instances from each
+     * other. Only needs to be provided on the initial request. When a stream
+     * disconnects and reconnects for the same stream, the client_id should be set
+     * to the same value so that state associated with the old stream can be
+     * transferred to the new stream. The same client_id should not be used for
+     * different client instances.
+     * </pre>
+     *
+     * <code>string client_id = 6;</code>
+     *
+     * @return The clientId.
+     */
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique identifier that is used to distinguish client instances from each
+     * other. Only needs to be provided on the initial request. When a stream
+     * disconnects and reconnects for the same stream, the client_id should be set
+     * to the same value so that state associated with the old stream can be
+     * transferred to the new stream. The same client_id should not be used for
+     * different client instances.
+     * </pre>
+     *
+     * <code>string client_id = 6;</code>
+     *
+     * @return The bytes for clientId.
+     */
+    public com.google.protobuf.ByteString getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique identifier that is used to distinguish client instances from each
+     * other. Only needs to be provided on the initial request. When a stream
+     * disconnects and reconnects for the same stream, the client_id should be set
+     * to the same value so that state associated with the old stream can be
+     * transferred to the new stream. The same client_id should not be used for
+     * different client instances.
+     * </pre>
+     *
+     * <code>string client_id = 6;</code>
+     *
+     * @param value The clientId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      clientId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique identifier that is used to distinguish client instances from each
+     * other. Only needs to be provided on the initial request. When a stream
+     * disconnects and reconnects for the same stream, the client_id should be set
+     * to the same value so that state associated with the old stream can be
+     * transferred to the new stream. The same client_id should not be used for
+     * different client instances.
+     * </pre>
+     *
+     * <code>string client_id = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClientId() {
+
+      clientId_ = getDefaultInstance().getClientId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique identifier that is used to distinguish client instances from each
+     * other. Only needs to be provided on the initial request. When a stream
+     * disconnects and reconnects for the same stream, the client_id should be set
+     * to the same value so that state associated with the old stream can be
+     * transferred to the new stream. The same client_id should not be used for
+     * different client instances.
+     * </pre>
+     *
+     * <code>string client_id = 6;</code>
+     *
+     * @param value The bytes for clientId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      clientId_ = value;
       onChanged();
       return this;
     }

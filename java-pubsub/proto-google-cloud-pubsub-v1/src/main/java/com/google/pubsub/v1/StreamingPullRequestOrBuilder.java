@@ -271,4 +271,39 @@ public interface StreamingPullRequestOrBuilder
    * @return The streamAckDeadlineSeconds.
    */
   int getStreamAckDeadlineSeconds();
+
+  /**
+   *
+   *
+   * <pre>
+   * A unique identifier that is used to distinguish client instances from each
+   * other. Only needs to be provided on the initial request. When a stream
+   * disconnects and reconnects for the same stream, the client_id should be set
+   * to the same value so that state associated with the old stream can be
+   * transferred to the new stream. The same client_id should not be used for
+   * different client instances.
+   * </pre>
+   *
+   * <code>string client_id = 6;</code>
+   *
+   * @return The clientId.
+   */
+  java.lang.String getClientId();
+  /**
+   *
+   *
+   * <pre>
+   * A unique identifier that is used to distinguish client instances from each
+   * other. Only needs to be provided on the initial request. When a stream
+   * disconnects and reconnects for the same stream, the client_id should be set
+   * to the same value so that state associated with the old stream can be
+   * transferred to the new stream. The same client_id should not be used for
+   * different client instances.
+   * </pre>
+   *
+   * <code>string client_id = 6;</code>
+   *
+   * @return The bytes for clientId.
+   */
+  com.google.protobuf.ByteString getClientIdBytes();
 }
