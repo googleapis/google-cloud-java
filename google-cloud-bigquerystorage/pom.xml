@@ -119,7 +119,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>1.91.3</version>
+      <version>1.92.3</version>
     </dependency>
 
     <dependency>
