@@ -45,6 +45,7 @@ import com.google.pubsub.v1.StreamingPullRequest;
 import com.google.pubsub.v1.StreamingPullResponse;
 import io.grpc.Status;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
@@ -76,6 +77,13 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
   private final Lock lock = new ReentrantLock();
   private ClientStream<StreamingPullRequest> clientStream;
+
+  /**
+   * The same clientId is used across all streaming pull connections that are created. This is
+   * intentional, as it indicates to the server that any guarantees made for a stream that
+   * disconnected will be made for the stream that is created to replace it.
+   */
+  private final String clientId = UUID.randomUUID().toString();
 
   public StreamingSubscriberConnection(
       String subscription,
@@ -200,6 +208,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
         StreamingPullRequest.newBuilder()
             .setSubscription(subscription)
             .setStreamAckDeadlineSeconds(60)
+            .setClientId(clientId)
             .build());
 
     /**
