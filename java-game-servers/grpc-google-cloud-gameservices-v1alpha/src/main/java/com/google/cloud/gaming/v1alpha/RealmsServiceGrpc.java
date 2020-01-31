@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,13 +26,13 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  *
  * <pre>
- * Realm provides grouping of game server clusters that are serving particular
+ * Realm provides grouping of game server clusters that are serving a particular
  * gamer population.
  * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.10.0)",
-    comments = "Source: google/cloud/gaming/v1alpha/realms.proto")
+    comments = "Source: google/cloud/gaming/v1alpha/realms_service.proto")
 public final class RealmsServiceGrpc {
 
   private RealmsServiceGrpc() {}
@@ -305,6 +305,65 @@ public final class RealmsServiceGrpc {
     return getUpdateRealmMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getPreviewRealmUpdateMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.gaming.v1alpha.PreviewRealmUpdateRequest,
+          com.google.cloud.gaming.v1alpha.PreviewRealmUpdateResponse>
+      METHOD_PREVIEW_REALM_UPDATE = getPreviewRealmUpdateMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gaming.v1alpha.PreviewRealmUpdateRequest,
+          com.google.cloud.gaming.v1alpha.PreviewRealmUpdateResponse>
+      getPreviewRealmUpdateMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gaming.v1alpha.PreviewRealmUpdateRequest,
+          com.google.cloud.gaming.v1alpha.PreviewRealmUpdateResponse>
+      getPreviewRealmUpdateMethod() {
+    return getPreviewRealmUpdateMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.gaming.v1alpha.PreviewRealmUpdateRequest,
+          com.google.cloud.gaming.v1alpha.PreviewRealmUpdateResponse>
+      getPreviewRealmUpdateMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gaming.v1alpha.PreviewRealmUpdateRequest,
+            com.google.cloud.gaming.v1alpha.PreviewRealmUpdateResponse>
+        getPreviewRealmUpdateMethod;
+    if ((getPreviewRealmUpdateMethod = RealmsServiceGrpc.getPreviewRealmUpdateMethod) == null) {
+      synchronized (RealmsServiceGrpc.class) {
+        if ((getPreviewRealmUpdateMethod = RealmsServiceGrpc.getPreviewRealmUpdateMethod) == null) {
+          RealmsServiceGrpc.getPreviewRealmUpdateMethod =
+              getPreviewRealmUpdateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gaming.v1alpha.PreviewRealmUpdateRequest,
+                          com.google.cloud.gaming.v1alpha.PreviewRealmUpdateResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.gaming.v1alpha.RealmsService", "PreviewRealmUpdate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gaming.v1alpha.PreviewRealmUpdateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gaming.v1alpha.PreviewRealmUpdateResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RealmsServiceMethodDescriptorSupplier("PreviewRealmUpdate"))
+                      .build();
+        }
+      }
+    }
+    return getPreviewRealmUpdateMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static RealmsServiceStub newStub(io.grpc.Channel channel) {
     return new RealmsServiceStub(channel);
@@ -326,7 +385,7 @@ public final class RealmsServiceGrpc {
    *
    *
    * <pre>
-   * Realm provides grouping of game server clusters that are serving particular
+   * Realm provides grouping of game server clusters that are serving a particular
    * gamer population.
    * </pre>
    */
@@ -398,6 +457,20 @@ public final class RealmsServiceGrpc {
       asyncUnimplementedUnaryCall(getUpdateRealmMethodHelper(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Previews patches to a single Realm.
+     * </pre>
+     */
+    public void previewRealmUpdate(
+        com.google.cloud.gaming.v1alpha.PreviewRealmUpdateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1alpha.PreviewRealmUpdateResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getPreviewRealmUpdateMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -432,6 +505,13 @@ public final class RealmsServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.gaming.v1alpha.UpdateRealmRequest,
                       com.google.longrunning.Operation>(this, METHODID_UPDATE_REALM)))
+          .addMethod(
+              getPreviewRealmUpdateMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.gaming.v1alpha.PreviewRealmUpdateRequest,
+                      com.google.cloud.gaming.v1alpha.PreviewRealmUpdateResponse>(
+                      this, METHODID_PREVIEW_REALM_UPDATE)))
           .build();
     }
   }
@@ -440,7 +520,7 @@ public final class RealmsServiceGrpc {
    *
    *
    * <pre>
-   * Realm provides grouping of game server clusters that are serving particular
+   * Realm provides grouping of game server clusters that are serving a particular
    * gamer population.
    * </pre>
    */
@@ -538,13 +618,30 @@ public final class RealmsServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Previews patches to a single Realm.
+     * </pre>
+     */
+    public void previewRealmUpdate(
+        com.google.cloud.gaming.v1alpha.PreviewRealmUpdateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1alpha.PreviewRealmUpdateResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPreviewRealmUpdateMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    *
    *
    * <pre>
-   * Realm provides grouping of game server clusters that are serving particular
+   * Realm provides grouping of game server clusters that are serving a particular
    * gamer population.
    * </pre>
    */
@@ -627,13 +724,26 @@ public final class RealmsServiceGrpc {
       return blockingUnaryCall(
           getChannel(), getUpdateRealmMethodHelper(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Previews patches to a single Realm.
+     * </pre>
+     */
+    public com.google.cloud.gaming.v1alpha.PreviewRealmUpdateResponse previewRealmUpdate(
+        com.google.cloud.gaming.v1alpha.PreviewRealmUpdateRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPreviewRealmUpdateMethodHelper(), getCallOptions(), request);
+    }
   }
 
   /**
    *
    *
    * <pre>
-   * Realm provides grouping of game server clusters that are serving particular
+   * Realm provides grouping of game server clusters that are serving a particular
    * gamer population.
    * </pre>
    */
@@ -718,6 +828,20 @@ public final class RealmsServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getUpdateRealmMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Previews patches to a single Realm.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gaming.v1alpha.PreviewRealmUpdateResponse>
+        previewRealmUpdate(com.google.cloud.gaming.v1alpha.PreviewRealmUpdateRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPreviewRealmUpdateMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_REALMS = 0;
@@ -725,6 +849,7 @@ public final class RealmsServiceGrpc {
   private static final int METHODID_CREATE_REALM = 2;
   private static final int METHODID_DELETE_REALM = 3;
   private static final int METHODID_UPDATE_REALM = 4;
+  private static final int METHODID_PREVIEW_REALM_UPDATE = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -770,6 +895,13 @@ public final class RealmsServiceGrpc {
               (com.google.cloud.gaming.v1alpha.UpdateRealmRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_PREVIEW_REALM_UPDATE:
+          serviceImpl.previewRealmUpdate(
+              (com.google.cloud.gaming.v1alpha.PreviewRealmUpdateRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.gaming.v1alpha.PreviewRealmUpdateResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -793,7 +925,7 @@ public final class RealmsServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.google.cloud.gaming.v1alpha.Realms.getDescriptor();
+      return com.google.cloud.gaming.v1alpha.RealmsServiceOuterClass.getDescriptor();
     }
 
     @java.lang.Override
@@ -839,6 +971,7 @@ public final class RealmsServiceGrpc {
                       .addMethod(getCreateRealmMethodHelper())
                       .addMethod(getDeleteRealmMethodHelper())
                       .addMethod(getUpdateRealmMethodHelper())
+                      .addMethod(getPreviewRealmUpdateMethodHelper())
                       .build();
         }
       }

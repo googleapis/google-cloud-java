@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,14 @@ public interface CreateGameServerDeploymentRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name, using the form:
-   * `projects/{project_id}/locations/{location}`.
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -39,10 +43,14 @@ public interface CreateGameServerDeploymentRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name, using the form:
-   * `projects/{project_id}/locations/{location}`.
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -53,7 +61,9 @@ public interface CreateGameServerDeploymentRequestOrBuilder
    * Required. The ID of the game server deployment resource to be created.
    * </pre>
    *
-   * <code>string deployment_id = 2;</code>
+   * <code>string deployment_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The deploymentId.
    */
   java.lang.String getDeploymentId();
   /**
@@ -63,7 +73,9 @@ public interface CreateGameServerDeploymentRequestOrBuilder
    * Required. The ID of the game server deployment resource to be created.
    * </pre>
    *
-   * <code>string deployment_id = 2;</code>
+   * <code>string deployment_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for deploymentId.
    */
   com.google.protobuf.ByteString getDeploymentIdBytes();
 
@@ -74,7 +86,11 @@ public interface CreateGameServerDeploymentRequestOrBuilder
    * Required. The game server deployment resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the gameServerDeployment field is set.
    */
   boolean hasGameServerDeployment();
   /**
@@ -84,7 +100,11 @@ public interface CreateGameServerDeploymentRequestOrBuilder
    * Required. The game server deployment resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The gameServerDeployment.
    */
   com.google.cloud.gaming.v1alpha.GameServerDeployment getGameServerDeployment();
   /**
@@ -94,7 +114,9 @@ public interface CreateGameServerDeploymentRequestOrBuilder
    * Required. The game server deployment resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.gaming.v1alpha.GameServerDeploymentOrBuilder getGameServerDeploymentOrBuilder();
 }

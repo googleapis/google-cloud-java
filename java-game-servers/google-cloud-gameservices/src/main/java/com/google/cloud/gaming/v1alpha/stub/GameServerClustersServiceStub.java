@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,12 @@ import com.google.cloud.gaming.v1alpha.GameServerCluster;
 import com.google.cloud.gaming.v1alpha.GetGameServerClusterRequest;
 import com.google.cloud.gaming.v1alpha.ListGameServerClustersRequest;
 import com.google.cloud.gaming.v1alpha.ListGameServerClustersResponse;
+import com.google.cloud.gaming.v1alpha.PreviewCreateGameServerClusterRequest;
+import com.google.cloud.gaming.v1alpha.PreviewCreateGameServerClusterResponse;
+import com.google.cloud.gaming.v1alpha.PreviewDeleteGameServerClusterRequest;
+import com.google.cloud.gaming.v1alpha.PreviewDeleteGameServerClusterResponse;
+import com.google.cloud.gaming.v1alpha.PreviewUpdateGameServerClusterRequest;
+import com.google.cloud.gaming.v1alpha.PreviewUpdateGameServerClusterResponse;
 import com.google.cloud.gaming.v1alpha.UpdateGameServerClusterRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -98,6 +104,27 @@ public abstract class GameServerClustersServiceStub implements BackgroundResourc
   public UnaryCallable<UpdateGameServerClusterRequest, Operation>
       updateGameServerClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: updateGameServerClusterCallable()");
+  }
+
+  public UnaryCallable<
+          PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
+      previewCreateGameServerClusterCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: previewCreateGameServerClusterCallable()");
+  }
+
+  public UnaryCallable<
+          PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
+      previewDeleteGameServerClusterCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: previewDeleteGameServerClusterCallable()");
+  }
+
+  public UnaryCallable<
+          PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
+      previewUpdateGameServerClusterCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: previewUpdateGameServerClusterCallable()");
   }
 
   @Override

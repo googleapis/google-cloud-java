@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,8 @@ import com.google.cloud.gaming.v1alpha.DeleteRealmRequest;
 import com.google.cloud.gaming.v1alpha.GetRealmRequest;
 import com.google.cloud.gaming.v1alpha.ListRealmsRequest;
 import com.google.cloud.gaming.v1alpha.ListRealmsResponse;
+import com.google.cloud.gaming.v1alpha.PreviewRealmUpdateRequest;
+import com.google.cloud.gaming.v1alpha.PreviewRealmUpdateResponse;
 import com.google.cloud.gaming.v1alpha.Realm;
 import com.google.cloud.gaming.v1alpha.UpdateRealmRequest;
 import com.google.common.collect.ImmutableList;
@@ -107,6 +109,8 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
   private final UnaryCallSettings<UpdateRealmRequest, Operation> updateRealmSettings;
   private final OperationCallSettings<UpdateRealmRequest, Realm, Empty>
       updateRealmOperationSettings;
+  private final UnaryCallSettings<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
+      previewRealmUpdateSettings;
 
   /** Returns the object with the settings used for calls to listRealms. */
   public PagedCallSettings<ListRealmsRequest, ListRealmsResponse, ListRealmsPagedResponse>
@@ -150,6 +154,12 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateRealmRequest, Realm, Empty> updateRealmOperationSettings() {
     return updateRealmOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to previewRealmUpdate. */
+  public UnaryCallSettings<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
+      previewRealmUpdateSettings() {
+    return previewRealmUpdateSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -229,6 +239,7 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
     deleteRealmOperationSettings = settingsBuilder.deleteRealmOperationSettings().build();
     updateRealmSettings = settingsBuilder.updateRealmSettings().build();
     updateRealmOperationSettings = settingsBuilder.updateRealmOperationSettings().build();
+    previewRealmUpdateSettings = settingsBuilder.previewRealmUpdateSettings().build();
   }
 
   private static final PagedListDescriptor<ListRealmsRequest, ListRealmsResponse, Realm>
@@ -301,6 +312,8 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
     private final UnaryCallSettings.Builder<UpdateRealmRequest, Operation> updateRealmSettings;
     private final OperationCallSettings.Builder<UpdateRealmRequest, Realm, Empty>
         updateRealmOperationSettings;
+    private final UnaryCallSettings.Builder<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
+        previewRealmUpdateSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -359,13 +372,16 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
 
       updateRealmOperationSettings = OperationCallSettings.newBuilder();
 
+      previewRealmUpdateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listRealmsSettings,
               getRealmSettings,
               createRealmSettings,
               deleteRealmSettings,
-              updateRealmSettings);
+              updateRealmSettings,
+              previewRealmUpdateSettings);
 
       initDefaults(this);
     }
@@ -403,6 +419,11 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
 
       builder
           .updateRealmSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .previewRealmUpdateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
@@ -486,6 +507,7 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
       deleteRealmOperationSettings = settings.deleteRealmOperationSettings.toBuilder();
       updateRealmSettings = settings.updateRealmSettings.toBuilder();
       updateRealmOperationSettings = settings.updateRealmOperationSettings.toBuilder();
+      previewRealmUpdateSettings = settings.previewRealmUpdateSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -493,7 +515,8 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
               getRealmSettings,
               createRealmSettings,
               deleteRealmSettings,
-              updateRealmSettings);
+              updateRealmSettings,
+              previewRealmUpdateSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -560,6 +583,12 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
     public OperationCallSettings.Builder<UpdateRealmRequest, Realm, Empty>
         updateRealmOperationSettings() {
       return updateRealmOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to previewRealmUpdate. */
+    public UnaryCallSettings.Builder<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
+        previewRealmUpdateSettings() {
+      return previewRealmUpdateSettings;
     }
 
     @Override

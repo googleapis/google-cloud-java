@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,12 @@ import com.google.cloud.gaming.v1alpha.GameServerCluster;
 import com.google.cloud.gaming.v1alpha.GetGameServerClusterRequest;
 import com.google.cloud.gaming.v1alpha.ListGameServerClustersRequest;
 import com.google.cloud.gaming.v1alpha.ListGameServerClustersResponse;
+import com.google.cloud.gaming.v1alpha.PreviewCreateGameServerClusterRequest;
+import com.google.cloud.gaming.v1alpha.PreviewCreateGameServerClusterResponse;
+import com.google.cloud.gaming.v1alpha.PreviewDeleteGameServerClusterRequest;
+import com.google.cloud.gaming.v1alpha.PreviewDeleteGameServerClusterResponse;
+import com.google.cloud.gaming.v1alpha.PreviewUpdateGameServerClusterRequest;
+import com.google.cloud.gaming.v1alpha.PreviewUpdateGameServerClusterResponse;
 import com.google.cloud.gaming.v1alpha.UpdateGameServerClusterRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -107,6 +113,51 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
                   ProtoUtils.marshaller(UpdateGameServerClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<
+          PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
+      previewCreateGameServerClusterMethodDescriptor =
+          MethodDescriptor
+              .<PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.gaming.v1alpha.GameServerClustersService/PreviewCreateGameServerCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PreviewCreateGameServerClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      PreviewCreateGameServerClusterResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<
+          PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
+      previewDeleteGameServerClusterMethodDescriptor =
+          MethodDescriptor
+              .<PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.gaming.v1alpha.GameServerClustersService/PreviewDeleteGameServerCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PreviewDeleteGameServerClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      PreviewDeleteGameServerClusterResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<
+          PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
+      previewUpdateGameServerClusterMethodDescriptor =
+          MethodDescriptor
+              .<PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.gaming.v1alpha.GameServerClustersService/PreviewUpdateGameServerCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PreviewUpdateGameServerClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      PreviewUpdateGameServerClusterResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -129,6 +180,15 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
       updateGameServerClusterCallable;
   private final OperationCallable<UpdateGameServerClusterRequest, GameServerCluster, Empty>
       updateGameServerClusterOperationCallable;
+  private final UnaryCallable<
+          PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
+      previewCreateGameServerClusterCallable;
+  private final UnaryCallable<
+          PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
+      previewDeleteGameServerClusterCallable;
+  private final UnaryCallable<
+          PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
+      previewUpdateGameServerClusterCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -246,6 +306,59 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
                       }
                     })
                 .build();
+    GrpcCallSettings<PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
+        previewCreateGameServerClusterTransportSettings =
+            GrpcCallSettings
+                .<PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
+                    newBuilder()
+                .setMethodDescriptor(previewCreateGameServerClusterMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<PreviewCreateGameServerClusterRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          PreviewCreateGameServerClusterRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
+        previewDeleteGameServerClusterTransportSettings =
+            GrpcCallSettings
+                .<PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
+                    newBuilder()
+                .setMethodDescriptor(previewDeleteGameServerClusterMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<PreviewDeleteGameServerClusterRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          PreviewDeleteGameServerClusterRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
+        previewUpdateGameServerClusterTransportSettings =
+            GrpcCallSettings
+                .<PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
+                    newBuilder()
+                .setMethodDescriptor(previewUpdateGameServerClusterMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<PreviewUpdateGameServerClusterRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          PreviewUpdateGameServerClusterRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put(
+                            "game_server_cluster.name",
+                            String.valueOf(request.getGameServerCluster().getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.listGameServerClustersCallable =
         callableFactory.createUnaryCallable(
@@ -295,6 +408,21 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
             settings.updateGameServerClusterOperationSettings(),
             clientContext,
             this.operationsStub);
+    this.previewCreateGameServerClusterCallable =
+        callableFactory.createUnaryCallable(
+            previewCreateGameServerClusterTransportSettings,
+            settings.previewCreateGameServerClusterSettings(),
+            clientContext);
+    this.previewDeleteGameServerClusterCallable =
+        callableFactory.createUnaryCallable(
+            previewDeleteGameServerClusterTransportSettings,
+            settings.previewDeleteGameServerClusterSettings(),
+            clientContext);
+    this.previewUpdateGameServerClusterCallable =
+        callableFactory.createUnaryCallable(
+            previewUpdateGameServerClusterTransportSettings,
+            settings.previewUpdateGameServerClusterSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -350,6 +478,24 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
   public UnaryCallable<UpdateGameServerClusterRequest, Operation>
       updateGameServerClusterCallable() {
     return updateGameServerClusterCallable;
+  }
+
+  public UnaryCallable<
+          PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
+      previewCreateGameServerClusterCallable() {
+    return previewCreateGameServerClusterCallable;
+  }
+
+  public UnaryCallable<
+          PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
+      previewDeleteGameServerClusterCallable() {
+    return previewDeleteGameServerClusterCallable;
+  }
+
+  public UnaryCallable<
+          PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
+      previewUpdateGameServerClusterCallable() {
+    return previewUpdateGameServerClusterCallable;
   }
 
   @Override

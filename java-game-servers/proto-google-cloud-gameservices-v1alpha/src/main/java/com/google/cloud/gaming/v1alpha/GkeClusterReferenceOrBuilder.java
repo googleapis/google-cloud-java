@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,18 +29,17 @@ public interface GkeClusterReferenceOrBuilder
    * <pre>
    * The full or partial name of a GKE cluster, using one of the following
    * forms:
-   * &lt;ul&gt;
-   *    &lt;li&gt;`projects/{project_id}/locations/{location}/clusters/{cluster_id}`
-   *    &lt;/li&gt;
-   *    &lt;li&gt;`locations/{location}/clusters/{cluster_id}`&lt;/li&gt;
-   *    &lt;li&gt;`{cluster_id}`&lt;/li&gt;
-   * &lt;/ul&gt;
+   *  * `projects/{project}/locations/{location}/clusters/{cluster}`
+   *  * `locations/{location}/clusters/{cluster}`
+   *  * `{cluster}`
    * If project and location are not specified, the project and location of the
    * GameServerCluster resource are used to generate the full name of the
    * GKE cluster.
    * </pre>
    *
    * <code>string cluster = 1;</code>
+   *
+   * @return The cluster.
    */
   java.lang.String getCluster();
   /**
@@ -49,18 +48,17 @@ public interface GkeClusterReferenceOrBuilder
    * <pre>
    * The full or partial name of a GKE cluster, using one of the following
    * forms:
-   * &lt;ul&gt;
-   *    &lt;li&gt;`projects/{project_id}/locations/{location}/clusters/{cluster_id}`
-   *    &lt;/li&gt;
-   *    &lt;li&gt;`locations/{location}/clusters/{cluster_id}`&lt;/li&gt;
-   *    &lt;li&gt;`{cluster_id}`&lt;/li&gt;
-   * &lt;/ul&gt;
+   *  * `projects/{project}/locations/{location}/clusters/{cluster}`
+   *  * `locations/{location}/clusters/{cluster}`
+   *  * `{cluster}`
    * If project and location are not specified, the project and location of the
    * GameServerCluster resource are used to generate the full name of the
    * GKE cluster.
    * </pre>
    *
    * <code>string cluster = 1;</code>
+   *
+   * @return The bytes for cluster.
    */
   com.google.protobuf.ByteString getClusterBytes();
 }

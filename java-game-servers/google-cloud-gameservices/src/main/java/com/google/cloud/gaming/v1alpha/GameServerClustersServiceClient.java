@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,8 +42,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: The game server cluster is used to capture the game server cluster's
- * settings which are used to manage game server clusters.
+ * Service Description: The game server cluster maps to Kubernetes clusters running Agones and is
+ * used to manage fleets within clusters.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -307,7 +307,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The parent resource name, using the form:
-   *     "projects/{project_id}/locations/{location}/realms/{realm-id}".
+   *     "projects/{project}/locations/{location}/realms/{realm-id}".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGameServerClustersPagedResponse listGameServerClusters(String parent) {
@@ -414,7 +414,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The name of the game server cluster to retrieve, using the form:
-   *     <p>`projects/{project_id}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster_id}`
+   *     <p>`projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GameServerCluster getGameServerCluster(String name) {
@@ -486,7 +486,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The parent resource name, using the form:
-   *     `projects/{project_id}/locations/{location}/realms/{realm-id}`.
+   *     `projects/{project}/locations/{location}/realms/{realm-id}`.
    * @param gameServerClusterId Required. The ID of the game server cluster resource to be created.
    * @param gameServerCluster Required. The game server cluster resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -604,7 +604,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The name of the game server cluster to delete, using the form:
-   *     <p>`projects/{project_id}/locations/{location}/gameServerClusters/{cluster_id}`
+   *     `projects/{project}/locations/{location}/gameServerClusters/{cluster}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -715,7 +715,6 @@ public class GameServerClustersServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<GameServerCluster, Empty> updateGameServerClusterAsync(
       GameServerCluster gameServerCluster, FieldMask updateMask) {
-
     UpdateGameServerClusterRequest request =
         UpdateGameServerClusterRequest.newBuilder()
             .setGameServerCluster(gameServerCluster)
@@ -801,6 +800,132 @@ public class GameServerClustersServiceClient implements BackgroundResource {
   public final UnaryCallable<UpdateGameServerClusterRequest, Operation>
       updateGameServerClusterCallable() {
     return stub.updateGameServerClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Previews creation of a new game server cluster in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GameServerClustersServiceClient gameServerClustersServiceClient = GameServerClustersServiceClient.create()) {
+   *   PreviewCreateGameServerClusterRequest request = PreviewCreateGameServerClusterRequest.newBuilder().build();
+   *   PreviewCreateGameServerClusterResponse response = gameServerClustersServiceClient.previewCreateGameServerCluster(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PreviewCreateGameServerClusterResponse previewCreateGameServerCluster(
+      PreviewCreateGameServerClusterRequest request) {
+    return previewCreateGameServerClusterCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Previews creation of a new game server cluster in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GameServerClustersServiceClient gameServerClustersServiceClient = GameServerClustersServiceClient.create()) {
+   *   PreviewCreateGameServerClusterRequest request = PreviewCreateGameServerClusterRequest.newBuilder().build();
+   *   ApiFuture&lt;PreviewCreateGameServerClusterResponse&gt; future = gameServerClustersServiceClient.previewCreateGameServerClusterCallable().futureCall(request);
+   *   // Do something
+   *   PreviewCreateGameServerClusterResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<
+          PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
+      previewCreateGameServerClusterCallable() {
+    return stub.previewCreateGameServerClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Previews deletion of a single game server cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GameServerClustersServiceClient gameServerClustersServiceClient = GameServerClustersServiceClient.create()) {
+   *   PreviewDeleteGameServerClusterRequest request = PreviewDeleteGameServerClusterRequest.newBuilder().build();
+   *   PreviewDeleteGameServerClusterResponse response = gameServerClustersServiceClient.previewDeleteGameServerCluster(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PreviewDeleteGameServerClusterResponse previewDeleteGameServerCluster(
+      PreviewDeleteGameServerClusterRequest request) {
+    return previewDeleteGameServerClusterCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Previews deletion of a single game server cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GameServerClustersServiceClient gameServerClustersServiceClient = GameServerClustersServiceClient.create()) {
+   *   PreviewDeleteGameServerClusterRequest request = PreviewDeleteGameServerClusterRequest.newBuilder().build();
+   *   ApiFuture&lt;PreviewDeleteGameServerClusterResponse&gt; future = gameServerClustersServiceClient.previewDeleteGameServerClusterCallable().futureCall(request);
+   *   // Do something
+   *   PreviewDeleteGameServerClusterResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<
+          PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
+      previewDeleteGameServerClusterCallable() {
+    return stub.previewDeleteGameServerClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Previews updating a GameServerCluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GameServerClustersServiceClient gameServerClustersServiceClient = GameServerClustersServiceClient.create()) {
+   *   PreviewUpdateGameServerClusterRequest request = PreviewUpdateGameServerClusterRequest.newBuilder().build();
+   *   PreviewUpdateGameServerClusterResponse response = gameServerClustersServiceClient.previewUpdateGameServerCluster(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PreviewUpdateGameServerClusterResponse previewUpdateGameServerCluster(
+      PreviewUpdateGameServerClusterRequest request) {
+    return previewUpdateGameServerClusterCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Previews updating a GameServerCluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GameServerClustersServiceClient gameServerClustersServiceClient = GameServerClustersServiceClient.create()) {
+   *   PreviewUpdateGameServerClusterRequest request = PreviewUpdateGameServerClusterRequest.newBuilder().build();
+   *   ApiFuture&lt;PreviewUpdateGameServerClusterResponse&gt; future = gameServerClustersServiceClient.previewUpdateGameServerClusterCallable().futureCall(request);
+   *   // Do something
+   *   PreviewUpdateGameServerClusterResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<
+          PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
+      previewUpdateGameServerClusterCallable() {
+    return stub.previewUpdateGameServerClusterCallable();
   }
 
   @Override

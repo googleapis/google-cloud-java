@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.google.cloud.gaming.v1alpha;
  *
  *
  * <pre>
- * GkeClusterReference represents a reference of a GKE cluster.
+ * GkeClusterReference represents a reference to a GKE cluster.
  * </pre>
  *
  * Protobuf type {@code google.cloud.gaming.v1alpha.GkeClusterReference}
@@ -42,6 +42,12 @@ public final class GkeClusterReference extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GkeClusterReference();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,7 +60,6 @@ public final class GkeClusterReference extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -114,18 +119,17 @@ public final class GkeClusterReference extends com.google.protobuf.GeneratedMess
    * <pre>
    * The full or partial name of a GKE cluster, using one of the following
    * forms:
-   * &lt;ul&gt;
-   *    &lt;li&gt;`projects/{project_id}/locations/{location}/clusters/{cluster_id}`
-   *    &lt;/li&gt;
-   *    &lt;li&gt;`locations/{location}/clusters/{cluster_id}`&lt;/li&gt;
-   *    &lt;li&gt;`{cluster_id}`&lt;/li&gt;
-   * &lt;/ul&gt;
+   *  * `projects/{project}/locations/{location}/clusters/{cluster}`
+   *  * `locations/{location}/clusters/{cluster}`
+   *  * `{cluster}`
    * If project and location are not specified, the project and location of the
    * GameServerCluster resource are used to generate the full name of the
    * GKE cluster.
    * </pre>
    *
    * <code>string cluster = 1;</code>
+   *
+   * @return The cluster.
    */
   public java.lang.String getCluster() {
     java.lang.Object ref = cluster_;
@@ -144,18 +148,17 @@ public final class GkeClusterReference extends com.google.protobuf.GeneratedMess
    * <pre>
    * The full or partial name of a GKE cluster, using one of the following
    * forms:
-   * &lt;ul&gt;
-   *    &lt;li&gt;`projects/{project_id}/locations/{location}/clusters/{cluster_id}`
-   *    &lt;/li&gt;
-   *    &lt;li&gt;`locations/{location}/clusters/{cluster_id}`&lt;/li&gt;
-   *    &lt;li&gt;`{cluster_id}`&lt;/li&gt;
-   * &lt;/ul&gt;
+   *  * `projects/{project}/locations/{location}/clusters/{cluster}`
+   *  * `locations/{location}/clusters/{cluster}`
+   *  * `{cluster}`
    * If project and location are not specified, the project and location of the
    * GameServerCluster resource are used to generate the full name of the
    * GKE cluster.
    * </pre>
    *
    * <code>string cluster = 1;</code>
+   *
+   * @return The bytes for cluster.
    */
   public com.google.protobuf.ByteString getClusterBytes() {
     java.lang.Object ref = cluster_;
@@ -332,7 +335,7 @@ public final class GkeClusterReference extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * GkeClusterReference represents a reference of a GKE cluster.
+   * GkeClusterReference represents a reference to a GKE cluster.
    * </pre>
    *
    * Protobuf type {@code google.cloud.gaming.v1alpha.GkeClusterReference}
@@ -494,18 +497,17 @@ public final class GkeClusterReference extends com.google.protobuf.GeneratedMess
      * <pre>
      * The full or partial name of a GKE cluster, using one of the following
      * forms:
-     * &lt;ul&gt;
-     *    &lt;li&gt;`projects/{project_id}/locations/{location}/clusters/{cluster_id}`
-     *    &lt;/li&gt;
-     *    &lt;li&gt;`locations/{location}/clusters/{cluster_id}`&lt;/li&gt;
-     *    &lt;li&gt;`{cluster_id}`&lt;/li&gt;
-     * &lt;/ul&gt;
+     *  * `projects/{project}/locations/{location}/clusters/{cluster}`
+     *  * `locations/{location}/clusters/{cluster}`
+     *  * `{cluster}`
      * If project and location are not specified, the project and location of the
      * GameServerCluster resource are used to generate the full name of the
      * GKE cluster.
      * </pre>
      *
      * <code>string cluster = 1;</code>
+     *
+     * @return The cluster.
      */
     public java.lang.String getCluster() {
       java.lang.Object ref = cluster_;
@@ -524,18 +526,17 @@ public final class GkeClusterReference extends com.google.protobuf.GeneratedMess
      * <pre>
      * The full or partial name of a GKE cluster, using one of the following
      * forms:
-     * &lt;ul&gt;
-     *    &lt;li&gt;`projects/{project_id}/locations/{location}/clusters/{cluster_id}`
-     *    &lt;/li&gt;
-     *    &lt;li&gt;`locations/{location}/clusters/{cluster_id}`&lt;/li&gt;
-     *    &lt;li&gt;`{cluster_id}`&lt;/li&gt;
-     * &lt;/ul&gt;
+     *  * `projects/{project}/locations/{location}/clusters/{cluster}`
+     *  * `locations/{location}/clusters/{cluster}`
+     *  * `{cluster}`
      * If project and location are not specified, the project and location of the
      * GameServerCluster resource are used to generate the full name of the
      * GKE cluster.
      * </pre>
      *
      * <code>string cluster = 1;</code>
+     *
+     * @return The bytes for cluster.
      */
     public com.google.protobuf.ByteString getClusterBytes() {
       java.lang.Object ref = cluster_;
@@ -554,18 +555,18 @@ public final class GkeClusterReference extends com.google.protobuf.GeneratedMess
      * <pre>
      * The full or partial name of a GKE cluster, using one of the following
      * forms:
-     * &lt;ul&gt;
-     *    &lt;li&gt;`projects/{project_id}/locations/{location}/clusters/{cluster_id}`
-     *    &lt;/li&gt;
-     *    &lt;li&gt;`locations/{location}/clusters/{cluster_id}`&lt;/li&gt;
-     *    &lt;li&gt;`{cluster_id}`&lt;/li&gt;
-     * &lt;/ul&gt;
+     *  * `projects/{project}/locations/{location}/clusters/{cluster}`
+     *  * `locations/{location}/clusters/{cluster}`
+     *  * `{cluster}`
      * If project and location are not specified, the project and location of the
      * GameServerCluster resource are used to generate the full name of the
      * GKE cluster.
      * </pre>
      *
      * <code>string cluster = 1;</code>
+     *
+     * @param value The cluster to set.
+     * @return This builder for chaining.
      */
     public Builder setCluster(java.lang.String value) {
       if (value == null) {
@@ -582,18 +583,17 @@ public final class GkeClusterReference extends com.google.protobuf.GeneratedMess
      * <pre>
      * The full or partial name of a GKE cluster, using one of the following
      * forms:
-     * &lt;ul&gt;
-     *    &lt;li&gt;`projects/{project_id}/locations/{location}/clusters/{cluster_id}`
-     *    &lt;/li&gt;
-     *    &lt;li&gt;`locations/{location}/clusters/{cluster_id}`&lt;/li&gt;
-     *    &lt;li&gt;`{cluster_id}`&lt;/li&gt;
-     * &lt;/ul&gt;
+     *  * `projects/{project}/locations/{location}/clusters/{cluster}`
+     *  * `locations/{location}/clusters/{cluster}`
+     *  * `{cluster}`
      * If project and location are not specified, the project and location of the
      * GameServerCluster resource are used to generate the full name of the
      * GKE cluster.
      * </pre>
      *
      * <code>string cluster = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCluster() {
 
@@ -607,18 +607,18 @@ public final class GkeClusterReference extends com.google.protobuf.GeneratedMess
      * <pre>
      * The full or partial name of a GKE cluster, using one of the following
      * forms:
-     * &lt;ul&gt;
-     *    &lt;li&gt;`projects/{project_id}/locations/{location}/clusters/{cluster_id}`
-     *    &lt;/li&gt;
-     *    &lt;li&gt;`locations/{location}/clusters/{cluster_id}`&lt;/li&gt;
-     *    &lt;li&gt;`{cluster_id}`&lt;/li&gt;
-     * &lt;/ul&gt;
+     *  * `projects/{project}/locations/{location}/clusters/{cluster}`
+     *  * `locations/{location}/clusters/{cluster}`
+     *  * `{cluster}`
      * If project and location are not specified, the project and location of the
      * GameServerCluster resource are used to generate the full name of the
      * GKE cluster.
      * </pre>
      *
      * <code>string cluster = 1;</code>
+     *
+     * @param value The bytes for cluster to set.
+     * @return This builder for chaining.
      */
     public Builder setClusterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

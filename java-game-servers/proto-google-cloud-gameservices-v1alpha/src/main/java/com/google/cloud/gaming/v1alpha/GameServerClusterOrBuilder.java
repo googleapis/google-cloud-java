@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,26 +27,30 @@ public interface GameServerClusterOrBuilder
    *
    *
    * <pre>
-   * The resource name of the game server cluster, using the form:
-   * `projects/{project_id}/locations/{location}/realms/{realm_id}/gameServerClusters/{cluster_id}`.
+   * Required. The resource name of the game server cluster, using the form:
+   * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
    * For example,
    * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * The resource name of the game server cluster, using the form:
-   * `projects/{project_id}/locations/{location}/realms/{realm_id}/gameServerClusters/{cluster_id}`.
+   * Required. The resource name of the game server cluster, using the form:
+   * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
    * For example,
    * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -57,7 +61,10 @@ public interface GameServerClusterOrBuilder
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -67,7 +74,10 @@ public interface GameServerClusterOrBuilder
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -77,7 +87,8 @@ public interface GameServerClusterOrBuilder
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -88,7 +99,10 @@ public interface GameServerClusterOrBuilder
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -98,7 +112,10 @@ public interface GameServerClusterOrBuilder
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -108,7 +125,8 @@ public interface GameServerClusterOrBuilder
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
@@ -180,6 +198,8 @@ public interface GameServerClusterOrBuilder
    * </pre>
    *
    * <code>.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfo connection_info = 5;</code>
+   *
+   * @return Whether the connectionInfo field is set.
    */
   boolean hasConnectionInfo();
   /**
@@ -191,6 +211,8 @@ public interface GameServerClusterOrBuilder
    * </pre>
    *
    * <code>.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfo connection_info = 5;</code>
+   *
+   * @return The connectionInfo.
    */
   com.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfo getConnectionInfo();
   /**
@@ -205,4 +227,54 @@ public interface GameServerClusterOrBuilder
    */
   com.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfoOrBuilder
       getConnectionInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * ETag of the resource.
+   * </pre>
+   *
+   * <code>string etag = 6;</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * ETag of the resource.
+   * </pre>
+   *
+   * <code>string etag = 6;</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Human readable description of the cluster.
+   * </pre>
+   *
+   * <code>string description = 7;</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   *
+   *
+   * <pre>
+   * Human readable description of the cluster.
+   * </pre>
+   *
+   * <code>string description = 7;</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
 }

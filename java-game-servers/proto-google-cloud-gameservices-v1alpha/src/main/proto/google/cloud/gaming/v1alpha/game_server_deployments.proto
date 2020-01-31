@@ -17,132 +17,46 @@ syntax = "proto3";
 
 package google.cloud.gaming.v1alpha;
 
-import "google/api/annotations.proto";
+import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
 import "google/cloud/gaming/v1alpha/common.proto";
-import "google/longrunning/operations.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
-import "google/api/client.proto";
+import "google/api/annotations.proto";
 
 option go_package = "google.golang.org/genproto/googleapis/cloud/gaming/v1alpha;gaming";
 
 option java_multiple_files = true;
 option java_package = "com.google.cloud.gaming.v1alpha";
 
-// The game server deployment is used to configure the deployment of game server
-// software to Agones Fleets in game server clusters.
-service GameServerDeploymentsService {
-  option (google.api.default_host) = "gameservices.googleapis.com";
-  option (google.api.oauth_scopes) = "https://www.googleapis.com/auth/cloud-platform";
-
-  // Lists game server deployments in a given project and location.
-  rpc ListGameServerDeployments(ListGameServerDeploymentsRequest) returns (ListGameServerDeploymentsResponse) {
-    option (google.api.http) = {
-      get: "/v1alpha/{parent=projects/*/locations/*}/gameServerDeployments"
-    };
-  }
-
-  // Gets details of a single game server deployment.
-  rpc GetGameServerDeployment(GetGameServerDeploymentRequest) returns (GameServerDeployment) {
-    option (google.api.http) = {
-      get: "/v1alpha/{name=projects/*/locations/*/gameServerDeployments/*}"
-    };
-  }
-
-  // Creates a new game server deployment in a given project and location.
-  rpc CreateGameServerDeployment(CreateGameServerDeploymentRequest) returns (google.longrunning.Operation) {
-    option (google.api.http) = {
-      post: "/v1alpha/{parent=projects/*/locations/*}/gameServerDeployments"
-      body: "game_server_deployment"
-    };
-  }
-
-  // Deletes a single game server deployment.
-  rpc DeleteGameServerDeployment(DeleteGameServerDeploymentRequest) returns (google.longrunning.Operation) {
-    option (google.api.http) = {
-      delete: "/v1alpha/{name=projects/*/locations/*/gameServerDeployments/*}"
-    };
-  }
-
-  // Patches a game server deployment.
-  rpc UpdateGameServerDeployment(UpdateGameServerDeploymentRequest) returns (google.longrunning.Operation) {
-    option (google.api.http) = {
-      patch: "/v1alpha/{game_server_deployment.name=projects/*/locations/*/gameServerDeployments/*}"
-      body: "game_server_deployment"
-    };
-  }
-
-  // Starts rollout of this game server deployment based on the given game
-  // server template.
-  rpc StartRollout(StartRolloutRequest) returns (google.longrunning.Operation) {
-    option (google.api.http) = {
-      post: "/v1alpha/{name=projects/*/locations/*/gameServerDeployments/*}:startRollout"
-      body: "*"
-    };
-  }
-
-  // Sets rollout target for the ongoing game server deployment rollout in the
-  // specified clusters and based on the given rollout percentage. Default is 0.
-  rpc SetRolloutTarget(SetRolloutTargetRequest) returns (google.longrunning.Operation) {
-    option (google.api.http) = {
-      post: "/v1alpha/{name=projects/*/locations/*/gameServerDeployments/*}:setRolloutTarget"
-      body: "*"
-    };
-  }
-
-  // Commits the ongoing game server deployment rollout by setting the rollout
-  // percentage to 100 in all clusters whose labels match labels in the game
-  // server template.
-  rpc CommitRollout(CommitRolloutRequest) returns (google.longrunning.Operation) {
-    option (google.api.http) = {
-      post: "/v1alpha/{name=projects/*/locations/*/gameServerDeployments/*}:commitRollout"
-      body: "*"
-    };
-  }
-
-  // Rolls back the ongoing game server deployment rollout by setting the
-  // rollout percentage to 0 in all clusters whose labels match labels in the
-  // game server template.
-  rpc RevertRollout(RevertRolloutRequest) returns (google.longrunning.Operation) {
-    option (google.api.http) = {
-      post: "/v1alpha/{name=projects/*/locations/*/gameServerDeployments/*}:revertRollout"
-      body: "*"
-    };
-  }
-
-  // Retrieves information on the rollout target of the deployment, e.g. the
-  // target percentage of game servers running stable_game_server_template and
-  // new_game_server_template in clusters.
-  rpc GetDeploymentTarget(GetDeploymentTargetRequest) returns (DeploymentTarget) {
-    option (google.api.http) = {
-      get: "/v1alpha/{name=projects/*/locations/*/gameServerDeployments/*}:getDeploymentTarget"
-    };
-  }
-}
-
 // Request message for GameServerDeploymentsService.ListGameServerDeployments.
 message ListGameServerDeploymentsRequest {
   // Required. The parent resource name, using the form:
-  // `projects/{project_id}/locations/{location}`.
-  string parent = 1;
+  // `projects/{project}/locations/{location}`.
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "gameservices.googleapis.com/GameServerDeployment"
+    }
+  ];
 
   // Optional. The maximum number of items to return.  If unspecified, server
   // will pick an appropriate default. Server may return fewer items than
   // requested. A caller should only rely on response's
   // [next_page_token][google.cloud.gaming.v1alpha.ListGameServerDeploymentsResponse.next_page_token] to
   // determine if there are more GameServerDeployments left to be queried.
-  int32 page_size = 2;
+  int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. The next_page_token value returned from a previous List request,
   // if any.
-  string page_token = 3;
+  string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. The filter to apply to list results.
-  string filter = 4;
+  string filter = 4 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Specifies the ordering of results following syntax at
   // https://cloud.google.com/apis/design/design_patterns#sorting_order.
-  string order_by = 5;
+  string order_by = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Response message for GameServerDeploymentsService.ListGameServerDeployments.
@@ -153,6 +67,12 @@ message ListGameServerDeploymentsResponse {
   // Token to retrieve the next page of results, or empty if there are no more
   // results in the list.
   string next_page_token = 2;
+
+  // List of locations that could not be reached.
+  repeated string unreachable_locations = 3 [deprecated = true];
+
+  // List of locations that were not reachable.
+  repeated string unreachable = 4;
 }
 
 // Request message for GameServerDeploymentsService.GetGameServerDeployment.
@@ -160,29 +80,59 @@ message GetGameServerDeploymentRequest {
   // Required. The name of the game server deployment to retrieve, using the
   // form:
   //
-  // `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
-  string name = 1;
+  // `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "gameservices.googleapis.com/GameServerDeployment"
+    }
+  ];
+}
+
+// Request message for
+// GameServerDeploymentsService.GetGameServerDeploymentRollout.
+message GetGameServerDeploymentRolloutRequest {
+  // Required. The name of the game server deployment to retrieve, using the
+  // form:
+  //
+  // `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "gameservices.googleapis.com/GameServerDeployment"
+    }
+  ];
 }
 
 // Request message for GameServerDeploymentsService.CreateGameServerDeployment.
 message CreateGameServerDeploymentRequest {
   // Required. The parent resource name, using the form:
-  // `projects/{project_id}/locations/{location}`.
-  string parent = 1;
+  // `projects/{project}/locations/{location}`.
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "gameservices.googleapis.com/GameServerDeployment"
+    }
+  ];
 
   // Required. The ID of the game server deployment resource to be created.
-  string deployment_id = 2;
+  string deployment_id = 2 [(google.api.field_behavior) = REQUIRED];
 
   // Required. The game server deployment resource to be created.
-  GameServerDeployment game_server_deployment = 3;
+  GameServerDeployment game_server_deployment = 3 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Request message for GameServerDeploymentsService.DeleteGameServerDeployment.
 message DeleteGameServerDeploymentRequest {
   // Required. The name of the game server deployment to delete, using the form:
   //
-  // `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
-  string name = 1;
+  // `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "gameservices.googleapis.com/GameServerDeployment"
+    }
+  ];
 }
 
 // Request message for GameServerDeploymentsService.UpdateGameServerDeployment.
@@ -190,7 +140,7 @@ message DeleteGameServerDeploymentRequest {
 message UpdateGameServerDeploymentRequest {
   // Required. The game server deployment to be updated.
   // Only fields specified in update_mask are updated.
-  GameServerDeployment game_server_deployment = 1;
+  GameServerDeployment game_server_deployment = 1 [(google.api.field_behavior) = REQUIRED];
 
   // Required. Mask of fields to update. At least one path must be supplied in
   // this field. For the `FieldMask` definition, see
@@ -198,137 +148,224 @@ message UpdateGameServerDeploymentRequest {
   // https:
   // //developers.google.com/protocol-buffers
   // // /docs/reference/google.protobuf#fieldmask
-  google.protobuf.FieldMask update_mask = 2;
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Request message for GameServerDeploymentsService.StartRollout.
-message StartRolloutRequest {
-  // Required. The name of the game server deployment, using the
-  // form:
+// Request message for
+// GameServerDeploymentsService.UpdateGameServerRolloutDeployment.
+message UpdateGameServerDeploymentRolloutRequest {
+  // Required. The game server deployment rollout to be updated.
+  // Only fields specified in update_mask are updated.
+  GameServerDeploymentRollout rollout = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Required. Mask of fields to update. At least one path must be supplied in
+  // this field. For the `FieldMask` definition, see
   //
-  // `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
-  string name = 1;
-
-  // Required. The game server template for the new rollout.
-  GameServerTemplate new_game_server_template = 2;
+  // https:
+  // //developers.google.com/protocol-buffers
+  // // /docs/reference/google.protobuf#fieldmask
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Request message for GameServerDeploymentsService.SetRolloutTarget.
-message SetRolloutTargetRequest {
-  // Required. The name of the game server deployment, using the
-  // form:
+// Request message for GameServerDeploymentsService.FetchDeploymentState.
+message FetchDeploymentStateRequest {
+  // Required. The name of the game server deployment, using the form:
   //
-  // `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
-  string name = 1;
-
-  // Required. The percentage of game servers that should run the new game
-  // server template in the specified clusters. Default is 0.
-  repeated ClusterPercentageSelector cluster_percentage_selector = 2;
+  // `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`
+  string name = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Request message for GameServerDeploymentsService.CommitRollout.
-message CommitRolloutRequest {
-  // Required. The name of the game server deployment, using the
-  // form:
-  //
-  // `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
-  string name = 1;
-}
+// Response message for GameServerDeploymentsService.FetchDeploymentState.
+message FetchDeploymentStateResponse {
+  // Details of the deployed fleet.
+  message DeployedFleetDetails {
+    // Fleet specification and details.
+    message Fleet {
+      // FleetStatus has details about the fleets like how many are running,
+      // how many allocated and so on.
+      message FleetStatus {
+        // The number of available servers.
+        // The are no players connected to this servers.
+        int64 available_count = 1;
 
-// Request message for GameServerDeploymentsService.RevertRollout.
-message RevertRolloutRequest {
-  // Required. The name of the game server deployment to deploy, using the
-  // form:
-  //
-  // `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
-  string name = 1;
-}
+        // The number of allocated servers.
+        // These are servers allocated to game sessions.
+        int64 allocated_count = 2;
 
-// Request message for GameServerDeploymentsService.GetDeploymentTarget.
-message GetDeploymentTargetRequest {
-  // Required. The name of the game server deployment, using the
-  // form:
-  //
-  // `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
-  string name = 1;
-}
+        // The number of reserved servers.
+        // Reserved instances won't be deleted on scale down, but won't cause
+        // an autoscaler to scale up.
+        int64 reserved_count = 3;
 
-// The percentage of game servers running this game server template in the
-// selected clusters.
-message ClusterPercentageSelector {
-  // Labels used to identify the clusters to which this game server template
-  // applies.
-  LabelSelector cluster_selector = 1;
+        // The total number of current GameServer replicas.
+        int64 replica_count = 4;
+      }
 
-  // The percentage of game servers running this game server depolyment. The
-  // percentage is applied to game server clusters which contain all of the
-  // labels in the cluster selector field.
-  int32 percent = 2;
-}
+      // The name of the Agones game server fleet.
+      string name = 1;
 
-// The game server spec sent to Agones and the rollout target.
-message GameServerTemplate {
-  // The description of the game server template.
-  string description = 1;
+      // The Agones fleet spec.
+      // This is sent because it is possible that we may no longer have the
+      // corresponding game server config in our systems.
+      string agones_spec = 2;
 
-  // The game server spec, which is sent to Agones.
-  string spec = 2;
+      // The cluster name.
+      string cluster = 3;
 
-  // Output only. The percentage of game servers running this game server
-  // template in the selected clusters.
-  repeated ClusterPercentageSelector cluster_percentage_selectors = 3;
+      // The source spec that is used to create the fleet.
+      // The game server config and fleet config may no longer
+      // exist in the system.
+      SpecSource spec_source = 4;
 
-  // The ID of the game server template, specified by the user.
-  string template_id = 4;
-}
+      // The current status of the fleet.
+      // Includes count of game servers in various states.
+      FleetStatus status = 5;
+    }
 
-// The rollout target of the deployment, e.g. the target percentage of game
-// servers running stable_game_server_template and new_game_server_template in
-// clusters.
-message DeploymentTarget {
-  // The rollout target of a cluster, i.e. the percentage of game servers
-  // running stable_game_server_template and new_game_server_template.
-  message ClusterRolloutTarget {
-    // The realm name.
-    string realm = 1;
+    // Details about the autoscaler.
+    message FleetAutoscaler {
+      // The name of the Agones autoscaler.
+      string autoscaler_name = 1;
 
-    // The cluster name.
-    string cluster = 2;
+      // The source spec that is used to create the autoscaler.
+      // The game server config and scaling config may no longer
+      // exist in the system.
+      SpecSource spec_source = 4;
 
-    // The desired percentage of game servers that run
-    // stable_game_server_template.
-    int32 stable_percent = 3;
+      // The autoscaler spec.
+      // This is sent because it is possible that we may no longer have the
+      // corresponding game server config in our systems.
+      string fleet_autoscaler_spec = 3;
+    }
 
-    // The desired percentage of game servers that run new_game_server_template.
-    int32 new_percent = 4;
+    // Information about the agones fleet.
+    Fleet fleet = 1;
+
+    // Information about the agones autoscaler for that fleet.
+    FleetAutoscaler autoscaler = 2;
   }
 
-  repeated ClusterRolloutTarget clusters = 1;
+  // The details of a deployment in a given location.
+  repeated DeployedFleetDetails details = 1;
+
+  // List of locations that could not be reached.
+  repeated string unavailable = 2;
 }
 
 // A game server deployment resource.
 message GameServerDeployment {
+  option (google.api.resource) = {
+    type: "gameservices.googleapis.com/GameServerDeployment"
+    pattern: "projects/{project}/locations/{location}/gameServerDeployments/{deployment}"
+  };
+
   // The resource name of the game server deployment, using the form:
   //
-  // `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`.
+  // `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
   // For example,
   //
   // `projects/my-project/locations/{location}/gameServerDeployments/my-deployment`.
   string name = 1;
 
   // Output only. The creation time.
-  google.protobuf.Timestamp create_time = 2;
+  google.protobuf.Timestamp create_time = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. The last-modified time.
-  google.protobuf.Timestamp update_time = 3;
+  google.protobuf.Timestamp update_time = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // The labels associated with this game server deployment. Each label is a
   // key-value pair.
   map<string, string> labels = 4;
 
-  // Output only. The GameServerTemplate whose rollout was completed.
-  GameServerTemplate stable_game_server_template = 5;
+  // ETag of the resource.
+  string etag = 7;
 
-  // The GameServerTemplate whose rollout is ongoing.
-  GameServerTemplate new_game_server_template = 6;
+  // Human readable description of the game server deployment.
+  string description = 8;
+}
+
+// A game server config override.
+message GameServerConfigOverride {
+  // Selector chooses the game server config targets.
+  oneof selector {
+    // Selector for choosing applicable realms.
+    RealmSelector realms_selector = 1;
+  }
+
+  // Actuator selects the game server config and how it should be applied.
+  oneof change {
+    // The game server config for this override.
+    string config_version = 100;
+  }
+}
+
+// The game server deployment rollout which represents the rollout state.
+message GameServerDeploymentRollout {
+  option (google.api.resource) = {
+    type: "gameservices.googleapis.com/GameServerDeploymentRollout"
+    pattern: "projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout"
+  };
+
+  // The resource name of the game server deployment rollout, using the form:
+  //
+  // `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
+  // For example,
+  //
+  // `projects/my-project/locations/{location}/gameServerDeployments/my-deployment/rollout`.
+  string name = 1;
+
+  // Output only. The creation time.
+  google.protobuf.Timestamp create_time = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. The last-modified time.
+  google.protobuf.Timestamp update_time = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // The default game server config points to the game server config  that is
+  // applied in all realms/clustesr. For example,
+  //
+  // `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
+  string default_game_server_config = 4;
+
+  // Contains the per game server config overrides. The overrides are processed
+  // in the order they are listed. As soon as a match is found for cluster,
+  // the rest of the list is not processed.
+  repeated GameServerConfigOverride game_server_config_overrides = 5;
+
+  // ETag of the resource.
+  string etag = 6;
+}
+
+// Request message for PreviewGameServerDeploymentRollout.
+message PreviewGameServerDeploymentRolloutRequest {
+  // Required. The game server deployment rollout to be updated.
+  // Only fields specified in update_mask are updated.
+  GameServerDeploymentRollout rollout = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. Mask of fields to update. At least one path must be supplied in
+  // this field. For the `FieldMask` definition, see
+  //
+  // https:
+  // //developers.google.com/protocol-buffers
+  // // /docs/reference/google.protobuf#fieldmask
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The instant of time at which the preview needs to be computed. If
+  // unspecified, defaults to the time after the suggested rollout finishes.
+  google.protobuf.Timestamp preview_time = 3 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Response message for PreviewGameServerDeploymentRollout.
+// This has details about the fleet and the autoscaler.
+message PreviewGameServerDeploymentRolloutResponse {
+  // The deployed state.
+  DeployedState deployed_state = 1 [deprecated = true];
+
+  // Locations that could not be reached on this request.
+  repeated string unavailable = 2;
+
+  // ETag of the game server deployment.
+  string etag = 3;
+
+  // The target state.
+  TargetState target_state = 4;
 }

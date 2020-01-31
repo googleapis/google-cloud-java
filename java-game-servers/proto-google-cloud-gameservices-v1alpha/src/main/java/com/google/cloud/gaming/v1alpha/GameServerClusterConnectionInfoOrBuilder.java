@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,32 +27,81 @@ public interface GameServerClusterConnectionInfoOrBuilder
    *
    *
    * <pre>
-   * Reference of the GKE cluster where the game servers are installed.
+   * Reference to the GKE cluster where the game servers are installed.
    * </pre>
    *
    * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
+   *
+   * @return Whether the gkeClusterReference field is set.
    */
   boolean hasGkeClusterReference();
   /**
    *
    *
    * <pre>
-   * Reference of the GKE cluster where the game servers are installed.
+   * Reference to the GKE cluster where the game servers are installed.
    * </pre>
    *
    * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
+   *
+   * @return The gkeClusterReference.
    */
   com.google.cloud.gaming.v1alpha.GkeClusterReference getGkeClusterReference();
   /**
    *
    *
    * <pre>
-   * Reference of the GKE cluster where the game servers are installed.
+   * Reference to the GKE cluster where the game servers are installed.
    * </pre>
    *
    * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
    */
   com.google.cloud.gaming.v1alpha.GkeClusterReferenceOrBuilder getGkeClusterReferenceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to an external (non-GKE) cluster registered with GKE Hub using
+   * the GKE connect agent. See
+   * https://cloud.google.com/anthos/multicluster-management/
+   * for more information about registering non-GKE clusters.
+   * </pre>
+   *
+   * <code>.google.cloud.gaming.v1alpha.GkeHubClusterReference gke_hub_cluster_reference = 8;</code>
+   *
+   * @return Whether the gkeHubClusterReference field is set.
+   */
+  boolean hasGkeHubClusterReference();
+  /**
+   *
+   *
+   * <pre>
+   * Reference to an external (non-GKE) cluster registered with GKE Hub using
+   * the GKE connect agent. See
+   * https://cloud.google.com/anthos/multicluster-management/
+   * for more information about registering non-GKE clusters.
+   * </pre>
+   *
+   * <code>.google.cloud.gaming.v1alpha.GkeHubClusterReference gke_hub_cluster_reference = 8;</code>
+   *
+   * @return The gkeHubClusterReference.
+   */
+  com.google.cloud.gaming.v1alpha.GkeHubClusterReference getGkeHubClusterReference();
+  /**
+   *
+   *
+   * <pre>
+   * Reference to an external (non-GKE) cluster registered with GKE Hub using
+   * the GKE connect agent. See
+   * https://cloud.google.com/anthos/multicluster-management/
+   * for more information about registering non-GKE clusters.
+   * </pre>
+   *
+   * <code>.google.cloud.gaming.v1alpha.GkeHubClusterReference gke_hub_cluster_reference = 8;</code>
+   */
+  com.google.cloud.gaming.v1alpha.GkeHubClusterReferenceOrBuilder
+      getGkeHubClusterReferenceOrBuilder();
 
   /**
    *
@@ -64,6 +113,8 @@ public interface GameServerClusterConnectionInfoOrBuilder
    * </pre>
    *
    * <code>string namespace = 5;</code>
+   *
+   * @return The namespace.
    */
   java.lang.String getNamespace();
   /**
@@ -76,37 +127,10 @@ public interface GameServerClusterConnectionInfoOrBuilder
    * </pre>
    *
    * <code>string namespace = 5;</code>
+   *
+   * @return The bytes for namespace.
    */
   com.google.protobuf.ByteString getNamespaceBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Deprecated. Use cluster instead.
-   * This is the gkeName where the game server cluster is installed.
-   * It must the format "projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;". For example,
-   * "projects/my-project/locations/us-central1/clusters/test".
-   * </pre>
-   *
-   * <code>string gke_name = 6 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated
-  java.lang.String getGkeName();
-  /**
-   *
-   *
-   * <pre>
-   * Deprecated. Use cluster instead.
-   * This is the gkeName where the game server cluster is installed.
-   * It must the format "projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;". For example,
-   * "projects/my-project/locations/us-central1/clusters/test".
-   * </pre>
-   *
-   * <code>string gke_name = 6 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated
-  com.google.protobuf.ByteString getGkeNameBytes();
 
   public com.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfo.ClusterReferenceCase
       getClusterReferenceCase();

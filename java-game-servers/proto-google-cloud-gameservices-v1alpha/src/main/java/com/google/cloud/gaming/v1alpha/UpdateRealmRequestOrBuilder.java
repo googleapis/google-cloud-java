@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,10 @@ public interface UpdateRealmRequestOrBuilder
    * Only fields specified in update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.Realm realm = 1;</code>
+   * <code>.google.cloud.gaming.v1alpha.Realm realm = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the realm field is set.
    */
   boolean hasRealm();
   /**
@@ -42,7 +45,10 @@ public interface UpdateRealmRequestOrBuilder
    * Only fields specified in update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.Realm realm = 1;</code>
+   * <code>.google.cloud.gaming.v1alpha.Realm realm = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The realm.
    */
   com.google.cloud.gaming.v1alpha.Realm getRealm();
   /**
@@ -53,7 +59,8 @@ public interface UpdateRealmRequestOrBuilder
    * Only fields specified in update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.Realm realm = 1;</code>
+   * <code>.google.cloud.gaming.v1alpha.Realm realm = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.gaming.v1alpha.RealmOrBuilder getRealmOrBuilder();
 
@@ -68,7 +75,10 @@ public interface UpdateRealmRequestOrBuilder
    * // /docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -82,7 +92,10 @@ public interface UpdateRealmRequestOrBuilder
    * // /docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -96,7 +109,8 @@ public interface UpdateRealmRequestOrBuilder
    * // /docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

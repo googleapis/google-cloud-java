@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,10 @@ public final class GameServerDeployments {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gaming_v1alpha_GetGameServerDeploymentRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_GetGameServerDeploymentRolloutRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_GetGameServerDeploymentRolloutRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gaming_v1alpha_CreateGameServerDeploymentRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gaming_v1alpha_CreateGameServerDeploymentRequest_fieldAccessorTable;
@@ -52,41 +56,33 @@ public final class GameServerDeployments {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gaming_v1alpha_UpdateGameServerDeploymentRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_gaming_v1alpha_StartRolloutRequest_descriptor;
+      internal_static_google_cloud_gaming_v1alpha_UpdateGameServerDeploymentRolloutRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_gaming_v1alpha_StartRolloutRequest_fieldAccessorTable;
+      internal_static_google_cloud_gaming_v1alpha_UpdateGameServerDeploymentRolloutRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_gaming_v1alpha_SetRolloutTargetRequest_descriptor;
+      internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_gaming_v1alpha_SetRolloutTargetRequest_fieldAccessorTable;
+      internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_gaming_v1alpha_CommitRolloutRequest_descriptor;
+      internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_gaming_v1alpha_CommitRolloutRequest_fieldAccessorTable;
+      internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_gaming_v1alpha_RevertRolloutRequest_descriptor;
+      internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_gaming_v1alpha_RevertRolloutRequest_fieldAccessorTable;
+      internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_gaming_v1alpha_GetDeploymentTargetRequest_descriptor;
+      internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_Fleet_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_gaming_v1alpha_GetDeploymentTargetRequest_fieldAccessorTable;
+      internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_Fleet_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_gaming_v1alpha_ClusterPercentageSelector_descriptor;
+      internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_Fleet_FleetStatus_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_gaming_v1alpha_ClusterPercentageSelector_fieldAccessorTable;
+      internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_Fleet_FleetStatus_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_gaming_v1alpha_GameServerTemplate_descriptor;
+      internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_FleetAutoscaler_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_gaming_v1alpha_GameServerTemplate_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_gaming_v1alpha_DeploymentTarget_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_gaming_v1alpha_DeploymentTarget_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_gaming_v1alpha_DeploymentTarget_ClusterRolloutTarget_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_gaming_v1alpha_DeploymentTarget_ClusterRolloutTarget_fieldAccessorTable;
+      internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_FleetAutoscaler_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gaming_v1alpha_GameServerDeployment_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -95,6 +91,22 @@ public final class GameServerDeployments {
       internal_static_google_cloud_gaming_v1alpha_GameServerDeployment_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gaming_v1alpha_GameServerDeployment_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_GameServerConfigOverride_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_GameServerConfigOverride_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_GameServerDeploymentRollout_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_GameServerDeploymentRollout_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_PreviewGameServerDeploymentRolloutRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_PreviewGameServerDeploymentRolloutRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_PreviewGameServerDeploymentRolloutResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_PreviewGameServerDeploymentRolloutResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -106,140 +118,120 @@ public final class GameServerDeployments {
     java.lang.String[] descriptorData = {
       "\n9google/cloud/gaming/v1alpha/game_serve"
           + "r_deployments.proto\022\033google.cloud.gaming"
-          + ".v1alpha\032\034google/api/annotations.proto\032("
-          + "google/cloud/gaming/v1alpha/common.proto"
-          + "\032#google/longrunning/operations.proto\032 g"
-          + "oogle/protobuf/field_mask.proto\032\037google/"
-          + "protobuf/timestamp.proto\032\027google/api/cli"
-          + "ent.proto\"{\n ListGameServerDeploymentsRe"
-          + "quest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005"
-          + "\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010"
-          + "order_by\030\005 \001(\t\"\220\001\n!ListGameServerDeploym"
-          + "entsResponse\022R\n\027game_server_deployments\030"
-          + "\001 \003(\01321.google.cloud.gaming.v1alpha.Game"
-          + "ServerDeployment\022\027\n\017next_page_token\030\002 \001("
-          + "\t\".\n\036GetGameServerDeploymentRequest\022\014\n\004n"
-          + "ame\030\001 \001(\t\"\235\001\n!CreateGameServerDeployment"
-          + "Request\022\016\n\006parent\030\001 \001(\t\022\025\n\rdeployment_id"
-          + "\030\002 \001(\t\022Q\n\026game_server_deployment\030\003 \001(\01321"
-          + ".google.cloud.gaming.v1alpha.GameServerD"
-          + "eployment\"1\n!DeleteGameServerDeploymentR"
-          + "equest\022\014\n\004name\030\001 \001(\t\"\247\001\n!UpdateGameServe"
-          + "rDeploymentRequest\022Q\n\026game_server_deploy"
-          + "ment\030\001 \001(\01321.google.cloud.gaming.v1alpha"
-          + ".GameServerDeployment\022/\n\013update_mask\030\002 \001"
-          + "(\0132\032.google.protobuf.FieldMask\"v\n\023StartR"
-          + "olloutRequest\022\014\n\004name\030\001 \001(\t\022Q\n\030new_game_"
-          + "server_template\030\002 \001(\0132/.google.cloud.gam"
-          + "ing.v1alpha.GameServerTemplate\"\204\001\n\027SetRo"
-          + "lloutTargetRequest\022\014\n\004name\030\001 \001(\t\022[\n\033clus"
-          + "ter_percentage_selector\030\002 \003(\01326.google.c"
-          + "loud.gaming.v1alpha.ClusterPercentageSel"
-          + "ector\"$\n\024CommitRolloutRequest\022\014\n\004name\030\001 "
-          + "\001(\t\"$\n\024RevertRolloutRequest\022\014\n\004name\030\001 \001("
-          + "\t\"*\n\032GetDeploymentTargetRequest\022\014\n\004name\030"
-          + "\001 \001(\t\"r\n\031ClusterPercentageSelector\022D\n\020cl"
-          + "uster_selector\030\001 \001(\0132*.google.cloud.gami"
-          + "ng.v1alpha.LabelSelector\022\017\n\007percent\030\002 \001("
-          + "\005\"\252\001\n\022GameServerTemplate\022\023\n\013description\030"
-          + "\001 \001(\t\022\014\n\004spec\030\002 \001(\t\022\\\n\034cluster_percentag"
-          + "e_selectors\030\003 \003(\01326.google.cloud.gaming."
-          + "v1alpha.ClusterPercentageSelector\022\023\n\013tem"
-          + "plate_id\030\004 \001(\t\"\315\001\n\020DeploymentTarget\022T\n\010c"
-          + "lusters\030\001 \003(\0132B.google.cloud.gaming.v1al"
-          + "pha.DeploymentTarget.ClusterRolloutTarge"
-          + "t\032c\n\024ClusterRolloutTarget\022\r\n\005realm\030\001 \001(\t"
-          + "\022\017\n\007cluster\030\002 \001(\t\022\026\n\016stable_percent\030\003 \001("
-          + "\005\022\023\n\013new_percent\030\004 \001(\005\"\255\003\n\024GameServerDep"
-          + "loyment\022\014\n\004name\030\001 \001(\t\022/\n\013create_time\030\002 \001"
-          + "(\0132\032.google.protobuf.Timestamp\022/\n\013update"
-          + "_time\030\003 \001(\0132\032.google.protobuf.Timestamp\022"
-          + "M\n\006labels\030\004 \003(\0132=.google.cloud.gaming.v1"
-          + "alpha.GameServerDeployment.LabelsEntry\022T"
-          + "\n\033stable_game_server_template\030\005 \001(\0132/.go"
-          + "ogle.cloud.gaming.v1alpha.GameServerTemp"
-          + "late\022Q\n\030new_game_server_template\030\006 \001(\0132/"
-          + ".google.cloud.gaming.v1alpha.GameServerT"
-          + "emplate\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
-          + "alue\030\002 \001(\t:\0028\0012\227\021\n\034GameServerDeployments"
-          + "Service\022\342\001\n\031ListGameServerDeployments\022=."
-          + "google.cloud.gaming.v1alpha.ListGameServ"
-          + "erDeploymentsRequest\032>.google.cloud.gami"
-          + "ng.v1alpha.ListGameServerDeploymentsResp"
-          + "onse\"F\202\323\344\223\002@\022>/v1alpha/{parent=projects/"
-          + "*/locations/*}/gameServerDeployments\022\321\001\n"
-          + "\027GetGameServerDeployment\022;.google.cloud."
-          + "gaming.v1alpha.GetGameServerDeploymentRe"
-          + "quest\0321.google.cloud.gaming.v1alpha.Game"
-          + "ServerDeployment\"F\202\323\344\223\002@\022>/v1alpha/{name"
-          + "=projects/*/locations/*/gameServerDeploy"
-          + "ments/*}\022\333\001\n\032CreateGameServerDeployment\022"
-          + ">.google.cloud.gaming.v1alpha.CreateGame"
-          + "ServerDeploymentRequest\032\035.google.longrun"
-          + "ning.Operation\"^\202\323\344\223\002X\">/v1alpha/{parent"
-          + "=projects/*/locations/*}/gameServerDeplo"
-          + "yments:\026game_server_deployment\022\303\001\n\032Delet"
-          + "eGameServerDeployment\022>.google.cloud.gam"
-          + "ing.v1alpha.DeleteGameServerDeploymentRe"
-          + "quest\032\035.google.longrunning.Operation\"F\202\323"
-          + "\344\223\002@*>/v1alpha/{name=projects/*/location"
-          + "s/*/gameServerDeployments/*}\022\362\001\n\032UpdateG"
-          + "ameServerDeployment\022>.google.cloud.gamin"
-          + "g.v1alpha.UpdateGameServerDeploymentRequ"
-          + "est\032\035.google.longrunning.Operation\"u\202\323\344\223"
-          + "\002o2U/v1alpha/{game_server_deployment.nam"
-          + "e=projects/*/locations/*/gameServerDeplo"
-          + "yments/*}:\026game_server_deployment\022\267\001\n\014St"
-          + "artRollout\0220.google.cloud.gaming.v1alpha"
-          + ".StartRolloutRequest\032\035.google.longrunnin"
-          + "g.Operation\"V\202\323\344\223\002P\"K/v1alpha/{name=proj"
-          + "ects/*/locations/*/gameServerDeployments"
-          + "/*}:startRollout:\001*\022\303\001\n\020SetRolloutTarget"
-          + "\0224.google.cloud.gaming.v1alpha.SetRollou"
-          + "tTargetRequest\032\035.google.longrunning.Oper"
-          + "ation\"Z\202\323\344\223\002T\"O/v1alpha/{name=projects/*"
-          + "/locations/*/gameServerDeployments/*}:se"
-          + "tRolloutTarget:\001*\022\272\001\n\rCommitRollout\0221.go"
-          + "ogle.cloud.gaming.v1alpha.CommitRolloutR"
-          + "equest\032\035.google.longrunning.Operation\"W\202"
-          + "\323\344\223\002Q\"L/v1alpha/{name=projects/*/locatio"
-          + "ns/*/gameServerDeployments/*}:commitRoll"
-          + "out:\001*\022\272\001\n\rRevertRollout\0221.google.cloud."
-          + "gaming.v1alpha.RevertRolloutRequest\032\035.go"
-          + "ogle.longrunning.Operation\"W\202\323\344\223\002Q\"L/v1a"
-          + "lpha/{name=projects/*/locations/*/gameSe"
-          + "rverDeployments/*}:revertRollout:\001*\022\331\001\n\023"
-          + "GetDeploymentTarget\0227.google.cloud.gamin"
-          + "g.v1alpha.GetDeploymentTargetRequest\032-.g"
-          + "oogle.cloud.gaming.v1alpha.DeploymentTar"
-          + "get\"Z\202\323\344\223\002T\022R/v1alpha/{name=projects/*/l"
-          + "ocations/*/gameServerDeployments/*}:getD"
-          + "eploymentTarget\032O\312A\033gameservices.googlea"
-          + "pis.com\322A.https://www.googleapis.com/aut"
-          + "h/cloud-platformBf\n\037com.google.cloud.gam"
-          + "ing.v1alphaP\001ZAgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/gaming/v1alpha;gaming"
-          + "b\006proto3"
+          + ".v1alpha\032\037google/api/field_behavior.prot"
+          + "o\032\031google/api/resource.proto\032(google/clo"
+          + "ud/gaming/v1alpha/common.proto\032 google/p"
+          + "rotobuf/field_mask.proto\032\037google/protobu"
+          + "f/timestamp.proto\032\034google/api/annotation"
+          + "s.proto\"\311\001\n ListGameServerDeploymentsReq"
+          + "uest\022H\n\006parent\030\001 \001(\tB8\340A\002\372A2\n0gameservic"
+          + "es.googleapis.com/GameServerDeployment\022\026"
+          + "\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001"
+          + "(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by"
+          + "\030\005 \001(\tB\003\340A\001\"\310\001\n!ListGameServerDeployment"
+          + "sResponse\022R\n\027game_server_deployments\030\001 \003"
+          + "(\01321.google.cloud.gaming.v1alpha.GameSer"
+          + "verDeployment\022\027\n\017next_page_token\030\002 \001(\t\022!"
+          + "\n\025unreachable_locations\030\003 \003(\tB\002\030\001\022\023\n\013unr"
+          + "eachable\030\004 \003(\t\"h\n\036GetGameServerDeploymen"
+          + "tRequest\022F\n\004name\030\001 \001(\tB8\340A\002\372A2\n0gameserv"
+          + "ices.googleapis.com/GameServerDeployment"
+          + "\"o\n%GetGameServerDeploymentRolloutReques"
+          + "t\022F\n\004name\030\001 \001(\tB8\340A\002\372A2\n0gameservices.go"
+          + "ogleapis.com/GameServerDeployment\"\341\001\n!Cr"
+          + "eateGameServerDeploymentRequest\022H\n\006paren"
+          + "t\030\001 \001(\tB8\340A\002\372A2\n0gameservices.googleapis"
+          + ".com/GameServerDeployment\022\032\n\rdeployment_"
+          + "id\030\002 \001(\tB\003\340A\002\022V\n\026game_server_deployment\030"
+          + "\003 \001(\01321.google.cloud.gaming.v1alpha.Game"
+          + "ServerDeploymentB\003\340A\002\"k\n!DeleteGameServe"
+          + "rDeploymentRequest\022F\n\004name\030\001 \001(\tB8\340A\002\372A2"
+          + "\n0gameservices.googleapis.com/GameServer"
+          + "Deployment\"\261\001\n!UpdateGameServerDeploymen"
+          + "tRequest\022V\n\026game_server_deployment\030\001 \001(\013"
+          + "21.google.cloud.gaming.v1alpha.GameServe"
+          + "rDeploymentB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032."
+          + "google.protobuf.FieldMaskB\003\340A\002\"\260\001\n(Updat"
+          + "eGameServerDeploymentRolloutRequest\022N\n\007r"
+          + "ollout\030\001 \001(\01328.google.cloud.gaming.v1alp"
+          + "ha.GameServerDeploymentRolloutB\003\340A\002\0224\n\013u"
+          + "pdate_mask\030\002 \001(\0132\032.google.protobuf.Field"
+          + "MaskB\003\340A\002\"0\n\033FetchDeploymentStateRequest"
+          + "\022\021\n\004name\030\001 \001(\tB\003\340A\002\"\356\006\n\034FetchDeploymentS"
+          + "tateResponse\022_\n\007details\030\001 \003(\0132N.google.c"
+          + "loud.gaming.v1alpha.FetchDeploymentState"
+          + "Response.DeployedFleetDetails\022\023\n\013unavail"
+          + "able\030\002 \003(\t\032\327\005\n\024DeployedFleetDetails\022c\n\005f"
+          + "leet\030\001 \001(\0132T.google.cloud.gaming.v1alpha"
+          + ".FetchDeploymentStateResponse.DeployedFl"
+          + "eetDetails.Fleet\022r\n\nautoscaler\030\002 \001(\0132^.g"
+          + "oogle.cloud.gaming.v1alpha.FetchDeployme"
+          + "ntStateResponse.DeployedFleetDetails.Fle"
+          + "etAutoscaler\032\333\002\n\005Fleet\022\014\n\004name\030\001 \001(\t\022\023\n\013"
+          + "agones_spec\030\002 \001(\t\022\017\n\007cluster\030\003 \001(\t\022<\n\013sp"
+          + "ec_source\030\004 \001(\0132\'.google.cloud.gaming.v1"
+          + "alpha.SpecSource\022p\n\006status\030\005 \001(\0132`.googl"
+          + "e.cloud.gaming.v1alpha.FetchDeploymentSt"
+          + "ateResponse.DeployedFleetDetails.Fleet.F"
+          + "leetStatus\032n\n\013FleetStatus\022\027\n\017available_c"
+          + "ount\030\001 \001(\003\022\027\n\017allocated_count\030\002 \001(\003\022\026\n\016r"
+          + "eserved_count\030\003 \001(\003\022\025\n\rreplica_count\030\004 \001"
+          + "(\003\032\207\001\n\017FleetAutoscaler\022\027\n\017autoscaler_nam"
+          + "e\030\001 \001(\t\022<\n\013spec_source\030\004 \001(\0132\'.google.cl"
+          + "oud.gaming.v1alpha.SpecSource\022\035\n\025fleet_a"
+          + "utoscaler_spec\030\003 \001(\t\"\265\003\n\024GameServerDeplo"
+          + "yment\022\014\n\004name\030\001 \001(\t\0224\n\013create_time\030\002 \001(\013"
+          + "2\032.google.protobuf.TimestampB\003\340A\003\0224\n\013upd"
+          + "ate_time\030\003 \001(\0132\032.google.protobuf.Timesta"
+          + "mpB\003\340A\003\022M\n\006labels\030\004 \003(\0132=.google.cloud.g"
+          + "aming.v1alpha.GameServerDeployment.Label"
+          + "sEntry\022\014\n\004etag\030\007 \001(\t\022\023\n\013description\030\010 \001("
+          + "\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
+          + " \001(\t:\0028\001:\201\001\352A~\n0gameservices.googleapis."
+          + "com/GameServerDeployment\022Jprojects/{proj"
+          + "ect}/locations/{location}/gameServerDepl"
+          + "oyments/{deployment}\"\221\001\n\030GameServerConfi"
+          + "gOverride\022E\n\017realms_selector\030\001 \001(\0132*.goo"
+          + "gle.cloud.gaming.v1alpha.RealmSelectorH\000"
+          + "\022\030\n\016config_version\030d \001(\tH\001B\n\n\010selectorB\010"
+          + "\n\006change\"\272\003\n\033GameServerDeploymentRollout"
+          + "\022\014\n\004name\030\001 \001(\t\0224\n\013create_time\030\002 \001(\0132\032.go"
+          + "ogle.protobuf.TimestampB\003\340A\003\0224\n\013update_t"
+          + "ime\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340"
+          + "A\003\022\"\n\032default_game_server_config\030\004 \001(\t\022["
+          + "\n\034game_server_config_overrides\030\005 \003(\01325.g"
+          + "oogle.cloud.gaming.v1alpha.GameServerCon"
+          + "figOverride\022\014\n\004etag\030\006 \001(\t:\221\001\352A\215\001\n7gamese"
+          + "rvices.googleapis.com/GameServerDeployme"
+          + "ntRollout\022Rprojects/{project}/locations/"
+          + "{location}/gameServerDeployments/{deploy"
+          + "ment}/rollout\"\350\001\n)PreviewGameServerDeplo"
+          + "ymentRolloutRequest\022N\n\007rollout\030\001 \001(\01328.g"
+          + "oogle.cloud.gaming.v1alpha.GameServerDep"
+          + "loymentRolloutB\003\340A\002\0224\n\013update_mask\030\002 \001(\013"
+          + "2\032.google.protobuf.FieldMaskB\003\340A\001\0225\n\014pre"
+          + "view_time\030\003 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\001\"\327\001\n*PreviewGameServerDeployment"
+          + "RolloutResponse\022F\n\016deployed_state\030\001 \001(\0132"
+          + "*.google.cloud.gaming.v1alpha.DeployedSt"
+          + "ateB\002\030\001\022\023\n\013unavailable\030\002 \003(\t\022\014\n\004etag\030\003 \001"
+          + "(\t\022>\n\014target_state\030\004 \001(\0132(.google.cloud."
+          + "gaming.v1alpha.TargetStateBf\n\037com.google"
+          + ".cloud.gaming.v1alphaP\001ZAgoogle.golang.o"
+          + "rg/genproto/googleapis/cloud/gaming/v1al"
+          + "pha;gamingb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.cloud.gaming.v1alpha.Common.getDescriptor(),
-          com.google.longrunning.OperationsProto.getDescriptor(),
-          com.google.protobuf.FieldMaskProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.api.ClientProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.gaming.v1alpha.Common.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
+            });
     internal_static_google_cloud_gaming_v1alpha_ListGameServerDeploymentsRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_gaming_v1alpha_ListGameServerDeploymentsRequest_fieldAccessorTable =
@@ -254,7 +246,7 @@ public final class GameServerDeployments {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gaming_v1alpha_ListGameServerDeploymentsResponse_descriptor,
             new java.lang.String[] {
-              "GameServerDeployments", "NextPageToken",
+              "GameServerDeployments", "NextPageToken", "UnreachableLocations", "Unreachable",
             });
     internal_static_google_cloud_gaming_v1alpha_GetGameServerDeploymentRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -264,8 +256,16 @@ public final class GameServerDeployments {
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_gaming_v1alpha_CreateGameServerDeploymentRequest_descriptor =
+    internal_static_google_cloud_gaming_v1alpha_GetGameServerDeploymentRolloutRequest_descriptor =
         getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_gaming_v1alpha_GetGameServerDeploymentRolloutRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_GetGameServerDeploymentRolloutRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_gaming_v1alpha_CreateGameServerDeploymentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_gaming_v1alpha_CreateGameServerDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gaming_v1alpha_CreateGameServerDeploymentRequest_descriptor,
@@ -273,7 +273,7 @@ public final class GameServerDeployments {
               "Parent", "DeploymentId", "GameServerDeployment",
             });
     internal_static_google_cloud_gaming_v1alpha_DeleteGameServerDeploymentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_gaming_v1alpha_DeleteGameServerDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gaming_v1alpha_DeleteGameServerDeploymentRequest_descriptor,
@@ -281,99 +281,84 @@ public final class GameServerDeployments {
               "Name",
             });
     internal_static_google_cloud_gaming_v1alpha_UpdateGameServerDeploymentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_gaming_v1alpha_UpdateGameServerDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gaming_v1alpha_UpdateGameServerDeploymentRequest_descriptor,
             new java.lang.String[] {
               "GameServerDeployment", "UpdateMask",
             });
-    internal_static_google_cloud_gaming_v1alpha_StartRolloutRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
-    internal_static_google_cloud_gaming_v1alpha_StartRolloutRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_gaming_v1alpha_StartRolloutRequest_descriptor,
-            new java.lang.String[] {
-              "Name", "NewGameServerTemplate",
-            });
-    internal_static_google_cloud_gaming_v1alpha_SetRolloutTargetRequest_descriptor =
+    internal_static_google_cloud_gaming_v1alpha_UpdateGameServerDeploymentRolloutRequest_descriptor =
         getDescriptor().getMessageTypes().get(7);
-    internal_static_google_cloud_gaming_v1alpha_SetRolloutTargetRequest_fieldAccessorTable =
+    internal_static_google_cloud_gaming_v1alpha_UpdateGameServerDeploymentRolloutRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_gaming_v1alpha_SetRolloutTargetRequest_descriptor,
+            internal_static_google_cloud_gaming_v1alpha_UpdateGameServerDeploymentRolloutRequest_descriptor,
             new java.lang.String[] {
-              "Name", "ClusterPercentageSelector",
+              "Rollout", "UpdateMask",
             });
-    internal_static_google_cloud_gaming_v1alpha_CommitRolloutRequest_descriptor =
+    internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateRequest_descriptor =
         getDescriptor().getMessageTypes().get(8);
-    internal_static_google_cloud_gaming_v1alpha_CommitRolloutRequest_fieldAccessorTable =
+    internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_gaming_v1alpha_CommitRolloutRequest_descriptor,
+            internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_gaming_v1alpha_RevertRolloutRequest_descriptor =
+    internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_descriptor =
         getDescriptor().getMessageTypes().get(9);
-    internal_static_google_cloud_gaming_v1alpha_RevertRolloutRequest_fieldAccessorTable =
+    internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_gaming_v1alpha_RevertRolloutRequest_descriptor,
+            internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Details", "Unavailable",
             });
-    internal_static_google_cloud_gaming_v1alpha_GetDeploymentTargetRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
-    internal_static_google_cloud_gaming_v1alpha_GetDeploymentTargetRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_gaming_v1alpha_GetDeploymentTargetRequest_descriptor,
-            new java.lang.String[] {
-              "Name",
-            });
-    internal_static_google_cloud_gaming_v1alpha_ClusterPercentageSelector_descriptor =
-        getDescriptor().getMessageTypes().get(11);
-    internal_static_google_cloud_gaming_v1alpha_ClusterPercentageSelector_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_gaming_v1alpha_ClusterPercentageSelector_descriptor,
-            new java.lang.String[] {
-              "ClusterSelector", "Percent",
-            });
-    internal_static_google_cloud_gaming_v1alpha_GameServerTemplate_descriptor =
-        getDescriptor().getMessageTypes().get(12);
-    internal_static_google_cloud_gaming_v1alpha_GameServerTemplate_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_gaming_v1alpha_GameServerTemplate_descriptor,
-            new java.lang.String[] {
-              "Description", "Spec", "ClusterPercentageSelectors", "TemplateId",
-            });
-    internal_static_google_cloud_gaming_v1alpha_DeploymentTarget_descriptor =
-        getDescriptor().getMessageTypes().get(13);
-    internal_static_google_cloud_gaming_v1alpha_DeploymentTarget_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_gaming_v1alpha_DeploymentTarget_descriptor,
-            new java.lang.String[] {
-              "Clusters",
-            });
-    internal_static_google_cloud_gaming_v1alpha_DeploymentTarget_ClusterRolloutTarget_descriptor =
-        internal_static_google_cloud_gaming_v1alpha_DeploymentTarget_descriptor
+    internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_descriptor =
+        internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_descriptor
             .getNestedTypes()
             .get(0);
-    internal_static_google_cloud_gaming_v1alpha_DeploymentTarget_ClusterRolloutTarget_fieldAccessorTable =
+    internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_gaming_v1alpha_DeploymentTarget_ClusterRolloutTarget_descriptor,
+            internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_descriptor,
             new java.lang.String[] {
-              "Realm", "Cluster", "StablePercent", "NewPercent",
+              "Fleet", "Autoscaler",
+            });
+    internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_Fleet_descriptor =
+        internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_Fleet_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_Fleet_descriptor,
+            new java.lang.String[] {
+              "Name", "AgonesSpec", "Cluster", "SpecSource", "Status",
+            });
+    internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_Fleet_FleetStatus_descriptor =
+        internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_Fleet_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_Fleet_FleetStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_Fleet_FleetStatus_descriptor,
+            new java.lang.String[] {
+              "AvailableCount", "AllocatedCount", "ReservedCount", "ReplicaCount",
+            });
+    internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_FleetAutoscaler_descriptor =
+        internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_FleetAutoscaler_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_FetchDeploymentStateResponse_DeployedFleetDetails_FleetAutoscaler_descriptor,
+            new java.lang.String[] {
+              "AutoscalerName", "SpecSource", "FleetAutoscalerSpec",
             });
     internal_static_google_cloud_gaming_v1alpha_GameServerDeployment_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_gaming_v1alpha_GameServerDeployment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gaming_v1alpha_GameServerDeployment_descriptor,
             new java.lang.String[] {
-              "Name",
-              "CreateTime",
-              "UpdateTime",
-              "Labels",
-              "StableGameServerTemplate",
-              "NewGameServerTemplate",
+              "Name", "CreateTime", "UpdateTime", "Labels", "Etag", "Description",
             });
     internal_static_google_cloud_gaming_v1alpha_GameServerDeployment_LabelsEntry_descriptor =
         internal_static_google_cloud_gaming_v1alpha_GameServerDeployment_descriptor
@@ -385,19 +370,56 @@ public final class GameServerDeployments {
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_gaming_v1alpha_GameServerConfigOverride_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_gaming_v1alpha_GameServerConfigOverride_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_GameServerConfigOverride_descriptor,
+            new java.lang.String[] {
+              "RealmsSelector", "ConfigVersion", "Selector", "Change",
+            });
+    internal_static_google_cloud_gaming_v1alpha_GameServerDeploymentRollout_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_gaming_v1alpha_GameServerDeploymentRollout_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_GameServerDeploymentRollout_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "CreateTime",
+              "UpdateTime",
+              "DefaultGameServerConfig",
+              "GameServerConfigOverrides",
+              "Etag",
+            });
+    internal_static_google_cloud_gaming_v1alpha_PreviewGameServerDeploymentRolloutRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_gaming_v1alpha_PreviewGameServerDeploymentRolloutRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_PreviewGameServerDeploymentRolloutRequest_descriptor,
+            new java.lang.String[] {
+              "Rollout", "UpdateMask", "PreviewTime",
+            });
+    internal_static_google_cloud_gaming_v1alpha_PreviewGameServerDeploymentRolloutResponse_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_gaming_v1alpha_PreviewGameServerDeploymentRolloutResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_PreviewGameServerDeploymentRolloutResponse_descriptor,
+            new java.lang.String[] {
+              "DeployedState", "Unavailable", "Etag", "TargetState",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.api.ClientProto.defaultHost);
-    registry.add(com.google.api.AnnotationsProto.http);
-    registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.gaming.v1alpha.Common.getDescriptor();
-    com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,6 +111,12 @@ public class RealmsServiceSettings extends ClientSettings<RealmsServiceSettings>
       "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateRealmRequest, Realm, Empty> updateRealmOperationSettings() {
     return ((RealmsServiceStubSettings) getStubSettings()).updateRealmOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to previewRealmUpdate. */
+  public UnaryCallSettings<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
+      previewRealmUpdateSettings() {
+    return ((RealmsServiceStubSettings) getStubSettings()).previewRealmUpdateSettings();
   }
 
   public static final RealmsServiceSettings create(RealmsServiceStubSettings stub)
@@ -258,6 +264,12 @@ public class RealmsServiceSettings extends ClientSettings<RealmsServiceSettings>
     public OperationCallSettings.Builder<UpdateRealmRequest, Realm, Empty>
         updateRealmOperationSettings() {
       return getStubSettingsBuilder().updateRealmOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to previewRealmUpdate. */
+    public UnaryCallSettings.Builder<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
+        previewRealmUpdateSettings() {
+      return getStubSettingsBuilder().previewRealmUpdateSettings();
     }
 
     @Override

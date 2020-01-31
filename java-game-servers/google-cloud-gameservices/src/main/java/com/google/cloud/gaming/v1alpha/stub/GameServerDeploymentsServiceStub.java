@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,19 +21,20 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.gaming.v1alpha.CommitRolloutRequest;
 import com.google.cloud.gaming.v1alpha.CreateGameServerDeploymentRequest;
 import com.google.cloud.gaming.v1alpha.DeleteGameServerDeploymentRequest;
-import com.google.cloud.gaming.v1alpha.DeploymentTarget;
+import com.google.cloud.gaming.v1alpha.FetchDeploymentStateRequest;
+import com.google.cloud.gaming.v1alpha.FetchDeploymentStateResponse;
 import com.google.cloud.gaming.v1alpha.GameServerDeployment;
-import com.google.cloud.gaming.v1alpha.GetDeploymentTargetRequest;
+import com.google.cloud.gaming.v1alpha.GameServerDeploymentRollout;
 import com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRequest;
+import com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRolloutRequest;
 import com.google.cloud.gaming.v1alpha.ListGameServerDeploymentsRequest;
 import com.google.cloud.gaming.v1alpha.ListGameServerDeploymentsResponse;
-import com.google.cloud.gaming.v1alpha.RevertRolloutRequest;
-import com.google.cloud.gaming.v1alpha.SetRolloutTargetRequest;
-import com.google.cloud.gaming.v1alpha.StartRolloutRequest;
+import com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutRequest;
+import com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutResponse;
 import com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRequest;
+import com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRolloutRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -109,48 +110,28 @@ public abstract class GameServerDeploymentsServiceStub implements BackgroundReso
         "Not implemented: updateGameServerDeploymentCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<StartRolloutRequest, GameServerDeployment, Empty>
-      startRolloutOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: startRolloutOperationCallable()");
+  public UnaryCallable<GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
+      getGameServerDeploymentRolloutCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getGameServerDeploymentRolloutCallable()");
   }
 
-  public UnaryCallable<StartRolloutRequest, Operation> startRolloutCallable() {
-    throw new UnsupportedOperationException("Not implemented: startRolloutCallable()");
+  public UnaryCallable<UpdateGameServerDeploymentRolloutRequest, Operation>
+      updateGameServerDeploymentRolloutCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateGameServerDeploymentRolloutCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<SetRolloutTargetRequest, GameServerDeployment, Empty>
-      setRolloutTargetOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: setRolloutTargetOperationCallable()");
+  public UnaryCallable<
+          PreviewGameServerDeploymentRolloutRequest, PreviewGameServerDeploymentRolloutResponse>
+      previewGameServerDeploymentRolloutCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: previewGameServerDeploymentRolloutCallable()");
   }
 
-  public UnaryCallable<SetRolloutTargetRequest, Operation> setRolloutTargetCallable() {
-    throw new UnsupportedOperationException("Not implemented: setRolloutTargetCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CommitRolloutRequest, GameServerDeployment, Empty>
-      commitRolloutOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: commitRolloutOperationCallable()");
-  }
-
-  public UnaryCallable<CommitRolloutRequest, Operation> commitRolloutCallable() {
-    throw new UnsupportedOperationException("Not implemented: commitRolloutCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<RevertRolloutRequest, GameServerDeployment, Empty>
-      revertRolloutOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: revertRolloutOperationCallable()");
-  }
-
-  public UnaryCallable<RevertRolloutRequest, Operation> revertRolloutCallable() {
-    throw new UnsupportedOperationException("Not implemented: revertRolloutCallable()");
-  }
-
-  public UnaryCallable<GetDeploymentTargetRequest, DeploymentTarget> getDeploymentTargetCallable() {
-    throw new UnsupportedOperationException("Not implemented: getDeploymentTargetCallable()");
+  public UnaryCallable<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
+      fetchDeploymentStateCallable() {
+    throw new UnsupportedOperationException("Not implemented: fetchDeploymentStateCallable()");
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,15 @@
 
 package com.google.cloud.gaming.v1alpha;
 
-/** Protobuf type {@code google.cloud.gaming.v1alpha.UpdateRealmRequest} */
+/**
+ *
+ *
+ * <pre>
+ * Request message for RealmsService.UpdateRealm.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.gaming.v1alpha.UpdateRealmRequest}
+ */
 public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.gaming.v1alpha.UpdateRealmRequest)
@@ -30,6 +38,12 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
   }
 
   private UpdateRealmRequest() {}
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateRealmRequest();
+  }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -44,7 +58,6 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -130,7 +143,10 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
    * Only fields specified in update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.Realm realm = 1;</code>
+   * <code>.google.cloud.gaming.v1alpha.Realm realm = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the realm field is set.
    */
   public boolean hasRealm() {
     return realm_ != null;
@@ -143,7 +159,10 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
    * Only fields specified in update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.Realm realm = 1;</code>
+   * <code>.google.cloud.gaming.v1alpha.Realm realm = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The realm.
    */
   public com.google.cloud.gaming.v1alpha.Realm getRealm() {
     return realm_ == null ? com.google.cloud.gaming.v1alpha.Realm.getDefaultInstance() : realm_;
@@ -156,7 +175,8 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
    * Only fields specified in update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.Realm realm = 1;</code>
+   * <code>.google.cloud.gaming.v1alpha.Realm realm = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.gaming.v1alpha.RealmOrBuilder getRealmOrBuilder() {
     return getRealm();
@@ -175,7 +195,10 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
    * // /docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -191,7 +214,10 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
    * // /docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -207,7 +233,8 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
    * // /docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -391,7 +418,15 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.gaming.v1alpha.UpdateRealmRequest} */
+  /**
+   *
+   *
+   * <pre>
+   * Request message for RealmsService.UpdateRealm.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.gaming.v1alpha.UpdateRealmRequest}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.gaming.v1alpha.UpdateRealmRequest)
@@ -577,7 +612,10 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the realm field is set.
      */
     public boolean hasRealm() {
       return realmBuilder_ != null || realm_ != null;
@@ -590,7 +628,10 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The realm.
      */
     public com.google.cloud.gaming.v1alpha.Realm getRealm() {
       if (realmBuilder_ == null) {
@@ -607,7 +648,8 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRealm(com.google.cloud.gaming.v1alpha.Realm value) {
       if (realmBuilder_ == null) {
@@ -630,7 +672,8 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRealm(com.google.cloud.gaming.v1alpha.Realm.Builder builderForValue) {
       if (realmBuilder_ == null) {
@@ -650,7 +693,8 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeRealm(com.google.cloud.gaming.v1alpha.Realm value) {
       if (realmBuilder_ == null) {
@@ -677,7 +721,8 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearRealm() {
       if (realmBuilder_ == null) {
@@ -698,7 +743,8 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.gaming.v1alpha.Realm.Builder getRealmBuilder() {
 
@@ -713,7 +759,8 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.gaming.v1alpha.RealmOrBuilder getRealmOrBuilder() {
       if (realmBuilder_ != null) {
@@ -730,7 +777,8 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gaming.v1alpha.Realm,
@@ -766,7 +814,10 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -782,7 +833,10 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -804,7 +858,8 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -830,7 +885,8 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -853,7 +909,8 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -881,7 +938,8 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -905,7 +963,8 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -923,7 +982,8 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -945,7 +1005,8 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

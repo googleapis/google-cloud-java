@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,17 +23,57 @@ public interface LabelSelectorOrBuilder
     // @@protoc_insertion_point(interface_extends:google.cloud.gaming.v1alpha.LabelSelector)
     com.google.protobuf.MessageOrBuilder {
 
-  /** <code>map&lt;string, string&gt; labels = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource labels for this selector.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 1;</code>
+   */
   int getLabelsCount();
-  /** <code>map&lt;string, string&gt; labels = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource labels for this selector.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 1;</code>
+   */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-  /** <code>map&lt;string, string&gt; labels = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource labels for this selector.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 1;</code>
+   */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-  /** <code>map&lt;string, string&gt; labels = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource labels for this selector.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 1;</code>
+   */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
-  /** <code>map&lt;string, string&gt; labels = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource labels for this selector.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 1;</code>
+   */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 }

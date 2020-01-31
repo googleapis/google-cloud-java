@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,13 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     verb_ = "";
     statusMessage_ = "";
     apiVersion_ = "";
+    unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new OperationMetadata();
   }
 
   @java.lang.Override
@@ -131,6 +138,35 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
               apiVersion_ = s;
               break;
             }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                unreachable_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              unreachable_.add(s);
+              break;
+            }
+          case 74:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                operationStatus_ =
+                    com.google.protobuf.MapField.newMapField(
+                        OperationStatusDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<
+                      java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus>
+                  operationStatus__ =
+                      input.readMessage(
+                          OperationStatusDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              operationStatus_
+                  .getMutableMap()
+                  .put(operationStatus__.getKey(), operationStatus__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -145,6 +181,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        unreachable_ = unreachable_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -153,6 +192,17 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1alpha.Common
         .internal_static_google_cloud_gaming_v1alpha_OperationMetadata_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 9:
+        return internalGetOperationStatus();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -174,7 +224,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * Output only. The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -186,7 +239,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * Output only. The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -198,7 +254,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * Output only. The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
@@ -213,7 +270,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * Output only. The time the operation finished running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the endTime field is set.
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -225,7 +285,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * Output only. The time the operation finished running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The endTime.
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -237,7 +300,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * Output only. The time the operation finished running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
@@ -252,7 +316,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * Output only. Server-defined resource path for the target of the operation.
    * </pre>
    *
-   * <code>string target = 3;</code>
+   * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The target.
    */
   public java.lang.String getTarget() {
     java.lang.Object ref = target_;
@@ -272,7 +338,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * Output only. Server-defined resource path for the target of the operation.
    * </pre>
    *
-   * <code>string target = 3;</code>
+   * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for target.
    */
   public com.google.protobuf.ByteString getTargetBytes() {
     java.lang.Object ref = target_;
@@ -295,7 +363,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * Output only. Name of the verb executed by the operation.
    * </pre>
    *
-   * <code>string verb = 4;</code>
+   * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The verb.
    */
   public java.lang.String getVerb() {
     java.lang.Object ref = verb_;
@@ -315,7 +385,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * Output only. Name of the verb executed by the operation.
    * </pre>
    *
-   * <code>string verb = 4;</code>
+   * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for verb.
    */
   public com.google.protobuf.ByteString getVerbBytes() {
     java.lang.Object ref = verb_;
@@ -338,7 +410,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * Output only. Human-readable status of the operation, if any.
    * </pre>
    *
-   * <code>string status_message = 5;</code>
+   * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The statusMessage.
    */
   public java.lang.String getStatusMessage() {
     java.lang.Object ref = statusMessage_;
@@ -358,7 +432,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * Output only. Human-readable status of the operation, if any.
    * </pre>
    *
-   * <code>string status_message = 5;</code>
+   * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for statusMessage.
    */
   public com.google.protobuf.ByteString getStatusMessageBytes() {
     java.lang.Object ref = statusMessage_;
@@ -384,7 +460,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * corresponding to `Code.CANCELLED`.
    * </pre>
    *
-   * <code>bool requested_cancellation = 6;</code>
+   * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The requestedCancellation.
    */
   public boolean getRequestedCancellation() {
     return requestedCancellation_;
@@ -399,7 +477,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * Output only. API version used to start the operation.
    * </pre>
    *
-   * <code>string api_version = 7;</code>
+   * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The apiVersion.
    */
   public java.lang.String getApiVersion() {
     java.lang.Object ref = apiVersion_;
@@ -419,7 +499,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * Output only. API version used to start the operation.
    * </pre>
    *
-   * <code>string api_version = 7;</code>
+   * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for apiVersion.
    */
   public com.google.protobuf.ByteString getApiVersionBytes() {
     java.lang.Object ref = apiVersion_;
@@ -431,6 +513,195 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int UNREACHABLE_FIELD_NUMBER = 8;
+  private com.google.protobuf.LazyStringList unreachable_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the unreachable.
+   */
+  public com.google.protobuf.ProtocolStringList getUnreachableList() {
+    return unreachable_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of unreachable.
+   */
+  public int getUnreachableCount() {
+    return unreachable_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The unreachable at the given index.
+   */
+  public java.lang.String getUnreachable(int index) {
+    return unreachable_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the unreachable at the given index.
+   */
+  public com.google.protobuf.ByteString getUnreachableBytes(int index) {
+    return unreachable_.getByteString(index);
+  }
+
+  public static final int OPERATION_STATUS_FIELD_NUMBER = 9;
+
+  private static final class OperationStatusDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus>
+                    newDefaultInstance(
+                        com.google.cloud.gaming.v1alpha.Common
+                            .internal_static_google_cloud_gaming_v1alpha_OperationMetadata_OperationStatusEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.gaming.v1alpha.OperationStatus.getDefaultInstance());
+  }
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus>
+      operationStatus_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus>
+      internalGetOperationStatus() {
+    if (operationStatus_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          OperationStatusDefaultEntryHolder.defaultEntry);
+    }
+    return operationStatus_;
+  }
+
+  public int getOperationStatusCount() {
+    return internalGetOperationStatus().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Operation status for game services operations. Operation status is in the
+   * form of key-value pairs where keys are resource IDs and the values show the
+   * status of the operation. In case of failures, the value includes an error
+   * code and error message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gaming.v1alpha.OperationStatus&gt; operation_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  public boolean containsOperationStatus(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetOperationStatus().getMap().containsKey(key);
+  }
+  /** Use {@link #getOperationStatusMap()} instead. */
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus>
+      getOperationStatus() {
+    return getOperationStatusMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Operation status for game services operations. Operation status is in the
+   * form of key-value pairs where keys are resource IDs and the values show the
+   * status of the operation. In case of failures, the value includes an error
+   * code and error message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gaming.v1alpha.OperationStatus&gt; operation_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  public java.util.Map<java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus>
+      getOperationStatusMap() {
+    return internalGetOperationStatus().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Operation status for game services operations. Operation status is in the
+   * form of key-value pairs where keys are resource IDs and the values show the
+   * status of the operation. In case of failures, the value includes an error
+   * code and error message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gaming.v1alpha.OperationStatus&gt; operation_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  public com.google.cloud.gaming.v1alpha.OperationStatus getOperationStatusOrDefault(
+      java.lang.String key, com.google.cloud.gaming.v1alpha.OperationStatus defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus> map =
+        internalGetOperationStatus().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Operation status for game services operations. Operation status is in the
+   * form of key-value pairs where keys are resource IDs and the values show the
+   * status of the operation. In case of failures, the value includes an error
+   * code and error message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gaming.v1alpha.OperationStatus&gt; operation_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  public com.google.cloud.gaming.v1alpha.OperationStatus getOperationStatusOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus> map =
+        internalGetOperationStatus().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -468,6 +739,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (!getApiVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, apiVersion_);
     }
+    for (int i = 0; i < unreachable_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, unreachable_.getRaw(i));
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetOperationStatus(), OperationStatusDefaultEntryHolder.defaultEntry, 9);
     unknownFields.writeTo(output);
   }
 
@@ -498,6 +774,26 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (!getApiVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, apiVersion_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < unreachable_.size(); i++) {
+        dataSize += computeStringSizeNoTag(unreachable_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getUnreachableList().size();
+    }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus>
+        entry : internalGetOperationStatus().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus>
+          operationStatus__ =
+              OperationStatusDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, operationStatus__);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -527,6 +823,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (!getStatusMessage().equals(other.getStatusMessage())) return false;
     if (getRequestedCancellation() != other.getRequestedCancellation()) return false;
     if (!getApiVersion().equals(other.getApiVersion())) return false;
+    if (!getUnreachableList().equals(other.getUnreachableList())) return false;
+    if (!internalGetOperationStatus().equals(other.internalGetOperationStatus())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -556,6 +854,14 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRequestedCancellation());
     hash = (37 * hash) + API_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getApiVersion().hashCode();
+    if (getUnreachableCount() > 0) {
+      hash = (37 * hash) + UNREACHABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getUnreachableList().hashCode();
+    }
+    if (!internalGetOperationStatus().getMap().isEmpty()) {
+      hash = (37 * hash) + OPERATION_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetOperationStatus().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -674,6 +980,26 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           .internal_static_google_cloud_gaming_v1alpha_OperationMetadata_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 9:
+          return internalGetOperationStatus();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 9:
+          return internalGetMutableOperationStatus();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -723,6 +1049,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
       apiVersion_ = "";
 
+      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      internalGetMutableOperationStatus().clear();
       return this;
     }
 
@@ -750,6 +1079,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.gaming.v1alpha.OperationMetadata buildPartial() {
       com.google.cloud.gaming.v1alpha.OperationMetadata result =
           new com.google.cloud.gaming.v1alpha.OperationMetadata(this);
+      int from_bitField0_ = bitField0_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
       } else {
@@ -765,6 +1095,13 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       result.statusMessage_ = statusMessage_;
       result.requestedCancellation_ = requestedCancellation_;
       result.apiVersion_ = apiVersion_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        unreachable_ = unreachable_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.unreachable_ = unreachable_;
+      result.operationStatus_ = internalGetOperationStatus();
+      result.operationStatus_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -840,6 +1177,17 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         apiVersion_ = other.apiVersion_;
         onChanged();
       }
+      if (!other.unreachable_.isEmpty()) {
+        if (unreachable_.isEmpty()) {
+          unreachable_ = other.unreachable_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureUnreachableIsMutable();
+          unreachable_.addAll(other.unreachable_);
+        }
+        onChanged();
+      }
+      internalGetMutableOperationStatus().mergeFrom(other.internalGetOperationStatus());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -870,6 +1218,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -883,7 +1233,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -895,7 +1249,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -913,7 +1271,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -935,7 +1295,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -954,7 +1316,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -978,7 +1342,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -998,7 +1364,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
 
@@ -1012,7 +1380,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -1030,7 +1400,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1062,7 +1434,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -1074,7 +1449,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {
@@ -1090,7 +1468,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
@@ -1112,7 +1491,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
@@ -1131,7 +1511,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
@@ -1155,7 +1536,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearEndTime() {
       if (endTimeBuilder_ == null) {
@@ -1175,7 +1557,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
 
@@ -1189,7 +1572,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
       if (endTimeBuilder_ != null) {
@@ -1205,7 +1589,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. The time the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1232,7 +1617,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Server-defined resource path for the target of the operation.
      * </pre>
      *
-     * <code>string target = 3;</code>
+     * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The target.
      */
     public java.lang.String getTarget() {
       java.lang.Object ref = target_;
@@ -1252,7 +1639,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Server-defined resource path for the target of the operation.
      * </pre>
      *
-     * <code>string target = 3;</code>
+     * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for target.
      */
     public com.google.protobuf.ByteString getTargetBytes() {
       java.lang.Object ref = target_;
@@ -1272,7 +1661,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Server-defined resource path for the target of the operation.
      * </pre>
      *
-     * <code>string target = 3;</code>
+     * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The target to set.
+     * @return This builder for chaining.
      */
     public Builder setTarget(java.lang.String value) {
       if (value == null) {
@@ -1290,7 +1682,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Server-defined resource path for the target of the operation.
      * </pre>
      *
-     * <code>string target = 3;</code>
+     * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTarget() {
 
@@ -1305,7 +1699,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Server-defined resource path for the target of the operation.
      * </pre>
      *
-     * <code>string target = 3;</code>
+     * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for target to set.
+     * @return This builder for chaining.
      */
     public Builder setTargetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1326,7 +1723,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Name of the verb executed by the operation.
      * </pre>
      *
-     * <code>string verb = 4;</code>
+     * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The verb.
      */
     public java.lang.String getVerb() {
       java.lang.Object ref = verb_;
@@ -1346,7 +1745,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Name of the verb executed by the operation.
      * </pre>
      *
-     * <code>string verb = 4;</code>
+     * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for verb.
      */
     public com.google.protobuf.ByteString getVerbBytes() {
       java.lang.Object ref = verb_;
@@ -1366,7 +1767,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Name of the verb executed by the operation.
      * </pre>
      *
-     * <code>string verb = 4;</code>
+     * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The verb to set.
+     * @return This builder for chaining.
      */
     public Builder setVerb(java.lang.String value) {
       if (value == null) {
@@ -1384,7 +1788,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Name of the verb executed by the operation.
      * </pre>
      *
-     * <code>string verb = 4;</code>
+     * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearVerb() {
 
@@ -1399,7 +1805,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Name of the verb executed by the operation.
      * </pre>
      *
-     * <code>string verb = 4;</code>
+     * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for verb to set.
+     * @return This builder for chaining.
      */
     public Builder setVerbBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1420,7 +1829,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Human-readable status of the operation, if any.
      * </pre>
      *
-     * <code>string status_message = 5;</code>
+     * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The statusMessage.
      */
     public java.lang.String getStatusMessage() {
       java.lang.Object ref = statusMessage_;
@@ -1440,7 +1851,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Human-readable status of the operation, if any.
      * </pre>
      *
-     * <code>string status_message = 5;</code>
+     * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for statusMessage.
      */
     public com.google.protobuf.ByteString getStatusMessageBytes() {
       java.lang.Object ref = statusMessage_;
@@ -1460,7 +1873,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Human-readable status of the operation, if any.
      * </pre>
      *
-     * <code>string status_message = 5;</code>
+     * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The statusMessage to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusMessage(java.lang.String value) {
       if (value == null) {
@@ -1478,7 +1894,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Human-readable status of the operation, if any.
      * </pre>
      *
-     * <code>string status_message = 5;</code>
+     * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStatusMessage() {
 
@@ -1493,7 +1911,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Human-readable status of the operation, if any.
      * </pre>
      *
-     * <code>string status_message = 5;</code>
+     * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for statusMessage to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusMessageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1517,7 +1938,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * corresponding to `Code.CANCELLED`.
      * </pre>
      *
-     * <code>bool requested_cancellation = 6;</code>
+     * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The requestedCancellation.
      */
     public boolean getRequestedCancellation() {
       return requestedCancellation_;
@@ -1532,7 +1955,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * corresponding to `Code.CANCELLED`.
      * </pre>
      *
-     * <code>bool requested_cancellation = 6;</code>
+     * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The requestedCancellation to set.
+     * @return This builder for chaining.
      */
     public Builder setRequestedCancellation(boolean value) {
 
@@ -1550,7 +1976,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * corresponding to `Code.CANCELLED`.
      * </pre>
      *
-     * <code>bool requested_cancellation = 6;</code>
+     * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRequestedCancellation() {
 
@@ -1567,7 +1995,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. API version used to start the operation.
      * </pre>
      *
-     * <code>string api_version = 7;</code>
+     * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The apiVersion.
      */
     public java.lang.String getApiVersion() {
       java.lang.Object ref = apiVersion_;
@@ -1587,7 +2017,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. API version used to start the operation.
      * </pre>
      *
-     * <code>string api_version = 7;</code>
+     * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for apiVersion.
      */
     public com.google.protobuf.ByteString getApiVersionBytes() {
       java.lang.Object ref = apiVersion_;
@@ -1607,7 +2039,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. API version used to start the operation.
      * </pre>
      *
-     * <code>string api_version = 7;</code>
+     * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The apiVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setApiVersion(java.lang.String value) {
       if (value == null) {
@@ -1625,7 +2060,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. API version used to start the operation.
      * </pre>
      *
-     * <code>string api_version = 7;</code>
+     * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearApiVersion() {
 
@@ -1640,7 +2077,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. API version used to start the operation.
      * </pre>
      *
-     * <code>string api_version = 7;</code>
+     * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for apiVersion to set.
+     * @return This builder for chaining.
      */
     public Builder setApiVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1650,6 +2090,377 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
       apiVersion_ = value;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList unreachable_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureUnreachableIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        unreachable_ = new com.google.protobuf.LazyStringArrayList(unreachable_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return A list containing the unreachable.
+     */
+    public com.google.protobuf.ProtocolStringList getUnreachableList() {
+      return unreachable_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The count of unreachable.
+     */
+    public int getUnreachableCount() {
+      return unreachable_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The unreachable at the given index.
+     */
+    public java.lang.String getUnreachable(int index) {
+      return unreachable_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the unreachable at the given index.
+     */
+    public com.google.protobuf.ByteString getUnreachableBytes(int index) {
+      return unreachable_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The unreachable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnreachable(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUnreachableIsMutable();
+      unreachable_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The unreachable to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUnreachable(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUnreachableIsMutable();
+      unreachable_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param values The unreachable to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllUnreachable(java.lang.Iterable<java.lang.String> values) {
+      ensureUnreachableIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unreachable_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUnreachable() {
+      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes of the unreachable to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUnreachableBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureUnreachableIsMutable();
+      unreachable_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus>
+        operationStatus_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus>
+        internalGetOperationStatus() {
+      if (operationStatus_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            OperationStatusDefaultEntryHolder.defaultEntry);
+      }
+      return operationStatus_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus>
+        internalGetMutableOperationStatus() {
+      onChanged();
+      ;
+      if (operationStatus_ == null) {
+        operationStatus_ =
+            com.google.protobuf.MapField.newMapField(
+                OperationStatusDefaultEntryHolder.defaultEntry);
+      }
+      if (!operationStatus_.isMutable()) {
+        operationStatus_ = operationStatus_.copy();
+      }
+      return operationStatus_;
+    }
+
+    public int getOperationStatusCount() {
+      return internalGetOperationStatus().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Operation status for game services operations. Operation status is in the
+     * form of key-value pairs where keys are resource IDs and the values show the
+     * status of the operation. In case of failures, the value includes an error
+     * code and error message.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gaming.v1alpha.OperationStatus&gt; operation_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public boolean containsOperationStatus(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetOperationStatus().getMap().containsKey(key);
+    }
+    /** Use {@link #getOperationStatusMap()} instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus>
+        getOperationStatus() {
+      return getOperationStatusMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Operation status for game services operations. Operation status is in the
+     * form of key-value pairs where keys are resource IDs and the values show the
+     * status of the operation. In case of failures, the value includes an error
+     * code and error message.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gaming.v1alpha.OperationStatus&gt; operation_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.Map<java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus>
+        getOperationStatusMap() {
+      return internalGetOperationStatus().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Operation status for game services operations. Operation status is in the
+     * form of key-value pairs where keys are resource IDs and the values show the
+     * status of the operation. In case of failures, the value includes an error
+     * code and error message.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gaming.v1alpha.OperationStatus&gt; operation_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gaming.v1alpha.OperationStatus getOperationStatusOrDefault(
+        java.lang.String key, com.google.cloud.gaming.v1alpha.OperationStatus defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus> map =
+          internalGetOperationStatus().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Operation status for game services operations. Operation status is in the
+     * form of key-value pairs where keys are resource IDs and the values show the
+     * status of the operation. In case of failures, the value includes an error
+     * code and error message.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gaming.v1alpha.OperationStatus&gt; operation_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gaming.v1alpha.OperationStatus getOperationStatusOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus> map =
+          internalGetOperationStatus().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearOperationStatus() {
+      internalGetMutableOperationStatus().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Operation status for game services operations. Operation status is in the
+     * form of key-value pairs where keys are resource IDs and the values show the
+     * status of the operation. In case of failures, the value includes an error
+     * code and error message.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gaming.v1alpha.OperationStatus&gt; operation_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeOperationStatus(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableOperationStatus().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus>
+        getMutableOperationStatus() {
+      return internalGetMutableOperationStatus().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Operation status for game services operations. Operation status is in the
+     * form of key-value pairs where keys are resource IDs and the values show the
+     * status of the operation. In case of failures, the value includes an error
+     * code and error message.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gaming.v1alpha.OperationStatus&gt; operation_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putOperationStatus(
+        java.lang.String key, com.google.cloud.gaming.v1alpha.OperationStatus value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableOperationStatus().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Operation status for game services operations. Operation status is in the
+     * form of key-value pairs where keys are resource IDs and the values show the
+     * status of the operation. In case of failures, the value includes an error
+     * code and error message.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gaming.v1alpha.OperationStatus&gt; operation_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putAllOperationStatus(
+        java.util.Map<java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus> values) {
+      internalGetMutableOperationStatus().getMutableMap().putAll(values);
       return this;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,11 @@ public interface UpdateGameServerClusterRequestOrBuilder
    * Only fields specified in update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the gameServerCluster field is set.
    */
   boolean hasGameServerCluster();
   /**
@@ -42,7 +46,11 @@ public interface UpdateGameServerClusterRequestOrBuilder
    * Only fields specified in update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The gameServerCluster.
    */
   com.google.cloud.gaming.v1alpha.GameServerCluster getGameServerCluster();
   /**
@@ -53,7 +61,9 @@ public interface UpdateGameServerClusterRequestOrBuilder
    * Only fields specified in update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.gaming.v1alpha.GameServerClusterOrBuilder getGameServerClusterOrBuilder();
 
@@ -68,7 +78,10 @@ public interface UpdateGameServerClusterRequestOrBuilder
    * // /docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
@@ -82,7 +95,10 @@ public interface UpdateGameServerClusterRequestOrBuilder
    * // /docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -96,7 +112,8 @@ public interface UpdateGameServerClusterRequestOrBuilder
    * // /docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

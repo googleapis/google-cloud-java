@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,13 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
   private ListRealmsResponse() {
     realms_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
+    unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListRealmsResponse();
   }
 
   @java.lang.Override
@@ -84,6 +91,16 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
               nextPageToken_ = s;
               break;
             }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                unreachable_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              unreachable_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -100,6 +117,9 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         realms_ = java.util.Collections.unmodifiableList(realms_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        unreachable_ = unreachable_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -121,7 +141,6 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
             com.google.cloud.gaming.v1alpha.ListRealmsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int REALMS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.gaming.v1alpha.Realm> realms_;
   /**
@@ -197,6 +216,8 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -218,6 +239,8 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -229,6 +252,67 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int UNREACHABLE_FIELD_NUMBER = 3;
+  private com.google.protobuf.LazyStringList unreachable_;
+  /**
+   *
+   *
+   * <pre>
+   * List of locations that were not reachable.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   *
+   * @return A list containing the unreachable.
+   */
+  public com.google.protobuf.ProtocolStringList getUnreachableList() {
+    return unreachable_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of locations that were not reachable.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   *
+   * @return The count of unreachable.
+   */
+  public int getUnreachableCount() {
+    return unreachable_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of locations that were not reachable.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The unreachable at the given index.
+   */
+  public java.lang.String getUnreachable(int index) {
+    return unreachable_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of locations that were not reachable.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the unreachable at the given index.
+   */
+  public com.google.protobuf.ByteString getUnreachableBytes(int index) {
+    return unreachable_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -251,6 +335,9 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
     if (!getNextPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
+    for (int i = 0; i < unreachable_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, unreachable_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -265,6 +352,14 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < unreachable_.size(); i++) {
+        dataSize += computeStringSizeNoTag(unreachable_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getUnreachableList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -284,6 +379,7 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
 
     if (!getRealmsList().equals(other.getRealmsList())) return false;
     if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!getUnreachableList().equals(other.getUnreachableList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -301,6 +397,10 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
     }
     hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getNextPageToken().hashCode();
+    if (getUnreachableCount() > 0) {
+      hash = (37 * hash) + UNREACHABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getUnreachableList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -456,6 +556,8 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
       }
       nextPageToken_ = "";
 
+      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -484,7 +586,6 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
       com.google.cloud.gaming.v1alpha.ListRealmsResponse result =
           new com.google.cloud.gaming.v1alpha.ListRealmsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (realmsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           realms_ = java.util.Collections.unmodifiableList(realms_);
@@ -495,7 +596,11 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
         result.realms_ = realmsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        unreachable_ = unreachable_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.unreachable_ = unreachable_;
       onBuilt();
       return result;
     }
@@ -575,6 +680,16 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        onChanged();
+      }
+      if (!other.unreachable_.isEmpty()) {
+        if (unreachable_.isEmpty()) {
+          unreachable_ = other.unreachable_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureUnreachableIsMutable();
+          unreachable_.addAll(other.unreachable_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -967,6 +1082,8 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -988,6 +1105,8 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1009,6 +1128,9 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1028,6 +1150,8 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
 
@@ -1044,6 +1168,9 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1052,6 +1179,174 @@ public final class ListRealmsResponse extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
 
       nextPageToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList unreachable_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureUnreachableIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        unreachable_ = new com.google.protobuf.LazyStringArrayList(unreachable_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of locations that were not reachable.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @return A list containing the unreachable.
+     */
+    public com.google.protobuf.ProtocolStringList getUnreachableList() {
+      return unreachable_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of locations that were not reachable.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @return The count of unreachable.
+     */
+    public int getUnreachableCount() {
+      return unreachable_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of locations that were not reachable.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The unreachable at the given index.
+     */
+    public java.lang.String getUnreachable(int index) {
+      return unreachable_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of locations that were not reachable.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the unreachable at the given index.
+     */
+    public com.google.protobuf.ByteString getUnreachableBytes(int index) {
+      return unreachable_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of locations that were not reachable.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The unreachable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnreachable(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUnreachableIsMutable();
+      unreachable_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of locations that were not reachable.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param value The unreachable to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUnreachable(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUnreachableIsMutable();
+      unreachable_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of locations that were not reachable.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param values The unreachable to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllUnreachable(java.lang.Iterable<java.lang.String> values) {
+      ensureUnreachableIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unreachable_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of locations that were not reachable.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUnreachable() {
+      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of locations that were not reachable.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param value The bytes of the unreachable to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUnreachableBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureUnreachableIsMutable();
+      unreachable_.add(value);
       onChanged();
       return this;
     }

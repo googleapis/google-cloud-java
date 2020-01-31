@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,11 +28,13 @@ public interface RealmOrBuilder
    *
    * <pre>
    * The resource name of the realm, using the form:
-   * `projects/{project_id}/locations/{location}/realms/{realm_id}`. For
+   * `projects/{project}/locations/{location}/realms/{realm}`. For
    * example, `projects/my-project/locations/{location}/realms/my-realm`.
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -40,11 +42,13 @@ public interface RealmOrBuilder
    *
    * <pre>
    * The resource name of the realm, using the form:
-   * `projects/{project_id}/locations/{location}/realms/{realm_id}`. For
+   * `projects/{project}/locations/{location}/realms/{realm}`. For
    * example, `projects/my-project/locations/{location}/realms/my-realm`.
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -55,7 +59,10 @@ public interface RealmOrBuilder
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -65,7 +72,10 @@ public interface RealmOrBuilder
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -75,7 +85,8 @@ public interface RealmOrBuilder
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -86,7 +97,10 @@ public interface RealmOrBuilder
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -96,7 +110,10 @@ public interface RealmOrBuilder
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -106,7 +123,8 @@ public interface RealmOrBuilder
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
@@ -168,26 +186,78 @@ public interface RealmOrBuilder
    *
    *
    * <pre>
-   * Time zone where all realm-specific policies are evaluated. The value of
+   * Required. Time zone where all realm-specific policies are evaluated. The value of
    * this field must be from the IANA time zone database:
-   * https://www.iana.org/time-zones. If not specified, UTC is assumed by
-   * default.
+   * https://www.iana.org/time-zones.
    * </pre>
    *
-   * <code>string time_zone = 6;</code>
+   * <code>string time_zone = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The timeZone.
    */
   java.lang.String getTimeZone();
   /**
    *
    *
    * <pre>
-   * Time zone where all realm-specific policies are evaluated. The value of
+   * Required. Time zone where all realm-specific policies are evaluated. The value of
    * this field must be from the IANA time zone database:
-   * https://www.iana.org/time-zones. If not specified, UTC is assumed by
-   * default.
+   * https://www.iana.org/time-zones.
    * </pre>
    *
-   * <code>string time_zone = 6;</code>
+   * <code>string time_zone = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for timeZone.
    */
   com.google.protobuf.ByteString getTimeZoneBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * ETag of the resource.
+   * </pre>
+   *
+   * <code>string etag = 7;</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * ETag of the resource.
+   * </pre>
+   *
+   * <code>string etag = 7;</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Human readable description of the realm.
+   * </pre>
+   *
+   * <code>string description = 8;</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   *
+   *
+   * <pre>
+   * Human readable description of the realm.
+   * </pre>
+   *
+   * <code>string description = 8;</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
 }

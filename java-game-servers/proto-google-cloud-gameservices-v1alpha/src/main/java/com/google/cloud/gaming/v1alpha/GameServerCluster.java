@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,14 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
 
   private GameServerCluster() {
     name_ = "";
+    etag_ = "";
+    description_ = "";
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GameServerCluster();
   }
 
   @java.lang.Override
@@ -104,10 +112,10 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -131,6 +139,20 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
                 connectionInfo_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              etag_ = s;
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
               break;
             }
           default:
@@ -178,20 +200,21 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
             com.google.cloud.gaming.v1alpha.GameServerCluster.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
    *
    *
    * <pre>
-   * The resource name of the game server cluster, using the form:
-   * `projects/{project_id}/locations/{location}/realms/{realm_id}/gameServerClusters/{cluster_id}`.
+   * Required. The resource name of the game server cluster, using the form:
+   * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
    * For example,
    * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -208,13 +231,15 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The resource name of the game server cluster, using the form:
-   * `projects/{project_id}/locations/{location}/realms/{realm_id}/gameServerClusters/{cluster_id}`.
+   * Required. The resource name of the game server cluster, using the form:
+   * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
    * For example,
    * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -237,7 +262,10 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -249,7 +277,10 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -261,7 +292,8 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
@@ -276,7 +308,10 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -288,7 +323,10 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -300,7 +338,8 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
@@ -414,6 +453,8 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfo connection_info = 5;</code>
+   *
+   * @return Whether the connectionInfo field is set.
    */
   public boolean hasConnectionInfo() {
     return connectionInfo_ != null;
@@ -427,6 +468,8 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfo connection_info = 5;</code>
+   *
+   * @return The connectionInfo.
    */
   public com.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfo getConnectionInfo() {
     return connectionInfo_ == null
@@ -446,6 +489,100 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfoOrBuilder
       getConnectionInfoOrBuilder() {
     return getConnectionInfo();
+  }
+
+  public static final int ETAG_FIELD_NUMBER = 6;
+  private volatile java.lang.Object etag_;
+  /**
+   *
+   *
+   * <pre>
+   * ETag of the resource.
+   * </pre>
+   *
+   * <code>string etag = 6;</code>
+   *
+   * @return The etag.
+   */
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ETag of the resource.
+   * </pre>
+   *
+   * <code>string etag = 6;</code>
+   *
+   * @return The bytes for etag.
+   */
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 7;
+  private volatile java.lang.Object description_;
+  /**
+   *
+   *
+   * <pre>
+   * Human readable description of the cluster.
+   * </pre>
+   *
+   * <code>string description = 7;</code>
+   *
+   * @return The description.
+   */
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Human readable description of the cluster.
+   * </pre>
+   *
+   * <code>string description = 7;</code>
+   *
+   * @return The bytes for description.
+   */
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -475,6 +612,12 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 4);
     if (connectionInfo_ != null) {
       output.writeMessage(5, getConnectionInfo());
+    }
+    if (!getEtagBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, etag_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, description_);
     }
     unknownFields.writeTo(output);
   }
@@ -507,6 +650,12 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
     if (connectionInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getConnectionInfo());
     }
+    if (!getEtagBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, etag_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, description_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -537,6 +686,8 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
     if (hasConnectionInfo()) {
       if (!getConnectionInfo().equals(other.getConnectionInfo())) return false;
     }
+    if (!getEtag().equals(other.getEtag())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -566,6 +717,10 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + CONNECTION_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getConnectionInfo().hashCode();
     }
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -752,6 +907,10 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
         connectionInfo_ = null;
         connectionInfoBuilder_ = null;
       }
+      etag_ = "";
+
+      description_ = "";
+
       return this;
     }
 
@@ -780,7 +939,6 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
       com.google.cloud.gaming.v1alpha.GameServerCluster result =
           new com.google.cloud.gaming.v1alpha.GameServerCluster(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
@@ -799,7 +957,8 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
       } else {
         result.connectionInfo_ = connectionInfoBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
+      result.etag_ = etag_;
+      result.description_ = description_;
       onBuilt();
       return result;
     }
@@ -864,6 +1023,14 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
       if (other.hasConnectionInfo()) {
         mergeConnectionInfo(other.getConnectionInfo());
       }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        onChanged();
+      }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -901,13 +1068,15 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the game server cluster, using the form:
-     * `projects/{project_id}/locations/{location}/realms/{realm_id}/gameServerClusters/{cluster_id}`.
+     * Required. The resource name of the game server cluster, using the form:
+     * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -924,13 +1093,15 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the game server cluster, using the form:
-     * `projects/{project_id}/locations/{location}/realms/{realm_id}/gameServerClusters/{cluster_id}`.
+     * Required. The resource name of the game server cluster, using the form:
+     * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -947,13 +1118,16 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the game server cluster, using the form:
-     * `projects/{project_id}/locations/{location}/realms/{realm_id}/gameServerClusters/{cluster_id}`.
+     * Required. The resource name of the game server cluster, using the form:
+     * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -968,13 +1142,15 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the game server cluster, using the form:
-     * `projects/{project_id}/locations/{location}/realms/{realm_id}/gameServerClusters/{cluster_id}`.
+     * Required. The resource name of the game server cluster, using the form:
+     * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -986,13 +1162,16 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the game server cluster, using the form:
-     * `projects/{project_id}/locations/{location}/realms/{realm_id}/gameServerClusters/{cluster_id}`.
+     * Required. The resource name of the game server cluster, using the form:
+     * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1018,7 +1197,11 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -1030,7 +1213,11 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1048,7 +1235,9 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1070,7 +1259,9 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -1089,7 +1280,9 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1113,7 +1306,9 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1133,7 +1328,9 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
 
@@ -1147,7 +1344,9 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -1165,7 +1364,9 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1197,7 +1398,11 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -1209,7 +1414,11 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -1227,7 +1436,9 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -1249,7 +1460,9 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
@@ -1268,7 +1481,9 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -1292,7 +1507,9 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -1312,7 +1529,9 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
 
@@ -1326,7 +1545,9 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -1344,7 +1565,9 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1538,6 +1761,8 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfo connection_info = 5;
      * </code>
+     *
+     * @return Whether the connectionInfo field is set.
      */
     public boolean hasConnectionInfo() {
       return connectionInfoBuilder_ != null || connectionInfo_ != null;
@@ -1552,6 +1777,8 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfo connection_info = 5;
      * </code>
+     *
+     * @return The connectionInfo.
      */
     public com.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfo getConnectionInfo() {
       if (connectionInfoBuilder_ == null) {
@@ -1725,6 +1952,218 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
         connectionInfo_ = null;
       }
       return connectionInfoBuilder_;
+    }
+
+    private java.lang.Object etag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * ETag of the resource.
+     * </pre>
+     *
+     * <code>string etag = 6;</code>
+     *
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ETag of the resource.
+     * </pre>
+     *
+     * <code>string etag = 6;</code>
+     *
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ETag of the resource.
+     * </pre>
+     *
+     * <code>string etag = 6;</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ETag of the resource.
+     * </pre>
+     *
+     * <code>string etag = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+
+      etag_ = getDefaultInstance().getEtag();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ETag of the resource.
+     * </pre>
+     *
+     * <code>string etag = 6;</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Human readable description of the cluster.
+     * </pre>
+     *
+     * <code>string description = 7;</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Human readable description of the cluster.
+     * </pre>
+     *
+     * <code>string description = 7;</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Human readable description of the cluster.
+     * </pre>
+     *
+     * <code>string description = 7;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Human readable description of the cluster.
+     * </pre>
+     *
+     * <code>string description = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Human readable description of the cluster.
+     * </pre>
+     *
+     * <code>string description = 7;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      description_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

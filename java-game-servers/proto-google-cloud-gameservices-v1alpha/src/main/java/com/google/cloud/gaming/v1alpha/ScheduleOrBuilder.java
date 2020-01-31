@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ public interface ScheduleOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
+   *
+   * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
@@ -41,6 +43,8 @@ public interface ScheduleOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
+   *
+   * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -62,6 +66,8 @@ public interface ScheduleOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   *
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -72,6 +78,8 @@ public interface ScheduleOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   *
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
@@ -94,6 +102,8 @@ public interface ScheduleOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration cron_job_duration = 3;</code>
+   *
+   * @return Whether the cronJobDuration field is set.
    */
   boolean hasCronJobDuration();
   /**
@@ -105,6 +115,8 @@ public interface ScheduleOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration cron_job_duration = 3;</code>
+   *
+   * @return The cronJobDuration.
    */
   com.google.protobuf.Duration getCronJobDuration();
   /**
@@ -129,6 +141,8 @@ public interface ScheduleOrBuilder
    * </pre>
    *
    * <code>string cron_spec = 4;</code>
+   *
+   * @return The cronSpec.
    */
   java.lang.String getCronSpec();
   /**
@@ -141,6 +155,8 @@ public interface ScheduleOrBuilder
    * </pre>
    *
    * <code>string cron_spec = 4;</code>
+   *
+   * @return The bytes for cronSpec.
    */
   com.google.protobuf.ByteString getCronSpecBytes();
 }

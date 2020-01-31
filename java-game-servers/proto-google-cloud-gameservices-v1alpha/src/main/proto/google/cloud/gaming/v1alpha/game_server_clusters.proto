@@ -17,84 +17,46 @@ syntax = "proto3";
 
 package google.cloud.gaming.v1alpha;
 
-import "google/api/annotations.proto";
-import "google/longrunning/operations.proto";
+import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
+import "google/cloud/gaming/v1alpha/common.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
-import "google/api/client.proto";
+import "google/api/annotations.proto";
 
 option go_package = "google.golang.org/genproto/googleapis/cloud/gaming/v1alpha;gaming";
 
 option java_multiple_files = true;
 option java_package = "com.google.cloud.gaming.v1alpha";
 
-// The game server cluster is used to capture the game server cluster's settings
-// which are used to manage game server clusters.
-service GameServerClustersService {
-  option (google.api.default_host) = "gameservices.googleapis.com";
-  option (google.api.oauth_scopes) = "https://www.googleapis.com/auth/cloud-platform";
-
-  // Lists game server clusters in a given project and location.
-  rpc ListGameServerClusters(ListGameServerClustersRequest) returns (ListGameServerClustersResponse) {
-    option (google.api.http) = {
-      get: "/v1alpha/{parent=projects/*/locations/*/realms/*}/gameServerClusters"
-    };
-  }
-
-  // Gets details of a single game server cluster.
-  rpc GetGameServerCluster(GetGameServerClusterRequest) returns (GameServerCluster) {
-    option (google.api.http) = {
-      get: "/v1alpha/{name=projects/*/locations/*/realms/*/gameServerClusters/*}"
-    };
-  }
-
-  // Creates a new game server cluster in a given project and location.
-  rpc CreateGameServerCluster(CreateGameServerClusterRequest) returns (google.longrunning.Operation) {
-    option (google.api.http) = {
-      post: "/v1alpha/{parent=projects/*/locations/*/realms/*}/gameServerClusters"
-      body: "game_server_cluster"
-    };
-  }
-
-  // Deletes a single game server cluster.
-  rpc DeleteGameServerCluster(DeleteGameServerClusterRequest) returns (google.longrunning.Operation) {
-    option (google.api.http) = {
-      delete: "/v1alpha/{name=projects/*/locations/*/realms/*/gameServerClusters/*}"
-    };
-  }
-
-  // Patches a single game server cluster.
-  rpc UpdateGameServerCluster(UpdateGameServerClusterRequest) returns (google.longrunning.Operation) {
-    option (google.api.http) = {
-      patch: "/v1alpha/{game_server_cluster.name=projects/*/locations/*/realms/*/gameServerClusters/*}"
-      body: "game_server_cluster"
-    };
-  }
-}
-
 // Request message for GameServerClustersService.ListGameServerClusters.
 message ListGameServerClustersRequest {
   // Required. The parent resource name, using the form:
-  // "projects/{project_id}/locations/{location}/realms/{realm-id}".
-  string parent = 1;
+  // "projects/{project}/locations/{location}/realms/{realm-id}".
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "gameservices.googleapis.com/GameServerCluster"
+    }
+  ];
 
   // Optional. The maximum number of items to return.  If unspecified, server
   // will pick an appropriate default. Server may return fewer items than
   // requested. A caller should only rely on response's
   // [next_page_token][google.cloud.gaming.v1alpha.ListGameServerClustersResponse.next_page_token] to
   // determine if there are more GameServerClusters left to be queried.
-  int32 page_size = 2;
+  int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. The next_page_token value returned from a previous List request,
   // if any.
-  string page_token = 3;
+  string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. The filter to apply to list results.
-  string filter = 4;
+  string filter = 4 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Specifies the ordering of results following syntax at
   // https://cloud.google.com/apis/design/design_patterns#sorting_order.
-  string order_by = 5;
+  string order_by = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Response message for GameServerClustersService.ListGameServerClusters.
@@ -105,42 +67,114 @@ message ListGameServerClustersResponse {
   // Token to retrieve the next page of results, or empty if there are no more
   // results in the list.
   string next_page_token = 2;
+
+  // List of locations that could not be reached.
+  repeated string unreachable_locations = 3 [deprecated = true];
+
+  // List of locations that could not be reached.
+  repeated string unreachable = 4;
 }
 
 // Request message for GameServerClustersService.GetGameServerCluster.
 message GetGameServerClusterRequest {
   // Required. The name of the game server cluster to retrieve, using the form:
   //
-  // `projects/{project_id}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster_id}`
-  string name = 1;
+  // `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "gameservices.googleapis.com/GameServerCluster"
+    }
+  ];
 }
 
 // Request message for GameServerClustersService.CreateGameServerCluster.
 message CreateGameServerClusterRequest {
   // Required. The parent resource name, using the form:
-  // `projects/{project_id}/locations/{location}/realms/{realm-id}`.
-  string parent = 1;
+  // `projects/{project}/locations/{location}/realms/{realm-id}`.
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "gameservices.googleapis.com/GameServerCluster"
+    }
+  ];
 
   // Required. The ID of the game server cluster resource to be created.
-  string game_server_cluster_id = 2;
+  string game_server_cluster_id = 2 [(google.api.field_behavior) = REQUIRED];
 
   // Required. The game server cluster resource to be created.
-  GameServerCluster game_server_cluster = 3;
+  GameServerCluster game_server_cluster = 3 [(google.api.field_behavior) = REQUIRED];
+}
+
+// Request message for GameServerClustersService.PreviewCreateGameServerCluster.
+message PreviewCreateGameServerClusterRequest {
+  // Required. The parent resource name, using the form:
+  // `projects/{project}/locations/{location}/realms/{realm-id}`.
+  string parent = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Required. The ID of the game server cluster resource to be created.
+  string game_server_cluster_id = 2 [(google.api.field_behavior) = REQUIRED];
+
+  // Required. The game server cluster resource to be created.
+  GameServerCluster game_server_cluster = 3 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. The instant of time at which the preview needs to be computed.
+  google.protobuf.Timestamp preview_time = 4 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Response message for
+// GameServerClustersService.PreviewCreateGameServerCluster.
+message PreviewCreateGameServerClusterResponse {
+  // The deployed state.
+  DeployedState deployed_state = 1 [deprecated = true];
+
+  // The ETag of the game server cluster.
+  string etag = 2;
+
+  // The target state.
+  TargetState target_state = 3;
 }
 
 // Request message for GameServerClustersService.DeleteGameServerCluster.
 message DeleteGameServerClusterRequest {
   // Required. The name of the game server cluster to delete, using the form:
-  //
-  // `projects/{project_id}/locations/{location}/gameServerClusters/{cluster_id}`
-  string name = 1;
+  // `projects/{project}/locations/{location}/gameServerClusters/{cluster}`
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "gameservices.googleapis.com/GameServerCluster"
+    }
+  ];
+}
+
+// Request message for GameServerClustersService.PreviewDeleteGameServerCluster.
+message PreviewDeleteGameServerClusterRequest {
+  // Required. The name of the game server cluster to delete, using the form:
+  // `projects/{project}/locations/{location}/gameServerClusters/{cluster}`
+  string name = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. The instant of time at which the preview needs to be computed.
+  google.protobuf.Timestamp preview_time = 2 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Response message for
+// GameServerClustersService.PreviewDeleteGameServerCluster.
+message PreviewDeleteGameServerClusterResponse {
+  // The deployed state.
+  DeployedState deployed_state = 1 [deprecated = true];
+
+  // The ETag of the game server cluster.
+  string etag = 2;
+
+  // The target state.
+  TargetState target_state = 3;
 }
 
 // Request message for GameServerClustersService.UpdateGameServerCluster.
 message UpdateGameServerClusterRequest {
   // Required. The game server cluster to be updated.
   // Only fields specified in update_mask are updated.
-  GameServerCluster game_server_cluster = 1;
+  GameServerCluster game_server_cluster = 1 [(google.api.field_behavior) = REQUIRED];
 
   // Required. Mask of fields to update. At least one path must be supplied in
   // this field. For the `FieldMask` definition, see
@@ -148,59 +182,108 @@ message UpdateGameServerClusterRequest {
   // https:
   // //developers.google.com/protocol-buffers
   // // /docs/reference/google.protobuf#fieldmask
-  google.protobuf.FieldMask update_mask = 2;
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Game server cluster connection information.
+// Request message for GameServerClustersService.UpdateGameServerCluster.
+message PreviewUpdateGameServerClusterRequest {
+  // Required. The game server cluster to be updated.
+  // Only fields specified in update_mask are updated.
+  GameServerCluster game_server_cluster = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Required. Mask of fields to update. At least one path must be supplied in
+  // this field. For the `FieldMask` definition, see
+  //
+  // https:
+  // //developers.google.com/protocol-buffers
+  // // /docs/reference/google.protobuf#fieldmask
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. The instant of time at which the preview needs to be computed.
+  google.protobuf.Timestamp preview_time = 3 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Response message for GameServerClustersService.PreviewUpdateGameServerCluster
+message PreviewUpdateGameServerClusterResponse {
+  // The deployed state.
+  DeployedState deployed_state = 1 [deprecated = true];
+
+  // The ETag of the game server cluster.
+  string etag = 2;
+
+  // The target state.
+  TargetState target_state = 3;
+}
+
+// The game server cluster connection information.
 message GameServerClusterConnectionInfo {
+  // Cluster reference represents the location of the Kubernetes cluster.
   oneof cluster_reference {
-    // Reference of the GKE cluster where the game servers are installed.
+    // Reference to the GKE cluster where the game servers are installed.
     GkeClusterReference gke_cluster_reference = 7;
+
+    // Reference to an external (non-GKE) cluster registered with GKE Hub using
+    // the GKE connect agent. See
+    // https://cloud.google.com/anthos/multicluster-management/
+    // for more information about registering non-GKE clusters.
+    GkeHubClusterReference gke_hub_cluster_reference = 8;
   }
 
   // Namespace designated on the game server cluster where the game server
   // instances will be created. The namespace existence will be validated
   // during creation.
   string namespace = 5;
-
-  // Deprecated. Use cluster instead.
-  // This is the gkeName where the game server cluster is installed.
-  // It must the format "projects/*/locations/*/clusters/*". For example,
-  // "projects/my-project/locations/us-central1/clusters/test".
-  string gke_name = 6 [deprecated = true];
 }
 
-// GkeClusterReference represents a reference of a GKE cluster.
+// GkeClusterReference represents a reference to a GKE cluster.
 message GkeClusterReference {
   // The full or partial name of a GKE cluster, using one of the following
   // forms:
-  // <ul>
-  //    <li>`projects/{project_id}/locations/{location}/clusters/{cluster_id}`
-  //    </li>
-  //    <li>`locations/{location}/clusters/{cluster_id}`</li>
-  //    <li>`{cluster_id}`</li>
-  // </ul>
+  //  * `projects/{project}/locations/{location}/clusters/{cluster}`
+  //  * `locations/{location}/clusters/{cluster}`
+  //  * `{cluster}`
   // If project and location are not specified, the project and location of the
   // GameServerCluster resource are used to generate the full name of the
   // GKE cluster.
   string cluster = 1;
 }
 
+// GkeHubClusterReference represents a reference to a Kubernetes cluster
+// registered through GKE Hub.
+message GkeHubClusterReference {
+  // The full or partial name of a GKE Hub membership, using one of the
+  // following forms:
+  //  *
+  // `https:
+  // //gkehub.googleapis.com/v1beta1/projects
+  // // /{project_id}/locations/global/memberships/{membership_id}`
+  //  * `projects/{project_id}/locations/global/memberships/{membership_id}`
+  //  * `{membership_id}`
+  // If project is not specified, the project of the GameServerCluster resource
+  // is used to generate the full name of the GKE Hub membership.
+  string membership = 1;
+}
+
 // A game server cluster resource.
 message GameServerCluster {
-  // The resource name of the game server cluster, using the form:
+  option (google.api.resource) = {
+    type: "gameservices.googleapis.com/GameServerCluster"
+    pattern: "projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}"
+  };
+
+  // Required. The resource name of the game server cluster, using the form:
   //
-  // `projects/{project_id}/locations/{location}/realms/{realm_id}/gameServerClusters/{cluster_id}`.
+  // `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
   // For example,
   //
   // `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
-  string name = 1;
+  string name = 1 [(google.api.field_behavior) = REQUIRED];
 
   // Output only. The creation time.
-  google.protobuf.Timestamp create_time = 2;
+  google.protobuf.Timestamp create_time = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. The last-modified time.
-  google.protobuf.Timestamp update_time = 3;
+  google.protobuf.Timestamp update_time = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // The labels associated with this game server cluster. Each label is a
   // key-value pair.
@@ -209,4 +292,10 @@ message GameServerCluster {
   // Game server cluster connection information. This information is used to
   // manage game server clusters.
   GameServerClusterConnectionInfo connection_info = 5;
+
+  // ETag of the resource.
+  string etag = 6;
+
+  // Human readable description of the cluster.
+  string description = 7;
 }

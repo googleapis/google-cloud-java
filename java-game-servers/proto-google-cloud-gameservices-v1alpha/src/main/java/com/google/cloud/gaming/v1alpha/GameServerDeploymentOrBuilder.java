@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,14 @@ public interface GameServerDeploymentOrBuilder
    *
    * <pre>
    * The resource name of the game server deployment, using the form:
-   * `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`.
+   * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * For example,
    * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment`.
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -41,12 +43,14 @@ public interface GameServerDeploymentOrBuilder
    *
    * <pre>
    * The resource name of the game server deployment, using the form:
-   * `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`.
+   * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * For example,
    * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment`.
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -57,7 +61,10 @@ public interface GameServerDeploymentOrBuilder
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -67,7 +74,10 @@ public interface GameServerDeploymentOrBuilder
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -77,7 +87,8 @@ public interface GameServerDeploymentOrBuilder
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -88,7 +99,10 @@ public interface GameServerDeploymentOrBuilder
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -98,7 +112,10 @@ public interface GameServerDeploymentOrBuilder
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -108,7 +125,8 @@ public interface GameServerDeploymentOrBuilder
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
@@ -175,62 +193,49 @@ public interface GameServerDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. The GameServerTemplate whose rollout was completed.
+   * ETag of the resource.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerTemplate stable_game_server_template = 5;</code>
+   * <code>string etag = 7;</code>
+   *
+   * @return The etag.
    */
-  boolean hasStableGameServerTemplate();
+  java.lang.String getEtag();
   /**
    *
    *
    * <pre>
-   * Output only. The GameServerTemplate whose rollout was completed.
+   * ETag of the resource.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerTemplate stable_game_server_template = 5;</code>
+   * <code>string etag = 7;</code>
+   *
+   * @return The bytes for etag.
    */
-  com.google.cloud.gaming.v1alpha.GameServerTemplate getStableGameServerTemplate();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The GameServerTemplate whose rollout was completed.
-   * </pre>
-   *
-   * <code>.google.cloud.gaming.v1alpha.GameServerTemplate stable_game_server_template = 5;</code>
-   */
-  com.google.cloud.gaming.v1alpha.GameServerTemplateOrBuilder
-      getStableGameServerTemplateOrBuilder();
+  com.google.protobuf.ByteString getEtagBytes();
 
   /**
    *
    *
    * <pre>
-   * The GameServerTemplate whose rollout is ongoing.
+   * Human readable description of the game server deployment.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerTemplate new_game_server_template = 6;</code>
+   * <code>string description = 8;</code>
+   *
+   * @return The description.
    */
-  boolean hasNewGameServerTemplate();
+  java.lang.String getDescription();
   /**
    *
    *
    * <pre>
-   * The GameServerTemplate whose rollout is ongoing.
+   * Human readable description of the game server deployment.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerTemplate new_game_server_template = 6;</code>
+   * <code>string description = 8;</code>
+   *
+   * @return The bytes for description.
    */
-  com.google.cloud.gaming.v1alpha.GameServerTemplate getNewGameServerTemplate();
-  /**
-   *
-   *
-   * <pre>
-   * The GameServerTemplate whose rollout is ongoing.
-   * </pre>
-   *
-   * <code>.google.cloud.gaming.v1alpha.GameServerTemplate new_game_server_template = 6;</code>
-   */
-  com.google.cloud.gaming.v1alpha.GameServerTemplateOrBuilder getNewGameServerTemplateOrBuilder();
+  com.google.protobuf.ByteString getDescriptionBytes();
 }

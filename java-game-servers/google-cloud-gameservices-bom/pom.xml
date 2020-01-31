@@ -11,7 +11,7 @@
     <version>0.4.0</version>
   </parent>
 
-  <name>Google Cloud gameservices BOM</name>
+  <name>Google Cloud Game Services BOM</name>
   <url>https://github.com/googleapis/java-gameservices</url>
   <description>
     BOM for Google Cloud Game Services

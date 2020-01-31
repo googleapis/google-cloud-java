@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,10 @@ public interface OperationMetadataOrBuilder
    * Output only. The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -40,7 +43,10 @@ public interface OperationMetadataOrBuilder
    * Output only. The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -50,7 +56,8 @@ public interface OperationMetadataOrBuilder
    * Output only. The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -61,7 +68,10 @@ public interface OperationMetadataOrBuilder
    * Output only. The time the operation finished running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
@@ -71,7 +81,10 @@ public interface OperationMetadataOrBuilder
    * Output only. The time the operation finished running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
@@ -81,7 +94,8 @@ public interface OperationMetadataOrBuilder
    * Output only. The time the operation finished running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
@@ -92,7 +106,9 @@ public interface OperationMetadataOrBuilder
    * Output only. Server-defined resource path for the target of the operation.
    * </pre>
    *
-   * <code>string target = 3;</code>
+   * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The target.
    */
   java.lang.String getTarget();
   /**
@@ -102,7 +118,9 @@ public interface OperationMetadataOrBuilder
    * Output only. Server-defined resource path for the target of the operation.
    * </pre>
    *
-   * <code>string target = 3;</code>
+   * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for target.
    */
   com.google.protobuf.ByteString getTargetBytes();
 
@@ -113,7 +131,9 @@ public interface OperationMetadataOrBuilder
    * Output only. Name of the verb executed by the operation.
    * </pre>
    *
-   * <code>string verb = 4;</code>
+   * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The verb.
    */
   java.lang.String getVerb();
   /**
@@ -123,7 +143,9 @@ public interface OperationMetadataOrBuilder
    * Output only. Name of the verb executed by the operation.
    * </pre>
    *
-   * <code>string verb = 4;</code>
+   * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for verb.
    */
   com.google.protobuf.ByteString getVerbBytes();
 
@@ -134,7 +156,9 @@ public interface OperationMetadataOrBuilder
    * Output only. Human-readable status of the operation, if any.
    * </pre>
    *
-   * <code>string status_message = 5;</code>
+   * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
   /**
@@ -144,7 +168,9 @@ public interface OperationMetadataOrBuilder
    * Output only. Human-readable status of the operation, if any.
    * </pre>
    *
-   * <code>string status_message = 5;</code>
+   * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for statusMessage.
    */
   com.google.protobuf.ByteString getStatusMessageBytes();
 
@@ -158,7 +184,9 @@ public interface OperationMetadataOrBuilder
    * corresponding to `Code.CANCELLED`.
    * </pre>
    *
-   * <code>bool requested_cancellation = 6;</code>
+   * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The requestedCancellation.
    */
   boolean getRequestedCancellation();
 
@@ -169,7 +197,9 @@ public interface OperationMetadataOrBuilder
    * Output only. API version used to start the operation.
    * </pre>
    *
-   * <code>string api_version = 7;</code>
+   * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The apiVersion.
    */
   java.lang.String getApiVersion();
   /**
@@ -179,7 +209,142 @@ public interface OperationMetadataOrBuilder
    * Output only. API version used to start the operation.
    * </pre>
    *
-   * <code>string api_version = 7;</code>
+   * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for apiVersion.
    */
   com.google.protobuf.ByteString getApiVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the unreachable.
+   */
+  java.util.List<java.lang.String> getUnreachableList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of unreachable.
+   */
+  int getUnreachableCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The unreachable at the given index.
+   */
+  java.lang.String getUnreachable(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the unreachable at the given index.
+   */
+  com.google.protobuf.ByteString getUnreachableBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Operation status for game services operations. Operation status is in the
+   * form of key-value pairs where keys are resource IDs and the values show the
+   * status of the operation. In case of failures, the value includes an error
+   * code and error message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gaming.v1alpha.OperationStatus&gt; operation_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getOperationStatusCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Operation status for game services operations. Operation status is in the
+   * form of key-value pairs where keys are resource IDs and the values show the
+   * status of the operation. In case of failures, the value includes an error
+   * code and error message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gaming.v1alpha.OperationStatus&gt; operation_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  boolean containsOperationStatus(java.lang.String key);
+  /** Use {@link #getOperationStatusMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus>
+      getOperationStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Operation status for game services operations. Operation status is in the
+   * form of key-value pairs where keys are resource IDs and the values show the
+   * status of the operation. In case of failures, the value includes an error
+   * code and error message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gaming.v1alpha.OperationStatus&gt; operation_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.gaming.v1alpha.OperationStatus>
+      getOperationStatusMap();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Operation status for game services operations. Operation status is in the
+   * form of key-value pairs where keys are resource IDs and the values show the
+   * status of the operation. In case of failures, the value includes an error
+   * code and error message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gaming.v1alpha.OperationStatus&gt; operation_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gaming.v1alpha.OperationStatus getOperationStatusOrDefault(
+      java.lang.String key, com.google.cloud.gaming.v1alpha.OperationStatus defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Operation status for game services operations. Operation status is in the
+   * form of key-value pairs where keys are resource IDs and the values show the
+   * status of the operation. In case of failures, the value includes an error
+   * code and error message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gaming.v1alpha.OperationStatus&gt; operation_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gaming.v1alpha.OperationStatus getOperationStatusOrThrow(java.lang.String key);
 }

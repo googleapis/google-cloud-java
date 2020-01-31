@@ -17,17 +17,144 @@
     <method>boolean has*(*)</method>
   </difference>
 
-  <!-- TODO: remove after 0.18.0 is released -->
+  <!-- TODO: remove after 0.19.0 is released -->
   <difference>
-    <differenceType>7006</differenceType>
-    <className>com/google/cloud/gaming/v1alpha/FleetAutoscalerSettings*</className>
-    <method>float getBufferSizePercentage()</method>
-    <to>int</to>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/GameServerClusterConnectionInfo*</className>
+    <field>GKE_NAME_FIELD_NUMBER</field>
   </difference>
   <difference>
-    <differenceType>7005</differenceType>
-    <className>com/google/cloud/gaming/v1alpha/FleetAutoscalerSettings$Builder</className>
-    <method>com.google.cloud.gaming.v1alpha.FleetAutoscalerSettings$Builder setBufferSizePercentage(float)</method>
-    <to>com.google.cloud.gaming.v1alpha.FleetAutoscalerSettings$Builder setBufferSizePercentage(int)</to>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/GameServerDeployment*</className>
+    <field>NEW_GAME_SERVER_TEMPLATE_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/GameServerDeployment*</className>
+    <field>STABLE_GAME_SERVER_TEMPLATE_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/GameServerClusterConnectionInfo</className>
+    <method>* get*()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/GameServerClusterConnectionInfoOrBuilder</className>
+    <method>* get*()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/GameServerClusterConnectionInfo$Builder</className>
+    <method>*</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/GameServerDeployment</className>
+    <method>* get*()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/GameServerDeployment</className>
+    <method>* has*()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/GameServerDeployment$Builder</className>
+    <method>*</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/GameServerDeploymentOrBuilder</className>
+    <method>com.google.cloud.gaming.v1alpha.GameServerTemplate* get*()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/GameServerDeploymentOrBuilder</className>
+    <method>boolean has*()</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/AllocationPolic*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/ClusterPercentageSelector*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/CommitRolloutRequest*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/CreateAllocationPolicyRequest*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/CreateScalingPolicyRequest*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/DeleteAllocationPolicyRequest*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/DeleteScalingPolicyRequest*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/DeploymentTarget*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/FleetAutoscalerSettings**</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/GameServerTemplate*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/GetAllocationPolicyRequest*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/GetDeploymentTargetRequest*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/GetScalingPolicyRequest*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/ListAllocationPolicies*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/ListScalingPolicies*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/RevertRolloutRequest*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/ScalingPolic*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/SetRolloutTargetRequest*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/StartRolloutRequest*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/UpdateAllocationPolicyRequest*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/UpdateScalingPolicyRequest*</className>
   </difference>
 </differences>

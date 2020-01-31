@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,14 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
   private Realm() {
     name_ = "";
     timeZone_ = "";
+    etag_ = "";
+    description_ = "";
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Realm();
   }
 
   @java.lang.Override
@@ -105,10 +113,10 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -121,6 +129,20 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               timeZone_ = s;
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              etag_ = s;
+              break;
+            }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
               break;
             }
           default:
@@ -168,7 +190,6 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gaming.v1alpha.Realm.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -176,11 +197,13 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the realm, using the form:
-   * `projects/{project_id}/locations/{location}/realms/{realm_id}`. For
+   * `projects/{project}/locations/{location}/realms/{realm}`. For
    * example, `projects/my-project/locations/{location}/realms/my-realm`.
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -198,11 +221,13 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the realm, using the form:
-   * `projects/{project_id}/locations/{location}/realms/{realm_id}`. For
+   * `projects/{project}/locations/{location}/realms/{realm}`. For
    * example, `projects/my-project/locations/{location}/realms/my-realm`.
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -225,7 +250,10 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -237,7 +265,10 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -249,7 +280,8 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
@@ -264,7 +296,10 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -276,7 +311,10 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -288,7 +326,8 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
@@ -393,13 +432,14 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Time zone where all realm-specific policies are evaluated. The value of
+   * Required. Time zone where all realm-specific policies are evaluated. The value of
    * this field must be from the IANA time zone database:
-   * https://www.iana.org/time-zones. If not specified, UTC is assumed by
-   * default.
+   * https://www.iana.org/time-zones.
    * </pre>
    *
-   * <code>string time_zone = 6;</code>
+   * <code>string time_zone = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The timeZone.
    */
   public java.lang.String getTimeZone() {
     java.lang.Object ref = timeZone_;
@@ -416,13 +456,14 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Time zone where all realm-specific policies are evaluated. The value of
+   * Required. Time zone where all realm-specific policies are evaluated. The value of
    * this field must be from the IANA time zone database:
-   * https://www.iana.org/time-zones. If not specified, UTC is assumed by
-   * default.
+   * https://www.iana.org/time-zones.
    * </pre>
    *
-   * <code>string time_zone = 6;</code>
+   * <code>string time_zone = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for timeZone.
    */
   public com.google.protobuf.ByteString getTimeZoneBytes() {
     java.lang.Object ref = timeZone_;
@@ -430,6 +471,100 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       timeZone_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ETAG_FIELD_NUMBER = 7;
+  private volatile java.lang.Object etag_;
+  /**
+   *
+   *
+   * <pre>
+   * ETag of the resource.
+   * </pre>
+   *
+   * <code>string etag = 7;</code>
+   *
+   * @return The etag.
+   */
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ETag of the resource.
+   * </pre>
+   *
+   * <code>string etag = 7;</code>
+   *
+   * @return The bytes for etag.
+   */
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 8;
+  private volatile java.lang.Object description_;
+  /**
+   *
+   *
+   * <pre>
+   * Human readable description of the realm.
+   * </pre>
+   *
+   * <code>string description = 8;</code>
+   *
+   * @return The description.
+   */
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Human readable description of the realm.
+   * </pre>
+   *
+   * <code>string description = 8;</code>
+   *
+   * @return The bytes for description.
+   */
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -464,6 +599,12 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
     if (!getTimeZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, timeZone_);
     }
+    if (!getEtagBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, etag_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, description_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -495,6 +636,12 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
     if (!getTimeZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, timeZone_);
     }
+    if (!getEtagBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, etag_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, description_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -521,6 +668,8 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getTimeZone().equals(other.getTimeZone())) return false;
+    if (!getEtag().equals(other.getEtag())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -548,6 +697,10 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + TIME_ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getTimeZone().hashCode();
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -729,6 +882,10 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().clear();
       timeZone_ = "";
 
+      etag_ = "";
+
+      description_ = "";
+
       return this;
     }
 
@@ -757,7 +914,6 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.gaming.v1alpha.Realm result =
           new com.google.cloud.gaming.v1alpha.Realm(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
@@ -772,7 +928,8 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
       result.timeZone_ = timeZone_;
-      result.bitField0_ = to_bitField0_;
+      result.etag_ = etag_;
+      result.description_ = description_;
       onBuilt();
       return result;
     }
@@ -837,6 +994,14 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
         timeZone_ = other.timeZone_;
         onChanged();
       }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        onChanged();
+      }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -874,11 +1039,13 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the realm, using the form:
-     * `projects/{project_id}/locations/{location}/realms/{realm_id}`. For
+     * `projects/{project}/locations/{location}/realms/{realm}`. For
      * example, `projects/my-project/locations/{location}/realms/my-realm`.
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -896,11 +1063,13 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the realm, using the form:
-     * `projects/{project_id}/locations/{location}/realms/{realm_id}`. For
+     * `projects/{project}/locations/{location}/realms/{realm}`. For
      * example, `projects/my-project/locations/{location}/realms/my-realm`.
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -918,11 +1087,14 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the realm, using the form:
-     * `projects/{project_id}/locations/{location}/realms/{realm_id}`. For
+     * `projects/{project}/locations/{location}/realms/{realm}`. For
      * example, `projects/my-project/locations/{location}/realms/my-realm`.
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -938,11 +1110,13 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the realm, using the form:
-     * `projects/{project_id}/locations/{location}/realms/{realm_id}`. For
+     * `projects/{project}/locations/{location}/realms/{realm}`. For
      * example, `projects/my-project/locations/{location}/realms/my-realm`.
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -955,11 +1129,14 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the realm, using the form:
-     * `projects/{project_id}/locations/{location}/realms/{realm_id}`. For
+     * `projects/{project}/locations/{location}/realms/{realm}`. For
      * example, `projects/my-project/locations/{location}/realms/my-realm`.
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -985,7 +1162,11 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -997,7 +1178,11 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1015,7 +1200,9 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1037,7 +1224,9 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -1056,7 +1245,9 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1080,7 +1271,9 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1100,7 +1293,9 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
 
@@ -1114,7 +1309,9 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -1132,7 +1329,9 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1164,7 +1363,11 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -1176,7 +1379,11 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -1194,7 +1401,9 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -1216,7 +1425,9 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
@@ -1235,7 +1446,9 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -1259,7 +1472,9 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -1279,7 +1494,9 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
 
@@ -1293,7 +1510,9 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -1311,7 +1530,9 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1487,13 +1708,14 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time zone where all realm-specific policies are evaluated. The value of
+     * Required. Time zone where all realm-specific policies are evaluated. The value of
      * this field must be from the IANA time zone database:
-     * https://www.iana.org/time-zones. If not specified, UTC is assumed by
-     * default.
+     * https://www.iana.org/time-zones.
      * </pre>
      *
-     * <code>string time_zone = 6;</code>
+     * <code>string time_zone = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The timeZone.
      */
     public java.lang.String getTimeZone() {
       java.lang.Object ref = timeZone_;
@@ -1510,13 +1732,14 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time zone where all realm-specific policies are evaluated. The value of
+     * Required. Time zone where all realm-specific policies are evaluated. The value of
      * this field must be from the IANA time zone database:
-     * https://www.iana.org/time-zones. If not specified, UTC is assumed by
-     * default.
+     * https://www.iana.org/time-zones.
      * </pre>
      *
-     * <code>string time_zone = 6;</code>
+     * <code>string time_zone = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for timeZone.
      */
     public com.google.protobuf.ByteString getTimeZoneBytes() {
       java.lang.Object ref = timeZone_;
@@ -1533,13 +1756,15 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time zone where all realm-specific policies are evaluated. The value of
+     * Required. Time zone where all realm-specific policies are evaluated. The value of
      * this field must be from the IANA time zone database:
-     * https://www.iana.org/time-zones. If not specified, UTC is assumed by
-     * default.
+     * https://www.iana.org/time-zones.
      * </pre>
      *
-     * <code>string time_zone = 6;</code>
+     * <code>string time_zone = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The timeZone to set.
+     * @return This builder for chaining.
      */
     public Builder setTimeZone(java.lang.String value) {
       if (value == null) {
@@ -1554,13 +1779,14 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time zone where all realm-specific policies are evaluated. The value of
+     * Required. Time zone where all realm-specific policies are evaluated. The value of
      * this field must be from the IANA time zone database:
-     * https://www.iana.org/time-zones. If not specified, UTC is assumed by
-     * default.
+     * https://www.iana.org/time-zones.
      * </pre>
      *
-     * <code>string time_zone = 6;</code>
+     * <code>string time_zone = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTimeZone() {
 
@@ -1572,13 +1798,15 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time zone where all realm-specific policies are evaluated. The value of
+     * Required. Time zone where all realm-specific policies are evaluated. The value of
      * this field must be from the IANA time zone database:
-     * https://www.iana.org/time-zones. If not specified, UTC is assumed by
-     * default.
+     * https://www.iana.org/time-zones.
      * </pre>
      *
-     * <code>string time_zone = 6;</code>
+     * <code>string time_zone = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for timeZone to set.
+     * @return This builder for chaining.
      */
     public Builder setTimeZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1587,6 +1815,218 @@ public final class Realm extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       timeZone_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object etag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * ETag of the resource.
+     * </pre>
+     *
+     * <code>string etag = 7;</code>
+     *
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ETag of the resource.
+     * </pre>
+     *
+     * <code>string etag = 7;</code>
+     *
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ETag of the resource.
+     * </pre>
+     *
+     * <code>string etag = 7;</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ETag of the resource.
+     * </pre>
+     *
+     * <code>string etag = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+
+      etag_ = getDefaultInstance().getEtag();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ETag of the resource.
+     * </pre>
+     *
+     * <code>string etag = 7;</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Human readable description of the realm.
+     * </pre>
+     *
+     * <code>string description = 8;</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Human readable description of the realm.
+     * </pre>
+     *
+     * <code>string description = 8;</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Human readable description of the realm.
+     * </pre>
+     *
+     * <code>string description = 8;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Human readable description of the realm.
+     * </pre>
+     *
+     * <code>string description = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Human readable description of the realm.
+     * </pre>
+     *
+     * <code>string description = 8;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      description_ = value;
       onChanged();
       return this;
     }

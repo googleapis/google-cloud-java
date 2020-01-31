@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -104,6 +104,22 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
   }
 
   @Override
+  public void previewCreateGameServerCluster(
+      PreviewCreateGameServerClusterRequest request,
+      StreamObserver<PreviewCreateGameServerClusterResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof PreviewCreateGameServerClusterResponse) {
+      requests.add(request);
+      responseObserver.onNext((PreviewCreateGameServerClusterResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void deleteGameServerCluster(
       DeleteGameServerClusterRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.remove();
@@ -119,12 +135,44 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
   }
 
   @Override
+  public void previewDeleteGameServerCluster(
+      PreviewDeleteGameServerClusterRequest request,
+      StreamObserver<PreviewDeleteGameServerClusterResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof PreviewDeleteGameServerClusterResponse) {
+      requests.add(request);
+      responseObserver.onNext((PreviewDeleteGameServerClusterResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void updateGameServerCluster(
       UpdateGameServerClusterRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext((Operation) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void previewUpdateGameServerCluster(
+      PreviewUpdateGameServerClusterRequest request,
+      StreamObserver<PreviewUpdateGameServerClusterResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof PreviewUpdateGameServerClusterResponse) {
+      requests.add(request);
+      responseObserver.onNext((PreviewUpdateGameServerClusterResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

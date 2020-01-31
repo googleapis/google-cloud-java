@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,8 +42,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: The game server deployment is used to configure the deployment of game
- * server software to Agones Fleets in game server clusters.
+ * Service Description: The game server deployment is used to control the deployment of game server
+ * software to Agones fleets.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -287,7 +287,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The parent resource name, using the form:
-   *     `projects/{project_id}/locations/{location}`.
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGameServerDeploymentsPagedResponse listGameServerDeployments(String parent) {
@@ -395,7 +395,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The name of the game server deployment to retrieve, using the form:
-   *     <p>`projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
+   *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GameServerDeployment getGameServerDeployment(String name) {
@@ -468,7 +468,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The parent resource name, using the form:
-   *     `projects/{project_id}/locations/{location}`.
+   *     `projects/{project}/locations/{location}`.
    * @param deploymentId Required. The ID of the game server deployment resource to be created.
    * @param gameServerDeployment Required. The game server deployment resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -586,7 +586,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The name of the game server deployment to delete, using the form:
-   *     <p>`projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
+   *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -697,7 +697,6 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<GameServerDeployment, Empty> updateGameServerDeploymentAsync(
       GameServerDeployment gameServerDeployment, FieldMask updateMask) {
-
     UpdateGameServerDeploymentRequest request =
         UpdateGameServerDeploymentRequest.newBuilder()
             .setGameServerDeployment(gameServerDeployment)
@@ -787,502 +786,171 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Starts rollout of this game server deployment based on the given game server template.
+   * Gets details a single game server deployment rollout.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   GameServerTemplate newGameServerTemplate = GameServerTemplate.newBuilder().build();
-   *   GameServerDeployment response = gameServerDeploymentsServiceClient.startRolloutAsync(formattedName, newGameServerTemplate).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the game server deployment, using the form:
-   *     <p>`projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
-   * @param newGameServerTemplate Required. The game server template for the new rollout.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<GameServerDeployment, Empty> startRolloutAsync(
-      String name, GameServerTemplate newGameServerTemplate) {
-    GAME_SERVER_DEPLOYMENT_PATH_TEMPLATE.validate(name, "startRollout");
-    StartRolloutRequest request =
-        StartRolloutRequest.newBuilder()
-            .setName(name)
-            .setNewGameServerTemplate(newGameServerTemplate)
-            .build();
-    return startRolloutAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Starts rollout of this game server deployment based on the given game server template.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   GameServerTemplate newGameServerTemplate = GameServerTemplate.newBuilder().build();
-   *   StartRolloutRequest request = StartRolloutRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .setNewGameServerTemplate(newGameServerTemplate)
-   *     .build();
-   *   GameServerDeployment response = gameServerDeploymentsServiceClient.startRolloutAsync(request).get();
+   *   GetGameServerDeploymentRolloutRequest request = GetGameServerDeploymentRolloutRequest.newBuilder().build();
+   *   GameServerDeploymentRollout response = gameServerDeploymentsServiceClient.getGameServerDeploymentRollout(request);
    * }
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<GameServerDeployment, Empty> startRolloutAsync(
-      StartRolloutRequest request) {
-    return startRolloutOperationCallable().futureCall(request);
+  public final GameServerDeploymentRollout getGameServerDeploymentRollout(
+      GetGameServerDeploymentRolloutRequest request) {
+    return getGameServerDeploymentRolloutCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Starts rollout of this game server deployment based on the given game server template.
+   * Gets details a single game server deployment rollout.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   GameServerTemplate newGameServerTemplate = GameServerTemplate.newBuilder().build();
-   *   StartRolloutRequest request = StartRolloutRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .setNewGameServerTemplate(newGameServerTemplate)
-   *     .build();
-   *   OperationFuture&lt;GameServerDeployment, Empty&gt; future = gameServerDeploymentsServiceClient.startRolloutOperationCallable().futureCall(request);
+   *   GetGameServerDeploymentRolloutRequest request = GetGameServerDeploymentRolloutRequest.newBuilder().build();
+   *   ApiFuture&lt;GameServerDeploymentRollout&gt; future = gameServerDeploymentsServiceClient.getGameServerDeploymentRolloutCallable().futureCall(request);
    *   // Do something
-   *   GameServerDeployment response = future.get();
+   *   GameServerDeploymentRollout response = future.get();
    * }
    * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<StartRolloutRequest, GameServerDeployment, Empty>
-      startRolloutOperationCallable() {
-    return stub.startRolloutOperationCallable();
+  public final UnaryCallable<GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
+      getGameServerDeploymentRolloutCallable() {
+    return stub.getGameServerDeploymentRolloutCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Starts rollout of this game server deployment based on the given game server template.
+   * Patches a single game server deployment rollout.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   GameServerTemplate newGameServerTemplate = GameServerTemplate.newBuilder().build();
-   *   StartRolloutRequest request = StartRolloutRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .setNewGameServerTemplate(newGameServerTemplate)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = gameServerDeploymentsServiceClient.startRolloutCallable().futureCall(request);
+   *   UpdateGameServerDeploymentRolloutRequest request = UpdateGameServerDeploymentRolloutRequest.newBuilder().build();
+   *   Operation response = gameServerDeploymentsServiceClient.updateGameServerDeploymentRollout(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation updateGameServerDeploymentRollout(
+      UpdateGameServerDeploymentRolloutRequest request) {
+    return updateGameServerDeploymentRolloutCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Patches a single game server deployment rollout.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
+   *   UpdateGameServerDeploymentRolloutRequest request = UpdateGameServerDeploymentRolloutRequest.newBuilder().build();
+   *   ApiFuture&lt;Operation&gt; future = gameServerDeploymentsServiceClient.updateGameServerDeploymentRolloutCallable().futureCall(request);
    *   // Do something
    *   Operation response = future.get();
    * }
    * </code></pre>
    */
-  public final UnaryCallable<StartRolloutRequest, Operation> startRolloutCallable() {
-    return stub.startRolloutCallable();
+  public final UnaryCallable<UpdateGameServerDeploymentRolloutRequest, Operation>
+      updateGameServerDeploymentRolloutCallable() {
+    return stub.updateGameServerDeploymentRolloutCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets rollout target for the ongoing game server deployment rollout in the specified clusters
-   * and based on the given rollout percentage. Default is 0.
+   * Previews the game server deployment rollout. This API does not mutate the rollout resource.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   List&lt;ClusterPercentageSelector&gt; clusterPercentageSelector = new ArrayList&lt;&gt;();
-   *   GameServerDeployment response = gameServerDeploymentsServiceClient.setRolloutTargetAsync(formattedName, clusterPercentageSelector).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the game server deployment, using the form:
-   *     <p>`projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
-   * @param clusterPercentageSelector Required. The percentage of game servers that should run the
-   *     new game server template in the specified clusters. Default is 0.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<GameServerDeployment, Empty> setRolloutTargetAsync(
-      String name, List<ClusterPercentageSelector> clusterPercentageSelector) {
-    GAME_SERVER_DEPLOYMENT_PATH_TEMPLATE.validate(name, "setRolloutTarget");
-    SetRolloutTargetRequest request =
-        SetRolloutTargetRequest.newBuilder()
-            .setName(name)
-            .addAllClusterPercentageSelector(clusterPercentageSelector)
-            .build();
-    return setRolloutTargetAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sets rollout target for the ongoing game server deployment rollout in the specified clusters
-   * and based on the given rollout percentage. Default is 0.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   List&lt;ClusterPercentageSelector&gt; clusterPercentageSelector = new ArrayList&lt;&gt;();
-   *   SetRolloutTargetRequest request = SetRolloutTargetRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .addAllClusterPercentageSelector(clusterPercentageSelector)
-   *     .build();
-   *   GameServerDeployment response = gameServerDeploymentsServiceClient.setRolloutTargetAsync(request).get();
+   *   PreviewGameServerDeploymentRolloutRequest request = PreviewGameServerDeploymentRolloutRequest.newBuilder().build();
+   *   PreviewGameServerDeploymentRolloutResponse response = gameServerDeploymentsServiceClient.previewGameServerDeploymentRollout(request);
    * }
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<GameServerDeployment, Empty> setRolloutTargetAsync(
-      SetRolloutTargetRequest request) {
-    return setRolloutTargetOperationCallable().futureCall(request);
+  public final PreviewGameServerDeploymentRolloutResponse previewGameServerDeploymentRollout(
+      PreviewGameServerDeploymentRolloutRequest request) {
+    return previewGameServerDeploymentRolloutCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets rollout target for the ongoing game server deployment rollout in the specified clusters
-   * and based on the given rollout percentage. Default is 0.
+   * Previews the game server deployment rollout. This API does not mutate the rollout resource.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   List&lt;ClusterPercentageSelector&gt; clusterPercentageSelector = new ArrayList&lt;&gt;();
-   *   SetRolloutTargetRequest request = SetRolloutTargetRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .addAllClusterPercentageSelector(clusterPercentageSelector)
-   *     .build();
-   *   OperationFuture&lt;GameServerDeployment, Empty&gt; future = gameServerDeploymentsServiceClient.setRolloutTargetOperationCallable().futureCall(request);
+   *   PreviewGameServerDeploymentRolloutRequest request = PreviewGameServerDeploymentRolloutRequest.newBuilder().build();
+   *   ApiFuture&lt;PreviewGameServerDeploymentRolloutResponse&gt; future = gameServerDeploymentsServiceClient.previewGameServerDeploymentRolloutCallable().futureCall(request);
    *   // Do something
-   *   GameServerDeployment response = future.get();
+   *   PreviewGameServerDeploymentRolloutResponse response = future.get();
    * }
    * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<SetRolloutTargetRequest, GameServerDeployment, Empty>
-      setRolloutTargetOperationCallable() {
-    return stub.setRolloutTargetOperationCallable();
+  public final UnaryCallable<
+          PreviewGameServerDeploymentRolloutRequest, PreviewGameServerDeploymentRolloutResponse>
+      previewGameServerDeploymentRolloutCallable() {
+    return stub.previewGameServerDeploymentRolloutCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets rollout target for the ongoing game server deployment rollout in the specified clusters
-   * and based on the given rollout percentage. Default is 0.
+   * Retrieves information about the current state of the deployment, e.g. it gathers all the fleets
+   * and autoscalars for this deployment. This includes fleets running older version of the
+   * deployment.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   List&lt;ClusterPercentageSelector&gt; clusterPercentageSelector = new ArrayList&lt;&gt;();
-   *   SetRolloutTargetRequest request = SetRolloutTargetRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .addAllClusterPercentageSelector(clusterPercentageSelector)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = gameServerDeploymentsServiceClient.setRolloutTargetCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<SetRolloutTargetRequest, Operation> setRolloutTargetCallable() {
-    return stub.setRolloutTargetCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Commits the ongoing game server deployment rollout by setting the rollout percentage to 100 in
-   * all clusters whose labels match labels in the game server template.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   GameServerDeployment response = gameServerDeploymentsServiceClient.commitRolloutAsync(formattedName).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the game server deployment, using the form:
-   *     <p>`projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<GameServerDeployment, Empty> commitRolloutAsync(String name) {
-    GAME_SERVER_DEPLOYMENT_PATH_TEMPLATE.validate(name, "commitRollout");
-    CommitRolloutRequest request = CommitRolloutRequest.newBuilder().setName(name).build();
-    return commitRolloutAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Commits the ongoing game server deployment rollout by setting the rollout percentage to 100 in
-   * all clusters whose labels match labels in the game server template.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   CommitRolloutRequest request = CommitRolloutRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .build();
-   *   GameServerDeployment response = gameServerDeploymentsServiceClient.commitRolloutAsync(request).get();
+   *   FetchDeploymentStateRequest request = FetchDeploymentStateRequest.newBuilder().build();
+   *   FetchDeploymentStateResponse response = gameServerDeploymentsServiceClient.fetchDeploymentState(request);
    * }
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<GameServerDeployment, Empty> commitRolloutAsync(
-      CommitRolloutRequest request) {
-    return commitRolloutOperationCallable().futureCall(request);
+  public final FetchDeploymentStateResponse fetchDeploymentState(
+      FetchDeploymentStateRequest request) {
+    return fetchDeploymentStateCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Commits the ongoing game server deployment rollout by setting the rollout percentage to 100 in
-   * all clusters whose labels match labels in the game server template.
+   * Retrieves information about the current state of the deployment, e.g. it gathers all the fleets
+   * and autoscalars for this deployment. This includes fleets running older version of the
+   * deployment.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   CommitRolloutRequest request = CommitRolloutRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .build();
-   *   OperationFuture&lt;GameServerDeployment, Empty&gt; future = gameServerDeploymentsServiceClient.commitRolloutOperationCallable().futureCall(request);
+   *   FetchDeploymentStateRequest request = FetchDeploymentStateRequest.newBuilder().build();
+   *   ApiFuture&lt;FetchDeploymentStateResponse&gt; future = gameServerDeploymentsServiceClient.fetchDeploymentStateCallable().futureCall(request);
    *   // Do something
-   *   GameServerDeployment response = future.get();
+   *   FetchDeploymentStateResponse response = future.get();
    * }
    * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<CommitRolloutRequest, GameServerDeployment, Empty>
-      commitRolloutOperationCallable() {
-    return stub.commitRolloutOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Commits the ongoing game server deployment rollout by setting the rollout percentage to 100 in
-   * all clusters whose labels match labels in the game server template.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   CommitRolloutRequest request = CommitRolloutRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = gameServerDeploymentsServiceClient.commitRolloutCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<CommitRolloutRequest, Operation> commitRolloutCallable() {
-    return stub.commitRolloutCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Rolls back the ongoing game server deployment rollout by setting the rollout percentage to 0 in
-   * all clusters whose labels match labels in the game server template.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   GameServerDeployment response = gameServerDeploymentsServiceClient.revertRolloutAsync(formattedName).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the game server deployment to deploy, using the form:
-   *     <p>`projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<GameServerDeployment, Empty> revertRolloutAsync(String name) {
-    GAME_SERVER_DEPLOYMENT_PATH_TEMPLATE.validate(name, "revertRollout");
-    RevertRolloutRequest request = RevertRolloutRequest.newBuilder().setName(name).build();
-    return revertRolloutAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Rolls back the ongoing game server deployment rollout by setting the rollout percentage to 0 in
-   * all clusters whose labels match labels in the game server template.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   RevertRolloutRequest request = RevertRolloutRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .build();
-   *   GameServerDeployment response = gameServerDeploymentsServiceClient.revertRolloutAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<GameServerDeployment, Empty> revertRolloutAsync(
-      RevertRolloutRequest request) {
-    return revertRolloutOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Rolls back the ongoing game server deployment rollout by setting the rollout percentage to 0 in
-   * all clusters whose labels match labels in the game server template.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   RevertRolloutRequest request = RevertRolloutRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .build();
-   *   OperationFuture&lt;GameServerDeployment, Empty&gt; future = gameServerDeploymentsServiceClient.revertRolloutOperationCallable().futureCall(request);
-   *   // Do something
-   *   GameServerDeployment response = future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<RevertRolloutRequest, GameServerDeployment, Empty>
-      revertRolloutOperationCallable() {
-    return stub.revertRolloutOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Rolls back the ongoing game server deployment rollout by setting the rollout percentage to 0 in
-   * all clusters whose labels match labels in the game server template.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   RevertRolloutRequest request = RevertRolloutRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = gameServerDeploymentsServiceClient.revertRolloutCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<RevertRolloutRequest, Operation> revertRolloutCallable() {
-    return stub.revertRolloutCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves information on the rollout target of the deployment, e.g. the target percentage of
-   * game servers running stable_game_server_template and new_game_server_template in clusters.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   DeploymentTarget response = gameServerDeploymentsServiceClient.getDeploymentTarget(formattedName);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the game server deployment, using the form:
-   *     <p>`projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final DeploymentTarget getDeploymentTarget(String name) {
-    GAME_SERVER_DEPLOYMENT_PATH_TEMPLATE.validate(name, "getDeploymentTarget");
-    GetDeploymentTargetRequest request =
-        GetDeploymentTargetRequest.newBuilder().setName(name).build();
-    return getDeploymentTarget(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves information on the rollout target of the deployment, e.g. the target percentage of
-   * game servers running stable_game_server_template and new_game_server_template in clusters.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   GetDeploymentTargetRequest request = GetDeploymentTargetRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .build();
-   *   DeploymentTarget response = gameServerDeploymentsServiceClient.getDeploymentTarget(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final DeploymentTarget getDeploymentTarget(GetDeploymentTargetRequest request) {
-    return getDeploymentTargetCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves information on the rollout target of the deployment, e.g. the target percentage of
-   * game servers running stable_game_server_template and new_game_server_template in clusters.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.create()) {
-   *   String formattedName = GameServerDeploymentsServiceClient.formatGameServerDeploymentName("[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-   *   GetDeploymentTargetRequest request = GetDeploymentTargetRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .build();
-   *   ApiFuture&lt;DeploymentTarget&gt; future = gameServerDeploymentsServiceClient.getDeploymentTargetCallable().futureCall(request);
-   *   // Do something
-   *   DeploymentTarget response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetDeploymentTargetRequest, DeploymentTarget>
-      getDeploymentTargetCallable() {
-    return stub.getDeploymentTargetCallable();
+  public final UnaryCallable<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
+      fetchDeploymentStateCallable() {
+    return stub.fetchDeploymentStateCallable();
   }
 
   @Override

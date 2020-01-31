@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,8 +42,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Realm provides grouping of game server clusters that are serving particular
- * gamer population.
+ * Service Description: Realm provides grouping of game server clusters that are serving a
+ * particular gamer population.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -272,7 +272,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The parent resource name, using the form:
-   *     `projects/{project_id}/locations/{location}`.
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRealmsPagedResponse listRealms(String parent) {
@@ -375,7 +375,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The name of the realm to retrieve, using the form:
-   *     `projects/{project_id}/locations/{location}/realms/{realm_id}`
+   *     `projects/{project}/locations/{location}/realms/{realm}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Realm getRealm(String name) {
@@ -445,7 +445,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The parent resource name, using the form:
-   *     `projects/{project_id}/locations/{location}`.
+   *     `projects/{project}/locations/{location}`.
    * @param realmId Required. The ID of the realm resource to be created.
    * @param realm Required. The realm resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -560,7 +560,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The name of the realm to delete, using the form:
-   *     `projects/{project_id}/locations/{location}/realms/{realm_id}`
+   *     `projects/{project}/locations/{location}/realms/{realm}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -666,7 +666,6 @@ public class RealmsServiceClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Realm, Empty> updateRealmAsync(Realm realm, FieldMask updateMask) {
-
     UpdateRealmRequest request =
         UpdateRealmRequest.newBuilder().setRealm(realm).setUpdateMask(updateMask).build();
     return updateRealmAsync(request);
@@ -746,6 +745,46 @@ public class RealmsServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateRealmRequest, Operation> updateRealmCallable() {
     return stub.updateRealmCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Previews patches to a single Realm.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
+   *   PreviewRealmUpdateRequest request = PreviewRealmUpdateRequest.newBuilder().build();
+   *   PreviewRealmUpdateResponse response = realmsServiceClient.previewRealmUpdate(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PreviewRealmUpdateResponse previewRealmUpdate(PreviewRealmUpdateRequest request) {
+    return previewRealmUpdateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Previews patches to a single Realm.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
+   *   PreviewRealmUpdateRequest request = PreviewRealmUpdateRequest.newBuilder().build();
+   *   ApiFuture&lt;PreviewRealmUpdateResponse&gt; future = realmsServiceClient.previewRealmUpdateCallable().futureCall(request);
+   *   // Do something
+   *   PreviewRealmUpdateResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
+      previewRealmUpdateCallable() {
+    return stub.previewRealmUpdateCallable();
   }
 
   @Override

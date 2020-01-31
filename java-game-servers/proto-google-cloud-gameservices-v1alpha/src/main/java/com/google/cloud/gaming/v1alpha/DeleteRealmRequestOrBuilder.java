@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,14 @@ public interface DeleteRealmRequestOrBuilder
    *
    * <pre>
    * Required. The name of the realm to delete, using the form:
-   * `projects/{project_id}/locations/{location}/realms/{realm_id}`
+   * `projects/{project}/locations/{location}/realms/{realm}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -39,10 +43,14 @@ public interface DeleteRealmRequestOrBuilder
    *
    * <pre>
    * Required. The name of the realm to delete, using the form:
-   * `projects/{project_id}/locations/{location}/realms/{realm_id}`
+   * `projects/{project}/locations/{location}/realms/{realm}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 }

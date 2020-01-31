@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,19 +26,20 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.gaming.v1alpha.CommitRolloutRequest;
 import com.google.cloud.gaming.v1alpha.CreateGameServerDeploymentRequest;
 import com.google.cloud.gaming.v1alpha.DeleteGameServerDeploymentRequest;
-import com.google.cloud.gaming.v1alpha.DeploymentTarget;
+import com.google.cloud.gaming.v1alpha.FetchDeploymentStateRequest;
+import com.google.cloud.gaming.v1alpha.FetchDeploymentStateResponse;
 import com.google.cloud.gaming.v1alpha.GameServerDeployment;
-import com.google.cloud.gaming.v1alpha.GetDeploymentTargetRequest;
+import com.google.cloud.gaming.v1alpha.GameServerDeploymentRollout;
 import com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRequest;
+import com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRolloutRequest;
 import com.google.cloud.gaming.v1alpha.ListGameServerDeploymentsRequest;
 import com.google.cloud.gaming.v1alpha.ListGameServerDeploymentsResponse;
-import com.google.cloud.gaming.v1alpha.RevertRolloutRequest;
-import com.google.cloud.gaming.v1alpha.SetRolloutTargetRequest;
-import com.google.cloud.gaming.v1alpha.StartRolloutRequest;
+import com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutRequest;
+import com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutResponse;
 import com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRequest;
+import com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRolloutRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -114,54 +115,57 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                   ProtoUtils.marshaller(UpdateGameServerDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<StartRolloutRequest, Operation>
-      startRolloutMethodDescriptor =
-          MethodDescriptor.<StartRolloutRequest, Operation>newBuilder()
+  private static final MethodDescriptor<
+          GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
+      getGameServerDeploymentRolloutMethodDescriptor =
+          MethodDescriptor
+              .<GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
-                  "google.cloud.gaming.v1alpha.GameServerDeploymentsService/StartRollout")
-              .setRequestMarshaller(ProtoUtils.marshaller(StartRolloutRequest.getDefaultInstance()))
+                  "google.cloud.gaming.v1alpha.GameServerDeploymentsService/GetGameServerDeploymentRollout")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetGameServerDeploymentRolloutRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GameServerDeploymentRollout.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<UpdateGameServerDeploymentRolloutRequest, Operation>
+      updateGameServerDeploymentRolloutMethodDescriptor =
+          MethodDescriptor.<UpdateGameServerDeploymentRolloutRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.gaming.v1alpha.GameServerDeploymentsService/UpdateGameServerDeploymentRollout")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      UpdateGameServerDeploymentRolloutRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<SetRolloutTargetRequest, Operation>
-      setRolloutTargetMethodDescriptor =
-          MethodDescriptor.<SetRolloutTargetRequest, Operation>newBuilder()
+  private static final MethodDescriptor<
+          PreviewGameServerDeploymentRolloutRequest, PreviewGameServerDeploymentRolloutResponse>
+      previewGameServerDeploymentRolloutMethodDescriptor =
+          MethodDescriptor
+              .<PreviewGameServerDeploymentRolloutRequest,
+                  PreviewGameServerDeploymentRolloutResponse>
+                  newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
-                  "google.cloud.gaming.v1alpha.GameServerDeploymentsService/SetRolloutTarget")
+                  "google.cloud.gaming.v1alpha.GameServerDeploymentsService/PreviewGameServerDeploymentRollout")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(SetRolloutTargetRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      PreviewGameServerDeploymentRolloutRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      PreviewGameServerDeploymentRolloutResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<CommitRolloutRequest, Operation>
-      commitRolloutMethodDescriptor =
-          MethodDescriptor.<CommitRolloutRequest, Operation>newBuilder()
+  private static final MethodDescriptor<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
+      fetchDeploymentStateMethodDescriptor =
+          MethodDescriptor.<FetchDeploymentStateRequest, FetchDeploymentStateResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
-                  "google.cloud.gaming.v1alpha.GameServerDeploymentsService/CommitRollout")
+                  "google.cloud.gaming.v1alpha.GameServerDeploymentsService/FetchDeploymentState")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(CommitRolloutRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<RevertRolloutRequest, Operation>
-      revertRolloutMethodDescriptor =
-          MethodDescriptor.<RevertRolloutRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.gaming.v1alpha.GameServerDeploymentsService/RevertRollout")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(RevertRolloutRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<GetDeploymentTargetRequest, DeploymentTarget>
-      getDeploymentTargetMethodDescriptor =
-          MethodDescriptor.<GetDeploymentTargetRequest, DeploymentTarget>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.gaming.v1alpha.GameServerDeploymentsService/GetDeploymentTarget")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetDeploymentTargetRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(DeploymentTarget.getDefaultInstance()))
+                  ProtoUtils.marshaller(FetchDeploymentStateRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FetchDeploymentStateResponse.getDefaultInstance()))
               .build();
 
   private final BackgroundResource backgroundResources;
@@ -186,20 +190,15 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
       updateGameServerDeploymentCallable;
   private final OperationCallable<UpdateGameServerDeploymentRequest, GameServerDeployment, Empty>
       updateGameServerDeploymentOperationCallable;
-  private final UnaryCallable<StartRolloutRequest, Operation> startRolloutCallable;
-  private final OperationCallable<StartRolloutRequest, GameServerDeployment, Empty>
-      startRolloutOperationCallable;
-  private final UnaryCallable<SetRolloutTargetRequest, Operation> setRolloutTargetCallable;
-  private final OperationCallable<SetRolloutTargetRequest, GameServerDeployment, Empty>
-      setRolloutTargetOperationCallable;
-  private final UnaryCallable<CommitRolloutRequest, Operation> commitRolloutCallable;
-  private final OperationCallable<CommitRolloutRequest, GameServerDeployment, Empty>
-      commitRolloutOperationCallable;
-  private final UnaryCallable<RevertRolloutRequest, Operation> revertRolloutCallable;
-  private final OperationCallable<RevertRolloutRequest, GameServerDeployment, Empty>
-      revertRolloutOperationCallable;
-  private final UnaryCallable<GetDeploymentTargetRequest, DeploymentTarget>
-      getDeploymentTargetCallable;
+  private final UnaryCallable<GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
+      getGameServerDeploymentRolloutCallable;
+  private final UnaryCallable<UpdateGameServerDeploymentRolloutRequest, Operation>
+      updateGameServerDeploymentRolloutCallable;
+  private final UnaryCallable<
+          PreviewGameServerDeploymentRolloutRequest, PreviewGameServerDeploymentRolloutResponse>
+      previewGameServerDeploymentRolloutCallable;
+  private final UnaryCallable<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
+      fetchDeploymentStateCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -322,66 +321,64 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                       }
                     })
                 .build();
-    GrpcCallSettings<StartRolloutRequest, Operation> startRolloutTransportSettings =
-        GrpcCallSettings.<StartRolloutRequest, Operation>newBuilder()
-            .setMethodDescriptor(startRolloutMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<StartRolloutRequest>() {
-                  @Override
-                  public Map<String, String> extract(StartRolloutRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<SetRolloutTargetRequest, Operation> setRolloutTargetTransportSettings =
-        GrpcCallSettings.<SetRolloutTargetRequest, Operation>newBuilder()
-            .setMethodDescriptor(setRolloutTargetMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<SetRolloutTargetRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetRolloutTargetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<CommitRolloutRequest, Operation> commitRolloutTransportSettings =
-        GrpcCallSettings.<CommitRolloutRequest, Operation>newBuilder()
-            .setMethodDescriptor(commitRolloutMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<CommitRolloutRequest>() {
-                  @Override
-                  public Map<String, String> extract(CommitRolloutRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<RevertRolloutRequest, Operation> revertRolloutTransportSettings =
-        GrpcCallSettings.<RevertRolloutRequest, Operation>newBuilder()
-            .setMethodDescriptor(revertRolloutMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<RevertRolloutRequest>() {
-                  @Override
-                  public Map<String, String> extract(RevertRolloutRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<GetDeploymentTargetRequest, DeploymentTarget>
-        getDeploymentTargetTransportSettings =
-            GrpcCallSettings.<GetDeploymentTargetRequest, DeploymentTarget>newBuilder()
-                .setMethodDescriptor(getDeploymentTargetMethodDescriptor)
+    GrpcCallSettings<GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
+        getGameServerDeploymentRolloutTransportSettings =
+            GrpcCallSettings
+                .<GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>newBuilder()
+                .setMethodDescriptor(getGameServerDeploymentRolloutMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetDeploymentTargetRequest>() {
+                    new RequestParamsExtractor<GetGameServerDeploymentRolloutRequest>() {
                       @Override
-                      public Map<String, String> extract(GetDeploymentTargetRequest request) {
+                      public Map<String, String> extract(
+                          GetGameServerDeploymentRolloutRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<UpdateGameServerDeploymentRolloutRequest, Operation>
+        updateGameServerDeploymentRolloutTransportSettings =
+            GrpcCallSettings.<UpdateGameServerDeploymentRolloutRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateGameServerDeploymentRolloutMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<UpdateGameServerDeploymentRolloutRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          UpdateGameServerDeploymentRolloutRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("rollout.name", String.valueOf(request.getRollout().getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<
+            PreviewGameServerDeploymentRolloutRequest, PreviewGameServerDeploymentRolloutResponse>
+        previewGameServerDeploymentRolloutTransportSettings =
+            GrpcCallSettings
+                .<PreviewGameServerDeploymentRolloutRequest,
+                    PreviewGameServerDeploymentRolloutResponse>
+                    newBuilder()
+                .setMethodDescriptor(previewGameServerDeploymentRolloutMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<PreviewGameServerDeploymentRolloutRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          PreviewGameServerDeploymentRolloutRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("rollout.name", String.valueOf(request.getRollout().getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
+        fetchDeploymentStateTransportSettings =
+            GrpcCallSettings.<FetchDeploymentStateRequest, FetchDeploymentStateResponse>newBuilder()
+                .setMethodDescriptor(fetchDeploymentStateMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<FetchDeploymentStateRequest>() {
+                      @Override
+                      public Map<String, String> extract(FetchDeploymentStateRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                         params.put("name", String.valueOf(request.getName()));
                         return params.build();
@@ -437,46 +434,25 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
             settings.updateGameServerDeploymentOperationSettings(),
             clientContext,
             this.operationsStub);
-    this.startRolloutCallable =
+    this.getGameServerDeploymentRolloutCallable =
         callableFactory.createUnaryCallable(
-            startRolloutTransportSettings, settings.startRolloutSettings(), clientContext);
-    this.startRolloutOperationCallable =
-        callableFactory.createOperationCallable(
-            startRolloutTransportSettings,
-            settings.startRolloutOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.setRolloutTargetCallable =
+            getGameServerDeploymentRolloutTransportSettings,
+            settings.getGameServerDeploymentRolloutSettings(),
+            clientContext);
+    this.updateGameServerDeploymentRolloutCallable =
         callableFactory.createUnaryCallable(
-            setRolloutTargetTransportSettings, settings.setRolloutTargetSettings(), clientContext);
-    this.setRolloutTargetOperationCallable =
-        callableFactory.createOperationCallable(
-            setRolloutTargetTransportSettings,
-            settings.setRolloutTargetOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.commitRolloutCallable =
+            updateGameServerDeploymentRolloutTransportSettings,
+            settings.updateGameServerDeploymentRolloutSettings(),
+            clientContext);
+    this.previewGameServerDeploymentRolloutCallable =
         callableFactory.createUnaryCallable(
-            commitRolloutTransportSettings, settings.commitRolloutSettings(), clientContext);
-    this.commitRolloutOperationCallable =
-        callableFactory.createOperationCallable(
-            commitRolloutTransportSettings,
-            settings.commitRolloutOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.revertRolloutCallable =
+            previewGameServerDeploymentRolloutTransportSettings,
+            settings.previewGameServerDeploymentRolloutSettings(),
+            clientContext);
+    this.fetchDeploymentStateCallable =
         callableFactory.createUnaryCallable(
-            revertRolloutTransportSettings, settings.revertRolloutSettings(), clientContext);
-    this.revertRolloutOperationCallable =
-        callableFactory.createOperationCallable(
-            revertRolloutTransportSettings,
-            settings.revertRolloutOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.getDeploymentTargetCallable =
-        callableFactory.createUnaryCallable(
-            getDeploymentTargetTransportSettings,
-            settings.getDeploymentTargetSettings(),
+            fetchDeploymentStateTransportSettings,
+            settings.fetchDeploymentStateSettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -535,48 +511,25 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
     return updateGameServerDeploymentCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<StartRolloutRequest, GameServerDeployment, Empty>
-      startRolloutOperationCallable() {
-    return startRolloutOperationCallable;
+  public UnaryCallable<GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
+      getGameServerDeploymentRolloutCallable() {
+    return getGameServerDeploymentRolloutCallable;
   }
 
-  public UnaryCallable<StartRolloutRequest, Operation> startRolloutCallable() {
-    return startRolloutCallable;
+  public UnaryCallable<UpdateGameServerDeploymentRolloutRequest, Operation>
+      updateGameServerDeploymentRolloutCallable() {
+    return updateGameServerDeploymentRolloutCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<SetRolloutTargetRequest, GameServerDeployment, Empty>
-      setRolloutTargetOperationCallable() {
-    return setRolloutTargetOperationCallable;
+  public UnaryCallable<
+          PreviewGameServerDeploymentRolloutRequest, PreviewGameServerDeploymentRolloutResponse>
+      previewGameServerDeploymentRolloutCallable() {
+    return previewGameServerDeploymentRolloutCallable;
   }
 
-  public UnaryCallable<SetRolloutTargetRequest, Operation> setRolloutTargetCallable() {
-    return setRolloutTargetCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CommitRolloutRequest, GameServerDeployment, Empty>
-      commitRolloutOperationCallable() {
-    return commitRolloutOperationCallable;
-  }
-
-  public UnaryCallable<CommitRolloutRequest, Operation> commitRolloutCallable() {
-    return commitRolloutCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<RevertRolloutRequest, GameServerDeployment, Empty>
-      revertRolloutOperationCallable() {
-    return revertRolloutOperationCallable;
-  }
-
-  public UnaryCallable<RevertRolloutRequest, Operation> revertRolloutCallable() {
-    return revertRolloutCallable;
-  }
-
-  public UnaryCallable<GetDeploymentTargetRequest, DeploymentTarget> getDeploymentTargetCallable() {
-    return getDeploymentTargetCallable;
+  public UnaryCallable<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
+      fetchDeploymentStateCallable() {
+    return fetchDeploymentStateCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,13 +26,13 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  *
  * <pre>
- * The game server deployment is used to configure the deployment of game server
- * software to Agones Fleets in game server clusters.
+ * The game server deployment is used to control the deployment of game server
+ * software to Agones fleets.
  * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.10.0)",
-    comments = "Source: google/cloud/gaming/v1alpha/game_server_deployments.proto")
+    comments = "Source: google/cloud/gaming/v1alpha/game_server_deployments_service.proto")
 public final class GameServerDeploymentsServiceGrpc {
 
   private GameServerDeploymentsServiceGrpc() {}
@@ -364,293 +364,265 @@ public final class GameServerDeploymentsServiceGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getStartRolloutMethod()} instead.
+  @java.lang.Deprecated // Use {@link #getGetGameServerDeploymentRolloutMethod()} instead.
   public static final io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.StartRolloutRequest, com.google.longrunning.Operation>
-      METHOD_START_ROLLOUT = getStartRolloutMethodHelper();
+          com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRolloutRequest,
+          com.google.cloud.gaming.v1alpha.GameServerDeploymentRollout>
+      METHOD_GET_GAME_SERVER_DEPLOYMENT_ROLLOUT = getGetGameServerDeploymentRolloutMethodHelper();
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.StartRolloutRequest, com.google.longrunning.Operation>
-      getStartRolloutMethod;
+          com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRolloutRequest,
+          com.google.cloud.gaming.v1alpha.GameServerDeploymentRollout>
+      getGetGameServerDeploymentRolloutMethod;
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.StartRolloutRequest, com.google.longrunning.Operation>
-      getStartRolloutMethod() {
-    return getStartRolloutMethodHelper();
+          com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRolloutRequest,
+          com.google.cloud.gaming.v1alpha.GameServerDeploymentRollout>
+      getGetGameServerDeploymentRolloutMethod() {
+    return getGetGameServerDeploymentRolloutMethodHelper();
   }
 
   private static io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.StartRolloutRequest, com.google.longrunning.Operation>
-      getStartRolloutMethodHelper() {
+          com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRolloutRequest,
+          com.google.cloud.gaming.v1alpha.GameServerDeploymentRollout>
+      getGetGameServerDeploymentRolloutMethodHelper() {
     io.grpc.MethodDescriptor<
-            com.google.cloud.gaming.v1alpha.StartRolloutRequest, com.google.longrunning.Operation>
-        getStartRolloutMethod;
-    if ((getStartRolloutMethod = GameServerDeploymentsServiceGrpc.getStartRolloutMethod) == null) {
+            com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRolloutRequest,
+            com.google.cloud.gaming.v1alpha.GameServerDeploymentRollout>
+        getGetGameServerDeploymentRolloutMethod;
+    if ((getGetGameServerDeploymentRolloutMethod =
+            GameServerDeploymentsServiceGrpc.getGetGameServerDeploymentRolloutMethod)
+        == null) {
       synchronized (GameServerDeploymentsServiceGrpc.class) {
-        if ((getStartRolloutMethod = GameServerDeploymentsServiceGrpc.getStartRolloutMethod)
+        if ((getGetGameServerDeploymentRolloutMethod =
+                GameServerDeploymentsServiceGrpc.getGetGameServerDeploymentRolloutMethod)
             == null) {
-          GameServerDeploymentsServiceGrpc.getStartRolloutMethod =
-              getStartRolloutMethod =
+          GameServerDeploymentsServiceGrpc.getGetGameServerDeploymentRolloutMethod =
+              getGetGameServerDeploymentRolloutMethod =
                   io.grpc.MethodDescriptor
-                      .<com.google.cloud.gaming.v1alpha.StartRolloutRequest,
-                          com.google.longrunning.Operation>
+                      .<com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRolloutRequest,
+                          com.google.cloud.gaming.v1alpha.GameServerDeploymentRollout>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
                           generateFullMethodName(
                               "google.cloud.gaming.v1alpha.GameServerDeploymentsService",
-                              "StartRollout"))
+                              "GetGameServerDeploymentRollout"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.gaming.v1alpha.StartRolloutRequest
+                              com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRolloutRequest
                                   .getDefaultInstance()))
                       .setResponseMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
+                              com.google.cloud.gaming.v1alpha.GameServerDeploymentRollout
+                                  .getDefaultInstance()))
                       .setSchemaDescriptor(
-                          new GameServerDeploymentsServiceMethodDescriptorSupplier("StartRollout"))
+                          new GameServerDeploymentsServiceMethodDescriptorSupplier(
+                              "GetGameServerDeploymentRollout"))
                       .build();
         }
       }
     }
-    return getStartRolloutMethod;
+    return getGetGameServerDeploymentRolloutMethod;
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSetRolloutTargetMethod()} instead.
+  @java.lang.Deprecated // Use {@link #getUpdateGameServerDeploymentRolloutMethod()} instead.
   public static final io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.SetRolloutTargetRequest, com.google.longrunning.Operation>
-      METHOD_SET_ROLLOUT_TARGET = getSetRolloutTargetMethodHelper();
+          com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRolloutRequest,
+          com.google.longrunning.Operation>
+      METHOD_UPDATE_GAME_SERVER_DEPLOYMENT_ROLLOUT =
+          getUpdateGameServerDeploymentRolloutMethodHelper();
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.SetRolloutTargetRequest, com.google.longrunning.Operation>
-      getSetRolloutTargetMethod;
+          com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRolloutRequest,
+          com.google.longrunning.Operation>
+      getUpdateGameServerDeploymentRolloutMethod;
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.SetRolloutTargetRequest, com.google.longrunning.Operation>
-      getSetRolloutTargetMethod() {
-    return getSetRolloutTargetMethodHelper();
+          com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRolloutRequest,
+          com.google.longrunning.Operation>
+      getUpdateGameServerDeploymentRolloutMethod() {
+    return getUpdateGameServerDeploymentRolloutMethodHelper();
   }
 
   private static io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.SetRolloutTargetRequest, com.google.longrunning.Operation>
-      getSetRolloutTargetMethodHelper() {
+          com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRolloutRequest,
+          com.google.longrunning.Operation>
+      getUpdateGameServerDeploymentRolloutMethodHelper() {
     io.grpc.MethodDescriptor<
-            com.google.cloud.gaming.v1alpha.SetRolloutTargetRequest,
+            com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRolloutRequest,
             com.google.longrunning.Operation>
-        getSetRolloutTargetMethod;
-    if ((getSetRolloutTargetMethod = GameServerDeploymentsServiceGrpc.getSetRolloutTargetMethod)
+        getUpdateGameServerDeploymentRolloutMethod;
+    if ((getUpdateGameServerDeploymentRolloutMethod =
+            GameServerDeploymentsServiceGrpc.getUpdateGameServerDeploymentRolloutMethod)
         == null) {
       synchronized (GameServerDeploymentsServiceGrpc.class) {
-        if ((getSetRolloutTargetMethod = GameServerDeploymentsServiceGrpc.getSetRolloutTargetMethod)
+        if ((getUpdateGameServerDeploymentRolloutMethod =
+                GameServerDeploymentsServiceGrpc.getUpdateGameServerDeploymentRolloutMethod)
             == null) {
-          GameServerDeploymentsServiceGrpc.getSetRolloutTargetMethod =
-              getSetRolloutTargetMethod =
+          GameServerDeploymentsServiceGrpc.getUpdateGameServerDeploymentRolloutMethod =
+              getUpdateGameServerDeploymentRolloutMethod =
                   io.grpc.MethodDescriptor
-                      .<com.google.cloud.gaming.v1alpha.SetRolloutTargetRequest,
+                      .<com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRolloutRequest,
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
                           generateFullMethodName(
                               "google.cloud.gaming.v1alpha.GameServerDeploymentsService",
-                              "SetRolloutTarget"))
+                              "UpdateGameServerDeploymentRollout"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.gaming.v1alpha.SetRolloutTargetRequest
-                                  .getDefaultInstance()))
+                              com.google.cloud.gaming.v1alpha
+                                  .UpdateGameServerDeploymentRolloutRequest.getDefaultInstance()))
                       .setResponseMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
                               com.google.longrunning.Operation.getDefaultInstance()))
                       .setSchemaDescriptor(
                           new GameServerDeploymentsServiceMethodDescriptorSupplier(
-                              "SetRolloutTarget"))
+                              "UpdateGameServerDeploymentRollout"))
                       .build();
         }
       }
     }
-    return getSetRolloutTargetMethod;
+    return getUpdateGameServerDeploymentRolloutMethod;
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCommitRolloutMethod()} instead.
+  @java.lang.Deprecated // Use {@link #getPreviewGameServerDeploymentRolloutMethod()} instead.
   public static final io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.CommitRolloutRequest, com.google.longrunning.Operation>
-      METHOD_COMMIT_ROLLOUT = getCommitRolloutMethodHelper();
+          com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutRequest,
+          com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutResponse>
+      METHOD_PREVIEW_GAME_SERVER_DEPLOYMENT_ROLLOUT =
+          getPreviewGameServerDeploymentRolloutMethodHelper();
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.CommitRolloutRequest, com.google.longrunning.Operation>
-      getCommitRolloutMethod;
+          com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutRequest,
+          com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutResponse>
+      getPreviewGameServerDeploymentRolloutMethod;
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.CommitRolloutRequest, com.google.longrunning.Operation>
-      getCommitRolloutMethod() {
-    return getCommitRolloutMethodHelper();
+          com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutRequest,
+          com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutResponse>
+      getPreviewGameServerDeploymentRolloutMethod() {
+    return getPreviewGameServerDeploymentRolloutMethodHelper();
   }
 
   private static io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.CommitRolloutRequest, com.google.longrunning.Operation>
-      getCommitRolloutMethodHelper() {
+          com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutRequest,
+          com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutResponse>
+      getPreviewGameServerDeploymentRolloutMethodHelper() {
     io.grpc.MethodDescriptor<
-            com.google.cloud.gaming.v1alpha.CommitRolloutRequest, com.google.longrunning.Operation>
-        getCommitRolloutMethod;
-    if ((getCommitRolloutMethod = GameServerDeploymentsServiceGrpc.getCommitRolloutMethod)
+            com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutRequest,
+            com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutResponse>
+        getPreviewGameServerDeploymentRolloutMethod;
+    if ((getPreviewGameServerDeploymentRolloutMethod =
+            GameServerDeploymentsServiceGrpc.getPreviewGameServerDeploymentRolloutMethod)
         == null) {
       synchronized (GameServerDeploymentsServiceGrpc.class) {
-        if ((getCommitRolloutMethod = GameServerDeploymentsServiceGrpc.getCommitRolloutMethod)
+        if ((getPreviewGameServerDeploymentRolloutMethod =
+                GameServerDeploymentsServiceGrpc.getPreviewGameServerDeploymentRolloutMethod)
             == null) {
-          GameServerDeploymentsServiceGrpc.getCommitRolloutMethod =
-              getCommitRolloutMethod =
+          GameServerDeploymentsServiceGrpc.getPreviewGameServerDeploymentRolloutMethod =
+              getPreviewGameServerDeploymentRolloutMethod =
                   io.grpc.MethodDescriptor
-                      .<com.google.cloud.gaming.v1alpha.CommitRolloutRequest,
-                          com.google.longrunning.Operation>
+                      .<com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutRequest,
+                          com.google.cloud.gaming.v1alpha
+                              .PreviewGameServerDeploymentRolloutResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
                           generateFullMethodName(
                               "google.cloud.gaming.v1alpha.GameServerDeploymentsService",
-                              "CommitRollout"))
+                              "PreviewGameServerDeploymentRollout"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.gaming.v1alpha.CommitRolloutRequest
-                                  .getDefaultInstance()))
+                              com.google.cloud.gaming.v1alpha
+                                  .PreviewGameServerDeploymentRolloutRequest.getDefaultInstance()))
                       .setResponseMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
+                              com.google.cloud.gaming.v1alpha
+                                  .PreviewGameServerDeploymentRolloutResponse.getDefaultInstance()))
                       .setSchemaDescriptor(
-                          new GameServerDeploymentsServiceMethodDescriptorSupplier("CommitRollout"))
+                          new GameServerDeploymentsServiceMethodDescriptorSupplier(
+                              "PreviewGameServerDeploymentRollout"))
                       .build();
         }
       }
     }
-    return getCommitRolloutMethod;
+    return getPreviewGameServerDeploymentRolloutMethod;
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getRevertRolloutMethod()} instead.
+  @java.lang.Deprecated // Use {@link #getFetchDeploymentStateMethod()} instead.
   public static final io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.RevertRolloutRequest, com.google.longrunning.Operation>
-      METHOD_REVERT_ROLLOUT = getRevertRolloutMethodHelper();
+          com.google.cloud.gaming.v1alpha.FetchDeploymentStateRequest,
+          com.google.cloud.gaming.v1alpha.FetchDeploymentStateResponse>
+      METHOD_FETCH_DEPLOYMENT_STATE = getFetchDeploymentStateMethodHelper();
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.RevertRolloutRequest, com.google.longrunning.Operation>
-      getRevertRolloutMethod;
+          com.google.cloud.gaming.v1alpha.FetchDeploymentStateRequest,
+          com.google.cloud.gaming.v1alpha.FetchDeploymentStateResponse>
+      getFetchDeploymentStateMethod;
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.RevertRolloutRequest, com.google.longrunning.Operation>
-      getRevertRolloutMethod() {
-    return getRevertRolloutMethodHelper();
+          com.google.cloud.gaming.v1alpha.FetchDeploymentStateRequest,
+          com.google.cloud.gaming.v1alpha.FetchDeploymentStateResponse>
+      getFetchDeploymentStateMethod() {
+    return getFetchDeploymentStateMethodHelper();
   }
 
   private static io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.RevertRolloutRequest, com.google.longrunning.Operation>
-      getRevertRolloutMethodHelper() {
+          com.google.cloud.gaming.v1alpha.FetchDeploymentStateRequest,
+          com.google.cloud.gaming.v1alpha.FetchDeploymentStateResponse>
+      getFetchDeploymentStateMethodHelper() {
     io.grpc.MethodDescriptor<
-            com.google.cloud.gaming.v1alpha.RevertRolloutRequest, com.google.longrunning.Operation>
-        getRevertRolloutMethod;
-    if ((getRevertRolloutMethod = GameServerDeploymentsServiceGrpc.getRevertRolloutMethod)
+            com.google.cloud.gaming.v1alpha.FetchDeploymentStateRequest,
+            com.google.cloud.gaming.v1alpha.FetchDeploymentStateResponse>
+        getFetchDeploymentStateMethod;
+    if ((getFetchDeploymentStateMethod =
+            GameServerDeploymentsServiceGrpc.getFetchDeploymentStateMethod)
         == null) {
       synchronized (GameServerDeploymentsServiceGrpc.class) {
-        if ((getRevertRolloutMethod = GameServerDeploymentsServiceGrpc.getRevertRolloutMethod)
+        if ((getFetchDeploymentStateMethod =
+                GameServerDeploymentsServiceGrpc.getFetchDeploymentStateMethod)
             == null) {
-          GameServerDeploymentsServiceGrpc.getRevertRolloutMethod =
-              getRevertRolloutMethod =
+          GameServerDeploymentsServiceGrpc.getFetchDeploymentStateMethod =
+              getFetchDeploymentStateMethod =
                   io.grpc.MethodDescriptor
-                      .<com.google.cloud.gaming.v1alpha.RevertRolloutRequest,
-                          com.google.longrunning.Operation>
+                      .<com.google.cloud.gaming.v1alpha.FetchDeploymentStateRequest,
+                          com.google.cloud.gaming.v1alpha.FetchDeploymentStateResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
                           generateFullMethodName(
                               "google.cloud.gaming.v1alpha.GameServerDeploymentsService",
-                              "RevertRollout"))
+                              "FetchDeploymentState"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.gaming.v1alpha.RevertRolloutRequest
+                              com.google.cloud.gaming.v1alpha.FetchDeploymentStateRequest
                                   .getDefaultInstance()))
                       .setResponseMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new GameServerDeploymentsServiceMethodDescriptorSupplier("RevertRollout"))
-                      .build();
-        }
-      }
-    }
-    return getRevertRolloutMethod;
-  }
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetDeploymentTargetMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.GetDeploymentTargetRequest,
-          com.google.cloud.gaming.v1alpha.DeploymentTarget>
-      METHOD_GET_DEPLOYMENT_TARGET = getGetDeploymentTargetMethodHelper();
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.GetDeploymentTargetRequest,
-          com.google.cloud.gaming.v1alpha.DeploymentTarget>
-      getGetDeploymentTargetMethod;
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.GetDeploymentTargetRequest,
-          com.google.cloud.gaming.v1alpha.DeploymentTarget>
-      getGetDeploymentTargetMethod() {
-    return getGetDeploymentTargetMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.gaming.v1alpha.GetDeploymentTargetRequest,
-          com.google.cloud.gaming.v1alpha.DeploymentTarget>
-      getGetDeploymentTargetMethodHelper() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.gaming.v1alpha.GetDeploymentTargetRequest,
-            com.google.cloud.gaming.v1alpha.DeploymentTarget>
-        getGetDeploymentTargetMethod;
-    if ((getGetDeploymentTargetMethod =
-            GameServerDeploymentsServiceGrpc.getGetDeploymentTargetMethod)
-        == null) {
-      synchronized (GameServerDeploymentsServiceGrpc.class) {
-        if ((getGetDeploymentTargetMethod =
-                GameServerDeploymentsServiceGrpc.getGetDeploymentTargetMethod)
-            == null) {
-          GameServerDeploymentsServiceGrpc.getGetDeploymentTargetMethod =
-              getGetDeploymentTargetMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.gaming.v1alpha.GetDeploymentTargetRequest,
-                          com.google.cloud.gaming.v1alpha.DeploymentTarget>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.gaming.v1alpha.GameServerDeploymentsService",
-                              "GetDeploymentTarget"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.gaming.v1alpha.GetDeploymentTargetRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.gaming.v1alpha.DeploymentTarget
+                              com.google.cloud.gaming.v1alpha.FetchDeploymentStateResponse
                                   .getDefaultInstance()))
                       .setSchemaDescriptor(
                           new GameServerDeploymentsServiceMethodDescriptorSupplier(
-                              "GetDeploymentTarget"))
+                              "FetchDeploymentState"))
                       .build();
         }
       }
     }
-    return getGetDeploymentTargetMethod;
+    return getFetchDeploymentStateMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -674,8 +646,8 @@ public final class GameServerDeploymentsServiceGrpc {
    *
    *
    * <pre>
-   * The game server deployment is used to configure the deployment of game server
-   * software to Agones Fleets in game server clusters.
+   * The game server deployment is used to control the deployment of game server
+   * software to Agones fleets.
    * </pre>
    */
   public abstract static class GameServerDeploymentsServiceImplBase
@@ -753,74 +725,62 @@ public final class GameServerDeploymentsServiceGrpc {
      *
      *
      * <pre>
-     * Starts rollout of this game server deployment based on the given game
-     * server template.
+     * Gets details a single game server deployment rollout.
      * </pre>
      */
-    public void startRollout(
-        com.google.cloud.gaming.v1alpha.StartRolloutRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getStartRolloutMethodHelper(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Sets rollout target for the ongoing game server deployment rollout in the
-     * specified clusters and based on the given rollout percentage. Default is 0.
-     * </pre>
-     */
-    public void setRolloutTarget(
-        com.google.cloud.gaming.v1alpha.SetRolloutTargetRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetRolloutTargetMethodHelper(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Commits the ongoing game server deployment rollout by setting the rollout
-     * percentage to 100 in all clusters whose labels match labels in the game
-     * server template.
-     * </pre>
-     */
-    public void commitRollout(
-        com.google.cloud.gaming.v1alpha.CommitRolloutRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCommitRolloutMethodHelper(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Rolls back the ongoing game server deployment rollout by setting the
-     * rollout percentage to 0 in all clusters whose labels match labels in the
-     * game server template.
-     * </pre>
-     */
-    public void revertRollout(
-        com.google.cloud.gaming.v1alpha.RevertRolloutRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getRevertRolloutMethodHelper(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves information on the rollout target of the deployment, e.g. the
-     * target percentage of game servers running stable_game_server_template and
-     * new_game_server_template in clusters.
-     * </pre>
-     */
-    public void getDeploymentTarget(
-        com.google.cloud.gaming.v1alpha.GetDeploymentTargetRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1alpha.DeploymentTarget>
+    public void getGameServerDeploymentRollout(
+        com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRolloutRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1alpha.GameServerDeploymentRollout>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetDeploymentTargetMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(
+          getGetGameServerDeploymentRolloutMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Patches a single game server deployment rollout.
+     * </pre>
+     */
+    public void updateGameServerDeploymentRollout(
+        com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRolloutRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(
+          getUpdateGameServerDeploymentRolloutMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Previews the game server deployment rollout. This API does not mutate the
+     * rollout resource.
+     * </pre>
+     */
+    public void previewGameServerDeploymentRollout(
+        com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(
+          getPreviewGameServerDeploymentRolloutMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves information about the current state of the deployment, e.g. it
+     * gathers all the fleets and autoscalars for this deployment.
+     * This includes fleets running older version of the deployment.
+     * </pre>
+     */
+    public void fetchDeploymentState(
+        com.google.cloud.gaming.v1alpha.FetchDeploymentStateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1alpha.FetchDeploymentStateResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getFetchDeploymentStateMethodHelper(), responseObserver);
     }
 
     @java.lang.Override
@@ -862,36 +822,33 @@ public final class GameServerDeploymentsServiceGrpc {
                       com.google.longrunning.Operation>(
                       this, METHODID_UPDATE_GAME_SERVER_DEPLOYMENT)))
           .addMethod(
-              getStartRolloutMethodHelper(),
+              getGetGameServerDeploymentRolloutMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
-                      com.google.cloud.gaming.v1alpha.StartRolloutRequest,
-                      com.google.longrunning.Operation>(this, METHODID_START_ROLLOUT)))
+                      com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRolloutRequest,
+                      com.google.cloud.gaming.v1alpha.GameServerDeploymentRollout>(
+                      this, METHODID_GET_GAME_SERVER_DEPLOYMENT_ROLLOUT)))
           .addMethod(
-              getSetRolloutTargetMethodHelper(),
+              getUpdateGameServerDeploymentRolloutMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
-                      com.google.cloud.gaming.v1alpha.SetRolloutTargetRequest,
-                      com.google.longrunning.Operation>(this, METHODID_SET_ROLLOUT_TARGET)))
+                      com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRolloutRequest,
+                      com.google.longrunning.Operation>(
+                      this, METHODID_UPDATE_GAME_SERVER_DEPLOYMENT_ROLLOUT)))
           .addMethod(
-              getCommitRolloutMethodHelper(),
+              getPreviewGameServerDeploymentRolloutMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
-                      com.google.cloud.gaming.v1alpha.CommitRolloutRequest,
-                      com.google.longrunning.Operation>(this, METHODID_COMMIT_ROLLOUT)))
+                      com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutRequest,
+                      com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutResponse>(
+                      this, METHODID_PREVIEW_GAME_SERVER_DEPLOYMENT_ROLLOUT)))
           .addMethod(
-              getRevertRolloutMethodHelper(),
+              getFetchDeploymentStateMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
-                      com.google.cloud.gaming.v1alpha.RevertRolloutRequest,
-                      com.google.longrunning.Operation>(this, METHODID_REVERT_ROLLOUT)))
-          .addMethod(
-              getGetDeploymentTargetMethodHelper(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1alpha.GetDeploymentTargetRequest,
-                      com.google.cloud.gaming.v1alpha.DeploymentTarget>(
-                      this, METHODID_GET_DEPLOYMENT_TARGET)))
+                      com.google.cloud.gaming.v1alpha.FetchDeploymentStateRequest,
+                      com.google.cloud.gaming.v1alpha.FetchDeploymentStateResponse>(
+                      this, METHODID_FETCH_DEPLOYMENT_STATE)))
           .build();
     }
   }
@@ -900,8 +857,8 @@ public final class GameServerDeploymentsServiceGrpc {
    *
    *
    * <pre>
-   * The game server deployment is used to configure the deployment of game server
-   * software to Agones Fleets in game server clusters.
+   * The game server deployment is used to control the deployment of game server
+   * software to Agones fleets.
    * </pre>
    */
   public static final class GameServerDeploymentsServiceStub
@@ -1008,87 +965,71 @@ public final class GameServerDeploymentsServiceGrpc {
      *
      *
      * <pre>
-     * Starts rollout of this game server deployment based on the given game
-     * server template.
+     * Gets details a single game server deployment rollout.
      * </pre>
      */
-    public void startRollout(
-        com.google.cloud.gaming.v1alpha.StartRolloutRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getStartRolloutMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Sets rollout target for the ongoing game server deployment rollout in the
-     * specified clusters and based on the given rollout percentage. Default is 0.
-     * </pre>
-     */
-    public void setRolloutTarget(
-        com.google.cloud.gaming.v1alpha.SetRolloutTargetRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getSetRolloutTargetMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Commits the ongoing game server deployment rollout by setting the rollout
-     * percentage to 100 in all clusters whose labels match labels in the game
-     * server template.
-     * </pre>
-     */
-    public void commitRollout(
-        com.google.cloud.gaming.v1alpha.CommitRolloutRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getCommitRolloutMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Rolls back the ongoing game server deployment rollout by setting the
-     * rollout percentage to 0 in all clusters whose labels match labels in the
-     * game server template.
-     * </pre>
-     */
-    public void revertRollout(
-        com.google.cloud.gaming.v1alpha.RevertRolloutRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getRevertRolloutMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves information on the rollout target of the deployment, e.g. the
-     * target percentage of game servers running stable_game_server_template and
-     * new_game_server_template in clusters.
-     * </pre>
-     */
-    public void getDeploymentTarget(
-        com.google.cloud.gaming.v1alpha.GetDeploymentTargetRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1alpha.DeploymentTarget>
+    public void getGameServerDeploymentRollout(
+        com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRolloutRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1alpha.GameServerDeploymentRollout>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetDeploymentTargetMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetGameServerDeploymentRolloutMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Patches a single game server deployment rollout.
+     * </pre>
+     */
+    public void updateGameServerDeploymentRollout(
+        com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRolloutRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel()
+              .newCall(getUpdateGameServerDeploymentRolloutMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Previews the game server deployment rollout. This API does not mutate the
+     * rollout resource.
+     * </pre>
+     */
+    public void previewGameServerDeploymentRollout(
+        com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel()
+              .newCall(getPreviewGameServerDeploymentRolloutMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves information about the current state of the deployment, e.g. it
+     * gathers all the fleets and autoscalars for this deployment.
+     * This includes fleets running older version of the deployment.
+     * </pre>
+     */
+    public void fetchDeploymentState(
+        com.google.cloud.gaming.v1alpha.FetchDeploymentStateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1alpha.FetchDeploymentStateResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getFetchDeploymentStateMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1098,8 +1039,8 @@ public final class GameServerDeploymentsServiceGrpc {
    *
    *
    * <pre>
-   * The game server deployment is used to configure the deployment of game server
-   * software to Agones Fleets in game server clusters.
+   * The game server deployment is used to control the deployment of game server
+   * software to Agones fleets.
    * </pre>
    */
   public static final class GameServerDeploymentsServiceBlockingStub
@@ -1189,73 +1130,63 @@ public final class GameServerDeploymentsServiceGrpc {
      *
      *
      * <pre>
-     * Starts rollout of this game server deployment based on the given game
-     * server template.
+     * Gets details a single game server deployment rollout.
      * </pre>
      */
-    public com.google.longrunning.Operation startRollout(
-        com.google.cloud.gaming.v1alpha.StartRolloutRequest request) {
+    public com.google.cloud.gaming.v1alpha.GameServerDeploymentRollout
+        getGameServerDeploymentRollout(
+            com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRolloutRequest request) {
       return blockingUnaryCall(
-          getChannel(), getStartRolloutMethodHelper(), getCallOptions(), request);
+          getChannel(), getGetGameServerDeploymentRolloutMethodHelper(), getCallOptions(), request);
     }
 
     /**
      *
      *
      * <pre>
-     * Sets rollout target for the ongoing game server deployment rollout in the
-     * specified clusters and based on the given rollout percentage. Default is 0.
+     * Patches a single game server deployment rollout.
      * </pre>
      */
-    public com.google.longrunning.Operation setRolloutTarget(
-        com.google.cloud.gaming.v1alpha.SetRolloutTargetRequest request) {
+    public com.google.longrunning.Operation updateGameServerDeploymentRollout(
+        com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRolloutRequest request) {
       return blockingUnaryCall(
-          getChannel(), getSetRolloutTargetMethodHelper(), getCallOptions(), request);
+          getChannel(),
+          getUpdateGameServerDeploymentRolloutMethodHelper(),
+          getCallOptions(),
+          request);
     }
 
     /**
      *
      *
      * <pre>
-     * Commits the ongoing game server deployment rollout by setting the rollout
-     * percentage to 100 in all clusters whose labels match labels in the game
-     * server template.
+     * Previews the game server deployment rollout. This API does not mutate the
+     * rollout resource.
      * </pre>
      */
-    public com.google.longrunning.Operation commitRollout(
-        com.google.cloud.gaming.v1alpha.CommitRolloutRequest request) {
+    public com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutResponse
+        previewGameServerDeploymentRollout(
+            com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCommitRolloutMethodHelper(), getCallOptions(), request);
+          getChannel(),
+          getPreviewGameServerDeploymentRolloutMethodHelper(),
+          getCallOptions(),
+          request);
     }
 
     /**
      *
      *
      * <pre>
-     * Rolls back the ongoing game server deployment rollout by setting the
-     * rollout percentage to 0 in all clusters whose labels match labels in the
-     * game server template.
+     * Retrieves information about the current state of the deployment, e.g. it
+     * gathers all the fleets and autoscalars for this deployment.
+     * This includes fleets running older version of the deployment.
      * </pre>
      */
-    public com.google.longrunning.Operation revertRollout(
-        com.google.cloud.gaming.v1alpha.RevertRolloutRequest request) {
+    public com.google.cloud.gaming.v1alpha.FetchDeploymentStateResponse fetchDeploymentState(
+        com.google.cloud.gaming.v1alpha.FetchDeploymentStateRequest request) {
       return blockingUnaryCall(
-          getChannel(), getRevertRolloutMethodHelper(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves information on the rollout target of the deployment, e.g. the
-     * target percentage of game servers running stable_game_server_template and
-     * new_game_server_template in clusters.
-     * </pre>
-     */
-    public com.google.cloud.gaming.v1alpha.DeploymentTarget getDeploymentTarget(
-        com.google.cloud.gaming.v1alpha.GetDeploymentTargetRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetDeploymentTargetMethodHelper(), getCallOptions(), request);
+          getChannel(), getFetchDeploymentStateMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -1263,8 +1194,8 @@ public final class GameServerDeploymentsServiceGrpc {
    *
    *
    * <pre>
-   * The game server deployment is used to configure the deployment of game server
-   * software to Agones Fleets in game server clusters.
+   * The game server deployment is used to control the deployment of game server
+   * software to Agones fleets.
    * </pre>
    */
   public static final class GameServerDeploymentsServiceFutureStub
@@ -1365,74 +1296,66 @@ public final class GameServerDeploymentsServiceGrpc {
      *
      *
      * <pre>
-     * Starts rollout of this game server deployment based on the given game
-     * server template.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        startRollout(com.google.cloud.gaming.v1alpha.StartRolloutRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getStartRolloutMethodHelper(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Sets rollout target for the ongoing game server deployment rollout in the
-     * specified clusters and based on the given rollout percentage. Default is 0.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        setRolloutTarget(com.google.cloud.gaming.v1alpha.SetRolloutTargetRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getSetRolloutTargetMethodHelper(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Commits the ongoing game server deployment rollout by setting the rollout
-     * percentage to 100 in all clusters whose labels match labels in the game
-     * server template.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        commitRollout(com.google.cloud.gaming.v1alpha.CommitRolloutRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getCommitRolloutMethodHelper(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Rolls back the ongoing game server deployment rollout by setting the
-     * rollout percentage to 0 in all clusters whose labels match labels in the
-     * game server template.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        revertRollout(com.google.cloud.gaming.v1alpha.RevertRolloutRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getRevertRolloutMethodHelper(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves information on the rollout target of the deployment, e.g. the
-     * target percentage of game servers running stable_game_server_template and
-     * new_game_server_template in clusters.
+     * Gets details a single game server deployment rollout.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.gaming.v1alpha.DeploymentTarget>
-        getDeploymentTarget(com.google.cloud.gaming.v1alpha.GetDeploymentTargetRequest request) {
+            com.google.cloud.gaming.v1alpha.GameServerDeploymentRollout>
+        getGameServerDeploymentRollout(
+            com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRolloutRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetDeploymentTargetMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetGameServerDeploymentRolloutMethodHelper(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Patches a single game server deployment rollout.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateGameServerDeploymentRollout(
+            com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRolloutRequest request) {
+      return futureUnaryCall(
+          getChannel()
+              .newCall(getUpdateGameServerDeploymentRolloutMethodHelper(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Previews the game server deployment rollout. This API does not mutate the
+     * rollout resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutResponse>
+        previewGameServerDeploymentRollout(
+            com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutRequest request) {
+      return futureUnaryCall(
+          getChannel()
+              .newCall(getPreviewGameServerDeploymentRolloutMethodHelper(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves information about the current state of the deployment, e.g. it
+     * gathers all the fleets and autoscalars for this deployment.
+     * This includes fleets running older version of the deployment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gaming.v1alpha.FetchDeploymentStateResponse>
+        fetchDeploymentState(com.google.cloud.gaming.v1alpha.FetchDeploymentStateRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getFetchDeploymentStateMethodHelper(), getCallOptions()), request);
     }
   }
 
@@ -1441,11 +1364,10 @@ public final class GameServerDeploymentsServiceGrpc {
   private static final int METHODID_CREATE_GAME_SERVER_DEPLOYMENT = 2;
   private static final int METHODID_DELETE_GAME_SERVER_DEPLOYMENT = 3;
   private static final int METHODID_UPDATE_GAME_SERVER_DEPLOYMENT = 4;
-  private static final int METHODID_START_ROLLOUT = 5;
-  private static final int METHODID_SET_ROLLOUT_TARGET = 6;
-  private static final int METHODID_COMMIT_ROLLOUT = 7;
-  private static final int METHODID_REVERT_ROLLOUT = 8;
-  private static final int METHODID_GET_DEPLOYMENT_TARGET = 9;
+  private static final int METHODID_GET_GAME_SERVER_DEPLOYMENT_ROLLOUT = 5;
+  private static final int METHODID_UPDATE_GAME_SERVER_DEPLOYMENT_ROLLOUT = 6;
+  private static final int METHODID_PREVIEW_GAME_SERVER_DEPLOYMENT_ROLLOUT = 7;
+  private static final int METHODID_FETCH_DEPLOYMENT_STATE = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1492,30 +1414,30 @@ public final class GameServerDeploymentsServiceGrpc {
               (com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
-        case METHODID_START_ROLLOUT:
-          serviceImpl.startRollout(
-              (com.google.cloud.gaming.v1alpha.StartRolloutRequest) request,
+        case METHODID_GET_GAME_SERVER_DEPLOYMENT_ROLLOUT:
+          serviceImpl.getGameServerDeploymentRollout(
+              (com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRolloutRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.gaming.v1alpha.GameServerDeploymentRollout>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_GAME_SERVER_DEPLOYMENT_ROLLOUT:
+          serviceImpl.updateGameServerDeploymentRollout(
+              (com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRolloutRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
-        case METHODID_SET_ROLLOUT_TARGET:
-          serviceImpl.setRolloutTarget(
-              (com.google.cloud.gaming.v1alpha.SetRolloutTargetRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+        case METHODID_PREVIEW_GAME_SERVER_DEPLOYMENT_ROLLOUT:
+          serviceImpl.previewGameServerDeploymentRollout(
+              (com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutResponse>)
+                  responseObserver);
           break;
-        case METHODID_COMMIT_ROLLOUT:
-          serviceImpl.commitRollout(
-              (com.google.cloud.gaming.v1alpha.CommitRolloutRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_REVERT_ROLLOUT:
-          serviceImpl.revertRollout(
-              (com.google.cloud.gaming.v1alpha.RevertRolloutRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_GET_DEPLOYMENT_TARGET:
-          serviceImpl.getDeploymentTarget(
-              (com.google.cloud.gaming.v1alpha.GetDeploymentTargetRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1alpha.DeploymentTarget>)
+        case METHODID_FETCH_DEPLOYMENT_STATE:
+          serviceImpl.fetchDeploymentState(
+              (com.google.cloud.gaming.v1alpha.FetchDeploymentStateRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.gaming.v1alpha.FetchDeploymentStateResponse>)
                   responseObserver);
           break;
         default:
@@ -1541,7 +1463,7 @@ public final class GameServerDeploymentsServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.google.cloud.gaming.v1alpha.GameServerDeployments.getDescriptor();
+      return com.google.cloud.gaming.v1alpha.GameServerDeploymentsServiceOuterClass.getDescriptor();
     }
 
     @java.lang.Override
@@ -1587,11 +1509,10 @@ public final class GameServerDeploymentsServiceGrpc {
                       .addMethod(getCreateGameServerDeploymentMethodHelper())
                       .addMethod(getDeleteGameServerDeploymentMethodHelper())
                       .addMethod(getUpdateGameServerDeploymentMethodHelper())
-                      .addMethod(getStartRolloutMethodHelper())
-                      .addMethod(getSetRolloutTargetMethodHelper())
-                      .addMethod(getCommitRolloutMethodHelper())
-                      .addMethod(getRevertRolloutMethodHelper())
-                      .addMethod(getGetDeploymentTargetMethodHelper())
+                      .addMethod(getGetGameServerDeploymentRolloutMethodHelper())
+                      .addMethod(getUpdateGameServerDeploymentRolloutMethodHelper())
+                      .addMethod(getPreviewGameServerDeploymentRolloutMethodHelper())
+                      .addMethod(getFetchDeploymentStateMethodHelper())
                       .build();
         }
       }

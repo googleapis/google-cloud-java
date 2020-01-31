@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,13 +44,37 @@ public final class GameServerClusters {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gaming_v1alpha_CreateGameServerClusterRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_PreviewCreateGameServerClusterRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_PreviewCreateGameServerClusterRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_PreviewCreateGameServerClusterResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_PreviewCreateGameServerClusterResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gaming_v1alpha_DeleteGameServerClusterRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gaming_v1alpha_DeleteGameServerClusterRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_PreviewDeleteGameServerClusterRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_PreviewDeleteGameServerClusterRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_PreviewDeleteGameServerClusterResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_PreviewDeleteGameServerClusterResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gaming_v1alpha_UpdateGameServerClusterRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gaming_v1alpha_UpdateGameServerClusterRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_PreviewUpdateGameServerClusterRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_PreviewUpdateGameServerClusterRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_PreviewUpdateGameServerClusterResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_PreviewUpdateGameServerClusterResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gaming_v1alpha_GameServerClusterConnectionInfo_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -59,6 +83,10 @@ public final class GameServerClusters {
       internal_static_google_cloud_gaming_v1alpha_GkeClusterReference_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gaming_v1alpha_GkeClusterReference_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_GkeHubClusterReference_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_GkeHubClusterReference_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gaming_v1alpha_GameServerCluster_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -78,93 +106,102 @@ public final class GameServerClusters {
     java.lang.String[] descriptorData = {
       "\n6google/cloud/gaming/v1alpha/game_serve"
           + "r_clusters.proto\022\033google.cloud.gaming.v1"
-          + "alpha\032\034google/api/annotations.proto\032#goo"
-          + "gle/longrunning/operations.proto\032 google"
-          + "/protobuf/field_mask.proto\032\037google/proto"
-          + "buf/timestamp.proto\032\027google/api/client.p"
-          + "roto\"x\n\035ListGameServerClustersRequest\022\016\n"
-          + "\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage"
-          + "_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by"
-          + "\030\005 \001(\t\"\207\001\n\036ListGameServerClustersRespons"
-          + "e\022L\n\024game_server_clusters\030\001 \003(\0132..google"
-          + ".cloud.gaming.v1alpha.GameServerCluster\022"
-          + "\027\n\017next_page_token\030\002 \001(\t\"+\n\033GetGameServe"
-          + "rClusterRequest\022\014\n\004name\030\001 \001(\t\"\235\001\n\036Create"
-          + "GameServerClusterRequest\022\016\n\006parent\030\001 \001(\t"
-          + "\022\036\n\026game_server_cluster_id\030\002 \001(\t\022K\n\023game"
-          + "_server_cluster\030\003 \001(\0132..google.cloud.gam"
-          + "ing.v1alpha.GameServerCluster\".\n\036DeleteG"
-          + "ameServerClusterRequest\022\014\n\004name\030\001 \001(\t\"\236\001"
-          + "\n\036UpdateGameServerClusterRequest\022K\n\023game"
-          + "_server_cluster\030\001 \001(\0132..google.cloud.gam"
-          + "ing.v1alpha.GameServerCluster\022/\n\013update_"
-          + "mask\030\002 \001(\0132\032.google.protobuf.FieldMask\"\262"
-          + "\001\n\037GameServerClusterConnectionInfo\022Q\n\025gk"
-          + "e_cluster_reference\030\007 \001(\01320.google.cloud"
-          + ".gaming.v1alpha.GkeClusterReferenceH\000\022\021\n"
-          + "\tnamespace\030\005 \001(\t\022\024\n\010gke_name\030\006 \001(\tB\002\030\001B\023"
-          + "\n\021cluster_reference\"&\n\023GkeClusterReferen"
-          + "ce\022\017\n\007cluster\030\001 \001(\t\"\325\002\n\021GameServerCluste"
-          + "r\022\014\n\004name\030\001 \001(\t\022/\n\013create_time\030\002 \001(\0132\032.g"
-          + "oogle.protobuf.Timestamp\022/\n\013update_time\030"
-          + "\003 \001(\0132\032.google.protobuf.Timestamp\022J\n\006lab"
-          + "els\030\004 \003(\0132:.google.cloud.gaming.v1alpha."
-          + "GameServerCluster.LabelsEntry\022U\n\017connect"
-          + "ion_info\030\005 \001(\0132<.google.cloud.gaming.v1a"
-          + "lpha.GameServerClusterConnectionInfo\032-\n\013"
-          + "LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
-          + "\0028\0012\257\t\n\031GameServerClustersService\022\337\001\n\026Li"
-          + "stGameServerClusters\022:.google.cloud.gami"
-          + "ng.v1alpha.ListGameServerClustersRequest"
-          + "\032;.google.cloud.gaming.v1alpha.ListGameS"
-          + "erverClustersResponse\"L\202\323\344\223\002F\022D/v1alpha/"
-          + "{parent=projects/*/locations/*/realms/*}"
-          + "/gameServerClusters\022\316\001\n\024GetGameServerClu"
-          + "ster\0228.google.cloud.gaming.v1alpha.GetGa"
-          + "meServerClusterRequest\032..google.cloud.ga"
-          + "ming.v1alpha.GameServerCluster\"L\202\323\344\223\002F\022D"
-          + "/v1alpha/{name=projects/*/locations/*/re"
-          + "alms/*/gameServerClusters/*}\022\330\001\n\027CreateG"
-          + "ameServerCluster\022;.google.cloud.gaming.v"
-          + "1alpha.CreateGameServerClusterRequest\032\035."
-          + "google.longrunning.Operation\"a\202\323\344\223\002[\"D/v"
-          + "1alpha/{parent=projects/*/locations/*/re"
-          + "alms/*}/gameServerClusters:\023game_server_"
-          + "cluster\022\303\001\n\027DeleteGameServerCluster\022;.go"
-          + "ogle.cloud.gaming.v1alpha.DeleteGameServ"
-          + "erClusterRequest\032\035.google.longrunning.Op"
-          + "eration\"L\202\323\344\223\002F*D/v1alpha/{name=projects"
-          + "/*/locations/*/realms/*/gameServerCluste"
-          + "rs/*}\022\354\001\n\027UpdateGameServerCluster\022;.goog"
-          + "le.cloud.gaming.v1alpha.UpdateGameServer"
-          + "ClusterRequest\032\035.google.longrunning.Oper"
-          + "ation\"u\202\323\344\223\002o2X/v1alpha/{game_server_clu"
-          + "ster.name=projects/*/locations/*/realms/"
-          + "*/gameServerClusters/*}:\023game_server_clu"
-          + "ster\032O\312A\033gameservices.googleapis.com\322A.h"
-          + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tformBf\n\037com.google.cloud.gaming.v1alpha"
-          + "P\001ZAgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/gaming/v1alpha;gamingb\006proto3"
+          + "alpha\032\037google/api/field_behavior.proto\032\031"
+          + "google/api/resource.proto\032(google/cloud/"
+          + "gaming/v1alpha/common.proto\032 google/prot"
+          + "obuf/field_mask.proto\032\037google/protobuf/t"
+          + "imestamp.proto\032\034google/api/annotations.p"
+          + "roto\"\303\001\n\035ListGameServerClustersRequest\022E"
+          + "\n\006parent\030\001 \001(\tB5\340A\002\372A/\n-gameservices.goo"
+          + "gleapis.com/GameServerCluster\022\026\n\tpage_si"
+          + "ze\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023"
+          + "\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340"
+          + "A\001\"\277\001\n\036ListGameServerClustersResponse\022L\n"
+          + "\024game_server_clusters\030\001 \003(\0132..google.clo"
+          + "ud.gaming.v1alpha.GameServerCluster\022\027\n\017n"
+          + "ext_page_token\030\002 \001(\t\022!\n\025unreachable_loca"
+          + "tions\030\003 \003(\tB\002\030\001\022\023\n\013unreachable\030\004 \003(\t\"b\n\033"
+          + "GetGameServerClusterRequest\022C\n\004name\030\001 \001("
+          + "\tB5\340A\002\372A/\n-gameservices.googleapis.com/G"
+          + "ameServerCluster\"\336\001\n\036CreateGameServerClu"
+          + "sterRequest\022E\n\006parent\030\001 \001(\tB5\340A\002\372A/\n-gam"
+          + "eservices.googleapis.com/GameServerClust"
+          + "er\022#\n\026game_server_cluster_id\030\002 \001(\tB\003\340A\002\022"
+          + "P\n\023game_server_cluster\030\003 \001(\0132..google.cl"
+          + "oud.gaming.v1alpha.GameServerClusterB\003\340A"
+          + "\002\"\352\001\n%PreviewCreateGameServerClusterRequ"
+          + "est\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022#\n\026game_server_"
+          + "cluster_id\030\002 \001(\tB\003\340A\002\022P\n\023game_server_clu"
+          + "ster\030\003 \001(\0132..google.cloud.gaming.v1alpha"
+          + ".GameServerClusterB\003\340A\002\0225\n\014preview_time\030"
+          + "\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\"\276"
+          + "\001\n&PreviewCreateGameServerClusterRespons"
+          + "e\022F\n\016deployed_state\030\001 \001(\0132*.google.cloud"
+          + ".gaming.v1alpha.DeployedStateB\002\030\001\022\014\n\004eta"
+          + "g\030\002 \001(\t\022>\n\014target_state\030\003 \001(\0132(.google.c"
+          + "loud.gaming.v1alpha.TargetState\"e\n\036Delet"
+          + "eGameServerClusterRequest\022C\n\004name\030\001 \001(\tB"
+          + "5\340A\002\372A/\n-gameservices.googleapis.com/Gam"
+          + "eServerCluster\"q\n%PreviewDeleteGameServe"
+          + "rClusterRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\0225\n\014pr"
+          + "eview_time\030\002 \001(\0132\032.google.protobuf.Times"
+          + "tampB\003\340A\001\"\276\001\n&PreviewDeleteGameServerClu"
+          + "sterResponse\022F\n\016deployed_state\030\001 \001(\0132*.g"
+          + "oogle.cloud.gaming.v1alpha.DeployedState"
+          + "B\002\030\001\022\014\n\004etag\030\002 \001(\t\022>\n\014target_state\030\003 \001(\013"
+          + "2(.google.cloud.gaming.v1alpha.TargetSta"
+          + "te\"\250\001\n\036UpdateGameServerClusterRequest\022P\n"
+          + "\023game_server_cluster\030\001 \001(\0132..google.clou"
+          + "d.gaming.v1alpha.GameServerClusterB\003\340A\002\022"
+          + "4\n\013update_mask\030\002 \001(\0132\032.google.protobuf.F"
+          + "ieldMaskB\003\340A\002\"\346\001\n%PreviewUpdateGameServe"
+          + "rClusterRequest\022P\n\023game_server_cluster\030\001"
+          + " \001(\0132..google.cloud.gaming.v1alpha.GameS"
+          + "erverClusterB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032"
+          + ".google.protobuf.FieldMaskB\003\340A\002\0225\n\014previ"
+          + "ew_time\030\003 \001(\0132\032.google.protobuf.Timestam"
+          + "pB\003\340A\001\"\276\001\n&PreviewUpdateGameServerCluste"
+          + "rResponse\022F\n\016deployed_state\030\001 \001(\0132*.goog"
+          + "le.cloud.gaming.v1alpha.DeployedStateB\002\030"
+          + "\001\022\014\n\004etag\030\002 \001(\t\022>\n\014target_state\030\003 \001(\0132(."
+          + "google.cloud.gaming.v1alpha.TargetState\""
+          + "\366\001\n\037GameServerClusterConnectionInfo\022Q\n\025g"
+          + "ke_cluster_reference\030\007 \001(\01320.google.clou"
+          + "d.gaming.v1alpha.GkeClusterReferenceH\000\022X"
+          + "\n\031gke_hub_cluster_reference\030\010 \001(\01323.goog"
+          + "le.cloud.gaming.v1alpha.GkeHubClusterRef"
+          + "erenceH\000\022\021\n\tnamespace\030\005 \001(\tB\023\n\021cluster_r"
+          + "eference\"&\n\023GkeClusterReference\022\017\n\007clust"
+          + "er\030\001 \001(\t\",\n\026GkeHubClusterReference\022\022\n\nme"
+          + "mbership\030\001 \001(\t\"\222\004\n\021GameServerCluster\022\021\n\004"
+          + "name\030\001 \001(\tB\003\340A\002\0224\n\013create_time\030\002 \001(\0132\032.g"
+          + "oogle.protobuf.TimestampB\003\340A\003\0224\n\013update_"
+          + "time\030\003 \001(\0132\032.google.protobuf.TimestampB\003"
+          + "\340A\003\022J\n\006labels\030\004 \003(\0132:.google.cloud.gamin"
+          + "g.v1alpha.GameServerCluster.LabelsEntry\022"
+          + "U\n\017connection_info\030\005 \001(\0132<.google.cloud."
+          + "gaming.v1alpha.GameServerClusterConnecti"
+          + "onInfo\022\014\n\004etag\030\006 \001(\t\022\023\n\013description\030\007 \001("
+          + "\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
+          + " \001(\t:\0028\001:\210\001\352A\204\001\n-gameservices.googleapis"
+          + ".com/GameServerCluster\022Sprojects/{projec"
+          + "t}/locations/{location}/realms/{realm}/g"
+          + "ameServerClusters/{cluster}Bf\n\037com.googl"
+          + "e.cloud.gaming.v1alphaP\001ZAgoogle.golang."
+          + "org/genproto/googleapis/cloud/gaming/v1a"
+          + "lpha;gamingb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.longrunning.OperationsProto.getDescriptor(),
-          com.google.protobuf.FieldMaskProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.api.ClientProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.gaming.v1alpha.Common.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
+            });
     internal_static_google_cloud_gaming_v1alpha_ListGameServerClustersRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_gaming_v1alpha_ListGameServerClustersRequest_fieldAccessorTable =
@@ -179,7 +216,7 @@ public final class GameServerClusters {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gaming_v1alpha_ListGameServerClustersResponse_descriptor,
             new java.lang.String[] {
-              "GameServerClusters", "NextPageToken",
+              "GameServerClusters", "NextPageToken", "UnreachableLocations", "Unreachable",
             });
     internal_static_google_cloud_gaming_v1alpha_GetGameServerClusterRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -197,45 +234,101 @@ public final class GameServerClusters {
             new java.lang.String[] {
               "Parent", "GameServerClusterId", "GameServerCluster",
             });
-    internal_static_google_cloud_gaming_v1alpha_DeleteGameServerClusterRequest_descriptor =
+    internal_static_google_cloud_gaming_v1alpha_PreviewCreateGameServerClusterRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_gaming_v1alpha_PreviewCreateGameServerClusterRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_PreviewCreateGameServerClusterRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "GameServerClusterId", "GameServerCluster", "PreviewTime",
+            });
+    internal_static_google_cloud_gaming_v1alpha_PreviewCreateGameServerClusterResponse_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_gaming_v1alpha_PreviewCreateGameServerClusterResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_PreviewCreateGameServerClusterResponse_descriptor,
+            new java.lang.String[] {
+              "DeployedState", "Etag", "TargetState",
+            });
+    internal_static_google_cloud_gaming_v1alpha_DeleteGameServerClusterRequest_descriptor =
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_gaming_v1alpha_DeleteGameServerClusterRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gaming_v1alpha_DeleteGameServerClusterRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_gaming_v1alpha_PreviewDeleteGameServerClusterRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_gaming_v1alpha_PreviewDeleteGameServerClusterRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_PreviewDeleteGameServerClusterRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "PreviewTime",
+            });
+    internal_static_google_cloud_gaming_v1alpha_PreviewDeleteGameServerClusterResponse_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_gaming_v1alpha_PreviewDeleteGameServerClusterResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_PreviewDeleteGameServerClusterResponse_descriptor,
+            new java.lang.String[] {
+              "DeployedState", "Etag", "TargetState",
+            });
     internal_static_google_cloud_gaming_v1alpha_UpdateGameServerClusterRequest_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_gaming_v1alpha_UpdateGameServerClusterRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gaming_v1alpha_UpdateGameServerClusterRequest_descriptor,
             new java.lang.String[] {
               "GameServerCluster", "UpdateMask",
             });
+    internal_static_google_cloud_gaming_v1alpha_PreviewUpdateGameServerClusterRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_gaming_v1alpha_PreviewUpdateGameServerClusterRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_PreviewUpdateGameServerClusterRequest_descriptor,
+            new java.lang.String[] {
+              "GameServerCluster", "UpdateMask", "PreviewTime",
+            });
+    internal_static_google_cloud_gaming_v1alpha_PreviewUpdateGameServerClusterResponse_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_gaming_v1alpha_PreviewUpdateGameServerClusterResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_PreviewUpdateGameServerClusterResponse_descriptor,
+            new java.lang.String[] {
+              "DeployedState", "Etag", "TargetState",
+            });
     internal_static_google_cloud_gaming_v1alpha_GameServerClusterConnectionInfo_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_gaming_v1alpha_GameServerClusterConnectionInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gaming_v1alpha_GameServerClusterConnectionInfo_descriptor,
             new java.lang.String[] {
-              "GkeClusterReference", "Namespace", "GkeName", "ClusterReference",
+              "GkeClusterReference", "GkeHubClusterReference", "Namespace", "ClusterReference",
             });
     internal_static_google_cloud_gaming_v1alpha_GkeClusterReference_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_gaming_v1alpha_GkeClusterReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gaming_v1alpha_GkeClusterReference_descriptor,
             new java.lang.String[] {
               "Cluster",
             });
+    internal_static_google_cloud_gaming_v1alpha_GkeHubClusterReference_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_gaming_v1alpha_GkeHubClusterReference_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_GkeHubClusterReference_descriptor,
+            new java.lang.String[] {
+              "Membership",
+            });
     internal_static_google_cloud_gaming_v1alpha_GameServerCluster_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_gaming_v1alpha_GameServerCluster_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gaming_v1alpha_GameServerCluster_descriptor,
             new java.lang.String[] {
-              "Name", "CreateTime", "UpdateTime", "Labels", "ConnectionInfo",
+              "Name", "CreateTime", "UpdateTime", "Labels", "ConnectionInfo", "Etag", "Description",
             });
     internal_static_google_cloud_gaming_v1alpha_GameServerCluster_LabelsEntry_descriptor =
         internal_static_google_cloud_gaming_v1alpha_GameServerCluster_descriptor
@@ -249,16 +342,17 @@ public final class GameServerClusters {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.api.ClientProto.defaultHost);
-    registry.add(com.google.api.AnnotationsProto.http);
-    registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
-    com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.gaming.v1alpha.Common.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

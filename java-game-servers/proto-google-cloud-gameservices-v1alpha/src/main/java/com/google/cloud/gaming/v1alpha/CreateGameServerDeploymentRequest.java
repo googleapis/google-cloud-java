@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,12 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateGameServerDeploymentRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -139,10 +144,14 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
    *
    * <pre>
    * Required. The parent resource name, using the form:
-   * `projects/{project_id}/locations/{location}`.
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -160,10 +169,14 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
    *
    * <pre>
    * Required. The parent resource name, using the form:
-   * `projects/{project_id}/locations/{location}`.
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -186,7 +199,9 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
    * Required. The ID of the game server deployment resource to be created.
    * </pre>
    *
-   * <code>string deployment_id = 2;</code>
+   * <code>string deployment_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The deploymentId.
    */
   public java.lang.String getDeploymentId() {
     java.lang.Object ref = deploymentId_;
@@ -206,7 +221,9 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
    * Required. The ID of the game server deployment resource to be created.
    * </pre>
    *
-   * <code>string deployment_id = 2;</code>
+   * <code>string deployment_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for deploymentId.
    */
   public com.google.protobuf.ByteString getDeploymentIdBytes() {
     java.lang.Object ref = deploymentId_;
@@ -229,7 +246,11 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
    * Required. The game server deployment resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the gameServerDeployment field is set.
    */
   public boolean hasGameServerDeployment() {
     return gameServerDeployment_ != null;
@@ -241,7 +262,11 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
    * Required. The game server deployment resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The gameServerDeployment.
    */
   public com.google.cloud.gaming.v1alpha.GameServerDeployment getGameServerDeployment() {
     return gameServerDeployment_ == null
@@ -255,7 +280,9 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
    * Required. The game server deployment resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.gaming.v1alpha.GameServerDeploymentOrBuilder
       getGameServerDeploymentOrBuilder() {
@@ -638,10 +665,14 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      *
      * <pre>
      * Required. The parent resource name, using the form:
-     * `projects/{project_id}/locations/{location}`.
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -659,10 +690,14 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      *
      * <pre>
      * Required. The parent resource name, using the form:
-     * `projects/{project_id}/locations/{location}`.
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -680,10 +715,15 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      *
      * <pre>
      * Required. The parent resource name, using the form:
-     * `projects/{project_id}/locations/{location}`.
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -699,10 +739,14 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      *
      * <pre>
      * Required. The parent resource name, using the form:
-     * `projects/{project_id}/locations/{location}`.
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -715,10 +759,15 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      *
      * <pre>
      * Required. The parent resource name, using the form:
-     * `projects/{project_id}/locations/{location}`.
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -739,7 +788,9 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      * Required. The ID of the game server deployment resource to be created.
      * </pre>
      *
-     * <code>string deployment_id = 2;</code>
+     * <code>string deployment_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The deploymentId.
      */
     public java.lang.String getDeploymentId() {
       java.lang.Object ref = deploymentId_;
@@ -759,7 +810,9 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      * Required. The ID of the game server deployment resource to be created.
      * </pre>
      *
-     * <code>string deployment_id = 2;</code>
+     * <code>string deployment_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for deploymentId.
      */
     public com.google.protobuf.ByteString getDeploymentIdBytes() {
       java.lang.Object ref = deploymentId_;
@@ -779,7 +832,10 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      * Required. The ID of the game server deployment resource to be created.
      * </pre>
      *
-     * <code>string deployment_id = 2;</code>
+     * <code>string deployment_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The deploymentId to set.
+     * @return This builder for chaining.
      */
     public Builder setDeploymentId(java.lang.String value) {
       if (value == null) {
@@ -797,7 +853,9 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      * Required. The ID of the game server deployment resource to be created.
      * </pre>
      *
-     * <code>string deployment_id = 2;</code>
+     * <code>string deployment_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDeploymentId() {
 
@@ -812,7 +870,10 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      * Required. The ID of the game server deployment resource to be created.
      * </pre>
      *
-     * <code>string deployment_id = 2;</code>
+     * <code>string deployment_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for deploymentId to set.
+     * @return This builder for chaining.
      */
     public Builder setDeploymentIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -838,7 +899,11 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      * Required. The game server deployment resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the gameServerDeployment field is set.
      */
     public boolean hasGameServerDeployment() {
       return gameServerDeploymentBuilder_ != null || gameServerDeployment_ != null;
@@ -850,7 +915,11 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      * Required. The game server deployment resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The gameServerDeployment.
      */
     public com.google.cloud.gaming.v1alpha.GameServerDeployment getGameServerDeployment() {
       if (gameServerDeploymentBuilder_ == null) {
@@ -868,7 +937,9 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      * Required. The game server deployment resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setGameServerDeployment(
         com.google.cloud.gaming.v1alpha.GameServerDeployment value) {
@@ -891,7 +962,9 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      * Required. The game server deployment resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setGameServerDeployment(
         com.google.cloud.gaming.v1alpha.GameServerDeployment.Builder builderForValue) {
@@ -911,7 +984,9 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      * Required. The game server deployment resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeGameServerDeployment(
         com.google.cloud.gaming.v1alpha.GameServerDeployment value) {
@@ -938,7 +1013,9 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      * Required. The game server deployment resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearGameServerDeployment() {
       if (gameServerDeploymentBuilder_ == null) {
@@ -958,7 +1035,9 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      * Required. The game server deployment resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.gaming.v1alpha.GameServerDeployment.Builder
         getGameServerDeploymentBuilder() {
@@ -973,7 +1052,9 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      * Required. The game server deployment resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.gaming.v1alpha.GameServerDeploymentOrBuilder
         getGameServerDeploymentOrBuilder() {
@@ -992,7 +1073,9 @@ public final class CreateGameServerDeploymentRequest extends com.google.protobuf
      * Required. The game server deployment resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerDeployment game_server_deployment = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gaming.v1alpha.GameServerDeployment,

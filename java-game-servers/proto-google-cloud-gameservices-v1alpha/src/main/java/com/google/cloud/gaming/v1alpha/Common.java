@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,14 @@ public final class Common {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gaming_v1alpha_OperationMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_OperationMetadata_OperationStatusEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_OperationMetadata_OperationStatusEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_OperationStatus_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_OperationStatus_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gaming_v1alpha_LabelSelector_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gaming_v1alpha_LabelSelector_fieldAccessorTable;
@@ -40,9 +48,49 @@ public final class Common {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gaming_v1alpha_LabelSelector_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_RealmSelector_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_RealmSelector_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gaming_v1alpha_Schedule_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gaming_v1alpha_Schedule_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_FleetDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_FleetDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_FleetDetails_AutoscalerDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_FleetDetails_AutoscalerDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_DeployedState_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_DeployedState_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_SpecSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_SpecSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_TargetDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_TargetDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_TargetDetails_TargetFleetDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_TargetDetails_TargetFleetDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_TargetDetails_TargetFleetDetails_TargetFleet_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_TargetDetails_TargetFleetDetails_TargetFleet_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_TargetDetails_TargetFleetDetails_TargetFleetAutoscaler_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_TargetDetails_TargetFleetDetails_TargetFleetAutoscaler_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gaming_v1alpha_TargetState_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gaming_v1alpha_TargetState_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -53,45 +101,77 @@ public final class Common {
   static {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/gaming/v1alpha/common.pro"
-          + "to\022\033google.cloud.gaming.v1alpha\032\034google/"
-          + "api/annotations.proto\032#google/longrunnin"
-          + "g/operations.proto\032\036google/protobuf/dura"
-          + "tion.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\"\335\001\n\021OperationMetadata\022/\n\013create_time"
-          + "\030\001 \001(\0132\032.google.protobuf.Timestamp\022,\n\010en"
-          + "d_time\030\002 \001(\0132\032.google.protobuf.Timestamp"
-          + "\022\016\n\006target\030\003 \001(\t\022\014\n\004verb\030\004 \001(\t\022\026\n\016status"
-          + "_message\030\005 \001(\t\022\036\n\026requested_cancellation"
-          + "\030\006 \001(\010\022\023\n\013api_version\030\007 \001(\t\"\206\001\n\rLabelSel"
-          + "ector\022F\n\006labels\030\001 \003(\01326.google.cloud.gam"
-          + "ing.v1alpha.LabelSelector.LabelsEntry\032-\n"
-          + "\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
-          + ":\0028\001\"\261\001\n\010Schedule\022.\n\nstart_time\030\001 \001(\0132\032."
-          + "google.protobuf.Timestamp\022,\n\010end_time\030\002 "
-          + "\001(\0132\032.google.protobuf.Timestamp\0224\n\021cron_"
-          + "job_duration\030\003 \001(\0132\031.google.protobuf.Dur"
-          + "ation\022\021\n\tcron_spec\030\004 \001(\tBf\n\037com.google.c"
-          + "loud.gaming.v1alphaP\001ZAgoogle.golang.org"
-          + "/genproto/googleapis/cloud/gaming/v1alph"
-          + "a;gamingb\006proto3"
+          + "to\022\033google.cloud.gaming.v1alpha\032\037google/"
+          + "api/field_behavior.proto\032\036google/protobu"
+          + "f/duration.proto\032\037google/protobuf/timest"
+          + "amp.proto\032\034google/api/annotations.proto\""
+          + "\344\003\n\021OperationMetadata\0224\n\013create_time\030\001 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n\010e"
+          + "nd_time\030\002 \001(\0132\032.google.protobuf.Timestam"
+          + "pB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001("
+          + "\tB\003\340A\003\022\033\n\016status_message\030\005 \001(\tB\003\340A\003\022#\n\026r"
+          + "equested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n\013api_"
+          + "version\030\007 \001(\tB\003\340A\003\022\030\n\013unreachable\030\010 \003(\tB"
+          + "\003\340A\003\022b\n\020operation_status\030\t \003(\0132C.google."
+          + "cloud.gaming.v1alpha.OperationMetadata.O"
+          + "perationStatusEntryB\003\340A\003\032d\n\024OperationSta"
+          + "tusEntry\022\013\n\003key\030\001 \001(\t\022;\n\005value\030\002 \001(\0132,.g"
+          + "oogle.cloud.gaming.v1alpha.OperationStat"
+          + "us:\0028\001\"\363\001\n\017OperationStatus\022\021\n\004done\030\001 \001(\010"
+          + "B\003\340A\003\022J\n\nerror_code\030\002 \001(\01626.google.cloud"
+          + ".gaming.v1alpha.OperationStatus.ErrorCod"
+          + "e\022\025\n\rerror_message\030\003 \001(\t\"j\n\tErrorCode\022\032\n"
+          + "\026ERROR_CODE_UNSPECIFIED\020\000\022\022\n\016INTERNAL_ER"
+          + "ROR\020\001\022\025\n\021PERMISSION_DENIED\020\002\022\026\n\022CLUSTER_"
+          + "CONNECTION\020\003\"\206\001\n\rLabelSelector\022F\n\006labels"
+          + "\030\001 \003(\01326.google.cloud.gaming.v1alpha.Lab"
+          + "elSelector.LabelsEntry\032-\n\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\037\n\rRealmSe"
+          + "lector\022\016\n\006realms\030\001 \003(\t\"\261\001\n\010Schedule\022.\n\ns"
+          + "tart_time\030\001 \001(\0132\032.google.protobuf.Timest"
+          + "amp\022,\n\010end_time\030\002 \001(\0132\032.google.protobuf."
+          + "Timestamp\0224\n\021cron_job_duration\030\003 \001(\0132\031.g"
+          + "oogle.protobuf.Duration\022\021\n\tcron_spec\030\004 \001"
+          + "(\t\"\211\002\n\014FleetDetails\022 \n\030game_server_clust"
+          + "er_name\030\001 \001(\t\022\022\n\nfleet_name\030\002 \001(\t\022\037\n\027gam"
+          + "e_server_config_name\030\003 \001(\t\022W\n\022autoscaler"
+          + "_details\030\004 \001(\0132;.google.cloud.gaming.v1a"
+          + "lpha.FleetDetails.AutoscalerDetails\032I\n\021A"
+          + "utoscalerDetails\022\027\n\017autoscaler_name\030\001 \001("
+          + "\t\022\033\n\023scaling_config_name\030\002 \001(\t\"N\n\rDeploy"
+          + "edState\0229\n\006fleets\030\001 \003(\0132).google.cloud.g"
+          + "aming.v1alpha.FleetDetails:\002\030\001\";\n\nSpecSo"
+          + "urce\022\037\n\027game_server_config_name\030\001 \001(\t\022\014\n"
+          + "\004name\030\002 \001(\t\"\306\004\n\rTargetDetails\022 \n\030game_se"
+          + "rver_cluster_name\030\001 \001(\t\022#\n\033game_server_d"
+          + "eployment_name\030\002 \001(\t\022T\n\rfleet_details\030\003 "
+          + "\003(\0132=.google.cloud.gaming.v1alpha.Target"
+          + "Details.TargetFleetDetails\032\227\003\n\022TargetFle"
+          + "etDetails\022X\n\005fleet\030\001 \001(\0132I.google.cloud."
+          + "gaming.v1alpha.TargetDetails.TargetFleet"
+          + "Details.TargetFleet\022g\n\nautoscaler\030\002 \001(\0132"
+          + "S.google.cloud.gaming.v1alpha.TargetDeta"
+          + "ils.TargetFleetDetails.TargetFleetAutosc"
+          + "aler\032Y\n\013TargetFleet\022\014\n\004name\030\001 \001(\t\022<\n\013spe"
+          + "c_source\030\002 \001(\0132\'.google.cloud.gaming.v1a"
+          + "lpha.SpecSource\032c\n\025TargetFleetAutoscaler"
+          + "\022\014\n\004name\030\001 \001(\t\022<\n\013spec_source\030\002 \001(\0132\'.go"
+          + "ogle.cloud.gaming.v1alpha.SpecSource\"J\n\013"
+          + "TargetState\022;\n\007details\030\001 \003(\0132*.google.cl"
+          + "oud.gaming.v1alpha.TargetDetailsBf\n\037com."
+          + "google.cloud.gaming.v1alphaP\001ZAgoogle.go"
+          + "lang.org/genproto/googleapis/cloud/gamin"
+          + "g/v1alpha;gamingb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.longrunning.OperationsProto.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
+            });
     internal_static_google_cloud_gaming_v1alpha_OperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_gaming_v1alpha_OperationMetadata_fieldAccessorTable =
@@ -105,9 +185,29 @@ public final class Common {
               "StatusMessage",
               "RequestedCancellation",
               "ApiVersion",
+              "Unreachable",
+              "OperationStatus",
+            });
+    internal_static_google_cloud_gaming_v1alpha_OperationMetadata_OperationStatusEntry_descriptor =
+        internal_static_google_cloud_gaming_v1alpha_OperationMetadata_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_gaming_v1alpha_OperationMetadata_OperationStatusEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_OperationMetadata_OperationStatusEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_gaming_v1alpha_OperationStatus_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_gaming_v1alpha_OperationStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_OperationStatus_descriptor,
+            new java.lang.String[] {
+              "Done", "ErrorCode", "ErrorMessage",
             });
     internal_static_google_cloud_gaming_v1alpha_LabelSelector_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_gaming_v1alpha_LabelSelector_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gaming_v1alpha_LabelSelector_descriptor,
@@ -124,18 +224,109 @@ public final class Common {
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_gaming_v1alpha_RealmSelector_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_gaming_v1alpha_RealmSelector_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_RealmSelector_descriptor,
+            new java.lang.String[] {
+              "Realms",
+            });
     internal_static_google_cloud_gaming_v1alpha_Schedule_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_gaming_v1alpha_Schedule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gaming_v1alpha_Schedule_descriptor,
             new java.lang.String[] {
               "StartTime", "EndTime", "CronJobDuration", "CronSpec",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
-    com.google.longrunning.OperationsProto.getDescriptor();
+    internal_static_google_cloud_gaming_v1alpha_FleetDetails_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_gaming_v1alpha_FleetDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_FleetDetails_descriptor,
+            new java.lang.String[] {
+              "GameServerClusterName", "FleetName", "GameServerConfigName", "AutoscalerDetails",
+            });
+    internal_static_google_cloud_gaming_v1alpha_FleetDetails_AutoscalerDetails_descriptor =
+        internal_static_google_cloud_gaming_v1alpha_FleetDetails_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_gaming_v1alpha_FleetDetails_AutoscalerDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_FleetDetails_AutoscalerDetails_descriptor,
+            new java.lang.String[] {
+              "AutoscalerName", "ScalingConfigName",
+            });
+    internal_static_google_cloud_gaming_v1alpha_DeployedState_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_gaming_v1alpha_DeployedState_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_DeployedState_descriptor,
+            new java.lang.String[] {
+              "Fleets",
+            });
+    internal_static_google_cloud_gaming_v1alpha_SpecSource_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_gaming_v1alpha_SpecSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_SpecSource_descriptor,
+            new java.lang.String[] {
+              "GameServerConfigName", "Name",
+            });
+    internal_static_google_cloud_gaming_v1alpha_TargetDetails_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_gaming_v1alpha_TargetDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_TargetDetails_descriptor,
+            new java.lang.String[] {
+              "GameServerClusterName", "GameServerDeploymentName", "FleetDetails",
+            });
+    internal_static_google_cloud_gaming_v1alpha_TargetDetails_TargetFleetDetails_descriptor =
+        internal_static_google_cloud_gaming_v1alpha_TargetDetails_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_gaming_v1alpha_TargetDetails_TargetFleetDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_TargetDetails_TargetFleetDetails_descriptor,
+            new java.lang.String[] {
+              "Fleet", "Autoscaler",
+            });
+    internal_static_google_cloud_gaming_v1alpha_TargetDetails_TargetFleetDetails_TargetFleet_descriptor =
+        internal_static_google_cloud_gaming_v1alpha_TargetDetails_TargetFleetDetails_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_gaming_v1alpha_TargetDetails_TargetFleetDetails_TargetFleet_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_TargetDetails_TargetFleetDetails_TargetFleet_descriptor,
+            new java.lang.String[] {
+              "Name", "SpecSource",
+            });
+    internal_static_google_cloud_gaming_v1alpha_TargetDetails_TargetFleetDetails_TargetFleetAutoscaler_descriptor =
+        internal_static_google_cloud_gaming_v1alpha_TargetDetails_TargetFleetDetails_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_gaming_v1alpha_TargetDetails_TargetFleetDetails_TargetFleetAutoscaler_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_TargetDetails_TargetFleetDetails_TargetFleetAutoscaler_descriptor,
+            new java.lang.String[] {
+              "Name", "SpecSource",
+            });
+    internal_static_google_cloud_gaming_v1alpha_TargetState_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_gaming_v1alpha_TargetState_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gaming_v1alpha_TargetState_descriptor,
+            new java.lang.String[] {
+              "Details",
+            });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

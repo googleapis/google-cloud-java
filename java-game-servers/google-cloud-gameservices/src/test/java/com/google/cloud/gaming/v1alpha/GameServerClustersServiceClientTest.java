@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,31 +47,25 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class GameServerClustersServiceClientTest {
-  private static MockAllocationPoliciesService mockAllocationPoliciesService;
   private static MockGameServerClustersService mockGameServerClustersService;
   private static MockGameServerDeploymentsService mockGameServerDeploymentsService;
   private static MockRealmsService mockRealmsService;
-  private static MockScalingPoliciesService mockScalingPoliciesService;
   private static MockServiceHelper serviceHelper;
   private GameServerClustersServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockAllocationPoliciesService = new MockAllocationPoliciesService();
     mockGameServerClustersService = new MockGameServerClustersService();
     mockGameServerDeploymentsService = new MockGameServerDeploymentsService();
     mockRealmsService = new MockRealmsService();
-    mockScalingPoliciesService = new MockScalingPoliciesService();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
-                mockAllocationPoliciesService,
                 mockGameServerClustersService,
                 mockGameServerDeploymentsService,
-                mockRealmsService,
-                mockScalingPoliciesService));
+                mockRealmsService));
     serviceHelper.start();
   }
 
@@ -153,7 +147,14 @@ public class GameServerClustersServiceClientTest {
   @SuppressWarnings("all")
   public void getGameServerClusterTest() {
     String name2 = "name2-1052831874";
-    GameServerCluster expectedResponse = GameServerCluster.newBuilder().setName(name2).build();
+    String etag = "etag3123477";
+    String description = "description-1724546052";
+    GameServerCluster expectedResponse =
+        GameServerCluster.newBuilder()
+            .setName(name2)
+            .setEtag(etag)
+            .setDescription(description)
+            .build();
     mockGameServerClustersService.addResponse(expectedResponse);
 
     String formattedName =
@@ -196,7 +197,14 @@ public class GameServerClustersServiceClientTest {
   @SuppressWarnings("all")
   public void createGameServerClusterTest() throws Exception {
     String name = "name3373707";
-    GameServerCluster expectedResponse = GameServerCluster.newBuilder().setName(name).build();
+    String etag = "etag3123477";
+    String description = "description-1724546052";
+    GameServerCluster expectedResponse =
+        GameServerCluster.newBuilder()
+            .setName(name)
+            .setEtag(etag)
+            .setDescription(description)
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("createGameServerClusterTest")
@@ -308,7 +316,14 @@ public class GameServerClustersServiceClientTest {
   @SuppressWarnings("all")
   public void updateGameServerClusterTest() throws Exception {
     String name = "name3373707";
-    GameServerCluster expectedResponse = GameServerCluster.newBuilder().setName(name).build();
+    String etag = "etag3123477";
+    String description = "description-1724546052";
+    GameServerCluster expectedResponse =
+        GameServerCluster.newBuilder()
+            .setName(name)
+            .setEtag(etag)
+            .setDescription(description)
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("updateGameServerClusterTest")

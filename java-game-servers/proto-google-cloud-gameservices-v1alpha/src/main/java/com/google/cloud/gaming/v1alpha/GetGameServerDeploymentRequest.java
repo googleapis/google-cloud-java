@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,12 @@ public final class GetGameServerDeploymentRequest extends com.google.protobuf.Ge
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GetGameServerDeploymentRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class GetGameServerDeploymentRequest extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -115,10 +120,14 @@ public final class GetGameServerDeploymentRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. The name of the game server deployment to retrieve, using the
    * form:
-   * `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
+   * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -137,10 +146,14 @@ public final class GetGameServerDeploymentRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. The name of the game server deployment to retrieve, using the
    * form:
-   * `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
+   * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -483,10 +496,14 @@ public final class GetGameServerDeploymentRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The name of the game server deployment to retrieve, using the
      * form:
-     * `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
+     * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -505,10 +522,14 @@ public final class GetGameServerDeploymentRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The name of the game server deployment to retrieve, using the
      * form:
-     * `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
+     * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -527,10 +548,15 @@ public final class GetGameServerDeploymentRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The name of the game server deployment to retrieve, using the
      * form:
-     * `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
+     * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -547,10 +573,14 @@ public final class GetGameServerDeploymentRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The name of the game server deployment to retrieve, using the
      * form:
-     * `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
+     * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -564,10 +594,15 @@ public final class GetGameServerDeploymentRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The name of the game server deployment to retrieve, using the
      * form:
-     * `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`
+     * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

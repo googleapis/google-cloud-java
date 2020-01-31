@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,14 @@ public interface ListRealmsRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name, using the form:
-   * `projects/{project_id}/locations/{location}`.
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -39,10 +43,14 @@ public interface ListRealmsRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name, using the form:
-   * `projects/{project_id}/locations/{location}`.
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -57,7 +65,9 @@ public interface ListRealmsRequestOrBuilder
    * determine if there are more Realms left to be queried.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -69,7 +79,9 @@ public interface ListRealmsRequestOrBuilder
    * if any.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -80,7 +92,9 @@ public interface ListRealmsRequestOrBuilder
    * if any.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -91,7 +105,9 @@ public interface ListRealmsRequestOrBuilder
    * Optional. The filter to apply to list results.
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
    */
   java.lang.String getFilter();
   /**
@@ -101,7 +117,9 @@ public interface ListRealmsRequestOrBuilder
    * Optional. The filter to apply to list results.
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -113,7 +131,9 @@ public interface ListRealmsRequestOrBuilder
    * https://cloud.google.com/apis/design/design_patterns#sorting_order.
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
    */
   java.lang.String getOrderBy();
   /**
@@ -124,7 +144,9 @@ public interface ListRealmsRequestOrBuilder
    * https://cloud.google.com/apis/design/design_patterns#sorting_order.
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
 }

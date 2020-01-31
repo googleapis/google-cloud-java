@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,12 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
   }
 
   private LabelSelector() {}
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LabelSelector();
+  }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -146,7 +152,15 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-  /** <code>map&lt;string, string&gt; labels = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource labels for this selector.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 1;</code>
+   */
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -158,11 +172,27 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-  /** <code>map&lt;string, string&gt; labels = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource labels for this selector.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 1;</code>
+   */
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-  /** <code>map&lt;string, string&gt; labels = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource labels for this selector.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 1;</code>
+   */
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -170,7 +200,15 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-  /** <code>map&lt;string, string&gt; labels = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource labels for this selector.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 1;</code>
+   */
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -551,7 +589,15 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-    /** <code>map&lt;string, string&gt; labels = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource labels for this selector.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 1;</code>
+     */
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -563,11 +609,27 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-    /** <code>map&lt;string, string&gt; labels = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource labels for this selector.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 1;</code>
+     */
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-    /** <code>map&lt;string, string&gt; labels = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource labels for this selector.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 1;</code>
+     */
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -576,7 +638,15 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-    /** <code>map&lt;string, string&gt; labels = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource labels for this selector.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 1;</code>
+     */
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -592,7 +662,15 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-    /** <code>map&lt;string, string&gt; labels = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource labels for this selector.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 1;</code>
+     */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -605,7 +683,15 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       return internalGetMutableLabels().getMutableMap();
     }
-    /** <code>map&lt;string, string&gt; labels = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource labels for this selector.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 1;</code>
+     */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -616,7 +702,15 @@ public final class LabelSelector extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
-    /** <code>map&lt;string, string&gt; labels = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource labels for this selector.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 1;</code>
+     */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       return this;

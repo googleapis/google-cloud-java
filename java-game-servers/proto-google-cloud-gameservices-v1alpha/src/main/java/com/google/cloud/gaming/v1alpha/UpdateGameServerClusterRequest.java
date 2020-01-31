@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,12 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
   private UpdateGameServerClusterRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateGameServerClusterRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -53,7 +59,6 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -140,7 +145,11 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
    * Only fields specified in update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the gameServerCluster field is set.
    */
   public boolean hasGameServerCluster() {
     return gameServerCluster_ != null;
@@ -153,7 +162,11 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
    * Only fields specified in update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The gameServerCluster.
    */
   public com.google.cloud.gaming.v1alpha.GameServerCluster getGameServerCluster() {
     return gameServerCluster_ == null
@@ -168,7 +181,9 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
    * Only fields specified in update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.gaming.v1alpha.GameServerClusterOrBuilder
       getGameServerClusterOrBuilder() {
@@ -188,7 +203,10 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
    * // /docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -204,7 +222,10 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
    * // /docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -220,7 +241,8 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
    * // /docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -602,7 +624,11 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the gameServerCluster field is set.
      */
     public boolean hasGameServerCluster() {
       return gameServerClusterBuilder_ != null || gameServerCluster_ != null;
@@ -615,7 +641,11 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The gameServerCluster.
      */
     public com.google.cloud.gaming.v1alpha.GameServerCluster getGameServerCluster() {
       if (gameServerClusterBuilder_ == null) {
@@ -634,7 +664,9 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setGameServerCluster(com.google.cloud.gaming.v1alpha.GameServerCluster value) {
       if (gameServerClusterBuilder_ == null) {
@@ -657,7 +689,9 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setGameServerCluster(
         com.google.cloud.gaming.v1alpha.GameServerCluster.Builder builderForValue) {
@@ -678,7 +712,9 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeGameServerCluster(com.google.cloud.gaming.v1alpha.GameServerCluster value) {
       if (gameServerClusterBuilder_ == null) {
@@ -705,7 +741,9 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearGameServerCluster() {
       if (gameServerClusterBuilder_ == null) {
@@ -726,7 +764,9 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.gaming.v1alpha.GameServerCluster.Builder getGameServerClusterBuilder() {
 
@@ -741,7 +781,9 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.gaming.v1alpha.GameServerClusterOrBuilder
         getGameServerClusterOrBuilder() {
@@ -761,7 +803,9 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * Only fields specified in update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gaming.v1alpha.GameServerCluster,
@@ -797,7 +841,10 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -813,7 +860,10 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -835,7 +885,8 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -861,7 +912,8 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -884,7 +936,8 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -912,7 +965,8 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -936,7 +990,8 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -954,7 +1009,8 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -976,7 +1032,8 @@ public final class UpdateGameServerClusterRequest extends com.google.protobuf.Ge
      * // /docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

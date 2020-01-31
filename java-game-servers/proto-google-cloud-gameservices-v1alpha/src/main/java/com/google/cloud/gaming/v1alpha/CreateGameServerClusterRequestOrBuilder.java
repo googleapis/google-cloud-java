@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,14 @@ public interface CreateGameServerClusterRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name, using the form:
-   * `projects/{project_id}/locations/{location}/realms/{realm-id}`.
+   * `projects/{project}/locations/{location}/realms/{realm-id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -39,10 +43,14 @@ public interface CreateGameServerClusterRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name, using the form:
-   * `projects/{project_id}/locations/{location}/realms/{realm-id}`.
+   * `projects/{project}/locations/{location}/realms/{realm-id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -53,7 +61,9 @@ public interface CreateGameServerClusterRequestOrBuilder
    * Required. The ID of the game server cluster resource to be created.
    * </pre>
    *
-   * <code>string game_server_cluster_id = 2;</code>
+   * <code>string game_server_cluster_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The gameServerClusterId.
    */
   java.lang.String getGameServerClusterId();
   /**
@@ -63,7 +73,9 @@ public interface CreateGameServerClusterRequestOrBuilder
    * Required. The ID of the game server cluster resource to be created.
    * </pre>
    *
-   * <code>string game_server_cluster_id = 2;</code>
+   * <code>string game_server_cluster_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for gameServerClusterId.
    */
   com.google.protobuf.ByteString getGameServerClusterIdBytes();
 
@@ -74,7 +86,11 @@ public interface CreateGameServerClusterRequestOrBuilder
    * Required. The game server cluster resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the gameServerCluster field is set.
    */
   boolean hasGameServerCluster();
   /**
@@ -84,7 +100,11 @@ public interface CreateGameServerClusterRequestOrBuilder
    * Required. The game server cluster resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The gameServerCluster.
    */
   com.google.cloud.gaming.v1alpha.GameServerCluster getGameServerCluster();
   /**
@@ -94,7 +114,9 @@ public interface CreateGameServerClusterRequestOrBuilder
    * Required. The game server cluster resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.gaming.v1alpha.GameServerClusterOrBuilder getGameServerClusterOrBuilder();
 }

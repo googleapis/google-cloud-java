@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,14 @@ public interface CreateRealmRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name, using the form:
-   * `projects/{project_id}/locations/{location}`.
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The parent.
    */
   java.lang.String getParent();
   /**
@@ -39,10 +43,14 @@ public interface CreateRealmRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name, using the form:
-   * `projects/{project_id}/locations/{location}`.
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -53,7 +61,9 @@ public interface CreateRealmRequestOrBuilder
    * Required. The ID of the realm resource to be created.
    * </pre>
    *
-   * <code>string realm_id = 2;</code>
+   * <code>string realm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The realmId.
    */
   java.lang.String getRealmId();
   /**
@@ -63,7 +73,9 @@ public interface CreateRealmRequestOrBuilder
    * Required. The ID of the realm resource to be created.
    * </pre>
    *
-   * <code>string realm_id = 2;</code>
+   * <code>string realm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for realmId.
    */
   com.google.protobuf.ByteString getRealmIdBytes();
 
@@ -74,7 +86,10 @@ public interface CreateRealmRequestOrBuilder
    * Required. The realm resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.Realm realm = 3;</code>
+   * <code>.google.cloud.gaming.v1alpha.Realm realm = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the realm field is set.
    */
   boolean hasRealm();
   /**
@@ -84,7 +99,10 @@ public interface CreateRealmRequestOrBuilder
    * Required. The realm resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.Realm realm = 3;</code>
+   * <code>.google.cloud.gaming.v1alpha.Realm realm = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The realm.
    */
   com.google.cloud.gaming.v1alpha.Realm getRealm();
   /**
@@ -94,7 +112,8 @@ public interface CreateRealmRequestOrBuilder
    * Required. The realm resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.Realm realm = 3;</code>
+   * <code>.google.cloud.gaming.v1alpha.Realm realm = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.gaming.v1alpha.RealmOrBuilder getRealmOrBuilder();
 }

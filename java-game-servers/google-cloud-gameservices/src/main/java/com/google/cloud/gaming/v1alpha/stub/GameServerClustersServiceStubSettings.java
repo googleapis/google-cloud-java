@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,12 @@ import com.google.cloud.gaming.v1alpha.GameServerCluster;
 import com.google.cloud.gaming.v1alpha.GetGameServerClusterRequest;
 import com.google.cloud.gaming.v1alpha.ListGameServerClustersRequest;
 import com.google.cloud.gaming.v1alpha.ListGameServerClustersResponse;
+import com.google.cloud.gaming.v1alpha.PreviewCreateGameServerClusterRequest;
+import com.google.cloud.gaming.v1alpha.PreviewCreateGameServerClusterResponse;
+import com.google.cloud.gaming.v1alpha.PreviewDeleteGameServerClusterRequest;
+import com.google.cloud.gaming.v1alpha.PreviewDeleteGameServerClusterResponse;
+import com.google.cloud.gaming.v1alpha.PreviewUpdateGameServerClusterRequest;
+import com.google.cloud.gaming.v1alpha.PreviewUpdateGameServerClusterResponse;
 import com.google.cloud.gaming.v1alpha.UpdateGameServerClusterRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -115,6 +121,15 @@ public class GameServerClustersServiceStubSettings
       updateGameServerClusterSettings;
   private final OperationCallSettings<UpdateGameServerClusterRequest, GameServerCluster, Empty>
       updateGameServerClusterOperationSettings;
+  private final UnaryCallSettings<
+          PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
+      previewCreateGameServerClusterSettings;
+  private final UnaryCallSettings<
+          PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
+      previewDeleteGameServerClusterSettings;
+  private final UnaryCallSettings<
+          PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
+      previewUpdateGameServerClusterSettings;
 
   /** Returns the object with the settings used for calls to listGameServerClusters. */
   public PagedCallSettings<
@@ -168,6 +183,27 @@ public class GameServerClustersServiceStubSettings
   public OperationCallSettings<UpdateGameServerClusterRequest, GameServerCluster, Empty>
       updateGameServerClusterOperationSettings() {
     return updateGameServerClusterOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to previewCreateGameServerCluster. */
+  public UnaryCallSettings<
+          PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
+      previewCreateGameServerClusterSettings() {
+    return previewCreateGameServerClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to previewDeleteGameServerCluster. */
+  public UnaryCallSettings<
+          PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
+      previewDeleteGameServerClusterSettings() {
+    return previewDeleteGameServerClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to previewUpdateGameServerCluster. */
+  public UnaryCallSettings<
+          PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
+      previewUpdateGameServerClusterSettings() {
+    return previewUpdateGameServerClusterSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -250,6 +286,12 @@ public class GameServerClustersServiceStubSettings
     updateGameServerClusterSettings = settingsBuilder.updateGameServerClusterSettings().build();
     updateGameServerClusterOperationSettings =
         settingsBuilder.updateGameServerClusterOperationSettings().build();
+    previewCreateGameServerClusterSettings =
+        settingsBuilder.previewCreateGameServerClusterSettings().build();
+    previewDeleteGameServerClusterSettings =
+        settingsBuilder.previewDeleteGameServerClusterSettings().build();
+    previewUpdateGameServerClusterSettings =
+        settingsBuilder.previewUpdateGameServerClusterSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -348,6 +390,15 @@ public class GameServerClustersServiceStubSettings
     private final OperationCallSettings.Builder<
             UpdateGameServerClusterRequest, GameServerCluster, Empty>
         updateGameServerClusterOperationSettings;
+    private final UnaryCallSettings.Builder<
+            PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
+        previewCreateGameServerClusterSettings;
+    private final UnaryCallSettings.Builder<
+            PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
+        previewDeleteGameServerClusterSettings;
+    private final UnaryCallSettings.Builder<
+            PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
+        previewUpdateGameServerClusterSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -407,13 +458,22 @@ public class GameServerClustersServiceStubSettings
 
       updateGameServerClusterOperationSettings = OperationCallSettings.newBuilder();
 
+      previewCreateGameServerClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      previewDeleteGameServerClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      previewUpdateGameServerClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listGameServerClustersSettings,
               getGameServerClusterSettings,
               createGameServerClusterSettings,
               deleteGameServerClusterSettings,
-              updateGameServerClusterSettings);
+              updateGameServerClusterSettings,
+              previewCreateGameServerClusterSettings,
+              previewDeleteGameServerClusterSettings,
+              previewUpdateGameServerClusterSettings);
 
       initDefaults(this);
     }
@@ -451,6 +511,21 @@ public class GameServerClustersServiceStubSettings
 
       builder
           .updateGameServerClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .previewCreateGameServerClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .previewDeleteGameServerClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .previewUpdateGameServerClusterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
@@ -540,6 +615,12 @@ public class GameServerClustersServiceStubSettings
       updateGameServerClusterSettings = settings.updateGameServerClusterSettings.toBuilder();
       updateGameServerClusterOperationSettings =
           settings.updateGameServerClusterOperationSettings.toBuilder();
+      previewCreateGameServerClusterSettings =
+          settings.previewCreateGameServerClusterSettings.toBuilder();
+      previewDeleteGameServerClusterSettings =
+          settings.previewDeleteGameServerClusterSettings.toBuilder();
+      previewUpdateGameServerClusterSettings =
+          settings.previewUpdateGameServerClusterSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -547,7 +628,10 @@ public class GameServerClustersServiceStubSettings
               getGameServerClusterSettings,
               createGameServerClusterSettings,
               deleteGameServerClusterSettings,
-              updateGameServerClusterSettings);
+              updateGameServerClusterSettings,
+              previewCreateGameServerClusterSettings,
+              previewDeleteGameServerClusterSettings,
+              previewUpdateGameServerClusterSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -621,6 +705,27 @@ public class GameServerClustersServiceStubSettings
     public OperationCallSettings.Builder<UpdateGameServerClusterRequest, GameServerCluster, Empty>
         updateGameServerClusterOperationSettings() {
       return updateGameServerClusterOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to previewCreateGameServerCluster. */
+    public UnaryCallSettings.Builder<
+            PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
+        previewCreateGameServerClusterSettings() {
+      return previewCreateGameServerClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to previewDeleteGameServerCluster. */
+    public UnaryCallSettings.Builder<
+            PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
+        previewDeleteGameServerClusterSettings() {
+      return previewDeleteGameServerClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to previewUpdateGameServerCluster. */
+    public UnaryCallSettings.Builder<
+            PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
+        previewUpdateGameServerClusterSettings() {
+      return previewUpdateGameServerClusterSettings;
     }
 
     @Override

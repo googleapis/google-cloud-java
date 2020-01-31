@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,12 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateGameServerClusterRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -139,10 +144,14 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. The parent resource name, using the form:
-   * `projects/{project_id}/locations/{location}/realms/{realm-id}`.
+   * `projects/{project}/locations/{location}/realms/{realm-id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -160,10 +169,14 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. The parent resource name, using the form:
-   * `projects/{project_id}/locations/{location}/realms/{realm-id}`.
+   * `projects/{project}/locations/{location}/realms/{realm-id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -186,7 +199,9 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
    * Required. The ID of the game server cluster resource to be created.
    * </pre>
    *
-   * <code>string game_server_cluster_id = 2;</code>
+   * <code>string game_server_cluster_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The gameServerClusterId.
    */
   public java.lang.String getGameServerClusterId() {
     java.lang.Object ref = gameServerClusterId_;
@@ -206,7 +221,9 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
    * Required. The ID of the game server cluster resource to be created.
    * </pre>
    *
-   * <code>string game_server_cluster_id = 2;</code>
+   * <code>string game_server_cluster_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for gameServerClusterId.
    */
   public com.google.protobuf.ByteString getGameServerClusterIdBytes() {
     java.lang.Object ref = gameServerClusterId_;
@@ -229,7 +246,11 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
    * Required. The game server cluster resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the gameServerCluster field is set.
    */
   public boolean hasGameServerCluster() {
     return gameServerCluster_ != null;
@@ -241,7 +262,11 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
    * Required. The game server cluster resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The gameServerCluster.
    */
   public com.google.cloud.gaming.v1alpha.GameServerCluster getGameServerCluster() {
     return gameServerCluster_ == null
@@ -255,7 +280,9 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
    * Required. The game server cluster resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3;</code>
+   * <code>
+   * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.gaming.v1alpha.GameServerClusterOrBuilder
       getGameServerClusterOrBuilder() {
@@ -634,10 +661,14 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The parent resource name, using the form:
-     * `projects/{project_id}/locations/{location}/realms/{realm-id}`.
+     * `projects/{project}/locations/{location}/realms/{realm-id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -655,10 +686,14 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The parent resource name, using the form:
-     * `projects/{project_id}/locations/{location}/realms/{realm-id}`.
+     * `projects/{project}/locations/{location}/realms/{realm-id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -676,10 +711,15 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The parent resource name, using the form:
-     * `projects/{project_id}/locations/{location}/realms/{realm-id}`.
+     * `projects/{project}/locations/{location}/realms/{realm-id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -695,10 +735,14 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The parent resource name, using the form:
-     * `projects/{project_id}/locations/{location}/realms/{realm-id}`.
+     * `projects/{project}/locations/{location}/realms/{realm-id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -711,10 +755,15 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The parent resource name, using the form:
-     * `projects/{project_id}/locations/{location}/realms/{realm-id}`.
+     * `projects/{project}/locations/{location}/realms/{realm-id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -735,7 +784,9 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      * Required. The ID of the game server cluster resource to be created.
      * </pre>
      *
-     * <code>string game_server_cluster_id = 2;</code>
+     * <code>string game_server_cluster_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The gameServerClusterId.
      */
     public java.lang.String getGameServerClusterId() {
       java.lang.Object ref = gameServerClusterId_;
@@ -755,7 +806,9 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      * Required. The ID of the game server cluster resource to be created.
      * </pre>
      *
-     * <code>string game_server_cluster_id = 2;</code>
+     * <code>string game_server_cluster_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for gameServerClusterId.
      */
     public com.google.protobuf.ByteString getGameServerClusterIdBytes() {
       java.lang.Object ref = gameServerClusterId_;
@@ -775,7 +828,10 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      * Required. The ID of the game server cluster resource to be created.
      * </pre>
      *
-     * <code>string game_server_cluster_id = 2;</code>
+     * <code>string game_server_cluster_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The gameServerClusterId to set.
+     * @return This builder for chaining.
      */
     public Builder setGameServerClusterId(java.lang.String value) {
       if (value == null) {
@@ -793,7 +849,9 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      * Required. The ID of the game server cluster resource to be created.
      * </pre>
      *
-     * <code>string game_server_cluster_id = 2;</code>
+     * <code>string game_server_cluster_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearGameServerClusterId() {
 
@@ -808,7 +866,10 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      * Required. The ID of the game server cluster resource to be created.
      * </pre>
      *
-     * <code>string game_server_cluster_id = 2;</code>
+     * <code>string game_server_cluster_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for gameServerClusterId to set.
+     * @return This builder for chaining.
      */
     public Builder setGameServerClusterIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -834,7 +895,11 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      * Required. The game server cluster resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the gameServerCluster field is set.
      */
     public boolean hasGameServerCluster() {
       return gameServerClusterBuilder_ != null || gameServerCluster_ != null;
@@ -846,7 +911,11 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      * Required. The game server cluster resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The gameServerCluster.
      */
     public com.google.cloud.gaming.v1alpha.GameServerCluster getGameServerCluster() {
       if (gameServerClusterBuilder_ == null) {
@@ -864,7 +933,9 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      * Required. The game server cluster resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setGameServerCluster(com.google.cloud.gaming.v1alpha.GameServerCluster value) {
       if (gameServerClusterBuilder_ == null) {
@@ -886,7 +957,9 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      * Required. The game server cluster resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setGameServerCluster(
         com.google.cloud.gaming.v1alpha.GameServerCluster.Builder builderForValue) {
@@ -906,7 +979,9 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      * Required. The game server cluster resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeGameServerCluster(com.google.cloud.gaming.v1alpha.GameServerCluster value) {
       if (gameServerClusterBuilder_ == null) {
@@ -932,7 +1007,9 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      * Required. The game server cluster resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearGameServerCluster() {
       if (gameServerClusterBuilder_ == null) {
@@ -952,7 +1029,9 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      * Required. The game server cluster resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.gaming.v1alpha.GameServerCluster.Builder getGameServerClusterBuilder() {
 
@@ -966,7 +1045,9 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      * Required. The game server cluster resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.gaming.v1alpha.GameServerClusterOrBuilder
         getGameServerClusterOrBuilder() {
@@ -985,7 +1066,9 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      * Required. The game server cluster resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3;</code>
+     * <code>
+     * .google.cloud.gaming.v1alpha.GameServerCluster game_server_cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gaming.v1alpha.GameServerCluster,

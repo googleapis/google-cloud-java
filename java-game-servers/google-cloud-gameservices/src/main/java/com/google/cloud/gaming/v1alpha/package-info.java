@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,30 +19,11 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>=============================== AllocationPoliciesServiceClient
+ * <p>=============================== GameServerClustersServiceClient
  * ===============================
  *
- * <p>Service Description: The cloud gaming allocation policy is used as the controller's recipe for
- * the allocating game servers from clusters. The policy has three modes: 1. Default mode which is
- * not limited to time. 2. Time based mode which is temporary and overrides the default mode when
- * effective. 3. Periodic mode which follows the time base mode, but happens periodically using
- * local time, identified by cron specs.
- *
- * <p>Sample for AllocationPoliciesServiceClient:
- *
- * <pre>
- * <code>
- * try (AllocationPoliciesServiceClient allocationPoliciesServiceClient = AllocationPoliciesServiceClient.create()) {
- *   String formattedName = AllocationPoliciesServiceClient.formatAllocationPolicyName("[PROJECT]", "[LOCATION]", "[ALLOCATION_POLICY]");
- *   AllocationPolicy response = allocationPoliciesServiceClient.getAllocationPolicy(formattedName);
- * }
- * </code>
- * </pre>
- *
- * =============================== GameServerClustersServiceClient ===============================
- *
- * <p>Service Description: The game server cluster is used to capture the game server cluster's
- * settings which are used to manage game server clusters.
+ * <p>Service Description: The game server cluster maps to Kubernetes clusters running Agones and is
+ * used to manage fleets within clusters.
  *
  * <p>Sample for GameServerClustersServiceClient:
  *
@@ -58,8 +39,8 @@
  * ================================== GameServerDeploymentsServiceClient
  * ==================================
  *
- * <p>Service Description: The game server deployment is used to configure the deployment of game
- * server software to Agones Fleets in game server clusters.
+ * <p>Service Description: The game server deployment is used to control the deployment of game
+ * server software to Agones fleets.
  *
  * <p>Sample for GameServerDeploymentsServiceClient:
  *
@@ -74,7 +55,7 @@
  *
  * =================== RealmsServiceClient ===================
  *
- * <p>Service Description: Realm provides grouping of game server clusters that are serving
+ * <p>Service Description: Realm provides grouping of game server clusters that are serving a
  * particular gamer population.
  *
  * <p>Sample for RealmsServiceClient:
@@ -84,22 +65,6 @@
  * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
  *   String formattedName = RealmsServiceClient.formatRealmName("[PROJECT]", "[LOCATION]", "[REALM]");
  *   Realm response = realmsServiceClient.getRealm(formattedName);
- * }
- * </code>
- * </pre>
- *
- * ============================ ScalingPoliciesServiceClient ============================
- *
- * <p>Service Description: The cloud gaming scaling policy is used to configure scaling parameters
- * for each fleet.
- *
- * <p>Sample for ScalingPoliciesServiceClient:
- *
- * <pre>
- * <code>
- * try (ScalingPoliciesServiceClient scalingPoliciesServiceClient = ScalingPoliciesServiceClient.create()) {
- *   String formattedName = ScalingPoliciesServiceClient.formatScalingPolicyName("[PROJECT]", "[LOCATION]", "[SCALING_POLICY]");
- *   ScalingPolicy response = scalingPoliciesServiceClient.getScalingPolicy(formattedName);
  * }
  * </code>
  * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,14 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
 
   private GameServerDeployment() {
     name_ = "";
+    etag_ = "";
+    description_ = "";
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GameServerDeployment();
   }
 
   @java.lang.Override
@@ -104,10 +112,10 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -115,38 +123,18 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
               labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
               break;
             }
-          case 42:
+          case 58:
             {
-              com.google.cloud.gaming.v1alpha.GameServerTemplate.Builder subBuilder = null;
-              if (stableGameServerTemplate_ != null) {
-                subBuilder = stableGameServerTemplate_.toBuilder();
-              }
-              stableGameServerTemplate_ =
-                  input.readMessage(
-                      com.google.cloud.gaming.v1alpha.GameServerTemplate.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(stableGameServerTemplate_);
-                stableGameServerTemplate_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              etag_ = s;
               break;
             }
-          case 50:
+          case 66:
             {
-              com.google.cloud.gaming.v1alpha.GameServerTemplate.Builder subBuilder = null;
-              if (newGameServerTemplate_ != null) {
-                subBuilder = newGameServerTemplate_.toBuilder();
-              }
-              newGameServerTemplate_ =
-                  input.readMessage(
-                      com.google.cloud.gaming.v1alpha.GameServerTemplate.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(newGameServerTemplate_);
-                newGameServerTemplate_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              description_ = s;
               break;
             }
           default:
@@ -194,7 +182,6 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
             com.google.cloud.gaming.v1alpha.GameServerDeployment.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -202,12 +189,14 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The resource name of the game server deployment, using the form:
-   * `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`.
+   * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * For example,
    * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment`.
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -225,12 +214,14 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The resource name of the game server deployment, using the form:
-   * `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`.
+   * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * For example,
    * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment`.
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -253,7 +244,10 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -265,7 +259,10 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -277,7 +274,8 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
    * Output only. The creation time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
@@ -292,7 +290,10 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
     return updateTime_ != null;
@@ -304,7 +305,10 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
@@ -316,7 +320,8 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
    * Output only. The last-modified time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
@@ -419,88 +424,98 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
     return map.get(key);
   }
 
-  public static final int STABLE_GAME_SERVER_TEMPLATE_FIELD_NUMBER = 5;
-  private com.google.cloud.gaming.v1alpha.GameServerTemplate stableGameServerTemplate_;
+  public static final int ETAG_FIELD_NUMBER = 7;
+  private volatile java.lang.Object etag_;
   /**
    *
    *
    * <pre>
-   * Output only. The GameServerTemplate whose rollout was completed.
+   * ETag of the resource.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerTemplate stable_game_server_template = 5;</code>
+   * <code>string etag = 7;</code>
+   *
+   * @return The etag.
    */
-  public boolean hasStableGameServerTemplate() {
-    return stableGameServerTemplate_ != null;
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * Output only. The GameServerTemplate whose rollout was completed.
+   * ETag of the resource.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerTemplate stable_game_server_template = 5;</code>
+   * <code>string etag = 7;</code>
+   *
+   * @return The bytes for etag.
    */
-  public com.google.cloud.gaming.v1alpha.GameServerTemplate getStableGameServerTemplate() {
-    return stableGameServerTemplate_ == null
-        ? com.google.cloud.gaming.v1alpha.GameServerTemplate.getDefaultInstance()
-        : stableGameServerTemplate_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The GameServerTemplate whose rollout was completed.
-   * </pre>
-   *
-   * <code>.google.cloud.gaming.v1alpha.GameServerTemplate stable_game_server_template = 5;</code>
-   */
-  public com.google.cloud.gaming.v1alpha.GameServerTemplateOrBuilder
-      getStableGameServerTemplateOrBuilder() {
-    return getStableGameServerTemplate();
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int NEW_GAME_SERVER_TEMPLATE_FIELD_NUMBER = 6;
-  private com.google.cloud.gaming.v1alpha.GameServerTemplate newGameServerTemplate_;
+  public static final int DESCRIPTION_FIELD_NUMBER = 8;
+  private volatile java.lang.Object description_;
   /**
    *
    *
    * <pre>
-   * The GameServerTemplate whose rollout is ongoing.
+   * Human readable description of the game server deployment.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerTemplate new_game_server_template = 6;</code>
+   * <code>string description = 8;</code>
+   *
+   * @return The description.
    */
-  public boolean hasNewGameServerTemplate() {
-    return newGameServerTemplate_ != null;
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * The GameServerTemplate whose rollout is ongoing.
+   * Human readable description of the game server deployment.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.GameServerTemplate new_game_server_template = 6;</code>
+   * <code>string description = 8;</code>
+   *
+   * @return The bytes for description.
    */
-  public com.google.cloud.gaming.v1alpha.GameServerTemplate getNewGameServerTemplate() {
-    return newGameServerTemplate_ == null
-        ? com.google.cloud.gaming.v1alpha.GameServerTemplate.getDefaultInstance()
-        : newGameServerTemplate_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The GameServerTemplate whose rollout is ongoing.
-   * </pre>
-   *
-   * <code>.google.cloud.gaming.v1alpha.GameServerTemplate new_game_server_template = 6;</code>
-   */
-  public com.google.cloud.gaming.v1alpha.GameServerTemplateOrBuilder
-      getNewGameServerTemplateOrBuilder() {
-    return getNewGameServerTemplate();
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -528,11 +543,11 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 4);
-    if (stableGameServerTemplate_ != null) {
-      output.writeMessage(5, getStableGameServerTemplate());
+    if (!getEtagBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, etag_);
     }
-    if (newGameServerTemplate_ != null) {
-      output.writeMessage(6, getNewGameServerTemplate());
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, description_);
     }
     unknownFields.writeTo(output);
   }
@@ -562,14 +577,11 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, labels__);
     }
-    if (stableGameServerTemplate_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              5, getStableGameServerTemplate());
+    if (!getEtagBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, etag_);
     }
-    if (newGameServerTemplate_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(6, getNewGameServerTemplate());
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, description_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -597,14 +609,8 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
-    if (hasStableGameServerTemplate() != other.hasStableGameServerTemplate()) return false;
-    if (hasStableGameServerTemplate()) {
-      if (!getStableGameServerTemplate().equals(other.getStableGameServerTemplate())) return false;
-    }
-    if (hasNewGameServerTemplate() != other.hasNewGameServerTemplate()) return false;
-    if (hasNewGameServerTemplate()) {
-      if (!getNewGameServerTemplate().equals(other.getNewGameServerTemplate())) return false;
-    }
+    if (!getEtag().equals(other.getEtag())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -630,14 +636,10 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
-    if (hasStableGameServerTemplate()) {
-      hash = (37 * hash) + STABLE_GAME_SERVER_TEMPLATE_FIELD_NUMBER;
-      hash = (53 * hash) + getStableGameServerTemplate().hashCode();
-    }
-    if (hasNewGameServerTemplate()) {
-      hash = (37 * hash) + NEW_GAME_SERVER_TEMPLATE_FIELD_NUMBER;
-      hash = (53 * hash) + getNewGameServerTemplate().hashCode();
-    }
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -818,18 +820,10 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
-      if (stableGameServerTemplateBuilder_ == null) {
-        stableGameServerTemplate_ = null;
-      } else {
-        stableGameServerTemplate_ = null;
-        stableGameServerTemplateBuilder_ = null;
-      }
-      if (newGameServerTemplateBuilder_ == null) {
-        newGameServerTemplate_ = null;
-      } else {
-        newGameServerTemplate_ = null;
-        newGameServerTemplateBuilder_ = null;
-      }
+      etag_ = "";
+
+      description_ = "";
+
       return this;
     }
 
@@ -858,7 +852,6 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
       com.google.cloud.gaming.v1alpha.GameServerDeployment result =
           new com.google.cloud.gaming.v1alpha.GameServerDeployment(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
@@ -872,17 +865,8 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      if (stableGameServerTemplateBuilder_ == null) {
-        result.stableGameServerTemplate_ = stableGameServerTemplate_;
-      } else {
-        result.stableGameServerTemplate_ = stableGameServerTemplateBuilder_.build();
-      }
-      if (newGameServerTemplateBuilder_ == null) {
-        result.newGameServerTemplate_ = newGameServerTemplate_;
-      } else {
-        result.newGameServerTemplate_ = newGameServerTemplateBuilder_.build();
-      }
-      result.bitField0_ = to_bitField0_;
+      result.etag_ = etag_;
+      result.description_ = description_;
       onBuilt();
       return result;
     }
@@ -944,11 +928,13 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      if (other.hasStableGameServerTemplate()) {
-        mergeStableGameServerTemplate(other.getStableGameServerTemplate());
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        onChanged();
       }
-      if (other.hasNewGameServerTemplate()) {
-        mergeNewGameServerTemplate(other.getNewGameServerTemplate());
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -988,12 +974,14 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The resource name of the game server deployment, using the form:
-     * `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`.
+     * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * For example,
      * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment`.
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1011,12 +999,14 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The resource name of the game server deployment, using the form:
-     * `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`.
+     * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * For example,
      * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment`.
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -1034,12 +1024,15 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The resource name of the game server deployment, using the form:
-     * `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`.
+     * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * For example,
      * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment`.
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -1055,12 +1048,14 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The resource name of the game server deployment, using the form:
-     * `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`.
+     * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * For example,
      * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment`.
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearName() {
 
@@ -1073,12 +1068,15 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The resource name of the game server deployment, using the form:
-     * `projects/{project_id}/locations/{location}/gameServerDeployments/{deployment_id}`.
+     * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * For example,
      * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment`.
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1104,7 +1102,11 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -1116,7 +1118,11 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1134,7 +1140,9 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1156,7 +1164,9 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -1175,7 +1185,9 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1199,7 +1211,9 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1219,7 +1233,9 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
 
@@ -1233,7 +1249,9 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -1251,7 +1269,9 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The creation time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1283,7 +1303,11 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
@@ -1295,7 +1319,11 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -1313,7 +1341,9 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -1335,7 +1365,9 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
@@ -1354,7 +1386,9 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -1378,7 +1412,9 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -1398,7 +1434,9 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
 
@@ -1412,7 +1450,9 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -1430,7 +1470,9 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      * Output only. The last-modified time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1608,377 +1650,216 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.cloud.gaming.v1alpha.GameServerTemplate stableGameServerTemplate_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.gaming.v1alpha.GameServerTemplate,
-            com.google.cloud.gaming.v1alpha.GameServerTemplate.Builder,
-            com.google.cloud.gaming.v1alpha.GameServerTemplateOrBuilder>
-        stableGameServerTemplateBuilder_;
+    private java.lang.Object etag_ = "";
     /**
      *
      *
      * <pre>
-     * Output only. The GameServerTemplate whose rollout was completed.
+     * ETag of the resource.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate stable_game_server_template = 5;</code>
+     * <code>string etag = 7;</code>
+     *
+     * @return The etag.
      */
-    public boolean hasStableGameServerTemplate() {
-      return stableGameServerTemplateBuilder_ != null || stableGameServerTemplate_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The GameServerTemplate whose rollout was completed.
-     * </pre>
-     *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate stable_game_server_template = 5;</code>
-     */
-    public com.google.cloud.gaming.v1alpha.GameServerTemplate getStableGameServerTemplate() {
-      if (stableGameServerTemplateBuilder_ == null) {
-        return stableGameServerTemplate_ == null
-            ? com.google.cloud.gaming.v1alpha.GameServerTemplate.getDefaultInstance()
-            : stableGameServerTemplate_;
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
       } else {
-        return stableGameServerTemplateBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
      *
      *
      * <pre>
-     * Output only. The GameServerTemplate whose rollout was completed.
+     * ETag of the resource.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate stable_game_server_template = 5;</code>
+     * <code>string etag = 7;</code>
+     *
+     * @return The bytes for etag.
      */
-    public Builder setStableGameServerTemplate(
-        com.google.cloud.gaming.v1alpha.GameServerTemplate value) {
-      if (stableGameServerTemplateBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        stableGameServerTemplate_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
       } else {
-        stableGameServerTemplateBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The GameServerTemplate whose rollout was completed.
+     * ETag of the resource.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate stable_game_server_template = 5;</code>
+     * <code>string etag = 7;</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
      */
-    public Builder setStableGameServerTemplate(
-        com.google.cloud.gaming.v1alpha.GameServerTemplate.Builder builderForValue) {
-      if (stableGameServerTemplateBuilder_ == null) {
-        stableGameServerTemplate_ = builderForValue.build();
-        onChanged();
-      } else {
-        stableGameServerTemplateBuilder_.setMessage(builderForValue.build());
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
       }
 
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The GameServerTemplate whose rollout was completed.
-     * </pre>
-     *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate stable_game_server_template = 5;</code>
-     */
-    public Builder mergeStableGameServerTemplate(
-        com.google.cloud.gaming.v1alpha.GameServerTemplate value) {
-      if (stableGameServerTemplateBuilder_ == null) {
-        if (stableGameServerTemplate_ != null) {
-          stableGameServerTemplate_ =
-              com.google.cloud.gaming.v1alpha.GameServerTemplate.newBuilder(
-                      stableGameServerTemplate_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          stableGameServerTemplate_ = value;
-        }
-        onChanged();
-      } else {
-        stableGameServerTemplateBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The GameServerTemplate whose rollout was completed.
-     * </pre>
-     *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate stable_game_server_template = 5;</code>
-     */
-    public Builder clearStableGameServerTemplate() {
-      if (stableGameServerTemplateBuilder_ == null) {
-        stableGameServerTemplate_ = null;
-        onChanged();
-      } else {
-        stableGameServerTemplate_ = null;
-        stableGameServerTemplateBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The GameServerTemplate whose rollout was completed.
-     * </pre>
-     *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate stable_game_server_template = 5;</code>
-     */
-    public com.google.cloud.gaming.v1alpha.GameServerTemplate.Builder
-        getStableGameServerTemplateBuilder() {
-
+      etag_ = value;
       onChanged();
-      return getStableGameServerTemplateFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The GameServerTemplate whose rollout was completed.
-     * </pre>
-     *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate stable_game_server_template = 5;</code>
-     */
-    public com.google.cloud.gaming.v1alpha.GameServerTemplateOrBuilder
-        getStableGameServerTemplateOrBuilder() {
-      if (stableGameServerTemplateBuilder_ != null) {
-        return stableGameServerTemplateBuilder_.getMessageOrBuilder();
-      } else {
-        return stableGameServerTemplate_ == null
-            ? com.google.cloud.gaming.v1alpha.GameServerTemplate.getDefaultInstance()
-            : stableGameServerTemplate_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The GameServerTemplate whose rollout was completed.
-     * </pre>
-     *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate stable_game_server_template = 5;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.gaming.v1alpha.GameServerTemplate,
-            com.google.cloud.gaming.v1alpha.GameServerTemplate.Builder,
-            com.google.cloud.gaming.v1alpha.GameServerTemplateOrBuilder>
-        getStableGameServerTemplateFieldBuilder() {
-      if (stableGameServerTemplateBuilder_ == null) {
-        stableGameServerTemplateBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.gaming.v1alpha.GameServerTemplate,
-                com.google.cloud.gaming.v1alpha.GameServerTemplate.Builder,
-                com.google.cloud.gaming.v1alpha.GameServerTemplateOrBuilder>(
-                getStableGameServerTemplate(), getParentForChildren(), isClean());
-        stableGameServerTemplate_ = null;
-      }
-      return stableGameServerTemplateBuilder_;
-    }
-
-    private com.google.cloud.gaming.v1alpha.GameServerTemplate newGameServerTemplate_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.gaming.v1alpha.GameServerTemplate,
-            com.google.cloud.gaming.v1alpha.GameServerTemplate.Builder,
-            com.google.cloud.gaming.v1alpha.GameServerTemplateOrBuilder>
-        newGameServerTemplateBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * The GameServerTemplate whose rollout is ongoing.
-     * </pre>
-     *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate new_game_server_template = 6;</code>
-     */
-    public boolean hasNewGameServerTemplate() {
-      return newGameServerTemplateBuilder_ != null || newGameServerTemplate_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The GameServerTemplate whose rollout is ongoing.
-     * </pre>
-     *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate new_game_server_template = 6;</code>
-     */
-    public com.google.cloud.gaming.v1alpha.GameServerTemplate getNewGameServerTemplate() {
-      if (newGameServerTemplateBuilder_ == null) {
-        return newGameServerTemplate_ == null
-            ? com.google.cloud.gaming.v1alpha.GameServerTemplate.getDefaultInstance()
-            : newGameServerTemplate_;
-      } else {
-        return newGameServerTemplateBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The GameServerTemplate whose rollout is ongoing.
-     * </pre>
-     *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate new_game_server_template = 6;</code>
-     */
-    public Builder setNewGameServerTemplate(
-        com.google.cloud.gaming.v1alpha.GameServerTemplate value) {
-      if (newGameServerTemplateBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        newGameServerTemplate_ = value;
-        onChanged();
-      } else {
-        newGameServerTemplateBuilder_.setMessage(value);
-      }
-
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The GameServerTemplate whose rollout is ongoing.
+     * ETag of the resource.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate new_game_server_template = 6;</code>
+     * <code>string etag = 7;</code>
+     *
+     * @return This builder for chaining.
      */
-    public Builder setNewGameServerTemplate(
-        com.google.cloud.gaming.v1alpha.GameServerTemplate.Builder builderForValue) {
-      if (newGameServerTemplateBuilder_ == null) {
-        newGameServerTemplate_ = builderForValue.build();
-        onChanged();
-      } else {
-        newGameServerTemplateBuilder_.setMessage(builderForValue.build());
-      }
+    public Builder clearEtag() {
 
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The GameServerTemplate whose rollout is ongoing.
-     * </pre>
-     *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate new_game_server_template = 6;</code>
-     */
-    public Builder mergeNewGameServerTemplate(
-        com.google.cloud.gaming.v1alpha.GameServerTemplate value) {
-      if (newGameServerTemplateBuilder_ == null) {
-        if (newGameServerTemplate_ != null) {
-          newGameServerTemplate_ =
-              com.google.cloud.gaming.v1alpha.GameServerTemplate.newBuilder(newGameServerTemplate_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          newGameServerTemplate_ = value;
-        }
-        onChanged();
-      } else {
-        newGameServerTemplateBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The GameServerTemplate whose rollout is ongoing.
-     * </pre>
-     *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate new_game_server_template = 6;</code>
-     */
-    public Builder clearNewGameServerTemplate() {
-      if (newGameServerTemplateBuilder_ == null) {
-        newGameServerTemplate_ = null;
-        onChanged();
-      } else {
-        newGameServerTemplate_ = null;
-        newGameServerTemplateBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The GameServerTemplate whose rollout is ongoing.
-     * </pre>
-     *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate new_game_server_template = 6;</code>
-     */
-    public com.google.cloud.gaming.v1alpha.GameServerTemplate.Builder
-        getNewGameServerTemplateBuilder() {
-
+      etag_ = getDefaultInstance().getEtag();
       onChanged();
-      return getNewGameServerTemplateFieldBuilder().getBuilder();
+      return this;
     }
     /**
      *
      *
      * <pre>
-     * The GameServerTemplate whose rollout is ongoing.
+     * ETag of the resource.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate new_game_server_template = 6;</code>
+     * <code>string etag = 7;</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
      */
-    public com.google.cloud.gaming.v1alpha.GameServerTemplateOrBuilder
-        getNewGameServerTemplateOrBuilder() {
-      if (newGameServerTemplateBuilder_ != null) {
-        return newGameServerTemplateBuilder_.getMessageOrBuilder();
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Human readable description of the game server deployment.
+     * </pre>
+     *
+     * <code>string description = 8;</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
       } else {
-        return newGameServerTemplate_ == null
-            ? com.google.cloud.gaming.v1alpha.GameServerTemplate.getDefaultInstance()
-            : newGameServerTemplate_;
+        return (java.lang.String) ref;
       }
     }
     /**
      *
      *
      * <pre>
-     * The GameServerTemplate whose rollout is ongoing.
+     * Human readable description of the game server deployment.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.GameServerTemplate new_game_server_template = 6;</code>
+     * <code>string description = 8;</code>
+     *
+     * @return The bytes for description.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.gaming.v1alpha.GameServerTemplate,
-            com.google.cloud.gaming.v1alpha.GameServerTemplate.Builder,
-            com.google.cloud.gaming.v1alpha.GameServerTemplateOrBuilder>
-        getNewGameServerTemplateFieldBuilder() {
-      if (newGameServerTemplateBuilder_ == null) {
-        newGameServerTemplateBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.gaming.v1alpha.GameServerTemplate,
-                com.google.cloud.gaming.v1alpha.GameServerTemplate.Builder,
-                com.google.cloud.gaming.v1alpha.GameServerTemplateOrBuilder>(
-                getNewGameServerTemplate(), getParentForChildren(), isClean());
-        newGameServerTemplate_ = null;
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
-      return newGameServerTemplateBuilder_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Human readable description of the game server deployment.
+     * </pre>
+     *
+     * <code>string description = 8;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Human readable description of the game server deployment.
+     * </pre>
+     *
+     * <code>string description = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Human readable description of the game server deployment.
+     * </pre>
+     *
+     * <code>string description = 8;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      description_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

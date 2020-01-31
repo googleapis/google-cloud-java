@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -135,8 +135,25 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
   }
 
   @Override
-  public void startRollout(
-      StartRolloutRequest request, StreamObserver<Operation> responseObserver) {
+  public void getGameServerDeploymentRollout(
+      GetGameServerDeploymentRolloutRequest request,
+      StreamObserver<GameServerDeploymentRollout> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof GameServerDeploymentRollout) {
+      requests.add(request);
+      responseObserver.onNext((GameServerDeploymentRollout) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void updateGameServerDeploymentRollout(
+      UpdateGameServerDeploymentRolloutRequest request,
+      StreamObserver<Operation> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
@@ -150,12 +167,13 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
   }
 
   @Override
-  public void setRolloutTarget(
-      SetRolloutTargetRequest request, StreamObserver<Operation> responseObserver) {
+  public void previewGameServerDeploymentRollout(
+      PreviewGameServerDeploymentRolloutRequest request,
+      StreamObserver<PreviewGameServerDeploymentRolloutResponse> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof Operation) {
+    if (response instanceof PreviewGameServerDeploymentRolloutResponse) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext((PreviewGameServerDeploymentRolloutResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);
@@ -165,42 +183,13 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
   }
 
   @Override
-  public void commitRollout(
-      CommitRolloutRequest request, StreamObserver<Operation> responseObserver) {
+  public void fetchDeploymentState(
+      FetchDeploymentStateRequest request,
+      StreamObserver<FetchDeploymentStateResponse> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof Operation) {
+    if (response instanceof FetchDeploymentStateResponse) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
-  public void revertRollout(
-      RevertRolloutRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof Operation) {
-      requests.add(request);
-      responseObserver.onNext((Operation) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
-  public void getDeploymentTarget(
-      GetDeploymentTargetRequest request, StreamObserver<DeploymentTarget> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof DeploymentTarget) {
-      requests.add(request);
-      responseObserver.onNext((DeploymentTarget) response);
+      responseObserver.onNext((FetchDeploymentStateResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

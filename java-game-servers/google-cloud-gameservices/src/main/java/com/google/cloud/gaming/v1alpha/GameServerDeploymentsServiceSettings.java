@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,68 +132,33 @@ public class GameServerDeploymentsServiceSettings
         .updateGameServerDeploymentOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to startRollout. */
-  public UnaryCallSettings<StartRolloutRequest, Operation> startRolloutSettings() {
-    return ((GameServerDeploymentsServiceStubSettings) getStubSettings()).startRolloutSettings();
-  }
-
-  /** Returns the object with the settings used for calls to startRollout. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<StartRolloutRequest, GameServerDeployment, Empty>
-      startRolloutOperationSettings() {
+  /** Returns the object with the settings used for calls to getGameServerDeploymentRollout. */
+  public UnaryCallSettings<GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
+      getGameServerDeploymentRolloutSettings() {
     return ((GameServerDeploymentsServiceStubSettings) getStubSettings())
-        .startRolloutOperationSettings();
+        .getGameServerDeploymentRolloutSettings();
   }
 
-  /** Returns the object with the settings used for calls to setRolloutTarget. */
-  public UnaryCallSettings<SetRolloutTargetRequest, Operation> setRolloutTargetSettings() {
+  /** Returns the object with the settings used for calls to updateGameServerDeploymentRollout. */
+  public UnaryCallSettings<UpdateGameServerDeploymentRolloutRequest, Operation>
+      updateGameServerDeploymentRolloutSettings() {
     return ((GameServerDeploymentsServiceStubSettings) getStubSettings())
-        .setRolloutTargetSettings();
+        .updateGameServerDeploymentRolloutSettings();
   }
 
-  /** Returns the object with the settings used for calls to setRolloutTarget. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<SetRolloutTargetRequest, GameServerDeployment, Empty>
-      setRolloutTargetOperationSettings() {
+  /** Returns the object with the settings used for calls to previewGameServerDeploymentRollout. */
+  public UnaryCallSettings<
+          PreviewGameServerDeploymentRolloutRequest, PreviewGameServerDeploymentRolloutResponse>
+      previewGameServerDeploymentRolloutSettings() {
     return ((GameServerDeploymentsServiceStubSettings) getStubSettings())
-        .setRolloutTargetOperationSettings();
+        .previewGameServerDeploymentRolloutSettings();
   }
 
-  /** Returns the object with the settings used for calls to commitRollout. */
-  public UnaryCallSettings<CommitRolloutRequest, Operation> commitRolloutSettings() {
-    return ((GameServerDeploymentsServiceStubSettings) getStubSettings()).commitRolloutSettings();
-  }
-
-  /** Returns the object with the settings used for calls to commitRollout. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<CommitRolloutRequest, GameServerDeployment, Empty>
-      commitRolloutOperationSettings() {
+  /** Returns the object with the settings used for calls to fetchDeploymentState. */
+  public UnaryCallSettings<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
+      fetchDeploymentStateSettings() {
     return ((GameServerDeploymentsServiceStubSettings) getStubSettings())
-        .commitRolloutOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to revertRollout. */
-  public UnaryCallSettings<RevertRolloutRequest, Operation> revertRolloutSettings() {
-    return ((GameServerDeploymentsServiceStubSettings) getStubSettings()).revertRolloutSettings();
-  }
-
-  /** Returns the object with the settings used for calls to revertRollout. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<RevertRolloutRequest, GameServerDeployment, Empty>
-      revertRolloutOperationSettings() {
-    return ((GameServerDeploymentsServiceStubSettings) getStubSettings())
-        .revertRolloutOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getDeploymentTarget. */
-  public UnaryCallSettings<GetDeploymentTargetRequest, DeploymentTarget>
-      getDeploymentTargetSettings() {
-    return ((GameServerDeploymentsServiceStubSettings) getStubSettings())
-        .getDeploymentTargetSettings();
+        .fetchDeploymentStateSettings();
   }
 
   public static final GameServerDeploymentsServiceSettings create(
@@ -353,63 +318,32 @@ public class GameServerDeploymentsServiceSettings
       return getStubSettingsBuilder().updateGameServerDeploymentOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to startRollout. */
-    public UnaryCallSettings.Builder<StartRolloutRequest, Operation> startRolloutSettings() {
-      return getStubSettingsBuilder().startRolloutSettings();
+    /** Returns the builder for the settings used for calls to getGameServerDeploymentRollout. */
+    public UnaryCallSettings.Builder<
+            GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
+        getGameServerDeploymentRolloutSettings() {
+      return getStubSettingsBuilder().getGameServerDeploymentRolloutSettings();
     }
 
-    /** Returns the builder for the settings used for calls to startRollout. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<StartRolloutRequest, GameServerDeployment, Empty>
-        startRolloutOperationSettings() {
-      return getStubSettingsBuilder().startRolloutOperationSettings();
+    /** Returns the builder for the settings used for calls to updateGameServerDeploymentRollout. */
+    public UnaryCallSettings.Builder<UpdateGameServerDeploymentRolloutRequest, Operation>
+        updateGameServerDeploymentRolloutSettings() {
+      return getStubSettingsBuilder().updateGameServerDeploymentRolloutSettings();
     }
 
-    /** Returns the builder for the settings used for calls to setRolloutTarget. */
-    public UnaryCallSettings.Builder<SetRolloutTargetRequest, Operation>
-        setRolloutTargetSettings() {
-      return getStubSettingsBuilder().setRolloutTargetSettings();
+    /**
+     * Returns the builder for the settings used for calls to previewGameServerDeploymentRollout.
+     */
+    public UnaryCallSettings.Builder<
+            PreviewGameServerDeploymentRolloutRequest, PreviewGameServerDeploymentRolloutResponse>
+        previewGameServerDeploymentRolloutSettings() {
+      return getStubSettingsBuilder().previewGameServerDeploymentRolloutSettings();
     }
 
-    /** Returns the builder for the settings used for calls to setRolloutTarget. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<SetRolloutTargetRequest, GameServerDeployment, Empty>
-        setRolloutTargetOperationSettings() {
-      return getStubSettingsBuilder().setRolloutTargetOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to commitRollout. */
-    public UnaryCallSettings.Builder<CommitRolloutRequest, Operation> commitRolloutSettings() {
-      return getStubSettingsBuilder().commitRolloutSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to commitRollout. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<CommitRolloutRequest, GameServerDeployment, Empty>
-        commitRolloutOperationSettings() {
-      return getStubSettingsBuilder().commitRolloutOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to revertRollout. */
-    public UnaryCallSettings.Builder<RevertRolloutRequest, Operation> revertRolloutSettings() {
-      return getStubSettingsBuilder().revertRolloutSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to revertRollout. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<RevertRolloutRequest, GameServerDeployment, Empty>
-        revertRolloutOperationSettings() {
-      return getStubSettingsBuilder().revertRolloutOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getDeploymentTarget. */
-    public UnaryCallSettings.Builder<GetDeploymentTargetRequest, DeploymentTarget>
-        getDeploymentTargetSettings() {
-      return getStubSettingsBuilder().getDeploymentTargetSettings();
+    /** Returns the builder for the settings used for calls to fetchDeploymentState. */
+    public UnaryCallSettings.Builder<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
+        fetchDeploymentStateSettings() {
+      return getStubSettingsBuilder().fetchDeploymentStateSettings();
     }
 
     @Override

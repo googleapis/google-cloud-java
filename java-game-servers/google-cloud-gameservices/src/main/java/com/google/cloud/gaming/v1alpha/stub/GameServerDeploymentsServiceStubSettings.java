@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,19 +43,20 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.gaming.v1alpha.CommitRolloutRequest;
 import com.google.cloud.gaming.v1alpha.CreateGameServerDeploymentRequest;
 import com.google.cloud.gaming.v1alpha.DeleteGameServerDeploymentRequest;
-import com.google.cloud.gaming.v1alpha.DeploymentTarget;
+import com.google.cloud.gaming.v1alpha.FetchDeploymentStateRequest;
+import com.google.cloud.gaming.v1alpha.FetchDeploymentStateResponse;
 import com.google.cloud.gaming.v1alpha.GameServerDeployment;
-import com.google.cloud.gaming.v1alpha.GetDeploymentTargetRequest;
+import com.google.cloud.gaming.v1alpha.GameServerDeploymentRollout;
 import com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRequest;
+import com.google.cloud.gaming.v1alpha.GetGameServerDeploymentRolloutRequest;
 import com.google.cloud.gaming.v1alpha.ListGameServerDeploymentsRequest;
 import com.google.cloud.gaming.v1alpha.ListGameServerDeploymentsResponse;
-import com.google.cloud.gaming.v1alpha.RevertRolloutRequest;
-import com.google.cloud.gaming.v1alpha.SetRolloutTargetRequest;
-import com.google.cloud.gaming.v1alpha.StartRolloutRequest;
+import com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutRequest;
+import com.google.cloud.gaming.v1alpha.PreviewGameServerDeploymentRolloutResponse;
 import com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRequest;
+import com.google.cloud.gaming.v1alpha.UpdateGameServerDeploymentRolloutRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -123,20 +124,16 @@ public class GameServerDeploymentsServiceStubSettings
   private final OperationCallSettings<
           UpdateGameServerDeploymentRequest, GameServerDeployment, Empty>
       updateGameServerDeploymentOperationSettings;
-  private final UnaryCallSettings<StartRolloutRequest, Operation> startRolloutSettings;
-  private final OperationCallSettings<StartRolloutRequest, GameServerDeployment, Empty>
-      startRolloutOperationSettings;
-  private final UnaryCallSettings<SetRolloutTargetRequest, Operation> setRolloutTargetSettings;
-  private final OperationCallSettings<SetRolloutTargetRequest, GameServerDeployment, Empty>
-      setRolloutTargetOperationSettings;
-  private final UnaryCallSettings<CommitRolloutRequest, Operation> commitRolloutSettings;
-  private final OperationCallSettings<CommitRolloutRequest, GameServerDeployment, Empty>
-      commitRolloutOperationSettings;
-  private final UnaryCallSettings<RevertRolloutRequest, Operation> revertRolloutSettings;
-  private final OperationCallSettings<RevertRolloutRequest, GameServerDeployment, Empty>
-      revertRolloutOperationSettings;
-  private final UnaryCallSettings<GetDeploymentTargetRequest, DeploymentTarget>
-      getDeploymentTargetSettings;
+  private final UnaryCallSettings<
+          GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
+      getGameServerDeploymentRolloutSettings;
+  private final UnaryCallSettings<UpdateGameServerDeploymentRolloutRequest, Operation>
+      updateGameServerDeploymentRolloutSettings;
+  private final UnaryCallSettings<
+          PreviewGameServerDeploymentRolloutRequest, PreviewGameServerDeploymentRolloutResponse>
+      previewGameServerDeploymentRolloutSettings;
+  private final UnaryCallSettings<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
+      fetchDeploymentStateSettings;
 
   /** Returns the object with the settings used for calls to listGameServerDeployments. */
   public PagedCallSettings<
@@ -192,58 +189,29 @@ public class GameServerDeploymentsServiceStubSettings
     return updateGameServerDeploymentOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to startRollout. */
-  public UnaryCallSettings<StartRolloutRequest, Operation> startRolloutSettings() {
-    return startRolloutSettings;
+  /** Returns the object with the settings used for calls to getGameServerDeploymentRollout. */
+  public UnaryCallSettings<GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
+      getGameServerDeploymentRolloutSettings() {
+    return getGameServerDeploymentRolloutSettings;
   }
 
-  /** Returns the object with the settings used for calls to startRollout. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<StartRolloutRequest, GameServerDeployment, Empty>
-      startRolloutOperationSettings() {
-    return startRolloutOperationSettings;
+  /** Returns the object with the settings used for calls to updateGameServerDeploymentRollout. */
+  public UnaryCallSettings<UpdateGameServerDeploymentRolloutRequest, Operation>
+      updateGameServerDeploymentRolloutSettings() {
+    return updateGameServerDeploymentRolloutSettings;
   }
 
-  /** Returns the object with the settings used for calls to setRolloutTarget. */
-  public UnaryCallSettings<SetRolloutTargetRequest, Operation> setRolloutTargetSettings() {
-    return setRolloutTargetSettings;
+  /** Returns the object with the settings used for calls to previewGameServerDeploymentRollout. */
+  public UnaryCallSettings<
+          PreviewGameServerDeploymentRolloutRequest, PreviewGameServerDeploymentRolloutResponse>
+      previewGameServerDeploymentRolloutSettings() {
+    return previewGameServerDeploymentRolloutSettings;
   }
 
-  /** Returns the object with the settings used for calls to setRolloutTarget. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<SetRolloutTargetRequest, GameServerDeployment, Empty>
-      setRolloutTargetOperationSettings() {
-    return setRolloutTargetOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to commitRollout. */
-  public UnaryCallSettings<CommitRolloutRequest, Operation> commitRolloutSettings() {
-    return commitRolloutSettings;
-  }
-
-  /** Returns the object with the settings used for calls to commitRollout. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<CommitRolloutRequest, GameServerDeployment, Empty>
-      commitRolloutOperationSettings() {
-    return commitRolloutOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to revertRollout. */
-  public UnaryCallSettings<RevertRolloutRequest, Operation> revertRolloutSettings() {
-    return revertRolloutSettings;
-  }
-
-  /** Returns the object with the settings used for calls to revertRollout. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<RevertRolloutRequest, GameServerDeployment, Empty>
-      revertRolloutOperationSettings() {
-    return revertRolloutOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getDeploymentTarget. */
-  public UnaryCallSettings<GetDeploymentTargetRequest, DeploymentTarget>
-      getDeploymentTargetSettings() {
-    return getDeploymentTargetSettings;
+  /** Returns the object with the settings used for calls to fetchDeploymentState. */
+  public UnaryCallSettings<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
+      fetchDeploymentStateSettings() {
+    return fetchDeploymentStateSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -330,15 +298,13 @@ public class GameServerDeploymentsServiceStubSettings
         settingsBuilder.updateGameServerDeploymentSettings().build();
     updateGameServerDeploymentOperationSettings =
         settingsBuilder.updateGameServerDeploymentOperationSettings().build();
-    startRolloutSettings = settingsBuilder.startRolloutSettings().build();
-    startRolloutOperationSettings = settingsBuilder.startRolloutOperationSettings().build();
-    setRolloutTargetSettings = settingsBuilder.setRolloutTargetSettings().build();
-    setRolloutTargetOperationSettings = settingsBuilder.setRolloutTargetOperationSettings().build();
-    commitRolloutSettings = settingsBuilder.commitRolloutSettings().build();
-    commitRolloutOperationSettings = settingsBuilder.commitRolloutOperationSettings().build();
-    revertRolloutSettings = settingsBuilder.revertRolloutSettings().build();
-    revertRolloutOperationSettings = settingsBuilder.revertRolloutOperationSettings().build();
-    getDeploymentTargetSettings = settingsBuilder.getDeploymentTargetSettings().build();
+    getGameServerDeploymentRolloutSettings =
+        settingsBuilder.getGameServerDeploymentRolloutSettings().build();
+    updateGameServerDeploymentRolloutSettings =
+        settingsBuilder.updateGameServerDeploymentRolloutSettings().build();
+    previewGameServerDeploymentRolloutSettings =
+        settingsBuilder.previewGameServerDeploymentRolloutSettings().build();
+    fetchDeploymentStateSettings = settingsBuilder.fetchDeploymentStateSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -442,22 +408,17 @@ public class GameServerDeploymentsServiceStubSettings
     private final OperationCallSettings.Builder<
             UpdateGameServerDeploymentRequest, GameServerDeployment, Empty>
         updateGameServerDeploymentOperationSettings;
-    private final UnaryCallSettings.Builder<StartRolloutRequest, Operation> startRolloutSettings;
-    private final OperationCallSettings.Builder<StartRolloutRequest, GameServerDeployment, Empty>
-        startRolloutOperationSettings;
-    private final UnaryCallSettings.Builder<SetRolloutTargetRequest, Operation>
-        setRolloutTargetSettings;
-    private final OperationCallSettings.Builder<
-            SetRolloutTargetRequest, GameServerDeployment, Empty>
-        setRolloutTargetOperationSettings;
-    private final UnaryCallSettings.Builder<CommitRolloutRequest, Operation> commitRolloutSettings;
-    private final OperationCallSettings.Builder<CommitRolloutRequest, GameServerDeployment, Empty>
-        commitRolloutOperationSettings;
-    private final UnaryCallSettings.Builder<RevertRolloutRequest, Operation> revertRolloutSettings;
-    private final OperationCallSettings.Builder<RevertRolloutRequest, GameServerDeployment, Empty>
-        revertRolloutOperationSettings;
-    private final UnaryCallSettings.Builder<GetDeploymentTargetRequest, DeploymentTarget>
-        getDeploymentTargetSettings;
+    private final UnaryCallSettings.Builder<
+            GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
+        getGameServerDeploymentRolloutSettings;
+    private final UnaryCallSettings.Builder<UpdateGameServerDeploymentRolloutRequest, Operation>
+        updateGameServerDeploymentRolloutSettings;
+    private final UnaryCallSettings.Builder<
+            PreviewGameServerDeploymentRolloutRequest, PreviewGameServerDeploymentRolloutResponse>
+        previewGameServerDeploymentRolloutSettings;
+    private final UnaryCallSettings.Builder<
+            FetchDeploymentStateRequest, FetchDeploymentStateResponse>
+        fetchDeploymentStateSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -517,23 +478,13 @@ public class GameServerDeploymentsServiceStubSettings
 
       updateGameServerDeploymentOperationSettings = OperationCallSettings.newBuilder();
 
-      startRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getGameServerDeploymentRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      startRolloutOperationSettings = OperationCallSettings.newBuilder();
+      updateGameServerDeploymentRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      setRolloutTargetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      previewGameServerDeploymentRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      setRolloutTargetOperationSettings = OperationCallSettings.newBuilder();
-
-      commitRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      commitRolloutOperationSettings = OperationCallSettings.newBuilder();
-
-      revertRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      revertRolloutOperationSettings = OperationCallSettings.newBuilder();
-
-      getDeploymentTargetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      fetchDeploymentStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -542,11 +493,10 @@ public class GameServerDeploymentsServiceStubSettings
               createGameServerDeploymentSettings,
               deleteGameServerDeploymentSettings,
               updateGameServerDeploymentSettings,
-              startRolloutSettings,
-              setRolloutTargetSettings,
-              commitRolloutSettings,
-              revertRolloutSettings,
-              getDeploymentTargetSettings);
+              getGameServerDeploymentRolloutSettings,
+              updateGameServerDeploymentRolloutSettings,
+              previewGameServerDeploymentRolloutSettings,
+              fetchDeploymentStateSettings);
 
       initDefaults(this);
     }
@@ -588,28 +538,23 @@ public class GameServerDeploymentsServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .startRolloutSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .setRolloutTargetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .commitRolloutSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .revertRolloutSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getDeploymentTargetSettings()
+          .getGameServerDeploymentRolloutSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateGameServerDeploymentRolloutSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .previewGameServerDeploymentRolloutSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .fetchDeploymentStateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
           .createGameServerDeploymentOperationSettings()
@@ -683,98 +628,6 @@ public class GameServerDeploymentsServiceStubSettings
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
-      builder
-          .startRolloutOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<StartRolloutRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(GameServerDeployment.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(Empty.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .setRolloutTargetOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<SetRolloutTargetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(GameServerDeployment.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(Empty.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .commitRolloutOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CommitRolloutRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(GameServerDeployment.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(Empty.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .revertRolloutOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<RevertRolloutRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(GameServerDeployment.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(Empty.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
 
       return builder;
     }
@@ -793,15 +646,13 @@ public class GameServerDeploymentsServiceStubSettings
       updateGameServerDeploymentSettings = settings.updateGameServerDeploymentSettings.toBuilder();
       updateGameServerDeploymentOperationSettings =
           settings.updateGameServerDeploymentOperationSettings.toBuilder();
-      startRolloutSettings = settings.startRolloutSettings.toBuilder();
-      startRolloutOperationSettings = settings.startRolloutOperationSettings.toBuilder();
-      setRolloutTargetSettings = settings.setRolloutTargetSettings.toBuilder();
-      setRolloutTargetOperationSettings = settings.setRolloutTargetOperationSettings.toBuilder();
-      commitRolloutSettings = settings.commitRolloutSettings.toBuilder();
-      commitRolloutOperationSettings = settings.commitRolloutOperationSettings.toBuilder();
-      revertRolloutSettings = settings.revertRolloutSettings.toBuilder();
-      revertRolloutOperationSettings = settings.revertRolloutOperationSettings.toBuilder();
-      getDeploymentTargetSettings = settings.getDeploymentTargetSettings.toBuilder();
+      getGameServerDeploymentRolloutSettings =
+          settings.getGameServerDeploymentRolloutSettings.toBuilder();
+      updateGameServerDeploymentRolloutSettings =
+          settings.updateGameServerDeploymentRolloutSettings.toBuilder();
+      previewGameServerDeploymentRolloutSettings =
+          settings.previewGameServerDeploymentRolloutSettings.toBuilder();
+      fetchDeploymentStateSettings = settings.fetchDeploymentStateSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -810,11 +661,10 @@ public class GameServerDeploymentsServiceStubSettings
               createGameServerDeploymentSettings,
               deleteGameServerDeploymentSettings,
               updateGameServerDeploymentSettings,
-              startRolloutSettings,
-              setRolloutTargetSettings,
-              commitRolloutSettings,
-              revertRolloutSettings,
-              getDeploymentTargetSettings);
+              getGameServerDeploymentRolloutSettings,
+              updateGameServerDeploymentRolloutSettings,
+              previewGameServerDeploymentRolloutSettings,
+              fetchDeploymentStateSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -892,63 +742,32 @@ public class GameServerDeploymentsServiceStubSettings
       return updateGameServerDeploymentOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to startRollout. */
-    public UnaryCallSettings.Builder<StartRolloutRequest, Operation> startRolloutSettings() {
-      return startRolloutSettings;
+    /** Returns the builder for the settings used for calls to getGameServerDeploymentRollout. */
+    public UnaryCallSettings.Builder<
+            GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
+        getGameServerDeploymentRolloutSettings() {
+      return getGameServerDeploymentRolloutSettings;
     }
 
-    /** Returns the builder for the settings used for calls to startRollout. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<StartRolloutRequest, GameServerDeployment, Empty>
-        startRolloutOperationSettings() {
-      return startRolloutOperationSettings;
+    /** Returns the builder for the settings used for calls to updateGameServerDeploymentRollout. */
+    public UnaryCallSettings.Builder<UpdateGameServerDeploymentRolloutRequest, Operation>
+        updateGameServerDeploymentRolloutSettings() {
+      return updateGameServerDeploymentRolloutSettings;
     }
 
-    /** Returns the builder for the settings used for calls to setRolloutTarget. */
-    public UnaryCallSettings.Builder<SetRolloutTargetRequest, Operation>
-        setRolloutTargetSettings() {
-      return setRolloutTargetSettings;
+    /**
+     * Returns the builder for the settings used for calls to previewGameServerDeploymentRollout.
+     */
+    public UnaryCallSettings.Builder<
+            PreviewGameServerDeploymentRolloutRequest, PreviewGameServerDeploymentRolloutResponse>
+        previewGameServerDeploymentRolloutSettings() {
+      return previewGameServerDeploymentRolloutSettings;
     }
 
-    /** Returns the builder for the settings used for calls to setRolloutTarget. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<SetRolloutTargetRequest, GameServerDeployment, Empty>
-        setRolloutTargetOperationSettings() {
-      return setRolloutTargetOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to commitRollout. */
-    public UnaryCallSettings.Builder<CommitRolloutRequest, Operation> commitRolloutSettings() {
-      return commitRolloutSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to commitRollout. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<CommitRolloutRequest, GameServerDeployment, Empty>
-        commitRolloutOperationSettings() {
-      return commitRolloutOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to revertRollout. */
-    public UnaryCallSettings.Builder<RevertRolloutRequest, Operation> revertRolloutSettings() {
-      return revertRolloutSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to revertRollout. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<RevertRolloutRequest, GameServerDeployment, Empty>
-        revertRolloutOperationSettings() {
-      return revertRolloutOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getDeploymentTarget. */
-    public UnaryCallSettings.Builder<GetDeploymentTargetRequest, DeploymentTarget>
-        getDeploymentTargetSettings() {
-      return getDeploymentTargetSettings;
+    /** Returns the builder for the settings used for calls to fetchDeploymentState. */
+    public UnaryCallSettings.Builder<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
+        fetchDeploymentStateSettings() {
+      return fetchDeploymentStateSettings;
     }
 
     @Override

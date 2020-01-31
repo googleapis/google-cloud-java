@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,6 @@ import com.google.protobuf.FieldMask;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -48,31 +47,25 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class GameServerDeploymentsServiceClientTest {
-  private static MockAllocationPoliciesService mockAllocationPoliciesService;
   private static MockGameServerClustersService mockGameServerClustersService;
   private static MockGameServerDeploymentsService mockGameServerDeploymentsService;
   private static MockRealmsService mockRealmsService;
-  private static MockScalingPoliciesService mockScalingPoliciesService;
   private static MockServiceHelper serviceHelper;
   private GameServerDeploymentsServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockAllocationPoliciesService = new MockAllocationPoliciesService();
     mockGameServerClustersService = new MockGameServerClustersService();
     mockGameServerDeploymentsService = new MockGameServerDeploymentsService();
     mockRealmsService = new MockRealmsService();
-    mockScalingPoliciesService = new MockScalingPoliciesService();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
-                mockAllocationPoliciesService,
                 mockGameServerClustersService,
                 mockGameServerDeploymentsService,
-                mockRealmsService,
-                mockScalingPoliciesService));
+                mockRealmsService));
     serviceHelper.start();
   }
 
@@ -154,8 +147,14 @@ public class GameServerDeploymentsServiceClientTest {
   @SuppressWarnings("all")
   public void getGameServerDeploymentTest() {
     String name2 = "name2-1052831874";
+    String etag = "etag3123477";
+    String description = "description-1724546052";
     GameServerDeployment expectedResponse =
-        GameServerDeployment.newBuilder().setName(name2).build();
+        GameServerDeployment.newBuilder()
+            .setName(name2)
+            .setEtag(etag)
+            .setDescription(description)
+            .build();
     mockGameServerDeploymentsService.addResponse(expectedResponse);
 
     String formattedName =
@@ -199,7 +198,14 @@ public class GameServerDeploymentsServiceClientTest {
   @SuppressWarnings("all")
   public void createGameServerDeploymentTest() throws Exception {
     String name = "name3373707";
-    GameServerDeployment expectedResponse = GameServerDeployment.newBuilder().setName(name).build();
+    String etag = "etag3123477";
+    String description = "description-1724546052";
+    GameServerDeployment expectedResponse =
+        GameServerDeployment.newBuilder()
+            .setName(name)
+            .setEtag(etag)
+            .setDescription(description)
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("createGameServerDeploymentTest")
@@ -311,7 +317,14 @@ public class GameServerDeploymentsServiceClientTest {
   @SuppressWarnings("all")
   public void updateGameServerDeploymentTest() throws Exception {
     String name = "name3373707";
-    GameServerDeployment expectedResponse = GameServerDeployment.newBuilder().setName(name).build();
+    String etag = "etag3123477";
+    String description = "description-1724546052";
+    GameServerDeployment expectedResponse =
+        GameServerDeployment.newBuilder()
+            .setName(name)
+            .setEtag(etag)
+            .setDescription(description)
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("updateGameServerDeploymentTest")
@@ -356,265 +369,6 @@ public class GameServerDeploymentsServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void startRolloutTest() throws Exception {
-    String name2 = "name2-1052831874";
-    GameServerDeployment expectedResponse =
-        GameServerDeployment.newBuilder().setName(name2).build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("startRolloutTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockGameServerDeploymentsService.addResponse(resultOperation);
-
-    String formattedName =
-        GameServerDeploymentsServiceClient.formatGameServerDeploymentName(
-            "[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-    GameServerTemplate newGameServerTemplate = GameServerTemplate.newBuilder().build();
-
-    GameServerDeployment actualResponse =
-        client.startRolloutAsync(formattedName, newGameServerTemplate).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockGameServerDeploymentsService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    StartRolloutRequest actualRequest = (StartRolloutRequest) actualRequests.get(0);
-
-    Assert.assertEquals(formattedName, actualRequest.getName());
-    Assert.assertEquals(newGameServerTemplate, actualRequest.getNewGameServerTemplate());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void startRolloutExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockGameServerDeploymentsService.addException(exception);
-
-    try {
-      String formattedName =
-          GameServerDeploymentsServiceClient.formatGameServerDeploymentName(
-              "[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-      GameServerTemplate newGameServerTemplate = GameServerTemplate.newBuilder().build();
-
-      client.startRolloutAsync(formattedName, newGameServerTemplate).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void setRolloutTargetTest() throws Exception {
-    String name2 = "name2-1052831874";
-    GameServerDeployment expectedResponse =
-        GameServerDeployment.newBuilder().setName(name2).build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("setRolloutTargetTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockGameServerDeploymentsService.addResponse(resultOperation);
-
-    String formattedName =
-        GameServerDeploymentsServiceClient.formatGameServerDeploymentName(
-            "[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-    List<ClusterPercentageSelector> clusterPercentageSelector = new ArrayList<>();
-
-    GameServerDeployment actualResponse =
-        client.setRolloutTargetAsync(formattedName, clusterPercentageSelector).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockGameServerDeploymentsService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    SetRolloutTargetRequest actualRequest = (SetRolloutTargetRequest) actualRequests.get(0);
-
-    Assert.assertEquals(formattedName, actualRequest.getName());
-    Assert.assertEquals(
-        clusterPercentageSelector, actualRequest.getClusterPercentageSelectorList());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void setRolloutTargetExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockGameServerDeploymentsService.addException(exception);
-
-    try {
-      String formattedName =
-          GameServerDeploymentsServiceClient.formatGameServerDeploymentName(
-              "[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-      List<ClusterPercentageSelector> clusterPercentageSelector = new ArrayList<>();
-
-      client.setRolloutTargetAsync(formattedName, clusterPercentageSelector).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void commitRolloutTest() throws Exception {
-    String name2 = "name2-1052831874";
-    GameServerDeployment expectedResponse =
-        GameServerDeployment.newBuilder().setName(name2).build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("commitRolloutTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockGameServerDeploymentsService.addResponse(resultOperation);
-
-    String formattedName =
-        GameServerDeploymentsServiceClient.formatGameServerDeploymentName(
-            "[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-
-    GameServerDeployment actualResponse = client.commitRolloutAsync(formattedName).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockGameServerDeploymentsService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CommitRolloutRequest actualRequest = (CommitRolloutRequest) actualRequests.get(0);
-
-    Assert.assertEquals(formattedName, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void commitRolloutExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockGameServerDeploymentsService.addException(exception);
-
-    try {
-      String formattedName =
-          GameServerDeploymentsServiceClient.formatGameServerDeploymentName(
-              "[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-
-      client.commitRolloutAsync(formattedName).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void revertRolloutTest() throws Exception {
-    String name2 = "name2-1052831874";
-    GameServerDeployment expectedResponse =
-        GameServerDeployment.newBuilder().setName(name2).build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("revertRolloutTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockGameServerDeploymentsService.addResponse(resultOperation);
-
-    String formattedName =
-        GameServerDeploymentsServiceClient.formatGameServerDeploymentName(
-            "[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-
-    GameServerDeployment actualResponse = client.revertRolloutAsync(formattedName).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockGameServerDeploymentsService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    RevertRolloutRequest actualRequest = (RevertRolloutRequest) actualRequests.get(0);
-
-    Assert.assertEquals(formattedName, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void revertRolloutExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockGameServerDeploymentsService.addException(exception);
-
-    try {
-      String formattedName =
-          GameServerDeploymentsServiceClient.formatGameServerDeploymentName(
-              "[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-
-      client.revertRolloutAsync(formattedName).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getDeploymentTargetTest() {
-    DeploymentTarget expectedResponse = DeploymentTarget.newBuilder().build();
-    mockGameServerDeploymentsService.addResponse(expectedResponse);
-
-    String formattedName =
-        GameServerDeploymentsServiceClient.formatGameServerDeploymentName(
-            "[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-
-    DeploymentTarget actualResponse = client.getDeploymentTarget(formattedName);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockGameServerDeploymentsService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetDeploymentTargetRequest actualRequest = (GetDeploymentTargetRequest) actualRequests.get(0);
-
-    Assert.assertEquals(formattedName, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getDeploymentTargetExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockGameServerDeploymentsService.addException(exception);
-
-    try {
-      String formattedName =
-          GameServerDeploymentsServiceClient.formatGameServerDeploymentName(
-              "[PROJECT]", "[LOCATION]", "[GAME_SERVER_DEPLOYMENT]");
-
-      client.getDeploymentTarget(formattedName);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
     }
   }
 }

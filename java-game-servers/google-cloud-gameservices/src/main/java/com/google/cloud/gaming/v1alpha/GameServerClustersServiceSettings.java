@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -130,6 +130,30 @@ public class GameServerClustersServiceSettings
       updateGameServerClusterOperationSettings() {
     return ((GameServerClustersServiceStubSettings) getStubSettings())
         .updateGameServerClusterOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to previewCreateGameServerCluster. */
+  public UnaryCallSettings<
+          PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
+      previewCreateGameServerClusterSettings() {
+    return ((GameServerClustersServiceStubSettings) getStubSettings())
+        .previewCreateGameServerClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to previewDeleteGameServerCluster. */
+  public UnaryCallSettings<
+          PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
+      previewDeleteGameServerClusterSettings() {
+    return ((GameServerClustersServiceStubSettings) getStubSettings())
+        .previewDeleteGameServerClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to previewUpdateGameServerCluster. */
+  public UnaryCallSettings<
+          PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
+      previewUpdateGameServerClusterSettings() {
+    return ((GameServerClustersServiceStubSettings) getStubSettings())
+        .previewUpdateGameServerClusterSettings();
   }
 
   public static final GameServerClustersServiceSettings create(
@@ -285,6 +309,27 @@ public class GameServerClustersServiceSettings
     public OperationCallSettings.Builder<UpdateGameServerClusterRequest, GameServerCluster, Empty>
         updateGameServerClusterOperationSettings() {
       return getStubSettingsBuilder().updateGameServerClusterOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to previewCreateGameServerCluster. */
+    public UnaryCallSettings.Builder<
+            PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
+        previewCreateGameServerClusterSettings() {
+      return getStubSettingsBuilder().previewCreateGameServerClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to previewDeleteGameServerCluster. */
+    public UnaryCallSettings.Builder<
+            PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
+        previewDeleteGameServerClusterSettings() {
+      return getStubSettingsBuilder().previewDeleteGameServerClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to previewUpdateGameServerCluster. */
+    public UnaryCallSettings.Builder<
+            PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
+        previewUpdateGameServerClusterSettings() {
+      return getStubSettingsBuilder().previewUpdateGameServerClusterSettings();
     }
 
     @Override

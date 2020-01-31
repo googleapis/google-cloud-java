@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,12 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateRealmRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -55,7 +61,6 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -137,10 +142,14 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The parent resource name, using the form:
-   * `projects/{project_id}/locations/{location}`.
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -158,10 +167,14 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The parent resource name, using the form:
-   * `projects/{project_id}/locations/{location}`.
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -184,7 +197,9 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
    * Required. The ID of the realm resource to be created.
    * </pre>
    *
-   * <code>string realm_id = 2;</code>
+   * <code>string realm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The realmId.
    */
   public java.lang.String getRealmId() {
     java.lang.Object ref = realmId_;
@@ -204,7 +219,9 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
    * Required. The ID of the realm resource to be created.
    * </pre>
    *
-   * <code>string realm_id = 2;</code>
+   * <code>string realm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for realmId.
    */
   public com.google.protobuf.ByteString getRealmIdBytes() {
     java.lang.Object ref = realmId_;
@@ -227,7 +244,10 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
    * Required. The realm resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.Realm realm = 3;</code>
+   * <code>.google.cloud.gaming.v1alpha.Realm realm = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the realm field is set.
    */
   public boolean hasRealm() {
     return realm_ != null;
@@ -239,7 +259,10 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
    * Required. The realm resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.Realm realm = 3;</code>
+   * <code>.google.cloud.gaming.v1alpha.Realm realm = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The realm.
    */
   public com.google.cloud.gaming.v1alpha.Realm getRealm() {
     return realm_ == null ? com.google.cloud.gaming.v1alpha.Realm.getDefaultInstance() : realm_;
@@ -251,7 +274,8 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
    * Required. The realm resource to be created.
    * </pre>
    *
-   * <code>.google.cloud.gaming.v1alpha.Realm realm = 3;</code>
+   * <code>.google.cloud.gaming.v1alpha.Realm realm = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.gaming.v1alpha.RealmOrBuilder getRealmOrBuilder() {
     return getRealm();
@@ -625,10 +649,14 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The parent resource name, using the form:
-     * `projects/{project_id}/locations/{location}`.
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -646,10 +674,14 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The parent resource name, using the form:
-     * `projects/{project_id}/locations/{location}`.
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -667,10 +699,15 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The parent resource name, using the form:
-     * `projects/{project_id}/locations/{location}`.
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -686,10 +723,14 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The parent resource name, using the form:
-     * `projects/{project_id}/locations/{location}`.
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -702,10 +743,15 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The parent resource name, using the form:
-     * `projects/{project_id}/locations/{location}`.
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -726,7 +772,9 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Required. The ID of the realm resource to be created.
      * </pre>
      *
-     * <code>string realm_id = 2;</code>
+     * <code>string realm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The realmId.
      */
     public java.lang.String getRealmId() {
       java.lang.Object ref = realmId_;
@@ -746,7 +794,9 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Required. The ID of the realm resource to be created.
      * </pre>
      *
-     * <code>string realm_id = 2;</code>
+     * <code>string realm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for realmId.
      */
     public com.google.protobuf.ByteString getRealmIdBytes() {
       java.lang.Object ref = realmId_;
@@ -766,7 +816,10 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Required. The ID of the realm resource to be created.
      * </pre>
      *
-     * <code>string realm_id = 2;</code>
+     * <code>string realm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The realmId to set.
+     * @return This builder for chaining.
      */
     public Builder setRealmId(java.lang.String value) {
       if (value == null) {
@@ -784,7 +837,9 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Required. The ID of the realm resource to be created.
      * </pre>
      *
-     * <code>string realm_id = 2;</code>
+     * <code>string realm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRealmId() {
 
@@ -799,7 +854,10 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Required. The ID of the realm resource to be created.
      * </pre>
      *
-     * <code>string realm_id = 2;</code>
+     * <code>string realm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for realmId to set.
+     * @return This builder for chaining.
      */
     public Builder setRealmIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -825,7 +883,10 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Required. The realm resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the realm field is set.
      */
     public boolean hasRealm() {
       return realmBuilder_ != null || realm_ != null;
@@ -837,7 +898,10 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Required. The realm resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The realm.
      */
     public com.google.cloud.gaming.v1alpha.Realm getRealm() {
       if (realmBuilder_ == null) {
@@ -853,7 +917,8 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Required. The realm resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRealm(com.google.cloud.gaming.v1alpha.Realm value) {
       if (realmBuilder_ == null) {
@@ -875,7 +940,8 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Required. The realm resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRealm(com.google.cloud.gaming.v1alpha.Realm.Builder builderForValue) {
       if (realmBuilder_ == null) {
@@ -894,7 +960,8 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Required. The realm resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeRealm(com.google.cloud.gaming.v1alpha.Realm value) {
       if (realmBuilder_ == null) {
@@ -920,7 +987,8 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Required. The realm resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearRealm() {
       if (realmBuilder_ == null) {
@@ -940,7 +1008,8 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Required. The realm resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.gaming.v1alpha.Realm.Builder getRealmBuilder() {
 
@@ -954,7 +1023,8 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Required. The realm resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.gaming.v1alpha.RealmOrBuilder getRealmOrBuilder() {
       if (realmBuilder_ != null) {
@@ -970,7 +1040,8 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * Required. The realm resource to be created.
      * </pre>
      *
-     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3;</code>
+     * <code>.google.cloud.gaming.v1alpha.Realm realm = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gaming.v1alpha.Realm,

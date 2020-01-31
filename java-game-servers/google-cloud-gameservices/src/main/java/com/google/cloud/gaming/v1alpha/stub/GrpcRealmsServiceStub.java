@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ import com.google.cloud.gaming.v1alpha.DeleteRealmRequest;
 import com.google.cloud.gaming.v1alpha.GetRealmRequest;
 import com.google.cloud.gaming.v1alpha.ListRealmsRequest;
 import com.google.cloud.gaming.v1alpha.ListRealmsResponse;
+import com.google.cloud.gaming.v1alpha.PreviewRealmUpdateRequest;
+import com.google.cloud.gaming.v1alpha.PreviewRealmUpdateResponse;
 import com.google.cloud.gaming.v1alpha.Realm;
 import com.google.cloud.gaming.v1alpha.UpdateRealmRequest;
 import com.google.common.collect.ImmutableMap;
@@ -90,6 +92,16 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateRealmRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+  private static final MethodDescriptor<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
+      previewRealmUpdateMethodDescriptor =
+          MethodDescriptor.<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.gaming.v1alpha.RealmsService/PreviewRealmUpdate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PreviewRealmUpdateRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PreviewRealmUpdateResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -103,6 +115,8 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
   private final OperationCallable<DeleteRealmRequest, Empty, Empty> deleteRealmOperationCallable;
   private final UnaryCallable<UpdateRealmRequest, Operation> updateRealmCallable;
   private final OperationCallable<UpdateRealmRequest, Realm, Empty> updateRealmOperationCallable;
+  private final UnaryCallable<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
+      previewRealmUpdateCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -209,6 +223,20 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
+        previewRealmUpdateTransportSettings =
+            GrpcCallSettings.<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>newBuilder()
+                .setMethodDescriptor(previewRealmUpdateMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<PreviewRealmUpdateRequest>() {
+                      @Override
+                      public Map<String, String> extract(PreviewRealmUpdateRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("realm.name", String.valueOf(request.getRealm().getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.listRealmsCallable =
         callableFactory.createUnaryCallable(
@@ -246,6 +274,11 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
             settings.updateRealmOperationSettings(),
             clientContext,
             this.operationsStub);
+    this.previewRealmUpdateCallable =
+        callableFactory.createUnaryCallable(
+            previewRealmUpdateTransportSettings,
+            settings.previewRealmUpdateSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -292,6 +325,11 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
 
   public UnaryCallable<UpdateRealmRequest, Operation> updateRealmCallable() {
     return updateRealmCallable;
+  }
+
+  public UnaryCallable<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
+      previewRealmUpdateCallable() {
+    return previewRealmUpdateCallable;
   }
 
   @Override

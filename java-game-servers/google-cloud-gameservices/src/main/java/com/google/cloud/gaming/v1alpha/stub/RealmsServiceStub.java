@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,8 @@ import com.google.cloud.gaming.v1alpha.DeleteRealmRequest;
 import com.google.cloud.gaming.v1alpha.GetRealmRequest;
 import com.google.cloud.gaming.v1alpha.ListRealmsRequest;
 import com.google.cloud.gaming.v1alpha.ListRealmsResponse;
+import com.google.cloud.gaming.v1alpha.PreviewRealmUpdateRequest;
+import com.google.cloud.gaming.v1alpha.PreviewRealmUpdateResponse;
 import com.google.cloud.gaming.v1alpha.Realm;
 import com.google.cloud.gaming.v1alpha.UpdateRealmRequest;
 import com.google.longrunning.Operation;
@@ -85,6 +87,11 @@ public abstract class RealmsServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateRealmRequest, Operation> updateRealmCallable() {
     throw new UnsupportedOperationException("Not implemented: updateRealmCallable()");
+  }
+
+  public UnaryCallable<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
+      previewRealmUpdateCallable() {
+    throw new UnsupportedOperationException("Not implemented: previewRealmUpdateCallable()");
   }
 
   @Override
