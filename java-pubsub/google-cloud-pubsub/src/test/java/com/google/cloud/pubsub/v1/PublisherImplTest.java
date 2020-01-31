@@ -196,6 +196,37 @@ public class PublisherImplTest {
   }
 
   @Test
+  public void testPublishByShutdown() throws Exception {
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setDelayThreshold(Duration.ofSeconds(100))
+                    .setElementCountThreshold(10L)
+                    .build())
+            .build();
+
+    testPublisherServiceImpl.addPublishResponse(
+        PublishResponse.newBuilder().addMessageIds("1").addMessageIds("2"));
+
+    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
+    ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
+
+    // Note we are not advancing time or reaching the count threshold but messages should
+    // still get published by call to shutdown
+
+    publisher.shutdown();
+    publisher.awaitTermination(1, TimeUnit.MINUTES);
+
+    // Verify the publishes completed
+    assertTrue(publishFuture1.isDone());
+    assertTrue(publishFuture2.isDone());
+    assertEquals("1", publishFuture1.get());
+    assertEquals("2", publishFuture2.get());
+  }
+
+  @Test
   public void testPublishMixedSizeAndDuration() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()

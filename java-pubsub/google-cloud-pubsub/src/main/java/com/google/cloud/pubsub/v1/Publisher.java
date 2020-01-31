@@ -527,6 +527,7 @@ public class Publisher {
       currentAlarmFuture.cancel(false);
     }
     publishAllOutstanding();
+    messagesWaiter.waitComplete();
     backgroundResources.shutdown();
   }
 
