@@ -41,6 +41,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
 
   private TimestampedObject() {
     attributes_ = java.util.Collections.emptyList();
+    landmarks_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -120,6 +121,20 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
                       extensionRegistry));
               break;
             }
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                landmarks_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              landmarks_.add(
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark.parser(),
+                      extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -136,6 +151,9 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         attributes_ = java.util.Collections.unmodifiableList(attributes_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        landmarks_ = java.util.Collections.unmodifiableList(landmarks_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -334,6 +352,83 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
     return attributes_.get(index);
   }
 
+  public static final int LANDMARKS_FIELD_NUMBER = 4;
+  private java.util.List<com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark> landmarks_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The detected landmarks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  public java.util.List<com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark>
+      getLandmarksList() {
+    return landmarks_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The detected landmarks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  public java.util.List<
+          ? extends com.google.cloud.videointelligence.v1p3beta1.DetectedLandmarkOrBuilder>
+      getLandmarksOrBuilderList() {
+    return landmarks_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The detected landmarks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  public int getLandmarksCount() {
+    return landmarks_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The detected landmarks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark getLandmarks(int index) {
+    return landmarks_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The detected landmarks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.DetectedLandmarkOrBuilder
+      getLandmarksOrBuilder(int index) {
+    return landmarks_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -357,6 +452,9 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < attributes_.size(); i++) {
       output.writeMessage(3, attributes_.get(i));
     }
+    for (int i = 0; i < landmarks_.size(); i++) {
+      output.writeMessage(4, landmarks_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -375,6 +473,9 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
     }
     for (int i = 0; i < attributes_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, attributes_.get(i));
+    }
+    for (int i = 0; i < landmarks_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, landmarks_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -401,6 +502,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       if (!getTimeOffset().equals(other.getTimeOffset())) return false;
     }
     if (!getAttributesList().equals(other.getAttributesList())) return false;
+    if (!getLandmarksList().equals(other.getLandmarksList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -423,6 +525,10 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
     if (getAttributesCount() > 0) {
       hash = (37 * hash) + ATTRIBUTES_FIELD_NUMBER;
       hash = (53 * hash) + getAttributesList().hashCode();
+    }
+    if (getLandmarksCount() > 0) {
+      hash = (37 * hash) + LANDMARKS_FIELD_NUMBER;
+      hash = (53 * hash) + getLandmarksList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -568,6 +674,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getAttributesFieldBuilder();
+        getLandmarksFieldBuilder();
       }
     }
 
@@ -591,6 +698,12 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         attributesBuilder_.clear();
+      }
+      if (landmarksBuilder_ == null) {
+        landmarks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        landmarksBuilder_.clear();
       }
       return this;
     }
@@ -639,6 +752,15 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         result.attributes_ = attributes_;
       } else {
         result.attributes_ = attributesBuilder_.build();
+      }
+      if (landmarksBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          landmarks_ = java.util.Collections.unmodifiableList(landmarks_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.landmarks_ = landmarks_;
+      } else {
+        result.landmarks_ = landmarksBuilder_.build();
       }
       onBuilt();
       return result;
@@ -721,6 +843,33 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
                     : null;
           } else {
             attributesBuilder_.addAllMessages(other.attributes_);
+          }
+        }
+      }
+      if (landmarksBuilder_ == null) {
+        if (!other.landmarks_.isEmpty()) {
+          if (landmarks_.isEmpty()) {
+            landmarks_ = other.landmarks_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureLandmarksIsMutable();
+            landmarks_.addAll(other.landmarks_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.landmarks_.isEmpty()) {
+          if (landmarksBuilder_.isEmpty()) {
+            landmarksBuilder_.dispose();
+            landmarksBuilder_ = null;
+            landmarks_ = other.landmarks_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            landmarksBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getLandmarksFieldBuilder()
+                    : null;
+          } else {
+            landmarksBuilder_.addAllMessages(other.landmarks_);
           }
         }
       }
@@ -1564,6 +1713,409 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         attributes_ = null;
       }
       return attributesBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark>
+        landmarks_ = java.util.Collections.emptyList();
+
+    private void ensureLandmarksIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        landmarks_ =
+            new java.util.ArrayList<com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark>(
+                landmarks_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark,
+            com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark.Builder,
+            com.google.cloud.videointelligence.v1p3beta1.DetectedLandmarkOrBuilder>
+        landmarksBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark>
+        getLandmarksList() {
+      if (landmarksBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(landmarks_);
+      } else {
+        return landmarksBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getLandmarksCount() {
+      if (landmarksBuilder_ == null) {
+        return landmarks_.size();
+      } else {
+        return landmarksBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark getLandmarks(int index) {
+      if (landmarksBuilder_ == null) {
+        return landmarks_.get(index);
+      } else {
+        return landmarksBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLandmarks(
+        int index, com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark value) {
+      if (landmarksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLandmarksIsMutable();
+        landmarks_.set(index, value);
+        onChanged();
+      } else {
+        landmarksBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLandmarks(
+        int index,
+        com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark.Builder builderForValue) {
+      if (landmarksBuilder_ == null) {
+        ensureLandmarksIsMutable();
+        landmarks_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        landmarksBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLandmarks(
+        com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark value) {
+      if (landmarksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLandmarksIsMutable();
+        landmarks_.add(value);
+        onChanged();
+      } else {
+        landmarksBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLandmarks(
+        int index, com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark value) {
+      if (landmarksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLandmarksIsMutable();
+        landmarks_.add(index, value);
+        onChanged();
+      } else {
+        landmarksBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLandmarks(
+        com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark.Builder builderForValue) {
+      if (landmarksBuilder_ == null) {
+        ensureLandmarksIsMutable();
+        landmarks_.add(builderForValue.build());
+        onChanged();
+      } else {
+        landmarksBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLandmarks(
+        int index,
+        com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark.Builder builderForValue) {
+      if (landmarksBuilder_ == null) {
+        ensureLandmarksIsMutable();
+        landmarks_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        landmarksBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllLandmarks(
+        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark>
+            values) {
+      if (landmarksBuilder_ == null) {
+        ensureLandmarksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, landmarks_);
+        onChanged();
+      } else {
+        landmarksBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearLandmarks() {
+      if (landmarksBuilder_ == null) {
+        landmarks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        landmarksBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeLandmarks(int index) {
+      if (landmarksBuilder_ == null) {
+        ensureLandmarksIsMutable();
+        landmarks_.remove(index);
+        onChanged();
+      } else {
+        landmarksBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark.Builder
+        getLandmarksBuilder(int index) {
+      return getLandmarksFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.DetectedLandmarkOrBuilder
+        getLandmarksOrBuilder(int index) {
+      if (landmarksBuilder_ == null) {
+        return landmarks_.get(index);
+      } else {
+        return landmarksBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.videointelligence.v1p3beta1.DetectedLandmarkOrBuilder>
+        getLandmarksOrBuilderList() {
+      if (landmarksBuilder_ != null) {
+        return landmarksBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(landmarks_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark.Builder
+        addLandmarksBuilder() {
+      return getLandmarksFieldBuilder()
+          .addBuilder(
+              com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark.Builder
+        addLandmarksBuilder(int index) {
+      return getLandmarksFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detected landmarks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark.Builder>
+        getLandmarksBuilderList() {
+      return getLandmarksFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark,
+            com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark.Builder,
+            com.google.cloud.videointelligence.v1p3beta1.DetectedLandmarkOrBuilder>
+        getLandmarksFieldBuilder() {
+      if (landmarksBuilder_ == null) {
+        landmarksBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark,
+                com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark.Builder,
+                com.google.cloud.videointelligence.v1p3beta1.DetectedLandmarkOrBuilder>(
+                landmarks_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        landmarks_ = null;
+      }
+      return landmarksBuilder_;
     }
 
     @java.lang.Override

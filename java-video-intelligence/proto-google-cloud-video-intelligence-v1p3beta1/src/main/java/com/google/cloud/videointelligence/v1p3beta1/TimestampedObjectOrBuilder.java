@@ -166,4 +166,67 @@ public interface TimestampedObjectOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.DetectedAttributeOrBuilder getAttributesOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The detected landmarks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark> getLandmarksList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The detected landmarks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark getLandmarks(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The detected landmarks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getLandmarksCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The detected landmarks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.DetectedLandmarkOrBuilder>
+      getLandmarksOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The detected landmarks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.DetectedLandmarkOrBuilder getLandmarksOrBuilder(
+      int index);
 }

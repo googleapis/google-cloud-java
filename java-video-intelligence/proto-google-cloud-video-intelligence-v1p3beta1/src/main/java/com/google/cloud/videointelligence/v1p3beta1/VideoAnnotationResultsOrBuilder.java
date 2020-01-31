@@ -472,6 +472,72 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
+   * Face detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.FaceDetectionAnnotation face_detection_annotations = 13;
+   * </code>
+   */
+  java.util.List<com.google.cloud.videointelligence.v1p3beta1.FaceDetectionAnnotation>
+      getFaceDetectionAnnotationsList();
+  /**
+   *
+   *
+   * <pre>
+   * Face detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.FaceDetectionAnnotation face_detection_annotations = 13;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.FaceDetectionAnnotation getFaceDetectionAnnotations(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Face detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.FaceDetectionAnnotation face_detection_annotations = 13;
+   * </code>
+   */
+  int getFaceDetectionAnnotationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Face detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.FaceDetectionAnnotation face_detection_annotations = 13;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.videointelligence.v1p3beta1.FaceDetectionAnnotationOrBuilder>
+      getFaceDetectionAnnotationsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Face detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.FaceDetectionAnnotation face_detection_annotations = 13;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.FaceDetectionAnnotationOrBuilder
+      getFaceDetectionAnnotationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Shot annotations. Each shot is represented as a video segment.
    * </pre>
    *
@@ -835,6 +901,72 @@ public interface VideoAnnotationResultsOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotationOrBuilder
       getLogoRecognitionAnnotationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Person detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.PersonDetectionAnnotation person_detection_annotations = 20;
+   * </code>
+   */
+  java.util.List<com.google.cloud.videointelligence.v1p3beta1.PersonDetectionAnnotation>
+      getPersonDetectionAnnotationsList();
+  /**
+   *
+   *
+   * <pre>
+   * Person detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.PersonDetectionAnnotation person_detection_annotations = 20;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.PersonDetectionAnnotation
+      getPersonDetectionAnnotations(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Person detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.PersonDetectionAnnotation person_detection_annotations = 20;
+   * </code>
+   */
+  int getPersonDetectionAnnotationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Person detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.PersonDetectionAnnotation person_detection_annotations = 20;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.videointelligence.v1p3beta1.PersonDetectionAnnotationOrBuilder>
+      getPersonDetectionAnnotationsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Person detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.PersonDetectionAnnotation person_detection_annotations = 20;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.PersonDetectionAnnotationOrBuilder
+      getPersonDetectionAnnotationsOrBuilder(int index);
 
   /**
    *

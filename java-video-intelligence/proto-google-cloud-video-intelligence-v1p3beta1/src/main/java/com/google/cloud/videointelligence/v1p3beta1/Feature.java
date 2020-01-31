@@ -72,6 +72,16 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Human face detection.
+   * </pre>
+   *
+   * <code>FACE_DETECTION = 4;</code>
+   */
+  FACE_DETECTION(4),
+  /**
+   *
+   *
+   * <pre>
    * Speech transcription.
    * </pre>
    *
@@ -118,6 +128,16 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CELEBRITY_RECOGNITION = 13;</code>
    */
   CELEBRITY_RECOGNITION(13),
+  /**
+   *
+   *
+   * <pre>
+   * Person detection.
+   * </pre>
+   *
+   * <code>PERSON_DETECTION = 14;</code>
+   */
+  PERSON_DETECTION(14),
   UNRECOGNIZED(-1),
   ;
 
@@ -161,6 +181,16 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXPLICIT_CONTENT_DETECTION = 3;</code>
    */
   public static final int EXPLICIT_CONTENT_DETECTION_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Human face detection.
+   * </pre>
+   *
+   * <code>FACE_DETECTION = 4;</code>
+   */
+  public static final int FACE_DETECTION_VALUE = 4;
   /**
    *
    *
@@ -211,6 +241,16 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CELEBRITY_RECOGNITION = 13;</code>
    */
   public static final int CELEBRITY_RECOGNITION_VALUE = 13;
+  /**
+   *
+   *
+   * <pre>
+   * Person detection.
+   * </pre>
+   *
+   * <code>PERSON_DETECTION = 14;</code>
+   */
+  public static final int PERSON_DETECTION_VALUE = 14;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -244,6 +284,8 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
         return SHOT_CHANGE_DETECTION;
       case 3:
         return EXPLICIT_CONTENT_DETECTION;
+      case 4:
+        return FACE_DETECTION;
       case 6:
         return SPEECH_TRANSCRIPTION;
       case 7:
@@ -254,6 +296,8 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
         return LOGO_RECOGNITION;
       case 13:
         return CELEBRITY_RECOGNITION;
+      case 14:
+        return PERSON_DETECTION;
       default:
         return null;
     }

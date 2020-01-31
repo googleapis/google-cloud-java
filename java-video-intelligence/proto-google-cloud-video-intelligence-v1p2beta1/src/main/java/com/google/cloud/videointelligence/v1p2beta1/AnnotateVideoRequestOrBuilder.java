@@ -31,10 +31,10 @@ public interface AnnotateVideoRequestOrBuilder
    * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
    * supported, which must be specified in the following format:
    * `gs://bucket-id/object-id` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
-   * more information, see [Request URIs](/storage/docs/reference-uris). A video
-   * URI may include wildcards in `object-id`, and thus identify multiple
-   * videos. Supported wildcards: '*' to match 0 or more characters;
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
+   * [Request URIs](/storage/docs/reference-uris).
+   * A video URI may include wildcards in `object-id`, and thus identify
+   * multiple videos. Supported wildcards: '*' to match 0 or more characters;
    * '?' to match 1 character. If unset, the input video should be embedded
    * in the request as `input_content`. If set, `input_content` should be unset.
    * </pre>
@@ -52,10 +52,10 @@ public interface AnnotateVideoRequestOrBuilder
    * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
    * supported, which must be specified in the following format:
    * `gs://bucket-id/object-id` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
-   * more information, see [Request URIs](/storage/docs/reference-uris). A video
-   * URI may include wildcards in `object-id`, and thus identify multiple
-   * videos. Supported wildcards: '*' to match 0 or more characters;
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
+   * [Request URIs](/storage/docs/reference-uris).
+   * A video URI may include wildcards in `object-id`, and thus identify
+   * multiple videos. Supported wildcards: '*' to match 0 or more characters;
    * '?' to match 1 character. If unset, the input video should be embedded
    * in the request as `input_content`. If set, `input_content` should be unset.
    * </pre>
@@ -85,10 +85,12 @@ public interface AnnotateVideoRequestOrBuilder
    *
    *
    * <pre>
-   * Requested video annotation features.
+   * Required. Requested video annotation features.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p2beta1.Feature features = 2;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p2beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return A list containing the features.
    */
@@ -97,10 +99,12 @@ public interface AnnotateVideoRequestOrBuilder
    *
    *
    * <pre>
-   * Requested video annotation features.
+   * Required. Requested video annotation features.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p2beta1.Feature features = 2;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p2beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The count of features.
    */
@@ -109,10 +113,12 @@ public interface AnnotateVideoRequestOrBuilder
    *
    *
    * <pre>
-   * Requested video annotation features.
+   * Required. Requested video annotation features.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p2beta1.Feature features = 2;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p2beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The features at the given index.
@@ -122,10 +128,12 @@ public interface AnnotateVideoRequestOrBuilder
    *
    *
    * <pre>
-   * Requested video annotation features.
+   * Required. Requested video annotation features.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p2beta1.Feature features = 2;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p2beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return A list containing the enum numeric values on the wire for features.
    */
@@ -134,10 +142,12 @@ public interface AnnotateVideoRequestOrBuilder
    *
    *
    * <pre>
-   * Requested video annotation features.
+   * Required. Requested video annotation features.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p2beta1.Feature features = 2;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p2beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of features at the given index.
@@ -183,15 +193,15 @@ public interface AnnotateVideoRequestOrBuilder
    *
    *
    * <pre>
-   * Optional location where the output (in JSON format) should be stored.
+   * Optional. Location where the output (in JSON format) should be stored.
    * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
    * URIs are supported, which must be specified in the following format:
    * `gs://bucket-id/object-id` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
-   * more information, see [Request URIs](/storage/docs/reference-uris).
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
+   * [Request URIs](/storage/docs/reference-uris).
    * </pre>
    *
-   * <code>string output_uri = 4;</code>
+   * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The outputUri.
    */
@@ -200,15 +210,15 @@ public interface AnnotateVideoRequestOrBuilder
    *
    *
    * <pre>
-   * Optional location where the output (in JSON format) should be stored.
+   * Optional. Location where the output (in JSON format) should be stored.
    * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
    * URIs are supported, which must be specified in the following format:
    * `gs://bucket-id/object-id` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
-   * more information, see [Request URIs](/storage/docs/reference-uris).
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
+   * [Request URIs](/storage/docs/reference-uris).
    * </pre>
    *
-   * <code>string output_uri = 4;</code>
+   * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for outputUri.
    */
@@ -218,12 +228,12 @@ public interface AnnotateVideoRequestOrBuilder
    *
    *
    * <pre>
-   * Optional cloud region where annotation should take place. Supported cloud
+   * Optional. Cloud region where annotation should take place. Supported cloud
    * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
    * is specified, a region will be determined based on video file location.
    * </pre>
    *
-   * <code>string location_id = 5;</code>
+   * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The locationId.
    */
@@ -232,12 +242,12 @@ public interface AnnotateVideoRequestOrBuilder
    *
    *
    * <pre>
-   * Optional cloud region where annotation should take place. Supported cloud
+   * Optional. Cloud region where annotation should take place. Supported cloud
    * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
    * is specified, a region will be determined based on video file location.
    * </pre>
    *
-   * <code>string location_id = 5;</code>
+   * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for locationId.
    */

@@ -202,8 +202,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
-   * to be contiguous or span the whole video. If unspecified, each video
-   * is treated as a single segment.
+   * to be contiguous or span the whole video. If unspecified, each video is
+   * treated as a single segment.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -216,8 +216,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
-   * to be contiguous or span the whole video. If unspecified, each video
-   * is treated as a single segment.
+   * to be contiguous or span the whole video. If unspecified, each video is
+   * treated as a single segment.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -231,8 +231,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
-   * to be contiguous or span the whole video. If unspecified, each video
-   * is treated as a single segment.
+   * to be contiguous or span the whole video. If unspecified, each video is
+   * treated as a single segment.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -245,8 +245,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
-   * to be contiguous or span the whole video. If unspecified, each video
-   * is treated as a single segment.
+   * to be contiguous or span the whole video. If unspecified, each video is
+   * treated as a single segment.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -259,8 +259,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
-   * to be contiguous or span the whole video. If unspecified, each video
-   * is treated as a single segment.
+   * to be contiguous or span the whole video. If unspecified, each video is
+   * treated as a single segment.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -981,8 +981,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -1000,8 +1000,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -1018,8 +1018,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -1036,8 +1036,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -1061,8 +1061,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -1084,8 +1084,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -1108,8 +1108,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -1133,8 +1133,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -1155,8 +1155,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -1178,8 +1178,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -1201,8 +1201,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -1222,8 +1222,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -1243,8 +1243,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -1258,8 +1258,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -1277,8 +1277,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -1297,8 +1297,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -1312,8 +1312,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
@@ -1329,8 +1329,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>

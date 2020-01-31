@@ -218,6 +218,45 @@ public interface VideoContextOrBuilder
    *
    *
    * <pre>
+   * Config for FACE_DETECTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.FaceDetectionConfig face_detection_config = 5;
+   * </code>
+   *
+   * @return Whether the faceDetectionConfig field is set.
+   */
+  boolean hasFaceDetectionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for FACE_DETECTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.FaceDetectionConfig face_detection_config = 5;
+   * </code>
+   *
+   * @return The faceDetectionConfig.
+   */
+  com.google.cloud.videointelligence.v1p3beta1.FaceDetectionConfig getFaceDetectionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for FACE_DETECTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.FaceDetectionConfig face_detection_config = 5;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.FaceDetectionConfigOrBuilder
+      getFaceDetectionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Config for SPEECH_TRANSCRIPTION.
    * </pre>
    *
@@ -295,6 +334,48 @@ public interface VideoContextOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.TextDetectionConfigOrBuilder
       getTextDetectionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Config for PERSON_DETECTION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.PersonDetectionConfig person_detection_config = 11;
+   * </code>
+   *
+   * @return Whether the personDetectionConfig field is set.
+   */
+  boolean hasPersonDetectionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for PERSON_DETECTION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.PersonDetectionConfig person_detection_config = 11;
+   * </code>
+   *
+   * @return The personDetectionConfig.
+   */
+  com.google.cloud.videointelligence.v1p3beta1.PersonDetectionConfig getPersonDetectionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for PERSON_DETECTION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.PersonDetectionConfig person_detection_config = 11;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.PersonDetectionConfigOrBuilder
+      getPersonDetectionConfigOrBuilder();
 
   /**
    *
