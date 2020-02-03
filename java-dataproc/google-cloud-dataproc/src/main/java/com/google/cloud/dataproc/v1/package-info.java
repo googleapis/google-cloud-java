@@ -69,6 +69,22 @@
  * }
  * </code>
  * </pre>
+ *
+ * ============================== AutoscalingPolicyServiceClient ==============================
+ *
+ * <p>Service Description: The API interface for managing autoscaling policies in the Dataproc API.
+ *
+ * <p>Sample for AutoscalingPolicyServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
+ *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+ *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
+ *   AutoscalingPolicy response = autoscalingPolicyServiceClient.createAutoscalingPolicy(formattedParent, policy);
+ * }
+ * </code>
+ * </pre>
  */
 @Generated("by gapic-generator")
 package com.google.cloud.dataproc.v1;

@@ -45,6 +45,7 @@ public class JobControllerClientTest {
   private static MockClusterController mockClusterController;
   private static MockJobController mockJobController;
   private static MockWorkflowTemplateService mockWorkflowTemplateService;
+  private static MockAutoscalingPolicyService mockAutoscalingPolicyService;
   private static MockServiceHelper serviceHelper;
   private JobControllerClient client;
   private LocalChannelProvider channelProvider;
@@ -54,11 +55,15 @@ public class JobControllerClientTest {
     mockClusterController = new MockClusterController();
     mockJobController = new MockJobController();
     mockWorkflowTemplateService = new MockWorkflowTemplateService();
+    mockAutoscalingPolicyService = new MockAutoscalingPolicyService();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
-                mockClusterController, mockJobController, mockWorkflowTemplateService));
+                mockClusterController,
+                mockJobController,
+                mockWorkflowTemplateService,
+                mockAutoscalingPolicyService));
     serviceHelper.start();
   }
 
