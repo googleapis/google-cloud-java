@@ -27,11 +27,13 @@ public interface UpdateProductRequestOrBuilder
    *
    *
    * <pre>
-   * The Product resource which replaces the one on the server.
+   * Required. The Product resource which replaces the one on the server.
    * product.name is immutable.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.Product product = 1;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the product field is set.
    */
@@ -40,11 +42,13 @@ public interface UpdateProductRequestOrBuilder
    *
    *
    * <pre>
-   * The Product resource which replaces the one on the server.
+   * Required. The Product resource which replaces the one on the server.
    * product.name is immutable.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.Product product = 1;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The product.
    */
@@ -53,11 +57,13 @@ public interface UpdateProductRequestOrBuilder
    *
    *
    * <pre>
-   * The Product resource which replaces the one on the server.
+   * Required. The Product resource which replaces the one on the server.
    * product.name is immutable.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.Product product = 1;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1p3beta1.ProductOrBuilder getProductOrBuilder();
 
@@ -68,7 +74,7 @@ public interface UpdateProductRequestOrBuilder
    * The [FieldMask][google.protobuf.FieldMask] that specifies which fields
    * to update.
    * If update_mask isn't specified, all mutable fields are to be updated.
-   * Valid mask paths include `product_labels`, `display_name` and
+   * Valid mask paths include `product_labels`, `display_name`, and
    * `description`.
    * </pre>
    *
@@ -84,7 +90,7 @@ public interface UpdateProductRequestOrBuilder
    * The [FieldMask][google.protobuf.FieldMask] that specifies which fields
    * to update.
    * If update_mask isn't specified, all mutable fields are to be updated.
-   * Valid mask paths include `product_labels`, `display_name` and
+   * Valid mask paths include `product_labels`, `display_name`, and
    * `description`.
    * </pre>
    *
@@ -100,7 +106,7 @@ public interface UpdateProductRequestOrBuilder
    * The [FieldMask][google.protobuf.FieldMask] that specifies which fields
    * to update.
    * If update_mask isn't specified, all mutable fields are to be updated.
-   * Valid mask paths include `product_labels`, `display_name` and
+   * Valid mask paths include `product_labels`, `display_name`, and
    * `description`.
    * </pre>
    *

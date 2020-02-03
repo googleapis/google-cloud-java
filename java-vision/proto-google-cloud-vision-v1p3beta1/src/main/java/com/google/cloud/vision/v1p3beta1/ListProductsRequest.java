@@ -130,12 +130,14 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The project OR ProductSet from which Products should be listed.
+   * Required. The project OR ProductSet from which Products should be listed.
    * Format:
    * `projects/PROJECT_ID/locations/LOC_ID`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -154,12 +156,14 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The project OR ProductSet from which Products should be listed.
+   * Required. The project OR ProductSet from which Products should be listed.
    * Format:
    * `projects/PROJECT_ID/locations/LOC_ID`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -594,12 +598,14 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The project OR ProductSet from which Products should be listed.
+     * Required. The project OR ProductSet from which Products should be listed.
      * Format:
      * `projects/PROJECT_ID/locations/LOC_ID`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -618,12 +624,14 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The project OR ProductSet from which Products should be listed.
+     * Required. The project OR ProductSet from which Products should be listed.
      * Format:
      * `projects/PROJECT_ID/locations/LOC_ID`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -642,12 +650,14 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The project OR ProductSet from which Products should be listed.
+     * Required. The project OR ProductSet from which Products should be listed.
      * Format:
      * `projects/PROJECT_ID/locations/LOC_ID`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -665,12 +675,14 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The project OR ProductSet from which Products should be listed.
+     * Required. The project OR ProductSet from which Products should be listed.
      * Format:
      * `projects/PROJECT_ID/locations/LOC_ID`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -684,12 +696,14 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The project OR ProductSet from which Products should be listed.
+     * Required. The project OR ProductSet from which Products should be listed.
      * Format:
      * `projects/PROJECT_ID/locations/LOC_ID`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.

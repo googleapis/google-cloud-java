@@ -27,12 +27,14 @@ public interface GetReferenceImageRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the ReferenceImage to get.
+   * Required. The resource name of the ReferenceImage to get.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -41,12 +43,14 @@ public interface GetReferenceImageRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the ReferenceImage to get.
+   * Required. The resource name of the ReferenceImage to get.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

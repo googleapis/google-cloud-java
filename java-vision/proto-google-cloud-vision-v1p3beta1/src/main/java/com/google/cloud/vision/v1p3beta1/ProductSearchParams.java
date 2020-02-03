@@ -495,7 +495,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
    *
-   * <code>string product_set = 6;</code>
+   * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The productSet.
    */
@@ -521,7 +521,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
    *
-   * <code>string product_set = 6;</code>
+   * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for productSet.
    */
@@ -2009,7 +2009,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
      *
-     * <code>string product_set = 6;</code>
+     * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The productSet.
      */
@@ -2035,7 +2035,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
      *
-     * <code>string product_set = 6;</code>
+     * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for productSet.
      */
@@ -2061,7 +2061,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
      *
-     * <code>string product_set = 6;</code>
+     * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The productSet to set.
      * @return This builder for chaining.
@@ -2086,7 +2086,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
      *
-     * <code>string product_set = 6;</code>
+     * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -2107,7 +2107,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
      *
-     * <code>string product_set = 6;</code>
+     * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for productSet to set.
      * @return This builder for chaining.

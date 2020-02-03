@@ -54,47 +54,50 @@ public final class ProductSearchProto {
     java.lang.String[] descriptorData = {
       "\n2google/cloud/vision/v1p3beta1/product_"
           + "search.proto\022\035google.cloud.vision.v1p3be"
-          + "ta1\032\034google/api/annotations.proto\032,googl"
-          + "e/cloud/vision/v1p3beta1/geometry.proto\032"
-          + ":google/cloud/vision/v1p3beta1/product_s"
-          + "earch_service.proto\032\037google/protobuf/tim"
-          + "estamp.proto\"\262\003\n\023ProductSearchParams\022\024\n\014"
-          + "catalog_name\030\001 \001(\t\022F\n\010category\030\002 \001(\01624.g"
-          + "oogle.cloud.vision.v1p3beta1.ProductSear"
-          + "chCategory\022\030\n\020product_category\030\005 \001(\t\022W\n\030"
-          + "normalized_bounding_poly\030\003 \001(\01325.google."
-          + "cloud.vision.v1p3beta1.NormalizedBoundin"
-          + "gPoly\022B\n\rbounding_poly\030\t \001(\0132+.google.cl"
-          + "oud.vision.v1p3beta1.BoundingPoly\022E\n\004vie"
-          + "w\030\004 \001(\01627.google.cloud.vision.v1p3beta1."
-          + "ProductSearchResultsView\022\023\n\013product_set\030"
-          + "\006 \001(\t\022\032\n\022product_categories\030\007 \003(\t\022\016\n\006fil"
-          + "ter\030\010 \001(\t\"\356\003\n\024ProductSearchResults\022F\n\010ca"
-          + "tegory\030\001 \001(\01624.google.cloud.vision.v1p3b"
-          + "eta1.ProductSearchCategory\022\030\n\020product_ca"
-          + "tegory\030\004 \001(\t\022.\n\nindex_time\030\002 \001(\0132\032.googl"
-          + "e.protobuf.Timestamp\022Q\n\010products\030\003 \003(\0132?"
+          + "ta1\032\034google/api/annotations.proto\032\031googl"
+          + "e/api/resource.proto\032,google/cloud/visio"
+          + "n/v1p3beta1/geometry.proto\032:google/cloud"
+          + "/vision/v1p3beta1/product_search_service"
+          + ".proto\032\037google/protobuf/timestamp.proto\""
+          + "\331\003\n\023ProductSearchParams\022\024\n\014catalog_name\030"
+          + "\001 \001(\t\022F\n\010category\030\002 \001(\01624.google.cloud.v"
+          + "ision.v1p3beta1.ProductSearchCategory\022\030\n"
+          + "\020product_category\030\005 \001(\t\022W\n\030normalized_bo"
+          + "unding_poly\030\003 \001(\01325.google.cloud.vision."
+          + "v1p3beta1.NormalizedBoundingPoly\022B\n\rboun"
+          + "ding_poly\030\t \001(\0132+.google.cloud.vision.v1"
+          + "p3beta1.BoundingPoly\022E\n\004view\030\004 \001(\01627.goo"
+          + "gle.cloud.vision.v1p3beta1.ProductSearch"
+          + "ResultsView\022:\n\013product_set\030\006 \001(\tB%\372A\"\n v"
+          + "ision.googleapis.com/ProductSet\022\032\n\022produ"
+          + "ct_categories\030\007 \003(\t\022\016\n\006filter\030\010 \001(\t\"\356\003\n\024"
+          + "ProductSearchResults\022F\n\010category\030\001 \001(\01624"
           + ".google.cloud.vision.v1p3beta1.ProductSe"
-          + "archResults.ProductInfo\022K\n\007results\030\005 \003(\013"
-          + "2:.google.cloud.vision.v1p3beta1.Product"
-          + "SearchResults.Result\032C\n\013ProductInfo\022\022\n\np"
-          + "roduct_id\030\001 \001(\t\022\021\n\timage_uri\030\002 \001(\t\022\r\n\005sc"
-          + "ore\030\003 \001(\002\032_\n\006Result\0227\n\007product\030\001 \001(\0132&.g"
-          + "oogle.cloud.vision.v1p3beta1.Product\022\r\n\005"
-          + "score\030\002 \001(\002\022\r\n\005image\030\003 \001(\t*U\n\025ProductSea"
-          + "rchCategory\022\'\n#PRODUCT_SEARCH_CATEGORY_U"
-          + "NSPECIFIED\020\000\022\t\n\005SHOES\020\001\022\010\n\004BAGS\020\002*/\n\030Pro"
-          + "ductSearchResultsView\022\t\n\005BASIC\020\000\022\010\n\004FULL"
-          + "\020\001B\201\001\n!com.google.cloud.vision.v1p3beta1"
-          + "B\022ProductSearchProtoP\001ZCgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/vision/v1p3b"
-          + "eta1;vision\370\001\001b\006proto3"
+          + "archCategory\022\030\n\020product_category\030\004 \001(\t\022."
+          + "\n\nindex_time\030\002 \001(\0132\032.google.protobuf.Tim"
+          + "estamp\022Q\n\010products\030\003 \003(\0132?.google.cloud."
+          + "vision.v1p3beta1.ProductSearchResults.Pr"
+          + "oductInfo\022K\n\007results\030\005 \003(\0132:.google.clou"
+          + "d.vision.v1p3beta1.ProductSearchResults."
+          + "Result\032C\n\013ProductInfo\022\022\n\nproduct_id\030\001 \001("
+          + "\t\022\021\n\timage_uri\030\002 \001(\t\022\r\n\005score\030\003 \001(\002\032_\n\006R"
+          + "esult\0227\n\007product\030\001 \001(\0132&.google.cloud.vi"
+          + "sion.v1p3beta1.Product\022\r\n\005score\030\002 \001(\002\022\r\n"
+          + "\005image\030\003 \001(\t*U\n\025ProductSearchCategory\022\'\n"
+          + "#PRODUCT_SEARCH_CATEGORY_UNSPECIFIED\020\000\022\t"
+          + "\n\005SHOES\020\001\022\010\n\004BAGS\020\002*/\n\030ProductSearchResu"
+          + "ltsView\022\t\n\005BASIC\020\000\022\010\n\004FULL\020\001B\201\001\n!com.goo"
+          + "gle.cloud.vision.v1p3beta1B\022ProductSearc"
+          + "hProtoP\001ZCgoogle.golang.org/genproto/goo"
+          + "gleapis/cloud/vision/v1p3beta1;vision\370\001\001"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.vision.v1p3beta1.GeometryProto.getDescriptor(),
               com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -143,7 +146,13 @@ public final class ProductSearchProto {
             new java.lang.String[] {
               "Product", "Score", "Image",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resourceReference);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.vision.v1p3beta1.GeometryProto.getDescriptor();
     com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

@@ -139,10 +139,12 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The ProductSet resource which replaces the one on the server.
+   * Required. The ProductSet resource which replaces the one on the server.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 1;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the productSet field is set.
    */
@@ -153,10 +155,12 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The ProductSet resource which replaces the one on the server.
+   * Required. The ProductSet resource which replaces the one on the server.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 1;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The productSet.
    */
@@ -169,10 +173,12 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The ProductSet resource which replaces the one on the server.
+   * Required. The ProductSet resource which replaces the one on the server.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 1;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1p3beta1.ProductSetOrBuilder getProductSetOrBuilder() {
     return getProductSet();
@@ -599,10 +605,12 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet resource which replaces the one on the server.
+     * Required. The ProductSet resource which replaces the one on the server.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the productSet field is set.
      */
@@ -613,10 +621,12 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet resource which replaces the one on the server.
+     * Required. The ProductSet resource which replaces the one on the server.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The productSet.
      */
@@ -633,10 +643,12 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet resource which replaces the one on the server.
+     * Required. The ProductSet resource which replaces the one on the server.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setProductSet(com.google.cloud.vision.v1p3beta1.ProductSet value) {
       if (productSetBuilder_ == null) {
@@ -655,10 +667,12 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet resource which replaces the one on the server.
+     * Required. The ProductSet resource which replaces the one on the server.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setProductSet(
         com.google.cloud.vision.v1p3beta1.ProductSet.Builder builderForValue) {
@@ -675,10 +689,12 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet resource which replaces the one on the server.
+     * Required. The ProductSet resource which replaces the one on the server.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeProductSet(com.google.cloud.vision.v1p3beta1.ProductSet value) {
       if (productSetBuilder_ == null) {
@@ -701,10 +717,12 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet resource which replaces the one on the server.
+     * Required. The ProductSet resource which replaces the one on the server.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearProductSet() {
       if (productSetBuilder_ == null) {
@@ -721,10 +739,12 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet resource which replaces the one on the server.
+     * Required. The ProductSet resource which replaces the one on the server.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p3beta1.ProductSet.Builder getProductSetBuilder() {
 
@@ -735,10 +755,12 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet resource which replaces the one on the server.
+     * Required. The ProductSet resource which replaces the one on the server.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p3beta1.ProductSetOrBuilder getProductSetOrBuilder() {
       if (productSetBuilder_ != null) {
@@ -753,10 +775,12 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet resource which replaces the one on the server.
+     * Required. The ProductSet resource which replaces the one on the server.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p3beta1.ProductSet,

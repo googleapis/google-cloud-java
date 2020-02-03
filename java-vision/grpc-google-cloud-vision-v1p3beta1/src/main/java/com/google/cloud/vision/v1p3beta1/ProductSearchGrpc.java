@@ -28,17 +28,13 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * <pre>
  * Manages Products and ProductSets of reference images for use in product
  * search. It uses the following resource model:
- * - The API has a collection of
- * [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] resources, named
+ * - The API has a collection of [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] resources, named
  * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
  * products into groups to limit identification.
  * In parallel,
- * - The API has a collection of
- * [Product][google.cloud.vision.v1p3beta1.Product] resources, named
+ * - The API has a collection of [Product][google.cloud.vision.v1p3beta1.Product] resources, named
  *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
- * - Each [Product][google.cloud.vision.v1p3beta1.Product] has a collection of
- * [ReferenceImage][google.cloud.vision.v1p3beta1.ReferenceImage] resources,
- * named
+ * - Each [Product][google.cloud.vision.v1p3beta1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1p3beta1.ReferenceImage] resources, named
  *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
  * </pre>
  */
@@ -1127,17 +1123,13 @@ public final class ProductSearchGrpc {
    * <pre>
    * Manages Products and ProductSets of reference images for use in product
    * search. It uses the following resource model:
-   * - The API has a collection of
-   * [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] resources, named
+   * - The API has a collection of [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] resources, named
    * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
    * products into groups to limit identification.
    * In parallel,
-   * - The API has a collection of
-   * [Product][google.cloud.vision.v1p3beta1.Product] resources, named
+   * - The API has a collection of [Product][google.cloud.vision.v1p3beta1.Product] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
-   * - Each [Product][google.cloud.vision.v1p3beta1.Product] has a collection of
-   * [ReferenceImage][google.cloud.vision.v1p3beta1.ReferenceImage] resources,
-   * named
+   * - Each [Product][google.cloud.vision.v1p3beta1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1p3beta1.ReferenceImage] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
    * </pre>
    */
@@ -1602,17 +1594,13 @@ public final class ProductSearchGrpc {
    * <pre>
    * Manages Products and ProductSets of reference images for use in product
    * search. It uses the following resource model:
-   * - The API has a collection of
-   * [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] resources, named
+   * - The API has a collection of [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] resources, named
    * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
    * products into groups to limit identification.
    * In parallel,
-   * - The API has a collection of
-   * [Product][google.cloud.vision.v1p3beta1.Product] resources, named
+   * - The API has a collection of [Product][google.cloud.vision.v1p3beta1.Product] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
-   * - Each [Product][google.cloud.vision.v1p3beta1.Product] has a collection of
-   * [ReferenceImage][google.cloud.vision.v1p3beta1.ReferenceImage] resources,
-   * named
+   * - Each [Product][google.cloud.vision.v1p3beta1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1p3beta1.ReferenceImage] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
    * </pre>
    */
@@ -2020,17 +2008,13 @@ public final class ProductSearchGrpc {
    * <pre>
    * Manages Products and ProductSets of reference images for use in product
    * search. It uses the following resource model:
-   * - The API has a collection of
-   * [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] resources, named
+   * - The API has a collection of [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] resources, named
    * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
    * products into groups to limit identification.
    * In parallel,
-   * - The API has a collection of
-   * [Product][google.cloud.vision.v1p3beta1.Product] resources, named
+   * - The API has a collection of [Product][google.cloud.vision.v1p3beta1.Product] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
-   * - Each [Product][google.cloud.vision.v1p3beta1.Product] has a collection of
-   * [ReferenceImage][google.cloud.vision.v1p3beta1.ReferenceImage] resources,
-   * named
+   * - Each [Product][google.cloud.vision.v1p3beta1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1p3beta1.ReferenceImage] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
    * </pre>
    */
@@ -2377,17 +2361,13 @@ public final class ProductSearchGrpc {
    * <pre>
    * Manages Products and ProductSets of reference images for use in product
    * search. It uses the following resource model:
-   * - The API has a collection of
-   * [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] resources, named
+   * - The API has a collection of [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] resources, named
    * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
    * products into groups to limit identification.
    * In parallel,
-   * - The API has a collection of
-   * [Product][google.cloud.vision.v1p3beta1.Product] resources, named
+   * - The API has a collection of [Product][google.cloud.vision.v1p3beta1.Product] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
-   * - Each [Product][google.cloud.vision.v1p3beta1.Product] has a collection of
-   * [ReferenceImage][google.cloud.vision.v1p3beta1.ReferenceImage] resources,
-   * named
+   * - Each [Product][google.cloud.vision.v1p3beta1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1p3beta1.ReferenceImage] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
    * </pre>
    */

@@ -91,7 +91,8 @@ public interface ProductSetOrBuilder
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp index_time = 3;</code>
+   * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the indexTime field is set.
    */
@@ -106,7 +107,8 @@ public interface ProductSetOrBuilder
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp index_time = 3;</code>
+   * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The indexTime.
    */
@@ -121,7 +123,8 @@ public interface ProductSetOrBuilder
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp index_time = 3;</code>
+   * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder();
 
@@ -134,7 +137,7 @@ public interface ProductSetOrBuilder
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.rpc.Status index_error = 4;</code>
+   * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the indexError field is set.
    */
@@ -148,7 +151,7 @@ public interface ProductSetOrBuilder
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.rpc.Status index_error = 4;</code>
+   * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The indexError.
    */
@@ -162,7 +165,7 @@ public interface ProductSetOrBuilder
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.rpc.Status index_error = 4;</code>
+   * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.rpc.StatusOrBuilder getIndexErrorOrBuilder();
 }

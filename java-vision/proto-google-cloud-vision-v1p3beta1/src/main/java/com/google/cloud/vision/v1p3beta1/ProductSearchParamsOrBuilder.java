@@ -231,7 +231,7 @@ public interface ProductSearchParamsOrBuilder
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
    *
-   * <code>string product_set = 6;</code>
+   * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The productSet.
    */
@@ -247,7 +247,7 @@ public interface ProductSearchParamsOrBuilder
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
    *
-   * <code>string product_set = 6;</code>
+   * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for productSet.
    */

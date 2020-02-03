@@ -27,12 +27,14 @@ public interface CreateReferenceImageRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the product in which to create the reference image.
+   * Required. Resource name of the product in which to create the reference image.
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -41,12 +43,14 @@ public interface CreateReferenceImageRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the product in which to create the reference image.
+   * Required. Resource name of the product in which to create the reference image.
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -56,11 +60,13 @@ public interface CreateReferenceImageRequestOrBuilder
    *
    *
    * <pre>
-   * The reference image to create.
+   * Required. The reference image to create.
    * If an image ID is specified, it is ignored.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the referenceImage field is set.
    */
@@ -69,11 +75,13 @@ public interface CreateReferenceImageRequestOrBuilder
    *
    *
    * <pre>
-   * The reference image to create.
+   * Required. The reference image to create.
    * If an image ID is specified, it is ignored.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The referenceImage.
    */
@@ -82,11 +90,13 @@ public interface CreateReferenceImageRequestOrBuilder
    *
    *
    * <pre>
-   * The reference image to create.
+   * Required. The reference image to create.
    * If an image ID is specified, it is ignored.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder getReferenceImageOrBuilder();
 

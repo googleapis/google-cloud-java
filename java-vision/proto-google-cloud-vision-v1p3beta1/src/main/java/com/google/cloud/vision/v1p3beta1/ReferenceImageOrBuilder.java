@@ -58,12 +58,11 @@ public interface ReferenceImageOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage URI of the reference image.
+   * Required. The Google Cloud Storage URI of the reference image.
    * The URI must start with `gs://`.
-   * Required.
    * </pre>
    *
-   * <code>string uri = 2;</code>
+   * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The uri.
    */
@@ -72,12 +71,11 @@ public interface ReferenceImageOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage URI of the reference image.
+   * Required. The Google Cloud Storage URI of the reference image.
    * The URI must start with `gs://`.
-   * Required.
    * </pre>
    *
-   * <code>string uri = 2;</code>
+   * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for uri.
    */
@@ -87,8 +85,8 @@ public interface ReferenceImageOrBuilder
    *
    *
    * <pre>
-   * Bounding polygons around the areas of interest in the reference image.
-   * Optional. If this field is empty, the system will try to detect regions of
+   * Optional. Bounding polygons around the areas of interest in the reference image.
+   * If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
    * The provided shape is converted into a non-rotated rectangle. Once
    * converted, the small edge of the rectangle must be greater than or equal
@@ -96,15 +94,17 @@ public interface ReferenceImageOrBuilder
    * is not).
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.BoundingPoly bounding_polys = 3;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.vision.v1p3beta1.BoundingPoly> getBoundingPolysList();
   /**
    *
    *
    * <pre>
-   * Bounding polygons around the areas of interest in the reference image.
-   * Optional. If this field is empty, the system will try to detect regions of
+   * Optional. Bounding polygons around the areas of interest in the reference image.
+   * If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
    * The provided shape is converted into a non-rotated rectangle. Once
    * converted, the small edge of the rectangle must be greater than or equal
@@ -112,15 +112,17 @@ public interface ReferenceImageOrBuilder
    * is not).
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.BoundingPoly bounding_polys = 3;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.vision.v1p3beta1.BoundingPoly getBoundingPolys(int index);
   /**
    *
    *
    * <pre>
-   * Bounding polygons around the areas of interest in the reference image.
-   * Optional. If this field is empty, the system will try to detect regions of
+   * Optional. Bounding polygons around the areas of interest in the reference image.
+   * If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
    * The provided shape is converted into a non-rotated rectangle. Once
    * converted, the small edge of the rectangle must be greater than or equal
@@ -128,15 +130,17 @@ public interface ReferenceImageOrBuilder
    * is not).
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.BoundingPoly bounding_polys = 3;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getBoundingPolysCount();
   /**
    *
    *
    * <pre>
-   * Bounding polygons around the areas of interest in the reference image.
-   * Optional. If this field is empty, the system will try to detect regions of
+   * Optional. Bounding polygons around the areas of interest in the reference image.
+   * If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
    * The provided shape is converted into a non-rotated rectangle. Once
    * converted, the small edge of the rectangle must be greater than or equal
@@ -144,7 +148,9 @@ public interface ReferenceImageOrBuilder
    * is not).
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.BoundingPoly bounding_polys = 3;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder>
       getBoundingPolysOrBuilderList();
@@ -152,8 +158,8 @@ public interface ReferenceImageOrBuilder
    *
    *
    * <pre>
-   * Bounding polygons around the areas of interest in the reference image.
-   * Optional. If this field is empty, the system will try to detect regions of
+   * Optional. Bounding polygons around the areas of interest in the reference image.
+   * If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
    * The provided shape is converted into a non-rotated rectangle. Once
    * converted, the small edge of the rectangle must be greater than or equal
@@ -161,7 +167,9 @@ public interface ReferenceImageOrBuilder
    * is not).
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.BoundingPoly bounding_polys = 3;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder getBoundingPolysOrBuilder(int index);
 }

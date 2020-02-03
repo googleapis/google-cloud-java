@@ -250,7 +250,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requests Individual async file annotation requests for this batch.
+   * @param requests Required. Individual async file annotation requests for this batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(

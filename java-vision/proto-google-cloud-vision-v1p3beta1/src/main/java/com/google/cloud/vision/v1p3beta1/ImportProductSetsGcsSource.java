@@ -119,7 +119,7 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
    *
    * <pre>
    * The Google Cloud Storage URI of the input csv file.
-   * The URI must start with gs://
+   * The URI must start with `gs://`.
    * The format of the input csv file should be one image per line.
    * In each line, there are 6 columns.
    * 1. image_uri
@@ -185,7 +185,7 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
    *
    * <pre>
    * The Google Cloud Storage URI of the input csv file.
-   * The URI must start with gs://
+   * The URI must start with `gs://`.
    * The format of the input csv file should be one image per line.
    * In each line, there are 6 columns.
    * 1. image_uri
@@ -575,7 +575,7 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      *
      * <pre>
      * The Google Cloud Storage URI of the input csv file.
-     * The URI must start with gs://
+     * The URI must start with `gs://`.
      * The format of the input csv file should be one image per line.
      * In each line, there are 6 columns.
      * 1. image_uri
@@ -641,7 +641,7 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      *
      * <pre>
      * The Google Cloud Storage URI of the input csv file.
-     * The URI must start with gs://
+     * The URI must start with `gs://`.
      * The format of the input csv file should be one image per line.
      * In each line, there are 6 columns.
      * 1. image_uri
@@ -707,7 +707,7 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      *
      * <pre>
      * The Google Cloud Storage URI of the input csv file.
-     * The URI must start with gs://
+     * The URI must start with `gs://`.
      * The format of the input csv file should be one image per line.
      * In each line, there are 6 columns.
      * 1. image_uri
@@ -772,7 +772,7 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      *
      * <pre>
      * The Google Cloud Storage URI of the input csv file.
-     * The URI must start with gs://
+     * The URI must start with `gs://`.
      * The format of the input csv file should be one image per line.
      * In each line, there are 6 columns.
      * 1. image_uri
@@ -833,7 +833,7 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      *
      * <pre>
      * The Google Cloud Storage URI of the input csv file.
-     * The URI must start with gs://
+     * The URI must start with `gs://`.
      * The format of the input csv file should be one image per line.
      * In each line, there are 6 columns.
      * 1. image_uri

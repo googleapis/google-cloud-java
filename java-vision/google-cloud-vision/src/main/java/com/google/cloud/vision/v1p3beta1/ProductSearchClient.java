@@ -208,9 +208,9 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The project in which the ProductSet should be created.
+   * @param parent Required. The project in which the ProductSet should be created.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
-   * @param productSet The ProductSet to create.
+   * @param productSet Required. The ProductSet to create.
    * @param productSetId A user-supplied resource id for this ProductSet. If set, the server will
    *     attempt to use this value as the resource id. If it is already in use, an error is returned
    *     with code ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the
@@ -248,9 +248,9 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The project in which the ProductSet should be created.
+   * @param parent Required. The project in which the ProductSet should be created.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
-   * @param productSet The ProductSet to create.
+   * @param productSet Required. The ProductSet to create.
    * @param productSetId A user-supplied resource id for this ProductSet. If set, the server will
    *     attempt to use this value as the resource id. If it is already in use, an error is returned
    *     with code ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the
@@ -350,7 +350,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The project from which ProductSets should be listed.
+   * @param parent Required. The project from which ProductSets should be listed.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -381,7 +381,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The project from which ProductSets should be listed.
+   * @param parent Required. The project from which ProductSets should be listed.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -501,8 +501,8 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the ProductSet to get.
-   *     <p>Format is: `projects/PROJECT_ID/locations/LOG_ID/productSets/PRODUCT_SET_ID`
+   * @param name Required. Resource name of the ProductSet to get.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ProductSet getProductSet(ProductSetName name) {
@@ -528,8 +528,8 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the ProductSet to get.
-   *     <p>Format is: `projects/PROJECT_ID/locations/LOG_ID/productSets/PRODUCT_SET_ID`
+   * @param name Required. Resource name of the ProductSet to get.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ProductSet getProductSet(String name) {
@@ -610,7 +610,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param productSet The ProductSet resource which replaces the one on the server.
+   * @param productSet Required. The ProductSet resource which replaces the one on the server.
    * @param updateMask The [FieldMask][google.protobuf.FieldMask] that specifies which fields to
    *     update. If update_mask isn't specified, all mutable fields are to be updated. Valid mask
    *     path is `display_name`.
@@ -706,7 +706,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the ProductSet to delete.
+   * @param name Required. Resource name of the ProductSet to delete.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -736,7 +736,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the ProductSet to delete.
+   * @param name Required. Resource name of the ProductSet to delete.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -825,9 +825,9 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The project in which the Product should be created.
+   * @param parent Required. The project in which the Product should be created.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
-   * @param product The product to create.
+   * @param product Required. The product to create.
    * @param productId A user-supplied resource id for this Product. If set, the server will attempt
    *     to use this value as the resource id. If it is already in use, an error is returned with
    *     code ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the character
@@ -865,9 +865,9 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The project in which the Product should be created.
+   * @param parent Required. The project in which the Product should be created.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
-   * @param product The product to create.
+   * @param product Required. The product to create.
    * @param productId A user-supplied resource id for this Product. If set, the server will attempt
    *     to use this value as the resource id. If it is already in use, an error is returned with
    *     code ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the character
@@ -968,7 +968,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The project OR ProductSet from which Products should be listed.
+   * @param parent Required. The project OR ProductSet from which Products should be listed.
    *     <p>Format: `projects/PROJECT_ID/locations/LOC_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -999,7 +999,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The project OR ProductSet from which Products should be listed.
+   * @param parent Required. The project OR ProductSet from which Products should be listed.
    *     <p>Format: `projects/PROJECT_ID/locations/LOC_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1118,7 +1118,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the Product to get.
+   * @param name Required. Resource name of the Product to get.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1145,7 +1145,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the Product to get.
+   * @param name Required. Resource name of the Product to get.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1233,11 +1233,11 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param product The Product resource which replaces the one on the server. product.name is
-   *     immutable.
+   * @param product Required. The Product resource which replaces the one on the server.
+   *     product.name is immutable.
    * @param updateMask The [FieldMask][google.protobuf.FieldMask] that specifies which fields to
    *     update. If update_mask isn't specified, all mutable fields are to be updated. Valid mask
-   *     paths include `product_labels`, `display_name` and `description`.
+   *     paths include `product_labels`, `display_name`, and `description`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Product updateProduct(Product product, FieldMask updateMask) {
@@ -1340,7 +1340,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of product to delete.
+   * @param name Required. Resource name of product to delete.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1371,7 +1371,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of product to delete.
+   * @param name Required. Resource name of product to delete.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1472,10 +1472,10 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the product in which to create the reference image.
+   * @param parent Required. Resource name of the product in which to create the reference image.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
-   * @param referenceImage The reference image to create. If an image ID is specified, it is
-   *     ignored.
+   * @param referenceImage Required. The reference image to create. If an image ID is specified, it
+   *     is ignored.
    * @param referenceImageId A user-supplied resource id for the ReferenceImage to be added. If set,
    *     the server will attempt to use this value as the resource id. If it is already in use, an
    *     error is returned with code ALREADY_EXISTS. Must be at most 128 characters long. It cannot
@@ -1524,10 +1524,10 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the product in which to create the reference image.
+   * @param parent Required. Resource name of the product in which to create the reference image.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
-   * @param referenceImage The reference image to create. If an image ID is specified, it is
-   *     ignored.
+   * @param referenceImage Required. The reference image to create. If an image ID is specified, it
+   *     is ignored.
    * @param referenceImageId A user-supplied resource id for the ReferenceImage to be added. If set,
    *     the server will attempt to use this value as the resource id. If it is already in use, an
    *     error is returned with code ALREADY_EXISTS. Must be at most 128 characters long. It cannot
@@ -1653,7 +1653,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the reference image to delete.
+   * @param name Required. The resource name of the reference image to delete.
    *     <p>Format is:
    *     <p>`projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1688,7 +1688,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the reference image to delete.
+   * @param name Required. The resource name of the reference image to delete.
    *     <p>Format is:
    *     <p>`projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1782,7 +1782,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the product containing the reference images.
+   * @param parent Required. Resource name of the product containing the reference images.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1814,7 +1814,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the product containing the reference images.
+   * @param parent Required. Resource name of the product containing the reference images.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1939,7 +1939,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the ReferenceImage to get.
+   * @param name Required. The resource name of the ReferenceImage to get.
    *     <p>Format is:
    *     <p>`projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1969,7 +1969,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name of the ReferenceImage to get.
+   * @param name Required. The resource name of the ReferenceImage to get.
    *     <p>Format is:
    *     <p>`projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2053,9 +2053,9 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name for the ProductSet to modify.
+   * @param name Required. The resource name for the ProductSet to modify.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
-   * @param product The resource name for the Product to be added to this ProductSet.
+   * @param product Required. The resource name for the Product to be added to this ProductSet.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2089,9 +2089,9 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name for the ProductSet to modify.
+   * @param name Required. The resource name for the ProductSet to modify.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
-   * @param product The resource name for the Product to be added to this ProductSet.
+   * @param product Required. The resource name for the Product to be added to this ProductSet.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2183,9 +2183,9 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name for the ProductSet to modify.
+   * @param name Required. The resource name for the ProductSet to modify.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
-   * @param product The resource name for the Product to be removed from this ProductSet.
+   * @param product Required. The resource name for the Product to be removed from this ProductSet.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2216,9 +2216,9 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The resource name for the ProductSet to modify.
+   * @param name Required. The resource name for the ProductSet to modify.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
-   * @param product The resource name for the Product to be removed from this ProductSet.
+   * @param product Required. The resource name for the Product to be removed from this ProductSet.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2306,7 +2306,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The ProductSet resource for which to retrieve Products.
+   * @param name Required. The ProductSet resource for which to retrieve Products.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2338,7 +2338,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The ProductSet resource for which to retrieve Products.
+   * @param name Required. The ProductSet resource for which to retrieve Products.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2470,9 +2470,9 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The project in which the ProductSets should be imported.
+   * @param parent Required. The project in which the ProductSets should be imported.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
-   * @param inputConfig The input content for the list of requests.
+   * @param inputConfig Required. The input content for the list of requests.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -2511,9 +2511,9 @@ public class ProductSearchClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The project in which the ProductSets should be imported.
+   * @param parent Required. The project in which the ProductSets should be imported.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
-   * @param inputConfig The input content for the list of requests.
+   * @param inputConfig Required. The input content for the list of requests.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(

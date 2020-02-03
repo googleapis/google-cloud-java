@@ -1180,12 +1180,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The category for the product identified by the reference image. This should
-   * be either "homegoods" or "apparel".
-   * This field is immutable.
+   * Immutable. The category for the product identified by the reference image. This should
+   * be either "homegoods-v2", "apparel-v2", or "toys-v2". The legacy categories
+   * "homegoods", "apparel", and "toys" are still supported, but these should
+   * not be used for new products.
    * </pre>
    *
-   * <code>string product_category = 4;</code>
+   * <code>string product_category = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The productCategory.
    */
@@ -1204,12 +1205,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The category for the product identified by the reference image. This should
-   * be either "homegoods" or "apparel".
-   * This field is immutable.
+   * Immutable. The category for the product identified by the reference image. This should
+   * be either "homegoods-v2", "apparel-v2", or "toys-v2". The legacy categories
+   * "homegoods", "apparel", and "toys" are still supported, but these should
+   * not be used for new products.
    * </pre>
    *
-   * <code>string product_category = 4;</code>
+   * <code>string product_category = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The bytes for productCategory.
    */
@@ -2090,12 +2092,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The category for the product identified by the reference image. This should
-     * be either "homegoods" or "apparel".
-     * This field is immutable.
+     * Immutable. The category for the product identified by the reference image. This should
+     * be either "homegoods-v2", "apparel-v2", or "toys-v2". The legacy categories
+     * "homegoods", "apparel", and "toys" are still supported, but these should
+     * not be used for new products.
      * </pre>
      *
-     * <code>string product_category = 4;</code>
+     * <code>string product_category = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The productCategory.
      */
@@ -2114,12 +2117,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The category for the product identified by the reference image. This should
-     * be either "homegoods" or "apparel".
-     * This field is immutable.
+     * Immutable. The category for the product identified by the reference image. This should
+     * be either "homegoods-v2", "apparel-v2", or "toys-v2". The legacy categories
+     * "homegoods", "apparel", and "toys" are still supported, but these should
+     * not be used for new products.
      * </pre>
      *
-     * <code>string product_category = 4;</code>
+     * <code>string product_category = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The bytes for productCategory.
      */
@@ -2138,12 +2142,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The category for the product identified by the reference image. This should
-     * be either "homegoods" or "apparel".
-     * This field is immutable.
+     * Immutable. The category for the product identified by the reference image. This should
+     * be either "homegoods-v2", "apparel-v2", or "toys-v2". The legacy categories
+     * "homegoods", "apparel", and "toys" are still supported, but these should
+     * not be used for new products.
      * </pre>
      *
-     * <code>string product_category = 4;</code>
+     * <code>string product_category = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @param value The productCategory to set.
      * @return This builder for chaining.
@@ -2161,12 +2166,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The category for the product identified by the reference image. This should
-     * be either "homegoods" or "apparel".
-     * This field is immutable.
+     * Immutable. The category for the product identified by the reference image. This should
+     * be either "homegoods-v2", "apparel-v2", or "toys-v2". The legacy categories
+     * "homegoods", "apparel", and "toys" are still supported, but these should
+     * not be used for new products.
      * </pre>
      *
-     * <code>string product_category = 4;</code>
+     * <code>string product_category = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return This builder for chaining.
      */
@@ -2180,12 +2186,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The category for the product identified by the reference image. This should
-     * be either "homegoods" or "apparel".
-     * This field is immutable.
+     * Immutable. The category for the product identified by the reference image. This should
+     * be either "homegoods-v2", "apparel-v2", or "toys-v2". The legacy categories
+     * "homegoods", "apparel", and "toys" are still supported, but these should
+     * not be used for new products.
      * </pre>
      *
-     * <code>string product_category = 4;</code>
+     * <code>string product_category = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @param value The bytes for productCategory to set.
      * @return This builder for chaining.

@@ -502,7 +502,7 @@ public class ProductSearchClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. Resource name of the ProductSet to get.
-   *     <p>Format is: `projects/PROJECT_ID/locations/LOG_ID/productSets/PRODUCT_SET_ID`
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ProductSet getProductSet(ProductSetName name) {
@@ -529,7 +529,7 @@ public class ProductSearchClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. Resource name of the ProductSet to get.
-   *     <p>Format is: `projects/PROJECT_ID/locations/LOG_ID/productSets/PRODUCT_SET_ID`
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ProductSet getProductSet(String name) {

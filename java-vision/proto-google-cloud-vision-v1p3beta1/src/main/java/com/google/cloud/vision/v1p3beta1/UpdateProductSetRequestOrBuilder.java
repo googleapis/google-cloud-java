@@ -27,10 +27,12 @@ public interface UpdateProductSetRequestOrBuilder
    *
    *
    * <pre>
-   * The ProductSet resource which replaces the one on the server.
+   * Required. The ProductSet resource which replaces the one on the server.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 1;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the productSet field is set.
    */
@@ -39,10 +41,12 @@ public interface UpdateProductSetRequestOrBuilder
    *
    *
    * <pre>
-   * The ProductSet resource which replaces the one on the server.
+   * Required. The ProductSet resource which replaces the one on the server.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 1;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The productSet.
    */
@@ -51,10 +55,12 @@ public interface UpdateProductSetRequestOrBuilder
    *
    *
    * <pre>
-   * The ProductSet resource which replaces the one on the server.
+   * Required. The ProductSet resource which replaces the one on the server.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 1;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1p3beta1.ProductSetOrBuilder getProductSetOrBuilder();
 

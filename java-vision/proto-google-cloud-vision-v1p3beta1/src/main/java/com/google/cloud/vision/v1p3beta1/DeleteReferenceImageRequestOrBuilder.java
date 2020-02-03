@@ -27,12 +27,14 @@ public interface DeleteReferenceImageRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the reference image to delete.
+   * Required. The resource name of the reference image to delete.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -41,12 +43,14 @@ public interface DeleteReferenceImageRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the reference image to delete.
+   * Required. The resource name of the reference image to delete.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

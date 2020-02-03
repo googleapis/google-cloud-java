@@ -141,12 +141,14 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Resource name of the product in which to create the reference image.
+   * Required. Resource name of the product in which to create the reference image.
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -165,12 +167,14 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Resource name of the product in which to create the reference image.
+   * Required. Resource name of the product in which to create the reference image.
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -192,11 +196,13 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The reference image to create.
+   * Required. The reference image to create.
    * If an image ID is specified, it is ignored.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the referenceImage field is set.
    */
@@ -207,11 +213,13 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The reference image to create.
+   * Required. The reference image to create.
    * If an image ID is specified, it is ignored.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The referenceImage.
    */
@@ -224,11 +232,13 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The reference image to create.
+   * Required. The reference image to create.
    * If an image ID is specified, it is ignored.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder getReferenceImageOrBuilder() {
     return getReferenceImage();
@@ -658,12 +668,14 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Resource name of the product in which to create the reference image.
+     * Required. Resource name of the product in which to create the reference image.
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -682,12 +694,14 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Resource name of the product in which to create the reference image.
+     * Required. Resource name of the product in which to create the reference image.
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -706,12 +720,14 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Resource name of the product in which to create the reference image.
+     * Required. Resource name of the product in which to create the reference image.
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -729,12 +745,14 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Resource name of the product in which to create the reference image.
+     * Required. Resource name of the product in which to create the reference image.
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -748,12 +766,14 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Resource name of the product in which to create the reference image.
+     * Required. Resource name of the product in which to create the reference image.
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -779,11 +799,13 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The reference image to create.
+     * Required. The reference image to create.
      * If an image ID is specified, it is ignored.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the referenceImage field is set.
      */
@@ -794,11 +816,13 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The reference image to create.
+     * Required. The reference image to create.
      * If an image ID is specified, it is ignored.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The referenceImage.
      */
@@ -815,11 +839,13 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The reference image to create.
+     * Required. The reference image to create.
      * If an image ID is specified, it is ignored.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setReferenceImage(com.google.cloud.vision.v1p3beta1.ReferenceImage value) {
       if (referenceImageBuilder_ == null) {
@@ -838,11 +864,13 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The reference image to create.
+     * Required. The reference image to create.
      * If an image ID is specified, it is ignored.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setReferenceImage(
         com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder builderForValue) {
@@ -859,11 +887,13 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The reference image to create.
+     * Required. The reference image to create.
      * If an image ID is specified, it is ignored.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeReferenceImage(com.google.cloud.vision.v1p3beta1.ReferenceImage value) {
       if (referenceImageBuilder_ == null) {
@@ -886,11 +916,13 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The reference image to create.
+     * Required. The reference image to create.
      * If an image ID is specified, it is ignored.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearReferenceImage() {
       if (referenceImageBuilder_ == null) {
@@ -907,11 +939,13 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The reference image to create.
+     * Required. The reference image to create.
      * If an image ID is specified, it is ignored.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder getReferenceImageBuilder() {
 
@@ -922,11 +956,13 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The reference image to create.
+     * Required. The reference image to create.
      * If an image ID is specified, it is ignored.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder getReferenceImageOrBuilder() {
       if (referenceImageBuilder_ != null) {
@@ -941,11 +977,13 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The reference image to create.
+     * Required. The reference image to create.
      * If an image ID is specified, it is ignored.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p3beta1.ReferenceImage,

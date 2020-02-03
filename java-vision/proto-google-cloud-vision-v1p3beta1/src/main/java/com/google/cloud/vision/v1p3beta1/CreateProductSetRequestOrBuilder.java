@@ -27,11 +27,13 @@ public interface CreateProductSetRequestOrBuilder
    *
    *
    * <pre>
-   * The project in which the ProductSet should be created.
+   * Required. The project in which the ProductSet should be created.
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -40,11 +42,13 @@ public interface CreateProductSetRequestOrBuilder
    *
    *
    * <pre>
-   * The project in which the ProductSet should be created.
+   * Required. The project in which the ProductSet should be created.
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -54,10 +58,12 @@ public interface CreateProductSetRequestOrBuilder
    *
    *
    * <pre>
-   * The ProductSet to create.
+   * Required. The ProductSet to create.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the productSet field is set.
    */
@@ -66,10 +72,12 @@ public interface CreateProductSetRequestOrBuilder
    *
    *
    * <pre>
-   * The ProductSet to create.
+   * Required. The ProductSet to create.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The productSet.
    */
@@ -78,10 +86,12 @@ public interface CreateProductSetRequestOrBuilder
    *
    *
    * <pre>
-   * The ProductSet to create.
+   * Required. The ProductSet to create.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSet product_set = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p3beta1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1p3beta1.ProductSetOrBuilder getProductSetOrBuilder();
 

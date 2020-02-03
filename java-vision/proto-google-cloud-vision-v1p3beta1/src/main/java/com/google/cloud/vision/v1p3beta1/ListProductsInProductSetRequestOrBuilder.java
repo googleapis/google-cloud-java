@@ -27,12 +27,14 @@ public interface ListProductsInProductSetRequestOrBuilder
    *
    *
    * <pre>
-   * The ProductSet resource for which to retrieve Products.
+   * Required. The ProductSet resource for which to retrieve Products.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -41,12 +43,14 @@ public interface ListProductsInProductSetRequestOrBuilder
    *
    *
    * <pre>
-   * The ProductSet resource for which to retrieve Products.
+   * Required. The ProductSet resource for which to retrieve Products.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

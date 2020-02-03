@@ -27,12 +27,14 @@ public interface ListProductsRequestOrBuilder
    *
    *
    * <pre>
-   * The project OR ProductSet from which Products should be listed.
+   * Required. The project OR ProductSet from which Products should be listed.
    * Format:
    * `projects/PROJECT_ID/locations/LOC_ID`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -41,12 +43,14 @@ public interface ListProductsRequestOrBuilder
    *
    *
    * <pre>
-   * The project OR ProductSet from which Products should be listed.
+   * Required. The project OR ProductSet from which Products should be listed.
    * Format:
    * `projects/PROJECT_ID/locations/LOC_ID`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
