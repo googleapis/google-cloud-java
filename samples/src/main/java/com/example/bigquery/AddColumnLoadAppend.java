@@ -16,7 +16,7 @@
 
 package com.example.bigquery;
 
-// [START bigquery_relax_column_load_append]
+// [START bigquery_add_column_load_append]
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
@@ -98,4 +98,4 @@ public class AddColumnLoadAppend {
     }
   }
 }
-// [END bigquery_relax_column_load_append]
+// [END bigquery_add_column_load_append]
