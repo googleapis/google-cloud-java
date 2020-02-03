@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-01-31T08:50:22.193816Z",
+  "updateTime": "2020-02-01T08:50:33.307509Z",
   "sources": [
     {
       "generator": {
@@ -13,8 +13,7 @@
         "name": "googleapis-private",
         "remote": "https://github.com/googleapis/googleapis-private.git",
         "sha": "7a4d8813b6b6c78b8d6dbcda6cd5a8abbc43604e",
-        "internalRef": "292467007",
-        "log": "7a4d8813b6b6c78b8d6dbcda6cd5a8abbc43604e\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 292467007\n\n"
+        "internalRef": "292467007"
       }
     },
     {
