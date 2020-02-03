@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.122.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.121.0...v0.122.0) (2020-02-03)
+
+
+### Features
+
+* re-generated  to pick up changes in the API or client library generator. ([#49](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/49)) ([44d2463](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/44d2463bcb679569a27f4d7d7764a87c9dd0c378))
+
+
+### Dependencies
+
+* update core dependencies to v1.53.0 ([#34](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/34)) ([4ef9dd5](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/4ef9dd5bb5b2e734ca79adf92e0cc310ac7ff11e))
+* update core dependencies to v1.53.1 ([#48](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/48)) ([e2d91c0](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/e2d91c0e5331a83b38f7e4b21706896ab7e77bf6))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#50](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/50)) ([ad5b7d9](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/ad5b7d98914349e47c351b8e5103505faf1e2c2d))
+* update dependency io.grpc:grpc-bom to v1.27.0 ([#45](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/45)) ([abd8c66](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/abd8c66b3493dd24ffa682eca3d7551906e37dec))
+* update dependency org.threeten:threetenbp to v1.4.1 ([c8ccb1e](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/c8ccb1eba1464989ea799fa4b0c2d6cf5acec109))
+
 ## [0.121.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/0.120.0...v0.121.0) (2020-01-08)
 
 
