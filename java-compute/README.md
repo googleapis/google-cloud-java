@@ -57,7 +57,7 @@ libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "0.117.0-al
 Example Application
 -------------------
 
-[`ComputeExample`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/v1/ComputeExample.java)
+[`ComputeExample`](https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/compute/v1/ComputeExample.java)
 is a simple command line interface that provides some of Google Cloud Compute Engine's
 functionality. Read more about using the application on the
 [`ComputeExample` docs page](https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/examples/compute/ComputeExample.html).
