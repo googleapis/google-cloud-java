@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.106.0](https://www.github.com/googleapis/java-bigquery/compare/v1.105.0...v1.106.0) (2020-02-03)
+
+
+### Features
+
+* re-generated  to pick up changes in the API or client library generator. ([#146](https://www.github.com/googleapis/java-bigquery/issues/146)) ([8b5a2e2](https://www.github.com/googleapis/java-bigquery/commit/8b5a2e23fbc043d323ce1e07f40ceb2886ec7697))
+
+
+### Bug Fixes
+
+* missing fields in tablefield ([#143](https://www.github.com/googleapis/java-bigquery/issues/143)) ([1f719fb](https://www.github.com/googleapis/java-bigquery/commit/1f719fb5dda9bd0198004c9622614ab469d1b2ea))
+
+
+### Dependencies
+
+* bump hamcrest dep version and artifactId ([#136](https://www.github.com/googleapis/java-bigquery/issues/136)) ([fc255cd](https://www.github.com/googleapis/java-bigquery/commit/fc255cd320735b24b1105d0512d6e1d20f95d031))
+* update core dependencies ([#122](https://www.github.com/googleapis/java-bigquery/issues/122)) ([41ec3a7](https://www.github.com/googleapis/java-bigquery/commit/41ec3a7773b546b49b9983a6fee73d7581b9b9d6))
+* update core dependencies ([#144](https://www.github.com/googleapis/java-bigquery/issues/144)) ([c6622b8](https://www.github.com/googleapis/java-bigquery/commit/c6622b814a84e8b05ad35e87e9bf55611fb8bb28))
+* update dependency com.google.cloud:google-cloud-storage to v1.103.1 ([#130](https://www.github.com/googleapis/java-bigquery/issues/130)) ([e30b3d7](https://www.github.com/googleapis/java-bigquery/commit/e30b3d7701d3d255fe5e32d6b25a5b28f7fd94e0))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#147](https://www.github.com/googleapis/java-bigquery/issues/147)) ([e619233](https://www.github.com/googleapis/java-bigquery/commit/e619233c9309a4b2f16f117017df53ec997b898e))
+
 ## [1.105.0](https://www.github.com/googleapis/java-bigquery/compare/v1.104.0...v1.105.0) (2020-01-28)
 
 
