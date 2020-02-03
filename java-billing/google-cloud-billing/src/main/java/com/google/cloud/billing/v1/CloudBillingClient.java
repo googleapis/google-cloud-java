@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -177,7 +177,6 @@ public class CloudBillingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BillingAccount getBillingAccount(BillingAccountName name) {
-
     GetBillingAccountRequest request =
         GetBillingAccountRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -204,7 +203,6 @@ public class CloudBillingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BillingAccount getBillingAccount(String name) {
-
     GetBillingAccountRequest request = GetBillingAccountRequest.newBuilder().setName(name).build();
     return getBillingAccount(request);
   }
@@ -276,7 +274,6 @@ public class CloudBillingClient implements BackgroundResource {
    */
   public final ListBillingAccountsPagedResponse listBillingAccounts() {
     ListBillingAccountsRequest request = ListBillingAccountsRequest.newBuilder().build();
-
     return listBillingAccounts(request);
   }
 
@@ -381,7 +378,6 @@ public class CloudBillingClient implements BackgroundResource {
    */
   public final BillingAccount updateBillingAccount(
       BillingAccountName name, BillingAccount account) {
-
     UpdateBillingAccountRequest request =
         UpdateBillingAccountRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -413,7 +409,6 @@ public class CloudBillingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BillingAccount updateBillingAccount(String name, BillingAccount account) {
-
     UpdateBillingAccountRequest request =
         UpdateBillingAccountRequest.newBuilder().setName(name).setAccount(account).build();
     return updateBillingAccount(request);
@@ -501,7 +496,6 @@ public class CloudBillingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BillingAccount createBillingAccount(BillingAccount billingAccount) {
-
     CreateBillingAccountRequest request =
         CreateBillingAccountRequest.newBuilder().setBillingAccount(billingAccount).build();
     return createBillingAccount(request);
@@ -728,7 +722,6 @@ public class CloudBillingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ProjectBillingInfo getProjectBillingInfo(String name) {
-
     GetProjectBillingInfoRequest request =
         GetProjectBillingInfoRequest.newBuilder().setName(name).build();
     return getProjectBillingInfo(request);
@@ -830,7 +823,6 @@ public class CloudBillingClient implements BackgroundResource {
    */
   public final ProjectBillingInfo updateProjectBillingInfo(
       String name, ProjectBillingInfo projectBillingInfo) {
-
     UpdateProjectBillingInfoRequest request =
         UpdateProjectBillingInfoRequest.newBuilder()
             .setName(name)
@@ -954,7 +946,6 @@ public class CloudBillingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(ResourceName resource) {
-
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -982,7 +973,6 @@ public class CloudBillingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(String resource) {
-
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
     return getIamPolicy(request);
   }
@@ -1061,7 +1051,6 @@ public class CloudBillingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(ResourceName resource, Policy policy) {
-
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1095,7 +1084,6 @@ public class CloudBillingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(String resource, Policy policy) {
-
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
     return setIamPolicy(request);
@@ -1181,7 +1169,6 @@ public class CloudBillingClient implements BackgroundResource {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       ResourceName resource, List<String> permissions) {
-
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1215,7 +1202,6 @@ public class CloudBillingClient implements BackgroundResource {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       String resource, List<String> permissions) {
-
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource)
