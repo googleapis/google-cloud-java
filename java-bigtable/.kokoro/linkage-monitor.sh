@@ -23,7 +23,12 @@ cd github/java-bigtable/
 java -version
 echo ${JOB_TYPE}
 
-mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V
+mvn install -B -V \
+  -DskipTests=true \
+  -Dclirr.skip=true \
+  -Denforcer.skip=true \
+  -Dmaven.javadoc.skip=true \
+  -Dgcloud.download.skip=true
 
 # Kokoro job cloud-opensource-java/ubuntu/linkage-monitor-gcs creates this JAR
 JAR=linkage-monitor-latest-all-deps.jar
