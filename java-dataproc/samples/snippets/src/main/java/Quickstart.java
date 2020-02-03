@@ -15,6 +15,19 @@
  */
 
 // [START dataproc_quickstart]
+/* This quickstart sample walks a user through creating a Cloud Dataproc
+ * cluster, submitting a PySpark job from Google Cloud Storage to the
+ * cluster, reading the output of the job and deleting the cluster, all
+ * using the Java client library.
+ *
+ * Usage:
+ *     mvn clean package -DskipTests
+ *
+ *     mvn exec:java -Dexec.args="<PROJECT_ID> <REGION> <CLUSTER_NAME> <GCS_JOB_FILE_PATH>"
+ *
+ *     You can also set these arguments in the main function instead of providing them via the CLI.
+ */
+
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.dataproc.v1.Cluster;
 import com.google.cloud.dataproc.v1.ClusterConfig;
@@ -60,15 +73,6 @@ public class Quickstart {
     }
   }
 
-  public static void quickstart() throws IOException, InterruptedException {
-    // TODO(developer): Replace these variables before running the sample.
-    String projectId = "your-project-id";
-    String region = "your-project-region";
-    String clusterName = "your-cluster-name";
-    String jobFilePath = "your-job-file-path";
-    quickstart(projectId, region, clusterName, jobFilePath);
-  }
-
   public static void quickstart(
       String projectId, String region, String clusterName, String jobFilePath)
       throws IOException, InterruptedException {
@@ -82,10 +86,10 @@ public class Quickstart {
     JobControllerSettings jobControllerSettings =
         JobControllerSettings.newBuilder().setEndpoint(myEndpoint).build();
 
-    // Create both a cluster controller client and job controller client with the configured
-    // settings. The client only needs to be created once and can be reused for multiple requests.
-    // Using a try-with-resources closes the client, but this can also be done manually with
-    // the .close() method.
+    // Create both a cluster controller client and job controller client with the
+    // configured settings. The client only needs to be created once and can be reused for
+    // multiple requests. Using a try-with-resources closes the client, but this can also be done
+    // manually with the .close() method.
     try (ClusterControllerClient clusterControllerClient =
             ClusterControllerClient.create(clusterControllerSettings);
         JobControllerClient jobControllerClient =
@@ -114,7 +118,8 @@ public class Quickstart {
       OperationFuture<Cluster, ClusterOperationMetadata> createClusterAsyncRequest =
           clusterControllerClient.createClusterAsync(projectId, region, cluster);
       Cluster response = createClusterAsyncRequest.get();
-      System.out.printf("Cluster created successfully: %s", response.getClusterName());
+      System.out.println(
+          String.format("Cluster created successfully: %s", response.getClusterName()));
 
       // Configure the settings for our job.
       JobPlacement jobPlacement = JobPlacement.newBuilder().setClusterName(clusterName).build();
@@ -133,7 +138,7 @@ public class Quickstart {
       int timeout = 10;
       try {
         Job jobInfo = finishedJobFuture.get(timeout, TimeUnit.MINUTES);
-        System.out.printf("Job %s finished successfully.", jobId);
+        System.out.println(String.format("Job %s finished successfully.", jobId));
 
         // Cloud Dataproc job output gets saved to a GCS bucket allocated to it.
         Cluster clusterInfo = clusterControllerClient.getCluster(projectId, region, clusterName);
@@ -162,6 +167,22 @@ public class Quickstart {
     } catch (ExecutionException e) {
       System.err.println(String.format("Error executing quickstart: %s ", e.getMessage()));
     }
+  }
+
+  public static void main(String... args) throws IOException, InterruptedException {
+    if (args.length != 4) {
+      System.err.println(
+          "Insufficient number of parameters provided. Please make sure a "
+              + "PROJECT_ID, REGION, CLUSTER_NAME and JOB_FILE_PATH are provided, in this order.");
+      return;
+    }
+
+    String projectId = args[0]; // project-id of project to create the cluster in
+    String region = args[1]; // region to create the cluster
+    String clusterName = args[2]; // name of the cluster
+    String jobFilePath = args[3]; // location in GCS of the PySpark job
+
+    quickstart(projectId, region, clusterName, jobFilePath);
   }
 }
 // [END dataproc_quickstart]

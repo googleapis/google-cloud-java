@@ -88,7 +88,7 @@ public class QuickstartTest {
 
   @Test
   public void quickstartTest() throws IOException, InterruptedException {
-    Quickstart.quickstart(PROJECT_ID, REGION, CLUSTER_NAME, JOB_FILE_PATH);
+    Quickstart.main(PROJECT_ID, REGION, CLUSTER_NAME, JOB_FILE_PATH);
     String output = bout.toString();
 
     assertThat(output, CoreMatchers.containsString("Cluster created successfully"));
