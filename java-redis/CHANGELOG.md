@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.118.1](https://www.github.com/googleapis/java-redis/compare/v0.118.0...v0.118.1) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#28](https://www.github.com/googleapis/java-redis/issues/28)) ([b80c0fc](https://www.github.com/googleapis/java-redis/commit/b80c0fc6d61f395480fd26bb53c7de77c0ca312c))
+* update dependency com.google.protobuf:protobuf-bom to v3.11.3 ([#49](https://www.github.com/googleapis/java-redis/issues/49)) ([5821e9c](https://www.github.com/googleapis/java-redis/commit/5821e9caecf10e5afc3b8e6466bd041e3337408b))
+
 ## [0.118.0](https://www.github.com/googleapis/java-redis/compare/v0.117.1...v0.118.0) (2020-01-23)
 
 
