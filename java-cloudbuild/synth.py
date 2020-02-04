@@ -43,9 +43,4 @@ for version in versions:
     java.format_code(f'grpc-google-cloud-build-{version}/src')
     java.format_code(f'proto-google-cloud-build-{version}/src')
 
-common_templates = gcp.CommonTemplates()
-templates = common_templates.java_library()
-s.copy(templates, excludes=[
-  'README.md',
-])
-
+java.common_templates()
