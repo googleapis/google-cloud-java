@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.2.1](https://www.github.com/googleapis/java-billingbudgets/compare/v0.2.0...v0.2.1) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#68](https://www.github.com/googleapis/java-billingbudgets/issues/68)) ([bd8d76e](https://www.github.com/googleapis/java-billingbudgets/commit/bd8d76e68547e48e4a7a15dd469bbcda2119949f))
+* update core dependencies to v1.92.3 ([#66](https://www.github.com/googleapis/java-billingbudgets/issues/66)) ([c6d4f8d](https://www.github.com/googleapis/java-billingbudgets/commit/c6d4f8d160301a2b07356819aaa11e96e53c8be9))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#37](https://www.github.com/googleapis/java-billingbudgets/issues/37)) ([79cce94](https://www.github.com/googleapis/java-billingbudgets/commit/79cce945cec628a659bd754b0ec1d762e43b69ff))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#70](https://www.github.com/googleapis/java-billingbudgets/issues/70)) ([ef6b9df](https://www.github.com/googleapis/java-billingbudgets/commit/ef6b9df5e63646e60016c0c717ddd1a957255fc8))
+* update dependency io.grpc:grpc-bom to v1.27.0 ([#65](https://www.github.com/googleapis/java-billingbudgets/issues/65)) ([df339fd](https://www.github.com/googleapis/java-billingbudgets/commit/df339fddc489cbf098469d805478c965e6482eec))
+* update dependency org.easymock:easymock to v4.2 ([#63](https://www.github.com/googleapis/java-billingbudgets/issues/63)) ([b1cff70](https://www.github.com/googleapis/java-billingbudgets/commit/b1cff706bf283a35ae4e55a22b70f302fc03c823))
+
 ## [0.2.0](https://www.github.com/googleapis/java-billingbudgets/compare/v0.1.2...v0.2.0) (2020-01-24)
 
 
