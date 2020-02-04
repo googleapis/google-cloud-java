@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gameservices-bom</artifactId>
-  <version>0.18.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-gameservices:current} -->
+  <version>0.19.0</version><!-- {x-version-update:google-cloud-gameservices:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -64,17 +64,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-gameservices-v1alpha</artifactId>
-        <version>0.18.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gameservices-v1alpha:current} -->
+        <version>0.19.0</version><!-- {x-version-update:proto-google-cloud-gameservices-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gameservices</artifactId>
-        <version>0.18.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-gameservices:current} -->
+        <version>0.19.0</version><!-- {x-version-update:google-cloud-gameservices:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-gameservices-v1alpha</artifactId>
-        <version>0.18.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gameservices-v1alpha:current} -->
+        <version>0.19.0</version><!-- {x-version-update:grpc-google-cloud-gameservices-v1alpha:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
