@@ -52,7 +52,7 @@ libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "1.106.0"
 
 Example Application
 -------------------
-- [`BigQueryExample`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality.
+- [`BigQueryExample`](https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality.
 Read more about using this application on the [`BigQueryExample` docs page](https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/examples/bigquery/BigQueryExample.html).
 
 Authentication
@@ -205,7 +205,7 @@ for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
 #### Complete source code
 
 In
-[InsertDataAndQueryTable.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/InsertDataAndQueryTable.java)
+[InsertDataAndQueryTable.java](https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/InsertDataAndQueryTable.java)
 we put together all the code shown above into one program. The program assumes that you are
 running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
