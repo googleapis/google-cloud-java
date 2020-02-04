@@ -10,5 +10,7 @@
   "repo": "googleapis/java-video-intelligence",
   "repo_short": "java-video-intelligence",
   "distribution_name": "com.google.cloud:google-cloud-video-intelligence",
-  "api_id": "videointelligence.googleapis.com"
+  "api_id": "videointelligence.googleapis.com",
+  "transport": "grpc",
+  "requires_billing": true
 }
