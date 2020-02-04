@@ -1,5 +1,16 @@
 # Changelog
 
+### [0.117.1](https://www.github.com/googleapis/java-iot/compare/v0.117.0...v0.117.1) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#41](https://www.github.com/googleapis/java-iot/issues/41)) ([8f9ffa9](https://www.github.com/googleapis/java-iot/commit/8f9ffa90245a86a947b5969cfab4c64506a8c195))
+* update core dependencies ([#56](https://www.github.com/googleapis/java-iot/issues/56)) ([7727de7](https://www.github.com/googleapis/java-iot/commit/7727de7968c141218bf167287d779e7615687578))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#39](https://www.github.com/googleapis/java-iot/issues/39)) ([fe1bddc](https://www.github.com/googleapis/java-iot/commit/fe1bddc373ca7ba4754c7a9c1182ef8b9026d41a))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#58](https://www.github.com/googleapis/java-iot/issues/58)) ([81a6775](https://www.github.com/googleapis/java-iot/commit/81a6775a88f0b88c2a6fc66a031c90e3d73174ae))
+* update dependency org.threeten:threetenbp to v1.4.1 ([b337cae](https://www.github.com/googleapis/java-iot/commit/b337cae09704b0451c23e01da69ce4080478c317))
+
 ## [0.117.0](https://www.github.com/googleapis/java-iot/compare/v0.116.0...v0.117.0) (2020-01-07)
 
 
