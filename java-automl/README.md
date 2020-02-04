@@ -17,7 +17,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>3.4.0</version>
+      <version>3.5.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -63,7 +63,7 @@ See the [Authentication][authentication] section in the base directory's README.
 ### Prerequisites
 
 You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Auto ML [API enabled][enable-api].
-
+You will need to [enable billing][enable-billing] to use Google Cloud Auto ML.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -76,7 +76,7 @@ to add `google-cloud-automl` as a dependency in your code.
 ## About Cloud Auto ML
 
 
-[Cloud Auto ML][product-docs] 
+[Cloud Auto ML][product-docs] makes the power of machine learning available to you even if you have limited knowledge of machine learning. You can use AutoML to build on Google's machine learning capabilities to create your own custom machine learning models that are tailored to your business needs, and then integrate those models into your applications and web sites.
 
 See the [Cloud Auto ML client library docs][javadocs] to learn how to
 use this Cloud Auto ML Client Library.
@@ -87,6 +87,10 @@ use this Cloud Auto ML Client Library.
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
+
+## Transport
+
+Cloud Auto ML uses gRPC for the transport layer.
 
 ## Java Versions
 
@@ -124,7 +128,7 @@ Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 [product-docs]: https://cloud.google.com/automl/docs/
-[javadocs]: https://googleapis.dev/java/google-cloud-automl/latest/index.html
+[javadocs]: https://googleapis.dev/java/google-cloud-automl/latest/
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-automl/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-automl/java7.html
 [kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-automl/java8.svg
@@ -146,6 +150,6 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [contributing]: https://github.com/googleapis/java-automl/blob/master/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/java-automl/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/java-automl/blob/master/LICENSE
-
+[enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=automl.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
