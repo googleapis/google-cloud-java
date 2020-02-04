@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquerystorage-parent</artifactId>
-    <version>0.121.0-beta</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
+    <version>0.121.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
   </parent>
   <dependencies>
     <dependency>
