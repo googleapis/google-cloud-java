@@ -133,11 +133,13 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -156,11 +158,13 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -182,7 +186,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The new data to be added to a list of time series.
+   * Required. The new data to be added to a list of time series.
    * Adds at most one data point to each of several time series.  The new data
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
@@ -190,7 +194,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+   * <code>
+   * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.monitoring.v3.TimeSeries> getTimeSeriesList() {
     return timeSeries_;
@@ -199,7 +205,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The new data to be added to a list of time series.
+   * Required. The new data to be added to a list of time series.
    * Adds at most one data point to each of several time series.  The new data
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
@@ -207,7 +213,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+   * <code>
+   * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<? extends com.google.monitoring.v3.TimeSeriesOrBuilder>
       getTimeSeriesOrBuilderList() {
@@ -217,7 +225,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The new data to be added to a list of time series.
+   * Required. The new data to be added to a list of time series.
    * Adds at most one data point to each of several time series.  The new data
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
@@ -225,7 +233,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+   * <code>
+   * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getTimeSeriesCount() {
     return timeSeries_.size();
@@ -234,7 +244,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The new data to be added to a list of time series.
+   * Required. The new data to be added to a list of time series.
    * Adds at most one data point to each of several time series.  The new data
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
@@ -242,7 +252,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+   * <code>
+   * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.monitoring.v3.TimeSeries getTimeSeries(int index) {
     return timeSeries_.get(index);
@@ -251,7 +263,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The new data to be added to a list of time series.
+   * Required. The new data to be added to a list of time series.
    * Adds at most one data point to each of several time series.  The new data
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
@@ -259,7 +271,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+   * <code>
+   * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.monitoring.v3.TimeSeriesOrBuilder getTimeSeriesOrBuilder(int index) {
     return timeSeries_.get(index);
@@ -645,11 +659,13 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -668,11 +684,13 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -691,11 +709,13 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -713,11 +733,13 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -731,11 +753,13 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -771,7 +795,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -779,7 +803,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.monitoring.v3.TimeSeries> getTimeSeriesList() {
       if (timeSeriesBuilder_ == null) {
@@ -792,7 +818,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -800,7 +826,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getTimeSeriesCount() {
       if (timeSeriesBuilder_ == null) {
@@ -813,7 +841,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -821,7 +849,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.v3.TimeSeries getTimeSeries(int index) {
       if (timeSeriesBuilder_ == null) {
@@ -834,7 +864,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -842,7 +872,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTimeSeries(int index, com.google.monitoring.v3.TimeSeries value) {
       if (timeSeriesBuilder_ == null) {
@@ -861,7 +893,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -869,7 +901,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTimeSeries(
         int index, com.google.monitoring.v3.TimeSeries.Builder builderForValue) {
@@ -886,7 +920,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -894,7 +928,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addTimeSeries(com.google.monitoring.v3.TimeSeries value) {
       if (timeSeriesBuilder_ == null) {
@@ -913,7 +949,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -921,7 +957,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addTimeSeries(int index, com.google.monitoring.v3.TimeSeries value) {
       if (timeSeriesBuilder_ == null) {
@@ -940,7 +978,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -948,7 +986,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addTimeSeries(com.google.monitoring.v3.TimeSeries.Builder builderForValue) {
       if (timeSeriesBuilder_ == null) {
@@ -964,7 +1004,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -972,7 +1012,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addTimeSeries(
         int index, com.google.monitoring.v3.TimeSeries.Builder builderForValue) {
@@ -989,7 +1031,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -997,7 +1039,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllTimeSeries(
         java.lang.Iterable<? extends com.google.monitoring.v3.TimeSeries> values) {
@@ -1014,7 +1058,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -1022,7 +1066,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTimeSeries() {
       if (timeSeriesBuilder_ == null) {
@@ -1038,7 +1084,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -1046,7 +1092,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeTimeSeries(int index) {
       if (timeSeriesBuilder_ == null) {
@@ -1062,7 +1110,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -1070,7 +1118,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.v3.TimeSeries.Builder getTimeSeriesBuilder(int index) {
       return getTimeSeriesFieldBuilder().getBuilder(index);
@@ -1079,7 +1129,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -1087,7 +1137,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.v3.TimeSeriesOrBuilder getTimeSeriesOrBuilder(int index) {
       if (timeSeriesBuilder_ == null) {
@@ -1100,7 +1152,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -1108,7 +1160,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.monitoring.v3.TimeSeriesOrBuilder>
         getTimeSeriesOrBuilderList() {
@@ -1122,7 +1176,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -1130,7 +1184,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.v3.TimeSeries.Builder addTimeSeriesBuilder() {
       return getTimeSeriesFieldBuilder()
@@ -1140,7 +1196,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -1148,7 +1204,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.v3.TimeSeries.Builder addTimeSeriesBuilder(int index) {
       return getTimeSeriesFieldBuilder()
@@ -1158,7 +1216,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The new data to be added to a list of time series.
+     * Required. The new data to be added to a list of time series.
      * Adds at most one data point to each of several time series.  The new data
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
@@ -1166,7 +1224,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+     * <code>
+     * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.monitoring.v3.TimeSeries.Builder> getTimeSeriesBuilderList() {
       return getTimeSeriesFieldBuilder().getBuilderList();

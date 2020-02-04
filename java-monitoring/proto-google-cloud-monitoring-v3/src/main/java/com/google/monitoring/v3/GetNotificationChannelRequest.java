@@ -117,11 +117,13 @@ public final class GetNotificationChannelRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The channel for which to execute the request. The format is
+   * Required. The channel for which to execute the request. The format is
    * `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -140,11 +142,13 @@ public final class GetNotificationChannelRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The channel for which to execute the request. The format is
+   * Required. The channel for which to execute the request. The format is
    * `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -484,11 +488,13 @@ public final class GetNotificationChannelRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The channel for which to execute the request. The format is
+     * Required. The channel for which to execute the request. The format is
      * `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -507,11 +513,13 @@ public final class GetNotificationChannelRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The channel for which to execute the request. The format is
+     * Required. The channel for which to execute the request. The format is
      * `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -530,11 +538,13 @@ public final class GetNotificationChannelRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The channel for which to execute the request. The format is
+     * Required. The channel for which to execute the request. The format is
      * `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -552,11 +562,13 @@ public final class GetNotificationChannelRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The channel for which to execute the request. The format is
+     * Required. The channel for which to execute the request. The format is
      * `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -570,11 +582,13 @@ public final class GetNotificationChannelRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The channel for which to execute the request. The format is
+     * Required. The channel for which to execute the request. The format is
      * `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

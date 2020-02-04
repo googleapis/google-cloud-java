@@ -273,4 +273,29 @@ public interface NotificationChannelDescriptorOrBuilder
    */
   @java.lang.Deprecated
   int getSupportedTiersValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The product launch stage for channels of this type.
+   * </pre>
+   *
+   * <code>.google.api.LaunchStage launch_stage = 7;</code>
+   *
+   * @return The enum numeric value on the wire for launchStage.
+   */
+  int getLaunchStageValue();
+  /**
+   *
+   *
+   * <pre>
+   * The product launch stage for channels of this type.
+   * </pre>
+   *
+   * <code>.google.api.LaunchStage launch_stage = 7;</code>
+   *
+   * @return The launchStage.
+   */
+  com.google.api.LaunchStage getLaunchStage();
 }

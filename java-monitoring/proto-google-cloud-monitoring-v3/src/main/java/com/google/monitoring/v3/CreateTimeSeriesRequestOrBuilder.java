@@ -27,11 +27,13 @@ public interface CreateTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -40,11 +42,13 @@ public interface CreateTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -54,7 +58,7 @@ public interface CreateTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * The new data to be added to a list of time series.
+   * Required. The new data to be added to a list of time series.
    * Adds at most one data point to each of several time series.  The new data
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
@@ -62,14 +66,16 @@ public interface CreateTimeSeriesRequestOrBuilder
    * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+   * <code>
+   * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.monitoring.v3.TimeSeries> getTimeSeriesList();
   /**
    *
    *
    * <pre>
-   * The new data to be added to a list of time series.
+   * Required. The new data to be added to a list of time series.
    * Adds at most one data point to each of several time series.  The new data
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
@@ -77,14 +83,16 @@ public interface CreateTimeSeriesRequestOrBuilder
    * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+   * <code>
+   * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.monitoring.v3.TimeSeries getTimeSeries(int index);
   /**
    *
    *
    * <pre>
-   * The new data to be added to a list of time series.
+   * Required. The new data to be added to a list of time series.
    * Adds at most one data point to each of several time series.  The new data
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
@@ -92,14 +100,16 @@ public interface CreateTimeSeriesRequestOrBuilder
    * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+   * <code>
+   * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getTimeSeriesCount();
   /**
    *
    *
    * <pre>
-   * The new data to be added to a list of time series.
+   * Required. The new data to be added to a list of time series.
    * Adds at most one data point to each of several time series.  The new data
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
@@ -107,7 +117,9 @@ public interface CreateTimeSeriesRequestOrBuilder
    * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+   * <code>
+   * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.monitoring.v3.TimeSeriesOrBuilder>
       getTimeSeriesOrBuilderList();
@@ -115,7 +127,7 @@ public interface CreateTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * The new data to be added to a list of time series.
+   * Required. The new data to be added to a list of time series.
    * Adds at most one data point to each of several time series.  The new data
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
@@ -123,7 +135,9 @@ public interface CreateTimeSeriesRequestOrBuilder
    * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
+   * <code>
+   * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.monitoring.v3.TimeSeriesOrBuilder getTimeSeriesOrBuilder(int index);
 }

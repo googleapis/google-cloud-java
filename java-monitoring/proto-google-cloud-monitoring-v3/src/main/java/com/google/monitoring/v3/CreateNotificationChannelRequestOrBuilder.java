@@ -27,7 +27,7 @@ public interface CreateNotificationChannelRequestOrBuilder
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is:
+   * Required. The project on which to execute the request. The format is:
    *     projects/[PROJECT_ID]
    * Note that this names the container into which the channel will be
    * written. This does not name the newly created channel. The resulting
@@ -35,7 +35,9 @@ public interface CreateNotificationChannelRequestOrBuilder
    * but will add `/notificationChannels/[CHANNEL_ID]` to identify the channel.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -44,7 +46,7 @@ public interface CreateNotificationChannelRequestOrBuilder
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is:
+   * Required. The project on which to execute the request. The format is:
    *     projects/[PROJECT_ID]
    * Note that this names the container into which the channel will be
    * written. This does not name the newly created channel. The resulting
@@ -52,7 +54,9 @@ public interface CreateNotificationChannelRequestOrBuilder
    * but will add `/notificationChannels/[CHANNEL_ID]` to identify the channel.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -62,10 +66,12 @@ public interface CreateNotificationChannelRequestOrBuilder
    *
    *
    * <pre>
-   * The definition of the `NotificationChannel` to create.
+   * Required. The definition of the `NotificationChannel` to create.
    * </pre>
    *
-   * <code>.google.monitoring.v3.NotificationChannel notification_channel = 2;</code>
+   * <code>
+   * .google.monitoring.v3.NotificationChannel notification_channel = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the notificationChannel field is set.
    */
@@ -74,10 +80,12 @@ public interface CreateNotificationChannelRequestOrBuilder
    *
    *
    * <pre>
-   * The definition of the `NotificationChannel` to create.
+   * Required. The definition of the `NotificationChannel` to create.
    * </pre>
    *
-   * <code>.google.monitoring.v3.NotificationChannel notification_channel = 2;</code>
+   * <code>
+   * .google.monitoring.v3.NotificationChannel notification_channel = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The notificationChannel.
    */
@@ -86,10 +94,12 @@ public interface CreateNotificationChannelRequestOrBuilder
    *
    *
    * <pre>
-   * The definition of the `NotificationChannel` to create.
+   * Required. The definition of the `NotificationChannel` to create.
    * </pre>
    *
-   * <code>.google.monitoring.v3.NotificationChannel notification_channel = 2;</code>
+   * <code>
+   * .google.monitoring.v3.NotificationChannel notification_channel = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.monitoring.v3.NotificationChannelOrBuilder getNotificationChannelOrBuilder();
 }

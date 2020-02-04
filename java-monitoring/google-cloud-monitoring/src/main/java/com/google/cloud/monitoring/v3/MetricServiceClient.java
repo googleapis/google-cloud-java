@@ -188,7 +188,7 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project on which to execute the request. The format is
+   * @param name Required. The project on which to execute the request. The format is
    *     `"projects/{project_id_or_number}"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -217,7 +217,7 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project on which to execute the request. The format is
+   * @param name Required. The project on which to execute the request. The format is
    *     `"projects/{project_id_or_number}"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -330,7 +330,7 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The monitored resource descriptor to get. The format is
+   * @param name Required. The monitored resource descriptor to get. The format is
    *     `"projects/{project_id_or_number}/monitoredResourceDescriptors/{resource_type}"`. The
    *     `{resource_type}` is a predefined type, such as `cloudsql_database`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -358,7 +358,7 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The monitored resource descriptor to get. The format is
+   * @param name Required. The monitored resource descriptor to get. The format is
    *     `"projects/{project_id_or_number}/monitoredResourceDescriptors/{resource_type}"`. The
    *     `{resource_type}` is a predefined type, such as `cloudsql_database`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -434,7 +434,7 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project on which to execute the request. The format is
+   * @param name Required. The project on which to execute the request. The format is
    *     `"projects/{project_id_or_number}"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -462,7 +462,7 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project on which to execute the request. The format is
+   * @param name Required. The project on which to execute the request. The format is
    *     `"projects/{project_id_or_number}"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -571,7 +571,7 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The metric descriptor on which to execute the request. The format is
+   * @param name Required. The metric descriptor on which to execute the request. The format is
    *     `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`. An example value of
    *     `{metric_id}` is `"compute.googleapis.com/instance/disk/read_bytes_count"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -597,7 +597,7 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The metric descriptor on which to execute the request. The format is
+   * @param name Required. The metric descriptor on which to execute the request. The format is
    *     `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`. An example value of
    *     `{metric_id}` is `"compute.googleapis.com/instance/disk/read_bytes_count"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -669,9 +669,10 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project on which to execute the request. The format is
+   * @param name Required. The project on which to execute the request. The format is
    *     `"projects/{project_id_or_number}"`.
-   * @param metricDescriptor The new [custom metric](/monitoring/custom-metrics) descriptor.
+   * @param metricDescriptor Required. The new [custom metric](/monitoring/custom-metrics)
+   *     descriptor.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MetricDescriptor createMetricDescriptor(
@@ -699,9 +700,10 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project on which to execute the request. The format is
+   * @param name Required. The project on which to execute the request. The format is
    *     `"projects/{project_id_or_number}"`.
-   * @param metricDescriptor The new [custom metric](/monitoring/custom-metrics) descriptor.
+   * @param metricDescriptor Required. The new [custom metric](/monitoring/custom-metrics)
+   *     descriptor.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MetricDescriptor createMetricDescriptor(
@@ -780,7 +782,7 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The metric descriptor on which to execute the request. The format is
+   * @param name Required. The metric descriptor on which to execute the request. The format is
    *     `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`. An example of
    *     `{metric_id}` is: `"custom.googleapis.com/my_test_metric"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -807,7 +809,7 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The metric descriptor on which to execute the request. The format is
+   * @param name Required. The metric descriptor on which to execute the request. The format is
    *     `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`. An example of
    *     `{metric_id}` is: `"custom.googleapis.com/my_test_metric"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -884,16 +886,16 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project on which to execute the request. The format is
+   * @param name Required. The project on which to execute the request. The format is
    *     "projects/{project_id_or_number}".
-   * @param filter A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
-   *     series should be returned. The filter must specify a single metric type, and can
+   * @param filter Required. A [monitoring filter](/monitoring/api/v3/filters) that specifies which
+   *     time series should be returned. The filter must specify a single metric type, and can
    *     additionally specify metric labels and other information. For example:
    *     <p>metric.type = "compute.googleapis.com/instance/cpu/usage_time" AND
    *     metric.labels.instance_name = "my-instance-name"
-   * @param interval The time interval for which results should be returned. Only time series that
-   *     contain data points in the specified interval are included in the response.
-   * @param view Specifies which information is returned about the time series.
+   * @param interval Required. The time interval for which results should be returned. Only time
+   *     series that contain data points in the specified interval are included in the response.
+   * @param view Required. Specifies which information is returned about the time series.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTimeSeriesPagedResponse listTimeSeries(
@@ -929,16 +931,16 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project on which to execute the request. The format is
+   * @param name Required. The project on which to execute the request. The format is
    *     "projects/{project_id_or_number}".
-   * @param filter A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
-   *     series should be returned. The filter must specify a single metric type, and can
+   * @param filter Required. A [monitoring filter](/monitoring/api/v3/filters) that specifies which
+   *     time series should be returned. The filter must specify a single metric type, and can
    *     additionally specify metric labels and other information. For example:
    *     <p>metric.type = "compute.googleapis.com/instance/cpu/usage_time" AND
    *     metric.labels.instance_name = "my-instance-name"
-   * @param interval The time interval for which results should be returned. Only time series that
-   *     contain data points in the specified interval are included in the response.
-   * @param view Specifies which information is returned about the time series.
+   * @param interval Required. The time interval for which results should be returned. Only time
+   *     series that contain data points in the specified interval are included in the response.
+   * @param view Required. Specifies which information is returned about the time series.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTimeSeriesPagedResponse listTimeSeries(
@@ -1072,12 +1074,12 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project on which to execute the request. The format is
+   * @param name Required. The project on which to execute the request. The format is
    *     `"projects/{project_id_or_number}"`.
-   * @param timeSeries The new data to be added to a list of time series. Adds at most one data
-   *     point to each of several time series. The new data point must be more recent than any other
-   *     point in its time series. Each `TimeSeries` value must fully specify a unique time series
-   *     by supplying all label values for the metric and the monitored resource.
+   * @param timeSeries Required. The new data to be added to a list of time series. Adds at most one
+   *     data point to each of several time series. The new data point must be more recent than any
+   *     other point in its time series. Each `TimeSeries` value must fully specify a unique time
+   *     series by supplying all label values for the metric and the monitored resource.
    *     <p>The maximum number of `TimeSeries` objects per `Create` request is 200.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1106,12 +1108,12 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project on which to execute the request. The format is
+   * @param name Required. The project on which to execute the request. The format is
    *     `"projects/{project_id_or_number}"`.
-   * @param timeSeries The new data to be added to a list of time series. Adds at most one data
-   *     point to each of several time series. The new data point must be more recent than any other
-   *     point in its time series. Each `TimeSeries` value must fully specify a unique time series
-   *     by supplying all label values for the metric and the monitored resource.
+   * @param timeSeries Required. The new data to be added to a list of time series. Adds at most one
+   *     data point to each of several time series. The new data point must be more recent than any
+   *     other point in its time series. Each `TimeSeries` value must fully specify a unique time
+   *     series by supplying all label values for the metric and the monitored resource.
    *     <p>The maximum number of `TimeSeries` objects per `Create` request is 200.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

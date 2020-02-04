@@ -27,11 +27,13 @@ public interface ListGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * The project whose groups are to be listed. The format is
+   * Required. The project whose groups are to be listed. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 7;</code>
+   * <code>
+   * string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -40,11 +42,13 @@ public interface ListGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * The project whose groups are to be listed. The format is
+   * Required. The project whose groups are to be listed. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 7;</code>
+   * <code>
+   * string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -59,7 +63,7 @@ public interface ListGroupsRequestOrBuilder
    * name.  If no groups have this parent, the results are empty.
    * </pre>
    *
-   * <code>string children_of_group = 2;</code>
+   * <code>string children_of_group = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The childrenOfGroup.
    */
@@ -73,7 +77,7 @@ public interface ListGroupsRequestOrBuilder
    * name.  If no groups have this parent, the results are empty.
    * </pre>
    *
-   * <code>string children_of_group = 2;</code>
+   * <code>string children_of_group = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for childrenOfGroup.
    */
@@ -90,7 +94,7 @@ public interface ListGroupsRequestOrBuilder
    * immediate parent, the results are empty.
    * </pre>
    *
-   * <code>string ancestors_of_group = 3;</code>
+   * <code>string ancestors_of_group = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The ancestorsOfGroup.
    */
@@ -106,7 +110,7 @@ public interface ListGroupsRequestOrBuilder
    * immediate parent, the results are empty.
    * </pre>
    *
-   * <code>string ancestors_of_group = 3;</code>
+   * <code>string ancestors_of_group = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for ancestorsOfGroup.
    */
@@ -122,7 +126,7 @@ public interface ListGroupsRequestOrBuilder
    * children-of-children, and so forth.
    * </pre>
    *
-   * <code>string descendants_of_group = 4;</code>
+   * <code>string descendants_of_group = 4 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The descendantsOfGroup.
    */
@@ -137,7 +141,7 @@ public interface ListGroupsRequestOrBuilder
    * children-of-children, and so forth.
    * </pre>
    *
-   * <code>string descendants_of_group = 4;</code>
+   * <code>string descendants_of_group = 4 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for descendantsOfGroup.
    */

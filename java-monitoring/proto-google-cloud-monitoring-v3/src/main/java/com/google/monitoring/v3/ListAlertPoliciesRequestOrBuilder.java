@@ -27,7 +27,7 @@ public interface ListAlertPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * The project whose alert policies are to be listed. The format is
+   * Required. The project whose alert policies are to be listed. The format is
    *     projects/[PROJECT_ID]
    * Note that this field names the parent container in which the alerting
    * policies to be listed are stored. To retrieve a single alerting policy
@@ -36,7 +36,9 @@ public interface ListAlertPoliciesRequestOrBuilder
    * operation, instead.
    * </pre>
    *
-   * <code>string name = 4;</code>
+   * <code>
+   * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -45,7 +47,7 @@ public interface ListAlertPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * The project whose alert policies are to be listed. The format is
+   * Required. The project whose alert policies are to be listed. The format is
    *     projects/[PROJECT_ID]
    * Note that this field names the parent container in which the alerting
    * policies to be listed are stored. To retrieve a single alerting policy
@@ -54,7 +56,9 @@ public interface ListAlertPoliciesRequestOrBuilder
    * operation, instead.
    * </pre>
    *
-   * <code>string name = 4;</code>
+   * <code>
+   * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

@@ -27,11 +27,13 @@ public interface GetAlertPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The alerting policy to retrieve. The format is
+   * Required. The alerting policy to retrieve. The format is
    *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -40,11 +42,13 @@ public interface GetAlertPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The alerting policy to retrieve. The format is
+   * Required. The alerting policy to retrieve. The format is
    *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

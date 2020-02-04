@@ -146,7 +146,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The project whose alert policies are to be listed. The format is
+   * Required. The project whose alert policies are to be listed. The format is
    *     projects/[PROJECT_ID]
    * Note that this field names the parent container in which the alerting
    * policies to be listed are stored. To retrieve a single alerting policy
@@ -155,7 +155,9 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    * operation, instead.
    * </pre>
    *
-   * <code>string name = 4;</code>
+   * <code>
+   * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -174,7 +176,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The project whose alert policies are to be listed. The format is
+   * Required. The project whose alert policies are to be listed. The format is
    *     projects/[PROJECT_ID]
    * Note that this field names the parent container in which the alerting
    * policies to be listed are stored. To retrieve a single alerting policy
@@ -183,7 +185,9 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    * operation, instead.
    * </pre>
    *
-   * <code>string name = 4;</code>
+   * <code>
+   * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -761,7 +765,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The project whose alert policies are to be listed. The format is
+     * Required. The project whose alert policies are to be listed. The format is
      *     projects/[PROJECT_ID]
      * Note that this field names the parent container in which the alerting
      * policies to be listed are stored. To retrieve a single alerting policy
@@ -770,7 +774,9 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      * operation, instead.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>
+     * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -789,7 +795,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The project whose alert policies are to be listed. The format is
+     * Required. The project whose alert policies are to be listed. The format is
      *     projects/[PROJECT_ID]
      * Note that this field names the parent container in which the alerting
      * policies to be listed are stored. To retrieve a single alerting policy
@@ -798,7 +804,9 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      * operation, instead.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>
+     * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -817,7 +825,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The project whose alert policies are to be listed. The format is
+     * Required. The project whose alert policies are to be listed. The format is
      *     projects/[PROJECT_ID]
      * Note that this field names the parent container in which the alerting
      * policies to be listed are stored. To retrieve a single alerting policy
@@ -826,7 +834,9 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      * operation, instead.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>
+     * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -844,7 +854,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The project whose alert policies are to be listed. The format is
+     * Required. The project whose alert policies are to be listed. The format is
      *     projects/[PROJECT_ID]
      * Note that this field names the parent container in which the alerting
      * policies to be listed are stored. To retrieve a single alerting policy
@@ -853,7 +863,9 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      * operation, instead.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>
+     * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -867,7 +879,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The project whose alert policies are to be listed. The format is
+     * Required. The project whose alert policies are to be listed. The format is
      *     projects/[PROJECT_ID]
      * Note that this field names the parent container in which the alerting
      * policies to be listed are stored. To retrieve a single alerting policy
@@ -876,7 +888,9 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      * operation, instead.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>
+     * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

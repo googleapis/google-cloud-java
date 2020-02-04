@@ -117,11 +117,13 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The group to retrieve. The format is
+   * Required. The group to retrieve. The format is
    * `"projects/{project_id_or_number}/groups/{group_id}"`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -140,11 +142,13 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The group to retrieve. The format is
+   * Required. The group to retrieve. The format is
    * `"projects/{project_id_or_number}/groups/{group_id}"`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -480,11 +484,13 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The group to retrieve. The format is
+     * Required. The group to retrieve. The format is
      * `"projects/{project_id_or_number}/groups/{group_id}"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -503,11 +509,13 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The group to retrieve. The format is
+     * Required. The group to retrieve. The format is
      * `"projects/{project_id_or_number}/groups/{group_id}"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -526,11 +534,13 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The group to retrieve. The format is
+     * Required. The group to retrieve. The format is
      * `"projects/{project_id_or_number}/groups/{group_id}"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -548,11 +558,13 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The group to retrieve. The format is
+     * Required. The group to retrieve. The format is
      * `"projects/{project_id_or_number}/groups/{group_id}"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -566,11 +578,13 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The group to retrieve. The format is
+     * Required. The group to retrieve. The format is
      * `"projects/{project_id_or_number}/groups/{group_id}"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

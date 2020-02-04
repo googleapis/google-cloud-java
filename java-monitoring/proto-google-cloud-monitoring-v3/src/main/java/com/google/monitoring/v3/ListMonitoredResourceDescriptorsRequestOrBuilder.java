@@ -27,11 +27,13 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 5;</code>
+   * <code>
+   * string name = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -40,11 +42,13 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 5;</code>
+   * <code>
+   * string name = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

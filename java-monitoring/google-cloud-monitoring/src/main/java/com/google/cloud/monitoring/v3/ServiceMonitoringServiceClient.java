@@ -190,8 +190,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the parent workspace. Of the form `projects/{project_id}`.
-   * @param service The `Service` to create.
+   * @param parent Required. Resource name of the parent workspace. Of the form
+   *     `projects/{project_id}`.
+   * @param service Required. The `Service` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Service createService(ProjectName parent, Service service) {
@@ -217,8 +218,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the parent workspace. Of the form `projects/{project_id}`.
-   * @param service The `Service` to create.
+   * @param parent Required. Resource name of the parent workspace. Of the form
+   *     `projects/{project_id}`.
+   * @param service Required. The `Service` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Service createService(String parent, Service service) {
@@ -289,7 +291,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the `Service`. Of the form
+   * @param name Required. Resource name of the `Service`. Of the form
    *     `projects/{project_id}/services/{service_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -312,7 +314,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the `Service`. Of the form
+   * @param name Required. Resource name of the `Service`. Of the form
    *     `projects/{project_id}/services/{service_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -381,7 +383,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the parent `Workspace`. Of the form `projects/{project_id}`.
+   * @param parent Required. Resource name of the parent `Workspace`. Of the form
+   *     `projects/{project_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServicesPagedResponse listServices(ProjectName parent) {
@@ -407,7 +410,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the parent `Workspace`. Of the form `projects/{project_id}`.
+   * @param parent Required. Resource name of the parent `Workspace`. Of the form
+   *     `projects/{project_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServicesPagedResponse listServices(String parent) {
@@ -509,8 +513,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param service The `Service` to draw updates from. The given `name` specifies the resource to
-   *     update.
+   * @param service Required. The `Service` to draw updates from. The given `name` specifies the
+   *     resource to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Service updateService(Service service) {
@@ -576,8 +580,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the `Service` to delete. Of the form
-   *     `projects/{project_id}/service/{service_id}`.
+   * @param name Required. Resource name of the `Service` to delete. Of the form
+   *     `projects/{project_id}/services/{service_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteService(ServiceName name) {
@@ -599,8 +603,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the `Service` to delete. Of the form
-   *     `projects/{project_id}/service/{service_id}`.
+   * @param name Required. Resource name of the `Service` to delete. Of the form
+   *     `projects/{project_id}/services/{service_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteService(String name) {
@@ -667,10 +671,10 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the parent `Service`. Of the form
+   * @param parent Required. Resource name of the parent `Service`. Of the form
    *     `projects/{project_id}/services/{service_id}`.
-   * @param serviceLevelObjective The `ServiceLevelObjective` to create. The provided `name` will be
-   *     respected if no `ServiceLevelObjective` exists with this name.
+   * @param serviceLevelObjective Required. The `ServiceLevelObjective` to create. The provided
+   *     `name` will be respected if no `ServiceLevelObjective` exists with this name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServiceLevelObjective createServiceLevelObjective(
@@ -697,10 +701,10 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the parent `Service`. Of the form
+   * @param parent Required. Resource name of the parent `Service`. Of the form
    *     `projects/{project_id}/services/{service_id}`.
-   * @param serviceLevelObjective The `ServiceLevelObjective` to create. The provided `name` will be
-   *     respected if no `ServiceLevelObjective` exists with this name.
+   * @param serviceLevelObjective Required. The `ServiceLevelObjective` to create. The provided
+   *     `name` will be respected if no `ServiceLevelObjective` exists with this name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServiceLevelObjective createServiceLevelObjective(
@@ -777,7 +781,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the `ServiceLevelObjective` to get. Of the form
+   * @param name Required. Resource name of the `ServiceLevelObjective` to get. Of the form
    *     `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -802,7 +806,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the `ServiceLevelObjective` to get. Of the form
+   * @param name Required. Resource name of the `ServiceLevelObjective` to get. Of the form
    *     `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -874,7 +878,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the parent `Service`. Of the form
+   * @param parent Required. Resource name of the parent `Service`. Of the form
    *     `projects/{project_id}/services/{service_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -902,7 +906,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Resource name of the parent `Service`. Of the form
+   * @param parent Required. Resource name of the parent `Service`. Of the form
    *     `projects/{project_id}/services/{service_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1009,8 +1013,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param serviceLevelObjective The `ServiceLevelObjective` to draw updates from. The given `name`
-   *     specifies the resource to update.
+   * @param serviceLevelObjective Required. The `ServiceLevelObjective` to draw updates from. The
+   *     given `name` specifies the resource to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServiceLevelObjective updateServiceLevelObjective(
@@ -1082,7 +1086,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the `ServiceLevelObjective` to delete. Of the form
+   * @param name Required. Resource name of the `ServiceLevelObjective` to delete. Of the form
    *     `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1107,7 +1111,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Resource name of the `ServiceLevelObjective` to delete. Of the form
+   * @param name Required. Resource name of the `ServiceLevelObjective` to delete. Of the form
    *     `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

@@ -147,7 +147,7 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * `projects/[PROJECT_ID]`. That is, this names the container
    * in which to look for the notification channels; it does not name a
    * specific channel. To query a specific channel by REST resource name, use
@@ -156,7 +156,9 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
    * operation.
    * </pre>
    *
-   * <code>string name = 5;</code>
+   * <code>
+   * string name = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -175,7 +177,7 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * `projects/[PROJECT_ID]`. That is, this names the container
    * in which to look for the notification channels; it does not name a
    * specific channel. To query a specific channel by REST resource name, use
@@ -184,7 +186,9 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
    * operation.
    * </pre>
    *
-   * <code>string name = 5;</code>
+   * <code>
+   * string name = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -765,7 +769,7 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `projects/[PROJECT_ID]`. That is, this names the container
      * in which to look for the notification channels; it does not name a
      * specific channel. To query a specific channel by REST resource name, use
@@ -774,7 +778,9 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * operation.
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>
+     * string name = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -793,7 +799,7 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `projects/[PROJECT_ID]`. That is, this names the container
      * in which to look for the notification channels; it does not name a
      * specific channel. To query a specific channel by REST resource name, use
@@ -802,7 +808,9 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * operation.
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>
+     * string name = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -821,7 +829,7 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `projects/[PROJECT_ID]`. That is, this names the container
      * in which to look for the notification channels; it does not name a
      * specific channel. To query a specific channel by REST resource name, use
@@ -830,7 +838,9 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * operation.
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>
+     * string name = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -848,7 +858,7 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `projects/[PROJECT_ID]`. That is, this names the container
      * in which to look for the notification channels; it does not name a
      * specific channel. To query a specific channel by REST resource name, use
@@ -857,7 +867,9 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * operation.
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>
+     * string name = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -871,7 +883,7 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `projects/[PROJECT_ID]`. That is, this names the container
      * in which to look for the notification channels; it does not name a
      * specific channel. To query a specific channel by REST resource name, use
@@ -880,7 +892,9 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * operation.
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>
+     * string name = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

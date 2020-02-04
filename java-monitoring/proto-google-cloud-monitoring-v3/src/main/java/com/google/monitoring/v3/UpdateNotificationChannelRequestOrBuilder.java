@@ -62,13 +62,15 @@ public interface UpdateNotificationChannelRequestOrBuilder
    *
    *
    * <pre>
-   * A description of the changes to be applied to the specified
+   * Required. A description of the changes to be applied to the specified
    * notification channel. The description must provide a definition for
    * fields to be updated; the names of these fields should also be
    * included in the `update_mask`.
    * </pre>
    *
-   * <code>.google.monitoring.v3.NotificationChannel notification_channel = 3;</code>
+   * <code>
+   * .google.monitoring.v3.NotificationChannel notification_channel = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the notificationChannel field is set.
    */
@@ -77,13 +79,15 @@ public interface UpdateNotificationChannelRequestOrBuilder
    *
    *
    * <pre>
-   * A description of the changes to be applied to the specified
+   * Required. A description of the changes to be applied to the specified
    * notification channel. The description must provide a definition for
    * fields to be updated; the names of these fields should also be
    * included in the `update_mask`.
    * </pre>
    *
-   * <code>.google.monitoring.v3.NotificationChannel notification_channel = 3;</code>
+   * <code>
+   * .google.monitoring.v3.NotificationChannel notification_channel = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The notificationChannel.
    */
@@ -92,13 +96,15 @@ public interface UpdateNotificationChannelRequestOrBuilder
    *
    *
    * <pre>
-   * A description of the changes to be applied to the specified
+   * Required. A description of the changes to be applied to the specified
    * notification channel. The description must provide a definition for
    * fields to be updated; the names of these fields should also be
    * included in the `update_mask`.
    * </pre>
    *
-   * <code>.google.monitoring.v3.NotificationChannel notification_channel = 3;</code>
+   * <code>
+   * .google.monitoring.v3.NotificationChannel notification_channel = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.monitoring.v3.NotificationChannelOrBuilder getNotificationChannelOrBuilder();
 }

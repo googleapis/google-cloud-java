@@ -27,12 +27,14 @@ public interface GetNotificationChannelVerificationCodeRequestOrBuilder
    *
    *
    * <pre>
-   * The notification channel for which a verification code is to be generated
+   * Required. The notification channel for which a verification code is to be generated
    * and retrieved. This must name a channel that is already verified; if
    * the specified channel is not verified, the request will fail.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -41,12 +43,14 @@ public interface GetNotificationChannelVerificationCodeRequestOrBuilder
    *
    *
    * <pre>
-   * The notification channel for which a verification code is to be generated
+   * Required. The notification channel for which a verification code is to be generated
    * and retrieved. This must name a channel that is already verified; if
    * the specified channel is not verified, the request will fail.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

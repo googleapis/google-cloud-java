@@ -321,11 +321,13 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * "projects/{project_id_or_number}".
    * </pre>
    *
-   * <code>string name = 10;</code>
+   * <code>
+   * string name = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -344,11 +346,13 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * "projects/{project_id_or_number}".
    * </pre>
    *
-   * <code>string name = 10;</code>
+   * <code>
+   * string name = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -370,7 +374,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
+   * Required. A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
    * series should be returned.  The filter must specify a single metric type,
    * and can additionally specify metric labels and other information. For
    * example:
@@ -378,7 +382,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *         metric.labels.instance_name = "my-instance-name"
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The filter.
    */
@@ -397,7 +401,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
+   * Required. A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
    * series should be returned.  The filter must specify a single metric type,
    * and can additionally specify metric labels and other information. For
    * example:
@@ -405,7 +409,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *         metric.labels.instance_name = "my-instance-name"
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for filter.
    */
@@ -427,12 +431,14 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The time interval for which results should be returned. Only time series
+   * Required. The time interval for which results should be returned. Only time series
    * that contain data points in the specified interval are included
    * in the response.
    * </pre>
    *
-   * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+   * <code>
+   * .google.monitoring.v3.TimeInterval interval = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the interval field is set.
    */
@@ -443,12 +449,14 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The time interval for which results should be returned. Only time series
+   * Required. The time interval for which results should be returned. Only time series
    * that contain data points in the specified interval are included
    * in the response.
    * </pre>
    *
-   * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+   * <code>
+   * .google.monitoring.v3.TimeInterval interval = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The interval.
    */
@@ -461,12 +469,14 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The time interval for which results should be returned. Only time series
+   * Required. The time interval for which results should be returned. Only time series
    * that contain data points in the specified interval are included
    * in the response.
    * </pre>
    *
-   * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+   * <code>
+   * .google.monitoring.v3.TimeInterval interval = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.monitoring.v3.TimeIntervalOrBuilder getIntervalOrBuilder() {
     return getInterval();
@@ -581,10 +591,12 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Specifies which information is returned about the time series.
+   * Required. Specifies which information is returned about the time series.
    * </pre>
    *
-   * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+   * <code>
+   * .google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The enum numeric value on the wire for view.
    */
@@ -595,10 +607,12 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Specifies which information is returned about the time series.
+   * Required. Specifies which information is returned about the time series.
    * </pre>
    *
-   * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+   * <code>
+   * .google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The view.
    */
@@ -1138,11 +1152,13 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * "projects/{project_id_or_number}".
      * </pre>
      *
-     * <code>string name = 10;</code>
+     * <code>
+     * string name = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -1161,11 +1177,13 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * "projects/{project_id_or_number}".
      * </pre>
      *
-     * <code>string name = 10;</code>
+     * <code>
+     * string name = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -1184,11 +1202,13 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * "projects/{project_id_or_number}".
      * </pre>
      *
-     * <code>string name = 10;</code>
+     * <code>
+     * string name = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1206,11 +1226,13 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * "projects/{project_id_or_number}".
      * </pre>
      *
-     * <code>string name = 10;</code>
+     * <code>
+     * string name = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1224,11 +1246,13 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * "projects/{project_id_or_number}".
      * </pre>
      *
-     * <code>string name = 10;</code>
+     * <code>
+     * string name = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1249,7 +1273,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
+     * Required. A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
      * series should be returned.  The filter must specify a single metric type,
      * and can additionally specify metric labels and other information. For
      * example:
@@ -1257,7 +1281,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *         metric.labels.instance_name = "my-instance-name"
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The filter.
      */
@@ -1276,7 +1300,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
+     * Required. A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
      * series should be returned.  The filter must specify a single metric type,
      * and can additionally specify metric labels and other information. For
      * example:
@@ -1284,7 +1308,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *         metric.labels.instance_name = "my-instance-name"
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for filter.
      */
@@ -1303,7 +1327,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
+     * Required. A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
      * series should be returned.  The filter must specify a single metric type,
      * and can additionally specify metric labels and other information. For
      * example:
@@ -1311,7 +1335,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *         metric.labels.instance_name = "my-instance-name"
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -1329,7 +1353,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
+     * Required. A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
      * series should be returned.  The filter must specify a single metric type,
      * and can additionally specify metric labels and other information. For
      * example:
@@ -1337,7 +1361,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *         metric.labels.instance_name = "my-instance-name"
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1351,7 +1375,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
+     * Required. A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
      * series should be returned.  The filter must specify a single metric type,
      * and can additionally specify metric labels and other information. For
      * example:
@@ -1359,7 +1383,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *         metric.labels.instance_name = "my-instance-name"
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -1385,12 +1409,14 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time interval for which results should be returned. Only time series
+     * Required. The time interval for which results should be returned. Only time series
      * that contain data points in the specified interval are included
      * in the response.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+     * <code>
+     * .google.monitoring.v3.TimeInterval interval = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the interval field is set.
      */
@@ -1401,12 +1427,14 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time interval for which results should be returned. Only time series
+     * Required. The time interval for which results should be returned. Only time series
      * that contain data points in the specified interval are included
      * in the response.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+     * <code>
+     * .google.monitoring.v3.TimeInterval interval = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The interval.
      */
@@ -1423,12 +1451,14 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time interval for which results should be returned. Only time series
+     * Required. The time interval for which results should be returned. Only time series
      * that contain data points in the specified interval are included
      * in the response.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+     * <code>
+     * .google.monitoring.v3.TimeInterval interval = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInterval(com.google.monitoring.v3.TimeInterval value) {
       if (intervalBuilder_ == null) {
@@ -1447,12 +1477,14 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time interval for which results should be returned. Only time series
+     * Required. The time interval for which results should be returned. Only time series
      * that contain data points in the specified interval are included
      * in the response.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+     * <code>
+     * .google.monitoring.v3.TimeInterval interval = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInterval(com.google.monitoring.v3.TimeInterval.Builder builderForValue) {
       if (intervalBuilder_ == null) {
@@ -1468,12 +1500,14 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time interval for which results should be returned. Only time series
+     * Required. The time interval for which results should be returned. Only time series
      * that contain data points in the specified interval are included
      * in the response.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+     * <code>
+     * .google.monitoring.v3.TimeInterval interval = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeInterval(com.google.monitoring.v3.TimeInterval value) {
       if (intervalBuilder_ == null) {
@@ -1496,12 +1530,14 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time interval for which results should be returned. Only time series
+     * Required. The time interval for which results should be returned. Only time series
      * that contain data points in the specified interval are included
      * in the response.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+     * <code>
+     * .google.monitoring.v3.TimeInterval interval = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearInterval() {
       if (intervalBuilder_ == null) {
@@ -1518,12 +1554,14 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time interval for which results should be returned. Only time series
+     * Required. The time interval for which results should be returned. Only time series
      * that contain data points in the specified interval are included
      * in the response.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+     * <code>
+     * .google.monitoring.v3.TimeInterval interval = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.v3.TimeInterval.Builder getIntervalBuilder() {
 
@@ -1534,12 +1572,14 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time interval for which results should be returned. Only time series
+     * Required. The time interval for which results should be returned. Only time series
      * that contain data points in the specified interval are included
      * in the response.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+     * <code>
+     * .google.monitoring.v3.TimeInterval interval = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.v3.TimeIntervalOrBuilder getIntervalOrBuilder() {
       if (intervalBuilder_ != null) {
@@ -1554,12 +1594,14 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time interval for which results should be returned. Only time series
+     * Required. The time interval for which results should be returned. Only time series
      * that contain data points in the specified interval are included
      * in the response.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+     * <code>
+     * .google.monitoring.v3.TimeInterval interval = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.TimeInterval,
@@ -1906,10 +1948,12 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Specifies which information is returned about the time series.
+     * Required. Specifies which information is returned about the time series.
      * </pre>
      *
-     * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+     * <code>
+     * .google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The enum numeric value on the wire for view.
      */
@@ -1920,10 +1964,12 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Specifies which information is returned about the time series.
+     * Required. Specifies which information is returned about the time series.
      * </pre>
      *
-     * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+     * <code>
+     * .google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The enum numeric value on the wire for view to set.
      * @return This builder for chaining.
@@ -1937,10 +1983,12 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Specifies which information is returned about the time series.
+     * Required. Specifies which information is returned about the time series.
      * </pre>
      *
-     * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+     * <code>
+     * .google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The view.
      */
@@ -1956,10 +2004,12 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Specifies which information is returned about the time series.
+     * Required. Specifies which information is returned about the time series.
      * </pre>
      *
-     * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+     * <code>
+     * .google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The view to set.
      * @return This builder for chaining.
@@ -1977,10 +2027,12 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Specifies which information is returned about the time series.
+     * Required. Specifies which information is returned about the time series.
      * </pre>
      *
-     * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+     * <code>
+     * .google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return This builder for chaining.
      */

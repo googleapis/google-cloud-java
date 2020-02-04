@@ -70,72 +70,85 @@ public final class GroupServiceProto {
     java.lang.String[] descriptorData = {
       "\n(google/monitoring/v3/group_service.pro"
           + "to\022\024google.monitoring.v3\032\034google/api/ann"
-          + "otations.proto\032#google/api/monitored_res"
-          + "ource.proto\032!google/monitoring/v3/common"
-          + ".proto\032 google/monitoring/v3/group.proto"
-          + "\032\033google/protobuf/empty.proto\032\027google/ap"
-          + "i/client.proto\"\255\001\n\021ListGroupsRequest\022\014\n\004"
-          + "name\030\007 \001(\t\022\033\n\021children_of_group\030\002 \001(\tH\000\022"
-          + "\034\n\022ancestors_of_group\030\003 \001(\tH\000\022\036\n\024descend"
-          + "ants_of_group\030\004 \001(\tH\000\022\021\n\tpage_size\030\005 \001(\005"
-          + "\022\022\n\npage_token\030\006 \001(\tB\010\n\006filter\"Y\n\022ListGr"
-          + "oupsResponse\022*\n\005group\030\001 \003(\0132\033.google.mon"
-          + "itoring.v3.Group\022\027\n\017next_page_token\030\002 \001("
-          + "\t\"\037\n\017GetGroupRequest\022\014\n\004name\030\003 \001(\t\"e\n\022Cr"
-          + "eateGroupRequest\022\014\n\004name\030\004 \001(\t\022*\n\005group\030"
-          + "\002 \001(\0132\033.google.monitoring.v3.Group\022\025\n\rva"
-          + "lidate_only\030\003 \001(\010\"W\n\022UpdateGroupRequest\022"
-          + "*\n\005group\030\002 \001(\0132\033.google.monitoring.v3.Gr"
-          + "oup\022\025\n\rvalidate_only\030\003 \001(\010\"5\n\022DeleteGrou"
-          + "pRequest\022\014\n\004name\030\003 \001(\t\022\021\n\trecursive\030\004 \001("
-          + "\010\"\224\001\n\027ListGroupMembersRequest\022\014\n\004name\030\007 "
-          + "\001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001"
-          + "(\t\022\016\n\006filter\030\005 \001(\t\0224\n\010interval\030\006 \001(\0132\".g"
-          + "oogle.monitoring.v3.TimeInterval\"w\n\030List"
-          + "GroupMembersResponse\022.\n\007members\030\001 \003(\0132\035."
-          + "google.api.MonitoredResource\022\027\n\017next_pag"
-          + "e_token\030\002 \001(\t\022\022\n\ntotal_size\030\003 \001(\0052\347\007\n\014Gr"
-          + "oupService\022\205\001\n\nListGroups\022\'.google.monit"
-          + "oring.v3.ListGroupsRequest\032(.google.moni"
-          + "toring.v3.ListGroupsResponse\"$\202\323\344\223\002\036\022\034/v"
-          + "3/{name=projects/*}/groups\022v\n\010GetGroup\022%"
-          + ".google.monitoring.v3.GetGroupRequest\032\033."
-          + "google.monitoring.v3.Group\"&\202\323\344\223\002 \022\036/v3/"
-          + "{name=projects/*/groups/*}\022\201\001\n\013CreateGro"
-          + "up\022(.google.monitoring.v3.CreateGroupReq"
-          + "uest\032\033.google.monitoring.v3.Group\"+\202\323\344\223\002"
-          + "%\"\034/v3/{name=projects/*}/groups:\005group\022\211"
-          + "\001\n\013UpdateGroup\022(.google.monitoring.v3.Up"
-          + "dateGroupRequest\032\033.google.monitoring.v3."
-          + "Group\"3\202\323\344\223\002-\032$/v3/{group.name=projects/"
-          + "*/groups/*}:\005group\022w\n\013DeleteGroup\022(.goog"
-          + "le.monitoring.v3.DeleteGroupRequest\032\026.go"
-          + "ogle.protobuf.Empty\"&\202\323\344\223\002 *\036/v3/{name=p"
-          + "rojects/*/groups/*}\022\241\001\n\020ListGroupMembers"
-          + "\022-.google.monitoring.v3.ListGroupMembers"
-          + "Request\032..google.monitoring.v3.ListGroup"
-          + "MembersResponse\".\202\323\344\223\002(\022&/v3/{name=proje"
-          + "cts/*/groups/*}/members\032\251\001\312A\031monitoring."
-          + "googleapis.com\322A\211\001https://www.googleapis"
-          + ".com/auth/cloud-platform,https://www.goo"
-          + "gleapis.com/auth/monitoring,https://www."
-          + "googleapis.com/auth/monitoring.readB\251\001\n\030"
-          + "com.google.monitoring.v3B\021GroupServicePr"
-          + "otoP\001Z>google.golang.org/genproto/google"
-          + "apis/monitoring/v3;monitoring\252\002\032Google.C"
-          + "loud.Monitoring.V3\312\002\032Google\\Cloud\\Monito"
-          + "ring\\V3b\006proto3"
+          + "otations.proto\032\027google/api/client.proto\032"
+          + "\037google/api/field_behavior.proto\032#google"
+          + "/api/monitored_resource.proto\032\031google/ap"
+          + "i/resource.proto\032!google/monitoring/v3/c"
+          + "ommon.proto\032 google/monitoring/v3/group."
+          + "proto\032\033google/protobuf/empty.proto\"\310\002\n\021L"
+          + "istGroupsRequest\0225\n\004name\030\007 \001(\tB\'\340A\002\372A!\022\037"
+          + "monitoring.googleapis.com/Group\022A\n\021child"
+          + "ren_of_group\030\002 \001(\tB$\372A!\n\037monitoring.goog"
+          + "leapis.com/GroupH\000\022B\n\022ancestors_of_group"
+          + "\030\003 \001(\tB$\372A!\n\037monitoring.googleapis.com/G"
+          + "roupH\000\022D\n\024descendants_of_group\030\004 \001(\tB$\372A"
+          + "!\n\037monitoring.googleapis.com/GroupH\000\022\021\n\t"
+          + "page_size\030\005 \001(\005\022\022\n\npage_token\030\006 \001(\tB\010\n\006f"
+          + "ilter\"Y\n\022ListGroupsResponse\022*\n\005group\030\001 \003"
+          + "(\0132\033.google.monitoring.v3.Group\022\027\n\017next_"
+          + "page_token\030\002 \001(\t\"H\n\017GetGroupRequest\0225\n\004n"
+          + "ame\030\003 \001(\tB\'\340A\002\372A!\n\037monitoring.googleapis"
+          + ".com/Group\"\223\001\n\022CreateGroupRequest\0225\n\004nam"
+          + "e\030\004 \001(\tB\'\340A\002\372A!\022\037monitoring.googleapis.c"
+          + "om/Group\022/\n\005group\030\002 \001(\0132\033.google.monitor"
+          + "ing.v3.GroupB\003\340A\002\022\025\n\rvalidate_only\030\003 \001(\010"
+          + "\"\\\n\022UpdateGroupRequest\022/\n\005group\030\002 \001(\0132\033."
+          + "google.monitoring.v3.GroupB\003\340A\002\022\025\n\rvalid"
+          + "ate_only\030\003 \001(\010\"^\n\022DeleteGroupRequest\0225\n\004"
+          + "name\030\003 \001(\tB\'\340A\002\372A!\n\037monitoring.googleapi"
+          + "s.com/Group\022\021\n\trecursive\030\004 \001(\010\"\275\001\n\027ListG"
+          + "roupMembersRequest\0225\n\004name\030\007 \001(\tB\'\340A\002\372A!"
+          + "\n\037monitoring.googleapis.com/Group\022\021\n\tpag"
+          + "e_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\022\016\n\006filt"
+          + "er\030\005 \001(\t\0224\n\010interval\030\006 \001(\0132\".google.moni"
+          + "toring.v3.TimeInterval\"w\n\030ListGroupMembe"
+          + "rsResponse\022.\n\007members\030\001 \003(\0132\035.google.api"
+          + ".MonitoredResource\022\027\n\017next_page_token\030\002 "
+          + "\001(\t\022\022\n\ntotal_size\030\003 \001(\0052\230\010\n\014GroupService"
+          + "\022\214\001\n\nListGroups\022\'.google.monitoring.v3.L"
+          + "istGroupsRequest\032(.google.monitoring.v3."
+          + "ListGroupsResponse\"+\202\323\344\223\002\036\022\034/v3/{name=pr"
+          + "ojects/*}/groups\332A\004name\022}\n\010GetGroup\022%.go"
+          + "ogle.monitoring.v3.GetGroupRequest\032\033.goo"
+          + "gle.monitoring.v3.Group\"-\202\323\344\223\002 \022\036/v3/{na"
+          + "me=projects/*/groups/*}\332A\004name\022\216\001\n\013Creat"
+          + "eGroup\022(.google.monitoring.v3.CreateGrou"
+          + "pRequest\032\033.google.monitoring.v3.Group\"8\202"
+          + "\323\344\223\002%\"\034/v3/{name=projects/*}/groups:\005gro"
+          + "up\332A\nname,group\022\221\001\n\013UpdateGroup\022(.google"
+          + ".monitoring.v3.UpdateGroupRequest\032\033.goog"
+          + "le.monitoring.v3.Group\";\202\323\344\223\002-\032$/v3/{gro"
+          + "up.name=projects/*/groups/*}:\005group\332A\005gr"
+          + "oup\022~\n\013DeleteGroup\022(.google.monitoring.v"
+          + "3.DeleteGroupRequest\032\026.google.protobuf.E"
+          + "mpty\"-\202\323\344\223\002 *\036/v3/{name=projects/*/group"
+          + "s/*}\332A\004name\022\250\001\n\020ListGroupMembers\022-.googl"
+          + "e.monitoring.v3.ListGroupMembersRequest\032"
+          + "..google.monitoring.v3.ListGroupMembersR"
+          + "esponse\"5\202\323\344\223\002(\022&/v3/{name=projects/*/gr"
+          + "oups/*}/members\332A\004name\032\251\001\312A\031monitoring.g"
+          + "oogleapis.com\322A\211\001https://www.googleapis."
+          + "com/auth/cloud-platform,https://www.goog"
+          + "leapis.com/auth/monitoring,https://www.g"
+          + "oogleapis.com/auth/monitoring.readB\251\001\n\030c"
+          + "om.google.monitoring.v3B\021GroupServicePro"
+          + "toP\001Z>google.golang.org/genproto/googlea"
+          + "pis/monitoring/v3;monitoring\252\002\032Google.Cl"
+          + "oud.Monitoring.V3\312\002\032Google\\Cloud\\Monitor"
+          + "ing\\V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.MonitoredResourceProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.monitoring.v3.CommonProto.getDescriptor(),
               com.google.monitoring.v3.GroupProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_monitoring_v3_ListGroupsRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -210,16 +223,21 @@ public final class GroupServiceProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.MonitoredResourceProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.monitoring.v3.CommonProto.getDescriptor();
     com.google.monitoring.v3.GroupProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

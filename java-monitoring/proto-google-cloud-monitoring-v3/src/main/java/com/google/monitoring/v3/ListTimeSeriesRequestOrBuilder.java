@@ -27,11 +27,13 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * "projects/{project_id_or_number}".
    * </pre>
    *
-   * <code>string name = 10;</code>
+   * <code>
+   * string name = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -40,11 +42,13 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * "projects/{project_id_or_number}".
    * </pre>
    *
-   * <code>string name = 10;</code>
+   * <code>
+   * string name = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -54,7 +58,7 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
+   * Required. A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
    * series should be returned.  The filter must specify a single metric type,
    * and can additionally specify metric labels and other information. For
    * example:
@@ -62,7 +66,7 @@ public interface ListTimeSeriesRequestOrBuilder
    *         metric.labels.instance_name = "my-instance-name"
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The filter.
    */
@@ -71,7 +75,7 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
+   * Required. A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
    * series should be returned.  The filter must specify a single metric type,
    * and can additionally specify metric labels and other information. For
    * example:
@@ -79,7 +83,7 @@ public interface ListTimeSeriesRequestOrBuilder
    *         metric.labels.instance_name = "my-instance-name"
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for filter.
    */
@@ -89,12 +93,14 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * The time interval for which results should be returned. Only time series
+   * Required. The time interval for which results should be returned. Only time series
    * that contain data points in the specified interval are included
    * in the response.
    * </pre>
    *
-   * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+   * <code>
+   * .google.monitoring.v3.TimeInterval interval = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the interval field is set.
    */
@@ -103,12 +109,14 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * The time interval for which results should be returned. Only time series
+   * Required. The time interval for which results should be returned. Only time series
    * that contain data points in the specified interval are included
    * in the response.
    * </pre>
    *
-   * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+   * <code>
+   * .google.monitoring.v3.TimeInterval interval = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The interval.
    */
@@ -117,12 +125,14 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * The time interval for which results should be returned. Only time series
+   * Required. The time interval for which results should be returned. Only time series
    * that contain data points in the specified interval are included
    * in the response.
    * </pre>
    *
-   * <code>.google.monitoring.v3.TimeInterval interval = 4;</code>
+   * <code>
+   * .google.monitoring.v3.TimeInterval interval = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.monitoring.v3.TimeIntervalOrBuilder getIntervalOrBuilder();
 
@@ -201,10 +211,12 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Specifies which information is returned about the time series.
+   * Required. Specifies which information is returned about the time series.
    * </pre>
    *
-   * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+   * <code>
+   * .google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The enum numeric value on the wire for view.
    */
@@ -213,10 +225,12 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Specifies which information is returned about the time series.
+   * Required. Specifies which information is returned about the time series.
    * </pre>
    *
-   * <code>.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7;</code>
+   * <code>
+   * .google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView view = 7 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The view.
    */

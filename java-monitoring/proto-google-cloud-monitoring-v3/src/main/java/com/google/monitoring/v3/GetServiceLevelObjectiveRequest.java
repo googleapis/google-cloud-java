@@ -126,12 +126,14 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Resource name of the `ServiceLevelObjective` to get.
+   * Required. Resource name of the `ServiceLevelObjective` to get.
    * Of the form
    * `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -150,12 +152,14 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Resource name of the `ServiceLevelObjective` to get.
+   * Required. Resource name of the `ServiceLevelObjective` to get.
    * Of the form
    * `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -552,12 +556,14 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Resource name of the `ServiceLevelObjective` to get.
+     * Required. Resource name of the `ServiceLevelObjective` to get.
      * Of the form
      * `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -576,12 +582,14 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Resource name of the `ServiceLevelObjective` to get.
+     * Required. Resource name of the `ServiceLevelObjective` to get.
      * Of the form
      * `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -600,12 +608,14 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Resource name of the `ServiceLevelObjective` to get.
+     * Required. Resource name of the `ServiceLevelObjective` to get.
      * Of the form
      * `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -623,12 +633,14 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Resource name of the `ServiceLevelObjective` to get.
+     * Required. Resource name of the `ServiceLevelObjective` to get.
      * Of the form
      * `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -642,12 +654,14 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Resource name of the `ServiceLevelObjective` to get.
+     * Required. Resource name of the `ServiceLevelObjective` to get.
      * Of the form
      * `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

@@ -204,7 +204,9 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    * `selected_regions`.
    * </pre>
    *
-   * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+   * <code>
+   * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the uptimeCheckConfig field is set.
    */
@@ -227,7 +229,9 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    * `selected_regions`.
    * </pre>
    *
-   * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+   * <code>
+   * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The uptimeCheckConfig.
    */
@@ -252,7 +256,9 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    * `selected_regions`.
    * </pre>
    *
-   * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+   * <code>
+   * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.monitoring.v3.UptimeCheckConfigOrBuilder getUptimeCheckConfigOrBuilder() {
     return getUptimeCheckConfig();
@@ -849,7 +855,9 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      * `selected_regions`.
      * </pre>
      *
-     * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the uptimeCheckConfig field is set.
      */
@@ -872,7 +880,9 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      * `selected_regions`.
      * </pre>
      *
-     * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The uptimeCheckConfig.
      */
@@ -901,7 +911,9 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      * `selected_regions`.
      * </pre>
      *
-     * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUptimeCheckConfig(com.google.monitoring.v3.UptimeCheckConfig value) {
       if (uptimeCheckConfigBuilder_ == null) {
@@ -932,7 +944,9 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      * `selected_regions`.
      * </pre>
      *
-     * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUptimeCheckConfig(
         com.google.monitoring.v3.UptimeCheckConfig.Builder builderForValue) {
@@ -961,7 +975,9 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      * `selected_regions`.
      * </pre>
      *
-     * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUptimeCheckConfig(com.google.monitoring.v3.UptimeCheckConfig value) {
       if (uptimeCheckConfigBuilder_ == null) {
@@ -996,7 +1012,9 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      * `selected_regions`.
      * </pre>
      *
-     * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUptimeCheckConfig() {
       if (uptimeCheckConfigBuilder_ == null) {
@@ -1025,7 +1043,9 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      * `selected_regions`.
      * </pre>
      *
-     * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.v3.UptimeCheckConfig.Builder getUptimeCheckConfigBuilder() {
 
@@ -1048,7 +1068,9 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      * `selected_regions`.
      * </pre>
      *
-     * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.v3.UptimeCheckConfigOrBuilder getUptimeCheckConfigOrBuilder() {
       if (uptimeCheckConfigBuilder_ != null) {
@@ -1075,7 +1097,9 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      * `selected_regions`.
      * </pre>
      *
-     * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.UptimeCheckConfig,

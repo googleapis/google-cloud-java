@@ -27,11 +27,13 @@ public interface CreateUptimeCheckConfigRequestOrBuilder
    *
    *
    * <pre>
-   * The project in which to create the Uptime check. The format
+   * Required. The project in which to create the Uptime check. The format
    *   is `projects/[PROJECT_ID]`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -40,11 +42,13 @@ public interface CreateUptimeCheckConfigRequestOrBuilder
    *
    *
    * <pre>
-   * The project in which to create the Uptime check. The format
+   * Required. The project in which to create the Uptime check. The format
    *   is `projects/[PROJECT_ID]`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -54,10 +58,12 @@ public interface CreateUptimeCheckConfigRequestOrBuilder
    *
    *
    * <pre>
-   * The new Uptime check configuration.
+   * Required. The new Uptime check configuration.
    * </pre>
    *
-   * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2;</code>
+   * <code>
+   * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the uptimeCheckConfig field is set.
    */
@@ -66,10 +72,12 @@ public interface CreateUptimeCheckConfigRequestOrBuilder
    *
    *
    * <pre>
-   * The new Uptime check configuration.
+   * Required. The new Uptime check configuration.
    * </pre>
    *
-   * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2;</code>
+   * <code>
+   * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The uptimeCheckConfig.
    */
@@ -78,10 +86,12 @@ public interface CreateUptimeCheckConfigRequestOrBuilder
    *
    *
    * <pre>
-   * The new Uptime check configuration.
+   * Required. The new Uptime check configuration.
    * </pre>
    *
-   * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2;</code>
+   * <code>
+   * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.monitoring.v3.UptimeCheckConfigOrBuilder getUptimeCheckConfigOrBuilder();
 }

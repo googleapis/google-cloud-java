@@ -117,12 +117,14 @@ public final class DeleteAlertPolicyRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The alerting policy to delete. The format is:
+   * Required. The alerting policy to delete. The format is:
    *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
    * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -141,12 +143,14 @@ public final class DeleteAlertPolicyRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The alerting policy to delete. The format is:
+   * Required. The alerting policy to delete. The format is:
    *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
    * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -485,12 +489,14 @@ public final class DeleteAlertPolicyRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The alerting policy to delete. The format is:
+     * Required. The alerting policy to delete. The format is:
      *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
      * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -509,12 +515,14 @@ public final class DeleteAlertPolicyRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The alerting policy to delete. The format is:
+     * Required. The alerting policy to delete. The format is:
      *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
      * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -533,12 +541,14 @@ public final class DeleteAlertPolicyRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The alerting policy to delete. The format is:
+     * Required. The alerting policy to delete. The format is:
      *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
      * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -556,12 +566,14 @@ public final class DeleteAlertPolicyRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The alerting policy to delete. The format is:
+     * Required. The alerting policy to delete. The format is:
      *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
      * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -575,12 +587,14 @@ public final class DeleteAlertPolicyRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The alerting policy to delete. The format is:
+     * Required. The alerting policy to delete. The format is:
      *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
      * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

@@ -27,13 +27,15 @@ public interface GetMetricDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * The metric descriptor on which to execute the request. The format is
+   * Required. The metric descriptor on which to execute the request. The format is
    * `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`.
    * An example value of `{metric_id}` is
    * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -42,13 +44,15 @@ public interface GetMetricDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * The metric descriptor on which to execute the request. The format is
+   * Required. The metric descriptor on which to execute the request. The format is
    * `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`.
    * An example value of `{metric_id}` is
    * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

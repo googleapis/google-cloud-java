@@ -184,7 +184,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project whose alert policies are to be listed. The format is
+   * @param name Required. The project whose alert policies are to be listed. The format is
    *     <p>projects/[PROJECT_ID]
    *     <p>Note that this field names the parent container in which the alerting policies to be
    *     listed are stored. To retrieve a single alerting policy by name, use the
@@ -215,7 +215,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project whose alert policies are to be listed. The format is
+   * @param name Required. The project whose alert policies are to be listed. The format is
    *     <p>projects/[PROJECT_ID]
    *     <p>Note that this field names the parent container in which the alerting policies to be
    *     listed are stored. To retrieve a single alerting policy by name, use the
@@ -323,7 +323,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The alerting policy to retrieve. The format is
+   * @param name Required. The alerting policy to retrieve. The format is
    *     <p>projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -346,7 +346,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The alerting policy to retrieve. The format is
+   * @param name Required. The alerting policy to retrieve. The format is
    *     <p>projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -414,14 +414,14 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project in which to create the alerting policy. The format is
+   * @param name Required. The project in which to create the alerting policy. The format is
    *     `projects/[PROJECT_ID]`.
    *     <p>Note that this field names the parent container in which the alerting policy will be
    *     written, not the name of the created policy. The alerting policy that is returned will have
    *     a name that contains a normalized representation of this name as a prefix but adds a suffix
    *     of the form `/alertPolicies/[POLICY_ID]`, identifying the policy in the container.
-   * @param alertPolicy The requested alerting policy. You should omit the `name` field in this
-   *     policy. The name will be returned in the new policy, including a new [ALERT_POLICY_ID]
+   * @param alertPolicy Required. The requested alerting policy. You should omit the `name` field in
+   *     this policy. The name will be returned in the new policy, including a new [ALERT_POLICY_ID]
    *     value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -448,14 +448,14 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project in which to create the alerting policy. The format is
+   * @param name Required. The project in which to create the alerting policy. The format is
    *     `projects/[PROJECT_ID]`.
    *     <p>Note that this field names the parent container in which the alerting policy will be
    *     written, not the name of the created policy. The alerting policy that is returned will have
    *     a name that contains a normalized representation of this name as a prefix but adds a suffix
    *     of the form `/alertPolicies/[POLICY_ID]`, identifying the policy in the container.
-   * @param alertPolicy The requested alerting policy. You should omit the `name` field in this
-   *     policy. The name will be returned in the new policy, including a new [ALERT_POLICY_ID]
+   * @param alertPolicy Required. The requested alerting policy. You should omit the `name` field in
+   *     this policy. The name will be returned in the new policy, including a new [ALERT_POLICY_ID]
    *     value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -527,7 +527,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The alerting policy to delete. The format is:
+   * @param name Required. The alerting policy to delete. The format is:
    *     <p>projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
    *     <p>For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -553,7 +553,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The alerting policy to delete. The format is:
+   * @param name Required. The alerting policy to delete. The format is:
    *     <p>projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
    *     <p>For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

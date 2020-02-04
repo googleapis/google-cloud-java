@@ -140,11 +140,13 @@ public final class ListMonitoredResourceDescriptorsRequest
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 5;</code>
+   * <code>
+   * string name = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -163,11 +165,13 @@ public final class ListMonitoredResourceDescriptorsRequest
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 5;</code>
+   * <code>
+   * string name = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -683,11 +687,13 @@ public final class ListMonitoredResourceDescriptorsRequest
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>
+     * string name = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -706,11 +712,13 @@ public final class ListMonitoredResourceDescriptorsRequest
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>
+     * string name = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -729,11 +737,13 @@ public final class ListMonitoredResourceDescriptorsRequest
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>
+     * string name = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -751,11 +761,13 @@ public final class ListMonitoredResourceDescriptorsRequest
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>
+     * string name = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -769,11 +781,13 @@ public final class ListMonitoredResourceDescriptorsRequest
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>
+     * string name = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

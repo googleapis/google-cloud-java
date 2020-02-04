@@ -27,11 +27,13 @@ public interface DeleteServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the `Service` to delete.
-   * Of the form `projects/{project_id}/service/{service_id}`.
+   * Required. Resource name of the `Service` to delete.
+   * Of the form `projects/{project_id}/services/{service_id}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -40,11 +42,13 @@ public interface DeleteServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the `Service` to delete.
-   * Of the form `projects/{project_id}/service/{service_id}`.
+   * Required. Resource name of the `Service` to delete.
+   * Of the form `projects/{project_id}/services/{service_id}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

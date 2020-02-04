@@ -239,7 +239,9 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
    * not in `update_mask` are ignored.
    * </pre>
    *
-   * <code>.google.monitoring.v3.AlertPolicy alert_policy = 3;</code>
+   * <code>
+   * .google.monitoring.v3.AlertPolicy alert_policy = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the alertPolicy field is set.
    */
@@ -256,7 +258,9 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
    * not in `update_mask` are ignored.
    * </pre>
    *
-   * <code>.google.monitoring.v3.AlertPolicy alert_policy = 3;</code>
+   * <code>
+   * .google.monitoring.v3.AlertPolicy alert_policy = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The alertPolicy.
    */
@@ -275,7 +279,9 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
    * not in `update_mask` are ignored.
    * </pre>
    *
-   * <code>.google.monitoring.v3.AlertPolicy alert_policy = 3;</code>
+   * <code>
+   * .google.monitoring.v3.AlertPolicy alert_policy = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.monitoring.v3.AlertPolicyOrBuilder getAlertPolicyOrBuilder() {
     return getAlertPolicy();
@@ -991,7 +997,9 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * not in `update_mask` are ignored.
      * </pre>
      *
-     * <code>.google.monitoring.v3.AlertPolicy alert_policy = 3;</code>
+     * <code>
+     * .google.monitoring.v3.AlertPolicy alert_policy = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the alertPolicy field is set.
      */
@@ -1008,7 +1016,9 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * not in `update_mask` are ignored.
      * </pre>
      *
-     * <code>.google.monitoring.v3.AlertPolicy alert_policy = 3;</code>
+     * <code>
+     * .google.monitoring.v3.AlertPolicy alert_policy = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The alertPolicy.
      */
@@ -1031,7 +1041,9 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * not in `update_mask` are ignored.
      * </pre>
      *
-     * <code>.google.monitoring.v3.AlertPolicy alert_policy = 3;</code>
+     * <code>
+     * .google.monitoring.v3.AlertPolicy alert_policy = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAlertPolicy(com.google.monitoring.v3.AlertPolicy value) {
       if (alertPolicyBuilder_ == null) {
@@ -1056,7 +1068,9 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * not in `update_mask` are ignored.
      * </pre>
      *
-     * <code>.google.monitoring.v3.AlertPolicy alert_policy = 3;</code>
+     * <code>
+     * .google.monitoring.v3.AlertPolicy alert_policy = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAlertPolicy(com.google.monitoring.v3.AlertPolicy.Builder builderForValue) {
       if (alertPolicyBuilder_ == null) {
@@ -1078,7 +1092,9 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * not in `update_mask` are ignored.
      * </pre>
      *
-     * <code>.google.monitoring.v3.AlertPolicy alert_policy = 3;</code>
+     * <code>
+     * .google.monitoring.v3.AlertPolicy alert_policy = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeAlertPolicy(com.google.monitoring.v3.AlertPolicy value) {
       if (alertPolicyBuilder_ == null) {
@@ -1107,7 +1123,9 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * not in `update_mask` are ignored.
      * </pre>
      *
-     * <code>.google.monitoring.v3.AlertPolicy alert_policy = 3;</code>
+     * <code>
+     * .google.monitoring.v3.AlertPolicy alert_policy = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearAlertPolicy() {
       if (alertPolicyBuilder_ == null) {
@@ -1130,7 +1148,9 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * not in `update_mask` are ignored.
      * </pre>
      *
-     * <code>.google.monitoring.v3.AlertPolicy alert_policy = 3;</code>
+     * <code>
+     * .google.monitoring.v3.AlertPolicy alert_policy = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.v3.AlertPolicy.Builder getAlertPolicyBuilder() {
 
@@ -1147,7 +1167,9 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * not in `update_mask` are ignored.
      * </pre>
      *
-     * <code>.google.monitoring.v3.AlertPolicy alert_policy = 3;</code>
+     * <code>
+     * .google.monitoring.v3.AlertPolicy alert_policy = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.v3.AlertPolicyOrBuilder getAlertPolicyOrBuilder() {
       if (alertPolicyBuilder_ != null) {
@@ -1168,7 +1190,9 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * not in `update_mask` are ignored.
      * </pre>
      *
-     * <code>.google.monitoring.v3.AlertPolicy alert_policy = 3;</code>
+     * <code>
+     * .google.monitoring.v3.AlertPolicy alert_policy = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.AlertPolicy,

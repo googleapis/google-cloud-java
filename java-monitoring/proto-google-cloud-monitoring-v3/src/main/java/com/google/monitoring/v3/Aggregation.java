@@ -22,12 +22,29 @@ package com.google.monitoring.v3;
  *
  *
  * <pre>
- * Describes how to combine multiple time series to provide different views of
- * the data.  Aggregation consists of an alignment step on individual time
- * series (`alignment_period` and `per_series_aligner`) followed by an optional
- * reduction step of the data across the aligned time series
- * (`cross_series_reducer` and `group_by_fields`).  For more details, see
- * [Aggregation](/monitoring/api/learn_more#aggregation).
+ * Describes how to combine multiple time series to provide a different view of
+ * the data.  Aggregation of time series is done in two steps. First, each time
+ * series in the set is _aligned_ to the same time interval boundaries, then the
+ * set of time series is optionally _reduced_ in number.
+ * Alignment consists of applying the `per_series_aligner` operation
+ * to each time series after its data has been divided into regular
+ * `alignment_period` time intervals. This process takes _all_ of the data
+ * points in an alignment period, applies a mathematical transformation such as
+ * averaging, minimum, maximum, delta, etc., and converts them into a single
+ * data point per period.
+ * Reduction is when the aligned and transformed time series can optionally be
+ * combined, reducing the number of time series through similar mathematical
+ * transformations. Reduction involves applying a `cross_series_reducer` to
+ * all the time series, optionally sorting the time series into subsets with
+ * `group_by_fields`, and applying the reducer to each subset.
+ * The raw time series data can contain a huge amount of information from
+ * multiple sources. Alignment and reduction transforms this mass of data into
+ * a more manageable and representative collection of data, for example "the
+ * 95% latency across the average of all tasks in a cluster". This
+ * representative data can be more easily graphed and comprehended, and the
+ * individual time series data is still available for later drilldown. For more
+ * details, see [Aggregating Time
+ * Series](/monitoring/api/v3/metrics#aggregating_time_series).
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.Aggregation}
@@ -158,8 +175,17 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Aligner describes how to bring the data points in a single
-   * time series into temporal alignment.
+   * The `Aligner` specifies the operation that will be applied to the data
+   * points in each alignment period in a time series. Except for
+   * `ALIGN_NONE`, which specifies that no operation be applied, each alignment
+   * operation replaces the set of data values in each alignment period with
+   * a single value: the result of applying the operation to the data values.
+   * An aligned time series has a single data value at the end of each
+   * `alignment_period`.
+   * An alignment operation can change the data type of the values, too. For
+   * example, if you apply a counting operation to boolean values, the data
+   * `value_type` in the original time series is `BOOLEAN`, but the `value_type`
+   * in the aligned result is `INT64`.
    * </pre>
    *
    * Protobuf enum {@code google.monitoring.v3.Aggregation.Aligner}
@@ -169,9 +195,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * No alignment. Raw data is returned. Not valid if cross-time
-     * series reduction is requested. The value type of the result is
-     * the same as the value type of the input.
+     * No alignment. Raw data is returned. Not valid if cross-series reduction
+     * is requested. The `value_type` of the result is the same as the
+     * `value_type` of the input.
      * </pre>
      *
      * <code>ALIGN_NONE = 0;</code>
@@ -181,13 +207,15 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align and convert to delta metric type. This alignment is valid
-     * for cumulative metrics and delta metrics. Aligning an existing
-     * delta metric to a delta metric requires that the alignment
-     * period be increased. The value type of the result is the same
-     * as the value type of the input.
-     * One can think of this aligner as a rate but without time units; that
-     * is, the output is conceptually (second_point - first_point).
+     * Align and convert to
+     * [DELTA][google.api.MetricDescriptor.MetricKind.DELTA].
+     * The output is `delta = y1 - y0`.
+     * This alignment is valid for
+     * [CUMULATIVE][google.api.MetricDescriptor.MetricKind.CUMULATIVE] and
+     * `DELTA` metrics. If the selected alignment period results in periods
+     * with no data, then the aligned value for such a period is created by
+     * interpolation. The `value_type`  of the aligned result is the same as
+     * the `value_type` of the input.
      * </pre>
      *
      * <code>ALIGN_DELTA = 1;</code>
@@ -197,16 +225,17 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align and convert to a rate. This alignment is valid for
-     * cumulative metrics and delta metrics with numeric values. The output is a
-     * gauge metric with value type
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
-     * One can think of this aligner as conceptually providing the slope of
-     * the line that passes through the value at the start and end of the
-     * window. In other words, this is conceptually ((y1 - y0)/(t1 - t0)),
-     * and the output unit is one that has a "/time" dimension.
-     * If, by rate, you are looking for percentage change, see the
-     * `ALIGN_PERCENT_CHANGE` aligner option.
+     * Align and convert to a rate. The result is computed as
+     * `rate = (y1 - y0)/(t1 - t0)`, or "delta over time".
+     * Think of this aligner as providing the slope of the line that passes
+     * through the value at the start and at the end of the `alignment_period`.
+     * This aligner is valid for `CUMULATIVE`
+     * and `DELTA` metrics with numeric values. If the selected alignment
+     * period results in periods with no data, then the aligned value for
+     * such a period is created by interpolation. The output is a `GAUGE`
+     * metric with `value_type` `DOUBLE`.
+     * If, by "rate", you mean "percentage change", see the
+     * `ALIGN_PERCENT_CHANGE` aligner instead.
      * </pre>
      *
      * <code>ALIGN_RATE = 2;</code>
@@ -216,10 +245,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align by interpolating between adjacent points around the
-     * period boundary. This alignment is valid for gauge
-     * metrics with numeric values. The value type of the result is the same
-     * as the value type of the input.
+     * Align by interpolating between adjacent points around the alignment
+     * period boundary. This aligner is valid for `GAUGE` metrics with
+     * numeric values. The `value_type` of the aligned result is the same as the
+     * `value_type` of the input.
      * </pre>
      *
      * <code>ALIGN_INTERPOLATE = 3;</code>
@@ -229,10 +258,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align by shifting the oldest data point before the period
-     * boundary to the boundary. This alignment is valid for gauge
-     * metrics. The value type of the result is the same as the
-     * value type of the input.
+     * Align by moving the most recent data point before the end of the
+     * alignment period to the boundary at the end of the alignment
+     * period. This aligner is valid for `GAUGE` metrics. The `value_type` of
+     * the aligned result is the same as the `value_type` of the input.
      * </pre>
      *
      * <code>ALIGN_NEXT_OLDER = 4;</code>
@@ -242,11 +271,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the minimum of all data points in the
-     * period. This alignment is valid for gauge and delta metrics with numeric
-     * values. The value type of the result is the same as the value
-     * type of the input.
+     * Align the time series by returning the minimum value in each alignment
+     * period. This aligner is valid for `GAUGE` and `DELTA` metrics with
+     * numeric values. The `value_type` of the aligned result is the same as
+     * the `value_type` of the input.
      * </pre>
      *
      * <code>ALIGN_MIN = 10;</code>
@@ -256,11 +284,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the maximum of all data points in the
-     * period. This alignment is valid for gauge and delta metrics with numeric
-     * values. The value type of the result is the same as the value
-     * type of the input.
+     * Align the time series by returning the maximum value in each alignment
+     * period. This aligner is valid for `GAUGE` and `DELTA` metrics with
+     * numeric values. The `value_type` of the aligned result is the same as
+     * the `value_type` of the input.
      * </pre>
      *
      * <code>ALIGN_MAX = 11;</code>
@@ -270,11 +297,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the average or arithmetic mean of all
-     * data points in the period. This alignment is valid for gauge and delta
-     * metrics with numeric values. The value type of the output is
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Align the time series by returning the mean value in each alignment
+     * period. This aligner is valid for `GAUGE` and `DELTA` metrics with
+     * numeric values. The `value_type` of the aligned result is `DOUBLE`.
      * </pre>
      *
      * <code>ALIGN_MEAN = 12;</code>
@@ -284,11 +309,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the count of all data points in the
-     * period. This alignment is valid for gauge and delta metrics with numeric
-     * or Boolean values. The value type of the output is
-     * [INT64][google.api.MetricDescriptor.ValueType.INT64].
+     * Align the time series by returning the number of values in each alignment
+     * period. This aligner is valid for `GAUGE` and `DELTA` metrics with
+     * numeric or Boolean values. The `value_type` of the aligned result is
+     * `INT64`.
      * </pre>
      *
      * <code>ALIGN_COUNT = 13;</code>
@@ -298,11 +322,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the sum of all data points in the
-     * period. This alignment is valid for gauge and delta metrics with numeric
-     * and distribution values. The value type of the output is the
-     * same as the value type of the input.
+     * Align the time series by returning the sum of the values in each
+     * alignment period. This aligner is valid for `GAUGE` and `DELTA`
+     * metrics with numeric and distribution values. The `value_type` of the
+     * aligned result is the same as the `value_type` of the input.
      * </pre>
      *
      * <code>ALIGN_SUM = 14;</code>
@@ -312,11 +335,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the standard deviation of all data
-     * points in the period. This alignment is valid for gauge and delta metrics
-     * with numeric values. The value type of the output is
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Align the time series by returning the standard deviation of the values
+     * in each alignment period. This aligner is valid for `GAUGE` and
+     * `DELTA` metrics with numeric values. The `value_type` of the output is
+     * `DOUBLE`.
      * </pre>
      *
      * <code>ALIGN_STDDEV = 15;</code>
@@ -326,11 +348,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the count of True-valued data points in the
-     * period. This alignment is valid for gauge metrics with
-     * Boolean values. The value type of the output is
-     * [INT64][google.api.MetricDescriptor.ValueType.INT64].
+     * Align the time series by returning the number of `True` values in
+     * each alignment period. This aligner is valid for `GAUGE` metrics with
+     * Boolean values. The `value_type` of the output is `INT64`.
      * </pre>
      *
      * <code>ALIGN_COUNT_TRUE = 16;</code>
@@ -340,11 +360,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the count of False-valued data points in the
-     * period. This alignment is valid for gauge metrics with
-     * Boolean values. The value type of the output is
-     * [INT64][google.api.MetricDescriptor.ValueType.INT64].
+     * Align the time series by returning the number of `False` values in
+     * each alignment period. This aligner is valid for `GAUGE` metrics with
+     * Boolean values. The `value_type` of the output is `INT64`.
      * </pre>
      *
      * <code>ALIGN_COUNT_FALSE = 24;</code>
@@ -354,11 +372,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the fraction of True-valued data points in the
-     * period. This alignment is valid for gauge metrics with Boolean values.
-     * The output value is in the range [0, 1] and has value type
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Align the time series by returning the ratio of the number of `True`
+     * values to the total number of values in each alignment period. This
+     * aligner is valid for `GAUGE` metrics with Boolean values. The output
+     * value is in the range [0.0, 1.0] and has `value_type` `DOUBLE`.
      * </pre>
      *
      * <code>ALIGN_FRACTION_TRUE = 17;</code>
@@ -368,11 +385,12 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the 99th percentile of all data
-     * points in the period. This alignment is valid for gauge and delta metrics
-     * with distribution values. The output is a gauge metric with value type
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Align the time series by using [percentile
+     * aggregation](https://en.wikipedia.org/wiki/Percentile). The resulting
+     * data point in each alignment period is the 99th percentile of all data
+     * points in the period. This aligner is valid for `GAUGE` and `DELTA`
+     * metrics with distribution values. The output is a `GAUGE` metric with
+     * `value_type` `DOUBLE`.
      * </pre>
      *
      * <code>ALIGN_PERCENTILE_99 = 18;</code>
@@ -382,11 +400,12 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the 95th percentile of all data
-     * points in the period. This alignment is valid for gauge and delta metrics
-     * with distribution values. The output is a gauge metric with value type
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Align the time series by using [percentile
+     * aggregation](https://en.wikipedia.org/wiki/Percentile). The resulting
+     * data point in each alignment period is the 95th percentile of all data
+     * points in the period. This aligner is valid for `GAUGE` and `DELTA`
+     * metrics with distribution values. The output is a `GAUGE` metric with
+     * `value_type` `DOUBLE`.
      * </pre>
      *
      * <code>ALIGN_PERCENTILE_95 = 19;</code>
@@ -396,11 +415,12 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the 50th percentile of all data
-     * points in the period. This alignment is valid for gauge and delta metrics
-     * with distribution values. The output is a gauge metric with value type
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Align the time series by using [percentile
+     * aggregation](https://en.wikipedia.org/wiki/Percentile). The resulting
+     * data point in each alignment period is the 50th percentile of all data
+     * points in the period. This aligner is valid for `GAUGE` and `DELTA`
+     * metrics with distribution values. The output is a `GAUGE` metric with
+     * `value_type` `DOUBLE`.
      * </pre>
      *
      * <code>ALIGN_PERCENTILE_50 = 20;</code>
@@ -410,11 +430,12 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the 5th percentile of all data
-     * points in the period. This alignment is valid for gauge and delta metrics
-     * with distribution values. The output is a gauge metric with value type
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Align the time series by using [percentile
+     * aggregation](https://en.wikipedia.org/wiki/Percentile). The resulting
+     * data point in each alignment period is the 5th percentile of all data
+     * points in the period. This aligner is valid for `GAUGE` and `DELTA`
+     * metrics with distribution values. The output is a `GAUGE` metric with
+     * `value_type` `DOUBLE`.
      * </pre>
      *
      * <code>ALIGN_PERCENTILE_05 = 21;</code>
@@ -424,21 +445,20 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align and convert to a percentage change. This alignment is valid for
-     * gauge and delta metrics with numeric values. This alignment conceptually
-     * computes the equivalent of "((current - previous)/previous)*100"
-     * where previous value is determined based on the alignmentPeriod.
-     * In the event that previous is 0 the calculated value is infinity with the
-     * exception that if both (current - previous) and previous are 0 the
-     * calculated value is 0.
-     * A 10 minute moving mean is computed at each point of the time window
+     * Align and convert to a percentage change. This aligner is valid for
+     * `GAUGE` and `DELTA` metrics with numeric values. This alignment returns
+     * `((current - previous)/previous) * 100`, where the value of `previous` is
+     * determined based on the `alignment_period`.
+     * If the values of `current` and `previous` are both 0, then the returned
+     * value is 0. If only `previous` is 0, the returned value is infinity.
+     * A 10-minute moving mean is computed at each point of the alignment period
      * prior to the above calculation to smooth the metric and prevent false
-     * positives from very short lived spikes.
-     * Only applicable for data that is &gt;= 0. Any values &lt; 0 are treated as
-     * no data. While delta metrics are accepted by this alignment special care
-     * should be taken that the values for the metric will always be positive.
-     * The output is a gauge metric with value type
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * positives from very short-lived spikes. The moving mean is only
+     * applicable for data whose values are `&gt;= 0`. Any values `&lt; 0` are
+     * treated as a missing datapoint, and are ignored. While `DELTA`
+     * metrics are accepted by this alignment, special care should be taken that
+     * the values for the metric will always be positive. The output is a
+     * `GAUGE` metric with `value_type` `DOUBLE`.
      * </pre>
      *
      * <code>ALIGN_PERCENT_CHANGE = 23;</code>
@@ -451,9 +471,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * No alignment. Raw data is returned. Not valid if cross-time
-     * series reduction is requested. The value type of the result is
-     * the same as the value type of the input.
+     * No alignment. Raw data is returned. Not valid if cross-series reduction
+     * is requested. The `value_type` of the result is the same as the
+     * `value_type` of the input.
      * </pre>
      *
      * <code>ALIGN_NONE = 0;</code>
@@ -463,13 +483,15 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align and convert to delta metric type. This alignment is valid
-     * for cumulative metrics and delta metrics. Aligning an existing
-     * delta metric to a delta metric requires that the alignment
-     * period be increased. The value type of the result is the same
-     * as the value type of the input.
-     * One can think of this aligner as a rate but without time units; that
-     * is, the output is conceptually (second_point - first_point).
+     * Align and convert to
+     * [DELTA][google.api.MetricDescriptor.MetricKind.DELTA].
+     * The output is `delta = y1 - y0`.
+     * This alignment is valid for
+     * [CUMULATIVE][google.api.MetricDescriptor.MetricKind.CUMULATIVE] and
+     * `DELTA` metrics. If the selected alignment period results in periods
+     * with no data, then the aligned value for such a period is created by
+     * interpolation. The `value_type`  of the aligned result is the same as
+     * the `value_type` of the input.
      * </pre>
      *
      * <code>ALIGN_DELTA = 1;</code>
@@ -479,16 +501,17 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align and convert to a rate. This alignment is valid for
-     * cumulative metrics and delta metrics with numeric values. The output is a
-     * gauge metric with value type
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
-     * One can think of this aligner as conceptually providing the slope of
-     * the line that passes through the value at the start and end of the
-     * window. In other words, this is conceptually ((y1 - y0)/(t1 - t0)),
-     * and the output unit is one that has a "/time" dimension.
-     * If, by rate, you are looking for percentage change, see the
-     * `ALIGN_PERCENT_CHANGE` aligner option.
+     * Align and convert to a rate. The result is computed as
+     * `rate = (y1 - y0)/(t1 - t0)`, or "delta over time".
+     * Think of this aligner as providing the slope of the line that passes
+     * through the value at the start and at the end of the `alignment_period`.
+     * This aligner is valid for `CUMULATIVE`
+     * and `DELTA` metrics with numeric values. If the selected alignment
+     * period results in periods with no data, then the aligned value for
+     * such a period is created by interpolation. The output is a `GAUGE`
+     * metric with `value_type` `DOUBLE`.
+     * If, by "rate", you mean "percentage change", see the
+     * `ALIGN_PERCENT_CHANGE` aligner instead.
      * </pre>
      *
      * <code>ALIGN_RATE = 2;</code>
@@ -498,10 +521,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align by interpolating between adjacent points around the
-     * period boundary. This alignment is valid for gauge
-     * metrics with numeric values. The value type of the result is the same
-     * as the value type of the input.
+     * Align by interpolating between adjacent points around the alignment
+     * period boundary. This aligner is valid for `GAUGE` metrics with
+     * numeric values. The `value_type` of the aligned result is the same as the
+     * `value_type` of the input.
      * </pre>
      *
      * <code>ALIGN_INTERPOLATE = 3;</code>
@@ -511,10 +534,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align by shifting the oldest data point before the period
-     * boundary to the boundary. This alignment is valid for gauge
-     * metrics. The value type of the result is the same as the
-     * value type of the input.
+     * Align by moving the most recent data point before the end of the
+     * alignment period to the boundary at the end of the alignment
+     * period. This aligner is valid for `GAUGE` metrics. The `value_type` of
+     * the aligned result is the same as the `value_type` of the input.
      * </pre>
      *
      * <code>ALIGN_NEXT_OLDER = 4;</code>
@@ -524,11 +547,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the minimum of all data points in the
-     * period. This alignment is valid for gauge and delta metrics with numeric
-     * values. The value type of the result is the same as the value
-     * type of the input.
+     * Align the time series by returning the minimum value in each alignment
+     * period. This aligner is valid for `GAUGE` and `DELTA` metrics with
+     * numeric values. The `value_type` of the aligned result is the same as
+     * the `value_type` of the input.
      * </pre>
      *
      * <code>ALIGN_MIN = 10;</code>
@@ -538,11 +560,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the maximum of all data points in the
-     * period. This alignment is valid for gauge and delta metrics with numeric
-     * values. The value type of the result is the same as the value
-     * type of the input.
+     * Align the time series by returning the maximum value in each alignment
+     * period. This aligner is valid for `GAUGE` and `DELTA` metrics with
+     * numeric values. The `value_type` of the aligned result is the same as
+     * the `value_type` of the input.
      * </pre>
      *
      * <code>ALIGN_MAX = 11;</code>
@@ -552,11 +573,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the average or arithmetic mean of all
-     * data points in the period. This alignment is valid for gauge and delta
-     * metrics with numeric values. The value type of the output is
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Align the time series by returning the mean value in each alignment
+     * period. This aligner is valid for `GAUGE` and `DELTA` metrics with
+     * numeric values. The `value_type` of the aligned result is `DOUBLE`.
      * </pre>
      *
      * <code>ALIGN_MEAN = 12;</code>
@@ -566,11 +585,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the count of all data points in the
-     * period. This alignment is valid for gauge and delta metrics with numeric
-     * or Boolean values. The value type of the output is
-     * [INT64][google.api.MetricDescriptor.ValueType.INT64].
+     * Align the time series by returning the number of values in each alignment
+     * period. This aligner is valid for `GAUGE` and `DELTA` metrics with
+     * numeric or Boolean values. The `value_type` of the aligned result is
+     * `INT64`.
      * </pre>
      *
      * <code>ALIGN_COUNT = 13;</code>
@@ -580,11 +598,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the sum of all data points in the
-     * period. This alignment is valid for gauge and delta metrics with numeric
-     * and distribution values. The value type of the output is the
-     * same as the value type of the input.
+     * Align the time series by returning the sum of the values in each
+     * alignment period. This aligner is valid for `GAUGE` and `DELTA`
+     * metrics with numeric and distribution values. The `value_type` of the
+     * aligned result is the same as the `value_type` of the input.
      * </pre>
      *
      * <code>ALIGN_SUM = 14;</code>
@@ -594,11 +611,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the standard deviation of all data
-     * points in the period. This alignment is valid for gauge and delta metrics
-     * with numeric values. The value type of the output is
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Align the time series by returning the standard deviation of the values
+     * in each alignment period. This aligner is valid for `GAUGE` and
+     * `DELTA` metrics with numeric values. The `value_type` of the output is
+     * `DOUBLE`.
      * </pre>
      *
      * <code>ALIGN_STDDEV = 15;</code>
@@ -608,11 +624,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the count of True-valued data points in the
-     * period. This alignment is valid for gauge metrics with
-     * Boolean values. The value type of the output is
-     * [INT64][google.api.MetricDescriptor.ValueType.INT64].
+     * Align the time series by returning the number of `True` values in
+     * each alignment period. This aligner is valid for `GAUGE` metrics with
+     * Boolean values. The `value_type` of the output is `INT64`.
      * </pre>
      *
      * <code>ALIGN_COUNT_TRUE = 16;</code>
@@ -622,11 +636,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the count of False-valued data points in the
-     * period. This alignment is valid for gauge metrics with
-     * Boolean values. The value type of the output is
-     * [INT64][google.api.MetricDescriptor.ValueType.INT64].
+     * Align the time series by returning the number of `False` values in
+     * each alignment period. This aligner is valid for `GAUGE` metrics with
+     * Boolean values. The `value_type` of the output is `INT64`.
      * </pre>
      *
      * <code>ALIGN_COUNT_FALSE = 24;</code>
@@ -636,11 +648,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the fraction of True-valued data points in the
-     * period. This alignment is valid for gauge metrics with Boolean values.
-     * The output value is in the range [0, 1] and has value type
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Align the time series by returning the ratio of the number of `True`
+     * values to the total number of values in each alignment period. This
+     * aligner is valid for `GAUGE` metrics with Boolean values. The output
+     * value is in the range [0.0, 1.0] and has `value_type` `DOUBLE`.
      * </pre>
      *
      * <code>ALIGN_FRACTION_TRUE = 17;</code>
@@ -650,11 +661,12 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the 99th percentile of all data
-     * points in the period. This alignment is valid for gauge and delta metrics
-     * with distribution values. The output is a gauge metric with value type
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Align the time series by using [percentile
+     * aggregation](https://en.wikipedia.org/wiki/Percentile). The resulting
+     * data point in each alignment period is the 99th percentile of all data
+     * points in the period. This aligner is valid for `GAUGE` and `DELTA`
+     * metrics with distribution values. The output is a `GAUGE` metric with
+     * `value_type` `DOUBLE`.
      * </pre>
      *
      * <code>ALIGN_PERCENTILE_99 = 18;</code>
@@ -664,11 +676,12 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the 95th percentile of all data
-     * points in the period. This alignment is valid for gauge and delta metrics
-     * with distribution values. The output is a gauge metric with value type
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Align the time series by using [percentile
+     * aggregation](https://en.wikipedia.org/wiki/Percentile). The resulting
+     * data point in each alignment period is the 95th percentile of all data
+     * points in the period. This aligner is valid for `GAUGE` and `DELTA`
+     * metrics with distribution values. The output is a `GAUGE` metric with
+     * `value_type` `DOUBLE`.
      * </pre>
      *
      * <code>ALIGN_PERCENTILE_95 = 19;</code>
@@ -678,11 +691,12 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the 50th percentile of all data
-     * points in the period. This alignment is valid for gauge and delta metrics
-     * with distribution values. The output is a gauge metric with value type
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Align the time series by using [percentile
+     * aggregation](https://en.wikipedia.org/wiki/Percentile). The resulting
+     * data point in each alignment period is the 50th percentile of all data
+     * points in the period. This aligner is valid for `GAUGE` and `DELTA`
+     * metrics with distribution values. The output is a `GAUGE` metric with
+     * `value_type` `DOUBLE`.
      * </pre>
      *
      * <code>ALIGN_PERCENTILE_50 = 20;</code>
@@ -692,11 +706,12 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align time series via aggregation. The resulting data point in
-     * the alignment period is the 5th percentile of all data
-     * points in the period. This alignment is valid for gauge and delta metrics
-     * with distribution values. The output is a gauge metric with value type
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Align the time series by using [percentile
+     * aggregation](https://en.wikipedia.org/wiki/Percentile). The resulting
+     * data point in each alignment period is the 5th percentile of all data
+     * points in the period. This aligner is valid for `GAUGE` and `DELTA`
+     * metrics with distribution values. The output is a `GAUGE` metric with
+     * `value_type` `DOUBLE`.
      * </pre>
      *
      * <code>ALIGN_PERCENTILE_05 = 21;</code>
@@ -706,21 +721,20 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Align and convert to a percentage change. This alignment is valid for
-     * gauge and delta metrics with numeric values. This alignment conceptually
-     * computes the equivalent of "((current - previous)/previous)*100"
-     * where previous value is determined based on the alignmentPeriod.
-     * In the event that previous is 0 the calculated value is infinity with the
-     * exception that if both (current - previous) and previous are 0 the
-     * calculated value is 0.
-     * A 10 minute moving mean is computed at each point of the time window
+     * Align and convert to a percentage change. This aligner is valid for
+     * `GAUGE` and `DELTA` metrics with numeric values. This alignment returns
+     * `((current - previous)/previous) * 100`, where the value of `previous` is
+     * determined based on the `alignment_period`.
+     * If the values of `current` and `previous` are both 0, then the returned
+     * value is 0. If only `previous` is 0, the returned value is infinity.
+     * A 10-minute moving mean is computed at each point of the alignment period
      * prior to the above calculation to smooth the metric and prevent false
-     * positives from very short lived spikes.
-     * Only applicable for data that is &gt;= 0. Any values &lt; 0 are treated as
-     * no data. While delta metrics are accepted by this alignment special care
-     * should be taken that the values for the metric will always be positive.
-     * The output is a gauge metric with value type
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * positives from very short-lived spikes. The moving mean is only
+     * applicable for data whose values are `&gt;= 0`. Any values `&lt; 0` are
+     * treated as a missing datapoint, and are ignored. While `DELTA`
+     * metrics are accepted by this alignment, special care should be taken that
+     * the values for the metric will always be positive. The output is a
+     * `GAUGE` metric with `value_type` `DOUBLE`.
      * </pre>
      *
      * <code>ALIGN_PERCENT_CHANGE = 23;</code>
@@ -842,8 +856,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Reducer describes how to aggregate data points from multiple
-   * time series into a single time series.
+   * A Reducer operation describes how to aggregate data points from multiple
+   * time series into a single time series, where the value of each data point
+   * in the resulting series is a function of all the already aligned values in
+   * the input time series.
    * </pre>
    *
    * Protobuf enum {@code google.monitoring.v3.Aggregation.Reducer}
@@ -853,7 +869,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * No cross-time series reduction. The output of the aligner is
+     * No cross-time series reduction. The output of the `Aligner` is
      * returned.
      * </pre>
      *
@@ -864,10 +880,12 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing the mean across time series for each
-     * alignment period. This reducer is valid for delta and
-     * gauge metrics with numeric or distribution values. The value type of the
-     * output is [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Reduce by computing the mean value across time series for each
+     * alignment period. This reducer is valid for
+     * [DELTA][google.api.MetricDescriptor.MetricKind.DELTA] and
+     * [GAUGE][google.api.MetricDescriptor.MetricKind.GAUGE] metrics with
+     * numeric or distribution values. The `value_type` of the output is
+     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
      * </pre>
      *
      * <code>REDUCE_MEAN = 1;</code>
@@ -877,10 +895,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing the minimum across time series for each
-     * alignment period. This reducer is valid for delta and
-     * gauge metrics with numeric values. The value type of the output
-     * is the same as the value type of the input.
+     * Reduce by computing the minimum value across time series for each
+     * alignment period. This reducer is valid for `DELTA` and `GAUGE` metrics
+     * with numeric values. The `value_type` of the output is the same as the
+     * `value_type` of the input.
      * </pre>
      *
      * <code>REDUCE_MIN = 2;</code>
@@ -890,10 +908,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing the maximum across time series for each
-     * alignment period. This reducer is valid for delta and
-     * gauge metrics with numeric values. The value type of the output
-     * is the same as the value type of the input.
+     * Reduce by computing the maximum value across time series for each
+     * alignment period. This reducer is valid for `DELTA` and `GAUGE` metrics
+     * with numeric values. The `value_type` of the output is the same as the
+     * `value_type` of the input.
      * </pre>
      *
      * <code>REDUCE_MAX = 3;</code>
@@ -904,9 +922,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Reduce by computing the sum across time series for each
-     * alignment period. This reducer is valid for delta and
-     * gauge metrics with numeric and distribution values. The value type of
-     * the output is the same as the value type of the input.
+     * alignment period. This reducer is valid for `DELTA` and `GAUGE` metrics
+     * with numeric and distribution values. The `value_type` of the output is
+     * the same as the `value_type` of the input.
      * </pre>
      *
      * <code>REDUCE_SUM = 4;</code>
@@ -917,9 +935,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Reduce by computing the standard deviation across time series
-     * for each alignment period. This reducer is valid for delta
-     * and gauge metrics with numeric or distribution values. The value type of
-     * the output is [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * for each alignment period. This reducer is valid for `DELTA` and
+     * `GAUGE` metrics with numeric or distribution values. The `value_type`
+     * of the output is `DOUBLE`.
      * </pre>
      *
      * <code>REDUCE_STDDEV = 5;</code>
@@ -929,11 +947,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing the count of data points across time series
-     * for each alignment period. This reducer is valid for delta
-     * and gauge metrics of numeric, Boolean, distribution, and string value
-     * type. The value type of the output is
-     * [INT64][google.api.MetricDescriptor.ValueType.INT64].
+     * Reduce by computing the number of data points across time series
+     * for each alignment period. This reducer is valid for `DELTA` and
+     * `GAUGE` metrics of numeric, Boolean, distribution, and string
+     * `value_type`. The `value_type` of the output is `INT64`.
      * </pre>
      *
      * <code>REDUCE_COUNT = 6;</code>
@@ -943,10 +960,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing the count of True-valued data points across time
-     * series for each alignment period. This reducer is valid for delta
-     * and gauge metrics of Boolean value type. The value type of
-     * the output is [INT64][google.api.MetricDescriptor.ValueType.INT64].
+     * Reduce by computing the number of `True`-valued data points across time
+     * series for each alignment period. This reducer is valid for `DELTA` and
+     * `GAUGE` metrics of Boolean `value_type`. The `value_type` of the output
+     * is `INT64`.
      * </pre>
      *
      * <code>REDUCE_COUNT_TRUE = 7;</code>
@@ -956,10 +973,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing the count of False-valued data points across time
-     * series for each alignment period. This reducer is valid for delta
-     * and gauge metrics of Boolean value type. The value type of
-     * the output is [INT64][google.api.MetricDescriptor.ValueType.INT64].
+     * Reduce by computing the number of `False`-valued data points across time
+     * series for each alignment period. This reducer is valid for `DELTA` and
+     * `GAUGE` metrics of Boolean `value_type`. The `value_type` of the output
+     * is `INT64`.
      * </pre>
      *
      * <code>REDUCE_COUNT_FALSE = 15;</code>
@@ -969,11 +986,11 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing the fraction of True-valued data points across time
-     * series for each alignment period. This reducer is valid for delta
-     * and gauge metrics of Boolean value type. The output value is in the
-     * range [0, 1] and has value type
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Reduce by computing the ratio of the number of `True`-valued data points
+     * to the total number of data points for each alignment period. This
+     * reducer is valid for `DELTA` and `GAUGE` metrics of Boolean `value_type`.
+     * The output value is in the range [0.0, 1.0] and has `value_type`
+     * `DOUBLE`.
      * </pre>
      *
      * <code>REDUCE_FRACTION_TRUE = 8;</code>
@@ -983,10 +1000,11 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing 99th percentile of data points across time series
-     * for each alignment period. This reducer is valid for gauge and delta
-     * metrics of numeric and distribution type. The value of the output is
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE]
+     * Reduce by computing the [99th
+     * percentile](https://en.wikipedia.org/wiki/Percentile) of data points
+     * across time series for each alignment period. This reducer is valid for
+     * `GAUGE` and `DELTA` metrics of numeric and distribution type. The value
+     * of the output is `DOUBLE`.
      * </pre>
      *
      * <code>REDUCE_PERCENTILE_99 = 9;</code>
@@ -996,10 +1014,11 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing 95th percentile of data points across time series
-     * for each alignment period. This reducer is valid for gauge and delta
-     * metrics of numeric and distribution type. The value of the output is
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE]
+     * Reduce by computing the [95th
+     * percentile](https://en.wikipedia.org/wiki/Percentile) of data points
+     * across time series for each alignment period. This reducer is valid for
+     * `GAUGE` and `DELTA` metrics of numeric and distribution type. The value
+     * of the output is `DOUBLE`.
      * </pre>
      *
      * <code>REDUCE_PERCENTILE_95 = 10;</code>
@@ -1009,10 +1028,11 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing 50th percentile of data points across time series
-     * for each alignment period. This reducer is valid for gauge and delta
-     * metrics of numeric and distribution type. The value of the output is
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE]
+     * Reduce by computing the [50th
+     * percentile](https://en.wikipedia.org/wiki/Percentile) of data points
+     * across time series for each alignment period. This reducer is valid for
+     * `GAUGE` and `DELTA` metrics of numeric and distribution type. The value
+     * of the output is `DOUBLE`.
      * </pre>
      *
      * <code>REDUCE_PERCENTILE_50 = 11;</code>
@@ -1022,10 +1042,11 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing 5th percentile of data points across time series
-     * for each alignment period. This reducer is valid for gauge and delta
-     * metrics of numeric and distribution type. The value of the output is
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE]
+     * Reduce by computing the [5th
+     * percentile](https://en.wikipedia.org/wiki/Percentile) of data points
+     * across time series for each alignment period. This reducer is valid for
+     * `GAUGE` and `DELTA` metrics of numeric and distribution type. The value
+     * of the output is `DOUBLE`.
      * </pre>
      *
      * <code>REDUCE_PERCENTILE_05 = 12;</code>
@@ -1038,7 +1059,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * No cross-time series reduction. The output of the aligner is
+     * No cross-time series reduction. The output of the `Aligner` is
      * returned.
      * </pre>
      *
@@ -1049,10 +1070,12 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing the mean across time series for each
-     * alignment period. This reducer is valid for delta and
-     * gauge metrics with numeric or distribution values. The value type of the
-     * output is [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Reduce by computing the mean value across time series for each
+     * alignment period. This reducer is valid for
+     * [DELTA][google.api.MetricDescriptor.MetricKind.DELTA] and
+     * [GAUGE][google.api.MetricDescriptor.MetricKind.GAUGE] metrics with
+     * numeric or distribution values. The `value_type` of the output is
+     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
      * </pre>
      *
      * <code>REDUCE_MEAN = 1;</code>
@@ -1062,10 +1085,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing the minimum across time series for each
-     * alignment period. This reducer is valid for delta and
-     * gauge metrics with numeric values. The value type of the output
-     * is the same as the value type of the input.
+     * Reduce by computing the minimum value across time series for each
+     * alignment period. This reducer is valid for `DELTA` and `GAUGE` metrics
+     * with numeric values. The `value_type` of the output is the same as the
+     * `value_type` of the input.
      * </pre>
      *
      * <code>REDUCE_MIN = 2;</code>
@@ -1075,10 +1098,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing the maximum across time series for each
-     * alignment period. This reducer is valid for delta and
-     * gauge metrics with numeric values. The value type of the output
-     * is the same as the value type of the input.
+     * Reduce by computing the maximum value across time series for each
+     * alignment period. This reducer is valid for `DELTA` and `GAUGE` metrics
+     * with numeric values. The `value_type` of the output is the same as the
+     * `value_type` of the input.
      * </pre>
      *
      * <code>REDUCE_MAX = 3;</code>
@@ -1089,9 +1112,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Reduce by computing the sum across time series for each
-     * alignment period. This reducer is valid for delta and
-     * gauge metrics with numeric and distribution values. The value type of
-     * the output is the same as the value type of the input.
+     * alignment period. This reducer is valid for `DELTA` and `GAUGE` metrics
+     * with numeric and distribution values. The `value_type` of the output is
+     * the same as the `value_type` of the input.
      * </pre>
      *
      * <code>REDUCE_SUM = 4;</code>
@@ -1102,9 +1125,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Reduce by computing the standard deviation across time series
-     * for each alignment period. This reducer is valid for delta
-     * and gauge metrics with numeric or distribution values. The value type of
-     * the output is [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * for each alignment period. This reducer is valid for `DELTA` and
+     * `GAUGE` metrics with numeric or distribution values. The `value_type`
+     * of the output is `DOUBLE`.
      * </pre>
      *
      * <code>REDUCE_STDDEV = 5;</code>
@@ -1114,11 +1137,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing the count of data points across time series
-     * for each alignment period. This reducer is valid for delta
-     * and gauge metrics of numeric, Boolean, distribution, and string value
-     * type. The value type of the output is
-     * [INT64][google.api.MetricDescriptor.ValueType.INT64].
+     * Reduce by computing the number of data points across time series
+     * for each alignment period. This reducer is valid for `DELTA` and
+     * `GAUGE` metrics of numeric, Boolean, distribution, and string
+     * `value_type`. The `value_type` of the output is `INT64`.
      * </pre>
      *
      * <code>REDUCE_COUNT = 6;</code>
@@ -1128,10 +1150,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing the count of True-valued data points across time
-     * series for each alignment period. This reducer is valid for delta
-     * and gauge metrics of Boolean value type. The value type of
-     * the output is [INT64][google.api.MetricDescriptor.ValueType.INT64].
+     * Reduce by computing the number of `True`-valued data points across time
+     * series for each alignment period. This reducer is valid for `DELTA` and
+     * `GAUGE` metrics of Boolean `value_type`. The `value_type` of the output
+     * is `INT64`.
      * </pre>
      *
      * <code>REDUCE_COUNT_TRUE = 7;</code>
@@ -1141,10 +1163,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing the count of False-valued data points across time
-     * series for each alignment period. This reducer is valid for delta
-     * and gauge metrics of Boolean value type. The value type of
-     * the output is [INT64][google.api.MetricDescriptor.ValueType.INT64].
+     * Reduce by computing the number of `False`-valued data points across time
+     * series for each alignment period. This reducer is valid for `DELTA` and
+     * `GAUGE` metrics of Boolean `value_type`. The `value_type` of the output
+     * is `INT64`.
      * </pre>
      *
      * <code>REDUCE_COUNT_FALSE = 15;</code>
@@ -1154,11 +1176,11 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing the fraction of True-valued data points across time
-     * series for each alignment period. This reducer is valid for delta
-     * and gauge metrics of Boolean value type. The output value is in the
-     * range [0, 1] and has value type
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE].
+     * Reduce by computing the ratio of the number of `True`-valued data points
+     * to the total number of data points for each alignment period. This
+     * reducer is valid for `DELTA` and `GAUGE` metrics of Boolean `value_type`.
+     * The output value is in the range [0.0, 1.0] and has `value_type`
+     * `DOUBLE`.
      * </pre>
      *
      * <code>REDUCE_FRACTION_TRUE = 8;</code>
@@ -1168,10 +1190,11 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing 99th percentile of data points across time series
-     * for each alignment period. This reducer is valid for gauge and delta
-     * metrics of numeric and distribution type. The value of the output is
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE]
+     * Reduce by computing the [99th
+     * percentile](https://en.wikipedia.org/wiki/Percentile) of data points
+     * across time series for each alignment period. This reducer is valid for
+     * `GAUGE` and `DELTA` metrics of numeric and distribution type. The value
+     * of the output is `DOUBLE`.
      * </pre>
      *
      * <code>REDUCE_PERCENTILE_99 = 9;</code>
@@ -1181,10 +1204,11 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing 95th percentile of data points across time series
-     * for each alignment period. This reducer is valid for gauge and delta
-     * metrics of numeric and distribution type. The value of the output is
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE]
+     * Reduce by computing the [95th
+     * percentile](https://en.wikipedia.org/wiki/Percentile) of data points
+     * across time series for each alignment period. This reducer is valid for
+     * `GAUGE` and `DELTA` metrics of numeric and distribution type. The value
+     * of the output is `DOUBLE`.
      * </pre>
      *
      * <code>REDUCE_PERCENTILE_95 = 10;</code>
@@ -1194,10 +1218,11 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing 50th percentile of data points across time series
-     * for each alignment period. This reducer is valid for gauge and delta
-     * metrics of numeric and distribution type. The value of the output is
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE]
+     * Reduce by computing the [50th
+     * percentile](https://en.wikipedia.org/wiki/Percentile) of data points
+     * across time series for each alignment period. This reducer is valid for
+     * `GAUGE` and `DELTA` metrics of numeric and distribution type. The value
+     * of the output is `DOUBLE`.
      * </pre>
      *
      * <code>REDUCE_PERCENTILE_50 = 11;</code>
@@ -1207,10 +1232,11 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reduce by computing 5th percentile of data points across time series
-     * for each alignment period. This reducer is valid for gauge and delta
-     * metrics of numeric and distribution type. The value of the output is
-     * [DOUBLE][google.api.MetricDescriptor.ValueType.DOUBLE]
+     * Reduce by computing the [5th
+     * percentile](https://en.wikipedia.org/wiki/Percentile) of data points
+     * across time series for each alignment period. This reducer is valid for
+     * `GAUGE` and `DELTA` metrics of numeric and distribution type. The value
+     * of the output is `DOUBLE`.
      * </pre>
      *
      * <code>REDUCE_PERCENTILE_05 = 12;</code>
@@ -1324,14 +1350,15 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
-   * alignment. If present, `alignmentPeriod` must be at least 60
-   * seconds.  After per-time series alignment, each time series will
-   * contain data points only on the period boundaries. If
-   * `perSeriesAligner` is not specified or equals `ALIGN_NONE`, then
-   * this field is ignored. If `perSeriesAligner` is specified and
-   * does not equal `ALIGN_NONE`, then this field must be defined;
-   * otherwise an error is returned.
+   * The `alignment_period` specifies a time interval, in seconds, that is used
+   * to divide the data in all the
+   * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
+   * time. This will be done before the per-series aligner can be applied to
+   * the data.
+   * The value must be at least 60 seconds. If a per-series aligner other than
+   * `ALIGN_NONE` is specified, this field is required or an error is returned.
+   * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
+   * specified, then this field is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -1345,14 +1372,15 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
-   * alignment. If present, `alignmentPeriod` must be at least 60
-   * seconds.  After per-time series alignment, each time series will
-   * contain data points only on the period boundaries. If
-   * `perSeriesAligner` is not specified or equals `ALIGN_NONE`, then
-   * this field is ignored. If `perSeriesAligner` is specified and
-   * does not equal `ALIGN_NONE`, then this field must be defined;
-   * otherwise an error is returned.
+   * The `alignment_period` specifies a time interval, in seconds, that is used
+   * to divide the data in all the
+   * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
+   * time. This will be done before the per-series aligner can be applied to
+   * the data.
+   * The value must be at least 60 seconds. If a per-series aligner other than
+   * `ALIGN_NONE` is specified, this field is required or an error is returned.
+   * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
+   * specified, then this field is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -1368,14 +1396,15 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
-   * alignment. If present, `alignmentPeriod` must be at least 60
-   * seconds.  After per-time series alignment, each time series will
-   * contain data points only on the period boundaries. If
-   * `perSeriesAligner` is not specified or equals `ALIGN_NONE`, then
-   * this field is ignored. If `perSeriesAligner` is specified and
-   * does not equal `ALIGN_NONE`, then this field must be defined;
-   * otherwise an error is returned.
+   * The `alignment_period` specifies a time interval, in seconds, that is used
+   * to divide the data in all the
+   * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
+   * time. This will be done before the per-series aligner can be applied to
+   * the data.
+   * The value must be at least 60 seconds. If a per-series aligner other than
+   * `ALIGN_NONE` is specified, this field is required or an error is returned.
+   * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
+   * specified, then this field is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -1390,15 +1419,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The approach to be used to align individual time series. Not all
-   * alignment functions may be applied to all time series, depending
-   * on the metric type and value type of the original time
-   * series. Alignment may change the metric type or the value type of
+   * An `Aligner` describes how to bring the data points in a single
+   * time series into temporal alignment. Except for `ALIGN_NONE`, all
+   * alignments cause all the data points in an `alignment_period` to be
+   * mathematically grouped together, resulting in a single data point for
+   * each `alignment_period` with end timestamp at the end of the period.
+   * Not all alignment operations may be applied to all time series. The valid
+   * choices depend on the `metric_kind` and `value_type` of the original time
+   * series. Alignment can change the `metric_kind` or the `value_type` of
    * the time series.
    * Time series data must be aligned in order to perform cross-time
-   * series reduction. If `crossSeriesReducer` is specified, then
-   * `perSeriesAligner` must be specified and not equal `ALIGN_NONE`
-   * and `alignmentPeriod` must be specified; otherwise, an error is
+   * series reduction. If `cross_series_reducer` is specified, then
+   * `per_series_aligner` must be specified and not equal to `ALIGN_NONE`
+   * and `alignment_period` must be specified; otherwise, an error is
    * returned.
    * </pre>
    *
@@ -1413,15 +1446,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The approach to be used to align individual time series. Not all
-   * alignment functions may be applied to all time series, depending
-   * on the metric type and value type of the original time
-   * series. Alignment may change the metric type or the value type of
+   * An `Aligner` describes how to bring the data points in a single
+   * time series into temporal alignment. Except for `ALIGN_NONE`, all
+   * alignments cause all the data points in an `alignment_period` to be
+   * mathematically grouped together, resulting in a single data point for
+   * each `alignment_period` with end timestamp at the end of the period.
+   * Not all alignment operations may be applied to all time series. The valid
+   * choices depend on the `metric_kind` and `value_type` of the original time
+   * series. Alignment can change the `metric_kind` or the `value_type` of
    * the time series.
    * Time series data must be aligned in order to perform cross-time
-   * series reduction. If `crossSeriesReducer` is specified, then
-   * `perSeriesAligner` must be specified and not equal `ALIGN_NONE`
-   * and `alignmentPeriod` must be specified; otherwise, an error is
+   * series reduction. If `cross_series_reducer` is specified, then
+   * `per_series_aligner` must be specified and not equal to `ALIGN_NONE`
+   * and `alignment_period` must be specified; otherwise, an error is
    * returned.
    * </pre>
    *
@@ -1442,16 +1479,18 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The approach to be used to combine time series. Not all reducer
-   * functions may be applied to all time series, depending on the
-   * metric type and the value type of the original time
-   * series. Reduction may change the metric type of value type of the
-   * time series.
-   * Time series data must be aligned in order to perform cross-time
-   * series reduction. If `crossSeriesReducer` is specified, then
-   * `perSeriesAligner` must be specified and not equal `ALIGN_NONE`
-   * and `alignmentPeriod` must be specified; otherwise, an error is
-   * returned.
+   * The reduction operation to be used to combine time series into a single
+   * time series, where the value of each data point in the resulting series is
+   * a function of all the already aligned values in the input time series.
+   * Not all reducer operations can be applied to all time series. The valid
+   * choices depend on the `metric_kind` and the `value_type` of the original
+   * time series. Reduction can yield a time series with a different
+   * `metric_kind` or `value_type` than the input time series.
+   * Time series data must first be aligned (see `per_series_aligner`) in order
+   * to perform cross-time series reduction. If `cross_series_reducer` is
+   * specified, then `per_series_aligner` must be specified, and must not be
+   * `ALIGN_NONE`. An `alignment_period` must also be specified; otherwise, an
+   * error is returned.
    * </pre>
    *
    * <code>.google.monitoring.v3.Aggregation.Reducer cross_series_reducer = 4;</code>
@@ -1465,16 +1504,18 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The approach to be used to combine time series. Not all reducer
-   * functions may be applied to all time series, depending on the
-   * metric type and the value type of the original time
-   * series. Reduction may change the metric type of value type of the
-   * time series.
-   * Time series data must be aligned in order to perform cross-time
-   * series reduction. If `crossSeriesReducer` is specified, then
-   * `perSeriesAligner` must be specified and not equal `ALIGN_NONE`
-   * and `alignmentPeriod` must be specified; otherwise, an error is
-   * returned.
+   * The reduction operation to be used to combine time series into a single
+   * time series, where the value of each data point in the resulting series is
+   * a function of all the already aligned values in the input time series.
+   * Not all reducer operations can be applied to all time series. The valid
+   * choices depend on the `metric_kind` and the `value_type` of the original
+   * time series. Reduction can yield a time series with a different
+   * `metric_kind` or `value_type` than the input time series.
+   * Time series data must first be aligned (see `per_series_aligner`) in order
+   * to perform cross-time series reduction. If `cross_series_reducer` is
+   * specified, then `per_series_aligner` must be specified, and must not be
+   * `ALIGN_NONE`. An `alignment_period` must also be specified; otherwise, an
+   * error is returned.
    * </pre>
    *
    * <code>.google.monitoring.v3.Aggregation.Reducer cross_series_reducer = 4;</code>
@@ -1494,19 +1535,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The set of fields to preserve when `crossSeriesReducer` is
-   * specified. The `groupByFields` determine how the time series are
+   * The set of fields to preserve when `cross_series_reducer` is
+   * specified. The `group_by_fields` determine how the time series are
    * partitioned into subsets prior to applying the aggregation
-   * function. Each subset contains time series that have the same
+   * operation. Each subset contains time series that have the same
    * value for each of the grouping fields. Each individual time
    * series is a member of exactly one subset. The
-   * `crossSeriesReducer` is applied to each subset of time series.
+   * `cross_series_reducer` is applied to each subset of time series.
    * It is not possible to reduce across different resource types, so
    * this field implicitly contains `resource.type`.  Fields not
-   * specified in `groupByFields` are aggregated away.  If
-   * `groupByFields` is not specified and all the time series have
+   * specified in `group_by_fields` are aggregated away.  If
+   * `group_by_fields` is not specified and all the time series have
    * the same resource type, then the time series are aggregated into
-   * a single output time series. If `crossSeriesReducer` is not
+   * a single output time series. If `cross_series_reducer` is not
    * defined, this field is ignored.
    * </pre>
    *
@@ -1521,19 +1562,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The set of fields to preserve when `crossSeriesReducer` is
-   * specified. The `groupByFields` determine how the time series are
+   * The set of fields to preserve when `cross_series_reducer` is
+   * specified. The `group_by_fields` determine how the time series are
    * partitioned into subsets prior to applying the aggregation
-   * function. Each subset contains time series that have the same
+   * operation. Each subset contains time series that have the same
    * value for each of the grouping fields. Each individual time
    * series is a member of exactly one subset. The
-   * `crossSeriesReducer` is applied to each subset of time series.
+   * `cross_series_reducer` is applied to each subset of time series.
    * It is not possible to reduce across different resource types, so
    * this field implicitly contains `resource.type`.  Fields not
-   * specified in `groupByFields` are aggregated away.  If
-   * `groupByFields` is not specified and all the time series have
+   * specified in `group_by_fields` are aggregated away.  If
+   * `group_by_fields` is not specified and all the time series have
    * the same resource type, then the time series are aggregated into
-   * a single output time series. If `crossSeriesReducer` is not
+   * a single output time series. If `cross_series_reducer` is not
    * defined, this field is ignored.
    * </pre>
    *
@@ -1548,19 +1589,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The set of fields to preserve when `crossSeriesReducer` is
-   * specified. The `groupByFields` determine how the time series are
+   * The set of fields to preserve when `cross_series_reducer` is
+   * specified. The `group_by_fields` determine how the time series are
    * partitioned into subsets prior to applying the aggregation
-   * function. Each subset contains time series that have the same
+   * operation. Each subset contains time series that have the same
    * value for each of the grouping fields. Each individual time
    * series is a member of exactly one subset. The
-   * `crossSeriesReducer` is applied to each subset of time series.
+   * `cross_series_reducer` is applied to each subset of time series.
    * It is not possible to reduce across different resource types, so
    * this field implicitly contains `resource.type`.  Fields not
-   * specified in `groupByFields` are aggregated away.  If
-   * `groupByFields` is not specified and all the time series have
+   * specified in `group_by_fields` are aggregated away.  If
+   * `group_by_fields` is not specified and all the time series have
    * the same resource type, then the time series are aggregated into
-   * a single output time series. If `crossSeriesReducer` is not
+   * a single output time series. If `cross_series_reducer` is not
    * defined, this field is ignored.
    * </pre>
    *
@@ -1576,19 +1617,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The set of fields to preserve when `crossSeriesReducer` is
-   * specified. The `groupByFields` determine how the time series are
+   * The set of fields to preserve when `cross_series_reducer` is
+   * specified. The `group_by_fields` determine how the time series are
    * partitioned into subsets prior to applying the aggregation
-   * function. Each subset contains time series that have the same
+   * operation. Each subset contains time series that have the same
    * value for each of the grouping fields. Each individual time
    * series is a member of exactly one subset. The
-   * `crossSeriesReducer` is applied to each subset of time series.
+   * `cross_series_reducer` is applied to each subset of time series.
    * It is not possible to reduce across different resource types, so
    * this field implicitly contains `resource.type`.  Fields not
-   * specified in `groupByFields` are aggregated away.  If
-   * `groupByFields` is not specified and all the time series have
+   * specified in `group_by_fields` are aggregated away.  If
+   * `group_by_fields` is not specified and all the time series have
    * the same resource type, then the time series are aggregated into
-   * a single output time series. If `crossSeriesReducer` is not
+   * a single output time series. If `cross_series_reducer` is not
    * defined, this field is ignored.
    * </pre>
    *
@@ -1803,12 +1844,29 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Describes how to combine multiple time series to provide different views of
-   * the data.  Aggregation consists of an alignment step on individual time
-   * series (`alignment_period` and `per_series_aligner`) followed by an optional
-   * reduction step of the data across the aligned time series
-   * (`cross_series_reducer` and `group_by_fields`).  For more details, see
-   * [Aggregation](/monitoring/api/learn_more#aggregation).
+   * Describes how to combine multiple time series to provide a different view of
+   * the data.  Aggregation of time series is done in two steps. First, each time
+   * series in the set is _aligned_ to the same time interval boundaries, then the
+   * set of time series is optionally _reduced_ in number.
+   * Alignment consists of applying the `per_series_aligner` operation
+   * to each time series after its data has been divided into regular
+   * `alignment_period` time intervals. This process takes _all_ of the data
+   * points in an alignment period, applies a mathematical transformation such as
+   * averaging, minimum, maximum, delta, etc., and converts them into a single
+   * data point per period.
+   * Reduction is when the aligned and transformed time series can optionally be
+   * combined, reducing the number of time series through similar mathematical
+   * transformations. Reduction involves applying a `cross_series_reducer` to
+   * all the time series, optionally sorting the time series into subsets with
+   * `group_by_fields`, and applying the reducer to each subset.
+   * The raw time series data can contain a huge amount of information from
+   * multiple sources. Alignment and reduction transforms this mass of data into
+   * a more manageable and representative collection of data, for example "the
+   * 95% latency across the average of all tasks in a cluster". This
+   * representative data can be more easily graphed and comprehended, and the
+   * individual time series data is still available for later drilldown. For more
+   * details, see [Aggregating Time
+   * Series](/monitoring/api/v3/metrics#aggregating_time_series).
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.Aggregation}
@@ -2009,14 +2067,15 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
-     * alignment. If present, `alignmentPeriod` must be at least 60
-     * seconds.  After per-time series alignment, each time series will
-     * contain data points only on the period boundaries. If
-     * `perSeriesAligner` is not specified or equals `ALIGN_NONE`, then
-     * this field is ignored. If `perSeriesAligner` is specified and
-     * does not equal `ALIGN_NONE`, then this field must be defined;
-     * otherwise an error is returned.
+     * The `alignment_period` specifies a time interval, in seconds, that is used
+     * to divide the data in all the
+     * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
+     * time. This will be done before the per-series aligner can be applied to
+     * the data.
+     * The value must be at least 60 seconds. If a per-series aligner other than
+     * `ALIGN_NONE` is specified, this field is required or an error is returned.
+     * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
+     * specified, then this field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2030,14 +2089,15 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
-     * alignment. If present, `alignmentPeriod` must be at least 60
-     * seconds.  After per-time series alignment, each time series will
-     * contain data points only on the period boundaries. If
-     * `perSeriesAligner` is not specified or equals `ALIGN_NONE`, then
-     * this field is ignored. If `perSeriesAligner` is specified and
-     * does not equal `ALIGN_NONE`, then this field must be defined;
-     * otherwise an error is returned.
+     * The `alignment_period` specifies a time interval, in seconds, that is used
+     * to divide the data in all the
+     * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
+     * time. This will be done before the per-series aligner can be applied to
+     * the data.
+     * The value must be at least 60 seconds. If a per-series aligner other than
+     * `ALIGN_NONE` is specified, this field is required or an error is returned.
+     * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
+     * specified, then this field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2057,14 +2117,15 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
-     * alignment. If present, `alignmentPeriod` must be at least 60
-     * seconds.  After per-time series alignment, each time series will
-     * contain data points only on the period boundaries. If
-     * `perSeriesAligner` is not specified or equals `ALIGN_NONE`, then
-     * this field is ignored. If `perSeriesAligner` is specified and
-     * does not equal `ALIGN_NONE`, then this field must be defined;
-     * otherwise an error is returned.
+     * The `alignment_period` specifies a time interval, in seconds, that is used
+     * to divide the data in all the
+     * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
+     * time. This will be done before the per-series aligner can be applied to
+     * the data.
+     * The value must be at least 60 seconds. If a per-series aligner other than
+     * `ALIGN_NONE` is specified, this field is required or an error is returned.
+     * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
+     * specified, then this field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2086,14 +2147,15 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
-     * alignment. If present, `alignmentPeriod` must be at least 60
-     * seconds.  After per-time series alignment, each time series will
-     * contain data points only on the period boundaries. If
-     * `perSeriesAligner` is not specified or equals `ALIGN_NONE`, then
-     * this field is ignored. If `perSeriesAligner` is specified and
-     * does not equal `ALIGN_NONE`, then this field must be defined;
-     * otherwise an error is returned.
+     * The `alignment_period` specifies a time interval, in seconds, that is used
+     * to divide the data in all the
+     * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
+     * time. This will be done before the per-series aligner can be applied to
+     * the data.
+     * The value must be at least 60 seconds. If a per-series aligner other than
+     * `ALIGN_NONE` is specified, this field is required or an error is returned.
+     * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
+     * specified, then this field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2112,14 +2174,15 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
-     * alignment. If present, `alignmentPeriod` must be at least 60
-     * seconds.  After per-time series alignment, each time series will
-     * contain data points only on the period boundaries. If
-     * `perSeriesAligner` is not specified or equals `ALIGN_NONE`, then
-     * this field is ignored. If `perSeriesAligner` is specified and
-     * does not equal `ALIGN_NONE`, then this field must be defined;
-     * otherwise an error is returned.
+     * The `alignment_period` specifies a time interval, in seconds, that is used
+     * to divide the data in all the
+     * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
+     * time. This will be done before the per-series aligner can be applied to
+     * the data.
+     * The value must be at least 60 seconds. If a per-series aligner other than
+     * `ALIGN_NONE` is specified, this field is required or an error is returned.
+     * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
+     * specified, then this field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2145,14 +2208,15 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
-     * alignment. If present, `alignmentPeriod` must be at least 60
-     * seconds.  After per-time series alignment, each time series will
-     * contain data points only on the period boundaries. If
-     * `perSeriesAligner` is not specified or equals `ALIGN_NONE`, then
-     * this field is ignored. If `perSeriesAligner` is specified and
-     * does not equal `ALIGN_NONE`, then this field must be defined;
-     * otherwise an error is returned.
+     * The `alignment_period` specifies a time interval, in seconds, that is used
+     * to divide the data in all the
+     * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
+     * time. This will be done before the per-series aligner can be applied to
+     * the data.
+     * The value must be at least 60 seconds. If a per-series aligner other than
+     * `ALIGN_NONE` is specified, this field is required or an error is returned.
+     * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
+     * specified, then this field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2172,14 +2236,15 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
-     * alignment. If present, `alignmentPeriod` must be at least 60
-     * seconds.  After per-time series alignment, each time series will
-     * contain data points only on the period boundaries. If
-     * `perSeriesAligner` is not specified or equals `ALIGN_NONE`, then
-     * this field is ignored. If `perSeriesAligner` is specified and
-     * does not equal `ALIGN_NONE`, then this field must be defined;
-     * otherwise an error is returned.
+     * The `alignment_period` specifies a time interval, in seconds, that is used
+     * to divide the data in all the
+     * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
+     * time. This will be done before the per-series aligner can be applied to
+     * the data.
+     * The value must be at least 60 seconds. If a per-series aligner other than
+     * `ALIGN_NONE` is specified, this field is required or an error is returned.
+     * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
+     * specified, then this field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2193,14 +2258,15 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
-     * alignment. If present, `alignmentPeriod` must be at least 60
-     * seconds.  After per-time series alignment, each time series will
-     * contain data points only on the period boundaries. If
-     * `perSeriesAligner` is not specified or equals `ALIGN_NONE`, then
-     * this field is ignored. If `perSeriesAligner` is specified and
-     * does not equal `ALIGN_NONE`, then this field must be defined;
-     * otherwise an error is returned.
+     * The `alignment_period` specifies a time interval, in seconds, that is used
+     * to divide the data in all the
+     * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
+     * time. This will be done before the per-series aligner can be applied to
+     * the data.
+     * The value must be at least 60 seconds. If a per-series aligner other than
+     * `ALIGN_NONE` is specified, this field is required or an error is returned.
+     * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
+     * specified, then this field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2218,14 +2284,15 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
-     * alignment. If present, `alignmentPeriod` must be at least 60
-     * seconds.  After per-time series alignment, each time series will
-     * contain data points only on the period boundaries. If
-     * `perSeriesAligner` is not specified or equals `ALIGN_NONE`, then
-     * this field is ignored. If `perSeriesAligner` is specified and
-     * does not equal `ALIGN_NONE`, then this field must be defined;
-     * otherwise an error is returned.
+     * The `alignment_period` specifies a time interval, in seconds, that is used
+     * to divide the data in all the
+     * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
+     * time. This will be done before the per-series aligner can be applied to
+     * the data.
+     * The value must be at least 60 seconds. If a per-series aligner other than
+     * `ALIGN_NONE` is specified, this field is required or an error is returned.
+     * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
+     * specified, then this field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2252,15 +2319,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The approach to be used to align individual time series. Not all
-     * alignment functions may be applied to all time series, depending
-     * on the metric type and value type of the original time
-     * series. Alignment may change the metric type or the value type of
+     * An `Aligner` describes how to bring the data points in a single
+     * time series into temporal alignment. Except for `ALIGN_NONE`, all
+     * alignments cause all the data points in an `alignment_period` to be
+     * mathematically grouped together, resulting in a single data point for
+     * each `alignment_period` with end timestamp at the end of the period.
+     * Not all alignment operations may be applied to all time series. The valid
+     * choices depend on the `metric_kind` and `value_type` of the original time
+     * series. Alignment can change the `metric_kind` or the `value_type` of
      * the time series.
      * Time series data must be aligned in order to perform cross-time
-     * series reduction. If `crossSeriesReducer` is specified, then
-     * `perSeriesAligner` must be specified and not equal `ALIGN_NONE`
-     * and `alignmentPeriod` must be specified; otherwise, an error is
+     * series reduction. If `cross_series_reducer` is specified, then
+     * `per_series_aligner` must be specified and not equal to `ALIGN_NONE`
+     * and `alignment_period` must be specified; otherwise, an error is
      * returned.
      * </pre>
      *
@@ -2275,15 +2346,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The approach to be used to align individual time series. Not all
-     * alignment functions may be applied to all time series, depending
-     * on the metric type and value type of the original time
-     * series. Alignment may change the metric type or the value type of
+     * An `Aligner` describes how to bring the data points in a single
+     * time series into temporal alignment. Except for `ALIGN_NONE`, all
+     * alignments cause all the data points in an `alignment_period` to be
+     * mathematically grouped together, resulting in a single data point for
+     * each `alignment_period` with end timestamp at the end of the period.
+     * Not all alignment operations may be applied to all time series. The valid
+     * choices depend on the `metric_kind` and `value_type` of the original time
+     * series. Alignment can change the `metric_kind` or the `value_type` of
      * the time series.
      * Time series data must be aligned in order to perform cross-time
-     * series reduction. If `crossSeriesReducer` is specified, then
-     * `perSeriesAligner` must be specified and not equal `ALIGN_NONE`
-     * and `alignmentPeriod` must be specified; otherwise, an error is
+     * series reduction. If `cross_series_reducer` is specified, then
+     * `per_series_aligner` must be specified and not equal to `ALIGN_NONE`
+     * and `alignment_period` must be specified; otherwise, an error is
      * returned.
      * </pre>
      *
@@ -2301,15 +2376,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The approach to be used to align individual time series. Not all
-     * alignment functions may be applied to all time series, depending
-     * on the metric type and value type of the original time
-     * series. Alignment may change the metric type or the value type of
+     * An `Aligner` describes how to bring the data points in a single
+     * time series into temporal alignment. Except for `ALIGN_NONE`, all
+     * alignments cause all the data points in an `alignment_period` to be
+     * mathematically grouped together, resulting in a single data point for
+     * each `alignment_period` with end timestamp at the end of the period.
+     * Not all alignment operations may be applied to all time series. The valid
+     * choices depend on the `metric_kind` and `value_type` of the original time
+     * series. Alignment can change the `metric_kind` or the `value_type` of
      * the time series.
      * Time series data must be aligned in order to perform cross-time
-     * series reduction. If `crossSeriesReducer` is specified, then
-     * `perSeriesAligner` must be specified and not equal `ALIGN_NONE`
-     * and `alignmentPeriod` must be specified; otherwise, an error is
+     * series reduction. If `cross_series_reducer` is specified, then
+     * `per_series_aligner` must be specified and not equal to `ALIGN_NONE`
+     * and `alignment_period` must be specified; otherwise, an error is
      * returned.
      * </pre>
      *
@@ -2327,15 +2406,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The approach to be used to align individual time series. Not all
-     * alignment functions may be applied to all time series, depending
-     * on the metric type and value type of the original time
-     * series. Alignment may change the metric type or the value type of
+     * An `Aligner` describes how to bring the data points in a single
+     * time series into temporal alignment. Except for `ALIGN_NONE`, all
+     * alignments cause all the data points in an `alignment_period` to be
+     * mathematically grouped together, resulting in a single data point for
+     * each `alignment_period` with end timestamp at the end of the period.
+     * Not all alignment operations may be applied to all time series. The valid
+     * choices depend on the `metric_kind` and `value_type` of the original time
+     * series. Alignment can change the `metric_kind` or the `value_type` of
      * the time series.
      * Time series data must be aligned in order to perform cross-time
-     * series reduction. If `crossSeriesReducer` is specified, then
-     * `perSeriesAligner` must be specified and not equal `ALIGN_NONE`
-     * and `alignmentPeriod` must be specified; otherwise, an error is
+     * series reduction. If `cross_series_reducer` is specified, then
+     * `per_series_aligner` must be specified and not equal to `ALIGN_NONE`
+     * and `alignment_period` must be specified; otherwise, an error is
      * returned.
      * </pre>
      *
@@ -2357,15 +2440,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The approach to be used to align individual time series. Not all
-     * alignment functions may be applied to all time series, depending
-     * on the metric type and value type of the original time
-     * series. Alignment may change the metric type or the value type of
+     * An `Aligner` describes how to bring the data points in a single
+     * time series into temporal alignment. Except for `ALIGN_NONE`, all
+     * alignments cause all the data points in an `alignment_period` to be
+     * mathematically grouped together, resulting in a single data point for
+     * each `alignment_period` with end timestamp at the end of the period.
+     * Not all alignment operations may be applied to all time series. The valid
+     * choices depend on the `metric_kind` and `value_type` of the original time
+     * series. Alignment can change the `metric_kind` or the `value_type` of
      * the time series.
      * Time series data must be aligned in order to perform cross-time
-     * series reduction. If `crossSeriesReducer` is specified, then
-     * `perSeriesAligner` must be specified and not equal `ALIGN_NONE`
-     * and `alignmentPeriod` must be specified; otherwise, an error is
+     * series reduction. If `cross_series_reducer` is specified, then
+     * `per_series_aligner` must be specified and not equal to `ALIGN_NONE`
+     * and `alignment_period` must be specified; otherwise, an error is
      * returned.
      * </pre>
      *
@@ -2385,16 +2472,18 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The approach to be used to combine time series. Not all reducer
-     * functions may be applied to all time series, depending on the
-     * metric type and the value type of the original time
-     * series. Reduction may change the metric type of value type of the
-     * time series.
-     * Time series data must be aligned in order to perform cross-time
-     * series reduction. If `crossSeriesReducer` is specified, then
-     * `perSeriesAligner` must be specified and not equal `ALIGN_NONE`
-     * and `alignmentPeriod` must be specified; otherwise, an error is
-     * returned.
+     * The reduction operation to be used to combine time series into a single
+     * time series, where the value of each data point in the resulting series is
+     * a function of all the already aligned values in the input time series.
+     * Not all reducer operations can be applied to all time series. The valid
+     * choices depend on the `metric_kind` and the `value_type` of the original
+     * time series. Reduction can yield a time series with a different
+     * `metric_kind` or `value_type` than the input time series.
+     * Time series data must first be aligned (see `per_series_aligner`) in order
+     * to perform cross-time series reduction. If `cross_series_reducer` is
+     * specified, then `per_series_aligner` must be specified, and must not be
+     * `ALIGN_NONE`. An `alignment_period` must also be specified; otherwise, an
+     * error is returned.
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation.Reducer cross_series_reducer = 4;</code>
@@ -2408,16 +2497,18 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The approach to be used to combine time series. Not all reducer
-     * functions may be applied to all time series, depending on the
-     * metric type and the value type of the original time
-     * series. Reduction may change the metric type of value type of the
-     * time series.
-     * Time series data must be aligned in order to perform cross-time
-     * series reduction. If `crossSeriesReducer` is specified, then
-     * `perSeriesAligner` must be specified and not equal `ALIGN_NONE`
-     * and `alignmentPeriod` must be specified; otherwise, an error is
-     * returned.
+     * The reduction operation to be used to combine time series into a single
+     * time series, where the value of each data point in the resulting series is
+     * a function of all the already aligned values in the input time series.
+     * Not all reducer operations can be applied to all time series. The valid
+     * choices depend on the `metric_kind` and the `value_type` of the original
+     * time series. Reduction can yield a time series with a different
+     * `metric_kind` or `value_type` than the input time series.
+     * Time series data must first be aligned (see `per_series_aligner`) in order
+     * to perform cross-time series reduction. If `cross_series_reducer` is
+     * specified, then `per_series_aligner` must be specified, and must not be
+     * `ALIGN_NONE`. An `alignment_period` must also be specified; otherwise, an
+     * error is returned.
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation.Reducer cross_series_reducer = 4;</code>
@@ -2434,16 +2525,18 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The approach to be used to combine time series. Not all reducer
-     * functions may be applied to all time series, depending on the
-     * metric type and the value type of the original time
-     * series. Reduction may change the metric type of value type of the
-     * time series.
-     * Time series data must be aligned in order to perform cross-time
-     * series reduction. If `crossSeriesReducer` is specified, then
-     * `perSeriesAligner` must be specified and not equal `ALIGN_NONE`
-     * and `alignmentPeriod` must be specified; otherwise, an error is
-     * returned.
+     * The reduction operation to be used to combine time series into a single
+     * time series, where the value of each data point in the resulting series is
+     * a function of all the already aligned values in the input time series.
+     * Not all reducer operations can be applied to all time series. The valid
+     * choices depend on the `metric_kind` and the `value_type` of the original
+     * time series. Reduction can yield a time series with a different
+     * `metric_kind` or `value_type` than the input time series.
+     * Time series data must first be aligned (see `per_series_aligner`) in order
+     * to perform cross-time series reduction. If `cross_series_reducer` is
+     * specified, then `per_series_aligner` must be specified, and must not be
+     * `ALIGN_NONE`. An `alignment_period` must also be specified; otherwise, an
+     * error is returned.
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation.Reducer cross_series_reducer = 4;</code>
@@ -2460,16 +2553,18 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The approach to be used to combine time series. Not all reducer
-     * functions may be applied to all time series, depending on the
-     * metric type and the value type of the original time
-     * series. Reduction may change the metric type of value type of the
-     * time series.
-     * Time series data must be aligned in order to perform cross-time
-     * series reduction. If `crossSeriesReducer` is specified, then
-     * `perSeriesAligner` must be specified and not equal `ALIGN_NONE`
-     * and `alignmentPeriod` must be specified; otherwise, an error is
-     * returned.
+     * The reduction operation to be used to combine time series into a single
+     * time series, where the value of each data point in the resulting series is
+     * a function of all the already aligned values in the input time series.
+     * Not all reducer operations can be applied to all time series. The valid
+     * choices depend on the `metric_kind` and the `value_type` of the original
+     * time series. Reduction can yield a time series with a different
+     * `metric_kind` or `value_type` than the input time series.
+     * Time series data must first be aligned (see `per_series_aligner`) in order
+     * to perform cross-time series reduction. If `cross_series_reducer` is
+     * specified, then `per_series_aligner` must be specified, and must not be
+     * `ALIGN_NONE`. An `alignment_period` must also be specified; otherwise, an
+     * error is returned.
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation.Reducer cross_series_reducer = 4;</code>
@@ -2490,16 +2585,18 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The approach to be used to combine time series. Not all reducer
-     * functions may be applied to all time series, depending on the
-     * metric type and the value type of the original time
-     * series. Reduction may change the metric type of value type of the
-     * time series.
-     * Time series data must be aligned in order to perform cross-time
-     * series reduction. If `crossSeriesReducer` is specified, then
-     * `perSeriesAligner` must be specified and not equal `ALIGN_NONE`
-     * and `alignmentPeriod` must be specified; otherwise, an error is
-     * returned.
+     * The reduction operation to be used to combine time series into a single
+     * time series, where the value of each data point in the resulting series is
+     * a function of all the already aligned values in the input time series.
+     * Not all reducer operations can be applied to all time series. The valid
+     * choices depend on the `metric_kind` and the `value_type` of the original
+     * time series. Reduction can yield a time series with a different
+     * `metric_kind` or `value_type` than the input time series.
+     * Time series data must first be aligned (see `per_series_aligner`) in order
+     * to perform cross-time series reduction. If `cross_series_reducer` is
+     * specified, then `per_series_aligner` must be specified, and must not be
+     * `ALIGN_NONE`. An `alignment_period` must also be specified; otherwise, an
+     * error is returned.
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation.Reducer cross_series_reducer = 4;</code>
@@ -2526,19 +2623,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of fields to preserve when `crossSeriesReducer` is
-     * specified. The `groupByFields` determine how the time series are
+     * The set of fields to preserve when `cross_series_reducer` is
+     * specified. The `group_by_fields` determine how the time series are
      * partitioned into subsets prior to applying the aggregation
-     * function. Each subset contains time series that have the same
+     * operation. Each subset contains time series that have the same
      * value for each of the grouping fields. Each individual time
      * series is a member of exactly one subset. The
-     * `crossSeriesReducer` is applied to each subset of time series.
+     * `cross_series_reducer` is applied to each subset of time series.
      * It is not possible to reduce across different resource types, so
      * this field implicitly contains `resource.type`.  Fields not
-     * specified in `groupByFields` are aggregated away.  If
-     * `groupByFields` is not specified and all the time series have
+     * specified in `group_by_fields` are aggregated away.  If
+     * `group_by_fields` is not specified and all the time series have
      * the same resource type, then the time series are aggregated into
-     * a single output time series. If `crossSeriesReducer` is not
+     * a single output time series. If `cross_series_reducer` is not
      * defined, this field is ignored.
      * </pre>
      *
@@ -2553,19 +2650,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of fields to preserve when `crossSeriesReducer` is
-     * specified. The `groupByFields` determine how the time series are
+     * The set of fields to preserve when `cross_series_reducer` is
+     * specified. The `group_by_fields` determine how the time series are
      * partitioned into subsets prior to applying the aggregation
-     * function. Each subset contains time series that have the same
+     * operation. Each subset contains time series that have the same
      * value for each of the grouping fields. Each individual time
      * series is a member of exactly one subset. The
-     * `crossSeriesReducer` is applied to each subset of time series.
+     * `cross_series_reducer` is applied to each subset of time series.
      * It is not possible to reduce across different resource types, so
      * this field implicitly contains `resource.type`.  Fields not
-     * specified in `groupByFields` are aggregated away.  If
-     * `groupByFields` is not specified and all the time series have
+     * specified in `group_by_fields` are aggregated away.  If
+     * `group_by_fields` is not specified and all the time series have
      * the same resource type, then the time series are aggregated into
-     * a single output time series. If `crossSeriesReducer` is not
+     * a single output time series. If `cross_series_reducer` is not
      * defined, this field is ignored.
      * </pre>
      *
@@ -2580,19 +2677,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of fields to preserve when `crossSeriesReducer` is
-     * specified. The `groupByFields` determine how the time series are
+     * The set of fields to preserve when `cross_series_reducer` is
+     * specified. The `group_by_fields` determine how the time series are
      * partitioned into subsets prior to applying the aggregation
-     * function. Each subset contains time series that have the same
+     * operation. Each subset contains time series that have the same
      * value for each of the grouping fields. Each individual time
      * series is a member of exactly one subset. The
-     * `crossSeriesReducer` is applied to each subset of time series.
+     * `cross_series_reducer` is applied to each subset of time series.
      * It is not possible to reduce across different resource types, so
      * this field implicitly contains `resource.type`.  Fields not
-     * specified in `groupByFields` are aggregated away.  If
-     * `groupByFields` is not specified and all the time series have
+     * specified in `group_by_fields` are aggregated away.  If
+     * `group_by_fields` is not specified and all the time series have
      * the same resource type, then the time series are aggregated into
-     * a single output time series. If `crossSeriesReducer` is not
+     * a single output time series. If `cross_series_reducer` is not
      * defined, this field is ignored.
      * </pre>
      *
@@ -2608,19 +2705,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of fields to preserve when `crossSeriesReducer` is
-     * specified. The `groupByFields` determine how the time series are
+     * The set of fields to preserve when `cross_series_reducer` is
+     * specified. The `group_by_fields` determine how the time series are
      * partitioned into subsets prior to applying the aggregation
-     * function. Each subset contains time series that have the same
+     * operation. Each subset contains time series that have the same
      * value for each of the grouping fields. Each individual time
      * series is a member of exactly one subset. The
-     * `crossSeriesReducer` is applied to each subset of time series.
+     * `cross_series_reducer` is applied to each subset of time series.
      * It is not possible to reduce across different resource types, so
      * this field implicitly contains `resource.type`.  Fields not
-     * specified in `groupByFields` are aggregated away.  If
-     * `groupByFields` is not specified and all the time series have
+     * specified in `group_by_fields` are aggregated away.  If
+     * `group_by_fields` is not specified and all the time series have
      * the same resource type, then the time series are aggregated into
-     * a single output time series. If `crossSeriesReducer` is not
+     * a single output time series. If `cross_series_reducer` is not
      * defined, this field is ignored.
      * </pre>
      *
@@ -2636,19 +2733,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of fields to preserve when `crossSeriesReducer` is
-     * specified. The `groupByFields` determine how the time series are
+     * The set of fields to preserve when `cross_series_reducer` is
+     * specified. The `group_by_fields` determine how the time series are
      * partitioned into subsets prior to applying the aggregation
-     * function. Each subset contains time series that have the same
+     * operation. Each subset contains time series that have the same
      * value for each of the grouping fields. Each individual time
      * series is a member of exactly one subset. The
-     * `crossSeriesReducer` is applied to each subset of time series.
+     * `cross_series_reducer` is applied to each subset of time series.
      * It is not possible to reduce across different resource types, so
      * this field implicitly contains `resource.type`.  Fields not
-     * specified in `groupByFields` are aggregated away.  If
-     * `groupByFields` is not specified and all the time series have
+     * specified in `group_by_fields` are aggregated away.  If
+     * `group_by_fields` is not specified and all the time series have
      * the same resource type, then the time series are aggregated into
-     * a single output time series. If `crossSeriesReducer` is not
+     * a single output time series. If `cross_series_reducer` is not
      * defined, this field is ignored.
      * </pre>
      *
@@ -2671,19 +2768,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of fields to preserve when `crossSeriesReducer` is
-     * specified. The `groupByFields` determine how the time series are
+     * The set of fields to preserve when `cross_series_reducer` is
+     * specified. The `group_by_fields` determine how the time series are
      * partitioned into subsets prior to applying the aggregation
-     * function. Each subset contains time series that have the same
+     * operation. Each subset contains time series that have the same
      * value for each of the grouping fields. Each individual time
      * series is a member of exactly one subset. The
-     * `crossSeriesReducer` is applied to each subset of time series.
+     * `cross_series_reducer` is applied to each subset of time series.
      * It is not possible to reduce across different resource types, so
      * this field implicitly contains `resource.type`.  Fields not
-     * specified in `groupByFields` are aggregated away.  If
-     * `groupByFields` is not specified and all the time series have
+     * specified in `group_by_fields` are aggregated away.  If
+     * `group_by_fields` is not specified and all the time series have
      * the same resource type, then the time series are aggregated into
-     * a single output time series. If `crossSeriesReducer` is not
+     * a single output time series. If `cross_series_reducer` is not
      * defined, this field is ignored.
      * </pre>
      *
@@ -2705,19 +2802,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of fields to preserve when `crossSeriesReducer` is
-     * specified. The `groupByFields` determine how the time series are
+     * The set of fields to preserve when `cross_series_reducer` is
+     * specified. The `group_by_fields` determine how the time series are
      * partitioned into subsets prior to applying the aggregation
-     * function. Each subset contains time series that have the same
+     * operation. Each subset contains time series that have the same
      * value for each of the grouping fields. Each individual time
      * series is a member of exactly one subset. The
-     * `crossSeriesReducer` is applied to each subset of time series.
+     * `cross_series_reducer` is applied to each subset of time series.
      * It is not possible to reduce across different resource types, so
      * this field implicitly contains `resource.type`.  Fields not
-     * specified in `groupByFields` are aggregated away.  If
-     * `groupByFields` is not specified and all the time series have
+     * specified in `group_by_fields` are aggregated away.  If
+     * `group_by_fields` is not specified and all the time series have
      * the same resource type, then the time series are aggregated into
-     * a single output time series. If `crossSeriesReducer` is not
+     * a single output time series. If `cross_series_reducer` is not
      * defined, this field is ignored.
      * </pre>
      *
@@ -2736,19 +2833,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of fields to preserve when `crossSeriesReducer` is
-     * specified. The `groupByFields` determine how the time series are
+     * The set of fields to preserve when `cross_series_reducer` is
+     * specified. The `group_by_fields` determine how the time series are
      * partitioned into subsets prior to applying the aggregation
-     * function. Each subset contains time series that have the same
+     * operation. Each subset contains time series that have the same
      * value for each of the grouping fields. Each individual time
      * series is a member of exactly one subset. The
-     * `crossSeriesReducer` is applied to each subset of time series.
+     * `cross_series_reducer` is applied to each subset of time series.
      * It is not possible to reduce across different resource types, so
      * this field implicitly contains `resource.type`.  Fields not
-     * specified in `groupByFields` are aggregated away.  If
-     * `groupByFields` is not specified and all the time series have
+     * specified in `group_by_fields` are aggregated away.  If
+     * `group_by_fields` is not specified and all the time series have
      * the same resource type, then the time series are aggregated into
-     * a single output time series. If `crossSeriesReducer` is not
+     * a single output time series. If `cross_series_reducer` is not
      * defined, this field is ignored.
      * </pre>
      *
@@ -2766,19 +2863,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of fields to preserve when `crossSeriesReducer` is
-     * specified. The `groupByFields` determine how the time series are
+     * The set of fields to preserve when `cross_series_reducer` is
+     * specified. The `group_by_fields` determine how the time series are
      * partitioned into subsets prior to applying the aggregation
-     * function. Each subset contains time series that have the same
+     * operation. Each subset contains time series that have the same
      * value for each of the grouping fields. Each individual time
      * series is a member of exactly one subset. The
-     * `crossSeriesReducer` is applied to each subset of time series.
+     * `cross_series_reducer` is applied to each subset of time series.
      * It is not possible to reduce across different resource types, so
      * this field implicitly contains `resource.type`.  Fields not
-     * specified in `groupByFields` are aggregated away.  If
-     * `groupByFields` is not specified and all the time series have
+     * specified in `group_by_fields` are aggregated away.  If
+     * `group_by_fields` is not specified and all the time series have
      * the same resource type, then the time series are aggregated into
-     * a single output time series. If `crossSeriesReducer` is not
+     * a single output time series. If `cross_series_reducer` is not
      * defined, this field is ignored.
      * </pre>
      *

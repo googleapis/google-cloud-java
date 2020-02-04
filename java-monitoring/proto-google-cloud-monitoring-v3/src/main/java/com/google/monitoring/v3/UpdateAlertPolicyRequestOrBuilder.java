@@ -119,7 +119,9 @@ public interface UpdateAlertPolicyRequestOrBuilder
    * not in `update_mask` are ignored.
    * </pre>
    *
-   * <code>.google.monitoring.v3.AlertPolicy alert_policy = 3;</code>
+   * <code>
+   * .google.monitoring.v3.AlertPolicy alert_policy = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the alertPolicy field is set.
    */
@@ -134,7 +136,9 @@ public interface UpdateAlertPolicyRequestOrBuilder
    * not in `update_mask` are ignored.
    * </pre>
    *
-   * <code>.google.monitoring.v3.AlertPolicy alert_policy = 3;</code>
+   * <code>
+   * .google.monitoring.v3.AlertPolicy alert_policy = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The alertPolicy.
    */
@@ -149,7 +153,9 @@ public interface UpdateAlertPolicyRequestOrBuilder
    * not in `update_mask` are ignored.
    * </pre>
    *
-   * <code>.google.monitoring.v3.AlertPolicy alert_policy = 3;</code>
+   * <code>
+   * .google.monitoring.v3.AlertPolicy alert_policy = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.monitoring.v3.AlertPolicyOrBuilder getAlertPolicyOrBuilder();
 }

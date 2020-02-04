@@ -126,10 +126,12 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * The notification channel to verify.
+   * Required. The notification channel to verify.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -148,10 +150,12 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * The notification channel to verify.
+   * Required. The notification channel to verify.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -173,7 +177,7 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * The verification code that was delivered to the channel as
+   * Required. The verification code that was delivered to the channel as
    * a result of invoking the `SendNotificationChannelVerificationCode` API
    * method or that was retrieved from a verified channel via
    * `GetNotificationChannelVerificationCode`. For example, one might have
@@ -182,7 +186,7 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
    * make any assumptions regarding the structure or format of the code).
    * </pre>
    *
-   * <code>string code = 2;</code>
+   * <code>string code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The code.
    */
@@ -201,7 +205,7 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * The verification code that was delivered to the channel as
+   * Required. The verification code that was delivered to the channel as
    * a result of invoking the `SendNotificationChannelVerificationCode` API
    * method or that was retrieved from a verified channel via
    * `GetNotificationChannelVerificationCode`. For example, one might have
@@ -210,7 +214,7 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
    * make any assumptions regarding the structure or format of the code).
    * </pre>
    *
-   * <code>string code = 2;</code>
+   * <code>string code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for code.
    */
@@ -566,10 +570,12 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The notification channel to verify.
+     * Required. The notification channel to verify.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -588,10 +594,12 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The notification channel to verify.
+     * Required. The notification channel to verify.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -610,10 +618,12 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The notification channel to verify.
+     * Required. The notification channel to verify.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -631,10 +641,12 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The notification channel to verify.
+     * Required. The notification channel to verify.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -648,10 +660,12 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The notification channel to verify.
+     * Required. The notification channel to verify.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -672,7 +686,7 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The verification code that was delivered to the channel as
+     * Required. The verification code that was delivered to the channel as
      * a result of invoking the `SendNotificationChannelVerificationCode` API
      * method or that was retrieved from a verified channel via
      * `GetNotificationChannelVerificationCode`. For example, one might have
@@ -681,7 +695,7 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      * make any assumptions regarding the structure or format of the code).
      * </pre>
      *
-     * <code>string code = 2;</code>
+     * <code>string code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The code.
      */
@@ -700,7 +714,7 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The verification code that was delivered to the channel as
+     * Required. The verification code that was delivered to the channel as
      * a result of invoking the `SendNotificationChannelVerificationCode` API
      * method or that was retrieved from a verified channel via
      * `GetNotificationChannelVerificationCode`. For example, one might have
@@ -709,7 +723,7 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      * make any assumptions regarding the structure or format of the code).
      * </pre>
      *
-     * <code>string code = 2;</code>
+     * <code>string code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for code.
      */
@@ -728,7 +742,7 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The verification code that was delivered to the channel as
+     * Required. The verification code that was delivered to the channel as
      * a result of invoking the `SendNotificationChannelVerificationCode` API
      * method or that was retrieved from a verified channel via
      * `GetNotificationChannelVerificationCode`. For example, one might have
@@ -737,7 +751,7 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      * make any assumptions regarding the structure or format of the code).
      * </pre>
      *
-     * <code>string code = 2;</code>
+     * <code>string code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The code to set.
      * @return This builder for chaining.
@@ -755,7 +769,7 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The verification code that was delivered to the channel as
+     * Required. The verification code that was delivered to the channel as
      * a result of invoking the `SendNotificationChannelVerificationCode` API
      * method or that was retrieved from a verified channel via
      * `GetNotificationChannelVerificationCode`. For example, one might have
@@ -764,7 +778,7 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      * make any assumptions regarding the structure or format of the code).
      * </pre>
      *
-     * <code>string code = 2;</code>
+     * <code>string code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -778,7 +792,7 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The verification code that was delivered to the channel as
+     * Required. The verification code that was delivered to the channel as
      * a result of invoking the `SendNotificationChannelVerificationCode` API
      * method or that was retrieved from a verified channel via
      * `GetNotificationChannelVerificationCode`. For example, one might have
@@ -787,7 +801,7 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      * make any assumptions regarding the structure or format of the code).
      * </pre>
      *
-     * <code>string code = 2;</code>
+     * <code>string code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for code to set.
      * @return This builder for chaining.

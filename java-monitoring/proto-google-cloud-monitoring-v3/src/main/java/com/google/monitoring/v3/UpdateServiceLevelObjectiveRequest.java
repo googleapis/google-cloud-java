@@ -140,11 +140,13 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
    *
    *
    * <pre>
-   * The `ServiceLevelObjective` to draw updates from.
+   * Required. The `ServiceLevelObjective` to draw updates from.
    * The given `name` specifies the resource to update.
    * </pre>
    *
-   * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 1;</code>
+   * <code>
+   * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the serviceLevelObjective field is set.
    */
@@ -155,11 +157,13 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
    *
    *
    * <pre>
-   * The `ServiceLevelObjective` to draw updates from.
+   * Required. The `ServiceLevelObjective` to draw updates from.
    * The given `name` specifies the resource to update.
    * </pre>
    *
-   * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 1;</code>
+   * <code>
+   * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The serviceLevelObjective.
    */
@@ -172,11 +176,13 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
    *
    *
    * <pre>
-   * The `ServiceLevelObjective` to draw updates from.
+   * Required. The `ServiceLevelObjective` to draw updates from.
    * The given `name` specifies the resource to update.
    * </pre>
    *
-   * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 1;</code>
+   * <code>
+   * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.monitoring.v3.ServiceLevelObjectiveOrBuilder
       getServiceLevelObjectiveOrBuilder() {
@@ -596,11 +602,13 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The `ServiceLevelObjective` to draw updates from.
+     * Required. The `ServiceLevelObjective` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 1;</code>
+     * <code>
+     * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the serviceLevelObjective field is set.
      */
@@ -611,11 +619,13 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The `ServiceLevelObjective` to draw updates from.
+     * Required. The `ServiceLevelObjective` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 1;</code>
+     * <code>
+     * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The serviceLevelObjective.
      */
@@ -632,11 +642,13 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The `ServiceLevelObjective` to draw updates from.
+     * Required. The `ServiceLevelObjective` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 1;</code>
+     * <code>
+     * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setServiceLevelObjective(com.google.monitoring.v3.ServiceLevelObjective value) {
       if (serviceLevelObjectiveBuilder_ == null) {
@@ -655,11 +667,13 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The `ServiceLevelObjective` to draw updates from.
+     * Required. The `ServiceLevelObjective` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 1;</code>
+     * <code>
+     * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setServiceLevelObjective(
         com.google.monitoring.v3.ServiceLevelObjective.Builder builderForValue) {
@@ -676,11 +690,13 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The `ServiceLevelObjective` to draw updates from.
+     * Required. The `ServiceLevelObjective` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 1;</code>
+     * <code>
+     * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeServiceLevelObjective(
         com.google.monitoring.v3.ServiceLevelObjective value) {
@@ -704,11 +720,13 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The `ServiceLevelObjective` to draw updates from.
+     * Required. The `ServiceLevelObjective` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 1;</code>
+     * <code>
+     * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearServiceLevelObjective() {
       if (serviceLevelObjectiveBuilder_ == null) {
@@ -725,11 +743,13 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The `ServiceLevelObjective` to draw updates from.
+     * Required. The `ServiceLevelObjective` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 1;</code>
+     * <code>
+     * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.v3.ServiceLevelObjective.Builder
         getServiceLevelObjectiveBuilder() {
@@ -741,11 +761,13 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The `ServiceLevelObjective` to draw updates from.
+     * Required. The `ServiceLevelObjective` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 1;</code>
+     * <code>
+     * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.v3.ServiceLevelObjectiveOrBuilder
         getServiceLevelObjectiveOrBuilder() {
@@ -761,11 +783,13 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * The `ServiceLevelObjective` to draw updates from.
+     * Required. The `ServiceLevelObjective` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 1;</code>
+     * <code>
+     * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.ServiceLevelObjective,

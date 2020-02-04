@@ -46,6 +46,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     description_ = "";
     labels_ = java.util.Collections.emptyList();
     supportedTiers_ = java.util.Collections.emptyList();
+    launchStage_ = 0;
   }
 
   @java.lang.Override
@@ -139,6 +140,13 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
+              break;
+            }
+          case 56:
+            {
+              int rawValue = input.readEnum();
+
+              launchStage_ = rawValue;
               break;
             }
           default:
@@ -561,6 +569,39 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
 
   private int supportedTiersMemoizedSerializedSize;
 
+  public static final int LAUNCH_STAGE_FIELD_NUMBER = 7;
+  private int launchStage_;
+  /**
+   *
+   *
+   * <pre>
+   * The product launch stage for channels of this type.
+   * </pre>
+   *
+   * <code>.google.api.LaunchStage launch_stage = 7;</code>
+   *
+   * @return The enum numeric value on the wire for launchStage.
+   */
+  public int getLaunchStageValue() {
+    return launchStage_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The product launch stage for channels of this type.
+   * </pre>
+   *
+   * <code>.google.api.LaunchStage launch_stage = 7;</code>
+   *
+   * @return The launchStage.
+   */
+  public com.google.api.LaunchStage getLaunchStage() {
+    @SuppressWarnings("deprecation")
+    com.google.api.LaunchStage result = com.google.api.LaunchStage.valueOf(launchStage_);
+    return result == null ? com.google.api.LaunchStage.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -597,6 +638,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     }
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
+    }
+    if (launchStage_ != com.google.api.LaunchStage.LAUNCH_STAGE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(7, launchStage_);
     }
     unknownFields.writeTo(output);
   }
@@ -635,6 +679,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
     }
+    if (launchStage_ != com.google.api.LaunchStage.LAUNCH_STAGE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, launchStage_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -657,6 +704,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getLabelsList().equals(other.getLabelsList())) return false;
     if (!supportedTiers_.equals(other.supportedTiers_)) return false;
+    if (launchStage_ != other.launchStage_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -684,6 +732,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       hash = (37 * hash) + SUPPORTED_TIERS_FIELD_NUMBER;
       hash = (53 * hash) + supportedTiers_.hashCode();
     }
+    hash = (37 * hash) + LAUNCH_STAGE_FIELD_NUMBER;
+    hash = (53 * hash) + launchStage_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -850,6 +900,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       }
       supportedTiers_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      launchStage_ = 0;
+
       return this;
     }
 
@@ -896,6 +948,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.supportedTiers_ = supportedTiers_;
+      result.launchStage_ = launchStage_;
       onBuilt();
       return result;
     }
@@ -998,6 +1051,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
           supportedTiers_.addAll(other.supportedTiers_);
         }
         onChanged();
+      }
+      if (other.launchStage_ != 0) {
+        setLaunchStageValue(other.getLaunchStageValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2120,6 +2176,93 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       for (int value : values) {
         supportedTiers_.add(value);
       }
+      onChanged();
+      return this;
+    }
+
+    private int launchStage_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The product launch stage for channels of this type.
+     * </pre>
+     *
+     * <code>.google.api.LaunchStage launch_stage = 7;</code>
+     *
+     * @return The enum numeric value on the wire for launchStage.
+     */
+    public int getLaunchStageValue() {
+      return launchStage_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The product launch stage for channels of this type.
+     * </pre>
+     *
+     * <code>.google.api.LaunchStage launch_stage = 7;</code>
+     *
+     * @param value The enum numeric value on the wire for launchStage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLaunchStageValue(int value) {
+      launchStage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The product launch stage for channels of this type.
+     * </pre>
+     *
+     * <code>.google.api.LaunchStage launch_stage = 7;</code>
+     *
+     * @return The launchStage.
+     */
+    public com.google.api.LaunchStage getLaunchStage() {
+      @SuppressWarnings("deprecation")
+      com.google.api.LaunchStage result = com.google.api.LaunchStage.valueOf(launchStage_);
+      return result == null ? com.google.api.LaunchStage.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The product launch stage for channels of this type.
+     * </pre>
+     *
+     * <code>.google.api.LaunchStage launch_stage = 7;</code>
+     *
+     * @param value The launchStage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLaunchStage(com.google.api.LaunchStage value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      launchStage_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The product launch stage for channels of this type.
+     * </pre>
+     *
+     * <code>.google.api.LaunchStage launch_stage = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLaunchStage() {
+
+      launchStage_ = 0;
       onChanged();
       return this;
     }

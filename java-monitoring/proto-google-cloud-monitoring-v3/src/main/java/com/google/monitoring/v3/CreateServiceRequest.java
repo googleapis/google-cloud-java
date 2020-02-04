@@ -140,11 +140,13 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Resource name of the parent workspace.
+   * Required. Resource name of the parent workspace.
    * Of the form `projects/{project_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -163,11 +165,13 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Resource name of the parent workspace.
+   * Required. Resource name of the parent workspace.
    * Of the form `projects/{project_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -238,10 +242,11 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The `Service` to create.
+   * Required. The `Service` to create.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service service = 2;</code>
+   * <code>.google.monitoring.v3.Service service = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the service field is set.
    */
@@ -252,10 +257,11 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The `Service` to create.
+   * Required. The `Service` to create.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service service = 2;</code>
+   * <code>.google.monitoring.v3.Service service = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The service.
    */
@@ -266,10 +272,11 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The `Service` to create.
+   * Required. The `Service` to create.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service service = 2;</code>
+   * <code>.google.monitoring.v3.Service service = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.monitoring.v3.ServiceOrBuilder getServiceOrBuilder() {
     return getService();
@@ -640,11 +647,13 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Resource name of the parent workspace.
+     * Required. Resource name of the parent workspace.
      * Of the form `projects/{project_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -663,11 +672,13 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Resource name of the parent workspace.
+     * Required. Resource name of the parent workspace.
      * Of the form `projects/{project_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -686,11 +697,13 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Resource name of the parent workspace.
+     * Required. Resource name of the parent workspace.
      * Of the form `projects/{project_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -708,11 +721,13 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Resource name of the parent workspace.
+     * Required. Resource name of the parent workspace.
      * Of the form `projects/{project_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -726,11 +741,13 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Resource name of the parent workspace.
+     * Required. Resource name of the parent workspace.
      * Of the form `projects/{project_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -867,10 +884,11 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to create.
+     * Required. The `Service` to create.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 2;</code>
+     * <code>.google.monitoring.v3.Service service = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the service field is set.
      */
@@ -881,10 +899,11 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to create.
+     * Required. The `Service` to create.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 2;</code>
+     * <code>.google.monitoring.v3.Service service = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The service.
      */
@@ -899,10 +918,11 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to create.
+     * Required. The `Service` to create.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 2;</code>
+     * <code>.google.monitoring.v3.Service service = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setService(com.google.monitoring.v3.Service value) {
       if (serviceBuilder_ == null) {
@@ -921,10 +941,11 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to create.
+     * Required. The `Service` to create.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 2;</code>
+     * <code>.google.monitoring.v3.Service service = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setService(com.google.monitoring.v3.Service.Builder builderForValue) {
       if (serviceBuilder_ == null) {
@@ -940,10 +961,11 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to create.
+     * Required. The `Service` to create.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 2;</code>
+     * <code>.google.monitoring.v3.Service service = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeService(com.google.monitoring.v3.Service value) {
       if (serviceBuilder_ == null) {
@@ -964,10 +986,11 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to create.
+     * Required. The `Service` to create.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 2;</code>
+     * <code>.google.monitoring.v3.Service service = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearService() {
       if (serviceBuilder_ == null) {
@@ -984,10 +1007,11 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to create.
+     * Required. The `Service` to create.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 2;</code>
+     * <code>.google.monitoring.v3.Service service = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.v3.Service.Builder getServiceBuilder() {
 
@@ -998,10 +1022,11 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to create.
+     * Required. The `Service` to create.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 2;</code>
+     * <code>.google.monitoring.v3.Service service = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.v3.ServiceOrBuilder getServiceOrBuilder() {
       if (serviceBuilder_ != null) {
@@ -1014,10 +1039,11 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to create.
+     * Required. The `Service` to create.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 2;</code>
+     * <code>.google.monitoring.v3.Service service = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.Service,

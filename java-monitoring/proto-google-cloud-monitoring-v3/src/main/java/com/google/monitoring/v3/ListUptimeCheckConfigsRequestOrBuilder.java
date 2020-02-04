@@ -27,11 +27,13 @@ public interface ListUptimeCheckConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * The project whose Uptime check configurations are listed. The format
+   * Required. The project whose Uptime check configurations are listed. The format
    *   is `projects/[PROJECT_ID]`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -40,11 +42,13 @@ public interface ListUptimeCheckConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * The project whose Uptime check configurations are listed. The format
+   * Required. The project whose Uptime check configurations are listed. The format
    *   is `projects/[PROJECT_ID]`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */

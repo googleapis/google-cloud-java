@@ -62,63 +62,73 @@ public final class AlertServiceProto {
     java.lang.String[] descriptorData = {
       "\n(google/monitoring/v3/alert_service.pro"
           + "to\022\024google.monitoring.v3\032\034google/api/ann"
-          + "otations.proto\032 google/monitoring/v3/ale"
-          + "rt.proto\032\033google/protobuf/empty.proto\032 g"
-          + "oogle/protobuf/field_mask.proto\032\027google/"
-          + "api/client.proto\"a\n\030CreateAlertPolicyReq"
-          + "uest\022\014\n\004name\030\003 \001(\t\0227\n\014alert_policy\030\002 \001(\013"
-          + "2!.google.monitoring.v3.AlertPolicy\"%\n\025G"
-          + "etAlertPolicyRequest\022\014\n\004name\030\003 \001(\t\"q\n\030Li"
-          + "stAlertPoliciesRequest\022\014\n\004name\030\004 \001(\t\022\016\n\006"
-          + "filter\030\005 \001(\t\022\020\n\010order_by\030\006 \001(\t\022\021\n\tpage_s"
-          + "ize\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"o\n\031ListAle"
-          + "rtPoliciesResponse\0229\n\016alert_policies\030\003 \003"
-          + "(\0132!.google.monitoring.v3.AlertPolicy\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\204\001\n\030UpdateAlertPo"
-          + "licyRequest\022/\n\013update_mask\030\002 \001(\0132\032.googl"
-          + "e.protobuf.FieldMask\0227\n\014alert_policy\030\003 \001"
-          + "(\0132!.google.monitoring.v3.AlertPolicy\"(\n"
-          + "\030DeleteAlertPolicyRequest\022\014\n\004name\030\003 \001(\t2"
-          + "\332\007\n\022AlertPolicyService\022\241\001\n\021ListAlertPoli"
-          + "cies\022..google.monitoring.v3.ListAlertPol"
-          + "iciesRequest\032/.google.monitoring.v3.List"
-          + "AlertPoliciesResponse\"+\202\323\344\223\002%\022#/v3/{name"
-          + "=projects/*}/alertPolicies\022\217\001\n\016GetAlertP"
-          + "olicy\022+.google.monitoring.v3.GetAlertPol"
-          + "icyRequest\032!.google.monitoring.v3.AlertP"
-          + "olicy\"-\202\323\344\223\002\'\022%/v3/{name=projects/*/aler"
-          + "tPolicies/*}\022\241\001\n\021CreateAlertPolicy\022..goo"
-          + "gle.monitoring.v3.CreateAlertPolicyReque"
-          + "st\032!.google.monitoring.v3.AlertPolicy\"9\202"
-          + "\323\344\223\0023\"#/v3/{name=projects/*}/alertPolici"
-          + "es:\014alert_policy\022\212\001\n\021DeleteAlertPolicy\022."
-          + ".google.monitoring.v3.DeleteAlertPolicyR"
-          + "equest\032\026.google.protobuf.Empty\"-\202\323\344\223\002\'*%"
-          + "/v3/{name=projects/*/alertPolicies/*}\022\260\001"
-          + "\n\021UpdateAlertPolicy\022..google.monitoring."
-          + "v3.UpdateAlertPolicyRequest\032!.google.mon"
-          + "itoring.v3.AlertPolicy\"H\202\323\344\223\002B22/v3/{ale"
-          + "rt_policy.name=projects/*/alertPolicies/"
-          + "*}:\014alert_policy\032\251\001\312A\031monitoring.googlea"
-          + "pis.com\322A\211\001https://www.googleapis.com/au"
-          + "th/cloud-platform,https://www.googleapis"
-          + ".com/auth/monitoring,https://www.googlea"
-          + "pis.com/auth/monitoring.readB\251\001\n\030com.goo"
-          + "gle.monitoring.v3B\021AlertServiceProtoP\001Z>"
-          + "google.golang.org/genproto/googleapis/mo"
-          + "nitoring/v3;monitoring\252\002\032Google.Cloud.Mo"
-          + "nitoring.V3\312\002\032Google\\Cloud\\Monitoring\\V3"
-          + "b\006proto3"
+          + "otations.proto\032\027google/api/client.proto\032"
+          + "\037google/api/field_behavior.proto\032\031google"
+          + "/api/resource.proto\032 google/monitoring/v"
+          + "3/alert.proto\032\033google/protobuf/empty.pro"
+          + "to\032 google/protobuf/field_mask.proto\"\225\001\n"
+          + "\030CreateAlertPolicyRequest\022;\n\004name\030\003 \001(\tB"
+          + "-\340A\002\372A\'\022%monitoring.googleapis.com/Alert"
+          + "Policy\022<\n\014alert_policy\030\002 \001(\0132!.google.mo"
+          + "nitoring.v3.AlertPolicyB\003\340A\002\"T\n\025GetAlert"
+          + "PolicyRequest\022;\n\004name\030\003 \001(\tB-\340A\002\372A\'\n%mon"
+          + "itoring.googleapis.com/AlertPolicy\"\240\001\n\030L"
+          + "istAlertPoliciesRequest\022;\n\004name\030\004 \001(\tB-\340"
+          + "A\002\372A\'\022%monitoring.googleapis.com/AlertPo"
+          + "licy\022\016\n\006filter\030\005 \001(\t\022\020\n\010order_by\030\006 \001(\t\022\021"
+          + "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"o\n"
+          + "\031ListAlertPoliciesResponse\0229\n\016alert_poli"
+          + "cies\030\003 \003(\0132!.google.monitoring.v3.AlertP"
+          + "olicy\022\027\n\017next_page_token\030\002 \001(\t\"\211\001\n\030Updat"
+          + "eAlertPolicyRequest\022/\n\013update_mask\030\002 \001(\013"
+          + "2\032.google.protobuf.FieldMask\022<\n\014alert_po"
+          + "licy\030\003 \001(\0132!.google.monitoring.v3.AlertP"
+          + "olicyB\003\340A\002\"W\n\030DeleteAlertPolicyRequest\022;"
+          + "\n\004name\030\003 \001(\tB-\340A\002\372A\'\n%monitoring.googlea"
+          + "pis.com/AlertPolicy2\236\010\n\022AlertPolicyServi"
+          + "ce\022\250\001\n\021ListAlertPolicies\022..google.monito"
+          + "ring.v3.ListAlertPoliciesRequest\032/.googl"
+          + "e.monitoring.v3.ListAlertPoliciesRespons"
+          + "e\"2\202\323\344\223\002%\022#/v3/{name=projects/*}/alertPo"
+          + "licies\332A\004name\022\226\001\n\016GetAlertPolicy\022+.googl"
+          + "e.monitoring.v3.GetAlertPolicyRequest\032!."
+          + "google.monitoring.v3.AlertPolicy\"4\202\323\344\223\002\'"
+          + "\022%/v3/{name=projects/*/alertPolicies/*}\332"
+          + "A\004name\022\265\001\n\021CreateAlertPolicy\022..google.mo"
+          + "nitoring.v3.CreateAlertPolicyRequest\032!.g"
+          + "oogle.monitoring.v3.AlertPolicy\"M\202\323\344\223\0023\""
+          + "#/v3/{name=projects/*}/alertPolicies:\014al"
+          + "ert_policy\332A\021name,alert_policy\022\221\001\n\021Delet"
+          + "eAlertPolicy\022..google.monitoring.v3.Dele"
+          + "teAlertPolicyRequest\032\026.google.protobuf.E"
+          + "mpty\"4\202\323\344\223\002\'*%/v3/{name=projects/*/alert"
+          + "Policies/*}\332A\004name\022\313\001\n\021UpdateAlertPolicy"
+          + "\022..google.monitoring.v3.UpdateAlertPolic"
+          + "yRequest\032!.google.monitoring.v3.AlertPol"
+          + "icy\"c\202\323\344\223\002B22/v3/{alert_policy.name=proj"
+          + "ects/*/alertPolicies/*}:\014alert_policy\332A\030"
+          + "update_mask,alert_policy\032\251\001\312A\031monitoring"
+          + ".googleapis.com\322A\211\001https://www.googleapi"
+          + "s.com/auth/cloud-platform,https://www.go"
+          + "ogleapis.com/auth/monitoring,https://www"
+          + ".googleapis.com/auth/monitoring.readB\251\001\n"
+          + "\030com.google.monitoring.v3B\021AlertServiceP"
+          + "rotoP\001Z>google.golang.org/genproto/googl"
+          + "eapis/monitoring/v3;monitoring\252\002\032Google."
+          + "Cloud.Monitoring.V3\312\002\032Google\\Cloud\\Monit"
+          + "oring\\V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.monitoring.v3.AlertProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_monitoring_v3_CreateAlertPolicyRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -171,15 +181,20 @@ public final class AlertServiceProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.monitoring.v3.AlertProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

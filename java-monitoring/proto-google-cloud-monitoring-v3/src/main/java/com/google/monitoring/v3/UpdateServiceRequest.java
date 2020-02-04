@@ -138,11 +138,12 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The `Service` to draw updates from.
+   * Required. The `Service` to draw updates from.
    * The given `name` specifies the resource to update.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service service = 1;</code>
+   * <code>.google.monitoring.v3.Service service = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the service field is set.
    */
@@ -153,11 +154,12 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The `Service` to draw updates from.
+   * Required. The `Service` to draw updates from.
    * The given `name` specifies the resource to update.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service service = 1;</code>
+   * <code>.google.monitoring.v3.Service service = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The service.
    */
@@ -168,11 +170,12 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The `Service` to draw updates from.
+   * Required. The `Service` to draw updates from.
    * The given `name` specifies the resource to update.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service service = 1;</code>
+   * <code>.google.monitoring.v3.Service service = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.monitoring.v3.ServiceOrBuilder getServiceOrBuilder() {
     return getService();
@@ -587,11 +590,12 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to draw updates from.
+     * Required. The `Service` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 1;</code>
+     * <code>.google.monitoring.v3.Service service = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the service field is set.
      */
@@ -602,11 +606,12 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to draw updates from.
+     * Required. The `Service` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 1;</code>
+     * <code>.google.monitoring.v3.Service service = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The service.
      */
@@ -621,11 +626,12 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to draw updates from.
+     * Required. The `Service` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 1;</code>
+     * <code>.google.monitoring.v3.Service service = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setService(com.google.monitoring.v3.Service value) {
       if (serviceBuilder_ == null) {
@@ -644,11 +650,12 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to draw updates from.
+     * Required. The `Service` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 1;</code>
+     * <code>.google.monitoring.v3.Service service = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setService(com.google.monitoring.v3.Service.Builder builderForValue) {
       if (serviceBuilder_ == null) {
@@ -664,11 +671,12 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to draw updates from.
+     * Required. The `Service` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 1;</code>
+     * <code>.google.monitoring.v3.Service service = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeService(com.google.monitoring.v3.Service value) {
       if (serviceBuilder_ == null) {
@@ -689,11 +697,12 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to draw updates from.
+     * Required. The `Service` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 1;</code>
+     * <code>.google.monitoring.v3.Service service = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearService() {
       if (serviceBuilder_ == null) {
@@ -710,11 +719,12 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to draw updates from.
+     * Required. The `Service` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 1;</code>
+     * <code>.google.monitoring.v3.Service service = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.v3.Service.Builder getServiceBuilder() {
 
@@ -725,11 +735,12 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to draw updates from.
+     * Required. The `Service` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 1;</code>
+     * <code>.google.monitoring.v3.Service service = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.v3.ServiceOrBuilder getServiceOrBuilder() {
       if (serviceBuilder_ != null) {
@@ -742,11 +753,12 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The `Service` to draw updates from.
+     * Required. The `Service` to draw updates from.
      * The given `name` specifies the resource to update.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service service = 1;</code>
+     * <code>.google.monitoring.v3.Service service = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.Service,

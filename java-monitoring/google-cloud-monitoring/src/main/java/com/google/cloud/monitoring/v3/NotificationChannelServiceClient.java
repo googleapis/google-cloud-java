@@ -192,8 +192,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The REST resource name of the parent from which to retrieve the notification
-   *     channel descriptors. The expected syntax is:
+   * @param name Required. The REST resource name of the parent from which to retrieve the
+   *     notification channel descriptors. The expected syntax is:
    *     <p>projects/[PROJECT_ID]
    *     <p>Note that this names the parent container in which to look for the descriptors; to
    *     retrieve a single descriptor by name, use the
@@ -226,8 +226,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The REST resource name of the parent from which to retrieve the notification
-   *     channel descriptors. The expected syntax is:
+   * @param name Required. The REST resource name of the parent from which to retrieve the
+   *     notification channel descriptors. The expected syntax is:
    *     <p>projects/[PROJECT_ID]
    *     <p>Note that this names the parent container in which to look for the descriptors; to
    *     retrieve a single descriptor by name, use the
@@ -345,7 +345,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The channel type for which to execute the request. The format is
+   * @param name Required. The channel type for which to execute the request. The format is
    *     `projects/[PROJECT_ID]/notificationChannelDescriptors/{channel_type}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -372,7 +372,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The channel type for which to execute the request. The format is
+   * @param name Required. The channel type for which to execute the request. The format is
    *     `projects/[PROJECT_ID]/notificationChannelDescriptors/{channel_type}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -446,9 +446,10 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project on which to execute the request. The format is `projects/[PROJECT_ID]`.
-   *     That is, this names the container in which to look for the notification channels; it does
-   *     not name a specific channel. To query a specific channel by REST resource name, use the
+   * @param name Required. The project on which to execute the request. The format is
+   *     `projects/[PROJECT_ID]`. That is, this names the container in which to look for the
+   *     notification channels; it does not name a specific channel. To query a specific channel by
+   *     REST resource name, use the
    *     [`GetNotificationChannel`][google.monitoring.v3.NotificationChannelService.GetNotificationChannel]
    *     operation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -476,9 +477,10 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project on which to execute the request. The format is `projects/[PROJECT_ID]`.
-   *     That is, this names the container in which to look for the notification channels; it does
-   *     not name a specific channel. To query a specific channel by REST resource name, use the
+   * @param name Required. The project on which to execute the request. The format is
+   *     `projects/[PROJECT_ID]`. That is, this names the container in which to look for the
+   *     notification channels; it does not name a specific channel. To query a specific channel by
+   *     REST resource name, use the
    *     [`GetNotificationChannel`][google.monitoring.v3.NotificationChannelService.GetNotificationChannel]
    *     operation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -588,7 +590,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The channel for which to execute the request. The format is
+   * @param name Required. The channel for which to execute the request. The format is
    *     `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -616,7 +618,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The channel for which to execute the request. The format is
+   * @param name Required. The channel for which to execute the request. The format is
    *     `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -693,13 +695,13 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project on which to execute the request. The format is:
+   * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID]
    *     <p>Note that this names the container into which the channel will be written. This does not
    *     name the newly created channel. The resulting channel's name will have a normalized version
    *     of this field as a prefix, but will add `/notificationChannels/[CHANNEL_ID]` to identify
    *     the channel.
-   * @param notificationChannel The definition of the `NotificationChannel` to create.
+   * @param notificationChannel Required. The definition of the `NotificationChannel` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationChannel createNotificationChannel(
@@ -727,13 +729,13 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The project on which to execute the request. The format is:
+   * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID]
    *     <p>Note that this names the container into which the channel will be written. This does not
    *     name the newly created channel. The resulting channel's name will have a normalized version
    *     of this field as a prefix, but will add `/notificationChannels/[CHANNEL_ID]` to identify
    *     the channel.
-   * @param notificationChannel The definition of the `NotificationChannel` to create.
+   * @param notificationChannel Required. The definition of the `NotificationChannel` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationChannel createNotificationChannel(
@@ -814,9 +816,9 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param updateMask The fields to update.
-   * @param notificationChannel A description of the changes to be applied to the specified
-   *     notification channel. The description must provide a definition for fields to be updated;
-   *     the names of these fields should also be included in the `update_mask`.
+   * @param notificationChannel Required. A description of the changes to be applied to the
+   *     specified notification channel. The description must provide a definition for fields to be
+   *     updated; the names of these fields should also be included in the `update_mask`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationChannel updateNotificationChannel(
@@ -890,7 +892,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The channel for which to execute the request. The format is
+   * @param name Required. The channel for which to execute the request. The format is
    *     `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
    * @param force If true, the notification channel will be deleted regardless of its use in alert
    *     policies (the policies will be updated to remove the channel). If false, channels that are
@@ -921,7 +923,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The channel for which to execute the request. The format is
+   * @param name Required. The channel for which to execute the request. The format is
    *     `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
    * @param force If true, the notification channel will be deleted regardless of its use in alert
    *     policies (the policies will be updated to remove the channel). If false, channels that are
@@ -995,7 +997,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The notification channel to which to send a verification code.
+   * @param name Required. The notification channel to which to send a verification code.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void sendNotificationChannelVerificationCode(NotificationChannelName name) {
@@ -1020,7 +1022,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The notification channel to which to send a verification code.
+   * @param name Required. The notification channel to which to send a verification code.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void sendNotificationChannelVerificationCode(String name) {
@@ -1106,9 +1108,9 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The notification channel for which a verification code is to be generated and
-   *     retrieved. This must name a channel that is already verified; if the specified channel is
-   *     not verified, the request will fail.
+   * @param name Required. The notification channel for which a verification code is to be generated
+   *     and retrieved. This must name a channel that is already verified; if the specified channel
+   *     is not verified, the request will fail.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GetNotificationChannelVerificationCodeResponse
@@ -1148,9 +1150,9 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The notification channel for which a verification code is to be generated and
-   *     retrieved. This must name a channel that is already verified; if the specified channel is
-   *     not verified, the request will fail.
+   * @param name Required. The notification channel for which a verification code is to be generated
+   *     and retrieved. This must name a channel that is already verified; if the specified channel
+   *     is not verified, the request will fail.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GetNotificationChannelVerificationCodeResponse
@@ -1255,13 +1257,13 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The notification channel to verify.
-   * @param code The verification code that was delivered to the channel as a result of invoking the
-   *     `SendNotificationChannelVerificationCode` API method or that was retrieved from a verified
-   *     channel via `GetNotificationChannelVerificationCode`. For example, one might have
-   *     "G-123456" or "TKNZGhhd2EyN3I1MnRnMjRv" (in general, one is only guaranteed that the code
-   *     is valid UTF-8; one should not make any assumptions regarding the structure or format of
-   *     the code).
+   * @param name Required. The notification channel to verify.
+   * @param code Required. The verification code that was delivered to the channel as a result of
+   *     invoking the `SendNotificationChannelVerificationCode` API method or that was retrieved
+   *     from a verified channel via `GetNotificationChannelVerificationCode`. For example, one
+   *     might have "G-123456" or "TKNZGhhd2EyN3I1MnRnMjRv" (in general, one is only guaranteed that
+   *     the code is valid UTF-8; one should not make any assumptions regarding the structure or
+   *     format of the code).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationChannel verifyNotificationChannel(
@@ -1289,13 +1291,13 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The notification channel to verify.
-   * @param code The verification code that was delivered to the channel as a result of invoking the
-   *     `SendNotificationChannelVerificationCode` API method or that was retrieved from a verified
-   *     channel via `GetNotificationChannelVerificationCode`. For example, one might have
-   *     "G-123456" or "TKNZGhhd2EyN3I1MnRnMjRv" (in general, one is only guaranteed that the code
-   *     is valid UTF-8; one should not make any assumptions regarding the structure or format of
-   *     the code).
+   * @param name Required. The notification channel to verify.
+   * @param code Required. The verification code that was delivered to the channel as a result of
+   *     invoking the `SendNotificationChannelVerificationCode` API method or that was retrieved
+   *     from a verified channel via `GetNotificationChannelVerificationCode`. For example, one
+   *     might have "G-123456" or "TKNZGhhd2EyN3I1MnRnMjRv" (in general, one is only guaranteed that
+   *     the code is valid UTF-8; one should not make any assumptions regarding the structure or
+   *     format of the code).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationChannel verifyNotificationChannel(String name, String code) {

@@ -27,11 +27,13 @@ public interface CreateServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the parent workspace.
+   * Required. Resource name of the parent workspace.
    * Of the form `projects/{project_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -40,11 +42,13 @@ public interface CreateServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the parent workspace.
+   * Required. Resource name of the parent workspace.
    * Of the form `projects/{project_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -81,10 +85,11 @@ public interface CreateServiceRequestOrBuilder
    *
    *
    * <pre>
-   * The `Service` to create.
+   * Required. The `Service` to create.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service service = 2;</code>
+   * <code>.google.monitoring.v3.Service service = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the service field is set.
    */
@@ -93,10 +98,11 @@ public interface CreateServiceRequestOrBuilder
    *
    *
    * <pre>
-   * The `Service` to create.
+   * Required. The `Service` to create.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service service = 2;</code>
+   * <code>.google.monitoring.v3.Service service = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The service.
    */
@@ -105,10 +111,11 @@ public interface CreateServiceRequestOrBuilder
    *
    *
    * <pre>
-   * The `Service` to create.
+   * Required. The `Service` to create.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service service = 2;</code>
+   * <code>.google.monitoring.v3.Service service = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.monitoring.v3.ServiceOrBuilder getServiceOrBuilder();
 }

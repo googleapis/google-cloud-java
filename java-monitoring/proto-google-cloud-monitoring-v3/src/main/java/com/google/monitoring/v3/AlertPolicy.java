@@ -10280,6 +10280,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * OR according to the `combiner` field. If the combined conditions evaluate
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
+   * If |condition_time_series_uery_language| is present, it must be the only
+   * |condition|.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -10295,6 +10297,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * OR according to the `combiner` field. If the combined conditions evaluate
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
+   * If |condition_time_series_uery_language| is present, it must be the only
+   * |condition|.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -10311,6 +10315,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * OR according to the `combiner` field. If the combined conditions evaluate
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
+   * If |condition_time_series_uery_language| is present, it must be the only
+   * |condition|.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -10326,6 +10332,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * OR according to the `combiner` field. If the combined conditions evaluate
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
+   * If |condition_time_series_uery_language| is present, it must be the only
+   * |condition|.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -10341,6 +10349,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * OR according to the `combiner` field. If the combined conditions evaluate
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
+   * If |condition_time_series_uery_language| is present, it must be the only
+   * |condition|.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -10357,6 +10367,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * How to combine the results of multiple conditions to determine if an
    * incident should be opened.
+   * If condition_time_series_query_language is present, this must be
+   * COMBINE_UNSPECIFIED.
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
@@ -10372,6 +10384,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * How to combine the results of multiple conditions to determine if an
    * incident should be opened.
+   * If condition_time_series_query_language is present, this must be
+   * COMBINE_UNSPECIFIED.
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
@@ -12000,6 +12014,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12019,6 +12035,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12038,6 +12056,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12057,6 +12077,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12082,6 +12104,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12105,6 +12129,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12130,6 +12156,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12155,6 +12183,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12178,6 +12208,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12201,6 +12233,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12224,6 +12258,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12246,6 +12282,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12268,6 +12306,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12283,6 +12323,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12303,6 +12345,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12323,6 +12367,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12339,6 +12385,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12355,6 +12403,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
+     * If |condition_time_series_uery_language| is present, it must be the only
+     * |condition|.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12388,6 +12438,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * How to combine the results of multiple conditions to determine if an
      * incident should be opened.
+     * If condition_time_series_query_language is present, this must be
+     * COMBINE_UNSPECIFIED.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
@@ -12403,6 +12455,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * How to combine the results of multiple conditions to determine if an
      * incident should be opened.
+     * If condition_time_series_query_language is present, this must be
+     * COMBINE_UNSPECIFIED.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
@@ -12421,6 +12475,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * How to combine the results of multiple conditions to determine if an
      * incident should be opened.
+     * If condition_time_series_query_language is present, this must be
+     * COMBINE_UNSPECIFIED.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
@@ -12441,6 +12497,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * How to combine the results of multiple conditions to determine if an
      * incident should be opened.
+     * If condition_time_series_query_language is present, this must be
+     * COMBINE_UNSPECIFIED.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
@@ -12463,6 +12521,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * How to combine the results of multiple conditions to determine if an
      * incident should be opened.
+     * If condition_time_series_query_language is present, this must be
+     * COMBINE_UNSPECIFIED.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>

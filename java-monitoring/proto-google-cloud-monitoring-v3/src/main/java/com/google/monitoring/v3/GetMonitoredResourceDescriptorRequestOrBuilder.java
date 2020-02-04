@@ -27,13 +27,15 @@ public interface GetMonitoredResourceDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * The monitored resource descriptor to get.  The format is
+   * Required. The monitored resource descriptor to get.  The format is
    * `"projects/{project_id_or_number}/monitoredResourceDescriptors/{resource_type}"`.
    * The `{resource_type}` is a predefined type, such as
    * `cloudsql_database`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -42,13 +44,15 @@ public interface GetMonitoredResourceDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * The monitored resource descriptor to get.  The format is
+   * Required. The monitored resource descriptor to get.  The format is
    * `"projects/{project_id_or_number}/monitoredResourceDescriptors/{resource_type}"`.
    * The `{resource_type}` is a predefined type, such as
    * `cloudsql_database`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

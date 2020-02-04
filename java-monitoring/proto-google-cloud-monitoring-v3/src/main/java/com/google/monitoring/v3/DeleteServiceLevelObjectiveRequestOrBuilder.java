@@ -27,12 +27,14 @@ public interface DeleteServiceLevelObjectiveRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the `ServiceLevelObjective` to delete.
+   * Required. Resource name of the `ServiceLevelObjective` to delete.
    * Of the form
    * `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -41,12 +43,14 @@ public interface DeleteServiceLevelObjectiveRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the `ServiceLevelObjective` to delete.
+   * Required. Resource name of the `ServiceLevelObjective` to delete.
    * Of the form
    * `projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

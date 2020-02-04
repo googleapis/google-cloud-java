@@ -27,7 +27,7 @@ public interface CreateAlertPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The project in which to create the alerting policy. The format is
+   * Required. The project in which to create the alerting policy. The format is
    * `projects/[PROJECT_ID]`.
    * Note that this field names the parent container in which the alerting
    * policy will be written, not the name of the created policy. The alerting
@@ -36,7 +36,9 @@ public interface CreateAlertPolicyRequestOrBuilder
    * `/alertPolicies/[POLICY_ID]`, identifying the policy in the container.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -45,7 +47,7 @@ public interface CreateAlertPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The project in which to create the alerting policy. The format is
+   * Required. The project in which to create the alerting policy. The format is
    * `projects/[PROJECT_ID]`.
    * Note that this field names the parent container in which the alerting
    * policy will be written, not the name of the created policy. The alerting
@@ -54,7 +56,9 @@ public interface CreateAlertPolicyRequestOrBuilder
    * `/alertPolicies/[POLICY_ID]`, identifying the policy in the container.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -64,12 +68,14 @@ public interface CreateAlertPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The requested alerting policy. You should omit the `name` field in this
+   * Required. The requested alerting policy. You should omit the `name` field in this
    * policy. The name will be returned in the new policy, including
    * a new [ALERT_POLICY_ID] value.
    * </pre>
    *
-   * <code>.google.monitoring.v3.AlertPolicy alert_policy = 2;</code>
+   * <code>
+   * .google.monitoring.v3.AlertPolicy alert_policy = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the alertPolicy field is set.
    */
@@ -78,12 +84,14 @@ public interface CreateAlertPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The requested alerting policy. You should omit the `name` field in this
+   * Required. The requested alerting policy. You should omit the `name` field in this
    * policy. The name will be returned in the new policy, including
    * a new [ALERT_POLICY_ID] value.
    * </pre>
    *
-   * <code>.google.monitoring.v3.AlertPolicy alert_policy = 2;</code>
+   * <code>
+   * .google.monitoring.v3.AlertPolicy alert_policy = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The alertPolicy.
    */
@@ -92,12 +100,14 @@ public interface CreateAlertPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The requested alerting policy. You should omit the `name` field in this
+   * Required. The requested alerting policy. You should omit the `name` field in this
    * policy. The name will be returned in the new policy, including
    * a new [ALERT_POLICY_ID] value.
    * </pre>
    *
-   * <code>.google.monitoring.v3.AlertPolicy alert_policy = 2;</code>
+   * <code>
+   * .google.monitoring.v3.AlertPolicy alert_policy = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.monitoring.v3.AlertPolicyOrBuilder getAlertPolicyOrBuilder();
 }

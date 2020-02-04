@@ -132,11 +132,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -155,11 +157,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -181,11 +185,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The new [custom metric](/monitoring/custom-metrics)
+   * Required. The new [custom metric](/monitoring/custom-metrics)
    * descriptor.
    * </pre>
    *
-   * <code>.google.api.MetricDescriptor metric_descriptor = 2;</code>
+   * <code>
+   * .google.api.MetricDescriptor metric_descriptor = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the metricDescriptor field is set.
    */
@@ -196,11 +202,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The new [custom metric](/monitoring/custom-metrics)
+   * Required. The new [custom metric](/monitoring/custom-metrics)
    * descriptor.
    * </pre>
    *
-   * <code>.google.api.MetricDescriptor metric_descriptor = 2;</code>
+   * <code>
+   * .google.api.MetricDescriptor metric_descriptor = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The metricDescriptor.
    */
@@ -213,11 +221,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The new [custom metric](/monitoring/custom-metrics)
+   * Required. The new [custom metric](/monitoring/custom-metrics)
    * descriptor.
    * </pre>
    *
-   * <code>.google.api.MetricDescriptor metric_descriptor = 2;</code>
+   * <code>
+   * .google.api.MetricDescriptor metric_descriptor = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.api.MetricDescriptorOrBuilder getMetricDescriptorOrBuilder() {
     return getMetricDescriptor();
@@ -575,11 +585,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -598,11 +610,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -621,11 +635,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -643,11 +659,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -661,11 +679,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The project on which to execute the request. The format is
+     * Required. The project on which to execute the request. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -691,11 +711,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The new [custom metric](/monitoring/custom-metrics)
+     * Required. The new [custom metric](/monitoring/custom-metrics)
      * descriptor.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 2;</code>
+     * <code>
+     * .google.api.MetricDescriptor metric_descriptor = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the metricDescriptor field is set.
      */
@@ -706,11 +728,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The new [custom metric](/monitoring/custom-metrics)
+     * Required. The new [custom metric](/monitoring/custom-metrics)
      * descriptor.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 2;</code>
+     * <code>
+     * .google.api.MetricDescriptor metric_descriptor = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The metricDescriptor.
      */
@@ -727,11 +751,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The new [custom metric](/monitoring/custom-metrics)
+     * Required. The new [custom metric](/monitoring/custom-metrics)
      * descriptor.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 2;</code>
+     * <code>
+     * .google.api.MetricDescriptor metric_descriptor = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setMetricDescriptor(com.google.api.MetricDescriptor value) {
       if (metricDescriptorBuilder_ == null) {
@@ -750,11 +776,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The new [custom metric](/monitoring/custom-metrics)
+     * Required. The new [custom metric](/monitoring/custom-metrics)
      * descriptor.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 2;</code>
+     * <code>
+     * .google.api.MetricDescriptor metric_descriptor = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setMetricDescriptor(com.google.api.MetricDescriptor.Builder builderForValue) {
       if (metricDescriptorBuilder_ == null) {
@@ -770,11 +798,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The new [custom metric](/monitoring/custom-metrics)
+     * Required. The new [custom metric](/monitoring/custom-metrics)
      * descriptor.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 2;</code>
+     * <code>
+     * .google.api.MetricDescriptor metric_descriptor = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeMetricDescriptor(com.google.api.MetricDescriptor value) {
       if (metricDescriptorBuilder_ == null) {
@@ -797,11 +827,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The new [custom metric](/monitoring/custom-metrics)
+     * Required. The new [custom metric](/monitoring/custom-metrics)
      * descriptor.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 2;</code>
+     * <code>
+     * .google.api.MetricDescriptor metric_descriptor = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearMetricDescriptor() {
       if (metricDescriptorBuilder_ == null) {
@@ -818,11 +850,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The new [custom metric](/monitoring/custom-metrics)
+     * Required. The new [custom metric](/monitoring/custom-metrics)
      * descriptor.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 2;</code>
+     * <code>
+     * .google.api.MetricDescriptor metric_descriptor = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.api.MetricDescriptor.Builder getMetricDescriptorBuilder() {
 
@@ -833,11 +867,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The new [custom metric](/monitoring/custom-metrics)
+     * Required. The new [custom metric](/monitoring/custom-metrics)
      * descriptor.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 2;</code>
+     * <code>
+     * .google.api.MetricDescriptor metric_descriptor = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.api.MetricDescriptorOrBuilder getMetricDescriptorOrBuilder() {
       if (metricDescriptorBuilder_ != null) {
@@ -852,11 +888,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The new [custom metric](/monitoring/custom-metrics)
+     * Required. The new [custom metric](/monitoring/custom-metrics)
      * descriptor.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 2;</code>
+     * <code>
+     * .google.api.MetricDescriptor metric_descriptor = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.api.MetricDescriptor,

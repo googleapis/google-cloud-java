@@ -117,13 +117,15 @@ public final class GetMetricDescriptorRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The metric descriptor on which to execute the request. The format is
+   * Required. The metric descriptor on which to execute the request. The format is
    * `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`.
    * An example value of `{metric_id}` is
    * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -142,13 +144,15 @@ public final class GetMetricDescriptorRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The metric descriptor on which to execute the request. The format is
+   * Required. The metric descriptor on which to execute the request. The format is
    * `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`.
    * An example value of `{metric_id}` is
    * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -487,13 +491,15 @@ public final class GetMetricDescriptorRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The metric descriptor on which to execute the request. The format is
+     * Required. The metric descriptor on which to execute the request. The format is
      * `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`.
      * An example value of `{metric_id}` is
      * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -512,13 +518,15 @@ public final class GetMetricDescriptorRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The metric descriptor on which to execute the request. The format is
+     * Required. The metric descriptor on which to execute the request. The format is
      * `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`.
      * An example value of `{metric_id}` is
      * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -537,13 +545,15 @@ public final class GetMetricDescriptorRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The metric descriptor on which to execute the request. The format is
+     * Required. The metric descriptor on which to execute the request. The format is
      * `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`.
      * An example value of `{metric_id}` is
      * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -561,13 +571,15 @@ public final class GetMetricDescriptorRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The metric descriptor on which to execute the request. The format is
+     * Required. The metric descriptor on which to execute the request. The format is
      * `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`.
      * An example value of `{metric_id}` is
      * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -581,13 +593,15 @@ public final class GetMetricDescriptorRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The metric descriptor on which to execute the request. The format is
+     * Required. The metric descriptor on which to execute the request. The format is
      * `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`.
      * An example value of `{metric_id}` is
      * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>
+     * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

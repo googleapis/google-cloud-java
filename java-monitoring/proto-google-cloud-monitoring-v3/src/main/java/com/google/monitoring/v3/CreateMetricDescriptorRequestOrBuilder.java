@@ -27,11 +27,13 @@ public interface CreateMetricDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -40,11 +42,13 @@ public interface CreateMetricDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * The project on which to execute the request. The format is
+   * Required. The project on which to execute the request. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -54,11 +58,13 @@ public interface CreateMetricDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * The new [custom metric](/monitoring/custom-metrics)
+   * Required. The new [custom metric](/monitoring/custom-metrics)
    * descriptor.
    * </pre>
    *
-   * <code>.google.api.MetricDescriptor metric_descriptor = 2;</code>
+   * <code>
+   * .google.api.MetricDescriptor metric_descriptor = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the metricDescriptor field is set.
    */
@@ -67,11 +73,13 @@ public interface CreateMetricDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * The new [custom metric](/monitoring/custom-metrics)
+   * Required. The new [custom metric](/monitoring/custom-metrics)
    * descriptor.
    * </pre>
    *
-   * <code>.google.api.MetricDescriptor metric_descriptor = 2;</code>
+   * <code>
+   * .google.api.MetricDescriptor metric_descriptor = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The metricDescriptor.
    */
@@ -80,11 +88,13 @@ public interface CreateMetricDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * The new [custom metric](/monitoring/custom-metrics)
+   * Required. The new [custom metric](/monitoring/custom-metrics)
    * descriptor.
    * </pre>
    *
-   * <code>.google.api.MetricDescriptor metric_descriptor = 2;</code>
+   * <code>
+   * .google.api.MetricDescriptor metric_descriptor = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.api.MetricDescriptorOrBuilder getMetricDescriptorOrBuilder();
 }

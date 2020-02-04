@@ -137,11 +137,13 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The project in which to create the group. The format is
+   * Required. The project in which to create the group. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 4;</code>
+   * <code>
+   * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -160,11 +162,13 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The project in which to create the group. The format is
+   * Required. The project in which to create the group. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 4;</code>
+   * <code>
+   * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -186,11 +190,11 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A group definition. It is an error to define the `name` field because
+   * Required. A group definition. It is an error to define the `name` field because
    * the system assigns the name.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Group group = 2;</code>
+   * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the group field is set.
    */
@@ -201,11 +205,11 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A group definition. It is an error to define the `name` field because
+   * Required. A group definition. It is an error to define the `name` field because
    * the system assigns the name.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Group group = 2;</code>
+   * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The group.
    */
@@ -216,11 +220,11 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A group definition. It is an error to define the `name` field because
+   * Required. A group definition. It is an error to define the `name` field because
    * the system assigns the name.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Group group = 2;</code>
+   * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.monitoring.v3.GroupOrBuilder getGroupOrBuilder() {
     return getGroup();
@@ -607,11 +611,13 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The project in which to create the group. The format is
+     * Required. The project in which to create the group. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>
+     * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -630,11 +636,13 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The project in which to create the group. The format is
+     * Required. The project in which to create the group. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>
+     * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -653,11 +661,13 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The project in which to create the group. The format is
+     * Required. The project in which to create the group. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>
+     * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -675,11 +685,13 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The project in which to create the group. The format is
+     * Required. The project in which to create the group. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>
+     * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -693,11 +705,13 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The project in which to create the group. The format is
+     * Required. The project in which to create the group. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>
+     * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -723,11 +737,11 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A group definition. It is an error to define the `name` field because
+     * Required. A group definition. It is an error to define the `name` field because
      * the system assigns the name.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Group group = 2;</code>
+     * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return Whether the group field is set.
      */
@@ -738,11 +752,11 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A group definition. It is an error to define the `name` field because
+     * Required. A group definition. It is an error to define the `name` field because
      * the system assigns the name.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Group group = 2;</code>
+     * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The group.
      */
@@ -757,11 +771,11 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A group definition. It is an error to define the `name` field because
+     * Required. A group definition. It is an error to define the `name` field because
      * the system assigns the name.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Group group = 2;</code>
+     * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setGroup(com.google.monitoring.v3.Group value) {
       if (groupBuilder_ == null) {
@@ -780,11 +794,11 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A group definition. It is an error to define the `name` field because
+     * Required. A group definition. It is an error to define the `name` field because
      * the system assigns the name.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Group group = 2;</code>
+     * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setGroup(com.google.monitoring.v3.Group.Builder builderForValue) {
       if (groupBuilder_ == null) {
@@ -800,11 +814,11 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A group definition. It is an error to define the `name` field because
+     * Required. A group definition. It is an error to define the `name` field because
      * the system assigns the name.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Group group = 2;</code>
+     * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeGroup(com.google.monitoring.v3.Group value) {
       if (groupBuilder_ == null) {
@@ -825,11 +839,11 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A group definition. It is an error to define the `name` field because
+     * Required. A group definition. It is an error to define the `name` field because
      * the system assigns the name.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Group group = 2;</code>
+     * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearGroup() {
       if (groupBuilder_ == null) {
@@ -846,11 +860,11 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A group definition. It is an error to define the `name` field because
+     * Required. A group definition. It is an error to define the `name` field because
      * the system assigns the name.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Group group = 2;</code>
+     * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.monitoring.v3.Group.Builder getGroupBuilder() {
 
@@ -861,11 +875,11 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A group definition. It is an error to define the `name` field because
+     * Required. A group definition. It is an error to define the `name` field because
      * the system assigns the name.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Group group = 2;</code>
+     * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.monitoring.v3.GroupOrBuilder getGroupOrBuilder() {
       if (groupBuilder_ != null) {
@@ -878,11 +892,11 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A group definition. It is an error to define the `name` field because
+     * Required. A group definition. It is an error to define the `name` field because
      * the system assigns the name.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Group group = 2;</code>
+     * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.Group,

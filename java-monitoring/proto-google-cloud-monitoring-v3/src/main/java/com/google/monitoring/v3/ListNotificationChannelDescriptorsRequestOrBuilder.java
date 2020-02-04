@@ -27,7 +27,7 @@ public interface ListNotificationChannelDescriptorsRequestOrBuilder
    *
    *
    * <pre>
-   * The REST resource name of the parent from which to retrieve
+   * Required. The REST resource name of the parent from which to retrieve
    * the notification channel descriptors. The expected syntax is:
    *     projects/[PROJECT_ID]
    * Note that this names the parent container in which to look for the
@@ -36,7 +36,9 @@ public interface ListNotificationChannelDescriptorsRequestOrBuilder
    * operation, instead.
    * </pre>
    *
-   * <code>string name = 4;</code>
+   * <code>
+   * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -45,7 +47,7 @@ public interface ListNotificationChannelDescriptorsRequestOrBuilder
    *
    *
    * <pre>
-   * The REST resource name of the parent from which to retrieve
+   * Required. The REST resource name of the parent from which to retrieve
    * the notification channel descriptors. The expected syntax is:
    *     projects/[PROJECT_ID]
    * Note that this names the parent container in which to look for the
@@ -54,7 +56,9 @@ public interface ListNotificationChannelDescriptorsRequestOrBuilder
    * operation, instead.
    * </pre>
    *
-   * <code>string name = 4;</code>
+   * <code>
+   * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

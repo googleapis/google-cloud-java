@@ -138,11 +138,13 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Resource name of the parent `Workspace`.
+   * Required. Resource name of the parent `Workspace`.
    * Of the form `projects/{project_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -161,11 +163,13 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Resource name of the parent `Workspace`.
+   * Required. Resource name of the parent `Workspace`.
    * Of the form `projects/{project_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -689,11 +693,13 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Resource name of the parent `Workspace`.
+     * Required. Resource name of the parent `Workspace`.
      * Of the form `projects/{project_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -712,11 +718,13 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Resource name of the parent `Workspace`.
+     * Required. Resource name of the parent `Workspace`.
      * Of the form `projects/{project_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -735,11 +743,13 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Resource name of the parent `Workspace`.
+     * Required. Resource name of the parent `Workspace`.
      * Of the form `projects/{project_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -757,11 +767,13 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Resource name of the parent `Workspace`.
+     * Required. Resource name of the parent `Workspace`.
      * Of the form `projects/{project_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -775,11 +787,13 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Resource name of the parent `Workspace`.
+     * Required. Resource name of the parent `Workspace`.
      * Of the form `projects/{project_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.

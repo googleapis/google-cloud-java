@@ -27,11 +27,13 @@ public interface ListServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the parent `Workspace`.
+   * Required. Resource name of the parent `Workspace`.
    * Of the form `projects/{project_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -40,11 +42,13 @@ public interface ListServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the parent `Workspace`.
+   * Required. Resource name of the parent `Workspace`.
    * Of the form `projects/{project_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */

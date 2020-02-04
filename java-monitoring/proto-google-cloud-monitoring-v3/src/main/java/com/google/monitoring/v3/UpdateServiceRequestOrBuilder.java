@@ -27,11 +27,12 @@ public interface UpdateServiceRequestOrBuilder
    *
    *
    * <pre>
-   * The `Service` to draw updates from.
+   * Required. The `Service` to draw updates from.
    * The given `name` specifies the resource to update.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service service = 1;</code>
+   * <code>.google.monitoring.v3.Service service = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the service field is set.
    */
@@ -40,11 +41,12 @@ public interface UpdateServiceRequestOrBuilder
    *
    *
    * <pre>
-   * The `Service` to draw updates from.
+   * Required. The `Service` to draw updates from.
    * The given `name` specifies the resource to update.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service service = 1;</code>
+   * <code>.google.monitoring.v3.Service service = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The service.
    */
@@ -53,11 +55,12 @@ public interface UpdateServiceRequestOrBuilder
    *
    *
    * <pre>
-   * The `Service` to draw updates from.
+   * Required. The `Service` to draw updates from.
    * The given `name` specifies the resource to update.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service service = 1;</code>
+   * <code>.google.monitoring.v3.Service service = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.monitoring.v3.ServiceOrBuilder getServiceOrBuilder();
 

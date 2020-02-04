@@ -22,8 +22,8 @@ package com.google.monitoring.v3;
  *
  *
  * <pre>
- * Specifies an ordering relationship on two arguments, here called left and
- * right.
+ * Specifies an ordering relationship on two arguments, called `left` and
+ * `right`.
  * </pre>
  *
  * Protobuf enum {@code google.monitoring.v3.ComparisonType}
@@ -43,7 +43,7 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The left argument is greater than the right argument.
+   * True if the left argument is greater than the right argument.
    * </pre>
    *
    * <code>COMPARISON_GT = 1;</code>
@@ -53,7 +53,7 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The left argument is greater than or equal to the right argument.
+   * True if the left argument is greater than or equal to the right argument.
    * </pre>
    *
    * <code>COMPARISON_GE = 2;</code>
@@ -63,7 +63,7 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The left argument is less than the right argument.
+   * True if the left argument is less than the right argument.
    * </pre>
    *
    * <code>COMPARISON_LT = 3;</code>
@@ -73,7 +73,7 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The left argument is less than or equal to the right argument.
+   * True if the left argument is less than or equal to the right argument.
    * </pre>
    *
    * <code>COMPARISON_LE = 4;</code>
@@ -83,7 +83,7 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The left argument is equal to the right argument.
+   * True if the left argument is equal to the right argument.
    * </pre>
    *
    * <code>COMPARISON_EQ = 5;</code>
@@ -93,7 +93,7 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The left argument is not equal to the right argument.
+   * True if the left argument is not equal to the right argument.
    * </pre>
    *
    * <code>COMPARISON_NE = 6;</code>
@@ -116,7 +116,7 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The left argument is greater than the right argument.
+   * True if the left argument is greater than the right argument.
    * </pre>
    *
    * <code>COMPARISON_GT = 1;</code>
@@ -126,7 +126,7 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The left argument is greater than or equal to the right argument.
+   * True if the left argument is greater than or equal to the right argument.
    * </pre>
    *
    * <code>COMPARISON_GE = 2;</code>
@@ -136,7 +136,7 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The left argument is less than the right argument.
+   * True if the left argument is less than the right argument.
    * </pre>
    *
    * <code>COMPARISON_LT = 3;</code>
@@ -146,7 +146,7 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The left argument is less than or equal to the right argument.
+   * True if the left argument is less than or equal to the right argument.
    * </pre>
    *
    * <code>COMPARISON_LE = 4;</code>
@@ -156,7 +156,7 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The left argument is equal to the right argument.
+   * True if the left argument is equal to the right argument.
    * </pre>
    *
    * <code>COMPARISON_EQ = 5;</code>
@@ -166,7 +166,7 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The left argument is not equal to the right argument.
+   * True if the left argument is not equal to the right argument.
    * </pre>
    *
    * <code>COMPARISON_NE = 6;</code>

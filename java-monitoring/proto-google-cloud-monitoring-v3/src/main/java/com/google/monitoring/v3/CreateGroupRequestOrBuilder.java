@@ -27,11 +27,13 @@ public interface CreateGroupRequestOrBuilder
    *
    *
    * <pre>
-   * The project in which to create the group. The format is
+   * Required. The project in which to create the group. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 4;</code>
+   * <code>
+   * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -40,11 +42,13 @@ public interface CreateGroupRequestOrBuilder
    *
    *
    * <pre>
-   * The project in which to create the group. The format is
+   * Required. The project in which to create the group. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 4;</code>
+   * <code>
+   * string name = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -54,11 +58,11 @@ public interface CreateGroupRequestOrBuilder
    *
    *
    * <pre>
-   * A group definition. It is an error to define the `name` field because
+   * Required. A group definition. It is an error to define the `name` field because
    * the system assigns the name.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Group group = 2;</code>
+   * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the group field is set.
    */
@@ -67,11 +71,11 @@ public interface CreateGroupRequestOrBuilder
    *
    *
    * <pre>
-   * A group definition. It is an error to define the `name` field because
+   * Required. A group definition. It is an error to define the `name` field because
    * the system assigns the name.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Group group = 2;</code>
+   * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The group.
    */
@@ -80,11 +84,11 @@ public interface CreateGroupRequestOrBuilder
    *
    *
    * <pre>
-   * A group definition. It is an error to define the `name` field because
+   * Required. A group definition. It is an error to define the `name` field because
    * the system assigns the name.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Group group = 2;</code>
+   * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.monitoring.v3.GroupOrBuilder getGroupOrBuilder();
 

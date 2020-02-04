@@ -27,11 +27,11 @@ public interface UpdateGroupRequestOrBuilder
    *
    *
    * <pre>
-   * The new definition of the group.  All fields of the existing group,
+   * Required. The new definition of the group.  All fields of the existing group,
    * excepting `name`, are replaced with the corresponding fields of this group.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Group group = 2;</code>
+   * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the group field is set.
    */
@@ -40,11 +40,11 @@ public interface UpdateGroupRequestOrBuilder
    *
    *
    * <pre>
-   * The new definition of the group.  All fields of the existing group,
+   * Required. The new definition of the group.  All fields of the existing group,
    * excepting `name`, are replaced with the corresponding fields of this group.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Group group = 2;</code>
+   * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The group.
    */
@@ -53,11 +53,11 @@ public interface UpdateGroupRequestOrBuilder
    *
    *
    * <pre>
-   * The new definition of the group.  All fields of the existing group,
+   * Required. The new definition of the group.  All fields of the existing group,
    * excepting `name`, are replaced with the corresponding fields of this group.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Group group = 2;</code>
+   * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.monitoring.v3.GroupOrBuilder getGroupOrBuilder();
 

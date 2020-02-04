@@ -27,11 +27,13 @@ public interface GetGroupRequestOrBuilder
    *
    *
    * <pre>
-   * The group to retrieve. The format is
+   * Required. The group to retrieve. The format is
    * `"projects/{project_id_or_number}/groups/{group_id}"`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -40,11 +42,13 @@ public interface GetGroupRequestOrBuilder
    *
    *
    * <pre>
-   * The group to retrieve. The format is
+   * Required. The group to retrieve. The format is
    * `"projects/{project_id_or_number}/groups/{group_id}"`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>
+   * string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

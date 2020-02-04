@@ -201,11 +201,13 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The project whose groups are to be listed. The format is
+   * Required. The project whose groups are to be listed. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 7;</code>
+   * <code>
+   * string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -224,11 +226,13 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The project whose groups are to be listed. The format is
+   * Required. The project whose groups are to be listed. The format is
    * `"projects/{project_id_or_number}"`.
    * </pre>
    *
-   * <code>string name = 7;</code>
+   * <code>
+   * string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -254,7 +258,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * name.  If no groups have this parent, the results are empty.
    * </pre>
    *
-   * <code>string children_of_group = 2;</code>
+   * <code>string children_of_group = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The childrenOfGroup.
    */
@@ -283,7 +287,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * name.  If no groups have this parent, the results are empty.
    * </pre>
    *
-   * <code>string children_of_group = 2;</code>
+   * <code>string children_of_group = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for childrenOfGroup.
    */
@@ -316,7 +320,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * immediate parent, the results are empty.
    * </pre>
    *
-   * <code>string ancestors_of_group = 3;</code>
+   * <code>string ancestors_of_group = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The ancestorsOfGroup.
    */
@@ -347,7 +351,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * immediate parent, the results are empty.
    * </pre>
    *
-   * <code>string ancestors_of_group = 3;</code>
+   * <code>string ancestors_of_group = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for ancestorsOfGroup.
    */
@@ -379,7 +383,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * children-of-children, and so forth.
    * </pre>
    *
-   * <code>string descendants_of_group = 4;</code>
+   * <code>string descendants_of_group = 4 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The descendantsOfGroup.
    */
@@ -409,7 +413,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * children-of-children, and so forth.
    * </pre>
    *
-   * <code>string descendants_of_group = 4;</code>
+   * <code>string descendants_of_group = 4 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for descendantsOfGroup.
    */
@@ -951,11 +955,13 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The project whose groups are to be listed. The format is
+     * Required. The project whose groups are to be listed. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 7;</code>
+     * <code>
+     * string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -974,11 +980,13 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The project whose groups are to be listed. The format is
+     * Required. The project whose groups are to be listed. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 7;</code>
+     * <code>
+     * string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -997,11 +1005,13 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The project whose groups are to be listed. The format is
+     * Required. The project whose groups are to be listed. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 7;</code>
+     * <code>
+     * string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1019,11 +1029,13 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The project whose groups are to be listed. The format is
+     * Required. The project whose groups are to be listed. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 7;</code>
+     * <code>
+     * string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1037,11 +1049,13 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The project whose groups are to be listed. The format is
+     * Required. The project whose groups are to be listed. The format is
      * `"projects/{project_id_or_number}"`.
      * </pre>
      *
-     * <code>string name = 7;</code>
+     * <code>
+     * string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1066,7 +1080,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * name.  If no groups have this parent, the results are empty.
      * </pre>
      *
-     * <code>string children_of_group = 2;</code>
+     * <code>string children_of_group = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The childrenOfGroup.
      */
@@ -1095,7 +1109,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * name.  If no groups have this parent, the results are empty.
      * </pre>
      *
-     * <code>string children_of_group = 2;</code>
+     * <code>string children_of_group = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for childrenOfGroup.
      */
@@ -1124,7 +1138,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * name.  If no groups have this parent, the results are empty.
      * </pre>
      *
-     * <code>string children_of_group = 2;</code>
+     * <code>string children_of_group = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The childrenOfGroup to set.
      * @return This builder for chaining.
@@ -1147,7 +1161,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * name.  If no groups have this parent, the results are empty.
      * </pre>
      *
-     * <code>string children_of_group = 2;</code>
+     * <code>string children_of_group = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -1168,7 +1182,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * name.  If no groups have this parent, the results are empty.
      * </pre>
      *
-     * <code>string children_of_group = 2;</code>
+     * <code>string children_of_group = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for childrenOfGroup to set.
      * @return This builder for chaining.
@@ -1195,7 +1209,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * immediate parent, the results are empty.
      * </pre>
      *
-     * <code>string ancestors_of_group = 3;</code>
+     * <code>string ancestors_of_group = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The ancestorsOfGroup.
      */
@@ -1226,7 +1240,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * immediate parent, the results are empty.
      * </pre>
      *
-     * <code>string ancestors_of_group = 3;</code>
+     * <code>string ancestors_of_group = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for ancestorsOfGroup.
      */
@@ -1257,7 +1271,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * immediate parent, the results are empty.
      * </pre>
      *
-     * <code>string ancestors_of_group = 3;</code>
+     * <code>string ancestors_of_group = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The ancestorsOfGroup to set.
      * @return This builder for chaining.
@@ -1282,7 +1296,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * immediate parent, the results are empty.
      * </pre>
      *
-     * <code>string ancestors_of_group = 3;</code>
+     * <code>string ancestors_of_group = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -1305,7 +1319,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * immediate parent, the results are empty.
      * </pre>
      *
-     * <code>string ancestors_of_group = 3;</code>
+     * <code>string ancestors_of_group = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for ancestorsOfGroup to set.
      * @return This builder for chaining.
@@ -1331,7 +1345,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * children-of-children, and so forth.
      * </pre>
      *
-     * <code>string descendants_of_group = 4;</code>
+     * <code>string descendants_of_group = 4 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The descendantsOfGroup.
      */
@@ -1361,7 +1375,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * children-of-children, and so forth.
      * </pre>
      *
-     * <code>string descendants_of_group = 4;</code>
+     * <code>string descendants_of_group = 4 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for descendantsOfGroup.
      */
@@ -1391,7 +1405,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * children-of-children, and so forth.
      * </pre>
      *
-     * <code>string descendants_of_group = 4;</code>
+     * <code>string descendants_of_group = 4 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The descendantsOfGroup to set.
      * @return This builder for chaining.
@@ -1415,7 +1429,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * children-of-children, and so forth.
      * </pre>
      *
-     * <code>string descendants_of_group = 4;</code>
+     * <code>string descendants_of_group = 4 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -1437,7 +1451,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * children-of-children, and so forth.
      * </pre>
      *
-     * <code>string descendants_of_group = 4;</code>
+     * <code>string descendants_of_group = 4 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for descendantsOfGroup to set.
      * @return This builder for chaining.

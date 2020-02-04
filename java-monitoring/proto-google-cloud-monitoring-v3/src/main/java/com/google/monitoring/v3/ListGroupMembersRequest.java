@@ -154,11 +154,13 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The group whose members are listed. The format is
+   * Required. The group whose members are listed. The format is
    * `"projects/{project_id_or_number}/groups/{group_id}"`.
    * </pre>
    *
-   * <code>string name = 7;</code>
+   * <code>
+   * string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -177,11 +179,13 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The group whose members are listed. The format is
+   * Required. The group whose members are listed. The format is
    * `"projects/{project_id_or_number}/groups/{group_id}"`.
    * </pre>
    *
-   * <code>string name = 7;</code>
+   * <code>
+   * string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -773,11 +777,13 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The group whose members are listed. The format is
+     * Required. The group whose members are listed. The format is
      * `"projects/{project_id_or_number}/groups/{group_id}"`.
      * </pre>
      *
-     * <code>string name = 7;</code>
+     * <code>
+     * string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -796,11 +802,13 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The group whose members are listed. The format is
+     * Required. The group whose members are listed. The format is
      * `"projects/{project_id_or_number}/groups/{group_id}"`.
      * </pre>
      *
-     * <code>string name = 7;</code>
+     * <code>
+     * string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -819,11 +827,13 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The group whose members are listed. The format is
+     * Required. The group whose members are listed. The format is
      * `"projects/{project_id_or_number}/groups/{group_id}"`.
      * </pre>
      *
-     * <code>string name = 7;</code>
+     * <code>
+     * string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -841,11 +851,13 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The group whose members are listed. The format is
+     * Required. The group whose members are listed. The format is
      * `"projects/{project_id_or_number}/groups/{group_id}"`.
      * </pre>
      *
-     * <code>string name = 7;</code>
+     * <code>
+     * string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -859,11 +871,13 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The group whose members are listed. The format is
+     * Required. The group whose members are listed. The format is
      * `"projects/{project_id_or_number}/groups/{group_id}"`.
      * </pre>
      *
-     * <code>string name = 7;</code>
+     * <code>
+     * string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

@@ -27,11 +27,13 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the parent `Service`.
+   * Required. Resource name of the parent `Service`.
    * Of the form `projects/{project_id}/services/{service_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -40,11 +42,13 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the parent `Service`.
+   * Required. Resource name of the parent `Service`.
    * Of the form `projects/{project_id}/services/{service_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -83,12 +87,14 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    *
    *
    * <pre>
-   * The `ServiceLevelObjective` to create.
+   * Required. The `ServiceLevelObjective` to create.
    * The provided `name` will be respected if no `ServiceLevelObjective` exists
    * with this name.
    * </pre>
    *
-   * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 2;</code>
+   * <code>
+   * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the serviceLevelObjective field is set.
    */
@@ -97,12 +103,14 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    *
    *
    * <pre>
-   * The `ServiceLevelObjective` to create.
+   * Required. The `ServiceLevelObjective` to create.
    * The provided `name` will be respected if no `ServiceLevelObjective` exists
    * with this name.
    * </pre>
    *
-   * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 2;</code>
+   * <code>
+   * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The serviceLevelObjective.
    */
@@ -111,12 +119,14 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    *
    *
    * <pre>
-   * The `ServiceLevelObjective` to create.
+   * Required. The `ServiceLevelObjective` to create.
    * The provided `name` will be respected if no `ServiceLevelObjective` exists
    * with this name.
    * </pre>
    *
-   * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 2;</code>
+   * <code>
+   * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.monitoring.v3.ServiceLevelObjectiveOrBuilder getServiceLevelObjectiveOrBuilder();
 }

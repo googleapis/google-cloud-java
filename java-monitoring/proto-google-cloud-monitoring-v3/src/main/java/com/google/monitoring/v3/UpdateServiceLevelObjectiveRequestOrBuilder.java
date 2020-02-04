@@ -27,11 +27,13 @@ public interface UpdateServiceLevelObjectiveRequestOrBuilder
    *
    *
    * <pre>
-   * The `ServiceLevelObjective` to draw updates from.
+   * Required. The `ServiceLevelObjective` to draw updates from.
    * The given `name` specifies the resource to update.
    * </pre>
    *
-   * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 1;</code>
+   * <code>
+   * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the serviceLevelObjective field is set.
    */
@@ -40,11 +42,13 @@ public interface UpdateServiceLevelObjectiveRequestOrBuilder
    *
    *
    * <pre>
-   * The `ServiceLevelObjective` to draw updates from.
+   * Required. The `ServiceLevelObjective` to draw updates from.
    * The given `name` specifies the resource to update.
    * </pre>
    *
-   * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 1;</code>
+   * <code>
+   * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The serviceLevelObjective.
    */
@@ -53,11 +57,13 @@ public interface UpdateServiceLevelObjectiveRequestOrBuilder
    *
    *
    * <pre>
-   * The `ServiceLevelObjective` to draw updates from.
+   * Required. The `ServiceLevelObjective` to draw updates from.
    * The given `name` specifies the resource to update.
    * </pre>
    *
-   * <code>.google.monitoring.v3.ServiceLevelObjective service_level_objective = 1;</code>
+   * <code>
+   * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.monitoring.v3.ServiceLevelObjectiveOrBuilder getServiceLevelObjectiveOrBuilder();
 

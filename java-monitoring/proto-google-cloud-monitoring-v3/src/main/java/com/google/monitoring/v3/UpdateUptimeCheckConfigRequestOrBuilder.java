@@ -83,7 +83,9 @@ public interface UpdateUptimeCheckConfigRequestOrBuilder
    * `selected_regions`.
    * </pre>
    *
-   * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+   * <code>
+   * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the uptimeCheckConfig field is set.
    */
@@ -104,7 +106,9 @@ public interface UpdateUptimeCheckConfigRequestOrBuilder
    * `selected_regions`.
    * </pre>
    *
-   * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+   * <code>
+   * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The uptimeCheckConfig.
    */
@@ -125,7 +129,9 @@ public interface UpdateUptimeCheckConfigRequestOrBuilder
    * `selected_regions`.
    * </pre>
    *
-   * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3;</code>
+   * <code>
+   * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.monitoring.v3.UptimeCheckConfigOrBuilder getUptimeCheckConfigOrBuilder();
 }
