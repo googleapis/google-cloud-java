@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-02-04T08:47:20.781325Z",
+  "updateTime": "2020-02-03T22:49:28.096010Z",
   "sources": [
     {
       "generator": {
@@ -12,9 +12,9 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "69d9945330a5721cd679f17331a78850e2618226",
-        "internalRef": "293080182",
-        "log": "69d9945330a5721cd679f17331a78850e2618226\nAdd file-level `Session` resource definition\n\nPiperOrigin-RevId: 293080182\n\nf6a1a6b417f39694275ca286110bc3c1ca4db0dc\nAdd file-level `Session` resource definition\n\nPiperOrigin-RevId: 293080178\n\n29d40b78e3dc1579b0b209463fbcb76e5767f72a\nExpose managedidentities/v1beta1/ API for client library usage.\n\nPiperOrigin-RevId: 292979741\n\na22129a1fb6e18056d576dfb7717aef74b63734a\nExpose managedidentities/v1/ API for client library usage.\n\nPiperOrigin-RevId: 292968186\n\n"
+        "sha": "29d40b78e3dc1579b0b209463fbcb76e5767f72a",
+        "internalRef": "292979741",
+        "log": "29d40b78e3dc1579b0b209463fbcb76e5767f72a\nExpose managedidentities/v1beta1/ API for client library usage.\n\nPiperOrigin-RevId: 292979741\n\na22129a1fb6e18056d576dfb7717aef74b63734a\nExpose managedidentities/v1/ API for client library usage.\n\nPiperOrigin-RevId: 292968186\n\n"
       }
     },
     {
