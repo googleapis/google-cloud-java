@@ -66,7 +66,7 @@
     <google.core.version>1.91.1</google.core.version>
     <google.api-common.version>1.8.1</google.api-common.version>
     <google.common-protos.version>1.17.0</google.common-protos.version>
-    <gax.version>1.53.0</gax.version>
+    <gax.version>1.53.1</gax.version>
     <grpc.version>1.27.0</grpc.version>
     <protobuf.version>3.11.3</protobuf.version>
     <junit.version>4.13</junit.version>
