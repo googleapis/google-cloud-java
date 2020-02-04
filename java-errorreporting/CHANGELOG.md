@@ -1,5 +1,16 @@
 # Changelog
 
+### [0.119.1](https://www.github.com/googleapis/java-errorreporting/compare/v0.119.0...v0.119.1) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#40](https://www.github.com/googleapis/java-errorreporting/issues/40)) ([861be4c](https://www.github.com/googleapis/java-errorreporting/commit/861be4c0f373fcef97606060d0354f00039131a5))
+* update core dependencies ([#56](https://www.github.com/googleapis/java-errorreporting/issues/56)) ([d9336c2](https://www.github.com/googleapis/java-errorreporting/commit/d9336c251aa8985d99b0bec9eadaa91218f3df6f))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#38](https://www.github.com/googleapis/java-errorreporting/issues/38)) ([05da694](https://www.github.com/googleapis/java-errorreporting/commit/05da694823f3fec8868a99cce256e7f4127a9736))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#58](https://www.github.com/googleapis/java-errorreporting/issues/58)) ([963c1f2](https://www.github.com/googleapis/java-errorreporting/commit/963c1f218669451214312643bae3bad5a529d7d4))
+* update dependency org.threeten:threetenbp to v1.4.1 ([e92b86c](https://www.github.com/googleapis/java-errorreporting/commit/e92b86c9f5630a5926187407e6f0d8ad0c5b41f5))
+
 ## [0.119.0](https://www.github.com/googleapis/java-errorreporting/compare/v0.118.1...v0.119.0) (2020-01-07)
 
 
