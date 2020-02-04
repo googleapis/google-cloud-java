@@ -22,6 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
+ * ============================================================================
+ * Requests and responses for custom methods.
  * The request to detect user's intent.
  * </pre>
  *
@@ -178,7 +180,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * ID must not exceed 36 bytes.
    * </pre>
    *
-   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The session.
    */
@@ -204,7 +208,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * ID must not exceed 36 bytes.
    * </pre>
    *
-   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for session.
    */
@@ -624,6 +630,8 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
+   * ============================================================================
+   * Requests and responses for custom methods.
    * The request to detect user's intent.
    * </pre>
    *
@@ -839,7 +847,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * ID must not exceed 36 bytes.
      * </pre>
      *
-     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The session.
      */
@@ -865,7 +875,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * ID must not exceed 36 bytes.
      * </pre>
      *
-     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for session.
      */
@@ -891,7 +903,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * ID must not exceed 36 bytes.
      * </pre>
      *
-     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The session to set.
      * @return This builder for chaining.
@@ -916,7 +930,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * ID must not exceed 36 bytes.
      * </pre>
      *
-     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -937,7 +953,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * ID must not exceed 36 bytes.
      * </pre>
      *
-     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for session to set.
      * @return This builder for chaining.

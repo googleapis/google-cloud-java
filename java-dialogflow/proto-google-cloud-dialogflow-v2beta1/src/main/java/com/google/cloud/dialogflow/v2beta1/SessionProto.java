@@ -237,12 +237,16 @@ public final class SessionProto {
           + "treamingDetectIntentResponse\"\000(\0010\001\032x\312A\031d"
           + "ialogflow.googleapis.com\322AYhttps://www.g"
           + "oogleapis.com/auth/cloud-platform,https:"
-          + "//www.googleapis.com/auth/dialogflowB\252\001\n"
+          + "//www.googleapis.com/auth/dialogflowB\300\002\n"
           + "#com.google.cloud.dialogflow.v2beta1B\014Se"
           + "ssionProtoP\001ZIgoogle.golang.org/genproto"
           + "/googleapis/cloud/dialogflow/v2beta1;dia"
           + "logflow\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflo"
-          + "w.V2beta1b\006proto3"
+          + "w.V2beta1\352A\222\001\n!dialogflow.googleapis.com"
+          + "/Session\022@projects/{project}/locations/{"
+          + "location}/agent/sessions/{session}\022+proj"
+          + "ects/{project}/agent/sessions/{session}b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -444,6 +448,7 @@ public final class SessionProto {
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

@@ -34,7 +34,9 @@ public interface DetectIntentRequestOrBuilder
    * ID must not exceed 36 bytes.
    * </pre>
    *
-   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The session.
    */
@@ -50,7 +52,9 @@ public interface DetectIntentRequestOrBuilder
    * ID must not exceed 36 bytes.
    * </pre>
    *
-   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for session.
    */
