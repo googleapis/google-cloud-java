@@ -33,8 +33,4 @@ for version in versions:
         package_pattern='com.google.{service}.{version}'
     )
 
-common_templates = gcp.CommonTemplates()
-templates = common_templates.java_library()
-s.copy(templates, excludes=[
-    'README.md',
-])
+java.common_templates()
