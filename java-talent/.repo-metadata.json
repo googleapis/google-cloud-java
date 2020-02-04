@@ -2,12 +2,15 @@
   "name": "talent",
   "name_pretty": "Google Cloud Talent Solution",
   "product_documentation": "https://cloud.google.com/solutions/talent-solution/",
-  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/talent/v4beta1/package-summary.html",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-talent/latest/",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559664",
   "release_level": "beta",
   "language": "java",
   "repo": "googleapis/java-talent",
   "repo_short": "java-talent",
   "distribution_name": "com.google.cloud:google-cloud-talent",
-  "api_id": "jobs.googleapis.com"
+  "api_id": "jobs.googleapis.com",
+  "transport": "grpc",
+  "requires_billing": true,
+  "api_description": "allows you to transform your job search and candidate matching capabilities with Cloud Talent Solution, designed to support enterprise talent acquisition technology and evolve with your growing needs. This AI solution includes features such as Job Search and Profile Search (Beta) to provide candidates and employers with an enhanced talent acquisition experience. Learn more about Cloud Talent Solution from the product overview page."
 }
