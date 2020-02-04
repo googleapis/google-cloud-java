@@ -2,7 +2,7 @@
   "name": "iamcredentials",
   "name_pretty": "IAM Service Account Credentials API",
   "product_documentation": "https://cloud.google.com/iam/credentials/reference/rest/",
-  "client_documentation": "https://googleapis.dev/java/google-cloud-iamcredentials/latest/index.html",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-iamcredentials/latest/",
   "api_description": "creates short-lived, limited-privilege credentials for IAM service accounts.",
   "issue_tracker": "https://issuetracker.google.com/issues/new?component=187161&template=0",
   "release_level": "beta",
