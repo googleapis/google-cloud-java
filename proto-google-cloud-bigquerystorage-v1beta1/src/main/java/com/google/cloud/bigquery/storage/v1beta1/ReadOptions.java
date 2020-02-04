@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -820,8 +820,7 @@ public final class ReadOptions {
        *
        * <code>repeated string selected_fields = 1;</code>
        *
-       * @param index The index of the value to return.
-       * @return The bytes of the selectedFields at the given index.
+       * @param value The bytes of the selectedFields to add.
        */
       public com.google.protobuf.ByteString getSelectedFieldsBytes(int index) {
         return selectedFields_.getByteString(index);

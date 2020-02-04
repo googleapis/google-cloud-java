@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2386,10 +2386,7 @@ public final class Storage {
     private int schemaCase_ = 0;
     private java.lang.Object schema_;
 
-    public enum SchemaCase
-        implements
-            com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    public enum SchemaCase implements com.google.protobuf.Internal.EnumLite {
       AVRO_SCHEMA(5),
       ARROW_SCHEMA(6),
       SCHEMA_NOT_SET(0);
@@ -10855,10 +10852,7 @@ public final class Storage {
     private int rowsCase_ = 0;
     private java.lang.Object rows_;
 
-    public enum RowsCase
-        implements
-            com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    public enum RowsCase implements com.google.protobuf.Internal.EnumLite {
       AVRO_ROWS(3),
       ARROW_RECORD_BATCH(4),
       ROWS_NOT_SET(0);

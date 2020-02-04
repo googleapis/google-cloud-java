@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/cloud/bigquery/storage/v1beta1/storage.proto")
 public final class BigQueryStorageGrpc {
 
@@ -43,30 +43,21 @@ public final class BigQueryStorageGrpc {
   public static final String SERVICE_NAME = "google.cloud.bigquery.storage.v1beta1.BigQueryStorage";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateReadSessionMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest,
-          com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession>
-      METHOD_CREATE_READ_SESSION = getCreateReadSessionMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest,
           com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession>
       getCreateReadSessionMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateReadSession",
+      requestType =
+          com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest.class,
+      responseType = com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest,
           com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession>
       getCreateReadSessionMethod() {
-    return getCreateReadSessionMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest,
-          com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession>
-      getCreateReadSessionMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest,
             com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession>
@@ -81,10 +72,7 @@ public final class BigQueryStorageGrpc {
                           com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.bigquery.storage.v1beta1.BigQueryStorage",
-                              "CreateReadSession"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateReadSession"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -103,30 +91,20 @@ public final class BigQueryStorageGrpc {
     return getCreateReadSessionMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getReadRowsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest,
-          com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse>
-      METHOD_READ_ROWS = getReadRowsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest,
           com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse>
       getReadRowsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReadRows",
+      requestType = com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest.class,
+      responseType = com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest,
           com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse>
       getReadRowsMethod() {
-    return getReadRowsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest,
-          com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse>
-      getReadRowsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest,
             com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse>
@@ -141,9 +119,7 @@ public final class BigQueryStorageGrpc {
                           com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.bigquery.storage.v1beta1.BigQueryStorage", "ReadRows"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReadRows"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -161,30 +137,24 @@ public final class BigQueryStorageGrpc {
     return getReadRowsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getBatchCreateReadSessionStreamsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest,
-          com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsResponse>
-      METHOD_BATCH_CREATE_READ_SESSION_STREAMS = getBatchCreateReadSessionStreamsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest,
           com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsResponse>
       getBatchCreateReadSessionStreamsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchCreateReadSessionStreams",
+      requestType =
+          com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest
+              .class,
+      responseType =
+          com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsResponse
+              .class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest,
           com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsResponse>
       getBatchCreateReadSessionStreamsMethod() {
-    return getBatchCreateReadSessionStreamsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest,
-          com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsResponse>
-      getBatchCreateReadSessionStreamsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest,
             com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsResponse>
@@ -206,9 +176,7 @@ public final class BigQueryStorageGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.bigquery.storage.v1beta1.BigQueryStorage",
-                              "BatchCreateReadSessionStreams"))
+                          generateFullMethodName(SERVICE_NAME, "BatchCreateReadSessionStreams"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -228,30 +196,20 @@ public final class BigQueryStorageGrpc {
     return getBatchCreateReadSessionStreamsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getFinalizeStreamMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest,
-          com.google.protobuf.Empty>
-      METHOD_FINALIZE_STREAM = getFinalizeStreamMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest,
           com.google.protobuf.Empty>
       getFinalizeStreamMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FinalizeStream",
+      requestType = com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest,
           com.google.protobuf.Empty>
       getFinalizeStreamMethod() {
-    return getFinalizeStreamMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest,
-          com.google.protobuf.Empty>
-      getFinalizeStreamMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest,
             com.google.protobuf.Empty>
@@ -266,10 +224,7 @@ public final class BigQueryStorageGrpc {
                           com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.bigquery.storage.v1beta1.BigQueryStorage",
-                              "FinalizeStream"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FinalizeStream"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -287,30 +242,21 @@ public final class BigQueryStorageGrpc {
     return getFinalizeStreamMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSplitReadStreamMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest,
-          com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse>
-      METHOD_SPLIT_READ_STREAM = getSplitReadStreamMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest,
           com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse>
       getSplitReadStreamMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SplitReadStream",
+      requestType = com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest.class,
+      responseType =
+          com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest,
           com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse>
       getSplitReadStreamMethod() {
-    return getSplitReadStreamMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest,
-          com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse>
-      getSplitReadStreamMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest,
             com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse>
@@ -325,10 +271,7 @@ public final class BigQueryStorageGrpc {
                           com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.bigquery.storage.v1beta1.BigQueryStorage",
-                              "SplitReadStream"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SplitReadStream"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -394,7 +337,7 @@ public final class BigQueryStorageGrpc {
         com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateReadSessionMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateReadSessionMethod(), responseObserver);
     }
 
     /**
@@ -416,7 +359,7 @@ public final class BigQueryStorageGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getReadRowsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getReadRowsMethod(), responseObserver);
     }
 
     /**
@@ -435,7 +378,7 @@ public final class BigQueryStorageGrpc {
                 com.google.cloud.bigquery.storage.v1beta1.Storage
                     .BatchCreateReadSessionStreamsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchCreateReadSessionStreamsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getBatchCreateReadSessionStreamsMethod(), responseObserver);
     }
 
     /**
@@ -459,7 +402,7 @@ public final class BigQueryStorageGrpc {
     public void finalizeStream(
         com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getFinalizeStreamMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getFinalizeStreamMethod(), responseObserver);
     }
 
     /**
@@ -484,28 +427,28 @@ public final class BigQueryStorageGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSplitReadStreamMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getSplitReadStreamMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getCreateReadSessionMethodHelper(),
+              getCreateReadSessionMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest,
                       com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession>(
                       this, METHODID_CREATE_READ_SESSION)))
           .addMethod(
-              getReadRowsMethodHelper(),
+              getReadRowsMethod(),
               asyncServerStreamingCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest,
                       com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse>(
                       this, METHODID_READ_ROWS)))
           .addMethod(
-              getBatchCreateReadSessionStreamsMethodHelper(),
+              getBatchCreateReadSessionStreamsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.storage.v1beta1.Storage
@@ -514,13 +457,13 @@ public final class BigQueryStorageGrpc {
                           .BatchCreateReadSessionStreamsResponse>(
                       this, METHODID_BATCH_CREATE_READ_SESSION_STREAMS)))
           .addMethod(
-              getFinalizeStreamMethodHelper(),
+              getFinalizeStreamMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest,
                       com.google.protobuf.Empty>(this, METHODID_FINALIZE_STREAM)))
           .addMethod(
-              getSplitReadStreamMethodHelper(),
+              getSplitReadStreamMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest,
@@ -574,7 +517,7 @@ public final class BigQueryStorageGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateReadSessionMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateReadSessionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -599,9 +542,7 @@ public final class BigQueryStorageGrpc {
                 com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse>
             responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getReadRowsMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getReadRowsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -621,7 +562,7 @@ public final class BigQueryStorageGrpc {
                     .BatchCreateReadSessionStreamsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getBatchCreateReadSessionStreamsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getBatchCreateReadSessionStreamsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -648,7 +589,7 @@ public final class BigQueryStorageGrpc {
         com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getFinalizeStreamMethodHelper(), getCallOptions()),
+          getChannel().newCall(getFinalizeStreamMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -676,7 +617,7 @@ public final class BigQueryStorageGrpc {
                 com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getSplitReadStreamMethodHelper(), getCallOptions()),
+          getChannel().newCall(getSplitReadStreamMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -725,7 +666,7 @@ public final class BigQueryStorageGrpc {
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession createReadSession(
         com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest request) {
       return blockingUnaryCall(
-          getChannel(), getCreateReadSessionMethodHelper(), getCallOptions(), request);
+          getChannel(), getCreateReadSessionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -745,7 +686,7 @@ public final class BigQueryStorageGrpc {
     public java.util.Iterator<com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse>
         readRows(com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest request) {
       return blockingServerStreamingCall(
-          getChannel(), getReadRowsMethodHelper(), getCallOptions(), request);
+          getChannel(), getReadRowsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -762,7 +703,7 @@ public final class BigQueryStorageGrpc {
             com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest
                 request) {
       return blockingUnaryCall(
-          getChannel(), getBatchCreateReadSessionStreamsMethodHelper(), getCallOptions(), request);
+          getChannel(), getBatchCreateReadSessionStreamsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -785,8 +726,7 @@ public final class BigQueryStorageGrpc {
      */
     public com.google.protobuf.Empty finalizeStream(
         com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getFinalizeStreamMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getFinalizeStreamMethod(), getCallOptions(), request);
     }
 
     /**
@@ -809,8 +749,7 @@ public final class BigQueryStorageGrpc {
     public com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse
         splitReadStream(
             com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getSplitReadStreamMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getSplitReadStreamMethod(), getCallOptions(), request);
     }
   }
 
@@ -859,7 +798,7 @@ public final class BigQueryStorageGrpc {
         createReadSession(
             com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateReadSessionMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateReadSessionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -877,7 +816,7 @@ public final class BigQueryStorageGrpc {
             com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest
                 request) {
       return futureUnaryCall(
-          getChannel().newCall(getBatchCreateReadSessionStreamsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getBatchCreateReadSessionStreamsMethod(), getCallOptions()),
           request);
     }
 
@@ -903,7 +842,7 @@ public final class BigQueryStorageGrpc {
         finalizeStream(
             com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getFinalizeStreamMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getFinalizeStreamMethod(), getCallOptions()), request);
     }
 
     /**
@@ -928,7 +867,7 @@ public final class BigQueryStorageGrpc {
         splitReadStream(
             com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getSplitReadStreamMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getSplitReadStreamMethod(), getCallOptions()), request);
     }
   }
 
@@ -1055,11 +994,11 @@ public final class BigQueryStorageGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new BigQueryStorageFileDescriptorSupplier())
-                      .addMethod(getCreateReadSessionMethodHelper())
-                      .addMethod(getReadRowsMethodHelper())
-                      .addMethod(getBatchCreateReadSessionStreamsMethodHelper())
-                      .addMethod(getFinalizeStreamMethodHelper())
-                      .addMethod(getSplitReadStreamMethodHelper())
+                      .addMethod(getCreateReadSessionMethod())
+                      .addMethod(getReadRowsMethod())
+                      .addMethod(getBatchCreateReadSessionStreamsMethod())
+                      .addMethod(getFinalizeStreamMethod())
+                      .addMethod(getSplitReadStreamMethod())
                       .build();
         }
       }
