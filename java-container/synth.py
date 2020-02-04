@@ -22,19 +22,14 @@ gapic = gcp.GAPICGenerator()
 
 service = 'container'
 versions = ['v1']
-config_pattern = '/google/container/artman_container_{version}.yaml'
 
 for version in versions:
-  library = java.gapic_library(
-      service=service,
-      version=version,
-      config_pattern=config_pattern,
-      package_pattern='com.google.{service}.{version}',
-      gapic=gapic
+  java.gapic_library(
+    service=service,
+    version=version,
+    config_pattern='/google/container/artman_container_{version}.yaml',
+    package_pattern='com.google.{service}.{version}',
+    gapic=gapic
   )
 
-common_templates = gcp.CommonTemplates()
-templates = common_templates.java_library()
-s.copy(templates, excludes=[
-    'README.md',
-])
+java.common_templates()
