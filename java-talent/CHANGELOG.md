@@ -1,5 +1,21 @@
 # Changelog
 
+### [0.35.2](https://www.github.com/googleapis/java-talent/compare/v0.35.1...v0.35.2) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#44](https://www.github.com/googleapis/java-talent/issues/44)) ([4e82be0](https://www.github.com/googleapis/java-talent/commit/4e82be00d52d92e2aabe7f758acc76deae63e01e))
+* update core dependencies ([#62](https://www.github.com/googleapis/java-talent/issues/62)) ([017cd38](https://www.github.com/googleapis/java-talent/commit/017cd389dbbf6ddd5496d8a50b972dbe0eda07dc))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#58](https://www.github.com/googleapis/java-talent/issues/58)) ([4ff4c95](https://www.github.com/googleapis/java-talent/commit/4ff4c958429b3b1316564a77e0a1f6ae0de67e00))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#64](https://www.github.com/googleapis/java-talent/issues/64)) ([0e28cb5](https://www.github.com/googleapis/java-talent/commit/0e28cb5a343dc025041c0209e582c7ea2b82ec11))
+* update dependency org.threeten:threetenbp to v1.4.1 ([8bcbfd3](https://www.github.com/googleapis/java-talent/commit/8bcbfd3d2b946f5a5ce815fe52eb853744ec6484))
+
+
+### Documentation
+
+* **regen:** regenerate with proto annotations ([#57](https://www.github.com/googleapis/java-talent/issues/57)) ([99802da](https://www.github.com/googleapis/java-talent/commit/99802dae34d7d68351c421b08a805f0873b267f2))
+
 ### [0.35.1](https://www.github.com/googleapis/java-talent/compare/v0.35.0...v0.35.1) (2020-01-07)
 
 
