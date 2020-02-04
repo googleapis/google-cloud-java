@@ -1,5 +1,15 @@
 # Changelog
 
+### [0.32.1](https://www.github.com/googleapis/java-datacatalog/compare/v0.32.0...v0.32.1) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#56](https://www.github.com/googleapis/java-datacatalog/issues/56)) ([8939810](https://www.github.com/googleapis/java-datacatalog/commit/8939810421e388b4e69af27f8c1f8932255c7a80))
+* update core dependencies ([#78](https://www.github.com/googleapis/java-datacatalog/issues/78)) ([e7228b8](https://www.github.com/googleapis/java-datacatalog/commit/e7228b88e768005cb7c6e4a72c02b9f213a82e42))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#54](https://www.github.com/googleapis/java-datacatalog/issues/54)) ([bd13a20](https://www.github.com/googleapis/java-datacatalog/commit/bd13a20888047ec0d90ef8c1be5c519d80959f49))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#80](https://www.github.com/googleapis/java-datacatalog/issues/80)) ([da3ca63](https://www.github.com/googleapis/java-datacatalog/commit/da3ca6305140ea5e85713fecd0cea04cd5ff1454))
+
 ## [0.32.0](https://www.github.com/googleapis/java-datacatalog/compare/v0.31.0...v0.32.0) (2020-01-23)
 
 
