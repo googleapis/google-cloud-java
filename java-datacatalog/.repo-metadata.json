@@ -2,12 +2,15 @@
   "name": "datacatalog",
   "name_pretty": "Google Cloud Data Catalog",
   "product_documentation": "https://cloud.google.com/data-catalog",
-  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/datacatalog/v1beta1/package-summary.html",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-datacatalog/latest/",
   "issue_tracker": "",
   "release_level": "beta",
   "language": "java",
   "repo": "googleapis/java-datacatalog",
   "repo_short": "java-datacatalog",
   "distribution_name": "com.google.cloud:google-cloud-datacatalog",
-  "api_id": "datacatalog.googleapis.com"
+  "api_id": "datacatalog.googleapis.com",
+  "transport": "grpc",
+  "requires_billing": true,
+  "api_description": "is a fully managed and highly scalable data discovery and metadata management service."
 }
