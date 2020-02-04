@@ -1,5 +1,16 @@
 # Changelog
 
+### [0.3.1](https://www.github.com/googleapis/java-recommender/compare/v0.3.0...v0.3.1) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#87](https://www.github.com/googleapis/java-recommender/issues/87)) ([8485004](https://www.github.com/googleapis/java-recommender/commit/8485004daef64c23d25c1329dbb1f006133d6aa5))
+* update dependency com.google.cloud:google-cloud-core-grpc to v1.92.3 ([#85](https://www.github.com/googleapis/java-recommender/issues/85)) ([9c8f747](https://www.github.com/googleapis/java-recommender/commit/9c8f747626684d86d8dbc608a7807a1d75ff6430))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#61](https://www.github.com/googleapis/java-recommender/issues/61)) ([0199f9f](https://www.github.com/googleapis/java-recommender/commit/0199f9ff74d20659c4174c873f927914024dcf07))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#89](https://www.github.com/googleapis/java-recommender/issues/89)) ([19f75c4](https://www.github.com/googleapis/java-recommender/commit/19f75c487c64339ae566bade479dfef0f19e8258))
+* update dependency io.grpc:grpc-bom to v1.27.0 ([#83](https://www.github.com/googleapis/java-recommender/issues/83)) ([0ab890a](https://www.github.com/googleapis/java-recommender/commit/0ab890a5c3bd782b5ab8e978d1b7d8f041b59b27))
+
 ## [0.3.0](https://www.github.com/googleapis/java-recommender/compare/v0.2.1...v0.3.0) (2020-01-27)
 
 

@@ -43,17 +43,17 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-recommender</artifactId>
-  <version>0.3.0</version>
+  <version>0.3.1</version>
 </dependency>
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-recommender:0.3.0'
+compile 'com.google.cloud:google-cloud-recommender:0.3.1'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-recommender" % "0.3.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-recommender" % "0.3.1"
 ```
 [//]: # ({x-version-update-end})
 
