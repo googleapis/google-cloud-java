@@ -2,12 +2,15 @@
   "name": "redis",
   "name_pretty": "Cloud Redis",
   "product_documentation": "https://cloud.google.com/memorystore/docs/redis/",
-  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/redis/v1/package-summary.html",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-redis/latest/",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/5169231",
   "release_level": "beta",
   "language": "java",
   "repo": "googleapis/java-redis",
   "repo_short": "java-redis",
   "distribution_name": "com.google.cloud:google-cloud-redis",
-  "api_id": "redis.googleapis.com"
+  "api_id": "redis.googleapis.com",
+  "transport": "grpc",
+  "requires_billing": true,
+  "api_description": "is a fully managed Redis service for the Google Cloud. Applications running on Google Cloud can achieve extreme performance by leveraging the highly scalable, available, secure Redis service without the burden of managing complex Redis deployments."
 }
