@@ -2,7 +2,7 @@
   "name": "dlp",
   "name_pretty": "Cloud Data Loss Prevention",
   "product_documentation": "https://cloud.google.com/dlp/docs/",
-  "client_documentation": "https://googleapis.dev/java/google-cloud-dlp/latest/index.html",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-dlp/latest/",
   "api_description": "provides programmatic access to a powerful detection engine for personally identifiable information and other privacy-sensitive data in unstructured data streams, like text blocks and images.",
   "release_level": "ga",
   "language": "java",
@@ -10,5 +10,7 @@
   "repo": "googleapis/java-dlp",
   "repo_short": "java-dlp",
   "distribution_name": "com.google.cloud:google-cloud-dlp",
-  "api_id": "dlp.googleapis.com"
+  "api_id": "dlp.googleapis.com",
+  "issue_tracker": "https://issuetracker.google.com/savedsearches/5548083",
+  "requires_billing": true
 }

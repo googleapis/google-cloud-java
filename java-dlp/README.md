@@ -17,7 +17,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>3.4.0</version>
+      <version>3.5.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -63,7 +63,7 @@ See the [Authentication][authentication] section in the base directory's README.
 ### Prerequisites
 
 You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Data Loss Prevention [API enabled][enable-api].
-
+You will need to [enable billing][enable-billing] to use Google Cloud Data Loss Prevention.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -128,7 +128,7 @@ Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 [product-docs]: https://cloud.google.com/dlp/docs/
-[javadocs]: https://googleapis.dev/java/google-cloud-dlp/latest/index.html
+[javadocs]: https://googleapis.dev/java/google-cloud-dlp/latest/
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-dlp/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-dlp/java7.html
 [kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-dlp/java8.svg
@@ -150,6 +150,6 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [contributing]: https://github.com/googleapis/java-dlp/blob/master/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/java-dlp/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/java-dlp/blob/master/LICENSE
-
+[enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=dlp.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM

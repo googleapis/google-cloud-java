@@ -26,15 +26,11 @@ config_pattern = '/google/privacy/dlp/artman_dlp_{version}.yaml'
 
 for version in versions:
   java.gapic_library(
-      service=service,
-      version=version,
-      config_pattern=config_pattern,
-      package_pattern='com.google.privacy.{service}.{version}',
-      gapic=gapic,
+    service=service,
+    version=version,
+    config_pattern=config_pattern,
+    package_pattern='com.google.privacy.{service}.{version}',
+    gapic=gapic,
   )
 
-common_templates = gcp.CommonTemplates()
-templates = common_templates.java_library()
-s.copy(templates, excludes=[
-  'README.md',
-])
+java.common_templates()
