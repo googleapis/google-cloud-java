@@ -1,5 +1,16 @@
 # Changelog
 
+### [0.118.1](https://www.github.com/googleapis/java-os-login/compare/v0.118.0...v0.118.1) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#34](https://www.github.com/googleapis/java-os-login/issues/34)) ([1959a8f](https://www.github.com/googleapis/java-os-login/commit/1959a8f13e1296afaa9c7b7ab3767994264c60fe))
+* update core dependencies ([#58](https://www.github.com/googleapis/java-os-login/issues/58)) ([9c29a0f](https://www.github.com/googleapis/java-os-login/commit/9c29a0f76586ff09f36f3df8c0f25c84d41ad0a2))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#32](https://www.github.com/googleapis/java-os-login/issues/32)) ([bbfb32d](https://www.github.com/googleapis/java-os-login/commit/bbfb32d9e7b6e2dfebcdbe8ff4e32ea2b6137596))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#60](https://www.github.com/googleapis/java-os-login/issues/60)) ([1bb6a94](https://www.github.com/googleapis/java-os-login/commit/1bb6a94f82857f834ff0f325de71ced77d4e64d1))
+* update dependency com.google.protobuf:protobuf-java-util to v3.11.3 ([#61](https://www.github.com/googleapis/java-os-login/issues/61)) ([fd7df17](https://www.github.com/googleapis/java-os-login/commit/fd7df175e6fb5b874ae286da051b66c0f74d9736))
+
 ## [0.118.0](https://www.github.com/googleapis/java-os-login/compare/v0.117.1...v0.118.0) (2020-01-24)
 
 
