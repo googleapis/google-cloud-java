@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-automl/compare/v1.0.0...v1.0.1) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies to v1.53.1 ([#96](https://www.github.com/googleapis/java-automl/issues/96)) ([470d960](https://www.github.com/googleapis/java-automl/commit/470d9605fb781422852aa5e665751330b331c980))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#88](https://www.github.com/googleapis/java-automl/issues/88)) ([519d8a7](https://www.github.com/googleapis/java-automl/commit/519d8a735add58b670f0ff27407a2565f2a2a1dd))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#98](https://www.github.com/googleapis/java-automl/issues/98)) ([218327a](https://www.github.com/googleapis/java-automl/commit/218327aa5945a23e01d00d1c4047cdecd1723a03))
+* update dependency io.grpc:grpc-bom to v1.27.0 ([#93](https://www.github.com/googleapis/java-automl/issues/93)) ([fab474f](https://www.github.com/googleapis/java-automl/commit/fab474f3ded867b212d596774276df117bbf61c1))
+
 ## [1.0.0](https://www.github.com/googleapis/java-automl/compare/v0.115.2...v1.0.0) (2020-01-22)
 
 
