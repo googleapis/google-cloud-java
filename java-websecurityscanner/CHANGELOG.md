@@ -1,5 +1,22 @@
 # Changelog
 
+### [0.116.2](https://www.github.com/googleapis/java-websecurityscanner/compare/v0.116.1...v0.116.2) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#48](https://www.github.com/googleapis/java-websecurityscanner/issues/48)) ([cb91f73](https://www.github.com/googleapis/java-websecurityscanner/commit/cb91f730762d8b0c7207442d5987e88a6e6f3603))
+* update core dependencies to v1.53.0 ([#40](https://www.github.com/googleapis/java-websecurityscanner/issues/40)) ([521cab6](https://www.github.com/googleapis/java-websecurityscanner/commit/521cab6df116cbd0f772c376350b6ed5c303bca1))
+* update core dependencies to v1.53.1 ([#50](https://www.github.com/googleapis/java-websecurityscanner/issues/50)) ([6dba753](https://www.github.com/googleapis/java-websecurityscanner/commit/6dba7533ba71d60ecaf748fa0b8a793d77be2c92))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#32](https://www.github.com/googleapis/java-websecurityscanner/issues/32)) ([d2befdf](https://www.github.com/googleapis/java-websecurityscanner/commit/d2befdfbabafae5af513a2fe3437976863eeab9a))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#52](https://www.github.com/googleapis/java-websecurityscanner/issues/52)) ([aa27b64](https://www.github.com/googleapis/java-websecurityscanner/commit/aa27b642bd5b614c1cc7b9211f67be489b0ada52))
+* update dependency org.threeten:threetenbp to v1.4.1 ([33dabdc](https://www.github.com/googleapis/java-websecurityscanner/commit/33dabdc980c32a66c0c1e2602cbc63f07de5608d))
+
+
+### Documentation
+
+* **regen:** fix javadoc return annotation ([#46](https://www.github.com/googleapis/java-websecurityscanner/issues/46)) ([4976f47](https://www.github.com/googleapis/java-websecurityscanner/commit/4976f472ea140940502327530baa17004ad37070))
+
 ### [0.116.1](https://www.github.com/googleapis/java-websecurityscanner/compare/v0.116.0...v0.116.1) (2020-01-07)
 
 
