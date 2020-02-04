@@ -1,5 +1,21 @@
 # Changelog
 
+### [0.29.1](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v0.29.0...v0.29.1) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#37](https://www.github.com/googleapis/java-recaptchaenterprise/issues/37)) ([d240e8f](https://www.github.com/googleapis/java-recaptchaenterprise/commit/d240e8f2e2a0e0000b22f5eb761bd7af5994822b))
+* update core dependencies to v1.53.1 ([49b378b](https://www.github.com/googleapis/java-recaptchaenterprise/commit/49b378b228fdb2eedd777e703a3323a1e4e62c8e))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#28](https://www.github.com/googleapis/java-recaptchaenterprise/issues/28)) ([22396d5](https://www.github.com/googleapis/java-recaptchaenterprise/commit/22396d5882ea1277cb75a19421d2078805d83da4))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#50](https://www.github.com/googleapis/java-recaptchaenterprise/issues/50)) ([fb9adce](https://www.github.com/googleapis/java-recaptchaenterprise/commit/fb9adce130f4ffcedd12bd7499a052b42c167cdf))
+* update dependency org.threeten:threetenbp to v1.4.1 ([8cef374](https://www.github.com/googleapis/java-recaptchaenterprise/commit/8cef3741c453ea303e056bf9ca1edd0a0a85ff93))
+
+
+### Documentation
+
+* **regen:** fix javadoc return annotation ([#44](https://www.github.com/googleapis/java-recaptchaenterprise/issues/44)) ([7abe1a2](https://www.github.com/googleapis/java-recaptchaenterprise/commit/7abe1a21d4a79bc0c6d51e72ba64a72ae39f1f45))
+
 ## [0.29.0](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v0.28.0...v0.29.0) (2020-01-07)
 
 
