@@ -2,12 +2,14 @@
   "name": "recaptcha-enterprise",
   "name_pretty": "Google Cloud reCAPTCHA Enterprise",
   "product_documentation": "https://cloud.google.com/recaptcha-enterprise/docs/",
-  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/recaptchaenterprise/v1beta1/package-summary.html",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-recaptchaenterprise/latest/",
   "issue_tracker": "",
   "release_level": "beta",
   "language": "java",
   "repo": "googleapis/java-recaptchaenterprise",
   "repo_short": "java-recaptchaenterprise",
   "distribution_name": "com.google.cloud:google-cloud-recaptchaenterprise",
-  "api_id": "recaptchaenterprise.googleapis.com"
+  "api_id": "recaptchaenterprise.googleapis.com",
+  "transport": "grpc",
+  "api_description": "is a service that protects your site from spam and abuse."
 }
