@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-trace/compare/v1.0.0...v1.0.1) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#70](https://www.github.com/googleapis/java-trace/issues/70)) ([30d1b6a](https://www.github.com/googleapis/java-trace/commit/30d1b6ab1df9696d21b6d16ae7861916aa584433))
+* update core dependencies ([#88](https://www.github.com/googleapis/java-trace/issues/88)) ([6545d9c](https://www.github.com/googleapis/java-trace/commit/6545d9c76305b19b0e348e3271b42b210b660920))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#68](https://www.github.com/googleapis/java-trace/issues/68)) ([a45ebe8](https://www.github.com/googleapis/java-trace/commit/a45ebe881b27f02e06873f18891096329ba61503))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#90](https://www.github.com/googleapis/java-trace/issues/90)) ([6b8d85d](https://www.github.com/googleapis/java-trace/commit/6b8d85dad9b54fa3baeda25122d12505e4f911c1))
+
 ## [1.0.0](https://www.github.com/googleapis/java-trace/compare/v0.109.3...v1.0.0) (2020-01-23)
 
 
