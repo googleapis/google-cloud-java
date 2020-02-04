@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.119.1](https://www.github.com/googleapis/java-container/compare/v0.119.0...v0.119.1) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#37](https://www.github.com/googleapis/java-container/issues/37)) ([d78962f](https://www.github.com/googleapis/java-container/commit/d78962fbec8b5de770104f6a350d987955d570ae))
+* update core dependencies ([#52](https://www.github.com/googleapis/java-container/issues/52)) ([e2f8c58](https://www.github.com/googleapis/java-container/commit/e2f8c58faaddb1031cc1ab6c71f21c16bb0bec38))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#35](https://www.github.com/googleapis/java-container/issues/35)) ([2f666f3](https://www.github.com/googleapis/java-container/commit/2f666f3dbf710b78d799f4f7ad78c167f39f79e3))
+* update dependency com.google.protobuf:protobuf-bom to v3.11.3 ([#54](https://www.github.com/googleapis/java-container/issues/54)) ([00cdc92](https://www.github.com/googleapis/java-container/commit/00cdc9250a72188b175979da0c13db81457fe60a))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#55](https://www.github.com/googleapis/java-container/issues/55)) ([2b6082a](https://www.github.com/googleapis/java-container/commit/2b6082a9346cad8cdae279e03190d11deb898301))
+* update dependency org.threeten:threetenbp to v1.4.1 ([ccc8dbf](https://www.github.com/googleapis/java-container/commit/ccc8dbf68a46ebbfb08c074e2e607aa94dc5d782))
+
 ## [0.119.0](https://www.github.com/googleapis/java-container/compare/v0.118.0...v0.119.0) (2020-01-07)
 
 
