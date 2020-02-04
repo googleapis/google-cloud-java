@@ -25,15 +25,11 @@ versions = [ 'v1beta1']
 
 for version in versions:
   java.gapic_library(
-      service=service,
-      version=version,
-      config_pattern='/google/cloud/datalabeling/artman_datalabeling_{version}.yaml',
-      package_pattern='com.google.cloud.{service}.{version}',
-      gapic=gapic,
+    service=service,
+    version=version,
+    config_pattern='/google/cloud/datalabeling/artman_datalabeling_{version}.yaml',
+    package_pattern='com.google.cloud.{service}.{version}',
+    gapic=gapic,
   )
 
-common_templates = gcp.CommonTemplates()
-templates = common_templates.java_library()
-s.copy(templates, excludes=[
-  'README.md',
-])
+java.common_templates()
