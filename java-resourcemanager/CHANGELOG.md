@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.117.1](https://www.github.com/googleapis/java-resourcemanager/compare/v0.117.0...v0.117.1) (2020-02-04)
+
+
+### Dependencies
+
+* easymock, objenesis, google-cloud-core are test deps ([#74](https://www.github.com/googleapis/java-resourcemanager/issues/74)) ([6fea948](https://www.github.com/googleapis/java-resourcemanager/commit/6fea948c7f0b9626b07cec4639541fcd89b7c6d5))
+* update core dependencies ([#55](https://www.github.com/googleapis/java-resourcemanager/issues/55)) ([0110d5a](https://www.github.com/googleapis/java-resourcemanager/commit/0110d5a1b11acd96517e05900c01a028b26e70a1))
+* update core dependencies ([#69](https://www.github.com/googleapis/java-resourcemanager/issues/69)) ([8208bbd](https://www.github.com/googleapis/java-resourcemanager/commit/8208bbd38072f19bda95fc59eb9c40336b0ba581))
+* update dependency com.google.api-client:google-api-client-bom to v1.30.8 ([#70](https://www.github.com/googleapis/java-resourcemanager/issues/70)) ([b14ebee](https://www.github.com/googleapis/java-resourcemanager/commit/b14ebee80f0d30874628cdc2db3b896171038eef))
+* update dependency com.google.http-client:google-http-client-bom to v1.34.1 ([#66](https://www.github.com/googleapis/java-resourcemanager/issues/66)) ([25f78d3](https://www.github.com/googleapis/java-resourcemanager/commit/25f78d33a4274ff23626f3747f05eb8833027e30))
+* update dependency com.google.protobuf:protobuf-bom to v3.11.3 ([#72](https://www.github.com/googleapis/java-resourcemanager/issues/72)) ([1c64212](https://www.github.com/googleapis/java-resourcemanager/commit/1c6421271adb1ae44f59bc5313c4a6a651ff5d23))
+* update dependency org.threeten:threetenbp to v1.4.1 ([c8f6ff4](https://www.github.com/googleapis/java-resourcemanager/commit/c8f6ff4d03b5c435c066b22bf036cfbb8776f083))
+
 ## [0.117.0](https://www.github.com/googleapis/java-resourcemanager/compare/0.116.0...v0.117.0) (2020-01-07)
 
 
