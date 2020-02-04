@@ -2,10 +2,15 @@
   "name": "google-cloud-recommender",
   "name_pretty": "Google Cloud Recommender",
   "product_documentation": "https://cloud.google.com/recommendations/",
-  "client_documentation": "https://googleapis.dev/java/java-recommender/latest",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-recommender/latest/",
   "release_level": "beta",
   "language": "java",
   "repo": "googleapis/java-recommender",
   "repo_short": "java-recommender",
-  "distribution_name": "com.google.cloud:google-cloud-recommender"
+  "distribution_name": "com.google.cloud:google-cloud-recommender",
+  "transport": "grpc",
+  "issue_tracker": "",
+  "requires_billing": true,
+  "api_id": "recommender.googleapis.com",
+  "api_description": "delivers highly personalized product recommendations at scale."
 }
