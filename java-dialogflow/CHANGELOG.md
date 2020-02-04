@@ -1,5 +1,23 @@
 # Changelog
 
+### [0.120.1](https://www.github.com/googleapis/java-dialogflow/compare/v0.120.0...v0.120.1) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#52](https://www.github.com/googleapis/java-dialogflow/issues/52)) ([b3e98dc](https://www.github.com/googleapis/java-dialogflow/commit/b3e98dcd668e849d8fe46c8777485390fc48cfb9))
+* update core dependencies ([#71](https://www.github.com/googleapis/java-dialogflow/issues/71)) ([3df377b](https://www.github.com/googleapis/java-dialogflow/commit/3df377bf44d7778404feb59d86eaba37effde77f))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#50](https://www.github.com/googleapis/java-dialogflow/issues/50)) ([3704d2c](https://www.github.com/googleapis/java-dialogflow/commit/3704d2cb9acdcc85f5396fe508a98a20b4cbe924))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#73](https://www.github.com/googleapis/java-dialogflow/issues/73)) ([fc9866d](https://www.github.com/googleapis/java-dialogflow/commit/fc9866d8bc38930c56d28aaeee6cd1a227d4b4c6))
+* update dependency org.threeten:threetenbp to v1.4.1 ([74b631b](https://www.github.com/googleapis/java-dialogflow/commit/74b631bd8cf9f4c4fcb522a30608b96c9bcb58df))
+
+
+### Documentation
+
+* **regen:** fix javadoc return annotation ([#66](https://www.github.com/googleapis/java-dialogflow/issues/66)) ([68041c9](https://www.github.com/googleapis/java-dialogflow/commit/68041c9fe4411b2ca271d32aa6215ab9971e9bb7))
+* **regen:** regenerate with update proto documentation ([#76](https://www.github.com/googleapis/java-dialogflow/issues/76)) ([867a187](https://www.github.com/googleapis/java-dialogflow/commit/867a187d2eac27a288ca1b376f7c51e3f987f879))
+* **regen:** regenerate with updated javadocs ([7df846f](https://www.github.com/googleapis/java-dialogflow/commit/7df846f6dd960ef81bc7bdb0ba5898c61bb3a2ab))
+
 ## [0.120.0](https://www.github.com/googleapis/java-dialogflow/compare/v0.119.0...v0.120.0) (2020-01-07)
 
 
