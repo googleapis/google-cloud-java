@@ -170,7 +170,7 @@
       <dependency>
         <groupId>io.grafeas</groupId>
         <artifactId>grafeas</artifactId>
-        <version>0.23.0</version>
+        <version>0.24.0</version>
       </dependency>
       <!-- TODO: Until gax-grpc && grafeas align  -->
       <dependency>
