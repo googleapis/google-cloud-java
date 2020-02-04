@@ -197,6 +197,7 @@
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
       <version>${easymock.version}</version>
+      <scope>test</scope>
       <exclusions>
         <exclusion>
           <groupId>org.objenesis</groupId>
@@ -208,11 +209,13 @@
       <groupId>org.objenesis</groupId>
       <artifactId>objenesis</artifactId>
       <version>${objenesis.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core</artifactId>
       <version>${google.core-http.version}</version>
+      <scope>test</scope>
       <type>test-jar</type>
     </dependency>
   </dependencies>
