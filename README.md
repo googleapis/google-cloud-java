@@ -20,7 +20,7 @@ If you are using Maven with a BOM, add this to your pom.xml file.
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>3.0.0</version>
+        <version>3.5.0</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
