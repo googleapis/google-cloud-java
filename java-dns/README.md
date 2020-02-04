@@ -40,16 +40,16 @@ If you are using Maven without a BOM, add this to your dependencies.
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dns</artifactId>
-  <version>0.117.3-alpha</version>
+  <version>0.117.4-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-dns:0.117.3-alpha'
+compile 'com.google.cloud:google-cloud-dns:0.117.4-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dns" % "0.117.3-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-dns" % "0.117.4-alpha"
 ```
 [//]: # ({x-version-update-end})
 

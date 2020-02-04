@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.117.4](https://www.github.com/googleapis/java-dns/compare/v0.117.3...v0.117.4) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#53](https://www.github.com/googleapis/java-dns/issues/53)) ([df69b71](https://www.github.com/googleapis/java-dns/commit/df69b719f162426405532f6951d7fba4629ddd89))
+* update core dependencies ([#62](https://www.github.com/googleapis/java-dns/issues/62)) ([f8f4c47](https://www.github.com/googleapis/java-dns/commit/f8f4c4799092508e8dac0891e718341bf8bef277))
+* update core dependencies to v1.92.3 ([#60](https://www.github.com/googleapis/java-dns/issues/60)) ([dda944b](https://www.github.com/googleapis/java-dns/commit/dda944bce9caa97dc4ae97a6f59350af1c40dcd8))
+* update dependency com.google.api-client:google-api-client-bom to v1.30.8 ([#63](https://www.github.com/googleapis/java-dns/issues/63)) ([ff64c3e](https://www.github.com/googleapis/java-dns/commit/ff64c3ed0f3afab86029622d1f698d2baee9bf92))
+* update dependency com.google.http-client:google-http-client-bom to v1.34.1 ([#58](https://www.github.com/googleapis/java-dns/issues/58)) ([3cf369f](https://www.github.com/googleapis/java-dns/commit/3cf369f07535a41959e6ce8989513e918c366939))
+* update dependency org.threeten:threetenbp to v1.4.1 ([9dafc8f](https://www.github.com/googleapis/java-dns/commit/9dafc8fc1555335b916857e01f439c3e9011e4f5))
+
 ### [0.117.3](https://www.github.com/googleapis/java-dns/compare/v0.117.2...v0.117.3) (2020-01-07)
 
 
