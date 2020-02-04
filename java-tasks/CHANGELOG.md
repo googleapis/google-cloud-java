@@ -1,5 +1,22 @@
 # Changelog
 
+### [1.28.1](https://www.github.com/googleapis/java-tasks/compare/v1.28.0...v1.28.1) (2020-02-04)
+
+
+### Bug Fixes
+
+* **regen:** deleteQueue marked as idempotent for retry settings ([#49](https://www.github.com/googleapis/java-tasks/issues/49)) ([58af13c](https://www.github.com/googleapis/java-tasks/commit/58af13c1c7b236127f9b6b9515eb7aa75945971b))
+* **regen:** deleteQueue marked as idempotent for retry settings ([#51](https://www.github.com/googleapis/java-tasks/issues/51)) ([2782770](https://www.github.com/googleapis/java-tasks/commit/2782770088bee28f612cbfd1dd4a3b5782af90d9))
+
+
+### Dependencies
+
+* update core dependencies ([#41](https://www.github.com/googleapis/java-tasks/issues/41)) ([f7edec5](https://www.github.com/googleapis/java-tasks/commit/f7edec5193e0f192901f7f02f0b5554150d27c7a))
+* update core dependencies ([#59](https://www.github.com/googleapis/java-tasks/issues/59)) ([23ae53f](https://www.github.com/googleapis/java-tasks/commit/23ae53fd64bee612d82a8d21abbd7fedd983b9d5))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#39](https://www.github.com/googleapis/java-tasks/issues/39)) ([af017bf](https://www.github.com/googleapis/java-tasks/commit/af017bfb8aec0a21401beeab4374e77de12e88c8))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#61](https://www.github.com/googleapis/java-tasks/issues/61)) ([cbb810a](https://www.github.com/googleapis/java-tasks/commit/cbb810aa4bea7ceb1ac2785704fd6809306a8157))
+* update dependency org.threeten:threetenbp to v1.4.1 ([#52](https://www.github.com/googleapis/java-tasks/issues/52)) ([18267bd](https://www.github.com/googleapis/java-tasks/commit/18267bdf980f3bb0f5dd6275540ad4f4f8e6019e))
+
 ## [1.28.0](https://www.github.com/googleapis/java-tasks/compare/v1.27.0...v1.28.0) (2020-01-08)
 
 
