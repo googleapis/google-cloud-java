@@ -2,12 +2,14 @@
   "name": "websecurityscanner",
   "name_pretty": "Cloud Security Scanner",
   "product_documentation": "https://cloud.google.com/security-scanner/docs/",
-  "client_documentation": "https://googleapis.dev/java/java-websecurityscanner/latest/",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-websecurityscanner/latest/",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559748",
   "release_level": "beta",
   "language": "java",
   "repo": "googleapis/java-websecurityscanner",
   "repo_short": "java-websecurityscanner",
   "distribution_name": "com.google.cloud:google-cloud-websecurityscanner",
-  "api_id": "websecurityscanner.googleapis.com"
+  "api_id": "websecurityscanner.googleapis.com",
+  "transport": "grpc",
+  "api_description": "identifies security vulnerabilities in your App Engine, Compute Engine, and Google Kubernetes Engine web applications. It crawls your application, following all links within the scope of your starting URLs, and attempts to exercise as many user inputs and event handlers as possible."
 }

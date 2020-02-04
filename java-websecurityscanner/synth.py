@@ -25,15 +25,11 @@ versions = ['v1alpha', 'v1beta']
 config_pattern = '/google/cloud/websecurityscanner/artman_websecurityscanner_{version}.yaml'
 
 for version in versions:
-    java.gapic_library(
-        service=service,
-        version=version,
-        config_pattern=config_pattern,
-        gapic=gapic,
-    )
+  java.gapic_library(
+    service=service,
+    version=version,
+    config_pattern=config_pattern,
+    gapic=gapic,
+  )
 
-common_templates = gcp.CommonTemplates()
-templates = common_templates.java_library()
-s.copy(templates, excludes=[
-  'README.md',
-])
+java.common_templates()
