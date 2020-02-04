@@ -1,5 +1,14 @@
 # Changelog
 
+### [0.32.1](https://www.github.com/googleapis/java-webrisk/compare/v0.32.0...v0.32.1) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#46](https://www.github.com/googleapis/java-webrisk/issues/46)) ([91b78e0](https://www.github.com/googleapis/java-webrisk/commit/91b78e0472296aee2a963404a397b29449921bb2))
+* update core dependencies to v1.53.1 ([#60](https://www.github.com/googleapis/java-webrisk/issues/60)) ([d083a12](https://www.github.com/googleapis/java-webrisk/commit/d083a1226977433bfc5a0d9d61d7bc1fa33c263a))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#62](https://www.github.com/googleapis/java-webrisk/issues/62)) ([efcdf68](https://www.github.com/googleapis/java-webrisk/commit/efcdf68396f9a420d8c892e4eafcfb97b7556c0b))
+
 ## [0.32.0](https://www.github.com/googleapis/java-webrisk/compare/v0.31.1...v0.32.0) (2020-01-24)
 
 
