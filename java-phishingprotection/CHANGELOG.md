@@ -1,5 +1,16 @@
 # Changelog
 
+### [0.28.2](https://www.github.com/googleapis/java-phishingprotection/compare/v0.28.1...v0.28.2) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#37](https://www.github.com/googleapis/java-phishingprotection/issues/37)) ([801623c](https://www.github.com/googleapis/java-phishingprotection/commit/801623c22ba471e85d6ff12210cba711b2e3e82f))
+* update core dependencies to v1.53.1 ([85ecff7](https://www.github.com/googleapis/java-phishingprotection/commit/85ecff7d8f78297f8d5389b559ab5acde1b54b33))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#29](https://www.github.com/googleapis/java-phishingprotection/issues/29)) ([a8b3dc6](https://www.github.com/googleapis/java-phishingprotection/commit/a8b3dc655fc36854dc9e8cd1bc190a804ef7249c))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#50](https://www.github.com/googleapis/java-phishingprotection/issues/50)) ([add1e8b](https://www.github.com/googleapis/java-phishingprotection/commit/add1e8b5841f54dd2f3ba9a18e7429f643af967b))
+* update dependency org.threeten:threetenbp to v1.4.1 ([56dcb0c](https://www.github.com/googleapis/java-phishingprotection/commit/56dcb0ce006ef1b12fc2a61fbaca6af76ed2efc6))
+
 ### [0.28.1](https://www.github.com/googleapis/java-phishingprotection/compare/v0.28.0...v0.28.1) (2020-01-07)
 
 
