@@ -2,11 +2,13 @@
   "name": "secretmanager",
   "name_pretty": "Google Cloud Secret Management",
   "product_documentation": "https://cloud.google.com/solutions/secrets-management/",
-  "client_documentation": "https://googleapis.dev/java/java-secretmanager/latest",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-secretmanager/latest/",
   "release_level": "beta",
   "language": "java",
   "repo": "googleapis/java-secretmanager",
   "repo_short": "java-secretmanager",
   "distribution_name": "com.google.cloud:google-cloud-secretmanager",
-  "api_id": "secretmanager.googleapis.com"
+  "api_id": "secretmanager.googleapis.com",
+  "transport": "grpc",
+  "api_description": "allows you to encrypt, store, manage, and audit infrastructure and application-level secrets."
 }
