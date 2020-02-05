@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.119.0](https://www.github.com/googleapis/java-dataproc/compare/v0.118.1...v0.119.0) (2020-02-04)
+
+
+### Features
+
+* add AutoscalingPolicyServiceClient ([#66](https://www.github.com/googleapis/java-dataproc/issues/66)) ([b612d8e](https://www.github.com/googleapis/java-dataproc/commit/b612d8e2ce9d133449a9eef8e760fe9f138e5a57))
+
+
+### Dependencies
+
+* update core dependencies ([#47](https://www.github.com/googleapis/java-dataproc/issues/47)) ([4a7e1de](https://www.github.com/googleapis/java-dataproc/commit/4a7e1de068246efd23129293170efdf417e4645b))
+* update core dependencies ([#65](https://www.github.com/googleapis/java-dataproc/issues/65)) ([521d6a2](https://www.github.com/googleapis/java-dataproc/commit/521d6a22d4c0be9af3df46c0b7186cdf13b5b8f9))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#45](https://www.github.com/googleapis/java-dataproc/issues/45)) ([231844e](https://www.github.com/googleapis/java-dataproc/commit/231844e6340d251d1d08c745235dd2e87e445af2))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#67](https://www.github.com/googleapis/java-dataproc/issues/67)) ([5321a0f](https://www.github.com/googleapis/java-dataproc/commit/5321a0fecd010fef6895b5f715794dd1f460aec7))
+* update dependency org.threeten:threetenbp to v1.4.1 ([d2af17b](https://www.github.com/googleapis/java-dataproc/commit/d2af17b6ee0672b8fa6d03d6f649415098d11127))
+
+
+### Documentation
+
+* **regen:** fix javadoc return annotation ([#60](https://www.github.com/googleapis/java-dataproc/issues/60)) ([28ff392](https://www.github.com/googleapis/java-dataproc/commit/28ff392d36a7a686750010ca860bf797b07fc312))
+
 ### [0.118.1](https://www.github.com/googleapis/java-dataproc/compare/v0.118.0...v0.118.1) (2020-01-07)
 
 

@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-cloud-dataproc-v1beta2:0.83.1:0.83.2-SNAPSHOT
-proto-google-cloud-dataproc-v1:0.83.1:0.83.2-SNAPSHOT
-grpc-google-cloud-dataproc-v1:0.83.1:0.83.2-SNAPSHOT
-grpc-google-cloud-dataproc-v1beta2:0.83.1:0.83.2-SNAPSHOT
-google-cloud-dataproc:0.118.1:0.118.2-SNAPSHOT
+proto-google-cloud-dataproc-v1beta2:0.84.0:0.84.0
+proto-google-cloud-dataproc-v1:0.84.0:0.84.0
+grpc-google-cloud-dataproc-v1:0.84.0:0.84.0
+grpc-google-cloud-dataproc-v1beta2:0.84.0:0.84.0
+google-cloud-dataproc:0.119.0:0.119.0
