@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-bigquerystorage-v1alpha2</artifactId>
-  <version>0.85.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1alpha2:current} -->
+  <version>0.86.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1alpha2:current} -->
   <name>grpc-google-cloud-bigquerystorage-v1alpha2</name>
   <description>GRPC library for grpc-google-cloud-bigquerystorage-v1alpha2</description>
   <parent>

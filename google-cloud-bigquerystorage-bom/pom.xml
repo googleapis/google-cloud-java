@@ -63,7 +63,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerystorage-v1alpha2</artifactId>
-        <version>0.85.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1alpha2:current} -->
+        <version>0.86.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1alpha2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -78,7 +78,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigquerystorage-v1alpha2</artifactId>
-        <version>0.85.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1alpha2:current} -->
+        <version>0.86.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1alpha2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
