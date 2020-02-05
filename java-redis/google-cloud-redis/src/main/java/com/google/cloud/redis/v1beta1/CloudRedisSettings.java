@@ -156,6 +156,19 @@ public class CloudRedisSettings extends ClientSettings<CloudRedisSettings> {
     return ((CloudRedisStubSettings) getStubSettings()).deleteInstanceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to upgradeInstance. */
+  public UnaryCallSettings<UpgradeInstanceRequest, Operation> upgradeInstanceSettings() {
+    return ((CloudRedisStubSettings) getStubSettings()).upgradeInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to upgradeInstance. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<UpgradeInstanceRequest, Instance, Any>
+      upgradeInstanceOperationSettings() {
+    return ((CloudRedisStubSettings) getStubSettings()).upgradeInstanceOperationSettings();
+  }
+
   public static final CloudRedisSettings create(CloudRedisStubSettings stub) throws IOException {
     return new CloudRedisSettings.Builder(stub.toBuilder()).build();
   }
@@ -341,6 +354,19 @@ public class CloudRedisSettings extends ClientSettings<CloudRedisSettings> {
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, Any>
         deleteInstanceOperationSettings() {
       return getStubSettingsBuilder().deleteInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to upgradeInstance. */
+    public UnaryCallSettings.Builder<UpgradeInstanceRequest, Operation> upgradeInstanceSettings() {
+      return getStubSettingsBuilder().upgradeInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to upgradeInstance. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpgradeInstanceRequest, Instance, Any>
+        upgradeInstanceOperationSettings() {
+      return getStubSettingsBuilder().upgradeInstanceOperationSettings();
     }
 
     @Override

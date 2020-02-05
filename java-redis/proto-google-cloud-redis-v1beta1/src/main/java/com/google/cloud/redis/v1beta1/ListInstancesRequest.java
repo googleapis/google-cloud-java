@@ -189,7 +189,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    * If not specified, a default value of 1000 will be used by the service.
    * Regardless of the page_size value, the response may include a partial list
    * and a caller should only rely on response's
-   * [next_page_token][CloudRedis.ListInstancesResponse.next_page_token]
+   * [`next_page_token`][google.cloud.redis.v1beta1.ListInstancesResponse.next_page_token]
    * to determine if there are more instances left to be queried.
    * </pre>
    *
@@ -207,8 +207,8 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The next_page_token value returned from a previous List request,
-   * if any.
+   * The `next_page_token` value returned from a previous
+   * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances] request, if any.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -230,8 +230,8 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The next_page_token value returned from a previous List request,
-   * if any.
+   * The `next_page_token` value returned from a previous
+   * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances] request, if any.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -734,7 +734,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * If not specified, a default value of 1000 will be used by the service.
      * Regardless of the page_size value, the response may include a partial list
      * and a caller should only rely on response's
-     * [next_page_token][CloudRedis.ListInstancesResponse.next_page_token]
+     * [`next_page_token`][google.cloud.redis.v1beta1.ListInstancesResponse.next_page_token]
      * to determine if there are more instances left to be queried.
      * </pre>
      *
@@ -753,7 +753,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * If not specified, a default value of 1000 will be used by the service.
      * Regardless of the page_size value, the response may include a partial list
      * and a caller should only rely on response's
-     * [next_page_token][CloudRedis.ListInstancesResponse.next_page_token]
+     * [`next_page_token`][google.cloud.redis.v1beta1.ListInstancesResponse.next_page_token]
      * to determine if there are more instances left to be queried.
      * </pre>
      *
@@ -776,7 +776,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * If not specified, a default value of 1000 will be used by the service.
      * Regardless of the page_size value, the response may include a partial list
      * and a caller should only rely on response's
-     * [next_page_token][CloudRedis.ListInstancesResponse.next_page_token]
+     * [`next_page_token`][google.cloud.redis.v1beta1.ListInstancesResponse.next_page_token]
      * to determine if there are more instances left to be queried.
      * </pre>
      *
@@ -796,8 +796,8 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The next_page_token value returned from a previous List request,
-     * if any.
+     * The `next_page_token` value returned from a previous
+     * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances] request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -819,8 +819,8 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The next_page_token value returned from a previous List request,
-     * if any.
+     * The `next_page_token` value returned from a previous
+     * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances] request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -842,8 +842,8 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The next_page_token value returned from a previous List request,
-     * if any.
+     * The `next_page_token` value returned from a previous
+     * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances] request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -864,8 +864,8 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The next_page_token value returned from a previous List request,
-     * if any.
+     * The `next_page_token` value returned from a previous
+     * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances] request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -882,8 +882,8 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The next_page_token value returned from a previous List request,
-     * if any.
+     * The `next_page_token` value returned from a previous
+     * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances] request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>

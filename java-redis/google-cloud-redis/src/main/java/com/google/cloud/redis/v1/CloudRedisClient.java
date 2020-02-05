@@ -187,8 +187,9 @@ public class CloudRedisClient implements BackgroundResource {
    * Lists all Redis instances owned by a project in either the specified location (region) or all
    * locations.
    *
-   * <p>The location should have the following format: &#42;
-   * `projects/{project_id}/locations/{location_id}`
+   * <p>The location should have the following format:
+   *
+   * <p>&#42; `projects/{project_id}/locations/{location_id}`
    *
    * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
    * are queried, and the results are aggregated.
@@ -221,8 +222,9 @@ public class CloudRedisClient implements BackgroundResource {
    * Lists all Redis instances owned by a project in either the specified location (region) or all
    * locations.
    *
-   * <p>The location should have the following format: &#42;
-   * `projects/{project_id}/locations/{location_id}`
+   * <p>The location should have the following format:
+   *
+   * <p>&#42; `projects/{project_id}/locations/{location_id}`
    *
    * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
    * are queried, and the results are aggregated.
@@ -252,8 +254,9 @@ public class CloudRedisClient implements BackgroundResource {
    * Lists all Redis instances owned by a project in either the specified location (region) or all
    * locations.
    *
-   * <p>The location should have the following format: &#42;
-   * `projects/{project_id}/locations/{location_id}`
+   * <p>The location should have the following format:
+   *
+   * <p>&#42; `projects/{project_id}/locations/{location_id}`
    *
    * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
    * are queried, and the results are aggregated.
@@ -284,8 +287,9 @@ public class CloudRedisClient implements BackgroundResource {
    * Lists all Redis instances owned by a project in either the specified location (region) or all
    * locations.
    *
-   * <p>The location should have the following format: &#42;
-   * `projects/{project_id}/locations/{location_id}`
+   * <p>The location should have the following format:
+   *
+   * <p>&#42; `projects/{project_id}/locations/{location_id}`
    *
    * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
    * are queried, and the results are aggregated.
@@ -316,8 +320,9 @@ public class CloudRedisClient implements BackgroundResource {
    * Lists all Redis instances owned by a project in either the specified location (region) or all
    * locations.
    *
-   * <p>The location should have the following format: &#42;
-   * `projects/{project_id}/locations/{location_id}`
+   * <p>The location should have the following format:
+   *
+   * <p>&#42; `projects/{project_id}/locations/{location_id}`
    *
    * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
    * are queried, and the results are aggregated.
@@ -709,7 +714,7 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * @param updateMask Required. Mask of fields to update. At least one path must be supplied in
    *     this field. The elements of the repeated paths field may only include these fields from
-   *     [Instance][CloudRedis.Instance]:
+   *     [Instance][google.cloud.redis.v1.Instance]:
    *     <p>&#42; `displayName` &#42; `labels` &#42; `memorySizeGb` &#42; `redisConfig`
    * @param instance Required. Update description. Only fields specified in update_mask are updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

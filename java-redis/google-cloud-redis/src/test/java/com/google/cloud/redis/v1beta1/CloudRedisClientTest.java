@@ -648,4 +648,81 @@ public class CloudRedisClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  @SuppressWarnings("all")
+  public void upgradeInstanceTest() throws Exception {
+    InstanceName name2 = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    String displayName = "displayName1615086568";
+    String locationId = "locationId552319461";
+    String alternativeLocationId = "alternativeLocationId-718920621";
+    String redisVersion2 = "redisVersion2-1453337401";
+    String reservedIpRange = "reservedIpRange-1082940580";
+    String host = "host3208616";
+    int port = 3446913;
+    String currentLocationId = "currentLocationId1312712735";
+    String statusMessage = "statusMessage-239442758";
+    int memorySizeGb = 34199707;
+    String authorizedNetwork = "authorizedNetwork-1733809270";
+    String persistenceIamIdentity = "persistenceIamIdentity1061944584";
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(name2.toString())
+            .setDisplayName(displayName)
+            .setLocationId(locationId)
+            .setAlternativeLocationId(alternativeLocationId)
+            .setRedisVersion(redisVersion2)
+            .setReservedIpRange(reservedIpRange)
+            .setHost(host)
+            .setPort(port)
+            .setCurrentLocationId(currentLocationId)
+            .setStatusMessage(statusMessage)
+            .setMemorySizeGb(memorySizeGb)
+            .setAuthorizedNetwork(authorizedNetwork)
+            .setPersistenceIamIdentity(persistenceIamIdentity)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("upgradeInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudRedis.addResponse(resultOperation);
+
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    String redisVersion = "redisVersion-685310444";
+
+    Instance actualResponse = client.upgradeInstanceAsync(name, redisVersion).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpgradeInstanceRequest actualRequest = (UpgradeInstanceRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, InstanceName.parse(actualRequest.getName()));
+    Assert.assertEquals(redisVersion, actualRequest.getRedisVersion());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void upgradeInstanceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockCloudRedis.addException(exception);
+
+    try {
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      String redisVersion = "redisVersion-685310444";
+
+      client.upgradeInstanceAsync(name, redisVersion).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
 }

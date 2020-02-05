@@ -51,6 +51,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     tier_ = 0;
     authorizedNetwork_ = "";
     persistenceIamIdentity_ = "";
+    connectMode_ = 0;
   }
 
   @java.lang.Override
@@ -225,6 +226,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               persistenceIamIdentity_ = s;
+              break;
+            }
+          case 176:
+            {
+              int rawValue = input.readEnum();
+
+              connectMode_ = rawValue;
               break;
             }
           default:
@@ -716,6 +724,161 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.redis.v1beta1.Instance.Tier)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Available connection modes.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.redis.v1beta1.Instance.ConnectMode}
+   */
+  public enum ConnectMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Not set.
+     * </pre>
+     *
+     * <code>CONNECT_MODE_UNSPECIFIED = 0;</code>
+     */
+    CONNECT_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Connect via directly peering with memorystore redis hosted service.
+     * </pre>
+     *
+     * <code>DIRECT_PEERING = 1;</code>
+     */
+    DIRECT_PEERING(1),
+    /**
+     *
+     *
+     * <pre>
+     * Connect with google via private service access and share connection
+     * across google managed services.
+     * </pre>
+     *
+     * <code>PRIVATE_SERVICE_ACCESS = 2;</code>
+     */
+    PRIVATE_SERVICE_ACCESS(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Not set.
+     * </pre>
+     *
+     * <code>CONNECT_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int CONNECT_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Connect via directly peering with memorystore redis hosted service.
+     * </pre>
+     *
+     * <code>DIRECT_PEERING = 1;</code>
+     */
+    public static final int DIRECT_PEERING_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Connect with google via private service access and share connection
+     * across google managed services.
+     * </pre>
+     *
+     * <code>PRIVATE_SERVICE_ACCESS = 2;</code>
+     */
+    public static final int PRIVATE_SERVICE_ACCESS_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ConnectMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ConnectMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CONNECT_MODE_UNSPECIFIED;
+        case 1:
+          return DIRECT_PEERING;
+        case 2:
+          return PRIVATE_SERVICE_ACCESS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ConnectMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ConnectMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ConnectMode>() {
+          public ConnectMode findValueByNumber(int number) {
+            return ConnectMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.redis.v1beta1.Instance.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final ConnectMode[] VALUES = values();
+
+    public static ConnectMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ConnectMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.redis.v1beta1.Instance.ConnectMode)
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -728,8 +891,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Note: Redis instances are managed and addressed at regional level so
    * location_id here refers to a GCP region; however, users may choose which
    * specific zone (or collection of zones for cross-zone instances) an instance
-   * should be provisioned in. Refer to [location_id] and
-   * [alternative_location_id] fields for more details.
+   * should be provisioned in. Refer to [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
+   * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] fields for more details.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -757,8 +920,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Note: Redis instances are managed and addressed at regional level so
    * location_id here refers to a GCP region; however, users may choose which
    * specific zone (or collection of zones for cross-zone instances) an instance
-   * should be provisioned in. Refer to [location_id] and
-   * [alternative_location_id] fields for more details.
+   * should be provisioned in. Refer to [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
+   * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] fields for more details.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -926,8 +1089,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. The zone where the instance will be provisioned. If not provided,
    * the service will choose a zone for the instance. For STANDARD_HA tier,
    * instances will be created across two zones for protection against zonal
-   * failures. If [alternative_location_id] is also provided, it must be
-   * different from [location_id].
+   * failures. If [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] is also provided, it must be
+   * different from [location_id][google.cloud.redis.v1beta1.Instance.location_id].
    * </pre>
    *
    * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -952,8 +1115,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. The zone where the instance will be provisioned. If not provided,
    * the service will choose a zone for the instance. For STANDARD_HA tier,
    * instances will be created across two zones for protection against zonal
-   * failures. If [alternative_location_id] is also provided, it must be
-   * different from [location_id].
+   * failures. If [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] is also provided, it must be
+   * different from [location_id][google.cloud.redis.v1beta1.Instance.location_id].
    * </pre>
    *
    * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -980,7 +1143,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Only applicable to STANDARD_HA tier which protects the instance
    * against zonal failures by provisioning it across two zones. If provided, it
-   * must be a different zone from the one provided in [location_id].
+   * must be a different zone from the one provided in [location_id][google.cloud.redis.v1beta1.Instance.location_id].
    * </pre>
    *
    * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1004,7 +1167,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Only applicable to STANDARD_HA tier which protects the instance
    * against zonal failures by provisioning it across two zones. If provided, it
-   * must be a different zone from the one provided in [location_id].
+   * must be a different zone from the one provided in [location_id][google.cloud.redis.v1beta1.Instance.location_id].
    * </pre>
    *
    * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1030,9 +1193,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The version of Redis software.
-   * If not provided, latest supported version will be used. Updating the
-   * version will perform an upgrade/downgrade to the new version. Currently,
-   * the supported values are:
+   * If not provided, latest supported version will be used. Currently, the
+   * supported values are:
    *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
    * </pre>
@@ -1057,9 +1219,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The version of Redis software.
-   * If not provided, latest supported version will be used. Updating the
-   * version will perform an upgrade/downgrade to the new version. Currently,
-   * the supported values are:
+   * If not provided, latest supported version will be used. Currently, the
+   * supported values are:
    *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
    * </pre>
@@ -1206,9 +1367,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The current zone where the Redis endpoint is placed. For Basic
-   * Tier instances, this will always be the same as the [location_id]
+   * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1beta1.Instance.location_id]
    * provided by the user at creation time. For Standard Tier instances,
-   * this can be either [location_id] or [alternative_location_id] and can
+   * this can be either [location_id][google.cloud.redis.v1beta1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] and can
    * change after a failover event.
    * </pre>
    *
@@ -1232,9 +1393,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The current zone where the Redis endpoint is placed. For Basic
-   * Tier instances, this will always be the same as the [location_id]
+   * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1beta1.Instance.location_id]
    * provided by the user at creation time. For Standard Tier instances,
-   * this can be either [location_id] or [alternative_location_id] and can
+   * this can be either [location_id][google.cloud.redis.v1beta1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] and can
    * change after a failover event.
    * </pre>
    *
@@ -1686,6 +1847,50 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CONNECT_MODE_FIELD_NUMBER = 22;
+  private int connectMode_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The connect mode of Redis instance.
+   * If not provided, default one will be used.
+   * Current default: DIRECT_PEERING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1beta1.Instance.ConnectMode connect_mode = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for connectMode.
+   */
+  public int getConnectModeValue() {
+    return connectMode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The connect mode of Redis instance.
+   * If not provided, default one will be used.
+   * Current default: DIRECT_PEERING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1beta1.Instance.ConnectMode connect_mode = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The connectMode.
+   */
+  public com.google.cloud.redis.v1beta1.Instance.ConnectMode getConnectMode() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.redis.v1beta1.Instance.ConnectMode result =
+        com.google.cloud.redis.v1beta1.Instance.ConnectMode.valueOf(connectMode_);
+    return result == null
+        ? com.google.cloud.redis.v1beta1.Instance.ConnectMode.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1751,6 +1956,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getPersistenceIamIdentityBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21, persistenceIamIdentity_);
+    }
+    if (connectMode_
+        != com.google.cloud.redis.v1beta1.Instance.ConnectMode.CONNECT_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(22, connectMode_);
     }
     unknownFields.writeTo(output);
   }
@@ -1829,6 +2039,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!getPersistenceIamIdentityBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, persistenceIamIdentity_);
     }
+    if (connectMode_
+        != com.google.cloud.redis.v1beta1.Instance.ConnectMode.CONNECT_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, connectMode_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1865,6 +2080,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (getMemorySizeGb() != other.getMemorySizeGb()) return false;
     if (!getAuthorizedNetwork().equals(other.getAuthorizedNetwork())) return false;
     if (!getPersistenceIamIdentity().equals(other.getPersistenceIamIdentity())) return false;
+    if (connectMode_ != other.connectMode_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1918,6 +2134,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getAuthorizedNetwork().hashCode();
     hash = (37 * hash) + PERSISTENCE_IAM_IDENTITY_FIELD_NUMBER;
     hash = (53 * hash) + getPersistenceIamIdentity().hashCode();
+    hash = (37 * hash) + CONNECT_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + connectMode_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2125,6 +2343,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
       persistenceIamIdentity_ = "";
 
+      connectMode_ = 0;
+
       return this;
     }
 
@@ -2177,6 +2397,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       result.memorySizeGb_ = memorySizeGb_;
       result.authorizedNetwork_ = authorizedNetwork_;
       result.persistenceIamIdentity_ = persistenceIamIdentity_;
+      result.connectMode_ = connectMode_;
       onBuilt();
       return result;
     }
@@ -2287,6 +2508,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         persistenceIamIdentity_ = other.persistenceIamIdentity_;
         onChanged();
       }
+      if (other.connectMode_ != 0) {
+        setConnectModeValue(other.getConnectModeValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -2329,8 +2553,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
-     * should be provisioned in. Refer to [location_id] and
-     * [alternative_location_id] fields for more details.
+     * should be provisioned in. Refer to [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
+     * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] fields for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2358,8 +2582,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
-     * should be provisioned in. Refer to [location_id] and
-     * [alternative_location_id] fields for more details.
+     * should be provisioned in. Refer to [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
+     * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] fields for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2387,8 +2611,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
-     * should be provisioned in. Refer to [location_id] and
-     * [alternative_location_id] fields for more details.
+     * should be provisioned in. Refer to [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
+     * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] fields for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2415,8 +2639,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
-     * should be provisioned in. Refer to [location_id] and
-     * [alternative_location_id] fields for more details.
+     * should be provisioned in. Refer to [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
+     * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] fields for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2439,8 +2663,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
-     * should be provisioned in. Refer to [location_id] and
-     * [alternative_location_id] fields for more details.
+     * should be provisioned in. Refer to [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
+     * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] fields for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2725,8 +2949,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The zone where the instance will be provisioned. If not provided,
      * the service will choose a zone for the instance. For STANDARD_HA tier,
      * instances will be created across two zones for protection against zonal
-     * failures. If [alternative_location_id] is also provided, it must be
-     * different from [location_id].
+     * failures. If [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] is also provided, it must be
+     * different from [location_id][google.cloud.redis.v1beta1.Instance.location_id].
      * </pre>
      *
      * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2751,8 +2975,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The zone where the instance will be provisioned. If not provided,
      * the service will choose a zone for the instance. For STANDARD_HA tier,
      * instances will be created across two zones for protection against zonal
-     * failures. If [alternative_location_id] is also provided, it must be
-     * different from [location_id].
+     * failures. If [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] is also provided, it must be
+     * different from [location_id][google.cloud.redis.v1beta1.Instance.location_id].
      * </pre>
      *
      * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2777,8 +3001,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The zone where the instance will be provisioned. If not provided,
      * the service will choose a zone for the instance. For STANDARD_HA tier,
      * instances will be created across two zones for protection against zonal
-     * failures. If [alternative_location_id] is also provided, it must be
-     * different from [location_id].
+     * failures. If [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] is also provided, it must be
+     * different from [location_id][google.cloud.redis.v1beta1.Instance.location_id].
      * </pre>
      *
      * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2802,8 +3026,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The zone where the instance will be provisioned. If not provided,
      * the service will choose a zone for the instance. For STANDARD_HA tier,
      * instances will be created across two zones for protection against zonal
-     * failures. If [alternative_location_id] is also provided, it must be
-     * different from [location_id].
+     * failures. If [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] is also provided, it must be
+     * different from [location_id][google.cloud.redis.v1beta1.Instance.location_id].
      * </pre>
      *
      * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2823,8 +3047,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The zone where the instance will be provisioned. If not provided,
      * the service will choose a zone for the instance. For STANDARD_HA tier,
      * instances will be created across two zones for protection against zonal
-     * failures. If [alternative_location_id] is also provided, it must be
-     * different from [location_id].
+     * failures. If [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] is also provided, it must be
+     * different from [location_id][google.cloud.redis.v1beta1.Instance.location_id].
      * </pre>
      *
      * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2850,7 +3074,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Only applicable to STANDARD_HA tier which protects the instance
      * against zonal failures by provisioning it across two zones. If provided, it
-     * must be a different zone from the one provided in [location_id].
+     * must be a different zone from the one provided in [location_id][google.cloud.redis.v1beta1.Instance.location_id].
      * </pre>
      *
      * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2874,7 +3098,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Only applicable to STANDARD_HA tier which protects the instance
      * against zonal failures by provisioning it across two zones. If provided, it
-     * must be a different zone from the one provided in [location_id].
+     * must be a different zone from the one provided in [location_id][google.cloud.redis.v1beta1.Instance.location_id].
      * </pre>
      *
      * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2898,7 +3122,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Only applicable to STANDARD_HA tier which protects the instance
      * against zonal failures by provisioning it across two zones. If provided, it
-     * must be a different zone from the one provided in [location_id].
+     * must be a different zone from the one provided in [location_id][google.cloud.redis.v1beta1.Instance.location_id].
      * </pre>
      *
      * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2921,7 +3145,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Only applicable to STANDARD_HA tier which protects the instance
      * against zonal failures by provisioning it across two zones. If provided, it
-     * must be a different zone from the one provided in [location_id].
+     * must be a different zone from the one provided in [location_id][google.cloud.redis.v1beta1.Instance.location_id].
      * </pre>
      *
      * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2940,7 +3164,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Only applicable to STANDARD_HA tier which protects the instance
      * against zonal failures by provisioning it across two zones. If provided, it
-     * must be a different zone from the one provided in [location_id].
+     * must be a different zone from the one provided in [location_id][google.cloud.redis.v1beta1.Instance.location_id].
      * </pre>
      *
      * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2965,9 +3189,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The version of Redis software.
-     * If not provided, latest supported version will be used. Updating the
-     * version will perform an upgrade/downgrade to the new version. Currently,
-     * the supported values are:
+     * If not provided, latest supported version will be used. Currently, the
+     * supported values are:
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      * </pre>
@@ -2992,9 +3215,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The version of Redis software.
-     * If not provided, latest supported version will be used. Updating the
-     * version will perform an upgrade/downgrade to the new version. Currently,
-     * the supported values are:
+     * If not provided, latest supported version will be used. Currently, the
+     * supported values are:
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      * </pre>
@@ -3019,9 +3241,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The version of Redis software.
-     * If not provided, latest supported version will be used. Updating the
-     * version will perform an upgrade/downgrade to the new version. Currently,
-     * the supported values are:
+     * If not provided, latest supported version will be used. Currently, the
+     * supported values are:
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      * </pre>
@@ -3045,9 +3266,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The version of Redis software.
-     * If not provided, latest supported version will be used. Updating the
-     * version will perform an upgrade/downgrade to the new version. Currently,
-     * the supported values are:
+     * If not provided, latest supported version will be used. Currently, the
+     * supported values are:
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      * </pre>
@@ -3067,9 +3287,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The version of Redis software.
-     * If not provided, latest supported version will be used. Updating the
-     * version will perform an upgrade/downgrade to the new version. Currently,
-     * the supported values are:
+     * If not provided, latest supported version will be used. Currently, the
+     * supported values are:
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      * </pre>
@@ -3379,9 +3598,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The current zone where the Redis endpoint is placed. For Basic
-     * Tier instances, this will always be the same as the [location_id]
+     * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1beta1.Instance.location_id]
      * provided by the user at creation time. For Standard Tier instances,
-     * this can be either [location_id] or [alternative_location_id] and can
+     * this can be either [location_id][google.cloud.redis.v1beta1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] and can
      * change after a failover event.
      * </pre>
      *
@@ -3405,9 +3624,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The current zone where the Redis endpoint is placed. For Basic
-     * Tier instances, this will always be the same as the [location_id]
+     * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1beta1.Instance.location_id]
      * provided by the user at creation time. For Standard Tier instances,
-     * this can be either [location_id] or [alternative_location_id] and can
+     * this can be either [location_id][google.cloud.redis.v1beta1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] and can
      * change after a failover event.
      * </pre>
      *
@@ -3431,9 +3650,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The current zone where the Redis endpoint is placed. For Basic
-     * Tier instances, this will always be the same as the [location_id]
+     * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1beta1.Instance.location_id]
      * provided by the user at creation time. For Standard Tier instances,
-     * this can be either [location_id] or [alternative_location_id] and can
+     * this can be either [location_id][google.cloud.redis.v1beta1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] and can
      * change after a failover event.
      * </pre>
      *
@@ -3456,9 +3675,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The current zone where the Redis endpoint is placed. For Basic
-     * Tier instances, this will always be the same as the [location_id]
+     * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1beta1.Instance.location_id]
      * provided by the user at creation time. For Standard Tier instances,
-     * this can be either [location_id] or [alternative_location_id] and can
+     * this can be either [location_id][google.cloud.redis.v1beta1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] and can
      * change after a failover event.
      * </pre>
      *
@@ -3477,9 +3696,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The current zone where the Redis endpoint is placed. For Basic
-     * Tier instances, this will always be the same as the [location_id]
+     * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1beta1.Instance.location_id]
      * provided by the user at creation time. For Standard Tier instances,
-     * this can be either [location_id] or [alternative_location_id] and can
+     * this can be either [location_id][google.cloud.redis.v1beta1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] and can
      * change after a failover event.
      * </pre>
      *
@@ -4531,6 +4750,116 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       persistenceIamIdentity_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int connectMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The connect mode of Redis instance.
+     * If not provided, default one will be used.
+     * Current default: DIRECT_PEERING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1beta1.Instance.ConnectMode connect_mode = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for connectMode.
+     */
+    public int getConnectModeValue() {
+      return connectMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The connect mode of Redis instance.
+     * If not provided, default one will be used.
+     * Current default: DIRECT_PEERING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1beta1.Instance.ConnectMode connect_mode = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for connectMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectModeValue(int value) {
+      connectMode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The connect mode of Redis instance.
+     * If not provided, default one will be used.
+     * Current default: DIRECT_PEERING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1beta1.Instance.ConnectMode connect_mode = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The connectMode.
+     */
+    public com.google.cloud.redis.v1beta1.Instance.ConnectMode getConnectMode() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.redis.v1beta1.Instance.ConnectMode result =
+          com.google.cloud.redis.v1beta1.Instance.ConnectMode.valueOf(connectMode_);
+      return result == null
+          ? com.google.cloud.redis.v1beta1.Instance.ConnectMode.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The connect mode of Redis instance.
+     * If not provided, default one will be used.
+     * Current default: DIRECT_PEERING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1beta1.Instance.ConnectMode connect_mode = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The connectMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectMode(com.google.cloud.redis.v1beta1.Instance.ConnectMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      connectMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The connect mode of Redis instance.
+     * If not provided, default one will be used.
+     * Current default: DIRECT_PEERING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1beta1.Instance.ConnectMode connect_mode = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConnectMode() {
+
+      connectMode_ = 0;
       onChanged();
       return this;
     }

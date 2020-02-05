@@ -31,6 +31,7 @@ import com.google.cloud.redis.v1beta1.Instance;
 import com.google.cloud.redis.v1beta1.ListInstancesRequest;
 import com.google.cloud.redis.v1beta1.ListInstancesResponse;
 import com.google.cloud.redis.v1beta1.UpdateInstanceRequest;
+import com.google.cloud.redis.v1beta1.UpgradeInstanceRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Any;
@@ -118,6 +119,16 @@ public abstract class CloudRedisStub implements BackgroundResource {
 
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteInstanceCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<UpgradeInstanceRequest, Instance, Any>
+      upgradeInstanceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: upgradeInstanceOperationCallable()");
+  }
+
+  public UnaryCallable<UpgradeInstanceRequest, Operation> upgradeInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: upgradeInstanceCallable()");
   }
 
   @Override

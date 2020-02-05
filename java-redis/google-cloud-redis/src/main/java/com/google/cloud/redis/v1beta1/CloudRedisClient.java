@@ -188,8 +188,9 @@ public class CloudRedisClient implements BackgroundResource {
    * Lists all Redis instances owned by a project in either the specified location (region) or all
    * locations.
    *
-   * <p>The location should have the following format: &#42;
-   * `projects/{project_id}/locations/{location_id}`
+   * <p>The location should have the following format:
+   *
+   * <p>&#42; `projects/{project_id}/locations/{location_id}`
    *
    * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
    * are queried, and the results are aggregated.
@@ -222,8 +223,9 @@ public class CloudRedisClient implements BackgroundResource {
    * Lists all Redis instances owned by a project in either the specified location (region) or all
    * locations.
    *
-   * <p>The location should have the following format: &#42;
-   * `projects/{project_id}/locations/{location_id}`
+   * <p>The location should have the following format:
+   *
+   * <p>&#42; `projects/{project_id}/locations/{location_id}`
    *
    * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
    * are queried, and the results are aggregated.
@@ -253,8 +255,9 @@ public class CloudRedisClient implements BackgroundResource {
    * Lists all Redis instances owned by a project in either the specified location (region) or all
    * locations.
    *
-   * <p>The location should have the following format: &#42;
-   * `projects/{project_id}/locations/{location_id}`
+   * <p>The location should have the following format:
+   *
+   * <p>&#42; `projects/{project_id}/locations/{location_id}`
    *
    * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
    * are queried, and the results are aggregated.
@@ -285,8 +288,9 @@ public class CloudRedisClient implements BackgroundResource {
    * Lists all Redis instances owned by a project in either the specified location (region) or all
    * locations.
    *
-   * <p>The location should have the following format: &#42;
-   * `projects/{project_id}/locations/{location_id}`
+   * <p>The location should have the following format:
+   *
+   * <p>&#42; `projects/{project_id}/locations/{location_id}`
    *
    * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
    * are queried, and the results are aggregated.
@@ -317,8 +321,9 @@ public class CloudRedisClient implements BackgroundResource {
    * Lists all Redis instances owned by a project in either the specified location (region) or all
    * locations.
    *
-   * <p>The location should have the following format: &#42;
-   * `projects/{project_id}/locations/{location_id}`
+   * <p>The location should have the following format:
+   *
+   * <p>&#42; `projects/{project_id}/locations/{location_id}`
    *
    * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
    * are queried, and the results are aggregated.
@@ -1363,6 +1368,144 @@ public class CloudRedisClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     return stub.deleteInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Upgrades Redis instance to the newer Redis version specified in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String redisVersion = "";
+   *   Instance response = cloudRedisClient.upgradeInstanceAsync(name, redisVersion).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region.
+   * @param redisVersion Required. Specifies the target version of Redis software to upgrade to.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Instance, Any> upgradeInstanceAsync(
+      InstanceName name, String redisVersion) {
+    UpgradeInstanceRequest request =
+        UpgradeInstanceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setRedisVersion(redisVersion)
+            .build();
+    return upgradeInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Upgrades Redis instance to the newer Redis version specified in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String redisVersion = "";
+   *   Instance response = cloudRedisClient.upgradeInstanceAsync(name.toString(), redisVersion).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region.
+   * @param redisVersion Required. Specifies the target version of Redis software to upgrade to.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Instance, Any> upgradeInstanceAsync(
+      String name, String redisVersion) {
+    UpgradeInstanceRequest request =
+        UpgradeInstanceRequest.newBuilder().setName(name).setRedisVersion(redisVersion).build();
+    return upgradeInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Upgrades Redis instance to the newer Redis version specified in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String redisVersion = "";
+   *   UpgradeInstanceRequest request = UpgradeInstanceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setRedisVersion(redisVersion)
+   *     .build();
+   *   Instance response = cloudRedisClient.upgradeInstanceAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Instance, Any> upgradeInstanceAsync(UpgradeInstanceRequest request) {
+    return upgradeInstanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Upgrades Redis instance to the newer Redis version specified in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String redisVersion = "";
+   *   UpgradeInstanceRequest request = UpgradeInstanceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setRedisVersion(redisVersion)
+   *     .build();
+   *   OperationFuture&lt;Instance, Any&gt; future = cloudRedisClient.upgradeInstanceOperationCallable().futureCall(request);
+   *   // Do something
+   *   Instance response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<UpgradeInstanceRequest, Instance, Any>
+      upgradeInstanceOperationCallable() {
+    return stub.upgradeInstanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Upgrades Redis instance to the newer Redis version specified in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String redisVersion = "";
+   *   UpgradeInstanceRequest request = UpgradeInstanceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setRedisVersion(redisVersion)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = cloudRedisClient.upgradeInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpgradeInstanceRequest, Operation> upgradeInstanceCallable() {
+    return stub.upgradeInstanceCallable();
   }
 
   @Override

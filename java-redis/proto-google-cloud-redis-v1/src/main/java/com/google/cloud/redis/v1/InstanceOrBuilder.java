@@ -33,8 +33,8 @@ public interface InstanceOrBuilder
    * Note: Redis instances are managed and addressed at regional level so
    * location_id here refers to a GCP region; however, users may choose which
    * specific zone (or collection of zones for cross-zone instances) an instance
-   * should be provisioned in. Refer to [location_id] and
-   * [alternative_location_id] fields for more details.
+   * should be provisioned in. Refer to [location_id][google.cloud.redis.v1.Instance.location_id] and
+   * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] fields for more details.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -52,8 +52,8 @@ public interface InstanceOrBuilder
    * Note: Redis instances are managed and addressed at regional level so
    * location_id here refers to a GCP region; however, users may choose which
    * specific zone (or collection of zones for cross-zone instances) an instance
-   * should be provisioned in. Refer to [location_id] and
-   * [alternative_location_id] fields for more details.
+   * should be provisioned in. Refer to [location_id][google.cloud.redis.v1.Instance.location_id] and
+   * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] fields for more details.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -148,8 +148,8 @@ public interface InstanceOrBuilder
    * Optional. The zone where the instance will be provisioned. If not provided,
    * the service will choose a zone for the instance. For STANDARD_HA tier,
    * instances will be created across two zones for protection against zonal
-   * failures. If [alternative_location_id] is also provided, it must be
-   * different from [location_id].
+   * failures. If [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] is also provided, it must be
+   * different from [location_id][google.cloud.redis.v1.Instance.location_id].
    * </pre>
    *
    * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -164,8 +164,8 @@ public interface InstanceOrBuilder
    * Optional. The zone where the instance will be provisioned. If not provided,
    * the service will choose a zone for the instance. For STANDARD_HA tier,
    * instances will be created across two zones for protection against zonal
-   * failures. If [alternative_location_id] is also provided, it must be
-   * different from [location_id].
+   * failures. If [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] is also provided, it must be
+   * different from [location_id][google.cloud.redis.v1.Instance.location_id].
    * </pre>
    *
    * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -180,7 +180,7 @@ public interface InstanceOrBuilder
    * <pre>
    * Optional. Only applicable to STANDARD_HA tier which protects the instance
    * against zonal failures by provisioning it across two zones. If provided, it
-   * must be a different zone from the one provided in [location_id].
+   * must be a different zone from the one provided in [location_id][google.cloud.redis.v1.Instance.location_id].
    * </pre>
    *
    * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -194,7 +194,7 @@ public interface InstanceOrBuilder
    * <pre>
    * Optional. Only applicable to STANDARD_HA tier which protects the instance
    * against zonal failures by provisioning it across two zones. If provided, it
-   * must be a different zone from the one provided in [location_id].
+   * must be a different zone from the one provided in [location_id][google.cloud.redis.v1.Instance.location_id].
    * </pre>
    *
    * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -208,9 +208,8 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Optional. The version of Redis software.
-   * If not provided, latest supported version will be used. Updating the
-   * version will perform an upgrade/downgrade to the new version. Currently,
-   * the supported values are:
+   * If not provided, latest supported version will be used. Currently, the
+   * supported values are:
    *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
    * </pre>
@@ -225,9 +224,8 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Optional. The version of Redis software.
-   * If not provided, latest supported version will be used. Updating the
-   * version will perform an upgrade/downgrade to the new version. Currently,
-   * the supported values are:
+   * If not provided, latest supported version will be used. Currently, the
+   * supported values are:
    *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
    * </pre>
@@ -314,9 +312,9 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Output only. The current zone where the Redis endpoint is placed. For Basic
-   * Tier instances, this will always be the same as the [location_id]
+   * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1.Instance.location_id]
    * provided by the user at creation time. For Standard Tier instances,
-   * this can be either [location_id] or [alternative_location_id] and can
+   * this can be either [location_id][google.cloud.redis.v1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] and can
    * change after a failover event.
    * </pre>
    *
@@ -330,9 +328,9 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Output only. The current zone where the Redis endpoint is placed. For Basic
-   * Tier instances, this will always be the same as the [location_id]
+   * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1.Instance.location_id]
    * provided by the user at creation time. For Standard Tier instances,
-   * this can be either [location_id] or [alternative_location_id] and can
+   * this can be either [location_id][google.cloud.redis.v1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] and can
    * change after a failover event.
    * </pre>
    *
@@ -643,4 +641,37 @@ public interface InstanceOrBuilder
    * @return The bytes for persistenceIamIdentity.
    */
   com.google.protobuf.ByteString getPersistenceIamIdentityBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The connect mode of Redis instance.
+   * If not provided, default one will be used.
+   * Current default: DIRECT_PEERING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.Instance.ConnectMode connect_mode = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for connectMode.
+   */
+  int getConnectModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The connect mode of Redis instance.
+   * If not provided, default one will be used.
+   * Current default: DIRECT_PEERING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.Instance.ConnectMode connect_mode = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The connectMode.
+   */
+  com.google.cloud.redis.v1.Instance.ConnectMode getConnectMode();
 }

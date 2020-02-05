@@ -119,7 +119,15 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
             com.google.cloud.redis.v1beta1.FailoverInstanceRequest.Builder.class);
   }
 
-  /** Protobuf enum {@code google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode} */
+  /**
+   *
+   *
+   * <pre>
+   * Specifies different modes of operation in relation to the data retention.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode}
+   */
   public enum DataProtectionMode implements com.google.protobuf.ProtocolMessageEnum {
     /**
      *
