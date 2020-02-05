@@ -33,14 +33,6 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-api</artifactId>
-      <exclusions>
-        <!-- currently collides with error_prone_annotations from grpc -->
-        <!-- TODO: try to remove after the next bump of grpc -->
-        <exclusion>
-          <groupId>com.google.errorprone</groupId>
-          <artifactId>error_prone_annotations</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
