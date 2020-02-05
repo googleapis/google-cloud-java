@@ -1,5 +1,22 @@
 # Changelog
 
+### [1.99.2](https://www.github.com/googleapis/java-monitoring/compare/v1.99.1...v1.99.2) (2020-02-04)
+
+
+### Documentation
+
+* **regen:** fix javadoc return annotation ([#50](https://www.github.com/googleapis/java-monitoring/issues/50)) ([94a9a4b](https://www.github.com/googleapis/java-monitoring/commit/94a9a4b97f40e359158f1bec177e24dbb39c5f63))
+* **regen:** regenerate with proto annotations ([#54](https://www.github.com/googleapis/java-monitoring/issues/54)) ([9335faa](https://www.github.com/googleapis/java-monitoring/commit/9335faa6654a43b7ffc318c90aaa34f33eb1640a))
+
+
+### Dependencies
+
+* update core dependencies ([#44](https://www.github.com/googleapis/java-monitoring/issues/44)) ([85acef7](https://www.github.com/googleapis/java-monitoring/commit/85acef7486c6d95feb9749028f90d1da226f1724))
+* update core dependencies to v1.53.1 ([#55](https://www.github.com/googleapis/java-monitoring/issues/55)) ([9873812](https://www.github.com/googleapis/java-monitoring/commit/98738121a8852a3556200a625f564bf047c7e044))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#36](https://www.github.com/googleapis/java-monitoring/issues/36)) ([06ad91c](https://www.github.com/googleapis/java-monitoring/commit/06ad91c9907c0278712e75a37c33f0a906142f10))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#56](https://www.github.com/googleapis/java-monitoring/issues/56)) ([edef416](https://www.github.com/googleapis/java-monitoring/commit/edef4161c5f35c331430f70f89e409bb85ad44bd))
+* update dependency org.threeten:threetenbp to v1.4.1 ([1fa3f45](https://www.github.com/googleapis/java-monitoring/commit/1fa3f45b8599d0ad0a23424d15e77b07b498804b))
+
 ### [1.99.1](https://www.github.com/googleapis/java-monitoring/compare/v1.99.0...v1.99.1) (2020-01-07)
 
 
