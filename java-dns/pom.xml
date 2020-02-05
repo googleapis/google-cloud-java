@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dns</artifactId>
   <packaging>jar</packaging>
-  <version>0.117.4-alpha</version><!-- {x-version-update:google-cloud-dns:current} -->
+  <version>0.117.5-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dns:current} -->
   <name>Google Cloud DNS Parent</name>
   <url>https://github.com/googleapis/java-dns</url>
   <description>
