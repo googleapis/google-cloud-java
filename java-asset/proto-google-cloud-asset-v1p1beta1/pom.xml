@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-asset-v1p1beta1</artifactId>
-  <version>0.81.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1p1beta1:current} -->
+  <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1p1beta1:current} -->
   <name>proto-google-cloud-asset-v1p1beta1</name>
   <description>PROTO library for proto-google-cloud-asset-v1p1beta1</description>
   <parent>
