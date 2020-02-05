@@ -64,6 +64,9 @@ public class BatchTranslateTextWithGlossaryAndModelTests {
   private static final String MODEL_ID = "TRL2188848820815848149";
   private static final String GLOSSARY_INPUT_URI =
       "gs://cloud-samples-data/translation/glossary_ja.csv";
+  private static final String PREFIX = "BATCH_TRANSLATION_OUTPUT/";
+  private static final String OUTPUT_URI =
+          String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -74,7 +77,7 @@ public class BatchTranslateTextWithGlossaryAndModelTests {
         storage.list(
             PROJECT_ID,
             Storage.BlobListOption.currentDirectory(),
-            Storage.BlobListOption.prefix("BATCH_TRANSLATION_OUTPUT/"));
+            Storage.BlobListOption.prefix(PREFIX));
 
     deleteDirectory(storage, blobs);
   }
@@ -137,7 +140,7 @@ public class BatchTranslateTextWithGlossaryAndModelTests {
         "en",
         "ja",
         INPUT_URI,
-        "gs://" + PROJECT_ID + "/BATCH_TRANSLATION_OUTPUT/",
+        OUTPUT_URI,
         GLOSSARY_ID,
         MODEL_ID);
     String got = bout.toString();
