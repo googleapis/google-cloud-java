@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.118.0](https://www.github.com/googleapis/java-datalabeling/compare/v0.117.0...v0.118.0) (2020-02-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove ObjectDetection, ObjectTracking, VideoClassification from v1beta1 client (#67)
+
+### Features
+
+* remove ObjectDetection, ObjectTracking, VideoClassification from v1beta1 client ([#67](https://www.github.com/googleapis/java-datalabeling/issues/67)) ([c7720de](https://www.github.com/googleapis/java-datalabeling/commit/c7720dedac0653343311b69ae36cd75525944973))
+
+
+### Dependencies
+
+* update core dependencies ([#52](https://www.github.com/googleapis/java-datalabeling/issues/52)) ([68b1980](https://www.github.com/googleapis/java-datalabeling/commit/68b1980b992732ca3876b524d43aeff624197568))
+* update core dependencies ([#71](https://www.github.com/googleapis/java-datalabeling/issues/71)) ([34e6e57](https://www.github.com/googleapis/java-datalabeling/commit/34e6e574c39eee3d2dd64197f5bb2693143776c4))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#50](https://www.github.com/googleapis/java-datalabeling/issues/50)) ([acaba19](https://www.github.com/googleapis/java-datalabeling/commit/acaba19f53b720d3a2789f61e0769fdf8eb6e09c))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#73](https://www.github.com/googleapis/java-datalabeling/issues/73)) ([c5a8a44](https://www.github.com/googleapis/java-datalabeling/commit/c5a8a44cf25f0cd08954f9a2b62e292d202ecc66))
+
 ## [0.117.0](https://www.github.com/googleapis/java-datalabeling/compare/v0.116.3...v0.117.0) (2020-01-24)
 
 
