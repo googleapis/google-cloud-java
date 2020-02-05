@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-dlp/compare/v1.0.0...v1.0.1) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies to v1.53.1 ([4b066eb](https://www.github.com/googleapis/java-dlp/commit/4b066eb6bc9f50ae00334f17d05062bfa2e7269a))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#44](https://www.github.com/googleapis/java-dlp/issues/44)) ([afe03d2](https://www.github.com/googleapis/java-dlp/commit/afe03d20eafc4d55c6be4b55f96cab813575a5dd))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#70](https://www.github.com/googleapis/java-dlp/issues/70)) ([687810b](https://www.github.com/googleapis/java-dlp/commit/687810b6eca528e7620f1d130c6511cc58841b2f))
+* update dependency io.grpc:grpc-bom to v1.27.0 ([#64](https://www.github.com/googleapis/java-dlp/issues/64)) ([4276306](https://www.github.com/googleapis/java-dlp/commit/4276306319a13804cd4961f5a3671152a3c768c2))
+
 ## [1.0.0](https://www.github.com/googleapis/java-dlp/compare/v0.118.1...v1.0.0) (2020-01-24)
 
 
