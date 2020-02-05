@@ -37,16 +37,16 @@ If you are using Maven without a BOM, add this to your dependencies.
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-language</artifactId>
-  <version>1.99.1</version>
+  <version>1.99.2</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-language:1.99.1'
+compile 'com.google.cloud:google-cloud-language:1.99.2'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-language" % "1.99.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-language" % "1.99.2"
 ```
 [//]: # ({x-version-update-end})
 

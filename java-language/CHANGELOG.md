@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.99.2](https://www.github.com/googleapis/java-language/compare/v1.99.1...v1.99.2) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies to v1.53.0 ([#42](https://www.github.com/googleapis/java-language/issues/42)) ([1a19705](https://www.github.com/googleapis/java-language/commit/1a1970550f50d07af46be754fa717e050f450a70))
+* update core dependencies to v1.53.1 ([#52](https://www.github.com/googleapis/java-language/issues/52)) ([66ba508](https://www.github.com/googleapis/java-language/commit/66ba5080f716cdf8ae8cd3a1d35378d0a4cb0ac4))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#32](https://www.github.com/googleapis/java-language/issues/32)) ([6430c77](https://www.github.com/googleapis/java-language/commit/6430c776ff9a1a7d463d0f35ebea529d00ec9101))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#54](https://www.github.com/googleapis/java-language/issues/54)) ([1cd82ee](https://www.github.com/googleapis/java-language/commit/1cd82eee92cab3c7deda49591a303282dee737a7))
+* update dependency io.grpc:grpc-bom to v1.27.0 ([#50](https://www.github.com/googleapis/java-language/issues/50)) ([8519b4e](https://www.github.com/googleapis/java-language/commit/8519b4ef73b6335cdb06185f9a34e38ade7a670b))
+* update dependency org.threeten:threetenbp to v1.4.1 ([b042fcb](https://www.github.com/googleapis/java-language/commit/b042fcb563039c005babb677b189f2718153ad36))
+
 ### [1.99.1](https://www.github.com/googleapis/java-language/compare/v1.99.0...v1.99.1) (2020-01-07)
 
 
