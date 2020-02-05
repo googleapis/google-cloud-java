@@ -37,16 +37,16 @@ If you are using Maven without Bom, Add this to your dependencies.
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-speech</artifactId>
-  <version>1.22.2</version>
+  <version>1.22.3</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-speech:1.22.2'
+compile 'com.google.cloud:google-cloud-speech:1.22.3'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "1.22.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "1.22.3"
 ```
 [//]: # ({x-version-update-end})
 

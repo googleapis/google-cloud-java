@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.22.3](https://www.github.com/googleapis/java-speech/compare/v1.22.2...v1.22.3) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#70](https://www.github.com/googleapis/java-speech/issues/70)) ([176d86d](https://www.github.com/googleapis/java-speech/commit/176d86db67ecac9d5c20ef635a4ae2fa2ebdf713))
+* update core dependencies ([#85](https://www.github.com/googleapis/java-speech/issues/85)) ([37693d4](https://www.github.com/googleapis/java-speech/commit/37693d4b7264bb38155d61a0240d5872210b133e))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#87](https://www.github.com/googleapis/java-speech/issues/87)) ([961ea81](https://www.github.com/googleapis/java-speech/commit/961ea81c56e42422804ddbd83e4ac1f62cd3ece9))
+* update dependency org.threeten:threetenbp to v1.4.1 ([47a65fe](https://www.github.com/googleapis/java-speech/commit/47a65fe91d8b915a643df0fa85f92baeacc4d1f5))
+
 ### [1.22.2](https://www.github.com/googleapis/java-speech/compare/v1.22.1...v1.22.2) (2020-01-07)
 
 
