@@ -15,7 +15,11 @@
  */
 package com.google.cloud.bigtable.data.v2;
 
+import static com.google.cloud.bigtable.data.v2.models.Filters.FILTERS;
+
+import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.Batcher;
@@ -36,6 +40,7 @@ import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.List;
@@ -157,6 +162,135 @@ public class BigtableDataClient implements AutoCloseable {
   @InternalApi("Visible for testing")
   BigtableDataClient(EnhancedBigtableStub stub) {
     this.stub = stub;
+  }
+
+  /**
+   * Confirms synchronously if given row key exists or not.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *   String key = "key";
+   *
+   *   boolean isRowPresent = bigtableDataClient.exists(tableId, key);
+   *
+   *   // Do something with result, for example, display a message
+   *   if(isRowPresent) {
+   *     System.out.println(key + " is present");
+   *   }
+   * } catch(ApiException e) {
+   *   e.printStackTrace();
+   * }
+   * }</pre>
+   *
+   * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   */
+  public boolean exists(String tableId, String rowKey) {
+    return ApiExceptions.callAndTranslateApiException(existsAsync(tableId, rowKey));
+  }
+
+  /**
+   * Confirms synchronously if given row key exists or not.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *   ByteString key = ByteString.copyFromUtf8("key");
+   *
+   *   boolean isRowPresent = bigtableDataClient.exists(tableId, key);
+   *
+   *   // Do something with result, for example, display a message
+   *   if(isRowPresent) {
+   *     System.out.println(key.toStringUtf8() + " is present");
+   *   }
+   * } catch(ApiException e) {
+   *   e.printStackTrace();
+   * }
+   * }</pre>
+   *
+   * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   */
+  public boolean exists(String tableId, ByteString rowKey) {
+    return ApiExceptions.callAndTranslateApiException(existsAsync(tableId, rowKey));
+  }
+
+  /**
+   * Confirms asynchronously if given row key exists or not.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *   final String key = "key";
+   *
+   *   ApiFuture<Boolean> futureResult = bigtableDataClient.existsAsync(tableId, key);
+   *
+   *   ApiFutures.addCallback(futureResult, new ApiFutureCallback<Boolean>() {
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *     public void onSuccess(Boolean isRowPresent) {
+   *       if(isRowPresent) {
+   *         System.out.println(key + " is present");
+   *       }
+   *     }
+   *   }, MoreExecutors.directExecutor());
+   * }
+   * }</pre>
+   */
+  public ApiFuture<Boolean> existsAsync(String tableId, String rowKey) {
+    return existsAsync(tableId, ByteString.copyFromUtf8(rowKey));
+  }
+
+  /**
+   * Confirms asynchronously if given row key exists or not.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *   final ByteString key = ByteString.copyFromUtf8("key");
+   *
+   *   ApiFuture<Boolean> futureResult = bigtableDataClient.existsAsync(tableId, key);
+   *
+   *   ApiFutures.addCallback(futureResult, new ApiFutureCallback<Boolean>() {
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *     public void onSuccess(Boolean isRowPresent) {
+   *       if(isRowPresent) {
+   *         System.out.println(key.toStringUtf8() + " is present");
+   *       }
+   *     }
+   *   }, MoreExecutors.directExecutor());
+   * }
+   * }</pre>
+   */
+  public ApiFuture<Boolean> existsAsync(String tableId, ByteString rowKey) {
+    Query query =
+        Query.create(tableId)
+            .rowKey(rowKey)
+            .filter(
+                FILTERS
+                    .chain()
+                    .filter(FILTERS.limit().cellsPerRow(1))
+                    .filter(FILTERS.value().strip()));
+    ApiFuture<Row> resultFuture = stub.readRowCallable().futureCall(query);
+    return ApiFutures.transform(
+        resultFuture,
+        new ApiFunction<Row, Boolean>() {
+          @Override
+          public Boolean apply(Row row) {
+            return row != null;
+          }
+        },
+        MoreExecutors.directExecutor());
   }
 
   /**

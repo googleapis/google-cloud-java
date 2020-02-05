@@ -93,6 +93,57 @@ public class BigtableDataClientTest {
   }
 
   @Test
+  public void existsTest() {
+    Query expectedQuery =
+        Query.create("fake-table")
+            .rowKey("fake-row-key")
+            .filter(
+                FILTERS
+                    .chain()
+                    .filter(FILTERS.limit().cellsPerRow(1))
+                    .filter(FILTERS.value().strip()));
+    Row row = Row.create(ByteString.copyFromUtf8("fake-row-key"), ImmutableList.<RowCell>of());
+    Mockito.when(mockReadRowCallable.futureCall(expectedQuery))
+        .thenReturn(ApiFutures.immediateFuture(row))
+        .thenReturn(ApiFutures.<Row>immediateFuture(null));
+
+    boolean result = bigtableDataClient.exists("fake-table", "fake-row-key");
+    boolean anotherResult =
+        bigtableDataClient.exists("fake-table", ByteString.copyFromUtf8("fake-row-key"));
+
+    assertThat(result).isTrue();
+    assertThat(anotherResult).isFalse();
+
+    Mockito.verify(mockReadRowCallable, Mockito.times(2)).futureCall(expectedQuery);
+  }
+
+  @Test
+  public void existsAsyncTest() throws Exception {
+    Query expectedQuery =
+        Query.create("fake-table")
+            .rowKey("fake-row-key")
+            .filter(
+                FILTERS
+                    .chain()
+                    .filter(FILTERS.limit().cellsPerRow(1))
+                    .filter(FILTERS.value().strip()));
+    Row row = Row.create(ByteString.copyFromUtf8("fake-row-key"), ImmutableList.<RowCell>of());
+
+    Mockito.when(mockReadRowCallable.futureCall(expectedQuery))
+        .thenReturn(ApiFutures.immediateFuture(row))
+        .thenReturn(ApiFutures.<Row>immediateFuture(null));
+
+    ApiFuture<Boolean> result =
+        bigtableDataClient.existsAsync("fake-table", ByteString.copyFromUtf8("fake-row-key"));
+    assertThat(result.get()).isTrue();
+
+    ApiFuture<Boolean> anotherResult = bigtableDataClient.existsAsync("fake-table", "fake-row-key");
+    assertThat(anotherResult.get()).isFalse();
+
+    Mockito.verify(mockReadRowCallable, Mockito.times(2)).futureCall(expectedQuery);
+  }
+
+  @Test
   public void proxyReadRowsCallableTest() {
     assertThat(bigtableDataClient.readRowsCallable()).isSameInstanceAs(mockReadRowsCallable);
   }

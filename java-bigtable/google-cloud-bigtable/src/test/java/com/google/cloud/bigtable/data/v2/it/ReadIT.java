@@ -58,6 +58,26 @@ public class ReadIT {
   }
 
   @Test
+  public void isRowExists() throws Exception {
+    String rowKey = prefix + "-test-row-key";
+    String tableId = testEnvRule.env().getTableId();
+    testEnvRule
+        .env()
+        .getDataClient()
+        .mutateRow(
+            RowMutation.create(tableId, rowKey)
+                .setCell(testEnvRule.env().getFamilyId(), "qualifier", "value"));
+
+    assertThat(testEnvRule.env().getDataClient().exists(tableId, rowKey)).isTrue();
+
+    String nonExistingKey = prefix + "non-existing-key";
+    assertThat(testEnvRule.env().getDataClient().exists(tableId, nonExistingKey)).isFalse();
+
+    // Async
+    assertThat(testEnvRule.env().getDataClient().existsAsync(tableId, rowKey).get()).isTrue();
+  }
+
+  @Test
   public void readEmpty() throws Throwable {
     String uniqueKey = prefix + "-readEmpty";
 
