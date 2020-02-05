@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-translate-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.94.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-translate:current} -->
+  <version>1.94.3</version><!-- {x-version-update:google-cloud-translate:current} -->
   <name>Google Cloud Translate Parent</name>
   <url>https://github.com/googleapis/java-translate</url>
   <description>
@@ -85,27 +85,27 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-translate-v3beta1</artifactId>
-        <version>0.77.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-translate-v3beta1:current} -->
+        <version>0.77.3</version><!-- {x-version-update:proto-google-cloud-translate-v3beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-translate-v3</artifactId>
-        <version>1.0.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-translate-v3:current} -->
+        <version>1.0.3</version><!-- {x-version-update:proto-google-cloud-translate-v3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-translate-v3beta1</artifactId>
-        <version>0.77.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-translate-v3beta1:current} -->
+        <version>0.77.3</version><!-- {x-version-update:grpc-google-cloud-translate-v3beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-translate-v3</artifactId>
-        <version>1.0.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-translate-v3:current} -->
+        <version>1.0.3</version><!-- {x-version-update:grpc-google-cloud-translate-v3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-translate</artifactId>
-        <version>1.94.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-translate:current} -->
+        <version>1.94.3</version><!-- {x-version-update:google-cloud-translate:current} -->
       </dependency>
 
       <dependency>

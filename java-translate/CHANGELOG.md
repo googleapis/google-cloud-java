@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.94.3](https://www.github.com/googleapis/java-translate/compare/v1.94.2...v1.94.3) (2020-02-03)
+
+
+### Dependencies
+
+* update core dependencies ([#59](https://www.github.com/googleapis/java-translate/issues/59)) ([1cd4ec0](https://www.github.com/googleapis/java-translate/commit/1cd4ec01e168f6b8e98e3584ab487ce6fbdbf19e))
+* update core dependencies ([#78](https://www.github.com/googleapis/java-translate/issues/78)) ([ad0d669](https://www.github.com/googleapis/java-translate/commit/ad0d66957947f26339331f5f065b744480dfc87d))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#57](https://www.github.com/googleapis/java-translate/issues/57)) ([542b507](https://www.github.com/googleapis/java-translate/commit/542b5073b1599e4df70d95fedd5f58c72481ad0d))
+* update dependency com.google.http-client:google-http-client-bom to v1.34.1 ([#75](https://www.github.com/googleapis/java-translate/issues/75)) ([afae548](https://www.github.com/googleapis/java-translate/commit/afae548adb906f3a53971e639c6bbae3d704487e))
+* update dependency com.google.protobuf:protobuf-bom to v3.11.3 ([#80](https://www.github.com/googleapis/java-translate/issues/80)) ([166ac50](https://www.github.com/googleapis/java-translate/commit/166ac50bafa19e97f92b9c44cb38a606dd584bd3))
+* update dependency org.threeten:threetenbp to v1.4.1 ([2c1ac0a](https://www.github.com/googleapis/java-translate/commit/2c1ac0a47042817e2856fd714a9deba3e67f6d00))
+
 ### [1.94.2](https://www.github.com/googleapis/java-translate/compare/v1.94.1...v1.94.2) (2020-01-07)
 
 
