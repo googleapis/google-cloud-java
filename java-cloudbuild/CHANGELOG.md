@@ -1,5 +1,16 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-cloudbuild/compare/v1.0.0...v1.0.1) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#44](https://www.github.com/googleapis/java-cloudbuild/issues/44)) ([739ef52](https://www.github.com/googleapis/java-cloudbuild/commit/739ef52c3032c6f122deb879f69e08c9cb357234))
+* update core dependencies ([#60](https://www.github.com/googleapis/java-cloudbuild/issues/60)) ([7177376](https://www.github.com/googleapis/java-cloudbuild/commit/71773763f4572f6b70109d40264f065017510f19))
+* update core dependencies ([#63](https://www.github.com/googleapis/java-cloudbuild/issues/63)) ([636bb16](https://www.github.com/googleapis/java-cloudbuild/commit/636bb1681f76b86145ade06c7cff969be59303ad))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#42](https://www.github.com/googleapis/java-cloudbuild/issues/42)) ([370316a](https://www.github.com/googleapis/java-cloudbuild/commit/370316a25c524ea14e88e1521b85eb0c43d2f2a2))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#65](https://www.github.com/googleapis/java-cloudbuild/issues/65)) ([79603c0](https://www.github.com/googleapis/java-cloudbuild/commit/79603c0a25fc0ad201d9f53a21f3fdc72fa90096))
+
 ## [1.0.0](https://www.github.com/googleapis/java-cloudbuild/compare/v0.1.1...v1.0.0) (2020-01-24)
 
 
