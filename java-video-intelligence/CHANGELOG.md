@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-video-intelligence/compare/v1.0.0...v1.1.0) (2020-02-04)
+
+
+### Features
+
+* add FaceDetection, PersonDetection to v1p3beta1 ([#62](https://www.github.com/googleapis/java-video-intelligence/issues/62)) ([9ae56c2](https://www.github.com/googleapis/java-video-intelligence/commit/9ae56c251c8d7ec5962a17ffc1732f51a1909937))
+
+
+### Dependencies
+
+* update core dependencies to v1.53.1 ([#67](https://www.github.com/googleapis/java-video-intelligence/issues/67)) ([1e6978a](https://www.github.com/googleapis/java-video-intelligence/commit/1e6978a365f2464ebf6f6f0e11833b7e91263ad1))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#43](https://www.github.com/googleapis/java-video-intelligence/issues/43)) ([c715f9a](https://www.github.com/googleapis/java-video-intelligence/commit/c715f9a8e869b696c4eb28129f6ce0dfdfa8bba9))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#69](https://www.github.com/googleapis/java-video-intelligence/issues/69)) ([d86047f](https://www.github.com/googleapis/java-video-intelligence/commit/d86047ffddfda44eb048032036eb40e361737b22))
+* update dependency io.grpc:grpc-bom to v1.27.0 ([#63](https://www.github.com/googleapis/java-video-intelligence/issues/63)) ([7d9c2b1](https://www.github.com/googleapis/java-video-intelligence/commit/7d9c2b1e3c498ed9f835e3f140713966362b6bf3))
+
+
+### Documentation
+
+* **regen:** regenerate updated proto documentation ([#65](https://www.github.com/googleapis/java-video-intelligence/issues/65)) ([244b90e](https://www.github.com/googleapis/java-video-intelligence/commit/244b90e76d7964c5885dccf982ef3d6426e02cb3))
+
 ## [1.0.0](https://www.github.com/googleapis/java-video-intelligence/compare/v0.116.2...v1.0.0) (2020-01-23)
 
 
