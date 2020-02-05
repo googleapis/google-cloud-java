@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -198,7 +198,6 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    */
   public final ReadSession createReadSession(
       TableReference tableReference, String parent, int requestedStreams) {
-
     CreateReadSessionRequest request =
         CreateReadSessionRequest.newBuilder()
             .setTableReference(tableReference)
@@ -329,7 +328,6 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    */
   public final BatchCreateReadSessionStreamsResponse batchCreateReadSessionStreams(
       ReadSession session, int requestedStreams) {
-
     BatchCreateReadSessionStreamsRequest request =
         BatchCreateReadSessionStreamsRequest.newBuilder()
             .setSession(session)
@@ -419,7 +417,6 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void finalizeStream(Stream stream) {
-
     FinalizeStreamRequest request = FinalizeStreamRequest.newBuilder().setStream(stream).build();
     finalizeStream(request);
   }
@@ -516,7 +513,6 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SplitReadStreamResponse splitReadStream(Stream originalStream) {
-
     SplitReadStreamRequest request =
         SplitReadStreamRequest.newBuilder().setOriginalStream(originalStream).build();
     return splitReadStream(request);
