@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.119.0](https://www.github.com/googleapis/java-redis/compare/v0.118.1...v0.119.0) (2020-02-05)
+
+
+### Features
+
+* add ConnectMode to v1 and UpgradeInstance RPC to v1beta1 ([#53](https://www.github.com/googleapis/java-redis/issues/53)) ([d8f9c5b](https://www.github.com/googleapis/java-redis/commit/d8f9c5bd276f39c165a70b55181f990ec0b50a85))
+
 ### [0.118.1](https://www.github.com/googleapis/java-redis/compare/v0.118.0...v0.118.1) (2020-02-04)
 
 
