@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-texttospeech/compare/v1.0.0...v1.0.1) (2020-02-04)
+
+
+### Dependencies
+
+* update core dependencies ([#46](https://www.github.com/googleapis/java-texttospeech/issues/46)) ([90156aa](https://www.github.com/googleapis/java-texttospeech/commit/90156aaef541dd4d8214d919867fb40ba2f6f910))
+* update core dependencies to v1.53.1 ([#58](https://www.github.com/googleapis/java-texttospeech/issues/58)) ([0af8035](https://www.github.com/googleapis/java-texttospeech/commit/0af8035e1f9d312cf8dbd48f4e78694c92c74612))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#34](https://www.github.com/googleapis/java-texttospeech/issues/34)) ([1cce588](https://www.github.com/googleapis/java-texttospeech/commit/1cce5888ec00c083161ef58cc9f46db0ae7944f0))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#60](https://www.github.com/googleapis/java-texttospeech/issues/60)) ([aad1784](https://www.github.com/googleapis/java-texttospeech/commit/aad178411f041db51d811cc3b0733803f28b2ca1))
+
 ## [1.0.0](https://www.github.com/googleapis/java-texttospeech/compare/v0.117.2...v1.0.0) (2020-01-24)
 
 
