@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-02-03T22:56:02.804400Z",
+  "updateTime": "2020-02-06T22:53:12.164018Z",
   "sources": [
     {
       "generator": {
@@ -12,15 +12,16 @@
       "git": {
         "name": "googleapis-private",
         "remote": "https://github.com/googleapis/googleapis-private.git",
-        "sha": "7a4d8813b6b6c78b8d6dbcda6cd5a8abbc43604e",
-        "internalRef": "292467007"
+        "sha": "a1f5059959398f6278a600b81bbf2828141e1a69",
+        "internalRef": "293086097",
+        "log": "a1f5059959398f6278a600b81bbf2828141e1a69\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 293086097\n\n"
       }
     },
     {
       "template": {
         "name": "java_library",
         "origin": "synthtool.gcp",
-        "version": "2019.10.17"
+        "version": "2020.2.4"
       }
     }
   ],
