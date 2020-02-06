@@ -37,7 +37,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core</artifactId>
-        <version>1.90.0</version>
+        <version>1.92.3</version>
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -61,7 +61,7 @@
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>4.12</version>
+        <version>4.13</version>
       </dependency>
       <dependency>
         <groupId>org.objenesis</groupId>
@@ -71,7 +71,7 @@
       <dependency>
         <groupId>com.google.truth</groupId>
         <artifactId>truth</artifactId>
-        <version>1.0</version>
+        <version>1.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.easymock</groupId>
@@ -90,7 +90,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.7.0</version>
+        <version>3.8.1</version>
         <configuration>
           <source>1.7</source>
           <target>1.7</target>

@@ -17,24 +17,4 @@
   <properties>
     <site.installationModule>google-cloud-contrib</site.installationModule>
   </properties>
-  <modules>
-    <module>google-cloud-nio</module>
-    <module>google-cloud-nio-examples</module>
-    <module>google-cloud-logging-logback</module>
-    <module>google-cloud-notification</module>
-    <module>google-cloud-spanner-jdbc</module>
-  </modules>
-  <dependencies>
-  </dependencies>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <configuration>
-          <skip>false</skip>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>
