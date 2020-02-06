@@ -1,0 +1,31 @@
+{
+  "updateTime": "2020-02-05T21:34:49.133430Z",
+  "sources": [
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "e2faab04f4cb7f9755072330866689b1943a16e9",
+        "internalRef": "293424055"
+      }
+    },
+    {
+      "template": {
+        "name": "java_library",
+        "origin": "synthtool.gcp",
+        "version": "2019.10.17"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "accessapproval",
+        "apiVersion": "v1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    }
+  ]
+}
