@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.120.2](https://www.github.com/googleapis/java-dialogflow/compare/v0.120.1...v0.120.2) (2020-02-06)
+
+
+### Documentation
+
+* **regen:** updated documentation for AudioOutputConfig ([#77](https://www.github.com/googleapis/java-dialogflow/issues/77)) ([db15f23](https://www.github.com/googleapis/java-dialogflow/commit/db15f234c07b4640f3866a5d2be591855d5317ec))
+
 ### [0.120.1](https://www.github.com/googleapis/java-dialogflow/compare/v0.120.0...v0.120.1) (2020-02-04)
 
 
