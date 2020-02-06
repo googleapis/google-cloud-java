@@ -1,5 +1,16 @@
 # Changelog
 
+### [1.22.2](https://www.github.com/googleapis/java-scheduler/compare/v1.22.1...v1.22.2) (2020-02-05)
+
+
+### Dependencies
+
+* update core dependencies ([#32](https://www.github.com/googleapis/java-scheduler/issues/32)) ([857d125](https://www.github.com/googleapis/java-scheduler/commit/857d125260ccfa2a921bdc1d142d842988603a96))
+* update core dependencies ([#50](https://www.github.com/googleapis/java-scheduler/issues/50)) ([b682566](https://www.github.com/googleapis/java-scheduler/commit/b682566a9bed718329f507278320e885638966c8))
+* update dependency com.google.guava:guava-bom to v28.2-android ([#30](https://www.github.com/googleapis/java-scheduler/issues/30)) ([bbb9682](https://www.github.com/googleapis/java-scheduler/commit/bbb968246fbaceb30315a86ce8c009eea59ce296))
+* update dependency com.google.protobuf:protobuf-java to v3.11.3 ([#52](https://www.github.com/googleapis/java-scheduler/issues/52)) ([8e6157b](https://www.github.com/googleapis/java-scheduler/commit/8e6157bd2fb3e1744bff788b50c4af95a5c673fa))
+* update dependency org.threeten:threetenbp to v1.4.1 ([6a24417](https://www.github.com/googleapis/java-scheduler/commit/6a2441798a1267b083d7f267c1e1b0cb78075672))
+
 ### [1.22.1](https://www.github.com/googleapis/java-scheduler/compare/v1.22.0...v1.22.1) (2020-01-07)
 
 
