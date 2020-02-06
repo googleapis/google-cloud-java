@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-02-03T23:41:08.410840Z",
+  "updateTime": "2020-02-06T23:12:50.861241Z",
   "sources": [
     {
       "generator": {
@@ -12,16 +12,16 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "29d40b78e3dc1579b0b209463fbcb76e5767f72a",
-        "internalRef": "292979741",
-        "log": "29d40b78e3dc1579b0b209463fbcb76e5767f72a\nExpose managedidentities/v1beta1/ API for client library usage.\n\nPiperOrigin-RevId: 292979741\n\na22129a1fb6e18056d576dfb7717aef74b63734a\nExpose managedidentities/v1/ API for client library usage.\n\nPiperOrigin-RevId: 292968186\n\n"
+        "sha": "2e23b8fbc45f5d9e200572ca662fe1271bcd6760",
+        "internalRef": "293666452",
+        "log": "2e23b8fbc45f5d9e200572ca662fe1271bcd6760\nAdd ListEntryGroups method, add http bindings to support entry group tagging, and update some comments.\n\nPiperOrigin-RevId: 293666452\n\n0275e38a4ca03a13d3f47a9613aac8c8b0d3f1f2\nAdd proto_package field to managedidentities API. It is needed for APIs that still depend on artman generation.\n\nPiperOrigin-RevId: 293643323\n\n4cdfe8278cb6f308106580d70648001c9146e759\nRegenerating public protos for Data Catalog to add new Custom Type Entry feature.\n\nPiperOrigin-RevId: 293614782\n\n45d2a569ab526a1fad3720f95eefb1c7330eaada\nEnable client generation for v1 ManagedIdentities API.\n\nPiperOrigin-RevId: 293515675\n\n2c17086b77e6f3bcf04a1f65758dfb0c3da1568f\nAdd the Actions on Google common types (//google/actions/type/*).\n\nPiperOrigin-RevId: 293478245\n\n781aadb932e64a12fb6ead7cd842698d99588433\nDialogflow weekly v2/v2beta1 library update:\n- Documentation updates\nImportant updates are also posted at\nhttps://cloud.google.com/dialogflow/docs/release-notes\n\nPiperOrigin-RevId: 293443396\n\ne2602608c9138c2fca24162720e67f9307c30b95\nDialogflow weekly v2/v2beta1 library update:\n- Documentation updates\nImportant updates are also posted at\nhttps://cloud.google.com/dialogflow/docs/release-notes\n\nPiperOrigin-RevId: 293442964\n\nc8aef82028d06b7992278fa9294c18570dc86c3d\nAdd cc_proto_library and cc_grpc_library targets for Bigtable protos.\n\nAlso fix indentation of cc_grpc_library targets in Spanner and IAM protos.\n\nPiperOrigin-RevId: 293440538\n\ne2faab04f4cb7f9755072330866689b1943a16e9\ncloudtasks: v2 replace non-standard retry params in gapic config v2\n\nPiperOrigin-RevId: 293424055\n\ndfb4097ea628a8470292c6590a4313aee0c675bd\nerrorreporting: v1beta1 add legacy artman config for php\n\nPiperOrigin-RevId: 293423790\n\nb18aed55b45bfe5b62476292c72759e6c3e573c6\nasset: v1p1beta1 updated comment for `page_size` limit.\n\nPiperOrigin-RevId: 293421386\n\nc9ef36b7956d9859a2fc86ad35fcaa16958ab44f\nbazel: Refactor CI build scripts\n\nPiperOrigin-RevId: 293387911\n\na8ed9d921fdddc61d8467bfd7c1668f0ad90435c\nfix: set Ruby module name for OrgPolicy\n\nPiperOrigin-RevId: 293257997\n\n6c7d28509bd8315de8af0889688ee20099594269\nredis: v1beta1 add UpgradeInstance and connect_mode field to Instance\n\nPiperOrigin-RevId: 293242878\n\nae0abed4fcb4c21f5cb67a82349a049524c4ef68\nredis: v1 add connect_mode field to Instance\n\nPiperOrigin-RevId: 293241914\n\n3f7a0d29b28ee9365771da2b66edf7fa2b4e9c56\nAdds service config definition for bigqueryreservation v1beta1\n\nPiperOrigin-RevId: 293234418\n\n0c88168d5ed6fe353a8cf8cbdc6bf084f6bb66a5\naddition of BUILD & configuration for accessapproval v1\n\nPiperOrigin-RevId: 293219198\n\n39bedc2e30f4778ce81193f6ba1fec56107bcfc4\naccessapproval: v1 publish protos\n\nPiperOrigin-RevId: 293167048\n\n69d9945330a5721cd679f17331a78850e2618226\nAdd file-level `Session` resource definition\n\nPiperOrigin-RevId: 293080182\n\nf6a1a6b417f39694275ca286110bc3c1ca4db0dc\nAdd file-level `Session` resource definition\n\nPiperOrigin-RevId: 293080178\n\n"
       }
     },
     {
       "template": {
         "name": "java_library",
         "origin": "synthtool.gcp",
-        "version": "2019.10.17"
+        "version": "2020.2.4"
       }
     }
   ],
