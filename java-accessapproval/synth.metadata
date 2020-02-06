@@ -1,19 +1,20 @@
 {
-  "updateTime": "2020-02-05T21:34:49.133430Z",
+  "updateTime": "2020-02-06T22:37:13.453793Z",
   "sources": [
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e2faab04f4cb7f9755072330866689b1943a16e9",
-        "internalRef": "293424055"
+        "sha": "2e23b8fbc45f5d9e200572ca662fe1271bcd6760",
+        "internalRef": "293666452",
+        "log": "2e23b8fbc45f5d9e200572ca662fe1271bcd6760\nAdd ListEntryGroups method, add http bindings to support entry group tagging, and update some comments.\n\nPiperOrigin-RevId: 293666452\n\n0275e38a4ca03a13d3f47a9613aac8c8b0d3f1f2\nAdd proto_package field to managedidentities API. It is needed for APIs that still depend on artman generation.\n\nPiperOrigin-RevId: 293643323\n\n4cdfe8278cb6f308106580d70648001c9146e759\nRegenerating public protos for Data Catalog to add new Custom Type Entry feature.\n\nPiperOrigin-RevId: 293614782\n\n45d2a569ab526a1fad3720f95eefb1c7330eaada\nEnable client generation for v1 ManagedIdentities API.\n\nPiperOrigin-RevId: 293515675\n\n2c17086b77e6f3bcf04a1f65758dfb0c3da1568f\nAdd the Actions on Google common types (//google/actions/type/*).\n\nPiperOrigin-RevId: 293478245\n\n781aadb932e64a12fb6ead7cd842698d99588433\nDialogflow weekly v2/v2beta1 library update:\n- Documentation updates\nImportant updates are also posted at\nhttps://cloud.google.com/dialogflow/docs/release-notes\n\nPiperOrigin-RevId: 293443396\n\ne2602608c9138c2fca24162720e67f9307c30b95\nDialogflow weekly v2/v2beta1 library update:\n- Documentation updates\nImportant updates are also posted at\nhttps://cloud.google.com/dialogflow/docs/release-notes\n\nPiperOrigin-RevId: 293442964\n\nc8aef82028d06b7992278fa9294c18570dc86c3d\nAdd cc_proto_library and cc_grpc_library targets for Bigtable protos.\n\nAlso fix indentation of cc_grpc_library targets in Spanner and IAM protos.\n\nPiperOrigin-RevId: 293440538\n\n"
       }
     },
     {
       "template": {
         "name": "java_library",
         "origin": "synthtool.gcp",
-        "version": "2019.10.17"
+        "version": "2020.2.4"
       }
     }
   ],
