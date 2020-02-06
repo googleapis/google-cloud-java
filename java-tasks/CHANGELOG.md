@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.28.2](https://www.github.com/googleapis/java-tasks/compare/v1.28.1...v1.28.2) (2020-02-06)
+
+
+### Bug Fixes
+
+* getIamSettings, testIamSettings, deleteTaskSettings marked as idempotent for retries ([#66](https://www.github.com/googleapis/java-tasks/issues/66)) ([8029bdd](https://www.github.com/googleapis/java-tasks/commit/8029bdd723483c79ff72c7786ba4a7b319e9b447))
+
 ### [1.28.1](https://www.github.com/googleapis/java-tasks/compare/v1.28.0...v1.28.1) (2020-02-04)
 
 
