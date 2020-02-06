@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.123.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.122.0...v0.123.0) (2020-02-06)
+
+
+### Features
+
+* v1 client generation ([#64](https://www.github.com/googleapis/java-bigquerystorage/issues/64)) ([902156d](https://www.github.com/googleapis/java-bigquerystorage/commit/902156d576845499e3eeedeff44c47d67e228098))
+
 ## [0.122.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.121.0...v0.122.0) (2020-02-05)
 
 
