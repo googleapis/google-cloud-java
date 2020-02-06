@@ -4,7 +4,9 @@
 proto-google-cloud-bigquerystorage-v1alpha2:0.87.0:0.87.1-SNAPSHOT
 proto-google-cloud-bigquerystorage-v1beta1:0.87.0:0.87.1-SNAPSHOT
 proto-google-cloud-bigquerystorage-v1beta2:0.87.0:0.87.1-SNAPSHOT
+proto-google-cloud-bigquerystorage-v1:0.87.0:0.87.1-SNAPSHOT
 grpc-google-cloud-bigquerystorage-v1alpha2:0.87.0:0.87.1-SNAPSHOT
 grpc-google-cloud-bigquerystorage-v1beta1:0.87.0:0.87.1-SNAPSHOT
 grpc-google-cloud-bigquerystorage-v1beta2:0.87.0:0.87.1-SNAPSHOT
+grpc-google-cloud-bigquerystorage-v1:0.87.0:0.87.1-SNAPSHOT
 google-cloud-bigquerystorage:0.122.0-beta:0.122.1-beta-SNAPSHOT

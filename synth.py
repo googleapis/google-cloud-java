@@ -20,7 +20,7 @@ import synthtool.languages.java as java
 
 gapic = gcp.GAPICGenerator()
 service = 'bigquerystorage'
-versions = ['v1beta1', 'v1beta2', 'v1alpha2']
+versions = ['v1beta1', 'v1beta2', 'v1alpha2', 'v1']
 
 for version in versions:
   java.bazel_library(
