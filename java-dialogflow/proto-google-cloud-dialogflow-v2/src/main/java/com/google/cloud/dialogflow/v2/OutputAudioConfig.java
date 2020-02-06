@@ -23,6 +23,8 @@ package com.google.cloud.dialogflow.v2;
  *
  * <pre>
  * Instructs the speech synthesizer on how to generate the output audio content.
+ * If this audio config is supplied in a request, it overrides all existing
+ * text-to-speech settings applied to the agent.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.OutputAudioConfig}
@@ -428,6 +430,8 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Instructs the speech synthesizer on how to generate the output audio content.
+   * If this audio config is supplied in a request, it overrides all existing
+   * text-to-speech settings applied to the agent.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.OutputAudioConfig}
