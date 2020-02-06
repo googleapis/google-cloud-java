@@ -55,6 +55,10 @@ import com.google.cloud.datacatalog.v1beta1.EntryGroup;
 import com.google.cloud.datacatalog.v1beta1.GetEntryGroupRequest;
 import com.google.cloud.datacatalog.v1beta1.GetEntryRequest;
 import com.google.cloud.datacatalog.v1beta1.GetTagTemplateRequest;
+import com.google.cloud.datacatalog.v1beta1.ListEntriesRequest;
+import com.google.cloud.datacatalog.v1beta1.ListEntriesResponse;
+import com.google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest;
+import com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse;
 import com.google.cloud.datacatalog.v1beta1.ListTagsRequest;
 import com.google.cloud.datacatalog.v1beta1.ListTagsResponse;
 import com.google.cloud.datacatalog.v1beta1.LookupEntryRequest;
@@ -65,6 +69,7 @@ import com.google.cloud.datacatalog.v1beta1.SearchCatalogResult;
 import com.google.cloud.datacatalog.v1beta1.Tag;
 import com.google.cloud.datacatalog.v1beta1.TagTemplate;
 import com.google.cloud.datacatalog.v1beta1.TagTemplateField;
+import com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest;
 import com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest;
 import com.google.cloud.datacatalog.v1beta1.UpdateTagRequest;
 import com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateFieldRequest;
@@ -150,6 +155,10 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupSettings;
+  private final UnaryCallSettings<ListEntryGroupsRequest, ListEntryGroupsResponse>
+      listEntryGroupsSettings;
+  private final UnaryCallSettings<ListEntriesRequest, ListEntriesResponse> listEntriesSettings;
 
   /** Returns the object with the settings used for calls to searchCatalog. */
   public PagedCallSettings<SearchCatalogRequest, SearchCatalogResponse, SearchCatalogPagedResponse>
@@ -277,6 +286,22 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     return testIamPermissionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateEntryGroup. */
+  public UnaryCallSettings<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupSettings() {
+    return updateEntryGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listEntryGroups. */
+  public UnaryCallSettings<ListEntryGroupsRequest, ListEntryGroupsResponse>
+      listEntryGroupsSettings() {
+    return listEntryGroupsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listEntries. */
+  public UnaryCallSettings<ListEntriesRequest, ListEntriesResponse> listEntriesSettings() {
+    return listEntriesSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DataCatalogStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -370,6 +395,9 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    updateEntryGroupSettings = settingsBuilder.updateEntryGroupSettings().build();
+    listEntryGroupsSettings = settingsBuilder.listEntryGroupsSettings().build();
+    listEntriesSettings = settingsBuilder.listEntriesSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -523,6 +551,12 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<UpdateEntryGroupRequest, EntryGroup>
+        updateEntryGroupSettings;
+    private final UnaryCallSettings.Builder<ListEntryGroupsRequest, ListEntryGroupsResponse>
+        listEntryGroupsSettings;
+    private final UnaryCallSettings.Builder<ListEntriesRequest, ListEntriesResponse>
+        listEntriesSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -613,6 +647,12 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
 
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      updateEntryGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listEntryGroupsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listEntriesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               searchCatalogSettings,
@@ -638,7 +678,10 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
               listTagsSettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              updateEntryGroupSettings,
+              listEntryGroupsSettings,
+              listEntriesSettings);
 
       initDefaults(this);
     }
@@ -774,6 +817,21 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .updateEntryGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listEntryGroupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listEntriesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -804,6 +862,9 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      updateEntryGroupSettings = settings.updateEntryGroupSettings.toBuilder();
+      listEntryGroupsSettings = settings.listEntryGroupsSettings.toBuilder();
+      listEntriesSettings = settings.listEntriesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -830,7 +891,10 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
               listTagsSettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              updateEntryGroupSettings,
+              listEntryGroupsSettings,
+              listEntriesSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -978,6 +1042,24 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateEntryGroup. */
+    public UnaryCallSettings.Builder<UpdateEntryGroupRequest, EntryGroup>
+        updateEntryGroupSettings() {
+      return updateEntryGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listEntryGroups. */
+    public UnaryCallSettings.Builder<ListEntryGroupsRequest, ListEntryGroupsResponse>
+        listEntryGroupsSettings() {
+      return listEntryGroupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listEntries. */
+    public UnaryCallSettings.Builder<ListEntriesRequest, ListEntriesResponse>
+        listEntriesSettings() {
+      return listEntriesSettings;
     }
 
     @Override

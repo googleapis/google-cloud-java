@@ -18,21 +18,18 @@
 
 package com.google.cloud.datacatalog.v1beta1;
 
-public interface ListTagsRequestOrBuilder
+public interface ListEntryGroupsRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.datacatalog.v1beta1.ListTagsRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The name of the Data Catalog resource to list the tags of. The
-   * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
-   * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
-   * Examples:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   * Required. The name of the location that contains the entry groups, which
+   * can be provided in URL format. Example:
+   * * projects/{project_id}/locations/{location}
    * </pre>
    *
    * <code>
@@ -46,12 +43,9 @@ public interface ListTagsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Data Catalog resource to list the tags of. The
-   * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
-   * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
-   * Examples:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   * Required. The name of the location that contains the entry groups, which
+   * can be provided in URL format. Example:
+   * * projects/{project_id}/locations/{location}
    * </pre>
    *
    * <code>
@@ -66,10 +60,11 @@ public interface ListTagsRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of tags to return. Default is 10. Max limit is 1000.
+   * Optional. The maximum number of items to return. Default is 10. Max limit
+   * is 1000. Throws an invalid argument for `page_size &gt; 1000`.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -79,11 +74,11 @@ public interface ListTagsRequestOrBuilder
    *
    *
    * <pre>
-   * Token that specifies which page is requested. If empty, the first page is
-   * returned.
+   * Optional. Token that specifies which page is requested. If empty, the first
+   * page is returned.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -92,11 +87,11 @@ public interface ListTagsRequestOrBuilder
    *
    *
    * <pre>
-   * Token that specifies which page is requested. If empty, the first page is
-   * returned.
+   * Optional. Token that specifies which page is requested. If empty, the first
+   * page is returned.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */

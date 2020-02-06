@@ -27,11 +27,11 @@ public interface CreateTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the project and the location this template is in.
+   * Required. The name of the project and the template location
+   * [region](/compute/docs/regions-zones/#available).
+   * NOTE: Currently, only the `us-central1 region` is supported.
    * Example:
-   * * projects/{project_id}/locations/{location}
-   * TagTemplate and its child resources may not actually be stored in the
-   * location in this name.
+   * * projects/{project_id}/locations/us-central1
    * </pre>
    *
    * <code>
@@ -45,11 +45,11 @@ public interface CreateTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the project and the location this template is in.
+   * Required. The name of the project and the template location
+   * [region](/compute/docs/regions-zones/#available).
+   * NOTE: Currently, only the `us-central1 region` is supported.
    * Example:
-   * * projects/{project_id}/locations/{location}
-   * TagTemplate and its child resources may not actually be stored in the
-   * location in this name.
+   * * projects/{project_id}/locations/us-central1
    * </pre>
    *
    * <code>

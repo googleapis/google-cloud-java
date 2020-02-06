@@ -23,22 +23,22 @@ package com.google.cloud.datacatalog.v1beta1;
  *
  * <pre>
  * Request message for
- * [ListTags][google.cloud.datacatalog.v1beta1.DataCatalog.ListTags].
+ * [ListEntries][google.cloud.datacatalog.v1beta1.DataCatalog.ListEntries].
  * </pre>
  *
- * Protobuf type {@code google.cloud.datacatalog.v1beta1.ListTagsRequest}
+ * Protobuf type {@code google.cloud.datacatalog.v1beta1.ListEntriesRequest}
  */
-public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV3
+public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.ListTagsRequest)
-    ListTagsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.ListEntriesRequest)
+    ListEntriesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use ListTagsRequest.newBuilder() to construct.
-  private ListTagsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ListEntriesRequest.newBuilder() to construct.
+  private ListEntriesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private ListTagsRequest() {
+  private ListEntriesRequest() {
     parent_ = "";
     pageToken_ = "";
   }
@@ -46,7 +46,7 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ListTagsRequest();
+    return new ListEntriesRequest();
   }
 
   @java.lang.Override
@@ -54,7 +54,7 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private ListTagsRequest(
+  private ListEntriesRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -91,6 +91,21 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
               pageToken_ = s;
               break;
             }
+          case 34:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (readMask_ != null) {
+                subBuilder = readMask_.toBuilder();
+              }
+              readMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(readMask_);
+                readMask_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -112,17 +127,17 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Datacatalog
-        .internal_static_google_cloud_datacatalog_v1beta1_ListTagsRequest_descriptor;
+        .internal_static_google_cloud_datacatalog_v1beta1_ListEntriesRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.datacatalog.v1beta1.Datacatalog
-        .internal_static_google_cloud_datacatalog_v1beta1_ListTagsRequest_fieldAccessorTable
+        .internal_static_google_cloud_datacatalog_v1beta1_ListEntriesRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.datacatalog.v1beta1.ListTagsRequest.class,
-            com.google.cloud.datacatalog.v1beta1.ListTagsRequest.Builder.class);
+            com.google.cloud.datacatalog.v1beta1.ListEntriesRequest.class,
+            com.google.cloud.datacatalog.v1beta1.ListEntriesRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
@@ -131,12 +146,9 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The name of the Data Catalog resource to list the tags of. The
-   * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
-   * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
-   * Examples:
+   * Required. The name of the entry group that contains the entries, which can
+   * be provided in URL format. Example:
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * </pre>
    *
    * <code>
@@ -160,12 +172,9 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The name of the Data Catalog resource to list the tags of. The
-   * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
-   * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
-   * Examples:
+   * Required. The name of the entry group that contains the entries, which can
+   * be provided in URL format. Example:
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * </pre>
    *
    * <code>
@@ -192,7 +201,8 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The maximum number of tags to return. Default is 10. Max limit is 1000.
+   * The maximum number of items to return. Default is 10. Max limit is 1000.
+   * Throws an invalid argument for `page_size &gt; 1000`.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -252,6 +262,58 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int READ_MASK_FIELD_NUMBER = 4;
+  private com.google.protobuf.FieldMask readMask_;
+  /**
+   *
+   *
+   * <pre>
+   * The fields to return for each Entry. If not set or empty, all
+   * fields are returned.
+   * For example, setting read_mask to contain only one path "name" will cause
+   * ListEntries to return a list of Entries with only "name" field.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 4;</code>
+   *
+   * @return Whether the readMask field is set.
+   */
+  public boolean hasReadMask() {
+    return readMask_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The fields to return for each Entry. If not set or empty, all
+   * fields are returned.
+   * For example, setting read_mask to contain only one path "name" will cause
+   * ListEntries to return a list of Entries with only "name" field.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 4;</code>
+   *
+   * @return The readMask.
+   */
+  public com.google.protobuf.FieldMask getReadMask() {
+    return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The fields to return for each Entry. If not set or empty, all
+   * fields are returned.
+   * For example, setting read_mask to contain only one path "name" will cause
+   * ListEntries to return a list of Entries with only "name" field.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 4;</code>
+   */
+  public com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder() {
+    return getReadMask();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -275,6 +337,9 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
     if (!getPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
+    if (readMask_ != null) {
+      output.writeMessage(4, getReadMask());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -293,6 +358,9 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
     if (!getPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
     }
+    if (readMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getReadMask());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -303,15 +371,19 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.datacatalog.v1beta1.ListTagsRequest)) {
+    if (!(obj instanceof com.google.cloud.datacatalog.v1beta1.ListEntriesRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.datacatalog.v1beta1.ListTagsRequest other =
-        (com.google.cloud.datacatalog.v1beta1.ListTagsRequest) obj;
+    com.google.cloud.datacatalog.v1beta1.ListEntriesRequest other =
+        (com.google.cloud.datacatalog.v1beta1.ListEntriesRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (hasReadMask() != other.hasReadMask()) return false;
+    if (hasReadMask()) {
+      if (!getReadMask().equals(other.getReadMask())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -329,76 +401,80 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    if (hasReadMask()) {
+      hash = (37 * hash) + READ_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getReadMask().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.ListTagsRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.ListEntriesRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.ListTagsRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.ListEntriesRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.ListTagsRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.ListEntriesRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.ListTagsRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.ListEntriesRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.ListTagsRequest parseFrom(byte[] data)
+  public static com.google.cloud.datacatalog.v1beta1.ListEntriesRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.ListTagsRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.ListEntriesRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.ListTagsRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.ListEntriesRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.ListTagsRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.ListEntriesRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.ListTagsRequest parseDelimitedFrom(
+  public static com.google.cloud.datacatalog.v1beta1.ListEntriesRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.ListTagsRequest parseDelimitedFrom(
+  public static com.google.cloud.datacatalog.v1beta1.ListEntriesRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.ListTagsRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.ListEntriesRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.ListTagsRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.ListEntriesRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -415,7 +491,8 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.datacatalog.v1beta1.ListTagsRequest prototype) {
+  public static Builder newBuilder(
+      com.google.cloud.datacatalog.v1beta1.ListEntriesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -434,31 +511,31 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Request message for
-   * [ListTags][google.cloud.datacatalog.v1beta1.DataCatalog.ListTags].
+   * [ListEntries][google.cloud.datacatalog.v1beta1.DataCatalog.ListEntries].
    * </pre>
    *
-   * Protobuf type {@code google.cloud.datacatalog.v1beta1.ListTagsRequest}
+   * Protobuf type {@code google.cloud.datacatalog.v1beta1.ListEntriesRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.datacatalog.v1beta1.ListTagsRequest)
-      com.google.cloud.datacatalog.v1beta1.ListTagsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.datacatalog.v1beta1.ListEntriesRequest)
+      com.google.cloud.datacatalog.v1beta1.ListEntriesRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datacatalog.v1beta1.Datacatalog
-          .internal_static_google_cloud_datacatalog_v1beta1_ListTagsRequest_descriptor;
+          .internal_static_google_cloud_datacatalog_v1beta1_ListEntriesRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.datacatalog.v1beta1.Datacatalog
-          .internal_static_google_cloud_datacatalog_v1beta1_ListTagsRequest_fieldAccessorTable
+          .internal_static_google_cloud_datacatalog_v1beta1_ListEntriesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.datacatalog.v1beta1.ListTagsRequest.class,
-              com.google.cloud.datacatalog.v1beta1.ListTagsRequest.Builder.class);
+              com.google.cloud.datacatalog.v1beta1.ListEntriesRequest.class,
+              com.google.cloud.datacatalog.v1beta1.ListEntriesRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.datacatalog.v1beta1.ListTagsRequest.newBuilder()
+    // Construct using com.google.cloud.datacatalog.v1beta1.ListEntriesRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -481,23 +558,29 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
 
       pageToken_ = "";
 
+      if (readMaskBuilder_ == null) {
+        readMask_ = null;
+      } else {
+        readMask_ = null;
+        readMaskBuilder_ = null;
+      }
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.datacatalog.v1beta1.Datacatalog
-          .internal_static_google_cloud_datacatalog_v1beta1_ListTagsRequest_descriptor;
+          .internal_static_google_cloud_datacatalog_v1beta1_ListEntriesRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.datacatalog.v1beta1.ListTagsRequest getDefaultInstanceForType() {
-      return com.google.cloud.datacatalog.v1beta1.ListTagsRequest.getDefaultInstance();
+    public com.google.cloud.datacatalog.v1beta1.ListEntriesRequest getDefaultInstanceForType() {
+      return com.google.cloud.datacatalog.v1beta1.ListEntriesRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.datacatalog.v1beta1.ListTagsRequest build() {
-      com.google.cloud.datacatalog.v1beta1.ListTagsRequest result = buildPartial();
+    public com.google.cloud.datacatalog.v1beta1.ListEntriesRequest build() {
+      com.google.cloud.datacatalog.v1beta1.ListEntriesRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -505,12 +588,17 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     @java.lang.Override
-    public com.google.cloud.datacatalog.v1beta1.ListTagsRequest buildPartial() {
-      com.google.cloud.datacatalog.v1beta1.ListTagsRequest result =
-          new com.google.cloud.datacatalog.v1beta1.ListTagsRequest(this);
+    public com.google.cloud.datacatalog.v1beta1.ListEntriesRequest buildPartial() {
+      com.google.cloud.datacatalog.v1beta1.ListEntriesRequest result =
+          new com.google.cloud.datacatalog.v1beta1.ListEntriesRequest(this);
       result.parent_ = parent_;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
+      if (readMaskBuilder_ == null) {
+        result.readMask_ = readMask_;
+      } else {
+        result.readMask_ = readMaskBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -550,16 +638,16 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.datacatalog.v1beta1.ListTagsRequest) {
-        return mergeFrom((com.google.cloud.datacatalog.v1beta1.ListTagsRequest) other);
+      if (other instanceof com.google.cloud.datacatalog.v1beta1.ListEntriesRequest) {
+        return mergeFrom((com.google.cloud.datacatalog.v1beta1.ListEntriesRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.datacatalog.v1beta1.ListTagsRequest other) {
-      if (other == com.google.cloud.datacatalog.v1beta1.ListTagsRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.cloud.datacatalog.v1beta1.ListEntriesRequest other) {
+      if (other == com.google.cloud.datacatalog.v1beta1.ListEntriesRequest.getDefaultInstance())
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
@@ -571,6 +659,9 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
         onChanged();
+      }
+      if (other.hasReadMask()) {
+        mergeReadMask(other.getReadMask());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -587,12 +678,12 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.datacatalog.v1beta1.ListTagsRequest parsedMessage = null;
+      com.google.cloud.datacatalog.v1beta1.ListEntriesRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.datacatalog.v1beta1.ListTagsRequest) e.getUnfinishedMessage();
+            (com.google.cloud.datacatalog.v1beta1.ListEntriesRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -607,12 +698,9 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The
-     * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
-     * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
-     * Examples:
+     * Required. The name of the entry group that contains the entries, which can
+     * be provided in URL format. Example:
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * </pre>
      *
      * <code>
@@ -636,12 +724,9 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The
-     * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
-     * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
-     * Examples:
+     * Required. The name of the entry group that contains the entries, which can
+     * be provided in URL format. Example:
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * </pre>
      *
      * <code>
@@ -665,12 +750,9 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The
-     * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
-     * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
-     * Examples:
+     * Required. The name of the entry group that contains the entries, which can
+     * be provided in URL format. Example:
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * </pre>
      *
      * <code>
@@ -693,12 +775,9 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The
-     * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
-     * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
-     * Examples:
+     * Required. The name of the entry group that contains the entries, which can
+     * be provided in URL format. Example:
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * </pre>
      *
      * <code>
@@ -717,12 +796,9 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The
-     * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
-     * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
-     * Examples:
+     * Required. The name of the entry group that contains the entries, which can
+     * be provided in URL format. Example:
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * </pre>
      *
      * <code>
@@ -748,7 +824,8 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum number of tags to return. Default is 10. Max limit is 1000.
+     * The maximum number of items to return. Default is 10. Max limit is 1000.
+     * Throws an invalid argument for `page_size &gt; 1000`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -762,7 +839,8 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum number of tags to return. Default is 10. Max limit is 1000.
+     * The maximum number of items to return. Default is 10. Max limit is 1000.
+     * Throws an invalid argument for `page_size &gt; 1000`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -780,7 +858,8 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum number of tags to return. Default is 10. Max limit is 1000.
+     * The maximum number of items to return. Default is 10. Max limit is 1000.
+     * Throws an invalid argument for `page_size &gt; 1000`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -905,6 +984,212 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private com.google.protobuf.FieldMask readMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        readMaskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The fields to return for each Entry. If not set or empty, all
+     * fields are returned.
+     * For example, setting read_mask to contain only one path "name" will cause
+     * ListEntries to return a list of Entries with only "name" field.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 4;</code>
+     *
+     * @return Whether the readMask field is set.
+     */
+    public boolean hasReadMask() {
+      return readMaskBuilder_ != null || readMask_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fields to return for each Entry. If not set or empty, all
+     * fields are returned.
+     * For example, setting read_mask to contain only one path "name" will cause
+     * ListEntries to return a list of Entries with only "name" field.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 4;</code>
+     *
+     * @return The readMask.
+     */
+    public com.google.protobuf.FieldMask getReadMask() {
+      if (readMaskBuilder_ == null) {
+        return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
+      } else {
+        return readMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fields to return for each Entry. If not set or empty, all
+     * fields are returned.
+     * For example, setting read_mask to contain only one path "name" will cause
+     * ListEntries to return a list of Entries with only "name" field.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 4;</code>
+     */
+    public Builder setReadMask(com.google.protobuf.FieldMask value) {
+      if (readMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        readMask_ = value;
+        onChanged();
+      } else {
+        readMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fields to return for each Entry. If not set or empty, all
+     * fields are returned.
+     * For example, setting read_mask to contain only one path "name" will cause
+     * ListEntries to return a list of Entries with only "name" field.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 4;</code>
+     */
+    public Builder setReadMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (readMaskBuilder_ == null) {
+        readMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        readMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fields to return for each Entry. If not set or empty, all
+     * fields are returned.
+     * For example, setting read_mask to contain only one path "name" will cause
+     * ListEntries to return a list of Entries with only "name" field.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 4;</code>
+     */
+    public Builder mergeReadMask(com.google.protobuf.FieldMask value) {
+      if (readMaskBuilder_ == null) {
+        if (readMask_ != null) {
+          readMask_ =
+              com.google.protobuf.FieldMask.newBuilder(readMask_).mergeFrom(value).buildPartial();
+        } else {
+          readMask_ = value;
+        }
+        onChanged();
+      } else {
+        readMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fields to return for each Entry. If not set or empty, all
+     * fields are returned.
+     * For example, setting read_mask to contain only one path "name" will cause
+     * ListEntries to return a list of Entries with only "name" field.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 4;</code>
+     */
+    public Builder clearReadMask() {
+      if (readMaskBuilder_ == null) {
+        readMask_ = null;
+        onChanged();
+      } else {
+        readMask_ = null;
+        readMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fields to return for each Entry. If not set or empty, all
+     * fields are returned.
+     * For example, setting read_mask to contain only one path "name" will cause
+     * ListEntries to return a list of Entries with only "name" field.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 4;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getReadMaskBuilder() {
+
+      onChanged();
+      return getReadMaskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fields to return for each Entry. If not set or empty, all
+     * fields are returned.
+     * For example, setting read_mask to contain only one path "name" will cause
+     * ListEntries to return a list of Entries with only "name" field.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 4;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder() {
+      if (readMaskBuilder_ != null) {
+        return readMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fields to return for each Entry. If not set or empty, all
+     * fields are returned.
+     * For example, setting read_mask to contain only one path "name" will cause
+     * ListEntries to return a list of Entries with only "name" field.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        getReadMaskFieldBuilder() {
+      if (readMaskBuilder_ == null) {
+        readMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getReadMask(), getParentForChildren(), isClean());
+        readMask_ = null;
+      }
+      return readMaskBuilder_;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -916,42 +1201,42 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.datacatalog.v1beta1.ListTagsRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.datacatalog.v1beta1.ListEntriesRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.datacatalog.v1beta1.ListTagsRequest)
-  private static final com.google.cloud.datacatalog.v1beta1.ListTagsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.datacatalog.v1beta1.ListEntriesRequest)
+  private static final com.google.cloud.datacatalog.v1beta1.ListEntriesRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.datacatalog.v1beta1.ListTagsRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.datacatalog.v1beta1.ListEntriesRequest();
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.ListTagsRequest getDefaultInstance() {
+  public static com.google.cloud.datacatalog.v1beta1.ListEntriesRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListTagsRequest> PARSER =
-      new com.google.protobuf.AbstractParser<ListTagsRequest>() {
+  private static final com.google.protobuf.Parser<ListEntriesRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ListEntriesRequest>() {
         @java.lang.Override
-        public ListTagsRequest parsePartialFrom(
+        public ListEntriesRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListTagsRequest(input, extensionRegistry);
+          return new ListEntriesRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<ListTagsRequest> parser() {
+  public static com.google.protobuf.Parser<ListEntriesRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListTagsRequest> getParserForType() {
+  public com.google.protobuf.Parser<ListEntriesRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.datacatalog.v1beta1.ListTagsRequest getDefaultInstanceForType() {
+  public com.google.cloud.datacatalog.v1beta1.ListEntriesRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

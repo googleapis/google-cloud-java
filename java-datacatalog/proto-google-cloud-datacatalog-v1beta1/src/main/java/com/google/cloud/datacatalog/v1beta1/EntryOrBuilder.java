@@ -58,15 +58,18 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource this metadata entry refers to.
+   * The resource this metadata entry refers to.
    * For Google Cloud Platform resources, `linked_resource` is the [full name of
    * the
    * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
    * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+   * Output only when Entry is of type in the EntryType enum. For entries with
+   * user_specified_type, this field is optional and defaults to an empty
+   * string.
    * </pre>
    *
-   * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string linked_resource = 9;</code>
    *
    * @return The linkedResource.
    */
@@ -75,15 +78,18 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource this metadata entry refers to.
+   * The resource this metadata entry refers to.
    * For Google Cloud Platform resources, `linked_resource` is the [full name of
    * the
    * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
    * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+   * Output only when Entry is of type in the EntryType enum. For entries with
+   * user_specified_type, this field is optional and defaults to an empty
+   * string.
    * </pre>
    *
-   * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string linked_resource = 9;</code>
    *
    * @return The bytes for linkedResource.
    */
@@ -94,6 +100,7 @@ public interface EntryOrBuilder
    *
    * <pre>
    * The type of the entry.
+   * Only used for Entries with types in the EntryType enum.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -106,6 +113,7 @@ public interface EntryOrBuilder
    *
    * <pre>
    * The type of the entry.
+   * Only used for Entries with types in the EntryType enum.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -113,6 +121,111 @@ public interface EntryOrBuilder
    * @return The type.
    */
   com.google.cloud.datacatalog.v1beta1.EntryType getType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Entry type if it does not fit any of the input-allowed values listed in
+   * `EntryType` enum above. When creating an entry, users should check the
+   * enum values first, if nothing matches the entry to be created, then
+   * provide a custom value, for example "my_special_type".
+   * `user_specified_type` strings must begin with a letter or underscore and
+   * can only contain letters, numbers, and underscores; are case insensitive;
+   * must be at least 1 character and at most 64 characters long.
+   * Currently, only FILESET enum value is allowed. All other entries created
+   * through Data Catalog must use `user_specified_type`.
+   * </pre>
+   *
+   * <code>string user_specified_type = 16;</code>
+   *
+   * @return The userSpecifiedType.
+   */
+  java.lang.String getUserSpecifiedType();
+  /**
+   *
+   *
+   * <pre>
+   * Entry type if it does not fit any of the input-allowed values listed in
+   * `EntryType` enum above. When creating an entry, users should check the
+   * enum values first, if nothing matches the entry to be created, then
+   * provide a custom value, for example "my_special_type".
+   * `user_specified_type` strings must begin with a letter or underscore and
+   * can only contain letters, numbers, and underscores; are case insensitive;
+   * must be at least 1 character and at most 64 characters long.
+   * Currently, only FILESET enum value is allowed. All other entries created
+   * through Data Catalog must use `user_specified_type`.
+   * </pre>
+   *
+   * <code>string user_specified_type = 16;</code>
+   *
+   * @return The bytes for userSpecifiedType.
+   */
+  com.google.protobuf.ByteString getUserSpecifiedTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field indicates the entry's source system that Data
+   * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for integratedSystem.
+   */
+  int getIntegratedSystemValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field indicates the entry's source system that Data
+   * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The integratedSystem.
+   */
+  com.google.cloud.datacatalog.v1beta1.IntegratedSystem getIntegratedSystem();
+
+  /**
+   *
+   *
+   * <pre>
+   * This field indicates the entry's source system that Data Catalog does not
+   * integrate with. `user_specified_system` strings must begin with a letter
+   * or underscore and can only contain letters, numbers, and underscores; are
+   * case insensitive; must be at least 1 character and at most 64 characters
+   * long.
+   * </pre>
+   *
+   * <code>string user_specified_system = 18;</code>
+   *
+   * @return The userSpecifiedSystem.
+   */
+  java.lang.String getUserSpecifiedSystem();
+  /**
+   *
+   *
+   * <pre>
+   * This field indicates the entry's source system that Data Catalog does not
+   * integrate with. `user_specified_system` strings must begin with a letter
+   * or underscore and can only contain letters, numbers, and underscores; are
+   * case insensitive; must be at least 1 character and at most 64 characters
+   * long.
+   * </pre>
+   *
+   * <code>string user_specified_system = 18;</code>
+   *
+   * @return The bytes for userSpecifiedSystem.
+   */
+  com.google.protobuf.ByteString getUserSpecifiedSystemBytes();
 
   /**
    *
@@ -333,8 +446,10 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying Google Cloud Platform
-   * resource, not about this Data Catalog Entry.
+   * Output only. Timestamps about the underlying resource, not about this Data
+   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+   * entries with user_specified_type, this field is optional and defaults to an
+   * empty timestamp.
    * </pre>
    *
    * <code>
@@ -348,8 +463,10 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying Google Cloud Platform
-   * resource, not about this Data Catalog Entry.
+   * Output only. Timestamps about the underlying resource, not about this Data
+   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+   * entries with user_specified_type, this field is optional and defaults to an
+   * empty timestamp.
    * </pre>
    *
    * <code>
@@ -363,8 +480,10 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying Google Cloud Platform
-   * resource, not about this Data Catalog Entry.
+   * Output only. Timestamps about the underlying resource, not about this Data
+   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+   * entries with user_specified_type, this field is optional and defaults to an
+   * empty timestamp.
    * </pre>
    *
    * <code>
@@ -375,6 +494,8 @@ public interface EntryOrBuilder
       getSourceSystemTimestampsOrBuilder();
 
   public com.google.cloud.datacatalog.v1beta1.Entry.EntryTypeCase getEntryTypeCase();
+
+  public com.google.cloud.datacatalog.v1beta1.Entry.SystemCase getSystemCase();
 
   public com.google.cloud.datacatalog.v1beta1.Entry.TypeSpecCase getTypeSpecCase();
 }

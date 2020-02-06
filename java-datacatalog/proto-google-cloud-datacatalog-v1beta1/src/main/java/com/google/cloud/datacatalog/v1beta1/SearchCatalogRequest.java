@@ -1578,7 +1578,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The query string in search query syntax. The query must be non-empty.
+   * Required. The query string in search query syntax. The query must be
+   * non-empty.
    * Query strings can be simple as "x" or more qualified as:
    * * name:x
    * * column:x
@@ -1607,7 +1608,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The query string in search query syntax. The query must be non-empty.
+   * Required. The query string in search query syntax. The query must be
+   * non-empty.
    * Query strings can be simple as "x" or more qualified as:
    * * name:x
    * * column:x
@@ -1658,8 +1660,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-   * indicates that this is a continuation of a prior
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+   * which indicates that this is a continuation of a prior
    * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
    * call, and that the system should return the next page of data. If empty,
    * the first page is returned.
@@ -1685,8 +1687,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-   * indicates that this is a continuation of a prior
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+   * which indicates that this is a continuation of a prior
    * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
    * call, and that the system should return the next page of data. If empty,
    * the first page is returned.
@@ -1716,9 +1718,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Specifies the ordering of results, currently supported case-sensitive
    * choices are:
-   *   * `relevance`, only supports desecending
-   *   * `last_access_timestamp [asc|desc]`, defaults to descending if not
-   *     specified
+   *   * `relevance`, only supports descending
    *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
    *     specified
    * If not specified, defaults to `relevance` descending.
@@ -1745,9 +1745,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Specifies the ordering of results, currently supported case-sensitive
    * choices are:
-   *   * `relevance`, only supports desecending
-   *   * `last_access_timestamp [asc|desc]`, defaults to descending if not
-   *     specified
+   *   * `relevance`, only supports descending
    *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
    *     specified
    * If not specified, defaults to `relevance` descending.
@@ -2376,7 +2374,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be non-empty.
+     * Required. The query string in search query syntax. The query must be
+     * non-empty.
      * Query strings can be simple as "x" or more qualified as:
      * * name:x
      * * column:x
@@ -2405,7 +2404,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be non-empty.
+     * Required. The query string in search query syntax. The query must be
+     * non-empty.
      * Query strings can be simple as "x" or more qualified as:
      * * name:x
      * * column:x
@@ -2434,7 +2434,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be non-empty.
+     * Required. The query string in search query syntax. The query must be
+     * non-empty.
      * Query strings can be simple as "x" or more qualified as:
      * * name:x
      * * column:x
@@ -2462,7 +2463,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be non-empty.
+     * Required. The query string in search query syntax. The query must be
+     * non-empty.
      * Query strings can be simple as "x" or more qualified as:
      * * name:x
      * * column:x
@@ -2486,7 +2488,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be non-empty.
+     * Required. The query string in search query syntax. The query must be
+     * non-empty.
      * Query strings can be simple as "x" or more qualified as:
      * * name:x
      * * column:x
@@ -2572,8 +2575,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+     * which indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -2599,8 +2602,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+     * which indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -2626,8 +2629,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+     * which indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -2652,8 +2655,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+     * which indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -2674,8 +2677,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+     * which indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -2704,9 +2707,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
-     *   * `relevance`, only supports desecending
-     *   * `last_access_timestamp [asc|desc]`, defaults to descending if not
-     *     specified
+     *   * `relevance`, only supports descending
      *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
      *     specified
      * If not specified, defaults to `relevance` descending.
@@ -2733,9 +2734,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
-     *   * `relevance`, only supports desecending
-     *   * `last_access_timestamp [asc|desc]`, defaults to descending if not
-     *     specified
+     *   * `relevance`, only supports descending
      *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
      *     specified
      * If not specified, defaults to `relevance` descending.
@@ -2762,9 +2761,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
-     *   * `relevance`, only supports desecending
-     *   * `last_access_timestamp [asc|desc]`, defaults to descending if not
-     *     specified
+     *   * `relevance`, only supports descending
      *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
      *     specified
      * If not specified, defaults to `relevance` descending.
@@ -2790,9 +2787,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
-     *   * `relevance`, only supports desecending
-     *   * `last_access_timestamp [asc|desc]`, defaults to descending if not
-     *     specified
+     *   * `relevance`, only supports descending
      *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
      *     specified
      * If not specified, defaults to `relevance` descending.
@@ -2814,9 +2809,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
-     *   * `relevance`, only supports desecending
-     *   * `last_access_timestamp [asc|desc]`, defaults to descending if not
-     *     specified
+     *   * `relevance`, only supports descending
      *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
      *     specified
      * If not specified, defaults to `relevance` descending.

@@ -78,6 +78,11 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
               name_ = s;
               break;
             }
+          case 16:
+            {
+              force_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -165,6 +170,23 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
     }
   }
 
+  public static final int FORCE_FIELD_NUMBER = 2;
+  private boolean force_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, deletes all entries in the entry group.
+   * </pre>
+   *
+   * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The force.
+   */
+  public boolean getForce() {
+    return force_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -182,6 +204,9 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (force_ != false) {
+      output.writeBool(2, force_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -193,6 +218,9 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
     size = 0;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (force_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, force_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -211,6 +239,7 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
         (com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getForce() != other.getForce()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -224,6 +253,8 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FORCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForce());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -373,6 +404,8 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
       super.clear();
       name_ = "";
 
+      force_ = false;
+
       return this;
     }
 
@@ -402,6 +435,7 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
       com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest result =
           new com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest(this);
       result.name_ = name_;
+      result.force_ = force_;
       onBuilt();
       return result;
     }
@@ -456,6 +490,9 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.getForce() != false) {
+        setForce(other.getForce());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -604,6 +641,57 @@ public final class DeleteEntryGroupRequest extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
 
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean force_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, deletes all entries in the entry group.
+     * </pre>
+     *
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The force.
+     */
+    public boolean getForce() {
+      return force_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, deletes all entries in the entry group.
+     * </pre>
+     *
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The force to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForce(boolean value) {
+
+      force_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, deletes all entries in the entry group.
+     * </pre>
+     *
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForce() {
+
+      force_ = false;
       onChanged();
       return this;
     }

@@ -27,10 +27,11 @@ public interface CreateTagTemplateFieldRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the project this template is in. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
-   * Note that this TagTemplateField may not actually be stored in the location
-   * in this name.
+   * Required. The name of the project and the template location
+   * [region](/compute/docs/regions-zones/#available).
+   * NOTE: Currently, only the `us-central1 region` is supported.
+   * Example:
+   * * projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
    * </pre>
    *
    * <code>
@@ -44,10 +45,11 @@ public interface CreateTagTemplateFieldRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the project this template is in. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
-   * Note that this TagTemplateField may not actually be stored in the location
-   * in this name.
+   * Required. The name of the project and the template location
+   * [region](/compute/docs/regions-zones/#available).
+   * NOTE: Currently, only the `us-central1 region` is supported.
+   * Example:
+   * * projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
    * </pre>
    *
    * <code>

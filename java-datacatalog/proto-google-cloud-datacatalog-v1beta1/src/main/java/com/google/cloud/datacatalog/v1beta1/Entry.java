@@ -24,9 +24,10 @@ package com.google.cloud.datacatalog.v1beta1;
  * <pre>
  * Entry Metadata.
  * A Data Catalog Entry resource represents another resource in Google
- * Cloud Platform, such as a BigQuery dataset or a Cloud Pub/Sub topic.
- * Clients can use the `linked_resource` field in the Entry resource to refer to
- * the original resource ID of the source system.
+ * Cloud Platform (such as a BigQuery dataset or a Cloud Pub/Sub topic), or
+ * outside of Google Cloud Platform. Clients can use the `linked_resource` field
+ * in the Entry resource to refer to the original resource ID of the source
+ * system.
  * An Entry resource contains resource details, such as its schema. An Entry can
  * also be used to attach flexible metadata, such as a
  * [Tag][google.cloud.datacatalog.v1beta1.Tag].
@@ -208,6 +209,27 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
               typeSpecCase_ = 15;
               break;
             }
+          case 130:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              entryTypeCase_ = 16;
+              entryType_ = s;
+              break;
+            }
+          case 136:
+            {
+              int rawValue = input.readEnum();
+              systemCase_ = 17;
+              system_ = rawValue;
+              break;
+            }
+          case 146:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              systemCase_ = 18;
+              system_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -250,6 +272,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TYPE(2),
+    USER_SPECIFIED_TYPE(16),
     ENTRYTYPE_NOT_SET(0);
     private final int value;
 
@@ -270,6 +293,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 2:
           return TYPE;
+        case 16:
+          return USER_SPECIFIED_TYPE;
         case 0:
           return ENTRYTYPE_NOT_SET;
         default:
@@ -284,6 +309,53 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
 
   public EntryTypeCase getEntryTypeCase() {
     return EntryTypeCase.forNumber(entryTypeCase_);
+  }
+
+  private int systemCase_ = 0;
+  private java.lang.Object system_;
+
+  public enum SystemCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    INTEGRATED_SYSTEM(17),
+    USER_SPECIFIED_SYSTEM(18),
+    SYSTEM_NOT_SET(0);
+    private final int value;
+
+    private SystemCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SystemCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SystemCase forNumber(int value) {
+      switch (value) {
+        case 17:
+          return INTEGRATED_SYSTEM;
+        case 18:
+          return USER_SPECIFIED_SYSTEM;
+        case 0:
+          return SYSTEM_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SystemCase getSystemCase() {
+    return SystemCase.forNumber(systemCase_);
   }
 
   private int typeSpecCase_ = 0;
@@ -395,15 +467,18 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource this metadata entry refers to.
+   * The resource this metadata entry refers to.
    * For Google Cloud Platform resources, `linked_resource` is the [full name of
    * the
    * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
    * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+   * Output only when Entry is of type in the EntryType enum. For entries with
+   * user_specified_type, this field is optional and defaults to an empty
+   * string.
    * </pre>
    *
-   * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string linked_resource = 9;</code>
    *
    * @return The linkedResource.
    */
@@ -422,15 +497,18 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource this metadata entry refers to.
+   * The resource this metadata entry refers to.
    * For Google Cloud Platform resources, `linked_resource` is the [full name of
    * the
    * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
    * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+   * Output only when Entry is of type in the EntryType enum. For entries with
+   * user_specified_type, this field is optional and defaults to an empty
+   * string.
    * </pre>
    *
-   * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string linked_resource = 9;</code>
    *
    * @return The bytes for linkedResource.
    */
@@ -452,6 +530,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The type of the entry.
+   * Only used for Entries with types in the EntryType enum.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -469,6 +548,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The type of the entry.
+   * Only used for Entries with types in the EntryType enum.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -483,6 +563,190 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       return result == null ? com.google.cloud.datacatalog.v1beta1.EntryType.UNRECOGNIZED : result;
     }
     return com.google.cloud.datacatalog.v1beta1.EntryType.ENTRY_TYPE_UNSPECIFIED;
+  }
+
+  public static final int USER_SPECIFIED_TYPE_FIELD_NUMBER = 16;
+  /**
+   *
+   *
+   * <pre>
+   * Entry type if it does not fit any of the input-allowed values listed in
+   * `EntryType` enum above. When creating an entry, users should check the
+   * enum values first, if nothing matches the entry to be created, then
+   * provide a custom value, for example "my_special_type".
+   * `user_specified_type` strings must begin with a letter or underscore and
+   * can only contain letters, numbers, and underscores; are case insensitive;
+   * must be at least 1 character and at most 64 characters long.
+   * Currently, only FILESET enum value is allowed. All other entries created
+   * through Data Catalog must use `user_specified_type`.
+   * </pre>
+   *
+   * <code>string user_specified_type = 16;</code>
+   *
+   * @return The userSpecifiedType.
+   */
+  public java.lang.String getUserSpecifiedType() {
+    java.lang.Object ref = "";
+    if (entryTypeCase_ == 16) {
+      ref = entryType_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (entryTypeCase_ == 16) {
+        entryType_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Entry type if it does not fit any of the input-allowed values listed in
+   * `EntryType` enum above. When creating an entry, users should check the
+   * enum values first, if nothing matches the entry to be created, then
+   * provide a custom value, for example "my_special_type".
+   * `user_specified_type` strings must begin with a letter or underscore and
+   * can only contain letters, numbers, and underscores; are case insensitive;
+   * must be at least 1 character and at most 64 characters long.
+   * Currently, only FILESET enum value is allowed. All other entries created
+   * through Data Catalog must use `user_specified_type`.
+   * </pre>
+   *
+   * <code>string user_specified_type = 16;</code>
+   *
+   * @return The bytes for userSpecifiedType.
+   */
+  public com.google.protobuf.ByteString getUserSpecifiedTypeBytes() {
+    java.lang.Object ref = "";
+    if (entryTypeCase_ == 16) {
+      ref = entryType_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (entryTypeCase_ == 16) {
+        entryType_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int INTEGRATED_SYSTEM_FIELD_NUMBER = 17;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field indicates the entry's source system that Data
+   * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for integratedSystem.
+   */
+  public int getIntegratedSystemValue() {
+    if (systemCase_ == 17) {
+      return (java.lang.Integer) system_;
+    }
+    return 0;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field indicates the entry's source system that Data
+   * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The integratedSystem.
+   */
+  public com.google.cloud.datacatalog.v1beta1.IntegratedSystem getIntegratedSystem() {
+    if (systemCase_ == 17) {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.datacatalog.v1beta1.IntegratedSystem result =
+          com.google.cloud.datacatalog.v1beta1.IntegratedSystem.valueOf(
+              (java.lang.Integer) system_);
+      return result == null
+          ? com.google.cloud.datacatalog.v1beta1.IntegratedSystem.UNRECOGNIZED
+          : result;
+    }
+    return com.google.cloud.datacatalog.v1beta1.IntegratedSystem.INTEGRATED_SYSTEM_UNSPECIFIED;
+  }
+
+  public static final int USER_SPECIFIED_SYSTEM_FIELD_NUMBER = 18;
+  /**
+   *
+   *
+   * <pre>
+   * This field indicates the entry's source system that Data Catalog does not
+   * integrate with. `user_specified_system` strings must begin with a letter
+   * or underscore and can only contain letters, numbers, and underscores; are
+   * case insensitive; must be at least 1 character and at most 64 characters
+   * long.
+   * </pre>
+   *
+   * <code>string user_specified_system = 18;</code>
+   *
+   * @return The userSpecifiedSystem.
+   */
+  public java.lang.String getUserSpecifiedSystem() {
+    java.lang.Object ref = "";
+    if (systemCase_ == 18) {
+      ref = system_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (systemCase_ == 18) {
+        system_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field indicates the entry's source system that Data Catalog does not
+   * integrate with. `user_specified_system` strings must begin with a letter
+   * or underscore and can only contain letters, numbers, and underscores; are
+   * case insensitive; must be at least 1 character and at most 64 characters
+   * long.
+   * </pre>
+   *
+   * <code>string user_specified_system = 18;</code>
+   *
+   * @return The bytes for userSpecifiedSystem.
+   */
+  public com.google.protobuf.ByteString getUserSpecifiedSystemBytes() {
+    java.lang.Object ref = "";
+    if (systemCase_ == 18) {
+      ref = system_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (systemCase_ == 18) {
+        system_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int GCS_FILESET_SPEC_FIELD_NUMBER = 6;
@@ -800,8 +1064,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying Google Cloud Platform
-   * resource, not about this Data Catalog Entry.
+   * Output only. Timestamps about the underlying resource, not about this Data
+   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+   * entries with user_specified_type, this field is optional and defaults to an
+   * empty timestamp.
    * </pre>
    *
    * <code>
@@ -817,8 +1083,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying Google Cloud Platform
-   * resource, not about this Data Catalog Entry.
+   * Output only. Timestamps about the underlying resource, not about this Data
+   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+   * entries with user_specified_type, this field is optional and defaults to an
+   * empty timestamp.
    * </pre>
    *
    * <code>
@@ -836,8 +1104,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying Google Cloud Platform
-   * resource, not about this Data Catalog Entry.
+   * Output only. Timestamps about the underlying resource, not about this Data
+   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+   * entries with user_specified_type, this field is optional and defaults to an
+   * empty timestamp.
    * </pre>
    *
    * <code>
@@ -894,6 +1164,15 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           15, (com.google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec) typeSpec_);
     }
+    if (entryTypeCase_ == 16) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, entryType_);
+    }
+    if (systemCase_ == 17) {
+      output.writeEnum(17, ((java.lang.Integer) system_));
+    }
+    if (systemCase_ == 18) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, system_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -942,6 +1221,16 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               15, (com.google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec) typeSpec_);
     }
+    if (entryTypeCase_ == 16) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, entryType_);
+    }
+    if (systemCase_ == 17) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(17, ((java.lang.Integer) system_));
+    }
+    if (systemCase_ == 18) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, system_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -974,6 +1263,20 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     switch (entryTypeCase_) {
       case 2:
         if (getTypeValue() != other.getTypeValue()) return false;
+        break;
+      case 16:
+        if (!getUserSpecifiedType().equals(other.getUserSpecifiedType())) return false;
+        break;
+      case 0:
+      default:
+    }
+    if (!getSystemCase().equals(other.getSystemCase())) return false;
+    switch (systemCase_) {
+      case 17:
+        if (getIntegratedSystemValue() != other.getIntegratedSystemValue()) return false;
+        break;
+      case 18:
+        if (!getUserSpecifiedSystem().equals(other.getUserSpecifiedSystem())) return false;
         break;
       case 0:
       default:
@@ -1023,6 +1326,22 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       case 2:
         hash = (37 * hash) + TYPE_FIELD_NUMBER;
         hash = (53 * hash) + getTypeValue();
+        break;
+      case 16:
+        hash = (37 * hash) + USER_SPECIFIED_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getUserSpecifiedType().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (systemCase_) {
+      case 17:
+        hash = (37 * hash) + INTEGRATED_SYSTEM_FIELD_NUMBER;
+        hash = (53 * hash) + getIntegratedSystemValue();
+        break;
+      case 18:
+        hash = (37 * hash) + USER_SPECIFIED_SYSTEM_FIELD_NUMBER;
+        hash = (53 * hash) + getUserSpecifiedSystem().hashCode();
         break;
       case 0:
       default:
@@ -1149,9 +1468,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Entry Metadata.
    * A Data Catalog Entry resource represents another resource in Google
-   * Cloud Platform, such as a BigQuery dataset or a Cloud Pub/Sub topic.
-   * Clients can use the `linked_resource` field in the Entry resource to refer to
-   * the original resource ID of the source system.
+   * Cloud Platform (such as a BigQuery dataset or a Cloud Pub/Sub topic), or
+   * outside of Google Cloud Platform. Clients can use the `linked_resource` field
+   * in the Entry resource to refer to the original resource ID of the source
+   * system.
    * An Entry resource contains resource details, such as its schema. An Entry can
    * also be used to attach flexible metadata, such as a
    * [Tag][google.cloud.datacatalog.v1beta1.Tag].
@@ -1217,6 +1537,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       }
       entryTypeCase_ = 0;
       entryType_ = null;
+      systemCase_ = 0;
+      system_ = null;
       typeSpecCase_ = 0;
       typeSpec_ = null;
       return this;
@@ -1250,6 +1572,15 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       result.linkedResource_ = linkedResource_;
       if (entryTypeCase_ == 2) {
         result.entryType_ = entryType_;
+      }
+      if (entryTypeCase_ == 16) {
+        result.entryType_ = entryType_;
+      }
+      if (systemCase_ == 17) {
+        result.system_ = system_;
+      }
+      if (systemCase_ == 18) {
+        result.system_ = system_;
       }
       if (typeSpecCase_ == 6) {
         if (gcsFilesetSpecBuilder_ == null) {
@@ -1285,6 +1616,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         result.sourceSystemTimestamps_ = sourceSystemTimestampsBuilder_.build();
       }
       result.entryTypeCase_ = entryTypeCase_;
+      result.systemCase_ = systemCase_;
       result.typeSpecCase_ = typeSpecCase_;
       onBuilt();
       return result;
@@ -1363,7 +1695,32 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             setTypeValue(other.getTypeValue());
             break;
           }
+        case USER_SPECIFIED_TYPE:
+          {
+            entryTypeCase_ = 16;
+            entryType_ = other.entryType_;
+            onChanged();
+            break;
+          }
         case ENTRYTYPE_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getSystemCase()) {
+        case INTEGRATED_SYSTEM:
+          {
+            setIntegratedSystemValue(other.getIntegratedSystemValue());
+            break;
+          }
+        case USER_SPECIFIED_SYSTEM:
+          {
+            systemCase_ = 18;
+            system_ = other.system_;
+            onChanged();
+            break;
+          }
+        case SYSTEM_NOT_SET:
           {
             break;
           }
@@ -1428,6 +1785,20 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEntryType() {
       entryTypeCase_ = 0;
       entryType_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int systemCase_ = 0;
+    private java.lang.Object system_;
+
+    public SystemCase getSystemCase() {
+      return SystemCase.forNumber(systemCase_);
+    }
+
+    public Builder clearSystem() {
+      systemCase_ = 0;
+      system_ = null;
       onChanged();
       return this;
     }
@@ -1572,15 +1943,18 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource this metadata entry refers to.
+     * The resource this metadata entry refers to.
      * For Google Cloud Platform resources, `linked_resource` is the [full name of
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+     * Output only when Entry is of type in the EntryType enum. For entries with
+     * user_specified_type, this field is optional and defaults to an empty
+     * string.
      * </pre>
      *
-     * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string linked_resource = 9;</code>
      *
      * @return The linkedResource.
      */
@@ -1599,15 +1973,18 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource this metadata entry refers to.
+     * The resource this metadata entry refers to.
      * For Google Cloud Platform resources, `linked_resource` is the [full name of
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+     * Output only when Entry is of type in the EntryType enum. For entries with
+     * user_specified_type, this field is optional and defaults to an empty
+     * string.
      * </pre>
      *
-     * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string linked_resource = 9;</code>
      *
      * @return The bytes for linkedResource.
      */
@@ -1626,15 +2003,18 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource this metadata entry refers to.
+     * The resource this metadata entry refers to.
      * For Google Cloud Platform resources, `linked_resource` is the [full name of
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+     * Output only when Entry is of type in the EntryType enum. For entries with
+     * user_specified_type, this field is optional and defaults to an empty
+     * string.
      * </pre>
      *
-     * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string linked_resource = 9;</code>
      *
      * @param value The linkedResource to set.
      * @return This builder for chaining.
@@ -1652,15 +2032,18 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource this metadata entry refers to.
+     * The resource this metadata entry refers to.
      * For Google Cloud Platform resources, `linked_resource` is the [full name of
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+     * Output only when Entry is of type in the EntryType enum. For entries with
+     * user_specified_type, this field is optional and defaults to an empty
+     * string.
      * </pre>
      *
-     * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string linked_resource = 9;</code>
      *
      * @return This builder for chaining.
      */
@@ -1674,15 +2057,18 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource this metadata entry refers to.
+     * The resource this metadata entry refers to.
      * For Google Cloud Platform resources, `linked_resource` is the [full name of
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+     * Output only when Entry is of type in the EntryType enum. For entries with
+     * user_specified_type, this field is optional and defaults to an empty
+     * string.
      * </pre>
      *
-     * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string linked_resource = 9;</code>
      *
      * @param value The bytes for linkedResource to set.
      * @return This builder for chaining.
@@ -1703,6 +2089,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The type of the entry.
+     * Only used for Entries with types in the EntryType enum.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -1720,6 +2107,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The type of the entry.
+     * Only used for Entries with types in the EntryType enum.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -1738,6 +2126,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The type of the entry.
+     * Only used for Entries with types in the EntryType enum.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -1760,6 +2149,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The type of the entry.
+     * Only used for Entries with types in the EntryType enum.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -1781,6 +2171,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The type of the entry.
+     * Only used for Entries with types in the EntryType enum.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -1793,6 +2184,415 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         entryType_ = null;
         onChanged();
       }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Entry type if it does not fit any of the input-allowed values listed in
+     * `EntryType` enum above. When creating an entry, users should check the
+     * enum values first, if nothing matches the entry to be created, then
+     * provide a custom value, for example "my_special_type".
+     * `user_specified_type` strings must begin with a letter or underscore and
+     * can only contain letters, numbers, and underscores; are case insensitive;
+     * must be at least 1 character and at most 64 characters long.
+     * Currently, only FILESET enum value is allowed. All other entries created
+     * through Data Catalog must use `user_specified_type`.
+     * </pre>
+     *
+     * <code>string user_specified_type = 16;</code>
+     *
+     * @return The userSpecifiedType.
+     */
+    public java.lang.String getUserSpecifiedType() {
+      java.lang.Object ref = "";
+      if (entryTypeCase_ == 16) {
+        ref = entryType_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (entryTypeCase_ == 16) {
+          entryType_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Entry type if it does not fit any of the input-allowed values listed in
+     * `EntryType` enum above. When creating an entry, users should check the
+     * enum values first, if nothing matches the entry to be created, then
+     * provide a custom value, for example "my_special_type".
+     * `user_specified_type` strings must begin with a letter or underscore and
+     * can only contain letters, numbers, and underscores; are case insensitive;
+     * must be at least 1 character and at most 64 characters long.
+     * Currently, only FILESET enum value is allowed. All other entries created
+     * through Data Catalog must use `user_specified_type`.
+     * </pre>
+     *
+     * <code>string user_specified_type = 16;</code>
+     *
+     * @return The bytes for userSpecifiedType.
+     */
+    public com.google.protobuf.ByteString getUserSpecifiedTypeBytes() {
+      java.lang.Object ref = "";
+      if (entryTypeCase_ == 16) {
+        ref = entryType_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (entryTypeCase_ == 16) {
+          entryType_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Entry type if it does not fit any of the input-allowed values listed in
+     * `EntryType` enum above. When creating an entry, users should check the
+     * enum values first, if nothing matches the entry to be created, then
+     * provide a custom value, for example "my_special_type".
+     * `user_specified_type` strings must begin with a letter or underscore and
+     * can only contain letters, numbers, and underscores; are case insensitive;
+     * must be at least 1 character and at most 64 characters long.
+     * Currently, only FILESET enum value is allowed. All other entries created
+     * through Data Catalog must use `user_specified_type`.
+     * </pre>
+     *
+     * <code>string user_specified_type = 16;</code>
+     *
+     * @param value The userSpecifiedType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserSpecifiedType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      entryTypeCase_ = 16;
+      entryType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Entry type if it does not fit any of the input-allowed values listed in
+     * `EntryType` enum above. When creating an entry, users should check the
+     * enum values first, if nothing matches the entry to be created, then
+     * provide a custom value, for example "my_special_type".
+     * `user_specified_type` strings must begin with a letter or underscore and
+     * can only contain letters, numbers, and underscores; are case insensitive;
+     * must be at least 1 character and at most 64 characters long.
+     * Currently, only FILESET enum value is allowed. All other entries created
+     * through Data Catalog must use `user_specified_type`.
+     * </pre>
+     *
+     * <code>string user_specified_type = 16;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUserSpecifiedType() {
+      if (entryTypeCase_ == 16) {
+        entryTypeCase_ = 0;
+        entryType_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Entry type if it does not fit any of the input-allowed values listed in
+     * `EntryType` enum above. When creating an entry, users should check the
+     * enum values first, if nothing matches the entry to be created, then
+     * provide a custom value, for example "my_special_type".
+     * `user_specified_type` strings must begin with a letter or underscore and
+     * can only contain letters, numbers, and underscores; are case insensitive;
+     * must be at least 1 character and at most 64 characters long.
+     * Currently, only FILESET enum value is allowed. All other entries created
+     * through Data Catalog must use `user_specified_type`.
+     * </pre>
+     *
+     * <code>string user_specified_type = 16;</code>
+     *
+     * @param value The bytes for userSpecifiedType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserSpecifiedTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      entryTypeCase_ = 16;
+      entryType_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field indicates the entry's source system that Data
+     * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for integratedSystem.
+     */
+    public int getIntegratedSystemValue() {
+      if (systemCase_ == 17) {
+        return ((java.lang.Integer) system_).intValue();
+      }
+      return 0;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field indicates the entry's source system that Data
+     * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for integratedSystem to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntegratedSystemValue(int value) {
+      systemCase_ = 17;
+      system_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field indicates the entry's source system that Data
+     * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The integratedSystem.
+     */
+    public com.google.cloud.datacatalog.v1beta1.IntegratedSystem getIntegratedSystem() {
+      if (systemCase_ == 17) {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.datacatalog.v1beta1.IntegratedSystem result =
+            com.google.cloud.datacatalog.v1beta1.IntegratedSystem.valueOf(
+                (java.lang.Integer) system_);
+        return result == null
+            ? com.google.cloud.datacatalog.v1beta1.IntegratedSystem.UNRECOGNIZED
+            : result;
+      }
+      return com.google.cloud.datacatalog.v1beta1.IntegratedSystem.INTEGRATED_SYSTEM_UNSPECIFIED;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field indicates the entry's source system that Data
+     * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The integratedSystem to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntegratedSystem(
+        com.google.cloud.datacatalog.v1beta1.IntegratedSystem value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      systemCase_ = 17;
+      system_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field indicates the entry's source system that Data
+     * Catalog integrates with, such as BigQuery or Cloud Pub/Sub.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIntegratedSystem() {
+      if (systemCase_ == 17) {
+        systemCase_ = 0;
+        system_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field indicates the entry's source system that Data Catalog does not
+     * integrate with. `user_specified_system` strings must begin with a letter
+     * or underscore and can only contain letters, numbers, and underscores; are
+     * case insensitive; must be at least 1 character and at most 64 characters
+     * long.
+     * </pre>
+     *
+     * <code>string user_specified_system = 18;</code>
+     *
+     * @return The userSpecifiedSystem.
+     */
+    public java.lang.String getUserSpecifiedSystem() {
+      java.lang.Object ref = "";
+      if (systemCase_ == 18) {
+        ref = system_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (systemCase_ == 18) {
+          system_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field indicates the entry's source system that Data Catalog does not
+     * integrate with. `user_specified_system` strings must begin with a letter
+     * or underscore and can only contain letters, numbers, and underscores; are
+     * case insensitive; must be at least 1 character and at most 64 characters
+     * long.
+     * </pre>
+     *
+     * <code>string user_specified_system = 18;</code>
+     *
+     * @return The bytes for userSpecifiedSystem.
+     */
+    public com.google.protobuf.ByteString getUserSpecifiedSystemBytes() {
+      java.lang.Object ref = "";
+      if (systemCase_ == 18) {
+        ref = system_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (systemCase_ == 18) {
+          system_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field indicates the entry's source system that Data Catalog does not
+     * integrate with. `user_specified_system` strings must begin with a letter
+     * or underscore and can only contain letters, numbers, and underscores; are
+     * case insensitive; must be at least 1 character and at most 64 characters
+     * long.
+     * </pre>
+     *
+     * <code>string user_specified_system = 18;</code>
+     *
+     * @param value The userSpecifiedSystem to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserSpecifiedSystem(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      systemCase_ = 18;
+      system_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field indicates the entry's source system that Data Catalog does not
+     * integrate with. `user_specified_system` strings must begin with a letter
+     * or underscore and can only contain letters, numbers, and underscores; are
+     * case insensitive; must be at least 1 character and at most 64 characters
+     * long.
+     * </pre>
+     *
+     * <code>string user_specified_system = 18;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUserSpecifiedSystem() {
+      if (systemCase_ == 18) {
+        systemCase_ = 0;
+        system_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field indicates the entry's source system that Data Catalog does not
+     * integrate with. `user_specified_system` strings must begin with a letter
+     * or underscore and can only contain letters, numbers, and underscores; are
+     * case insensitive; must be at least 1 character and at most 64 characters
+     * long.
+     * </pre>
+     *
+     * <code>string user_specified_system = 18;</code>
+     *
+     * @param value The bytes for userSpecifiedSystem to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserSpecifiedSystemBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      systemCase_ = 18;
+      system_ = value;
+      onChanged();
       return this;
     }
 
@@ -2905,8 +3705,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying Google Cloud Platform
-     * resource, not about this Data Catalog Entry.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>
@@ -2922,8 +3724,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying Google Cloud Platform
-     * resource, not about this Data Catalog Entry.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>
@@ -2945,8 +3749,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying Google Cloud Platform
-     * resource, not about this Data Catalog Entry.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>
@@ -2971,8 +3777,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying Google Cloud Platform
-     * resource, not about this Data Catalog Entry.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>
@@ -2994,8 +3802,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying Google Cloud Platform
-     * resource, not about this Data Catalog Entry.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>
@@ -3025,8 +3835,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying Google Cloud Platform
-     * resource, not about this Data Catalog Entry.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>
@@ -3048,8 +3860,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying Google Cloud Platform
-     * resource, not about this Data Catalog Entry.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>
@@ -3066,8 +3880,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying Google Cloud Platform
-     * resource, not about this Data Catalog Entry.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>
@@ -3088,8 +3904,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying Google Cloud Platform
-     * resource, not about this Data Catalog Entry.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>

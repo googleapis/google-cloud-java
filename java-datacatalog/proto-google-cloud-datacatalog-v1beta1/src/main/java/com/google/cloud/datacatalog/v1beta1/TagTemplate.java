@@ -22,9 +22,12 @@ package com.google.cloud.datacatalog.v1beta1;
  *
  *
  * <pre>
- * A tag template defines the schema of the tags used to attach to Data Catalog
- * resources. It defines the mapping of accepted field names and types that can
- * be used within the tag. The tag template also controls the access to the tag.
+ * A tag template defines a tag, which can have one or more typed fields.
+ * The template is used to create and attach the tag to GCP resources.
+ * [Tag template roles](/iam/docs/understanding-roles#data-catalog-roles)
+ * provide permissions to create, edit, and use the template (see, for example,
+ * the [TagTemplate User](/data-catalog/docs/how-to/template-user) role, which
+ * includes permission to use the tag template to tag resources.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.v1beta1.TagTemplate}
@@ -580,9 +583,12 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A tag template defines the schema of the tags used to attach to Data Catalog
-   * resources. It defines the mapping of accepted field names and types that can
-   * be used within the tag. The tag template also controls the access to the tag.
+   * A tag template defines a tag, which can have one or more typed fields.
+   * The template is used to create and attach the tag to GCP resources.
+   * [Tag template roles](/iam/docs/understanding-roles#data-catalog-roles)
+   * provide permissions to create, edit, and use the template (see, for example,
+   * the [TagTemplate User](/data-catalog/docs/how-to/template-user) role, which
+   * includes permission to use the tag template to tag resources.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.v1beta1.TagTemplate}

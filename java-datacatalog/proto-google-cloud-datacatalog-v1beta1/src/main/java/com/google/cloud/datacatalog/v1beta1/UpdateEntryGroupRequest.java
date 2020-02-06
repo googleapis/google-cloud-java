@@ -23,27 +23,27 @@ package com.google.cloud.datacatalog.v1beta1;
  *
  * <pre>
  * Request message for
- * [UpdateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.UpdateEntry].
+ * [UpdateEntryGroup][google.cloud.datacatalog.v1beta1.DataCatalog.UpdateEntryGroup].
  * </pre>
  *
- * Protobuf type {@code google.cloud.datacatalog.v1beta1.UpdateEntryRequest}
+ * Protobuf type {@code google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest}
  */
-public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessageV3
+public final class UpdateEntryGroupRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.UpdateEntryRequest)
-    UpdateEntryRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest)
+    UpdateEntryGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use UpdateEntryRequest.newBuilder() to construct.
-  private UpdateEntryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateEntryGroupRequest.newBuilder() to construct.
+  private UpdateEntryGroupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private UpdateEntryRequest() {}
+  private UpdateEntryGroupRequest() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new UpdateEntryRequest();
+    return new UpdateEntryGroupRequest();
   }
 
   @java.lang.Override
@@ -51,7 +51,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private UpdateEntryRequest(
+  private UpdateEntryGroupRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -71,16 +71,16 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
             break;
           case 10:
             {
-              com.google.cloud.datacatalog.v1beta1.Entry.Builder subBuilder = null;
-              if (entry_ != null) {
-                subBuilder = entry_.toBuilder();
+              com.google.cloud.datacatalog.v1beta1.EntryGroup.Builder subBuilder = null;
+              if (entryGroup_ != null) {
+                subBuilder = entryGroup_.toBuilder();
               }
-              entry_ =
+              entryGroup_ =
                   input.readMessage(
-                      com.google.cloud.datacatalog.v1beta1.Entry.parser(), extensionRegistry);
+                      com.google.cloud.datacatalog.v1beta1.EntryGroup.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(entry_);
-                entry_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(entryGroup_);
+                entryGroup_ = subBuilder.buildPartial();
               }
 
               break;
@@ -121,68 +121,68 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Datacatalog
-        .internal_static_google_cloud_datacatalog_v1beta1_UpdateEntryRequest_descriptor;
+        .internal_static_google_cloud_datacatalog_v1beta1_UpdateEntryGroupRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.datacatalog.v1beta1.Datacatalog
-        .internal_static_google_cloud_datacatalog_v1beta1_UpdateEntryRequest_fieldAccessorTable
+        .internal_static_google_cloud_datacatalog_v1beta1_UpdateEntryGroupRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest.class,
-            com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest.Builder.class);
+            com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest.class,
+            com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest.Builder.class);
   }
 
-  public static final int ENTRY_FIELD_NUMBER = 1;
-  private com.google.cloud.datacatalog.v1beta1.Entry entry_;
+  public static final int ENTRY_GROUP_FIELD_NUMBER = 1;
+  private com.google.cloud.datacatalog.v1beta1.EntryGroup entryGroup_;
   /**
    *
    *
    * <pre>
-   * Required. The updated entry. The "name" field must be set.
+   * Required. The updated entry group. "name" field must be set.
    * </pre>
    *
    * <code>
-   * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @return Whether the entry field is set.
+   * @return Whether the entryGroup field is set.
    */
-  public boolean hasEntry() {
-    return entry_ != null;
+  public boolean hasEntryGroup() {
+    return entryGroup_ != null;
   }
   /**
    *
    *
    * <pre>
-   * Required. The updated entry. The "name" field must be set.
+   * Required. The updated entry group. "name" field must be set.
    * </pre>
    *
    * <code>
-   * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @return The entry.
+   * @return The entryGroup.
    */
-  public com.google.cloud.datacatalog.v1beta1.Entry getEntry() {
-    return entry_ == null
-        ? com.google.cloud.datacatalog.v1beta1.Entry.getDefaultInstance()
-        : entry_;
+  public com.google.cloud.datacatalog.v1beta1.EntryGroup getEntryGroup() {
+    return entryGroup_ == null
+        ? com.google.cloud.datacatalog.v1beta1.EntryGroup.getDefaultInstance()
+        : entryGroup_;
   }
   /**
    *
    *
    * <pre>
-   * Required. The updated entry. The "name" field must be set.
+   * Required. The updated entry group. "name" field must be set.
    * </pre>
    *
    * <code>
-   * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-  public com.google.cloud.datacatalog.v1beta1.EntryOrBuilder getEntryOrBuilder() {
-    return getEntry();
+  public com.google.cloud.datacatalog.v1beta1.EntryGroupOrBuilder getEntryGroupOrBuilder() {
+    return getEntryGroup();
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -191,25 +191,8 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The fields to update on the entry. If absent or empty, all modifiable
+   * The fields to update on the entry group. If absent or empty, all modifiable
    * fields are updated.
-   * The following fields are modifiable:
-   * * For entries with type `DATA_STREAM`:
-   *    * `schema`
-   * * For entries with type `FILESET`
-   *    * `schema`
-   *    * `display_name`
-   *    * `description`
-   *    * `gcs_fileset_spec`
-   *    * `gcs_fileset_spec.file_patterns`
-   * * For entries with `user_specified_type`
-   *    * `schema`
-   *    * `display_name`
-   *    * `description`
-   *    * user_specified_type
-   *    * user_specified_system
-   *    * linked_resource
-   *    * source_system_timestamps
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -223,25 +206,8 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The fields to update on the entry. If absent or empty, all modifiable
+   * The fields to update on the entry group. If absent or empty, all modifiable
    * fields are updated.
-   * The following fields are modifiable:
-   * * For entries with type `DATA_STREAM`:
-   *    * `schema`
-   * * For entries with type `FILESET`
-   *    * `schema`
-   *    * `display_name`
-   *    * `description`
-   *    * `gcs_fileset_spec`
-   *    * `gcs_fileset_spec.file_patterns`
-   * * For entries with `user_specified_type`
-   *    * `schema`
-   *    * `display_name`
-   *    * `description`
-   *    * user_specified_type
-   *    * user_specified_system
-   *    * linked_resource
-   *    * source_system_timestamps
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -255,25 +221,8 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The fields to update on the entry. If absent or empty, all modifiable
+   * The fields to update on the entry group. If absent or empty, all modifiable
    * fields are updated.
-   * The following fields are modifiable:
-   * * For entries with type `DATA_STREAM`:
-   *    * `schema`
-   * * For entries with type `FILESET`
-   *    * `schema`
-   *    * `display_name`
-   *    * `description`
-   *    * `gcs_fileset_spec`
-   *    * `gcs_fileset_spec.file_patterns`
-   * * For entries with `user_specified_type`
-   *    * `schema`
-   *    * `display_name`
-   *    * `description`
-   *    * user_specified_type
-   *    * user_specified_system
-   *    * linked_resource
-   *    * source_system_timestamps
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -296,8 +245,8 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (entry_ != null) {
-      output.writeMessage(1, getEntry());
+    if (entryGroup_ != null) {
+      output.writeMessage(1, getEntryGroup());
     }
     if (updateMask_ != null) {
       output.writeMessage(2, getUpdateMask());
@@ -311,8 +260,8 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (entry_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getEntry());
+    if (entryGroup_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getEntryGroup());
     }
     if (updateMask_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
@@ -327,15 +276,15 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest)) {
+    if (!(obj instanceof com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest other =
-        (com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest) obj;
+    com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest other =
+        (com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest) obj;
 
-    if (hasEntry() != other.hasEntry()) return false;
-    if (hasEntry()) {
-      if (!getEntry().equals(other.getEntry())) return false;
+    if (hasEntryGroup() != other.hasEntryGroup()) return false;
+    if (hasEntryGroup()) {
+      if (!getEntryGroup().equals(other.getEntryGroup())) return false;
     }
     if (hasUpdateMask() != other.hasUpdateMask()) return false;
     if (hasUpdateMask()) {
@@ -352,9 +301,9 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasEntry()) {
-      hash = (37 * hash) + ENTRY_FIELD_NUMBER;
-      hash = (53 * hash) + getEntry().hashCode();
+    if (hasEntryGroup()) {
+      hash = (37 * hash) + ENTRY_GROUP_FIELD_NUMBER;
+      hash = (53 * hash) + getEntryGroup().hashCode();
     }
     if (hasUpdateMask()) {
       hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
@@ -365,71 +314,71 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     return hash;
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest parseFrom(byte[] data)
+  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest parseDelimitedFrom(
+  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest parseDelimitedFrom(
+  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest parseFrom(
+  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -447,7 +396,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static Builder newBuilder(
-      com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest prototype) {
+      com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -466,31 +415,31 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Request message for
-   * [UpdateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.UpdateEntry].
+   * [UpdateEntryGroup][google.cloud.datacatalog.v1beta1.DataCatalog.UpdateEntryGroup].
    * </pre>
    *
-   * Protobuf type {@code google.cloud.datacatalog.v1beta1.UpdateEntryRequest}
+   * Protobuf type {@code google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.datacatalog.v1beta1.UpdateEntryRequest)
-      com.google.cloud.datacatalog.v1beta1.UpdateEntryRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest)
+      com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datacatalog.v1beta1.Datacatalog
-          .internal_static_google_cloud_datacatalog_v1beta1_UpdateEntryRequest_descriptor;
+          .internal_static_google_cloud_datacatalog_v1beta1_UpdateEntryGroupRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.datacatalog.v1beta1.Datacatalog
-          .internal_static_google_cloud_datacatalog_v1beta1_UpdateEntryRequest_fieldAccessorTable
+          .internal_static_google_cloud_datacatalog_v1beta1_UpdateEntryGroupRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest.class,
-              com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest.Builder.class);
+              com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest.class,
+              com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest.newBuilder()
+    // Construct using com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -507,11 +456,11 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (entryBuilder_ == null) {
-        entry_ = null;
+      if (entryGroupBuilder_ == null) {
+        entryGroup_ = null;
       } else {
-        entry_ = null;
-        entryBuilder_ = null;
+        entryGroup_ = null;
+        entryGroupBuilder_ = null;
       }
       if (updateMaskBuilder_ == null) {
         updateMask_ = null;
@@ -525,17 +474,18 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.datacatalog.v1beta1.Datacatalog
-          .internal_static_google_cloud_datacatalog_v1beta1_UpdateEntryRequest_descriptor;
+          .internal_static_google_cloud_datacatalog_v1beta1_UpdateEntryGroupRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest getDefaultInstanceForType() {
-      return com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest.getDefaultInstance();
+    public com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest
+        getDefaultInstanceForType() {
+      return com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest build() {
-      com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest result = buildPartial();
+    public com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest build() {
+      com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -543,13 +493,13 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     }
 
     @java.lang.Override
-    public com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest buildPartial() {
-      com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest result =
-          new com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest(this);
-      if (entryBuilder_ == null) {
-        result.entry_ = entry_;
+    public com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest buildPartial() {
+      com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest result =
+          new com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest(this);
+      if (entryGroupBuilder_ == null) {
+        result.entryGroup_ = entryGroup_;
       } else {
-        result.entry_ = entryBuilder_.build();
+        result.entryGroup_ = entryGroupBuilder_.build();
       }
       if (updateMaskBuilder_ == null) {
         result.updateMask_ = updateMask_;
@@ -595,19 +545,20 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest) {
-        return mergeFrom((com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest) other);
+      if (other instanceof com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest) {
+        return mergeFrom((com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest other) {
-      if (other == com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest other) {
+      if (other
+          == com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest.getDefaultInstance())
         return this;
-      if (other.hasEntry()) {
-        mergeEntry(other.getEntry());
+      if (other.hasEntryGroup()) {
+        mergeEntryGroup(other.getEntryGroup());
       }
       if (other.hasUpdateMask()) {
         mergeUpdateMask(other.getUpdateMask());
@@ -627,12 +578,12 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest parsedMessage = null;
+      com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest) e.getUnfinishedMessage();
+            (com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -642,70 +593,70 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.cloud.datacatalog.v1beta1.Entry entry_;
+    private com.google.cloud.datacatalog.v1beta1.EntryGroup entryGroup_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datacatalog.v1beta1.Entry,
-            com.google.cloud.datacatalog.v1beta1.Entry.Builder,
-            com.google.cloud.datacatalog.v1beta1.EntryOrBuilder>
-        entryBuilder_;
+            com.google.cloud.datacatalog.v1beta1.EntryGroup,
+            com.google.cloud.datacatalog.v1beta1.EntryGroup.Builder,
+            com.google.cloud.datacatalog.v1beta1.EntryGroupOrBuilder>
+        entryGroupBuilder_;
     /**
      *
      *
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. The updated entry group. "name" field must be set.
      * </pre>
      *
      * <code>
-     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
-     * @return Whether the entry field is set.
+     * @return Whether the entryGroup field is set.
      */
-    public boolean hasEntry() {
-      return entryBuilder_ != null || entry_ != null;
+    public boolean hasEntryGroup() {
+      return entryGroupBuilder_ != null || entryGroup_ != null;
     }
     /**
      *
      *
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. The updated entry group. "name" field must be set.
      * </pre>
      *
      * <code>
-     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
-     * @return The entry.
+     * @return The entryGroup.
      */
-    public com.google.cloud.datacatalog.v1beta1.Entry getEntry() {
-      if (entryBuilder_ == null) {
-        return entry_ == null
-            ? com.google.cloud.datacatalog.v1beta1.Entry.getDefaultInstance()
-            : entry_;
+    public com.google.cloud.datacatalog.v1beta1.EntryGroup getEntryGroup() {
+      if (entryGroupBuilder_ == null) {
+        return entryGroup_ == null
+            ? com.google.cloud.datacatalog.v1beta1.EntryGroup.getDefaultInstance()
+            : entryGroup_;
       } else {
-        return entryBuilder_.getMessage();
+        return entryGroupBuilder_.getMessage();
       }
     }
     /**
      *
      *
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. The updated entry group. "name" field must be set.
      * </pre>
      *
      * <code>
-     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder setEntry(com.google.cloud.datacatalog.v1beta1.Entry value) {
-      if (entryBuilder_ == null) {
+    public Builder setEntryGroup(com.google.cloud.datacatalog.v1beta1.EntryGroup value) {
+      if (entryGroupBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        entry_ = value;
+        entryGroup_ = value;
         onChanged();
       } else {
-        entryBuilder_.setMessage(value);
+        entryGroupBuilder_.setMessage(value);
       }
 
       return this;
@@ -714,19 +665,20 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. The updated entry group. "name" field must be set.
      * </pre>
      *
      * <code>
-     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder setEntry(com.google.cloud.datacatalog.v1beta1.Entry.Builder builderForValue) {
-      if (entryBuilder_ == null) {
-        entry_ = builderForValue.build();
+    public Builder setEntryGroup(
+        com.google.cloud.datacatalog.v1beta1.EntryGroup.Builder builderForValue) {
+      if (entryGroupBuilder_ == null) {
+        entryGroup_ = builderForValue.build();
         onChanged();
       } else {
-        entryBuilder_.setMessage(builderForValue.build());
+        entryGroupBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
@@ -735,26 +687,26 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. The updated entry group. "name" field must be set.
      * </pre>
      *
      * <code>
-     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder mergeEntry(com.google.cloud.datacatalog.v1beta1.Entry value) {
-      if (entryBuilder_ == null) {
-        if (entry_ != null) {
-          entry_ =
-              com.google.cloud.datacatalog.v1beta1.Entry.newBuilder(entry_)
+    public Builder mergeEntryGroup(com.google.cloud.datacatalog.v1beta1.EntryGroup value) {
+      if (entryGroupBuilder_ == null) {
+        if (entryGroup_ != null) {
+          entryGroup_ =
+              com.google.cloud.datacatalog.v1beta1.EntryGroup.newBuilder(entryGroup_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
-          entry_ = value;
+          entryGroup_ = value;
         }
         onChanged();
       } else {
-        entryBuilder_.mergeFrom(value);
+        entryGroupBuilder_.mergeFrom(value);
       }
 
       return this;
@@ -763,20 +715,20 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. The updated entry group. "name" field must be set.
      * </pre>
      *
      * <code>
-     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder clearEntry() {
-      if (entryBuilder_ == null) {
-        entry_ = null;
+    public Builder clearEntryGroup() {
+      if (entryGroupBuilder_ == null) {
+        entryGroup_ = null;
         onChanged();
       } else {
-        entry_ = null;
-        entryBuilder_ = null;
+        entryGroup_ = null;
+        entryGroupBuilder_ = null;
       }
 
       return this;
@@ -785,64 +737,64 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. The updated entry group. "name" field must be set.
      * </pre>
      *
      * <code>
-     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public com.google.cloud.datacatalog.v1beta1.Entry.Builder getEntryBuilder() {
+    public com.google.cloud.datacatalog.v1beta1.EntryGroup.Builder getEntryGroupBuilder() {
 
       onChanged();
-      return getEntryFieldBuilder().getBuilder();
+      return getEntryGroupFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. The updated entry group. "name" field must be set.
      * </pre>
      *
      * <code>
-     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public com.google.cloud.datacatalog.v1beta1.EntryOrBuilder getEntryOrBuilder() {
-      if (entryBuilder_ != null) {
-        return entryBuilder_.getMessageOrBuilder();
+    public com.google.cloud.datacatalog.v1beta1.EntryGroupOrBuilder getEntryGroupOrBuilder() {
+      if (entryGroupBuilder_ != null) {
+        return entryGroupBuilder_.getMessageOrBuilder();
       } else {
-        return entry_ == null
-            ? com.google.cloud.datacatalog.v1beta1.Entry.getDefaultInstance()
-            : entry_;
+        return entryGroup_ == null
+            ? com.google.cloud.datacatalog.v1beta1.EntryGroup.getDefaultInstance()
+            : entryGroup_;
       }
     }
     /**
      *
      *
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. The updated entry group. "name" field must be set.
      * </pre>
      *
      * <code>
-     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.datacatalog.v1beta1.Entry,
-            com.google.cloud.datacatalog.v1beta1.Entry.Builder,
-            com.google.cloud.datacatalog.v1beta1.EntryOrBuilder>
-        getEntryFieldBuilder() {
-      if (entryBuilder_ == null) {
-        entryBuilder_ =
+            com.google.cloud.datacatalog.v1beta1.EntryGroup,
+            com.google.cloud.datacatalog.v1beta1.EntryGroup.Builder,
+            com.google.cloud.datacatalog.v1beta1.EntryGroupOrBuilder>
+        getEntryGroupFieldBuilder() {
+      if (entryGroupBuilder_ == null) {
+        entryGroupBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.datacatalog.v1beta1.Entry,
-                com.google.cloud.datacatalog.v1beta1.Entry.Builder,
-                com.google.cloud.datacatalog.v1beta1.EntryOrBuilder>(
-                getEntry(), getParentForChildren(), isClean());
-        entry_ = null;
+                com.google.cloud.datacatalog.v1beta1.EntryGroup,
+                com.google.cloud.datacatalog.v1beta1.EntryGroup.Builder,
+                com.google.cloud.datacatalog.v1beta1.EntryGroupOrBuilder>(
+                getEntryGroup(), getParentForChildren(), isClean());
+        entryGroup_ = null;
       }
-      return entryBuilder_;
+      return entryGroupBuilder_;
     }
 
     private com.google.protobuf.FieldMask updateMask_;
@@ -855,25 +807,8 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The fields to update on the entry. If absent or empty, all modifiable
+     * The fields to update on the entry group. If absent or empty, all modifiable
      * fields are updated.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * user_specified_type
-     *    * user_specified_system
-     *    * linked_resource
-     *    * source_system_timestamps
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -887,25 +822,8 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The fields to update on the entry. If absent or empty, all modifiable
+     * The fields to update on the entry group. If absent or empty, all modifiable
      * fields are updated.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * user_specified_type
-     *    * user_specified_system
-     *    * linked_resource
-     *    * source_system_timestamps
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -925,25 +843,8 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The fields to update on the entry. If absent or empty, all modifiable
+     * The fields to update on the entry group. If absent or empty, all modifiable
      * fields are updated.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * user_specified_type
-     *    * user_specified_system
-     *    * linked_resource
-     *    * source_system_timestamps
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -965,25 +866,8 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The fields to update on the entry. If absent or empty, all modifiable
+     * The fields to update on the entry group. If absent or empty, all modifiable
      * fields are updated.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * user_specified_type
-     *    * user_specified_system
-     *    * linked_resource
-     *    * source_system_timestamps
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1002,25 +886,8 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The fields to update on the entry. If absent or empty, all modifiable
+     * The fields to update on the entry group. If absent or empty, all modifiable
      * fields are updated.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * user_specified_type
-     *    * user_specified_system
-     *    * linked_resource
-     *    * source_system_timestamps
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1044,25 +911,8 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The fields to update on the entry. If absent or empty, all modifiable
+     * The fields to update on the entry group. If absent or empty, all modifiable
      * fields are updated.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * user_specified_type
-     *    * user_specified_system
-     *    * linked_resource
-     *    * source_system_timestamps
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1082,25 +932,8 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The fields to update on the entry. If absent or empty, all modifiable
+     * The fields to update on the entry group. If absent or empty, all modifiable
      * fields are updated.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * user_specified_type
-     *    * user_specified_system
-     *    * linked_resource
-     *    * source_system_timestamps
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1114,25 +947,8 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The fields to update on the entry. If absent or empty, all modifiable
+     * The fields to update on the entry group. If absent or empty, all modifiable
      * fields are updated.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * user_specified_type
-     *    * user_specified_system
-     *    * linked_resource
-     *    * source_system_timestamps
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1150,25 +966,8 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The fields to update on the entry. If absent or empty, all modifiable
+     * The fields to update on the entry group. If absent or empty, all modifiable
      * fields are updated.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * user_specified_type
-     *    * user_specified_system
-     *    * linked_resource
-     *    * source_system_timestamps
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1201,42 +1000,43 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.datacatalog.v1beta1.UpdateEntryRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.datacatalog.v1beta1.UpdateEntryRequest)
-  private static final com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest)
+  private static final com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest
+      DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest();
   }
 
-  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest getDefaultInstance() {
+  public static com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateEntryRequest> PARSER =
-      new com.google.protobuf.AbstractParser<UpdateEntryRequest>() {
+  private static final com.google.protobuf.Parser<UpdateEntryGroupRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UpdateEntryGroupRequest>() {
         @java.lang.Override
-        public UpdateEntryRequest parsePartialFrom(
+        public UpdateEntryGroupRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UpdateEntryRequest(input, extensionRegistry);
+          return new UpdateEntryGroupRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<UpdateEntryRequest> parser() {
+  public static com.google.protobuf.Parser<UpdateEntryGroupRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UpdateEntryRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpdateEntryGroupRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest getDefaultInstanceForType() {
+  public com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

@@ -495,9 +495,9 @@ public class DataCatalogClient implements BackgroundResource {
    * return the complete resource, only the resource identifier and high level fields. Clients can
    * subsequentally call `Get` methods.
    *
-   * <p>Note that searches do not have full recall. There may be results that match your query but
-   * are not returned, even in subsequent pages of results. These missing results may vary across
-   * repeated calls to search. Do not rely on this method if you need to guarantee full recall.
+   * <p>Note that Data Catalog search queries do not guarantee full recall. Query results that match
+   * your query may not be returned, even in subsequent result pages. Also note that results
+   * returned (and not returned) can vary across repeated search queries.
    *
    * <p>See [Data Catalog Search Syntax](/data-catalog/docs/how-to/search-reference) for more
    * information.
@@ -524,8 +524,7 @@ public class DataCatalogClient implements BackgroundResource {
    *     more information.
    * @param orderBy Specifies the ordering of results, currently supported case-sensitive choices
    *     are:
-   *     <p>&#42; `relevance`, only supports desecending &#42; `last_access_timestamp [asc|desc]`,
-   *     defaults to descending if not specified &#42; `last_modified_timestamp [asc|desc]`,
+   *     <p>&#42; `relevance`, only supports descending &#42; `last_modified_timestamp [asc|desc]`,
    *     defaults to descending if not specified
    *     <p>If not specified, defaults to `relevance` descending.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -549,9 +548,9 @@ public class DataCatalogClient implements BackgroundResource {
    * return the complete resource, only the resource identifier and high level fields. Clients can
    * subsequentally call `Get` methods.
    *
-   * <p>Note that searches do not have full recall. There may be results that match your query but
-   * are not returned, even in subsequent pages of results. These missing results may vary across
-   * repeated calls to search. Do not rely on this method if you need to guarantee full recall.
+   * <p>Note that Data Catalog search queries do not guarantee full recall. Query results that match
+   * your query may not be returned, even in subsequent result pages. Also note that results
+   * returned (and not returned) can vary across repeated search queries.
    *
    * <p>See [Data Catalog Search Syntax](/data-catalog/docs/how-to/search-reference) for more
    * information.
@@ -587,9 +586,9 @@ public class DataCatalogClient implements BackgroundResource {
    * return the complete resource, only the resource identifier and high level fields. Clients can
    * subsequentally call `Get` methods.
    *
-   * <p>Note that searches do not have full recall. There may be results that match your query but
-   * are not returned, even in subsequent pages of results. These missing results may vary across
-   * repeated calls to search. Do not rely on this method if you need to guarantee full recall.
+   * <p>Note that Data Catalog search queries do not guarantee full recall. Query results that match
+   * your query may not be returned, even in subsequent result pages. Also note that results
+   * returned (and not returned) can vary across repeated search queries.
    *
    * <p>See [Data Catalog Search Syntax](/data-catalog/docs/how-to/search-reference) for more
    * information.
@@ -625,9 +624,9 @@ public class DataCatalogClient implements BackgroundResource {
    * return the complete resource, only the resource identifier and high level fields. Clients can
    * subsequentally call `Get` methods.
    *
-   * <p>Note that searches do not have full recall. There may be results that match your query but
-   * are not returned, even in subsequent pages of results. These missing results may vary across
-   * repeated calls to search. Do not rely on this method if you need to guarantee full recall.
+   * <p>Note that Data Catalog search queries do not guarantee full recall. Query results that match
+   * your query may not be returned, even in subsequent result pages. Also note that results
+   * returned (and not returned) can vary across repeated search queries.
    *
    * <p>See [Data Catalog Search Syntax](/data-catalog/docs/how-to/search-reference) for more
    * information.
@@ -663,9 +662,22 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Alpha feature. Creates an EntryGroup. The user should enable the Data Catalog API in the
-   * project identified by the `parent` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
+   * Creates an EntryGroup.
+   *
+   * <p>An entry group contains logically related entries together with Cloud Identity and Access
+   * Management policies that specify the users who can create, edit, and view entries within the
+   * entry group.
+   *
+   * <p>Data Catalog automatically creates an entry group for BigQuery entries
+   * ("{@literal @}bigquery") and Pub/Sub topics ("{@literal @}pubsub"). Users create their own
+   * entry group to contain Cloud Storage fileset entries or custom type entries, and the IAM
+   * policies associated with those entries. Entry groups, like entries, can be searched.
+   *
+   * <p>A maximum of 10,000 entry groups may be created per organization across all locations.
+   *
+   * <p>Users should enable the Data Catalog API in the project identified by the `parent` parameter
+   * (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
+   * information).
    *
    * <p>Sample code:
    *
@@ -702,9 +714,22 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Alpha feature. Creates an EntryGroup. The user should enable the Data Catalog API in the
-   * project identified by the `parent` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
+   * Creates an EntryGroup.
+   *
+   * <p>An entry group contains logically related entries together with Cloud Identity and Access
+   * Management policies that specify the users who can create, edit, and view entries within the
+   * entry group.
+   *
+   * <p>Data Catalog automatically creates an entry group for BigQuery entries
+   * ("{@literal @}bigquery") and Pub/Sub topics ("{@literal @}pubsub"). Users create their own
+   * entry group to contain Cloud Storage fileset entries or custom type entries, and the IAM
+   * policies associated with those entries. Entry groups, like entries, can be searched.
+   *
+   * <p>A maximum of 10,000 entry groups may be created per organization across all locations.
+   *
+   * <p>Users should enable the Data Catalog API in the project identified by the `parent` parameter
+   * (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
+   * information).
    *
    * <p>Sample code:
    *
@@ -731,9 +756,22 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Alpha feature. Creates an EntryGroup. The user should enable the Data Catalog API in the
-   * project identified by the `parent` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
+   * Creates an EntryGroup.
+   *
+   * <p>An entry group contains logically related entries together with Cloud Identity and Access
+   * Management policies that specify the users who can create, edit, and view entries within the
+   * entry group.
+   *
+   * <p>Data Catalog automatically creates an entry group for BigQuery entries
+   * ("{@literal @}bigquery") and Pub/Sub topics ("{@literal @}pubsub"). Users create their own
+   * entry group to contain Cloud Storage fileset entries or custom type entries, and the IAM
+   * policies associated with those entries. Entry groups, like entries, can be searched.
+   *
+   * <p>A maximum of 10,000 entry groups may be created per organization across all locations.
+   *
+   * <p>Users should enable the Data Catalog API in the project identified by the `parent` parameter
+   * (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
+   * information).
    *
    * <p>Sample code:
    *
@@ -759,7 +797,7 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Alpha feature. Gets an EntryGroup.
+   * Gets an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -785,7 +823,7 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Alpha feature. Gets an EntryGroup.
+   * Gets an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -808,7 +846,7 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Alpha feature. Gets an EntryGroup.
+   * Gets an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -830,10 +868,9 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Alpha feature. Deletes an EntryGroup. Only entry groups that do not contain entries can be
-   * deleted. The user should enable the Data Catalog API in the project identified by the `name`
-   * parameter (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project)
-   * for more information).
+   * Deletes an EntryGroup. Only entry groups that do not contain entries can be deleted. Users
+   * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
+   * Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -856,10 +893,9 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Alpha feature. Deletes an EntryGroup. Only entry groups that do not contain entries can be
-   * deleted. The user should enable the Data Catalog API in the project identified by the `name`
-   * parameter (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project)
-   * for more information).
+   * Deletes an EntryGroup. Only entry groups that do not contain entries can be deleted. Users
+   * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
+   * Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -882,10 +918,9 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Alpha feature. Deletes an EntryGroup. Only entry groups that do not contain entries can be
-   * deleted. The user should enable the Data Catalog API in the project identified by the `name`
-   * parameter (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project)
-   * for more information).
+   * Deletes an EntryGroup. Only entry groups that do not contain entries can be deleted. Users
+   * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
+   * Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -907,10 +942,13 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Alpha feature. Creates an entry. Currently only entries of 'FILESET' type can be created. The
-   * user should enable the Data Catalog API in the project identified by the `parent` parameter
+   * Creates an entry. Only entries of 'FILESET' type or user-specified type can be created.
+   *
+   * <p>Users should enable the Data Catalog API in the project identified by the `parent` parameter
    * (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
    * information).
+   *
+   * <p>A maximum of 100,000 entries may be created per entry group.
    *
    * <p>Sample code:
    *
@@ -944,10 +982,13 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Alpha feature. Creates an entry. Currently only entries of 'FILESET' type can be created. The
-   * user should enable the Data Catalog API in the project identified by the `parent` parameter
+   * Creates an entry. Only entries of 'FILESET' type or user-specified type can be created.
+   *
+   * <p>Users should enable the Data Catalog API in the project identified by the `parent` parameter
    * (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
    * information).
+   *
+   * <p>A maximum of 100,000 entries may be created per entry group.
    *
    * <p>Sample code:
    *
@@ -974,10 +1015,13 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Alpha feature. Creates an entry. Currently only entries of 'FILESET' type can be created. The
-   * user should enable the Data Catalog API in the project identified by the `parent` parameter
+   * Creates an entry. Only entries of 'FILESET' type or user-specified type can be created.
+   *
+   * <p>Users should enable the Data Catalog API in the project identified by the `parent` parameter
    * (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
    * information).
+   *
+   * <p>A maximum of 100,000 entries may be created per entry group.
    *
    * <p>Sample code:
    *
@@ -1003,8 +1047,8 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an existing entry. The user should enable the Data Catalog API in the project
-   * identified by the `entry.name` parameter (see [Data Catalog Resource Project]
+   * Updates an existing entry. Users should enable the Data Catalog API in the project identified
+   * by the `entry.name` parameter (see [Data Catalog Resource Project]
    * (/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
@@ -1022,7 +1066,10 @@ public class DataCatalogClient implements BackgroundResource {
    *     are updated.
    *     <p>The following fields are modifiable: &#42; For entries with type `DATA_STREAM`: &#42;
    *     `schema` &#42; For entries with type `FILESET` &#42; `schema` &#42; `display_name` &#42;
-   *     `description` &#42; `gcs_fileset_spec` &#42; `gcs_fileset_spec.file_patterns`
+   *     `description` &#42; `gcs_fileset_spec` &#42; `gcs_fileset_spec.file_patterns` &#42; For
+   *     entries with `user_specified_type` &#42; `schema` &#42; `display_name` &#42; `description`
+   *     &#42; user_specified_type &#42; user_specified_system &#42; linked_resource &#42;
+   *     source_system_timestamps
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Entry updateEntry(Entry entry, FieldMask updateMask) {
@@ -1033,8 +1080,8 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an existing entry. The user should enable the Data Catalog API in the project
-   * identified by the `entry.name` parameter (see [Data Catalog Resource Project]
+   * Updates an existing entry. Users should enable the Data Catalog API in the project identified
+   * by the `entry.name` parameter (see [Data Catalog Resource Project]
    * (/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
@@ -1058,8 +1105,8 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an existing entry. The user should enable the Data Catalog API in the project
-   * identified by the `entry.name` parameter (see [Data Catalog Resource Project]
+   * Updates an existing entry. Users should enable the Data Catalog API in the project identified
+   * by the `entry.name` parameter (see [Data Catalog Resource Project]
    * (/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
@@ -1082,10 +1129,10 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Alpha feature. Deletes an existing entry. Only entries created through
+   * Deletes an existing entry. Only entries created through
    * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry] method can be deleted.
-   * The user should enable the Data Catalog API in the project identified by the `name` parameter
-   * (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
+   * Users should enable the Data Catalog API in the project identified by the `name` parameter (see
+   * [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
    * information).
    *
    * <p>Sample code:
@@ -1110,10 +1157,10 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Alpha feature. Deletes an existing entry. Only entries created through
+   * Deletes an existing entry. Only entries created through
    * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry] method can be deleted.
-   * The user should enable the Data Catalog API in the project identified by the `name` parameter
-   * (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
+   * Users should enable the Data Catalog API in the project identified by the `name` parameter (see
+   * [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
    * information).
    *
    * <p>Sample code:
@@ -1137,10 +1184,10 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Alpha feature. Deletes an existing entry. Only entries created through
+   * Deletes an existing entry. Only entries created through
    * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry] method can be deleted.
-   * The user should enable the Data Catalog API in the project identified by the `name` parameter
-   * (see [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
+   * Users should enable the Data Catalog API in the project identified by the `name` parameter (see
+   * [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
    * information).
    *
    * <p>Sample code:
@@ -1177,9 +1224,6 @@ public class DataCatalogClient implements BackgroundResource {
    * @param name Required. The name of the entry. Example:
    *     <p>&#42;
    *     projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-   *     <p>Entry groups are logical groupings of entries. Currently, users cannot create/modify
-   *     entry groups. They are created by Data Catalog; they include `{@literal @}bigquery` for all
-   *     BigQuery entries, and `{@literal @}pubsub` for all Cloud Pub/Sub entries.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Entry getEntry(String name) {
@@ -1291,10 +1335,11 @@ public class DataCatalogClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the project and the location this template is in. Example:
-   *     <p>&#42; projects/{project_id}/locations/{location}
-   *     <p>TagTemplate and its child resources may not actually be stored in the location in this
-   *     name.
+   * @param parent Required. The name of the project and the template location
+   *     [region](/compute/docs/regions-zones/#available). NOTE: Currently, only the `us-central1
+   *     region` is supported.
+   *     <p>Example:
+   *     <p>&#42; projects/{project_id}/locations/us-central1
    * @param tagTemplateId Required. The id of the tag template to create.
    * @param tagTemplate Required. The tag template to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1440,7 +1485,7 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Updates a tag template. This method cannot be used to update the fields of a template. The tag
    * template fields are represented as separate resources and should be updated using their own
-   * create/update/delete methods. The user should enable the Data Catalog API in the project
+   * create/update/delete methods. Users should enable the Data Catalog API in the project
    * identified by the `tag_template.name` parameter (see [Data Catalog Resource Project]
    * (/data-catalog/docs/concepts/resource-project) for more information).
    *
@@ -1474,7 +1519,7 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Updates a tag template. This method cannot be used to update the fields of a template. The tag
    * template fields are represented as separate resources and should be updated using their own
-   * create/update/delete methods. The user should enable the Data Catalog API in the project
+   * create/update/delete methods. Users should enable the Data Catalog API in the project
    * identified by the `tag_template.name` parameter (see [Data Catalog Resource Project]
    * (/data-catalog/docs/concepts/resource-project) for more information).
    *
@@ -1501,7 +1546,7 @@ public class DataCatalogClient implements BackgroundResource {
   /**
    * Updates a tag template. This method cannot be used to update the fields of a template. The tag
    * template fields are represented as separate resources and should be updated using their own
-   * create/update/delete methods. The user should enable the Data Catalog API in the project
+   * create/update/delete methods. Users should enable the Data Catalog API in the project
    * identified by the `tag_template.name` parameter (see [Data Catalog Resource Project]
    * (/data-catalog/docs/concepts/resource-project) for more information).
    *
@@ -1525,7 +1570,7 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a tag template and all tags using the template. The user should enable the Data Catalog
+   * Deletes a tag template and all tags using the template. Users should enable the Data Catalog
    * API in the project identified by the `name` parameter (see [Data Catalog Resource Project]
    * (/data-catalog/docs/concepts/resource-project) for more information).
    *
@@ -1555,7 +1600,7 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a tag template and all tags using the template. The user should enable the Data Catalog
+   * Deletes a tag template and all tags using the template. Users should enable the Data Catalog
    * API in the project identified by the `name` parameter (see [Data Catalog Resource Project]
    * (/data-catalog/docs/concepts/resource-project) for more information).
    *
@@ -1582,7 +1627,7 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a tag template and all tags using the template. The user should enable the Data Catalog
+   * Deletes a tag template and all tags using the template. Users should enable the Data Catalog
    * API in the project identified by the `name` parameter (see [Data Catalog Resource Project]
    * (/data-catalog/docs/concepts/resource-project) for more information).
    *
@@ -1623,9 +1668,11 @@ public class DataCatalogClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the project this template is in. Example:
-   *     <p>&#42; projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
-   *     <p>Note that this TagTemplateField may not actually be stored in the location in this name.
+   * @param parent Required. The name of the project and the template location
+   *     [region](/compute/docs/regions-zones/#available). NOTE: Currently, only the `us-central1
+   *     region` is supported.
+   *     <p>Example:
+   *     <p>&#42; projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
    * @param tagTemplateFieldId Required. The ID of the tag template field to create. Field ids can
    *     contain letters (both uppercase and lowercase), numbers (0-9), underscores (_) and dashes
    *     (-). Field IDs must be at least 1 character long and at most 128 characters long. Field IDs
@@ -1705,10 +1752,9 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a field in a tag template. This method cannot be used to update the field type. The
-   * user should enable the Data Catalog API in the project identified by the `name` parameter (see
-   * [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
-   * information).
+   * Updates a field in a tag template. This method cannot be used to update the field type. Users
+   * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
+   * Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1748,10 +1794,9 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a field in a tag template. This method cannot be used to update the field type. The
-   * user should enable the Data Catalog API in the project identified by the `name` parameter (see
-   * [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
-   * information).
+   * Updates a field in a tag template. This method cannot be used to update the field type. Users
+   * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
+   * Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1776,10 +1821,9 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a field in a tag template. This method cannot be used to update the field type. The
-   * user should enable the Data Catalog API in the project identified by the `name` parameter (see
-   * [Data Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more
-   * information).
+   * Updates a field in a tag template. This method cannot be used to update the field type. Users
+   * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
+   * Catalog Resource Project] (/data-catalog/docs/concepts/resource-project) for more information).
    *
    * <p>Sample code:
    *
@@ -1891,7 +1935,7 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a field in a tag template and all uses of that field. The user should enable the Data
+   * Deletes a field in a tag template and all uses of that field. Users should enable the Data
    * Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource
    * Project] (/data-catalog/docs/concepts/resource-project) for more information).
    *
@@ -1922,7 +1966,7 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a field in a tag template and all uses of that field. The user should enable the Data
+   * Deletes a field in a tag template and all uses of that field. Users should enable the Data
    * Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource
    * Project] (/data-catalog/docs/concepts/resource-project) for more information).
    *
@@ -1949,7 +1993,7 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a field in a tag template and all uses of that field. The user should enable the Data
+   * Deletes a field in a tag template and all uses of that field. Users should enable the Data
    * Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource
    * Project] (/data-catalog/docs/concepts/resource-project) for more information).
    *
@@ -2222,7 +2266,11 @@ public class DataCatalogClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The name of the Data Catalog resource to list the tags of. The resource
-   *     could be an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+   *     could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
+   *     [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
+   *     <p>Examples:
+   *     <p>&#42; projects/{project_id}/locations/{location}/entryGroups/{entry_group_id} &#42;
+   *     projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTagsPagedResponse listTags(String parent) {
@@ -2608,6 +2656,128 @@ public class DataCatalogClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an EntryGroup. The user should enable the Data Catalog API in the project identified by
+   * the `entry_group.name` parameter (see [Data Catalog Resource Project]
+   * (/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   UpdateEntryGroupRequest request = UpdateEntryGroupRequest.newBuilder().build();
+   *   EntryGroup response = dataCatalogClient.updateEntryGroup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntryGroup updateEntryGroup(UpdateEntryGroupRequest request) {
+    return updateEntryGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an EntryGroup. The user should enable the Data Catalog API in the project identified by
+   * the `entry_group.name` parameter (see [Data Catalog Resource Project]
+   * (/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   UpdateEntryGroupRequest request = UpdateEntryGroupRequest.newBuilder().build();
+   *   ApiFuture&lt;EntryGroup&gt; future = dataCatalogClient.updateEntryGroupCallable().futureCall(request);
+   *   // Do something
+   *   EntryGroup response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupCallable() {
+    return stub.updateEntryGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists entry groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ListEntryGroupsRequest request = ListEntryGroupsRequest.newBuilder().build();
+   *   ListEntryGroupsResponse response = dataCatalogClient.listEntryGroups(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEntryGroupsResponse listEntryGroups(ListEntryGroupsRequest request) {
+    return listEntryGroupsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists entry groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ListEntryGroupsRequest request = ListEntryGroupsRequest.newBuilder().build();
+   *   ApiFuture&lt;ListEntryGroupsResponse&gt; future = dataCatalogClient.listEntryGroupsCallable().futureCall(request);
+   *   // Do something
+   *   ListEntryGroupsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsResponse>
+      listEntryGroupsCallable() {
+    return stub.listEntryGroupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists entries.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ListEntriesRequest request = ListEntriesRequest.newBuilder().build();
+   *   ListEntriesResponse response = dataCatalogClient.listEntries(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEntriesResponse listEntries(ListEntriesRequest request) {
+    return listEntriesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists entries.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ListEntriesRequest request = ListEntriesRequest.newBuilder().build();
+   *   ApiFuture&lt;ListEntriesResponse&gt; future = dataCatalogClient.listEntriesCallable().futureCall(request);
+   *   // Do something
+   *   ListEntriesResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListEntriesRequest, ListEntriesResponse> listEntriesCallable() {
+    return stub.listEntriesCallable();
   }
 
   @Override

@@ -79,6 +79,14 @@ public interface UpdateEntryRequestOrBuilder
    *    * `description`
    *    * `gcs_fileset_spec`
    *    * `gcs_fileset_spec.file_patterns`
+   * * For entries with `user_specified_type`
+   *    * `schema`
+   *    * `display_name`
+   *    * `description`
+   *    * user_specified_type
+   *    * user_specified_system
+   *    * linked_resource
+   *    * source_system_timestamps
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -101,6 +109,14 @@ public interface UpdateEntryRequestOrBuilder
    *    * `description`
    *    * `gcs_fileset_spec`
    *    * `gcs_fileset_spec.file_patterns`
+   * * For entries with `user_specified_type`
+   *    * `schema`
+   *    * `display_name`
+   *    * `description`
+   *    * user_specified_type
+   *    * user_specified_system
+   *    * linked_resource
+   *    * source_system_timestamps
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -123,6 +139,14 @@ public interface UpdateEntryRequestOrBuilder
    *    * `description`
    *    * `gcs_fileset_spec`
    *    * `gcs_fileset_spec.file_patterns`
+   * * For entries with `user_specified_type`
+   *    * `schema`
+   *    * `display_name`
+   *    * `description`
+   *    * user_specified_type
+   *    * user_specified_system
+   *    * linked_resource
+   *    * source_system_timestamps
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

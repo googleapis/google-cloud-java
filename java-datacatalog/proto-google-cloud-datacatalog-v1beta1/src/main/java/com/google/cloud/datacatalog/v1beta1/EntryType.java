@@ -55,6 +55,16 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Output only. The type of models.
+   * </pre>
+   *
+   * <code>MODEL = 5;</code>
+   */
+  MODEL(5),
+  /**
+   *
+   *
+   * <pre>
    * Output only. An entry type which is used for streaming entries. Example:
    * Cloud Pub/Sub topic.
    * </pre>
@@ -66,7 +76,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Alpha feature. An entry type which is a set of files or objects. Example:
+   * An entry type which is a set of files or objects. Example:
    * Cloud Storage fileset.
    * </pre>
    *
@@ -101,6 +111,16 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Output only. The type of models.
+   * </pre>
+   *
+   * <code>MODEL = 5;</code>
+   */
+  public static final int MODEL_VALUE = 5;
+  /**
+   *
+   *
+   * <pre>
    * Output only. An entry type which is used for streaming entries. Example:
    * Cloud Pub/Sub topic.
    * </pre>
@@ -112,7 +132,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Alpha feature. An entry type which is a set of files or objects. Example:
+   * An entry type which is a set of files or objects. Example:
    * Cloud Storage fileset.
    * </pre>
    *
@@ -148,6 +168,8 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
         return ENTRY_TYPE_UNSPECIFIED;
       case 2:
         return TABLE;
+      case 5:
+        return MODEL;
       case 3:
         return DATA_STREAM;
       case 4:

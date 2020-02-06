@@ -18,21 +18,18 @@
 
 package com.google.cloud.datacatalog.v1beta1;
 
-public interface ListTagsRequestOrBuilder
+public interface ListEntriesRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.datacatalog.v1beta1.ListTagsRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.datacatalog.v1beta1.ListEntriesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The name of the Data Catalog resource to list the tags of. The
-   * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
-   * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
-   * Examples:
+   * Required. The name of the entry group that contains the entries, which can
+   * be provided in URL format. Example:
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * </pre>
    *
    * <code>
@@ -46,12 +43,9 @@ public interface ListTagsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Data Catalog resource to list the tags of. The
-   * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
-   * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
-   * Examples:
+   * Required. The name of the entry group that contains the entries, which can
+   * be provided in URL format. Example:
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * </pre>
    *
    * <code>
@@ -66,7 +60,8 @@ public interface ListTagsRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of tags to return. Default is 10. Max limit is 1000.
+   * The maximum number of items to return. Default is 10. Max limit is 1000.
+   * Throws an invalid argument for `page_size &gt; 1000`.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -101,4 +96,48 @@ public interface ListTagsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The fields to return for each Entry. If not set or empty, all
+   * fields are returned.
+   * For example, setting read_mask to contain only one path "name" will cause
+   * ListEntries to return a list of Entries with only "name" field.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 4;</code>
+   *
+   * @return Whether the readMask field is set.
+   */
+  boolean hasReadMask();
+  /**
+   *
+   *
+   * <pre>
+   * The fields to return for each Entry. If not set or empty, all
+   * fields are returned.
+   * For example, setting read_mask to contain only one path "name" will cause
+   * ListEntries to return a list of Entries with only "name" field.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 4;</code>
+   *
+   * @return The readMask.
+   */
+  com.google.protobuf.FieldMask getReadMask();
+  /**
+   *
+   *
+   * <pre>
+   * The fields to return for each Entry. If not set or empty, all
+   * fields are returned.
+   * For example, setting read_mask to contain only one path "name" will cause
+   * ListEntries to return a list of Entries with only "name" field.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 4;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder();
 }

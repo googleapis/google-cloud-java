@@ -53,4 +53,17 @@ public interface DeleteEntryGroupRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, deletes all entries in the entry group.
+   * </pre>
+   *
+   * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The force.
+   */
+  boolean getForce();
 }

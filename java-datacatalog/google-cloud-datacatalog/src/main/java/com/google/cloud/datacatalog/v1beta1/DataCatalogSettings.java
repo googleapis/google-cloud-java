@@ -196,6 +196,22 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
     return ((DataCatalogStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateEntryGroup. */
+  public UnaryCallSettings<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).updateEntryGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listEntryGroups. */
+  public UnaryCallSettings<ListEntryGroupsRequest, ListEntryGroupsResponse>
+      listEntryGroupsSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).listEntryGroupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listEntries. */
+  public UnaryCallSettings<ListEntriesRequest, ListEntriesResponse> listEntriesSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).listEntriesSettings();
+  }
+
   public static final DataCatalogSettings create(DataCatalogStubSettings stub) throws IOException {
     return new DataCatalogSettings.Builder(stub.toBuilder()).build();
   }
@@ -421,6 +437,24 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateEntryGroup. */
+    public UnaryCallSettings.Builder<UpdateEntryGroupRequest, EntryGroup>
+        updateEntryGroupSettings() {
+      return getStubSettingsBuilder().updateEntryGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listEntryGroups. */
+    public UnaryCallSettings.Builder<ListEntryGroupsRequest, ListEntryGroupsResponse>
+        listEntryGroupsSettings() {
+      return getStubSettingsBuilder().listEntryGroupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listEntries. */
+    public UnaryCallSettings.Builder<ListEntriesRequest, ListEntriesResponse>
+        listEntriesSettings() {
+      return getStubSettingsBuilder().listEntriesSettings();
     }
 
     @Override

@@ -294,12 +294,16 @@ public class DataCatalogClientTest {
   public void createEntryTest() {
     String name = "name3373707";
     String linkedResource = "linkedResource1544625012";
+    String userSpecifiedType = "userSpecifiedType-940364963";
+    String userSpecifiedSystem = "userSpecifiedSystem-1776119406";
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     Entry expectedResponse =
         Entry.newBuilder()
             .setName(name)
             .setLinkedResource(linkedResource)
+            .setUserSpecifiedType(userSpecifiedType)
+            .setUserSpecifiedSystem(userSpecifiedSystem)
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
@@ -350,12 +354,16 @@ public class DataCatalogClientTest {
   public void updateEntryTest() {
     String name = "name3373707";
     String linkedResource = "linkedResource1544625012";
+    String userSpecifiedType = "userSpecifiedType-940364963";
+    String userSpecifiedSystem = "userSpecifiedSystem-1776119406";
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     Entry expectedResponse =
         Entry.newBuilder()
             .setName(name)
             .setLinkedResource(linkedResource)
+            .setUserSpecifiedType(userSpecifiedType)
+            .setUserSpecifiedSystem(userSpecifiedSystem)
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
@@ -440,12 +448,16 @@ public class DataCatalogClientTest {
   public void getEntryTest() {
     String name2 = "name2-1052831874";
     String linkedResource = "linkedResource1544625012";
+    String userSpecifiedType = "userSpecifiedType-940364963";
+    String userSpecifiedSystem = "userSpecifiedSystem-1776119406";
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     Entry expectedResponse =
         Entry.newBuilder()
             .setName(name2)
             .setLinkedResource(linkedResource)
+            .setUserSpecifiedType(userSpecifiedType)
+            .setUserSpecifiedSystem(userSpecifiedSystem)
             .setDisplayName(displayName)
             .setDescription(description)
             .build();

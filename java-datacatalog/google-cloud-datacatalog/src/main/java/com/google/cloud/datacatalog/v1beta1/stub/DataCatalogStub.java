@@ -36,6 +36,10 @@ import com.google.cloud.datacatalog.v1beta1.EntryGroup;
 import com.google.cloud.datacatalog.v1beta1.GetEntryGroupRequest;
 import com.google.cloud.datacatalog.v1beta1.GetEntryRequest;
 import com.google.cloud.datacatalog.v1beta1.GetTagTemplateRequest;
+import com.google.cloud.datacatalog.v1beta1.ListEntriesRequest;
+import com.google.cloud.datacatalog.v1beta1.ListEntriesResponse;
+import com.google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest;
+import com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse;
 import com.google.cloud.datacatalog.v1beta1.ListTagsRequest;
 import com.google.cloud.datacatalog.v1beta1.ListTagsResponse;
 import com.google.cloud.datacatalog.v1beta1.LookupEntryRequest;
@@ -45,6 +49,7 @@ import com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse;
 import com.google.cloud.datacatalog.v1beta1.Tag;
 import com.google.cloud.datacatalog.v1beta1.TagTemplate;
 import com.google.cloud.datacatalog.v1beta1.TagTemplateField;
+import com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest;
 import com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest;
 import com.google.cloud.datacatalog.v1beta1.UpdateTagRequest;
 import com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateFieldRequest;
@@ -174,6 +179,18 @@ public abstract class DataCatalogStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public UnaryCallable<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateEntryGroupCallable()");
+  }
+
+  public UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsResponse> listEntryGroupsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEntryGroupsCallable()");
+  }
+
+  public UnaryCallable<ListEntriesRequest, ListEntriesResponse> listEntriesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEntriesCallable()");
   }
 
   @Override

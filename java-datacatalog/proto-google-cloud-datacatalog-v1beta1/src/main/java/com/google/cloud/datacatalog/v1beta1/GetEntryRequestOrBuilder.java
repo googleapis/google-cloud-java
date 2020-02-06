@@ -29,10 +29,6 @@ public interface GetEntryRequestOrBuilder
    * <pre>
    * Required. The name of the entry. Example:
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-   * Entry groups are logical groupings of entries. Currently, users cannot
-   * create/modify entry groups. They are created by Data Catalog; they include
-   * `&#64;bigquery` for all BigQuery entries, and `&#64;pubsub` for all Cloud Pub/Sub
-   * entries.
    * </pre>
    *
    * <code>
@@ -48,10 +44,6 @@ public interface GetEntryRequestOrBuilder
    * <pre>
    * Required. The name of the entry. Example:
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-   * Entry groups are logical groupings of entries. Currently, users cannot
-   * create/modify entry groups. They are created by Data Catalog; they include
-   * `&#64;bigquery` for all BigQuery entries, and `&#64;pubsub` for all Cloud Pub/Sub
-   * entries.
    * </pre>
    *
    * <code>

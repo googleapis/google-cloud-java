@@ -93,6 +93,21 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
   }
 
   @Override
+  public void updateEntryGroup(
+      UpdateEntryGroupRequest request, StreamObserver<EntryGroup> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof EntryGroup) {
+      requests.add(request);
+      responseObserver.onNext((EntryGroup) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void getEntryGroup(
       GetEntryGroupRequest request, StreamObserver<EntryGroup> responseObserver) {
     Object response = responses.remove();
@@ -114,6 +129,21 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void listEntryGroups(
+      ListEntryGroupsRequest request, StreamObserver<ListEntryGroupsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListEntryGroupsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListEntryGroupsResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);
@@ -184,6 +214,21 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     if (response instanceof Entry) {
       requests.add(request);
       responseObserver.onNext((Entry) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void listEntries(
+      ListEntriesRequest request, StreamObserver<ListEntriesResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListEntriesResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListEntriesResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);
