@@ -499,6 +499,183 @@ public class DataCatalogClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void listEntryGroupsTest() {
+    String nextPageToken = "nextPageToken-1530815211";
+    ListEntryGroupsResponse expectedResponse =
+        ListEntryGroupsResponse.newBuilder().setNextPageToken(nextPageToken).build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    String formattedParent = DataCatalogClient.formatLocationName("[PROJECT]", "[LOCATION]");
+
+    ListEntryGroupsResponse actualResponse = client.listEntryGroups(formattedParent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEntryGroupsRequest actualRequest = (ListEntryGroupsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listEntryGroupsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      String formattedParent = DataCatalogClient.formatLocationName("[PROJECT]", "[LOCATION]");
+
+      client.listEntryGroups(formattedParent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listEntriesTest() {
+    String nextPageToken = "nextPageToken-1530815211";
+    ListEntriesResponse expectedResponse =
+        ListEntriesResponse.newBuilder().setNextPageToken(nextPageToken).build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    String formattedParent =
+        DataCatalogClient.formatEntryGroupName("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+
+    ListEntriesResponse actualResponse = client.listEntries(formattedParent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEntriesRequest actualRequest = (ListEntriesRequest) actualRequests.get(0);
+
+    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listEntriesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      String formattedParent =
+          DataCatalogClient.formatEntryGroupName("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+
+      client.listEntries(formattedParent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateEntryGroupTest() {
+    String name = "name3373707";
+    String displayName = "displayName1615086568";
+    String description = "description-1724546052";
+    EntryGroup expectedResponse =
+        EntryGroup.newBuilder()
+            .setName(name)
+            .setDisplayName(displayName)
+            .setDescription(description)
+            .build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    EntryGroup entryGroup = EntryGroup.newBuilder().build();
+
+    EntryGroup actualResponse = client.updateEntryGroup(entryGroup);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateEntryGroupRequest actualRequest = (UpdateEntryGroupRequest) actualRequests.get(0);
+
+    Assert.assertEquals(entryGroup, actualRequest.getEntryGroup());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateEntryGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      EntryGroup entryGroup = EntryGroup.newBuilder().build();
+
+      client.updateEntryGroup(entryGroup);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateEntryGroupTest2() {
+    String name = "name3373707";
+    String displayName = "displayName1615086568";
+    String description = "description-1724546052";
+    EntryGroup expectedResponse =
+        EntryGroup.newBuilder()
+            .setName(name)
+            .setDisplayName(displayName)
+            .setDescription(description)
+            .build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    EntryGroup entryGroup = EntryGroup.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    EntryGroup actualResponse = client.updateEntryGroup(entryGroup, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateEntryGroupRequest actualRequest = (UpdateEntryGroupRequest) actualRequests.get(0);
+
+    Assert.assertEquals(entryGroup, actualRequest.getEntryGroup());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateEntryGroupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      EntryGroup entryGroup = EntryGroup.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+
+      client.updateEntryGroup(entryGroup, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createTagTemplateTest() {
     String name = "name3373707";
     String displayName = "displayName1615086568";

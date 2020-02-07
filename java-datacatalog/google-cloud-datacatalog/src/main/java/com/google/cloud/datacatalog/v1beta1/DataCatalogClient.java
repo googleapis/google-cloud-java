@@ -1320,6 +1320,248 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Lists entry groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   String formattedParent = DataCatalogClient.formatLocationName("[PROJECT]", "[LOCATION]");
+   *   ListEntryGroupsResponse response = dataCatalogClient.listEntryGroups(formattedParent);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the location that contains the entry groups, which can be
+   *     provided in URL format. Example:
+   *     <p>&#42; projects/{project_id}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEntryGroupsResponse listEntryGroups(String parent) {
+    LOCATION_PATH_TEMPLATE.validate(parent, "listEntryGroups");
+    ListEntryGroupsRequest request = ListEntryGroupsRequest.newBuilder().setParent(parent).build();
+    return listEntryGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists entry groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   String formattedParent = DataCatalogClient.formatLocationName("[PROJECT]", "[LOCATION]");
+   *   ListEntryGroupsRequest request = ListEntryGroupsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .build();
+   *   ListEntryGroupsResponse response = dataCatalogClient.listEntryGroups(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEntryGroupsResponse listEntryGroups(ListEntryGroupsRequest request) {
+    return listEntryGroupsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists entry groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   String formattedParent = DataCatalogClient.formatLocationName("[PROJECT]", "[LOCATION]");
+   *   ListEntryGroupsRequest request = ListEntryGroupsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .build();
+   *   ApiFuture&lt;ListEntryGroupsResponse&gt; future = dataCatalogClient.listEntryGroupsCallable().futureCall(request);
+   *   // Do something
+   *   ListEntryGroupsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsResponse>
+      listEntryGroupsCallable() {
+    return stub.listEntryGroupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists entries.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   String formattedParent = DataCatalogClient.formatEntryGroupName("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+   *   ListEntriesResponse response = dataCatalogClient.listEntries(formattedParent);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the entry group that contains the entries, which can be
+   *     provided in URL format. Example:
+   *     <p>&#42; projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEntriesResponse listEntries(String parent) {
+    ENTRY_GROUP_PATH_TEMPLATE.validate(parent, "listEntries");
+    ListEntriesRequest request = ListEntriesRequest.newBuilder().setParent(parent).build();
+    return listEntries(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists entries.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   String formattedParent = DataCatalogClient.formatEntryGroupName("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+   *   ListEntriesRequest request = ListEntriesRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .build();
+   *   ListEntriesResponse response = dataCatalogClient.listEntries(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEntriesResponse listEntries(ListEntriesRequest request) {
+    return listEntriesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists entries.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   String formattedParent = DataCatalogClient.formatEntryGroupName("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+   *   ListEntriesRequest request = ListEntriesRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .build();
+   *   ApiFuture&lt;ListEntriesResponse&gt; future = dataCatalogClient.listEntriesCallable().futureCall(request);
+   *   // Do something
+   *   ListEntriesResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListEntriesRequest, ListEntriesResponse> listEntriesCallable() {
+    return stub.listEntriesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an EntryGroup. The user should enable the Data Catalog API in the project identified by
+   * the `entry_group.name` parameter (see [Data Catalog Resource Project]
+   * (/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryGroup entryGroup = EntryGroup.newBuilder().build();
+   *   EntryGroup response = dataCatalogClient.updateEntryGroup(entryGroup);
+   * }
+   * </code></pre>
+   *
+   * @param entryGroup Required. The updated entry group. "name" field must be set.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntryGroup updateEntryGroup(EntryGroup entryGroup) {
+    UpdateEntryGroupRequest request =
+        UpdateEntryGroupRequest.newBuilder().setEntryGroup(entryGroup).build();
+    return updateEntryGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an EntryGroup. The user should enable the Data Catalog API in the project identified by
+   * the `entry_group.name` parameter (see [Data Catalog Resource Project]
+   * (/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryGroup entryGroup = EntryGroup.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   EntryGroup response = dataCatalogClient.updateEntryGroup(entryGroup, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param entryGroup Required. The updated entry group. "name" field must be set.
+   * @param updateMask The fields to update on the entry group. If absent or empty, all modifiable
+   *     fields are updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntryGroup updateEntryGroup(EntryGroup entryGroup, FieldMask updateMask) {
+    UpdateEntryGroupRequest request =
+        UpdateEntryGroupRequest.newBuilder()
+            .setEntryGroup(entryGroup)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateEntryGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an EntryGroup. The user should enable the Data Catalog API in the project identified by
+   * the `entry_group.name` parameter (see [Data Catalog Resource Project]
+   * (/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryGroup entryGroup = EntryGroup.newBuilder().build();
+   *   UpdateEntryGroupRequest request = UpdateEntryGroupRequest.newBuilder()
+   *     .setEntryGroup(entryGroup)
+   *     .build();
+   *   EntryGroup response = dataCatalogClient.updateEntryGroup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntryGroup updateEntryGroup(UpdateEntryGroupRequest request) {
+    return updateEntryGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an EntryGroup. The user should enable the Data Catalog API in the project identified by
+   * the `entry_group.name` parameter (see [Data Catalog Resource Project]
+   * (/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryGroup entryGroup = EntryGroup.newBuilder().build();
+   *   UpdateEntryGroupRequest request = UpdateEntryGroupRequest.newBuilder()
+   *     .setEntryGroup(entryGroup)
+   *     .build();
+   *   ApiFuture&lt;EntryGroup&gt; future = dataCatalogClient.updateEntryGroupCallable().futureCall(request);
+   *   // Do something
+   *   EntryGroup response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupCallable() {
+    return stub.updateEntryGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Creates a tag template. The user should enable the Data Catalog API in the project identified
    * by the `parent` parameter (see [Data Catalog Resource
    * Project](/data-catalog/docs/concepts/resource-project) for more information).
@@ -2656,128 +2898,6 @@ public class DataCatalogClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates an EntryGroup. The user should enable the Data Catalog API in the project identified by
-   * the `entry_group.name` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   UpdateEntryGroupRequest request = UpdateEntryGroupRequest.newBuilder().build();
-   *   EntryGroup response = dataCatalogClient.updateEntryGroup(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final EntryGroup updateEntryGroup(UpdateEntryGroupRequest request) {
-    return updateEntryGroupCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates an EntryGroup. The user should enable the Data Catalog API in the project identified by
-   * the `entry_group.name` parameter (see [Data Catalog Resource Project]
-   * (/data-catalog/docs/concepts/resource-project) for more information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   UpdateEntryGroupRequest request = UpdateEntryGroupRequest.newBuilder().build();
-   *   ApiFuture&lt;EntryGroup&gt; future = dataCatalogClient.updateEntryGroupCallable().futureCall(request);
-   *   // Do something
-   *   EntryGroup response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupCallable() {
-    return stub.updateEntryGroupCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists entry groups.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   ListEntryGroupsRequest request = ListEntryGroupsRequest.newBuilder().build();
-   *   ListEntryGroupsResponse response = dataCatalogClient.listEntryGroups(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListEntryGroupsResponse listEntryGroups(ListEntryGroupsRequest request) {
-    return listEntryGroupsCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists entry groups.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   ListEntryGroupsRequest request = ListEntryGroupsRequest.newBuilder().build();
-   *   ApiFuture&lt;ListEntryGroupsResponse&gt; future = dataCatalogClient.listEntryGroupsCallable().futureCall(request);
-   *   // Do something
-   *   ListEntryGroupsResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsResponse>
-      listEntryGroupsCallable() {
-    return stub.listEntryGroupsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists entries.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   ListEntriesRequest request = ListEntriesRequest.newBuilder().build();
-   *   ListEntriesResponse response = dataCatalogClient.listEntries(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListEntriesResponse listEntries(ListEntriesRequest request) {
-    return listEntriesCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists entries.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   ListEntriesRequest request = ListEntriesRequest.newBuilder().build();
-   *   ApiFuture&lt;ListEntriesResponse&gt; future = dataCatalogClient.listEntriesCallable().futureCall(request);
-   *   // Do something
-   *   ListEntriesResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListEntriesRequest, ListEntriesResponse> listEntriesCallable() {
-    return stub.listEntriesCallable();
   }
 
   @Override

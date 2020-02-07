@@ -113,6 +113,18 @@ public abstract class DataCatalogStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: lookupEntryCallable()");
   }
 
+  public UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsResponse> listEntryGroupsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEntryGroupsCallable()");
+  }
+
+  public UnaryCallable<ListEntriesRequest, ListEntriesResponse> listEntriesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEntriesCallable()");
+  }
+
+  public UnaryCallable<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateEntryGroupCallable()");
+  }
+
   public UnaryCallable<CreateTagTemplateRequest, TagTemplate> createTagTemplateCallable() {
     throw new UnsupportedOperationException("Not implemented: createTagTemplateCallable()");
   }
@@ -179,18 +191,6 @@ public abstract class DataCatalogStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
-  }
-
-  public UnaryCallable<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateEntryGroupCallable()");
-  }
-
-  public UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsResponse> listEntryGroupsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listEntryGroupsCallable()");
-  }
-
-  public UnaryCallable<ListEntriesRequest, ListEntriesResponse> listEntriesCallable() {
-    throw new UnsupportedOperationException("Not implemented: listEntriesCallable()");
   }
 
   @Override
