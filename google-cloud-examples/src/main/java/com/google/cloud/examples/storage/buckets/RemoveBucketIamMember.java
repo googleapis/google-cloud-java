@@ -17,17 +17,11 @@ package com.google.cloud.examples.storage.buckets;
 
 // [START storage_remove_bucket_iam_member]
 import com.google.cloud.Binding;
-import com.google.cloud.Identity;
 import com.google.cloud.Policy;
-import com.google.cloud.Role;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-import com.google.cloud.storage.StorageRoles;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class RemoveBucketIamMember {
   public static void removeBucketIamMember(String projectId, String bucketName) {
@@ -49,7 +43,9 @@ public class RemoveBucketIamMember {
     List<Binding> bindings = new ArrayList(originalPolicy.getBindingsList());
     for (int index = 0; index < bindings.size(); ++index) {
       Binding binding = bindings.get(index);
-      if (binding.getRole().equals(role) && binding.getMembers().contains(member) && null == binding.getCondition()) {
+      if (binding.getRole().equals(role)
+          && binding.getMembers().contains(member)
+          && null == binding.getCondition()) {
         bindings.set(index, binding.toBuilder().removeMembers(member).build());
         break;
       }
