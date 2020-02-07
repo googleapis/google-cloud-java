@@ -16,12 +16,18 @@
 package com.google.cloud.examples.storage.buckets;
 
 // [START storage_remove_bucket_iam_member]
+import com.google.cloud.Binding;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.StorageRoles;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class RemoveBucketIamMember {
   public static void removeBucketIamMember(String projectId, String bucketName) {
@@ -37,18 +43,32 @@ public class RemoveBucketIamMember {
 
     // See the StorageRoles documentation for other roles:
     // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/storage/StorageRoles.html
-    Role role = StorageRoles.objectViewer();
+    String role = "roles/storage.objectViewer";
 
-    // See the Identity documentation for other identities:
-    // https://googleapis.dev/java/google-cloud-core/latest/com/google/cloud/Identity.html
-    Identity identity = Identity.group("example@google.com");
+    String member = "group:example@google.com";
+    List<Binding> bindings = new ArrayList(originalPolicy.getBindingsList());
+    for (int index = 0; index < bindings.size(); ++index) {
+      Binding binding = bindings.get(index);
+      if (binding.getRole().equals(role) && binding.getMembers().contains(member) && null == binding.getCondition()) {
+        bindings.set(index, binding.toBuilder().removeMembers(member).build());
+        break;
+      }
+    }
 
     Policy updatedPolicy =
-        storage.setIamPolicy(bucketName, originalPolicy.toBuilder().removeIdentity(role, identity).build());
+        storage.setIamPolicy(bucketName, originalPolicy.toBuilder().setBindings(bindings).build());
 
-    if (updatedPolicy.getBindings().get(role) == null
-        || !updatedPolicy.getBindings().get(role).contains(identity)) {
-      System.out.printf("Removed %s with role %s from %s\n", identity, role, bucketName);
+    boolean bindingExists = false;
+    for (Binding binding : updatedPolicy.getBindingsList()) {
+      if (binding.getRole().equals(role) && null == binding.getCondition()) {
+        bindingExists = true;
+        if (!binding.getMembers().contains(member)) {
+          System.out.printf("Removed %s with role %s from %s\n", member, role, bucketName);
+        }
+      }
+    }
+    if (!bindingExists) {
+      System.out.printf("Removed %s with role %s from %s\n", member, role, bucketName);
     }
   }
 }

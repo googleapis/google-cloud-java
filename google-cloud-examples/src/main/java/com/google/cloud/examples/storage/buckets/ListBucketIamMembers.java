@@ -16,12 +16,14 @@
 package com.google.cloud.examples.storage.buckets;
 
 // [START storage_view_bucket_iam_members]
+import com.google.cloud.Binding;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -35,10 +37,15 @@ public class ListBucketIamMembers {
 
         Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
         Policy policy = storage.getIamPolicy(bucketName);
-        Map<Role, Set<Identity>> policyBindings = policy.getBindings();
+        List<Binding> policyBindings = policy.getBindingsList();
 
-        for (Map.Entry<Role, Set<Identity>> entry : policyBindings.entrySet()) {
-            System.out.printf("Role: %s Identities: %s\n", entry.getKey(), entry.getValue());
+        for (Binding binding : policy.getBindingsList()) {
+            System.out.printf("Role: %s Identities: %s\n", binding.getRole(), binding.getMembers());
+            if (null != binding.getCondition()) {
+                System.out.printf("Condition Title: %s\n", binding.getCondition().getTitle());
+                System.out.printf("Condition Description: %s\n", binding.getCondition().getDescription());
+                System.out.printf("Condition Expression: %s\n", binding.getCondition().getExpression());
+            }
         }
     }
 }

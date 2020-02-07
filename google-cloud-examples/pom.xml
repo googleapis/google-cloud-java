@@ -76,6 +76,12 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>
+      <version>1.103.2-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-core</artifactId>
+      <version>1.92.3-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
