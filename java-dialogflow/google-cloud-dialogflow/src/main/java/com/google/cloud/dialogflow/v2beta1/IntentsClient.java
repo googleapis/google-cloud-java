@@ -780,10 +780,8 @@ public class IntentsClient implements BackgroundResource {
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   Intent intent = Intent.newBuilder().build();
-   *   String languageCode = "";
    *   UpdateIntentRequest request = UpdateIntentRequest.newBuilder()
    *     .setIntent(intent)
-   *     .setLanguageCode(languageCode)
    *     .build();
    *   Intent response = intentsClient.updateIntent(request);
    * }
@@ -805,10 +803,8 @@ public class IntentsClient implements BackgroundResource {
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   Intent intent = Intent.newBuilder().build();
-   *   String languageCode = "";
    *   UpdateIntentRequest request = UpdateIntentRequest.newBuilder()
    *     .setIntent(intent)
-   *     .setLanguageCode(languageCode)
    *     .build();
    *   ApiFuture&lt;Intent&gt; future = intentsClient.updateIntentCallable().futureCall(request);
    *   // Do something
@@ -924,10 +920,8 @@ public class IntentsClient implements BackgroundResource {
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
-   *   String languageCode = "";
    *   BatchUpdateIntentsRequest request = BatchUpdateIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
-   *     .setLanguageCode(languageCode)
    *     .build();
    *   BatchUpdateIntentsResponse response = intentsClient.batchUpdateIntentsAsync(request).get();
    * }
@@ -955,10 +949,8 @@ public class IntentsClient implements BackgroundResource {
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
-   *   String languageCode = "";
    *   BatchUpdateIntentsRequest request = BatchUpdateIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
-   *     .setLanguageCode(languageCode)
    *     .build();
    *   OperationFuture&lt;BatchUpdateIntentsResponse, Struct&gt; future = intentsClient.batchUpdateIntentsOperationCallable().futureCall(request);
    *   // Do something
@@ -984,10 +976,8 @@ public class IntentsClient implements BackgroundResource {
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
-   *   String languageCode = "";
    *   BatchUpdateIntentsRequest request = BatchUpdateIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
-   *     .setLanguageCode(languageCode)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = intentsClient.batchUpdateIntentsCallable().futureCall(request);
    *   // Do something
