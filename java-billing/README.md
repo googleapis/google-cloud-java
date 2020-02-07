@@ -66,7 +66,7 @@ See the [Authentication][authentication] section in the base directory's README.
 ### Prerequisites
 
 You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Billing [API enabled][enable-api].
-
+You will need to [enable billing][enable-billing] to use Google Cloud Billing.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -90,6 +90,10 @@ use this Cloud Billing Client Library.
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
+
+## Transport
+
+Cloud Billing uses gRPC for the transport layer.
 
 ## Java Versions
 
@@ -152,6 +156,6 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [contributing]: https://github.com/googleapis/java-billing/blob/master/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/java-billing/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/java-billing/blob/master/LICENSE
-
+[enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=cloudbilling.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM

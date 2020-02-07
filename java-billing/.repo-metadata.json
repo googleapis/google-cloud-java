@@ -10,5 +10,7 @@
   "repo": "googleapis/java-billing",
   "repo_short": "java-billing",
   "distribution_name": "com.google.cloud:google-cloud-billing",
-  "api_id": "cloudbilling.googleapis.com"
+  "api_id": "cloudbilling.googleapis.com",
+  "transport": "grpc",
+  "requires_billing": true
 }
