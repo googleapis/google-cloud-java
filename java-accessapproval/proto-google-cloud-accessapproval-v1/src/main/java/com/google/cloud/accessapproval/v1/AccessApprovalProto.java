@@ -102,11 +102,11 @@ public final class AccessApprovalProto {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/accessapproval/v1/accessa"
           + "pproval.proto\022\036google.cloud.accessapprov"
-          + "al.v1\032\034google/api/annotations.proto\032\037goo"
-          + "gle/api/field_behavior.proto\032\033google/pro"
-          + "tobuf/empty.proto\032 google/protobuf/field"
-          + "_mask.proto\032\037google/protobuf/timestamp.p"
-          + "roto\032\027google/api/client.proto\"`\n\017AccessL"
+          + "al.v1\032\034google/api/annotations.proto\032\027goo"
+          + "gle/api/client.proto\032\037google/api/field_b"
+          + "ehavior.proto\032\033google/protobuf/empty.pro"
+          + "to\032 google/protobuf/field_mask.proto\032\037go"
+          + "ogle/protobuf/timestamp.proto\"`\n\017AccessL"
           + "ocations\022 \n\030principal_office_country\030\001 \001"
           + "(\t\022+\n#principal_physical_location_countr"
           + "y\030\002 \001(\t\"\330\001\n\014AccessReason\022?\n\004type\030\001 \001(\01621"
@@ -161,78 +161,79 @@ public final class AccessApprovalProto {
           + "3\n#DeleteAccessApprovalSettingsMessage\022\014"
           + "\n\004name\030\001 \001(\t*B\n\017EnrollmentLevel\022 \n\034ENROL"
           + "LMENT_LEVEL_UNSPECIFIED\020\000\022\r\n\tBLOCK_ALL\020\001"
-          + "2\323\021\n\016AccessApproval\022\241\002\n\024ListApprovalRequ"
+          + "2\210\022\n\016AccessApproval\022\252\002\n\024ListApprovalRequ"
           + "ests\022;.google.cloud.accessapproval.v1.Li"
           + "stApprovalRequestsMessage\032<.google.cloud"
           + ".accessapproval.v1.ListApprovalRequestsR"
-          + "esponse\"\215\001\202\323\344\223\002\206\001\022(/v1/{parent=projects/"
+          + "esponse\"\226\001\202\323\344\223\002\206\001\022(/v1/{parent=projects/"
           + "*}/approvalRequestsZ)\022\'/v1/{parent=folde"
           + "rs/*}/approvalRequestsZ/\022-/v1/{parent=or"
-          + "ganizations/*}/approvalRequests\022\220\002\n\022GetA"
-          + "pprovalRequest\0229.google.cloud.accessappr"
-          + "oval.v1.GetApprovalRequestMessage\032/.goog"
-          + "le.cloud.accessapproval.v1.ApprovalReque"
-          + "st\"\215\001\202\323\344\223\002\206\001\022(/v1/{name=projects/*/appro"
-          + "valRequests/*}Z)\022\'/v1/{name=folders/*/ap"
-          + "provalRequests/*}Z/\022-/v1/{name=organizat"
-          + "ions/*/approvalRequests/*}\022\271\002\n\026ApproveAp"
-          + "provalRequest\022=.google.cloud.accessappro"
-          + "val.v1.ApproveApprovalRequestMessage\032/.g"
-          + "oogle.cloud.accessapproval.v1.ApprovalRe"
-          + "quest\"\256\001\202\323\344\223\002\247\001\"0/v1/{name=projects/*/ap"
-          + "provalRequests/*}:approve:\001*Z4\"//v1/{nam"
-          + "e=folders/*/approvalRequests/*}:approve:"
-          + "\001*Z:\"5/v1/{name=organizations/*/approval"
-          + "Requests/*}:approve:\001*\022\271\002\n\026DismissApprov"
-          + "alRequest\022=.google.cloud.accessapproval."
-          + "v1.DismissApprovalRequestMessage\032/.googl"
-          + "e.cloud.accessapproval.v1.ApprovalReques"
-          + "t\"\256\001\202\323\344\223\002\247\001\"0/v1/{name=projects/*/approv"
-          + "alRequests/*}:dismiss:\001*Z4\"//v1/{name=fo"
-          + "lders/*/approvalRequests/*}:dismiss:\001*Z:"
-          + "\"5/v1/{name=organizations/*/approvalRequ"
-          + "ests/*}:dismiss:\001*\022\261\002\n\031GetAccessApproval"
-          + "Settings\022@.google.cloud.accessapproval.v"
-          + "1.GetAccessApprovalSettingsMessage\0326.goo"
-          + "gle.cloud.accessapproval.v1.AccessApprov"
-          + "alSettings\"\231\001\202\323\344\223\002\222\001\022,/v1/{name=projects"
-          + "/*/accessApprovalSettings}Z-\022+/v1/{name="
-          + "folders/*/accessApprovalSettings}Z3\0221/v1"
-          + "/{name=organizations/*/accessApprovalSet"
-          + "tings}\022\360\002\n\034UpdateAccessApprovalSettings\022"
-          + "C.google.cloud.accessapproval.v1.UpdateA"
-          + "ccessApprovalSettingsMessage\0326.google.cl"
-          + "oud.accessapproval.v1.AccessApprovalSett"
-          + "ings\"\322\001\202\323\344\223\002\313\00125/v1/{settings.name=proje"
-          + "cts/*/accessApprovalSettings}:\010settingsZ"
-          + "@24/v1/{settings.name=folders/*/accessAp"
-          + "provalSettings}:\010settingsZF2:/v1/{settin"
-          + "gs.name=organizations/*/accessApprovalSe"
-          + "ttings}:\010settings\022\227\002\n\034DeleteAccessApprov"
-          + "alSettings\022C.google.cloud.accessapproval"
-          + ".v1.DeleteAccessApprovalSettingsMessage\032"
-          + "\026.google.protobuf.Empty\"\231\001\202\323\344\223\002\222\001*,/v1/{"
-          + "name=projects/*/accessApprovalSettings}Z"
-          + "-*+/v1/{name=folders/*/accessApprovalSet"
-          + "tings}Z3*1/v1/{name=organizations/*/acce"
-          + "ssApprovalSettings}\032Q\312A\035accessapproval.g"
-          + "oogleapis.com\322A.https://www.googleapis.c"
-          + "om/auth/cloud-platformB\211\001\n\"com.google.cl"
-          + "oud.accessapproval.v1B\023AccessApprovalPro"
-          + "toP\001ZLgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/accessapproval/v1;accessapprov"
-          + "alb\006proto3"
+          + "ganizations/*}/approvalRequests\332A\006parent"
+          + "\022\227\002\n\022GetApprovalRequest\0229.google.cloud.a"
+          + "ccessapproval.v1.GetApprovalRequestMessa"
+          + "ge\032/.google.cloud.accessapproval.v1.Appr"
+          + "ovalRequest\"\224\001\202\323\344\223\002\206\001\022(/v1/{name=project"
+          + "s/*/approvalRequests/*}Z)\022\'/v1/{name=fol"
+          + "ders/*/approvalRequests/*}Z/\022-/v1/{name="
+          + "organizations/*/approvalRequests/*}\332A\004na"
+          + "me\022\271\002\n\026ApproveApprovalRequest\022=.google.c"
+          + "loud.accessapproval.v1.ApproveApprovalRe"
+          + "questMessage\032/.google.cloud.accessapprov"
+          + "al.v1.ApprovalRequest\"\256\001\202\323\344\223\002\247\001\"0/v1/{na"
+          + "me=projects/*/approvalRequests/*}:approv"
+          + "e:\001*Z4\"//v1/{name=folders/*/approvalRequ"
+          + "ests/*}:approve:\001*Z:\"5/v1/{name=organiza"
+          + "tions/*/approvalRequests/*}:approve:\001*\022\271"
+          + "\002\n\026DismissApprovalRequest\022=.google.cloud"
+          + ".accessapproval.v1.DismissApprovalReques"
+          + "tMessage\032/.google.cloud.accessapproval.v"
+          + "1.ApprovalRequest\"\256\001\202\323\344\223\002\247\001\"0/v1/{name=p"
+          + "rojects/*/approvalRequests/*}:dismiss:\001*"
+          + "Z4\"//v1/{name=folders/*/approvalRequests"
+          + "/*}:dismiss:\001*Z:\"5/v1/{name=organization"
+          + "s/*/approvalRequests/*}:dismiss:\001*\022\270\002\n\031G"
+          + "etAccessApprovalSettings\022@.google.cloud."
+          + "accessapproval.v1.GetAccessApprovalSetti"
+          + "ngsMessage\0326.google.cloud.accessapproval"
+          + ".v1.AccessApprovalSettings\"\240\001\202\323\344\223\002\222\001\022,/v"
+          + "1/{name=projects/*/accessApprovalSetting"
+          + "s}Z-\022+/v1/{name=folders/*/accessApproval"
+          + "Settings}Z3\0221/v1/{name=organizations/*/a"
+          + "ccessApprovalSettings}\332A\004name\022\207\003\n\034Update"
+          + "AccessApprovalSettings\022C.google.cloud.ac"
+          + "cessapproval.v1.UpdateAccessApprovalSett"
+          + "ingsMessage\0326.google.cloud.accessapprova"
+          + "l.v1.AccessApprovalSettings\"\351\001\202\323\344\223\002\313\00125/"
+          + "v1/{settings.name=projects/*/accessAppro"
+          + "valSettings}:\010settingsZ@24/v1/{settings."
+          + "name=folders/*/accessApprovalSettings}:\010"
+          + "settingsZF2:/v1/{settings.name=organizat"
+          + "ions/*/accessApprovalSettings}:\010settings"
+          + "\332A\024settings,update_mask\022\236\002\n\034DeleteAccess"
+          + "ApprovalSettings\022C.google.cloud.accessap"
+          + "proval.v1.DeleteAccessApprovalSettingsMe"
+          + "ssage\032\026.google.protobuf.Empty\"\240\001\202\323\344\223\002\222\001*"
+          + ",/v1/{name=projects/*/accessApprovalSett"
+          + "ings}Z-*+/v1/{name=folders/*/accessAppro"
+          + "valSettings}Z3*1/v1/{name=organizations/"
+          + "*/accessApprovalSettings}\332A\004name\032Q\312A\035acc"
+          + "essapproval.googleapis.com\322A.https://www"
+          + ".googleapis.com/auth/cloud-platformB\211\001\n\""
+          + "com.google.cloud.accessapproval.v1B\023Acce"
+          + "ssApprovalProtoP\001ZLgoogle.golang.org/gen"
+          + "proto/googleapis/cloud/accessapproval/v1"
+          + ";accessapprovalb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_cloud_accessapproval_v1_AccessLocations_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -376,15 +377,16 @@ public final class AccessApprovalProto {
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

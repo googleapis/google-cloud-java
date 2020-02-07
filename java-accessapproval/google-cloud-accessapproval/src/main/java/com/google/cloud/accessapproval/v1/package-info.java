@@ -19,7 +19,7 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>==================== AccessApprovalClient ====================
+ * <p>========================= AccessApprovalAdminClient =========================
  *
  * <p>Service Description: This API allows a customer to manage accesses to cloud resources by
  * Google personnel. It defines the following resource model:
@@ -50,13 +50,13 @@
  *
  * <p>If a request is not approved or dismissed, we call it pending. LINT.IfChange
  *
- * <p>Sample for AccessApprovalClient:
+ * <p>Sample for AccessApprovalAdminClient:
  *
  * <pre>
  * <code>
- * try (AccessApprovalClient accessApprovalClient = AccessApprovalClient.create()) {
- *   GetApprovalRequestMessage request = GetApprovalRequestMessage.newBuilder().build();
- *   ApprovalRequest response = accessApprovalClient.getApprovalRequest(request);
+ * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+ *   String name = "";
+ *   ApprovalRequest response = accessApprovalAdminClient.getApprovalRequest(name);
  * }
  * </code>
  * </pre>

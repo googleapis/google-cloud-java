@@ -15,7 +15,7 @@
  */
 package com.google.cloud.accessapproval.v1.stub;
 
-import static com.google.cloud.accessapproval.v1.AccessApprovalClient.ListApprovalRequestsPagedResponse;
+import static com.google.cloud.accessapproval.v1.AccessApprovalAdminClient.ListApprovalRequestsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;

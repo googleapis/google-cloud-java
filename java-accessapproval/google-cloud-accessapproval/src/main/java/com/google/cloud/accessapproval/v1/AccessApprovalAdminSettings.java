@@ -15,7 +15,7 @@
  */
 package com.google.cloud.accessapproval.v1;
 
-import static com.google.cloud.accessapproval.v1.AccessApprovalClient.ListApprovalRequestsPagedResponse;
+import static com.google.cloud.accessapproval.v1.AccessApprovalAdminClient.ListApprovalRequestsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -36,7 +36,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link AccessApprovalClient}.
+ * Settings class to configure an instance of {@link AccessApprovalAdminClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
@@ -54,17 +54,17 @@ import javax.annotation.Generated;
  *
  * <pre>
  * <code>
- * AccessApprovalSettings.Builder accessApprovalSettingsBuilder =
- *     AccessApprovalSettings.newBuilder();
- * accessApprovalSettingsBuilder.getApprovalRequestSettings().getRetrySettings().toBuilder()
+ * AccessApprovalAdminSettings.Builder accessApprovalAdminSettingsBuilder =
+ *     AccessApprovalAdminSettings.newBuilder();
+ * accessApprovalAdminSettingsBuilder.getApprovalRequestSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
- * AccessApprovalSettings accessApprovalSettings = accessApprovalSettingsBuilder.build();
+ * AccessApprovalAdminSettings accessApprovalAdminSettings = accessApprovalAdminSettingsBuilder.build();
  * </code>
  * </pre>
  */
 @Generated("by gapic-generator")
 @BetaApi
-public class AccessApprovalSettings extends ClientSettings<AccessApprovalSettings> {
+public class AccessApprovalAdminSettings extends ClientSettings<AccessApprovalAdminSettings> {
   /** Returns the object with the settings used for calls to listApprovalRequests. */
   public PagedCallSettings<
           ListApprovalRequestsMessage,
@@ -110,9 +110,9 @@ public class AccessApprovalSettings extends ClientSettings<AccessApprovalSetting
     return ((AccessApprovalStubSettings) getStubSettings()).deleteAccessApprovalSettingsSettings();
   }
 
-  public static final AccessApprovalSettings create(AccessApprovalStubSettings stub)
+  public static final AccessApprovalAdminSettings create(AccessApprovalStubSettings stub)
       throws IOException {
-    return new AccessApprovalSettings.Builder(stub.toBuilder()).build();
+    return new AccessApprovalAdminSettings.Builder(stub.toBuilder()).build();
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -164,12 +164,12 @@ public class AccessApprovalSettings extends ClientSettings<AccessApprovalSetting
     return new Builder(this);
   }
 
-  protected AccessApprovalSettings(Builder settingsBuilder) throws IOException {
+  protected AccessApprovalAdminSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
   }
 
-  /** Builder for AccessApprovalSettings. */
-  public static class Builder extends ClientSettings.Builder<AccessApprovalSettings, Builder> {
+  /** Builder for AccessApprovalAdminSettings. */
+  public static class Builder extends ClientSettings.Builder<AccessApprovalAdminSettings, Builder> {
     protected Builder() throws IOException {
       this((ClientContext) null);
     }
@@ -182,7 +182,7 @@ public class AccessApprovalSettings extends ClientSettings<AccessApprovalSetting
       return new Builder(AccessApprovalStubSettings.newBuilder());
     }
 
-    protected Builder(AccessApprovalSettings settings) {
+    protected Builder(AccessApprovalAdminSettings settings) {
       super(settings.getStubSettings().toBuilder());
     }
 
@@ -253,8 +253,8 @@ public class AccessApprovalSettings extends ClientSettings<AccessApprovalSetting
     }
 
     @Override
-    public AccessApprovalSettings build() throws IOException {
-      return new AccessApprovalSettings(this);
+    public AccessApprovalAdminSettings build() throws IOException {
+      return new AccessApprovalAdminSettings(this);
     }
   }
 }

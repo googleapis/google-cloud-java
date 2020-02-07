@@ -15,7 +15,7 @@
  */
 package com.google.cloud.accessapproval.v1.stub;
 
-import static com.google.cloud.accessapproval.v1.AccessApprovalClient.ListApprovalRequestsPagedResponse;
+import static com.google.cloud.accessapproval.v1.AccessApprovalAdminClient.ListApprovalRequestsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -79,11 +79,11 @@ import org.threeten.bp.Duration;
  *
  * <pre>
  * <code>
- * AccessApprovalStubSettings.Builder accessApprovalSettingsBuilder =
+ * AccessApprovalStubSettings.Builder accessApprovalAdminSettingsBuilder =
  *     AccessApprovalStubSettings.newBuilder();
- * accessApprovalSettingsBuilder.getApprovalRequestSettings().getRetrySettings().toBuilder()
+ * accessApprovalAdminSettingsBuilder.getApprovalRequestSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
- * AccessApprovalStubSettings accessApprovalSettings = accessApprovalSettingsBuilder.build();
+ * AccessApprovalStubSettings accessApprovalAdminSettings = accessApprovalAdminSettingsBuilder.build();
  * </code>
  * </pre>
  */
