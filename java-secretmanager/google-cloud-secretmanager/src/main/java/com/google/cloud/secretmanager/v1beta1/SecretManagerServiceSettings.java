@@ -61,8 +61,12 @@ import javax.annotation.Generated;
  * <code>
  * SecretManagerServiceSettings.Builder secretManagerServiceSettingsBuilder =
  *     SecretManagerServiceSettings.newBuilder();
- * secretManagerServiceSettingsBuilder.createSecretSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * secretManagerServiceSettingsBuilder
+ *     .createSecretSettings()
+ *     .setRetrySettings(
+ *         secretManagerServiceSettingsBuilder.createSecretSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * SecretManagerServiceSettings secretManagerServiceSettings = secretManagerServiceSettingsBuilder.build();
  * </code>
  * </pre>

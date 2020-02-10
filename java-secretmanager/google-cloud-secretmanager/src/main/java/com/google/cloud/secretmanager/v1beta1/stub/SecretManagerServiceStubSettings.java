@@ -93,8 +93,12 @@ import org.threeten.bp.Duration;
  * <code>
  * SecretManagerServiceStubSettings.Builder secretManagerServiceSettingsBuilder =
  *     SecretManagerServiceStubSettings.newBuilder();
- * secretManagerServiceSettingsBuilder.createSecretSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * secretManagerServiceSettingsBuilder
+ *     .createSecretSettings()
+ *     .setRetrySettings(
+ *         secretManagerServiceSettingsBuilder.createSecretSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * SecretManagerServiceStubSettings secretManagerServiceSettings = secretManagerServiceSettingsBuilder.build();
  * </code>
  * </pre>
