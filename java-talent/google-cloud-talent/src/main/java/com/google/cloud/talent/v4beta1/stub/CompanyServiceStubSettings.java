@@ -77,8 +77,12 @@ import org.threeten.bp.Duration;
  * <code>
  * CompanyServiceStubSettings.Builder companyServiceSettingsBuilder =
  *     CompanyServiceStubSettings.newBuilder();
- * companyServiceSettingsBuilder.createCompanySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * companyServiceSettingsBuilder
+ *     .createCompanySettings()
+ *     .setRetrySettings(
+ *         companyServiceSettingsBuilder.createCompanySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * CompanyServiceStubSettings companyServiceSettings = companyServiceSettingsBuilder.build();
  * </code>
  * </pre>

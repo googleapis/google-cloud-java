@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * TenantServiceSettings.Builder tenantServiceSettingsBuilder =
  *     TenantServiceSettings.newBuilder();
- * tenantServiceSettingsBuilder.createTenantSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * tenantServiceSettingsBuilder
+ *     .createTenantSettings()
+ *     .setRetrySettings(
+ *         tenantServiceSettingsBuilder.createTenantSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * TenantServiceSettings tenantServiceSettings = tenantServiceSettingsBuilder.build();
  * </code>
  * </pre>

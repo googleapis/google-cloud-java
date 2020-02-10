@@ -77,8 +77,12 @@ import org.threeten.bp.Duration;
  * <code>
  * TenantServiceStubSettings.Builder tenantServiceSettingsBuilder =
  *     TenantServiceStubSettings.newBuilder();
- * tenantServiceSettingsBuilder.createTenantSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * tenantServiceSettingsBuilder
+ *     .createTenantSettings()
+ *     .setRetrySettings(
+ *         tenantServiceSettingsBuilder.createTenantSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * TenantServiceStubSettings tenantServiceSettings = tenantServiceSettingsBuilder.build();
  * </code>
  * </pre>

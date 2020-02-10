@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * CompanyServiceSettings.Builder companyServiceSettingsBuilder =
  *     CompanyServiceSettings.newBuilder();
- * companyServiceSettingsBuilder.createCompanySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * companyServiceSettingsBuilder
+ *     .createCompanySettings()
+ *     .setRetrySettings(
+ *         companyServiceSettingsBuilder.createCompanySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * CompanyServiceSettings companyServiceSettings = companyServiceSettingsBuilder.build();
  * </code>
  * </pre>

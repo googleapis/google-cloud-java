@@ -51,8 +51,12 @@ import javax.annotation.Generated;
  * <code>
  * CompletionSettings.Builder completionSettingsBuilder =
  *     CompletionSettings.newBuilder();
- * completionSettingsBuilder.completeQuerySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * completionSettingsBuilder
+ *     .completeQuerySettings()
+ *     .setRetrySettings(
+ *         completionSettingsBuilder.completeQuerySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * CompletionSettings completionSettings = completionSettingsBuilder.build();
  * </code>
  * </pre>

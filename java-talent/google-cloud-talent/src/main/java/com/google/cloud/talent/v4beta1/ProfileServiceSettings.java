@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * ProfileServiceSettings.Builder profileServiceSettingsBuilder =
  *     ProfileServiceSettings.newBuilder();
- * profileServiceSettingsBuilder.createProfileSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * profileServiceSettingsBuilder
+ *     .createProfileSettings()
+ *     .setRetrySettings(
+ *         profileServiceSettingsBuilder.createProfileSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ProfileServiceSettings profileServiceSettings = profileServiceSettingsBuilder.build();
  * </code>
  * </pre>

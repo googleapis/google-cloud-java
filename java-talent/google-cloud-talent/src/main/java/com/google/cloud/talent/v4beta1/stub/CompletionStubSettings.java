@@ -62,8 +62,12 @@ import org.threeten.bp.Duration;
  * <code>
  * CompletionStubSettings.Builder completionSettingsBuilder =
  *     CompletionStubSettings.newBuilder();
- * completionSettingsBuilder.completeQuerySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * completionSettingsBuilder
+ *     .completeQuerySettings()
+ *     .setRetrySettings(
+ *         completionSettingsBuilder.completeQuerySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * CompletionStubSettings completionSettings = completionSettingsBuilder.build();
  * </code>
  * </pre>

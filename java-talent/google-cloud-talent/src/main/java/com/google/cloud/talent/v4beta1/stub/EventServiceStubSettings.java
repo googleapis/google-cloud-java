@@ -62,8 +62,12 @@ import org.threeten.bp.Duration;
  * <code>
  * EventServiceStubSettings.Builder eventServiceSettingsBuilder =
  *     EventServiceStubSettings.newBuilder();
- * eventServiceSettingsBuilder.createClientEventSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * eventServiceSettingsBuilder
+ *     .createClientEventSettings()
+ *     .setRetrySettings(
+ *         eventServiceSettingsBuilder.createClientEventSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * EventServiceStubSettings eventServiceSettings = eventServiceSettingsBuilder.build();
  * </code>
  * </pre>

@@ -51,8 +51,12 @@ import javax.annotation.Generated;
  * <code>
  * EventServiceSettings.Builder eventServiceSettingsBuilder =
  *     EventServiceSettings.newBuilder();
- * eventServiceSettingsBuilder.createClientEventSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * eventServiceSettingsBuilder
+ *     .createClientEventSettings()
+ *     .setRetrySettings(
+ *         eventServiceSettingsBuilder.createClientEventSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * EventServiceSettings eventServiceSettings = eventServiceSettingsBuilder.build();
  * </code>
  * </pre>

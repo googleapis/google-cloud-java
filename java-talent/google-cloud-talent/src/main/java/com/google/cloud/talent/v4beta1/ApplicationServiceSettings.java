@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * ApplicationServiceSettings.Builder applicationServiceSettingsBuilder =
  *     ApplicationServiceSettings.newBuilder();
- * applicationServiceSettingsBuilder.createApplicationSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * applicationServiceSettingsBuilder
+ *     .createApplicationSettings()
+ *     .setRetrySettings(
+ *         applicationServiceSettingsBuilder.createApplicationSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ApplicationServiceSettings applicationServiceSettings = applicationServiceSettingsBuilder.build();
  * </code>
  * </pre>

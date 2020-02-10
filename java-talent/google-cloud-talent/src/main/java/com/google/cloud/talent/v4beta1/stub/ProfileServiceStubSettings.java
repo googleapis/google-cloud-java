@@ -81,8 +81,12 @@ import org.threeten.bp.Duration;
  * <code>
  * ProfileServiceStubSettings.Builder profileServiceSettingsBuilder =
  *     ProfileServiceStubSettings.newBuilder();
- * profileServiceSettingsBuilder.createProfileSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * profileServiceSettingsBuilder
+ *     .createProfileSettings()
+ *     .setRetrySettings(
+ *         profileServiceSettingsBuilder.createProfileSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ProfileServiceStubSettings profileServiceSettings = profileServiceSettingsBuilder.build();
  * </code>
  * </pre>
