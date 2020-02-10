@@ -98,8 +98,12 @@ import org.threeten.bp.Duration;
  * <code>
  * SubscriberStubSettings.Builder subscriptionAdminSettingsBuilder =
  *     SubscriberStubSettings.newBuilder();
- * subscriptionAdminSettingsBuilder.createSubscriptionSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * subscriptionAdminSettingsBuilder
+ *     .createSubscriptionSettings()
+ *     .setRetrySettings(
+ *         subscriptionAdminSettingsBuilder.createSubscriptionSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * SubscriberStubSettings subscriptionAdminSettings = subscriptionAdminSettingsBuilder.build();
  * </code>
  * </pre>

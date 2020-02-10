@@ -38,6 +38,8 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.CreateSnapshotRequest;
 import com.google.pubsub.v1.DeleteSnapshotRequest;
@@ -57,11 +59,15 @@ import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.ReceivedMessage;
+import com.google.pubsub.v1.SeekRequest;
+import com.google.pubsub.v1.SeekResponse;
 import com.google.pubsub.v1.Snapshot;
 import com.google.pubsub.v1.StreamingPullRequest;
 import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.TopicName;
+import com.google.pubsub.v1.UpdateSnapshotRequest;
+import com.google.pubsub.v1.UpdateSubscriptionRequest;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -228,6 +234,77 @@ public class SubscriptionAdminClientTest {
           ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
 
       client.getSubscription(subscription);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateSubscriptionTest() {
+    ProjectSubscriptionName name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+    TopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+    int ackDeadlineSeconds2 = 921632575;
+    boolean retainAckedMessages = false;
+    boolean enableMessageOrdering = true;
+    Subscription expectedResponse =
+        Subscription.newBuilder()
+            .setName(name.toString())
+            .setTopic(topic.toString())
+            .setAckDeadlineSeconds(ackDeadlineSeconds2)
+            .setRetainAckedMessages(retainAckedMessages)
+            .setEnableMessageOrdering(enableMessageOrdering)
+            .build();
+    mockSubscriber.addResponse(expectedResponse);
+
+    int ackDeadlineSeconds = 42;
+    Subscription subscription =
+        Subscription.newBuilder().setAckDeadlineSeconds(ackDeadlineSeconds).build();
+    String pathsElement = "ack_deadline_seconds";
+    List<String> paths = Arrays.asList(pathsElement);
+    FieldMask updateMask = FieldMask.newBuilder().addAllPaths(paths).build();
+    UpdateSubscriptionRequest request =
+        UpdateSubscriptionRequest.newBuilder()
+            .setSubscription(subscription)
+            .setUpdateMask(updateMask)
+            .build();
+
+    Subscription actualResponse = client.updateSubscription(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSubscriber.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSubscriptionRequest actualRequest = (UpdateSubscriptionRequest) actualRequests.get(0);
+
+    Assert.assertEquals(subscription, actualRequest.getSubscription());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateSubscriptionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockSubscriber.addException(exception);
+
+    try {
+      int ackDeadlineSeconds = 42;
+      Subscription subscription =
+          Subscription.newBuilder().setAckDeadlineSeconds(ackDeadlineSeconds).build();
+      String pathsElement = "ack_deadline_seconds";
+      List<String> paths = Arrays.asList(pathsElement);
+      FieldMask updateMask = FieldMask.newBuilder().addAllPaths(paths).build();
+      UpdateSubscriptionRequest request =
+          UpdateSubscriptionRequest.newBuilder()
+              .setSubscription(subscription)
+              .setUpdateMask(updateMask)
+              .build();
+
+      client.updateSubscription(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -663,6 +740,65 @@ public class SubscriptionAdminClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void updateSnapshotTest() {
+    ProjectSnapshotName name = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+    ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+    Snapshot expectedResponse =
+        Snapshot.newBuilder().setName(name.toString()).setTopic(topic.toString()).build();
+    mockSubscriber.addResponse(expectedResponse);
+
+    long seconds = 123456L;
+    Timestamp expireTime = Timestamp.newBuilder().setSeconds(seconds).build();
+    Snapshot snapshot = Snapshot.newBuilder().setExpireTime(expireTime).build();
+    String pathsElement = "expire_time";
+    List<String> paths = Arrays.asList(pathsElement);
+    FieldMask updateMask = FieldMask.newBuilder().addAllPaths(paths).build();
+    UpdateSnapshotRequest request =
+        UpdateSnapshotRequest.newBuilder().setSnapshot(snapshot).setUpdateMask(updateMask).build();
+
+    Snapshot actualResponse = client.updateSnapshot(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSubscriber.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSnapshotRequest actualRequest = (UpdateSnapshotRequest) actualRequests.get(0);
+
+    Assert.assertEquals(snapshot, actualRequest.getSnapshot());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateSnapshotExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockSubscriber.addException(exception);
+
+    try {
+      long seconds = 123456L;
+      Timestamp expireTime = Timestamp.newBuilder().setSeconds(seconds).build();
+      Snapshot snapshot = Snapshot.newBuilder().setExpireTime(expireTime).build();
+      String pathsElement = "expire_time";
+      List<String> paths = Arrays.asList(pathsElement);
+      FieldMask updateMask = FieldMask.newBuilder().addAllPaths(paths).build();
+      UpdateSnapshotRequest request =
+          UpdateSnapshotRequest.newBuilder()
+              .setSnapshot(snapshot)
+              .setUpdateMask(updateMask)
+              .build();
+
+      client.updateSnapshot(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void deleteSnapshotTest() {
     Empty expectedResponse = Empty.newBuilder().build();
     mockSubscriber.addResponse(expectedResponse);
@@ -692,6 +828,50 @@ public class SubscriptionAdminClientTest {
       ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
 
       client.deleteSnapshot(snapshot);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void seekTest() {
+    SeekResponse expectedResponse = SeekResponse.newBuilder().build();
+    mockSubscriber.addResponse(expectedResponse);
+
+    ProjectSubscriptionName subscription =
+        ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+    SeekRequest request = SeekRequest.newBuilder().setSubscription(subscription.toString()).build();
+
+    SeekResponse actualResponse = client.seek(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSubscriber.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SeekRequest actualRequest = (SeekRequest) actualRequests.get(0);
+
+    Assert.assertEquals(
+        subscription, ProjectSubscriptionName.parse(actualRequest.getSubscription()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void seekExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockSubscriber.addException(exception);
+
+    try {
+      ProjectSubscriptionName subscription =
+          ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+      SeekRequest request =
+          SeekRequest.newBuilder().setSubscription(subscription.toString()).build();
+
+      client.seek(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
