@@ -72,8 +72,12 @@ import org.threeten.bp.Duration;
  * <code>
  * LanguageServiceStubSettings.Builder languageServiceSettingsBuilder =
  *     LanguageServiceStubSettings.newBuilder();
- * languageServiceSettingsBuilder.analyzeSentimentSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * languageServiceSettingsBuilder
+ *     .analyzeSentimentSettings()
+ *     .setRetrySettings(
+ *         languageServiceSettingsBuilder.analyzeSentimentSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * LanguageServiceStubSettings languageServiceSettings = languageServiceSettingsBuilder.build();
  * </code>
  * </pre>

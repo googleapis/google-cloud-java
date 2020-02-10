@@ -126,8 +126,9 @@ public class LanguageServiceClientTest {
     mockLanguageService.addResponse(expectedResponse);
 
     Document document = Document.newBuilder().build();
+    EncodingType encodingType = EncodingType.NONE;
 
-    AnalyzeSentimentResponse actualResponse = client.analyzeSentiment(document);
+    AnalyzeSentimentResponse actualResponse = client.analyzeSentiment(document, encodingType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
@@ -135,6 +136,7 @@ public class LanguageServiceClientTest {
     AnalyzeSentimentRequest actualRequest = (AnalyzeSentimentRequest) actualRequests.get(0);
 
     Assert.assertEquals(document, actualRequest.getDocument());
+    Assert.assertEquals(encodingType, actualRequest.getEncodingType());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -149,8 +151,9 @@ public class LanguageServiceClientTest {
 
     try {
       Document document = Document.newBuilder().build();
+      EncodingType encodingType = EncodingType.NONE;
 
-      client.analyzeSentiment(document);
+      client.analyzeSentiment(document, encodingType);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -209,8 +212,9 @@ public class LanguageServiceClientTest {
     mockLanguageService.addResponse(expectedResponse);
 
     Document document = Document.newBuilder().build();
+    EncodingType encodingType = EncodingType.NONE;
 
-    AnalyzeEntitiesResponse actualResponse = client.analyzeEntities(document);
+    AnalyzeEntitiesResponse actualResponse = client.analyzeEntities(document, encodingType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
@@ -218,6 +222,7 @@ public class LanguageServiceClientTest {
     AnalyzeEntitiesRequest actualRequest = (AnalyzeEntitiesRequest) actualRequests.get(0);
 
     Assert.assertEquals(document, actualRequest.getDocument());
+    Assert.assertEquals(encodingType, actualRequest.getEncodingType());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -232,8 +237,9 @@ public class LanguageServiceClientTest {
 
     try {
       Document document = Document.newBuilder().build();
+      EncodingType encodingType = EncodingType.NONE;
 
-      client.analyzeEntities(document);
+      client.analyzeEntities(document, encodingType);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -294,8 +300,10 @@ public class LanguageServiceClientTest {
     mockLanguageService.addResponse(expectedResponse);
 
     Document document = Document.newBuilder().build();
+    EncodingType encodingType = EncodingType.NONE;
 
-    AnalyzeEntitySentimentResponse actualResponse = client.analyzeEntitySentiment(document);
+    AnalyzeEntitySentimentResponse actualResponse =
+        client.analyzeEntitySentiment(document, encodingType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
@@ -304,6 +312,7 @@ public class LanguageServiceClientTest {
         (AnalyzeEntitySentimentRequest) actualRequests.get(0);
 
     Assert.assertEquals(document, actualRequest.getDocument());
+    Assert.assertEquals(encodingType, actualRequest.getEncodingType());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -318,8 +327,9 @@ public class LanguageServiceClientTest {
 
     try {
       Document document = Document.newBuilder().build();
+      EncodingType encodingType = EncodingType.NONE;
 
-      client.analyzeEntitySentiment(document);
+      client.analyzeEntitySentiment(document, encodingType);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -378,8 +388,9 @@ public class LanguageServiceClientTest {
     mockLanguageService.addResponse(expectedResponse);
 
     Document document = Document.newBuilder().build();
+    EncodingType encodingType = EncodingType.NONE;
 
-    AnalyzeSyntaxResponse actualResponse = client.analyzeSyntax(document);
+    AnalyzeSyntaxResponse actualResponse = client.analyzeSyntax(document, encodingType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
@@ -387,6 +398,7 @@ public class LanguageServiceClientTest {
     AnalyzeSyntaxRequest actualRequest = (AnalyzeSyntaxRequest) actualRequests.get(0);
 
     Assert.assertEquals(document, actualRequest.getDocument());
+    Assert.assertEquals(encodingType, actualRequest.getEncodingType());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -401,8 +413,9 @@ public class LanguageServiceClientTest {
 
     try {
       Document document = Document.newBuilder().build();
+      EncodingType encodingType = EncodingType.NONE;
 
-      client.analyzeSyntax(document);
+      client.analyzeSyntax(document, encodingType);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -503,8 +516,9 @@ public class LanguageServiceClientTest {
 
     Document document = Document.newBuilder().build();
     AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
+    EncodingType encodingType = EncodingType.NONE;
 
-    AnnotateTextResponse actualResponse = client.annotateText(document, features);
+    AnnotateTextResponse actualResponse = client.annotateText(document, features, encodingType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
@@ -513,6 +527,7 @@ public class LanguageServiceClientTest {
 
     Assert.assertEquals(document, actualRequest.getDocument());
     Assert.assertEquals(features, actualRequest.getFeatures());
+    Assert.assertEquals(encodingType, actualRequest.getEncodingType());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -528,8 +543,9 @@ public class LanguageServiceClientTest {
     try {
       Document document = Document.newBuilder().build();
       AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
+      EncodingType encodingType = EncodingType.NONE;
 
-      client.annotateText(document, features);
+      client.annotateText(document, features, encodingType);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

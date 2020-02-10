@@ -51,8 +51,12 @@ import javax.annotation.Generated;
  * <code>
  * LanguageServiceSettings.Builder languageServiceSettingsBuilder =
  *     LanguageServiceSettings.newBuilder();
- * languageServiceSettingsBuilder.analyzeSentimentSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * languageServiceSettingsBuilder
+ *     .analyzeSentimentSettings()
+ *     .setRetrySettings(
+ *         languageServiceSettingsBuilder.analyzeSentimentSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * LanguageServiceSettings languageServiceSettings = languageServiceSettingsBuilder.build();
  * </code>
  * </pre>
