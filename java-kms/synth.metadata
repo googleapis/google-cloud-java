@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-02-08T09:56:28.006945Z",
+  "updateTime": "2020-02-10T22:50:26.634108Z",
   "sources": [
     {
       "generator": {
@@ -12,9 +12,9 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e7d8a694f4559201e6913f6610069cb08b39274e",
-        "internalRef": "293903652",
-        "log": "e7d8a694f4559201e6913f6610069cb08b39274e\nDepend on the latest gapic-generator and resource names plugin.\n\nThis fixes the very old an very annoying bug: https://github.com/googleapis/gapic-generator/pull/3087\n\nPiperOrigin-RevId: 293903652\n\n806b2854a966d55374ee26bb0cef4e30eda17b58\nfix: correct capitalization of Ruby namespaces in SecurityCenter V1p1beta1\n\nPiperOrigin-RevId: 293903613\n\n1b83c92462b14d67a7644e2980f723112472e03a\nPublish annotations and grpc service config for Logging API.\n\nPiperOrigin-RevId: 293893514\n\ne46f761cd6ec15a9e3d5ed4ff321a4bcba8e8585\nGenerate the Bazel build file for recommendengine public api\n\nPiperOrigin-RevId: 293710856\n\n68477017c4173c98addac0373950c6aa9d7b375f\nMake `language_code` optional for UpdateIntentRequest and BatchUpdateIntentsRequest.\n\nThe comments and proto annotations describe this parameter as optional.\n\nPiperOrigin-RevId: 293703548\n\n16f823f578bca4e845a19b88bb9bc5870ea71ab2\nAdd BUILD.bazel files for managedidentities API\n\nPiperOrigin-RevId: 293698246\n\n2f53fd8178c9a9de4ad10fae8dd17a7ba36133f2\nAdd v1p1beta1 config file\n\nPiperOrigin-RevId: 293696729\n\n052b274138fce2be80f97b6dcb83ab343c7c8812\nAdd source field for user event and add field behavior annotations\n\nPiperOrigin-RevId: 293693115\n\n1e89732b2d69151b1b3418fff3d4cc0434f0dded\ndatacatalog: v1beta1 add three new RPCs to gapic v1beta1 config\n\nPiperOrigin-RevId: 293692823\n\n9c8bd09bbdc7c4160a44f1fbab279b73cd7a2337\nchange the name of AccessApproval service to AccessApprovalAdmin\n\nPiperOrigin-RevId: 293690934\n\n"
+        "sha": "fcc86bee0e84dc11e9abbff8d7c3529c0626f390",
+        "internalRef": "294264582",
+        "log": "fcc86bee0e84dc11e9abbff8d7c3529c0626f390\nfix: Bigtable Admin v2\n\nChange LRO metadata from PartialUpdateInstanceMetadata\nto UpdateInstanceMetadata. (Otherwise, it will not build.)\n\nPiperOrigin-RevId: 294264582\n\n6d9361eae2ebb3f42d8c7ce5baf4bab966fee7c0\nrefactor: Add annotations to Bigtable Admin v2.\n\nPiperOrigin-RevId: 294243406\n\nad7616f3fc8e123451c8b3a7987bc91cea9e6913\nFix: Resource type in CreateLogMetricRequest should use logging.googleapis.com.\nFix: ListLogEntries should have a method signature for convenience of calling it.\n\nPiperOrigin-RevId: 294222165\n\n63796fcbb08712676069e20a3e455c9f7aa21026\nFix: Remove extraneous resource definition for cloudkms.googleapis.com/CryptoKey.\n\nPiperOrigin-RevId: 294176658\n\n"
       }
     },
     {
