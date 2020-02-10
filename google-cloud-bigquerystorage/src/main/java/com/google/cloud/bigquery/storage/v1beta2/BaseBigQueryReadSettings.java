@@ -53,8 +53,12 @@ import javax.annotation.Generated;
  * <code>
  * BaseBigQueryReadSettings.Builder baseBigQueryReadSettingsBuilder =
  *     BaseBigQueryReadSettings.newBuilder();
- * baseBigQueryReadSettingsBuilder.createReadSessionSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * baseBigQueryReadSettingsBuilder
+ *     .createReadSessionSettings()
+ *     .setRetrySettings(
+ *         baseBigQueryReadSettingsBuilder.createReadSessionSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * BaseBigQueryReadSettings baseBigQueryReadSettings = baseBigQueryReadSettingsBuilder.build();
  * </code>
  * </pre>

@@ -63,8 +63,12 @@ import javax.annotation.Generated;
  * <code>
  * BaseBigQueryStorageSettings.Builder baseBigQueryStorageSettingsBuilder =
  *     BaseBigQueryStorageSettings.newBuilder();
- * baseBigQueryStorageSettingsBuilder.createReadSessionSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * baseBigQueryStorageSettingsBuilder
+ *     .createReadSessionSettings()
+ *     .setRetrySettings(
+ *         baseBigQueryStorageSettingsBuilder.createReadSessionSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * BaseBigQueryStorageSettings baseBigQueryStorageSettings = baseBigQueryStorageSettingsBuilder.build();
  * </code>
  * </pre>

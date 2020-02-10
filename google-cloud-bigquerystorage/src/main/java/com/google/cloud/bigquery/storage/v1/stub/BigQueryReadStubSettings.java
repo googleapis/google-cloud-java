@@ -68,8 +68,12 @@ import org.threeten.bp.Duration;
  * <code>
  * BigQueryReadStubSettings.Builder baseBigQueryReadSettingsBuilder =
  *     BigQueryReadStubSettings.newBuilder();
- * baseBigQueryReadSettingsBuilder.createReadSessionSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * baseBigQueryReadSettingsBuilder
+ *     .createReadSessionSettings()
+ *     .setRetrySettings(
+ *         baseBigQueryReadSettingsBuilder.createReadSessionSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * BigQueryReadStubSettings baseBigQueryReadSettings = baseBigQueryReadSettingsBuilder.build();
  * </code>
  * </pre>

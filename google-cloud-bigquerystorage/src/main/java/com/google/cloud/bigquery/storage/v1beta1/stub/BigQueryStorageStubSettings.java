@@ -72,8 +72,12 @@ import org.threeten.bp.Duration;
  * <code>
  * BigQueryStorageStubSettings.Builder baseBigQueryStorageSettingsBuilder =
  *     BigQueryStorageStubSettings.newBuilder();
- * baseBigQueryStorageSettingsBuilder.createReadSessionSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * baseBigQueryStorageSettingsBuilder
+ *     .createReadSessionSettings()
+ *     .setRetrySettings(
+ *         baseBigQueryStorageSettingsBuilder.createReadSessionSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * BigQueryStorageStubSettings baseBigQueryStorageSettings = baseBigQueryStorageSettingsBuilder.build();
  * </code>
  * </pre>

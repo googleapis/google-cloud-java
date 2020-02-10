@@ -163,4 +163,41 @@ public class BaseBigQueryReadClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  @SuppressWarnings("all")
+  public void splitReadStreamTest() {
+    SplitReadStreamResponse expectedResponse = SplitReadStreamResponse.newBuilder().build();
+    mockBigQueryRead.addResponse(expectedResponse);
+
+    SplitReadStreamRequest request = SplitReadStreamRequest.newBuilder().build();
+
+    SplitReadStreamResponse actualResponse = client.splitReadStream(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigQueryRead.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SplitReadStreamRequest actualRequest = (SplitReadStreamRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void splitReadStreamExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockBigQueryRead.addException(exception);
+
+    try {
+      SplitReadStreamRequest request = SplitReadStreamRequest.newBuilder().build();
+
+      client.splitReadStream(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
 }

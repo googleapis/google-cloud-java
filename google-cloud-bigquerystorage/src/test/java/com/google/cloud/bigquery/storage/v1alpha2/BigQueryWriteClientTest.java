@@ -16,16 +16,26 @@
 package com.google.cloud.bigquery.storage.v1alpha2;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.grpc.testing.MockStreamObserver;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsResponse;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStreamsRequest;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStreamsResponse;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.CreateWriteStreamRequest;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamRequest;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamResponse;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.GetWriteStreamRequest;
+import com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream;
+import com.google.protobuf.AbstractMessage;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -80,6 +90,46 @@ public class BigQueryWriteClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void createWriteStreamTest() {
+    String name = "name3373707";
+    String externalId = "externalId-1153075697";
+    WriteStream expectedResponse =
+        WriteStream.newBuilder().setName(name).setExternalId(externalId).build();
+    mockBigQueryWrite.addResponse(expectedResponse);
+
+    CreateWriteStreamRequest request = CreateWriteStreamRequest.newBuilder().build();
+
+    WriteStream actualResponse = client.createWriteStream(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateWriteStreamRequest actualRequest = (CreateWriteStreamRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createWriteStreamExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockBigQueryWrite.addException(exception);
+
+    try {
+      CreateWriteStreamRequest request = CreateWriteStreamRequest.newBuilder().build();
+
+      client.createWriteStream(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void appendRowsTest() throws Exception {
     long offset = 1019779949L;
     AppendRowsResponse expectedResponse = AppendRowsResponse.newBuilder().setOffset(offset).build();
@@ -124,6 +174,124 @@ public class BigQueryWriteClientTest {
       Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
       InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getWriteStreamTest() {
+    String name = "name3373707";
+    String externalId = "externalId-1153075697";
+    WriteStream expectedResponse =
+        WriteStream.newBuilder().setName(name).setExternalId(externalId).build();
+    mockBigQueryWrite.addResponse(expectedResponse);
+
+    GetWriteStreamRequest request = GetWriteStreamRequest.newBuilder().build();
+
+    WriteStream actualResponse = client.getWriteStream(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetWriteStreamRequest actualRequest = (GetWriteStreamRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getWriteStreamExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockBigQueryWrite.addException(exception);
+
+    try {
+      GetWriteStreamRequest request = GetWriteStreamRequest.newBuilder().build();
+
+      client.getWriteStream(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void finalizeWriteStreamTest() {
+    long rowCount = 1340416618L;
+    FinalizeWriteStreamResponse expectedResponse =
+        FinalizeWriteStreamResponse.newBuilder().setRowCount(rowCount).build();
+    mockBigQueryWrite.addResponse(expectedResponse);
+
+    FinalizeWriteStreamRequest request = FinalizeWriteStreamRequest.newBuilder().build();
+
+    FinalizeWriteStreamResponse actualResponse = client.finalizeWriteStream(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FinalizeWriteStreamRequest actualRequest = (FinalizeWriteStreamRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void finalizeWriteStreamExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockBigQueryWrite.addException(exception);
+
+    try {
+      FinalizeWriteStreamRequest request = FinalizeWriteStreamRequest.newBuilder().build();
+
+      client.finalizeWriteStream(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchCommitWriteStreamsTest() {
+    BatchCommitWriteStreamsResponse expectedResponse =
+        BatchCommitWriteStreamsResponse.newBuilder().build();
+    mockBigQueryWrite.addResponse(expectedResponse);
+
+    BatchCommitWriteStreamsRequest request = BatchCommitWriteStreamsRequest.newBuilder().build();
+
+    BatchCommitWriteStreamsResponse actualResponse = client.batchCommitWriteStreams(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCommitWriteStreamsRequest actualRequest =
+        (BatchCommitWriteStreamsRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchCommitWriteStreamsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockBigQueryWrite.addException(exception);
+
+    try {
+      BatchCommitWriteStreamsRequest request = BatchCommitWriteStreamsRequest.newBuilder().build();
+
+      client.batchCommitWriteStreams(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 }
