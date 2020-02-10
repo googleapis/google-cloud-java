@@ -82,8 +82,12 @@ import org.threeten.bp.Duration;
  * <code>
  * RecaptchaEnterpriseServiceV1Beta1StubSettings.Builder recaptchaEnterpriseServiceV1Beta1SettingsBuilder =
  *     RecaptchaEnterpriseServiceV1Beta1StubSettings.newBuilder();
- * recaptchaEnterpriseServiceV1Beta1SettingsBuilder.createAssessmentSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * recaptchaEnterpriseServiceV1Beta1SettingsBuilder
+ *     .createAssessmentSettings()
+ *     .setRetrySettings(
+ *         recaptchaEnterpriseServiceV1Beta1SettingsBuilder.createAssessmentSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RecaptchaEnterpriseServiceV1Beta1StubSettings recaptchaEnterpriseServiceV1Beta1Settings = recaptchaEnterpriseServiceV1Beta1SettingsBuilder.build();
  * </code>
  * </pre>

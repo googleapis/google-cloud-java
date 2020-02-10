@@ -67,8 +67,12 @@ import javax.annotation.Generated;
  * <code>
  * RecaptchaEnterpriseServiceV1Beta1Settings.Builder recaptchaEnterpriseServiceV1Beta1SettingsBuilder =
  *     RecaptchaEnterpriseServiceV1Beta1Settings.newBuilder();
- * recaptchaEnterpriseServiceV1Beta1SettingsBuilder.createAssessmentSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * recaptchaEnterpriseServiceV1Beta1SettingsBuilder
+ *     .createAssessmentSettings()
+ *     .setRetrySettings(
+ *         recaptchaEnterpriseServiceV1Beta1SettingsBuilder.createAssessmentSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RecaptchaEnterpriseServiceV1Beta1Settings recaptchaEnterpriseServiceV1Beta1Settings = recaptchaEnterpriseServiceV1Beta1SettingsBuilder.build();
  * </code>
  * </pre>
