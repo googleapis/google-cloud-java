@@ -691,6 +691,77 @@ public class KeyManagementServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void importCryptoKeyVersionTest() {
+    CryptoKeyVersionName name =
+        CryptoKeyVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+    String importJob2 = "importJob2-1714851050";
+    String importFailureReason = "importFailureReason-494073229";
+    CryptoKeyVersion expectedResponse =
+        CryptoKeyVersion.newBuilder()
+            .setName(name.toString())
+            .setImportJob(importJob2)
+            .setImportFailureReason(importFailureReason)
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    CryptoKeyName parent =
+        CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+    CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm =
+        CryptoKeyVersion.CryptoKeyVersionAlgorithm.CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED;
+    String importJob = "importJob2125587491";
+    ImportCryptoKeyVersionRequest request =
+        ImportCryptoKeyVersionRequest.newBuilder()
+            .setParent(parent.toString())
+            .setAlgorithm(algorithm)
+            .setImportJob(importJob)
+            .build();
+
+    CryptoKeyVersion actualResponse = client.importCryptoKeyVersion(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportCryptoKeyVersionRequest actualRequest =
+        (ImportCryptoKeyVersionRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, CryptoKeyName.parse(actualRequest.getParent()));
+    Assert.assertEquals(algorithm, actualRequest.getAlgorithm());
+    Assert.assertEquals(importJob, actualRequest.getImportJob());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void importCryptoKeyVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyName parent =
+          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+      CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm =
+          CryptoKeyVersion.CryptoKeyVersionAlgorithm.CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED;
+      String importJob = "importJob2125587491";
+      ImportCryptoKeyVersionRequest request =
+          ImportCryptoKeyVersionRequest.newBuilder()
+              .setParent(parent.toString())
+              .setAlgorithm(algorithm)
+              .setImportJob(importJob)
+              .build();
+
+      client.importCryptoKeyVersion(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void updateCryptoKeyTest() {
     CryptoKeyName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
     CryptoKey expectedResponse = CryptoKey.newBuilder().setName(name.toString()).build();

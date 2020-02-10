@@ -113,8 +113,12 @@ import org.threeten.bp.Duration;
  * <code>
  * KeyManagementServiceStubSettings.Builder keyManagementServiceSettingsBuilder =
  *     KeyManagementServiceStubSettings.newBuilder();
- * keyManagementServiceSettingsBuilder.getKeyRingSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * keyManagementServiceSettingsBuilder
+ *     .getKeyRingSettings()
+ *     .setRetrySettings(
+ *         keyManagementServiceSettingsBuilder.getKeyRingSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * KeyManagementServiceStubSettings keyManagementServiceSettings = keyManagementServiceSettingsBuilder.build();
  * </code>
  * </pre>

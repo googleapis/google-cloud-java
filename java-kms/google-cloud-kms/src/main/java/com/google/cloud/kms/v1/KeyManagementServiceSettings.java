@@ -62,8 +62,12 @@ import javax.annotation.Generated;
  * <code>
  * KeyManagementServiceSettings.Builder keyManagementServiceSettingsBuilder =
  *     KeyManagementServiceSettings.newBuilder();
- * keyManagementServiceSettingsBuilder.getKeyRingSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * keyManagementServiceSettingsBuilder
+ *     .getKeyRingSettings()
+ *     .setRetrySettings(
+ *         keyManagementServiceSettingsBuilder.getKeyRingSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * KeyManagementServiceSettings keyManagementServiceSettings = keyManagementServiceSettingsBuilder.build();
  * </code>
  * </pre>
