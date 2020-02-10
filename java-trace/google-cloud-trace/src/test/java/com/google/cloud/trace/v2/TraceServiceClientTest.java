@@ -25,8 +25,11 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest;
 import com.google.devtools.cloudtrace.v2.ProjectName;
 import com.google.devtools.cloudtrace.v2.Span;
+import com.google.devtools.cloudtrace.v2.SpanName;
+import com.google.devtools.cloudtrace.v2.TruncatableString;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Timestamp;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -113,6 +116,80 @@ public class TraceServiceClientTest {
       List<Span> spans = new ArrayList<>();
 
       client.batchWriteSpans(name, spans);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createSpanTest() {
+    SpanName name2 = SpanName.of("[PROJECT]", "[TRACE]", "[SPAN]");
+    String spanId2 = "spanId2-643891741";
+    String parentSpanId = "parentSpanId-1757797477";
+    Span expectedResponse =
+        Span.newBuilder()
+            .setName(name2.toString())
+            .setSpanId(spanId2)
+            .setParentSpanId(parentSpanId)
+            .build();
+    mockTraceService.addResponse(expectedResponse);
+
+    SpanName name = SpanName.of("[PROJECT]", "[TRACE]", "[SPAN]");
+    String spanId = "spanId-2011840976";
+    TruncatableString displayName = TruncatableString.newBuilder().build();
+    Timestamp startTime = Timestamp.newBuilder().build();
+    Timestamp endTime = Timestamp.newBuilder().build();
+    Span request =
+        Span.newBuilder()
+            .setName(name.toString())
+            .setSpanId(spanId)
+            .setDisplayName(displayName)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .build();
+
+    Span actualResponse = client.createSpan(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTraceService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    Span actualRequest = (Span) actualRequests.get(0);
+
+    Assert.assertEquals(name, SpanName.parse(actualRequest.getName()));
+    Assert.assertEquals(spanId, actualRequest.getSpanId());
+    Assert.assertEquals(displayName, actualRequest.getDisplayName());
+    Assert.assertEquals(startTime, actualRequest.getStartTime());
+    Assert.assertEquals(endTime, actualRequest.getEndTime());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createSpanExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockTraceService.addException(exception);
+
+    try {
+      SpanName name = SpanName.of("[PROJECT]", "[TRACE]", "[SPAN]");
+      String spanId = "spanId-2011840976";
+      TruncatableString displayName = TruncatableString.newBuilder().build();
+      Timestamp startTime = Timestamp.newBuilder().build();
+      Timestamp endTime = Timestamp.newBuilder().build();
+      Span request =
+          Span.newBuilder()
+              .setName(name.toString())
+              .setSpanId(spanId)
+              .setDisplayName(displayName)
+              .setStartTime(startTime)
+              .setEndTime(endTime)
+              .build();
+
+      client.createSpan(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
