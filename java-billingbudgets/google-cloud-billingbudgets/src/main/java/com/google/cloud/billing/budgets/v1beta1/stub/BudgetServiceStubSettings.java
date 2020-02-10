@@ -78,8 +78,12 @@ import org.threeten.bp.Duration;
  * <code>
  * BudgetServiceStubSettings.Builder budgetServiceSettingsBuilder =
  *     BudgetServiceStubSettings.newBuilder();
- * budgetServiceSettingsBuilder.createBudgetSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * budgetServiceSettingsBuilder
+ *     .createBudgetSettings()
+ *     .setRetrySettings(
+ *         budgetServiceSettingsBuilder.createBudgetSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * BudgetServiceStubSettings budgetServiceSettings = budgetServiceSettingsBuilder.build();
  * </code>
  * </pre>
