@@ -278,6 +278,88 @@ public class TranslationServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void batchTranslateTextTest() throws Exception {
+    long totalCharacters = 1368640955L;
+    long translatedCharacters = 1337326221L;
+    long failedCharacters = 1723028396L;
+    BatchTranslateResponse expectedResponse =
+        BatchTranslateResponse.newBuilder()
+            .setTotalCharacters(totalCharacters)
+            .setTranslatedCharacters(translatedCharacters)
+            .setFailedCharacters(failedCharacters)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchTranslateTextTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTranslationService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String sourceLanguageCode = "sourceLanguageCode1687263568";
+    List<String> targetLanguageCodes = new ArrayList<>();
+    List<InputConfig> inputConfigs = new ArrayList<>();
+    OutputConfig outputConfig = OutputConfig.newBuilder().build();
+    BatchTranslateTextRequest request =
+        BatchTranslateTextRequest.newBuilder()
+            .setParent(parent.toString())
+            .setSourceLanguageCode(sourceLanguageCode)
+            .addAllTargetLanguageCodes(targetLanguageCodes)
+            .addAllInputConfigs(inputConfigs)
+            .setOutputConfig(outputConfig)
+            .build();
+
+    BatchTranslateResponse actualResponse = client.batchTranslateTextAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchTranslateTextRequest actualRequest = (BatchTranslateTextRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(sourceLanguageCode, actualRequest.getSourceLanguageCode());
+    Assert.assertEquals(targetLanguageCodes, actualRequest.getTargetLanguageCodesList());
+    Assert.assertEquals(inputConfigs, actualRequest.getInputConfigsList());
+    Assert.assertEquals(outputConfig, actualRequest.getOutputConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchTranslateTextExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String sourceLanguageCode = "sourceLanguageCode1687263568";
+      List<String> targetLanguageCodes = new ArrayList<>();
+      List<InputConfig> inputConfigs = new ArrayList<>();
+      OutputConfig outputConfig = OutputConfig.newBuilder().build();
+      BatchTranslateTextRequest request =
+          BatchTranslateTextRequest.newBuilder()
+              .setParent(parent.toString())
+              .setSourceLanguageCode(sourceLanguageCode)
+              .addAllTargetLanguageCodes(targetLanguageCodes)
+              .addAllInputConfigs(inputConfigs)
+              .setOutputConfig(outputConfig)
+              .build();
+
+      client.batchTranslateTextAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createGlossaryTest() throws Exception {
     GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
     int entryCount = 811131134;

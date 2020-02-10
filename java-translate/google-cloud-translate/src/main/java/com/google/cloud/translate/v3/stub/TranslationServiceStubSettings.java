@@ -92,8 +92,12 @@ import org.threeten.bp.Duration;
  * <code>
  * TranslationServiceStubSettings.Builder translationServiceSettingsBuilder =
  *     TranslationServiceStubSettings.newBuilder();
- * translationServiceSettingsBuilder.translateTextSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * translationServiceSettingsBuilder
+ *     .translateTextSettings()
+ *     .setRetrySettings(
+ *         translationServiceSettingsBuilder.translateTextSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * TranslationServiceStubSettings translationServiceSettings = translationServiceSettingsBuilder.build();
  * </code>
  * </pre>

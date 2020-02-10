@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * TranslationServiceSettings.Builder translationServiceSettingsBuilder =
  *     TranslationServiceSettings.newBuilder();
- * translationServiceSettingsBuilder.detectLanguageSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * translationServiceSettingsBuilder
+ *     .detectLanguageSettings()
+ *     .setRetrySettings(
+ *         translationServiceSettingsBuilder.detectLanguageSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * TranslationServiceSettings translationServiceSettings = translationServiceSettingsBuilder.build();
  * </code>
  * </pre>

@@ -32,6 +32,7 @@ import com.google.protobuf.Any;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -79,6 +80,62 @@ public class TranslationServiceClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void translateTextTest() {
+    TranslateTextResponse expectedResponse = TranslateTextResponse.newBuilder().build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    List<String> contents = new ArrayList<>();
+    String targetLanguageCode = "targetLanguageCode1323228230";
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    TranslateTextRequest request =
+        TranslateTextRequest.newBuilder()
+            .addAllContents(contents)
+            .setTargetLanguageCode(targetLanguageCode)
+            .setParent(parent.toString())
+            .build();
+
+    TranslateTextResponse actualResponse = client.translateText(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TranslateTextRequest actualRequest = (TranslateTextRequest) actualRequests.get(0);
+
+    Assert.assertEquals(contents, actualRequest.getContentsList());
+    Assert.assertEquals(targetLanguageCode, actualRequest.getTargetLanguageCode());
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void translateTextExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      List<String> contents = new ArrayList<>();
+      String targetLanguageCode = "targetLanguageCode1323228230";
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      TranslateTextRequest request =
+          TranslateTextRequest.newBuilder()
+              .addAllContents(contents)
+              .setTargetLanguageCode(targetLanguageCode)
+              .setParent(parent.toString())
+              .build();
+
+      client.translateText(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
   }
 
   @Test
@@ -168,6 +225,88 @@ public class TranslationServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchTranslateTextTest() throws Exception {
+    long totalCharacters = 1368640955L;
+    long translatedCharacters = 1337326221L;
+    long failedCharacters = 1723028396L;
+    BatchTranslateResponse expectedResponse =
+        BatchTranslateResponse.newBuilder()
+            .setTotalCharacters(totalCharacters)
+            .setTranslatedCharacters(translatedCharacters)
+            .setFailedCharacters(failedCharacters)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchTranslateTextTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTranslationService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String sourceLanguageCode = "sourceLanguageCode1687263568";
+    List<String> targetLanguageCodes = new ArrayList<>();
+    List<InputConfig> inputConfigs = new ArrayList<>();
+    OutputConfig outputConfig = OutputConfig.newBuilder().build();
+    BatchTranslateTextRequest request =
+        BatchTranslateTextRequest.newBuilder()
+            .setParent(parent.toString())
+            .setSourceLanguageCode(sourceLanguageCode)
+            .addAllTargetLanguageCodes(targetLanguageCodes)
+            .addAllInputConfigs(inputConfigs)
+            .setOutputConfig(outputConfig)
+            .build();
+
+    BatchTranslateResponse actualResponse = client.batchTranslateTextAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchTranslateTextRequest actualRequest = (BatchTranslateTextRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(sourceLanguageCode, actualRequest.getSourceLanguageCode());
+    Assert.assertEquals(targetLanguageCodes, actualRequest.getTargetLanguageCodesList());
+    Assert.assertEquals(inputConfigs, actualRequest.getInputConfigsList());
+    Assert.assertEquals(outputConfig, actualRequest.getOutputConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchTranslateTextExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String sourceLanguageCode = "sourceLanguageCode1687263568";
+      List<String> targetLanguageCodes = new ArrayList<>();
+      List<InputConfig> inputConfigs = new ArrayList<>();
+      OutputConfig outputConfig = OutputConfig.newBuilder().build();
+      BatchTranslateTextRequest request =
+          BatchTranslateTextRequest.newBuilder()
+              .setParent(parent.toString())
+              .setSourceLanguageCode(sourceLanguageCode)
+              .addAllTargetLanguageCodes(targetLanguageCodes)
+              .addAllInputConfigs(inputConfigs)
+              .setOutputConfig(outputConfig)
+              .build();
+
+      client.batchTranslateTextAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
