@@ -58,8 +58,12 @@ import javax.annotation.Generated;
  * <code>
  * EntityTypesSettings.Builder entityTypesSettingsBuilder =
  *     EntityTypesSettings.newBuilder();
- * entityTypesSettingsBuilder.getEntityTypeSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * entityTypesSettingsBuilder
+ *     .getEntityTypeSettings()
+ *     .setRetrySettings(
+ *         entityTypesSettingsBuilder.getEntityTypeSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * EntityTypesSettings entityTypesSettings = entityTypesSettingsBuilder.build();
  * </code>
  * </pre>

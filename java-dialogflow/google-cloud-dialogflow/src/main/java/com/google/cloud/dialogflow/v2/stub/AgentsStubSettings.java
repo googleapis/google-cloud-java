@@ -87,8 +87,12 @@ import org.threeten.bp.Duration;
  * <code>
  * AgentsStubSettings.Builder agentsSettingsBuilder =
  *     AgentsStubSettings.newBuilder();
- * agentsSettingsBuilder.setAgentSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * agentsSettingsBuilder
+ *     .setAgentSettings()
+ *     .setRetrySettings(
+ *         agentsSettingsBuilder.setAgentSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AgentsStubSettings agentsSettings = agentsSettingsBuilder.build();
  * </code>
  * </pre>

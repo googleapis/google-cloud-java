@@ -462,9 +462,8 @@ public class EntityTypesClientTest {
     mockEntityTypes.addResponse(expectedResponse);
 
     EntityType entityType = EntityType.newBuilder().build();
-    String languageCode = "languageCode-412800396";
 
-    EntityType actualResponse = client.updateEntityType(entityType, languageCode);
+    EntityType actualResponse = client.updateEntityType(entityType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
@@ -472,7 +471,6 @@ public class EntityTypesClientTest {
     UpdateEntityTypeRequest actualRequest = (UpdateEntityTypeRequest) actualRequests.get(0);
 
     Assert.assertEquals(entityType, actualRequest.getEntityType());
-    Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -487,9 +485,8 @@ public class EntityTypesClientTest {
 
     try {
       EntityType entityType = EntityType.newBuilder().build();
-      String languageCode = "languageCode-412800396";
 
-      client.updateEntityType(entityType, languageCode);
+      client.updateEntityType(entityType);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -530,6 +527,59 @@ public class EntityTypesClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchUpdateEntityTypesTest() throws Exception {
+    BatchUpdateEntityTypesResponse expectedResponse =
+        BatchUpdateEntityTypesResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchUpdateEntityTypesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEntityTypes.addResponse(resultOperation);
+
+    ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+    BatchUpdateEntityTypesRequest request =
+        BatchUpdateEntityTypesRequest.newBuilder().setParent(parent.toString()).build();
+
+    BatchUpdateEntityTypesResponse actualResponse =
+        client.batchUpdateEntityTypesAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchUpdateEntityTypesRequest actualRequest =
+        (BatchUpdateEntityTypesRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, ProjectAgentName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchUpdateEntityTypesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockEntityTypes.addException(exception);
+
+    try {
+      ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+      BatchUpdateEntityTypesRequest request =
+          BatchUpdateEntityTypesRequest.newBuilder().setParent(parent.toString()).build();
+
+      client.batchUpdateEntityTypesAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

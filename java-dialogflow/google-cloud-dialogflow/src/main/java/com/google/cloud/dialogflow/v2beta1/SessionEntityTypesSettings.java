@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * SessionEntityTypesSettings.Builder sessionEntityTypesSettingsBuilder =
  *     SessionEntityTypesSettings.newBuilder();
- * sessionEntityTypesSettingsBuilder.getSessionEntityTypeSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * sessionEntityTypesSettingsBuilder
+ *     .getSessionEntityTypeSettings()
+ *     .setRetrySettings(
+ *         sessionEntityTypesSettingsBuilder.getSessionEntityTypeSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * SessionEntityTypesSettings sessionEntityTypesSettings = sessionEntityTypesSettingsBuilder.build();
  * </code>
  * </pre>

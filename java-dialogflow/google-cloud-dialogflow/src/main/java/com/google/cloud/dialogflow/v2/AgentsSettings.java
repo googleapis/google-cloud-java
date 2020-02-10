@@ -58,8 +58,12 @@ import javax.annotation.Generated;
  * <code>
  * AgentsSettings.Builder agentsSettingsBuilder =
  *     AgentsSettings.newBuilder();
- * agentsSettingsBuilder.setAgentSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * agentsSettingsBuilder
+ *     .setAgentSettings()
+ *     .setRetrySettings(
+ *         agentsSettingsBuilder.setAgentSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AgentsSettings agentsSettings = agentsSettingsBuilder.build();
  * </code>
  * </pre>

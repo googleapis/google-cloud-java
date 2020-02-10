@@ -58,8 +58,12 @@ import javax.annotation.Generated;
  * <code>
  * IntentsSettings.Builder intentsSettingsBuilder =
  *     IntentsSettings.newBuilder();
- * intentsSettingsBuilder.getIntentSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * intentsSettingsBuilder
+ *     .getIntentSettings()
+ *     .setRetrySettings(
+ *         intentsSettingsBuilder.getIntentSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * IntentsSettings intentsSettings = intentsSettingsBuilder.build();
  * </code>
  * </pre>

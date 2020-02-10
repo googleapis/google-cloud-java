@@ -77,8 +77,12 @@ import org.threeten.bp.Duration;
  * <code>
  * KnowledgeBasesStubSettings.Builder knowledgeBasesSettingsBuilder =
  *     KnowledgeBasesStubSettings.newBuilder();
- * knowledgeBasesSettingsBuilder.getKnowledgeBaseSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * knowledgeBasesSettingsBuilder
+ *     .getKnowledgeBaseSettings()
+ *     .setRetrySettings(
+ *         knowledgeBasesSettingsBuilder.getKnowledgeBaseSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * KnowledgeBasesStubSettings knowledgeBasesSettings = knowledgeBasesSettingsBuilder.build();
  * </code>
  * </pre>

@@ -30,7 +30,6 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
-import com.google.protobuf.FieldMask;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -563,9 +562,8 @@ public class IntentsClientTest {
 
     Intent intent = Intent.newBuilder().build();
     String languageCode = "languageCode-412800396";
-    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    Intent actualResponse = client.updateIntent(intent, languageCode, updateMask);
+    Intent actualResponse = client.updateIntent(intent, languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockIntents.getRequests();
@@ -574,7 +572,6 @@ public class IntentsClientTest {
 
     Assert.assertEquals(intent, actualRequest.getIntent());
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -590,9 +587,8 @@ public class IntentsClientTest {
     try {
       Intent intent = Intent.newBuilder().build();
       String languageCode = "languageCode-412800396";
-      FieldMask updateMask = FieldMask.newBuilder().build();
 
-      client.updateIntent(intent, languageCode, updateMask);
+      client.updateIntent(intent, languageCode);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -633,6 +629,56 @@ public class IntentsClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchUpdateIntentsTest() throws Exception {
+    BatchUpdateIntentsResponse expectedResponse = BatchUpdateIntentsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchUpdateIntentsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockIntents.addResponse(resultOperation);
+
+    ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+    BatchUpdateIntentsRequest request =
+        BatchUpdateIntentsRequest.newBuilder().setParent(parent.toString()).build();
+
+    BatchUpdateIntentsResponse actualResponse = client.batchUpdateIntentsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchUpdateIntentsRequest actualRequest = (BatchUpdateIntentsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, ProjectAgentName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchUpdateIntentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockIntents.addException(exception);
+
+    try {
+      ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+      BatchUpdateIntentsRequest request =
+          BatchUpdateIntentsRequest.newBuilder().setParent(parent.toString()).build();
+
+      client.batchUpdateIntentsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

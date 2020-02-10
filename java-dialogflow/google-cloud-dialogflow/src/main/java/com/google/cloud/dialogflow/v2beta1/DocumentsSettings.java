@@ -57,8 +57,12 @@ import javax.annotation.Generated;
  * <code>
  * DocumentsSettings.Builder documentsSettingsBuilder =
  *     DocumentsSettings.newBuilder();
- * documentsSettingsBuilder.getDocumentSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * documentsSettingsBuilder
+ *     .getDocumentSettings()
+ *     .setRetrySettings(
+ *         documentsSettingsBuilder.getDocumentSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * DocumentsSettings documentsSettings = documentsSettingsBuilder.build();
  * </code>
  * </pre>

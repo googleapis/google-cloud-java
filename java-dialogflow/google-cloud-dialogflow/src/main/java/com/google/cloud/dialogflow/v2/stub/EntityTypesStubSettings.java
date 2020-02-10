@@ -89,8 +89,12 @@ import org.threeten.bp.Duration;
  * <code>
  * EntityTypesStubSettings.Builder entityTypesSettingsBuilder =
  *     EntityTypesStubSettings.newBuilder();
- * entityTypesSettingsBuilder.getEntityTypeSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * entityTypesSettingsBuilder
+ *     .getEntityTypeSettings()
+ *     .setRetrySettings(
+ *         entityTypesSettingsBuilder.getEntityTypeSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * EntityTypesStubSettings entityTypesSettings = entityTypesSettingsBuilder.build();
  * </code>
  * </pre>

@@ -361,4 +361,43 @@ public class DocumentsClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  @SuppressWarnings("all")
+  public void reloadDocumentTest() {
+    String name = "name3373707";
+    boolean done = true;
+    Operation expectedResponse = Operation.newBuilder().setName(name).setDone(done).build();
+    mockDocuments.addResponse(expectedResponse);
+
+    ReloadDocumentRequest request = ReloadDocumentRequest.newBuilder().build();
+
+    Operation actualResponse = client.reloadDocument(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocuments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ReloadDocumentRequest actualRequest = (ReloadDocumentRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void reloadDocumentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDocuments.addException(exception);
+
+    try {
+      ReloadDocumentRequest request = ReloadDocumentRequest.newBuilder().build();
+
+      client.reloadDocument(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
 }

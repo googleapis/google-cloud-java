@@ -77,8 +77,12 @@ import org.threeten.bp.Duration;
  * <code>
  * SessionEntityTypesStubSettings.Builder sessionEntityTypesSettingsBuilder =
  *     SessionEntityTypesStubSettings.newBuilder();
- * sessionEntityTypesSettingsBuilder.getSessionEntityTypeSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * sessionEntityTypesSettingsBuilder
+ *     .getSessionEntityTypeSettings()
+ *     .setRetrySettings(
+ *         sessionEntityTypesSettingsBuilder.getSessionEntityTypeSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * SessionEntityTypesStubSettings sessionEntityTypesSettings = sessionEntityTypesSettingsBuilder.build();
  * </code>
  * </pre>

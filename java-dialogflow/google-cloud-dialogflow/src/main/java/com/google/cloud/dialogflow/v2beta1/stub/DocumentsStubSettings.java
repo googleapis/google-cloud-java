@@ -84,8 +84,12 @@ import org.threeten.bp.Duration;
  * <code>
  * DocumentsStubSettings.Builder documentsSettingsBuilder =
  *     DocumentsStubSettings.newBuilder();
- * documentsSettingsBuilder.getDocumentSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * documentsSettingsBuilder
+ *     .getDocumentSettings()
+ *     .setRetrySettings(
+ *         documentsSettingsBuilder.getDocumentSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * DocumentsStubSettings documentsSettings = documentsSettingsBuilder.build();
  * </code>
  * </pre>

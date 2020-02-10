@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * KnowledgeBasesSettings.Builder knowledgeBasesSettingsBuilder =
  *     KnowledgeBasesSettings.newBuilder();
- * knowledgeBasesSettingsBuilder.getKnowledgeBaseSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * knowledgeBasesSettingsBuilder
+ *     .getKnowledgeBaseSettings()
+ *     .setRetrySettings(
+ *         knowledgeBasesSettingsBuilder.getKnowledgeBaseSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * KnowledgeBasesSettings knowledgeBasesSettings = knowledgeBasesSettingsBuilder.build();
  * </code>
  * </pre>
