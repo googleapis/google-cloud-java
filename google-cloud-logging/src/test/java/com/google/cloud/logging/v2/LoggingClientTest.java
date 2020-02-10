@@ -17,8 +17,10 @@ package com.google.cloud.logging.v2;
 
 import static com.google.cloud.logging.v2.LoggingClient.ListLogEntriesPagedResponse;
 import static com.google.cloud.logging.v2.LoggingClient.ListLogsPagedResponse;
+import static com.google.cloud.logging.v2.LoggingClient.ListMonitoredResourceDescriptorsPagedResponse;
 
 import com.google.api.MonitoredResource;
+import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -32,6 +34,8 @@ import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
 import com.google.logging.v2.ListLogsRequest;
 import com.google.logging.v2.ListLogsResponse;
+import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
+import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.LogEntry;
 import com.google.logging.v2.LogName;
 import com.google.logging.v2.LogNames;
@@ -237,6 +241,60 @@ public class LoggingClientTest {
       String orderBy = "orderBy1234304744";
 
       client.listLogEntries(formattedResourceNames, filter, orderBy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listMonitoredResourceDescriptorsTest() {
+    String nextPageToken = "";
+    MonitoredResourceDescriptor resourceDescriptorsElement =
+        MonitoredResourceDescriptor.newBuilder().build();
+    List<MonitoredResourceDescriptor> resourceDescriptors =
+        Arrays.asList(resourceDescriptorsElement);
+    ListMonitoredResourceDescriptorsResponse expectedResponse =
+        ListMonitoredResourceDescriptorsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllResourceDescriptors(resourceDescriptors)
+            .build();
+    mockLoggingServiceV2.addResponse(expectedResponse);
+
+    ListMonitoredResourceDescriptorsRequest request =
+        ListMonitoredResourceDescriptorsRequest.newBuilder().build();
+
+    ListMonitoredResourceDescriptorsPagedResponse pagedListResponse =
+        client.listMonitoredResourceDescriptors(request);
+
+    List<MonitoredResourceDescriptor> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceDescriptorsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockLoggingServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMonitoredResourceDescriptorsRequest actualRequest =
+        (ListMonitoredResourceDescriptorsRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listMonitoredResourceDescriptorsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockLoggingServiceV2.addException(exception);
+
+    try {
+      ListMonitoredResourceDescriptorsRequest request =
+          ListMonitoredResourceDescriptorsRequest.newBuilder().build();
+
+      client.listMonitoredResourceDescriptors(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

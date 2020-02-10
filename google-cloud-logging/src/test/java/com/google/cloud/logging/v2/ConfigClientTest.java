@@ -28,12 +28,14 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
 import com.google.logging.v2.BillingName;
+import com.google.logging.v2.CmekSettings;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
 import com.google.logging.v2.ExclusionName;
 import com.google.logging.v2.ExclusionNames;
+import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.ListExclusionsRequest;
@@ -49,6 +51,7 @@ import com.google.logging.v2.ProjectName;
 import com.google.logging.v2.ProjectSinkName;
 import com.google.logging.v2.SinkName;
 import com.google.logging.v2.SinkNames;
+import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.AbstractMessage;
@@ -653,6 +656,96 @@ public class ConfigClientTest {
       ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
 
       client.deleteExclusion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getCmekSettingsTest() {
+    String name = "name3373707";
+    String kmsKeyName = "kmsKeyName2094986649";
+    String serviceAccountId = "serviceAccountId-111486921";
+    CmekSettings expectedResponse =
+        CmekSettings.newBuilder()
+            .setName(name)
+            .setKmsKeyName(kmsKeyName)
+            .setServiceAccountId(serviceAccountId)
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    GetCmekSettingsRequest request = GetCmekSettingsRequest.newBuilder().build();
+
+    CmekSettings actualResponse = client.getCmekSettings(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetCmekSettingsRequest actualRequest = (GetCmekSettingsRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getCmekSettingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      GetCmekSettingsRequest request = GetCmekSettingsRequest.newBuilder().build();
+
+      client.getCmekSettings(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateCmekSettingsTest() {
+    String name = "name3373707";
+    String kmsKeyName = "kmsKeyName2094986649";
+    String serviceAccountId = "serviceAccountId-111486921";
+    CmekSettings expectedResponse =
+        CmekSettings.newBuilder()
+            .setName(name)
+            .setKmsKeyName(kmsKeyName)
+            .setServiceAccountId(serviceAccountId)
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    UpdateCmekSettingsRequest request = UpdateCmekSettingsRequest.newBuilder().build();
+
+    CmekSettings actualResponse = client.updateCmekSettings(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateCmekSettingsRequest actualRequest = (UpdateCmekSettingsRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateCmekSettingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      UpdateCmekSettingsRequest request = UpdateCmekSettingsRequest.newBuilder().build();
+
+      client.updateCmekSettings(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

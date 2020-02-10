@@ -88,8 +88,12 @@ import org.threeten.bp.Duration;
  * <code>
  * ConfigServiceV2StubSettings.Builder configSettingsBuilder =
  *     ConfigServiceV2StubSettings.newBuilder();
- * configSettingsBuilder.getSinkSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * configSettingsBuilder
+ *     .getSinkSettings()
+ *     .setRetrySettings(
+ *         configSettingsBuilder.getSinkSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ConfigServiceV2StubSettings configSettings = configSettingsBuilder.build();
  * </code>
  * </pre>
