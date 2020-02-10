@@ -60,8 +60,12 @@ import javax.annotation.Generated;
  * <code>
  * CloudBillingSettings.Builder cloudBillingSettingsBuilder =
  *     CloudBillingSettings.newBuilder();
- * cloudBillingSettingsBuilder.getBillingAccountSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * cloudBillingSettingsBuilder
+ *     .getBillingAccountSettings()
+ *     .setRetrySettings(
+ *         cloudBillingSettingsBuilder.getBillingAccountSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * CloudBillingSettings cloudBillingSettings = cloudBillingSettingsBuilder.build();
  * </code>
  * </pre>

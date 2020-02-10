@@ -76,8 +76,12 @@ import org.threeten.bp.Duration;
  * <code>
  * CloudCatalogStubSettings.Builder cloudCatalogSettingsBuilder =
  *     CloudCatalogStubSettings.newBuilder();
- * cloudCatalogSettingsBuilder.listServicesSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * cloudCatalogSettingsBuilder
+ *     .listServicesSettings()
+ *     .setRetrySettings(
+ *         cloudCatalogSettingsBuilder.listServicesSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * CloudCatalogStubSettings cloudCatalogSettings = cloudCatalogSettingsBuilder.build();
  * </code>
  * </pre>

@@ -86,8 +86,12 @@ import org.threeten.bp.Duration;
  * <code>
  * CloudBillingStubSettings.Builder cloudBillingSettingsBuilder =
  *     CloudBillingStubSettings.newBuilder();
- * cloudBillingSettingsBuilder.getBillingAccountSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * cloudBillingSettingsBuilder
+ *     .getBillingAccountSettings()
+ *     .setRetrySettings(
+ *         cloudBillingSettingsBuilder.getBillingAccountSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * CloudBillingStubSettings cloudBillingSettings = cloudBillingSettingsBuilder.build();
  * </code>
  * </pre>

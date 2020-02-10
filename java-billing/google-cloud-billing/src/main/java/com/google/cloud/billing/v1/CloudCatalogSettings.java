@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * CloudCatalogSettings.Builder cloudCatalogSettingsBuilder =
  *     CloudCatalogSettings.newBuilder();
- * cloudCatalogSettingsBuilder.listServicesSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * cloudCatalogSettingsBuilder
+ *     .listServicesSettings()
+ *     .setRetrySettings(
+ *         cloudCatalogSettingsBuilder.listServicesSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * CloudCatalogSettings cloudCatalogSettings = cloudCatalogSettingsBuilder.build();
  * </code>
  * </pre>
