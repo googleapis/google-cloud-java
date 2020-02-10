@@ -77,8 +77,12 @@ import org.threeten.bp.Duration;
  * <code>
  * AlertPolicyServiceStubSettings.Builder alertPolicyServiceSettingsBuilder =
  *     AlertPolicyServiceStubSettings.newBuilder();
- * alertPolicyServiceSettingsBuilder.getAlertPolicySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * alertPolicyServiceSettingsBuilder
+ *     .getAlertPolicySettings()
+ *     .setRetrySettings(
+ *         alertPolicyServiceSettingsBuilder.getAlertPolicySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AlertPolicyServiceStubSettings alertPolicyServiceSettings = alertPolicyServiceSettingsBuilder.build();
  * </code>
  * </pre>

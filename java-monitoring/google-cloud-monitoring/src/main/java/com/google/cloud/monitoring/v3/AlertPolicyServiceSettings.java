@@ -62,8 +62,12 @@ import javax.annotation.Generated;
  * <code>
  * AlertPolicyServiceSettings.Builder alertPolicyServiceSettingsBuilder =
  *     AlertPolicyServiceSettings.newBuilder();
- * alertPolicyServiceSettingsBuilder.getAlertPolicySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * alertPolicyServiceSettingsBuilder
+ *     .getAlertPolicySettings()
+ *     .setRetrySettings(
+ *         alertPolicyServiceSettingsBuilder.getAlertPolicySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AlertPolicyServiceSettings alertPolicyServiceSettings = alertPolicyServiceSettingsBuilder.build();
  * </code>
  * </pre>

@@ -70,8 +70,12 @@ import javax.annotation.Generated;
  * <code>
  * ServiceMonitoringServiceSettings.Builder serviceMonitoringServiceSettingsBuilder =
  *     ServiceMonitoringServiceSettings.newBuilder();
- * serviceMonitoringServiceSettingsBuilder.createServiceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * serviceMonitoringServiceSettingsBuilder
+ *     .createServiceSettings()
+ *     .setRetrySettings(
+ *         serviceMonitoringServiceSettingsBuilder.createServiceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ServiceMonitoringServiceSettings serviceMonitoringServiceSettings = serviceMonitoringServiceSettingsBuilder.build();
  * </code>
  * </pre>

@@ -85,8 +85,12 @@ import org.threeten.bp.Duration;
  * <code>
  * ServiceMonitoringServiceStubSettings.Builder serviceMonitoringServiceSettingsBuilder =
  *     ServiceMonitoringServiceStubSettings.newBuilder();
- * serviceMonitoringServiceSettingsBuilder.createServiceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * serviceMonitoringServiceSettingsBuilder
+ *     .createServiceSettings()
+ *     .setRetrySettings(
+ *         serviceMonitoringServiceSettingsBuilder.createServiceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ServiceMonitoringServiceStubSettings serviceMonitoringServiceSettings = serviceMonitoringServiceSettingsBuilder.build();
  * </code>
  * </pre>

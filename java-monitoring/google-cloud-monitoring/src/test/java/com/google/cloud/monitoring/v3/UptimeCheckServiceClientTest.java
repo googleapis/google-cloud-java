@@ -16,6 +16,7 @@
 package com.google.cloud.monitoring.v3;
 
 import static com.google.cloud.monitoring.v3.UptimeCheckServiceClient.ListUptimeCheckConfigsPagedResponse;
+import static com.google.cloud.monitoring.v3.UptimeCheckServiceClient.ListUptimeCheckIpsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -30,10 +31,13 @@ import com.google.monitoring.v3.DeleteUptimeCheckConfigRequest;
 import com.google.monitoring.v3.GetUptimeCheckConfigRequest;
 import com.google.monitoring.v3.ListUptimeCheckConfigsRequest;
 import com.google.monitoring.v3.ListUptimeCheckConfigsResponse;
+import com.google.monitoring.v3.ListUptimeCheckIpsRequest;
+import com.google.monitoring.v3.ListUptimeCheckIpsResponse;
 import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.UpdateUptimeCheckConfigRequest;
 import com.google.monitoring.v3.UptimeCheckConfig;
 import com.google.monitoring.v3.UptimeCheckConfigName;
+import com.google.monitoring.v3.UptimeCheckIp;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import io.grpc.Status;
@@ -332,6 +336,53 @@ public class UptimeCheckServiceClientTest {
       UptimeCheckConfigName name = UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
 
       client.deleteUptimeCheckConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listUptimeCheckIpsTest() {
+    String nextPageToken = "";
+    UptimeCheckIp uptimeCheckIpsElement = UptimeCheckIp.newBuilder().build();
+    List<UptimeCheckIp> uptimeCheckIps = Arrays.asList(uptimeCheckIpsElement);
+    ListUptimeCheckIpsResponse expectedResponse =
+        ListUptimeCheckIpsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllUptimeCheckIps(uptimeCheckIps)
+            .build();
+    mockUptimeCheckService.addResponse(expectedResponse);
+
+    ListUptimeCheckIpsRequest request = ListUptimeCheckIpsRequest.newBuilder().build();
+
+    ListUptimeCheckIpsPagedResponse pagedListResponse = client.listUptimeCheckIps(request);
+
+    List<UptimeCheckIp> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getUptimeCheckIpsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockUptimeCheckService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListUptimeCheckIpsRequest actualRequest = (ListUptimeCheckIpsRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listUptimeCheckIpsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockUptimeCheckService.addException(exception);
+
+    try {
+      ListUptimeCheckIpsRequest request = ListUptimeCheckIpsRequest.newBuilder().build();
+
+      client.listUptimeCheckIps(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

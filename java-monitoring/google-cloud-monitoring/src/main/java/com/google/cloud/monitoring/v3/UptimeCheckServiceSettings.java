@@ -65,8 +65,12 @@ import javax.annotation.Generated;
  * <code>
  * UptimeCheckServiceSettings.Builder uptimeCheckServiceSettingsBuilder =
  *     UptimeCheckServiceSettings.newBuilder();
- * uptimeCheckServiceSettingsBuilder.getUptimeCheckConfigSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * uptimeCheckServiceSettingsBuilder
+ *     .getUptimeCheckConfigSettings()
+ *     .setRetrySettings(
+ *         uptimeCheckServiceSettingsBuilder.getUptimeCheckConfigSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * UptimeCheckServiceSettings uptimeCheckServiceSettings = uptimeCheckServiceSettingsBuilder.build();
  * </code>
  * </pre>

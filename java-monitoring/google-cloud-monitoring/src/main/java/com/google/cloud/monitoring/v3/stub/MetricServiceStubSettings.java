@@ -86,8 +86,12 @@ import org.threeten.bp.Duration;
  * <code>
  * MetricServiceStubSettings.Builder metricServiceSettingsBuilder =
  *     MetricServiceStubSettings.newBuilder();
- * metricServiceSettingsBuilder.getMonitoredResourceDescriptorSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * metricServiceSettingsBuilder
+ *     .getMonitoredResourceDescriptorSettings()
+ *     .setRetrySettings(
+ *         metricServiceSettingsBuilder.getMonitoredResourceDescriptorSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * MetricServiceStubSettings metricServiceSettings = metricServiceSettingsBuilder.build();
  * </code>
  * </pre>
