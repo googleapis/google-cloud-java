@@ -93,9 +93,21 @@ public class ITSystemTest {
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String ID = UUID.randomUUID().toString().substring(0, 8);
   private static final String RESOURCES = "src/test/resources/";
-  private static final String SAMPLE_BUCKET = "gs://cloud-samples-data/vision/";
-  private static final String SAMPLE_URI =
-      "https://storage-download.googleapis.com/cloud-samples-data/vision/";
+  private static final String GCS_BUCKET_ENV_VAR = "GOOGLE_CLOUD_TESTS_VISION_BUCKET";
+  private static final String SAMPLE_BUCKET;
+  private static final String SAMPLE_URI;
+
+  static {
+    String GCS_BUCKET;
+    if (System.getenv(GCS_BUCKET_ENV_VAR) != null) {
+      GCS_BUCKET = System.getenv(GCS_BUCKET_ENV_VAR);
+    } else {
+      GCS_BUCKET = "cloud-samples-data";
+    }
+    SAMPLE_BUCKET = String.format("gs://%s/vision/", GCS_BUCKET);
+    SAMPLE_URI = String.format("https://storage-download.googleapis.com/%s/vision/", GCS_BUCKET);
+  }
+
   private static final String COMPUTE_REGION = "us-west1";
   private static final String LOCATION_NAME =
       LocationName.of(PROJECT_ID, COMPUTE_REGION).toString();
