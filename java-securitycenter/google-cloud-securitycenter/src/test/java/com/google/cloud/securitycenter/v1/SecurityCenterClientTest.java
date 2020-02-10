@@ -15,7 +15,10 @@
  */
 package com.google.cloud.securitycenter.v1;
 
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -329,6 +332,63 @@ public class SecurityCenterClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void groupAssetsTest() {
+    String nextPageToken = "";
+    int totalSize = 705419236;
+    GroupResult groupByResultsElement = GroupResult.newBuilder().build();
+    List<GroupResult> groupByResults = Arrays.asList(groupByResultsElement);
+    GroupAssetsResponse expectedResponse =
+        GroupAssetsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .setTotalSize(totalSize)
+            .addAllGroupByResults(groupByResults)
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    String groupBy = "groupBy506361367";
+    GroupAssetsRequest request =
+        GroupAssetsRequest.newBuilder().setParent(parent.toString()).setGroupBy(groupBy).build();
+
+    GroupAssetsPagedResponse pagedListResponse = client.groupAssets(request);
+
+    List<GroupResult> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGroupByResultsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GroupAssetsRequest actualRequest = (GroupAssetsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, OrganizationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(groupBy, actualRequest.getGroupBy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void groupAssetsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      String groupBy = "groupBy506361367";
+      GroupAssetsRequest request =
+          GroupAssetsRequest.newBuilder().setParent(parent.toString()).setGroupBy(groupBy).build();
+
+      client.groupAssets(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void groupFindingsTest() {
     String nextPageToken = "";
     int totalSize = 705419236;
@@ -374,6 +434,119 @@ public class SecurityCenterClientTest {
       String groupBy = "groupBy506361367";
 
       client.groupFindings(parent, groupBy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listAssetsTest() {
+    String nextPageToken = "";
+    int totalSize = 705419236;
+    ListAssetsResponse.ListAssetsResult listAssetsResultsElement =
+        ListAssetsResponse.ListAssetsResult.newBuilder().build();
+    List<ListAssetsResponse.ListAssetsResult> listAssetsResults =
+        Arrays.asList(listAssetsResultsElement);
+    ListAssetsResponse expectedResponse =
+        ListAssetsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .setTotalSize(totalSize)
+            .addAllListAssetsResults(listAssetsResults)
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    ListAssetsRequest request = ListAssetsRequest.newBuilder().setParent(parent.toString()).build();
+
+    ListAssetsPagedResponse pagedListResponse = client.listAssets(request);
+
+    List<ListAssetsResponse.ListAssetsResult> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getListAssetsResultsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAssetsRequest actualRequest = (ListAssetsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, OrganizationName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listAssetsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      ListAssetsRequest request =
+          ListAssetsRequest.newBuilder().setParent(parent.toString()).build();
+
+      client.listAssets(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listFindingsTest() {
+    String nextPageToken = "";
+    int totalSize = 705419236;
+    ListFindingsResponse.ListFindingsResult listFindingsResultsElement =
+        ListFindingsResponse.ListFindingsResult.newBuilder().build();
+    List<ListFindingsResponse.ListFindingsResult> listFindingsResults =
+        Arrays.asList(listFindingsResultsElement);
+    ListFindingsResponse expectedResponse =
+        ListFindingsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .setTotalSize(totalSize)
+            .addAllListFindingsResults(listFindingsResults)
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+    ListFindingsRequest request =
+        ListFindingsRequest.newBuilder().setParent(parent.toString()).build();
+
+    ListFindingsPagedResponse pagedListResponse = client.listFindings(request);
+
+    List<ListFindingsResponse.ListFindingsResult> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getListFindingsResultsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFindingsRequest actualRequest = (ListFindingsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, SourceName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listFindingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+      ListFindingsRequest request =
+          ListFindingsRequest.newBuilder().setParent(parent.toString()).build();
+
+      client.listFindings(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

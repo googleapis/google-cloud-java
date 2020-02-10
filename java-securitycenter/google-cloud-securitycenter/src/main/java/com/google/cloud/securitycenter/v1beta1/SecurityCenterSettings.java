@@ -67,8 +67,12 @@ import javax.annotation.Generated;
  * <code>
  * SecurityCenterSettings.Builder securityCenterSettingsBuilder =
  *     SecurityCenterSettings.newBuilder();
- * securityCenterSettingsBuilder.createSourceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * securityCenterSettingsBuilder
+ *     .createSourceSettings()
+ *     .setRetrySettings(
+ *         securityCenterSettingsBuilder.createSourceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * SecurityCenterSettings securityCenterSettings = securityCenterSettingsBuilder.build();
  * </code>
  * </pre>
