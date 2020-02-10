@@ -58,8 +58,12 @@ import javax.annotation.Generated;
  * <code>
  * GrafeasSettings.Builder grafeasSettingsBuilder =
  *     GrafeasSettings.newBuilder();
- * grafeasSettingsBuilder.getOccurrenceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * grafeasSettingsBuilder
+ *     .getOccurrenceSettings()
+ *     .setRetrySettings(
+ *         grafeasSettingsBuilder.getOccurrenceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * GrafeasSettings grafeasSettings = grafeasSettingsBuilder.build();
  * </code>
  * </pre>
