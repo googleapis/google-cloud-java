@@ -66,8 +66,12 @@ import org.threeten.bp.Duration;
  * <code>
  * WebRiskServiceV1Beta1StubSettings.Builder webRiskServiceV1Beta1SettingsBuilder =
  *     WebRiskServiceV1Beta1StubSettings.newBuilder();
- * webRiskServiceV1Beta1SettingsBuilder.computeThreatListDiffSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * webRiskServiceV1Beta1SettingsBuilder
+ *     .computeThreatListDiffSettings()
+ *     .setRetrySettings(
+ *         webRiskServiceV1Beta1SettingsBuilder.computeThreatListDiffSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * WebRiskServiceV1Beta1StubSettings webRiskServiceV1Beta1Settings = webRiskServiceV1Beta1SettingsBuilder.build();
  * </code>
  * </pre>

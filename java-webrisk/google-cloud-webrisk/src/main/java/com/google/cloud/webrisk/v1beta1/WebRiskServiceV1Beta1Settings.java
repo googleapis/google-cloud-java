@@ -57,8 +57,12 @@ import javax.annotation.Generated;
  * <code>
  * WebRiskServiceV1Beta1Settings.Builder webRiskServiceV1Beta1SettingsBuilder =
  *     WebRiskServiceV1Beta1Settings.newBuilder();
- * webRiskServiceV1Beta1SettingsBuilder.computeThreatListDiffSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * webRiskServiceV1Beta1SettingsBuilder
+ *     .computeThreatListDiffSettings()
+ *     .setRetrySettings(
+ *         webRiskServiceV1Beta1SettingsBuilder.computeThreatListDiffSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * WebRiskServiceV1Beta1Settings webRiskServiceV1Beta1Settings = webRiskServiceV1Beta1SettingsBuilder.build();
  * </code>
  * </pre>
