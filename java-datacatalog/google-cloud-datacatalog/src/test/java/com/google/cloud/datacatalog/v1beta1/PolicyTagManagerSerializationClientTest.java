@@ -16,16 +16,25 @@
 package com.google.cloud.datacatalog.v1beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.protobuf.AbstractMessage;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class PolicyTagManagerSerializationClientTest {
@@ -69,5 +78,79 @@ public class PolicyTagManagerSerializationClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void importTaxonomiesTest() {
+    ImportTaxonomiesResponse expectedResponse = ImportTaxonomiesResponse.newBuilder().build();
+    mockPolicyTagManagerSerialization.addResponse(expectedResponse);
+
+    ImportTaxonomiesRequest request = ImportTaxonomiesRequest.newBuilder().build();
+
+    ImportTaxonomiesResponse actualResponse = client.importTaxonomies(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPolicyTagManagerSerialization.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportTaxonomiesRequest actualRequest = (ImportTaxonomiesRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void importTaxonomiesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockPolicyTagManagerSerialization.addException(exception);
+
+    try {
+      ImportTaxonomiesRequest request = ImportTaxonomiesRequest.newBuilder().build();
+
+      client.importTaxonomies(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void exportTaxonomiesTest() {
+    ExportTaxonomiesResponse expectedResponse = ExportTaxonomiesResponse.newBuilder().build();
+    mockPolicyTagManagerSerialization.addResponse(expectedResponse);
+
+    ExportTaxonomiesRequest request = ExportTaxonomiesRequest.newBuilder().build();
+
+    ExportTaxonomiesResponse actualResponse = client.exportTaxonomies(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPolicyTagManagerSerialization.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportTaxonomiesRequest actualRequest = (ExportTaxonomiesRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void exportTaxonomiesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockPolicyTagManagerSerialization.addException(exception);
+
+    try {
+      ExportTaxonomiesRequest request = ExportTaxonomiesRequest.newBuilder().build();
+
+      client.exportTaxonomies(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
   }
 }

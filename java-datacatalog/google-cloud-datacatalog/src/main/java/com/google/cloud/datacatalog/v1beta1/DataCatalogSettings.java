@@ -61,8 +61,12 @@ import javax.annotation.Generated;
  * <code>
  * DataCatalogSettings.Builder dataCatalogSettingsBuilder =
  *     DataCatalogSettings.newBuilder();
- * dataCatalogSettingsBuilder.createEntryGroupSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * dataCatalogSettingsBuilder
+ *     .createEntryGroupSettings()
+ *     .setRetrySettings(
+ *         dataCatalogSettingsBuilder.createEntryGroupSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * DataCatalogSettings dataCatalogSettings = dataCatalogSettingsBuilder.build();
  * </code>
  * </pre>

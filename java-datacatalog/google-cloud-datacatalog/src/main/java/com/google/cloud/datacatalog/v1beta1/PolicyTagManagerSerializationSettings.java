@@ -51,8 +51,12 @@ import javax.annotation.Generated;
  * <code>
  * PolicyTagManagerSerializationSettings.Builder policyTagManagerSerializationSettingsBuilder =
  *     PolicyTagManagerSerializationSettings.newBuilder();
- * policyTagManagerSerializationSettingsBuilder.importTaxonomiesSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * policyTagManagerSerializationSettingsBuilder
+ *     .importTaxonomiesSettings()
+ *     .setRetrySettings(
+ *         policyTagManagerSerializationSettingsBuilder.importTaxonomiesSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * PolicyTagManagerSerializationSettings policyTagManagerSerializationSettings = policyTagManagerSerializationSettingsBuilder.build();
  * </code>
  * </pre>

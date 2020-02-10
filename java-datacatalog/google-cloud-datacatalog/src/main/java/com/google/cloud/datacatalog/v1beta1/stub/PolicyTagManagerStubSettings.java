@@ -80,8 +80,12 @@ import org.threeten.bp.Duration;
  * <code>
  * PolicyTagManagerStubSettings.Builder policyTagManagerSettingsBuilder =
  *     PolicyTagManagerStubSettings.newBuilder();
- * policyTagManagerSettingsBuilder.createTaxonomySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * policyTagManagerSettingsBuilder
+ *     .createTaxonomySettings()
+ *     .setRetrySettings(
+ *         policyTagManagerSettingsBuilder.createTaxonomySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * PolicyTagManagerStubSettings policyTagManagerSettings = policyTagManagerSettingsBuilder.build();
  * </code>
  * </pre>

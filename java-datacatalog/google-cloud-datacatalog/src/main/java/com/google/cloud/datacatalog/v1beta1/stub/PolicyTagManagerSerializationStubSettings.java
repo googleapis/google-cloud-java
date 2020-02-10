@@ -64,8 +64,12 @@ import org.threeten.bp.Duration;
  * <code>
  * PolicyTagManagerSerializationStubSettings.Builder policyTagManagerSerializationSettingsBuilder =
  *     PolicyTagManagerSerializationStubSettings.newBuilder();
- * policyTagManagerSerializationSettingsBuilder.importTaxonomiesSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * policyTagManagerSerializationSettingsBuilder
+ *     .importTaxonomiesSettings()
+ *     .setRetrySettings(
+ *         policyTagManagerSerializationSettingsBuilder.importTaxonomiesSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * PolicyTagManagerSerializationStubSettings policyTagManagerSerializationSettings = policyTagManagerSerializationSettingsBuilder.build();
  * </code>
  * </pre>

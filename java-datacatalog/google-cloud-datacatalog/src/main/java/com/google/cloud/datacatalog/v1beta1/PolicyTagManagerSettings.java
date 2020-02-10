@@ -57,8 +57,12 @@ import javax.annotation.Generated;
  * <code>
  * PolicyTagManagerSettings.Builder policyTagManagerSettingsBuilder =
  *     PolicyTagManagerSettings.newBuilder();
- * policyTagManagerSettingsBuilder.createTaxonomySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * policyTagManagerSettingsBuilder
+ *     .createTaxonomySettings()
+ *     .setRetrySettings(
+ *         policyTagManagerSettingsBuilder.createTaxonomySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * PolicyTagManagerSettings policyTagManagerSettings = policyTagManagerSettingsBuilder.build();
  * </code>
  * </pre>

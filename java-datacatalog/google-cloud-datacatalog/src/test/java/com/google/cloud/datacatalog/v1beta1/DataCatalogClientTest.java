@@ -499,6 +499,57 @@ public class DataCatalogClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void lookupEntryTest() {
+    String name = "name3373707";
+    String linkedResource = "linkedResource1544625012";
+    String userSpecifiedType = "userSpecifiedType-940364963";
+    String userSpecifiedSystem = "userSpecifiedSystem-1776119406";
+    String displayName = "displayName1615086568";
+    String description = "description-1724546052";
+    Entry expectedResponse =
+        Entry.newBuilder()
+            .setName(name)
+            .setLinkedResource(linkedResource)
+            .setUserSpecifiedType(userSpecifiedType)
+            .setUserSpecifiedSystem(userSpecifiedSystem)
+            .setDisplayName(displayName)
+            .setDescription(description)
+            .build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    LookupEntryRequest request = LookupEntryRequest.newBuilder().build();
+
+    Entry actualResponse = client.lookupEntry(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    LookupEntryRequest actualRequest = (LookupEntryRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void lookupEntryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      LookupEntryRequest request = LookupEntryRequest.newBuilder().build();
+
+      client.lookupEntry(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void listEntryGroupsTest() {
     String nextPageToken = "nextPageToken-1530815211";
     ListEntryGroupsResponse expectedResponse =
@@ -640,9 +691,8 @@ public class DataCatalogClientTest {
     mockDataCatalog.addResponse(expectedResponse);
 
     EntryGroup entryGroup = EntryGroup.newBuilder().build();
-    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    EntryGroup actualResponse = client.updateEntryGroup(entryGroup, updateMask);
+    EntryGroup actualResponse = client.updateEntryGroup(entryGroup);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
@@ -650,7 +700,6 @@ public class DataCatalogClientTest {
     UpdateEntryGroupRequest actualRequest = (UpdateEntryGroupRequest) actualRequests.get(0);
 
     Assert.assertEquals(entryGroup, actualRequest.getEntryGroup());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -665,9 +714,8 @@ public class DataCatalogClientTest {
 
     try {
       EntryGroup entryGroup = EntryGroup.newBuilder().build();
-      FieldMask updateMask = FieldMask.newBuilder().build();
 
-      client.updateEntryGroup(entryGroup, updateMask);
+      client.updateEntryGroup(entryGroup);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
