@@ -27,14 +27,16 @@ public interface UpdateLogMetricRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the metric to update:
+   * Required. The resource name of the metric to update:
    *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * The updated metric must be provided in the request and it's
    * `name` field must be the same as `[METRIC_ID]` If the metric
    * does not exist in `[PROJECT_ID]`, then a new metric is created.
    * </pre>
    *
-   * <code>string metric_name = 1;</code>
+   * <code>
+   * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The metricName.
    */
@@ -43,14 +45,16 @@ public interface UpdateLogMetricRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the metric to update:
+   * Required. The resource name of the metric to update:
    *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * The updated metric must be provided in the request and it's
    * `name` field must be the same as `[METRIC_ID]` If the metric
    * does not exist in `[PROJECT_ID]`, then a new metric is created.
    * </pre>
    *
-   * <code>string metric_name = 1;</code>
+   * <code>
+   * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for metricName.
    */
@@ -60,10 +64,10 @@ public interface UpdateLogMetricRequestOrBuilder
    *
    *
    * <pre>
-   * The updated metric.
+   * Required. The updated metric.
    * </pre>
    *
-   * <code>.google.logging.v2.LogMetric metric = 2;</code>
+   * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the metric field is set.
    */
@@ -72,10 +76,10 @@ public interface UpdateLogMetricRequestOrBuilder
    *
    *
    * <pre>
-   * The updated metric.
+   * Required. The updated metric.
    * </pre>
    *
-   * <code>.google.logging.v2.LogMetric metric = 2;</code>
+   * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The metric.
    */
@@ -84,10 +88,10 @@ public interface UpdateLogMetricRequestOrBuilder
    *
    *
    * <pre>
-   * The updated metric.
+   * Required. The updated metric.
    * </pre>
    *
-   * <code>.google.logging.v2.LogMetric metric = 2;</code>
+   * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.logging.v2.LogMetricOrBuilder getMetricOrBuilder();
 }

@@ -42,7 +42,7 @@ public interface WriteLogEntriesRequestOrBuilder
    * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
    * </pre>
    *
-   * <code>string log_name = 1;</code>
+   * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The logName.
    */
@@ -66,7 +66,7 @@ public interface WriteLogEntriesRequestOrBuilder
    * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
    * </pre>
    *
-   * <code>string log_name = 1;</code>
+   * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for logName.
    */
@@ -217,7 +217,9 @@ public interface WriteLogEntriesRequestOrBuilder
    * rather than calling this method for each individual log entry.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+   * <code>
+   * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.logging.v2.LogEntry> getEntriesList();
   /**
@@ -246,7 +248,9 @@ public interface WriteLogEntriesRequestOrBuilder
    * rather than calling this method for each individual log entry.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+   * <code>
+   * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.logging.v2.LogEntry getEntries(int index);
   /**
@@ -275,7 +279,9 @@ public interface WriteLogEntriesRequestOrBuilder
    * rather than calling this method for each individual log entry.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+   * <code>
+   * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getEntriesCount();
   /**
@@ -304,7 +310,9 @@ public interface WriteLogEntriesRequestOrBuilder
    * rather than calling this method for each individual log entry.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+   * <code>
+   * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.logging.v2.LogEntryOrBuilder> getEntriesOrBuilderList();
   /**
@@ -333,7 +341,9 @@ public interface WriteLogEntriesRequestOrBuilder
    * rather than calling this method for each individual log entry.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+   * <code>
+   * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.logging.v2.LogEntryOrBuilder getEntriesOrBuilder(int index);
 

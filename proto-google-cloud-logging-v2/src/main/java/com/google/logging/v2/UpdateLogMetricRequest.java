@@ -132,14 +132,16 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The resource name of the metric to update:
+   * Required. The resource name of the metric to update:
    *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * The updated metric must be provided in the request and it's
    * `name` field must be the same as `[METRIC_ID]` If the metric
    * does not exist in `[PROJECT_ID]`, then a new metric is created.
    * </pre>
    *
-   * <code>string metric_name = 1;</code>
+   * <code>
+   * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The metricName.
    */
@@ -158,14 +160,16 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The resource name of the metric to update:
+   * Required. The resource name of the metric to update:
    *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * The updated metric must be provided in the request and it's
    * `name` field must be the same as `[METRIC_ID]` If the metric
    * does not exist in `[PROJECT_ID]`, then a new metric is created.
    * </pre>
    *
-   * <code>string metric_name = 1;</code>
+   * <code>
+   * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for metricName.
    */
@@ -187,10 +191,10 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The updated metric.
+   * Required. The updated metric.
    * </pre>
    *
-   * <code>.google.logging.v2.LogMetric metric = 2;</code>
+   * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the metric field is set.
    */
@@ -201,10 +205,10 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The updated metric.
+   * Required. The updated metric.
    * </pre>
    *
-   * <code>.google.logging.v2.LogMetric metric = 2;</code>
+   * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The metric.
    */
@@ -215,10 +219,10 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The updated metric.
+   * Required. The updated metric.
    * </pre>
    *
-   * <code>.google.logging.v2.LogMetric metric = 2;</code>
+   * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.logging.v2.LogMetricOrBuilder getMetricOrBuilder() {
     return getMetric();
@@ -573,14 +577,16 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource name of the metric to update:
+     * Required. The resource name of the metric to update:
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      * The updated metric must be provided in the request and it's
      * `name` field must be the same as `[METRIC_ID]` If the metric
      * does not exist in `[PROJECT_ID]`, then a new metric is created.
      * </pre>
      *
-     * <code>string metric_name = 1;</code>
+     * <code>
+     * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The metricName.
      */
@@ -599,14 +605,16 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource name of the metric to update:
+     * Required. The resource name of the metric to update:
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      * The updated metric must be provided in the request and it's
      * `name` field must be the same as `[METRIC_ID]` If the metric
      * does not exist in `[PROJECT_ID]`, then a new metric is created.
      * </pre>
      *
-     * <code>string metric_name = 1;</code>
+     * <code>
+     * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for metricName.
      */
@@ -625,14 +633,16 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource name of the metric to update:
+     * Required. The resource name of the metric to update:
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      * The updated metric must be provided in the request and it's
      * `name` field must be the same as `[METRIC_ID]` If the metric
      * does not exist in `[PROJECT_ID]`, then a new metric is created.
      * </pre>
      *
-     * <code>string metric_name = 1;</code>
+     * <code>
+     * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The metricName to set.
      * @return This builder for chaining.
@@ -650,14 +660,16 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource name of the metric to update:
+     * Required. The resource name of the metric to update:
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      * The updated metric must be provided in the request and it's
      * `name` field must be the same as `[METRIC_ID]` If the metric
      * does not exist in `[PROJECT_ID]`, then a new metric is created.
      * </pre>
      *
-     * <code>string metric_name = 1;</code>
+     * <code>
+     * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -671,14 +683,16 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource name of the metric to update:
+     * Required. The resource name of the metric to update:
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      * The updated metric must be provided in the request and it's
      * `name` field must be the same as `[METRIC_ID]` If the metric
      * does not exist in `[PROJECT_ID]`, then a new metric is created.
      * </pre>
      *
-     * <code>string metric_name = 1;</code>
+     * <code>
+     * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for metricName to set.
      * @return This builder for chaining.
@@ -704,10 +718,11 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The updated metric.
+     * Required. The updated metric.
      * </pre>
      *
-     * <code>.google.logging.v2.LogMetric metric = 2;</code>
+     * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the metric field is set.
      */
@@ -718,10 +733,11 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The updated metric.
+     * Required. The updated metric.
      * </pre>
      *
-     * <code>.google.logging.v2.LogMetric metric = 2;</code>
+     * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The metric.
      */
@@ -736,10 +752,11 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The updated metric.
+     * Required. The updated metric.
      * </pre>
      *
-     * <code>.google.logging.v2.LogMetric metric = 2;</code>
+     * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setMetric(com.google.logging.v2.LogMetric value) {
       if (metricBuilder_ == null) {
@@ -758,10 +775,11 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The updated metric.
+     * Required. The updated metric.
      * </pre>
      *
-     * <code>.google.logging.v2.LogMetric metric = 2;</code>
+     * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setMetric(com.google.logging.v2.LogMetric.Builder builderForValue) {
       if (metricBuilder_ == null) {
@@ -777,10 +795,11 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The updated metric.
+     * Required. The updated metric.
      * </pre>
      *
-     * <code>.google.logging.v2.LogMetric metric = 2;</code>
+     * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeMetric(com.google.logging.v2.LogMetric value) {
       if (metricBuilder_ == null) {
@@ -801,10 +820,11 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The updated metric.
+     * Required. The updated metric.
      * </pre>
      *
-     * <code>.google.logging.v2.LogMetric metric = 2;</code>
+     * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearMetric() {
       if (metricBuilder_ == null) {
@@ -821,10 +841,11 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The updated metric.
+     * Required. The updated metric.
      * </pre>
      *
-     * <code>.google.logging.v2.LogMetric metric = 2;</code>
+     * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.logging.v2.LogMetric.Builder getMetricBuilder() {
 
@@ -835,10 +856,11 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The updated metric.
+     * Required. The updated metric.
      * </pre>
      *
-     * <code>.google.logging.v2.LogMetric metric = 2;</code>
+     * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.logging.v2.LogMetricOrBuilder getMetricOrBuilder() {
       if (metricBuilder_ != null) {
@@ -851,10 +873,11 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The updated metric.
+     * Required. The updated metric.
      * </pre>
      *
-     * <code>.google.logging.v2.LogMetric metric = 2;</code>
+     * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.logging.v2.LogMetric,

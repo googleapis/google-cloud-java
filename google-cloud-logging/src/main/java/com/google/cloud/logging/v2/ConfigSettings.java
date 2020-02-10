@@ -30,10 +30,12 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.logging.v2.stub.ConfigServiceV2StubSettings;
+import com.google.logging.v2.CmekSettings;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.ListExclusionsRequest;
@@ -42,6 +44,7 @@ import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
@@ -130,6 +133,16 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
   /** Returns the object with the settings used for calls to deleteExclusion. */
   public UnaryCallSettings<DeleteExclusionRequest, Empty> deleteExclusionSettings() {
     return ((ConfigServiceV2StubSettings) getStubSettings()).deleteExclusionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getCmekSettings. */
+  public UnaryCallSettings<GetCmekSettingsRequest, CmekSettings> getCmekSettingsSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).getCmekSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCmekSettings. */
+  public UnaryCallSettings<UpdateCmekSettingsRequest, CmekSettings> updateCmekSettingsSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).updateCmekSettingsSettings();
   }
 
   public static final ConfigSettings create(ConfigServiceV2StubSettings stub) throws IOException {
@@ -281,6 +294,18 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
     /** Returns the builder for the settings used for calls to deleteExclusion. */
     public UnaryCallSettings.Builder<DeleteExclusionRequest, Empty> deleteExclusionSettings() {
       return getStubSettingsBuilder().deleteExclusionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getCmekSettings. */
+    public UnaryCallSettings.Builder<GetCmekSettingsRequest, CmekSettings>
+        getCmekSettingsSettings() {
+      return getStubSettingsBuilder().getCmekSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCmekSettings. */
+    public UnaryCallSettings.Builder<UpdateCmekSettingsRequest, CmekSettings>
+        updateCmekSettingsSettings() {
+      return getStubSettingsBuilder().updateCmekSettingsSettings();
     }
 
     @Override

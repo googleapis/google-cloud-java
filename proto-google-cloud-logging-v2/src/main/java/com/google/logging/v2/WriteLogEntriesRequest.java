@@ -196,7 +196,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
    * </pre>
    *
-   * <code>string log_name = 1;</code>
+   * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The logName.
    */
@@ -230,7 +230,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
    * </pre>
    *
-   * <code>string log_name = 1;</code>
+   * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for logName.
    */
@@ -437,7 +437,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * rather than calling this method for each individual log entry.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+   * <code>
+   * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.logging.v2.LogEntry> getEntriesList() {
     return entries_;
@@ -468,7 +470,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * rather than calling this method for each individual log entry.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+   * <code>
+   * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<? extends com.google.logging.v2.LogEntryOrBuilder>
       getEntriesOrBuilderList() {
@@ -500,7 +504,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * rather than calling this method for each individual log entry.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+   * <code>
+   * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getEntriesCount() {
     return entries_.size();
@@ -531,7 +537,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * rather than calling this method for each individual log entry.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+   * <code>
+   * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.logging.v2.LogEntry getEntries(int index) {
     return entries_.get(index);
@@ -562,7 +570,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    * rather than calling this method for each individual log entry.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+   * <code>
+   * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.logging.v2.LogEntryOrBuilder getEntriesOrBuilder(int index) {
     return entries_.get(index);
@@ -1101,7 +1111,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
      * </pre>
      *
-     * <code>string log_name = 1;</code>
+     * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The logName.
      */
@@ -1135,7 +1145,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
      * </pre>
      *
-     * <code>string log_name = 1;</code>
+     * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for logName.
      */
@@ -1169,7 +1179,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
      * </pre>
      *
-     * <code>string log_name = 1;</code>
+     * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The logName to set.
      * @return This builder for chaining.
@@ -1202,7 +1212,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
      * </pre>
      *
-     * <code>string log_name = 1;</code>
+     * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -1231,7 +1241,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
      * </pre>
      *
-     * <code>string log_name = 1;</code>
+     * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for logName to set.
      * @return This builder for chaining.
@@ -1692,7 +1702,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.logging.v2.LogEntry> getEntriesList() {
       if (entriesBuilder_ == null) {
@@ -1727,7 +1739,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getEntriesCount() {
       if (entriesBuilder_ == null) {
@@ -1762,7 +1776,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.logging.v2.LogEntry getEntries(int index) {
       if (entriesBuilder_ == null) {
@@ -1797,7 +1813,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEntries(int index, com.google.logging.v2.LogEntry value) {
       if (entriesBuilder_ == null) {
@@ -1838,7 +1856,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEntries(int index, com.google.logging.v2.LogEntry.Builder builderForValue) {
       if (entriesBuilder_ == null) {
@@ -1876,7 +1896,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntries(com.google.logging.v2.LogEntry value) {
       if (entriesBuilder_ == null) {
@@ -1917,7 +1939,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntries(int index, com.google.logging.v2.LogEntry value) {
       if (entriesBuilder_ == null) {
@@ -1958,7 +1982,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntries(com.google.logging.v2.LogEntry.Builder builderForValue) {
       if (entriesBuilder_ == null) {
@@ -1996,7 +2022,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntries(int index, com.google.logging.v2.LogEntry.Builder builderForValue) {
       if (entriesBuilder_ == null) {
@@ -2034,7 +2062,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllEntries(
         java.lang.Iterable<? extends com.google.logging.v2.LogEntry> values) {
@@ -2073,7 +2103,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearEntries() {
       if (entriesBuilder_ == null) {
@@ -2111,7 +2143,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeEntries(int index) {
       if (entriesBuilder_ == null) {
@@ -2149,7 +2183,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.logging.v2.LogEntry.Builder getEntriesBuilder(int index) {
       return getEntriesFieldBuilder().getBuilder(index);
@@ -2180,7 +2216,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.logging.v2.LogEntryOrBuilder getEntriesOrBuilder(int index) {
       if (entriesBuilder_ == null) {
@@ -2215,7 +2253,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.logging.v2.LogEntryOrBuilder>
         getEntriesOrBuilderList() {
@@ -2251,7 +2291,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.logging.v2.LogEntry.Builder addEntriesBuilder() {
       return getEntriesFieldBuilder()
@@ -2283,7 +2325,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.logging.v2.LogEntry.Builder addEntriesBuilder(int index) {
       return getEntriesFieldBuilder()
@@ -2315,7 +2359,9 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      * rather than calling this method for each individual log entry.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
+     * <code>
+     * repeated .google.logging.v2.LogEntry entries = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.logging.v2.LogEntry.Builder> getEntriesBuilderList() {
       return getEntriesFieldBuilder().getBuilderList();

@@ -162,6 +162,8 @@ public class ConfigClientTest {
     String name = "name3373707";
     ResourceName destination = BillingName.of("[BILLING_ACCOUNT]");
     String filter = "filter-1274492040";
+    String description = "description-1724546052";
+    boolean disabled = true;
     String writerIdentity = "writerIdentity775638794";
     boolean includeChildren = true;
     LogSink expectedResponse =
@@ -169,6 +171,8 @@ public class ConfigClientTest {
             .setName(name)
             .setDestination(destination.toString())
             .setFilter(filter)
+            .setDescription(description)
+            .setDisabled(disabled)
             .setWriterIdentity(writerIdentity)
             .setIncludeChildren(includeChildren)
             .build();
@@ -212,6 +216,8 @@ public class ConfigClientTest {
     String name = "name3373707";
     ResourceName destination = BillingName.of("[BILLING_ACCOUNT]");
     String filter = "filter-1274492040";
+    String description = "description-1724546052";
+    boolean disabled = true;
     String writerIdentity = "writerIdentity775638794";
     boolean includeChildren = true;
     LogSink expectedResponse =
@@ -219,6 +225,8 @@ public class ConfigClientTest {
             .setName(name)
             .setDestination(destination.toString())
             .setFilter(filter)
+            .setDescription(description)
+            .setDisabled(disabled)
             .setWriterIdentity(writerIdentity)
             .setIncludeChildren(includeChildren)
             .build();
@@ -265,6 +273,8 @@ public class ConfigClientTest {
     String name = "name3373707";
     ResourceName destination = BillingName.of("[BILLING_ACCOUNT]");
     String filter = "filter-1274492040";
+    String description = "description-1724546052";
+    boolean disabled = true;
     String writerIdentity = "writerIdentity775638794";
     boolean includeChildren = true;
     LogSink expectedResponse =
@@ -272,6 +282,8 @@ public class ConfigClientTest {
             .setName(name)
             .setDestination(destination.toString())
             .setFilter(filter)
+            .setDescription(description)
+            .setDisabled(disabled)
             .setWriterIdentity(writerIdentity)
             .setIncludeChildren(includeChildren)
             .build();
@@ -321,6 +333,8 @@ public class ConfigClientTest {
     String name = "name3373707";
     ResourceName destination = BillingName.of("[BILLING_ACCOUNT]");
     String filter = "filter-1274492040";
+    String description = "description-1724546052";
+    boolean disabled = true;
     String writerIdentity = "writerIdentity775638794";
     boolean includeChildren = true;
     LogSink expectedResponse =
@@ -328,6 +342,8 @@ public class ConfigClientTest {
             .setName(name)
             .setDestination(destination.toString())
             .setFilter(filter)
+            .setDescription(description)
+            .setDisabled(disabled)
             .setWriterIdentity(writerIdentity)
             .setIncludeChildren(includeChildren)
             .build();

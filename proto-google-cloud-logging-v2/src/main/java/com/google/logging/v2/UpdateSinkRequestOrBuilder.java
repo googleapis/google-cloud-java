@@ -36,7 +36,9 @@ public interface UpdateSinkRequestOrBuilder
    * Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * </pre>
    *
-   * <code>string sink_name = 1;</code>
+   * <code>
+   * string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The sinkName.
    */
@@ -54,7 +56,9 @@ public interface UpdateSinkRequestOrBuilder
    * Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * </pre>
    *
-   * <code>string sink_name = 1;</code>
+   * <code>
+   * string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for sinkName.
    */
@@ -68,7 +72,7 @@ public interface UpdateSinkRequestOrBuilder
    * as part of `sink_name`.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the sink field is set.
    */
@@ -81,7 +85,7 @@ public interface UpdateSinkRequestOrBuilder
    * as part of `sink_name`.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The sink.
    */
@@ -94,7 +98,7 @@ public interface UpdateSinkRequestOrBuilder
    * as part of `sink_name`.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.logging.v2.LogSinkOrBuilder getSinkOrBuilder();
 

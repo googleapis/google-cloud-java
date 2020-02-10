@@ -155,7 +155,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -182,7 +184,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -208,7 +212,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    * in `update_mask` are relevant.
    * </pre>
    *
-   * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the exclusion field is set.
    */
@@ -223,7 +228,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    * in `update_mask` are relevant.
    * </pre>
    *
-   * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The exclusion.
    */
@@ -240,7 +246,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    * in `update_mask` are relevant.
    * </pre>
    *
-   * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.logging.v2.LogExclusionOrBuilder getExclusionOrBuilder() {
     return getExclusion();
@@ -260,7 +267,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    * specify an `update_mask` of `"filter,description"`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -279,7 +287,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    * specify an `update_mask` of `"filter,description"`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -298,7 +307,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    * specify an `update_mask` of `"filter,description"`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -689,7 +699,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -716,7 +728,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -743,7 +757,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -769,7 +785,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -791,7 +809,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -821,7 +841,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>
+     * .google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the exclusion field is set.
      */
@@ -836,7 +858,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>
+     * .google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The exclusion.
      */
@@ -857,7 +881,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>
+     * .google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setExclusion(com.google.logging.v2.LogExclusion value) {
       if (exclusionBuilder_ == null) {
@@ -880,7 +906,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>
+     * .google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setExclusion(com.google.logging.v2.LogExclusion.Builder builderForValue) {
       if (exclusionBuilder_ == null) {
@@ -900,7 +928,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>
+     * .google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeExclusion(com.google.logging.v2.LogExclusion value) {
       if (exclusionBuilder_ == null) {
@@ -927,7 +957,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>
+     * .google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearExclusion() {
       if (exclusionBuilder_ == null) {
@@ -948,7 +980,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>
+     * .google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.logging.v2.LogExclusion.Builder getExclusionBuilder() {
 
@@ -963,7 +997,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>
+     * .google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.logging.v2.LogExclusionOrBuilder getExclusionOrBuilder() {
       if (exclusionBuilder_ != null) {
@@ -982,7 +1018,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * in `update_mask` are relevant.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>
+     * .google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.logging.v2.LogExclusion,
@@ -1019,7 +1057,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -1038,7 +1077,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -1063,7 +1103,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1090,7 +1131,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -1114,7 +1156,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1143,7 +1186,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -1168,7 +1212,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -1187,7 +1232,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -1210,7 +1256,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * specify an `update_mask` of `"filter,description"`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

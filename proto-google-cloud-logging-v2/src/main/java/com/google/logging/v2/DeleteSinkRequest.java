@@ -126,7 +126,9 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
    * Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * </pre>
    *
-   * <code>string sink_name = 1;</code>
+   * <code>
+   * string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The sinkName.
    */
@@ -154,7 +156,9 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
    * Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * </pre>
    *
-   * <code>string sink_name = 1;</code>
+   * <code>
+   * string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for sinkName.
    */
@@ -499,7 +503,9 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      * </pre>
      *
-     * <code>string sink_name = 1;</code>
+     * <code>
+     * string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The sinkName.
      */
@@ -527,7 +533,9 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      * </pre>
      *
-     * <code>string sink_name = 1;</code>
+     * <code>
+     * string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for sinkName.
      */
@@ -555,7 +563,9 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      * </pre>
      *
-     * <code>string sink_name = 1;</code>
+     * <code>
+     * string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The sinkName to set.
      * @return This builder for chaining.
@@ -582,7 +592,9 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      * </pre>
      *
-     * <code>string sink_name = 1;</code>
+     * <code>
+     * string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -605,7 +617,9 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
      * Example: `"projects/my-project-id/sinks/my-sink-id"`.
      * </pre>
      *
-     * <code>string sink_name = 1;</code>
+     * <code>
+     * string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for sinkName to set.
      * @return This builder for chaining.

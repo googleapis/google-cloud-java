@@ -28,11 +28,13 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.logging.v2.stub.ConfigServiceV2Stub;
 import com.google.cloud.logging.v2.stub.ConfigServiceV2StubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.logging.v2.CmekSettings;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
 import com.google.logging.v2.ExclusionName;
+import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.ListExclusionsRequest;
@@ -43,6 +45,7 @@ import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
 import com.google.logging.v2.ParentName;
 import com.google.logging.v2.SinkName;
+import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
@@ -1433,6 +1436,118 @@ public class ConfigClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable() {
     return stub.deleteExclusionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the Logs Router CMEK settings for the given resource.
+   *
+   * <p>Note: CMEK for the Logs Router can currently only be configured for GCP organizations. Once
+   * configured, it applies to all projects and folders in the GCP organization.
+   *
+   * <p>See [Enabling CMEK for Logs Router](/logging/docs/routing/managed-encryption) for more
+   * information.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetCmekSettingsRequest request = GetCmekSettingsRequest.newBuilder().build();
+   *   CmekSettings response = configClient.getCmekSettings(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CmekSettings getCmekSettings(GetCmekSettingsRequest request) {
+    return getCmekSettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the Logs Router CMEK settings for the given resource.
+   *
+   * <p>Note: CMEK for the Logs Router can currently only be configured for GCP organizations. Once
+   * configured, it applies to all projects and folders in the GCP organization.
+   *
+   * <p>See [Enabling CMEK for Logs Router](/logging/docs/routing/managed-encryption) for more
+   * information.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetCmekSettingsRequest request = GetCmekSettingsRequest.newBuilder().build();
+   *   ApiFuture&lt;CmekSettings&gt; future = configClient.getCmekSettingsCallable().futureCall(request);
+   *   // Do something
+   *   CmekSettings response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetCmekSettingsRequest, CmekSettings> getCmekSettingsCallable() {
+    return stub.getCmekSettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the Logs Router CMEK settings for the given resource.
+   *
+   * <p>Note: CMEK for the Logs Router can currently only be configured for GCP organizations. Once
+   * configured, it applies to all projects and folders in the GCP organization.
+   *
+   * <p>[UpdateCmekSettings][google.logging.v2.ConfigServiceV2.UpdateCmekSettings] will fail if 1)
+   * `kms_key_name` is invalid, or 2) the associated service account does not have the required
+   * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or 3) access to the key
+   * is disabled.
+   *
+   * <p>See [Enabling CMEK for Logs Router](/logging/docs/routing/managed-encryption) for more
+   * information.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   UpdateCmekSettingsRequest request = UpdateCmekSettingsRequest.newBuilder().build();
+   *   CmekSettings response = configClient.updateCmekSettings(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CmekSettings updateCmekSettings(UpdateCmekSettingsRequest request) {
+    return updateCmekSettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the Logs Router CMEK settings for the given resource.
+   *
+   * <p>Note: CMEK for the Logs Router can currently only be configured for GCP organizations. Once
+   * configured, it applies to all projects and folders in the GCP organization.
+   *
+   * <p>[UpdateCmekSettings][google.logging.v2.ConfigServiceV2.UpdateCmekSettings] will fail if 1)
+   * `kms_key_name` is invalid, or 2) the associated service account does not have the required
+   * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or 3) access to the key
+   * is disabled.
+   *
+   * <p>See [Enabling CMEK for Logs Router](/logging/docs/routing/managed-encryption) for more
+   * information.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   UpdateCmekSettingsRequest request = UpdateCmekSettingsRequest.newBuilder().build();
+   *   ApiFuture&lt;CmekSettings&gt; future = configClient.updateCmekSettingsCallable().futureCall(request);
+   *   // Do something
+   *   CmekSettings response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateCmekSettingsRequest, CmekSettings> updateCmekSettingsCallable() {
+    return stub.updateCmekSettingsCallable();
   }
 
   @Override

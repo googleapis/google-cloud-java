@@ -45,6 +45,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     destination_ = "";
     filter_ = "";
+    description_ = "";
     outputVersionFormat_ = 0;
     writerIdentity_ = "";
   }
@@ -192,6 +193,18 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
                 updateTime_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 146:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          case 152:
+            {
+              disabled_ = input.readBool();
               break;
             }
           default:
@@ -436,7 +449,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
    * limited to 100 characters and can include only the following characters:
    * upper and lower-case alphanumeric characters, underscores, hyphens, and
-   * periods.
+   * periods. First character has to be alphanumeric.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -462,7 +475,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
    * limited to 100 characters and can include only the following characters:
    * upper and lower-case alphanumeric characters, underscores, hyphens, and
-   * periods.
+   * periods. First character has to be alphanumeric.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -497,7 +510,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
-   * <code>string destination = 3;</code>
+   * <code>string destination = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The destination.
    */
@@ -526,7 +539,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
-   * <code>string destination = 3;</code>
+   * <code>string destination = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for destination.
    */
@@ -595,6 +608,73 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DESCRIPTION_FIELD_NUMBER = 18;
+  private volatile java.lang.Object description_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of this sink.
+   * The maximum length of the description is 8000 characters.
+   * </pre>
+   *
+   * <code>string description = 18;</code>
+   *
+   * @return The description.
+   */
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of this sink.
+   * The maximum length of the description is 8000 characters.
+   * </pre>
+   *
+   * <code>string description = 18;</code>
+   *
+   * @return The bytes for description.
+   */
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DISABLED_FIELD_NUMBER = 19;
+  private boolean disabled_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to True, then this sink is disabled and it does not
+   * export any log entries.
+   * </pre>
+   *
+   * <code>bool disabled = 19;</code>
+   *
+   * @return The disabled.
+   */
+  public boolean getDisabled() {
+    return disabled_;
+  }
+
   public static final int OUTPUT_VERSION_FORMAT_FIELD_NUMBER = 6;
   private int outputVersionFormat_;
   /**
@@ -656,7 +736,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * appropriate IAM roles to assign to the identity.
    * </pre>
    *
-   * <code>string writer_identity = 8;</code>
+   * <code>string writer_identity = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The writerIdentity.
    */
@@ -690,7 +770,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * appropriate IAM roles to assign to the identity.
    * </pre>
    *
-   * <code>string writer_identity = 8;</code>
+   * <code>string writer_identity = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for writerIdentity.
    */
@@ -792,7 +872,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * This field may not be present for older sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -807,7 +888,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * This field may not be present for older sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -822,7 +904,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * This field may not be present for older sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
@@ -838,7 +921,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * This field may not be present for older sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 14;</code>
+   * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the updateTime field is set.
    */
@@ -853,7 +937,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * This field may not be present for older sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 14;</code>
+   * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The updateTime.
    */
@@ -868,7 +953,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * This field may not be present for older sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 14;</code>
+   * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
@@ -1014,6 +1100,12 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       output.writeMessage(14, getUpdateTime());
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, description_);
+    }
+    if (disabled_ != false) {
+      output.writeBool(19, disabled_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1059,6 +1151,12 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getUpdateTime());
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, description_);
+    }
+    if (disabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, disabled_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1077,6 +1175,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getDestination().equals(other.getDestination())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (getDisabled() != other.getDisabled()) return false;
     if (outputVersionFormat_ != other.outputVersionFormat_) return false;
     if (!getWriterIdentity().equals(other.getWriterIdentity())) return false;
     if (getIncludeChildren() != other.getIncludeChildren()) return false;
@@ -1121,6 +1221,10 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDestination().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + DISABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
     hash = (37 * hash) + OUTPUT_VERSION_FORMAT_FIELD_NUMBER;
     hash = (53 * hash) + outputVersionFormat_;
     hash = (37 * hash) + WRITER_IDENTITY_FIELD_NUMBER;
@@ -1304,6 +1408,10 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
 
       filter_ = "";
 
+      description_ = "";
+
+      disabled_ = false;
+
       outputVersionFormat_ = 0;
 
       writerIdentity_ = "";
@@ -1365,6 +1473,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       result.name_ = name_;
       result.destination_ = destination_;
       result.filter_ = filter_;
+      result.description_ = description_;
+      result.disabled_ = disabled_;
       result.outputVersionFormat_ = outputVersionFormat_;
       result.writerIdentity_ = writerIdentity_;
       result.includeChildren_ = includeChildren_;
@@ -1457,6 +1567,13 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         filter_ = other.filter_;
         onChanged();
       }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
+      }
+      if (other.getDisabled() != false) {
+        setDisabled(other.getDisabled());
+      }
       if (other.outputVersionFormat_ != 0) {
         setOutputVersionFormatValue(other.getOutputVersionFormatValue());
       }
@@ -1542,7 +1659,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
      * limited to 100 characters and can include only the following characters:
      * upper and lower-case alphanumeric characters, underscores, hyphens, and
-     * periods.
+     * periods. First character has to be alphanumeric.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1568,7 +1685,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
      * limited to 100 characters and can include only the following characters:
      * upper and lower-case alphanumeric characters, underscores, hyphens, and
-     * periods.
+     * periods. First character has to be alphanumeric.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1594,7 +1711,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
      * limited to 100 characters and can include only the following characters:
      * upper and lower-case alphanumeric characters, underscores, hyphens, and
-     * periods.
+     * periods. First character has to be alphanumeric.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1619,7 +1736,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
      * limited to 100 characters and can include only the following characters:
      * upper and lower-case alphanumeric characters, underscores, hyphens, and
-     * periods.
+     * periods. First character has to be alphanumeric.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1640,7 +1757,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
      * limited to 100 characters and can include only the following characters:
      * upper and lower-case alphanumeric characters, underscores, hyphens, and
-     * periods.
+     * periods. First character has to be alphanumeric.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1674,7 +1791,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>string destination = 3;</code>
+     * <code>string destination = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The destination.
      */
@@ -1703,7 +1820,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>string destination = 3;</code>
+     * <code>string destination = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for destination.
      */
@@ -1732,7 +1849,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>string destination = 3;</code>
+     * <code>string destination = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The destination to set.
      * @return This builder for chaining.
@@ -1760,7 +1877,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>string destination = 3;</code>
+     * <code>string destination = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -1784,7 +1901,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>string destination = 3;</code>
+     * <code>string destination = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for destination to set.
      * @return This builder for chaining.
@@ -1921,6 +2038,171 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of this sink.
+     * The maximum length of the description is 8000 characters.
+     * </pre>
+     *
+     * <code>string description = 18;</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of this sink.
+     * The maximum length of the description is 8000 characters.
+     * </pre>
+     *
+     * <code>string description = 18;</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of this sink.
+     * The maximum length of the description is 8000 characters.
+     * </pre>
+     *
+     * <code>string description = 18;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of this sink.
+     * The maximum length of the description is 8000 characters.
+     * </pre>
+     *
+     * <code>string description = 18;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of this sink.
+     * The maximum length of the description is 8000 characters.
+     * </pre>
+     *
+     * <code>string description = 18;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean disabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to True, then this sink is disabled and it does not
+     * export any log entries.
+     * </pre>
+     *
+     * <code>bool disabled = 19;</code>
+     *
+     * @return The disabled.
+     */
+    public boolean getDisabled() {
+      return disabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to True, then this sink is disabled and it does not
+     * export any log entries.
+     * </pre>
+     *
+     * <code>bool disabled = 19;</code>
+     *
+     * @param value The disabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisabled(boolean value) {
+
+      disabled_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to True, then this sink is disabled and it does not
+     * export any log entries.
+     * </pre>
+     *
+     * <code>bool disabled = 19;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisabled() {
+
+      disabled_ = false;
+      onChanged();
+      return this;
+    }
+
     private int outputVersionFormat_ = 0;
     /**
      *
@@ -2044,7 +2326,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * appropriate IAM roles to assign to the identity.
      * </pre>
      *
-     * <code>string writer_identity = 8;</code>
+     * <code>string writer_identity = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The writerIdentity.
      */
@@ -2078,7 +2360,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * appropriate IAM roles to assign to the identity.
      * </pre>
      *
-     * <code>string writer_identity = 8;</code>
+     * <code>string writer_identity = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for writerIdentity.
      */
@@ -2112,7 +2394,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * appropriate IAM roles to assign to the identity.
      * </pre>
      *
-     * <code>string writer_identity = 8;</code>
+     * <code>string writer_identity = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The writerIdentity to set.
      * @return This builder for chaining.
@@ -2145,7 +2427,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * appropriate IAM roles to assign to the identity.
      * </pre>
      *
-     * <code>string writer_identity = 8;</code>
+     * <code>string writer_identity = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -2174,7 +2456,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * appropriate IAM roles to assign to the identity.
      * </pre>
      *
-     * <code>string writer_identity = 8;</code>
+     * <code>string writer_identity = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for writerIdentity to set.
      * @return This builder for chaining.
@@ -2494,7 +2776,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
@@ -2509,7 +2793,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -2530,7 +2816,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2553,7 +2841,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -2573,7 +2863,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2598,7 +2890,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -2619,7 +2913,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
 
@@ -2634,7 +2930,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -2653,7 +2951,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -2686,7 +2986,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the updateTime field is set.
      */
@@ -2701,7 +3003,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The updateTime.
      */
@@ -2722,7 +3026,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -2745,7 +3051,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
@@ -2765,7 +3073,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -2790,7 +3100,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -2811,7 +3123,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
 
@@ -2826,7 +3140,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -2845,7 +3161,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older sinks.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,

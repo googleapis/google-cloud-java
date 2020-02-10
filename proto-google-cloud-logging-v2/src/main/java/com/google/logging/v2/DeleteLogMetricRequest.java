@@ -117,11 +117,13 @@ public final class DeleteLogMetricRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The resource name of the metric to delete:
+   * Required. The resource name of the metric to delete:
    *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * </pre>
    *
-   * <code>string metric_name = 1;</code>
+   * <code>
+   * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The metricName.
    */
@@ -140,11 +142,13 @@ public final class DeleteLogMetricRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The resource name of the metric to delete:
+   * Required. The resource name of the metric to delete:
    *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * </pre>
    *
-   * <code>string metric_name = 1;</code>
+   * <code>
+   * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for metricName.
    */
@@ -481,11 +485,13 @@ public final class DeleteLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource name of the metric to delete:
+     * Required. The resource name of the metric to delete:
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      * </pre>
      *
-     * <code>string metric_name = 1;</code>
+     * <code>
+     * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The metricName.
      */
@@ -504,11 +510,13 @@ public final class DeleteLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource name of the metric to delete:
+     * Required. The resource name of the metric to delete:
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      * </pre>
      *
-     * <code>string metric_name = 1;</code>
+     * <code>
+     * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for metricName.
      */
@@ -527,11 +535,13 @@ public final class DeleteLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource name of the metric to delete:
+     * Required. The resource name of the metric to delete:
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      * </pre>
      *
-     * <code>string metric_name = 1;</code>
+     * <code>
+     * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The metricName to set.
      * @return This builder for chaining.
@@ -549,11 +559,13 @@ public final class DeleteLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource name of the metric to delete:
+     * Required. The resource name of the metric to delete:
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      * </pre>
      *
-     * <code>string metric_name = 1;</code>
+     * <code>
+     * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -567,11 +579,13 @@ public final class DeleteLogMetricRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource name of the metric to delete:
+     * Required. The resource name of the metric to delete:
      *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
      * </pre>
      *
-     * <code>string metric_name = 1;</code>
+     * <code>
+     * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for metricName to set.
      * @return This builder for chaining.

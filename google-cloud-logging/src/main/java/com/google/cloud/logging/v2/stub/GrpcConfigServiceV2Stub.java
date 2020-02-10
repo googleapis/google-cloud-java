@@ -27,10 +27,12 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.logging.v2.CmekSettings;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.ListExclusionsRequest;
@@ -39,6 +41,7 @@ import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
@@ -140,6 +143,24 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   ProtoUtils.marshaller(DeleteExclusionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<GetCmekSettingsRequest, CmekSettings>
+      getCmekSettingsMethodDescriptor =
+          MethodDescriptor.<GetCmekSettingsRequest, CmekSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.ConfigServiceV2/GetCmekSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetCmekSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CmekSettings.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<UpdateCmekSettingsRequest, CmekSettings>
+      updateCmekSettingsMethodDescriptor =
+          MethodDescriptor.<UpdateCmekSettingsRequest, CmekSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.ConfigServiceV2/UpdateCmekSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateCmekSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CmekSettings.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -156,6 +177,8 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
   private final UnaryCallable<CreateExclusionRequest, LogExclusion> createExclusionCallable;
   private final UnaryCallable<UpdateExclusionRequest, LogExclusion> updateExclusionCallable;
   private final UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable;
+  private final UnaryCallable<GetCmekSettingsRequest, CmekSettings> getCmekSettingsCallable;
+  private final UnaryCallable<UpdateCmekSettingsRequest, CmekSettings> updateCmekSettingsCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -329,6 +352,32 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   }
                 })
             .build();
+    GrpcCallSettings<GetCmekSettingsRequest, CmekSettings> getCmekSettingsTransportSettings =
+        GrpcCallSettings.<GetCmekSettingsRequest, CmekSettings>newBuilder()
+            .setMethodDescriptor(getCmekSettingsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetCmekSettingsRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetCmekSettingsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<UpdateCmekSettingsRequest, CmekSettings> updateCmekSettingsTransportSettings =
+        GrpcCallSettings.<UpdateCmekSettingsRequest, CmekSettings>newBuilder()
+            .setMethodDescriptor(updateCmekSettingsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateCmekSettingsRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateCmekSettingsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.listSinksCallable =
         callableFactory.createUnaryCallable(
@@ -366,6 +415,14 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
     this.deleteExclusionCallable =
         callableFactory.createUnaryCallable(
             deleteExclusionTransportSettings, settings.deleteExclusionSettings(), clientContext);
+    this.getCmekSettingsCallable =
+        callableFactory.createUnaryCallable(
+            getCmekSettingsTransportSettings, settings.getCmekSettingsSettings(), clientContext);
+    this.updateCmekSettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateCmekSettingsTransportSettings,
+            settings.updateCmekSettingsSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -417,6 +474,14 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
 
   public UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable() {
     return deleteExclusionCallable;
+  }
+
+  public UnaryCallable<GetCmekSettingsRequest, CmekSettings> getCmekSettingsCallable() {
+    return getCmekSettingsCallable;
+  }
+
+  public UnaryCallable<UpdateCmekSettingsRequest, CmekSettings> updateCmekSettingsCallable() {
+    return updateCmekSettingsCallable;
   }
 
   @Override

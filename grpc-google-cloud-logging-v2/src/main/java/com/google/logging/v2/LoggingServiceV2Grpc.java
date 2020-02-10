@@ -344,10 +344,10 @@ public final class LoggingServiceV2Grpc {
      *
      *
      * <pre>
-     * Deletes all the log entries in a log.
-     * The log reappears if it receives new entries.
-     * Log entries written shortly before the delete operation might not be
-     * deleted.
+     * Deletes all the log entries in a log. The log reappears if it receives new
+     * entries. Log entries written shortly before the delete operation might not
+     * be deleted. Entries received after the delete operation with a timestamp
+     * before the operation will be deleted.
      * </pre>
      */
     public void deleteLog(
@@ -487,10 +487,10 @@ public final class LoggingServiceV2Grpc {
      *
      *
      * <pre>
-     * Deletes all the log entries in a log.
-     * The log reappears if it receives new entries.
-     * Log entries written shortly before the delete operation might not be
-     * deleted.
+     * Deletes all the log entries in a log. The log reappears if it receives new
+     * entries. Log entries written shortly before the delete operation might not
+     * be deleted. Entries received after the delete operation with a timestamp
+     * before the operation will be deleted.
      * </pre>
      */
     public void deleteLog(
@@ -606,10 +606,10 @@ public final class LoggingServiceV2Grpc {
      *
      *
      * <pre>
-     * Deletes all the log entries in a log.
-     * The log reappears if it receives new entries.
-     * Log entries written shortly before the delete operation might not be
-     * deleted.
+     * Deletes all the log entries in a log. The log reappears if it receives new
+     * entries. Log entries written shortly before the delete operation might not
+     * be deleted. Entries received after the delete operation with a timestamp
+     * before the operation will be deleted.
      * </pre>
      */
     public com.google.protobuf.Empty deleteLog(com.google.logging.v2.DeleteLogRequest request) {
@@ -708,10 +708,10 @@ public final class LoggingServiceV2Grpc {
      *
      *
      * <pre>
-     * Deletes all the log entries in a log.
-     * The log reappears if it receives new entries.
-     * Log entries written shortly before the delete operation might not be
-     * deleted.
+     * Deletes all the log entries in a log. The log reappears if it receives new
+     * entries. Log entries written shortly before the delete operation might not
+     * be deleted. Entries received after the delete operation with a timestamp
+     * before the operation will be deleted.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteLog(

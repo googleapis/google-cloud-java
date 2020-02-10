@@ -30,6 +30,7 @@ public interface LogExclusionOrBuilder
    * Required. A client-assigned identifier, such as
    * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
    * can include only letters, digits, underscores, hyphens, and periods.
+   * First character has to be alphanumeric.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -44,6 +45,7 @@ public interface LogExclusionOrBuilder
    * Required. A client-assigned identifier, such as
    * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
    * can include only letters, digits, underscores, hyphens, and periods.
+   * First character has to be alphanumeric.
    * </pre>
    *
    * <code>string name = 1;</code>

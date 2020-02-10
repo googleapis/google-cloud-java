@@ -544,6 +544,111 @@ public final class ConfigServiceV2Grpc {
     return getDeleteExclusionMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetCmekSettingsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.logging.v2.GetCmekSettingsRequest, com.google.logging.v2.CmekSettings>
+      METHOD_GET_CMEK_SETTINGS = getGetCmekSettingsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.GetCmekSettingsRequest, com.google.logging.v2.CmekSettings>
+      getGetCmekSettingsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.GetCmekSettingsRequest, com.google.logging.v2.CmekSettings>
+      getGetCmekSettingsMethod() {
+    return getGetCmekSettingsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.logging.v2.GetCmekSettingsRequest, com.google.logging.v2.CmekSettings>
+      getGetCmekSettingsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.logging.v2.GetCmekSettingsRequest, com.google.logging.v2.CmekSettings>
+        getGetCmekSettingsMethod;
+    if ((getGetCmekSettingsMethod = ConfigServiceV2Grpc.getGetCmekSettingsMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getGetCmekSettingsMethod = ConfigServiceV2Grpc.getGetCmekSettingsMethod) == null) {
+          ConfigServiceV2Grpc.getGetCmekSettingsMethod =
+              getGetCmekSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.GetCmekSettingsRequest,
+                          com.google.logging.v2.CmekSettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.logging.v2.ConfigServiceV2", "GetCmekSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.GetCmekSettingsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.CmekSettings.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigServiceV2MethodDescriptorSupplier("GetCmekSettings"))
+                      .build();
+        }
+      }
+    }
+    return getGetCmekSettingsMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getUpdateCmekSettingsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.logging.v2.UpdateCmekSettingsRequest, com.google.logging.v2.CmekSettings>
+      METHOD_UPDATE_CMEK_SETTINGS = getUpdateCmekSettingsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.UpdateCmekSettingsRequest, com.google.logging.v2.CmekSettings>
+      getUpdateCmekSettingsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.UpdateCmekSettingsRequest, com.google.logging.v2.CmekSettings>
+      getUpdateCmekSettingsMethod() {
+    return getUpdateCmekSettingsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.logging.v2.UpdateCmekSettingsRequest, com.google.logging.v2.CmekSettings>
+      getUpdateCmekSettingsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.logging.v2.UpdateCmekSettingsRequest, com.google.logging.v2.CmekSettings>
+        getUpdateCmekSettingsMethod;
+    if ((getUpdateCmekSettingsMethod = ConfigServiceV2Grpc.getUpdateCmekSettingsMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getUpdateCmekSettingsMethod = ConfigServiceV2Grpc.getUpdateCmekSettingsMethod)
+            == null) {
+          ConfigServiceV2Grpc.getUpdateCmekSettingsMethod =
+              getUpdateCmekSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.UpdateCmekSettingsRequest,
+                          com.google.logging.v2.CmekSettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.logging.v2.ConfigServiceV2", "UpdateCmekSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.UpdateCmekSettingsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.CmekSettings.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigServiceV2MethodDescriptorSupplier("UpdateCmekSettings"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateCmekSettingsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ConfigServiceV2Stub newStub(io.grpc.Channel channel) {
     return new ConfigServiceV2Stub(channel);
@@ -710,6 +815,47 @@ public final class ConfigServiceV2Grpc {
       asyncUnimplementedUnaryCall(getDeleteExclusionMethodHelper(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Logs Router CMEK settings for the given resource.
+     * Note: CMEK for the Logs Router can currently only be configured for GCP
+     * organizations. Once configured, it applies to all projects and folders in
+     * the GCP organization.
+     * See [Enabling CMEK for Logs
+     * Router](/logging/docs/routing/managed-encryption) for more information.
+     * </pre>
+     */
+    public void getCmekSettings(
+        com.google.logging.v2.GetCmekSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.CmekSettings> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetCmekSettingsMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Logs Router CMEK settings for the given resource.
+     * Note: CMEK for the Logs Router can currently only be configured for GCP
+     * organizations. Once configured, it applies to all projects and folders in
+     * the GCP organization.
+     * [UpdateCmekSettings][google.logging.v2.ConfigServiceV2.UpdateCmekSettings]
+     * will fail if 1) `kms_key_name` is invalid, or 2) the associated service
+     * account does not have the required
+     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
+     * 3) access to the key is disabled.
+     * See [Enabling CMEK for Logs
+     * Router](/logging/docs/routing/managed-encryption) for more information.
+     * </pre>
+     */
+    public void updateCmekSettings(
+        com.google.logging.v2.UpdateCmekSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.CmekSettings> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateCmekSettingsMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -774,6 +920,18 @@ public final class ConfigServiceV2Grpc {
                   new MethodHandlers<
                       com.google.logging.v2.DeleteExclusionRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_EXCLUSION)))
+          .addMethod(
+              getGetCmekSettingsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.logging.v2.GetCmekSettingsRequest,
+                      com.google.logging.v2.CmekSettings>(this, METHODID_GET_CMEK_SETTINGS)))
+          .addMethod(
+              getUpdateCmekSettingsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.logging.v2.UpdateCmekSettingsRequest,
+                      com.google.logging.v2.CmekSettings>(this, METHODID_UPDATE_CMEK_SETTINGS)))
           .build();
     }
   }
@@ -969,6 +1127,53 @@ public final class ConfigServiceV2Grpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Logs Router CMEK settings for the given resource.
+     * Note: CMEK for the Logs Router can currently only be configured for GCP
+     * organizations. Once configured, it applies to all projects and folders in
+     * the GCP organization.
+     * See [Enabling CMEK for Logs
+     * Router](/logging/docs/routing/managed-encryption) for more information.
+     * </pre>
+     */
+    public void getCmekSettings(
+        com.google.logging.v2.GetCmekSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.CmekSettings> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetCmekSettingsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Logs Router CMEK settings for the given resource.
+     * Note: CMEK for the Logs Router can currently only be configured for GCP
+     * organizations. Once configured, it applies to all projects and folders in
+     * the GCP organization.
+     * [UpdateCmekSettings][google.logging.v2.ConfigServiceV2.UpdateCmekSettings]
+     * will fail if 1) `kms_key_name` is invalid, or 2) the associated service
+     * account does not have the required
+     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
+     * 3) access to the key is disabled.
+     * See [Enabling CMEK for Logs
+     * Router](/logging/docs/routing/managed-encryption) for more information.
+     * </pre>
+     */
+    public void updateCmekSettings(
+        com.google.logging.v2.UpdateCmekSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.CmekSettings> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateCmekSettingsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1127,6 +1332,47 @@ public final class ConfigServiceV2Grpc {
         com.google.logging.v2.DeleteExclusionRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteExclusionMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Logs Router CMEK settings for the given resource.
+     * Note: CMEK for the Logs Router can currently only be configured for GCP
+     * organizations. Once configured, it applies to all projects and folders in
+     * the GCP organization.
+     * See [Enabling CMEK for Logs
+     * Router](/logging/docs/routing/managed-encryption) for more information.
+     * </pre>
+     */
+    public com.google.logging.v2.CmekSettings getCmekSettings(
+        com.google.logging.v2.GetCmekSettingsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetCmekSettingsMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Logs Router CMEK settings for the given resource.
+     * Note: CMEK for the Logs Router can currently only be configured for GCP
+     * organizations. Once configured, it applies to all projects and folders in
+     * the GCP organization.
+     * [UpdateCmekSettings][google.logging.v2.ConfigServiceV2.UpdateCmekSettings]
+     * will fail if 1) `kms_key_name` is invalid, or 2) the associated service
+     * account does not have the required
+     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
+     * 3) access to the key is disabled.
+     * See [Enabling CMEK for Logs
+     * Router](/logging/docs/routing/managed-encryption) for more information.
+     * </pre>
+     */
+    public com.google.logging.v2.CmekSettings updateCmekSettings(
+        com.google.logging.v2.UpdateCmekSettingsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateCmekSettingsMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -1293,6 +1539,47 @@ public final class ConfigServiceV2Grpc {
       return futureUnaryCall(
           getChannel().newCall(getDeleteExclusionMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Logs Router CMEK settings for the given resource.
+     * Note: CMEK for the Logs Router can currently only be configured for GCP
+     * organizations. Once configured, it applies to all projects and folders in
+     * the GCP organization.
+     * See [Enabling CMEK for Logs
+     * Router](/logging/docs/routing/managed-encryption) for more information.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.CmekSettings>
+        getCmekSettings(com.google.logging.v2.GetCmekSettingsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetCmekSettingsMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Logs Router CMEK settings for the given resource.
+     * Note: CMEK for the Logs Router can currently only be configured for GCP
+     * organizations. Once configured, it applies to all projects and folders in
+     * the GCP organization.
+     * [UpdateCmekSettings][google.logging.v2.ConfigServiceV2.UpdateCmekSettings]
+     * will fail if 1) `kms_key_name` is invalid, or 2) the associated service
+     * account does not have the required
+     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
+     * 3) access to the key is disabled.
+     * See [Enabling CMEK for Logs
+     * Router](/logging/docs/routing/managed-encryption) for more information.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.CmekSettings>
+        updateCmekSettings(com.google.logging.v2.UpdateCmekSettingsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateCmekSettingsMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_SINKS = 0;
@@ -1305,6 +1592,8 @@ public final class ConfigServiceV2Grpc {
   private static final int METHODID_CREATE_EXCLUSION = 7;
   private static final int METHODID_UPDATE_EXCLUSION = 8;
   private static final int METHODID_DELETE_EXCLUSION = 9;
+  private static final int METHODID_GET_CMEK_SETTINGS = 10;
+  private static final int METHODID_UPDATE_CMEK_SETTINGS = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1374,6 +1663,16 @@ public final class ConfigServiceV2Grpc {
           serviceImpl.deleteExclusion(
               (com.google.logging.v2.DeleteExclusionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_GET_CMEK_SETTINGS:
+          serviceImpl.getCmekSettings(
+              (com.google.logging.v2.GetCmekSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.logging.v2.CmekSettings>) responseObserver);
+          break;
+        case METHODID_UPDATE_CMEK_SETTINGS:
+          serviceImpl.updateCmekSettings(
+              (com.google.logging.v2.UpdateCmekSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.logging.v2.CmekSettings>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1449,6 +1748,8 @@ public final class ConfigServiceV2Grpc {
                       .addMethod(getCreateExclusionMethodHelper())
                       .addMethod(getUpdateExclusionMethodHelper())
                       .addMethod(getDeleteExclusionMethodHelper())
+                      .addMethod(getGetCmekSettingsMethodHelper())
+                      .addMethod(getUpdateCmekSettingsMethodHelper())
                       .build();
         }
       }

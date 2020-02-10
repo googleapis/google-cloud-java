@@ -27,11 +27,13 @@ public interface GetLogMetricRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the desired metric:
+   * Required. The resource name of the desired metric:
    *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * </pre>
    *
-   * <code>string metric_name = 1;</code>
+   * <code>
+   * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The metricName.
    */
@@ -40,11 +42,13 @@ public interface GetLogMetricRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the desired metric:
+   * Required. The resource name of the desired metric:
    *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * </pre>
    *
-   * <code>string metric_name = 1;</code>
+   * <code>
+   * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for metricName.
    */

@@ -22,29 +22,32 @@ package com.google.logging.v2;
  *
  *
  * <pre>
- * The parameters to `GetSink`.
+ * The parameters to
+ * [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings].
+ * See [Enabling CMEK for Logs Router](/logging/docs/routing/managed-encryption)
+ * for more information.
  * </pre>
  *
- * Protobuf type {@code google.logging.v2.GetSinkRequest}
+ * Protobuf type {@code google.logging.v2.GetCmekSettingsRequest}
  */
-public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
+public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.logging.v2.GetSinkRequest)
-    GetSinkRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.logging.v2.GetCmekSettingsRequest)
+    GetCmekSettingsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use GetSinkRequest.newBuilder() to construct.
-  private GetSinkRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetCmekSettingsRequest.newBuilder() to construct.
+  private GetCmekSettingsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private GetSinkRequest() {
-    sinkName_ = "";
+  private GetCmekSettingsRequest() {
+    name_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new GetSinkRequest();
+    return new GetCmekSettingsRequest();
   }
 
   @java.lang.Override
@@ -52,7 +55,7 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private GetSinkRequest(
+  private GetCmekSettingsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -74,7 +77,7 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              sinkName_ = s;
+              name_ = s;
               break;
             }
           default:
@@ -98,47 +101,48 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
-        .internal_static_google_logging_v2_GetSinkRequest_descriptor;
+        .internal_static_google_logging_v2_GetCmekSettingsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.logging.v2.LoggingConfigProto
-        .internal_static_google_logging_v2_GetSinkRequest_fieldAccessorTable
+        .internal_static_google_logging_v2_GetCmekSettingsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.logging.v2.GetSinkRequest.class,
-            com.google.logging.v2.GetSinkRequest.Builder.class);
+            com.google.logging.v2.GetCmekSettingsRequest.class,
+            com.google.logging.v2.GetCmekSettingsRequest.Builder.class);
   }
 
-  public static final int SINK_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object sinkName_;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the sink:
-   *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
-   *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
-   *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
-   * Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   * Required. The resource for which to retrieve CMEK settings.
+   *     "projects/[PROJECT_ID]/cmekSettings"
+   *     "organizations/[ORGANIZATION_ID]/cmekSettings"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
+   *     "folders/[FOLDER_ID]/cmekSettings"
+   * Example: `"organizations/12345/cmekSettings"`.
+   * Note: CMEK for the Logs Router can currently only be configured for GCP
+   * organizations. Once configured, it applies to all projects and folders in
+   * the GCP organization.
    * </pre>
    *
-   * <code>
-   * string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 1;</code>
    *
-   * @return The sinkName.
+   * @return The name.
    */
-  public java.lang.String getSinkName() {
-    java.lang.Object ref = sinkName_;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      sinkName_ = s;
+      name_ = s;
       return s;
     }
   }
@@ -146,26 +150,27 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the sink:
-   *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
-   *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
-   *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
-   * Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   * Required. The resource for which to retrieve CMEK settings.
+   *     "projects/[PROJECT_ID]/cmekSettings"
+   *     "organizations/[ORGANIZATION_ID]/cmekSettings"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
+   *     "folders/[FOLDER_ID]/cmekSettings"
+   * Example: `"organizations/12345/cmekSettings"`.
+   * Note: CMEK for the Logs Router can currently only be configured for GCP
+   * organizations. Once configured, it applies to all projects and folders in
+   * the GCP organization.
    * </pre>
    *
-   * <code>
-   * string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 1;</code>
    *
-   * @return The bytes for sinkName.
+   * @return The bytes for name.
    */
-  public com.google.protobuf.ByteString getSinkNameBytes() {
-    java.lang.Object ref = sinkName_;
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      sinkName_ = b;
+      name_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -186,8 +191,8 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getSinkNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sinkName_);
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     unknownFields.writeTo(output);
   }
@@ -198,8 +203,8 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getSinkNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sinkName_);
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -211,12 +216,13 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.logging.v2.GetSinkRequest)) {
+    if (!(obj instanceof com.google.logging.v2.GetCmekSettingsRequest)) {
       return super.equals(obj);
     }
-    com.google.logging.v2.GetSinkRequest other = (com.google.logging.v2.GetSinkRequest) obj;
+    com.google.logging.v2.GetCmekSettingsRequest other =
+        (com.google.logging.v2.GetCmekSettingsRequest) obj;
 
-    if (!getSinkName().equals(other.getSinkName())) return false;
+    if (!getName().equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -228,77 +234,78 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SINK_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getSinkName().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.logging.v2.GetSinkRequest parseFrom(java.nio.ByteBuffer data)
+  public static com.google.logging.v2.GetCmekSettingsRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.GetSinkRequest parseFrom(
+  public static com.google.logging.v2.GetCmekSettingsRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.GetSinkRequest parseFrom(com.google.protobuf.ByteString data)
+  public static com.google.logging.v2.GetCmekSettingsRequest parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.GetSinkRequest parseFrom(
+  public static com.google.logging.v2.GetCmekSettingsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.GetSinkRequest parseFrom(byte[] data)
+  public static com.google.logging.v2.GetCmekSettingsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.GetSinkRequest parseFrom(
+  public static com.google.logging.v2.GetCmekSettingsRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.GetSinkRequest parseFrom(java.io.InputStream input)
+  public static com.google.logging.v2.GetCmekSettingsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.GetSinkRequest parseFrom(
+  public static com.google.logging.v2.GetCmekSettingsRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.logging.v2.GetSinkRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.logging.v2.GetCmekSettingsRequest parseDelimitedFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.GetSinkRequest parseDelimitedFrom(
+  public static com.google.logging.v2.GetCmekSettingsRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.logging.v2.GetSinkRequest parseFrom(
+  public static com.google.logging.v2.GetCmekSettingsRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.GetSinkRequest parseFrom(
+  public static com.google.logging.v2.GetCmekSettingsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -315,7 +322,7 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.logging.v2.GetSinkRequest prototype) {
+  public static Builder newBuilder(com.google.logging.v2.GetCmekSettingsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -333,31 +340,34 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The parameters to `GetSink`.
+   * The parameters to
+   * [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings].
+   * See [Enabling CMEK for Logs Router](/logging/docs/routing/managed-encryption)
+   * for more information.
    * </pre>
    *
-   * Protobuf type {@code google.logging.v2.GetSinkRequest}
+   * Protobuf type {@code google.logging.v2.GetCmekSettingsRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.logging.v2.GetSinkRequest)
-      com.google.logging.v2.GetSinkRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.logging.v2.GetCmekSettingsRequest)
+      com.google.logging.v2.GetCmekSettingsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_GetSinkRequest_descriptor;
+          .internal_static_google_logging_v2_GetCmekSettingsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_GetSinkRequest_fieldAccessorTable
+          .internal_static_google_logging_v2_GetCmekSettingsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.logging.v2.GetSinkRequest.class,
-              com.google.logging.v2.GetSinkRequest.Builder.class);
+              com.google.logging.v2.GetCmekSettingsRequest.class,
+              com.google.logging.v2.GetCmekSettingsRequest.Builder.class);
     }
 
-    // Construct using com.google.logging.v2.GetSinkRequest.newBuilder()
+    // Construct using com.google.logging.v2.GetCmekSettingsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -374,7 +384,7 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      sinkName_ = "";
+      name_ = "";
 
       return this;
     }
@@ -382,17 +392,17 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_GetSinkRequest_descriptor;
+          .internal_static_google_logging_v2_GetCmekSettingsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.logging.v2.GetSinkRequest getDefaultInstanceForType() {
-      return com.google.logging.v2.GetSinkRequest.getDefaultInstance();
+    public com.google.logging.v2.GetCmekSettingsRequest getDefaultInstanceForType() {
+      return com.google.logging.v2.GetCmekSettingsRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.logging.v2.GetSinkRequest build() {
-      com.google.logging.v2.GetSinkRequest result = buildPartial();
+    public com.google.logging.v2.GetCmekSettingsRequest build() {
+      com.google.logging.v2.GetCmekSettingsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -400,9 +410,10 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.logging.v2.GetSinkRequest buildPartial() {
-      com.google.logging.v2.GetSinkRequest result = new com.google.logging.v2.GetSinkRequest(this);
-      result.sinkName_ = sinkName_;
+    public com.google.logging.v2.GetCmekSettingsRequest buildPartial() {
+      com.google.logging.v2.GetCmekSettingsRequest result =
+          new com.google.logging.v2.GetCmekSettingsRequest(this);
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -442,18 +453,18 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.logging.v2.GetSinkRequest) {
-        return mergeFrom((com.google.logging.v2.GetSinkRequest) other);
+      if (other instanceof com.google.logging.v2.GetCmekSettingsRequest) {
+        return mergeFrom((com.google.logging.v2.GetCmekSettingsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.logging.v2.GetSinkRequest other) {
-      if (other == com.google.logging.v2.GetSinkRequest.getDefaultInstance()) return this;
-      if (!other.getSinkName().isEmpty()) {
-        sinkName_ = other.sinkName_;
+    public Builder mergeFrom(com.google.logging.v2.GetCmekSettingsRequest other) {
+      if (other == com.google.logging.v2.GetCmekSettingsRequest.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -471,11 +482,11 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.logging.v2.GetSinkRequest parsedMessage = null;
+      com.google.logging.v2.GetCmekSettingsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.logging.v2.GetSinkRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.logging.v2.GetCmekSettingsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -485,31 +496,32 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object sinkName_ = "";
+    private java.lang.Object name_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the sink:
-     *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
-     *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
-     *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
-     * Example: `"projects/my-project-id/sinks/my-sink-id"`.
+     * Required. The resource for which to retrieve CMEK settings.
+     *     "projects/[PROJECT_ID]/cmekSettings"
+     *     "organizations/[ORGANIZATION_ID]/cmekSettings"
+     *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
+     *     "folders/[FOLDER_ID]/cmekSettings"
+     * Example: `"organizations/12345/cmekSettings"`.
+     * Note: CMEK for the Logs Router can currently only be configured for GCP
+     * organizations. Once configured, it applies to all projects and folders in
+     * the GCP organization.
      * </pre>
      *
-     * <code>
-     * string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 1;</code>
      *
-     * @return The sinkName.
+     * @return The name.
      */
-    public java.lang.String getSinkName() {
-      java.lang.Object ref = sinkName_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        sinkName_ = s;
+        name_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -519,26 +531,27 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the sink:
-     *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
-     *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
-     *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
-     * Example: `"projects/my-project-id/sinks/my-sink-id"`.
+     * Required. The resource for which to retrieve CMEK settings.
+     *     "projects/[PROJECT_ID]/cmekSettings"
+     *     "organizations/[ORGANIZATION_ID]/cmekSettings"
+     *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
+     *     "folders/[FOLDER_ID]/cmekSettings"
+     * Example: `"organizations/12345/cmekSettings"`.
+     * Note: CMEK for the Logs Router can currently only be configured for GCP
+     * organizations. Once configured, it applies to all projects and folders in
+     * the GCP organization.
      * </pre>
      *
-     * <code>
-     * string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 1;</code>
      *
-     * @return The bytes for sinkName.
+     * @return The bytes for name.
      */
-    public com.google.protobuf.ByteString getSinkNameBytes() {
-      java.lang.Object ref = sinkName_;
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        sinkName_ = b;
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -548,27 +561,28 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the sink:
-     *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
-     *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
-     *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
-     * Example: `"projects/my-project-id/sinks/my-sink-id"`.
+     * Required. The resource for which to retrieve CMEK settings.
+     *     "projects/[PROJECT_ID]/cmekSettings"
+     *     "organizations/[ORGANIZATION_ID]/cmekSettings"
+     *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
+     *     "folders/[FOLDER_ID]/cmekSettings"
+     * Example: `"organizations/12345/cmekSettings"`.
+     * Note: CMEK for the Logs Router can currently only be configured for GCP
+     * organizations. Once configured, it applies to all projects and folders in
+     * the GCP organization.
      * </pre>
      *
-     * <code>
-     * string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 1;</code>
      *
-     * @param value The sinkName to set.
+     * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setSinkName(java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      sinkName_ = value;
+      name_ = value;
       onChanged();
       return this;
     }
@@ -576,23 +590,24 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the sink:
-     *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
-     *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
-     *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
-     * Example: `"projects/my-project-id/sinks/my-sink-id"`.
+     * Required. The resource for which to retrieve CMEK settings.
+     *     "projects/[PROJECT_ID]/cmekSettings"
+     *     "organizations/[ORGANIZATION_ID]/cmekSettings"
+     *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
+     *     "folders/[FOLDER_ID]/cmekSettings"
+     * Example: `"organizations/12345/cmekSettings"`.
+     * Note: CMEK for the Logs Router can currently only be configured for GCP
+     * organizations. Once configured, it applies to all projects and folders in
+     * the GCP organization.
      * </pre>
      *
-     * <code>
-     * string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 1;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearSinkName() {
+    public Builder clearName() {
 
-      sinkName_ = getDefaultInstance().getSinkName();
+      name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
@@ -600,28 +615,29 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the sink:
-     *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
-     *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
-     *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
-     * Example: `"projects/my-project-id/sinks/my-sink-id"`.
+     * Required. The resource for which to retrieve CMEK settings.
+     *     "projects/[PROJECT_ID]/cmekSettings"
+     *     "organizations/[ORGANIZATION_ID]/cmekSettings"
+     *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
+     *     "folders/[FOLDER_ID]/cmekSettings"
+     * Example: `"organizations/12345/cmekSettings"`.
+     * Note: CMEK for the Logs Router can currently only be configured for GCP
+     * organizations. Once configured, it applies to all projects and folders in
+     * the GCP organization.
      * </pre>
      *
-     * <code>
-     * string sink_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 1;</code>
      *
-     * @param value The bytes for sinkName to set.
+     * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setSinkNameBytes(com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      sinkName_ = value;
+      name_ = value;
       onChanged();
       return this;
     }
@@ -637,42 +653,42 @@ public final class GetSinkRequest extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.logging.v2.GetSinkRequest)
+    // @@protoc_insertion_point(builder_scope:google.logging.v2.GetCmekSettingsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.logging.v2.GetSinkRequest)
-  private static final com.google.logging.v2.GetSinkRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.logging.v2.GetCmekSettingsRequest)
+  private static final com.google.logging.v2.GetCmekSettingsRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.logging.v2.GetSinkRequest();
+    DEFAULT_INSTANCE = new com.google.logging.v2.GetCmekSettingsRequest();
   }
 
-  public static com.google.logging.v2.GetSinkRequest getDefaultInstance() {
+  public static com.google.logging.v2.GetCmekSettingsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetSinkRequest> PARSER =
-      new com.google.protobuf.AbstractParser<GetSinkRequest>() {
+  private static final com.google.protobuf.Parser<GetCmekSettingsRequest> PARSER =
+      new com.google.protobuf.AbstractParser<GetCmekSettingsRequest>() {
         @java.lang.Override
-        public GetSinkRequest parsePartialFrom(
+        public GetCmekSettingsRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetSinkRequest(input, extensionRegistry);
+          return new GetCmekSettingsRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<GetSinkRequest> parser() {
+  public static com.google.protobuf.Parser<GetCmekSettingsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetSinkRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetCmekSettingsRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.logging.v2.GetSinkRequest getDefaultInstanceForType() {
+  public com.google.logging.v2.GetCmekSettingsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

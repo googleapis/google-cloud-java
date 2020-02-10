@@ -35,7 +35,9 @@ public interface CreateSinkRequestOrBuilder
    * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -52,7 +54,9 @@ public interface CreateSinkRequestOrBuilder
    * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -66,7 +70,7 @@ public interface CreateSinkRequestOrBuilder
    * is not already in use.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the sink field is set.
    */
@@ -79,7 +83,7 @@ public interface CreateSinkRequestOrBuilder
    * is not already in use.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The sink.
    */
@@ -92,7 +96,7 @@ public interface CreateSinkRequestOrBuilder
    * is not already in use.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink sink = 2;</code>
+   * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.logging.v2.LogSinkOrBuilder getSinkOrBuilder();
 

@@ -27,11 +27,13 @@ public interface DeleteLogMetricRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the metric to delete:
+   * Required. The resource name of the metric to delete:
    *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * </pre>
    *
-   * <code>string metric_name = 1;</code>
+   * <code>
+   * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The metricName.
    */
@@ -40,11 +42,13 @@ public interface DeleteLogMetricRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the metric to delete:
+   * Required. The resource name of the metric to delete:
    *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * </pre>
    *
-   * <code>string metric_name = 1;</code>
+   * <code>
+   * string metric_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for metricName.
    */

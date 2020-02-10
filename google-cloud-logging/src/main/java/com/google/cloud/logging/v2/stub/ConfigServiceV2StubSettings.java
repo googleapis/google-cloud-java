@@ -44,10 +44,12 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.logging.v2.CmekSettings;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.ListExclusionsRequest;
@@ -56,6 +58,7 @@ import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
@@ -117,6 +120,9 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
   private final UnaryCallSettings<CreateExclusionRequest, LogExclusion> createExclusionSettings;
   private final UnaryCallSettings<UpdateExclusionRequest, LogExclusion> updateExclusionSettings;
   private final UnaryCallSettings<DeleteExclusionRequest, Empty> deleteExclusionSettings;
+  private final UnaryCallSettings<GetCmekSettingsRequest, CmekSettings> getCmekSettingsSettings;
+  private final UnaryCallSettings<UpdateCmekSettingsRequest, CmekSettings>
+      updateCmekSettingsSettings;
 
   /** Returns the object with the settings used for calls to listSinks. */
   public PagedCallSettings<ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
@@ -169,6 +175,16 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
   /** Returns the object with the settings used for calls to deleteExclusion. */
   public UnaryCallSettings<DeleteExclusionRequest, Empty> deleteExclusionSettings() {
     return deleteExclusionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getCmekSettings. */
+  public UnaryCallSettings<GetCmekSettingsRequest, CmekSettings> getCmekSettingsSettings() {
+    return getCmekSettingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCmekSettings. */
+  public UnaryCallSettings<UpdateCmekSettingsRequest, CmekSettings> updateCmekSettingsSettings() {
+    return updateCmekSettingsSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -250,6 +266,8 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
     createExclusionSettings = settingsBuilder.createExclusionSettings().build();
     updateExclusionSettings = settingsBuilder.updateExclusionSettings().build();
     deleteExclusionSettings = settingsBuilder.deleteExclusionSettings().build();
+    getCmekSettingsSettings = settingsBuilder.getCmekSettingsSettings().build();
+    updateCmekSettingsSettings = settingsBuilder.updateCmekSettingsSettings().build();
   }
 
   private static final PagedListDescriptor<ListSinksRequest, ListSinksResponse, LogSink>
@@ -380,6 +398,10 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
     private final UnaryCallSettings.Builder<UpdateExclusionRequest, LogExclusion>
         updateExclusionSettings;
     private final UnaryCallSettings.Builder<DeleteExclusionRequest, Empty> deleteExclusionSettings;
+    private final UnaryCallSettings.Builder<GetCmekSettingsRequest, CmekSettings>
+        getCmekSettingsSettings;
+    private final UnaryCallSettings.Builder<UpdateCmekSettingsRequest, CmekSettings>
+        updateCmekSettingsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -395,6 +417,11 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.UNAVAILABLE)));
       definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "idempotent2",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -455,6 +482,10 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
 
       deleteExclusionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getCmekSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      updateCmekSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listSinksSettings,
@@ -466,7 +497,9 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
               getExclusionSettings,
               createExclusionSettings,
               updateExclusionSettings,
-              deleteExclusionSettings);
+              deleteExclusionSettings,
+              getCmekSettingsSettings,
+              updateCmekSettingsSettings);
 
       initDefaults(this);
     }
@@ -532,6 +565,16 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .getCmekSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent2"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateCmekSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -548,6 +591,8 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
       createExclusionSettings = settings.createExclusionSettings.toBuilder();
       updateExclusionSettings = settings.updateExclusionSettings.toBuilder();
       deleteExclusionSettings = settings.deleteExclusionSettings.toBuilder();
+      getCmekSettingsSettings = settings.getCmekSettingsSettings.toBuilder();
+      updateCmekSettingsSettings = settings.updateCmekSettingsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -560,7 +605,9 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
               getExclusionSettings,
               createExclusionSettings,
               updateExclusionSettings,
-              deleteExclusionSettings);
+              deleteExclusionSettings,
+              getCmekSettingsSettings,
+              updateCmekSettingsSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -632,6 +679,18 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
     /** Returns the builder for the settings used for calls to deleteExclusion. */
     public UnaryCallSettings.Builder<DeleteExclusionRequest, Empty> deleteExclusionSettings() {
       return deleteExclusionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getCmekSettings. */
+    public UnaryCallSettings.Builder<GetCmekSettingsRequest, CmekSettings>
+        getCmekSettingsSettings() {
+      return getCmekSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCmekSettings. */
+    public UnaryCallSettings.Builder<UpdateCmekSettingsRequest, CmekSettings>
+        updateCmekSettingsSettings() {
+      return updateCmekSettingsSettings;
     }
 
     @Override

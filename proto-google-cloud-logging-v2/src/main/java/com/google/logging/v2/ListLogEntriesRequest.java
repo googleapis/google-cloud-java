@@ -249,7 +249,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * Projects listed in the `project_ids` field are added to this list.
    * </pre>
    *
-   * <code>repeated string resource_names = 8;</code>
+   * <code>
+   * repeated string resource_names = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return A list containing the resourceNames.
    */
@@ -269,7 +271,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * Projects listed in the `project_ids` field are added to this list.
    * </pre>
    *
-   * <code>repeated string resource_names = 8;</code>
+   * <code>
+   * repeated string resource_names = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The count of resourceNames.
    */
@@ -289,7 +293,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * Projects listed in the `project_ids` field are added to this list.
    * </pre>
    *
-   * <code>repeated string resource_names = 8;</code>
+   * <code>
+   * repeated string resource_names = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The resourceNames at the given index.
@@ -310,7 +316,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    * Projects listed in the `project_ids` field are added to this list.
    * </pre>
    *
-   * <code>repeated string resource_names = 8;</code>
+   * <code>
+   * repeated string resource_names = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the resourceNames at the given index.
@@ -326,7 +334,7 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. A filter that chooses which log entries to return.  See [Advanced
-   * Logs Filters](/logging/docs/view/advanced_filters).  Only log entries that
+   * Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
    * match the filter are returned.  An empty filter matches all log entries in
    * the resources listed in `resource_names`. Referencing a parent resource
    * that is not listed in `resource_names` will cause the filter to return no
@@ -354,7 +362,7 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. A filter that chooses which log entries to return.  See [Advanced
-   * Logs Filters](/logging/docs/view/advanced_filters).  Only log entries that
+   * Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
    * match the filter are returned.  An empty filter matches all log entries in
    * the resources listed in `resource_names`. Referencing a parent resource
    * that is not listed in `resource_names` will cause the filter to return no
@@ -1156,7 +1164,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * Projects listed in the `project_ids` field are added to this list.
      * </pre>
      *
-     * <code>repeated string resource_names = 8;</code>
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return A list containing the resourceNames.
      */
@@ -1176,7 +1186,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * Projects listed in the `project_ids` field are added to this list.
      * </pre>
      *
-     * <code>repeated string resource_names = 8;</code>
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The count of resourceNames.
      */
@@ -1196,7 +1208,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * Projects listed in the `project_ids` field are added to this list.
      * </pre>
      *
-     * <code>repeated string resource_names = 8;</code>
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The resourceNames at the given index.
@@ -1217,7 +1231,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * Projects listed in the `project_ids` field are added to this list.
      * </pre>
      *
-     * <code>repeated string resource_names = 8;</code>
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the resourceNames at the given index.
@@ -1238,7 +1254,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * Projects listed in the `project_ids` field are added to this list.
      * </pre>
      *
-     * <code>repeated string resource_names = 8;</code>
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The resourceNames to set.
@@ -1266,7 +1284,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * Projects listed in the `project_ids` field are added to this list.
      * </pre>
      *
-     * <code>repeated string resource_names = 8;</code>
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The resourceNames to add.
      * @return This builder for chaining.
@@ -1293,7 +1313,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * Projects listed in the `project_ids` field are added to this list.
      * </pre>
      *
-     * <code>repeated string resource_names = 8;</code>
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param values The resourceNames to add.
      * @return This builder for chaining.
@@ -1317,7 +1339,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * Projects listed in the `project_ids` field are added to this list.
      * </pre>
      *
-     * <code>repeated string resource_names = 8;</code>
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1340,7 +1364,9 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * Projects listed in the `project_ids` field are added to this list.
      * </pre>
      *
-     * <code>repeated string resource_names = 8;</code>
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes of the resourceNames to add.
      * @return This builder for chaining.
@@ -1362,7 +1388,7 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. A filter that chooses which log entries to return.  See [Advanced
-     * Logs Filters](/logging/docs/view/advanced_filters).  Only log entries that
+     * Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
      * match the filter are returned.  An empty filter matches all log entries in
      * the resources listed in `resource_names`. Referencing a parent resource
      * that is not listed in `resource_names` will cause the filter to return no
@@ -1390,7 +1416,7 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. A filter that chooses which log entries to return.  See [Advanced
-     * Logs Filters](/logging/docs/view/advanced_filters).  Only log entries that
+     * Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
      * match the filter are returned.  An empty filter matches all log entries in
      * the resources listed in `resource_names`. Referencing a parent resource
      * that is not listed in `resource_names` will cause the filter to return no
@@ -1418,7 +1444,7 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. A filter that chooses which log entries to return.  See [Advanced
-     * Logs Filters](/logging/docs/view/advanced_filters).  Only log entries that
+     * Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
      * match the filter are returned.  An empty filter matches all log entries in
      * the resources listed in `resource_names`. Referencing a parent resource
      * that is not listed in `resource_names` will cause the filter to return no
@@ -1445,7 +1471,7 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. A filter that chooses which log entries to return.  See [Advanced
-     * Logs Filters](/logging/docs/view/advanced_filters).  Only log entries that
+     * Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
      * match the filter are returned.  An empty filter matches all log entries in
      * the resources listed in `resource_names`. Referencing a parent resource
      * that is not listed in `resource_names` will cause the filter to return no
@@ -1468,7 +1494,7 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. A filter that chooses which log entries to return.  See [Advanced
-     * Logs Filters](/logging/docs/view/advanced_filters).  Only log entries that
+     * Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
      * match the filter are returned.  An empty filter matches all log entries in
      * the resources listed in `resource_names`. Referencing a parent resource
      * that is not listed in `resource_names` will cause the filter to return no

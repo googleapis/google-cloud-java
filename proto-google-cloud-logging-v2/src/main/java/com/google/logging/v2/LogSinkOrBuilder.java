@@ -31,7 +31,7 @@ public interface LogSinkOrBuilder
    * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
    * limited to 100 characters and can include only the following characters:
    * upper and lower-case alphanumeric characters, underscores, hyphens, and
-   * periods.
+   * periods. First character has to be alphanumeric.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -47,7 +47,7 @@ public interface LogSinkOrBuilder
    * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
    * limited to 100 characters and can include only the following characters:
    * upper and lower-case alphanumeric characters, underscores, hyphens, and
-   * periods.
+   * periods. First character has to be alphanumeric.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -70,7 +70,7 @@ public interface LogSinkOrBuilder
    * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
-   * <code>string destination = 3;</code>
+   * <code>string destination = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The destination.
    */
@@ -89,7 +89,7 @@ public interface LogSinkOrBuilder
    * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
-   * <code>string destination = 3;</code>
+   * <code>string destination = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for destination.
    */
@@ -125,6 +125,47 @@ public interface LogSinkOrBuilder
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of this sink.
+   * The maximum length of the description is 8000 characters.
+   * </pre>
+   *
+   * <code>string description = 18;</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of this sink.
+   * The maximum length of the description is 8000 characters.
+   * </pre>
+   *
+   * <code>string description = 18;</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to True, then this sink is disabled and it does not
+   * export any log entries.
+   * </pre>
+   *
+   * <code>bool disabled = 19;</code>
+   *
+   * @return The disabled.
+   */
+  boolean getDisabled();
 
   /**
    *
@@ -176,7 +217,7 @@ public interface LogSinkOrBuilder
    * appropriate IAM roles to assign to the identity.
    * </pre>
    *
-   * <code>string writer_identity = 8;</code>
+   * <code>string writer_identity = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The writerIdentity.
    */
@@ -200,7 +241,7 @@ public interface LogSinkOrBuilder
    * appropriate IAM roles to assign to the identity.
    * </pre>
    *
-   * <code>string writer_identity = 8;</code>
+   * <code>string writer_identity = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for writerIdentity.
    */
@@ -273,7 +314,8 @@ public interface LogSinkOrBuilder
    * This field may not be present for older sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -286,7 +328,8 @@ public interface LogSinkOrBuilder
    * This field may not be present for older sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -299,7 +342,8 @@ public interface LogSinkOrBuilder
    * This field may not be present for older sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -311,7 +355,8 @@ public interface LogSinkOrBuilder
    * This field may not be present for older sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 14;</code>
+   * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the updateTime field is set.
    */
@@ -324,7 +369,8 @@ public interface LogSinkOrBuilder
    * This field may not be present for older sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 14;</code>
+   * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The updateTime.
    */
@@ -337,7 +383,8 @@ public interface LogSinkOrBuilder
    * This field may not be present for older sinks.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 14;</code>
+   * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 

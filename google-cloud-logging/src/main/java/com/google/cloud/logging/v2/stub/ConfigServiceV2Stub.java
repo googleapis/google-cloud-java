@@ -21,10 +21,12 @@ import static com.google.cloud.logging.v2.ConfigClient.ListSinksPagedResponse;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.logging.v2.CmekSettings;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.ListExclusionsRequest;
@@ -33,6 +35,7 @@ import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
@@ -95,6 +98,14 @@ public abstract class ConfigServiceV2Stub implements BackgroundResource {
 
   public UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteExclusionCallable()");
+  }
+
+  public UnaryCallable<GetCmekSettingsRequest, CmekSettings> getCmekSettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: getCmekSettingsCallable()");
+  }
+
+  public UnaryCallable<UpdateCmekSettingsRequest, CmekSettings> updateCmekSettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCmekSettingsCallable()");
   }
 
   @Override
