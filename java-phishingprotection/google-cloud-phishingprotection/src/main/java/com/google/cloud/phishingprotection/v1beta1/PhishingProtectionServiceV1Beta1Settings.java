@@ -54,8 +54,12 @@ import javax.annotation.Generated;
  * <code>
  * PhishingProtectionServiceV1Beta1Settings.Builder phishingProtectionServiceV1Beta1SettingsBuilder =
  *     PhishingProtectionServiceV1Beta1Settings.newBuilder();
- * phishingProtectionServiceV1Beta1SettingsBuilder.reportPhishingSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * phishingProtectionServiceV1Beta1SettingsBuilder
+ *     .reportPhishingSettings()
+ *     .setRetrySettings(
+ *         phishingProtectionServiceV1Beta1SettingsBuilder.reportPhishingSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * PhishingProtectionServiceV1Beta1Settings phishingProtectionServiceV1Beta1Settings = phishingProtectionServiceV1Beta1SettingsBuilder.build();
  * </code>
  * </pre>

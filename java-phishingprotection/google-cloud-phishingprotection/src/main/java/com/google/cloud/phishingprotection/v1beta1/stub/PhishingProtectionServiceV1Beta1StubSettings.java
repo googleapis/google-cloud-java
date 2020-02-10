@@ -63,8 +63,12 @@ import org.threeten.bp.Duration;
  * <code>
  * PhishingProtectionServiceV1Beta1StubSettings.Builder phishingProtectionServiceV1Beta1SettingsBuilder =
  *     PhishingProtectionServiceV1Beta1StubSettings.newBuilder();
- * phishingProtectionServiceV1Beta1SettingsBuilder.reportPhishingSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * phishingProtectionServiceV1Beta1SettingsBuilder
+ *     .reportPhishingSettings()
+ *     .setRetrySettings(
+ *         phishingProtectionServiceV1Beta1SettingsBuilder.reportPhishingSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * PhishingProtectionServiceV1Beta1StubSettings phishingProtectionServiceV1Beta1Settings = phishingProtectionServiceV1Beta1SettingsBuilder.build();
  * </code>
  * </pre>
