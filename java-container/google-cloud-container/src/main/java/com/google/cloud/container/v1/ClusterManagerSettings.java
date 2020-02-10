@@ -94,8 +94,12 @@ import javax.annotation.Generated;
  * <code>
  * ClusterManagerSettings.Builder clusterManagerSettingsBuilder =
  *     ClusterManagerSettings.newBuilder();
- * clusterManagerSettingsBuilder.listClustersSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * clusterManagerSettingsBuilder
+ *     .listClustersSettings()
+ *     .setRetrySettings(
+ *         clusterManagerSettingsBuilder.listClustersSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ClusterManagerSettings clusterManagerSettings = clusterManagerSettingsBuilder.build();
  * </code>
  * </pre>
