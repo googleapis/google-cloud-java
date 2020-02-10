@@ -57,8 +57,12 @@ import javax.annotation.Generated;
  * <code>
  * WorkflowTemplateServiceSettings.Builder workflowTemplateServiceSettingsBuilder =
  *     WorkflowTemplateServiceSettings.newBuilder();
- * workflowTemplateServiceSettingsBuilder.createWorkflowTemplateSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * workflowTemplateServiceSettingsBuilder
+ *     .createWorkflowTemplateSettings()
+ *     .setRetrySettings(
+ *         workflowTemplateServiceSettingsBuilder.createWorkflowTemplateSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * WorkflowTemplateServiceSettings workflowTemplateServiceSettings = workflowTemplateServiceSettingsBuilder.build();
  * </code>
  * </pre>

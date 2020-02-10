@@ -85,8 +85,12 @@ import org.threeten.bp.Duration;
  * <code>
  * ClusterControllerStubSettings.Builder clusterControllerSettingsBuilder =
  *     ClusterControllerStubSettings.newBuilder();
- * clusterControllerSettingsBuilder.getClusterSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * clusterControllerSettingsBuilder
+ *     .getClusterSettings()
+ *     .setRetrySettings(
+ *         clusterControllerSettingsBuilder.getClusterSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ClusterControllerStubSettings clusterControllerSettings = clusterControllerSettingsBuilder.build();
  * </code>
  * </pre>

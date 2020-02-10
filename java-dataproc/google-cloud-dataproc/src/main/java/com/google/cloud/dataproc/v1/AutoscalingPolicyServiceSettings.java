@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * AutoscalingPolicyServiceSettings.Builder autoscalingPolicyServiceSettingsBuilder =
  *     AutoscalingPolicyServiceSettings.newBuilder();
- * autoscalingPolicyServiceSettingsBuilder.createAutoscalingPolicySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * autoscalingPolicyServiceSettingsBuilder
+ *     .createAutoscalingPolicySettings()
+ *     .setRetrySettings(
+ *         autoscalingPolicyServiceSettingsBuilder.createAutoscalingPolicySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AutoscalingPolicyServiceSettings autoscalingPolicyServiceSettings = autoscalingPolicyServiceSettingsBuilder.build();
  * </code>
  * </pre>

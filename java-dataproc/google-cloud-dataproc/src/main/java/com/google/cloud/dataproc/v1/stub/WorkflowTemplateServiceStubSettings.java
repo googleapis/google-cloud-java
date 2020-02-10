@@ -85,8 +85,12 @@ import org.threeten.bp.Duration;
  * <code>
  * WorkflowTemplateServiceStubSettings.Builder workflowTemplateServiceSettingsBuilder =
  *     WorkflowTemplateServiceStubSettings.newBuilder();
- * workflowTemplateServiceSettingsBuilder.createWorkflowTemplateSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * workflowTemplateServiceSettingsBuilder
+ *     .createWorkflowTemplateSettings()
+ *     .setRetrySettings(
+ *         workflowTemplateServiceSettingsBuilder.createWorkflowTemplateSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * WorkflowTemplateServiceStubSettings workflowTemplateServiceSettings = workflowTemplateServiceSettingsBuilder.build();
  * </code>
  * </pre>

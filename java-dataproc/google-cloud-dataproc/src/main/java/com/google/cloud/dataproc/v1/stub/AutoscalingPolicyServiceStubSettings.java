@@ -77,8 +77,12 @@ import org.threeten.bp.Duration;
  * <code>
  * AutoscalingPolicyServiceStubSettings.Builder autoscalingPolicyServiceSettingsBuilder =
  *     AutoscalingPolicyServiceStubSettings.newBuilder();
- * autoscalingPolicyServiceSettingsBuilder.createAutoscalingPolicySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * autoscalingPolicyServiceSettingsBuilder
+ *     .createAutoscalingPolicySettings()
+ *     .setRetrySettings(
+ *         autoscalingPolicyServiceSettingsBuilder.createAutoscalingPolicySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AutoscalingPolicyServiceStubSettings autoscalingPolicyServiceSettings = autoscalingPolicyServiceSettingsBuilder.build();
  * </code>
  * </pre>

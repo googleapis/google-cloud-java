@@ -391,9 +391,8 @@ public class ClusterControllerClientTest {
 
     String projectId = "projectId-1969970175";
     String region = "region-934795532";
-    String filter = "filter-1274492040";
 
-    ListClustersPagedResponse pagedListResponse = client.listClusters(projectId, region, filter);
+    ListClustersPagedResponse pagedListResponse = client.listClusters(projectId, region);
 
     List<Cluster> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -405,7 +404,6 @@ public class ClusterControllerClientTest {
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(region, actualRequest.getRegion());
-    Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -421,9 +419,8 @@ public class ClusterControllerClientTest {
     try {
       String projectId = "projectId-1969970175";
       String region = "region-934795532";
-      String filter = "filter-1274492040";
 
-      client.listClusters(projectId, region, filter);
+      client.listClusters(projectId, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
