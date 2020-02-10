@@ -173,6 +173,94 @@ public class AccessApprovalAdminClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void approveApprovalRequestTest() {
+    String name = "name3373707";
+    String requestedResourceName = "requestedResourceName-1409378037";
+    ApprovalRequest expectedResponse =
+        ApprovalRequest.newBuilder()
+            .setName(name)
+            .setRequestedResourceName(requestedResourceName)
+            .build();
+    mockAccessApproval.addResponse(expectedResponse);
+
+    ApproveApprovalRequestMessage request = ApproveApprovalRequestMessage.newBuilder().build();
+
+    ApprovalRequest actualResponse = client.approveApprovalRequest(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAccessApproval.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ApproveApprovalRequestMessage actualRequest =
+        (ApproveApprovalRequestMessage) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void approveApprovalRequestExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockAccessApproval.addException(exception);
+
+    try {
+      ApproveApprovalRequestMessage request = ApproveApprovalRequestMessage.newBuilder().build();
+
+      client.approveApprovalRequest(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void dismissApprovalRequestTest() {
+    String name = "name3373707";
+    String requestedResourceName = "requestedResourceName-1409378037";
+    ApprovalRequest expectedResponse =
+        ApprovalRequest.newBuilder()
+            .setName(name)
+            .setRequestedResourceName(requestedResourceName)
+            .build();
+    mockAccessApproval.addResponse(expectedResponse);
+
+    DismissApprovalRequestMessage request = DismissApprovalRequestMessage.newBuilder().build();
+
+    ApprovalRequest actualResponse = client.dismissApprovalRequest(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAccessApproval.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DismissApprovalRequestMessage actualRequest =
+        (DismissApprovalRequestMessage) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void dismissApprovalRequestExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockAccessApproval.addException(exception);
+
+    try {
+      DismissApprovalRequestMessage request = DismissApprovalRequestMessage.newBuilder().build();
+
+      client.dismissApprovalRequest(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void getAccessApprovalSettingsTest() {
     String name2 = "name2-1052831874";
     boolean enrolledAncestor = false;

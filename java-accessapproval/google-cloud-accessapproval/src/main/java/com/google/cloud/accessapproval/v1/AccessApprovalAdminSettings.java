@@ -56,8 +56,12 @@ import javax.annotation.Generated;
  * <code>
  * AccessApprovalAdminSettings.Builder accessApprovalAdminSettingsBuilder =
  *     AccessApprovalAdminSettings.newBuilder();
- * accessApprovalAdminSettingsBuilder.getApprovalRequestSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * accessApprovalAdminSettingsBuilder
+ *     .getApprovalRequestSettings()
+ *     .setRetrySettings(
+ *         accessApprovalAdminSettingsBuilder.getApprovalRequestSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AccessApprovalAdminSettings accessApprovalAdminSettings = accessApprovalAdminSettingsBuilder.build();
  * </code>
  * </pre>
