@@ -62,8 +62,12 @@ import javax.annotation.Generated;
  * <code>
  * ErrorStatsServiceSettings.Builder errorStatsServiceSettingsBuilder =
  *     ErrorStatsServiceSettings.newBuilder();
- * errorStatsServiceSettingsBuilder.deleteEventsSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * errorStatsServiceSettingsBuilder
+ *     .deleteEventsSettings()
+ *     .setRetrySettings(
+ *         errorStatsServiceSettingsBuilder.deleteEventsSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ErrorStatsServiceSettings errorStatsServiceSettings = errorStatsServiceSettingsBuilder.build();
  * </code>
  * </pre>

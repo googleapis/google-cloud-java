@@ -79,8 +79,12 @@ import org.threeten.bp.Duration;
  * <code>
  * ErrorStatsServiceStubSettings.Builder errorStatsServiceSettingsBuilder =
  *     ErrorStatsServiceStubSettings.newBuilder();
- * errorStatsServiceSettingsBuilder.deleteEventsSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * errorStatsServiceSettingsBuilder
+ *     .deleteEventsSettings()
+ *     .setRetrySettings(
+ *         errorStatsServiceSettingsBuilder.deleteEventsSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ErrorStatsServiceStubSettings errorStatsServiceSettings = errorStatsServiceSettingsBuilder.build();
  * </code>
  * </pre>

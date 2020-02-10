@@ -55,8 +55,12 @@ import javax.annotation.Generated;
  * <code>
  * ErrorGroupServiceSettings.Builder errorGroupServiceSettingsBuilder =
  *     ErrorGroupServiceSettings.newBuilder();
- * errorGroupServiceSettingsBuilder.getGroupSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * errorGroupServiceSettingsBuilder
+ *     .getGroupSettings()
+ *     .setRetrySettings(
+ *         errorGroupServiceSettingsBuilder.getGroupSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ErrorGroupServiceSettings errorGroupServiceSettings = errorGroupServiceSettingsBuilder.build();
  * </code>
  * </pre>
