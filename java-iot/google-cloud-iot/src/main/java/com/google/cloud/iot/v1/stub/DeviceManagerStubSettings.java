@@ -102,8 +102,12 @@ import org.threeten.bp.Duration;
  * <code>
  * DeviceManagerStubSettings.Builder deviceManagerSettingsBuilder =
  *     DeviceManagerStubSettings.newBuilder();
- * deviceManagerSettingsBuilder.createDeviceRegistrySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * deviceManagerSettingsBuilder
+ *     .createDeviceRegistrySettings()
+ *     .setRetrySettings(
+ *         deviceManagerSettingsBuilder.createDeviceRegistrySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * DeviceManagerStubSettings deviceManagerSettings = deviceManagerSettingsBuilder.build();
  * </code>
  * </pre>

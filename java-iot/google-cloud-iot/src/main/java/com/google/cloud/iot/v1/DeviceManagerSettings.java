@@ -61,8 +61,12 @@ import javax.annotation.Generated;
  * <code>
  * DeviceManagerSettings.Builder deviceManagerSettingsBuilder =
  *     DeviceManagerSettings.newBuilder();
- * deviceManagerSettingsBuilder.createDeviceRegistrySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * deviceManagerSettingsBuilder
+ *     .createDeviceRegistrySettings()
+ *     .setRetrySettings(
+ *         deviceManagerSettingsBuilder.createDeviceRegistrySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * DeviceManagerSettings deviceManagerSettings = deviceManagerSettingsBuilder.build();
  * </code>
  * </pre>
