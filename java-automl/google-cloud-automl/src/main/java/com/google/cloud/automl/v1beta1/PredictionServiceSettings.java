@@ -53,8 +53,12 @@ import javax.annotation.Generated;
  * <code>
  * PredictionServiceSettings.Builder predictionServiceSettingsBuilder =
  *     PredictionServiceSettings.newBuilder();
- * predictionServiceSettingsBuilder.predictSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * predictionServiceSettingsBuilder
+ *     .predictSettings()
+ *     .setRetrySettings(
+ *         predictionServiceSettingsBuilder.predictSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * PredictionServiceSettings predictionServiceSettings = predictionServiceSettingsBuilder.build();
  * </code>
  * </pre>

@@ -59,8 +59,12 @@ import javax.annotation.Generated;
  * <code>
  * AutoMlSettings.Builder autoMlSettingsBuilder =
  *     AutoMlSettings.newBuilder();
- * autoMlSettingsBuilder.updateDatasetSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * autoMlSettingsBuilder
+ *     .updateDatasetSettings()
+ *     .setRetrySettings(
+ *         autoMlSettingsBuilder.updateDatasetSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AutoMlSettings autoMlSettings = autoMlSettingsBuilder.build();
  * </code>
  * </pre>

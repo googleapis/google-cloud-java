@@ -835,6 +835,65 @@ public class AutoMlClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void exportModelTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAutoMl.addResponse(resultOperation);
+
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+    ModelExportOutputConfig outputConfig = ModelExportOutputConfig.newBuilder().build();
+    ExportModelRequest request =
+        ExportModelRequest.newBuilder()
+            .setName(name.toString())
+            .setOutputConfig(outputConfig)
+            .build();
+
+    Empty actualResponse = client.exportModelAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportModelRequest actualRequest = (ExportModelRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ModelName.parse(actualRequest.getName()));
+    Assert.assertEquals(outputConfig, actualRequest.getOutputConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void exportModelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockAutoMl.addException(exception);
+
+    try {
+      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      ModelExportOutputConfig outputConfig = ModelExportOutputConfig.newBuilder().build();
+      ExportModelRequest request =
+          ExportModelRequest.newBuilder()
+              .setName(name.toString())
+              .setOutputConfig(outputConfig)
+              .build();
+
+      client.exportModelAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void getModelEvaluationTest() {
     String name2 = "name2-1052831874";
     String annotationSpecId = "annotationSpecId60690191";

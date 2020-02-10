@@ -103,8 +103,12 @@ import org.threeten.bp.Duration;
  * <code>
  * AutoMlStubSettings.Builder autoMlSettingsBuilder =
  *     AutoMlStubSettings.newBuilder();
- * autoMlSettingsBuilder.updateDatasetSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * autoMlSettingsBuilder
+ *     .updateDatasetSettings()
+ *     .setRetrySettings(
+ *         autoMlSettingsBuilder.updateDatasetSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * AutoMlStubSettings autoMlSettings = autoMlSettingsBuilder.build();
  * </code>
  * </pre>
