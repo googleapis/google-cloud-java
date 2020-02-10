@@ -119,8 +119,12 @@ import org.threeten.bp.Duration;
  * <code>
  * DlpServiceStubSettings.Builder dlpServiceSettingsBuilder =
  *     DlpServiceStubSettings.newBuilder();
- * dlpServiceSettingsBuilder.inspectContentSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * dlpServiceSettingsBuilder
+ *     .inspectContentSettings()
+ *     .setRetrySettings(
+ *         dlpServiceSettingsBuilder.inspectContentSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * DlpServiceStubSettings dlpServiceSettings = dlpServiceSettingsBuilder.build();
  * </code>
  * </pre>
