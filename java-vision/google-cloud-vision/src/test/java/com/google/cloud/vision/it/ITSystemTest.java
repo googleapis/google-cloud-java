@@ -394,34 +394,6 @@ public class ITSystemTest {
   }
 
   @Test
-  public void detectWebDetectionsTest() throws IOException {
-    List<AnnotateImageResponse> responses =
-        getResponsesList("landmark.jpg", Type.WEB_DETECTION, false);
-    List<String> actual = new ArrayList<>();
-    for (AnnotateImageResponse res : responses) {
-      WebDetection annotation = res.getWebDetection();
-      for (WebDetection.WebEntity entity : annotation.getWebEntitiesList()) {
-        actual.add(entity.getDescription());
-      }
-    }
-    assertTrue(actual.contains("The Palace Of Fine Arts"));
-  }
-
-  @Test
-  public void detectWebDetectionsGcsTest() throws IOException {
-    List<AnnotateImageResponse> responses =
-        getResponsesList("landmark/pofa.jpg", Type.WEB_DETECTION, true);
-    List<String> actual = new ArrayList<>();
-    for (AnnotateImageResponse res : responses) {
-      WebDetection annotation = res.getWebDetection();
-      for (WebDetection.WebEntity entity : annotation.getWebEntitiesList()) {
-        actual.add(entity.getDescription());
-      }
-    }
-    assertTrue(actual.contains("The Palace Of Fine Arts"));
-  }
-
-  @Test
   public void detectWebEntitiesTest() throws IOException {
     List<AnnotateImageResponse> responses = getResponsesList("city.jpg", Type.WEB_DETECTION, false);
     List<String> actual = new ArrayList<>();
