@@ -36,8 +36,9 @@ final class NotificationConfigSnippets {
 
     // [START scc_create_notification_config]
     // TODO(UpdateMe) String organizationId = "{your-org-id}";
-    // TODO(UpdateMe) String pubsubTopic = "projects/{your-project}/topics/{your-topic}";
     // TODO(UpdateMe) String notificationConfigId = "config-id";
+    // TODO(UpdateMe) String pubsubTopic = "projects/{your-project}/topics/{your-topic}";
+    // Ensure this ServiceAccount has the "pubsub.topics.setIamPolicy" permission on the topic.
 
     String orgName = String.format("organizations/%s", organizationId);
 
@@ -139,10 +140,12 @@ final class NotificationConfigSnippets {
     // [START scc_update_notification_config]
     // TODO(UpdateMe) String organizationId = "{your-org-id}";
     // TODO(UpdateMe) String notificationConfigId = "{your-config-id}";
-    // TODO(UpdateMe) String pubsubTopic = "projects/{your-project}/topics/{your-new-topic}";
     String notificationConfigName =
         String.format(
             "organizations/%s/notificationConfigs/%s", organizationId, notificationConfigId);
+
+    // TODO(UpdateMe) String pubsubTopic = "projects/{your-project}/topics/{your-new-topic}";
+    // Ensure this ServiceAccount has the "pubsub.topics.setIamPolicy" permission on the topic.
 
     NotificationConfig configToUpdate =
         NotificationConfig.newBuilder()
