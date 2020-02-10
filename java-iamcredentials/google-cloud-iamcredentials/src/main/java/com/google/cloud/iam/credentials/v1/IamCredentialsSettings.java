@@ -52,8 +52,12 @@ import javax.annotation.Generated;
  * <code>
  * IamCredentialsSettings.Builder iamCredentialsSettingsBuilder =
  *     IamCredentialsSettings.newBuilder();
- * iamCredentialsSettingsBuilder.generateAccessTokenSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * iamCredentialsSettingsBuilder
+ *     .generateAccessTokenSettings()
+ *     .setRetrySettings(
+ *         iamCredentialsSettingsBuilder.generateAccessTokenSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * IamCredentialsSettings iamCredentialsSettings = iamCredentialsSettingsBuilder.build();
  * </code>
  * </pre>

@@ -69,8 +69,12 @@ import org.threeten.bp.Duration;
  * <code>
  * IamCredentialsStubSettings.Builder iamCredentialsSettingsBuilder =
  *     IamCredentialsStubSettings.newBuilder();
- * iamCredentialsSettingsBuilder.generateAccessTokenSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * iamCredentialsSettingsBuilder
+ *     .generateAccessTokenSettings()
+ *     .setRetrySettings(
+ *         iamCredentialsSettingsBuilder.generateAccessTokenSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * IamCredentialsStubSettings iamCredentialsSettings = iamCredentialsSettingsBuilder.build();
  * </code>
  * </pre>
