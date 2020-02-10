@@ -80,8 +80,12 @@ import org.threeten.bp.Duration;
  * <code>
  * ContainerAnalysisV1Beta1StubSettings.Builder containerAnalysisV1Beta1SettingsBuilder =
  *     ContainerAnalysisV1Beta1StubSettings.newBuilder();
- * containerAnalysisV1Beta1SettingsBuilder.setIamPolicySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * containerAnalysisV1Beta1SettingsBuilder
+ *     .setIamPolicySettings()
+ *     .setRetrySettings(
+ *         containerAnalysisV1Beta1SettingsBuilder.setIamPolicySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ContainerAnalysisV1Beta1StubSettings containerAnalysisV1Beta1Settings = containerAnalysisV1Beta1SettingsBuilder.build();
  * </code>
  * </pre>

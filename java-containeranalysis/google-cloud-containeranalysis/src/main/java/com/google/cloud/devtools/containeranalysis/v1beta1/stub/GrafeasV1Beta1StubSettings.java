@@ -96,8 +96,12 @@ import org.threeten.bp.Duration;
  * <code>
  * GrafeasV1Beta1StubSettings.Builder grafeasV1Beta1SettingsBuilder =
  *     GrafeasV1Beta1StubSettings.newBuilder();
- * grafeasV1Beta1SettingsBuilder.getOccurrenceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * grafeasV1Beta1SettingsBuilder
+ *     .getOccurrenceSettings()
+ *     .setRetrySettings(
+ *         grafeasV1Beta1SettingsBuilder.getOccurrenceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * GrafeasV1Beta1StubSettings grafeasV1Beta1Settings = grafeasV1Beta1SettingsBuilder.build();
  * </code>
  * </pre>

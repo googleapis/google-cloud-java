@@ -81,8 +81,12 @@ import javax.annotation.Generated;
  * <code>
  * GrafeasV1Beta1Settings.Builder grafeasV1Beta1SettingsBuilder =
  *     GrafeasV1Beta1Settings.newBuilder();
- * grafeasV1Beta1SettingsBuilder.getOccurrenceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * grafeasV1Beta1SettingsBuilder
+ *     .getOccurrenceSettings()
+ *     .setRetrySettings(
+ *         grafeasV1Beta1SettingsBuilder.getOccurrenceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * GrafeasV1Beta1Settings grafeasV1Beta1Settings = grafeasV1Beta1SettingsBuilder.build();
  * </code>
  * </pre>

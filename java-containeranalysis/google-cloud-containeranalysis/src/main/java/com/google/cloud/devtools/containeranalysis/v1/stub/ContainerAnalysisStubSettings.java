@@ -66,8 +66,12 @@ import org.threeten.bp.Duration;
  * <code>
  * ContainerAnalysisStubSettings.Builder containerAnalysisSettingsBuilder =
  *     ContainerAnalysisStubSettings.newBuilder();
- * containerAnalysisSettingsBuilder.setIamPolicySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * containerAnalysisSettingsBuilder
+ *     .setIamPolicySettings()
+ *     .setRetrySettings(
+ *         containerAnalysisSettingsBuilder.setIamPolicySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ContainerAnalysisStubSettings containerAnalysisSettings = containerAnalysisSettingsBuilder.build();
  * </code>
  * </pre>

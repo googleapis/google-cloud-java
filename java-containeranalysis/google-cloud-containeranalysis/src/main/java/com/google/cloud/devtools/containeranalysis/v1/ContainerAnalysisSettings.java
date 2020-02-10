@@ -57,8 +57,12 @@ import javax.annotation.Generated;
  * <code>
  * ContainerAnalysisSettings.Builder containerAnalysisSettingsBuilder =
  *     ContainerAnalysisSettings.newBuilder();
- * containerAnalysisSettingsBuilder.setIamPolicySettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * containerAnalysisSettingsBuilder
+ *     .setIamPolicySettings()
+ *     .setRetrySettings(
+ *         containerAnalysisSettingsBuilder.setIamPolicySettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ContainerAnalysisSettings containerAnalysisSettings = containerAnalysisSettingsBuilder.build();
  * </code>
  * </pre>
