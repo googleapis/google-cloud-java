@@ -87,8 +87,12 @@ import org.threeten.bp.Duration;
  * <code>
  * CloudRedisStubSettings.Builder cloudRedisSettingsBuilder =
  *     CloudRedisStubSettings.newBuilder();
- * cloudRedisSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * cloudRedisSettingsBuilder
+ *     .getInstanceSettings()
+ *     .setRetrySettings(
+ *         cloudRedisSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * CloudRedisStubSettings cloudRedisSettings = cloudRedisSettingsBuilder.build();
  * </code>
  * </pre>

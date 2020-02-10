@@ -57,8 +57,12 @@ import javax.annotation.Generated;
  * <code>
  * CloudRedisSettings.Builder cloudRedisSettingsBuilder =
  *     CloudRedisSettings.newBuilder();
- * cloudRedisSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * cloudRedisSettingsBuilder
+ *     .getInstanceSettings()
+ *     .setRetrySettings(
+ *         cloudRedisSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * CloudRedisSettings cloudRedisSettings = cloudRedisSettingsBuilder.build();
  * </code>
  * </pre>
