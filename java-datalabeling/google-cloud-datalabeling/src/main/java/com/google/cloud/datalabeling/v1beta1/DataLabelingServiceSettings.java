@@ -65,8 +65,12 @@ import javax.annotation.Generated;
  * <code>
  * DataLabelingServiceSettings.Builder dataLabelingServiceSettingsBuilder =
  *     DataLabelingServiceSettings.newBuilder();
- * dataLabelingServiceSettingsBuilder.createDatasetSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * dataLabelingServiceSettingsBuilder
+ *     .createDatasetSettings()
+ *     .setRetrySettings(
+ *         dataLabelingServiceSettingsBuilder.createDatasetSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * DataLabelingServiceSettings dataLabelingServiceSettings = dataLabelingServiceSettingsBuilder.build();
  * </code>
  * </pre>

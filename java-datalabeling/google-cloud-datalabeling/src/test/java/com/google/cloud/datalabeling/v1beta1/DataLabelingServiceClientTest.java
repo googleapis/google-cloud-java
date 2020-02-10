@@ -600,6 +600,50 @@ public class DataLabelingServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteAnnotatedDatasetTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataLabelingService.addResponse(expectedResponse);
+
+    AnnotatedDatasetName name =
+        AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+    DeleteAnnotatedDatasetRequest request =
+        DeleteAnnotatedDatasetRequest.newBuilder().setName(name.toString()).build();
+
+    client.deleteAnnotatedDataset(request);
+
+    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAnnotatedDatasetRequest actualRequest =
+        (DeleteAnnotatedDatasetRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, AnnotatedDatasetName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteAnnotatedDatasetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataLabelingService.addException(exception);
+
+    try {
+      AnnotatedDatasetName name =
+          AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+      DeleteAnnotatedDatasetRequest request =
+          DeleteAnnotatedDatasetRequest.newBuilder().setName(name.toString()).build();
+
+      client.deleteAnnotatedDataset(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void labelImageTest() throws Exception {
     AnnotatedDatasetName name =
         AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");

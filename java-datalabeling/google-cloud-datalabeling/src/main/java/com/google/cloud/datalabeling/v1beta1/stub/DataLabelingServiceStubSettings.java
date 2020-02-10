@@ -140,8 +140,12 @@ import org.threeten.bp.Duration;
  * <code>
  * DataLabelingServiceStubSettings.Builder dataLabelingServiceSettingsBuilder =
  *     DataLabelingServiceStubSettings.newBuilder();
- * dataLabelingServiceSettingsBuilder.createDatasetSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * dataLabelingServiceSettingsBuilder
+ *     .createDatasetSettings()
+ *     .setRetrySettings(
+ *         dataLabelingServiceSettingsBuilder.createDatasetSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * DataLabelingServiceStubSettings dataLabelingServiceSettings = dataLabelingServiceSettingsBuilder.build();
  * </code>
  * </pre>
