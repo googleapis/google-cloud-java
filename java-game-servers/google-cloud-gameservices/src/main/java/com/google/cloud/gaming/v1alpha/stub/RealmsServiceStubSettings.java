@@ -84,8 +84,12 @@ import org.threeten.bp.Duration;
  * <code>
  * RealmsServiceStubSettings.Builder realmsServiceSettingsBuilder =
  *     RealmsServiceStubSettings.newBuilder();
- * realmsServiceSettingsBuilder.getRealmSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * realmsServiceSettingsBuilder
+ *     .getRealmSettings()
+ *     .setRetrySettings(
+ *         realmsServiceSettingsBuilder.getRealmSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RealmsServiceStubSettings realmsServiceSettings = realmsServiceSettingsBuilder.build();
  * </code>
  * </pre>

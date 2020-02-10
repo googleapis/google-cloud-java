@@ -57,8 +57,12 @@ import javax.annotation.Generated;
  * <code>
  * GameServerClustersServiceSettings.Builder gameServerClustersServiceSettingsBuilder =
  *     GameServerClustersServiceSettings.newBuilder();
- * gameServerClustersServiceSettingsBuilder.getGameServerClusterSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * gameServerClustersServiceSettingsBuilder
+ *     .getGameServerClusterSettings()
+ *     .setRetrySettings(
+ *         gameServerClustersServiceSettingsBuilder.getGameServerClusterSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * GameServerClustersServiceSettings gameServerClustersServiceSettings = gameServerClustersServiceSettingsBuilder.build();
  * </code>
  * </pre>

@@ -370,4 +370,133 @@ public class GameServerClustersServiceClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  @SuppressWarnings("all")
+  public void previewCreateGameServerClusterTest() {
+    String etag = "etag3123477";
+    PreviewCreateGameServerClusterResponse expectedResponse =
+        PreviewCreateGameServerClusterResponse.newBuilder().setEtag(etag).build();
+    mockGameServerClustersService.addResponse(expectedResponse);
+
+    PreviewCreateGameServerClusterRequest request =
+        PreviewCreateGameServerClusterRequest.newBuilder().build();
+
+    PreviewCreateGameServerClusterResponse actualResponse =
+        client.previewCreateGameServerCluster(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGameServerClustersService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PreviewCreateGameServerClusterRequest actualRequest =
+        (PreviewCreateGameServerClusterRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void previewCreateGameServerClusterExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockGameServerClustersService.addException(exception);
+
+    try {
+      PreviewCreateGameServerClusterRequest request =
+          PreviewCreateGameServerClusterRequest.newBuilder().build();
+
+      client.previewCreateGameServerCluster(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void previewDeleteGameServerClusterTest() {
+    String etag = "etag3123477";
+    PreviewDeleteGameServerClusterResponse expectedResponse =
+        PreviewDeleteGameServerClusterResponse.newBuilder().setEtag(etag).build();
+    mockGameServerClustersService.addResponse(expectedResponse);
+
+    PreviewDeleteGameServerClusterRequest request =
+        PreviewDeleteGameServerClusterRequest.newBuilder().build();
+
+    PreviewDeleteGameServerClusterResponse actualResponse =
+        client.previewDeleteGameServerCluster(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGameServerClustersService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PreviewDeleteGameServerClusterRequest actualRequest =
+        (PreviewDeleteGameServerClusterRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void previewDeleteGameServerClusterExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockGameServerClustersService.addException(exception);
+
+    try {
+      PreviewDeleteGameServerClusterRequest request =
+          PreviewDeleteGameServerClusterRequest.newBuilder().build();
+
+      client.previewDeleteGameServerCluster(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void previewUpdateGameServerClusterTest() {
+    String etag = "etag3123477";
+    PreviewUpdateGameServerClusterResponse expectedResponse =
+        PreviewUpdateGameServerClusterResponse.newBuilder().setEtag(etag).build();
+    mockGameServerClustersService.addResponse(expectedResponse);
+
+    PreviewUpdateGameServerClusterRequest request =
+        PreviewUpdateGameServerClusterRequest.newBuilder().build();
+
+    PreviewUpdateGameServerClusterResponse actualResponse =
+        client.previewUpdateGameServerCluster(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGameServerClustersService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PreviewUpdateGameServerClusterRequest actualRequest =
+        (PreviewUpdateGameServerClusterRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void previewUpdateGameServerClusterExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockGameServerClustersService.addException(exception);
+
+    try {
+      PreviewUpdateGameServerClusterRequest request =
+          PreviewUpdateGameServerClusterRequest.newBuilder().build();
+
+      client.previewUpdateGameServerCluster(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
 }

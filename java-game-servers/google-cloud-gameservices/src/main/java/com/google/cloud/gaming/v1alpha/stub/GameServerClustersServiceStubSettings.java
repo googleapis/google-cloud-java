@@ -88,8 +88,12 @@ import org.threeten.bp.Duration;
  * <code>
  * GameServerClustersServiceStubSettings.Builder gameServerClustersServiceSettingsBuilder =
  *     GameServerClustersServiceStubSettings.newBuilder();
- * gameServerClustersServiceSettingsBuilder.getGameServerClusterSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * gameServerClustersServiceSettingsBuilder
+ *     .getGameServerClusterSettings()
+ *     .setRetrySettings(
+ *         gameServerClustersServiceSettingsBuilder.getGameServerClusterSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * GameServerClustersServiceStubSettings gameServerClustersServiceSettings = gameServerClustersServiceSettingsBuilder.build();
  * </code>
  * </pre>

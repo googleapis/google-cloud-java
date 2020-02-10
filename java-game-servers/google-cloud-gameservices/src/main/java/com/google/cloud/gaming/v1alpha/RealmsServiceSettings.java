@@ -57,8 +57,12 @@ import javax.annotation.Generated;
  * <code>
  * RealmsServiceSettings.Builder realmsServiceSettingsBuilder =
  *     RealmsServiceSettings.newBuilder();
- * realmsServiceSettingsBuilder.getRealmSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * realmsServiceSettingsBuilder
+ *     .getRealmSettings()
+ *     .setRetrySettings(
+ *         realmsServiceSettingsBuilder.getRealmSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RealmsServiceSettings realmsServiceSettings = realmsServiceSettingsBuilder.build();
  * </code>
  * </pre>

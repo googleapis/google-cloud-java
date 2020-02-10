@@ -1,11 +1,11 @@
 {
-  "updateTime": "2020-02-06T22:53:12.164018Z",
+  "updateTime": "2020-02-08T09:53:43.793235Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.44.4",
-        "dockerImage": "googleapis/artman@sha256:19e945954fc960a4bdfee6cb34695898ab21a8cf0bac063ee39b91f00a1faec8"
+        "version": "0.45.0",
+        "dockerImage": "googleapis/artman@sha256:6aec9c34db0e4be221cdaf6faba27bdc07cfea846808b3d3b964dfce3a9a0f9b"
       }
     },
     {
@@ -13,8 +13,7 @@
         "name": "googleapis-private",
         "remote": "https://github.com/googleapis/googleapis-private.git",
         "sha": "a1f5059959398f6278a600b81bbf2828141e1a69",
-        "internalRef": "293086097",
-        "log": "a1f5059959398f6278a600b81bbf2828141e1a69\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 293086097\n\n"
+        "internalRef": "293086097"
       }
     },
     {

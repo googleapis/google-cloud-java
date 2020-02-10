@@ -371,4 +371,175 @@ public class GameServerDeploymentsServiceClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getGameServerDeploymentRolloutTest() {
+    String name = "name3373707";
+    String defaultGameServerConfig = "defaultGameServerConfig-1758159633";
+    String etag = "etag3123477";
+    GameServerDeploymentRollout expectedResponse =
+        GameServerDeploymentRollout.newBuilder()
+            .setName(name)
+            .setDefaultGameServerConfig(defaultGameServerConfig)
+            .setEtag(etag)
+            .build();
+    mockGameServerDeploymentsService.addResponse(expectedResponse);
+
+    GetGameServerDeploymentRolloutRequest request =
+        GetGameServerDeploymentRolloutRequest.newBuilder().build();
+
+    GameServerDeploymentRollout actualResponse = client.getGameServerDeploymentRollout(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGameServerDeploymentsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGameServerDeploymentRolloutRequest actualRequest =
+        (GetGameServerDeploymentRolloutRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getGameServerDeploymentRolloutExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockGameServerDeploymentsService.addException(exception);
+
+    try {
+      GetGameServerDeploymentRolloutRequest request =
+          GetGameServerDeploymentRolloutRequest.newBuilder().build();
+
+      client.getGameServerDeploymentRollout(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateGameServerDeploymentRolloutTest() {
+    String name = "name3373707";
+    boolean done = true;
+    Operation expectedResponse = Operation.newBuilder().setName(name).setDone(done).build();
+    mockGameServerDeploymentsService.addResponse(expectedResponse);
+
+    UpdateGameServerDeploymentRolloutRequest request =
+        UpdateGameServerDeploymentRolloutRequest.newBuilder().build();
+
+    Operation actualResponse = client.updateGameServerDeploymentRollout(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGameServerDeploymentsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateGameServerDeploymentRolloutRequest actualRequest =
+        (UpdateGameServerDeploymentRolloutRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateGameServerDeploymentRolloutExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockGameServerDeploymentsService.addException(exception);
+
+    try {
+      UpdateGameServerDeploymentRolloutRequest request =
+          UpdateGameServerDeploymentRolloutRequest.newBuilder().build();
+
+      client.updateGameServerDeploymentRollout(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void previewGameServerDeploymentRolloutTest() {
+    String etag = "etag3123477";
+    PreviewGameServerDeploymentRolloutResponse expectedResponse =
+        PreviewGameServerDeploymentRolloutResponse.newBuilder().setEtag(etag).build();
+    mockGameServerDeploymentsService.addResponse(expectedResponse);
+
+    PreviewGameServerDeploymentRolloutRequest request =
+        PreviewGameServerDeploymentRolloutRequest.newBuilder().build();
+
+    PreviewGameServerDeploymentRolloutResponse actualResponse =
+        client.previewGameServerDeploymentRollout(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGameServerDeploymentsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PreviewGameServerDeploymentRolloutRequest actualRequest =
+        (PreviewGameServerDeploymentRolloutRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void previewGameServerDeploymentRolloutExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockGameServerDeploymentsService.addException(exception);
+
+    try {
+      PreviewGameServerDeploymentRolloutRequest request =
+          PreviewGameServerDeploymentRolloutRequest.newBuilder().build();
+
+      client.previewGameServerDeploymentRollout(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void fetchDeploymentStateTest() {
+    FetchDeploymentStateResponse expectedResponse =
+        FetchDeploymentStateResponse.newBuilder().build();
+    mockGameServerDeploymentsService.addResponse(expectedResponse);
+
+    FetchDeploymentStateRequest request = FetchDeploymentStateRequest.newBuilder().build();
+
+    FetchDeploymentStateResponse actualResponse = client.fetchDeploymentState(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGameServerDeploymentsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchDeploymentStateRequest actualRequest = (FetchDeploymentStateRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void fetchDeploymentStateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockGameServerDeploymentsService.addException(exception);
+
+    try {
+      FetchDeploymentStateRequest request = FetchDeploymentStateRequest.newBuilder().build();
+
+      client.fetchDeploymentState(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
 }

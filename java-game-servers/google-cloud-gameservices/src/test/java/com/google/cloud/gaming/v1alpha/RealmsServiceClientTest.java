@@ -357,4 +357,43 @@ public class RealmsServiceClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  @SuppressWarnings("all")
+  public void previewRealmUpdateTest() {
+    String etag = "etag3123477";
+    PreviewRealmUpdateResponse expectedResponse =
+        PreviewRealmUpdateResponse.newBuilder().setEtag(etag).build();
+    mockRealmsService.addResponse(expectedResponse);
+
+    PreviewRealmUpdateRequest request = PreviewRealmUpdateRequest.newBuilder().build();
+
+    PreviewRealmUpdateResponse actualResponse = client.previewRealmUpdate(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRealmsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PreviewRealmUpdateRequest actualRequest = (PreviewRealmUpdateRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void previewRealmUpdateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockRealmsService.addException(exception);
+
+    try {
+      PreviewRealmUpdateRequest request = PreviewRealmUpdateRequest.newBuilder().build();
+
+      client.previewRealmUpdate(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
 }

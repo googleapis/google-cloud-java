@@ -89,8 +89,12 @@ import org.threeten.bp.Duration;
  * <code>
  * GameServerDeploymentsServiceStubSettings.Builder gameServerDeploymentsServiceSettingsBuilder =
  *     GameServerDeploymentsServiceStubSettings.newBuilder();
- * gameServerDeploymentsServiceSettingsBuilder.getGameServerDeploymentSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * gameServerDeploymentsServiceSettingsBuilder
+ *     .getGameServerDeploymentSettings()
+ *     .setRetrySettings(
+ *         gameServerDeploymentsServiceSettingsBuilder.getGameServerDeploymentSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * GameServerDeploymentsServiceStubSettings gameServerDeploymentsServiceSettings = gameServerDeploymentsServiceSettingsBuilder.build();
  * </code>
  * </pre>

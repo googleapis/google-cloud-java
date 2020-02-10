@@ -57,8 +57,12 @@ import javax.annotation.Generated;
  * <code>
  * GameServerDeploymentsServiceSettings.Builder gameServerDeploymentsServiceSettingsBuilder =
  *     GameServerDeploymentsServiceSettings.newBuilder();
- * gameServerDeploymentsServiceSettingsBuilder.getGameServerDeploymentSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * gameServerDeploymentsServiceSettingsBuilder
+ *     .getGameServerDeploymentSettings()
+ *     .setRetrySettings(
+ *         gameServerDeploymentsServiceSettingsBuilder.getGameServerDeploymentSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * GameServerDeploymentsServiceSettings gameServerDeploymentsServiceSettings = gameServerDeploymentsServiceSettingsBuilder.build();
  * </code>
  * </pre>
