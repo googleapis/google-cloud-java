@@ -64,8 +64,12 @@ import org.threeten.bp.Duration;
  * <code>
  * TextToSpeechStubSettings.Builder textToSpeechSettingsBuilder =
  *     TextToSpeechStubSettings.newBuilder();
- * textToSpeechSettingsBuilder.listVoicesSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * textToSpeechSettingsBuilder
+ *     .listVoicesSettings()
+ *     .setRetrySettings(
+ *         textToSpeechSettingsBuilder.listVoicesSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * TextToSpeechStubSettings textToSpeechSettings = textToSpeechSettingsBuilder.build();
  * </code>
  * </pre>

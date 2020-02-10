@@ -51,8 +51,12 @@ import javax.annotation.Generated;
  * <code>
  * TextToSpeechSettings.Builder textToSpeechSettingsBuilder =
  *     TextToSpeechSettings.newBuilder();
- * textToSpeechSettingsBuilder.listVoicesSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * textToSpeechSettingsBuilder
+ *     .listVoicesSettings()
+ *     .setRetrySettings(
+ *         textToSpeechSettingsBuilder.listVoicesSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * TextToSpeechSettings textToSpeechSettings = textToSpeechSettingsBuilder.build();
  * </code>
  * </pre>
