@@ -76,8 +76,12 @@ import org.threeten.bp.Duration;
  * <code>
  * RecommenderStubSettings.Builder recommenderSettingsBuilder =
  *     RecommenderStubSettings.newBuilder();
- * recommenderSettingsBuilder.getRecommendationSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * recommenderSettingsBuilder
+ *     .getRecommendationSettings()
+ *     .setRetrySettings(
+ *         recommenderSettingsBuilder.getRecommendationSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RecommenderStubSettings recommenderSettings = recommenderSettingsBuilder.build();
  * </code>
  * </pre>

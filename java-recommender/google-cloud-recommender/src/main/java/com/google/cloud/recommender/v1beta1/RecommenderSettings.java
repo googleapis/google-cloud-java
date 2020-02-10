@@ -54,8 +54,12 @@ import javax.annotation.Generated;
  * <code>
  * RecommenderSettings.Builder recommenderSettingsBuilder =
  *     RecommenderSettings.newBuilder();
- * recommenderSettingsBuilder.getRecommendationSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * recommenderSettingsBuilder
+ *     .getRecommendationSettings()
+ *     .setRetrySettings(
+ *         recommenderSettingsBuilder.getRecommendationSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RecommenderSettings recommenderSettings = recommenderSettingsBuilder.build();
  * </code>
  * </pre>
