@@ -96,8 +96,12 @@ import org.threeten.bp.Duration;
  * <code>
  * WebSecurityScannerStubSettings.Builder webSecurityScannerSettingsBuilder =
  *     WebSecurityScannerStubSettings.newBuilder();
- * webSecurityScannerSettingsBuilder.createScanConfigSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * webSecurityScannerSettingsBuilder
+ *     .createScanConfigSettings()
+ *     .setRetrySettings(
+ *         webSecurityScannerSettingsBuilder.createScanConfigSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * WebSecurityScannerStubSettings webSecurityScannerSettings = webSecurityScannerSettingsBuilder.build();
  * </code>
  * </pre>

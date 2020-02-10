@@ -59,8 +59,12 @@ import javax.annotation.Generated;
  * <code>
  * WebSecurityScannerSettings.Builder webSecurityScannerSettingsBuilder =
  *     WebSecurityScannerSettings.newBuilder();
- * webSecurityScannerSettingsBuilder.createScanConfigSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * webSecurityScannerSettingsBuilder
+ *     .createScanConfigSettings()
+ *     .setRetrySettings(
+ *         webSecurityScannerSettingsBuilder.createScanConfigSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * WebSecurityScannerSettings webSecurityScannerSettings = webSecurityScannerSettingsBuilder.build();
  * </code>
  * </pre>
