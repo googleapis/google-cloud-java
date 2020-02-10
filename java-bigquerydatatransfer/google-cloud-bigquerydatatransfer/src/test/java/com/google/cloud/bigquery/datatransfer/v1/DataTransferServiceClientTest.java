@@ -736,4 +736,43 @@ public class DataTransferServiceClientTest {
       // Expected exception
     }
   }
+
+  @Test
+  @SuppressWarnings("all")
+  public void startManualTransferRunsTest() {
+    StartManualTransferRunsResponse expectedResponse =
+        StartManualTransferRunsResponse.newBuilder().build();
+    mockDataTransferService.addResponse(expectedResponse);
+
+    StartManualTransferRunsRequest request = StartManualTransferRunsRequest.newBuilder().build();
+
+    StartManualTransferRunsResponse actualResponse = client.startManualTransferRuns(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StartManualTransferRunsRequest actualRequest =
+        (StartManualTransferRunsRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void startManualTransferRunsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataTransferService.addException(exception);
+
+    try {
+      StartManualTransferRunsRequest request = StartManualTransferRunsRequest.newBuilder().build();
+
+      client.startManualTransferRuns(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
 }

@@ -59,8 +59,12 @@ import javax.annotation.Generated;
  * <code>
  * DataTransferServiceSettings.Builder dataTransferServiceSettingsBuilder =
  *     DataTransferServiceSettings.newBuilder();
- * dataTransferServiceSettingsBuilder.getDataSourceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * dataTransferServiceSettingsBuilder
+ *     .getDataSourceSettings()
+ *     .setRetrySettings(
+ *         dataTransferServiceSettingsBuilder.getDataSourceSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * DataTransferServiceSettings dataTransferServiceSettings = dataTransferServiceSettingsBuilder.build();
  * </code>
  * </pre>
