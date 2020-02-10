@@ -102,8 +102,12 @@ import org.threeten.bp.Duration;
  * <code>
  * BigtableTableAdminStubSettings.Builder baseBigtableTableAdminSettingsBuilder =
  *     BigtableTableAdminStubSettings.newBuilder();
- * baseBigtableTableAdminSettingsBuilder.createTableSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * baseBigtableTableAdminSettingsBuilder
+ *     .createTableSettings()
+ *     .setRetrySettings(
+ *         baseBigtableTableAdminSettingsBuilder.createTableSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * BigtableTableAdminStubSettings baseBigtableTableAdminSettings = baseBigtableTableAdminSettingsBuilder.build();
  * </code>
  * </pre>

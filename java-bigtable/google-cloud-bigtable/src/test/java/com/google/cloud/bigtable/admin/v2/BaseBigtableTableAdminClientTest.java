@@ -33,6 +33,7 @@ import com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest;
 import com.google.bigtable.admin.v2.CreateTableRequest;
 import com.google.bigtable.admin.v2.DeleteSnapshotRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
+import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
 import com.google.bigtable.admin.v2.GetSnapshotRequest;
@@ -377,6 +378,46 @@ public class BaseBigtableTableAdminClientTest {
       List<ModifyColumnFamiliesRequest.Modification> modifications = new ArrayList<>();
 
       client.modifyColumnFamilies(name, modifications);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void dropRowRangeTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockBigtableTableAdmin.addResponse(expectedResponse);
+
+    TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    DropRowRangeRequest request = DropRowRangeRequest.newBuilder().setName(name.toString()).build();
+
+    client.dropRowRange(request);
+
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DropRowRangeRequest actualRequest = (DropRowRangeRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, TableName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void dropRowRangeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockBigtableTableAdmin.addException(exception);
+
+    try {
+      TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+      DropRowRangeRequest request =
+          DropRowRangeRequest.newBuilder().setName(name.toString()).build();
+
+      client.dropRowRange(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

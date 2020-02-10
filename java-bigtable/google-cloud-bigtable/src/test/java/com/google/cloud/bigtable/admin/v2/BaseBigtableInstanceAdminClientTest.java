@@ -498,6 +498,67 @@ public class BaseBigtableInstanceAdminClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void updateClusterTest() throws Exception {
+    ClusterName name2 = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+    LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+    int serveNodes2 = 1623486220;
+    Cluster expectedResponse =
+        Cluster.newBuilder()
+            .setName(name2.toString())
+            .setLocation(location.toString())
+            .setServeNodes(serveNodes2)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(resultOperation);
+
+    ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+    int serveNodes = 1288838783;
+    Cluster request =
+        Cluster.newBuilder().setName(name.toString()).setServeNodes(serveNodes).build();
+
+    Cluster actualResponse = client.updateClusterAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    Cluster actualRequest = (Cluster) actualRequests.get(0);
+
+    Assert.assertEquals(name, ClusterName.parse(actualRequest.getName()));
+    Assert.assertEquals(serveNodes, actualRequest.getServeNodes());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateClusterExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+      int serveNodes = 1288838783;
+      Cluster request =
+          Cluster.newBuilder().setName(name.toString()).setServeNodes(serveNodes).build();
+
+      client.updateClusterAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void deleteClusterTest() {
     Empty expectedResponse = Empty.newBuilder().build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
