@@ -77,8 +77,12 @@ import org.threeten.bp.Duration;
  * <code>
  * DashboardsServiceStubSettings.Builder dashboardsServiceSettingsBuilder =
  *     DashboardsServiceStubSettings.newBuilder();
- * dashboardsServiceSettingsBuilder.createDashboardSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * dashboardsServiceSettingsBuilder
+ *     .createDashboardSettings()
+ *     .setRetrySettings(
+ *         dashboardsServiceSettingsBuilder.createDashboardSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * DashboardsServiceStubSettings dashboardsServiceSettings = dashboardsServiceSettingsBuilder.build();
  * </code>
  * </pre>
