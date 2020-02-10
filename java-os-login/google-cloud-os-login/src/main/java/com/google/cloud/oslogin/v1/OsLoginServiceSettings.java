@@ -53,8 +53,12 @@ import javax.annotation.Generated;
  * <code>
  * OsLoginServiceSettings.Builder osLoginServiceSettingsBuilder =
  *     OsLoginServiceSettings.newBuilder();
- * osLoginServiceSettingsBuilder.deletePosixAccountSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * osLoginServiceSettingsBuilder
+ *     .deletePosixAccountSettings()
+ *     .setRetrySettings(
+ *         osLoginServiceSettingsBuilder.deletePosixAccountSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * OsLoginServiceSettings osLoginServiceSettings = osLoginServiceSettingsBuilder.build();
  * </code>
  * </pre>
