@@ -53,8 +53,12 @@ import javax.annotation.Generated;
  * <code>
  * ImageAnnotatorSettings.Builder imageAnnotatorSettingsBuilder =
  *     ImageAnnotatorSettings.newBuilder();
- * imageAnnotatorSettingsBuilder.batchAnnotateImagesSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * imageAnnotatorSettingsBuilder
+ *     .batchAnnotateImagesSettings()
+ *     .setRetrySettings(
+ *         imageAnnotatorSettingsBuilder.batchAnnotateImagesSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ImageAnnotatorSettings imageAnnotatorSettings = imageAnnotatorSettingsBuilder.build();
  * </code>
  * </pre>

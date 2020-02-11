@@ -60,8 +60,12 @@ import javax.annotation.Generated;
  * <code>
  * ProductSearchSettings.Builder productSearchSettingsBuilder =
  *     ProductSearchSettings.newBuilder();
- * productSearchSettingsBuilder.createProductSetSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * productSearchSettingsBuilder
+ *     .createProductSetSettings()
+ *     .setRetrySettings(
+ *         productSearchSettingsBuilder.createProductSetSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * ProductSearchSettings productSearchSettings = productSearchSettingsBuilder.build();
  * </code>
  * </pre>

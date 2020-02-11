@@ -903,4 +903,43 @@ public class ProductSearchClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  @SuppressWarnings("all")
+  public void purgeProductsTest() {
+    String name = "name3373707";
+    boolean done = true;
+    Operation expectedResponse = Operation.newBuilder().setName(name).setDone(done).build();
+    mockProductSearch.addResponse(expectedResponse);
+
+    PurgeProductsRequest request = PurgeProductsRequest.newBuilder().build();
+
+    Operation actualResponse = client.purgeProducts(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PurgeProductsRequest actualRequest = (PurgeProductsRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void purgeProductsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockProductSearch.addException(exception);
+
+    try {
+      PurgeProductsRequest request = PurgeProductsRequest.newBuilder().build();
+
+      client.purgeProducts(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
 }
