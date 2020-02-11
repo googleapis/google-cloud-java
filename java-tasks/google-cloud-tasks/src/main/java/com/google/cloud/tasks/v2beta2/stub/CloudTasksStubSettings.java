@@ -98,8 +98,12 @@ import org.threeten.bp.Duration;
  * <code>
  * CloudTasksStubSettings.Builder cloudTasksSettingsBuilder =
  *     CloudTasksStubSettings.newBuilder();
- * cloudTasksSettingsBuilder.getQueueSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * cloudTasksSettingsBuilder
+ *     .getQueueSettings()
+ *     .setRetrySettings(
+ *         cloudTasksSettingsBuilder.getQueueSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * CloudTasksStubSettings cloudTasksSettings = cloudTasksSettingsBuilder.build();
  * </code>
  * </pre>

@@ -61,8 +61,12 @@ import javax.annotation.Generated;
  * <code>
  * CloudTasksSettings.Builder cloudTasksSettingsBuilder =
  *     CloudTasksSettings.newBuilder();
- * cloudTasksSettingsBuilder.getQueueSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * cloudTasksSettingsBuilder
+ *     .getQueueSettings()
+ *     .setRetrySettings(
+ *         cloudTasksSettingsBuilder.getQueueSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * CloudTasksSettings cloudTasksSettings = cloudTasksSettingsBuilder.build();
  * </code>
  * </pre>
