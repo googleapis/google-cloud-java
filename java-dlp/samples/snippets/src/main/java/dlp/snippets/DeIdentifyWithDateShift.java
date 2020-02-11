@@ -33,7 +33,7 @@ public class DeIdentifyWithDateShift {
 
   public static void deIdentifyWithDateShift() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = "YOUR_PROJECT_ID";
+    String projectId = "your-project-id";
     Path inputCsvFile = Paths.get("path/to/your/input/file.csv");
     Path outputCsvFile = Paths.get("path/to/your/output/file.csv");
     deIdentifyWithDateShift(projectId, inputCsvFile, outputCsvFile);

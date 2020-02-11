@@ -36,7 +36,7 @@ public class InspectImageFile {
 
   public static void inspectImageFile() {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = "my-project-id";
+    String projectId = "your-project-id";
     String filePath = "path/to/image.png";
     inspectImageFile(projectId, filePath);
   }

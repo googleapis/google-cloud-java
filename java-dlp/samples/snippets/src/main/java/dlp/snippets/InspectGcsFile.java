@@ -51,7 +51,7 @@ public class InspectGcsFile {
   public static void inspectGcsFile() throws InterruptedException, ExecutionException, IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
-    String gcsUri = "gs://" + "your-bucket-name" + "/path/to/your/image.png";
+    String gcsUri = "gs://" + "your-bucket-name" + "/path/to/your/file.txt";
     String pubSubTopicId = "your-pubsub-topic-id";
     String pubSubSubscriptionId = "your-pubsub-subscription-id";
     inspectGcsFile(projectId, gcsUri, pubSubTopicId, pubSubSubscriptionId);

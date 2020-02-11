@@ -35,7 +35,7 @@ public class InspectString {
 
   public static void inspectString() {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = "my-project-id";
+    String projectId = "your-project-id";
     String textToInspect = "My name is Gary and my email is gary@example.com";
     inspectString(projectId, textToInspect);
   }

@@ -27,7 +27,7 @@ public class ReIdentifyWithFpe {
 
   public static void reIdentifyWithFpe() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = "YOUR_PROJECT_ID";
+    String projectId = "your-project-id";
     String textToReIdentify = "My SSN is SSN_TOKEN(9):731997681";
     String kmsKeyName =
         "projects/YOUR_PROJECT/"
