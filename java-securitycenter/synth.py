@@ -21,7 +21,7 @@ import synthtool.languages.java as java
 gapic = gcp.GAPICGenerator()
 
 service = 'securitycenter'
-versions = ['v1beta1', 'v1']
+versions = ['v1p1beta1', 'v1beta1', 'v1']
 config_pattern = '/google/cloud/securitycenter/artman_securitycenter_{version}.yaml'
 
 for version in versions:
