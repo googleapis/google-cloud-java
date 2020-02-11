@@ -86,10 +86,12 @@ public final class StreamProto {
           + "}/locations/{location}/sessions/{session"
           + "}/streams/{stream}*>\n\nDataFormat\022\033\n\027DATA"
           + "_FORMAT_UNSPECIFIED\020\000\022\010\n\004AVRO\020\001\022\t\n\005ARROW"
-          + "\020\002B~\n$com.google.cloud.bigquery.storage."
-          + "v1B\013StreamProtoP\001ZGgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/bigquery/storage/"
-          + "v1;storageb\006proto3"
+          + "\020\002B\304\001\n$com.google.cloud.bigquery.storage"
+          + ".v1B\013StreamProtoP\001ZGgoogle.golang.org/ge"
+          + "nproto/googleapis/cloud/bigquery/storage"
+          + "/v1;storage\252\002 Google.Cloud.BigQuery.Stor"
+          + "age.V1\312\002 Google\\Cloud\\BigQuery\\Storage\\V"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -48,11 +48,12 @@ public final class ArrowProto {
           + ".proto\022 google.cloud.bigquery.storage.v1"
           + "\"(\n\013ArrowSchema\022\031\n\021serialized_schema\030\001 \001"
           + "(\014\"F\n\020ArrowRecordBatch\022\037\n\027serialized_rec"
-          + "ord_batch\030\001 \001(\014\022\021\n\trow_count\030\002 \001(\003B}\n$co"
-          + "m.google.cloud.bigquery.storage.v1B\nArro"
-          + "wProtoP\001ZGgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/bigquery/storage/v1;storag"
-          + "eb\006proto3"
+          + "ord_batch\030\001 \001(\014\022\021\n\trow_count\030\002 \001(\003B\303\001\n$c"
+          + "om.google.cloud.bigquery.storage.v1B\nArr"
+          + "owProtoP\001ZGgoogle.golang.org/genproto/go"
+          + "ogleapis/cloud/bigquery/storage/v1;stora"
+          + "ge\252\002 Google.Cloud.BigQuery.Storage.V1\312\002 "
+          + "Google\\Cloud\\BigQuery\\Storage\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -125,10 +125,12 @@ public final class StorageProto {
           + "w.googleapis.com/auth/bigquery,https://w"
           + "ww.googleapis.com/auth/bigquery.readonly"
           + ",https://www.googleapis.com/auth/cloud-p"
-          + "latformB\177\n$com.google.cloud.bigquery.sto"
-          + "rage.v1B\014StorageProtoP\001ZGgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/bigquery/st"
-          + "orage/v1;storageb\006proto3"
+          + "latformB\305\001\n$com.google.cloud.bigquery.st"
+          + "orage.v1B\014StorageProtoP\001ZGgoogle.golang."
+          + "org/genproto/googleapis/cloud/bigquery/s"
+          + "torage/v1;storage\252\002 Google.Cloud.BigQuer"
+          + "y.Storage.V1\312\002 Google\\Cloud\\BigQuery\\Sto"
+          + "rage\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
