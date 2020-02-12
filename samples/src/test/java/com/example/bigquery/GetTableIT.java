@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ListDatasetsIT {
+public class GetTableIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -41,9 +41,9 @@ public class ListDatasetsIT {
   }
 
   @Test
-  public void testListDatasets() {
-    // List datasets in bigquery-public-data project
-    ListDatasets.listDatasets("bigquery-public-data");
-    assertThat(bout.toString()).contains("Success! Dataset ID");
+  public void testGetTable() {
+    // Get shakespeare table from bigquery-public-data:samples dataset
+    GetTable.getTable("bigquery-public-data", "samples", "shakespeare");
+    assertThat(bout.toString()).contains("Table info:");
   }
 }
