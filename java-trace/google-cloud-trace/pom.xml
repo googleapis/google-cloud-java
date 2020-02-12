@@ -6,7 +6,7 @@
   <version>1.0.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Trace</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-trace</url>
+  <url>https://github.com/googleapis/java-trace</url>
   <description>
     Java idiomatic client for Stackdriver Trace.
   </description>
