@@ -1,39 +1,41 @@
-Google Cloud Java Client for Translation
-====================================
+# Google Cloud Translation Client for Java
 
-Java idiomatic client for [Google Translation][cloud-translate].
-
+Java idiomatic client for [Cloud Translation][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
 
-- [Product Documentation][translate-product-docs]
-- [Client Library Documentation][translate-client-lib-docs]
+- [Product Documentation][product-docs]
+- [Client Library Documentation][javadocs]
 
-Quickstart
-----------
-If you are using Maven with a BOM, add this to your pom.xml file.
+## Quickstart
+
+If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 ```xml
 <dependencyManagement>
- <dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>libraries-bom</artifactId>
-    <version>2.8.0</version>
-    <type>pom</type>
-    <scope>import</scope>
-   </dependency>
- </dependencies>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>libraries-bom</artifactId>
+      <version>4.0.0</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
 </dependencyManagement>
 
-<dependency>
-  <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-translate</artifactId>
-</dependency>
+<dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-translate</artifactId>
+  </dependency>
+</dependencies>
 ```
 
 [//]: # ({x-version-update-start:google-cloud-translate:released})
-If you are using Maven without a BOM, add this to your dependencies.
+
+If you are using Maven without BOM, add this to your dependencies:
+
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
@@ -41,6 +43,7 @@ If you are using Maven without a BOM, add this to your dependencies.
   <version>1.94.3</version>
 </dependency>
 ```
+
 If you are using Gradle, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud-translate:1.94.3'
@@ -51,50 +54,38 @@ libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "1.94.3"
 ```
 [//]: # ({x-version-update-end})
 
-Example Application
--------------------
+## Authentication
+
+See the [Authentication][authentication] section in the base directory's README.
+
+## Getting Started
+
+### Prerequisites
+
+You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Translation [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Cloud Translation.
+[Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
+[installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
+`gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
+
+### Installation and setup
+
+You'll need to obtain the `google-cloud-translate` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-translate` as a dependency in your code.
+
+## About Cloud Translation
+
+
+[Cloud Translation][product-docs] can dynamically translate text between thousands of language pairs. Translation lets websites and programs programmatically integrate with the translation service.
+
+See the [Cloud Translation client library docs][javadocs] to learn how to
+use this Cloud Translation Client Library.
+
+
+### Example Application
 
 [`TranslateExample`](https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/translate/TranslateExample.java)
 is a simple command line interface that provides some of Google Translation's functionality.
-
-Authentication
---------------
-
-For instructions on how to set up authentication and make authenticated calls,
-follow
-the [Translation quickstart](https://cloud.google.com/translate/v2/quickstart).
-
-About Google Translation
---------------------
-
-[Google Translation][cloud-translate] provides a simple programmatic interface for translating an
-arbitrary string into any supported language. Translation is highly responsive, so websites and
-applications can integrate with Translation API for fast, dynamic translation of source text from the
-source language to a target language (e.g., French to English). Language detection is also
-available in cases where the source language is unknown.
-
-See the [Translation quickstart][cloud-translate-quickstart] for more details
-on how to activate Google Translation for your project.
-
-See the [Translation client library docs][translate-client-lib-docs] to learn how to interact with
-the Google Translation using this Client Library.
-
-Getting Started
----------------
-#### Prerequisites
-For this tutorial, you need a [Google Developers Console](https://console.developers.google.com/)
-project with "Translation API" enabled via the console's API Manager. You also need to enable
-billing via the [Google Developers Console](https://console.developers.google.com/).
-
-Finally, you must set up the local development environment by
-[installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following command
-in command line: `gcloud auth application-default login`. Alternatively, you can authenticate
-Translation requests using an API key. See
-[Translation quickstart](https://cloud.google.com/translate/v2/quickstart) for more details.
-
-#### Installation and setup
-You'll need to obtain the `google-cloud-translate` library. See the [Quickstart](#quickstart)
-section to add `google-cloud-translate` as a dependency in your code.
 
 #### Creating an authorized service object
 To make authenticated requests to Google Translation, you must create a service object with
@@ -165,52 +156,43 @@ Translation translation = translate.translate(
 #### Complete source code
 
 In
-[DetectLanguageAndTranslate.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java)
+[DetectLanguageAndTranslate.java](https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java)
 we put together all the code shown above into one program. The program assumes that either Application
 Default Credentials or a valid API key are available.
 
-Troubleshooting
----------------
 
-To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+## Troubleshooting
 
-Transport
----------
-Translate uses HTTP for the transport layer.
-Translate v3beta1 uses gRPC for the transport layer.
+To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
 
-Java Versions
--------------
+## Transport
+
+Cloud Translation uses both gRPC and HTTP/JSON for the transport layer.
+
+## Java Versions
 
 Java 7 or above is required for using this client.
 
-Testing
--------
-
-This library has tools to help make tests for code using Cloud Translation.
-
-See [TESTING] to read more about testing.
-
-Versioning
-----------
+## Versioning
 
 This library follows [Semantic Versioning](http://semver.org/).
 
-It is currently in major version one (``1.y.z``), which means that the public API should be considered stable.
 
-Contributing
-------------
+
+## Contributing
+
 
 Contributions to this library are always welcome and highly encouraged.
 
-See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/googleapis/google-cloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
+See [CONTRIBUTING][contributing] for more information how to get started.
 
-Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
+Please note that this project is released with a Contributor Code of Conduct. By participating in
+this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more
+information.
 
-License
--------
+## License
 
-Apache 2.0 - See [LICENSE] for more information.
+Apache 2.0 - See [LICENSE][license] for more information.
 
 ## CI Status
 
@@ -222,19 +204,8 @@ Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
-
-[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-translate
-[cloud-platform]: https://cloud.google.com/
-[cloud-translate]: https://cloud.google.com/translate/
-[cloud-translate-quickstart]: https://cloud.google.com/translate/v2/quickstart
-[translate-product-docs]: https://cloud.google.com/translate/docs/
-[translate-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/translate/package-summary.html
-[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-translate.svg
-[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-translate&core=gav
-[stability-image]: https://img.shields.io/badge/stability-GA-green
+[product-docs]: https://cloud.google.com/translate/docs/
+[javadocs]: https://googleapis.dev/java/google-cloud-translate/latest/
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-translate/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-translate/java7.html
 [kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-translate/java8.svg
@@ -245,3 +216,17 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-translate/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-translate/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-translate/java11.html
+[stability-image]: https://img.shields.io/badge/stability-ga-green
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-translate.svg
+[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-translate&core=gav
+[authentication]: https://github.com/googleapis/google-cloud-java#authentication
+[developer-console]: https://console.developers.google.com/
+[create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
+[cloud-sdk]: https://cloud.google.com/sdk/
+[troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting
+[contributing]: https://github.com/googleapis/java-translate/blob/master/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-translate/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[license]: https://github.com/googleapis/java-translate/blob/master/LICENSE
+[enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=translation.googleapis.com
+[libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
