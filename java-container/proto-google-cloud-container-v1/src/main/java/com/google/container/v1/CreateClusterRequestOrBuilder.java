@@ -27,13 +27,12 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @return The projectId.
    */
@@ -43,13 +42,12 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @return The bytes for projectId.
    */
@@ -60,13 +58,13 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    *
    * @return The zone.
    */
@@ -76,13 +74,13 @@ public interface CreateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    *
    * @return The bytes for zone.
    */

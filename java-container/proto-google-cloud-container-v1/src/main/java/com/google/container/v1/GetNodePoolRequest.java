@@ -149,13 +149,12 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Deprecated. The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://developers.google.com/console/help/new/#projectnumber).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @return The projectId.
    */
@@ -175,13 +174,12 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Deprecated. The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://developers.google.com/console/help/new/#projectnumber).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @return The bytes for projectId.
    */
@@ -204,13 +202,13 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    *
    * @return The zone.
    */
@@ -230,13 +228,13 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    *
    * @return The bytes for zone.
    */
@@ -259,12 +257,11 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the cluster.
+   * Deprecated. The name of the cluster.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @return The clusterId.
    */
@@ -284,12 +281,11 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the cluster.
+   * Deprecated. The name of the cluster.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @return The bytes for clusterId.
    */
@@ -312,12 +308,11 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the node pool.
+   * Deprecated. The name of the node pool.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @return The nodePoolId.
    */
@@ -337,12 +332,11 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the node pool.
+   * Deprecated. The name of the node pool.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @return The bytes for nodePoolId.
    */
@@ -795,13 +789,12 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://developers.google.com/console/help/new/#projectnumber).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @return The projectId.
      */
@@ -821,13 +814,12 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://developers.google.com/console/help/new/#projectnumber).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @return The bytes for projectId.
      */
@@ -847,13 +839,12 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://developers.google.com/console/help/new/#projectnumber).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @param value The projectId to set.
      * @return This builder for chaining.
@@ -872,13 +863,12 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://developers.google.com/console/help/new/#projectnumber).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
@@ -893,13 +883,12 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://developers.google.com/console/help/new/#projectnumber).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
@@ -921,13 +910,13 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @return The zone.
      */
@@ -947,13 +936,13 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @return The bytes for zone.
      */
@@ -973,13 +962,13 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @param value The zone to set.
      * @return This builder for chaining.
@@ -998,13 +987,13 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
@@ -1019,13 +1008,13 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
@@ -1047,12 +1036,11 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster.
+     * Deprecated. The name of the cluster.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @return The clusterId.
      */
@@ -1072,12 +1060,11 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster.
+     * Deprecated. The name of the cluster.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @return The bytes for clusterId.
      */
@@ -1097,12 +1084,11 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster.
+     * Deprecated. The name of the cluster.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @param value The clusterId to set.
      * @return This builder for chaining.
@@ -1121,12 +1107,11 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster.
+     * Deprecated. The name of the cluster.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
@@ -1141,12 +1126,11 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster.
+     * Deprecated. The name of the cluster.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
@@ -1168,12 +1152,11 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the node pool.
+     * Deprecated. The name of the node pool.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @return The nodePoolId.
      */
@@ -1193,12 +1176,11 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the node pool.
+     * Deprecated. The name of the node pool.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @return The bytes for nodePoolId.
      */
@@ -1218,12 +1200,11 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the node pool.
+     * Deprecated. The name of the node pool.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
@@ -1242,12 +1223,11 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the node pool.
+     * Deprecated. The name of the node pool.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
@@ -1262,12 +1242,11 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the node pool.
+     * Deprecated. The name of the node pool.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.

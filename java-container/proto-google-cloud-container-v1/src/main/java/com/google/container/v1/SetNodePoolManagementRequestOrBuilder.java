@@ -27,13 +27,12 @@ public interface SetNodePoolManagementRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @return The projectId.
    */
@@ -43,13 +42,12 @@ public interface SetNodePoolManagementRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @return The bytes for projectId.
    */
@@ -60,13 +58,13 @@ public interface SetNodePoolManagementRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    *
    * @return The zone.
    */
@@ -76,13 +74,13 @@ public interface SetNodePoolManagementRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    *
    * @return The bytes for zone.
    */
@@ -93,12 +91,11 @@ public interface SetNodePoolManagementRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the cluster to update.
+   * Deprecated. The name of the cluster to update.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @return The clusterId.
    */
@@ -108,12 +105,11 @@ public interface SetNodePoolManagementRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the cluster to update.
+   * Deprecated. The name of the cluster to update.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @return The bytes for clusterId.
    */
@@ -124,12 +120,11 @@ public interface SetNodePoolManagementRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the node pool to update.
+   * Deprecated. The name of the node pool to update.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @return The nodePoolId.
    */
@@ -139,12 +134,11 @@ public interface SetNodePoolManagementRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the node pool to update.
+   * Deprecated. The name of the node pool to update.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @return The bytes for nodePoolId.
    */

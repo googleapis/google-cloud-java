@@ -149,13 +149,12 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Deprecated. The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @return The projectId.
    */
@@ -175,13 +174,12 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Deprecated. The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @return The bytes for projectId.
    */
@@ -204,16 +202,17 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    *
    * @return The zone.
    */
+  @java.lang.Deprecated
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
@@ -229,16 +228,17 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    *
    * @return The bytes for zone.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
@@ -257,12 +257,11 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the cluster to upgrade.
+   * Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @return The clusterId.
    */
@@ -282,12 +281,11 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Deprecated. The name of the cluster to upgrade.
+   * Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @return The bytes for clusterId.
    */
@@ -792,13 +790,12 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @return The projectId.
      */
@@ -818,13 +815,12 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @return The bytes for projectId.
      */
@@ -844,13 +840,12 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @param value The projectId to set.
      * @return This builder for chaining.
@@ -869,13 +864,12 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
@@ -890,13 +884,12 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Deprecated. The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
@@ -918,16 +911,17 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @return The zone.
      */
+    @java.lang.Deprecated
     public java.lang.String getZone() {
       java.lang.Object ref = zone_;
       if (!(ref instanceof java.lang.String)) {
@@ -943,16 +937,17 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @return The bytes for zone.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getZoneBytes() {
       java.lang.Object ref = zone_;
       if (ref instanceof String) {
@@ -968,17 +963,18 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @param value The zone to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setZone(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -992,16 +988,17 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearZone() {
 
       zone_ = getDefaultInstance().getZone();
@@ -1012,17 +1009,18 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      *
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1039,12 +1037,11 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster to upgrade.
+     * Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @return The clusterId.
      */
@@ -1064,12 +1061,11 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster to upgrade.
+     * Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @return The bytes for clusterId.
      */
@@ -1089,12 +1085,11 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster to upgrade.
+     * Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @param value The clusterId to set.
      * @return This builder for chaining.
@@ -1113,12 +1108,11 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster to upgrade.
+     * Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
@@ -1133,12 +1127,11 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Deprecated. The name of the cluster to upgrade.
+     * Deprecated. The name of the cluster to upgrade.
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
