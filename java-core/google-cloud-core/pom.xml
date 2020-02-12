@@ -6,7 +6,7 @@
   <version>1.92.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Core</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-core</url>
+  <url>https://github.com/googleapis/java-core</url>
   <description>
     Core module for the google-cloud.
   </description>
