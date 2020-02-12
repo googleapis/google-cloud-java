@@ -6,7 +6,7 @@
   <version>1.0.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-build:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Build</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-build</url>
+  <url>https://github.com/googleapis/java-cloudbuild</url>
   <description>
     Java idiomatic client for Google Cloud Build.
   </description>
