@@ -6,7 +6,7 @@
   <version>1.22.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Speech</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-speech</url>
+  <url>https://github.com/googleapis/java-speech</url>
   <description>
     Java idiomatic client for Google Cloud Speech.
   </description>
