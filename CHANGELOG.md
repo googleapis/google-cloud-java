@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.101.2](https://www.github.com/googleapis/java-datastore/compare/v1.101.1...v1.101.2) (2020-02-13)
+
+
+### Bug Fixes
+
+* bom version tag miss configured ([#42](https://www.github.com/googleapis/java-datastore/issues/42)) ([6af084f](https://www.github.com/googleapis/java-datastore/commit/6af084face9afa7ee1fa8dec2a96419e7f4db706))
+
 ### [1.101.1](https://www.github.com/googleapis/java-datastore/compare/1.101.0...v1.101.1) (2020-02-11)
 
 
