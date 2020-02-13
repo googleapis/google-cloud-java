@@ -25,6 +25,7 @@ import com.google.auth.oauth2.ComputeEngineCredentials;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
+import com.google.common.base.Stopwatch;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.alts.ComputeEngineChannelBuilder;
 import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
@@ -42,6 +43,7 @@ import java.net.Inet6Address;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
@@ -134,9 +136,9 @@ public class DirectPathFallbackIT {
   }
 
   @Test
-  public void testFallback() throws InterruptedException {
-    // Verify that we can send a request
-    instrumentedClient.readRow(testEnvRule.env().getTableId(), "nonexistent-row");
+  public void testFallback() throws InterruptedException, TimeoutException {
+    // Precondition: wait for DirectPath to connect
+    assertWithMessage("Failed to observe RPCs over DirectPath").that(exerciseDirectPath()).isTrue();
 
     // Enable the blackhole, which will prevent communication via IPv6 and thus DirectPath.
     blackholeIPv6.set(true);
@@ -153,19 +155,24 @@ public class DirectPathFallbackIT {
     // Make sure that the client will start reading from IPv6 again by sending new requests and
     // checking the injected IPv6 counter has been updated.
     blackholeIPv6.set(false);
+
+    assertWithMessage("Failed to upgrade back to DirectPath").that(exerciseDirectPath()).isTrue();
+  }
+
+  private boolean exerciseDirectPath() throws InterruptedException, TimeoutException {
+    Stopwatch stopwatch = Stopwatch.createStarted();
     numIPv6Read.set(0);
 
-    while (numIPv6Read.get() < MIN_COMPLETE_READ_CALLS) {
+    boolean seenEnough = false;
+
+    while (!seenEnough && stopwatch.elapsed(TimeUnit.MINUTES) < 2) {
       for (int i = 0; i < NUM_RPCS_TO_SEND; i++) {
         instrumentedClient.readRow(testEnvRule.env().getTableId(), "nonexistent-row");
       }
-
       Thread.sleep(100);
+      seenEnough = numIPv6Read.get() >= MIN_COMPLETE_READ_CALLS;
     }
-
-    assertWithMessage("Failed to upgrade back to DirectPath")
-        .that(numIPv6Read.get())
-        .isGreaterThan(MIN_COMPLETE_READ_CALLS);
+    return seenEnough;
   }
 
   /**
