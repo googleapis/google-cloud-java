@@ -1,6 +1,20 @@
 {
-  "updateTime": "2020-02-08T09:53:43.793235Z",
+  "updateTime": "2020-02-13T09:52:48.642077Z",
   "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-gameservices.git",
+        "sha": "4db7571f3b7862e9efeb3e630d0d5543497cec7c"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "rpc://devrel/cloud/libraries/tools/autosynth",
+        "sha": "dd7cd93888cbeb1d4c56a1ca814491c7813160e8"
+      }
+    },
     {
       "generator": {
         "name": "artman",
