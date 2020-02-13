@@ -1,18 +1,18 @@
 {
-  "updateTime": "2020-02-12T17:53:22.611200Z",
+  "updateTime": "2020-02-13T10:09:43.757295Z",
   "sources": [
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/java-translate.git",
-        "sha": "39106e1cab8e154d30340c4155944cdbc2391e44"
+        "remote": "https://github.com/googleapis/java-translate.git",
+        "sha": "5180e7971f42178791abe316bb997bfb6624362c"
       }
     },
     {
       "git": {
         "name": "synthtool",
-        "remote": "git@github.com:chingor13/synthtool.git",
-        "sha": "e2a16745b64b788820bb89b244a5dc14e06c9a22"
+        "remote": "rpc://devrel/cloud/libraries/tools/autosynth",
+        "sha": "dd7cd93888cbeb1d4c56a1ca814491c7813160e8"
       }
     },
     {
@@ -26,8 +26,9 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "efd36705972cfcd7d00ab4c6dfa1135bafacd4ae",
-        "internalRef": "294664231"
+        "sha": "0646bc775203077226c2c34d3e4d50cc4ec53660",
+        "internalRef": "294809380",
+        "log": "0646bc775203077226c2c34d3e4d50cc4ec53660\nRemove unnecessary languages from bigquery-related artman configuration files.\n\nPiperOrigin-RevId: 294809380\n\n8b78aa04382e3d4147112ad6d344666771bb1909\nUpdate backend.proto for schemes and protocol\n\nPiperOrigin-RevId: 294788800\n\n80b8f8b3de2359831295e24e5238641a38d8488f\nAdds artman config files for bigquerystorage endpoints v1beta2, v1alpha2, v1\n\nPiperOrigin-RevId: 294763931\n\n2c17ac33b226194041155bb5340c3f34733f1b3a\nAdd parameter to sample generated for UpdateInstance. Related to https://github.com/googleapis/python-redis/issues/4\n\nPiperOrigin-RevId: 294734008\n\nd5e8a8953f2acdfe96fb15e85eb2f33739623957\nMove bigquery datatransfer to gapic v2.\n\nPiperOrigin-RevId: 294703703\n\n"
       }
     },
     {
