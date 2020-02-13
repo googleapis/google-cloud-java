@@ -12,13 +12,12 @@ Java idiomatic client for [Stackdriver Monitoring][product-docs].
 
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 ```xml
-<!-- [START monitoring_install_with_bom] -->
 <dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>4.0.0</version>
+      <version>4.0.1</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -31,7 +30,6 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <artifactId>google-cloud-monitoring</artifactId>
   </dependency>
 </dependencies>
-<!-- [END monitoring_install_with_bom] -->
 ```
 
 [//]: # ({x-version-update-start:google-cloud-monitoring:released})
@@ -39,13 +37,11 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 If you are using Maven without BOM, add this to your dependencies:
 
 ```xml
-<!-- [START monitoring_install_without_bom] -->
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-monitoring</artifactId>
   <version>1.99.2</version>
 </dependency>
-<!-- [END monitoring_install_without_bom] -->
 ```
 
 If you are using Gradle, add this to your dependencies
