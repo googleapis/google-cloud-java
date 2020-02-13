@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>monitoring-install-without-bom</artifactId>
+  <packaging>jar</packaging>
+  <name>Google Cloud Monitoring Install Without BOM Sample</name>
+  <url>https://github.com/googleapis/java-monitoring</url>
+
+  <!--
+    The parent pom defines common style checks and testing strategies for our samples.
+    Removing or replacing it should not affect the execution of the samples in anyway.
+  -->
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-monitoring-samples</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+  <properties>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <!-- {x-version-update-start:google-cloud-monitoring:released} -->
+  <dependencies>
+    <!-- [START monitoring_install_without_bom] -->
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-monitoring</artifactId>
+      <version>1.99.2</version>
+    </dependency>
+    <!-- [END monitoring_install_without_bom] -->
+  </dependencies>
+  <!-- {x-version-update-end} -->
+
+</project>

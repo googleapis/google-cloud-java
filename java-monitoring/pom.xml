@@ -181,7 +181,7 @@
     <module>proto-google-cloud-monitoring-v3</module>
     <module>grpc-google-cloud-monitoring-v3</module>
     <module>google-cloud-monitoring</module>
-  <module>google-cloud-monitoring-bom</module>
+    <module>google-cloud-monitoring-bom</module>
   </modules>
 
   <reporting>
@@ -253,4 +253,13 @@
       </plugin>
     </plugins>
   </reporting>
+
+  <profiles>
+    <profile>
+      <id>enable-samples</id>
+      <modules>
+        <module>samples</module>
+      </modules>
+    </profile>
+  </profiles>
 </project>
