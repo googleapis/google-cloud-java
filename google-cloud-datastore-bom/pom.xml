@@ -68,7 +68,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datastore</artifactId>
-        <version>0.85.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
+        <version>1.102.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
