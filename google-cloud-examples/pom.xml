@@ -68,6 +68,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-securitycenter</artifactId>
+      <version>0.119.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
