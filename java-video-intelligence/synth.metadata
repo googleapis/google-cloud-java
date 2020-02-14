@@ -1,11 +1,11 @@
 {
-  "updateTime": "2020-02-13T10:11:50.228010Z",
+  "updateTime": "2020-02-14T23:11:10.186834Z",
   "sources": [
     {
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-video-intelligence.git",
-        "sha": "f204b23a635e8fce1e3fcbaf9b089be6345844fd"
+        "sha": "f07f097d6cec508a8ff57ead11da57aca6590fcf"
       }
     },
     {
@@ -26,9 +26,9 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "0646bc775203077226c2c34d3e4d50cc4ec53660",
-        "internalRef": "294809380",
-        "log": "0646bc775203077226c2c34d3e4d50cc4ec53660\nRemove unnecessary languages from bigquery-related artman configuration files.\n\nPiperOrigin-RevId: 294809380\n\n8b78aa04382e3d4147112ad6d344666771bb1909\nUpdate backend.proto for schemes and protocol\n\nPiperOrigin-RevId: 294788800\n\n80b8f8b3de2359831295e24e5238641a38d8488f\nAdds artman config files for bigquerystorage endpoints v1beta2, v1alpha2, v1\n\nPiperOrigin-RevId: 294763931\n\n2c17ac33b226194041155bb5340c3f34733f1b3a\nAdd parameter to sample generated for UpdateInstance. Related to https://github.com/googleapis/python-redis/issues/4\n\nPiperOrigin-RevId: 294734008\n\nd5e8a8953f2acdfe96fb15e85eb2f33739623957\nMove bigquery datatransfer to gapic v2.\n\nPiperOrigin-RevId: 294703703\n\nefd36705972cfcd7d00ab4c6dfa1135bafacd4ae\nfix: Add two annotations that we missed.\n\nPiperOrigin-RevId: 294664231\n\n8a36b928873ff9c05b43859b9d4ea14cd205df57\nFix: Define the \"bigquery.googleapis.com/Table\" resource in the BigQuery Storage API (v1beta2).\n\nPiperOrigin-RevId: 294459768\n\nc7a3caa2c40c49f034a3c11079dd90eb24987047\nFix: Define the \"bigquery.googleapis.com/Table\" resource in the BigQuery Storage API (v1).\n\nPiperOrigin-RevId: 294456889\n\n5006247aa157e59118833658084345ee59af7c09\nFix: Make deprecated fields optional\nFix: Deprecate SetLoggingServiceRequest.zone in line with the comments\nFeature: Add resource name method signatures where appropriate\n\nPiperOrigin-RevId: 294383128\n\neabba40dac05c5cbe0fca3a35761b17e372036c4\nFix: C# and PHP package/namespace capitalization for BigQuery Storage v1.\n\nPiperOrigin-RevId: 294382444\n\nf8d9a858a7a55eba8009a23aa3f5cc5fe5e88dde\nfix: artman configuration file for bigtable-admin\n\nPiperOrigin-RevId: 294322616\n\n0f29555d1cfcf96add5c0b16b089235afbe9b1a9\nAPI definition for (not-yet-launched) GCS gRPC.\n\nPiperOrigin-RevId: 294321472\n\nfcc86bee0e84dc11e9abbff8d7c3529c0626f390\nfix: Bigtable Admin v2\n\nChange LRO metadata from PartialUpdateInstanceMetadata\nto UpdateInstanceMetadata. (Otherwise, it will not build.)\n\nPiperOrigin-RevId: 294264582\n\n6d9361eae2ebb3f42d8c7ce5baf4bab966fee7c0\nrefactor: Add annotations to Bigtable Admin v2.\n\nPiperOrigin-RevId: 294243406\n\nad7616f3fc8e123451c8b3a7987bc91cea9e6913\nFix: Resource type in CreateLogMetricRequest should use logging.googleapis.com.\nFix: ListLogEntries should have a method signature for convenience of calling it.\n\nPiperOrigin-RevId: 294222165\n\n63796fcbb08712676069e20a3e455c9f7aa21026\nFix: Remove extraneous resource definition for cloudkms.googleapis.com/CryptoKey.\n\nPiperOrigin-RevId: 294176658\n\n"
+        "sha": "d9835e922ea79eed8497db270d2f9f85099a519c",
+        "internalRef": "295185610",
+        "log": "d9835e922ea79eed8497db270d2f9f85099a519c\nUpdate some minor docs changes about user event proto\n\nPiperOrigin-RevId: 295185610\n\n5f311e416e69c170243de722023b22f3df89ec1c\nfix: use correct PHP package name in gapic configuration\n\nPiperOrigin-RevId: 295161330\n\n6cdd74dcdb071694da6a6b5a206e3a320b62dd11\npubsub: v1 add client config annotations and retry config\n\nPiperOrigin-RevId: 295158776\n\n5169f46d9f792e2934d9fa25c36d0515b4fd0024\nAdded cloud asset api v1p4beta1.\n\nPiperOrigin-RevId: 295026522\n\n56b55aa8818cd0a532a7d779f6ef337ba809ccbd\nFix: Resource annotations for CreateTimeSeriesRequest and ListTimeSeriesRequest should refer to valid resources. TimeSeries is not a named resource.\n\nPiperOrigin-RevId: 294931650\n\n"
       }
     },
     {
