@@ -284,7 +284,7 @@ public class CloudRedisClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateInstanceTest() throws Exception {
-    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    InstanceName name2 = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
     String displayName2 = "displayName21615000987";
     String locationId = "locationId552319461";
     String alternativeLocationId = "alternativeLocationId-718920621";
@@ -294,12 +294,12 @@ public class CloudRedisClientTest {
     int port = 3446913;
     String currentLocationId = "currentLocationId1312712735";
     String statusMessage = "statusMessage-239442758";
-    int memorySizeGb = 34199707;
+    int memorySizeGb2 = 1493816946;
     String authorizedNetwork = "authorizedNetwork-1733809270";
     String persistenceIamIdentity = "persistenceIamIdentity1061944584";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name.toString())
+            .setName(name2.toString())
             .setDisplayName(displayName2)
             .setLocationId(locationId)
             .setAlternativeLocationId(alternativeLocationId)
@@ -309,7 +309,7 @@ public class CloudRedisClientTest {
             .setPort(port)
             .setCurrentLocationId(currentLocationId)
             .setStatusMessage(statusMessage)
-            .setMemorySizeGb(memorySizeGb)
+            .setMemorySizeGb(memorySizeGb2)
             .setAuthorizedNetwork(authorizedNetwork)
             .setPersistenceIamIdentity(persistenceIamIdentity)
             .build();
@@ -325,8 +325,15 @@ public class CloudRedisClientTest {
     String pathsElement2 = "memory_size_gb";
     List<String> paths = Arrays.asList(pathsElement, pathsElement2);
     FieldMask updateMask = FieldMask.newBuilder().addAllPaths(paths).build();
-    String displayName = "￼ instance.memory_size_gb=4";
-    Instance instance = Instance.newBuilder().setDisplayName(displayName).build();
+    String displayName = "UpdatedDisplayName";
+    String name = "projects/<project-name>/locations/<location>/instances/<instance>";
+    int memorySizeGb = 4;
+    Instance instance =
+        Instance.newBuilder()
+            .setDisplayName(displayName)
+            .setName(name)
+            .setMemorySizeGb(memorySizeGb)
+            .build();
 
     Instance actualResponse = client.updateInstanceAsync(updateMask, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -354,8 +361,15 @@ public class CloudRedisClientTest {
       String pathsElement2 = "memory_size_gb";
       List<String> paths = Arrays.asList(pathsElement, pathsElement2);
       FieldMask updateMask = FieldMask.newBuilder().addAllPaths(paths).build();
-      String displayName = "￼ instance.memory_size_gb=4";
-      Instance instance = Instance.newBuilder().setDisplayName(displayName).build();
+      String displayName = "UpdatedDisplayName";
+      String name = "projects/<project-name>/locations/<location>/instances/<instance>";
+      int memorySizeGb = 4;
+      Instance instance =
+          Instance.newBuilder()
+              .setDisplayName(displayName)
+              .setName(name)
+              .setMemorySizeGb(memorySizeGb)
+              .build();
 
       client.updateInstanceAsync(updateMask, instance).get();
       Assert.fail("No exception raised");

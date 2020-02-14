@@ -704,9 +704,13 @@ public class CloudRedisClient implements BackgroundResource {
    *   FieldMask updateMask = FieldMask.newBuilder()
    *     .addAllPaths(paths)
    *     .build();
-   *   String displayName = "￼ instance.memory_size_gb=4";
+   *   String displayName = "UpdatedDisplayName";
+   *   String name = "projects/&lt;project-name&gt;/locations/&lt;location&gt;/instances/&lt;instance&gt;";
+   *   int memorySizeGb = 4;
    *   Instance instance = Instance.newBuilder()
    *     .setDisplayName(displayName)
+   *     .setName(name)
+   *     .setMemorySizeGb(memorySizeGb)
    *     .build();
    *   Instance response = cloudRedisClient.updateInstanceAsync(updateMask, instance).get();
    * }
@@ -746,9 +750,13 @@ public class CloudRedisClient implements BackgroundResource {
    *   FieldMask updateMask = FieldMask.newBuilder()
    *     .addAllPaths(paths)
    *     .build();
-   *   String displayName = "￼ instance.memory_size_gb=4";
+   *   String displayName = "UpdatedDisplayName";
+   *   String name = "projects/&lt;project-name&gt;/locations/&lt;location&gt;/instances/&lt;instance&gt;";
+   *   int memorySizeGb = 4;
    *   Instance instance = Instance.newBuilder()
    *     .setDisplayName(displayName)
+   *     .setName(name)
+   *     .setMemorySizeGb(memorySizeGb)
    *     .build();
    *   UpdateInstanceRequest request = UpdateInstanceRequest.newBuilder()
    *     .setUpdateMask(updateMask)
@@ -786,9 +794,13 @@ public class CloudRedisClient implements BackgroundResource {
    *   FieldMask updateMask = FieldMask.newBuilder()
    *     .addAllPaths(paths)
    *     .build();
-   *   String displayName = "￼ instance.memory_size_gb=4";
+   *   String displayName = "UpdatedDisplayName";
+   *   String name = "projects/&lt;project-name&gt;/locations/&lt;location&gt;/instances/&lt;instance&gt;";
+   *   int memorySizeGb = 4;
    *   Instance instance = Instance.newBuilder()
    *     .setDisplayName(displayName)
+   *     .setName(name)
+   *     .setMemorySizeGb(memorySizeGb)
    *     .build();
    *   UpdateInstanceRequest request = UpdateInstanceRequest.newBuilder()
    *     .setUpdateMask(updateMask)
@@ -824,9 +836,13 @@ public class CloudRedisClient implements BackgroundResource {
    *   FieldMask updateMask = FieldMask.newBuilder()
    *     .addAllPaths(paths)
    *     .build();
-   *   String displayName = "￼ instance.memory_size_gb=4";
+   *   String displayName = "UpdatedDisplayName";
+   *   String name = "projects/&lt;project-name&gt;/locations/&lt;location&gt;/instances/&lt;instance&gt;";
+   *   int memorySizeGb = 4;
    *   Instance instance = Instance.newBuilder()
    *     .setDisplayName(displayName)
+   *     .setName(name)
+   *     .setMemorySizeGb(memorySizeGb)
    *     .build();
    *   UpdateInstanceRequest request = UpdateInstanceRequest.newBuilder()
    *     .setUpdateMask(updateMask)

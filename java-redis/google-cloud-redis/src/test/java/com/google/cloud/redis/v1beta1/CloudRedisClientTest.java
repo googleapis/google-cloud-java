@@ -284,7 +284,7 @@ public class CloudRedisClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateInstanceTest() throws Exception {
-    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    InstanceName name2 = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
     String displayName2 = "displayName21615000987";
     String locationId = "locationId552319461";
     String alternativeLocationId = "alternativeLocationId-718920621";
@@ -299,7 +299,7 @@ public class CloudRedisClientTest {
     String persistenceIamIdentity = "persistenceIamIdentity1061944584";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name.toString())
+            .setName(name2.toString())
             .setDisplayName(displayName2)
             .setLocationId(locationId)
             .setAlternativeLocationId(alternativeLocationId)
@@ -326,9 +326,14 @@ public class CloudRedisClientTest {
     List<String> paths = Arrays.asList(pathsElement, pathsElement2);
     FieldMask updateMask = FieldMask.newBuilder().addAllPaths(paths).build();
     String displayName = "UpdatedDisplayName";
+    String name = "projects/<project-name>/locations/<location>/instances/<instance>";
     int memorySizeGb = 4;
     Instance instance =
-        Instance.newBuilder().setDisplayName(displayName).setMemorySizeGb(memorySizeGb).build();
+        Instance.newBuilder()
+            .setDisplayName(displayName)
+            .setName(name)
+            .setMemorySizeGb(memorySizeGb)
+            .build();
 
     Instance actualResponse = client.updateInstanceAsync(updateMask, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -357,9 +362,14 @@ public class CloudRedisClientTest {
       List<String> paths = Arrays.asList(pathsElement, pathsElement2);
       FieldMask updateMask = FieldMask.newBuilder().addAllPaths(paths).build();
       String displayName = "UpdatedDisplayName";
+      String name = "projects/<project-name>/locations/<location>/instances/<instance>";
       int memorySizeGb = 4;
       Instance instance =
-          Instance.newBuilder().setDisplayName(displayName).setMemorySizeGb(memorySizeGb).build();
+          Instance.newBuilder()
+              .setDisplayName(displayName)
+              .setName(name)
+              .setMemorySizeGb(memorySizeGb)
+              .build();
 
       client.updateInstanceAsync(updateMask, instance).get();
       Assert.fail("No exception raised");

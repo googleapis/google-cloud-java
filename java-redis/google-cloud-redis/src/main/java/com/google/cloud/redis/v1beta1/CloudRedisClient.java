@@ -705,9 +705,11 @@ public class CloudRedisClient implements BackgroundResource {
    *     .addAllPaths(paths)
    *     .build();
    *   String displayName = "UpdatedDisplayName";
+   *   String name = "projects/&lt;project-name&gt;/locations/&lt;location&gt;/instances/&lt;instance&gt;";
    *   int memorySizeGb = 4;
    *   Instance instance = Instance.newBuilder()
    *     .setDisplayName(displayName)
+   *     .setName(name)
    *     .setMemorySizeGb(memorySizeGb)
    *     .build();
    *   Instance response = cloudRedisClient.updateInstanceAsync(updateMask, instance).get();
@@ -749,9 +751,11 @@ public class CloudRedisClient implements BackgroundResource {
    *     .addAllPaths(paths)
    *     .build();
    *   String displayName = "UpdatedDisplayName";
+   *   String name = "projects/&lt;project-name&gt;/locations/&lt;location&gt;/instances/&lt;instance&gt;";
    *   int memorySizeGb = 4;
    *   Instance instance = Instance.newBuilder()
    *     .setDisplayName(displayName)
+   *     .setName(name)
    *     .setMemorySizeGb(memorySizeGb)
    *     .build();
    *   UpdateInstanceRequest request = UpdateInstanceRequest.newBuilder()
@@ -790,9 +794,11 @@ public class CloudRedisClient implements BackgroundResource {
    *     .addAllPaths(paths)
    *     .build();
    *   String displayName = "UpdatedDisplayName";
+   *   String name = "projects/&lt;project-name&gt;/locations/&lt;location&gt;/instances/&lt;instance&gt;";
    *   int memorySizeGb = 4;
    *   Instance instance = Instance.newBuilder()
    *     .setDisplayName(displayName)
+   *     .setName(name)
    *     .setMemorySizeGb(memorySizeGb)
    *     .build();
    *   UpdateInstanceRequest request = UpdateInstanceRequest.newBuilder()
@@ -830,9 +836,11 @@ public class CloudRedisClient implements BackgroundResource {
    *     .addAllPaths(paths)
    *     .build();
    *   String displayName = "UpdatedDisplayName";
+   *   String name = "projects/&lt;project-name&gt;/locations/&lt;location&gt;/instances/&lt;instance&gt;";
    *   int memorySizeGb = 4;
    *   Instance instance = Instance.newBuilder()
    *     .setDisplayName(displayName)
+   *     .setName(name)
    *     .setMemorySizeGb(memorySizeGb)
    *     .build();
    *   UpdateInstanceRequest request = UpdateInstanceRequest.newBuilder()
