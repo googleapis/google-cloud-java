@@ -462,6 +462,7 @@ public class ITDatastoreTest {
     assertEquals(KEY1, projectionEntity.getKey());
     assertTrue(projectionEntity.getNames().isEmpty());
     assertFalse(keyProjectionResult.hasNext());
+    DATASTORE.delete(ENTITY3.getKey());
   }
 
   @Test
@@ -663,6 +664,7 @@ public class ITDatastoreTest {
       // expected - no such property
     }
     assertFalse(result.hasNext());
+    DATASTORE.delete(ENTITY3.getKey());
   }
 
   @Test
@@ -712,6 +714,7 @@ public class ITDatastoreTest {
     assertNotEquals(ENTITY3, entity3);
     DATASTORE.update(entity3);
     assertEquals(entity3, DATASTORE.get(ENTITY3.getKey()));
+    DATASTORE.delete(ENTITY3.getKey());
   }
 
   @Test
