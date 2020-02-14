@@ -1,11 +1,11 @@
 {
-  "updateTime": "2020-02-13T09:52:48.642077Z",
+  "updateTime": "2020-02-14T22:51:38.930041Z",
   "sources": [
     {
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-gameservices.git",
-        "sha": "4db7571f3b7862e9efeb3e630d0d5543497cec7c"
+        "sha": "a2a5fa5d339cfce7dd45c754a848de6b1975742c"
       }
     },
     {
