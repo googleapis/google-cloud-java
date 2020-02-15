@@ -32,10 +32,16 @@ class StorageBenchWrapperImpl extends StorageBenchWrapperImplBase {
   private Storage client;
 
   public StorageBenchWrapperImpl(String storageEmulatorHost) {
-    client = StorageOptions.newBuilder()
+    if (storageEmulatorHost.isEmpty()){
+      client = StorageOptions.newBuilder()
+          .build()
+          .getService();
+    } else {
+      client = StorageOptions.newBuilder()
         .setHost("http://" + storageEmulatorHost)
         .build()
         .getService();
+    }
   }
 
   public void write(ObjectWrite request, StreamObserver<EmptyResponse> responseObserver) {
