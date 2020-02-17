@@ -59,6 +59,7 @@ public class QueryStageTest {
   private static final long WRITE_MS_MAX = 50;
   private static final double WRITE_RATIO_AVG = 9.9;
   private static final double WRITE_RATIO_MAX = 10.10;
+  private static final long SLOTMS = 1522540800000L;
   private static final QueryStage QUERY_STAGE =
       QueryStage.newBuilder()
           .setCompletedParallelInputs(COMPLETED_PARALLEL_INPUTS)
@@ -90,6 +91,7 @@ public class QueryStageTest {
           .setWriteMsMax(WRITE_MS_MAX)
           .setWriteRatioAvg(WRITE_RATIO_AVG)
           .setWriteRatioMax(WRITE_RATIO_MAX)
+          .setSlotMs(SLOTMS)
           .build();
 
   @Test
@@ -112,6 +114,8 @@ public class QueryStageTest {
     assertEquals(INPUT_STAGES, QUERY_STAGE.getInputStages());
     assertEquals(PARALLEL_INPUTS, QUERY_STAGE.getParallelInputs());
     assertEquals(NAME, QUERY_STAGE.getName());
+    assertEquals(READ_MS_AVG, QUERY_STAGE.getReadMsAvg());
+    assertEquals(READ_MS_MAX, QUERY_STAGE.getReadMsMax());
     assertEquals(READ_RATIO_AVG, QUERY_STAGE.getReadRatioAvg(), 0);
     assertEquals(READ_RATIO_MAX, QUERY_STAGE.getReadRatioMax(), 0);
     assertEquals(RECORDS_READ, QUERY_STAGE.getRecordsRead());
@@ -129,6 +133,7 @@ public class QueryStageTest {
     assertEquals(WRITE_MS_MAX, QUERY_STAGE.getWriteMsMax());
     assertEquals(WRITE_RATIO_AVG, QUERY_STAGE.getWriteRatioAvg(), 0);
     assertEquals(WRITE_RATIO_MAX, QUERY_STAGE.getWriteRatioMax(), 0);
+    assertEquals(SLOTMS, QUERY_STAGE.getSlotMs());
   }
 
   @Test
@@ -178,7 +183,9 @@ public class QueryStageTest {
     assertEquals(expected.getWriteMsMax(), expected.getWriteMsMax());
     assertEquals(expected.getWriteRatioAvg(), value.getWriteRatioAvg(), 0);
     assertEquals(expected.getWriteRatioMax(), value.getWriteRatioMax(), 0);
+    assertEquals(expected.getSlotMs(), value.getSlotMs());
     assertEquals(expected.hashCode(), value.hashCode());
+    assertEquals(expected.toString(), value.toString());
   }
 
   private void compareQueryStep(QueryStep expected, QueryStep value) {

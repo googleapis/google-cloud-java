@@ -163,6 +163,7 @@ public class QueryStage implements Serializable {
   private final long writeMsMax;
   private final double writeRatioAvg;
   private final double writeRatioMax;
+  private final long slotMs;
 
   static final class Builder {
 
@@ -195,6 +196,7 @@ public class QueryStage implements Serializable {
     private long writeMsMax;
     private double writeRatioAvg;
     private double writeRatioMax;
+    private long slotMs;
 
     private Builder() {}
 
@@ -343,6 +345,11 @@ public class QueryStage implements Serializable {
       return this;
     }
 
+    Builder setSlotMs(long slotMs) {
+      this.slotMs = slotMs;
+      return this;
+    }
+
     QueryStage build() {
       return new QueryStage(this);
     }
@@ -378,6 +385,7 @@ public class QueryStage implements Serializable {
     writeMsMax = builder.writeMsMax;
     writeRatioAvg = builder.writeRatioAvg;
     writeRatioMax = builder.writeRatioMax;
+    slotMs = builder.slotMs;
   }
 
   /** Returns the number of parallel input segments completed. */
@@ -551,6 +559,11 @@ public class QueryStage implements Serializable {
     return writeRatioMax;
   }
 
+  /** Returns the slot-milliseconds used by the stage. */
+  public long getSlotMs() {
+    return slotMs;
+  }
+
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
@@ -583,6 +596,7 @@ public class QueryStage implements Serializable {
         .add("writeMsMax", writeMsMax)
         .add("writeRatioAvg", writeRatioAvg)
         .add("writeRatioMax", writeRatioMax)
+        .add("slotMs", slotMs)
         .toString();
   }
 
@@ -617,7 +631,8 @@ public class QueryStage implements Serializable {
         writeMsAvg,
         writeMsMax,
         writeRatioAvg,
-        writeRatioMax);
+        writeRatioMax,
+        slotMs);
   }
 
   @Override
@@ -657,7 +672,8 @@ public class QueryStage implements Serializable {
         && Objects.equals(steps, other.steps)
         && Objects.equals(name, other.name)
         && Objects.equals(status, other.status)
-        && Objects.equals(inputStages, other.inputStages);
+        && Objects.equals(inputStages, other.inputStages)
+        && Objects.equals(slotMs, other.slotMs);
   }
 
   static Builder newBuilder() {
@@ -694,7 +710,8 @@ public class QueryStage implements Serializable {
             .setWriteMsAvg(writeMsAvg)
             .setWriteMsMax(writeMsMax)
             .setWriteRatioAvg(writeRatioAvg)
-            .setWriteRatioMax(writeRatioMax);
+            .setWriteRatioMax(writeRatioMax)
+            .setSlotMs(slotMs);
     if (steps != null) {
       stagePb.setSteps(Lists.transform(steps, QueryStep.TO_PB_FUNCTION));
     }
@@ -734,6 +751,7 @@ public class QueryStage implements Serializable {
     builder.setWriteMsMax(stagePb.getWriteMsMax());
     builder.setWriteRatioAvg(stagePb.getWriteRatioAvg());
     builder.setWriteRatioMax(stagePb.getWriteRatioMax());
+    builder.setSlotMs(stagePb.getSlotMs());
     return builder.build();
   }
 }
