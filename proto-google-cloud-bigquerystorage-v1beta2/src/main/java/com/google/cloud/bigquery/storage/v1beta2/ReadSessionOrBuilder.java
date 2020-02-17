@@ -54,10 +54,9 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time,
-   * subsequent requests to read this Session will return errors. The
-   * expire_time is automatically assigned and currently cannot be specified or
-   * updated.
+   * Output only. Time at which the session becomes invalid. After this time, subsequent
+   * requests to read this Session will return errors. The expire_time is
+   * automatically assigned and currently cannot be specified or updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -70,10 +69,9 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time,
-   * subsequent requests to read this Session will return errors. The
-   * expire_time is automatically assigned and currently cannot be specified or
-   * updated.
+   * Output only. Time at which the session becomes invalid. After this time, subsequent
+   * requests to read this Session will return errors. The expire_time is
+   * automatically assigned and currently cannot be specified or updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -86,10 +84,9 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time,
-   * subsequent requests to read this Session will return errors. The
-   * expire_time is automatically assigned and currently cannot be specified or
-   * updated.
+   * Output only. Time at which the session becomes invalid. After this time, subsequent
+   * requests to read this Session will return errors. The expire_time is
+   * automatically assigned and currently cannot be specified or updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -101,8 +98,7 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Immutable. Data format of the output data. Behavior defaults to Apache
-   * Avro.
+   * Immutable. Data format of the output data.
    * </pre>
    *
    * <code>
@@ -116,8 +112,7 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Immutable. Data format of the output data. Behavior defaults to Apache
-   * Avro.
+   * Immutable. Data format of the output data.
    * </pre>
    *
    * <code>
@@ -214,11 +209,13 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Table that this ReadSession is reading from, in the form
+   * Immutable. Table that this ReadSession is reading from, in the form
    * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}
    * </pre>
    *
-   * <code>string table = 6;</code>
+   * <code>
+   * string table = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The table.
    */
@@ -227,11 +224,13 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Table that this ReadSession is reading from, in the form
+   * Immutable. Table that this ReadSession is reading from, in the form
    * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}
    * </pre>
    *
-   * <code>string table = 6;</code>
+   * <code>
+   * string table = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for table.
    */
@@ -241,8 +240,7 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified
-   * table.
+   * Optional. Any modifiers which are applied when reading from the specified table.
    * </pre>
    *
    * <code>
@@ -256,8 +254,7 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified
-   * table.
+   * Optional. Any modifiers which are applied when reading from the specified table.
    * </pre>
    *
    * <code>
@@ -271,8 +268,7 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified
-   * table.
+   * Optional. Any modifiers which are applied when reading from the specified table.
    * </pre>
    *
    * <code>

@@ -35,6 +35,10 @@ public final class ArrowProto {
       internal_static_google_cloud_bigquery_storage_v1beta2_ArrowRecordBatch_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_storage_v1beta2_ArrowRecordBatch_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_storage_v1beta2_ArrowSerializationOptions_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_storage_v1beta2_ArrowSerializationOptions_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -48,11 +52,15 @@ public final class ArrowProto {
           + "arrow.proto\022%google.cloud.bigquery.stora"
           + "ge.v1beta2\"(\n\013ArrowSchema\022\031\n\021serialized_"
           + "schema\030\001 \001(\014\"3\n\020ArrowRecordBatch\022\037\n\027seri"
-          + "alized_record_batch\030\001 \001(\014B\207\001\n)com.google"
-          + ".cloud.bigquery.storage.v1beta2B\nArrowPr"
-          + "otoP\001ZLgoogle.golang.org/genproto/google"
-          + "apis/cloud/bigquery/storage/v1beta2;stor"
-          + "ageb\006proto3"
+          + "alized_record_batch\030\001 \001(\014\"\266\001\n\031ArrowSeria"
+          + "lizationOptions\022W\n\006format\030\001 \001(\0162G.google"
+          + ".cloud.bigquery.storage.v1beta2.ArrowSer"
+          + "ializationOptions.Format\"@\n\006Format\022\026\n\022FO"
+          + "RMAT_UNSPECIFIED\020\000\022\016\n\nARROW_0_14\020\001\022\016\n\nAR"
+          + "ROW_0_15\020\002B\207\001\n)com.google.cloud.bigquery"
+          + ".storage.v1beta2B\nArrowProtoP\001ZLgoogle.g"
+          + "olang.org/genproto/googleapis/cloud/bigq"
+          + "uery/storage/v1beta2;storageb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -72,6 +80,14 @@ public final class ArrowProto {
             internal_static_google_cloud_bigquery_storage_v1beta2_ArrowRecordBatch_descriptor,
             new java.lang.String[] {
               "SerializedRecordBatch",
+            });
+    internal_static_google_cloud_bigquery_storage_v1beta2_ArrowSerializationOptions_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_bigquery_storage_v1beta2_ArrowSerializationOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_storage_v1beta2_ArrowSerializationOptions_descriptor,
+            new java.lang.String[] {
+              "Format",
             });
   }
 

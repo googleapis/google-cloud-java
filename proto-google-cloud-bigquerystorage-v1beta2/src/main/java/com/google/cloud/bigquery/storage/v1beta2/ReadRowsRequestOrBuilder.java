@@ -30,7 +30,9 @@ public interface ReadRowsRequestOrBuilder
    * Required. Stream to read rows from.
    * </pre>
    *
-   * <code>string read_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string read_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The readStream.
    */
@@ -42,7 +44,9 @@ public interface ReadRowsRequestOrBuilder
    * Required. Stream to read rows from.
    * </pre>
    *
-   * <code>string read_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string read_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for readStream.
    */

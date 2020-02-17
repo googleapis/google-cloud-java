@@ -125,7 +125,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    * Required. Stream to read rows from.
    * </pre>
    *
-   * <code>string read_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string read_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The readStream.
    */
@@ -147,7 +149,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    * Required. Stream to read rows from.
    * </pre>
    *
-   * <code>string read_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string read_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for readStream.
    */
@@ -524,7 +528,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * Required. Stream to read rows from.
      * </pre>
      *
-     * <code>string read_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string read_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The readStream.
      */
@@ -546,7 +552,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * Required. Stream to read rows from.
      * </pre>
      *
-     * <code>string read_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string read_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for readStream.
      */
@@ -568,7 +576,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * Required. Stream to read rows from.
      * </pre>
      *
-     * <code>string read_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string read_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The readStream to set.
      * @return This builder for chaining.
@@ -589,7 +599,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * Required. Stream to read rows from.
      * </pre>
      *
-     * <code>string read_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string read_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -606,7 +618,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      * Required. Stream to read rows from.
      * </pre>
      *
-     * <code>string read_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string read_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for readStream to set.
      * @return This builder for chaining.
