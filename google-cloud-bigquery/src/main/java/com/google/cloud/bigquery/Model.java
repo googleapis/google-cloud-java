@@ -109,6 +109,12 @@ public class Model extends ModelInfo {
     }
 
     @Override
+    Builder setLocation(String location) {
+      infoBuilder.setLocation(location);
+      return this;
+    }
+
+    @Override
     Builder setTrainingRuns(List<TrainingRun> trainingRunList) {
       infoBuilder.setTrainingRuns(trainingRunList);
       return this;

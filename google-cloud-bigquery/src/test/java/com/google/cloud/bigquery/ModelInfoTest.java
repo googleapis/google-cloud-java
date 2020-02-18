@@ -33,6 +33,7 @@ public class ModelInfoTest {
   private static final Long EXPIRATION_TIME = 30L;
   private static final String DESCRIPTION = "description";
   private static final String FRIENDLY_NAME = "friendlyname";
+  private static final String LOCATION = "US";
   private static final EncryptionConfiguration MODEL_ENCRYPTION_CONFIGURATION =
       EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
 
@@ -52,6 +53,7 @@ public class ModelInfoTest {
           .setFriendlyName(FRIENDLY_NAME)
           .setTrainingRuns(TRAINING_RUN_LIST)
           .setEncryptionConfiguration(MODEL_ENCRYPTION_CONFIGURATION)
+          .setLocation(LOCATION)
           .build();
 
   @Test
@@ -75,6 +77,7 @@ public class ModelInfoTest {
     assertEquals(FRIENDLY_NAME, MODEL_INFO.getFriendlyName());
     assertEquals(TRAINING_OPTIONS, MODEL_INFO.getTrainingRuns().get(0).getTrainingOptions());
     assertEquals(MODEL_ENCRYPTION_CONFIGURATION, MODEL_INFO.getEncryptionConfiguration());
+    assertEquals(LOCATION, MODEL_INFO.getLocation());
   }
 
   @Test
@@ -88,6 +91,7 @@ public class ModelInfoTest {
     assertNull(modelInfo.getDescription());
     assertNull(modelInfo.getFriendlyName());
     assertNull(modelInfo.getEncryptionConfiguration());
+    assertNull(modelInfo.getLocation());
     assertEquals(modelInfo.getTrainingRuns().isEmpty(), true);
     assertEquals(modelInfo.getLabelColumns().isEmpty(), true);
     assertEquals(modelInfo.getFeatureColumns().isEmpty(), true);
@@ -113,6 +117,7 @@ public class ModelInfoTest {
     assertEquals(expected.getDescription(), value.getDescription());
     assertEquals(expected.getFriendlyName(), value.getFriendlyName());
     assertEquals(expected.getLabels(), value.getLabels());
+    assertEquals(expected.getLocation(), value.getLocation());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.getTrainingRuns(), value.getTrainingRuns());
     assertEquals(expected.getLabelColumns(), value.getLabelColumns());

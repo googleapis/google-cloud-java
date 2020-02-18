@@ -68,6 +68,7 @@ public class ModelInfo implements Serializable {
   private final Long lastModifiedTime;
   private final Long expirationTime;
   private final Labels labels;
+  private final String location;
   private final ImmutableList<TrainingRun> trainingRunList;
   private final ImmutableList<StandardSQLField> featureColumnList;
   private final ImmutableList<StandardSQLField> labelColumnList;
@@ -96,6 +97,8 @@ public class ModelInfo implements Serializable {
      * are removed and other keys are updated to their respective values.
      */
     public abstract Builder setLabels(Map<String, String> labels);
+
+    abstract Builder setLocation(String location);
 
     public abstract Builder setModelId(ModelId modelId);
 
@@ -130,6 +133,7 @@ public class ModelInfo implements Serializable {
     private Long lastModifiedTime;
     private Long expirationTime;
     private Labels labels = Labels.ZERO;
+    private String location;
     private List<TrainingRun> trainingRunList = Collections.emptyList();
     private List<StandardSQLField> labelColumnList = Collections.emptyList();
     private List<StandardSQLField> featureColumnList = Collections.emptyList();
@@ -150,6 +154,7 @@ public class ModelInfo implements Serializable {
       this.labelColumnList = modelInfo.labelColumnList;
       this.featureColumnList = modelInfo.featureColumnList;
       this.encryptionConfiguration = modelInfo.encryptionConfiguration;
+      this.location = modelInfo.location;
     }
 
     BuilderImpl(Model modelPb) {
@@ -165,6 +170,7 @@ public class ModelInfo implements Serializable {
       this.lastModifiedTime = modelPb.getLastModifiedTime();
       this.expirationTime = modelPb.getExpirationTime();
       this.labels = Labels.fromPb(modelPb.getLabels());
+      this.location = modelPb.getLocation();
       if (modelPb.getTrainingRuns() != null) {
         this.trainingRunList = modelPb.getTrainingRuns();
       }
@@ -237,6 +243,12 @@ public class ModelInfo implements Serializable {
     }
 
     @Override
+    Builder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    @Override
     Builder setTrainingRuns(List<TrainingRun> trainingRunList) {
       this.trainingRunList = checkNotNull(trainingRunList);
       return this;
@@ -276,6 +288,7 @@ public class ModelInfo implements Serializable {
     this.lastModifiedTime = builder.lastModifiedTime;
     this.expirationTime = builder.expirationTime;
     this.labels = builder.labels;
+    this.location = builder.location;
     this.trainingRunList = ImmutableList.copyOf(builder.trainingRunList);
     this.labelColumnList = ImmutableList.copyOf(builder.labelColumnList);
     this.featureColumnList = ImmutableList.copyOf(builder.featureColumnList);
@@ -330,6 +343,11 @@ public class ModelInfo implements Serializable {
     return labels.userMap();
   }
 
+  /** Returns a location of the model. */
+  public String getLocation() {
+    return location;
+  }
+
   /** Returns metadata about each training run iteration. */
   @BetaApi
   public ImmutableList<TrainingRun> getTrainingRuns() {
@@ -368,6 +386,7 @@ public class ModelInfo implements Serializable {
         .add("lastModifiedTime", lastModifiedTime)
         .add("expirationTime", expirationTime)
         .add("labels", labels)
+        .add("location", location)
         .add("trainingRuns", trainingRunList)
         .add("labelColumns", labelColumnList)
         .add("featureColumns", featureColumnList)
@@ -416,6 +435,7 @@ public class ModelInfo implements Serializable {
     modelPb.setLastModifiedTime(lastModifiedTime);
     modelPb.setExpirationTime(expirationTime);
     modelPb.setLabels(labels.toPb());
+    modelPb.setLocation(location);
     modelPb.setTrainingRuns(trainingRunList);
     if (labelColumnList != null) {
       modelPb.setLabelColumns(Lists.transform(labelColumnList, StandardSQLField.TO_PB_FUNCTION));
