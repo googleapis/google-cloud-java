@@ -24,7 +24,8 @@ import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageOptions;
 
 public class ChangeObjectStorageClass {
-  public static void changeObjectStorageClass(String projectId, String bucketName, String objectName) {
+  public static void changeObjectStorageClass(
+      String projectId, String bucketName, String objectName) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
@@ -41,10 +42,11 @@ public class ChangeObjectStorageClass {
     // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/storage/StorageClass.html
     StorageClass storageClass = StorageClass.COLDLINE;
 
-    // You can't change an object's storage class directly, the only way is to rewrite the object with the
+    // You can't change an object's storage class directly, the only way is to rewrite the object
+    // with the
     // desired storage class
-    Storage.CopyRequest request = Storage.CopyRequest
-            .newBuilder()
+    Storage.CopyRequest request =
+        Storage.CopyRequest.newBuilder()
             .setSource(blobId)
             .setTarget(BlobInfo.newBuilder(blobId).setStorageClass(storageClass).build())
             .build();

@@ -44,7 +44,8 @@ public class AddBucketIamMember {
     Identity identity = Identity.group("example@google.com");
 
     Policy updatedPolicy =
-        storage.setIamPolicy(bucketName, originalPolicy.toBuilder().addIdentity(role, identity).build());
+        storage.setIamPolicy(
+            bucketName, originalPolicy.toBuilder().addIdentity(role, identity).build());
 
     if (updatedPolicy.getBindings().get(role).contains(identity)) {
       System.out.printf("Added %s with role %s to %s\n", identity, role, bucketName);

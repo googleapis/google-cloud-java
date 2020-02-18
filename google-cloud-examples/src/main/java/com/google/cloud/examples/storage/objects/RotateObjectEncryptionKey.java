@@ -21,8 +21,12 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
 public class RotateObjectEncryptionKey {
-  public static void rotateObjectEncryptionKey(String projectId, String bucketName, String objectName,
-      String oldEncryptionKey, String newEncryptionKey) {
+  public static void rotateObjectEncryptionKey(
+      String projectId,
+      String bucketName,
+      String objectName,
+      String oldEncryptionKey,
+      String newEncryptionKey) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
@@ -32,7 +36,8 @@ public class RotateObjectEncryptionKey {
     // The ID of your GCS object
     // String objectName = "your-object-name";
 
-    // The Base64 encoded AES-256 encryption key originally used to encrypt the object. See the documentation
+    // The Base64 encoded AES-256 encryption key originally used to encrypt the object. See the
+    // documentation
     // on Customer-Supplied Encryption keys for more info:
     // https://cloud.google.com/storage/docs/encryption/using-customer-supplied-keys
     // String oldEncryptionKey = "TIbv/fjexq+VmtXzAlc63J4z5kFmWJ6NdAPQulQBT7g="
@@ -51,7 +56,8 @@ public class RotateObjectEncryptionKey {
             .build();
     storage.copy(request);
 
-    System.out.println("Rotated encryption key for object " + objectName + "in bucket " + bucketName);
+    System.out.println(
+        "Rotated encryption key for object " + objectName + "in bucket " + bucketName);
   }
 }
 // [END storage_rotate_encryption_key]

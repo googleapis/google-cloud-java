@@ -45,12 +45,10 @@ import com.google.cloud.storage.HmacKey.HmacKeyState;
 import com.google.cloud.storage.ServiceAccount;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobGetOption;
-import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.Storage.BlobTargetOption;
 import com.google.cloud.storage.Storage.BucketField;
 import com.google.cloud.storage.Storage.BucketGetOption;
-import com.google.cloud.storage.Storage.BucketListOption;
 import com.google.cloud.storage.Storage.BucketSourceOption;
 import com.google.cloud.storage.Storage.ComposeRequest;
 import com.google.cloud.storage.Storage.CopyRequest;
@@ -58,7 +56,6 @@ import com.google.cloud.storage.Storage.ListHmacKeysOption;
 import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.StorageBatch;
 import com.google.cloud.storage.StorageBatchResult;
-import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import java.io.ByteArrayInputStream;
@@ -67,12 +64,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
-import java.nio.file.Path;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /** This class contains a number of snippets for the {@link Storage} interface. */
@@ -147,7 +141,6 @@ public class StorageSnippets {
     // [END createBlobFromInputStream]
     return blob;
   }
-
 
   /**
    * Example of getting information on a bucket, only if its metageneration matches a value,
@@ -323,7 +316,6 @@ public class StorageSnippets {
     return blob;
   }
 
-
   /** Example of copying a blob in chunks. */
   // [TARGET copy(CopyRequest)]
   // [VARIABLE "my_unique_bucket"]
@@ -344,7 +336,6 @@ public class StorageSnippets {
     // [END copyBlobInChunks]
     return blob;
   }
-
 
   /**
    * Example of reading all bytes of a blob, if generation matches a value, otherwise a {@link
@@ -820,8 +811,6 @@ public class StorageSnippets {
     }
     // [END storage_list_buckets]
   }
-
-
 
   /** Example of retrieving Requester pays status on a bucket. */
   public Bucket getRequesterPaysStatus(String bucketName) throws StorageException {
