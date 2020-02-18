@@ -15,7 +15,7 @@
  */
 package com.google.cloud.examples.storage.buckets;
 
-// [START storage_remove_bucket_label
+// [START storage_remove_bucket_label]
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
