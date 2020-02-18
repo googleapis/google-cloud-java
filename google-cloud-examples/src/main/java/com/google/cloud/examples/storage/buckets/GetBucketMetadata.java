@@ -20,7 +20,6 @@ import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-
 import java.util.Map;
 
 public class GetBucketMetadata {
@@ -34,7 +33,8 @@ public class GetBucketMetadata {
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
 
     // Select all fields. Fields can be selected individually e.g. Storage.BucketField.NAME
-    Bucket bucket = storage.get(bucketName, Storage.BucketGetOption.fields(Storage.BucketField.values()));
+    Bucket bucket =
+        storage.get(bucketName, Storage.BucketGetOption.fields(Storage.BucketField.values()));
 
     // Print bucket metadata
     System.out.println("BucketName: " + bucket.getName());
@@ -61,10 +61,10 @@ public class GetBucketMetadata {
       }
     }
     if (bucket.getLifecycleRules() != null) {
-        System.out.println ("\n\n\nLifecycle Rules:");
-        for (BucketInfo.LifecycleRule rule : bucket.getLifecycleRules()) {
-            System.out.println(rule);
-        }
+      System.out.println("\n\n\nLifecycle Rules:");
+      for (BucketInfo.LifecycleRule rule : bucket.getLifecycleRules()) {
+        System.out.println(rule);
+      }
     }
   }
 }

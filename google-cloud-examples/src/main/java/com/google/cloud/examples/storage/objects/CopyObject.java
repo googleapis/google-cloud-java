@@ -42,7 +42,13 @@ public class CopyObject {
     // copyTo(targetBucketName, "target-object-name") to change the name
     blob.copyTo(targetBucketName);
 
-    System.out.println("Copied object " + objectName + " from bucket " + sourceBucketName + " to " + targetBucketName);
+    System.out.println(
+        "Copied object "
+            + objectName
+            + " from bucket "
+            + sourceBucketName
+            + " to "
+            + targetBucketName);
   }
 }
 // [END storage_copy_file]

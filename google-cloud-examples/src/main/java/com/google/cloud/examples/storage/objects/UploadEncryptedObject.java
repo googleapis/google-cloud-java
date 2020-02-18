@@ -20,14 +20,14 @@ import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class UploadEncryptedObject {
-  public static void uploadEncryptedObject(String projectId, String bucketName, String objectName, String filePath,
-      String encryptionKey) throws IOException {
+  public static void uploadEncryptedObject(
+      String projectId, String bucketName, String objectName, String filePath, String encryptionKey)
+      throws IOException {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 

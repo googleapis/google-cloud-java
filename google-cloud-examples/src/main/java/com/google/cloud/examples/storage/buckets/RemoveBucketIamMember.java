@@ -44,7 +44,8 @@ public class RemoveBucketIamMember {
     Identity identity = Identity.group("example@google.com");
 
     Policy updatedPolicy =
-        storage.setIamPolicy(bucketName, originalPolicy.toBuilder().removeIdentity(role, identity).build());
+        storage.setIamPolicy(
+            bucketName, originalPolicy.toBuilder().removeIdentity(role, identity).build());
 
     if (updatedPolicy.getBindings().get(role) == null
         || !updatedPolicy.getBindings().get(role).contains(identity)) {

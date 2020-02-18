@@ -19,7 +19,6 @@ package com.google.cloud.examples.storage.buckets;
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,7 +41,7 @@ public class RemoveBucketLabel {
     Bucket bucket = storage.get(bucketName);
     Map<String, String> labels;
     if (bucket.getLabels() == null) {
-      labels = new HashMap<> ();
+      labels = new HashMap<>();
     } else {
       labels = new HashMap(bucket.getLabels());
     }

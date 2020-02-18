@@ -41,7 +41,8 @@ public class MoveObject {
     // Write a copy of the object to the target bucket
     CopyWriter copyWriter = blob.copyTo(targetBucketName, objectName);
     Blob copiedBlob = copyWriter.getResult();
-    // Delete the original blob now that we've copied to where we want it, finishing the "move" operation
+    // Delete the original blob now that we've copied to where we want it, finishing the "move"
+    // operation
     blob.delete();
 
     System.out.println(

@@ -24,7 +24,6 @@ package com.google.cloud.examples.storage.snippets;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.api.gax.paging.Page;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Blob;

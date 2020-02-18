@@ -149,6 +149,7 @@ public class ITStorageSnippets {
     thrown.expect(StorageException.class);
     storageSnippets.getBucketWithMetageneration(BUCKET, -1);
   }
+
   @Test
   public void testUpdateBucket() {
     assertNotNull(storageSnippets.updateBucket(BUCKET));

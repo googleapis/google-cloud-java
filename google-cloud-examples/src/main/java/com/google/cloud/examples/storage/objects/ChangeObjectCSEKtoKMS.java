@@ -21,8 +21,12 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
 public class ChangeObjectCSEKtoKMS {
-  public static void changeObjectFromCSEKtoKMS(String projectId, String bucketName, String objectName,
-      String decryptionKey, String kmsKeyName) {
+  public static void changeObjectFromCSEKtoKMS(
+      String projectId,
+      String bucketName,
+      String objectName,
+      String decryptionKey,
+      String kmsKeyName) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
@@ -32,11 +36,13 @@ public class ChangeObjectCSEKtoKMS {
     // The ID of your GCS object
     // String objectName = "your-object-name";
 
-    // The Base64 encoded decryption key, which should be the same key originally used to encrypt the object
+    // The Base64 encoded decryption key, which should be the same key originally used to encrypt
+    // the object
     // String decryptionKey = "TIbv/fjexq+VmtXzAlc63J4z5kFmWJ6NdAPQulQBT7g=";
 
     // The name of the KMS key to manage this object with
-    // String kmsKeyName = "projects/your-project-id/locations/global/keyRings/your-key-ring/cryptoKeys/your-key";
+    // String kmsKeyName =
+    // "projects/your-project-id/locations/global/keyRings/your-key-ring/cryptoKeys/your-key";
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     BlobId blobId = BlobId.of(bucketName, objectName);

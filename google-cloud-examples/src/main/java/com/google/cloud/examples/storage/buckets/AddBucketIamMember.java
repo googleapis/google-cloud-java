@@ -15,7 +15,7 @@
  */
 package com.google.cloud.examples.storage.buckets;
 
-// [START storaoe_add_bucket_iam_member]
+// [START storage_add_bucket_iam_member]
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
@@ -44,7 +44,8 @@ public class AddBucketIamMember {
     Identity identity = Identity.group("example@google.com");
 
     Policy updatedPolicy =
-        storage.setIamPolicy(bucketName, originalPolicy.toBuilder().addIdentity(role, identity).build());
+        storage.setIamPolicy(
+            bucketName, originalPolicy.toBuilder().addIdentity(role, identity).build());
 
     if (updatedPolicy.getBindings().get(role).contains(identity)) {
       System.out.printf("Added %s with role %s to %s\n", identity, role, bucketName);

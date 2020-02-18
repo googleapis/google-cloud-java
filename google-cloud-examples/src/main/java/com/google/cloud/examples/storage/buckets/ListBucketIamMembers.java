@@ -21,25 +21,24 @@ import com.google.cloud.Policy;
 import com.google.cloud.Role;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-
 import java.util.Map;
 import java.util.Set;
 
 public class ListBucketIamMembers {
-    public static void listBucketIamMembers(String projectId, String bucketName) {
-        // The ID of your GCP project
-        // String projectId = "your-project-id";
+  public static void listBucketIamMembers(String projectId, String bucketName) {
+    // The ID of your GCP project
+    // String projectId = "your-project-id";
 
-        // The ID of your GCS bucket
-        // String bucketName = "your-unique-bucket-name";
+    // The ID of your GCS bucket
+    // String bucketName = "your-unique-bucket-name";
 
-        Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-        Policy policy = storage.getIamPolicy(bucketName);
-        Map<Role, Set<Identity>> policyBindings = policy.getBindings();
+    Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
+    Policy policy = storage.getIamPolicy(bucketName);
+    Map<Role, Set<Identity>> policyBindings = policy.getBindings();
 
-        for (Map.Entry<Role, Set<Identity>> entry : policyBindings.entrySet()) {
-            System.out.printf("Role: %s Identities: %s\n", entry.getKey(), entry.getValue());
-        }
+    for (Map.Entry<Role, Set<Identity>> entry : policyBindings.entrySet()) {
+      System.out.printf("Role: %s Identities: %s\n", entry.getKey(), entry.getValue());
     }
+  }
 }
 // [END storage_view_bucket_iam_members]

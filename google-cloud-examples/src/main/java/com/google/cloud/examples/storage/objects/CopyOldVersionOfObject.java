@@ -21,8 +21,12 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
 public class CopyOldVersionOfObject {
-  public static void copyOldVersionOfObject(String projectId, String bucketName, String objectToCopy,
-      long generationToCopy, String newObjectName) {
+  public static void copyOldVersionOfObject(
+      String projectId,
+      String bucketName,
+      String objectToCopy,
+      long generationToCopy,
+      String newObjectName) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
