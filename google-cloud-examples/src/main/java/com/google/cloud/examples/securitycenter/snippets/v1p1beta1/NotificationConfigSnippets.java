@@ -135,7 +135,7 @@ final class NotificationConfigSnippets {
     // [END scc_list_notification_configs]
   }
 
-  public static NotificationConfig updateNotificationConfigs(
+  public static NotificationConfig updateNotificationConfig(
       String organizationId, String notificationConfigId, String pubsubTopic) {
     // [START scc_update_notification_config]
     // TODO(UpdateMe) String organizationId = "{your-org-id}";
