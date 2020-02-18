@@ -187,8 +187,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The project whose groups are to be listed. The format is
-   *     `"projects/{project_id_or_number}"`.
+   * @param name Required. The project whose groups are to be listed. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGroupsPagedResponse listGroups(ProjectName name) {
@@ -212,8 +212,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The project whose groups are to be listed. The format is
-   *     `"projects/{project_id_or_number}"`.
+   * @param name Required. The project whose groups are to be listed. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGroupsPagedResponse listGroups(String name) {
@@ -314,8 +314,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The group to retrieve. The format is
-   *     `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * @param name Required. The group to retrieve. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Group getGroup(GroupName name) {
@@ -337,8 +337,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The group to retrieve. The format is
-   *     `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * @param name Required. The group to retrieve. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Group getGroup(String name) {
@@ -405,8 +405,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The project in which to create the group. The format is
-   *     `"projects/{project_id_or_number}"`.
+   * @param name Required. The project in which to create the group. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param group Required. A group definition. It is an error to define the `name` field because
    *     the system assigns the name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -434,8 +434,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The project in which to create the group. The format is
-   *     `"projects/{project_id_or_number}"`.
+   * @param name Required. The project in which to create the group. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param group Required. A group definition. It is an error to define the `name` field because
    *     the system assigns the name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -575,8 +575,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The group to delete. The format is
-   *     `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * @param name Required. The group to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteGroup(GroupName name) {
@@ -598,8 +598,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The group to delete. The format is
-   *     `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * @param name Required. The group to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteGroup(String name) {
@@ -667,8 +667,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The group whose members are listed. The format is
-   *     `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * @param name Required. The group whose members are listed. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGroupMembersPagedResponse listGroupMembers(GroupName name) {
@@ -692,8 +692,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The group whose members are listed. The format is
-   *     `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * @param name Required. The group whose members are listed. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGroupMembersPagedResponse listGroupMembers(String name) {

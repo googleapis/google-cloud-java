@@ -27,8 +27,8 @@ public interface ListGroupMembersRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The group whose members are listed. The format is
-   * `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * Required. The group whose members are listed. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListGroupMembersRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The group whose members are listed. The format is
-   * `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * Required. The group whose members are listed. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * </pre>
    *
    * <code>
@@ -71,7 +71,7 @@ public interface ListGroupMembersRequestOrBuilder
    *
    *
    * <pre>
-   * If this field is not empty then it must contain the `nextPageToken` value
+   * If this field is not empty then it must contain the `next_page_token` value
    * returned by a previous call to this method.  Using this field causes the
    * method to return additional results from the previous method call.
    * </pre>
@@ -85,7 +85,7 @@ public interface ListGroupMembersRequestOrBuilder
    *
    *
    * <pre>
-   * If this field is not empty then it must contain the `nextPageToken` value
+   * If this field is not empty then it must contain the `next_page_token` value
    * returned by a previous call to this method.  Using this field causes the
    * method to return additional results from the previous method call.
    * </pre>
@@ -100,12 +100,13 @@ public interface ListGroupMembersRequestOrBuilder
    *
    *
    * <pre>
-   * An optional [list filter](/monitoring/api/learn_more#filtering) describing
-   * the members to be returned.  The filter may reference the type, labels, and
-   * metadata of monitored resources that comprise the group.
-   * For example, to return only resources representing Compute Engine VM
-   * instances, use this filter:
-   *     resource.type = "gce_instance"
+   * An optional [list
+   * filter](https://cloud.google.com/monitoring/api/learn_more#filtering)
+   * describing the members to be returned.  The filter may reference the type,
+   * labels, and metadata of monitored resources that comprise the group. For
+   * example, to return only resources representing Compute Engine VM instances,
+   * use this filter:
+   *     `resource.type = "gce_instance"`
    * </pre>
    *
    * <code>string filter = 5;</code>
@@ -117,12 +118,13 @@ public interface ListGroupMembersRequestOrBuilder
    *
    *
    * <pre>
-   * An optional [list filter](/monitoring/api/learn_more#filtering) describing
-   * the members to be returned.  The filter may reference the type, labels, and
-   * metadata of monitored resources that comprise the group.
-   * For example, to return only resources representing Compute Engine VM
-   * instances, use this filter:
-   *     resource.type = "gce_instance"
+   * An optional [list
+   * filter](https://cloud.google.com/monitoring/api/learn_more#filtering)
+   * describing the members to be returned.  The filter may reference the type,
+   * labels, and metadata of monitored resources that comprise the group. For
+   * example, to return only resources representing Compute Engine VM instances,
+   * use this filter:
+   *     `resource.type = "gce_instance"`
    * </pre>
    *
    * <code>string filter = 5;</code>

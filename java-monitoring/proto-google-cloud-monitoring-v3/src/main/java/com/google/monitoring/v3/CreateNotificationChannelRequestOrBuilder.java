@@ -28,9 +28,9 @@ public interface CreateNotificationChannelRequestOrBuilder
    *
    * <pre>
    * Required. The project on which to execute the request. The format is:
-   *     projects/[PROJECT_ID]
-   * Note that this names the container into which the channel will be
-   * written. This does not name the newly created channel. The resulting
+   *     projects/[PROJECT_ID_OR_NUMBER]
+   * This names the container into which the channel will be
+   * written, this does not name the newly created channel. The resulting
    * channel's name will have a normalized version of this field as a prefix,
    * but will add `/notificationChannels/[CHANNEL_ID]` to identify the channel.
    * </pre>
@@ -47,9 +47,9 @@ public interface CreateNotificationChannelRequestOrBuilder
    *
    * <pre>
    * Required. The project on which to execute the request. The format is:
-   *     projects/[PROJECT_ID]
-   * Note that this names the container into which the channel will be
-   * written. This does not name the newly created channel. The resulting
+   *     projects/[PROJECT_ID_OR_NUMBER]
+   * This names the container into which the channel will be
+   * written, this does not name the newly created channel. The resulting
    * channel's name will have a normalized version of this field as a prefix,
    * but will add `/notificationChannels/[CHANNEL_ID]` to identify the channel.
    * </pre>

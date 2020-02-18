@@ -203,7 +203,7 @@ public final class ListMetricDescriptorsResponse extends com.google.protobuf.Gen
    * <pre>
    * If there are more results than have been returned, then this field is set
    * to a non-empty value.  To see the additional results,
-   * use that value as `pageToken` in the next call to this method.
+   * use that value as `page_token` in the next call to this method.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -227,7 +227,7 @@ public final class ListMetricDescriptorsResponse extends com.google.protobuf.Gen
    * <pre>
    * If there are more results than have been returned, then this field is set
    * to a non-empty value.  To see the additional results,
-   * use that value as `pageToken` in the next call to this method.
+   * use that value as `page_token` in the next call to this method.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -1002,7 +1002,7 @@ public final class ListMetricDescriptorsResponse extends com.google.protobuf.Gen
      * <pre>
      * If there are more results than have been returned, then this field is set
      * to a non-empty value.  To see the additional results,
-     * use that value as `pageToken` in the next call to this method.
+     * use that value as `page_token` in the next call to this method.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1026,7 +1026,7 @@ public final class ListMetricDescriptorsResponse extends com.google.protobuf.Gen
      * <pre>
      * If there are more results than have been returned, then this field is set
      * to a non-empty value.  To see the additional results,
-     * use that value as `pageToken` in the next call to this method.
+     * use that value as `page_token` in the next call to this method.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1050,7 +1050,7 @@ public final class ListMetricDescriptorsResponse extends com.google.protobuf.Gen
      * <pre>
      * If there are more results than have been returned, then this field is set
      * to a non-empty value.  To see the additional results,
-     * use that value as `pageToken` in the next call to this method.
+     * use that value as `page_token` in the next call to this method.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1073,7 +1073,7 @@ public final class ListMetricDescriptorsResponse extends com.google.protobuf.Gen
      * <pre>
      * If there are more results than have been returned, then this field is set
      * to a non-empty value.  To see the additional results,
-     * use that value as `pageToken` in the next call to this method.
+     * use that value as `page_token` in the next call to this method.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1092,7 +1092,7 @@ public final class ListMetricDescriptorsResponse extends com.google.protobuf.Gen
      * <pre>
      * If there are more results than have been returned, then this field is set
      * to a non-empty value.  To see the additional results,
-     * use that value as `pageToken` in the next call to this method.
+     * use that value as `page_token` in the next call to this method.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

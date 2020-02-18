@@ -27,8 +27,8 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is
-   * "projects/{project_id_or_number}".
+   * Required. The project on which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is
-   * "projects/{project_id_or_number}".
+   * Required. The project on which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>
@@ -58,10 +58,10 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
-   * series should be returned.  The filter must specify a single metric type,
-   * and can additionally specify metric labels and other information. For
-   * example:
+   * Required. A [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+   * that specifies which time series should be returned.  The filter must
+   * specify a single metric type, and can additionally specify metric labels
+   * and other information. For example:
    *     metric.type = "compute.googleapis.com/instance/cpu/usage_time" AND
    *         metric.labels.instance_name = "my-instance-name"
    * </pre>
@@ -75,10 +75,10 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
-   * series should be returned.  The filter must specify a single metric type,
-   * and can additionally specify metric labels and other information. For
-   * example:
+   * Required. A [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+   * that specifies which time series should be returned.  The filter must
+   * specify a single metric type, and can additionally specify metric labels
+   * and other information. For example:
    *     metric.type = "compute.googleapis.com/instance/cpu/usage_time" AND
    *         metric.labels.instance_name = "my-instance-name"
    * </pre>

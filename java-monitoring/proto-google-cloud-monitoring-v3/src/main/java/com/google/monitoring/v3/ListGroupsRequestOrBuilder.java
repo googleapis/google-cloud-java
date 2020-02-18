@@ -27,8 +27,8 @@ public interface ListGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project whose groups are to be listed. The format is
-   * `"projects/{project_id_or_number}"`.
+   * Required. The project whose groups are to be listed. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project whose groups are to be listed. The format is
-   * `"projects/{project_id_or_number}"`.
+   * Required. The project whose groups are to be listed. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>
@@ -58,8 +58,9 @@ public interface ListGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
-   * Returns groups whose `parentName` field contains the group
+   * A group name. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   * Returns groups whose `parent_name` field contains the group
    * name.  If no groups have this parent, the results are empty.
    * </pre>
    *
@@ -72,8 +73,9 @@ public interface ListGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
-   * Returns groups whose `parentName` field contains the group
+   * A group name. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   * Returns groups whose `parent_name` field contains the group
    * name.  If no groups have this parent, the results are empty.
    * </pre>
    *
@@ -87,7 +89,8 @@ public interface ListGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * A group name. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * Returns groups that are ancestors of the specified group.
    * The groups are returned in order, starting with the immediate parent and
    * ending with the most distant ancestor.  If the specified group has no
@@ -103,7 +106,8 @@ public interface ListGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * A group name. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * Returns groups that are ancestors of the specified group.
    * The groups are returned in order, starting with the immediate parent and
    * ending with the most distant ancestor.  If the specified group has no
@@ -120,9 +124,10 @@ public interface ListGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * A group name. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * Returns the descendants of the specified group.  This is a superset of
-   * the results returned by the `childrenOfGroup` filter, and includes
+   * the results returned by the `children_of_group` filter, and includes
    * children-of-children, and so forth.
    * </pre>
    *
@@ -135,9 +140,10 @@ public interface ListGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * A group name. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * Returns the descendants of the specified group.  This is a superset of
-   * the results returned by the `childrenOfGroup` filter, and includes
+   * the results returned by the `children_of_group` filter, and includes
    * children-of-children, and so forth.
    * </pre>
    *
@@ -164,7 +170,7 @@ public interface ListGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * If this field is not empty then it must contain the `nextPageToken` value
+   * If this field is not empty then it must contain the `next_page_token` value
    * returned by a previous call to this method.  Using this field causes the
    * method to return additional results from the previous method call.
    * </pre>
@@ -178,7 +184,7 @@ public interface ListGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * If this field is not empty then it must contain the `nextPageToken` value
+   * If this field is not empty then it must contain the `next_page_token` value
    * returned by a previous call to this method.  Using this field causes the
    * method to return additional results from the previous method call.
    * </pre>

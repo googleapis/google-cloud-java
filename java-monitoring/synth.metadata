@@ -1,11 +1,11 @@
 {
-  "updateTime": "2020-02-14T22:56:10.547439Z",
+  "updateTime": "2020-02-15T09:51:47.447068Z",
   "sources": [
     {
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-monitoring.git",
-        "sha": "01269d977f30e79b9b6613b366531be87ec4cfc4"
+        "sha": "6c013839c5b349e4402a3fa87245930d8d1cc20b"
       }
     },
     {
@@ -26,9 +26,9 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d9835e922ea79eed8497db270d2f9f85099a519c",
-        "internalRef": "295185610",
-        "log": "d9835e922ea79eed8497db270d2f9f85099a519c\nUpdate some minor docs changes about user event proto\n\nPiperOrigin-RevId: 295185610\n\n5f311e416e69c170243de722023b22f3df89ec1c\nfix: use correct PHP package name in gapic configuration\n\nPiperOrigin-RevId: 295161330\n\n6cdd74dcdb071694da6a6b5a206e3a320b62dd11\npubsub: v1 add client config annotations and retry config\n\nPiperOrigin-RevId: 295158776\n\n5169f46d9f792e2934d9fa25c36d0515b4fd0024\nAdded cloud asset api v1p4beta1.\n\nPiperOrigin-RevId: 295026522\n\n"
+        "sha": "8a1020bf6828f6e3c84c3014f2c51cb62b739140",
+        "internalRef": "295286165",
+        "log": "8a1020bf6828f6e3c84c3014f2c51cb62b739140\nUpdate cloud asset api v1p4beta1.\n\nPiperOrigin-RevId: 295286165\n\n5cfa105206e77670369e4b2225597386aba32985\nAdd service control related proto build rule.\n\nPiperOrigin-RevId: 295262088\n\nee4dddf805072004ab19ac94df2ce669046eec26\nmonitoring v3: Add prefix \"https://cloud.google.com/\" into the link for global access\ncl 295167522, get ride of synth.py hacks\n\nPiperOrigin-RevId: 295238095\n\n"
       }
     },
     {

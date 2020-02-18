@@ -27,8 +27,8 @@ public interface GetNotificationChannelDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The channel type for which to execute the request. The format is
-   * `projects/[PROJECT_ID]/notificationChannelDescriptors/{channel_type}`.
+   * Required. The channel type for which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[CHANNEL_TYPE]
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface GetNotificationChannelDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The channel type for which to execute the request. The format is
-   * `projects/[PROJECT_ID]/notificationChannelDescriptors/{channel_type}`.
+   * Required. The channel type for which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[CHANNEL_TYPE]
    * </pre>
    *
    * <code>

@@ -117,8 +117,8 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The group to retrieve. The format is
-   * `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * Required. The group to retrieve. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * </pre>
    *
    * <code>
@@ -142,8 +142,8 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The group to retrieve. The format is
-   * `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * Required. The group to retrieve. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * </pre>
    *
    * <code>
@@ -484,8 +484,8 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The group to retrieve. The format is
-     * `"projects/{project_id_or_number}/groups/{group_id}"`.
+     * Required. The group to retrieve. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
      * </pre>
      *
      * <code>
@@ -509,8 +509,8 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The group to retrieve. The format is
-     * `"projects/{project_id_or_number}/groups/{group_id}"`.
+     * Required. The group to retrieve. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
      * </pre>
      *
      * <code>
@@ -534,8 +534,8 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The group to retrieve. The format is
-     * `"projects/{project_id_or_number}/groups/{group_id}"`.
+     * Required. The group to retrieve. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
      * </pre>
      *
      * <code>
@@ -558,8 +558,8 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The group to retrieve. The format is
-     * `"projects/{project_id_or_number}/groups/{group_id}"`.
+     * Required. The group to retrieve. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
      * </pre>
      *
      * <code>
@@ -578,8 +578,8 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The group to retrieve. The format is
-     * `"projects/{project_id_or_number}/groups/{group_id}"`.
+     * Required. The group to retrieve. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
      * </pre>
      *
      * <code>

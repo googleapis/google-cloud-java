@@ -27,9 +27,9 @@ public interface GetMetricDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The metric descriptor on which to execute the request. The format is
-   * `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`.
-   * An example value of `{metric_id}` is
+   * Required. The metric descriptor on which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
+   * An example value of `[METRIC_ID]` is
    * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
    * </pre>
    *
@@ -44,9 +44,9 @@ public interface GetMetricDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The metric descriptor on which to execute the request. The format is
-   * `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`.
-   * An example value of `{metric_id}` is
+   * Required. The metric descriptor on which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
+   * An example value of `[METRIC_ID]` is
    * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
    * </pre>
    *

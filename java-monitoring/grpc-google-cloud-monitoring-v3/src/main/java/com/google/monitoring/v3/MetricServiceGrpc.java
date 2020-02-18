@@ -594,7 +594,7 @@ public final class MetricServiceGrpc {
      * <pre>
      * Creates a new metric descriptor.
      * User-created metric descriptors define
-     * [custom metrics](/monitoring/custom-metrics).
+     * [custom metrics](https://cloud.google.com/monitoring/custom-metrics).
      * </pre>
      */
     public void createMetricDescriptor(
@@ -608,7 +608,8 @@ public final class MetricServiceGrpc {
      *
      * <pre>
      * Deletes a metric descriptor. Only user-created
-     * [custom metrics](/monitoring/custom-metrics) can be deleted.
+     * [custom metrics](https://cloud.google.com/monitoring/custom-metrics) can be
+     * deleted.
      * </pre>
      */
     public void deleteMetricDescriptor(
@@ -801,7 +802,7 @@ public final class MetricServiceGrpc {
      * <pre>
      * Creates a new metric descriptor.
      * User-created metric descriptors define
-     * [custom metrics](/monitoring/custom-metrics).
+     * [custom metrics](https://cloud.google.com/monitoring/custom-metrics).
      * </pre>
      */
     public void createMetricDescriptor(
@@ -818,7 +819,8 @@ public final class MetricServiceGrpc {
      *
      * <pre>
      * Deletes a metric descriptor. Only user-created
-     * [custom metrics](/monitoring/custom-metrics) can be deleted.
+     * [custom metrics](https://cloud.google.com/monitoring/custom-metrics) can be
+     * deleted.
      * </pre>
      */
     public void deleteMetricDescriptor(
@@ -953,7 +955,7 @@ public final class MetricServiceGrpc {
      * <pre>
      * Creates a new metric descriptor.
      * User-created metric descriptors define
-     * [custom metrics](/monitoring/custom-metrics).
+     * [custom metrics](https://cloud.google.com/monitoring/custom-metrics).
      * </pre>
      */
     public com.google.api.MetricDescriptor createMetricDescriptor(
@@ -967,7 +969,8 @@ public final class MetricServiceGrpc {
      *
      * <pre>
      * Deletes a metric descriptor. Only user-created
-     * [custom metrics](/monitoring/custom-metrics) can be deleted.
+     * [custom metrics](https://cloud.google.com/monitoring/custom-metrics) can be
+     * deleted.
      * </pre>
      */
     public com.google.protobuf.Empty deleteMetricDescriptor(
@@ -1095,7 +1098,7 @@ public final class MetricServiceGrpc {
      * <pre>
      * Creates a new metric descriptor.
      * User-created metric descriptors define
-     * [custom metrics](/monitoring/custom-metrics).
+     * [custom metrics](https://cloud.google.com/monitoring/custom-metrics).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.api.MetricDescriptor>
@@ -1109,7 +1112,8 @@ public final class MetricServiceGrpc {
      *
      * <pre>
      * Deletes a metric descriptor. Only user-created
-     * [custom metrics](/monitoring/custom-metrics) can be deleted.
+     * [custom metrics](https://cloud.google.com/monitoring/custom-metrics) can be
+     * deleted.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

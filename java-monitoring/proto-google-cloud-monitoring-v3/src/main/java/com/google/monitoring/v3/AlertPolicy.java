@@ -290,7 +290,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Combine conditions using the logical `AND` operator. An
-     * incident is created only if all conditions are met
+     * incident is created only if all the conditions are met
      * simultaneously. This combiner is satisfied if all conditions are
      * met, even if they are met on completely different resources.
      * </pre>
@@ -339,7 +339,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Combine conditions using the logical `AND` operator. An
-     * incident is created only if all conditions are met
+     * incident is created only if all the conditions are met
      * simultaneously. This combiner is satisfied if all conditions are
      * met, even if they are met on completely different resources.
      * </pre>
@@ -1364,8 +1364,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required if the condition exists. The unique resource name for this
-     * condition. Its syntax is:
-     *     projects/[PROJECT_ID]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
+     * condition. Its format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
      * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
      * condition is created as part of a new or updated alerting policy.
      * When calling the
@@ -1395,8 +1395,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required if the condition exists. The unique resource name for this
-     * condition. Its syntax is:
-     *     projects/[PROJECT_ID]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
+     * condition. Its format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
      * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
      * condition is created as part of a new or updated alerting policy.
      * When calling the
@@ -2463,7 +2463,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](/monitoring/api/v3/filters) that
+       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
@@ -2483,7 +2483,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](/monitoring/api/v3/filters) that
+       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
@@ -2601,11 +2601,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](/monitoring/api/v3/filters) that identifies a time
-       * series that should be used as the denominator of a ratio that will be
-       * compared with the threshold. If a `denominator_filter` is specified,
-       * the time series specified by the `filter` field will be used as the
-       * numerator.
+       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+       * identifies a time series that should be used as the denominator of a
+       * ratio that will be compared with the threshold. If a
+       * `denominator_filter` is specified, the time series specified by the
+       * `filter` field will be used as the numerator.
        * The filter must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
@@ -2620,11 +2620,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](/monitoring/api/v3/filters) that identifies a time
-       * series that should be used as the denominator of a ratio that will be
-       * compared with the threshold. If a `denominator_filter` is specified,
-       * the time series specified by the `filter` field will be used as the
-       * numerator.
+       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+       * identifies a time series that should be used as the denominator of a
+       * ratio that will be compared with the threshold. If a
+       * `denominator_filter` is specified, the time series specified by the
+       * `filter` field will be used as the numerator.
        * The filter must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
@@ -3073,7 +3073,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](/monitoring/api/v3/filters) that
+       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
@@ -3103,7 +3103,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](/monitoring/api/v3/filters) that
+       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
@@ -3245,11 +3245,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](/monitoring/api/v3/filters) that identifies a time
-       * series that should be used as the denominator of a ratio that will be
-       * compared with the threshold. If a `denominator_filter` is specified,
-       * the time series specified by the `filter` field will be used as the
-       * numerator.
+       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+       * identifies a time series that should be used as the denominator of a
+       * ratio that will be compared with the threshold. If a
+       * `denominator_filter` is specified, the time series specified by the
+       * `filter` field will be used as the numerator.
        * The filter must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
@@ -3274,11 +3274,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](/monitoring/api/v3/filters) that identifies a time
-       * series that should be used as the denominator of a ratio that will be
-       * compared with the threshold. If a `denominator_filter` is specified,
-       * the time series specified by the `filter` field will be used as the
-       * numerator.
+       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+       * identifies a time series that should be used as the denominator of a
+       * ratio that will be compared with the threshold. If a
+       * `denominator_filter` is specified, the time series specified by the
+       * `filter` field will be used as the numerator.
        * The filter must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
@@ -4156,7 +4156,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](/monitoring/api/v3/filters) that
+         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
@@ -4186,7 +4186,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](/monitoring/api/v3/filters) that
+         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
@@ -4216,7 +4216,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](/monitoring/api/v3/filters) that
+         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
@@ -4245,7 +4245,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](/monitoring/api/v3/filters) that
+         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
@@ -4270,7 +4270,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](/monitoring/api/v3/filters) that
+         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
@@ -4818,11 +4818,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](/monitoring/api/v3/filters) that identifies a time
-         * series that should be used as the denominator of a ratio that will be
-         * compared with the threshold. If a `denominator_filter` is specified,
-         * the time series specified by the `filter` field will be used as the
-         * numerator.
+         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+         * identifies a time series that should be used as the denominator of a
+         * ratio that will be compared with the threshold. If a
+         * `denominator_filter` is specified, the time series specified by the
+         * `filter` field will be used as the numerator.
          * The filter must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -4847,11 +4847,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](/monitoring/api/v3/filters) that identifies a time
-         * series that should be used as the denominator of a ratio that will be
-         * compared with the threshold. If a `denominator_filter` is specified,
-         * the time series specified by the `filter` field will be used as the
-         * numerator.
+         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+         * identifies a time series that should be used as the denominator of a
+         * ratio that will be compared with the threshold. If a
+         * `denominator_filter` is specified, the time series specified by the
+         * `filter` field will be used as the numerator.
          * The filter must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -4876,11 +4876,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](/monitoring/api/v3/filters) that identifies a time
-         * series that should be used as the denominator of a ratio that will be
-         * compared with the threshold. If a `denominator_filter` is specified,
-         * the time series specified by the `filter` field will be used as the
-         * numerator.
+         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+         * identifies a time series that should be used as the denominator of a
+         * ratio that will be compared with the threshold. If a
+         * `denominator_filter` is specified, the time series specified by the
+         * `filter` field will be used as the numerator.
          * The filter must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -4904,11 +4904,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](/monitoring/api/v3/filters) that identifies a time
-         * series that should be used as the denominator of a ratio that will be
-         * compared with the threshold. If a `denominator_filter` is specified,
-         * the time series specified by the `filter` field will be used as the
-         * numerator.
+         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+         * identifies a time series that should be used as the denominator of a
+         * ratio that will be compared with the threshold. If a
+         * `denominator_filter` is specified, the time series specified by the
+         * `filter` field will be used as the numerator.
          * The filter must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -4928,11 +4928,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](/monitoring/api/v3/filters) that identifies a time
-         * series that should be used as the denominator of a ratio that will be
-         * compared with the threshold. If a `denominator_filter` is specified,
-         * the time series specified by the `filter` field will be used as the
-         * numerator.
+         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+         * identifies a time series that should be used as the denominator of a
+         * ratio that will be compared with the threshold. If a
+         * `denominator_filter` is specified, the time series specified by the
+         * `filter` field will be used as the numerator.
          * The filter must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -6181,7 +6181,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](/monitoring/api/v3/filters) that
+       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
@@ -6201,7 +6201,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](/monitoring/api/v3/filters) that
+       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
@@ -6561,7 +6561,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](/monitoring/api/v3/filters) that
+       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
@@ -6591,7 +6591,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](/monitoring/api/v3/filters) that
+       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
@@ -7289,7 +7289,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](/monitoring/api/v3/filters) that
+         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
@@ -7319,7 +7319,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](/monitoring/api/v3/filters) that
+         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
@@ -7349,7 +7349,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](/monitoring/api/v3/filters) that
+         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
@@ -7378,7 +7378,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](/monitoring/api/v3/filters) that
+         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
@@ -7403,7 +7403,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](/monitoring/api/v3/filters) that
+         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
@@ -8499,8 +8499,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required if the condition exists. The unique resource name for this
-     * condition. Its syntax is:
-     *     projects/[PROJECT_ID]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
+     * condition. Its format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
      * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
      * condition is created as part of a new or updated alerting policy.
      * When calling the
@@ -8540,8 +8540,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required if the condition exists. The unique resource name for this
-     * condition. Its syntax is:
-     *     projects/[PROJECT_ID]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
+     * condition. Its format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
      * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
      * condition is created as part of a new or updated alerting policy.
      * When calling the
@@ -9165,8 +9165,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required if the condition exists. The unique resource name for this
-       * condition. Its syntax is:
-       *     projects/[PROJECT_ID]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
+       * condition. Its format is:
+       *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
        * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
        * condition is created as part of a new or updated alerting policy.
        * When calling the
@@ -9206,8 +9206,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required if the condition exists. The unique resource name for this
-       * condition. Its syntax is:
-       *     projects/[PROJECT_ID]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
+       * condition. Its format is:
+       *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
        * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
        * condition is created as part of a new or updated alerting policy.
        * When calling the
@@ -9247,8 +9247,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required if the condition exists. The unique resource name for this
-       * condition. Its syntax is:
-       *     projects/[PROJECT_ID]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
+       * condition. Its format is:
+       *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
        * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
        * condition is created as part of a new or updated alerting policy.
        * When calling the
@@ -9287,8 +9287,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required if the condition exists. The unique resource name for this
-       * condition. Its syntax is:
-       *     projects/[PROJECT_ID]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
+       * condition. Its format is:
+       *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
        * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
        * condition is created as part of a new or updated alerting policy.
        * When calling the
@@ -9323,8 +9323,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required if the condition exists. The unique resource name for this
-       * condition. Its syntax is:
-       *     projects/[PROJECT_ID]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
+       * condition. Its format is:
+       *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
        * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
        * condition is created as part of a new or updated alerting policy.
        * When calling the
@@ -9992,8 +9992,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required if the policy exists. The resource name for this policy. The
-   * syntax is:
-   *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
+   * format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
    * is created.  When calling the
    * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -10021,8 +10021,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required if the policy exists. The resource name for this policy. The
-   * syntax is:
-   *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
+   * format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
    * is created.  When calling the
    * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -10280,8 +10280,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * OR according to the `combiner` field. If the combined conditions evaluate
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
-   * If |condition_time_series_uery_language| is present, it must be the only
-   * |condition|.
+   * If `condition_time_series_query_language` is present, it must be the only
+   * `condition`.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -10297,8 +10297,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * OR according to the `combiner` field. If the combined conditions evaluate
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
-   * If |condition_time_series_uery_language| is present, it must be the only
-   * |condition|.
+   * If `condition_time_series_query_language` is present, it must be the only
+   * `condition`.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -10315,8 +10315,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * OR according to the `combiner` field. If the combined conditions evaluate
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
-   * If |condition_time_series_uery_language| is present, it must be the only
-   * |condition|.
+   * If `condition_time_series_query_language` is present, it must be the only
+   * `condition`.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -10332,8 +10332,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * OR according to the `combiner` field. If the combined conditions evaluate
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
-   * If |condition_time_series_uery_language| is present, it must be the only
-   * |condition|.
+   * If `condition_time_series_query_language` is present, it must be the only
+   * `condition`.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -10349,8 +10349,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * OR according to the `combiner` field. If the combined conditions evaluate
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
-   * If |condition_time_series_uery_language| is present, it must be the only
-   * |condition|.
+   * If `condition_time_series_query_language` is present, it must be the only
+   * `condition`.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -10367,8 +10367,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * How to combine the results of multiple conditions to determine if an
    * incident should be opened.
-   * If condition_time_series_query_language is present, this must be
-   * COMBINE_UNSPECIFIED.
+   * If `condition_time_series_query_language` is present, this must be
+   * `COMBINE_UNSPECIFIED`.
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
@@ -10384,8 +10384,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * How to combine the results of multiple conditions to determine if an
    * incident should be opened.
-   * If condition_time_series_query_language is present, this must be
-   * COMBINE_UNSPECIFIED.
+   * If `condition_time_series_query_language` is present, this must be
+   * `COMBINE_UNSPECIFIED`.
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
@@ -10515,8 +10515,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * [`NotificationChannel`][google.monitoring.v3.NotificationChannel]
    * objects that are returned from the [`ListNotificationChannels`]
    * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
-   * method. The syntax of the entries in this field is:
-   *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+   * method. The format of the entries in this field is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
    * <code>repeated string notification_channels = 14;</code>
@@ -10537,8 +10537,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * [`NotificationChannel`][google.monitoring.v3.NotificationChannel]
    * objects that are returned from the [`ListNotificationChannels`]
    * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
-   * method. The syntax of the entries in this field is:
-   *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+   * method. The format of the entries in this field is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
    * <code>repeated string notification_channels = 14;</code>
@@ -10559,8 +10559,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * [`NotificationChannel`][google.monitoring.v3.NotificationChannel]
    * objects that are returned from the [`ListNotificationChannels`]
    * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
-   * method. The syntax of the entries in this field is:
-   *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+   * method. The format of the entries in this field is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
    * <code>repeated string notification_channels = 14;</code>
@@ -10582,8 +10582,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * [`NotificationChannel`][google.monitoring.v3.NotificationChannel]
    * objects that are returned from the [`ListNotificationChannels`]
    * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
-   * method. The syntax of the entries in this field is:
-   *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+   * method. The format of the entries in this field is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
    * <code>repeated string notification_channels = 14;</code>
@@ -11321,8 +11321,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required if the policy exists. The resource name for this policy. The
-     * syntax is:
-     *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
+     * format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
      * is created.  When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -11350,8 +11350,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required if the policy exists. The resource name for this policy. The
-     * syntax is:
-     *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
+     * format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
      * is created.  When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -11379,8 +11379,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required if the policy exists. The resource name for this policy. The
-     * syntax is:
-     *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
+     * format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
      * is created.  When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -11407,8 +11407,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required if the policy exists. The resource name for this policy. The
-     * syntax is:
-     *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
+     * format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
      * is created.  When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -11431,8 +11431,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required if the policy exists. The resource name for this policy. The
-     * syntax is:
-     *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
+     * format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
      * is created.  When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -12014,8 +12014,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12035,8 +12035,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12056,8 +12056,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12077,8 +12077,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12104,8 +12104,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12129,8 +12129,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12156,8 +12156,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12183,8 +12183,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12208,8 +12208,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12233,8 +12233,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12258,8 +12258,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12282,8 +12282,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12306,8 +12306,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12323,8 +12323,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12345,8 +12345,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12367,8 +12367,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12385,8 +12385,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12403,8 +12403,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * OR according to the `combiner` field. If the combined conditions evaluate
      * to true, then an incident is created. A policy can have from one to six
      * conditions.
-     * If |condition_time_series_uery_language| is present, it must be the only
-     * |condition|.
+     * If `condition_time_series_query_language` is present, it must be the only
+     * `condition`.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -12438,8 +12438,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * How to combine the results of multiple conditions to determine if an
      * incident should be opened.
-     * If condition_time_series_query_language is present, this must be
-     * COMBINE_UNSPECIFIED.
+     * If `condition_time_series_query_language` is present, this must be
+     * `COMBINE_UNSPECIFIED`.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
@@ -12455,8 +12455,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * How to combine the results of multiple conditions to determine if an
      * incident should be opened.
-     * If condition_time_series_query_language is present, this must be
-     * COMBINE_UNSPECIFIED.
+     * If `condition_time_series_query_language` is present, this must be
+     * `COMBINE_UNSPECIFIED`.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
@@ -12475,8 +12475,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * How to combine the results of multiple conditions to determine if an
      * incident should be opened.
-     * If condition_time_series_query_language is present, this must be
-     * COMBINE_UNSPECIFIED.
+     * If `condition_time_series_query_language` is present, this must be
+     * `COMBINE_UNSPECIFIED`.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
@@ -12497,8 +12497,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * How to combine the results of multiple conditions to determine if an
      * incident should be opened.
-     * If condition_time_series_query_language is present, this must be
-     * COMBINE_UNSPECIFIED.
+     * If `condition_time_series_query_language` is present, this must be
+     * `COMBINE_UNSPECIFIED`.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
@@ -12521,8 +12521,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * How to combine the results of multiple conditions to determine if an
      * incident should be opened.
-     * If condition_time_series_query_language is present, this must be
-     * COMBINE_UNSPECIFIED.
+     * If `condition_time_series_query_language` is present, this must be
+     * `COMBINE_UNSPECIFIED`.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
@@ -12953,8 +12953,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * [`NotificationChannel`][google.monitoring.v3.NotificationChannel]
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
-     * method. The syntax of the entries in this field is:
-     *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+     * method. The format of the entries in this field is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>
@@ -12975,8 +12975,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * [`NotificationChannel`][google.monitoring.v3.NotificationChannel]
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
-     * method. The syntax of the entries in this field is:
-     *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+     * method. The format of the entries in this field is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>
@@ -12997,8 +12997,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * [`NotificationChannel`][google.monitoring.v3.NotificationChannel]
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
-     * method. The syntax of the entries in this field is:
-     *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+     * method. The format of the entries in this field is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>
@@ -13020,8 +13020,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * [`NotificationChannel`][google.monitoring.v3.NotificationChannel]
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
-     * method. The syntax of the entries in this field is:
-     *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+     * method. The format of the entries in this field is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>
@@ -13043,8 +13043,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * [`NotificationChannel`][google.monitoring.v3.NotificationChannel]
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
-     * method. The syntax of the entries in this field is:
-     *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+     * method. The format of the entries in this field is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>
@@ -13073,8 +13073,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * [`NotificationChannel`][google.monitoring.v3.NotificationChannel]
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
-     * method. The syntax of the entries in this field is:
-     *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+     * method. The format of the entries in this field is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>
@@ -13102,8 +13102,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * [`NotificationChannel`][google.monitoring.v3.NotificationChannel]
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
-     * method. The syntax of the entries in this field is:
-     *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+     * method. The format of the entries in this field is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>
@@ -13128,8 +13128,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * [`NotificationChannel`][google.monitoring.v3.NotificationChannel]
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
-     * method. The syntax of the entries in this field is:
-     *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+     * method. The format of the entries in this field is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>
@@ -13153,8 +13153,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * [`NotificationChannel`][google.monitoring.v3.NotificationChannel]
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
-     * method. The syntax of the entries in this field is:
-     *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+     * method. The format of the entries in this field is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
      * <code>repeated string notification_channels = 14;</code>

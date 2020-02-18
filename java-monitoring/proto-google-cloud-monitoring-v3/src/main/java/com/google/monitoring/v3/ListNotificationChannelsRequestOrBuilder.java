@@ -27,8 +27,9 @@ public interface ListNotificationChannelsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is
-   * `projects/[PROJECT_ID]`. That is, this names the container
+   * Required. The project on which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
+   * This names the container
    * in which to look for the notification channels; it does not name a
    * specific channel. To query a specific channel by REST resource name, use
    * the
@@ -47,8 +48,9 @@ public interface ListNotificationChannelsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is
-   * `projects/[PROJECT_ID]`. That is, this names the container
+   * Required. The project on which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
+   * This names the container
    * in which to look for the notification channels; it does not name a
    * specific channel. To query a specific channel by REST resource name, use
    * the
@@ -71,7 +73,7 @@ public interface ListNotificationChannelsRequestOrBuilder
    * If provided, this field specifies the criteria that must be met by
    * notification channels to be included in the response.
    * For more details, see [sorting and
-   * filtering](/monitoring/api/v3/sorting-and-filtering).
+   * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
    *
    * <code>string filter = 6;</code>
@@ -86,7 +88,7 @@ public interface ListNotificationChannelsRequestOrBuilder
    * If provided, this field specifies the criteria that must be met by
    * notification channels to be included in the response.
    * For more details, see [sorting and
-   * filtering](/monitoring/api/v3/sorting-and-filtering).
+   * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
    *
    * <code>string filter = 6;</code>
@@ -103,7 +105,7 @@ public interface ListNotificationChannelsRequestOrBuilder
    * the same set of fields as in `filter`. Entries can be prefixed with
    * a minus sign to sort in descending rather than ascending order.
    * For more details, see [sorting and
-   * filtering](/monitoring/api/v3/sorting-and-filtering).
+   * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
    *
    * <code>string order_by = 7;</code>
@@ -119,7 +121,7 @@ public interface ListNotificationChannelsRequestOrBuilder
    * the same set of fields as in `filter`. Entries can be prefixed with
    * a minus sign to sort in descending rather than ascending order.
    * For more details, see [sorting and
-   * filtering](/monitoring/api/v3/sorting-and-filtering).
+   * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
    *
    * <code>string order_by = 7;</code>

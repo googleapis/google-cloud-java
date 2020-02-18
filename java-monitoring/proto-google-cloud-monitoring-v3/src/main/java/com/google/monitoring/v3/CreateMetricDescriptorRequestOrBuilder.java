@@ -27,8 +27,8 @@ public interface CreateMetricDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is
-   * `"projects/{project_id_or_number}"`.
+   * Required. The project on which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CreateMetricDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is
-   * `"projects/{project_id_or_number}"`.
+   * Required. The project on which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>
@@ -58,7 +58,7 @@ public interface CreateMetricDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The new [custom metric](/monitoring/custom-metrics)
+   * Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
    * descriptor.
    * </pre>
    *
@@ -73,7 +73,7 @@ public interface CreateMetricDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The new [custom metric](/monitoring/custom-metrics)
+   * Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
    * descriptor.
    * </pre>
    *
@@ -88,7 +88,7 @@ public interface CreateMetricDescriptorRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The new [custom metric](/monitoring/custom-metrics)
+   * Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
    * descriptor.
    * </pre>
    *

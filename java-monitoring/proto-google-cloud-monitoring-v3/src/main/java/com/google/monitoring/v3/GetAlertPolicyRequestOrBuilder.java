@@ -27,8 +27,8 @@ public interface GetAlertPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The alerting policy to retrieve. The format is
-   *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
+   * Required. The alerting policy to retrieve. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface GetAlertPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The alerting policy to retrieve. The format is
-   *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
+   * Required. The alerting policy to retrieve. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    * </pre>
    *
    * <code>

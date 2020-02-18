@@ -138,8 +138,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is
-   * `"projects/{project_id_or_number}"`.
+   * Required. The project on which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>
@@ -163,8 +163,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is
-   * `"projects/{project_id_or_number}"`.
+   * Required. The project on which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>
@@ -193,10 +193,10 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    * <pre>
    * If this field is empty, all custom and
    * system-defined metric descriptors are returned.
-   * Otherwise, the [filter](/monitoring/api/v3/filters)
+   * Otherwise, the [filter](https://cloud.google.com/monitoring/api/v3/filters)
    * specifies which metric descriptors are to be
    * returned. For example, the following filter matches all
-   * [custom metrics](/monitoring/custom-metrics):
+   * [custom metrics](https://cloud.google.com/monitoring/custom-metrics):
    *     metric.type = starts_with("custom.googleapis.com/")
    * </pre>
    *
@@ -221,10 +221,10 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    * <pre>
    * If this field is empty, all custom and
    * system-defined metric descriptors are returned.
-   * Otherwise, the [filter](/monitoring/api/v3/filters)
+   * Otherwise, the [filter](https://cloud.google.com/monitoring/api/v3/filters)
    * specifies which metric descriptors are to be
    * returned. For example, the following filter matches all
-   * [custom metrics](/monitoring/custom-metrics):
+   * [custom metrics](https://cloud.google.com/monitoring/custom-metrics):
    *     metric.type = starts_with("custom.googleapis.com/")
    * </pre>
    *
@@ -683,8 +683,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is
-     * `"projects/{project_id_or_number}"`.
+     * Required. The project on which to execute the request. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -708,8 +708,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is
-     * `"projects/{project_id_or_number}"`.
+     * Required. The project on which to execute the request. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -733,8 +733,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is
-     * `"projects/{project_id_or_number}"`.
+     * Required. The project on which to execute the request. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -757,8 +757,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is
-     * `"projects/{project_id_or_number}"`.
+     * Required. The project on which to execute the request. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -777,8 +777,8 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is
-     * `"projects/{project_id_or_number}"`.
+     * Required. The project on which to execute the request. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -806,10 +806,10 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * <pre>
      * If this field is empty, all custom and
      * system-defined metric descriptors are returned.
-     * Otherwise, the [filter](/monitoring/api/v3/filters)
+     * Otherwise, the [filter](https://cloud.google.com/monitoring/api/v3/filters)
      * specifies which metric descriptors are to be
      * returned. For example, the following filter matches all
-     * [custom metrics](/monitoring/custom-metrics):
+     * [custom metrics](https://cloud.google.com/monitoring/custom-metrics):
      *     metric.type = starts_with("custom.googleapis.com/")
      * </pre>
      *
@@ -834,10 +834,10 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * <pre>
      * If this field is empty, all custom and
      * system-defined metric descriptors are returned.
-     * Otherwise, the [filter](/monitoring/api/v3/filters)
+     * Otherwise, the [filter](https://cloud.google.com/monitoring/api/v3/filters)
      * specifies which metric descriptors are to be
      * returned. For example, the following filter matches all
-     * [custom metrics](/monitoring/custom-metrics):
+     * [custom metrics](https://cloud.google.com/monitoring/custom-metrics):
      *     metric.type = starts_with("custom.googleapis.com/")
      * </pre>
      *
@@ -862,10 +862,10 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * <pre>
      * If this field is empty, all custom and
      * system-defined metric descriptors are returned.
-     * Otherwise, the [filter](/monitoring/api/v3/filters)
+     * Otherwise, the [filter](https://cloud.google.com/monitoring/api/v3/filters)
      * specifies which metric descriptors are to be
      * returned. For example, the following filter matches all
-     * [custom metrics](/monitoring/custom-metrics):
+     * [custom metrics](https://cloud.google.com/monitoring/custom-metrics):
      *     metric.type = starts_with("custom.googleapis.com/")
      * </pre>
      *
@@ -889,10 +889,10 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * <pre>
      * If this field is empty, all custom and
      * system-defined metric descriptors are returned.
-     * Otherwise, the [filter](/monitoring/api/v3/filters)
+     * Otherwise, the [filter](https://cloud.google.com/monitoring/api/v3/filters)
      * specifies which metric descriptors are to be
      * returned. For example, the following filter matches all
-     * [custom metrics](/monitoring/custom-metrics):
+     * [custom metrics](https://cloud.google.com/monitoring/custom-metrics):
      *     metric.type = starts_with("custom.googleapis.com/")
      * </pre>
      *
@@ -912,10 +912,10 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      * <pre>
      * If this field is empty, all custom and
      * system-defined metric descriptors are returned.
-     * Otherwise, the [filter](/monitoring/api/v3/filters)
+     * Otherwise, the [filter](https://cloud.google.com/monitoring/api/v3/filters)
      * specifies which metric descriptors are to be
      * returned. For example, the following filter matches all
-     * [custom metrics](/monitoring/custom-metrics):
+     * [custom metrics](https://cloud.google.com/monitoring/custom-metrics):
      *     metric.type = starts_with("custom.googleapis.com/")
      * </pre>
      *

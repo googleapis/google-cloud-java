@@ -28,8 +28,8 @@ public interface AlertPolicyOrBuilder
    *
    * <pre>
    * Required if the policy exists. The resource name for this policy. The
-   * syntax is:
-   *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
+   * format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
    * is created.  When calling the
    * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -47,8 +47,8 @@ public interface AlertPolicyOrBuilder
    *
    * <pre>
    * Required if the policy exists. The resource name for this policy. The
-   * syntax is:
-   *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
+   * format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
    * is created.  When calling the
    * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -227,8 +227,8 @@ public interface AlertPolicyOrBuilder
    * OR according to the `combiner` field. If the combined conditions evaluate
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
-   * If |condition_time_series_uery_language| is present, it must be the only
-   * |condition|.
+   * If `condition_time_series_query_language` is present, it must be the only
+   * `condition`.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -242,8 +242,8 @@ public interface AlertPolicyOrBuilder
    * OR according to the `combiner` field. If the combined conditions evaluate
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
-   * If |condition_time_series_uery_language| is present, it must be the only
-   * |condition|.
+   * If `condition_time_series_query_language` is present, it must be the only
+   * `condition`.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -257,8 +257,8 @@ public interface AlertPolicyOrBuilder
    * OR according to the `combiner` field. If the combined conditions evaluate
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
-   * If |condition_time_series_uery_language| is present, it must be the only
-   * |condition|.
+   * If `condition_time_series_query_language` is present, it must be the only
+   * `condition`.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -272,8 +272,8 @@ public interface AlertPolicyOrBuilder
    * OR according to the `combiner` field. If the combined conditions evaluate
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
-   * If |condition_time_series_uery_language| is present, it must be the only
-   * |condition|.
+   * If `condition_time_series_query_language` is present, it must be the only
+   * `condition`.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -288,8 +288,8 @@ public interface AlertPolicyOrBuilder
    * OR according to the `combiner` field. If the combined conditions evaluate
    * to true, then an incident is created. A policy can have from one to six
    * conditions.
-   * If |condition_time_series_uery_language| is present, it must be the only
-   * |condition|.
+   * If `condition_time_series_query_language` is present, it must be the only
+   * `condition`.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
@@ -302,8 +302,8 @@ public interface AlertPolicyOrBuilder
    * <pre>
    * How to combine the results of multiple conditions to determine if an
    * incident should be opened.
-   * If condition_time_series_query_language is present, this must be
-   * COMBINE_UNSPECIFIED.
+   * If `condition_time_series_query_language` is present, this must be
+   * `COMBINE_UNSPECIFIED`.
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
@@ -317,8 +317,8 @@ public interface AlertPolicyOrBuilder
    * <pre>
    * How to combine the results of multiple conditions to determine if an
    * incident should be opened.
-   * If condition_time_series_query_language is present, this must be
-   * COMBINE_UNSPECIFIED.
+   * If `condition_time_series_query_language` is present, this must be
+   * `COMBINE_UNSPECIFIED`.
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.ConditionCombinerType combiner = 6;</code>
@@ -423,8 +423,8 @@ public interface AlertPolicyOrBuilder
    * [`NotificationChannel`][google.monitoring.v3.NotificationChannel]
    * objects that are returned from the [`ListNotificationChannels`]
    * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
-   * method. The syntax of the entries in this field is:
-   *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+   * method. The format of the entries in this field is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
    * <code>repeated string notification_channels = 14;</code>
@@ -443,8 +443,8 @@ public interface AlertPolicyOrBuilder
    * [`NotificationChannel`][google.monitoring.v3.NotificationChannel]
    * objects that are returned from the [`ListNotificationChannels`]
    * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
-   * method. The syntax of the entries in this field is:
-   *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+   * method. The format of the entries in this field is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
    * <code>repeated string notification_channels = 14;</code>
@@ -463,8 +463,8 @@ public interface AlertPolicyOrBuilder
    * [`NotificationChannel`][google.monitoring.v3.NotificationChannel]
    * objects that are returned from the [`ListNotificationChannels`]
    * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
-   * method. The syntax of the entries in this field is:
-   *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+   * method. The format of the entries in this field is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
    * <code>repeated string notification_channels = 14;</code>
@@ -484,8 +484,8 @@ public interface AlertPolicyOrBuilder
    * [`NotificationChannel`][google.monitoring.v3.NotificationChannel]
    * objects that are returned from the [`ListNotificationChannels`]
    * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
-   * method. The syntax of the entries in this field is:
-   *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+   * method. The format of the entries in this field is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
    * <code>repeated string notification_channels = 14;</code>

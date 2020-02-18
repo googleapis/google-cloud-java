@@ -188,8 +188,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The project on which to execute the request. The format is
-   *     `"projects/{project_id_or_number}"`.
+   * @param name Required. The project on which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMonitoredResourceDescriptorsPagedResponse listMonitoredResourceDescriptors(
@@ -217,8 +217,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The project on which to execute the request. The format is
-   *     `"projects/{project_id_or_number}"`.
+   * @param name Required. The project on which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMonitoredResourceDescriptorsPagedResponse listMonitoredResourceDescriptors(
@@ -330,9 +330,9 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The monitored resource descriptor to get. The format is
-   *     `"projects/{project_id_or_number}/monitoredResourceDescriptors/{resource_type}"`. The
-   *     `{resource_type}` is a predefined type, such as `cloudsql_database`.
+   * @param name Required. The monitored resource descriptor to get. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE]
+   *     <p>The `[RESOURCE_TYPE]` is a predefined type, such as `cloudsql_database`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MonitoredResourceDescriptor getMonitoredResourceDescriptor(
@@ -358,9 +358,9 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The monitored resource descriptor to get. The format is
-   *     `"projects/{project_id_or_number}/monitoredResourceDescriptors/{resource_type}"`. The
-   *     `{resource_type}` is a predefined type, such as `cloudsql_database`.
+   * @param name Required. The monitored resource descriptor to get. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE]
+   *     <p>The `[RESOURCE_TYPE]` is a predefined type, such as `cloudsql_database`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MonitoredResourceDescriptor getMonitoredResourceDescriptor(String name) {
@@ -434,8 +434,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The project on which to execute the request. The format is
-   *     `"projects/{project_id_or_number}"`.
+   * @param name Required. The project on which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMetricDescriptorsPagedResponse listMetricDescriptors(ProjectName name) {
@@ -462,8 +462,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The project on which to execute the request. The format is
-   *     `"projects/{project_id_or_number}"`.
+   * @param name Required. The project on which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMetricDescriptorsPagedResponse listMetricDescriptors(String name) {
@@ -571,9 +571,10 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The metric descriptor on which to execute the request. The format is
-   *     `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`. An example value of
-   *     `{metric_id}` is `"compute.googleapis.com/instance/disk/read_bytes_count"`.
+   * @param name Required. The metric descriptor on which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
+   *     <p>An example value of `[METRIC_ID]` is
+   *     `"compute.googleapis.com/instance/disk/read_bytes_count"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MetricDescriptor getMetricDescriptor(MetricDescriptorName name) {
@@ -597,9 +598,10 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The metric descriptor on which to execute the request. The format is
-   *     `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`. An example value of
-   *     `{metric_id}` is `"compute.googleapis.com/instance/disk/read_bytes_count"`.
+   * @param name Required. The metric descriptor on which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
+   *     <p>An example value of `[METRIC_ID]` is
+   *     `"compute.googleapis.com/instance/disk/read_bytes_count"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MetricDescriptor getMetricDescriptor(String name) {
@@ -657,7 +659,7 @@ public class MetricServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a new metric descriptor. User-created metric descriptors define [custom
-   * metrics](/monitoring/custom-metrics).
+   * metrics](https://cloud.google.com/monitoring/custom-metrics).
    *
    * <p>Sample code:
    *
@@ -669,10 +671,10 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The project on which to execute the request. The format is
-   *     `"projects/{project_id_or_number}"`.
-   * @param metricDescriptor Required. The new [custom metric](/monitoring/custom-metrics)
-   *     descriptor.
+   * @param name Required. The project on which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @param metricDescriptor Required. The new [custom
+   *     metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MetricDescriptor createMetricDescriptor(
@@ -688,7 +690,7 @@ public class MetricServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a new metric descriptor. User-created metric descriptors define [custom
-   * metrics](/monitoring/custom-metrics).
+   * metrics](https://cloud.google.com/monitoring/custom-metrics).
    *
    * <p>Sample code:
    *
@@ -700,10 +702,10 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The project on which to execute the request. The format is
-   *     `"projects/{project_id_or_number}"`.
-   * @param metricDescriptor Required. The new [custom metric](/monitoring/custom-metrics)
-   *     descriptor.
+   * @param name Required. The project on which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @param metricDescriptor Required. The new [custom
+   *     metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MetricDescriptor createMetricDescriptor(
@@ -719,7 +721,7 @@ public class MetricServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a new metric descriptor. User-created metric descriptors define [custom
-   * metrics](/monitoring/custom-metrics).
+   * metrics](https://cloud.google.com/monitoring/custom-metrics).
    *
    * <p>Sample code:
    *
@@ -745,7 +747,7 @@ public class MetricServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a new metric descriptor. User-created metric descriptors define [custom
-   * metrics](/monitoring/custom-metrics).
+   * metrics](https://cloud.google.com/monitoring/custom-metrics).
    *
    * <p>Sample code:
    *
@@ -770,8 +772,8 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a metric descriptor. Only user-created [custom metrics](/monitoring/custom-metrics) can
-   * be deleted.
+   * Deletes a metric descriptor. Only user-created [custom
+   * metrics](https://cloud.google.com/monitoring/custom-metrics) can be deleted.
    *
    * <p>Sample code:
    *
@@ -782,9 +784,9 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The metric descriptor on which to execute the request. The format is
-   *     `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`. An example of
-   *     `{metric_id}` is: `"custom.googleapis.com/my_test_metric"`.
+   * @param name Required. The metric descriptor on which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
+   *     <p>An example of `[METRIC_ID]` is: `"custom.googleapis.com/my_test_metric"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteMetricDescriptor(MetricDescriptorName name) {
@@ -797,8 +799,8 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a metric descriptor. Only user-created [custom metrics](/monitoring/custom-metrics) can
-   * be deleted.
+   * Deletes a metric descriptor. Only user-created [custom
+   * metrics](https://cloud.google.com/monitoring/custom-metrics) can be deleted.
    *
    * <p>Sample code:
    *
@@ -809,9 +811,9 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The metric descriptor on which to execute the request. The format is
-   *     `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`. An example of
-   *     `{metric_id}` is: `"custom.googleapis.com/my_test_metric"`.
+   * @param name Required. The metric descriptor on which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
+   *     <p>An example of `[METRIC_ID]` is: `"custom.googleapis.com/my_test_metric"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteMetricDescriptor(String name) {
@@ -822,8 +824,8 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a metric descriptor. Only user-created [custom metrics](/monitoring/custom-metrics) can
-   * be deleted.
+   * Deletes a metric descriptor. Only user-created [custom
+   * metrics](https://cloud.google.com/monitoring/custom-metrics) can be deleted.
    *
    * <p>Sample code:
    *
@@ -846,8 +848,8 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a metric descriptor. Only user-created [custom metrics](/monitoring/custom-metrics) can
-   * be deleted.
+   * Deletes a metric descriptor. Only user-created [custom
+   * metrics](https://cloud.google.com/monitoring/custom-metrics) can be deleted.
    *
    * <p>Sample code:
    *
@@ -886,10 +888,11 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The project on which to execute the request. The format is
-   *     "projects/{project_id_or_number}".
-   * @param filter Required. A [monitoring filter](/monitoring/api/v3/filters) that specifies which
-   *     time series should be returned. The filter must specify a single metric type, and can
+   * @param name Required. The project on which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @param filter Required. A [monitoring
+   *     filter](https://cloud.google.com/monitoring/api/v3/filters) that specifies which time
+   *     series should be returned. The filter must specify a single metric type, and can
    *     additionally specify metric labels and other information. For example:
    *     <p>metric.type = "compute.googleapis.com/instance/cpu/usage_time" AND
    *     metric.labels.instance_name = "my-instance-name"
@@ -931,10 +934,11 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The project on which to execute the request. The format is
-   *     "projects/{project_id_or_number}".
-   * @param filter Required. A [monitoring filter](/monitoring/api/v3/filters) that specifies which
-   *     time series should be returned. The filter must specify a single metric type, and can
+   * @param name Required. The project on which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @param filter Required. A [monitoring
+   *     filter](https://cloud.google.com/monitoring/api/v3/filters) that specifies which time
+   *     series should be returned. The filter must specify a single metric type, and can
    *     additionally specify metric labels and other information. For example:
    *     <p>metric.type = "compute.googleapis.com/instance/cpu/usage_time" AND
    *     metric.labels.instance_name = "my-instance-name"
@@ -1074,8 +1078,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The project on which to execute the request. The format is
-   *     `"projects/{project_id_or_number}"`.
+   * @param name Required. The project on which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param timeSeries Required. The new data to be added to a list of time series. Adds at most one
    *     data point to each of several time series. The new data point must be more recent than any
    *     other point in its time series. Each `TimeSeries` value must fully specify a unique time
@@ -1108,8 +1112,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The project on which to execute the request. The format is
-   *     `"projects/{project_id_or_number}"`.
+   * @param name Required. The project on which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param timeSeries Required. The new data to be added to a list of time series. Adds at most one
    *     data point to each of several time series. The new data point must be more recent than any
    *     other point in its time series. Each `TimeSeries` value must fully specify a unique time

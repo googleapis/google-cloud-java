@@ -133,8 +133,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is
-   * `"projects/{project_id_or_number}"`.
+   * Required. The project on which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>
@@ -158,8 +158,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is
-   * `"projects/{project_id_or_number}"`.
+   * Required. The project on which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
    * <code>
@@ -659,8 +659,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is
-     * `"projects/{project_id_or_number}"`.
+     * Required. The project on which to execute the request. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -684,8 +684,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is
-     * `"projects/{project_id_or_number}"`.
+     * Required. The project on which to execute the request. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -709,8 +709,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is
-     * `"projects/{project_id_or_number}"`.
+     * Required. The project on which to execute the request. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -733,8 +733,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is
-     * `"projects/{project_id_or_number}"`.
+     * Required. The project on which to execute the request. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>
@@ -753,8 +753,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is
-     * `"projects/{project_id_or_number}"`.
+     * Required. The project on which to execute the request. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
      * <code>

@@ -123,8 +123,8 @@ public final class DeleteNotificationChannelRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The channel for which to execute the request. The format is
-   * `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
+   * Required. The channel for which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
    * <code>
@@ -148,8 +148,8 @@ public final class DeleteNotificationChannelRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The channel for which to execute the request. The format is
-   * `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
+   * Required. The channel for which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
    * <code>
@@ -529,8 +529,8 @@ public final class DeleteNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The channel for which to execute the request. The format is
-     * `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
+     * Required. The channel for which to execute the request. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
      * <code>
@@ -554,8 +554,8 @@ public final class DeleteNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The channel for which to execute the request. The format is
-     * `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
+     * Required. The channel for which to execute the request. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
      * <code>
@@ -579,8 +579,8 @@ public final class DeleteNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The channel for which to execute the request. The format is
-     * `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
+     * Required. The channel for which to execute the request. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
      * <code>
@@ -603,8 +603,8 @@ public final class DeleteNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The channel for which to execute the request. The format is
-     * `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
+     * Required. The channel for which to execute the request. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
      * <code>
@@ -623,8 +623,8 @@ public final class DeleteNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The channel for which to execute the request. The format is
-     * `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
+     * Required. The channel for which to execute the request. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
      * <code>

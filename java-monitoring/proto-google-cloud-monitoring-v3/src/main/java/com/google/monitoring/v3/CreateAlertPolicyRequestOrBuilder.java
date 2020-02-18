@@ -27,13 +27,14 @@ public interface CreateAlertPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project in which to create the alerting policy. The format is
-   * `projects/[PROJECT_ID]`.
+   * Required. The project in which to create the alerting policy. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * Note that this field names the parent container in which the alerting
    * policy will be written, not the name of the created policy. The alerting
    * policy that is returned will have a name that contains a normalized
    * representation of this name as a prefix but adds a suffix of the form
-   * `/alertPolicies/[POLICY_ID]`, identifying the policy in the container.
+   * `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
+   * container.
    * </pre>
    *
    * <code>
@@ -47,13 +48,14 @@ public interface CreateAlertPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project in which to create the alerting policy. The format is
-   * `projects/[PROJECT_ID]`.
+   * Required. The project in which to create the alerting policy. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * Note that this field names the parent container in which the alerting
    * policy will be written, not the name of the created policy. The alerting
    * policy that is returned will have a name that contains a normalized
    * representation of this name as a prefix but adds a suffix of the form
-   * `/alertPolicies/[POLICY_ID]`, identifying the policy in the container.
+   * `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
+   * container.
    * </pre>
    *
    * <code>
@@ -70,7 +72,7 @@ public interface CreateAlertPolicyRequestOrBuilder
    * <pre>
    * Required. The requested alerting policy. You should omit the `name` field in this
    * policy. The name will be returned in the new policy, including
-   * a new [ALERT_POLICY_ID] value.
+   * a new `[ALERT_POLICY_ID]` value.
    * </pre>
    *
    * <code>
@@ -86,7 +88,7 @@ public interface CreateAlertPolicyRequestOrBuilder
    * <pre>
    * Required. The requested alerting policy. You should omit the `name` field in this
    * policy. The name will be returned in the new policy, including
-   * a new [ALERT_POLICY_ID] value.
+   * a new `[ALERT_POLICY_ID]` value.
    * </pre>
    *
    * <code>
@@ -102,7 +104,7 @@ public interface CreateAlertPolicyRequestOrBuilder
    * <pre>
    * Required. The requested alerting policy. You should omit the `name` field in this
    * policy. The name will be returned in the new policy, including
-   * a new [ALERT_POLICY_ID] value.
+   * a new `[ALERT_POLICY_ID]` value.
    * </pre>
    *
    * <code>

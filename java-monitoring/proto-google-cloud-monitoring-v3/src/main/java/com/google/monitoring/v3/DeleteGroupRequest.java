@@ -123,8 +123,8 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The group to delete. The format is
-   * `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * Required. The group to delete. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * </pre>
    *
    * <code>
@@ -148,8 +148,8 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The group to delete. The format is
-   * `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * Required. The group to delete. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * </pre>
    *
    * <code>
@@ -526,8 +526,8 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The group to delete. The format is
-     * `"projects/{project_id_or_number}/groups/{group_id}"`.
+     * Required. The group to delete. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
      * </pre>
      *
      * <code>
@@ -551,8 +551,8 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The group to delete. The format is
-     * `"projects/{project_id_or_number}/groups/{group_id}"`.
+     * Required. The group to delete. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
      * </pre>
      *
      * <code>
@@ -576,8 +576,8 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The group to delete. The format is
-     * `"projects/{project_id_or_number}/groups/{group_id}"`.
+     * Required. The group to delete. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
      * </pre>
      *
      * <code>
@@ -600,8 +600,8 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The group to delete. The format is
-     * `"projects/{project_id_or_number}/groups/{group_id}"`.
+     * Required. The group to delete. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
      * </pre>
      *
      * <code>
@@ -620,8 +620,8 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The group to delete. The format is
-     * `"projects/{project_id_or_number}/groups/{group_id}"`.
+     * Required. The group to delete. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
      * </pre>
      *
      * <code>
