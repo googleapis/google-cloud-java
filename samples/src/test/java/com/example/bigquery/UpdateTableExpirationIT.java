@@ -61,5 +61,8 @@ public class UpdateTableExpirationIT {
     CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, null);
     UpdateTableExpiration.updateTableExpiration(BIGQUERY_DATASET_NAME, tableName);
     assertThat(bout.toString()).contains("Table expiration updated successfully");
+
+    // Clean up
+    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
   }
 }
